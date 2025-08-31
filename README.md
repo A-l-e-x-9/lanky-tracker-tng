@@ -1,4 +1,4 @@
-# lanky-tracker
+# Lanky Tracker: The Next Generation
 
 This program/website is a tracker for the video game *Donkey Kong 64* that you can use to track your progress in said game. It was originally made for ROM hacks that were made using the [Donkey Kong 64 Randomizer](https://dk64randomizer.com/), but should work for the original game, too.
 
