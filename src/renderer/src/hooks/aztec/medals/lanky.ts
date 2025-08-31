@@ -1,4 +1,4 @@
-import { useAnyMusic, useDive, useGrape, useLanky, useVine } from '@renderer/hooks/kongs'
+import { useAnyMusic, useClimbing, useDive, useGrape, useLanky, useRocket, useVine } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { logicBreak } from '@renderer/hooks/world'
 import {
@@ -6,12 +6,14 @@ import {
   useAztecBack,
   useAztecFront,
   useAztecLlamaTemple,
-  useAztecTinyTemple
+  useAztecTinyTemple,
+  useTinyTempleIce
 } from '..'
 
 export const useLankyMedalInLogic = (): number => {
   const inStage = useAztecFront()
   const tinyTemple = useAztecTinyTemple()
+  const iceMelted = useTinyTempleIce()
   const aztecBack = useAztecBack()
   const llamaTemple = useAztecLlamaTemple()
   const doorTemple = useAztec5DoorTemple()
@@ -20,6 +22,7 @@ export const useLankyMedalInLogic = (): number => {
   const gun = useGrape()
   const vine = useVine()
   const dive = useDive()
+  const hasClimb = useClimbing()
   const shuffleBananas = useShuffleColoredBananas()
 
   if (!inStage.in) {
@@ -35,11 +38,14 @@ export const useLankyMedalInLogic = (): number => {
   let bananas = 0
   if (inStage.in) {
     bananas += 5
-    if (tinyTemple.in && dive) {
+    if (tinyTemple.in && iceMelted && dive) {
       bananas += 14
     }
     if (aztecBack.in) {
-      bananas += 35
+      bananas += 15
+      if (hasClimb) {
+        bananas += 20
+      }
       if (doorTemple.in && gun) {
         bananas += 10
       }
@@ -61,6 +67,7 @@ export const useLankyMedalInLogic = (): number => {
 export const useLankyMedalOutLogic = (): number => {
   const inStage = useAztecFront()
   const tinyTemple = useAztecTinyTemple()
+  const iceMelted = useTinyTempleIce()
   const aztecBack = useAztecBack()
   const llamaTemple = useAztecLlamaTemple()
   const doorTemple = useAztec5DoorTemple()
@@ -69,6 +76,8 @@ export const useLankyMedalOutLogic = (): number => {
   const gun = useGrape()
   const vine = useVine()
   const dive = useDive()
+  const hasClimb = useClimbing()
+  const hasJetbarrel = useRocket()
   const shuffleBananas = useShuffleColoredBananas()
 
   if (!logicBreak(inStage)) {
@@ -84,11 +93,14 @@ export const useLankyMedalOutLogic = (): number => {
   let bananas = 0
   if (logicBreak(inStage)) {
     bananas += 5
-    if (logicBreak(tinyTemple) && dive) {
+    if (logicBreak(tinyTemple) && iceMelted && dive) {
       bananas += 14
     }
     if (logicBreak(aztecBack)) {
-      bananas += 35
+      bananas += 15
+      if (hasClimb || hasJetbarrel) {
+        bananas+=20
+      }
       if (logicBreak(doorTemple) && gun) {
         bananas += 10
       }

@@ -8,8 +8,7 @@ const MonkeyportIgloo: React.FC = () => {
       id={6031}
       name="Caves Tiny Monkeyport Igloo"
       region="Igloo Area"
-      canGetLogic={portGb.in}
-      canGetBreak={portGb.out}
+      canGetLogic={portGb}
     />
   )
 }

@@ -3,6 +3,7 @@ import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '../../store'
 
 type DoubleIconProps = {
+  title: string
   storeLeft: string
   storeRight: string
   imgLeft: string
@@ -30,6 +31,8 @@ const DoubleIcon: React.FC<DoubleIconProps> = (props) => {
       <img
         width={24}
         height={24}
+        alt={props.title}
+        title={props.title}
         src={url}
         style={{ filter: `grayscale(${left || right ? '0' : '1'})` }}
         onClick={() => props.setItem(props.storeLeft, !left)}

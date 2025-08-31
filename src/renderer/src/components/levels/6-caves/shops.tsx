@@ -1,11 +1,14 @@
 import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
-import { usePlayCaves } from '@renderer/hooks/caves'
-import { usePunch } from '@renderer/hooks/kongs'
+import { usePlayCaves, useCanAccessSnide } from '@renderer/hooks/caves'
+import { usePunch, useCranky, whatAFunky, useCandy } from '@renderer/hooks/kongs'
 import { useShuffledShops } from '@renderer/hooks/settings'
 
 const Vanilla: React.FC = () => {
   const inStage = usePlayCaves()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
+  const hasCandy = useCandy()
 
   return (
     <>
@@ -14,21 +17,21 @@ const Vanilla: React.FC = () => {
         baseName="Caves Cranky"
         level="Caves"
         region="Caves Shops"
-        inLogic={inStage}
+        inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={6120}
         baseName="Caves Funky"
         level="Caves"
         region="Caves Shops"
-        inLogic={inStage}
+        inLogic={hasFunky && inStage}
       />
       <ShopGenerator
         baseId={6130}
         baseName="Caves Candy"
         level="Caves"
         region="Caves Shops"
-        inLogic={inStage}
+        inLogic={hasCandy && inStage}
       />
     </>
   )
@@ -37,6 +40,10 @@ const Vanilla: React.FC = () => {
 const Shuffled: React.FC = () => {
   const inStage = usePlayCaves()
   const punch = usePunch()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
+  const hasCandy = useCandy()
+  const hasSnide = useCanAccessSnide()
 
   return (
     <>
@@ -45,28 +52,28 @@ const Shuffled: React.FC = () => {
         baseName="Caves Cranky Location"
         level="Caves"
         region="Caves Shops"
-        inLogic={inStage}
+        inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={6150}
         baseName="Caves Funky Location"
         level="Caves"
         region="Caves Shops"
-        inLogic={inStage}
+        inLogic={hasFunky && inStage}
       />
       <ShopGenerator
         baseId={6160}
         baseName="Caves Candy Location"
         level="Caves"
         region="Caves Shops"
-        inLogic={inStage}
+        inLogic={hasCandy && instage}
       />
       <ShopGenerator
         baseId={6170}
         baseName="Caves Snide Location"
         level="Caves"
         region="Caves Shops"
-        inLogic={inStage && punch}
+        inLogic={hasSnide}
       />
     </>
   )

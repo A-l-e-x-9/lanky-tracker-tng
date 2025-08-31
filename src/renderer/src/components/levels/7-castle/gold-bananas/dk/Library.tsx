@@ -6,7 +6,7 @@ const DkLibrary: React.FC = () => {
   return (
     <CastleCheck
       id={7002}
-      name="Castle Donkey Library"
+      name="Castle DK Library"
       region="Castle Rooms"
       canGetLogic={roomGb.in}
       canGetBreak={roomGb.out}

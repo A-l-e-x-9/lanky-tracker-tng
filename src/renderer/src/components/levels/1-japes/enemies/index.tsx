@@ -17,7 +17,7 @@ const EnemyLocations: React.FC = () => {
       <HiveOutsideEnemies />
       <HiveInteriorEnemies />
       <StormyTunnelEnemies />
-      {/* Painting Gauntlet used to go here. */}
+      {/* Painting Gauntlet might go here if the DK64 Rando peeps make them eligible for Dropsanity... */}
       <CaveEnemies />
     </>
   )

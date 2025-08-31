@@ -2,16 +2,12 @@ import BananaMedalPool from '@renderer/components/pools/BananaMedals'
 import DropPool from '@renderer/components/pools/Drops'
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import ShuffledArenas from './arenas/Shuffled'
 import VultureArena from './arenas/Vulture'
 import BossCheck from './boss'
 import CrateLocations from './crates'
-import ShuffledCrates from './crates/Shuffled'
 import DirtLocations from './dirt'
-import ShuffledDirtLocations from './dirt/Shuffled'
 import EnemyLocations from './enemies'
 import FairyLocations from './fairies'
-import ShuffledFairies from './fairies/Shuffled'
 import ChunkyBananas from './gold-bananas/chunky'
 import DiddyBananas from './gold-bananas/diddy'
 import DkBananas from './gold-bananas/dk'
@@ -25,6 +21,7 @@ import LankyMedal from './medals/LankyMedal'
 import TinyMedal from './medals/TinyMedal'
 import AztecRegionChecks from './regions'
 import AztecShops from './shops'
+import BoulderLocations from './boulders'
 
 const ClassicChecks: React.FC = () => (
   <div className="grid">
@@ -35,13 +32,9 @@ const ClassicChecks: React.FC = () => (
     <ChunkyBananas />
     <KasplatLocations />
     <CrateLocations />
-    <ShuffledCrates />
     <DirtLocations />
-    <ShuffledDirtLocations />
     <FairyLocations />
-    <ShuffledFairies />
     <VultureArena />
-    <ShuffledArenas />
     <BananaMedalPool>
       <DkMedal />
       <DiddyMedal />
@@ -49,6 +42,7 @@ const ClassicChecks: React.FC = () => (
       <TinyMedal />
       <ChunkyMedal />
     </BananaMedalPool>
+    <BoulderLocations />
     <BossCheck />
     <AztecShops />
     <DropPool>

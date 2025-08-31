@@ -10,11 +10,12 @@ import {
   useTwirl
 } from '@renderer/hooks/kongs'
 import { useBananaportAll, useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { useCavesIgloo, usePlayCaves } from '..'
+import { useCavesIgloo, usePlayCaves, useIceWalls } from '..'
 
 const useTinyMedalCommonLogic = (): number => {
   const igloo = useCavesIgloo()
   const punch = usePunch()
+  const prePunched = useIceWalls()
   const boulderTech = useBoulderTech()
   const warpAll = useBananaportAll()
   const gun = useFeather()
@@ -36,7 +37,7 @@ const useTinyMedalCommonLogic = (): number => {
       bananas += 10
     }
   }
-  if (punch && boulderTech && hunky && pad) {
+  if ((punch || prePunched) && boulderTech && hunky && pad) {
     bananas += 20
   }
   if (igloo && music) {

@@ -61,7 +61,13 @@ import {
   useTriangle,
   useTrombone,
   useTwirl,
-  useVine
+  useVine,
+  useClimbing,
+  useCranky,
+  whatAFunky,
+  useCandy,
+  useSnide,
+  useBarrel
 } from '../kongs'
 import {
   useAutoBonus,
@@ -69,7 +75,7 @@ import {
   useFairyCount,
   useIsSwitchsanity,
   useOpenLobbies,
-  useProgressiveSlams
+  useProgressiveSlams,
 } from '../settings'
 import { LogicBool, logicBreak, useSwitchsanityGun, useSwitchsanityMusicPad } from '../world'
 
@@ -522,6 +528,11 @@ export const useCheckTinyGalleonLobby = (): LogicBool => {
     out: playGalleon && slam && chunky && dive && mini
   }
 }
+/*Alex addition: Can we access the inital BFI check (that would get us Cam and Shockwave in vanilla)?*/
+export const useCheckBFIInitial = (): boolean => {
+  const mini = useMini()
+  return mini
+}
 
 /**
  * Can we access the Banana Fairy Island (BFI) check?
@@ -588,7 +599,8 @@ export const useGeneralDirt = (): boolean => {
 export const useHoardDirt = (): boolean => {
   const dirt = useGeneralDirt()
   const vine = useVine()
-  return dirt && vine
+  const climbing = useClimbing()
+  return dirt && vine && climbing
 }
 
 export const useIslandDirt = (): boolean => {
@@ -657,35 +669,151 @@ export const useKremFairy = (): boolean => {
 
 export const useHelmKasplat = (): LogicBool => {
   const playHelm = usePlayHelm()
+  const snide = useSnide()
   const sniper = useSniper()
   const coconut = useCoconut()
   const twirl = useTwirl()
+  const FtaDkBlueprint = useFtaDkBlueprint()
   return {
-    in: playHelm && sniper && coconut,
-    out: useFtaDkBlueprint() && playHelm && twirl
+    in: snide && playHelm && sniper && coconut,
+    out: snide && FtaDkBlueprint && playHelm && twirl
   }
 }
 
 export const useCastleKasplat = (): boolean => {
   const playCastle = usePlayCastle()
+  const snide = useSnide()
   const coconut = useCoconut()
-  return useFtaDiddyBlueprint() && playCastle && coconut
+  const FtaDiddyBlueprint = useFtaDiddyBlueprint()
+  return snide && FtaDiddyBlueprint && playCastle && coconut
 }
 
 export const useCavesKasplat = (): boolean => {
   const playCaves = usePlayCaves()
   const punch = usePunch()
-  return useFtaLankyBlueprint() && playCaves && punch
+  const snide = useSnide()
+  const FtaLankyBlueprint = useFtaLankyBlueprint()
+  return snide && FtaLankyBlueprint && playCaves && punch
 }
 
 export const useFactoryKasplat = (): boolean => {
   const playFactory = usePlayFactory()
   const punch = usePunch()
-  return useFtaTinyBlueprint() && playFactory && punch
+  const FtaTinyBlueprint = useFtaTinyBlueprint()
+  const snide = useSnide()
+  return snide && FtaTinyBlueprint && playFactory && punch
 }
 
 export const useGalleonKasplat = (): boolean => {
   const playGalleon = usePlayGalleon()
   const anyKong = useAnyKong()
-  return useFtaChunkyBlueprint() && playGalleon && anyKong
+  const snide = useSnide()
+  const FtaChunkyBlueprint = useFtaChunkyBlueprint()
+  return snide && FtaChunkyBlueprint && playGalleon && anyKong
+}
+
+export const useAztecLobbyTrombonePad = (): boolean => {
+  const bananaport = useBananaport()
+  const chunky = useChunky()
+  const barrels = useBarrel()
+  const climbing = useClimbing()
+  const vines = useVine()
+  return (bananaport || climbing && vines) && chunky && barrels
+}
+
+export const useAztecLobbyTrianglePad = (): boolean => {
+  const bananaport = useBananaport()
+  const chunky = useChunky()
+  const barrels = useBarrel()
+  const climbing = useClimbing()
+  const vines = useVine()
+  return (bananaport || climbing && vines) && chunky && barrels
+}
+
+export const useCastleLobby = (): boolean => {
+  const canEnterCastle = usePlayCastle()
+  const chunky = useChunky()
+  const barrels = useBarrel()
+  return canEnterCastle && chunky && barrels
+}
+
+export const useCavesLobby = (): boolean => {
+  const canEnterCaves = usePlayCaves()
+  const chunky = useChunky()
+  const barrels = useBarrel()
+  const punch = usePunch()
+  return canEnterCaves && chunky && barrels && punch
+}
+
+export const useJapesLobby = (): boolean => {
+  const canEnterJapes = usePlayJapes()
+  const chunky = useChunky()
+  const barrels = useBarrel()
+  return canEnterJapes && chunky && barrels
+}
+
+export const useJapesLobbyGeneric = (): boolean => {
+  const canEnterJapes = usePlayJapes()
+  return canEnterJapes
+}
+
+export const useAztecLobbyGeneric = (): boolean => {
+  const canEnterAztec = usePlayAztec()
+  return canEnterAztec
+}
+
+export const useAztecLobbyChunky = (): boolean => {
+  const canEnterAztec = usePlayAztec()
+  const feathers = useFeather()
+  return canEnterAztec && feathers
+}
+
+export const useFactoryLobbyLower = (): boolean => {
+  const canEnterFactory = usePlayFactory()
+  return canEnterFactory
+}
+
+export const useFactoryLobbyUpper = (): LogicBool => {
+  const canEnterFactory = usePlayFactory()
+  const grab = useGrab()
+  const hasDiddy = useDiddy()
+  const hasTiny = useTiny()
+  const hasChunky = useChunky()
+  return {
+    in: canEnterFactory && grab,
+    out: canEnterFactory && (hasDiddy || hasTiny || hasChunky)
+  }
+}
+
+export const useGalleonLobbyGeneric = (): boolean => {
+  const canEnterGalleon = usePlayGalleon()
+  return canEnterGalleon
+}
+
+export const useForestLobbyGeneric = (): boolean => {
+  const canEnterForest = usePlayForest()
+  return canEnterForest
+}
+
+export const useCavesLobbyGeneric = (): boolean => {
+  const canEnterCaves = usePlayCaves()
+  return canEnterCaves
+}
+
+export const useCavesLobbyDiddy = (): LogicBool => {
+  const canEnterCaves = usePlayCaves()
+  const hasJetbarrel = useRocket()
+  const boulderTech = useBoulderTech()
+  const hasTiny = useTiny()
+  const hasTwirl = useTwirl()
+  const highGrab = useHighGrab()
+  return {
+    in: canEnterCaves && hasJetbarrel,
+    out: canEnterCaves && boulderTech && hasTiny && hasTwirl && highGrab
+  }
+}
+
+export const useCastleLobbyGeneric = (): boolean => {
+  const canEnterCastle = usePlayCastle()
+  return canEnterCastle
 }

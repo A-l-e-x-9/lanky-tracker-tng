@@ -6,7 +6,7 @@ const Mechfish: React.FC = () => {
   return (
     <GalleonCheck
       id={4012}
-      name="Galleon Diddy Mechfish"
+      name="The Mechfish Agenda"
       region="Shipyard Outskirts"
       canGetLogic={mechGb.in}
       canGetBreak={mechGb.out}

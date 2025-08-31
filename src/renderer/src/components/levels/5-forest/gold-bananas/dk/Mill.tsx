@@ -6,7 +6,7 @@ const DkMill: React.FC = () => {
   return (
     <ForestCheck
       id={5003}
-      name="Forest Donkey Mill Levers"
+      name="Forest DK Mill Levers"
       region="Forest Mills"
       canGetLogic={millGb.in}
       canGetBreak={millGb.out}

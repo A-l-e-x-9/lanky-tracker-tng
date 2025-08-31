@@ -2,9 +2,14 @@ import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { usePlayCastle } from '@renderer/hooks/castle'
 import { useShuffledShops } from '@renderer/hooks/settings'
+import { useCranky, whatAFunky, useCandy, useClimbing } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
   const inStage = usePlayCastle()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
+  const hasCandy = useCandy()
+  const hasClimbing = useClimbing()
 
   return (
     <>
@@ -13,21 +18,22 @@ const Vanilla: React.FC = () => {
         baseName="Castle Cranky"
         level="Castle"
         region="Castle Shops"
-        inLogic={inStage}
+        inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={7120}
         baseName="Castle Funky"
         level="Castle"
         region="Castle Shops"
-        inLogic={inStage}
+        inLogic={whatAFunky && inStage && hasClimbing}
+        outLogic={whatAFunky && inStage}
       />
       <ShopGenerator
         baseId={7130}
         baseName="Castle Candy"
         level="Castle"
         region="Castle Shops"
-        inLogic={inStage}
+        inLogic={hasCandy && inStage}
       />
     </>
   )

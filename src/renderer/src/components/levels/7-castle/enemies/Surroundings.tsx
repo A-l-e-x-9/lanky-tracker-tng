@@ -1,13 +1,14 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { usePlayCastle } from '@renderer/hooks/castle'
 import { useDefeatKosha } from '@renderer/hooks/enemies'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import { useAnyKong, useClimbing } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const SurroundingsEnemies: React.FC = () => {
   const inStage = usePlayCastle()
   const anyKong = useAnyKong()
   const kosha = useDefeatKosha()
+  const hasClimbing = useClimbing()
   return (
     <DropPool>
       <CastleCheck
@@ -62,19 +63,22 @@ const SurroundingsEnemies: React.FC = () => {
         id={7308}
         name="Castle Enemy: Near Low Caves"
         region="Castle Surroundings"
-        canGetLogic={inStage && anyKong}
+        canGetLogic={inStage && anyKong && hasClimbing}
+        canGetBreak={inStage && anyKong}
       />
       <CastleCheck
         id={7309}
         name="Castle Enemy: Path to Low Kasplat"
         region="Castle Surroundings"
-        canGetLogic={inStage && anyKong}
+        canGetLogic={inStage && anyKong && hasClimbing}
+        canGetBreak={inStage && anyKong}
       />
       <CastleCheck
         id={7310}
         name="Castle Enemy: Low Boss Portal"
         region="Castle Surroundings"
-        canGetLogic={inStage && anyKong}
+        canGetLogic={inStage && anyKong && hasClimbing}
+        canGetBreak={inStage && anyKong}
       />
       <CastleCheck
         id={7311}

@@ -1,5 +1,5 @@
-import { useCharge, useDiddy, useDive, useHighGrab, usePeanut } from '@renderer/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/hooks/settings'
+import { useCharge, useClimbing, useDiddy, useDive, useHighGrab, usePeanut } from '@renderer/hooks/kongs'
+import { useShuffleColoredBananas, useBananaportAll } from '@renderer/hooks/settings'
 import { useJapesKongGates, useJapesRambi, useJapesSideArea, usePlayJapes, useSlamJapes } from '..'
 
 const useDiddyMedalCommonLogic = (): number => {
@@ -9,15 +9,23 @@ const useDiddyMedalCommonLogic = (): number => {
   const gun = usePeanut()
   const dive = useDive()
   const kongGates = useJapesKongGates()
+  const climbing = useClimbing()
+  const bananaport = useBananaportAll()
 
-  let bananas = 32 // start (5), tree bunches (20), around mine (7)
+  let bananas = 5 // start (5)
+  if (climbing) {
+    bananas += 20 //tree bunches (20)
+  }
+  if (climbing || bananaport) {
+    bananas += 7 //around mine (7)
+  }
   if (dive) {
     bananas += 10 // bunches in water (10)
   }
   if (sideArea && gun) {
     bananas += 10 // initial side tunnel (normally peanut locked)
   }
-  if (gun) {
+  if (gun && (climbing || bananaport)) {
     bananas += 20 // balloon on top of mountain (10), free bananas in mines (10)
     if (canSlam) {
       bananas += 15 // conveyor belt + balloon nearby (15)
@@ -41,6 +49,8 @@ export const useDiddyMedalInLogic = (): number => {
   const gun = usePeanut()
   const move = useCharge()
   const shuffleBananas = useShuffleColoredBananas()
+  const climbing = useClimbing()
+  const bananaport = useBananaportAll()
   let bananas = useDiddyMedalCommonLogic()
 
   if (!inStage) {
@@ -53,7 +63,7 @@ export const useDiddyMedalInLogic = (): number => {
     return 100
   }
 
-  if (gun && canSlam && move) {
+  if ((climbing || bananaport) && gun && canSlam && move) {
     bananas += 5 // by mine cart
   }
 
@@ -66,6 +76,8 @@ export const useDiddyMedalOutLogic = (): number => {
   const gun = usePeanut()
   const highGrab = useHighGrab()
   const shuffleBananas = useShuffleColoredBananas()
+  const climbing = useClimbing()
+  const bananaport = useBananaportAll()
   let bananas = useDiddyMedalCommonLogic()
 
   if (!inStage) {
@@ -78,7 +90,7 @@ export const useDiddyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (gun && highGrab) {
+  if ((climbing || bananaport) && gun && highGrab) {
     bananas += 5 // sequence break
   }
 

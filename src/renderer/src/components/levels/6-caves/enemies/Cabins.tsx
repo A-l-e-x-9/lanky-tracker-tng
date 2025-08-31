@@ -30,17 +30,9 @@ const CabinsEnemies: React.FC = () => {
         region="Cabins Area"
         canGetLogic={inStage && anyKong && kosha}
       />
-
       <CavesCheck
         id={6317}
-        name="Caves Enemy: Lanky Cabin Inside Near"
-        region="Cabins Area"
-        canGetLogic={lankyCabin.in && kosha}
-        canGetBreak={lankyCabin.out && kosha}
-      />
-      <CavesCheck
-        id={6318}
-        name="Caves Enemy: Lanky Cabin Inside Far"
+        name="Caves Enemy: Lanky Cabin Inside Near Pad and Barrel"
         region="Cabins Area"
         canGetLogic={lankyCabin.in && kosha}
         canGetBreak={lankyCabin.out && kosha}
@@ -50,3 +42,12 @@ const CabinsEnemies: React.FC = () => {
 }
 
 export default CabinsEnemies
+
+/*Major Alex edit: According to the Plandomizer, this enemy is not eligible for Dropsanity. Not sure I buy that, so keeping it here for posterity instead of outright deleting the entry.
+      <CavesCheck
+        id={6318}
+        name="Caves Enemy: Lanky Cabin Inside Near Switch"
+        region="Cabins Area"
+        canGetLogic={lankyCabin.in && kosha}
+        canGetBreak={lankyCabin.out && kosha}
+      />*/

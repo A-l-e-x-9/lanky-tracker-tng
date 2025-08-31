@@ -4,25 +4,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   background-image: url('./wavy-lines.svg');
   background-size: cover;
-  user-select: none;
 }
+
+h1, h2, h3, h4, h5, h6 {text-align: center; font-family: Optima LT Pro, Verdana, Tahoma, sans-serif; font-weight: bold;}
+header, footer {background-color: #0080ff; color: #000000;}
+header {width: 100%; position: absolute; top: 0; left: 0; text-transform: lowercase; padding: 0px 100px;}
+header h1 {font-size: 5em; text-align: left;}
+header h2 {text-align: right;}
+footer {position: fixed; bottom: 0; left: 0; max-width: 350px; border: 3px solid;}
+a {font-weight: bold;}
+a:link {color: #ff00ff;}
+a:visited {color: #800080;}
+a:hover {color: #ffffff;}
 
 code {
   font-weight: 600;
   padding: 3px 5px;
   border-radius: 2px;
   background-color: var(--color-background-mute);
-  font-family:
-    ui-monospace,
-    SFMono-Regular,
-    SF Mono,
-    Menlo,
-    Consolas,
-    Liberation Mono,
-    monospace;
+  font-family: monospace;
   font-size: 85%;
 }
 
@@ -45,6 +47,7 @@ code {
 }
 
 main {
+  padding-top: 167px;
   display: grid;
   gap: 1em;
   grid-template-columns: 1fr 3fr;
@@ -77,30 +80,32 @@ main > article:last-child {
   justify-items: center;
 }
 
-.level-list {
+.level-list, .boss-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
 }
 .level-list img:nth-of-type(3n),
-.level-list img:nth-of-type(3n + 2) {
+.level-list img:nth-of-type(3n + 2),
+.boss-list img:nth-of-type(3n),
+.boss-list img:nth-of-type(3n + 2) {
   cursor: pointer;
 }
-.level-list > section {
+.level-list > section, .boss-list section {
   display: grid;
   grid-template-columns: 1fr 14ex 1fr;
   justify-items: center;
 }
-.level-list > .level2 {
+.level-list > .level2, .boss-list > .boss2 {
   grid-row: 2;
 }
-.level-list > .level3 {
+.level-list > .level3, .boss-list > .boss3 {
   grid-row: 3;
 }
-.level-list > .level4 {
+.level-list > .level4, .boss-list > .boss4 {
   grid-row: 4;
 }
-.level-list img {
+.level-list img, .boss-list img {
   height: 24px;
 }
 
@@ -172,7 +177,6 @@ main > article:last-child {
 }
 
 .hint-drops {
-  overflow-y: auto;
   height: 18vh;
 }
 
@@ -213,7 +217,6 @@ main > article:last-child {
   display: grid;
   grid-template-columns: 7fr 1fr;
   height: 27vh;
-  overflow-y: auto;
 }
 .switchsanity-settings > section > img {
   text-align: right;
@@ -228,7 +231,6 @@ main > article:last-child {
 main .grid {
   display: grid;
   grid-template-columns: 4fr 2.5fr 0.5fr;
-  overflow-y: auto;
   height: calc(100vh - 3ex);
 }
 
@@ -247,19 +249,17 @@ main .grid {
   text-decoration: none;
 }
 
-.grid > :not(.checked) > .not-available,
-.ending .not-available {
-  color: red;
+.not-available
+{
+  color: #ff0000;
 }
 
-.grid > :not(.checked) > .logic-break,
-.ending .logic-break {
-  color: yellow;
+.logic-break {
+  color: #ffff00;
 }
 
-.grid > :not(.checked) > .available,
-.ending .available {
-  color: cyan;
+.available {
+  color: #00ff00;
 }
 
 .grid > :not(.checked).foolish {

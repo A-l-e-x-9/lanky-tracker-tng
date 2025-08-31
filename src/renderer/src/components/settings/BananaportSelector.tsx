@@ -44,7 +44,7 @@ const BananaportSelector: React.FC = () => {
       <img
         className="simple-icon"
         height={24}
-        title={bananaport == 0 ? 'None' : bananaport == 1 ? 'Isles' : 'All'}
+        title={bananaport == 0 ? 'None' : bananaport == 1 ? 'DK Isles only' : 'All'}
         src={portToIcon(bananaport)}
         onClick={handleNextLevel}
         onContextMenu={handlePrevLevel}

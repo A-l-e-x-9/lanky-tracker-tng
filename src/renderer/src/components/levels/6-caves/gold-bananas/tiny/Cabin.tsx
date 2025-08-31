@@ -8,8 +8,7 @@ const TinyCabin: React.FC = () => {
       id={6033}
       name="Caves Tiny 5 Door Cabin"
       region="Cabins Area"
-      canGetLogic={cabinCb.in}
-      canGetBreak={cabinCb.out}
+      canGetLogic={cabinCb}
     />
   )
 }

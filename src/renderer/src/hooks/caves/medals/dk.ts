@@ -1,16 +1,17 @@
 import { useBlast, useBongos, useCoconut, useDk, usePunch, useStrong } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { useCavesIgloo, usePlayCaves } from '..'
+import { useCavesIgloo, usePlayCaves, useIceWalls } from '..'
 
 const useDkMedalCommonLogic = (): number => {
   const igloo = useCavesIgloo()
   const punch = usePunch()
+  const wallPrePunched = useIceWalls()
   const gun = useCoconut()
   const music = useBongos()
   const pad = useBlast()
 
   let bananas = 25
-  if (punch) {
+  if (punch || wallPrePunched) {
     bananas += 3
     if (gun) {
       bananas += 20
@@ -23,7 +24,7 @@ const useDkMedalCommonLogic = (): number => {
     bananas += 10
   }
   if (music && igloo && gun) {
-    bananas == 10
+    bananas += 10
   }
   return bananas
 }
@@ -48,7 +49,7 @@ export const useDkMedalInLogic = (): number => {
   }
 
   if (music && igloo && crystal) {
-    bananas += 7
+    bananas += 12
   }
   return bananas
 }
@@ -72,7 +73,7 @@ export const useDkMedalOutLogic = (): number => {
   }
 
   if (music && igloo) {
-    bananas += 7
+    bananas += 12
   }
   return bananas
 }

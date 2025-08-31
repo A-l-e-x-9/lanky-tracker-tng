@@ -1,12 +1,26 @@
+import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
 import { useDkBlastGb } from '@renderer/hooks/factory'
 import { useFastArcade } from '@renderer/hooks/fast-checks'
 import FactoryCheck from '../../check'
 
 const FactoryBlast: React.FC = () => {
-  const desc = 'Factory Donkey Blast' + (useFastArcade() ? '' : ' + Arcade Round 1')
+  const fastArcade = useFastArcade()
+  if (fastArcade) {
   return (
-    <FactoryCheck id={3003} name={desc} region="Storage And Arcade" canGetLogic={useDkBlastGb()} />
+    <FactoryCheck id={3003} name="Factory DK Barrel Blast" region="Storage And Arcade" canGetLogic={useDkBlastGb()} />
   )
+  } else {
+  return (
+    <ToughGoldenBanana>
+    <FactoryCheck
+    id={3003}
+    name="Factory DK Barrel Blast and DK Arcade Round 1"
+    region="Storage and Arcade"
+    canGetLogic={useDkBlastGb()}
+    />
+    </ToughGoldenBanana>
+  )
+  }
 }
 
 export default FactoryBlast

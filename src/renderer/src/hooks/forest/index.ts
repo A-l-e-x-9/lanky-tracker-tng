@@ -43,7 +43,11 @@ import {
   useTiny,
   useTriangle,
   useTrombone,
-  useVine
+  useVine,
+  useClimbing,
+  useBalloon,
+  useSnide,
+  useBarrel
 } from '../kongs'
 import { useBananaportAll, useForestTime, useHardShooting } from '../settings'
 import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
@@ -127,8 +131,8 @@ export const useForestSpiderBoss = (): LogicBool => {
   const punch = usePunch()
 
   return {
-    in: (dusk && (mini || punch)) || (night.in && punch && mini),
-    out: logicBreak(night) && punch && mini
+    in: dusk || (night.in && punch && mini),
+    out: dusk || (logicBreak(night) && punch && mini)
   }
 }
 
@@ -247,12 +251,18 @@ export const useDiddyOwlGb = (): LogicBool => {
   }
 }
 
-export const useDiddyCageGb = (): boolean => {
+export const useDiddyCageGb = (): LogicBool => {
   const inStage = usePlayForest()
+  const hasClimbing = useClimbing()
+  const hasBalloon = useBalloon()
+  const hasSlam = useSlamForest()
   const charge = useCharge()
   const guitar = useGuitar()
   const anyGun = useAnyGun()
-  return inStage && charge && guitar && anyGun
+  return {
+    in: inStage && hasClimbing && hasSlam && charge && guitar && anyGun,
+    out: inStage && hasBalloon && hasSlam && charge && guitar && anyGun
+  }
 }
 
 export const useDiddyRaftersGb = (): LogicBool => {
@@ -308,9 +318,10 @@ export const useForestBarn = (): LogicBool => {
 
 export const useDkBarnGb = (): LogicBool => {
   const barn = useForestBarn()
+  const climbing = useClimbing()
   const vine = useVine()
   return {
-    in: barn.in && vine,
+    in: barn.in && climbing && vine,
     out: logicBreak(barn)
   }
 }
@@ -319,13 +330,12 @@ export const useLankyMillGb = (): LogicBool => {
   const inStage = usePlayForest()
   const night = useForestNight()
   const canSlam = useSlamForest()
-  const grape = useGrape()
   const homing = useHoming()
   const hardShooting = useHardShooting()
   const anyGun = useAnyGun()
   const lanky = useLanky()
   return {
-    in: inStage && night.in && canSlam && grape && (homing || hardShooting),
+    in: inStage && night.in && lanky && canSlam && anyGun && (homing || hardShooting),
     out: inStage && logicBreak(night) && lanky && canSlam && anyGun
   }
 }
@@ -340,6 +350,7 @@ export const useLankyMushGb = (): LogicBool => {
   }
 }
 
+/*Alex edit: The former code for VerdantAsh's favorite banana, kept here for posterity because the alterations are historically significant.
 export const useLankyRaceGb = (): LogicBool => {
   const owl = useForestOwl()
   const trombone = useTrombone()
@@ -351,11 +362,25 @@ export const useLankyRaceGb = (): LogicBool => {
   }
 }
 
+Thanks to an extremely infamous Season 3 tournament race where someone, I forgot who, choked the huge lead he had by spending, like, AN HOUR doing this banana with DK over and over and over again (one that, in my comment on the YouTube video, I felt met Albert Einstein's definition of insanity), 2Dos patched this banana so that you are now required to have Sprint! The "new" Lanky Race GB?*/
+export const useLankyRaceGb = (): LogicBool => {
+  const isDay = useForestDay()
+  const owl = useForestOwl()
+  const trombone = useTrombone()
+  const sprint = useSprint()
+  return {
+    in: isDay.in && owl && trombone && sprint,
+    out: isDay.out && owl && trombone && sprint
+  }
+}
+/*This check still has a glitch in it from the old tracker that requires you to have Key 5 before you can get the GB, that I've been unable to find and fix.*/
+
 export const useTinyMushGb = (): boolean => {
   const inStage = usePlayForest()
   const tiny = useTiny()
   const canSlam = useSlamForest()
-  return inStage && tiny && canSlam
+  const hasClimbing = useClimbing()
+  return inStage && tiny && canSlam && hasClimbing
 }
 
 export const useTinyAntGb = (): boolean => {
@@ -367,13 +392,11 @@ export const useTinyAntGb = (): boolean => {
 
 export const useTinySpiderGb = (): LogicBool => {
   const spider = useForestSpiderBoss()
-  const dusk = useForestDusk()
   const feather = useFeather()
-  const pineapple = usePineapple()
   const anyGun = useAnyGun()
   const kong = useFtaTinyBanana()
   return {
-    in: kong && spider.in && ((dusk && (feather || pineapple)) || (!dusk && feather)),
+    in: kong && spider.in && anyGun,
     out: kong && logicBreak(spider) && anyGun
   }
 }
@@ -410,9 +433,10 @@ export const useGeneralDirt = (): boolean => {
 
 export const useBarnFairy = (): LogicBool => {
   const barn = useForestBarn()
+  const hasClimbing = useClimbing()
   const camera = useCamera()
   return {
-    in: barn.in && camera,
+    in: barn.in && useClimbing && camera,
     out: barn.out && camera
   }
 }
@@ -433,34 +457,55 @@ export const useGeneralFairy = (): boolean => {
 }
 
 export const useBarnKasplat = (): LogicBool => {
+  const hasSnide = useSnide()
   const inStage = usePlayForest()
   const night = useForestNight()
   const anyGun = useAnyGun()
   const kong = useFtaDkBlueprint()
   return {
-    in: kong && inStage && night.in && anyGun,
-    out: kong && inStage && (night.in || night.out)
+    in: hasSnide && kong && inStage && night.in && anyGun,
+    out: hasSnide && kong && inStage && (night.in || night.out)
   }
 }
 
 export const useOwlKasplat = (): boolean => {
+  const hasSnide = useSnide()
   const inStage = useForestOwl()
   const anyKong = useAnyKong()
-  return useFtaLankyBlueprint() && inStage && anyKong
+  return useFtaLankyBlueprint() && hasSnide && inStage && anyKong
 }
 
 export const useNightKasplat = (): boolean => {
+  const hasSnide = useSnide()
   const inStage = useForestMushroomTop()
   const anyKong = useAnyKong()
-  return useFtaChunkyBlueprint() && inStage && anyKong
+  return useFtaChunkyBlueprint() && hasSnide && inStage && anyKong
 }
 
 export const useMushInteriorKasplat = (): boolean => {
+  const hasSnide = useSnide()
   const inStage = usePlayForest()
-  return useFtaDiddyBlueprint() && inStage
+  return useFtaDiddyBlueprint() && hasSnide && inStage
 }
 
 export const useMushExteriorKasplat = (): boolean => {
+  const hasSnide = useSnide()
   const inStage = usePlayForest()
-  return useFtaTinyBlueprint() && inStage
+  return useFtaTinyBlueprint() && hasSnide && inStage
+}
+
+export const useMillFrontKegs = (): boolean => {
+  const canEnterMills = useForestDay()
+  const hasChunky = useChunky()
+  const hasBarrels = useBarrel()
+  return canEnterMills && hasChunky && hasBarrels
+}
+
+export const useMillBackKeg = (): boolean => {
+  const canEnterMills = useForestDay()
+  const hasPrimatePunch = usePunch()
+  const hasMiniMonkey = useMini()
+  const hasChunky = useChunky()
+  const hasBarrels = useBarrel()
+  return canEnterMills && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels
 }

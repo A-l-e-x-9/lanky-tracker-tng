@@ -2,21 +2,25 @@ import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { useIslesKremAscent } from '@renderer/hooks/isles'
 import { useShuffledShops } from '@renderer/hooks/settings'
+import { useCranky, useSnide } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
+  const cranky = useCranky()
   return (
     <ShopGenerator
       baseId={110}
       baseName="Isles Cranky"
       level="Isles"
       region="Isles Shops"
-      inLogic={true}
+      inLogic={cranky}
     />
   )
 }
 
 const Shuffled: React.FC = () => {
   const kremAscent = useIslesKremAscent()
+  const cranky = useCranky()
+  const snide = useSnide()
 
   return (
     <>
@@ -25,14 +29,14 @@ const Shuffled: React.FC = () => {
         baseName="Isles Cranky Location"
         level="Isles"
         region="Isles Shops"
-        inLogic={true}
+        inLogic={cranky}
       />
       <ShopGenerator
         baseId={170}
         baseName="Isles Snide Location"
         level="Isles"
         region="Isles Shops"
-        inLogic={kremAscent}
+        inLogic={kremAscent && snide}
       />
     </>
   )

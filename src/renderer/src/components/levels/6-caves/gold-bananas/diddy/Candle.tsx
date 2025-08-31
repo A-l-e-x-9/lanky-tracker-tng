@@ -8,8 +8,7 @@ const DiddyCandleCabin: React.FC = () => {
       id={6013}
       name="Caves Diddy 5 Door Cabin Upper (Candle)"
       region="Cabins Area"
-      canGetLogic={candleGb.in}
-      canGetBreak={candleGb.out}
+      canGetLogic={candleGb}
     />
   )
 }

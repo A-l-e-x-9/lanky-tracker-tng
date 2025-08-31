@@ -6,7 +6,7 @@ const DkGauntletCabin: React.FC = () => {
   return (
     <CavesCheck
       id={6004}
-      name="Caves Donkey 5 Door Cabin"
+      name="Caves DK 5 Door Cabin"
       region="Cabins Area"
       canGetLogic={cabinGb.in}
       canGetBreak={cabinGb.out}

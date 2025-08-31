@@ -1,0 +1,16 @@
+import { useCheckBFIInitial } from '@renderer/hooks/isles'
+import IslesCheck from '../../check'
+
+export const FairyReward: React.FC = () => {
+  const checkBfi = useCheckBFIInitial()
+  return (
+      <IslesCheck
+        id={48}
+        name="Banana Fairy Queen's Initial Reward"
+        region="Outer Isles"
+        canGetLogic={checkBfi}
+      />
+  )
+}
+
+export default FairyReward

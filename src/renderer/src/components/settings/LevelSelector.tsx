@@ -56,6 +56,8 @@ const nextLevel = (level: Level): Level => {
     case 'Caves':
       return 'Castle'
     case 'Castle':
+      return 'Helm'
+    case 'Helm':
       return ''
     default:
       return 'Japes'
@@ -78,8 +80,10 @@ const prevLevel = (level: Level): Level => {
       return 'Forest'
     case 'Castle':
       return 'Caves'
-    default:
+    case 'Helm':
       return 'Castle'
+    default:
+      return 'Helm'
   }
 }
 
@@ -90,21 +94,19 @@ const LevelSelector: React.FC<LevelSelectorProps> = ({ storeKey }) => {
   const lvlNum = Number.parseInt(storeKey.slice(5), 10)
 
   const handleNextLevel = (): void => {
-    if (storeKey !== 'level8') setLevel(lvlNum, nextLevel(level))
+    setLevel(lvlNum, nextLevel(level))
   }
 
   const handlePrevLevel = (): void => {
-    if (storeKey !== 'level8') setLevel(lvlNum, prevLevel(level))
+    setLevel(lvlNum, prevLevel(level))
   }
 
   const handleWheel = (e: WheelEvent<HTMLImageElement>): void => {
-    if (storeKey !== 'level8') {
       if (e.deltaY >= 0) {
         setLevel(lvlNum, nextLevel(level))
       } else {
         setLevel(lvlNum, prevLevel(level))
       }
-    }
   }
 
   const levelTitle = level !== '' ? level : 'Unknown'
@@ -112,6 +114,7 @@ const LevelSelector: React.FC<LevelSelectorProps> = ({ storeKey }) => {
   return (
     <>
       <img
+        alt={levelTitle}
         title={levelTitle}
         height={24}
         src={levelToIcon(level)}

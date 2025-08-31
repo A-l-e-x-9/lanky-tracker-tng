@@ -6,7 +6,7 @@ const QuicksandTunnel: React.FC = () => {
   return (
     <AztecCheck
       id={2002}
-      name="Aztec Donkey Quicksand Tunnel Barrel"
+      name="Aztec DK Quicksand Tunnel Barrel"
       region="Various Aztec Tunnels"
       canGetLogic={tunnelGb.in}
       canGetBreak={tunnelGb.out}

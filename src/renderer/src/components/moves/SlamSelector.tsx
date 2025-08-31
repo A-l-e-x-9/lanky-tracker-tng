@@ -18,6 +18,17 @@ const slamToIcon = (num: number): string => {
   }
 }
 
+const slamName = (num: number): string => {
+  switch (num) {
+    case 2:
+      return "Super Simian Slam"
+    case 3:
+      return "Super Duper Simian Slam"
+    default:
+      return "Simian Slam"
+  }
+}
+
 const clamp = (num: number): number => Math.min(Math.max(num, 0), 3)
 
 const nextSlam = (num: number): number => clamp(num + 1)
@@ -48,6 +59,8 @@ const SlamSelector: React.FC = () => {
     <div className="slam-icon moves-slam">
       <img
         height={24}
+        alt={slamName(slam)}
+        title={slamName(slam)}
         src={slamToIcon(slam)}
         onClick={handleNextLevel}
         onContextMenu={handlePrevLevel}

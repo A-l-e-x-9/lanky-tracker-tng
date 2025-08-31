@@ -4,7 +4,7 @@ import JapesCheck from '../../check'
 const BaboonBlast: React.FC = () => (
   <JapesCheck
     id={1004}
-    name="Japes Donkey Baboon Blast"
+    name="Japes DK Baboon Blast"
     region="Japes Lowlands"
     canGetLogic={useDkBlastGb()}
   />

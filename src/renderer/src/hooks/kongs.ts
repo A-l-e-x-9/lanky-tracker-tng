@@ -293,6 +293,11 @@ export const useVine = (): boolean => {
   return move
 }
 
+export const useClimbing = (): boolean => {
+  const move = useDonkStore((state) => state.moves.climbing)
+  return move
+}
+
 export const useDive = (): boolean => {
   const move = useDonkStore((state) => state.moves.dive)
   return move
@@ -400,4 +405,26 @@ export const useFtaChunkyBlueprint = (): boolean => {
   const kong = useChunky()
   const free = useFreeTradeFull()
   return kong || free
+}
+
+/*Since V4, the Randomizer allows you to shuffle shopkeeps. When so shuffled, they won't be in their shops initially, and you'll have to find them on some check in order to use their shops. This section is for the shopkeep logic.*/
+export const useCranky = (): boolean => {
+  const shopkeep = useDonkStore(useShallow((state) => state.moves.cranky))
+  return shopkeep
+}
+
+export const whatAFunky = (): boolean => { //the Cirno Nation pwns you 9.999999999999999999 times, jerk!
+  const shopkeep = useDonkStore(useShallow((state) => state.moves.funky))
+  return shopkeep
+}
+
+export const useCandy = (): boolean => {
+  const shopkeep = useDonkStore(useShallow((state) => state.moves.candy))
+  return shopkeep
+}
+
+/*Why is Snide here? If he's gone, Kasplat checks will be in red even though you can get the blueprint, because you still can't turn it in.*/
+export const useSnide = (): boolean => {
+  const shopkeep = useDonkStore(useShallow((state) => state.moves.snide))
+  return shopkeep
 }

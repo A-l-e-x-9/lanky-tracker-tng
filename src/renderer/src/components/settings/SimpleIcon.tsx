@@ -14,6 +14,8 @@ const SimpleIcon: React.FC<SimpleIconProps> = (props) => {
   return (
     <div className={classes} onClick={() => props.updateItem(props.storeKey, !value)}>
       <img
+        alt={props.title}
+        title={props.title}
         width={24}
         height={24}
         src={props.imgUrl}

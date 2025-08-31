@@ -4,11 +4,13 @@ import { usePlayLevel, useSlamLevel } from '../isles'
 import {
   useAnyGun,
   useAnyKong,
+  useBarrel,
   useBlast,
   useBongos,
   useBoulderTech,
   useCamera,
   useCharge,
+  useClimbing,
   useCoconut,
   useDive,
   useFeather,
@@ -33,7 +35,9 @@ import {
   useTriangle,
   useTrombone,
   useTwirl,
-  useVine
+  useVine,
+  useSnide,
+  useDiddy
 } from '../kongs'
 import { useBananaportAll } from '../settings'
 import {
@@ -132,6 +136,17 @@ export const useAztecTinyTemple = (): LogicBool => {
     in: aztecFront.in && properGun,
     out: logicBreak(aztecFront) && properGun
   }
+}
+
+/*A new check created by Alex to account for the "Tiny Temple Ice" barrier added in V4 of the Randomizer*/
+export const useTinyTempleIce = (): boolean => {
+  const canEnterTT = useAztecTinyTemple()
+  const hasDiddy = useDiddy()
+  const canSlam = useSlamAztec()
+  const hasPeanuts = usePeanut()
+  const hasGuitar = useGuitar()
+  const preMelted = useDonkStore(useShallow((state) => state.removeBarriers.aztecIce))
+  return canEnterTT && ((hasDiddy && canSlam && hasPeanuts && hasGuitar) || preMelted)
 }
 
 /**
@@ -241,6 +256,15 @@ export const useChunky5DoorGb = (): LogicBool => {
   }
 }
 
+export const useChunkyKasplat = (): LogicBool => {
+  const canEnter5DT = useChunky5DoorGb()
+  const hasSnide = useSnide()
+  return {
+    in: hasSnide && canEnter5DT.in,
+    out: hasSnide && canEnter5DT.out
+  }
+}
+
 const useFreeTinySwitch = (): boolean => {
   const charge = useCharge()
   const punch = usePunch()
@@ -257,11 +281,12 @@ const useFreeTinySwitch = (): boolean => {
 
 export const useDiddyFreeTinyGb = (): LogicBool => {
   const temple = useAztecTinyTemple()
+  const iceMelted = useTinyTempleIce()
   const dive = useDive()
   const free = useFreeTinySwitch()
   return {
-    in: temple.in && dive && free,
-    out: logicBreak(temple) && dive && free
+    in: temple.in && iceMelted && dive && free,
+    out: logicBreak(temple) && iceMelted && dive && free
   }
 }
 
@@ -367,10 +392,16 @@ export const useLankyVultureGb = (): LogicBool => {
   const tinyTemple = useAztecTinyTemple()
   const lanky = useLanky()
   const anyGun = useAnyGun()
+  const iceMelted = useTinyTempleIce()
   return {
-    in: front.in && grape && dive && canSlam,
-    out: logicBreak(tinyTemple) && dive && canSlam && lanky && anyGun
+    in: front.in && grape && iceMelted && dive && canSlam,
+    out: logicBreak(tinyTemple) && iceMelted && dive && canSlam && lanky && anyGun
   }
+}
+
+export const useArena = (): boolean => {
+  const didVultureGb = useLankyVultureGb()
+  return didVultureGb
 }
 
 export const useLanky5DoorGb = (): LogicBool => {
@@ -408,9 +439,10 @@ export const useTinyKlaptrapGb = (): LogicBool => {
   const mini = useMini()
   const dive = useDive()
   const tinyTemple = useAztecTinyTemple()
+  const iceMelted = useTinyTempleIce()
   return {
-    in: front.in && feather && mini && dive,
-    out: logicBreak(tinyTemple) && mini && dive
+    in: front.in && feather && mini && iceMelted && dive,
+    out: logicBreak(tinyTemple) && mini && iceMelted && dive
   }
 }
 
@@ -437,9 +469,11 @@ export const useTinyLavaGb = (): LogicBool => {
   const lava = useAztecLlamaLava()
   const canSlam = useSlamAztec()
   const tiny = useTiny()
+  const ftaTiny = useFtaTinyBanana()
+  const kuruKuru = useTwirl()
   return {
-    in: lava.in && tiny && canSlam,
-    out: useFtaTinyBanana() && logicBreak(lava)
+    in: lava.in && tiny && (canSlam || kuruKuru),
+    out: ftaTiny && logicBreak(lava) && kuruKuru
   }
 }
 
@@ -457,9 +491,11 @@ export const useLlamaCrate = (): LogicBool => useAztecLlamaTemple()
 export const useLlamaOutsideCrate = (): LogicBool => {
   const back = useAztecBack()
   const rocket = useRocket()
+  const hasTiny = useTiny()
+  const kuruKuru = useTwirl()
   return {
     in: rocket && back.in,
-    out: rocket && back.out
+    out: hasTiny && kuruKuru && back.out
   }
 }
 
@@ -515,35 +551,60 @@ export const useCoconutKasplat = (): LogicBool => {
   const coconut = useCoconut()
   const strong = useStrong()
   const twirl = useTwirl()
+  const hasSnide = useSnide()
   return {
-    in: aztecFront.in && coconut && (strong || twirl),
-    out: aztecFront.out && coconut
+    in: hasSnide && aztecFront.in && coconut && (strong || twirl),
+    out: hasSnide && aztecFront.out && coconut
   }
 }
 
 export const useOasisKasplat = (): LogicBool => {
   const thing = useAztecFront()
   const rocket = useRocket()
+  const climbing = useClimbing()
+  const hasSnide = useSnide()
   return {
-    in: rocket && thing.in,
-    out: rocket && thing.out
+    in: hasSnide && climbing && rocket && thing.in,
+    out: hasSnide && climbing && rocket && thing.out
   }
 }
 
 export const useLlamaLavaKasplat = (): LogicBool => {
   const lava = useAztecLlamaLava()
   const kong = useFtaLankyBlueprint()
+  const hasSnide = useSnide()
   return {
-    in: kong && lava.in,
-    out: kong && lava.out
+    in: hasSnide && kong && lava.in,
+    out: hasSnide && kong && lava.out
   }
 }
 
 export const useTunnelKasplat = (): LogicBool => {
   const back = useAztecBack()
   const kong = useFtaTinyBlueprint()
+  const hasSnide = useSnide()
   return {
-    in: kong && back.in,
-    out: kong && back.out
+    in: hasSnide && kong && back.in,
+    out: hasSnide && kong && back.out
+  }
+}
+
+export const useTunnelBoulder = (): LogicBool => {
+  const hasBackAccess = useAztecBack()
+  const hasBarrels = useBarrel()
+  const hasHunky = useHunky()
+  return {
+    in: hasBackAccess.in && hasBarrels && hasHunky,
+    out: hasBackAccess.out && hasBarrels && hasHunky
+  }
+}
+
+export const useVases = (): LogicBool => {
+  const hasAccess = useAztecFront()
+  const hasPineapples = usePineapple()
+  const hasBarrels = useBarrel()
+  return {
+    in: hasAccess.in && hasBarrels && hasPineapples,
+    out: hasAccess.out && hasBarrels && hasPineapples
   }
 }

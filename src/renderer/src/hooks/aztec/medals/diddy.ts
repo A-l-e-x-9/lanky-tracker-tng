@@ -7,12 +7,14 @@ import {
   useAztecBackTunnel,
   useAztecFront,
   useAztecTinyTemple,
-  useSlamAztec
+  useSlamAztec,
+  useTinyTempleIce
 } from '..'
 
 export const useDiddyMedalInLogic = (): number => {
   const inStage = useAztecFront()
   const tinyTemple = useAztecTinyTemple()
+  const iceMelted = useTinyTempleIce()
   const aztecBack = useAztecBack()
   const doorTemple = useAztec5DoorTemple()
   const backTunnel = useAztecBackTunnel()
@@ -46,7 +48,7 @@ export const useDiddyMedalInLogic = (): number => {
           bananas += 15
         }
       }
-      if (dive) {
+      if (iceMelted && dive) {
         bananas += 7
       }
     }
@@ -70,6 +72,7 @@ export const useDiddyMedalInLogic = (): number => {
 export const useDiddyMedalOutLogic = (): number => {
   const inStage = useAztecFront()
   const tinyTemple = useAztecTinyTemple()
+  const iceMelted = useTinyTempleIce()
   const aztecBack = useAztecBack()
   const doorTemple = useAztec5DoorTemple()
   const backTunnel = useAztecBackTunnel()
@@ -103,7 +106,7 @@ export const useDiddyMedalOutLogic = (): number => {
           bananas += 10
         }
       }
-      if (dive) {
+      if (iceMelted && dive) {
         bananas += 7
       }
     }

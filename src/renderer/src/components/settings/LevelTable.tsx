@@ -13,7 +13,8 @@ import l8 from '../../assets/images/8.png'
 
 const LevelTable = (): JSX.Element => {
   return (
-    <>
+    <section className="level-section">
+    <h3>Level Order and Keys</h3>
       <section className="level-list">
         <section className="level1">
           <img src={l1} height={24} />
@@ -56,7 +57,7 @@ const LevelTable = (): JSX.Element => {
           <SimpleKey keyNum={8} />
         </section>
       </section>
-    </>
+    </section>
   )
 }
 

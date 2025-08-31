@@ -1,4 +1,4 @@
-import { useFeather, useMini, useTiny } from '@renderer/hooks/kongs'
+import { useClimbing, useFeather, useMini, useTiny } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useJapesHive,
@@ -19,6 +19,7 @@ export const useTinyMedalInLogic = (): number => {
   const kong = useTiny()
   const gun = useFeather()
   const mini = useMini()
+  const climbing = useClimbing()
   const shuffleBananas = useShuffleColoredBananas()
 
   if (!inStage) {
@@ -49,7 +50,10 @@ export const useTinyMedalInLogic = (): number => {
   }
 
   if (kongGates) {
-    currLogic += 7 // by Cranky (5) & before Rambi Wall (2)
+    currLogic += 2 //before Rambi Wall (2)
+    if (climbing) {
+      currLogic += 5 //the bunch on a tree near Cranky's
+    }
     if (gun) {
       currLogic += 10 // balloon by hut
     }

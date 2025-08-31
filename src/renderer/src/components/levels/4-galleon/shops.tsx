@@ -7,10 +7,14 @@ import {
   usePlayGalleon
 } from '@renderer/hooks/galleon'
 import { useShuffledShops } from '@renderer/hooks/settings'
+import { useCranky, whatAFunky, useCandy, useSnide } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
   const inStage = usePlayGalleon()
   const outskirts = useGalleonOutskirts()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
+  const hasCandy = useCandy()
 
   return (
     <>
@@ -19,21 +23,21 @@ const Vanilla: React.FC = () => {
         baseName="Galleon Cranky"
         level="Galleon"
         region="Galleon Shops"
-        inLogic={inStage}
+        inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={4120}
         baseName="Galleon Funky"
         level="Galleon"
         region="Galleon Shops"
-        inLogic={outskirts}
+        inLogic={hasFunky && outskirts}
       />
       <ShopGenerator
         baseId={4130}
         baseName="Galleon Candy"
         level="Galleon"
         region="Galleon Shops"
-        inLogic={outskirts}
+        inLogic={hasCandy && outskirts}
       />
     </>
   )
@@ -44,6 +48,10 @@ const Shuffled: React.FC = () => {
   const outskirts = useGalleonOutskirts()
   const lighthouseArea = useGalleonLighthouseArea()
   const highTide = useGalleonHighTide()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
+  const hasCandy = useCandy()
+  const hasSnide = useSnide()
 
   return (
     <>
@@ -52,29 +60,29 @@ const Shuffled: React.FC = () => {
         baseName="Galleon Cranky Location"
         level="Galleon"
         region="Galleon Shops"
-        inLogic={inStage}
+        inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={4150}
         baseName="Galleon Funky Location"
         level="Galleon"
         region="Galleon Shops"
-        inLogic={outskirts}
+        inLogic={hasFunky && outskirts}
       />
       <ShopGenerator
         baseId={4160}
         baseName="Galleon Candy Location"
         level="Galleon"
         region="Galleon Shops"
-        inLogic={outskirts}
+        inLogic={hasCandy && outskirts}
       />
       <ShopGenerator
         baseId={4170}
         baseName="Galleon Snide Location"
         level="Galleon"
         region="Galleon Shops"
-        inLogic={lighthouseArea && highTide}
-        outLogic={lighthouseArea}
+        inLogic={hasSnide && lighthouseArea && highTide}
+        outLogic={hasSnide && lighthouseArea}
       />
     </>
   )

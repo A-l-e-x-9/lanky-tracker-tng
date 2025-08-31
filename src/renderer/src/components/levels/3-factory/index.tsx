@@ -3,15 +3,11 @@ import DropPool from '@renderer/components/pools/Drops'
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import RNDArena from './arenas/Research'
-import ShuffledArenas from './arenas/Shuffled'
 import BossCheck from './boss'
 import CrateLocations from './crates'
-import ShuffledCrates from './crates/Shuffled'
 import DarkRoomDirt from './dirt/DarkRoom'
-import ShuffledDirtLocations from './dirt/Shuffled'
 import EnemyLocations from './enemies'
 import FairyLocations from './fairies'
-import ShuffledFairies from './fairies/Shuffled'
 import ChunkyBananas from './gold-bananas/chunky'
 import DiddyBananas from './gold-bananas/diddy'
 import DkBananas from './gold-bananas/dk'
@@ -35,13 +31,9 @@ const ClassicChecks: React.FC = () => (
     <ChunkyBananas />
     <KasplatLocations />
     <CrateLocations />
-    <ShuffledCrates />
     <DarkRoomDirt />
-    <ShuffledDirtLocations />
     <FairyLocations />
-    <ShuffledFairies />
     <RNDArena />
-    <ShuffledArenas />
     <BananaMedalPool>
       <DkMedal />
       <DiddyMedal />

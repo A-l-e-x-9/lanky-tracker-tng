@@ -8,8 +8,10 @@ import CheckIcon from './CheckIcon'
 import CountSelector from './CountSelector'
 import HelmSelector from './HelmSelector'
 import SimpleIcon from './SimpleIcon'
+import SlamSelector from '../moves/SlamSelector'
 
 import beanIcon from '../../assets/images/bean.png'
+import chunkyIcon from '../../assets/images/chunky.png'
 import crownIcon from '../../assets/images/crown.png'
 import peanutIcon from '../../assets/images/diddy_gun.png'
 import guitarIcon from '../../assets/images/diddy_inst.png'
@@ -17,6 +19,7 @@ import rocketIcon from '../../assets/images/diddybarrel.png'
 import coconutIcon from '../../assets/images/dk_gun.png'
 import grabIcon from '../../assets/images/dk_move.png'
 import dkPadIcon from '../../assets/images/dkpad.png'
+import lankyIcon from '../../assets/images/lanky.png'
 import fairyIcon from '../../assets/images/fairy.png'
 import keyIcon from '../../assets/images/key.png'
 import blueprintIcon from '../../assets/images/lanky_bp.png'
@@ -42,7 +45,7 @@ import featherIcon from '../../assets/images/tiny_gun.png'
 
 const customStyles: Modal.Styles = {
   content: {
-    backgroundColor: '#1b1b1f',
+    backgroundColor: '#002040',
     color: 'white'
   }
 }
@@ -68,8 +71,9 @@ const GeneratorSettings: React.FC = () => {
         style={customStyles}
       >
         <section className="modal-settings">
+        <h2>Tracker Settings</h2>
           <section className="pool">
-            <h3>Pool Settings</h3>
+            <h3>Items in Pool</h3>
             <>
               <p>Shops?</p>
               <SimpleIcon
@@ -148,17 +152,31 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
-              <p>Enemy Drops?</p>
+              <p>Dropsanity?</p>
               <SimpleIcon
                 imgUrl={dropIcon}
                 storeKey="poolDrops"
                 prefix="settings"
                 updateItem={setSetting}
               />
+              <p>Wrinkly Doors?</p>
+              <SimpleIcon
+                imgUrl={shopIcon}
+                storeKey="poolWrinkly"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Boulders?</p>
+              <SimpleIcon
+                imgUrl={chunkyIcon}
+                storeKey="poolBoulders"
+                prefix="settings"
+                updateItem={setSetting}
+              />
             </>
             <h3>Consumable Settings</h3>
             <>
-              <p>Medals for Jetpac?</p>
+              <p>Medals needed for Jetpac?</p>
               <CountSelector
                 imgUrl={bananaMedalIcon}
                 storeKey="jetpacCount"
@@ -166,7 +184,7 @@ const GeneratorSettings: React.FC = () => {
                 setCount={setSetting}
                 maxValue={40}
               />
-              <p>Bananas for Medal?</p>
+              <p>Colored bananas needed for medal?</p>
               <CountSelector
                 imgUrl={bananaIcon}
                 storeKey="cbCount"
@@ -175,7 +193,7 @@ const GeneratorSettings: React.FC = () => {
                 maxValue={100}
               />
               <p>
-                Fairies for <span title="Banana Fairy Island">BFI</span>?
+                Fairies needed for the Fairy's reward?
               </p>
               <CountSelector
                 imgUrl={fairyIcon}
@@ -226,65 +244,15 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
-              <p>Balanced K. Rool Phases?</p>
+              <p>Does DK phase of K. Rool require Blast?</p>
               <SimpleIcon
                 imgUrl={slamIcon}
                 storeKey="balancedRoolPhases"
                 prefix="settings"
                 updateItem={setSetting}
               />
-            </>
-            <h3>Location Shuffle Settings</h3>
-            <>
-              <p>Colored Bananas?</p>
-              <SimpleIcon
-                imgUrl={bananaIcon}
-                storeKey="shuffleColoredBananas"
-                prefix="settings"
-                updateItem={setSetting}
-              />
-              <p>Kasplats?</p>
-              <SimpleIcon
-                imgUrl={kasplatIcon}
-                storeKey="shuffleKasplats"
-                prefix="settings"
-                updateItem={setSetting}
-              />
-              <p>Fairies?</p>
-              <SimpleIcon
-                imgUrl={fairyIcon}
-                storeKey="shuffleFairies"
-                prefix="settings"
-                updateItem={setSetting}
-              />
-              <p>Dirt Patches?</p>
-              <SimpleIcon
-                imgUrl={dirtIcon}
-                storeKey="shuffleDirt"
-                prefix="settings"
-                updateItem={setSetting}
-              />
-              <p>Battle Arenas?</p>
-              <SimpleIcon
-                imgUrl={arenaIcon}
-                storeKey="shuffleArenas"
-                prefix="settings"
-                updateItem={setSetting}
-              />
-              <p>Melon Crates?</p>
-              <SimpleIcon
-                imgUrl={melonIcon}
-                storeKey="shuffleCrates"
-                prefix="settings"
-                updateItem={setSetting}
-              />
-              <p>Shops?</p>
-              <SimpleIcon
-                imgUrl={shopIcon}
-                storeKey="shuffleShops"
-                prefix="settings"
-                updateItem={setSetting}
-              />
+              <p>Slam level required for Chunky phase of K. Rool</p>
+              <SlamSelector />
             </>
             <h3>Fast Barrier Settings</h3>
             <>
@@ -295,10 +263,17 @@ const GeneratorSettings: React.FC = () => {
                 prefix="removeBarriers"
                 updateItem={setBarrier}
               />
-              <p style={{ gridColumnStart: 5 }}>Japes Hive Gate?</p>
+              <p>Japes Hive Gate?</p>
               <SimpleIcon
                 imgUrl={featherIcon}
                 storeKey="japesHiveGate"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Tiny Temple Ice?</p>
+              <SimpleIcon
+                imgUrl={guitarIcon}
+                storeKey="aztecIce"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
               />
@@ -330,7 +305,7 @@ const GeneratorSettings: React.FC = () => {
                 prefix="removeBarriers"
                 updateItem={setBarrier}
               />
-              <p style={{ gridColumnStart: 5 }}>Factory Testing Area?</p>
+              <p>Factory Testing Area?</p>
               <SimpleIcon
                 imgUrl={slamIcon}
                 storeKey="factoryTesting"
@@ -358,6 +333,13 @@ const GeneratorSettings: React.FC = () => {
                 prefix="removeBarriers"
                 updateItem={setBarrier}
               />
+              <p>Treasure Room?</p>
+              <SimpleIcon
+                imgUrl={lankyIcon}
+                storeKey="galleonTreasureRoom"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
               <p>Forest Beanstalk Area?</p>
               <SimpleIcon
                 imgUrl={beanIcon}
@@ -379,6 +361,20 @@ const GeneratorSettings: React.FC = () => {
                 prefix="removeBarriers"
                 updateItem={setBarrier}
               />
+              <p>Ice walls in Caves pre-punched?</p>
+              <SimpleIcon
+                imgUrl={chunkyIcon}
+                storeKey="cavesWalls"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Castle Crypt rooms pre-opened?</p>
+              <SimpleIcon
+                imgUrl={hardShootIcon}
+                storeKey="castleCrypt"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
             </>
             <h3>Fast Check Settings</h3>
             <>
@@ -389,12 +385,13 @@ const GeneratorSettings: React.FC = () => {
                 prefix="fastChecks"
                 updateItem={setFastCheck}
               />
-              <p style={{ gridColumnStart: 5 }}>Fast Mermaid Pearls?</p>
-              <SimpleIcon
-                imgUrl={pearlIcon}
+              <p>Number of pearls the Mermaid requires:</p>
+              <CountSelector
                 storeKey="galleonMermaid"
+                imgUrl={pearlIcon}
                 prefix="fastChecks"
-                updateItem={setFastCheck}
+                setCount={setFastCheck}
+                maxValue={5}
               />
             </>
             <h3>UI Settings</h3>

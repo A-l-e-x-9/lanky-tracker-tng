@@ -6,7 +6,7 @@ const NintendoCoin: React.FC = () => (
   <CompanyPool>
     <FactoryCheck
       id={3005}
-      name="Factory Donkey Nintendo Coin"
+      name="DK Arcade Round 2"
       region="Storage And Arcade"
       canGetLogic={useDkCoin()}
     />

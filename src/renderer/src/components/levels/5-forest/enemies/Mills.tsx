@@ -6,7 +6,7 @@ import {
   useDefeatZinger
 } from '@renderer/hooks/enemies'
 import { useForestDay, useForestNight, usePlayForest, useSlamForest } from '@renderer/hooks/forest'
-import { useAnyKong, useDiddy, useDk, usePunch, useStrong } from '@renderer/hooks/kongs'
+import { useAnyKong, useDiddy, useDk, usePunch, useStrong, useMini } from '@renderer/hooks/kongs'
 import { logicBreak } from '@renderer/hooks/world'
 import ForestCheck from '../check'
 
@@ -24,6 +24,7 @@ const MillsEnemies: React.FC = () => {
   const night = useForestNight()
   const day = useForestDay()
   const punch = usePunch()
+  const hasMiniMonkey = useMini()
   return (
     <DropPool>
       <ForestCheck
@@ -34,7 +35,7 @@ const MillsEnemies: React.FC = () => {
       />
       <ForestCheck
         id={5331}
-        name="Forest Enemy: Near Iso Coin"
+        name="Forest Enemy: Near the Infamous Dirt Patch"
         region="Forest Mills"
         canGetLogic={inStage && zinger}
       />
@@ -67,8 +68,8 @@ const MillsEnemies: React.FC = () => {
         id={5347}
         name="Forest Enemy: Mill Inside Rear"
         region="Forest Mills"
-        canGetLogic={day.in && punch && zinger}
-        canGetBreak={logicBreak(day) && punch && zinger}
+        canGetLogic={day.in && (punch || hasMiniMonkey) && zinger}
+        canGetBreak={logicBreak(day) && (punch || hasMiniMonkey) && zinger}
       />
       <ForestCheck
         id={5344}
@@ -100,7 +101,6 @@ const MillsEnemies: React.FC = () => {
         region="Forest Mills"
         canGetLogic={inStage && klump}
       />
-
       <ForestCheck
         id={5345}
         name="Forest Enemy: Thornvine Barn Inside"

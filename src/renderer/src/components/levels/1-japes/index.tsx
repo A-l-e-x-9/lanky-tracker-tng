@@ -35,15 +35,10 @@ const ClassicChecks: React.FC = () => (
     <TinyBananas />
     <ChunkyBananas />
     <KasplatLocations />
-    <ShuffledKasplats />
     <CrateLocations />
-    <ShuffledCrates />
     <DirtLocations />
-    <ShuffledDirtLocations />
     <FairyLocations />
-    <ShuffledFairies />
     <FunkyArena />
-    <ShuffledArenas />
     <BananaMedalPool>
       <DkMedal />
       <DiddyMedal />

@@ -26,7 +26,7 @@ const MushExteriorEnemies: React.FC = () => {
       />
       <ForestCheck
         id={5314}
-        name="Forest Enemy: Near Pink Tunnel"
+        name="Forest Enemy: Near Pink Tunnel Bounce Tag Barrel"
         region="Giant Mushroom Exterior"
         canGetLogic={inStage && anyKong}
       />
@@ -60,7 +60,12 @@ const MushExteriorEnemies: React.FC = () => {
         region="Giant Mushroom Exterior"
         canGetLogic={inStage && zinger}
       />
-
+      <ForestCheck
+        id={5418}
+        name="Forest Enemy: Near DK Pad"
+        region="Giant Mushroom Exterior"
+        canGetLogic={inStage && zinger}
+      />
       <ForestCheck
         id={5319}
         name="Forest Enemy: Near Face Puzzle"
@@ -83,7 +88,7 @@ const MushExteriorEnemies: React.FC = () => {
         id={5322}
         name="Forest Enemy: Top Of Mushroom"
         region="Giant Mushroom Exterior"
-        canGetLogic={roof && anyKong && klump}
+        canGetLogic={inStage && roof && anyKong && klump}
       />
     </DropPool>
   )

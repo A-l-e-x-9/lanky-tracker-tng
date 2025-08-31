@@ -12,8 +12,7 @@ const DiddyKasplat: React.FC = () => {
           id={6051}
           name="Caves Kasplat: Mini Room by Funky"
           region="Main Caves Area"
-          canGetLogic={miniFunky.in}
-          canGetBreak={miniFunky.out}
+          canGetLogic={miniFunky}
         />
       </VanillaKasplat>
     </KasplatPool>

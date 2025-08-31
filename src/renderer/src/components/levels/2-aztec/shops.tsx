@@ -2,10 +2,14 @@ import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { useAztecBack, useAztecFront } from '@renderer/hooks/aztec'
 import { useShuffledShops } from '@renderer/hooks/settings'
+import { useCranky, whatAFunky, useCandy, useSnide } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
   const aztecFront = useAztecFront()
   const aztecBack = useAztecBack()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
+  const hasCandy = useCandy()
 
   return (
     <>
@@ -14,24 +18,24 @@ const Vanilla: React.FC = () => {
         baseName="Aztec Cranky"
         level="Aztec"
         region="Aztec Shops"
-        inLogic={aztecBack.in}
-        outLogic={aztecBack.out}
+        inLogic={hasCranky && aztecBack.in}
+        outLogic={hasCranky && aztecBack.out}
       />
       <ShopGenerator
         baseId={2120}
         baseName="Aztec Funky"
         level="Aztec"
         region="Aztec Shops"
-        inLogic={aztecBack.in}
-        outLogic={aztecBack.out}
+        inLogic={hasFunky && aztecBack.in}
+        outLogic={hasFunky && aztecBack.out}
       />
       <ShopGenerator
         baseId={2130}
         baseName="Aztec Candy"
         level="Aztec"
         region="Aztec Shops"
-        inLogic={aztecFront.in}
-        outLogic={aztecFront.out}
+        inLogic={hasCandy && aztecFront.in}
+        outLogic={hasCandy && aztecFront.out}
       />
     </>
   )
@@ -40,6 +44,10 @@ const Vanilla: React.FC = () => {
 const Shuffled: React.FC = () => {
   const aztecFront = useAztecFront()
   const aztecBack = useAztecBack()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
+  const hasCandy = useCandy()
+  const hasSnide = useSnide()
 
   return (
     <>
@@ -48,32 +56,32 @@ const Shuffled: React.FC = () => {
         baseName="Aztec Cranky Location"
         level="Aztec"
         region="Aztec Shops"
-        inLogic={aztecBack.in}
-        outLogic={aztecBack.out}
+        inLogic={hasCranky && aztecBack.in}
+        outLogic={hasCranky && aztecBack.out}
       />
       <ShopGenerator
         baseId={2150}
         baseName="Aztec Funky Location"
         level="Aztec"
         region="Aztec Shops"
-        inLogic={aztecBack.in}
-        outLogic={aztecBack.out}
+        inLogic={hasFunky && aztecBack.in}
+        outLogic={hasFunky && aztecBack.out}
       />
       <ShopGenerator
         baseId={2160}
         baseName="Aztec Candy Location"
         level="Aztec"
         region="Aztec Shops"
-        inLogic={aztecFront.in}
-        outLogic={aztecFront.out}
+        inLogic={hasCandy && aztecFront.in}
+        outLogic={hasCAndy && aztecFront.out}
       />
       <ShopGenerator
         baseId={2170}
         baseName="Aztec Snide Location"
         level="Aztec"
         region="Aztec Shops"
-        inLogic={aztecBack.in}
-        outLogic={aztecBack.out}
+        inLogic={hasSnide && aztecBack.in}
+        outLogic={hasSnide && aztecBack.out}
       />
     </>
   )

@@ -1,4 +1,4 @@
-import { useCoconut, useDk, useStrong } from '@renderer/hooks/kongs'
+import { useCoconut, useClimbing, useDk, useStrong } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { logicBreak } from '@renderer/hooks/world'
 import {
@@ -18,6 +18,7 @@ export const useDkMedalInLogic = (): number => {
   const kong = useDk()
   const gun = useCoconut()
   const crystal = useStrong()
+  const hasClimb = useClimbing()
   const shuffleBananas = useShuffleColoredBananas()
 
   if (!inStage.in) {
@@ -32,7 +33,10 @@ export const useDkMedalInLogic = (): number => {
 
   let bananas = 0 // Every banana has opposition.
   if (inStage.in) {
-    bananas += 18
+    bananas += 3
+    if (hasClimb) {
+      bananas +=15
+    }
     if (kasplat.in) {
       bananas += 10
     }
@@ -61,6 +65,7 @@ export const useDkMedalOutLogic = (): number => {
   const backTunnel = useAztecBackTunnel()
   const kong = useDk()
   const gun = useCoconut()
+  const hasClimb = useClimbing()
   const shuffleBananas = useShuffleColoredBananas()
 
   if (!logicBreak(inStage)) {
@@ -75,7 +80,10 @@ export const useDkMedalOutLogic = (): number => {
 
   let bananas = 0
   if (logicBreak(inStage)) {
-    bananas += 18
+    bananas += 3
+    if (hasClimb) {
+      bananas +=15
+    }
     if (logicBreak(kasplat)) {
       bananas += 10
     }

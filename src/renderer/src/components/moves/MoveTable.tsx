@@ -16,6 +16,7 @@ import chunkyInstIcon from '../../assets/images/chunky_inst.png'
 import chunkyMoveIcon from '../../assets/images/chunky_move.png'
 import chunkyBarrelIcon from '../../assets/images/chunkybarrel.png'
 import chunkyPadIcon from '../../assets/images/chunkypad.png'
+import climbingIcon from '../../assets/images/climbing.png'
 import crownIcon from '../../assets/images/crown.png'
 import diddyIcon from '../../assets/images/diddy.png'
 import diddyGunIcon from '../../assets/images/diddy_gun.png'
@@ -56,27 +57,35 @@ import tinyMoveIcon from '../../assets/images/tiny_move.png'
 import tinyBarrelIcon from '../../assets/images/tinybarrel.png'
 import tinyPadIcon from '../../assets/images/tinypad.png'
 import vineIcon from '../../assets/images/vine.png'
+import vineClimbBoth from '../../assets/images/vine-climb-both.png'
 import dkBpIcon from '../../assets/images/dk_bp.png'
 import diddyBpIcon from '../../assets/images/diddy_bp.png'
 import lankyBpIcon from '../../assets/images/lanky_bp.png'
 import tinyBpIcon from '../../assets/images/tiny_bp.png'
 import chunkyBpIcon from '../../assets/images/chunky_bp.png'
+import crankyIcon from '../../assets/images/settings/funky.png'
+import funkyIcon from '../../assets/images/settings/funky.png'
+import candyIcon from '../../assets/images/settings/funky.png'
+import snideIcon from '../../assets/images/settings/funky.png'
 
 const MoveTable = (): JSX.Element => {
   const [setMove, setConsumable] = useDonkStore(
     useShallow((state) => [state.setMove, state.setConsumable])
   )
   return (
+  <section className="move-section">
+    <h3>Moves, Kongs, and Major Collectibles</h3>
     <section className="move-table">
-      <SimpleIcon storeKey="dk" imgUrl={dkIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="coconut" imgUrl={dkGunIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="bongos" imgUrl={dkInstIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="grab" imgUrl={dkMoveIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="strong" imgUrl={dkBarrelIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="blast" imgUrl={dkPadIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="dk" title="DK" imgUrl={dkIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="coconut" title="Coconut Gun" imgUrl={dkGunIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="bongos" title="Bongoes" imgUrl={dkInstIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="grab" title="Gorilla Grab" imgUrl={dkMoveIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="strong" title="Strong Kong" imgUrl={dkBarrelIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="blast" title="Barrel Blast" imgUrl={dkPadIcon} prefix="moves" updateItem={setMove} />
       <CountSelector
         storeKey="dkBp"
         imgUrl={dkBpIcon}
+        title="DK Blueprints"
         prefix="consumables"
         setCount={setConsumable}
         maxValue={8}
@@ -85,6 +94,7 @@ const MoveTable = (): JSX.Element => {
       <DoubleIcon
         storeLeft="camera"
         storeRight="shockwave"
+        title="Fairy Cam and Shockwave"
         imgBoth={filmWaveBoth}
         imgLeft={filmWaveLeft}
         imgRight={filmWaveRight}
@@ -93,28 +103,31 @@ const MoveTable = (): JSX.Element => {
       />
       <CountSelector
         storeKey="crowns"
+        title="Battle Arena Crowns"
         imgUrl={crownIcon}
         prefix="consumables"
         setCount={setConsumable}
         maxValue={10}
       />
-      <SimpleIcon storeKey="diddy" imgUrl={diddyIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="peanut" imgUrl={diddyGunIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="guitar" imgUrl={diddyInstIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="charge" imgUrl={diddyMoveIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="rocket" imgUrl={diddyBarrelIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="spring" imgUrl={diddyPadIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="diddy" title="Diddy Kong" imgUrl={diddyIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="peanut" title="Peanuts" imgUrl={diddyGunIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="guitar" title="Guitar" imgUrl={diddyInstIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="charge" title="Chimpy Charge" imgUrl={diddyMoveIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="rocket" title="Jetbarrel" imgUrl={diddyBarrelIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="spring" title="Simian Spring" imgUrl={diddyPadIcon} prefix="moves" updateItem={setMove} />
       <CountSelector
         storeKey="diddyBp"
+        title="Diddy Blueprints"
         imgUrl={diddyBpIcon}
         prefix="consumables"
         setCount={setConsumable}
         maxValue={8}
       />
-      <SimpleIcon storeKey="dive" imgUrl={diveIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="dive" title="Diving" imgUrl={diveIcon} prefix="moves" updateItem={setMove} />
       <DoubleIcon
         storeLeft="homing"
         storeRight="sniper"
+        title="Homing Ammo and Sniper Scope"
         imgBoth={homeScopeBoth}
         imgLeft={homeScopeLeft}
         imgRight={homeScopeRight}
@@ -123,26 +136,29 @@ const MoveTable = (): JSX.Element => {
       />
       <CountSelector
         storeKey="bananaMedals"
+        title="Banana Medals"
         imgUrl={bananaMedalIcon}
         prefix="consumables"
         setCount={setConsumable}
-        maxValue={40}
+        maxValue={45}
       />
-      <SimpleIcon storeKey="lanky" imgUrl={lankyIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="grape" imgUrl={lankyGunIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="trombone" imgUrl={lankyInstIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="stand" imgUrl={lankyMoveIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="sprint" imgUrl={lankyBarrelIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="balloon" imgUrl={lankyPadIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="lanky" title="Lanky Kong" imgUrl={lankyIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="grape" title="Grapes" imgUrl={lankyGunIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="trombone" title="Trombone" imgUrl={lankyInstIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="stand" title="Orangstand" imgUrl={lankyMoveIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="sprint" title="Orangstand Sprint" imgUrl={lankyBarrelIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="balloon" title="Baboon Balloon" imgUrl={lankyPadIcon} prefix="moves" updateItem={setMove} />
       <CountSelector
         storeKey="lankyBp"
+        title="Lanky Blueprints"
         imgUrl={lankyBpIcon}
         prefix="consumables"
         setCount={setConsumable}
         maxValue={8}
       />
-      <SimpleIcon storeKey="orange" imgUrl={orangeIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="orange" title="Oranges" imgUrl={orangeIcon} prefix="moves" updateItem={setMove} />
       <DoubleIcon
+        title="Nintendo and Rareware Coins"
         storeLeft="nintendoCoin"
         storeRight="rareCoin"
         imgBoth={companyCoinBoth}
@@ -152,47 +168,61 @@ const MoveTable = (): JSX.Element => {
         setItem={setConsumable}
       />
       <CountSelector
+        title="Rainbow Coins"
         storeKey="rainbowCoins"
         imgUrl={rainbowCoinICon}
         prefix="consumables"
         setCount={setConsumable}
         maxValue={16}
       />
-      <SimpleIcon storeKey="tiny" imgUrl={tinyIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="feather" imgUrl={tinyGunIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="sax" imgUrl={tinyInstIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="twirl" imgUrl={tinyMoveIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="mini" imgUrl={tinyBarrelIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="port" imgUrl={tinyPadIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="tiny" title="Tiny Kong" imgUrl={tinyIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="feather" title="Feathers" imgUrl={tinyGunIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="sax" title="Saxophone" imgUrl={tinyInstIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="twirl" title="Ponytail Twirl" imgUrl={tinyMoveIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="mini" title="Mini Monkey" imgUrl={tinyBarrelIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="port" title="Monkeyport" imgUrl={tinyPadIcon} prefix="moves" updateItem={setMove} />
       <CountSelector
         storeKey="tinyBp"
+        title="Tiny Blueprint"
         imgUrl={tinyBpIcon}
         prefix="consumables"
         setCount={setConsumable}
         maxValue={8}
       />
-      <SimpleIcon storeKey="vine" imgUrl={vineIcon} prefix="moves" updateItem={setMove} />
+      <DoubleIcon
+        storeLeft="vine"
+        storeRight="climbing"
+        title="Vines and Climbing"
+        imgBoth={vineClimbBoth}
+        imgLeft={vineIcon}
+        imgRight={climbingIcon}
+        prefix="moves"
+        setItem={setMove}
+      />
       <SimpleIcon
         storeKey="bean"
+        title="THE BEAN!!!"
         imgUrl={beanIcon}
         prefix="consumables"
         updateItem={setConsumable}
       />
       <CountSelector
         storeKey="fairies"
+        title="Banana Fairies"
         imgUrl={fairyIcon}
         prefix="consumables"
         setCount={setConsumable}
         maxValue={20}
       />
-      <SimpleIcon storeKey="chunky" imgUrl={chunkyIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="pineapple" imgUrl={chunkyGunIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="triangle" imgUrl={chunkyInstIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="punch" imgUrl={chunkyMoveIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="hunky" imgUrl={chunkyBarrelIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="gone" imgUrl={chunkyPadIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="chunky" title="Chunky Kong" imgUrl={chunkyIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="pineapple" title="Pineapples" imgUrl={chunkyGunIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="triangle" title="Triangle" imgUrl={chunkyInstIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="punch" title="Primate Punch" imgUrl={chunkyMoveIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="hunky" title="Hunky Chunky" imgUrl={chunkyBarrelIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="gone" title="Gorilla Gone" imgUrl={chunkyPadIcon} prefix="moves" updateItem={setMove} />
       <CountSelector
         storeKey="chunkyBp"
+        title="Chunky Blueprints"
         imgUrl={chunkyBpIcon}
         prefix="consumables"
         setCount={setConsumable}
@@ -201,6 +231,7 @@ const MoveTable = (): JSX.Element => {
       <SimpleIcon storeKey="barrel" imgUrl={barrelIcon} prefix="moves" updateItem={setMove} />
       <CountSelector
         storeKey="pearls"
+        title="Pearls"
         imgUrl={pearlIcon}
         prefix="consumables"
         setCount={setConsumable}
@@ -208,12 +239,22 @@ const MoveTable = (): JSX.Element => {
       />
       <CountSelector
         storeKey="goldBananas"
+        title="Golden Bananas"
         imgUrl={goldBananaIcon}
         prefix="consumables"
         setCount={setConsumable}
         maxValue={201}
       />
+      &nbsp;
+      <SimpleIcon storeKey="cranky" title="Cranky Kong" imgUrl={crankyIcon} prefix="moves" updateItem={setMove} />
+      &nbsp;
+      <SimpleIcon storeKey="funky" title="New Funky Mode!" imgUrl={funkyIcon} prefix="moves" updateItem={setMove} />
+      &nbsp;
+      <SimpleIcon storeKey="candy" title="Candy Kong" imgUrl={candyIcon} prefix="moves" updateItem={setMove} />
+       &nbsp;
+      <SimpleIcon storeKey="snide" title="Snide" imgUrl={snideIcon} prefix="moves" updateItem={setMove} />
     </section>
+  </section>
   )
 }
 

@@ -38,7 +38,9 @@ import {
   useTriangle,
   useTrombone,
   useTwirl,
-  useVine
+  useVine,
+  useClimbing,
+  useSnide
 } from '../kongs'
 import { useAutoBonus, useBananaportAll } from '../settings'
 import { LogicBool, logicBreak } from '../world'
@@ -64,7 +66,9 @@ export const useFactoryTesting = (): boolean => {
   const inStage = usePlayFactory()
   const slam = useSlam()
   const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]))
-  return inStage && (removeBarriers.factoryTesting || slam)
+  const hasClimbing = useClimbing()
+  const hasBananaport = useBananaportAll()
+  return inStage && (((removeBarriers.factoryTesting || slam) && hasClimbing) || hasBananaport)
 }
 
 /**
@@ -102,28 +106,37 @@ export const useFactoryProductionEnabled = (): boolean => {
 export const useFactoryProductionTop = (): boolean => {
   const inStage = usePlayFactory()
   const factoryOn = useFactoryProductionEnabled()
+  const climbing = useClimbing()
   const warpAll = useBananaportAll()
-  return factoryOn || (inStage && warpAll)
+  return (factoryOn && climbing) || (inStage && warpAll)
 }
 
-export const useChunkyKaijuGb = (): boolean => {
+export const useChunkyKaijuGb = (): LogicBool => {
   const testing = useFactoryTesting()
+  const climbing = useClimbing()
+  const highGrab = useHighGrab()
   const punch = usePunch()
   const triangle = useTriangle()
   const hunky = useHunky()
-  return testing && punch && triangle && hunky
+  return {
+    in: testing && climbing && punch && triangle && hunky,
+    out: testing && highGrab && punch && triangle && hunky
+  }
 }
 
 export const useChunkyArcadeGb = (): boolean => {
   const inStage = usePlayFactory()
+  const hasClimbing = useClimbing()
+  const hasBananaport = useBananaportAll()
   const punch = usePunch()
-  return inStage && punch
+  return inStage && (hasClimbing || hasBananaport) && punch
 }
 
 export const useChunkyDarkGb = (): boolean => {
-  const arcade = useChunkyArcadeGb()
+  const inStage = usePlayFactory()
+  const hasPunch = usePunch()
   const canSlam = useSlamFactory()
-  return arcade && canSlam
+  return inStage && hasPunch && canSlam
 }
 
 export const useChunkyProductionGb = (): boolean => {
@@ -137,10 +150,9 @@ export const useDiddyBlockGb = (): LogicBool => {
   const testing = useFactoryTesting()
   const spring = useSpring()
   const highGrab = useHighGrab()
-  const twirl = useTwirl()
   return {
     in: testing && spring,
-    out: useFtaDiddyBanana() && testing && (highGrab || twirl)
+    out: useFtaDiddyBanana() && testing && highGrab
   }
 }
 
@@ -159,9 +171,10 @@ export const useDiddyStorageGb = (): LogicBool => {
   const vine = useVine()
   const dk = useDk()
   const chunky = useChunky()
+  const twirl = useTwirl()
   return {
     in: hut.in && canSlam && diddy && (autoBonus || vine),
-    out: logicBreak(hut) && canSlam && diddy && (autoBonus || vine || dk || chunky)
+    out: logicBreak(hut) && canSlam && diddy && (autoBonus || vine || dk || chunky || twirl)
   }
 }
 
@@ -209,13 +222,17 @@ export const useDkBlastGb = (): boolean => {
   const blast = useBlast()
   const fastArcade = useFastArcade()
   const grab = useGrab()
-  return inStage && blast && (fastArcade || grab)
+  const hasClimbing = useClimbing()
+  const hasBananaport = useBananaportAll()
+  return inStage && blast && (fastArcade || (hasClimbing || hasBananaport) && grab)
 }
 
 export const useDkCoin = (): boolean => {
   const blast = useDkBlastGb()
   const grab = useGrab()
-  return blast && grab
+  const climbing = useClimbing()
+  const warps = useBananaportAll()
+  return blast && (climbing || warps) && grab
 }
 
 export const useDkProdGb = (): LogicBool => {
@@ -278,11 +295,12 @@ export const useLankyFreeChunkyGb = (): boolean => {
 export const useLankyProductionGb = (): LogicBool => {
   const production = useFactoryProductionEnabled()
   const canSlam = useSlamFactory()
+  const hasLanky = useLanky()
   const stand = useStand()
   const tiny = useTiny()
   return {
-    in: production && canSlam && stand,
-    out: useFtaLankyBanana() && production && (stand || tiny)
+    in: production && canSlam && hasLanky && stand,
+    out: useFtaLankyBanana() && production && canSlam && hasLanky && (stand || tiny)
   }
 }
 
@@ -302,7 +320,9 @@ export const useTinyDartGb = (): boolean => {
 export const useTinyArcadeGb = (): boolean => {
   const inStage = usePlayFactory()
   const mini = useMini()
-  return inStage && mini
+  const climbing = useClimbing()
+  const hasBananaport = useBananaportAll()
+  return inStage && (climbing || hasBananaport) && mini
 }
 
 export const useTinyProductionGb = (): LogicBool => {
@@ -312,7 +332,7 @@ export const useTinyProductionGb = (): LogicBool => {
   const dk = useDk()
   return {
     in: production && canSlam && twirl,
-    out: useFtaTinyBanana() && production && (twirl || dk)
+    out: useFtaTinyBanana() && production && canSlam && (twirl || dk)
   }
 }
 
@@ -366,26 +386,33 @@ export const useDartFairy = (): boolean => {
 }
 
 export const useProductionTopKasplat = (): boolean => {
-  const production = useFactoryProductionTop()
-  return useFtaDkBlueprint() && production
+  const production = useFactoryProductionEnabled()
+  const hasSnide = useSnide()
+  return useFtaDkBlueprint() && production && hasSnide
 }
 
 export const useProductionBaseKasplat = (): boolean => {
   const inStage = usePlayFactory()
-  return useFtaDiddyBlueprint() && inStage
+  const hasSnide = useSnide()
+  return useFtaDiddyBlueprint() && inStage && hasSnide
 }
 
 export const useResearchKasplat = (): boolean => {
   const inStage = usePlayFactory()
-  return useFtaLankyBlueprint() && inStage
+  const canReachTesting = useFactoryTesting()
+  const hasSnide = useSnide()
+  return useFtaLankyBlueprint() && inStage && canReachTesting && hasSnide
 }
 
 export const useStorageKasplat = (): boolean => {
   const inStage = usePlayFactory()
-  return useFtaTinyBlueprint() && inStage
+  const hasSnide = useSnide()
+  return useFtaTinyBlueprint() && inStage && hasSnide
 }
 
 export const useBlockKasplat = (): boolean => {
   const inStage = usePlayFactory()
-  return useFtaChunkyBlueprint() && inStage
+  const canReachTesting = useFactoryTesting()
+  const hasSnide = useSnide()
+  return useFtaChunkyBlueprint() && inStage && canReachTesting && hasSnide
 }

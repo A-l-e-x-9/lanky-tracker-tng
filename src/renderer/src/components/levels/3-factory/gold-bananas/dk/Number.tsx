@@ -4,7 +4,7 @@ import FactoryCheck from '../../check'
 const NumberGame: React.FC = () => (
   <FactoryCheck
     id={3001}
-    name="Factory Donkey Number Game"
+    name="Factory DK Number Game"
     region="Testing Area"
     canGetLogic={useDkNumberGb()}
   />

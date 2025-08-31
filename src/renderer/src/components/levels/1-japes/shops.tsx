@@ -1,11 +1,16 @@
 import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { useJapesKongGates, usePlayJapes } from '@renderer/hooks/japes'
-import { useShuffledShops } from '@renderer/hooks/settings'
+import { useShuffledShops, useBananaportAll } from '@renderer/hooks/settings'
+import { useCranky, whatAFunky, useSnide, useClimbing } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
   const playJapes = usePlayJapes()
   const kongGates = useJapesKongGates()
+  const climbing = useClimbing()
+  const bananaport = useBananaportAll()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
 
   return (
     <>
@@ -14,14 +19,14 @@ const Vanilla: React.FC = () => {
         baseName="Japes Cranky"
         level="Japes"
         region="Japes Shops"
-        inLogic={kongGates}
+        inLogic={kongGates && hasCranky}
       />
       <ShopGenerator
         baseId={1120}
         baseName="Japes Funky"
         level="Japes"
         region="Japes Shops"
-        inLogic={playJapes}
+        inLogic={playJapes && (climbing || bananaport) && hasFunky}
       />
     </>
   )
@@ -30,6 +35,11 @@ const Vanilla: React.FC = () => {
 const Shuffled: React.FC = () => {
   const playJapes = usePlayJapes()
   const kongGates = useJapesKongGates()
+  const climbing = useClimbing()
+  const bananaport = useBananaportAll()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
+  const hasSnide = useSnide()
 
   return (
     <>
@@ -38,21 +48,21 @@ const Shuffled: React.FC = () => {
         baseName="Japes Cranky Location"
         level="Japes"
         region="Japes Shops"
-        inLogic={kongGates}
+        inLogic={hasCranky && (kongGates || (climbing || bananaport))}
       />
       <ShopGenerator
         baseId={1150}
         baseName="Japes Funky Location"
         level="Japes"
         region="Japes Shops"
-        inLogic={playJapes}
+        inLogic={hasFunky && (kongGates || (climbing || bananaport))}
       />
       <ShopGenerator
         baseId={1170}
         baseName="Japes Snide Location"
         level="Japes"
         region="Japes Shops"
-        inLogic={playJapes}
+        inLogic={hasSnide && (kongGates || (climbing || bananaport))}
       />
     </>
   )

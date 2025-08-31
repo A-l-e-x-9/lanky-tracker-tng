@@ -160,6 +160,10 @@ interface MoveCollection {
    */
   vine: boolean
   /**
+   * Was Climbing found?
+   */
+  climbing: boolean
+  /**
    * Was the sniper scope found?
    */
   sniper: boolean
@@ -296,7 +300,7 @@ export interface SwitchsanitySwitches {
    */
   islesMonkeyport: BananaportRange
   /**
-   * What move or instrument is needed to reveal the vines to access Helm?
+   * What move or instrument is needed to reveal the vines to access Helm? (Superfluous since roughly start of 2025 if Bananaports are pre-activated for Isles.)
    */
   islesHelm: IntRange<0, 8>
   /**
@@ -394,11 +398,9 @@ interface FastCheckCollection {
    */
   factoryArcade: boolean
   /**
-   * Can we turn in only one Pearl instead of five?
-   *
-   * @todo Watch this setting in the future: some folks want three.
-   */
-  galleonMermaid: boolean
+    How many Pearls are needed for the Mermaid's reward?
+  */
+  galleonMermaid: PearlRange
 }
 
 export interface FastCheckState {
@@ -423,6 +425,8 @@ interface RemoveBarriers {
    * Is the gate leading to the hive opened?
    */
   japesHiveGate: boolean
+  /*Has the ice in Tiny Temple been pre-melted?*/
+  aztecIce: boolean
   /**
    * Is the back of Aztec available without needing an instrument?
    */
@@ -452,9 +456,11 @@ interface RemoveBarriers {
    */
   galleonOutskirts: boolean
   /**
-   * Is the Galleon Seasick ship already out?
+   * Is the lighthouse pre-activated and is the Galleon Seasick ship already out?
    */
   galleonSeasick: boolean
+  /*Has Galleon's Treasure Room been opened without the need for Lanky as Enguarde to go through a DK Star? (Superfluous if Bananaports are pre-activated for Galleon)*/
+  galleonTreasureRoom: boolean
   /**
    * Is planting the bean immediately possible?
    */
@@ -469,6 +475,10 @@ interface RemoveBarriers {
    * If not, Rocket is required.
    */
   cavesIgloo: boolean
+  /*Have the Primate Punchable ice walls in Caves been pre-Punched?*/
+  cavesWalls: boolean
+  /*Have the doors to the Crypt and Mausoleum in Castle, as well as the doors to each Kong's crypt in the former, been pre-opened, eliminating the need for the Kongs to have their guns to access those two areas?*/
+  castleCrypt: boolean
 }
 
 export interface BarrierState {
@@ -525,9 +535,9 @@ interface SettingCollection {
   galleonHighTide: boolean
   /**
    * How far do we start in Helm?
-   * 0: Very Beginning
-   * 1: Machine Area
-   * 2: Doors at Top
+   * 0: "Vanilla" setting in Randomizer (back of the level)
+   * 1: "Skip Start" (start at the Blast-O-Matic's room with the doors to each Kong's section pre-opened and the Primate Punch gates taken down)
+   * 2: "Skip All" (Blast-O-Matic is already deactivated and you start at the nav room/Crown Door area)
    */
   helmAccess: BananaportRange
   /**
@@ -643,10 +653,7 @@ interface SettingCollection {
    */
   freeTrade: BananaportRange
   /**
-   * Is the battle against K. Rool more balanced?
-   *
-   * If this is true, then Chunky can use any Slam, but DK needs Blast.
-   * @return true if it is more balanced.
+   * Does the DK Phase of the K. Rool fight require Barrel Blast? (Known as "Balanced K. Rool Phases" in Season 3, but in Season 4, the Blast requirement became a separate thing and it became possible to require any of all three Slams for Chunky's phase.)
    */
   balancedRoolPhases: boolean
 }
@@ -681,18 +688,17 @@ export type HintSlice = HintState & HintActions
 //#endregion
 
 //#region Ending
-
 export interface EndingState {
   helm1: PearlRange
   helm2: PearlRange
   helm3: PearlRange
   helm4: PearlRange
   helm5: PearlRange
-  rool1: PearlRange
-  rool2: PearlRange
-  rool3: PearlRange
-  rool4: PearlRange
-  rool5: PearlRange
+  rool1: IntRange<0, 12>
+  rool2: IntRange<0, 12>
+  rool3: IntRange<0, 12>
+  rool4: IntRange<0, 12>
+  rool5: IntRange<0, 12>
 }
 
 interface EndingActions {
@@ -720,30 +726,6 @@ export type UiSlice = UiState & UiActions
 
 //#endregion
 
-//#region Presets
-export type Preset =
-  | 'beginner'
-  | 's2'
-  | 's3'
-  | 'sandbox'
-  | 'balancedLzr'
-  | 'nsak'
-  | 'anotherDay'
-  | 'hitlist'
-  | 'treasureHurry'
-  | 'kevin'
-  | 'bountyHunter'
-  | 'radicalSlo'
-  | 's3allKeys'
-  | 's3Clo'
-  | 's3Traditionalist'
-
-export type PresetSlice = {
-  setPreset: (id: Preset) => void
-}
-
-//#endregion
-
 export type Level =
   | ''
   | 'Isles'
@@ -755,6 +737,21 @@ export type Level =
   | 'Caves'
   | 'Castle'
   | 'Helm'
+
+export type Boss =
+  | ''
+  | 'Army Dillo 1'
+  | 'Dogadon 1'
+  | 'Mad Jack'
+  | 'Puftoss'
+  | 'Dogadon 2'
+  | 'Army Dillo 2'
+  | 'Kutout'
+  | 'DK Phase of K. Rool'
+  | 'Diddy Phase of K. Rool'
+  | 'Lanky Phase of K. Rool'
+  | 'Tiny Phase of K. Rool'
+  | 'Chunky Phase of K. Rool'
 
 export const SelectableRegions = [
   '',
@@ -843,6 +840,30 @@ interface LevelActions {
 
 export type LevelSlice = LevelState & LevelActions
 
+export interface BossState {
+  boss1: Boss
+  boss2: Boss
+  boss3: Boss
+  boss4: Boss
+  boss5: Boss
+  boss6: Boss
+  boss7: Boss
+  state1: boolean
+  state2: boolean
+  state3: boolean
+  state4: boolean
+  state5: boolean
+  state6: boolean
+  state7: boolean
+}
+
+interface BossActions {
+  setBoss: (index: number, name: Boss) => void
+  setLogicState: (index: number, isSet: boolean) => void
+}
+
+export type BossSlice = BossState & BossActions
+
 export type AllSlice = CheckSlice &
   MoveSlice &
   ConsumablesSlice &
@@ -850,6 +871,7 @@ export type AllSlice = CheckSlice &
   BarrierSlice &
   SettingSlice &
   LevelSlice &
+  BossSlice &
   HintSlice &
   FastCheckSlice &
   PresetSlice &

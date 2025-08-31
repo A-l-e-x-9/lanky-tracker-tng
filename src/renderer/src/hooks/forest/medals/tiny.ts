@@ -1,4 +1,4 @@
-import { useDive, useFeather, useMini, usePunch, useSax, useTiny } from '@renderer/hooks/kongs'
+import { useDive, useFeather, useMini, usePunch, useSax, useTiny, useClimbing } from '@renderer/hooks/kongs'
 import { useForestTime, useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { logicBreak } from '@renderer/hooks/world'
 import {
@@ -16,12 +16,16 @@ const useTinyMedalCommonLogic = (): number => {
   const half = useForestBeanHalf()
   const gun = useFeather()
   const dive = useDive()
+  const hasClimbing = useClimbing()
   let bananas = 10 // two bunches at start
   if (half) {
     bananas += 4 // first bean door
   }
   if (bean) {
-    bananas += 16 // full bean access
+    bananas += 1 // full bean access
+    if (hasClimbing) {
+      bananas += 15 //the bananas on top of the mushrooms surrounding the Apple
+    }
   }
   if (gun) {
     bananas += 10 // balloon in lower mushroom

@@ -2,10 +2,14 @@ import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { useFactoryTesting, usePlayFactory } from '@renderer/hooks/factory'
 import { useShuffledShops } from '@renderer/hooks/settings'
+import { useCranky, whatAFunky, useCandy, useSnide } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
   const inStage = usePlayFactory()
   const testing = useFactoryTesting()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
+  const hasCandy = useCandy()
 
   return (
     <>
@@ -14,21 +18,21 @@ const Vanilla: React.FC = () => {
         baseName="Factory Cranky"
         level="Factory"
         region="Factory Shops"
-        inLogic={inStage}
+        inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={3120}
         baseName="Factory Funky"
         level="Factory"
         region="Factory Shops"
-        inLogic={testing}
+        inLogic={hasFunky && testing}
       />
       <ShopGenerator
         baseId={3130}
         baseName="Factory Candy"
         level="Factory"
         region="Factory Shops"
-        inLogic={inStage}
+        inLogic={hasCandy && inStage}
       />
     </>
   )
@@ -37,6 +41,10 @@ const Vanilla: React.FC = () => {
 const Shuffled: React.FC = () => {
   const inStage = usePlayFactory()
   const testing = useFactoryTesting()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
+  const hasCandy = useCandy()
+  const hasSnide = useSnide()
 
   return (
     <>
@@ -45,28 +53,28 @@ const Shuffled: React.FC = () => {
         baseName="Factory Cranky Location"
         level="Factory"
         region="Factory Shops"
-        inLogic={inStage}
+        inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={3150}
         baseName="Factory Funky Location"
         level="Factory"
         region="Factory Shops"
-        inLogic={testing}
+        inLogic={hasFunky && testing}
       />
       <ShopGenerator
         baseId={3160}
         baseName="Factory Candy Location"
         level="Factory"
         region="Factory Shops"
-        inLogic={inStage}
+        inLogic={hasCandy && inStage}
       />
       <ShopGenerator
         baseId={3170}
         baseName="Factory Snide Location"
         level="Factory"
         region="Factory Shops"
-        inLogic={testing}
+        inLogic={hasSnide && testing}
       />
     </>
   )

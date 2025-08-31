@@ -36,7 +36,9 @@ import {
   useTiny,
   useTrombone,
   useTwirl,
-  useVine
+  useVine,
+  useClimbing,
+  useSnide
 } from '../kongs'
 import { useBananaportAll } from '../settings'
 import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
@@ -115,7 +117,9 @@ export const useJapesRambi = (): boolean => {
 export const useJapesMine = (): boolean => {
   const peanut = usePeanut()
   const canPlay = usePlayJapes()
-  return peanut && canPlay
+  const hasClimbing = useClimbing()
+  const hasBananaports = useBananaportAll()
+  return peanut && (hasClimbing || hasBananaports) && canPlay
 }
 
 /**
@@ -140,12 +144,13 @@ export const useJapesPaintingOutside = (): LogicBool => {
   const inStage = usePlayJapes()
   const stand = useStand()
   const twirl = useTwirl()
+  const climbing = useClimbing()
   const dk = useDk()
   const tiny = useTiny()
   const chunky = useChunky()
   return {
-    in: inStage && (stand || twirl),
-    out: inStage && (dk || tiny || chunky)
+    in: inStage && (stand || (climbing && twirl)),
+    out: inStage && climbing && (dk || tiny || chunky)
   }
 }
 
@@ -183,13 +188,19 @@ export const useChunkyCagedGb = (): boolean => {
   const boulderTech = useBoulderTech()
   const canSlam = useSlamJapes()
   const rambi = useJapesRambi()
-  return rambi && boulderTech && canSlam
+  const climbing = useClimbing()
+  const hasBananaports = useBananaportAll()
+  return rambi && boulderTech && canSlam && (climbing || hasBananaports)
 }
 
-export const useChunkyHiveGb = (): boolean => {
+export const useChunkyHiveGb = (): LogicBool => {
   const hive = useJapesHive()
   const hunky = useHunky()
-  return hive && hunky
+  const climbing = useClimbing()
+  return {
+    in: hive && hunky && climbing,
+    out: hive && hunky
+  }
 }
 
 export const useChunkyUndergroundGb = (): LogicBool => {
@@ -203,6 +214,15 @@ export const useChunkyUndergroundGb = (): LogicBool => {
   return {
     in: under && pineapple && vine,
     out: useFtaChunkyBanana() && under && (dk || twirl || ((tiny || diddy) && vine))
+  }
+}
+
+export const useChunkyKasplat = (): LogicBool => {
+  const canGoUnderground = useChunkyUndergroundGb()
+  const hasSnide = useSnide()
+  return {
+    in: hasSnide && canGoUnderground.in,
+    out: hasSnide && canGoUnderground.out
   }
 }
 
@@ -244,7 +264,9 @@ export const useDiddyMinecartGb = (): LogicBool => {
 export const useDkFreebieGb = (): boolean => {
   const inStage = usePlayJapes()
   const anyKong = useAnyKong()
-  return inStage && anyKong
+  const hasClimbing = useClimbing()
+  const hasBananaports = useBananaportAll()
+  return inStage && anyKong && (hasClimbing || hasBananaports)
 }
 
 const useFreeDiddySwitch = (): boolean => {
@@ -272,7 +294,9 @@ const useFreeDiddySwitch = (): boolean => {
 
 export const useDkFreeDiddyGb = (): boolean => {
   const inStage = usePlayJapes()
-  return useFreeDiddySwitch() && inStage
+  const climbing = useClimbing()
+  const hasBananaports = useBananaportAll()
+  return useFreeDiddySwitch() && inStage && (climbing || hasBananaports)
 }
 
 export const useDkCagedGb = (): boolean => {
@@ -286,14 +310,17 @@ export const useDkBlastGb = (): boolean => {
   const inStage = usePlayJapes()
   const blast = useBlast()
   const vine = useVine()
-  return inStage && blast && vine
+  const climbing = useClimbing()
+  return inStage && blast && vine && climbing
 }
 
 export const useLankyCagedGb = (): boolean => {
   const rambi = useJapesRambi()
   const lanky = useLanky()
   const canSlam = useSlamJapes()
-  return rambi && lanky && canSlam
+  const hasClimbing = useClimbing()
+  const hasBananaports = useBananaportAll()
+  return rambi && lanky && canSlam && (hasClimbing || hasBananaports)
 }
 
 export const useLankyGateGb = (): boolean => {
@@ -402,27 +429,42 @@ export const useGeneralFairy = (): boolean => {
 }
 
 export const useGateKasplat = (): boolean => {
+  const hasSnide = useSnide()
   const kongGates = useJapesKongGates()
   const anyKong = useAnyKong()
-  return kongGates && anyKong
+  return hasSnide && kongGates && anyKong
 }
 
 export const useDkKasplat = (): boolean => {
+  const hasSnide = useSnide()
   const gate = useGateKasplat()
-  return useFtaDkBlueprint() && gate
+  const ftaBP = useFtaDkBlueprint()
+  return hasSnide && ftaBP && gate
 }
 
 export const useDiddyKasplat = (): boolean => {
   const gate = useGateKasplat()
-  return useFtaDiddyBlueprint() && gate
+  const hasSnide = useSnide()
+  const ftaBP = useFtaDiddyBlueprint()
+  return hasSnide && ftaBP && gate
 }
 
 export const useLankyKasplat = (): boolean => {
+  const hasSnide = useSnide()
   const gate = useGateKasplat()
-  return useFtaLankyBlueprint() && gate
+  const ftaBP = useFtaLankyBlueprint()
+  return hasSnide && ftaBP && gate
 }
 
 export const useTinyKasplat = (): boolean => {
   const gate = useGateKasplat()
-  return useFtaTinyBlueprint() && gate
+  const ftaBP = useFtaTinyBlueprint()
+  const hasSnide = useSnide()
+  return hasSnide && ftaBP && gate
+}
+
+export const useMtnCrate = (): boolean => {
+  const hasClimbing = useClimbing()
+  const hasBananaports = useBananaportAll()
+  return hasClimbing || hasBananaports
 }

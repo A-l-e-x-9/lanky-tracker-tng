@@ -64,11 +64,11 @@ const RuntimeSettings: React.FC = () => {
       <div>
         <h4>Settings</h4>
         <GeneratorSettings />
-        <p>Galleon Starting Tide</p>
+        <p>Current Galleon Tide:</p>
         <span onClick={() => setSetting('galleonHighTide', !galleonHighTide)}>
           {galleonHighTide ? '🠱' : '🠳'}
         </span>
-        <p>Forest Time Active</p>
+        <p>Current Forest Time:</p>
         <span onClick={handleClick} onContextMenu={handleContextClick} onWheel={handleWheel}>
           {timeToString(forestTime)}
         </span>

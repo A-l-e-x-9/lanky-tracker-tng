@@ -50,7 +50,7 @@ export const useLankyMedalInLogic = (): number => {
   }
 
   if (canSlam && pad) {
-    bananas += 5
+    bananas += 15
   }
   if (pillar.in) {
     bananas += 20
@@ -84,7 +84,7 @@ export const useLankyMedalOutLogic = (): number => {
   }
 
   if (canSlam) {
-    bananas += 5
+    bananas += 15
   }
   if (logicBreak(pillar)) {
     bananas += 20

@@ -1,4 +1,4 @@
-import { useDiddy, useGuitar, useHighGrab, usePeanut, useSpring } from '@renderer/hooks/kongs'
+import { useDiddy, useGuitar, useHighGrab, usePeanut, useSpring, useClimbing } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { useFactoryProductionEnabled, useFactoryTesting, usePlayFactory } from '..'
 
@@ -7,8 +7,12 @@ const useDiddyMedalCommonLogic = (): number => {
   const production = useFactoryProductionEnabled()
   const gun = usePeanut()
   const music = useGuitar()
+  const climbing = useClimbing()
 
-  let bananas = 22 // 12 on prod floor, 5 by game, 5 on warp 5
+  let bananas = 12 // 12 on prod floor
+  if (climbing) {
+    bananas += 10 //10 in arcade area
+  }
   if (production) {
     bananas += 15
   }

@@ -4,6 +4,7 @@ import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 
 type CountSelectorProps = {
+  title: string
   imgUrl: string
   storeKey: string
   prefix: string
@@ -45,7 +46,7 @@ const CountSelector: React.FC<CountSelectorProps> = (props) => {
       onContextMenu={handlePrevLevel}
       onWheel={handleWheel}
     >
-      <img height={24} src={imgUrl} style={{ filter: `grayscale(${num != 0 ? '0' : '1'})` }} />
+      <img height={24} alt={props.title} title={props.title} src={imgUrl} style={{ filter: `grayscale(${num != 0 ? '0' : '1'})` }} />
       <span>{num}</span>
     </div>
   )

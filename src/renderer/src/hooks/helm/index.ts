@@ -48,6 +48,7 @@ export const useHelmEnter = (): boolean => {
  * @returns true if we can access the machine.
  */
 export const useHelmMachine = (): LogicBool => {
+  const inLevel = usePlayHelm()
   const entry = useHelmEnter()
   const stand = useStand()
   const pineapple = usePineapple()
@@ -55,8 +56,8 @@ export const useHelmMachine = (): LogicBool => {
   const mini = useMini()
   const helmAccess = useHelmStartPosition()
   return {
-    in: entry && (helmAccess != 0 || (stand && pineapple && vine && mini)),
-    out: entry && pineapple && vine && mini
+    in: inLevel && entry && (helmAccess != 0 || (stand && pineapple && vine && mini)),
+    out: inLevel && entry && pineapple && vine && mini
   }
 }
 

@@ -2,6 +2,7 @@ import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatKlump, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useForestBean, useForestBeanHalf, usePlayForest } from '@renderer/hooks/forest'
 import ForestCheck from '../check'
+import { useHunky } from '@renderer/hooks/kongs'
 
 const CenterEnemies: React.FC = () => {
   const inStage = usePlayForest()
@@ -9,6 +10,7 @@ const CenterEnemies: React.FC = () => {
   const klump = useDefeatKlump()
   const beanstalk = useForestBean()
   const beanHalf = useForestBeanHalf()
+  const hasHunky = useHunky()
   return (
     <DropPool>
       <ForestCheck
@@ -19,7 +21,7 @@ const CenterEnemies: React.FC = () => {
       />
       <ForestCheck
         id={5324}
-        name="Forest Enemy: Near DK Portal"
+        name="Forest Enemy: Near Vanilla DK Portal"
         region="Forest Center And Beanstalk"
         canGetLogic={inStage && zinger}
       />
@@ -46,6 +48,30 @@ const CenterEnemies: React.FC = () => {
         name="Forest Enemy: Near Beanstalk 1"
         region="Forest Center And Beanstalk"
         canGetLogic={beanstalk && klump}
+      />
+      <ForestCheck
+        id={5411}
+        name="Forest Enemy: Giant Tomato 0"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && hasHunky}
+      />
+      <ForestCheck
+        id={5412}
+        name="Forest Enemy: Giant Tomato 1"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && hasHunky}
+      />
+      <ForestCheck
+        id={5413}
+        name="Forest Enemy: Giant Tomato 2"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && hasHunky}
+      />
+      <ForestCheck
+        id={5414}
+        name="Forest Enemy: Giant Tomato 3"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && hasHunky}
       />
     </DropPool>
   )

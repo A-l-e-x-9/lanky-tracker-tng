@@ -6,7 +6,7 @@ const CrusherRoom: React.FC = () => {
   return (
     <FactoryCheck
       id={3004}
-      name="Factory Donkey Crusher Room"
+      name="Factory DK Crusher Room"
       region="Production Room"
       canGetLogic={prodGb.in}
       canGetBreak={prodGb.out}

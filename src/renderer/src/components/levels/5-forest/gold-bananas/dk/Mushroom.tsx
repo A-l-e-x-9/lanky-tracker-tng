@@ -4,7 +4,7 @@ import ForestCheck from '../../check'
 const MushroomCannon: React.FC = () => (
   <ForestCheck
     id={5002}
-    name="Forest Donkey Mushroom Cannons"
+    name="The Check of Legends (Forest DK Mushroom Cannons)"
     region="Giant Mushroom Insides"
     canGetLogic={useDkMushGb()}
   />

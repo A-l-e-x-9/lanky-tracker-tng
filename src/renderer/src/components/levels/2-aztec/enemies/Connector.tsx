@@ -19,6 +19,13 @@ const ConnectorTunnelEnemies: React.FC = () => {
         canGetBreak={logicBreak(inStage) && zinger}
       />
       <AztecCheck
+        id={2303}
+        name="Aztec Enemy Tunnel Pad 1"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && zinger}
+        canGetBreak={logicBreak(inStage) && zinger}
+      />
+      <AztecCheck
         id={2304}
         name="Aztec Enemy: Tunnel Cage 0"
         region="Various Aztec Tunnels"
@@ -45,13 +52,6 @@ const ConnectorTunnelEnemies: React.FC = () => {
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && anyKong}
         canGetBreak={logicBreak(inStage) && anyKong}
-      />
-      <AztecCheck
-        id={2303}
-        name="Aztec Enemy Tunnel Pad 1"
-        region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && zinger}
-        canGetBreak={logicBreak(inStage) && zinger}
       />
     </DropPool>
   )

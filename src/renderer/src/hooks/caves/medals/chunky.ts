@@ -10,7 +10,7 @@ import {
   useTriangle
 } from '@renderer/hooks/kongs'
 import { useBananaportAll, useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { useCavesIgloo, usePlayCaves } from '..'
+import { useCavesIgloo, usePlayCaves, useIceWalls } from '..'
 
 export const useChunkyMedalInLogic = (): number => {
   const inStage = usePlayCaves()
@@ -26,6 +26,7 @@ export const useChunkyMedalInLogic = (): number => {
   const pad = useGone()
   const mini = useMini()
   const shuffleBananas = useShuffleColoredBananas()
+  const prePunched = useIceWalls()
 
   if (!inStage) {
     return 0
@@ -41,7 +42,7 @@ export const useChunkyMedalInLogic = (): number => {
   if (boulderTech) {
     bananas += 5
   }
-  if (move) {
+  if (move || prePunched) {
     bananas += 11
     if (gun) {
       bananas += 10

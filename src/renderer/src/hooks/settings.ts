@@ -218,6 +218,14 @@ export const useShuffleDirt = (): boolean =>
 export const useShuffleFairies = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.shuffleFairies))
 
+/*Are Chunky's boulders in the pool?*/
+export const usePoolBoulders = (): boolean =>
+  useDonkStore(useShallow((state) => state.settings.poolBoulders))
+  
+/*What about Wrinkly Kong's doors?*/
+export const usePoolWrinkly = (): boolean =>
+  useDonkStore(useShallow((state) => state.settings.poolWrinkly))
+
 /**
  * Are the Kasplat locations shuffled around in this seed?
  * @returns true if the Kasplat locations are shuffled this seed.

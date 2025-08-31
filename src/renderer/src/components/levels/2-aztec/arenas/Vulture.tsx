@@ -1,10 +1,10 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import VanillaArena from '@renderer/components/pools/VanillaArena'
-import { useLankyVultureGb } from '@renderer/hooks/aztec'
+import { useArena } from '@renderer/hooks/aztec'
 import AztecCheck from '../check'
 
 const VultureArena: React.FC = () => {
-  const vulture = useLankyVultureGb()
+  const vulture = useArena()
   return (
     <ArenaPool>
       <VanillaArena>

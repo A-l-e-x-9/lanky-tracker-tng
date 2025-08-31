@@ -47,7 +47,7 @@ export const useDiddyMedalInLogic = (): number => {
     bananas += 10 // two bunches that rocket expects.
   }
 
-  if (miniFunky.in && crystal) {
+  if (miniFunky && crystal) {
     bananas += 10
   }
   if (music) {
@@ -69,6 +69,7 @@ export const useDiddyMedalOutLogic = (): number => {
   const music = useGuitar()
   const crystal = useRocket()
   const shuffleBananas = useShuffleColoredBananas()
+  const pad = useSpring()
   let bananas = useDiddyMedalCommonLogic() + 10
 
   if (!inStage) {
@@ -81,12 +82,16 @@ export const useDiddyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (logicBreak(miniFunky)) {
+  if (crystal) {
+    bananas += 10 // two bunches that rocket expects.
+  }
+
+  if (miniFunky) {
     bananas += 10
   }
   if (music) {
     bananas += 10 // Diddy's enemy cabin floor
-    if (crystal) {
+    if (crystal && pad) {
       bananas += 15 // Candles
     }
   }

@@ -1,10 +1,10 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import VanillaKasplat from '@renderer/components/pools/VanillaKasplat'
-import { useChunkyUndergroundGb } from '@renderer/hooks/japes'
+import { useChunkyKasplat } from '@renderer/hooks/japes'
 import JapesCheck from '../check'
 
 const ChunkyKasplat: React.FC = () => {
-  const under = useChunkyUndergroundGb()
+  const under = useChunkyKasplat()
   return (
     <KasplatPool>
       <VanillaKasplat>

@@ -3,15 +3,11 @@ import DropPool from '@renderer/components/pools/Drops'
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import GreenhouseArena from './arenas/Greenhouse'
-import ShuffledArenas from './arenas/Shuffled'
 import BossCheck from './boss'
 import MausoleumCrate from './crates/Mausoleum'
-import ShuffledCrates from './crates/Shuffled'
-import ShuffledDirtLocations from './dirt/Shuffled'
 import TopFloorDirt from './dirt/TopFloor'
 import EnemyLocations from './enemies'
 import FairyLocations from './fairies'
-import ShuffledFairies from './fairies/Shuffled'
 import ChunkyBananas from './gold-bananas/chunky'
 import DiddyBananas from './gold-bananas/diddy'
 import DkBananas from './gold-bananas/dk'
@@ -25,8 +21,11 @@ import LankyMedal from './medals/LankyMedal'
 import TinyMedal from './medals/TinyMedal'
 import CastleRegionChecks from './regions'
 import CastleShops from './shops'
+import BoulderCheck from './boulder'
 
 const ClassicChecks: React.FC = () => (
+<div>
+  <p class="not-available"><strong>WARNING:</strong> If you don't have Climbing and you attempt to do any check in the Crypt area, you won't be able to get back up without killing your Kong or pause-exiting, then re-entering. For that reason, all checks involving this area in some way will be yellow if you indicated that you didn't have Climbing in the moves table!</p>
   <div className="grid">
     <DkBananas />
     <DiddyBananas />
@@ -35,13 +34,9 @@ const ClassicChecks: React.FC = () => (
     <ChunkyBananas />
     <KasplatLocations />
     <MausoleumCrate />
-    <ShuffledCrates />
     <TopFloorDirt />
-    <ShuffledDirtLocations />
     <FairyLocations />
-    <ShuffledFairies />
     <GreenhouseArena />
-    <ShuffledArenas />
     <BananaMedalPool>
       <DkMedal />
       <DiddyMedal />
@@ -49,12 +44,14 @@ const ClassicChecks: React.FC = () => (
       <TinyMedal />
       <ChunkyMedal />
     </BananaMedalPool>
+    <BoulderCheck />
     <BossCheck />
     <CastleShops />
     <DropPool>
       <EnemyLocations />
     </DropPool>
   </div>
+</div>
 )
 
 const CastleChecks: React.FC = () => {

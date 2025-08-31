@@ -1,4 +1,4 @@
-import { useDive, useFeather, useMini, useTiny, useTwirl } from '@renderer/hooks/kongs'
+import { useClimbing, useDive, useFeather, useMini, useTiny, useTwirl } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { logicBreak } from '@renderer/hooks/world'
 import {
@@ -7,13 +7,15 @@ import {
   useAztecLlamaLava,
   useAztecLlamaTemple,
   useAztecTinyTemple,
-  useSlamAztec
+  useSlamAztec,
+  useTinyTempleIce
 } from '..'
 
 export const useTinyMedalInLogic = (): number => {
   const inStage = useAztecFront()
   const aztecBack = useAztecBack()
   const tinyTemple = useAztecTinyTemple()
+  const iceMelted = useTinyTempleIce()
   const llamaTemple = useAztecLlamaTemple()
   const lava = useAztecLlamaLava()
   const canSlam = useSlamAztec()
@@ -22,6 +24,7 @@ export const useTinyMedalInLogic = (): number => {
   const crystal = useMini()
   const move = useTwirl()
   const dive = useDive()
+  const hasClimb = useClimbing()
   const shuffleBananas = useShuffleColoredBananas()
 
   if (!inStage.in) {
@@ -36,7 +39,7 @@ export const useTinyMedalInLogic = (): number => {
 
   let bananas = 0
   if (inStage.in) {
-    if (tinyTemple.in && dive) {
+    if (tinyTemple.in && iceMelted && dive) {
       if (gun) {
         bananas += 20
       }
@@ -45,7 +48,10 @@ export const useTinyMedalInLogic = (): number => {
       }
     }
     if (aztecBack.in) {
-      bananas += 50
+      bananas += 30
+      if (hasClimb) {
+        bananas +=20
+      }
     }
     if (llamaTemple.in) {
       bananas += 3
@@ -67,6 +73,7 @@ export const useTinyMedalInLogic = (): number => {
 export const useTinyMedalOutLogic = (): number => {
   const inStage = useAztecFront()
   const aztecBack = useAztecBack()
+  const iceMelted = useTinyTempleIce()
   const tinyTemple = useAztecTinyTemple()
   const llamaTemple = useAztecLlamaTemple()
   const lava = useAztecLlamaLava()
@@ -74,6 +81,7 @@ export const useTinyMedalOutLogic = (): number => {
   const gun = useFeather()
   const crystal = useMini()
   const dive = useDive()
+  const kuruKuru = useTwirl()
   const shuffleBananas = useShuffleColoredBananas()
 
   if (!logicBreak(inStage)) {
@@ -88,7 +96,7 @@ export const useTinyMedalOutLogic = (): number => {
 
   let bananas = 0
   if (logicBreak(inStage)) {
-    if (logicBreak(tinyTemple) && dive) {
+    if (logicBreak(tinyTemple) && iceMelted && dive) {
       if (gun) {
         bananas += 20
       }
@@ -97,7 +105,10 @@ export const useTinyMedalOutLogic = (): number => {
       }
     }
     if (logicBreak(aztecBack)) {
-      bananas += 50
+      bananas += 40
+      if (kuruKuru) {
+        bananas += 10
+      }
     }
     if (logicBreak(llamaTemple)) {
       bananas += 3

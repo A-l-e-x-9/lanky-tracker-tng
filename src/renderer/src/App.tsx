@@ -1,7 +1,6 @@
 import Checklist from './Checklist'
-import ResetTracker from './components/ResetComponent'
-import RegionHints from './components/hints'
 import MoveTable from './components/moves/MoveTable'
+import Bosses from './components/settings/Bosses'
 import Ending from './components/settings/Ending'
 import LevelTable from './components/settings/LevelTable'
 import RuntimeSettings from './components/settings/RuntimeSettings'
@@ -14,11 +13,10 @@ const App = (): JSX.Element => {
         <article>
           <MoveTable />
           <LevelTable />
+          <Bosses />
           <Ending />
-          <RegionHints />
           <RuntimeSettings />
           <SwitchsanitySelector />
-          <ResetTracker />
         </article>
         <Checklist />
       </main>

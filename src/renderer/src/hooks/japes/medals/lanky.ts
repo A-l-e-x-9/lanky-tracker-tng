@@ -1,4 +1,4 @@
-import { useDive, useGrape, useLanky, useStand } from '@renderer/hooks/kongs'
+import { useClimbing, useDive, useGrape, useLanky, useStand } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { logicBreak } from '@renderer/hooks/world'
 import {
@@ -16,8 +16,12 @@ const useLankyMedalCommonLogic = (): number => {
   const sideArea = useJapesSideArea()
   const dive = useDive()
   const gun = useGrape()
+  const climbing = useClimbing()
 
-  let bananas = 10 // by Snide's HQ.
+  let bananas = 5 // by Snide's HQ.
+  if (climbing) {
+    bananas += 5 //Bunch on a tree near Snide's
+  }
   if (dive) {
     bananas += 5 // water separating lowlands & hillside
   }

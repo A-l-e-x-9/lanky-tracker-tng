@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import { usePlayLevel, useSlamLevel } from '../isles'
 import {
   useAnyGun,
@@ -37,7 +39,9 @@ import {
   useTriangle,
   useTrombone,
   useTwirl,
-  useVine
+  useVine,
+  useClimbing,
+  useSnide
 } from '../kongs'
 import { useHardShooting } from '../settings'
 import { LogicBool } from '../world'
@@ -65,6 +69,12 @@ export const useCastleTree = (): boolean => {
   return inStage && blast
 }
 
+/*Alex addition: Did we set the "pre-open Crypt" option under Fast Barriers?*/
+export const useOpenCrypt = (): boolean => {
+  const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]))
+  return removeBarriers.castleCrypt
+}
+
 /**
  * Can the enemies in the shed be defeated?
  * @returns true if the enemies in the shed can be defeated.
@@ -76,9 +86,10 @@ export const useChunkyShedGb = (): LogicBool => {
   const gone = useGone()
   const pineapple = usePineapple()
   const anyMusic = useAnyMusic()
+  const hasAGun = useAnyGun()
   return {
     in: inStage && punch && (triangle || (gone && pineapple)),
-    out: inStage && punch && anyMusic
+    out: inStage && punch && (anyMusic || hasAGun)
   }
 }
 
@@ -102,11 +113,16 @@ export const useChunkyRoomGb = (): boolean => {
   return inStage && slam && boulder && punch
 }
 
-export const useChunkyCryptGb = (): boolean => {
+export const useChunkyCryptGb = (): LogicBool => {
   const inStage = usePlayCastle()
   const pineapple = usePineapple()
   const punch = usePunch()
-  return inStage && pineapple && punch
+  const preOpened = useOpenCrypt()
+  const hasClimbing = useClimbing()
+  return {
+    in: inStage && (pineapple || preOpened) && punch && hasClimbing,
+    out: inStage && (pineapple || preOpened) && punch
+  }
 }
 
 export const useDiddyTopGb = (): boolean => {
@@ -119,10 +135,15 @@ export const useDiddyRoomGb = (): boolean => {
   return useSlamCastle() && topGb
 }
 
-export const useDiddyCryptGb = (): boolean => {
+export const useDiddyCryptGb = (): LogicBool => {
   const peanut = usePeanut()
+  const cryptPreOpened = useOpenCrypt()
   const charge = useCharge()
-  return usePlayCastle() && peanut && charge
+  const hasClimbing = useClimbing()
+  return {
+    in: usePlayCastle() && (peanut || cryptPreOpened) && charge && hasClimbing,
+    out: usePlayCastle() && (peanut || cryptPreOpened) && charge
+  }
 }
 
 export const useDiddyDungeonGb = (): boolean => {
@@ -150,10 +171,15 @@ export const useDkRoomGb = (): LogicBool => {
   }
 }
 
-export const useDkCryptGb = (): boolean => {
+export const useDkCryptGb = (): LogicBool => {
   const coconut = useCoconut()
+  const cryptPreOpened = useOpenCrypt()
   const grab = useGrab()
-  return usePlayCastle() && coconut && grab
+  const hasClimbing = useClimbing()
+  return {
+    in: usePlayCastle() && (coconut || cryptPreOpened) && grab && hasClimbing,
+    out: usePlayCastle() && (coconut || cryptPreOpened) && grab
+  }
 }
 
 export const useDkDungeonGb = (): boolean => {
@@ -175,25 +201,34 @@ export const useLankyRoomGb = (): LogicBool => {
   }
 }
 
+/*The O-Stand Sprint barrel here is a total red herring. You can do it without.*/
 export const useLankyGreenhouseGb = (): boolean => {
   const lanky = useLanky()
   const slam = useSlamCastle()
   return usePlayCastle() && lanky && slam
 }
 
+export const useArena = (): boolean => {
+  const didGreenhouseBanana = useLankyGreenhouseGb()
+  return didGreenhouseBanana
+}
+
 export const useLankyMausoleumGb = (): LogicBool => {
   const inStage = usePlayCastle()
   const grape = useGrape()
+  const preOpened = useOpenCrypt()
   const sprint = useSprint()
   const vine = useVine()
   const trombone = useTrombone()
   const dk = useDk()
   const diddy = useDiddy()
+  const hasClimbing = useClimbing()
   return {
-    in: inStage && grape && sprint && vine && trombone,
-    out: inStage && grape && (sprint || dk || diddy)
+    in: inStage && (grape || useOpenCrypt) && sprint && vine && trombone && hasClimbing,
+    out: inStage && (grape || useOpenCrypt) && (sprint || dk || diddy)
   }
 }
+/*Does the "pre-open Crypt" option affect the gate barring the way to Lanky's Banana, too? May have to change this...*/
 
 export const useLankyDungeonGb = (): LogicBool => {
   const inStage = usePlayCastle()
@@ -219,14 +254,14 @@ export const useTinyRoomGb = (): boolean => {
 export const useTinyTrashGb = (): LogicBool => {
   const inStage = usePlayCastle()
   const mini = useMini()
-  const sax = useSax()
+  const sax = useAnyMusic()
   const feather = useFeather()
   const homing = useHoming()
   const hardShooting = useHardShooting()
   const anyGun = useAnyGun()
   return {
-    in: inStage && mini && (sax || (feather && (homing || hardShooting))),
-    out: inStage && mini && anyGun
+    in: inStage && mini && (sax || (anyGun && (homing || hardShooting))),
+    out: inStage && mini && (sax || anyGun)
   }
 }
 
@@ -242,9 +277,11 @@ export const useTinyMausoleumGb = (): LogicBool => {
   const twirl = useTwirl()
   const grape = useGrape()
   const dk = useDk()
+  const hasClimbing = useClimbing()
+  const preOpened = useOpenCrypt()
   return {
-    in: inStage && feather && canSlam && twirl,
-    out: useFtaTinyBanana() && inStage && (feather || grape) && canSlam && (dk || twirl)
+    in: inStage && (feather || grape || useOpenCrypt) && canSlam && twirl && hasClimbing,
+    out: useFtaTinyBanana() && inStage && (feather || grape || useOpenCrypt) && canSlam && (dk || twirl)
   }
 }
 
@@ -290,25 +327,47 @@ export const useRoomFairy = (): LogicBool => {
 export const useTreeKasplat = (): boolean => {
   const tree = useCastleTree()
   const coconut = useCoconut()
-  return tree && coconut
+  const hasSnide = useSnide()
+  return tree && coconut && hasSnide
 }
 
-export const useMausoleumKasplat = (): boolean => {
+export const useMausoleumKasplat = (): LogicBool => {
   const inStage = usePlayCastle()
-  return useFtaDiddyBlueprint() && inStage
+  const hasSnide = useSnide()
+  const hasClimbing = useClimbing()
+  return {
+    in: useFtaDiddyBlueprint() && hasSnide && inStage && hasClimbing,
+    out: useFtaDiddyBlueprint() && hasSnide && inStage
+  }
 }
 
 export const usePathKasplat = (): boolean => {
   const inStage = usePlayCastle()
-  return useFtaLankyBlueprint() && inStage
+  const hasSnide = useSnide()
+  return useFtaLankyBlueprint() && hasSnide && inStage
 }
 
-export const useLonelyKasplat = (): boolean => {
+export const useLonelyKasplat = (): LogicBool => {
   const inStage = usePlayCastle()
-  return useFtaTinyBlueprint() && inStage
+  const hasSnide = useSnide()
+  const hasClimbing = useClimbing()
+  return {
+    in: useFtaTinyBlueprint() && inStage && hasSnide && hasClimbing,
+    out: useFtaTinyBlueprint() && inStage && hasSnide
+  }
 }
 
 export const useDungeonKasplat = (): boolean => {
   const inStage = usePlayCastle()
-  return useFtaChunkyBlueprint() && inStage
+  const hasSnide = useSnide()
+  return useFtaChunkyBlueprint() && hasSnide && inStage
+}
+
+export const useCrate = (): LogicBool => {
+  const inStage = usePlayCastle()
+  const hasClimbing = useClimbing()
+  return {
+    in: useAnyKong() && inStage && hasClimbing,
+    out: useAnyKong() && inStage
+  }
 }

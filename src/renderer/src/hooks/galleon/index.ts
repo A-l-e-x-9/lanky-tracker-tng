@@ -34,7 +34,8 @@ import {
   useTriangle,
   useTrombone,
   useTwirl,
-  useVine
+  useVine,
+  useClimbing
 } from '../kongs'
 import { useBananaportAll, useGalleonTideStartHigh } from '../settings'
 import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
@@ -116,9 +117,11 @@ export const useGalleonLighthouseInside = (): LogicBool => {
   const canSlam = useSlamGalleon()
   const lighthousePlatform = useGalleonLighthousePlatform()
   const dk = useDk()
+  const hasClimbing = useClimbing()
+  const hasJetbarrel = useRocket()
   return {
-    in: lighthousePlatform.in && canSlam && dk,
-    out: lighthousePlatform.out && canSlam && dk
+    in: lighthousePlatform.in && canSlam && dk && hasClimbing,
+    out: lighthousePlatform.out && canSlam && dk && (hasClimbing || hasJetbarrel)
   }
 }
 
@@ -190,10 +193,11 @@ export const useGalleonTreasureRoom = (): LogicBool => {
   const inStage = usePlayGalleon()
   const lanky = useLanky()
   const dive = useDive()
+  const preOpened = useDonkStore(useShallow((state) => state.removeBarriers.galleonTreasureRoom))
   const warpAll = useBananaportAll()
   return {
-    in: (inStage && warpAll) || (outskirts && lanky && dive && highTide),
-    out: outskirts && lanky && dive
+    in: (inStage && warpAll) || (outskirts && (lanky && dive || preOpened) && highTide),
+    out: outskirts && (lanky && dive || preOpened)
   }
 }
 
@@ -201,9 +205,10 @@ export const useDkLighthouseGb = (): LogicBool => {
   const grab = useGrab()
   const inside = useGalleonLighthouseInside()
   const seasick = useDonkStore(useShallow((state) => state.removeBarriers.galleonSeasick))
+  const hasClimbing = useClimbing()
   return {
-    in: inside.in && (seasick || grab),
-    out: inside.out && (seasick || grab)
+    in: inside.in && hasClimbing && (seasick || grab),
+    out: inside.out && hasClimbing && (seasick || grab)
   }
 }
 
@@ -240,9 +245,11 @@ export const useChunkyCannonGb = (): LogicBool => {
 
 export const useChunkySeasickGb = (): boolean => {
   const lighthouse = useGalleonLighthouseArea()
+  const isLighthouseOn = useDkLighthouseGb()
+  const wasLighthouseOn = useDonkStore(useShallow((state) => state.removeBarriers.galleonSeasick))
   const punch = usePunch()
   const slam = useSlam()
-  return lighthouse && punch && slam
+  return lighthouse && ((isLighthouseOn.in || isLighthouseOn.out) || wasLighthouseOn) && punch && slam
 }
 
 export const useChunky5DoorShipGb = (): boolean => {
@@ -250,7 +257,8 @@ export const useChunky5DoorShipGb = (): boolean => {
   const outskirts = useGalleonOutskirts()
   const dive = useDive()
   const triangle = useTriangle()
-  return lighthouse && outskirts && dive && triangle
+  const lowTide = useGalleonLowTide()
+  return lighthouse && outskirts && dive && lowTide && triangle
 }
 
 export const useDiddyGoldGb = (): LogicBool => {
@@ -345,7 +353,7 @@ export const useTinyMermaidGb = (): boolean => {
   const dive = useDive()
   const mermaid = useFastMermaid()
   const pearls = useCurrentPearlCount()
-  return lighthouse && mini && dive && pearls >= (mermaid ? 1 : 5)
+  return lighthouse && mini && dive && pearls >= mermaid
 }
 
 export const useTinySubGb = (): boolean => {
@@ -436,7 +444,7 @@ export const useTreasureKasplat = (): LogicBool => {
   }
 }
 
-export const useLighthouseKasplat = (): boolean => {
+export const useKevin = (): boolean => {
   const lighthouse = useGalleonLighthouseArea()
   return useFtaDiddyBlueprint() && lighthouse
 }

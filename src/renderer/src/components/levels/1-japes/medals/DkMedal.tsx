@@ -14,7 +14,7 @@ const DkMedal: React.FC = (): JSX.Element => {
   return (
     <JapesCheck
       id={1100}
-      name="Japes Donkey Medal"
+      name="Japes DK Medal"
       region="Japes Medal Rewards"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}

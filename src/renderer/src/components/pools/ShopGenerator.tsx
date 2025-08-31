@@ -40,7 +40,7 @@ const useShopLogic = (id: number): boolean => {
 const useShopKong = (id: number): string => {
   switch (id % 10) {
     case 1:
-      return 'Donkey'
+      return 'DK'
     case 2:
       return 'Diddy'
     case 3:

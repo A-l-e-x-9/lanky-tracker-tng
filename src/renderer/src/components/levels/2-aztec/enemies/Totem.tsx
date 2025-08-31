@@ -13,21 +13,28 @@ const TotemEnemies: React.FC = () => {
     <DropPool>
       <AztecCheck
         id={2313}
-        name="Aztec Enemy: Outside Llama"
+        name="Aztec Enemy: Outside Llama Temple"
         region="Aztec Oasis And Totem Area"
         canGetLogic={inStage.in && anyKong}
         canGetBreak={logicBreak(inStage) && anyKong}
       />
       <AztecCheck
         id={2314}
-        name="Aztec Enemy: Outside Tower"
+        name="Aztec Enemy: Outside the Gong Tower"
+        region="Aztec Oasis And Totem Area"
+        canGetLogic={inStage.in && anyKong}
+        canGetBreak={logicBreak(inStage) && anyKong}
+      />
+      <AztecCheck
+        id={2414}
+        name="Aztec Enemy: In Front of Snide's"
         region="Aztec Oasis And Totem Area"
         canGetLogic={inStage.in && anyKong}
         canGetBreak={logicBreak(inStage) && anyKong}
       />
       <AztecCheck
         id={2316}
-        name="Aztec Enemy: Around Totem"
+        name="Aztec Enemy: Between Totem and Quicksand Tunnel"
         region="Aztec Oasis And Totem Area"
         canGetLogic={inStage.in && anyKong}
         canGetBreak={logicBreak(inStage) && anyKong}
@@ -41,7 +48,7 @@ const TotemEnemies: React.FC = () => {
       />
       <AztecCheck
         id={2318}
-        name="Aztec Enemy: Near Snoop Tunnel"
+        name="Aztec Enemy: Near Funky's"
         region="Aztec Oasis And Totem Area"
         canGetLogic={inStage.in && anyKong}
         canGetBreak={logicBreak(inStage) && anyKong}

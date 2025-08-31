@@ -1,10 +1,10 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import VanillaKasplat from '@renderer/components/pools/VanillaKasplat'
-import { useChunky5DoorGb } from '@renderer/hooks/aztec'
+import { useChunkyKasplat } from '@renderer/hooks/aztec'
 import AztecCheck from '../check'
 
 const ChunkyKasplat: React.FC = () => {
-  const chunky = useChunky5DoorGb()
+  const chunky = useChunkyKasplat()
   return (
     <KasplatPool>
       <VanillaKasplat>

@@ -10,7 +10,7 @@ const DkMedal: React.FC = () => {
   return (
     <CastleCheck
       id={7100}
-      name="Castle Donkey Medal"
+      name="Castle DK Medal"
       region="Castle Medal Rewards"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}

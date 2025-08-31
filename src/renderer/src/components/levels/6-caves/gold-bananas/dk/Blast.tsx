@@ -6,7 +6,7 @@ const CavesBlast: React.FC = () => (
   <ToughGoldenBanana>
     <CavesCheck
       id={6001}
-      name="Caves Donkey Baboon Blast"
+      name="Caves DK Baboon Blast"
       region="Main Caves Area"
       canGetLogic={useDkBlastGb()}
     />

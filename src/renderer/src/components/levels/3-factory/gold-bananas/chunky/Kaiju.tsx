@@ -1,13 +1,17 @@
 import { useChunkyKaijuGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
-const ToyMonster: React.FC = () => (
+const ToyMonster: React.FC = () => {
+  const inLogic = useChunkyKaijuGb()
+  return (
   <FactoryCheck
     id={3040}
     name="Factory Chunky Toy Monster"
     region="R&D Area"
-    canGetLogic={useChunkyKaijuGb()}
+    canGetLogic={inLogic.in}
+    canGetBreak={inLogic.out}
   />
-)
+  )
+}
 
 export default ToyMonster

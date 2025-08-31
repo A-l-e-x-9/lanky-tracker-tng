@@ -2,10 +2,13 @@ import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { useForestBean, useForestDay, usePlayForest } from '@renderer/hooks/forest'
 import { useShuffledShops } from '@renderer/hooks/settings'
+import { useCranky, whatAFunky, useSnide } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
   const inStage = usePlayForest()
   const beanstalk = useForestBean()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
 
   return (
     <>
@@ -14,14 +17,14 @@ const Vanilla: React.FC = () => {
         baseName="Forest Cranky"
         level="Forest"
         region="Forest Shops"
-        inLogic={inStage}
+        inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={5120}
         baseName="Forest Funky"
         level="Forest"
         region="Forest Shops"
-        inLogic={beanstalk}
+        inLogic={hasFunky && beanstalk}
       />
     </>
   )
@@ -31,6 +34,9 @@ const Shuffled: React.FC = () => {
   const inStage = usePlayForest()
   const beanstalk = useForestBean()
   const day = useForestDay()
+  const hasCranky = useCranky()
+  const hasFunky = whatAFunky()
+  const hasSnide = useSnide()
 
   return (
     <>
@@ -39,22 +45,22 @@ const Shuffled: React.FC = () => {
         baseName="Forest Cranky Location"
         level="Forest"
         region="Forest Shops"
-        inLogic={inStage}
+        inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={5150}
         baseName="Forest Funky Location"
         level="Forest"
         region="Forest Shops"
-        inLogic={beanstalk}
+        inLogic={hasFunky && beanstalk}
       />
       <ShopGenerator
         baseId={5170}
         baseName="Forest Snide Location"
         level="Forest"
         region="Forest Shops"
-        inLogic={day.in}
-        outLogic={day.out}
+        inLogic={hasSnide && day.in}
+        outLogic={hasSnide && day.out}
       />
     </>
   )

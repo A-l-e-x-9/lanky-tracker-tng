@@ -28,6 +28,13 @@ const BeforeOasisEnemies: React.FC = () => {
         canGetBreak={logicBreak(inStage) && pineapple}
       />
       <AztecCheck
+        id={2402}
+        name="Aztec Enemy: Vase 2"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && pineapple}
+        canGetBreak={logicBreak(inStage) && pineapple}
+      />
+      <AztecCheck
         id={2308}
         name="Aztec Enemy: Starting Tunnel 0"
         region="Various Aztec Tunnels"

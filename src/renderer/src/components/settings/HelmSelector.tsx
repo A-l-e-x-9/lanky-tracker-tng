@@ -44,7 +44,7 @@ const HelmSelector: React.FC = () => {
       <img
         className="simple-icon"
         height={24}
-        title={helmAccess == 0 ? 'Start' : helmAccess == 1 ? 'Machine' : 'Doors'}
+        title={helmAccess == 0 ? 'Vanilla' : helmAccess == 1 ? 'Skip Start' : 'Skip All'}
         src={portToIcon(helmAccess)}
         onClick={handleNextLevel}
         onContextMenu={handlePrevLevel}

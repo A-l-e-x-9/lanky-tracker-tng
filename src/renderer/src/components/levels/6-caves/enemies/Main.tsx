@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { usePlayCaves } from '@renderer/hooks/caves'
 import { useDefeatKosha, useDefeatZinger } from '@renderer/hooks/enemies'
-import { useAnyKong, useMini } from '@renderer/hooks/kongs'
+import { useAnyKong } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const MainEnemies: React.FC = () => {
@@ -9,7 +9,6 @@ const MainEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const zinger = useDefeatZinger()
   const kosha = useDefeatKosha()
-  const mini = useMini()
   return (
     <DropPool>
       <CavesCheck
@@ -34,7 +33,7 @@ const MainEnemies: React.FC = () => {
         id={6306}
         name="Caves Enemy: Near Bonus Room"
         region="Main Caves Area"
-        canGetLogic={inStage && mini && kosha}
+        canGetLogic={inStage && kosha}
       />
       <CavesCheck
         id={6305}

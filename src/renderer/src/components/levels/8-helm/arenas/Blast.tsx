@@ -13,7 +13,8 @@ const BlastArena: React.FC = () => {
         <HelmCheck
           id={8090}
           name="Helm Arena (Top of Blast-o-Matic)"
-          canGetLogic={helmMachine && rocket}
+          canGetLogic={helmMachine.in && rocket}
+          canGetBreak={helmMachine.out && rocket}
         />
       </VanillaArena>
     </ArenaPool>

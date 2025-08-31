@@ -13,11 +13,21 @@ const EndOfHelmFairies: React.FC = () => {
       <VanillaFairy>
         <HelmCheck
           id={8110}
-          name="Helm Fairies (Key 8 Room) x2"
-          canGetLogic={helmDoors && camera && anyKong}
+          name="Helm Fairy 1 (Key 8 room)"
+          canGetLogic={helmDoors.in && camera && anyKong}
+          canGetBreak={helmDoors.out && camera && anyKong}
+        />
+      </VanillaFairy>
+      <VanillaFairy>
+        <HelmCheck
+          id={8111}
+          name="Helm Fairy 2 (Key 8 room)"
+          canGetLogic={helmDoors.in && camera && anyKong}
+          canGetBreak={helmDoors.out && camera && anyKong}
         />
       </VanillaFairy>
     </FairyPool>
+
   )
 }
 

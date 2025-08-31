@@ -6,7 +6,7 @@ const CavesLava: React.FC = () => {
   return (
     <IslesCheck
       id={4}
-      name="Isles Donkey Caves Lava"
+      name="Isles DK Caves Lava"
       region="Caves-Helm Lobbies"
       canGetLogic={cave.in}
       canGetBreak={cave.out}

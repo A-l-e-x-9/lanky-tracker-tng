@@ -9,7 +9,7 @@ export const initialLevel: LevelState = {
   level5: '',
   level6: '',
   level7: '',
-  level8: 'Helm',
+  level8: '',
   key1: false,
   key2: false,
   key3: false,
