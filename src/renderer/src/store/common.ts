@@ -726,7 +726,7 @@ export interface UiState {
 }
 
 interface UiActions {
-  setUi: (item: keyof UiCollection, val: boolean) => void
+  setUi: (item: keyof UiCollection, val: number) => void
 }
 
 export type UiSlice = UiState & UiActions
