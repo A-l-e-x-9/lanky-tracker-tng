@@ -32,10 +32,8 @@ import bananaMedalIcon from '../../assets/images/settings/bananamedal.gif'
 import dropIcon from '../../assets/images/settings/beaver.png'
 import bonusIcon from '../../assets/images/settings/bonus.png'
 import bananaIcon from '../../assets/images/settings/bunch.png'
-import dirtIcon from '../../assets/images/settings/dirt_patch.png'
 import shopIcon from '../../assets/images/settings/funky.png'
 import hardShootIcon from '../../assets/images/settings/hard_shoot.png'
-import kasplatIcon from '../../assets/images/settings/kasplat.png'
 import melonIcon from '../../assets/images/settings/melon.png'
 import toughBananaIcon from '../../assets/images/settings/rabbit.png'
 import slamSwitchIcon from '../../assets/images/settings/slam_switch.png'
@@ -78,6 +76,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Shops?</p>
               <SimpleIcon
                 imgUrl={shopIcon}
+                title="Puts Cranky, Funky, and Candy Kong's shops in the pool."
                 storeKey="poolShops"
                 prefix="settings"
                 updateItem={setSetting}
@@ -85,6 +84,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Tough Golden Bananas?</p>
               <SimpleIcon
                 imgUrl={toughBananaIcon}
+                title="Puts certain Bananas in the pool that the DK64 Randomizer makers mark as hard to get."
                 storeKey="poolToughBananas"
                 prefix="settings"
                 updateItem={setSetting}
@@ -92,6 +92,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Battle Crowns?</p>
               <SimpleIcon
                 imgUrl={crownIcon}
+                title="Puts Battle Arenas in the pool."
                 storeKey="poolCrowns"
                 prefix="settings"
                 updateItem={setSetting}
@@ -99,6 +100,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Blueprints?</p>
               <SimpleIcon
                 imgUrl={blueprintIcon}
+                title="Puts Kasplat checks in the pool."
                 storeKey="poolBlueprints"
                 prefix="settings"
                 updateItem={setSetting}
@@ -106,6 +108,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Boss Keys?</p>
               <SimpleIcon
                 imgUrl={keyIcon}
+                title="Puts &quot;Boss Defeated&quot; checks in the pool."
                 storeKey="poolKeys"
                 prefix="settings"
                 updateItem={setSetting}
@@ -113,6 +116,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Banana Medals?</p>
               <SimpleIcon
                 imgUrl={bananaMedalIcon}
+                title="Puts the Banana Medal checks in the pool."
                 storeKey="poolBananaMedals"
                 prefix="settings"
                 updateItem={setSetting}
@@ -120,6 +124,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Company Coins?</p>
               <SimpleIcon
                 imgUrl={companyCoinIcon}
+                title="Puts the Jetpac and DK Arcade checks in the pool."
                 storeKey="poolCompanyCoins"
                 prefix="settings"
                 updateItem={setSetting}
@@ -127,6 +132,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Banana Fairies?</p>
               <SimpleIcon
                 imgUrl={fairyIcon}
+                title="Puts Banana Fairies in the pool."
                 storeKey="poolFairies"
                 prefix="settings"
                 updateItem={setSetting}
@@ -134,6 +140,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Rainbow Coins?</p>
               <SimpleIcon
                 imgUrl={rainbowCoinIcon}
+                title="Puts the dirt patches in the pool."
                 storeKey="poolRainbowCoins"
                 prefix="settings"
                 updateItem={setSetting}
@@ -141,6 +148,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Melon Crates?</p>
               <SimpleIcon
                 imgUrl={melonIcon}
+                title="Puts melon crates in the pool."
                 storeKey="poolCrates"
                 prefix="settings"
                 updateItem={setSetting}
@@ -148,6 +156,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Pearls & Bean?</p>
               <SimpleIcon
                 imgUrl={beanIcon}
+                title="Puts the Galleon clam checks in the pool, as well as your second reward for clearing Tiny's tree stump check in Forest."
                 storeKey="poolMisc"
                 prefix="settings"
                 updateItem={setSetting}
@@ -155,6 +164,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Dropsanity?</p>
               <SimpleIcon
                 imgUrl={dropIcon}
+                title="If Dropsanity is enabled for your seed, puts the enemies in the pool."
                 storeKey="poolDrops"
                 prefix="settings"
                 updateItem={setSetting}
@@ -162,6 +172,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Wrinkly Doors?</p>
               <SimpleIcon
                 imgUrl={shopIcon}
+                title="Puts Wrinkly Kong's doors in the pool."
                 storeKey="poolWrinkly"
                 prefix="settings"
                 updateItem={setSetting}
@@ -169,6 +180,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Boulders?</p>
               <SimpleIcon
                 imgUrl={chunkyIcon}
+                title="Puts the various objects Chunky can pick up in the pool."
                 storeKey="poolBoulders"
                 prefix="settings"
                 updateItem={setSetting}
@@ -210,6 +222,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Switchsanity On?</p>
               <SimpleIcon
                 imgUrl={switchsanityIcon}
+                title="Is Switchsanity on in your seed?"
                 storeKey="isSwitchsanity"
                 prefix="settings"
                 updateItem={setSetting}
@@ -217,6 +230,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Progressive Slams?</p>
               <SimpleIcon
                 imgUrl={slamSwitchIcon}
+                title="If on, the Simian Slam level required for Kong head switches is tied to a level's position (i.e., if Creepy Castle is Level 1, it requires regular Slam instead of Super Duper). If off, the level's vanilla slam level is used."
                 storeKey="progressiveSlams"
                 prefix="settings"
                 updateItem={setSetting}
@@ -226,6 +240,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Auto-Finish Bonus Barrels?</p>
               <SimpleIcon
                 imgUrl={bonusIcon}
+                title="If this is on, you don't have to do the bonus levels for Bonus Barrel checks. Doesn't apply to Helm."
                 storeKey="autoBonus"
                 prefix="settings"
                 updateItem={setSetting}
@@ -233,6 +248,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Hard Shooting?</p>
               <SimpleIcon
                 imgUrl={hardShootIcon}
+                title="If on, certain checks that logically require Homing Ammo or Sniper Scope will instead expect you to do those checks without."
                 storeKey="hardShooting"
                 prefix="settings"
                 updateItem={setSetting}
@@ -240,6 +256,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Open Lobbies?</p>
               <SimpleIcon
                 imgUrl={keyIcon}
+                title="If on, all levels except Helm are open even if you don't have the appropriate Keys."
                 storeKey="openLobbies"
                 prefix="settings"
                 updateItem={setSetting}
@@ -247,6 +264,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Does DK phase of K. Rool require Blast?</p>
               <SimpleIcon
                 imgUrl={slamIcon}
+                title="In the vanilla game, you didn't actually need Blast to complete his phase. If this is on, however, you do."
                 storeKey="balancedRoolPhases"
                 prefix="settings"
                 updateItem={setSetting}
@@ -259,6 +277,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Japes Tunnel Gates?</p>
               <SimpleIcon
                 imgUrl={coconutIcon}
+                title="Pre-opens the gates that open after rescuing Diddy Kong in the original game."
                 storeKey="japesCoconutGates"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -266,6 +285,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Japes Hive Gate?</p>
               <SimpleIcon
                 imgUrl={featherIcon}
+                title="Pre-opens the gate to the hive area."
                 storeKey="japesHiveGate"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -273,6 +293,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Tiny Temple Ice?</p>
               <SimpleIcon
                 imgUrl={guitarIcon}
+                title="Turn this on if the ice on the pool in Aztec's Tiny Temple is already melted to start the seed; else, you will additionally need Diddy and Guitar to do certain checks there."
                 storeKey="aztecIce"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -280,6 +301,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Aztec Back Access?</p>
               <SimpleIcon
                 imgUrl={guitarIcon}
+                title="Turn this on if the big door to the second half of Aztec is pre-opened."
                 storeKey="aztecBack"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -287,6 +309,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Aztec 5 Door Temple?</p>
               <SimpleIcon
                 imgUrl={rocketIcon}
+                title="Turn this on if the 5-Door/Get Out Temple's switches are pre-spawned; else, you will need Diddy, Peanuts, Jetbarrel, and the appropriate Slam to do all checks in there."
                 storeKey="aztec5DoorTemple"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -294,6 +317,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Aztec Llama Temple?</p>
               <SimpleIcon
                 imgUrl={coconutIcon}
+                title="Turn this on if the three switches to get into the Llama Temple are pre-spawned; else, you will need DK and Blast to do all checks inside."
                 storeKey="aztecLlamaTemple"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -301,6 +325,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Factory Production Power?</p>
               <SimpleIcon
                 imgUrl={grabIcon}
+                title="Turn on if Prod Room is pre-activated. Else, you will need DK, Coconuts, and Grab to do the Prod Room checks."
                 storeKey="factoryProduction"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -308,6 +333,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Factory Testing Area?</p>
               <SimpleIcon
                 imgUrl={slamIcon}
+                title="Turn on if the upper half of Factory is pre-opened. Else, you will need a Simian Slam to explore that side."
                 storeKey="factoryTesting"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -315,6 +341,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Galleon Lighthouse Area?</p>
               <SimpleIcon
                 imgUrl={coconutIcon}
+                title="Turn this on if the lighthouse area is already open to start. Else, you will need a gun, Coconuts by default."
                 storeKey="galleonLighthouse"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -322,6 +349,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Galleon Lighthouse Power?</p>
               <SimpleIcon
                 imgUrl={grabIcon}
+                title="Turn this on if Gloomy Galleon's lighthouse is already on and the ship is already sailing when you start the level. Else, you will need DK, Climbing, and Grab to do any checks on the ship."
                 storeKey="galleonSeasick"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -329,6 +357,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Galleon Outskirts Area?</p>
               <SimpleIcon
                 imgUrl={peanutIcon}
+                title="Turn this on if you can access the shipwreck area. Else, you will need a gun to do so, Peanuts by default."
                 storeKey="galleonOutskirts"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -336,6 +365,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Treasure Room?</p>
               <SimpleIcon
                 imgUrl={lankyIcon}
+                title="Turn this on if the Treasure Room is already open to start your seed. Else, you will need Lanky to turn into Enguarde in the shipwreck area and jump through a DK star to open it."
                 storeKey="galleonTreasureRoom"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -343,6 +373,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Forest Beanstalk Area?</p>
               <SimpleIcon
                 imgUrl={beanIcon}
+                title="Turn this on if you can reach Area 2 of the Forest at the start of your seed. Else, you'll need two guns to get through the green tunnel (Feathers and Pineapples by default)."
                 storeKey="forestBeanstalk"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -350,6 +381,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Forest Owl Tree?</p>
               <SimpleIcon
                 imgUrl={grapeIcon}
+                title="Turn this on if you can reach Area 4 of the Forest by default. Else, you'll need a gun to get through a yellow tunnel from Area 3 (Grapes by default)."
                 storeKey="forestOwlTree"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -357,6 +389,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Caves Igloo Insides?</p>
               <SimpleIcon
                 imgUrl={rocketIcon}
+                title="Turn this on if the music pads are pre-spawned in front of the 5-Door Igloo in Caves. Else, you'll need Diddy and Jetbarrel to do 5DI checks."
                 storeKey="cavesIgloo"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -364,6 +397,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Ice walls in Caves pre-punched?</p>
               <SimpleIcon
                 imgUrl={chunkyIcon}
+                title="Turn this on if the ice walls in Caves have already been punched down. Else, you'll need Chunky and Primate Punch to do a few checks."
                 storeKey="cavesWalls"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -371,6 +405,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Castle Crypt rooms pre-opened?</p>
               <SimpleIcon
                 imgUrl={hardShootIcon}
+                title="Turn this on if the gun-activated gates in Creepy Castle's crypt area have been removed in your seed. Else, you'll need all five guns to do crypt/mausoleum checks."
                 storeKey="castleCrypt"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -381,6 +416,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Fast Factory Arcade?</p>
               <SimpleIcon
                 imgUrl={dkPadIcon}
+                title="If this is on, then you only have to play DK Arcade once. What would normally be the first reward instead replaces the star at the end of DK's Barrel Blast course in Factory."
                 storeKey="factoryArcade"
                 prefix="fastChecks"
                 updateItem={setFastCheck}
