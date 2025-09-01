@@ -31,7 +31,6 @@ import {
   usePineapple,
   usePunch,
   useRocket,
-  useSax,
   useShockwave,
   useSniper,
   useSprint,
@@ -224,8 +223,8 @@ export const useLankyMausoleumGb = (): LogicBool => {
   const diddy = useDiddy()
   const hasClimbing = useClimbing()
   return {
-    in: inStage && (grape || useOpenCrypt) && sprint && vine && trombone && hasClimbing,
-    out: inStage && (grape || useOpenCrypt) && (sprint || dk || diddy)
+    in: inStage && (grape || preOpened) && sprint && vine && trombone && hasClimbing,
+    out: inStage && (grape || preOpened) && (sprint || dk || diddy)
   }
 }
 /*Does the "pre-open Crypt" option affect the gate barring the way to Lanky's Banana, too? May have to change this...*/
@@ -255,7 +254,6 @@ export const useTinyTrashGb = (): LogicBool => {
   const inStage = usePlayCastle()
   const mini = useMini()
   const sax = useAnyMusic()
-  const feather = useFeather()
   const homing = useHoming()
   const hardShooting = useHardShooting()
   const anyGun = useAnyGun()
@@ -280,8 +278,8 @@ export const useTinyMausoleumGb = (): LogicBool => {
   const hasClimbing = useClimbing()
   const preOpened = useOpenCrypt()
   return {
-    in: inStage && (feather || grape || useOpenCrypt) && canSlam && twirl && hasClimbing,
-    out: useFtaTinyBanana() && inStage && (feather || grape || useOpenCrypt) && canSlam && (dk || twirl)
+    in: inStage && (feather || grape || preOpened) && canSlam && twirl && hasClimbing,
+    out: useFtaTinyBanana() && inStage && (feather || grape || preOpened) && canSlam && (dk || twirl)
   }
 }
 
