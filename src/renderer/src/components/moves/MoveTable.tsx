@@ -228,7 +228,7 @@ const MoveTable = (): JSX.Element => {
         setCount={setConsumable}
         maxValue={8}
       />
-      <SimpleIcon storeKey="barrel" imgUrl={barrelIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="barrel" title="Barrel Throwing" imgUrl={barrelIcon} prefix="moves" updateItem={setMove} />
       <CountSelector
         storeKey="pearls"
         title="Pearls"
