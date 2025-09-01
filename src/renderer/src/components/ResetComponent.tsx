@@ -1,7 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 
 import useDonkStore from '@renderer/store'
-import { Preset } from '@renderer/store/common'
 import { useState } from 'react'
 
 const ResetTracker: React.FC = () => {
