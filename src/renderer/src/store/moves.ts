@@ -42,7 +42,11 @@ export const initialMoves: MoveState = {
     triangle: false,
     trombone: false,
     twirl: false,
-    vine: false
+    vine: false,
+    cranky: true,
+    funky: true,
+    candy: true,
+    snide: true
   }
 }
 
