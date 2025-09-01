@@ -10,6 +10,7 @@ export const initialMoves: MoveState = {
     camera: false,
     charge: false,
     chunky: false,
+    climbing: false,
     coconut: false,
     diddy: false,
     dive: false,
