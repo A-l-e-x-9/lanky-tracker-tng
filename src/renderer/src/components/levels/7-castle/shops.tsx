@@ -26,7 +26,7 @@ const Vanilla: React.FC = () => {
         level="Castle"
         region="Castle Shops"
         inLogic={hasFunky && inStage && hasClimbing}
-        outLogic={hasFunkywhatAFunky && inStage}
+        outLogic={hasFunky && inStage}
       />
       <ShopGenerator
         baseId={7130}
