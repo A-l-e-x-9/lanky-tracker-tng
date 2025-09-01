@@ -660,6 +660,9 @@ interface SettingCollection {
    * Does the DK Phase of the K. Rool fight require Barrel Blast? (Known as "Balanced K. Rool Phases" in Season 3, but in Season 4, the Blast requirement became a separate thing and it became possible to require any of all three Slams for Chunky's phase.)
    */
   balancedRoolPhases: boolean
+  chunkySlamLevel: SlamRange
+  poolWrinkly: boolean
+  poolBoulders: boolean
 }
 
 export interface SettingState {
