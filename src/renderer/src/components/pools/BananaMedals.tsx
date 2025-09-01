@@ -1,4 +1,4 @@
-import { usePoolBananaMedals, usePoolBananaMedalsIsles } from '@renderer/hooks/settings'
+import { usePoolBananaMedals } from '@renderer/hooks/settings'
 
 const BananaMedalPool: React.FC<React.PropsWithChildren> = ({ children }) =>
   usePoolBananaMedals() ? <>{children}</> : null
