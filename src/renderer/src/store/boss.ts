@@ -62,7 +62,6 @@ const bossSlice: StateCreator<AllSlice, [], [], BossSlice> = (set) => {
         return state
       })
   }
-  }
 }
 
 export default bossSlice
