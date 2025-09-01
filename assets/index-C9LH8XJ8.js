@@ -14107,6 +14107,7 @@ const CastleLobbyEnemies = () => {
   const playCastle = usePlayCastle();
   const anyKong = useAnyKong();
   const kosha = useDefeatKosha();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14134,12 +14135,40 @@ const CastleLobbyEnemies = () => {
         region: "Caves-Helm Lobbies",
         canGetLogic: anyKong && playCastle && kosha
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 415,
+        name: "Isles Enemy Photo: Castle Lobby Left",
+        region: "Caves-Helm Lobbies",
+        canGetLogic: anyKong && playCastle && kosha && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 416,
+        name: "Isles Enemy Photo: Castle Lobby Near Right",
+        region: "Caves-Helm Lobbies",
+        canGetLogic: anyKong && playCastle && kosha && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 417,
+        name: "Isles Enemy Photo: Castle Lobby Far Right",
+        region: "Caves-Helm Lobbies",
+        canGetLogic: anyKong && playCastle && kosha && hasFairyCam
+      }
     )
   ] });
 };
 const IslesMainEnemies = () => {
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14185,6 +14214,51 @@ const IslesMainEnemies = () => {
         region: "Main Isle",
         canGetLogic: anyKong
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 400,
+        name: "Isles Enemy Photo: Pineapple Cage 0",
+        region: "Main Isle",
+        canGetLogic: anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 401,
+        name: "Isles Enemy Photo: Pineapple Cage 1",
+        region: "Main Isle",
+        canGetLogic: anyKong && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 402,
+        name: "Isles Enemy Photo: Fungi Cannon 0",
+        region: "Main Isle",
+        canGetLogic: anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 403,
+        name: "Isles Enemy Photo: Fungi Cannon 1",
+        region: "Main Isle",
+        canGetLogic: anyKong && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 404,
+        name: "Isles Enemy Photo: Japes Entrance",
+        region: "Main Isle",
+        canGetLogic: anyKong && hasFairyCam
+      }
     )
   ] });
 };
@@ -14192,19 +14266,32 @@ const FactoryLobbyEnemies = () => {
   const anyKong = useAnyKong();
   const playFactory = usePlayFactory();
   const zinger = useDefeatZinger();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    IslesCheck,
-    {
-      id: 314,
-      name: "Isles Enemy: Factory Lobby",
-      region: "Japes-Forest Lobbies",
-      canGetLogic: anyKong && playFactory && zinger
-    }
-  ) });
+  const hasFairyCam = useCamera();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 314,
+        name: "Isles Enemy: Factory Lobby",
+        region: "Japes-Forest Lobbies",
+        canGetLogic: anyKong && playFactory && zinger
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 414,
+        name: "Isles Enemy Photo: Factory Lobby",
+        region: "Japes-Forest Lobbies",
+        canGetLogic: anyKong && playFactory && zinger && hasFairyCam
+      }
+    )
+  ] });
 };
 const JapesLobbyEnemies = () => {
   const anyKong = useAnyKong();
   const playJapes = usePlayJapes();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14223,6 +14310,24 @@ const JapesLobbyEnemies = () => {
         region: "Japes-Forest Lobbies",
         canGetLogic: anyKong && playJapes
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 410,
+        name: "Isles Enemy Photo: Japes Lobby 0",
+        region: "Japes-Forest Lobbies",
+        canGetLogic: anyKong && playJapes && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 411,
+        name: "Isles Enemy Photo: Japes Lobby 1",
+        region: "Japes-Forest Lobbies",
+        canGetLogic: anyKong && playJapes && hasFairyCam
+      }
     )
   ] });
 };
@@ -14230,19 +14335,31 @@ const JapesForestEnemies = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyEnemies, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyEnemies, {})
 ] });
-const KremBaseEnemies = () => /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  IslesCheck,
-  {
-    id: 305,
-    name: "Isles Enemy: Monkeyport Pad",
-    region: "Krem Isle",
-    canGetLogic: useAnyKong()
-  }
-) });
+const KremBaseEnemies = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 305,
+      name: "Isles Enemy: Monkeyport Pad",
+      region: "Krem Isle",
+      canGetLogic: useAnyKong()
+    }
+  ),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 405,
+      name: "Isles Enemy Photo: Monkeyport Pad",
+      region: "Krem Isle",
+      canGetLogic: useAnyKong() && useCamera()
+    }
+  )
+] });
 const KremLiftEnemies = () => {
   const anyKong = useAnyKong();
   const kremAscent = useIslesKremAscent();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14270,21 +14387,60 @@ const KremLiftEnemies = () => {
         region: "Krem Isle",
         canGetLogic: anyKong && kremAscent && zinger
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 406,
+        name: "Isles Enemy Photo: Upper Factory Path",
+        region: "Krem Isle",
+        canGetLogic: anyKong && kremAscent && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 408,
+        name: "Isles Enemy Photo: Lower Factory Path 0",
+        region: "Krem Isle",
+        canGetLogic: anyKong && kremAscent && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 409,
+        name: "Isles Enemy Photo: Lower Factory Path 1",
+        region: "Krem Isle",
+        canGetLogic: anyKong && kremAscent && zinger && hasFairyCam
+      }
     )
   ] });
 };
 const NearAztecEnemies = () => {
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    IslesCheck,
-    {
-      id: 307,
-      name: "Isles Enemy: Near Aztec",
-      region: "Main Isle",
-      canGetLogic: anyKong && zinger
-    }
-  ) });
+  const hasFairyCam = useCamera();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 307,
+        name: "Isles Enemy: Near Aztec",
+        region: "Main Isle",
+        canGetLogic: anyKong && zinger
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 407,
+        name: "Isles Enemy Photo: Near Aztec",
+        region: "Main Isle",
+        canGetLogic: anyKong && zinger && hasFairyCam
+      }
+    )
+  ] });
 };
 const EnemyLocations$8 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainEnemies, {}),
