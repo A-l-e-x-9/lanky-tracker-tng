@@ -49,8 +49,8 @@ const customStyles: Modal.Styles = {
 
 const GeneratorSettings: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
-  const [setSetting, setBarrier, setFastCheck, setPearls, setUi] = useDonkStore(
-    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setPearls, state.setUi])
+  const [setSetting, setBarrier, setFastCheck, setUi] = useDonkStore(
+    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi])
   )
 
   const openModal = (): void => setOpen(true)
@@ -429,7 +429,7 @@ const GeneratorSettings: React.FC = () => {
                 title="How many Pearls must you give the Mermaid to get her reward?"
                 imgUrl={pearlIcon}
                 prefix="fastChecks"
-                setCount={setPearls}
+                setCount={setFastCheck}
                 maxValue={5}
               />
             </>
