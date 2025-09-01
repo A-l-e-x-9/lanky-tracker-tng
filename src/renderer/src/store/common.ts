@@ -868,7 +868,7 @@ export interface BossState {
 
 interface BossActions {
   setBoss: (index: number, name: Boss) => void
-  setKey: (index: number, isSet: boolean) => void
+  setLogicState: (index: number, isSet: boolean) => void
 }
 
 export type BossSlice = BossState & BossActions
