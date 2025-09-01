@@ -15,7 +15,7 @@ const FactoryBlast: React.FC = () => {
     <FactoryCheck
     id={3003}
     name="Factory DK Barrel Blast and DK Arcade Round 1"
-    region="Storage and Arcade"
+    region="Storage And Arcade"
     canGetLogic={useDkBlastGb()}
     />
     </ToughGoldenBanana>
