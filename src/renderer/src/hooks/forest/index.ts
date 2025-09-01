@@ -22,7 +22,6 @@ import {
   useFtaTinyBanana,
   useFtaTinyBlueprint,
   useGrab,
-  useGrape,
   useGuitar,
   useHighGrab,
   useHoming,
@@ -392,7 +391,6 @@ export const useTinyAntGb = (): boolean => {
 
 export const useTinySpiderGb = (): LogicBool => {
   const spider = useForestSpiderBoss()
-  const feather = useFeather()
   const anyGun = useAnyGun()
   const kong = useFtaTinyBanana()
   return {
@@ -436,7 +434,7 @@ export const useBarnFairy = (): LogicBool => {
   const hasClimbing = useClimbing()
   const camera = useCamera()
   return {
-    in: barn.in && useClimbing && camera,
+    in: barn.in && hasClimbing && camera,
     out: barn.out && camera
   }
 }
