@@ -4,7 +4,7 @@
   "description": "An DK 64 Rando Tracker Electron application with React and TypeScript",
   "main": "./out/main/index.js",
   "author": "A-l-e-x-99, previously wolfman2000",
-  "homepage": "https://a-l-e-x-9.github.io",
+  "homepage": "https://a-l-e-x-9.github.io/lanky-tracker-tng",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
