@@ -5,6 +5,7 @@ export const initialBarriers: BarrierState = {
   removeBarriers: {
     japesCoconutGates: false,
     japesHiveGate: false,
+    aztecIce: false,
     aztecBack: false,
     aztec5DoorTemple: false,
     aztecLlamaTemple: false,
@@ -13,9 +14,12 @@ export const initialBarriers: BarrierState = {
     galleonLighthouse: false,
     galleonOutskirts: false,
     galleonSeasick: false,
+    galleonTreasureRoom: false,
     forestBeanstalk: false,
     forestOwlTree: false,
-    cavesIgloo: false
+    cavesIgloo: false,
+    cavesWalls: false,
+    castleCrypt: false
   }
 }
 
