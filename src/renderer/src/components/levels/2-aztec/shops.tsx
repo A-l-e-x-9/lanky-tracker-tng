@@ -73,7 +73,7 @@ const Shuffled: React.FC = () => {
         level="Aztec"
         region="Aztec Shops"
         inLogic={hasCandy && aztecFront.in}
-        outLogic={hasCAndy && aztecFront.out}
+        outLogic={hasCandy && aztecFront.out}
       />
       <ShopGenerator
         baseId={2170}
