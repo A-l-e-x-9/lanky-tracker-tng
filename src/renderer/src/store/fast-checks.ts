@@ -14,7 +14,7 @@ const fastCheckSlice: StateCreator<AllSlice, [], [], FastCheckSlice> = (set) => 
     ...initialFastChecks,
     setFastCheck: (id, val): void => {
       set((state) => {
-        const target: Record<string, boolean> = {}
+        const target: Record<string, boolean | number> = {}
         target[id] = val
         state = {
           ...state,
