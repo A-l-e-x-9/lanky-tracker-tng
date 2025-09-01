@@ -1,7 +1,7 @@
 import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { usePlayCaves, useCanAccessSnide } from '@renderer/hooks/caves'
-import { usePunch, useCranky, whatAFunky, useCandy } from '@renderer/hooks/kongs'
+import { useCranky, whatAFunky, useCandy } from '@renderer/hooks/kongs'
 import { useShuffledShops } from '@renderer/hooks/settings'
 
 const Vanilla: React.FC = () => {
