@@ -2,7 +2,7 @@ import { WheelEvent } from 'react'
 import { useShallow } from 'zustand/react/shallow'
 
 import useDonkStore from '@renderer/store'
-import Boss from '@renderer/store/common'
+import { Boss } from '@renderer/store/common'
 import { useAnyKong, useBarrel, useBlast, useDk, useFeather, useGone, useHunky, useMini, useOrange, usePeanut, usePunch, useRocket, useSlam, useTiny, useTrombone, useTwirl } from '@renderer/hooks/kongs'
 import { useBalancedRoolPhase } from '@renderer/hooks/settings'
 
