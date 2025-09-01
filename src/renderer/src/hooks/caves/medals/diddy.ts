@@ -1,6 +1,5 @@
 import { useDiddy, useGuitar, usePeanut, useRocket, useSpring } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { logicBreak } from '@renderer/hooks/world'
 import { useCavesIgloo, useCavesMiniFunky, usePlayCaves } from '..'
 
 const useDiddyMedalCommonLogic = (): number => {
