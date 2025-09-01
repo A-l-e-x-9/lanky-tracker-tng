@@ -63,9 +63,6 @@ import {
   useTwirl,
   useVine,
   useClimbing,
-  useCranky,
-  whatAFunky,
-  useCandy,
   useSnide,
   useBarrel
 } from '../kongs'
@@ -205,7 +202,7 @@ export const useIslesHelmEntry = (): boolean => {
   const [islesHelm] = useDonkStore(useShallow((state) => [state.switchsanitySwitches.islesHelm]))
   const target = isSwitchsanity ? islesHelm : 0
   switch (target) {
-    case 0:
+    default:
       return gone
     case 1:
       return grab
