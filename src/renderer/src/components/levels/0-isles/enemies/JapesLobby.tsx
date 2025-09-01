@@ -1,11 +1,12 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { usePlayJapes } from '@renderer/hooks/japes'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 
 const JapesLobbyEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const playJapes = usePlayJapes()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <IslesCheck
@@ -19,6 +20,18 @@ const JapesLobbyEnemies: React.FC = () => {
         name="Isles Enemy: Japes Lobby 1"
         region="Japes-Forest Lobbies"
         canGetLogic={anyKong && playJapes}
+      />
+      <IslesCheck
+        id={410}
+        name="Isles Enemy Photo: Japes Lobby 0"
+        region="Japes-Forest Lobbies"
+        canGetLogic={anyKong && playJapes && hasFairyCam}
+      />
+      <IslesCheck
+        id={411}
+        name="Isles Enemy Photo: Japes Lobby 1"
+        region="Japes-Forest Lobbies"
+        canGetLogic={anyKong && playJapes && hasFairyCam}
       />
     </DropPool>
   )

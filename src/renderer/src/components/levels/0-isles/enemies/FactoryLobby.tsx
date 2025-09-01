@@ -1,13 +1,14 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatZinger } from '@renderer/hooks/enemies'
 import { usePlayFactory } from '@renderer/hooks/factory'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 
 const FactoryLobbyEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const playFactory = usePlayFactory()
   const zinger = useDefeatZinger()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <IslesCheck
@@ -15,6 +16,12 @@ const FactoryLobbyEnemies: React.FC = () => {
         name="Isles Enemy: Factory Lobby"
         region="Japes-Forest Lobbies"
         canGetLogic={anyKong && playFactory && zinger}
+      />
+      <IslesCheck
+        id={414}
+        name="Isles Enemy Photo: Factory Lobby"
+        region="Japes-Forest Lobbies"
+        canGetLogic={anyKong && playFactory && zinger && hasFairyCam}
       />
     </DropPool>
   )
