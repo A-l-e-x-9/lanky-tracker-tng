@@ -13,7 +13,6 @@ import {
   useChunky,
   useDiddy,
   useDk,
-  useFeather,
   useFtaChunkyBlueprint,
   useFtaDiddyBanana,
   useFtaDiddyBlueprint,
