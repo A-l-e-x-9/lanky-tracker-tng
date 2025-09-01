@@ -2,13 +2,13 @@ import { StateCreator } from 'zustand'
 import { AllSlice, Boss, BossState, donkResetFns } from './common'
 
 export const initialBoss: BossState = {
-  boss1: 'state1',
-  boss2: 'state2',
-  boss3: 'state3',
-  boss4: 'state4',
-  boss5: 'state5',
-  boss6: 'state6',
-  boss7: 'state7'
+  boss1: '',
+  boss2: '',
+  boss3: '',
+  boss4: '',
+  boss5: '',
+  boss6: '',
+  boss7: ''
 }
 
 interface BossSlice {
