@@ -1,5 +1,3 @@
-import useDonkStore from '@renderer/store'
-import { useShallow } from 'zustand/react/shallow'
 import TunnelBoulder from './TunnelBoulder'
 import CircleVase from './CircleVase'
 import ColonVase from './ColonVase'
