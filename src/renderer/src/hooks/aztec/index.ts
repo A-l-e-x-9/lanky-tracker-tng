@@ -358,11 +358,6 @@ const useFreeLankySwitch = (): LogicBool => {
   const triangle = useTriangle()
   const freeLanky = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeLanky))
   switch (freeLanky) {
-    case 0:
-      return {
-        in: coconut && bongos,
-        out: bongos
-      }
     case 1:
       return { in: peanut && guitar, out: guitar }
     case 2:
@@ -371,6 +366,8 @@ const useFreeLankySwitch = (): LogicBool => {
       return { in: feather && sax, out: sax }
     case 4:
       return { in: pineapple && triangle, out: triangle }
+    default:
+      return { in: coconut && bongos, out: bongos }
   }
 }
 
