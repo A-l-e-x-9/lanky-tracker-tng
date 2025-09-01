@@ -25,7 +25,7 @@ import BoulderCheck from './boulder'
 
 const ClassicChecks: React.FC = () => (
 <div>
-  <p class="not-available"><strong>WARNING:</strong> If you don't have Climbing and you attempt to do any check in the Crypt area, you won't be able to get back up without killing your Kong or pause-exiting, then re-entering. For that reason, all checks involving this area in some way will be yellow if you indicated that you didn't have Climbing in the moves table!</p>
+  <p className="not-available"><strong>WARNING:</strong> If you don't have Climbing and you attempt to do any check in the Crypt area, you won't be able to get back up without killing your Kong or pause-exiting, then re-entering. For that reason, all checks involving this area in some way will be yellow if you indicated that you didn't have Climbing in the moves table!</p>
   <div className="grid">
     <DkBananas />
     <DiddyBananas />
