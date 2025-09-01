@@ -39,7 +39,6 @@ const Vanilla: React.FC = () => {
 
 const Shuffled: React.FC = () => {
   const inStage = usePlayCaves()
-  const punch = usePunch()
   const hasCranky = useCranky()
   const hasFunky = whatAFunky()
   const hasCandy = useCandy()
@@ -66,7 +65,7 @@ const Shuffled: React.FC = () => {
         baseName="Caves Candy Location"
         level="Caves"
         region="Caves Shops"
-        inLogic={hasCandy && instage}
+        inLogic={hasCandy && inStage}
       />
       <ShopGenerator
         baseId={6170}
