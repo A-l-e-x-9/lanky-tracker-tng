@@ -2,6 +2,7 @@ import useDonkStore from '../../store'
 
 type SimpleIconProps = {
   storeKey: string
+  title: string
   imgUrl: string
   prefix: string
   className?: string
