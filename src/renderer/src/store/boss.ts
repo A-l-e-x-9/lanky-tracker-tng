@@ -8,7 +8,14 @@ export const initialBoss: BossState = {
   boss4: '',
   boss5: '',
   boss6: '',
-  boss7: ''
+  boss7: '',
+  state1: false,
+  state2: false,
+  state3: false,
+  state4: false,
+  state5: false,
+  state6: false,
+  state7: false
 }
 
 interface BossSlice {
@@ -19,7 +26,15 @@ interface BossSlice {
   boss5: Boss
   boss6: Boss
   boss7: Boss
+  state1: boolean
+  state2: boolean
+  state3: boolean
+  state4: boolean
+  state5: boolean
+  state6: boolean
+  state7: boolean
   setBoss: (index: number, name: string) => void
+  setLogicState: (index: number, isSet: boolean) => void
 }
 
 const bossSlice: StateCreator<AllSlice, [], [], BossSlice> = (set) => {
@@ -35,7 +50,18 @@ const bossSlice: StateCreator<AllSlice, [], [], BossSlice> = (set) => {
           ...newKey
         }
         return state
+      }),
+    setLogicState: (index, isSet) =>
+      set((state) => {
+        const newKey: Record<number, boolean> = {}
+        newKey['key' + index] = isSet
+        state = {
+          ...state,
+          ...newKey
+        }
+        return state
       })
+  }
   }
 }
 
