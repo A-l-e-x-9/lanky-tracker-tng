@@ -5,7 +5,6 @@ import { useShuffledShops, useBananaportAll } from '@renderer/hooks/settings'
 import { useCranky, whatAFunky, useSnide, useClimbing } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
-  const playJapes = usePlayJapes()
   const kongGates = useJapesKongGates()
   const climbing = useClimbing()
   const bananaport = useBananaportAll()
