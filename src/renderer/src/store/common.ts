@@ -185,6 +185,10 @@ interface MoveCollection {
    * These are progressive: value of 2 covers values of 1, and 3 covers 1 & 2.
    */
   slam: SlamRange
+  cranky: boolean
+  funky: boolean
+  candy: boolean
+  snide: boolean
 }
 
 export interface MoveState {
