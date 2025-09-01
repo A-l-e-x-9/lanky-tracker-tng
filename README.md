@@ -19,7 +19,7 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 - Changing the "Slam level required for Chunky phase of K. Rool" also changes what level of Simian Slam you have in the moves section...must separate these two. Likely related, the Chunky phase checker currently only checks to see if you have a Slam at all, and not what level of Slam it is.
 - The Banana Medal checks may not have been properly updated to account for whether Climbing is required for them or not, and Alex probably poorly implemented the Isles Medals.
 - When grouping by regions, the new checks that weren't in the original Lanky Tracker don't show up...must find what went wrong there.
-- Change all the defaults for the settings, so that all "Items in Pool" are on, "Colored Bananas needed for Medal" defaults to 75, "Fairies needed for the Fairy's reward" defaults to 20, and all "World Settings" are off by default except for "Progressive Slams?" Also, change the progressive Slam settings to account for the fact that you can now customize how progressive they are as of the Version 5 Dev Randomizer.
+- Change the progressive Slam settings to account for the fact that you can now customize how progressive they are as of the Version 5 Dev Randomizer.
 - Make it so that the tracker doesn't get wider when you set Fungi Forest time to dusk...instead, make it so that the tracker is wide all the time.
 - Alex took out the "Region Hints" section of the original Tracker because he thought it was poorly done, as well as the "Location Shuffle Settings" section of the settings...should reimplement both somehow.
 - Need an easy way to reset the tracker if need be.
