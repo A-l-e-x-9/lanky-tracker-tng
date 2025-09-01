@@ -42,4 +42,4 @@ jobs:
       with:
         folder: out/renderer/
         ssh-key: ${{ secrets.WEB_DEPLOY_KEY }}
-        repository-name: wolfman2000/wolfman2000.github.io
+        repository-name: a-l-e-x-9/a-l-e-x-9.github.io/lanky-tracker-tng
