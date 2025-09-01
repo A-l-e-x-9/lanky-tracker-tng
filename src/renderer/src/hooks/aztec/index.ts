@@ -399,9 +399,12 @@ export const useLankyVultureGb = (): LogicBool => {
   }
 }
 
-export const useArena = (): boolean => {
+export const useArena = (): LogicBool => {
   const didVultureGb = useLankyVultureGb()
-  return didVultureGb
+  return {
+    in: didVultureGb.in,
+    out: didVultureGb.out
+  }
 }
 
 export const useLanky5DoorGb = (): LogicBool => {
