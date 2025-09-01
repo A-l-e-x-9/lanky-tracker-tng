@@ -412,7 +412,7 @@ export interface FastCheckState {
 }
 
 interface FastCheckActions {
-  setFastCheck: (id: string, val: boolean) => void
+  setFastCheck: (id: string, val: boolean | number) => void
 }
 
 export type FastCheckSlice = FastCheckState & FastCheckActions
