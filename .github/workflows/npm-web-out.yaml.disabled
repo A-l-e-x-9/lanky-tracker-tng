@@ -42,4 +42,4 @@ jobs:
       with:
         folder: out/renderer/
         ssh-key: ${{ secrets.WEB_DEPLOY_KEY }}
-        repository-name: a-l-e-x-9/a-l-e-x-9.github.io/lanky-tracker-tng
+        repository-name: a-l-e-x-9/a-l-e-x-99.github.io
