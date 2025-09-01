@@ -27,7 +27,6 @@ import grapeIcon from '../../assets/images/lanky_gun.png'
 import companyCoinIcon from '../../assets/images/n64rw_coin.png'
 import pearlIcon from '../../assets/images/pearl.png'
 import rainbowCoinIcon from '../../assets/images/rainbowcoin.png'
-import arenaIcon from '../../assets/images/settings/arena.png'
 import bananaMedalIcon from '../../assets/images/settings/bananamedal.gif'
 import dropIcon from '../../assets/images/settings/beaver.png'
 import bonusIcon from '../../assets/images/settings/bonus.png'
@@ -191,6 +190,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Medals needed for Jetpac?</p>
               <CountSelector
                 imgUrl={bananaMedalIcon}
+                title="Number of Banana Medals you need for Jetpac."
                 storeKey="jetpacCount"
                 prefix="settings"
                 setCount={setSetting}
@@ -199,6 +199,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Colored bananas needed for medal?</p>
               <CountSelector
                 imgUrl={bananaIcon}
+                title="Number of regular bananas you need for a Medal."
                 storeKey="cbCount"
                 prefix="settings"
                 setCount={setSetting}
@@ -209,6 +210,7 @@ const GeneratorSettings: React.FC = () => {
               </p>
               <CountSelector
                 imgUrl={fairyIcon}
+                title="Number of Fairies you need for the Rareware Banana."
                 storeKey="fairyCount"
                 prefix="settings"
                 setCount={setSetting}
@@ -424,6 +426,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Number of pearls the Mermaid requires:</p>
               <CountSelector
                 storeKey="galleonMermaid"
+                title="How many Pearls must you give the Mermaid to get her reward?"
                 imgUrl={pearlIcon}
                 prefix="fastChecks"
                 setCount={setFastCheck}
