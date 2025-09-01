@@ -876,7 +876,6 @@ export type AllSlice = CheckSlice &
   BossSlice &
   HintSlice &
   FastCheckSlice &
-  PresetSlice &
   EndingSlice &
   UiSlice
 
