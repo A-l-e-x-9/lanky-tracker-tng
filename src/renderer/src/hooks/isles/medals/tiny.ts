@@ -1,8 +1,5 @@
 import { useFeather, useMini, useTiny } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import {
-  useBananaport
-} from '..'
 
 export const useTinyMedalInLogic = (): number => {
   const kong = useTiny()
