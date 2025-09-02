@@ -2,7 +2,7 @@ import DropPool from '@renderer/components/pools/Drops'
 import { useAztecLlamaTemple } from '@renderer/hooks/aztec'
 import { useDefeatPurpleKlaptrap } from '@renderer/hooks/enemies'
 import { logicBreak } from '@renderer/hooks/world'
-import { useGrape, useCamera } from @'renderer/hooks/kongs'
+import { useGrape, useCamera } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 
 const LlamaTempleEnemies: React.FC = () => {
