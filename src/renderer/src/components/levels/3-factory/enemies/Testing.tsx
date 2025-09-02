@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatRoboKremling, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useFactoryTesting, usePlayFactory } from '@renderer/hooks/factory'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 
 const TestingEnemies: React.FC = () => {
@@ -10,6 +10,7 @@ const TestingEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const robo = useDefeatRoboKremling()
   const zinger = useDefeatZinger()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <FactoryCheck
@@ -41,6 +42,36 @@ const TestingEnemies: React.FC = () => {
         name="Factory Enemy: To Block Tower Tunnel"
         region="Testing Area"
         canGetLogic={inStage && zinger}
+      />
+      <FactoryCheck
+        id={3405}
+        name="Factory Enemy Photo: Block Tower 0"
+        region="Testing Area"
+        canGetLogic={testing && anyKong && hasFairyCam}
+      />
+      <FactoryCheck
+        id={3406}
+        name="Factory Enemy Photo: Block Tower 1"
+        region="Testing Area"
+        canGetLogic={testing && anyKong && hasFairyCam}
+      />
+      <FactoryCheck
+        id={3407}
+        name="Factory Enemy Photo: Block Tower 2"
+        region="Testing Area"
+        canGetLogic={testing && anyKong && hasFairyCam}
+      />
+      <FactoryCheck
+        id={3411}
+        name="Factory Enemy Photo: Tunnel to Block Tower"
+        region="Testing Area"
+        canGetLogic={testing && robo && hasFairyCam}
+      />
+      <FactoryCheck
+        id={3416}
+        name="Factory Enemy Photo: To Block Tower Tunnel"
+        region="Testing Area"
+        canGetLogic={inStage && zinger && hasFairyCam}
       />
     </DropPool>
   )
