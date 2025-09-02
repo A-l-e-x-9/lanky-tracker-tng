@@ -17795,6 +17795,7 @@ const BeforeOasisEnemies = () => {
   const inStage = useAztecFront();
   const pineapple = usePineapple();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -17865,6 +17866,76 @@ const BeforeOasisEnemies = () => {
         canGetLogic: inStage.in && zinger,
         canGetBreak: logicBreak(inStage) && zinger
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2400,
+        name: "Aztec Enemy Photo: Vase 0",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && pineapple && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && pineapple && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2401,
+        name: "Aztec Enemy Photo: Vase 1",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && pineapple && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && pineapple && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2502,
+        name: "Aztec Enemy Photo: Vase 2",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && pineapple && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && pineapple && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2408,
+        name: "Aztec Enemy Photo: Starting Tunnel 0",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && anyKong && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2409,
+        name: "Aztec Enemy Photo: Starting Tunnel 1",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && anyKong && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2410,
+        name: "Aztec Enemy Photo: Starting Tunnel 2",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && zinger && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2411,
+        name: "Aztec Enemy Photo: Starting Tunnel 3",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && zinger && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && zinger && hasFairyCam
+      }
     )
   ] });
 };
@@ -17872,12 +17943,13 @@ const ConnectorTunnelEnemies = () => {
   const anyKong = useAnyKong();
   const inStage = useAztecBack();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2302,
-        name: "Aztec Enemy Tunnel Pad 0",
+        name: "Aztec Enemy: Tunnel Pad 0",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && zinger,
         canGetBreak: logicBreak(inStage) && zinger
@@ -17887,7 +17959,7 @@ const ConnectorTunnelEnemies = () => {
       AztecCheck,
       {
         id: 2303,
-        name: "Aztec Enemy Tunnel Pad 1",
+        name: "Aztec Enemy: Tunnel Pad 1",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && zinger,
         canGetBreak: logicBreak(inStage) && zinger
@@ -17932,6 +18004,66 @@ const ConnectorTunnelEnemies = () => {
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2402,
+        name: "Aztec Enemy Photo: Tunnel Pad 0",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && zinger && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2403,
+        name: "Aztec Enemy Photo: Tunnel Pad 1",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && zinger && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2404,
+        name: "Aztec Enemy Photo: Tunnel Cage 0",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && anyKong && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2405,
+        name: "Aztec Enemy Photo: Tunnel Cage 1",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && anyKong && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2406,
+        name: "Aztec Enemy Photo: Tunnel Cage 2",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && anyKong && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2407,
+        name: "Aztec Enemy Photo: Tunnel Cage 3",
+        region: "Various Aztec Tunnels",
+        canGetLogic: inStage.in && anyKong && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
+      }
     )
   ] });
 };
@@ -17940,6 +18072,7 @@ const Chunky5Enemies = () => {
   const pineapple = usePineapple();
   const zinger = useDefeatZinger();
   const klobber = useDefeatKlobber();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -17990,6 +18123,56 @@ const Chunky5Enemies = () => {
         canGetLogic: door.in && pineapple && zinger,
         canGetBreak: logicBreak(door) && pineapple && zinger
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2446,
+        name: "Aztec Enemy Photo: Chunky 5DT Start Right",
+        region: "5 Door Temple",
+        canGetLogic: door.in && pineapple && klobber && hasFairyCam,
+        canGetBreak: logicBreak(door) && pineapple && klobber && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2447,
+        name: "Aztec Enemy Photo: Chunky 5DT Start Left",
+        region: "5 Door Temple",
+        canGetLogic: door.in && pineapple && klobber && hasFairyCam,
+        canGetBreak: logicBreak(door) && pineapple && klobber && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2448,
+        name: "Aztec Enemy Photo: Chunky 5DT Second Right",
+        region: "5 Door Temple",
+        canGetLogic: door.in && pineapple && klobber && hasFairyCam,
+        canGetBreak: logicBreak(door) && pineapple && klobber && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2449,
+        name: "Aztec Enemy Photo: Chunky 5DT Second Left",
+        region: "5 Door Temple",
+        canGetLogic: door.in && pineapple && klobber && hasFairyCam,
+        canGetBreak: logicBreak(door) && pineapple && klobber && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2450,
+        name: "Aztec Enemy Photo: Chunky 5DT Reward",
+        region: "5 Door Temple",
+        canGetLogic: door.in && pineapple && zinger && hasFairyCam,
+        canGetBreak: logicBreak(door) && pineapple && zinger && hasFairyCam
+      }
     )
   ] });
 };
@@ -17998,6 +18181,7 @@ const Diddy5Enemies = () => {
   const peanut = usePeanut();
   const klobber = useDefeatKlobber();
   const klump = useDefeatKlump();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -18068,6 +18252,76 @@ const Diddy5Enemies = () => {
         canGetLogic: door.in && peanut,
         canGetBreak: logicBreak(door) && peanut
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2428,
+        name: "Aztec Enemy Photo: Diddy 5DT End Trap 0",
+        region: "5 Door Temple",
+        canGetLogic: door.in && peanut && klobber && hasFairyCam,
+        canGetBreak: logicBreak(door) && peanut && klobber && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2429,
+        name: "Aztec Enemy Photo: Diddy 5DT End Trap 1",
+        region: "5 Door Temple",
+        canGetLogic: door.in && peanut && klobber && hasFairyCam,
+        canGetBreak: logicBreak(door) && peanut && klobber && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2430,
+        name: "Aztec Enemy Photo: Diddy 5DT End Trap 2",
+        region: "5 Door Temple",
+        canGetLogic: door.in && peanut && klobber && hasFairyCam,
+        canGetBreak: logicBreak(door) && peanut && klobber && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2431,
+        name: "Aztec Enemy Photo: Diddy 5DT Start Left 0",
+        region: "5 Door Temple",
+        canGetLogic: door.in && peanut && hasFairyCam,
+        canGetBreak: logicBreak(door) && peanut && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2432,
+        name: "Aztec Enemy Photo: Diddy 5DT Start Left 1",
+        region: "5 Door Temple",
+        canGetLogic: door.in && peanut && hasFairyCam,
+        canGetBreak: logicBreak(door) && peanut && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2433,
+        name: "Aztec Enemy Photo: Diddy 5DT Reward",
+        region: "5 Door Temple",
+        canGetLogic: door.in && peanut && klump && hasFairyCam,
+        canGetBreak: logicBreak(door) && peanut && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2434,
+        name: "Aztec Enemy Photo: Diddy 5DT Second Switch",
+        region: "5 Door Temple",
+        canGetLogic: door.in && peanut && hasFairyCam,
+        canGetBreak: logicBreak(door) && peanut && hasFairyCam
+      }
     )
   ] });
 };
@@ -18076,6 +18330,7 @@ const Dk5Enemies = () => {
   const coconut = useCoconut();
   const kaboom = useDefeatKaboom();
   const klaptrap = useDefeatPurpleKlaptrap();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -18166,6 +18421,96 @@ const Dk5Enemies = () => {
         canGetLogic: door.in && coconut && klaptrap,
         canGetBreak: logicBreak(door) && coconut && klaptrap
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2419,
+        name: "Aztec Enemy: DK 5DT Start Trap 0",
+        region: "5 Door Temple",
+        canGetLogic: door.in && coconut && kaboom && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && kaboom && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2420,
+        name: "Aztec Enemy: DK 5DT Start Trap 1",
+        region: "5 Door Temple",
+        canGetLogic: door.in && coconut && kaboom && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && kaboom && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2421,
+        name: "Aztec Enemy: DK 5DT Start Trap 2",
+        region: "5 Door Temple",
+        canGetLogic: door.in && coconut && kaboom && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && kaboom && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2422,
+        name: "Aztec Enemy: DK 5DT End Trap 0",
+        region: "5 Door Temple",
+        canGetLogic: door.in && coconut && kaboom && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && kaboom && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2423,
+        name: "Aztec Enemy: DK 5DT End Trap 1",
+        region: "5 Door Temple",
+        canGetLogic: door.in && coconut && kaboom && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && kaboom && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2424,
+        name: "Aztec Enemy: DK 5DT End Trap 2",
+        region: "5 Door Temple",
+        canGetLogic: door.in && coconut && kaboom && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && kaboom && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2425,
+        name: "Aztec Enemy: DK 5DT End Path 0",
+        region: "5 Door Temple",
+        canGetLogic: door.in && coconut && klaptrap && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && klaptrap && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2426,
+        name: "Aztec Enemy: DK 5DT End Path 1",
+        region: "5 Door Temple",
+        canGetLogic: door.in && coconut && klaptrap && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && klaptrap && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2427,
+        name: "Aztec Enemy: DK 5DT Start Path",
+        region: "5 Door Temple",
+        canGetLogic: door.in && coconut && klaptrap && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && klaptrap && hasFairyCam
+      }
     )
   ] });
 };
@@ -18173,6 +18518,7 @@ const Lanky5Enemies = () => {
   const door = useAztec5DoorTemple();
   const grape = useGrape();
   const klump = useDefeatKlump();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -18203,6 +18549,36 @@ const Lanky5Enemies = () => {
         canGetLogic: door.in && grape && klump,
         canGetBreak: logicBreak(door) && grape && klump
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2435,
+        name: "Aztec Enemy Photo: Lanky 5DT Joining Paths",
+        region: "5 Door Temple",
+        canGetLogic: door.in && grape && klump && hasFairyCam,
+        canGetBreak: logicBreak(door) && grape && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2436,
+        name: "Aztec Enemy Photo: Lanky 5DT End Trap",
+        region: "5 Door Temple",
+        canGetLogic: door.in && grape && klump && hasFairyCam,
+        canGetBreak: logicBreak(door) && grape && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2437,
+        name: "Aztec Enemy Photo: Lanky 5DT Reward",
+        region: "5 Door Temple",
+        canGetLogic: door.in && grape && klump && hasFairyCam,
+        canGetBreak: logicBreak(door) && grape && klump && hasFairyCam
+      }
     )
   ] });
 };
@@ -18210,6 +18586,7 @@ const Tiny5Enemies = () => {
   const door = useAztec5DoorTemple();
   const feather = useFeather();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -18290,12 +18667,94 @@ const Tiny5Enemies = () => {
         canGetLogic: door.in && feather && zinger,
         canGetBreak: logicBreak(door) && feather && zinger
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2438,
+        name: "Aztec Enemy Photo: Tiny 5DT Start Right Front",
+        region: "5 Door Temple",
+        canGetLogic: door.in && feather && zinger && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2439,
+        name: "Aztec Enemy Photo: Tiny 5DT Start Left Back",
+        region: "5 Door Temple",
+        canGetLogic: door.in && feather && zinger && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2440,
+        name: "Aztec Enemy Photo: Tiny 5DT Start Right Back",
+        region: "5 Door Temple",
+        canGetLogic: door.in && feather && zinger && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2441,
+        name: "Aztec Enemy Photo: Tiny 5DT Start Left Front",
+        region: "5 Door Temple",
+        canGetLogic: door.in && feather && zinger && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2442,
+        name: "Aztec Enemy Photo: Tiny 5DT Reward 0",
+        region: "5 Door Temple",
+        canGetLogic: door.in && feather && zinger && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2443,
+        name: "Aztec Enemy Photo: Tiny 5DT Reward 1",
+        region: "5 Door Temple",
+        canGetLogic: door.in && feather && zinger && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2444,
+        name: "Aztec Enemy Photo: Tiny 5DT Dead End 0",
+        region: "5 Door Temple",
+        canGetLogic: door.in && feather && zinger && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2445,
+        name: "Aztec Enemy Photo: Tiny 5DT Dead End 1",
+        region: "5 Door Temple",
+        canGetLogic: door.in && feather && zinger && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+      }
     )
   ] });
 };
 const LlamaTempleEnemies = () => {
   const llama = useAztecLlamaTemple();
   const klaptrap = useDefeatPurpleKlaptrap();
+  const hasGrapes = useGrape();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -18315,6 +18774,26 @@ const LlamaTempleEnemies = () => {
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
         canGetBreak: logicBreak(llama) && klaptrap
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2353,
+        name: "Aztec Enemy: Lanky Matching Room 0",
+        region: "Llama Temple",
+        canGetLogic: llama.in && hasGrapes,
+        canGetBreak: logicBreak(llama) && hasGrapes
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2354,
+        name: "Aztec Enemy: Lanky Matching Room 1",
+        region: "Llama Temple",
+        canGetLogic: llama.in && hasGrapes,
+        canGetBreak: logicBreak(llama) && hasGrapes
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -18356,6 +18835,86 @@ const LlamaTempleEnemies = () => {
         canGetLogic: llama.in && klaptrap,
         canGetBreak: logicBreak(llama) && klaptrap
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2451,
+        name: "Aztec Enemy Photo: Llama Kong Free Music",
+        region: "Llama Temple",
+        canGetLogic: llama.in && klaptrap && hasFairyCam,
+        canGetBreak: logicBreak(llama) && klaptrap && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2452,
+        name: "Aztec Enemy Photo: Llama Dino Music",
+        region: "Llama Temple",
+        canGetLogic: llama.in && klaptrap && hasFairyCam,
+        canGetBreak: logicBreak(llama) && klaptrap && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2453,
+        name: "Aztec Enemy Photo: Lanky Matching Room 0",
+        region: "Llama Temple",
+        canGetLogic: llama.in && hasGrapes && hasFairyCam,
+        canGetBreak: logicBreak(llama) && hasGrapes && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2454,
+        name: "Aztec Enemy Photo: Lanky Matching Room 1",
+        region: "Llama Temple",
+        canGetLogic: llama.in && hasGrapes && hasFairyCam,
+        canGetBreak: logicBreak(llama) && hasGrapes && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2455,
+        name: "Aztec Enemy Photo: Llama Right",
+        region: "Llama Temple",
+        canGetLogic: llama.in && hasFairyCam,
+        canGetBreak: logicBreak(llama) && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2456,
+        name: "Aztec Enemy Photo: Llama Left",
+        region: "Llama Temple",
+        canGetLogic: llama.in && hasFairyCam,
+        canGetBreak: logicBreak(llama) && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2457,
+        name: "Aztec Enemy Photo: Llama Melon Crate",
+        region: "Llama Temple",
+        canGetLogic: llama.in && klaptrap && hasFairyCam,
+        canGetBreak: logicBreak(llama) && klaptrap && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2458,
+        name: "Aztec Enemy Photo: Llama Slam Switch",
+        region: "Llama Temple",
+        canGetLogic: llama.in && klaptrap && hasFairyCam,
+        canGetBreak: logicBreak(llama) && klaptrap && hasFairyCam
+      }
     )
   ] });
 };
@@ -18363,6 +18922,7 @@ const OasisEnemies = () => {
   const anyKong = useAnyKong();
   const inStage = useAztecFront();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -18383,11 +18943,32 @@ const OasisEnemies = () => {
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2415,
+        name: "Aztec Enemy Photo: Near Candy",
+        region: "Aztec Oasis And Totem Area",
+        canGetLogic: inStage.in && zinger && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2412,
+        name: "Aztec Enemy Photo: Oasis Door",
+        region: "Aztec Oasis And Totem Area",
+        canGetLogic: inStage.in && anyKong && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
+      }
     )
   ] });
 };
 const TinyStartEnemies = () => {
   const tiny = useAztecTinyTemple();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -18438,6 +19019,56 @@ const TinyStartEnemies = () => {
         canGetLogic: tiny.in,
         canGetBreak: logicBreak(tiny)
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2479,
+        name: "Aztec Enemy Photo: TT Guard 0",
+        region: "Tiny Temple",
+        canGetLogic: tiny.in && hasFairyCam,
+        canGetBreak: logicBreak(tiny) && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2480,
+        name: "Aztec Enemy Photo: TT Guard 1",
+        region: "Tiny Temple",
+        canGetLogic: tiny.in && hasFairyCam,
+        canGetBreak: logicBreak(tiny) && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2481,
+        name: "Aztec Enemy Photo: TT Main 0",
+        region: "Tiny Temple",
+        canGetLogic: tiny.in && hasFairyCam,
+        canGetBreak: logicBreak(tiny) && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2482,
+        name: "Aztec Enemy Photo: TT Main 1",
+        region: "Tiny Temple",
+        canGetLogic: tiny.in && hasFairyCam,
+        canGetBreak: logicBreak(tiny) && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2483,
+        name: "Aztec Enemy Photo: TT Main 2",
+        region: "Tiny Temple",
+        canGetLogic: tiny.in && hasFairyCam,
+        canGetBreak: logicBreak(tiny) && hasFairyCam
+      }
     )
   ] });
 };
@@ -18445,6 +19076,7 @@ const TinySwimEnemies = () => {
   const tiny = useAztecTinyTemple();
   const dive = useDive();
   const iceMelted = useTinyTempleIce();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -18495,6 +19127,66 @@ const TinySwimEnemies = () => {
         canGetLogic: tiny.in && iceMelted && dive,
         canGetBreak: logicBreak(tiny) && iceMelted && dive
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2484,
+        name: "Aztec Enemy Photo: TT Kong 0",
+        region: "Tiny Temple",
+        canGetLogic: tiny.in && iceMelted && dive && hasFairyCam,
+        canGetBreak: logicBreak(tiny) && iceMelted && dive && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2485,
+        name: "Aztec Enemy Photo: TT Kong 1",
+        region: "Tiny Temple",
+        canGetLogic: tiny.in && iceMelted && dive && hasFairyCam,
+        canGetBreak: logicBreak(tiny) && iceMelted && dive && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2486,
+        name: "Aztec Enemy Photo: TT Kong 2",
+        region: "Tiny Temple",
+        canGetLogic: tiny.in && iceMelted && dive && hasFairyCam,
+        canGetBreak: logicBreak(tiny) && iceMelted && dive && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2487,
+        name: "Aztec Enemy Photo: TT Kong 3",
+        region: "Tiny Temple",
+        canGetLogic: tiny.in && iceMelted && dive && hasFairyCam,
+        canGetBreak: logicBreak(tiny) && iceMelted && dive && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2488,
+        name: "Aztec Enemy Photo: TT Kong 4",
+        region: "Tiny Temple",
+        canGetLogic: tiny.in && iceMelted && dive && hasFairyCam,
+        canGetBreak: logicBreak(tiny) && iceMelted && dive && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2489,
+        name: "Aztec Enemy Photo: Underwater enemy near vulture GB",
+        region: "Tiny Temple",
+        canGetLogic: tiny.in && iceMelted && dive && hasFairyCam,
+        canGetBreak: logicBreak(tiny) && iceMelted && dive && hasFairyCam
+      }
     )
   ] });
 };
@@ -18502,6 +19194,7 @@ const TotemEnemies = () => {
   const anyKong = useAnyKong();
   const inStage = useAztecBack();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -18561,6 +19254,66 @@ const TotemEnemies = () => {
         region: "Aztec Oasis And Totem Area",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2413,
+        name: "Aztec Enemy Photo: Outside Llama Temple",
+        region: "Aztec Oasis And Totem Area",
+        canGetLogic: inStage.in && anyKong && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2414,
+        name: "Aztec Enemy Photo: Outside the Gong Tower",
+        region: "Aztec Oasis And Totem Area",
+        canGetLogic: inStage.in && anyKong && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2514,
+        name: "Aztec Enemy Photo: In Front of Snide's",
+        region: "Aztec Oasis And Totem Area",
+        canGetLogic: inStage.in && anyKong && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2416,
+        name: "Aztec Enemy Photo: Between Totem and Quicksand Tunnel",
+        region: "Aztec Oasis And Totem Area",
+        canGetLogic: inStage.in && anyKong && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2417,
+        name: "Aztec Enemy Photo: Outside 5DT",
+        region: "Aztec Oasis And Totem Area",
+        canGetLogic: inStage.in && zinger && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2418,
+        name: "Aztec Enemy Photo: Near Funky's",
+        region: "Aztec Oasis And Totem Area",
+        canGetLogic: inStage.in && anyKong && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
       }
     )
   ] });
