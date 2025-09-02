@@ -20794,6 +20794,7 @@ const ProductionEnemies = () => {
   const anyKong = useAnyKong();
   const robo = useDefeatRoboKremling();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -20830,6 +20831,42 @@ const ProductionEnemies = () => {
         region: "Production Room",
         canGetLogic: inStage && zinger
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3409,
+        name: "Factory Enemy Photo: Tunnel to Prod 0",
+        region: "Production Room",
+        canGetLogic: testing && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3410,
+        name: "Factory Enemy Photo: Tunnel to Prod 1",
+        region: "Production Room",
+        canGetLogic: testing && robo && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3414,
+        name: "Factory Enemy Photo: Low Warp 4",
+        region: "Production Room",
+        canGetLogic: inStage && robo && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3415,
+        name: "Factory Enemy Photo: Diddy Switch",
+        region: "Production Room",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
     )
   ] });
 };
@@ -20837,6 +20874,7 @@ const RNDEnemies = () => {
   const testing = useFactoryTesting();
   const robo = useDefeatRoboKremling();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -20855,6 +20893,24 @@ const RNDEnemies = () => {
         region: "R&D Area",
         canGetLogic: testing && zinger
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3412,
+        name: "Factory Enemy Photo: Tunnel to Race 0",
+        region: "R&D Area",
+        canGetLogic: testing && robo && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3413,
+        name: "Factory Enemy Photo: Tunnel to Race 1",
+        region: "R&D Area",
+        canGetLogic: testing && zinger && hasFairyCam
+      }
     )
   ] });
 };
@@ -20862,6 +20918,7 @@ const StartEnemies = () => {
   const inStage = usePlayFactory();
   const testing = useFactoryTesting();
   const robo = useDefeatRoboKremling();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -20889,6 +20946,33 @@ const StartEnemies = () => {
         region: "Factory Start",
         canGetLogic: testing && robo
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3402,
+        name: "Factory Enemy Photo: Lobby Left",
+        region: "Factory Start",
+        canGetLogic: inStage && robo && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3403,
+        name: "Factory Enemy Photo: Lobby Right",
+        region: "Factory Start",
+        canGetLogic: inStage && robo && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3408,
+        name: "Factory Enemy Photo: Tunnel to Hatch",
+        region: "Factory Start",
+        canGetLogic: testing && robo && hasFairyCam
+      }
     )
   ] });
 };
@@ -20897,6 +20981,7 @@ const StorageEnemies = () => {
   const punch = usePunch();
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -20942,6 +21027,51 @@ const StorageEnemies = () => {
         region: "Storage And Arcade",
         canGetLogic: inStage && punch && zinger
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3400,
+        name: "Factory Enemy Photo: Shops 0",
+        region: "Storage And Arcade",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3401,
+        name: "Factory Enemy Photo: Shops 1",
+        region: "Storage And Arcade",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3404,
+        name: "Factory Enemy Photo: Storage Room",
+        region: "Storage And Arcade",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3417,
+        name: "Factory Enemy Photo: Dark Room 0",
+        region: "Storage And Arcade",
+        canGetLogic: inStage && punch && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3418,
+        name: "Factory Enemy Photo: Dark Room 1",
+        region: "Storage And Arcade",
+        canGetLogic: inStage && punch && zinger && hasFairyCam
+      }
     )
   ] });
 };
@@ -20951,6 +21081,7 @@ const TestingEnemies = () => {
   const anyKong = useAnyKong();
   const robo = useDefeatRoboKremling();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -20995,6 +21126,51 @@ const TestingEnemies = () => {
         name: "Factory Enemy: To Block Tower Tunnel",
         region: "Testing Area",
         canGetLogic: inStage && zinger
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3405,
+        name: "Factory Enemy Photo: Block Tower 0",
+        region: "Testing Area",
+        canGetLogic: testing && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3406,
+        name: "Factory Enemy Photo: Block Tower 1",
+        region: "Testing Area",
+        canGetLogic: testing && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3407,
+        name: "Factory Enemy Photo: Block Tower 2",
+        region: "Testing Area",
+        canGetLogic: testing && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3411,
+        name: "Factory Enemy Photo: Tunnel to Block Tower",
+        region: "Testing Area",
+        canGetLogic: testing && robo && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3416,
+        name: "Factory Enemy Photo: To Block Tower Tunnel",
+        region: "Testing Area",
+        canGetLogic: inStage && zinger && hasFairyCam
       }
     )
   ] });
