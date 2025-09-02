@@ -15890,6 +15890,7 @@ const CaveEnemies = () => {
   const mine = useJapesMine();
   const klump = useDefeatKlump();
   const charge = useCharge();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -15980,6 +15981,96 @@ const CaveEnemies = () => {
         region: "Japes Caves And Mines",
         canGetLogic: mine && canSlam && klump
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1425,
+        name: "Japes Enemy Photo: Mountain Start 0",
+        region: "Japes Caves And Mines",
+        canGetLogic: mine && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1426,
+        name: "Japes Enemy Photo: Mountain Start 1",
+        region: "Japes Caves And Mines",
+        canGetLogic: mine && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1427,
+        name: "Japes Enemy Photo: Mountain Start 2",
+        region: "Japes Caves And Mines",
+        canGetLogic: mine && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1428,
+        name: "Japes Enemy Photo: Mountain Start 3",
+        region: "Japes Caves And Mines",
+        canGetLogic: mine && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1429,
+        name: "Japes Enemy Photo: Mountain Start 4",
+        region: "Japes Caves And Mines",
+        canGetLogic: mine && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1430,
+        name: "Japes Enemy Photo: Mountain Gate 0",
+        region: "Japes Caves And Mines",
+        canGetLogic: mine && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1431,
+        name: "Japes Enemy Photo: Mountain Gate 1",
+        region: "Japes Caves And Mines",
+        canGetLogic: mine && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1432,
+        name: "Japes Enemy Photo: Mountain Charge Switch",
+        region: "Japes Caves And Mines",
+        canGetLogic: mine && charge && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1433,
+        name: "Japes Enemy Photo: Mountain Conveyor 0",
+        region: "Japes Caves And Mines",
+        canGetLogic: mine && canSlam && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1434,
+        name: "Japes Enemy Photo: Mountain Conveyor 1",
+        region: "Japes Caves And Mines",
+        canGetLogic: mine && canSlam && klump && hasFairyCam
+      }
     )
   ] });
 };
@@ -15989,6 +16080,7 @@ const HiveInteriorEnemies = () => {
   const zinger = useDefeatZinger();
   const klaptrap = useDefeatPurpleKlaptrap();
   const canSlam = useSlamJapes();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -16061,6 +16153,78 @@ const HiveInteriorEnemies = () => {
         region: "Hive Tunnel Area",
         canGetLogic: hiveIn && zinger
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1435,
+        name: "Japes Enemy Photo: Hive First Room",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveIn && klaptrap && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1436,
+        name: "Japes Enemy Photo: Hive Second Room 0",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveIn && klaptrap && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1437,
+        name: "Japes Enemy Photo: Hive Second Room 1",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveIn && klaptrap && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1438,
+        name: "Japes Enemy Photo: Hive Third Room 0",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveIn && klaptrap && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1439,
+        name: "Japes Enemy Photo: Hive Third Room 1",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveIn && klaptrap && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1440,
+        name: "Japes Enemy Photo: Hive Third Room 2",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveIn && zinger && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1441,
+        name: "Japes Enemy Photo: Hive Third Room 3",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveIn && zinger && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1442,
+        name: "Japes Enemy Photo: Hive Main Room",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveIn && zinger && hasFairyCam
+      }
     )
   ] });
 };
@@ -16068,6 +16232,7 @@ const HiveOutsideEnemies = () => {
   const anyKong = useAnyKong();
   const hiveOut = useJapesHive();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -16113,26 +16278,84 @@ const HiveOutsideEnemies = () => {
         region: "Hive Tunnel Area",
         canGetLogic: hiveOut && anyKong
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1407,
+        name: "Japes Enemy Photo: Hive Area 0",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveOut && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1408,
+        name: "Japes Enemy Photo: Hive Area 1",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveOut && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1409,
+        name: "Japes Enemy Photo: Hive Area 2",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveOut && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1410,
+        name: "Japes Enemy Photo: Hive Area 3",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveOut && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1411,
+        name: "Japes Enemy Photo: Hive Area 4",
+        region: "Hive Tunnel Area",
+        canGetLogic: hiveOut && anyKong && hasFairyCam
+      }
     )
   ] });
 };
 const HiveTunnelEnemies = () => {
   const zinger = useDefeatZinger();
   const kongGates = useJapesKongGates();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    JapesCheck,
-    {
-      id: 1318,
-      name: "Japes Enemy: Feather Tunnel",
-      region: "Hive Tunnel Area",
-      canGetLogic: kongGates && zinger
-    }
-  ) });
+  const hasFairyCam = useCamera();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1318,
+        name: "Japes Enemy: Feather Tunnel",
+        region: "Hive Tunnel Area",
+        canGetLogic: kongGates && zinger
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1418,
+        name: "Japes Enemy Photo: Feather Tunnel",
+        region: "Hive Tunnel Area",
+        canGetLogic: kongGates && zinger && hasFairyCam
+      }
+    )
+  ] });
 };
 const JapesMainEnemies = () => {
   const anyKong = useAnyKong();
   const inStage = usePlayJapes();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -16169,6 +16392,42 @@ const JapesMainEnemies = () => {
         region: "Japes Hillside",
         canGetLogic: inStage && anyKong
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1414,
+        name: "Japes Enemy Photo: Near Painting 0",
+        region: "Japes Hillside",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1415,
+        name: "Japes Enemy Photo: Near Painting 1",
+        region: "Japes Hillside",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1416,
+        name: "Japes Enemy Photo: Near Painting 2",
+        region: "Japes Hillside",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1417,
+        name: "Japes Enemy Photo: Mountain",
+        region: "Japes Hillside",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
     )
   ] });
 };
@@ -16176,6 +16435,7 @@ const JapesStartEnemies = () => {
   const anyKong = useAnyKong();
   const inStage = usePlayJapes();
   const zinger = useDefeatZinger();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -16221,25 +16481,83 @@ const JapesStartEnemies = () => {
         region: "Japes Lowlands",
         canGetLogic: inStage && zinger
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1400,
+        name: "Japes Enemy Photo: Start",
+        region: "Japes Lowlands",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1402,
+        name: "Japes Enemy Photo: Early Tunnel 0",
+        region: "Japes Lowlands",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1403,
+        name: "Japes Enemy Photo: Early Tunnel 1",
+        region: "Japes Lowlands",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1412,
+        name: "Japes Enemy Photo: Demo Death",
+        region: "Japes Lowlands",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1413,
+        name: "Japes Enemy Photo: Near Underground",
+        region: "Japes Lowlands",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
     )
   ] });
 };
 const PeanutGateEnemies = () => {
   const anyKong = useAnyKong();
   const japesSide = useJapesSideArea();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    JapesCheck,
-    {
-      id: 1301,
-      name: "Japes Enemy: Diddy Cavern",
-      region: "Japes Lowlands",
-      canGetLogic: japesSide && anyKong
-    }
-  ) });
+  const hasFairyCam = useCamera();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1301,
+        name: "Japes Enemy: Diddy Cavern",
+        region: "Japes Lowlands",
+        canGetLogic: japesSide && anyKong
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1401,
+        name: "Japes Enemy Photo: Diddy Cavern",
+        region: "Japes Lowlands",
+        canGetLogic: japesSide && anyKong && hasFairyCam
+      }
+    )
+  ] });
 };
 const StormyTunnelEnemies = () => {
   const anyKong = useAnyKong();
   const kongGates = useJapesKongGates();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -16275,6 +16593,42 @@ const StormyTunnelEnemies = () => {
         name: "Japes Enemy: Middle Tunnel",
         region: "Stormy Tunnel Area",
         canGetLogic: kongGates && anyKong
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1404,
+        name: "Japes Enemy Photo: Stormy Tunnel 0",
+        region: "Stormy Tunnel Area",
+        canGetLogic: kongGates && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1405,
+        name: "Japes Enemy Photo: Stormy Tunnel 1",
+        region: "Stormy Tunnel Area",
+        canGetLogic: kongGates && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1406,
+        name: "Japes Enemy Photo: Stormy Tunnel 2",
+        region: "Stormy Tunnel Area",
+        canGetLogic: kongGates && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1419,
+        name: "Japes Enemy Photo: Middle Tunnel",
+        region: "Stormy Tunnel Area",
+        canGetLogic: kongGates && anyKong && hasFairyCam
       }
     )
   ] });
