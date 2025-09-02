@@ -10,7 +10,7 @@ const CavernsEnemies: React.FC = () => {
   const kaboom = useDefeatKaboom()
   const kosha = useDefeatKosha()
   const anyKong = useAnyKong()
-  const hasFairyCam = useCamera()
+  const hasCamera = useCamera()
   return (
     <DropPool>
       <GalleonCheck
