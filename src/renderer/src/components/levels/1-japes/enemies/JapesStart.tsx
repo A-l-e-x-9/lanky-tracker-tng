@@ -1,13 +1,14 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatZinger } from '@renderer/hooks/enemies'
 import { usePlayJapes } from '@renderer/hooks/japes'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
 const JapesStartEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const inStage = usePlayJapes()
   const zinger = useDefeatZinger()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <JapesCheck
@@ -39,6 +40,36 @@ const JapesStartEnemies: React.FC = () => {
         name="Japes Enemy: Near Underground"
         region="Japes Lowlands"
         canGetLogic={inStage && zinger}
+      />
+      <JapesCheck
+        id={1400}
+        name="Japes Enemy Photo: Start"
+        region="Japes Lowlands"
+        canGetLogic={inStage && anyKong && hasFairyCam}
+      />
+      <JapesCheck
+        id={1402}
+        name="Japes Enemy Photo: Early Tunnel 0"
+        region="Japes Lowlands"
+        canGetLogic={inStage && anyKong && hasFairyCam}
+      />
+      <JapesCheck
+        id={1403}
+        name="Japes Enemy Photo: Early Tunnel 1"
+        region="Japes Lowlands"
+        canGetLogic={inStage && anyKong && hasFairyCam}
+      />
+      <JapesCheck
+        id={1412}
+        name="Japes Enemy Photo: Demo Death"
+        region="Japes Lowlands"
+        canGetLogic={inStage && anyKong && hasFairyCam}
+      />
+      <JapesCheck
+        id={1413}
+        name="Japes Enemy Photo: Near Underground"
+        region="Japes Lowlands"
+        canGetLogic={inStage && zinger && hasFairyCam}
       />
     </DropPool>
   )

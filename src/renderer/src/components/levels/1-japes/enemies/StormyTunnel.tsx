@@ -1,11 +1,12 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useJapesKongGates } from '@renderer/hooks/japes'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
 const StormyTunnelEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const kongGates = useJapesKongGates()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <JapesCheck
@@ -31,6 +32,30 @@ const StormyTunnelEnemies: React.FC = () => {
         name="Japes Enemy: Middle Tunnel"
         region="Stormy Tunnel Area"
         canGetLogic={kongGates && anyKong}
+      />
+      <JapesCheck
+        id={1404}
+        name="Japes Enemy Photo: Stormy Tunnel 0"
+        region="Stormy Tunnel Area"
+        canGetLogic={kongGates && anyKong && hasFairyCam}
+      />
+      <JapesCheck
+        id={1405}
+        name="Japes Enemy Photo: Stormy Tunnel 1"
+        region="Stormy Tunnel Area"
+        canGetLogic={kongGates && anyKong && hasFairyCam}
+      />
+      <JapesCheck
+        id={1406}
+        name="Japes Enemy Photo: Stormy Tunnel 2"
+        region="Stormy Tunnel Area"
+        canGetLogic={kongGates && anyKong && hasFairyCam}
+      />
+      <JapesCheck
+        id={1419}
+        name="Japes Enemy Photo: Middle Tunnel"
+        region="Stormy Tunnel Area"
+        canGetLogic={kongGates && anyKong && hasFairyCam}
       />
     </DropPool>
   )

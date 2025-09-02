@@ -1,13 +1,14 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatZinger } from '@renderer/hooks/enemies'
 import { useJapesHive } from '@renderer/hooks/japes'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
 const HiveOutsideEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const hiveOut = useJapesHive()
   const zinger = useDefeatZinger()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <JapesCheck
@@ -39,6 +40,36 @@ const HiveOutsideEnemies: React.FC = () => {
         name="Japes Enemy: Hive Area 4"
         region="Hive Tunnel Area"
         canGetLogic={hiveOut && anyKong}
+      />
+      <JapesCheck
+        id={1407}
+        name="Japes Enemy Photo: Hive Area 0"
+        region="Hive Tunnel Area"
+        canGetLogic={hiveOut && zinger && hasFairyCam}
+      />
+      <JapesCheck
+        id={1408}
+        name="Japes Enemy Photo: Hive Area 1"
+        region="Hive Tunnel Area"
+        canGetLogic={hiveOut && zinger && hasFairyCam}
+      />
+      <JapesCheck
+        id={1409}
+        name="Japes Enemy Photo: Hive Area 2"
+        region="Hive Tunnel Area"
+        canGetLogic={hiveOut && zinger && hasFairyCam}
+      />
+      <JapesCheck
+        id={1410}
+        name="Japes Enemy Photo: Hive Area 3"
+        region="Hive Tunnel Area"
+        canGetLogic={hiveOut && anyKong && hasFairyCam}
+      />
+      <JapesCheck
+        id={1411}
+        name="Japes Enemy Photo: Hive Area 4"
+        region="Hive Tunnel Area"
+        canGetLogic={hiveOut && anyKong && hasFairyCam}
       />
     </DropPool>
   )
