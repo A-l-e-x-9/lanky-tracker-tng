@@ -1,6 +1,6 @@
 import CavernsEnemies from './Caverns'
 import LighthouseEnemies from './Lighthouse'
-import UnderWaterEnemies from './Underwater'
+import UnderwaterEnemies from './Underwater'
 
 const EnemyLocations: React.FC = () => (
   <>
