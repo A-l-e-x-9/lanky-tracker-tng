@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useAztec5DoorTemple } from '@renderer/hooks/aztec'
 import { useDefeatZinger } from '@renderer/hooks/enemies'
-import { useFeather } from '@renderer/hooks/kongs'
+import { useFeather, useCamera } from '@renderer/hooks/kongs'
 import { logicBreak } from '@renderer/hooks/world'
 import AztecCheck from '../check'
 
@@ -9,6 +9,7 @@ const Tiny5Enemies: React.FC = () => {
   const door = useAztec5DoorTemple()
   const feather = useFeather()
   const zinger = useDefeatZinger()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <AztecCheck
@@ -66,6 +67,62 @@ const Tiny5Enemies: React.FC = () => {
         region="5 Door Temple"
         canGetLogic={door.in && feather && zinger}
         canGetBreak={logicBreak(door) && feather && zinger}
+      />
+      <AztecCheck
+        id={2438}
+        name="Aztec Enemy Photo: Tiny 5DT Start Right Front"
+        region="5 Door Temple"
+        canGetLogic={door.in && feather && zinger && hasFairyCam}
+        canGetBreak={logicBreak(door) && feather && zinger && hasFairyCam}
+      />
+      <AztecCheck
+        id={2439}
+        name="Aztec Enemy Photo: Tiny 5DT Start Left Back"
+        region="5 Door Temple"
+        canGetLogic={door.in && feather && zinger && hasFairyCam}
+        canGetBreak={logicBreak(door) && feather && zinger && hasFairyCam}
+      />
+      <AztecCheck
+        id={2440}
+        name="Aztec Enemy Photo: Tiny 5DT Start Right Back"
+        region="5 Door Temple"
+        canGetLogic={door.in && feather && zinger && hasFairyCam}
+        canGetBreak={logicBreak(door) && feather && zinger && hasFairyCam}
+      />
+      <AztecCheck
+        id={2441}
+        name="Aztec Enemy Photo: Tiny 5DT Start Left Front"
+        region="5 Door Temple"
+        canGetLogic={door.in && feather && zinger && hasFairyCam}
+        canGetBreak={logicBreak(door) && feather && zinger && hasFairyCam}
+      />
+      <AztecCheck
+        id={2442}
+        name="Aztec Enemy Photo: Tiny 5DT Reward 0"
+        region="5 Door Temple"
+        canGetLogic={door.in && feather && zinger && hasFairyCam}
+        canGetBreak={logicBreak(door) && feather && zinger && hasFairyCam}
+      />
+      <AztecCheck
+        id={2443}
+        name="Aztec Enemy Photo: Tiny 5DT Reward 1"
+        region="5 Door Temple"
+        canGetLogic={door.in && feather && zinger && hasFairyCam}
+        canGetBreak={logicBreak(door) && feather && zinger && hasFairyCam}
+      />
+      <AztecCheck
+        id={2444}
+        name="Aztec Enemy Photo: Tiny 5DT Dead End 0"
+        region="5 Door Temple"
+        canGetLogic={door.in && feather && zinger && hasFairyCam}
+        canGetBreak={logicBreak(door) && feather && zinger && hasFairyCam}
+      />
+      <AztecCheck
+        id={2445}
+        name="Aztec Enemy Photo: Tiny 5DT Dead End 1"
+        region="5 Door Temple"
+        canGetLogic={door.in && feather && zinger && hasFairyCam}
+        canGetBreak={logicBreak(door) && feather && zinger && hasFairyCam}
       />
     </DropPool>
   )

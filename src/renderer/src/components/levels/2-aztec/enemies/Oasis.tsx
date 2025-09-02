@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useAztecFront } from '@renderer/hooks/aztec'
 import { useDefeatZinger } from '@renderer/hooks/enemies'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import { logicBreak } from '@renderer/hooks/world'
 import AztecCheck from '../check'
 
@@ -9,6 +9,7 @@ const OasisEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const inStage = useAztecFront()
   const zinger = useDefeatZinger()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <AztecCheck
@@ -24,6 +25,20 @@ const OasisEnemies: React.FC = () => {
         region="Aztec Oasis And Totem Area"
         canGetLogic={inStage.in && anyKong}
         canGetBreak={logicBreak(inStage) && anyKong}
+      />
+      <AztecCheck
+        id={2415}
+        name="Aztec Enemy Photo: Near Candy"
+        region="Aztec Oasis And Totem Area"
+        canGetLogic={inStage.in && zinger && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && zinger && hasFairyCam}
+      />
+      <AztecCheck
+        id={2412}
+        name="Aztec Enemy Photo: Oasis Door"
+        region="Aztec Oasis And Totem Area"
+        canGetLogic={inStage.in && anyKong && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
       />
     </DropPool>
   )
