@@ -22464,7 +22464,7 @@ const UnderwaterEnemies = () => {
       {
         id: 4420,
         name: "Galleon Enemy Photo: Inside Tiny's 2-Door Ship room, near entrance",
-        region: "5 Door Ship",
+        region: "Shipyard Outskirts",
         canGetLogic: hasFairyCam && canReach2DS
       }
     ),
@@ -22473,7 +22473,7 @@ const UnderwaterEnemies = () => {
       {
         id: 4421,
         name: "Galleon Enemy Photo: Inside Tiny's 2-Door Ship room, near Bonus Barrel",
-        region: "5 Door Ship",
+        region: "Shipyard Outskirts",
         canGetLogic: hasFairyCam && canReach2DS
       }
     ),
