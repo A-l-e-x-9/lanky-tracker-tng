@@ -22187,6 +22187,7 @@ const CavernsEnemies = () => {
   const kaboom = useDefeatKaboom();
   const kosha = useDefeatKosha();
   const anyKong = useAnyKong();
+  const hasCamera = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
@@ -22241,6 +22242,60 @@ const CavernsEnemies = () => {
         region: "Galleon Caverns",
         canGetLogic: inStage && anyKong
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4400,
+        name: "Galleon Enemy Photo: Chest Room 0",
+        region: "Galleon Caverns",
+        canGetLogic: inStage && klobber && hasCamera
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4401,
+        name: "Galleon Enemy Photo: Chest Room 1",
+        region: "Galleon Caverns",
+        canGetLogic: inStage && kaboom && hasCamera
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4402,
+        name: "Galleon Enemy Photo: Vine Cannon",
+        region: "Galleon Caverns",
+        canGetLogic: inStage && kaboom && hasCamera
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4403,
+        name: "Galleon Enemy Photo: Cranky Cannon",
+        region: "Galleon Caverns",
+        canGetLogic: inStage && kaboom && hasCamera
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4404,
+        name: "Galleon Enemy Photo: Peanut Tunnel",
+        region: "Galleon Caverns",
+        canGetLogic: inStage && kosha && hasCamera
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4406,
+        name: "Galleon Enemy Photo: Coconut Tunnel",
+        region: "Galleon Caverns",
+        canGetLogic: inStage && anyKong && hasCamera
+      }
     )
   ] });
 };
@@ -22249,6 +22304,7 @@ const LighthouseEnemies = () => {
   const klump = useDefeatKlump();
   const dk2 = useDk();
   const canSlam = useSlamGalleon();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
@@ -22269,12 +22325,200 @@ const LighthouseEnemies = () => {
         canGetLogic: lighthouse.in && dk2 && canSlam && klump,
         canGetBreak: lighthouse.out && dk2 && canSlam && klump
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4407,
+        name: "Galleon Enemy Photo: Lighthouse 0",
+        region: "Lighthouse Area",
+        canGetLogic: lighthouse.in && dk2 && canSlam && klump && hasFairyCam,
+        canGetBreak: lighthouse.out && dk2 && canSlam && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4408,
+        name: "Galleon Enemy Photo: Lighthouse 1",
+        region: "Lighthouse Area",
+        canGetLogic: lighthouse.in && dk2 && canSlam && klump && hasFairyCam,
+        canGetBreak: lighthouse.out && dk2 && canSlam && klump && hasFairyCam
+      }
+    )
+  ] });
+};
+const UnderwaterEnemies = () => {
+  const hasFairyCam = useCamera();
+  const canReachShips = useGalleonOutskirts();
+  const hasDiving = useDive();
+  const canReachDK5DS = useDk5DoorShipGb();
+  const canReachDiddy5DS = useDiddy5DoorShipGb();
+  const canReachLanky5DS = useLanky5DoorShipGb();
+  const canReachTiny5DS = useTiny5DoorShipGb();
+  const canReachChunky5DS = useChunky5DoorShipGb();
+  const canReach2DS = useTiny2DoorShipGb();
+  const canReachSub = useTinySubGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4409,
+        name: "Galleon Enemy Photo: In front of sub and Tiny barrel",
+        region: "Shipyard Outskirts",
+        canGetLogic: hasFairyCam && canReachShips && hasDiving
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4410,
+        name: "Galleon Enemy Photo: Around bottom of 5-Door Ship 0",
+        region: "Shipyard Outskirts",
+        canGetLogic: hasFairyCam && canReachShips && hasDiving
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4411,
+        name: "Galleon Enemy Photo: Around bottom of 5-Door Ship 1",
+        region: "Shipyard Outskirts",
+        canGetLogic: hasFairyCam && canReachShips && hasDiving
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4412,
+        name: "Galleon Enemy Photo: Inside DK's 5-Door Ship room 0",
+        region: "5 Door Ship",
+        canGetLogic: hasFairyCam && canReachDK5DS
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4413,
+        name: "Galleon Enemy Photo: Inside DK's 5-Door Ship room 1",
+        region: "5 Door Ship",
+        canGetLogic: hasFairyCam && canReachDK5DS
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4414,
+        name: "Galleon Enemy Photo: Inside DK's 5-Door Ship room 2",
+        region: "5 Door Ship",
+        canGetLogic: hasFairyCam && canReachDK5DS
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4415,
+        name: "Galleon Enemy Photo: Inside Diddy's 5-Door Ship room",
+        region: "5 Door Ship",
+        canGetLogic: hasFairyCam && canReachDiddy5DS
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4416,
+        name: "Galleon Enemy Photo: Inside Lanky's 5-Door Ship room",
+        region: "5 Door Ship",
+        canGetLogic: hasFairyCam && canReachLanky5DS
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4417,
+        name: "Galleon Enemy Photo: Inside Tiny's 5-Door Ship room, in the GB cage",
+        region: "5 Door Ship",
+        canGetLogic: hasFairyCam && canReachTiny5DS
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4418,
+        name: "Galleon Enemy Photo: Inside Tiny's 5-Door Ship room, on the bed",
+        region: "5 Door Ship",
+        canGetLogic: hasFairyCam && canReachTiny5DS
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4419,
+        name: "Galleon Enemy Photo: Inside Chunky's 5-Door Ship room",
+        region: "5 Door Ship",
+        canGetLogic: hasFairyCam && canReachChunky5DS
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4420,
+        name: "Galleon Enemy Photo: Inside Tiny's 2-Door Ship room, near entrance",
+        region: "5 Door Ship",
+        canGetLogic: hasFairyCam && canReach2DS
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4421,
+        name: "Galleon Enemy Photo: Inside Tiny's 2-Door Ship room, near Bonus Barrel",
+        region: "5 Door Ship",
+        canGetLogic: hasFairyCam && canReach2DS
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4422,
+        name: "Galleon Enemy Photo: Inside Tiny's sub, near entrance left",
+        region: "Shipyard Outskirts",
+        canGetLogic: hasFairyCam && canReachSub
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4423,
+        name: "Galleon Enemy Photo: Inside Tiny's sub, near entrance right",
+        region: "Shipyard Outskirts",
+        canGetLogic: hasFairyCam && canReachSub
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4424,
+        name: "Galleon Enemy Photo: Inside Tiny's sub, near Bonus Barrel left",
+        region: "Shipyard Outskirts",
+        canGetLogic: hasFairyCam && canReachSub
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4425,
+        name: "Galleon Enemy Photo: Inside Tiny's sub, near Bonus Barrel right",
+        region: "Shipyard Outskirts",
+        canGetLogic: hasFairyCam && canReachSub
+      }
     )
   ] });
 };
 const EnemyLocations$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(CavernsEnemies, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(LighthouseEnemies, {})
+  /* @__PURE__ */ jsxRuntimeExports.jsx(LighthouseEnemies, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(UnderwaterEnemies, {})
 ] });
 const ChestFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
