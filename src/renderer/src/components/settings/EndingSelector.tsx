@@ -96,7 +96,7 @@ export const EndingSelector: React.FC<EndingSelectorProps> = (props) => {
 }
 
 type RoolSelectorProps = {
-  rootKey: keyof RoolState
+  rootKey: keyof endingPhase
 }
 
 const currPhaseImg = (val: RoolRange): string => {
