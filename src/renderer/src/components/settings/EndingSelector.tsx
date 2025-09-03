@@ -96,7 +96,7 @@ export const EndingSelector: React.FC<EndingSelectorProps> = (props) => {
 }
 
 type RoolSelectorProps = {
-  rootKey: keyof endingPhase
+  roolRootKey: keyof endingPhase
 }
 
 const currPhaseImg = (val: RoolRange): string => {
@@ -132,7 +132,7 @@ const currPhaseImg = (val: RoolRange): string => {
 
 const nextRool = (val: RoolRange): RoolRange => {
   const target = val + 1
-  if (target > 12) {
+  if (target > 11) {
     return 0
   }
   return target as RoolRange
@@ -141,30 +141,30 @@ const nextRool = (val: RoolRange): RoolRange => {
 const prevRool = (val: RoolRange): RoolRange => {
   const target = val - 1
   if (target < 0) {
-    return 12
+    return 11
   }
   return target as RoolRange
 }
 
 export const RoolSelector: React.FC<RoolSelectorProps> = (props) => {
   const [endingPhase, setEnd] = useDonkStore(
-    useShallow((state) => [state[props.rootKey] as RoolRange, state.setEnd])
+    useShallow((state) => [state[props.roolRootKey] as RoolRange, state.setEnd])
   )
 
   const handleNext = (): void => {
-    setEnd(props.rootKey, nextRool(endingPhase))
+    setEnd(props.roolRootKey, nextRool(endingPhase))
   }
 
   const handlePrev = (e: React.MouseEvent<HTMLImageElement>): void => {
     e.preventDefault()
-    setEnd(props.rootKey, prevRool(endingPhase))
+    setEnd(props.roolRootKey, prevRool(endingPhase))
   }
 
   const handleWheel = (e: React.WheelEvent<HTMLImageElement>): void => {
     if (e.deltaY >= 0) {
-      setEnd(props.rootKey, nextRool(endingPhase))
+      setEnd(props.roolRootKey, nextRool(endingPhase))
     } else {
-      setEnd(props.rootKey, prevRool(endingPhase))
+      setEnd(props.roolRootKey, prevRool(endingPhase))
     }
   }
 
