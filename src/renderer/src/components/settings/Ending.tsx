@@ -1,5 +1,5 @@
 import { useCanDeactivateHelm, useCanFightRool } from '@renderer/hooks/helm'
-import EndingSelector from './EndingSelector'
+import { EndingSelector, RoolSelector } from './EndingSelector'
 
 const Ending: React.FC = () => {
   const helmLogic = useCanDeactivateHelm()
@@ -27,11 +27,11 @@ const Ending: React.FC = () => {
         </span>
       </div>
       <section>
-        <EndingSelector rootKey="rool1" />
-        <EndingSelector rootKey="rool2" />
-        <EndingSelector rootKey="rool3" />
-        <EndingSelector rootKey="rool4" />
-        <EndingSelector rootKey="rool5" />
+        <RoolSelector rootKey="rool1" />
+        <RoolSelector rootKey="rool2" />
+        <RoolSelector rootKey="rool3" />
+        <RoolSelector rootKey="rool4" />
+        <RoolSelector rootKey="rool5" />
       </section>
     </section>
   )
