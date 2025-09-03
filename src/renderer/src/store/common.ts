@@ -16,6 +16,7 @@ type RainbowCoinRange = IntRange<0, 17>
 type SlamRange = IntRange<0, 4>
 export type BananaportRange = IntRange<0, 3>
 export type KongRange = IntRange<0, 5>
+export type RoolRange = IntRange<0, 12>
 
 export const nameof = <T>(name: Extract<keyof T, string>): string => name
 
@@ -701,11 +702,6 @@ export interface EndingState {
   helm3: PearlRange
   helm4: PearlRange
   helm5: PearlRange
-  rool1: IntRange<0, 12>
-  rool2: IntRange<0, 12>
-  rool3: IntRange<0, 12>
-  rool4: IntRange<0, 12>
-  rool5: IntRange<0, 12>
 }
 
 interface EndingActions {
