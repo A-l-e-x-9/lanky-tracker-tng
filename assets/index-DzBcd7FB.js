@@ -23760,6 +23760,7 @@ const CenterEnemies = () => {
   const beanstalk = useForestBean();
   const beanHalf = useForestBeanHalf();
   const hasHunky = useHunky();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
@@ -23850,6 +23851,96 @@ const CenterEnemies = () => {
         region: "Forest Center And Beanstalk",
         canGetLogic: beanstalk && hasHunky
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5423,
+        name: "Forest Enemy Photo: Near Apple Dropoff",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5424,
+        name: "Forest Enemy Photo: Near Vanilla DK Portal",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5425,
+        name: "Forest Enemy Photo: Near Well Tag",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5412,
+        name: "Forest Enemy Photo: Green Tunnel",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanHalf && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5410,
+        name: "Forest Enemy Photo: Near Beanstalk 0",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5411,
+        name: "Forest Enemy Photo: Near Beanstalk 1",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5511,
+        name: "Forest Enemy Photo: Giant Tomato 0",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && hasHunky && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5512,
+        name: "Forest Enemy Photo: Giant Tomato 1",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && hasHunky && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5513,
+        name: "Forest Enemy Photo: Giant Tomato 2",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && hasHunky && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5514,
+        name: "Forest Enemy Photo: Giant Tomato 3",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && hasHunky && hasFairyCam
+      }
     )
   ] });
 };
@@ -23868,6 +23959,7 @@ const MillsEnemies = () => {
   const day = useForestDay();
   const punch = usePunch();
   const hasMiniMonkey = useMini();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
@@ -23988,6 +24080,126 @@ const MillsEnemies = () => {
         canGetLogic: night.in && strong && canSlam && kosha,
         canGetBreak: logicBreak(night) && dk2 && canSlam && kosha
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5430,
+        name: "Forest Enemy Photo: Near Snide",
+        region: "Forest Mills",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5431,
+        name: "Forest Enemy Photo: Near the Infamous Dirt Patch",
+        region: "Forest Mills",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5433,
+        name: "Forest Enemy Photo: Near Dark Attic",
+        region: "Forest Mills",
+        canGetLogic: inStage && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5434,
+        name: "Forest Enemy Photo: Near Well Exit",
+        region: "Forest Mills",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5435,
+        name: "Forest Enemy Photo: Near Blue Tunnel",
+        region: "Forest Mills",
+        canGetLogic: inStage && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5446,
+        name: "Forest Enemy Photo: Mill Inside Front",
+        region: "Forest Mills",
+        canGetLogic: day.in && zinger && hasFairyCam,
+        canGetBreak: logicBreak(day) && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5447,
+        name: "Forest Enemy Photo: Mill Inside Rear",
+        region: "Forest Mills",
+        canGetLogic: day.in && (punch || hasMiniMonkey) && zinger && hasFairyCam,
+        canGetBreak: logicBreak(day) && (punch || hasMiniMonkey) && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5444,
+        name: "Forest Enemy Photo: Winch Inside",
+        region: "Forest Mills",
+        canGetLogic: inStage && diddy && canSlam && bat && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5436,
+        name: "Forest Enemy Photo: Thornvine 0",
+        region: "Forest Mills",
+        canGetLogic: inStage && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5437,
+        name: "Forest Enemy Photo: Thornvine 1",
+        region: "Forest Mills",
+        canGetLogic: inStage && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5438,
+        name: "Forest Enemy Photo: Thornvine 2",
+        region: "Forest Mills",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5439,
+        name: "Forest Enemy Photo: Thornvine Entrance",
+        region: "Forest Mills",
+        canGetLogic: inStage && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5445,
+        name: "Forest Enemy Photo: Thornvine Barn Inside",
+        region: "Forest Mills",
+        canGetLogic: night.in && strong && canSlam && kosha && hasFairyCam,
+        canGetBreak: logicBreak(night) && dk2 && canSlam && kosha && hasFairyCam
+      }
     )
   ] });
 };
@@ -23997,6 +24209,7 @@ const MushExteriorEnemies = () => {
   const klump = useDefeatKlump();
   const zinger = useDefeatZinger();
   const anyKong = useAnyKong();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
@@ -24114,6 +24327,123 @@ const MushExteriorEnemies = () => {
         region: "Giant Mushroom Exterior",
         canGetLogic: inStage && roof && anyKong && klump
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5426,
+        name: "Forest Enemy Photo: Yellow Tunnel 0",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5413,
+        name: "Forest Enemy Photo: Near Low Warp 5",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5414,
+        name: "Forest Enemy Photo: Near Pink Tunnel Bounce Tag Barrel",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5415,
+        name: "Forest Enemy Photo: Near Mushroom Rocket Barrel",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5416,
+        name: "Forest Enemy Photo: b/t Rocket & Yellow Tunnel",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5417,
+        name: "Forest Enemy Photo: Near Cranky",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5432,
+        name: "Forest Enemy Photo: Near Pink Tunnel",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5518,
+        name: "Forest Enemy Photo: Rear Tag",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5519,
+        name: "Forest Enemy Photo: Near DK Pad",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5419,
+        name: "Forest Enemy Photo: Near Face Puzzle",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5420,
+        name: "Forest Enemy Photo: Near Crown",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5421,
+        name: "Forest Enemy Photo: Near High Warp 5",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5422,
+        name: "Forest Enemy Photo: Top Of Mushroom",
+        region: "Giant Mushroom Exterior",
+        canGetLogic: inStage && roof && anyKong && klump && hasFairyCam
+      }
     )
   ] });
 };
@@ -24125,6 +24455,7 @@ const MushInteriorEnemies = () => {
   const chunky = useChunky();
   const roof = useForestMushroomRoof();
   const canSlam = useSlamForest();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
@@ -24181,6 +24512,62 @@ const MushInteriorEnemies = () => {
         region: "Giant Mushroom Insides",
         canGetLogic: inStage && chunky && canSlam && zinger
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5448,
+        name: "Forest Enemy Photo: Mushroom Night Door",
+        region: "Giant Mushroom Insides",
+        canGetLogic: inStage && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5449,
+        name: "Forest Enemy Photo: Mushroom Path 0",
+        region: "Giant Mushroom Insides",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5450,
+        name: "Forest Enemy Photo: Mushroom Path 1",
+        region: "Giant Mushroom Insides",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5454,
+        name: "Forest Enemy Photo: Mushroom Leap 0",
+        region: "Giant Mushroom Insides",
+        canGetLogic: roof.in && lanky && canSlam && zinger && hasFairyCam,
+        canGetBreak: logicBreak(roof) && lanky && canSlam && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5455,
+        name: "Forest Enemy Photo: Mushroom Leap 1",
+        region: "Giant Mushroom Insides",
+        canGetLogic: roof.in && lanky && canSlam && zinger && hasFairyCam,
+        canGetBreak: logicBreak(roof) && lanky && canSlam && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5456,
+        name: "Forest Enemy Photo: Face Puzzle",
+        region: "Giant Mushroom Insides",
+        canGetLogic: inStage && chunky && canSlam && zinger && hasFairyCam
+      }
     )
   ] });
 };
@@ -24190,6 +24577,7 @@ const OwlEnemies = () => {
   const zinger = useDefeatZinger();
   const mini = useMini();
   const sax = useSax();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
@@ -24306,6 +24694,123 @@ const OwlEnemies = () => {
         name: "Forest Enemy: Anthill Gauntlet 3",
         region: "Owl Tree",
         canGetLogic: owlTree && mini && sax
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5427,
+        name: "Forest Enemy Photo: Yellow Tunnel 1",
+        region: "Owl Tree",
+        canGetLogic: owlTree && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5428,
+        name: "Forest Enemy Photo: Yellow Tunnel 2",
+        region: "Owl Tree",
+        canGetLogic: owlTree && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5429,
+        name: "Forest Enemy Photo: Yellow Tunnel 3",
+        region: "Owl Tree",
+        canGetLogic: owlTree && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5400,
+        name: "Forest Enemy Photo: Hollow Tree 0",
+        region: "Owl Tree",
+        canGetLogic: owlTree && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5401,
+        name: "Forest Enemy Photo: Hollow Tree 1",
+        region: "Owl Tree",
+        canGetLogic: owlTree && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5402,
+        name: "Forest Enemy Photo: Hollow Tree Entrance",
+        region: "Owl Tree",
+        canGetLogic: owlTree && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5403,
+        name: "Forest Enemy Photo: Tree Melon Crate 0",
+        region: "Owl Tree",
+        canGetLogic: owlTree && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5404,
+        name: "Forest Enemy Photo: Tree Melon Crate 1",
+        region: "Owl Tree",
+        canGetLogic: owlTree && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5405,
+        name: "Forest Enemy Photo: Tree Melon Crate 2",
+        region: "Owl Tree",
+        canGetLogic: owlTree && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5440,
+        name: "Forest Enemy Photo: Anthill Gauntlet 0",
+        region: "Owl Tree",
+        canGetLogic: owlTree && mini && sax && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5441,
+        name: "Forest Enemy Photo: Anthill Gauntlet 1",
+        region: "Owl Tree",
+        canGetLogic: owlTree && mini && sax && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5442,
+        name: "Forest Enemy Photo: Anthill Gauntlet 2",
+        region: "Owl Tree",
+        canGetLogic: owlTree && mini && sax && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5443,
+        name: "Forest Enemy Photo: Anthill Gauntlet 3",
+        region: "Owl Tree",
+        canGetLogic: owlTree && mini && sax && hasFairyCam
       }
     )
   ] });
