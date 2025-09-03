@@ -10,7 +10,6 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
 - The shopkeep icons are all Funky Kong's face...need Cranky, Candy, and Snide icons.
-- The icon for Climbing, as well as the icon to indicate you have both Vines and Climbing, are just recolors of the original's Vine icon...need an actual Climbing indicator.
 - There's a bug from the original Lanky Tracker that Alex was unable to fix: the fact that the Lanky Rabbit Race apparently requires Key 5. While that may be true for the original game (as Level 6, Crystal Caves, was where O-Stand Sprint was), it's not true for Randomizer seeds.
 - The new "Bosses" feature uses level names rather than boss icons and just the Kongs' heads for K. Rool phases...need icons for Army Dillo, Dogadon, Mad Jack, Puftoss, and Kutout, as well as the K. Rool/Kong head dual icons for K. Rool phases.
 - While the Bosses feature is designed to account for seeds with the "K. Rool Phases as Bosses" option on, the "K. Rool" section is not, due to it apparently sharing the same option selector as the "Helm" section...need to write a new selector.
