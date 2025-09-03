@@ -27540,6 +27540,7 @@ const SurroundingsEnemies = () => {
   const anyKong = useAnyKong();
   const kosha = useDefeatKosha();
   const hasClimbing = useClimbing();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
@@ -27659,6 +27660,126 @@ const SurroundingsEnemies = () => {
         name: "Castle Enemy: Near Headphones",
         region: "Castle Surroundings",
         canGetLogic: inStage && anyKong
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7400,
+        name: "Castle Enemy Photo: Near Bridge 0",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7401,
+        name: "Castle Enemy Photo: Near Bridge 1",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7402,
+        name: "Castle Enemy Photo: Wooden Extrusion 0",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && kosha && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7403,
+        name: "Castle Enemy Photo: Wooden Extrusion 1",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && kosha && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7404,
+        name: "Castle Enemy Photo: Near Shed",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7405,
+        name: "Castle Enemy Photo: Near Library",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7406,
+        name: "Castle Enemy Photo: Near Tower",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && kosha && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7407,
+        name: "Castle Enemy Photo: Museum Steps",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7408,
+        name: "Castle Enemy Photo: Near Low Caves",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
+        canGetBreak: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7409,
+        name: "Castle Enemy Photo: Path to Low Kasplat",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
+        canGetBreak: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7410,
+        name: "Castle Enemy Photo: Low Boss Portal",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
+        canGetBreak: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7411,
+        name: "Castle Enemy Photo: Path to Dungeon",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7412,
+        name: "Castle Enemy Photo: Near Headphones",
+        region: "Castle Surroundings",
+        canGetLogic: inStage && anyKong && hasFairyCam
       }
     )
   ] });
