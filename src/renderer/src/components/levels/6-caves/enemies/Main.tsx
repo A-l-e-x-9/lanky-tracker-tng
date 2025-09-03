@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { usePlayCaves } from '@renderer/hooks/caves'
 import { useDefeatKosha, useDefeatZinger } from '@renderer/hooks/enemies'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const MainEnemies: React.FC = () => {
@@ -9,6 +9,7 @@ const MainEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const zinger = useDefeatZinger()
   const kosha = useDefeatKosha()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <CavesCheck
@@ -40,6 +41,36 @@ const MainEnemies: React.FC = () => {
         name="Caves Enemy: Near Snide"
         region="Main Caves Area"
         canGetLogic={inStage && kosha}
+      />
+      <CavesCheck
+        id={6400}
+        name="Caves Enemy Photo: Start"
+        region="Main Caves Area"
+        canGetLogic={inStage && anyKong && hasFairyCam}
+      />
+      <CavesCheck
+        id={6401}
+        name="Caves Enemy Photo: Near Ice Castle"
+        region="Main Caves Area"
+        canGetLogic={inStage && anyKong && hasFairyCam}
+      />
+      <CavesCheck
+        id={6404}
+        name="Caves Enemy Photo: Near Funky"
+        region="Main Caves Area"
+        canGetLogic={inStage && zinger && hasFairyCam}
+      />
+      <CavesCheck
+        id={6406}
+        name="Caves Enemy Photo: Near Bonus Room"
+        region="Main Caves Area"
+        canGetLogic={inStage && kosha && hasFairyCam}
+      />
+      <CavesCheck
+        id={6405}
+        name="Caves Enemy Photo: Near Snide"
+        region="Main Caves Area"
+        canGetLogic={inStage && kosha && hasFairyCam}
       />
     </DropPool>
   )

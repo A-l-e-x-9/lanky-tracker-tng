@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useCavesIgloo } from '@renderer/hooks/caves'
 import { useDefeatKosha } from '@renderer/hooks/enemies'
-import { useBongos, useSax } from '@renderer/hooks/kongs'
+import { useBongos, useSax, useCamera } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const IglooEnemies: React.FC = () => {
@@ -9,6 +9,7 @@ const IglooEnemies: React.FC = () => {
   const kosha = useDefeatKosha()
   const bongos = useBongos()
   const sax = useSax()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <CavesCheck
@@ -28,6 +29,24 @@ const IglooEnemies: React.FC = () => {
         name="Caves Enemy: Tiny Igloo Big"
         region="Igloo Area"
         canGetLogic={igloo && sax && kosha}
+      />
+      <CavesCheck
+        id={6409}
+        name="Caves Enemy Photo: DK Igloo Right"
+        region="Igloo Area"
+        canGetLogic={igloo && bongos && kosha && hasFairyCam}
+      />
+      <CavesCheck
+        id={6410}
+        name="Caves Enemy Photo: DK Igloo Left"
+        region="Igloo Area"
+        canGetLogic={igloo && bongos && kosha && hasFairyCam}
+      />
+      <CavesCheck
+        id={6416}
+        name="Caves Enemy Photo: Tiny Igloo Big"
+        region="Igloo Area"
+        canGetLogic={igloo && sax && kosha && hasFairyCam}
       />
     </DropPool>
   )
