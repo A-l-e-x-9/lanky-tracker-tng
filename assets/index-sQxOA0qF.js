@@ -30502,6 +30502,37 @@ const EndingSelector = (props) => {
     }
   ) });
 };
+const RoolSelector = (props) => {
+  const [endingChar, setEnd] = useDonkStore(
+    useShallow((state) => [state[props.rootKey], state.setEnd])
+  );
+  const handleNext = () => {
+    setEnd(props.rootKey, nextEnd(endingChar));
+  };
+  const handlePrev = (e2) => {
+    e2.preventDefault();
+    setEnd(props.rootKey, prevEnd(endingChar));
+  };
+  const handleWheel = (e2) => {
+    if (e2.deltaY >= 0) {
+      setEnd(props.rootKey, nextEnd(endingChar));
+    } else {
+      setEnd(props.rootKey, prevEnd(endingChar));
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "img",
+    {
+      height: 24,
+      width: 24,
+      className: "simple-icon",
+      src: currImg(endingChar),
+      onClick: handleNext,
+      onContextMenu: handlePrev,
+      onWheel: handleWheel
+    }
+  ) });
+};
 const Ending = () => {
   const helmLogic = useCanDeactivateHelm();
   const roolLogic = useCanFightRool();
@@ -30528,11 +30559,11 @@ const Ending = () => {
       )
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "rool1" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "rool2" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "rool3" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "rool4" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "rool5" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { rootKey: "rool1" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { rootKey: "rool2" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { rootKey: "rool3" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { rootKey: "rool4" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { rootKey: "rool5" })
     ] })
   ] });
 };
