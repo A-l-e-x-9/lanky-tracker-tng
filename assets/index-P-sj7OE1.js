@@ -27360,6 +27360,7 @@ const MuseumEnemies = () => {
   const canSlam = useSlamCastle();
   const chunky = useChunky();
   const kosha = useDefeatKosha();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
@@ -27404,6 +27405,51 @@ const MuseumEnemies = () => {
         name: "Castle Enemy: Museum Main 3",
         region: "Castle Rooms",
         canGetLogic: inStage && chunky && canSlam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7461,
+        name: "Castle Enemy Photo: Museum Start",
+        region: "Castle Rooms",
+        canGetLogic: inStage && chunky && canSlam && kosha && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7462,
+        name: "Castle Enemy Photo: Museum Main 0",
+        region: "Castle Rooms",
+        canGetLogic: inStage && chunky && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7463,
+        name: "Castle Enemy Photo: Museum Main 1",
+        region: "Castle Rooms",
+        canGetLogic: inStage && chunky && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7464,
+        name: "Castle Enemy Photo: Museum Main 2",
+        region: "Castle Rooms",
+        canGetLogic: inStage && chunky && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7465,
+        name: "Castle Enemy Photo: Museum Main 3",
+        region: "Castle Rooms",
+        canGetLogic: inStage && chunky && canSlam && hasFairyCam
       }
     )
   ] });
