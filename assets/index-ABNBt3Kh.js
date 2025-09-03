@@ -30168,6 +30168,11 @@ const madJackIcon = "" + new URL("mad-jack-CWHOmyh7.png", import.meta.url).href;
 const dogadon2Icon = "" + new URL("dogadon-2-C3BHVicw.png", import.meta.url).href;
 const puftossIcon = "" + new URL("puftoss-BZnWIqQ-.png", import.meta.url).href;
 const armyDillo1Icon = "" + new URL("army-dillo-1-zDonsgJZ.png", import.meta.url).href;
+const kRoolDKIcon = "" + new URL("krool-dk-Br7GS7q-.png", import.meta.url).href;
+const kRoolDiddyIcon = "" + new URL("krool-diddy-DTNg2u1e.png", import.meta.url).href;
+const kRoolLankyIcon = "" + new URL("krool-lanky-C_N2UOq5.png", import.meta.url).href;
+const kRoolTinyIcon = "" + new URL("krool-tiny-C2_qn65W.png", import.meta.url).href;
+const kRoolChunkyIcon = "" + new URL("krool-chunky-CoKMx8la.png", import.meta.url).href;
 const unknownIcon$1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA/UExURQAAACkpKT09PUBAQC4uLkpKSk9PT1RUVGVlZVlZWQwMDGhoaHFxcWBgYHl5eX19fX9/fxsbG3h4eAEBAQAAAAw7gGsAAAAVdFJOU///////////////////////////ACvZfeoAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACHSURBVChTrdDbEsIgDATQUEkxeKPK/3+rWSCYGfTN7cvJDrQF6qnIwi912E6xT57EOzNvGDwpnSXJzjp4Uo7pcpWb6G5HRO6PUhZSKJqFlD824m/B/iEjDI4VRnW01lGfozyPV68nsXMEZxtpdQwZRG3UWl+o52r3Nmk1WsffdUuvJ/9Q1/oGnaEP/8RpzxgAAAAASUVORK5CYII=";
 const bossToIcon = (boss) => {
   switch (boss) {
@@ -30186,15 +30191,15 @@ const bossToIcon = (boss) => {
     case "Kutout":
       return kutoutIcon;
     case "DK Phase of K. Rool":
-      return dkKongIcon;
+      return kRoolDKIcon;
     case "Diddy Phase of K. Rool":
-      return diddyKongIcon;
+      return kRoolDiddyIcon;
     case "Lanky Phase of K. Rool":
-      return lankyKongIcon;
+      return kRoolLankyIcon;
     case "Tiny Phase of K. Rool":
-      return tinyKongIcon;
+      return kRoolTinyIcon;
     case "Chunky Phase of K. Rool":
-      return chunkyKongIcon;
+      return kRoolChunkyIcon;
     default:
       return unknownIcon$1;
   }
