@@ -27787,6 +27787,7 @@ const SurroundingsEnemies = () => {
 const TreeEnemies = () => {
   const tree = useCastleTree();
   const bat = useDefeatBat();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
@@ -27804,6 +27805,24 @@ const TreeEnemies = () => {
         name: "Castle Enemy: Tree Start 1",
         region: "Castle Surroundings",
         canGetLogic: tree && bat
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7470,
+        name: "Castle Enemy Photo: Tree Start 0",
+        region: "Castle Surroundings",
+        canGetLogic: tree && bat && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7471,
+        name: "Castle Enemy Photo: Tree Start 1",
+        region: "Castle Surroundings",
+        canGetLogic: tree && bat && hasFairyCam
       }
     )
   ] });
