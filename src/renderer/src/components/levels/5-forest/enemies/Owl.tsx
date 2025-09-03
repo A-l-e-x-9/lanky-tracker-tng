@@ -95,79 +95,79 @@ const OwlEnemies: React.FC = () => {
         id={5427}
         name="Forest Enemy Photo: Yellow Tunnel 1"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger}
+        canGetLogic={owlTree && zinger && hasFairyCam}
       />
       <ForestCheck
         id={5428}
         name="Forest Enemy Photo: Yellow Tunnel 2"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger}
+        canGetLogic={owlTree && zinger && hasFairyCam}
       />
       <ForestCheck
         id={5429}
         name="Forest Enemy Photo: Yellow Tunnel 3"
         region="Owl Tree"
-        canGetLogic={owlTree && klump}
+        canGetLogic={owlTree && klump && hasFairyCam}
       />
       <ForestCheck
         id={5400}
         name="Forest Enemy Photo: Hollow Tree 0"
         region="Owl Tree"
-        canGetLogic={owlTree && klump}
+        canGetLogic={owlTree && klump && hasFairyCam}
       />
       <ForestCheck
         id={5401}
         name="Forest Enemy Photo: Hollow Tree 1"
         region="Owl Tree"
-        canGetLogic={owlTree && klump}
+        canGetLogic={owlTree && klump && hasFairyCam}
       />
       <ForestCheck
         id={5402}
         name="Forest Enemy Photo: Hollow Tree Entrance"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger}
+        canGetLogic={owlTree && zinger && hasFairyCam}
       />
       <ForestCheck
         id={5403}
         name="Forest Enemy Photo: Tree Melon Crate 0"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger}
+        canGetLogic={owlTree && zinger && hasFairyCam}
       />
       <ForestCheck
         id={5404}
         name="Forest Enemy Photo: Tree Melon Crate 1"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger}
+        canGetLogic={owlTree && zinger && hasFairyCam}
       />
       <ForestCheck
         id={5405}
         name="Forest Enemy Photo: Tree Melon Crate 2"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger}
+        canGetLogic={owlTree && zinger && hasFairyCam}
       />
       <ForestCheck
         id={5440}
         name="Forest Enemy Photo: Anthill Gauntlet 0"
         region="Owl Tree"
-        canGetLogic={owlTree && mini && sax}
+        canGetLogic={owlTree && mini && sax && hasFairyCam}
       />
       <ForestCheck
         id={5441}
         name="Forest Enemy Photo: Anthill Gauntlet 1"
         region="Owl Tree"
-        canGetLogic={owlTree && mini && sax}
+        canGetLogic={owlTree && mini && sax && hasFairyCam}
       />
       <ForestCheck
         id={5442}
         name="Forest Enemy Photo: Anthill Gauntlet 2"
         region="Owl Tree"
-        canGetLogic={owlTree && mini && sax}
+        canGetLogic={owlTree && mini && sax && hasFairyCam}
       />
       <ForestCheck
         id={5443}
         name="Forest Enemy Photo: Anthill Gauntlet 3"
         region="Owl Tree"
-        canGetLogic={owlTree && mini && sax}
+        canGetLogic={owlTree && mini && sax && hasFairyCam}
       />
     </DropPool>
   )
