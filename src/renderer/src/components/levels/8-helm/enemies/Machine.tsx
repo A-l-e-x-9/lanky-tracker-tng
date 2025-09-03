@@ -6,7 +6,8 @@ import {
   useRocket,
   useSax,
   useTriangle,
-  useTrombone
+  useTrombone,
+  useCamera
 } from '@renderer/hooks/kongs'
 import HelmCheck from '../check'
 
@@ -19,6 +20,7 @@ const HelmMachineEnemies: React.FC = () => {
   const sax = useSax()
   const triangle = useTriangle()
   const klump = useDefeatKlump()
+  const hasFairyCam = useCamera()
   return (
     <>
       <HelmCheck
@@ -68,6 +70,54 @@ const HelmMachineEnemies: React.FC = () => {
         name="Helm Enemy: Diddy Room 1"
         canGetLogic={helmMachine.in && guitar && rocket}
         canGetBreak={helmMachine.out && guitar && rocket}
+      />
+      <HelmCheck
+        id={8409}
+        name="Helm Enemy Photo: DK Room"
+        canGetLogic={helmMachine.in && bongos && hasCamera}
+        canGetBreak={helmMachine.out && bongos && hasCamera}
+      />
+      <HelmCheck
+        id={8410}
+        name="Helm Enemy Photo: Chunky Room 0"
+        canGetLogic={helmMachine.in && triangle && hasCamera}
+        canGetBreak={helmMachine.out && triangle && hasCamera}
+      />
+      <HelmCheck
+        id={8411}
+        name="Helm Enemy Photo: Chunky Room 1"
+        canGetLogic={helmMachine.in && triangle && hasCamera}
+        canGetBreak={helmMachine.out && triangle && hasCamera}
+      />
+      <HelmCheck
+        id={8412}
+        name="Helm Enemy Photo: Tiny Room"
+        canGetLogic={helmMachine.in && sax && hasCamera}
+        canGetBreak={helmMachine.out && sax && klump && hasCamera}
+      />
+      <HelmCheck
+        id={8413}
+        name="Helm Enemy Photo: Lanky Room 0"
+        canGetLogic={helmMachine.in && trombone && hasCamera}
+        canGetBreak={helmMachine.out && trombone && klump && hasCamera}
+      />
+      <HelmCheck
+        id={8414}
+        name="Helm Enemy Photo: Lanky Room 1"
+        canGetLogic={helmMachine.in && trombone && hasCamera}
+        canGetBreak={helmMachine.out && trombone && hasCamera}
+      />
+      <HelmCheck
+        id={8415}
+        name="Helm Enemy Photo: Diddy Room 0"
+        canGetLogic={helmMachine.in && guitar && rocket && hasCamera}
+        canGetBreak={helmMachine.out && guitar && rocket && hasCamera}
+      />
+      <HelmCheck
+        id={8416}
+        name="Helm Enemy Photo: Diddy Room 1"
+        canGetLogic={helmMachine.in && guitar && rocket && hasCamera}
+        canGetBreak={helmMachine.out && guitar && rocket && hasCamera}
       />
     </>
   )
