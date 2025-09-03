@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { usePlayCastle, useSlamCastle } from '@renderer/hooks/castle'
 import { useDefeatKosha } from '@renderer/hooks/enemies'
-import { useDiddy } from '@renderer/hooks/kongs'
+import { useDiddy, useCamera } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const BallroomEnemies: React.FC = () => {
@@ -9,6 +9,7 @@ const BallroomEnemies: React.FC = () => {
   const canSlam = useSlamCastle()
   const diddy = useDiddy()
   const kosha = useDefeatKosha()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <CastleCheck
@@ -16,6 +17,12 @@ const BallroomEnemies: React.FC = () => {
         name="Castle Enemy: Ballroom Start"
         region="Castle Rooms"
         canGetLogic={inStage && diddy && canSlam && kosha}
+      />
+      <CastleCheck
+        id={7413}
+        name="Castle Enemy Photo: Ballroom Start"
+        region="Castle Rooms"
+        canGetLogic={inStage && diddy && canSlam && kosha && hasFairyCam}
       />
     </DropPool>
   )
