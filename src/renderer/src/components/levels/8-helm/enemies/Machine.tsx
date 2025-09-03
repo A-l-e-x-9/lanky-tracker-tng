@@ -20,7 +20,7 @@ const HelmMachineEnemies: React.FC = () => {
   const sax = useSax()
   const triangle = useTriangle()
   const klump = useDefeatKlump()
-  const hasFairyCam = useCamera()
+  const hasCamera = useCamera()
   return (
     <>
       <HelmCheck
