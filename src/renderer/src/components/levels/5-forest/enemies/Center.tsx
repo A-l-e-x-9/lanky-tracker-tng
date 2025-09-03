@@ -11,7 +11,7 @@ const CenterEnemies: React.FC = () => {
   const beanstalk = useForestBean()
   const beanHalf = useForestBeanHalf()
   const hasHunky = useHunky()
-  const hasFairyCam = useFairyCamera()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <ForestCheck
