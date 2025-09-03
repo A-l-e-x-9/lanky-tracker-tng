@@ -29398,6 +29398,7 @@ const BossCheck = () => {
 const HelmDoorsEnemies = () => {
   const helmDoors = useHelmDoors();
   const anyKong = useAnyKong();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       HelmCheck,
@@ -29415,6 +29416,24 @@ const HelmDoorsEnemies = () => {
         name: "Helm Enemy: Nav Room Right",
         canGetLogic: helmDoors.in && anyKong,
         canGetBreak: helmDoors.out && anyKong
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8417,
+        name: "Helm Enemy Photo: Nav Room Left",
+        canGetLogic: helmDoors.in && anyKong && hasFairyCam,
+        canGetBreak: helmDoors.out && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8418,
+        name: "Helm Enemy Photo: Nav Room Right",
+        canGetLogic: helmDoors.in && anyKong && hasFairyCam,
+        canGetBreak: helmDoors.out && anyKong && hasFairyCam
       }
     )
   ] });
