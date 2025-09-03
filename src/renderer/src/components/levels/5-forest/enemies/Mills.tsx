@@ -6,7 +6,7 @@ import {
   useDefeatZinger
 } from '@renderer/hooks/enemies'
 import { useForestDay, useForestNight, usePlayForest, useSlamForest } from '@renderer/hooks/forest'
-import { useAnyKong, useDiddy, useDk, usePunch, useStrong, useMini } from '@renderer/hooks/kongs'
+import { useAnyKong, useDiddy, useDk, usePunch, useStrong, useMini, useCamera } from '@renderer/hooks/kongs'
 import { logicBreak } from '@renderer/hooks/world'
 import ForestCheck from '../check'
 
@@ -25,6 +25,7 @@ const MillsEnemies: React.FC = () => {
   const day = useForestDay()
   const punch = usePunch()
   const hasMiniMonkey = useMini()
+  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <ForestCheck
@@ -107,6 +108,87 @@ const MillsEnemies: React.FC = () => {
         region="Forest Mills"
         canGetLogic={night.in && strong && canSlam && kosha}
         canGetBreak={logicBreak(night) && dk && canSlam && kosha}
+      />
+      <ForestCheck
+        id={5430}
+        name="Forest Enemy Photo: Near Snide"
+        region="Forest Mills"
+        canGetLogic={inStage && anyKong && hasFairyCam}
+      />
+      <ForestCheck
+        id={5431}
+        name="Forest Enemy Photo: Near the Infamous Dirt Patch"
+        region="Forest Mills"
+        canGetLogic={inStage && zinger && hasFairyCam}
+      />
+      <ForestCheck
+        id={5433}
+        name="Forest Enemy Photo: Near Dark Attic"
+        region="Forest Mills"
+        canGetLogic={inStage && klump && hasFairyCam}
+      />
+      <ForestCheck
+        id={5434}
+        name="Forest Enemy Photo: Near Well Exit"
+        region="Forest Mills"
+        canGetLogic={inStage && zinger && hasFairyCam}
+      />
+      <ForestCheck
+        id={5435}
+        name="Forest Enemy Photo: Near Blue Tunnel"
+        region="Forest Mills"
+        canGetLogic={inStage && klump && hasFairyCam}
+      />
+      <ForestCheck
+        id={5446}
+        name="Forest Enemy Photo: Mill Inside Front"
+        region="Forest Mills"
+        canGetLogic={day.in && zinger && hasFairyCam}
+        canGetBreak={logicBreak(day) && zinger && hasFairyCam}
+      />
+      <ForestCheck
+        id={5447}
+        name="Forest Enemy Photo: Mill Inside Rear"
+        region="Forest Mills"
+        canGetLogic={day.in && (punch || hasMiniMonkey) && zinger && hasFairyCam}
+        canGetBreak={logicBreak(day) && (punch || hasMiniMonkey) && zinger && hasFairyCam}
+      />
+      <ForestCheck
+        id={5444}
+        name="Forest Enemy Photo: Winch Inside"
+        region="Forest Mills"
+        canGetLogic={inStage && diddy && canSlam && bat && hasFairyCam}
+      />
+      <ForestCheck
+        id={5436}
+        name="Forest Enemy Photo: Thornvine 0"
+        region="Forest Mills"
+        canGetLogic={inStage && klump && hasFairyCam}
+      />
+      <ForestCheck
+        id={5437}
+        name="Forest Enemy Photo: Thornvine 1"
+        region="Forest Mills"
+        canGetLogic={inStage && klump && hasFairyCam}
+      />
+      <ForestCheck
+        id={5438}
+        name="Forest Enemy Photo: Thornvine 2"
+        region="Forest Mills"
+        canGetLogic={inStage && zinger && hasFairyCam}
+      />
+      <ForestCheck
+        id={5439}
+        name="Forest Enemy Photo: Thornvine Entrance"
+        region="Forest Mills"
+        canGetLogic={inStage && klump && hasFairyCam}
+      />
+      <ForestCheck
+        id={5445}
+        name="Forest Enemy Photo: Thornvine Barn Inside"
+        region="Forest Mills"
+        canGetLogic={night.in && strong && canSlam && kosha && hasFairyCam}
+        canGetBreak={logicBreak(night) && dk && canSlam && kosha && hasFairyCam}
       />
     </DropPool>
   )

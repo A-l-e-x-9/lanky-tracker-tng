@@ -2,7 +2,7 @@ import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatKlump, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useForestBean, useForestBeanHalf, usePlayForest } from '@renderer/hooks/forest'
 import ForestCheck from '../check'
-import { useHunky } from '@renderer/hooks/kongs'
+import { useHunky, useCamera } from '@renderer/hooks/kongs'
 
 const CenterEnemies: React.FC = () => {
   const inStage = usePlayForest()
@@ -11,6 +11,7 @@ const CenterEnemies: React.FC = () => {
   const beanstalk = useForestBean()
   const beanHalf = useForestBeanHalf()
   const hasHunky = useHunky()
+  const hasFairyCam = useFairyCamera()
   return (
     <DropPool>
       <ForestCheck
@@ -72,6 +73,66 @@ const CenterEnemies: React.FC = () => {
         name="Forest Enemy: Giant Tomato 3"
         region="Forest Center And Beanstalk"
         canGetLogic={beanstalk && hasHunky}
+      />
+      <ForestCheck
+        id={5423}
+        name="Forest Enemy Photo: Near Apple Dropoff"
+        region="Forest Center And Beanstalk"
+        canGetLogic={inStage && zinger && hasFairyCam}
+      />
+      <ForestCheck
+        id={5424}
+        name="Forest Enemy Photo: Near Vanilla DK Portal"
+        region="Forest Center And Beanstalk"
+        canGetLogic={inStage && zinger && hasFairyCam}
+      />
+      <ForestCheck
+        id={5425}
+        name="Forest Enemy Photo: Near Well Tag"
+        region="Forest Center And Beanstalk"
+        canGetLogic={inStage && zinger && hasFairyCam}
+      />
+      <ForestCheck
+        id={5412}
+        name="Forest Enemy Photo: Green Tunnel"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanHalf && zinger && hasFairyCam}
+      />
+      <ForestCheck
+        id={5410}
+        name="Forest Enemy Photo: Near Beanstalk 0"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && klump && hasFairyCam}
+      />
+      <ForestCheck
+        id={5411}
+        name="Forest Enemy Photo: Near Beanstalk 1"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && klump && hasFairyCam}
+      />
+      <ForestCheck
+        id={5511}
+        name="Forest Enemy Photo: Giant Tomato 0"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && hasHunky && hasFairyCam}
+      />
+      <ForestCheck
+        id={5512}
+        name="Forest Enemy Photo: Giant Tomato 1"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && hasHunky && hasFairyCam}
+      />
+      <ForestCheck
+        id={5513}
+        name="Forest Enemy Photo: Giant Tomato 2"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && hasHunky && hasFairyCam}
+      />
+      <ForestCheck
+        id={5514}
+        name="Forest Enemy Photo: Giant Tomato 3"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && hasHunky && hasFairyCam}
       />
     </DropPool>
   )
