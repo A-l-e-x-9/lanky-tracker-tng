@@ -25995,6 +25995,7 @@ const CabinsEnemies = () => {
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
   const kosha = useDefeatKosha();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
@@ -26032,6 +26033,43 @@ const CabinsEnemies = () => {
         canGetLogic: lankyCabin.in && kosha,
         canGetBreak: lankyCabin.out && kosha
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6402,
+        name: "Caves Enemy Photo: Outside 5 Door Cabin",
+        region: "Cabins Area",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6403,
+        name: "Caves Enemy Photo: Waterfall Lanky Cabin",
+        region: "Cabins Area",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6407,
+        name: "Caves Enemy Photo: Lanky Cabin Headphones",
+        region: "Cabins Area",
+        canGetLogic: inStage && anyKong && kosha && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6417,
+        name: "Caves Enemy Photo: Lanky Cabin Inside Near Pad and Barrel",
+        region: "Cabins Area",
+        canGetLogic: lankyCabin.in && kosha && hasFairyCam,
+        canGetBreak: lankyCabin.out && kosha && hasFairyCam
+      }
     )
   ] });
 };
@@ -26040,6 +26078,7 @@ const IglooEnemies = () => {
   const kosha = useDefeatKosha();
   const bongos = useBongos();
   const sax = useSax();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
@@ -26067,6 +26106,33 @@ const IglooEnemies = () => {
         region: "Igloo Area",
         canGetLogic: igloo && sax && kosha
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6409,
+        name: "Caves Enemy Photo: DK Igloo Right",
+        region: "Igloo Area",
+        canGetLogic: igloo && bongos && kosha && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6410,
+        name: "Caves Enemy Photo: DK Igloo Left",
+        region: "Igloo Area",
+        canGetLogic: igloo && bongos && kosha && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6416,
+        name: "Caves Enemy Photo: Tiny Igloo Big",
+        region: "Igloo Area",
+        canGetLogic: igloo && sax && kosha && hasFairyCam
+      }
     )
   ] });
 };
@@ -26075,6 +26141,7 @@ const MainEnemies = () => {
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
   const kosha = useDefeatKosha();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
@@ -26119,6 +26186,51 @@ const MainEnemies = () => {
         name: "Caves Enemy: Near Snide",
         region: "Main Caves Area",
         canGetLogic: inStage && kosha
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6400,
+        name: "Caves Enemy Photo: Start",
+        region: "Main Caves Area",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6401,
+        name: "Caves Enemy Photo: Near Ice Castle",
+        region: "Main Caves Area",
+        canGetLogic: inStage && anyKong && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6404,
+        name: "Caves Enemy Photo: Near Funky",
+        region: "Main Caves Area",
+        canGetLogic: inStage && zinger && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6406,
+        name: "Caves Enemy Photo: Near Bonus Room",
+        region: "Main Caves Area",
+        canGetLogic: inStage && kosha && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6405,
+        name: "Caves Enemy Photo: Near Snide",
+        region: "Main Caves Area",
+        canGetLogic: inStage && kosha && hasFairyCam
       }
     )
   ] });
