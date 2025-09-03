@@ -46,7 +46,7 @@ const prevEnd = (val: PearlRange): PearlRange => {
   return target as PearlRange
 }
 
-const EndingSelector: React.FC<EndingSelectorProps> = (props) => {
+export const EndingSelector: React.FC<EndingSelectorProps> = (props) => {
   const [endingChar, setEnd] = useDonkStore(
     useShallow((state) => [state[props.rootKey] as PearlRange, state.setEnd])
   )
@@ -83,4 +83,39 @@ const EndingSelector: React.FC<EndingSelectorProps> = (props) => {
   )
 }
 
-export default EndingSelector
+export const RoolSelector: React.FC<EndingSelectorProps> = (props) => {
+  const [endingChar, setEnd] = useDonkStore(
+    useShallow((state) => [state[props.rootKey] as PearlRange, state.setEnd])
+  )
+
+  const handleNext = (): void => {
+    setEnd(props.rootKey, nextEnd(endingChar))
+  }
+
+  const handlePrev = (e: React.MouseEvent<HTMLImageElement>): void => {
+    e.preventDefault()
+    setEnd(props.rootKey, prevEnd(endingChar))
+  }
+
+  const handleWheel = (e: React.WheelEvent<HTMLImageElement>): void => {
+    if (e.deltaY >= 0) {
+      setEnd(props.rootKey, nextEnd(endingChar))
+    } else {
+      setEnd(props.rootKey, prevEnd(endingChar))
+    }
+  }
+
+  return (
+    <>
+      <img
+        height={24}
+        width={24}
+        className="simple-icon"
+        src={currImg(endingChar)}
+        onClick={handleNext}
+        onContextMenu={handlePrev}
+        onWheel={handleWheel}
+      />
+    </>
+  )
+}
