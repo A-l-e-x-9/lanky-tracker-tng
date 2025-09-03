@@ -27413,6 +27413,7 @@ const LibraryEnemies = () => {
   const canSlam = useSlamCastle();
   const dk2 = useDk();
   const bat = useDefeatBat();
+  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
@@ -27448,6 +27449,42 @@ const LibraryEnemies = () => {
         name: "Castle Enemy: Library Gauntlet Fork Right",
         region: "Castle Rooms",
         canGetLogic: inStage && dk2 && canSlam && bat
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7457,
+        name: "Castle Enemy Photo: Library Gauntlet Fork Left 0",
+        region: "Castle Rooms",
+        canGetLogic: inStage && dk2 && canSlam && bat && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7458,
+        name: "Castle Enemy Photo: Library Gauntlet Fork Left 1",
+        region: "Castle Rooms",
+        canGetLogic: inStage && dk2 && canSlam && bat && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7459,
+        name: "Castle Enemy Photo: Library Gauntlet Fork Center",
+        region: "Castle Rooms",
+        canGetLogic: inStage && dk2 && canSlam && bat && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7460,
+        name: "Castle Enemy Photo: Library Gauntlet Fork Right",
+        region: "Castle Rooms",
+        canGetLogic: inStage && dk2 && canSlam && bat && hasFairyCam
       }
     )
   ] });
