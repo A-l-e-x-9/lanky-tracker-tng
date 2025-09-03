@@ -128,6 +128,6 @@ export const useCanFightRool = (): LogicBool => {
 
   return {
     in: check1.in && check2.in && check3.in && check4.in && check5.in,
-    out: check1.in && check2.in && check3.in && check4.out && check5.in
+    out: check1.out && check2.out && check3.out && check4.out && check5.out
   }
 }
