@@ -29487,6 +29487,7 @@ const HelmMachineEnemies = () => {
   const sax = useSax();
   const triangle = useTriangle();
   const klump = useDefeatKlump();
+  const hasCamera = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       HelmCheck,
@@ -29558,6 +29559,78 @@ const HelmMachineEnemies = () => {
         name: "Helm Enemy: Diddy Room 1",
         canGetLogic: helmMachine.in && guitar && rocket,
         canGetBreak: helmMachine.out && guitar && rocket
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8409,
+        name: "Helm Enemy Photo: DK Room",
+        canGetLogic: helmMachine.in && bongos && hasCamera,
+        canGetBreak: helmMachine.out && bongos && hasCamera
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8410,
+        name: "Helm Enemy Photo: Chunky Room 0",
+        canGetLogic: helmMachine.in && triangle && hasCamera,
+        canGetBreak: helmMachine.out && triangle && hasCamera
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8411,
+        name: "Helm Enemy Photo: Chunky Room 1",
+        canGetLogic: helmMachine.in && triangle && hasCamera,
+        canGetBreak: helmMachine.out && triangle && hasCamera
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8412,
+        name: "Helm Enemy Photo: Tiny Room",
+        canGetLogic: helmMachine.in && sax && hasCamera,
+        canGetBreak: helmMachine.out && sax && klump && hasCamera
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8413,
+        name: "Helm Enemy Photo: Lanky Room 0",
+        canGetLogic: helmMachine.in && trombone && hasCamera,
+        canGetBreak: helmMachine.out && trombone && klump && hasCamera
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8414,
+        name: "Helm Enemy Photo: Lanky Room 1",
+        canGetLogic: helmMachine.in && trombone && hasCamera,
+        canGetBreak: helmMachine.out && trombone && hasCamera
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8415,
+        name: "Helm Enemy Photo: Diddy Room 0",
+        canGetLogic: helmMachine.in && guitar && rocket && hasCamera,
+        canGetBreak: helmMachine.out && guitar && rocket && hasCamera
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8416,
+        name: "Helm Enemy Photo: Diddy Room 1",
+        canGetLogic: helmMachine.in && guitar && rocket && hasCamera,
+        canGetBreak: helmMachine.out && guitar && rocket && hasCamera
       }
     )
   ] });
