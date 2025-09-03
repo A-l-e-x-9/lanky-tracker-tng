@@ -27,11 +27,11 @@ const Ending: React.FC = () => {
         </span>
       </div>
       <section>
-        <RoolSelector rootKey="rool1" />
-        <RoolSelector rootKey="rool2" />
-        <RoolSelector rootKey="rool3" />
-        <RoolSelector rootKey="rool4" />
-        <RoolSelector rootKey="rool5" />
+        <RoolSelector roolRootKey="rool1" />
+        <RoolSelector roolRootKey="rool2" />
+        <RoolSelector roolRootKey="rool3" />
+        <RoolSelector roolRootKey="rool4" />
+        <RoolSelector roolRootKey="rool5" />
       </section>
     </section>
   )
