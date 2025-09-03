@@ -10,7 +10,6 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
 - There's a bug from the original Lanky Tracker that Alex was unable to fix: the fact that the Lanky Rabbit Race apparently requires Key 5. While that may be true for the original game (as Level 6, Crystal Caves, was where O-Stand Sprint was), it's not true for Randomizer seeds.
-- The new "Bosses" feature still uses just the Kongs' heads for K. Rool phases...need the K. Rool/Kong head dual icons for K. Rool phases.
 - While the Bosses feature is designed to account for seeds with the "K. Rool Phases as Bosses" option on, the "K. Rool" section is not, due to it apparently sharing the same option selector as the "Helm" section...need to write a new selector.
 - Make the left side of the tracker sticky...either Alex really sucks at using the "position: sticky;" CSS command, or something else about the tracker's design is stopping it from being sticky.
 - Having Snide turned off in the "Moves" section makes all Kasplats unavailable. This, obviously, is a stupid way to check whether or not you can turn in Blueprints for a seed, since most Randomizer seeds are highly unlikely to have them on Kasplats...must find a better way to implement Snide.
