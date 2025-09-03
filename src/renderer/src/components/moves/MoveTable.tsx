@@ -65,8 +65,8 @@ import tinyBpIcon from '../../assets/images/tiny_bp.png'
 import chunkyBpIcon from '../../assets/images/chunky_bp.png'
 import crankyIcon from '../../assets/images/cranky.png'
 import funkyIcon from '../../assets/images/settings/funky.png'
-import candyIcon from '../../assets/images/settings/candy.png'
-import snideIcon from '../../assets/images/settings/snide.png'
+import candyIcon from '../../assets/images/candy.png'
+import snideIcon from '../../assets/images/snide.png'
 
 const MoveTable = (): JSX.Element => {
   const [setMove, setConsumable] = useDonkStore(
