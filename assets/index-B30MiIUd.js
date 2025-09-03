@@ -27333,15 +27333,27 @@ const BallroomEnemies = () => {
   const canSlam = useSlamCastle();
   const diddy = useDiddy();
   const kosha = useDefeatKosha();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CastleCheck,
-    {
-      id: 7313,
-      name: "Castle Enemy: Ballroom Start",
-      region: "Castle Rooms",
-      canGetLogic: inStage && diddy && canSlam && kosha
-    }
-  ) });
+  const hasFairyCam = useCamera();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7313,
+        name: "Castle Enemy: Ballroom Start",
+        region: "Castle Rooms",
+        canGetLogic: inStage && diddy && canSlam && kosha
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7413,
+        name: "Castle Enemy Photo: Ballroom Start",
+        region: "Castle Rooms",
+        canGetLogic: inStage && diddy && canSlam && kosha && hasFairyCam
+      }
+    )
+  ] });
 };
 const MuseumEnemies = () => {
   const inStage = usePlayCastle();
