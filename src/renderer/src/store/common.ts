@@ -710,6 +710,14 @@ interface EndingActions {
 
 export type EndingSlice = EndingState & EndingActions
 
+export interface endingPhase {
+  rool1: RoolRange
+  rool2: RoolRange
+  rool3: RoolRange
+  rool4: RoolRange
+  rool5: RoolRange
+}
+
 //#endregion
 
 //#region UI
