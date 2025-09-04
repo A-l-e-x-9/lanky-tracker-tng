@@ -30612,7 +30612,7 @@ const currPhaseImg = (val) => {
 };
 const nextRool = (val) => {
   const target = val + 1;
-  if (target > 11) {
+  if (target > 12) {
     return 0;
   }
   return target;
@@ -30620,7 +30620,7 @@ const nextRool = (val) => {
 const prevRool = (val) => {
   const target = val - 1;
   if (target < 0) {
-    return 11;
+    return 12;
   }
   return target;
 };
