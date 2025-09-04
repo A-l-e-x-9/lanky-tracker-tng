@@ -894,6 +894,7 @@ export type AllSlice = CheckSlice &
   HintSlice &
   FastCheckSlice &
   EndingSlice &
+  RoolSlice &
   UiSlice
 
 export const donkResetFns = new Set<() => void>()
