@@ -132,7 +132,7 @@ const currPhaseImg = (val: RoolRange): string => {
 
 const nextRool = (val: RoolRange): RoolRange => {
   const target = val + 1
-  if (target > 11) {
+  if (target > 12) {
     return 0
   }
   return target as RoolRange
@@ -141,7 +141,7 @@ const nextRool = (val: RoolRange): RoolRange => {
 const prevRool = (val: RoolRange): RoolRange => {
   const target = val - 1
   if (target < 0) {
-    return 11
+    return 12
   }
   return target as RoolRange
 }
