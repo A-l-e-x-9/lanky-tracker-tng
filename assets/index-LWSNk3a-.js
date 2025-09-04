@@ -14413,26 +14413,29 @@ const JapesForestEnemies = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyEnemies, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyEnemies, {})
 ] });
-const KremBaseEnemies = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(
-    IslesCheck,
-    {
-      id: 305,
-      name: "Isles Enemy: Monkeyport Pad",
-      region: "Krem Isle",
-      canGetLogic: useAnyKong()
-    }
-  ),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(
-    IslesCheck,
-    {
-      id: 405,
-      name: "Isles Enemy Photo: Monkeyport Pad",
-      region: "Krem Isle",
-      canGetLogic: useAnyKong() && useCamera()
-    }
-  )
-] });
+const KremBaseEnemies = () => {
+  const hasFairyCam = useCamera();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 305,
+        name: "Isles Enemy: Monkeyport Pad",
+        region: "Krem Isle",
+        canGetLogic: useAnyKong()
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 405,
+        name: "Isles Enemy Photo: Monkeyport Pad",
+        region: "Krem Isle",
+        canGetLogic: useAnyKong() && hasFairyCam
+      }
+    )
+  ] });
+};
 const KremLiftEnemies = () => {
   const anyKong = useAnyKong();
   const kremAscent = useIslesKremAscent();
