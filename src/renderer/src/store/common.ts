@@ -16,7 +16,7 @@ type RainbowCoinRange = IntRange<0, 17>
 type SlamRange = IntRange<0, 4>
 export type BananaportRange = IntRange<0, 3>
 export type KongRange = IntRange<0, 5>
-export type RoolRange = IntRange<0, 12>
+export type RoolRange = IntRange<0, 13>
 
 export const nameof = <T>(name: Extract<keyof T, string>): string => name
 
