@@ -30953,10 +30953,11 @@ const melonIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAAC
 const toughBananaIcon = "" + new URL("rabbit-D6O9SrZi.png", import.meta.url).href;
 const slamSwitchIcon = "" + new URL("slam_switch-DrcJ-6n7.png", import.meta.url).href;
 const switchsanityIcon = "" + new URL("switch-D6Og0W-L.png", import.meta.url).href;
+const wrinkly = "" + new URL("wrinkly-COxhSpd3.png", import.meta.url).href;
 const customStyles = {
   content: {
     backgroundColor: "#002040",
-    color: "white"
+    color: "#ffffff"
   }
 };
 const GeneratorSettings = () => {
@@ -31116,7 +31117,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: shopIcon,
+                  imgUrl: wrinkly,
                   title: "Puts Wrinkly Kong's doors in the pool.",
                   storeKey: "poolWrinkly",
                   prefix: "settings",
