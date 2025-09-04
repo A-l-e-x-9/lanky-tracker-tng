@@ -718,6 +718,12 @@ export interface endingPhase {
   rool5: RoolRange
 }
 
+interface RoolActions {
+  setRool: (id: keyof endingPhase, val: RoolRange) => void
+}
+
+export type RoolSlice = endingPhase & RoolActions
+
 //#endregion
 
 //#region UI
