@@ -9977,7 +9977,9 @@ const initialEndings = {
   helm2: 0,
   helm3: 0,
   helm4: 0,
-  helm5: 0,
+  helm5: 0
+};
+const initialRool = {
   rool1: 0,
   rool2: 0,
   rool3: 0,
@@ -9989,6 +9991,23 @@ const endingSlice = (set) => {
   return {
     ...initialEndings,
     setEnd(id2, val) {
+      set((state) => {
+        const target = {};
+        target[id2] = val;
+        state = {
+          ...state,
+          ...target
+        };
+        return state;
+      });
+    }
+  };
+};
+const roolSlice = (set) => {
+  donkResetFns.add(() => set(initialRool));
+  return {
+    ...initialRool,
+    setRool(id2, val) {
       set((state) => {
         const target = {};
         target[id2] = val;
@@ -10349,6 +10368,7 @@ const initializer = (...d) => ({
   ...barrierSlice(...d),
   ...fastCheckSlice(...d),
   ...endingSlice(...d),
+  ...roolSlice(...d),
   ...uiSlice(...d)
 });
 const useDonkStore = create()(
@@ -12819,6 +12839,7 @@ const useCactusKasplat = () => {
 const useSingleHelmCheck = (val) => {
   const dk2 = useBongos();
   const diddy = useGuitar();
+  const hasJetbarrel = useRocket();
   const lanky = useTrombone();
   const tiny = useSax();
   const chunky = useTriangle();
@@ -12827,7 +12848,7 @@ const useSingleHelmCheck = (val) => {
     case 1:
       return dk2;
     case 2:
-      return diddy;
+      return diddy && hasJetbarrel;
     case 3:
       return lanky;
     case 4:
@@ -12873,19 +12894,26 @@ const useSingleRoolCheck = (val) => {
   const gone = useGone();
   const punch = usePunch();
   const chunky = useHunky() && (balancedRool ? slam : superSlam) && gone && punch;
+  const hasTwirl = useTwirl();
+  const madJackBreak = useTiny();
+  const isBreathing = useAnyKong();
+  const hunky = useHunky();
   const check = useDonkStore(useShallow((state) => state["rool" + val]));
   switch (check) {
     case 1:
       return {
-        in: dk2 && (!balancedRool || blast)
+        in: dk2 && (!balancedRool || blast),
+        out: dk2 && (!balancedRool || blast)
       };
     case 2:
       return {
-        in: diddy
+        in: diddy,
+        out: diddy
       };
     case 3:
       return {
-        in: lanky
+        in: lanky,
+        out: lanky
       };
     case 4:
       return {
@@ -12894,7 +12922,43 @@ const useSingleRoolCheck = (val) => {
       };
     case 5:
       return {
-        in: chunky
+        in: chunky,
+        out: chunky
+      };
+    case 6:
+      return {
+        in: barrel,
+        out: barrel
+      };
+    case 7:
+      return {
+        in: barrel,
+        out: barrel
+      };
+    case 8:
+      return {
+        in: hasTwirl,
+        out: dk2 || madJackBreak
+      };
+    case 9:
+      return {
+        in: isBreathing,
+        out: isBreathing
+      };
+    case 10:
+      return {
+        in: barrel && hunky,
+        out: barrel && hunky
+      };
+    case 11:
+      return {
+        in: barrel,
+        out: barrel
+      };
+    case 12:
+      return {
+        in: isBreathing,
+        out: isBreathing
       };
     default:
       return { in: true };
@@ -12913,6 +12977,20 @@ const useSingleRoolNum = (val) => {
       return 4;
     case 5:
       return 5;
+    case 6:
+      return 6;
+    case 7:
+      return 7;
+    case 8:
+      return 8;
+    case 9:
+      return 9;
+    case 10:
+      return 10;
+    case 11:
+      return 11;
+    case 12:
+      return 12;
     default:
       return 0;
   }
@@ -12989,7 +13067,7 @@ const useCanFightRool = () => {
   }
   return {
     in: check1.in && check2.in && check3.in && check4.in && check5.in,
-    out: check1.in && check2.in && check3.in && check4.out && check5.in
+    out: check1.out && check2.out && check3.out && check4.out && check5.out
   };
 };
 const usePlayJapes = () => usePlayLevel("Japes");
@@ -30161,45 +30239,45 @@ const MoveTable = () => {
     ] })
   ] });
 };
-const dogadon1Icon = "" + new URL("dogadon-1-D9BQDcc1.png", import.meta.url).href;
-const kutoutIcon = "" + new URL("kutout-CndUk1aJ.png", import.meta.url).href;
-const armyDillo2Icon = "" + new URL("army-dillo-2-DlW0W-ZC.png", import.meta.url).href;
-const madJackIcon = "" + new URL("mad-jack-CWHOmyh7.png", import.meta.url).href;
-const dogadon2Icon = "" + new URL("dogadon-2-C3BHVicw.png", import.meta.url).href;
-const puftossIcon = "" + new URL("puftoss-BZnWIqQ-.png", import.meta.url).href;
-const armyDillo1Icon = "" + new URL("army-dillo-1-zDonsgJZ.png", import.meta.url).href;
-const kRoolDKIcon = "" + new URL("krool-dk-Br7GS7q-.png", import.meta.url).href;
-const kRoolDiddyIcon = "" + new URL("krool-diddy-DTNg2u1e.png", import.meta.url).href;
-const kRoolLankyIcon = "" + new URL("krool-lanky-C_N2UOq5.png", import.meta.url).href;
-const kRoolTinyIcon = "" + new URL("krool-tiny-C2_qn65W.png", import.meta.url).href;
-const kRoolChunkyIcon = "" + new URL("krool-chunky-CoKMx8la.png", import.meta.url).href;
+const dogadon1 = "" + new URL("dogadon-1-D9BQDcc1.png", import.meta.url).href;
+const kutOut = "" + new URL("kutout-CndUk1aJ.png", import.meta.url).href;
+const armyDillo2 = "" + new URL("army-dillo-2-DlW0W-ZC.png", import.meta.url).href;
+const madJack = "" + new URL("mad-jack-CWHOmyh7.png", import.meta.url).href;
+const dogadon2 = "" + new URL("dogadon-2-C3BHVicw.png", import.meta.url).href;
+const puftoss = "" + new URL("puftoss-BZnWIqQ-.png", import.meta.url).href;
+const armyDillo1 = "" + new URL("army-dillo-1-zDonsgJZ.png", import.meta.url).href;
+const kroolDK = "" + new URL("krool-dk-Br7GS7q-.png", import.meta.url).href;
+const kroolDiddy = "" + new URL("krool-diddy-DTNg2u1e.png", import.meta.url).href;
+const kroolLanky = "" + new URL("krool-lanky-C_N2UOq5.png", import.meta.url).href;
+const kroolTiny = "" + new URL("krool-tiny-C2_qn65W.png", import.meta.url).href;
+const kroolChunky = "" + new URL("krool-chunky-CoKMx8la.png", import.meta.url).href;
 const unknownIcon$1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA/UExURQAAACkpKT09PUBAQC4uLkpKSk9PT1RUVGVlZVlZWQwMDGhoaHFxcWBgYHl5eX19fX9/fxsbG3h4eAEBAQAAAAw7gGsAAAAVdFJOU///////////////////////////ACvZfeoAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACHSURBVChTrdDbEsIgDATQUEkxeKPK/3+rWSCYGfTN7cvJDrQF6qnIwi912E6xT57EOzNvGDwpnSXJzjp4Uo7pcpWb6G5HRO6PUhZSKJqFlD824m/B/iEjDI4VRnW01lGfozyPV68nsXMEZxtpdQwZRG3UWl+o52r3Nmk1WsffdUuvJ/9Q1/oGnaEP/8RpzxgAAAAASUVORK5CYII=";
 const bossToIcon = (boss) => {
   switch (boss) {
     case "Army Dillo 1":
-      return armyDillo1Icon;
+      return armyDillo1;
     case "Dogadon 1":
-      return dogadon1Icon;
+      return dogadon1;
     case "Mad Jack":
-      return madJackIcon;
+      return madJack;
     case "Puftoss":
-      return puftossIcon;
+      return puftoss;
     case "Dogadon 2":
-      return dogadon2Icon;
+      return dogadon2;
     case "Army Dillo 2":
-      return armyDillo2Icon;
+      return armyDillo2;
     case "Kutout":
-      return kutoutIcon;
+      return kutOut;
     case "DK Phase of K. Rool":
-      return kRoolDKIcon;
+      return kroolDK;
     case "Diddy Phase of K. Rool":
-      return kRoolDiddyIcon;
+      return kroolDiddy;
     case "Lanky Phase of K. Rool":
-      return kRoolLankyIcon;
+      return kroolLanky;
     case "Tiny Phase of K. Rool":
-      return kRoolTinyIcon;
+      return kroolTiny;
     case "Chunky Phase of K. Rool":
-      return kRoolChunkyIcon;
+      return kroolChunky;
     default:
       return unknownIcon$1;
   }
@@ -30502,22 +30580,66 @@ const EndingSelector = (props) => {
     }
   ) });
 };
+const currPhaseImg = (val) => {
+  switch (val) {
+    case 0:
+      return unknownIcon$1;
+    case 1:
+      return kroolDK;
+    case 2:
+      return kroolDiddy;
+    case 3:
+      return kroolLanky;
+    case 4:
+      return kroolTiny;
+    case 5:
+      return kroolChunky;
+    case 6:
+      return armyDillo1;
+    case 7:
+      return dogadon1;
+    case 8:
+      return madJack;
+    case 9:
+      return puftoss;
+    case 10:
+      return dogadon2;
+    case 11:
+      return armyDillo2;
+    default:
+      return kutOut;
+  }
+};
+const nextRool = (val) => {
+  const target = val + 1;
+  if (target > 11) {
+    return 0;
+  }
+  return target;
+};
+const prevRool = (val) => {
+  const target = val - 1;
+  if (target < 0) {
+    return 11;
+  }
+  return target;
+};
 const RoolSelector = (props) => {
-  const [endingChar, setEnd] = useDonkStore(
-    useShallow((state) => [state[props.rootKey], state.setEnd])
+  const [endingPhase2, setRool] = useDonkStore(
+    useShallow((state) => [state[props.roolRootKey], state.setRool])
   );
   const handleNext = () => {
-    setEnd(props.rootKey, nextEnd(endingChar));
+    setRool(props.roolRootKey, nextRool(endingPhase2));
   };
   const handlePrev = (e2) => {
     e2.preventDefault();
-    setEnd(props.rootKey, prevEnd(endingChar));
+    setRool(props.roolRootKey, prevRool(endingPhase2));
   };
   const handleWheel = (e2) => {
     if (e2.deltaY >= 0) {
-      setEnd(props.rootKey, nextEnd(endingChar));
+      setRool(props.roolRootKey, nextRool(endingPhase2));
     } else {
-      setEnd(props.rootKey, prevEnd(endingChar));
+      setRool(props.roolRootKey, prevRool(endingPhase2));
     }
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30526,7 +30648,7 @@ const RoolSelector = (props) => {
       height: 24,
       width: 24,
       className: "simple-icon",
-      src: currImg(endingChar),
+      src: currPhaseImg(endingPhase2),
       onClick: handleNext,
       onContextMenu: handlePrev,
       onWheel: handleWheel
@@ -30559,11 +30681,11 @@ const Ending = () => {
       )
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { rootKey: "rool1" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { rootKey: "rool2" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { rootKey: "rool3" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { rootKey: "rool4" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { rootKey: "rool5" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool1" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool2" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool3" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool4" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool5" })
     ] })
   ] });
 };
