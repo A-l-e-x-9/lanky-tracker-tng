@@ -7,7 +7,7 @@ import barrierSlice from './barriers'
 import bossSlice from './boss'
 import coreSlice from './checks'
 import consumablesSlice from './consumables'
-import endingSlice from './ending'
+import { endingSlice, roolSlice } from './ending'
 import fastCheckSlice from './fast-checks'
 import hintSlice from './hints'
 import levelSlice from './level'
@@ -28,6 +28,7 @@ const initializer: StateCreator<AllSlice, [['zustand/persist', unknown]], []> = 
   ...barrierSlice(...d),
   ...fastCheckSlice(...d),
   ...endingSlice(...d),
+  ...roolSlice(...d),
   ...uiSlice(...d)
 })
 
