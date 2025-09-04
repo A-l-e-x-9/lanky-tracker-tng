@@ -9,6 +9,7 @@ The instructions on how to use this thing can be found in "instructions.html".
 As with the original, this tracker was written in JavaScript, primarily with an [electron-vite](https://electron-vite.org/) setup in addition to Facebook/the Meta Group's [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/). Obviously, you need JavaScript in order to use it.
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
+- Find a Wrinkly Kong icon...the "Wrinkly Doors?" checkbox in Settings currently uses Funky's head as a filler. What a funky? D:
 - There's a bug from the original Lanky Tracker that Alex was unable to fix: the fact that the Lanky Rabbit Race apparently requires Key 5. While that may be true for the original game (as Level 6, Crystal Caves, was where O-Stand Sprint was), it's not true for Randomizer seeds.
 - K. Rool's phase selector will only light up in yellow if you have all five phases set and one of them is Tiny Phase without Feathers or Mad Jack without Ponytail Twirl. Alex was unable to fix this while updating the K. Rool selector to account for the "use K. Rool phases as bosses" option in the Randomizer. Since all regulation "season" seeds that Alex has seen on YouTube (going back to Season 2) have only three phases, must fix this.
 - Make the left side of the tracker sticky...either Alex really sucks at using the "position: sticky;" CSS command, or something else about the tracker's design is stopping it from being sticky.
