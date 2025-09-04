@@ -39,11 +39,12 @@ import slamSwitchIcon from '../../assets/images/settings/slam_switch.png'
 import switchsanityIcon from '../../assets/images/settings/switch.png'
 import slamIcon from '../../assets/images/slam1.png'
 import featherIcon from '../../assets/images/tiny_gun.png'
+import wrinkly from '../../assets/images/wrinkly.png'
 
 const customStyles: Modal.Styles = {
   content: {
     backgroundColor: '#002040',
-    color: 'white'
+    color: '#ffffff'
   }
 }
 
@@ -170,7 +171,7 @@ const GeneratorSettings: React.FC = () => {
               />
               <p>Wrinkly Doors?</p>
               <SimpleIcon
-                imgUrl={shopIcon}
+                imgUrl={wrinkly}
                 title="Puts Wrinkly Kong's doors in the pool."
                 storeKey="poolWrinkly"
                 prefix="settings"
