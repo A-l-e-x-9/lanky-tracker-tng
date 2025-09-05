@@ -273,7 +273,7 @@ const GeneratorSettings: React.FC = () => {
                 updateItem={setSetting}
               />
               <p>Slam level required for Chunky phase of K. Rool</p>
-              <SlamSelector />
+              <p><del><strong>UNDER CONSTRUCTION</strong></del></p>
             </>
             <h3>Fast Barrier Settings</h3>
             <>
