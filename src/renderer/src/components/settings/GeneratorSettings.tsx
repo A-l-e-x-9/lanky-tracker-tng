@@ -8,7 +8,7 @@ import CheckIcon from './CheckIcon'
 import CountSelector from './CountSelector'
 import HelmSelector from './HelmSelector'
 import SimpleIcon from './SimpleIcon'
-/*import SlamSelector from '../moves/SlamSelector'*/
+import { KRoolSlamSelector } from '../moves/SlamSelector'
 
 import beanIcon from '../../assets/images/bean.png'
 import chunkyIcon from '../../assets/images/chunky.png'
@@ -272,8 +272,8 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
-              <p>Slam level required for Chunky phase of K. Rool</p>
-              <p><del><strong>UNDER CONSTRUCTION</strong></del></p>
+              <p>Slam level required for Chunky phase of K. Rool:</p>
+              <KRoolSlamSelector />
             </>
             <h3>Fast Barrier Settings</h3>
             <>
