@@ -4,7 +4,7 @@ import { useShallow } from 'zustand/react/shallow'
 import CountSelector from '../settings/CountSelector'
 import SimpleIcon from '../settings/SimpleIcon'
 import DoubleIcon from './DoubleIcon'
-import SlamSelector from './SlamSelector'
+import { SlamSelector } from './SlamSelector'
 
 import goldBananaIcon from '../../assets/images/GB.png'
 import bananaMedalIcon from '../../assets/images/bananamedal.png'
