@@ -31248,7 +31248,7 @@ const GeneratorSettings = () => {
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level required for Chunky phase of K. Rool" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(SlamSelector, {})
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("del", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "UNDER CONSTRUCTION" }) }) })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fast Barrier Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
