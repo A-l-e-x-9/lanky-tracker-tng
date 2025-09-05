@@ -1,5 +1,5 @@
 import useDonkStore from '@renderer/store'
-import { BananaportRange } from '@renderer/store/common'
+import { BananaportRange, SlamRange } from '@renderer/store/common'
 import { useShallow } from 'zustand/react/shallow'
 
 export const useBalancedRoolPhase = (): boolean =>
@@ -244,3 +244,6 @@ export const useFreeTradeRestricted = (): boolean =>
 
 export const useFreeTradeFull = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.freeTrade)) == 2
+  
+export const useChunkySlamLevel = (): SlamRange =>
+  useDonkStore(useShallow((state) => state.settings.chunkySlamLevel))

@@ -16,6 +16,7 @@ import {
   useSax,
   useSlam,
   useSuperSlam,
+  useSuperDuperSlam,
   useTriangle,
   useTrombone,
   useTwirl,
@@ -24,7 +25,7 @@ import {
 } from './kongs'
 import { useShallow } from 'zustand/react/shallow'
 import { LogicBool } from './world'
-import { useBalancedRoolPhase } from './settings'
+import { useBalancedRoolPhase, useChunkySlamLevel } from './settings'
 
 export const useSingleHelmCheck = (val: number): boolean => {
   const dk = useBongos()
@@ -71,6 +72,7 @@ export const useSingleHelmNum = (val: number): number => {
 
 export const useSingleRoolCheck = (val: number): LogicBool => {
   const balancedRool = useBalancedRoolPhase()
+  const chunkySlam = useChunkySlamLevel()
   const dk = useDk()
   const blast = useBlast()
   const peanut = usePeanut()
@@ -84,9 +86,11 @@ export const useSingleRoolCheck = (val: number): LogicBool => {
   const tinyBreak = orange && mini
   const slam = useSlam()
   const superSlam = useSuperSlam()
+  const duperSlam = useSuperDuperSlam()
   const gone = useGone()
   const punch = usePunch()
-  const chunky = useHunky() && (balancedRool ? slam : superSlam) && gone && punch
+  const chunky = useHunky() && (chunkySlam <= 1 ? slam 
+    : chunkySlam == 2 ? superSlam : duperSlam) && gone && punch
   const hasTwirl = useTwirl()
   const madJackBreak = useTiny()
   const isBreathing = useAnyKong()
