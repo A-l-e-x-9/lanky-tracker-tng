@@ -1,6 +1,6 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-
+import { useChunkySlamLevel } from '@renderer/hooks/settings.ts'
 import slamIcon from '../../assets/images/slam1.png'
 import superIcon from '../../assets/images/slam2.png'
 import duperIcon from '../../assets/images/slam3.png'
@@ -35,7 +35,7 @@ const nextSlam = (num: number): number => clamp(num + 1)
 
 const prevSlam = (num: number): number => clamp(num - 1)
 
-const SlamSelector: React.FC = () => {
+export const SlamSelector: React.FC = () => {
   const [slam, setSlam] = useDonkStore(useShallow((state) => [state.moves.slam, state.setSlam]))
 
   const handleNextLevel = (): void => {
@@ -71,4 +71,40 @@ const SlamSelector: React.FC = () => {
   )
 }
 
-export default SlamSelector
+export const KRoolSlamSelector: React.FC = () => {
+  const chunkySlamLevel = useChunkySlamLevel()
+  const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]))
+
+  const handleNextLevel = (): void => {
+    setSetting('chunkySlamLevel', nextSlam(chunkySlamLevel))
+  }
+
+  const handlePrevLevel = (e: MouseEvent<HTMLImageElement>): void => {
+    e.preventDefault()
+    setSetting('chunkySlamLevel', prevSlam(chunkySlamLevel))
+  }
+
+  const handleWheel = (e: WheelEvent<HTMLImageElement>): void => {
+    if (e.deltaY >= 0) {
+      setSetting('chunkySlamLevel', nextSlam(chunkySlamLevel))
+    } else {
+      setSetting('chunkySlamLevel', prevSlam(chunkySlamLevel))
+    }
+  }
+
+  return (
+    <div>
+      <img
+        className="simple-icon"
+        height={24}
+        alt={slamName(chunkySlamLevel)}
+        title={slamName(chunkySlamLevel)}
+        src={slamToIcon(chunkySlamLevel)}
+        onClick={handleNextLevel}
+        onContextMenu={handlePrevLevel}
+        onWheel={handleWheel}
+        style={{ filter: `grayscale(${chunkySlamLevel != 0 ? '0' : '1'})` }}
+      />
+    </div>
+  )
+}
