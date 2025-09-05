@@ -9,6 +9,8 @@ The instructions on how to use this thing can be found in "instructions.html".
 As with the original, this tracker was written in JavaScript, primarily with an [electron-vite](https://electron-vite.org/) setup in addition to Facebook/the Meta Group's [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/). Obviously, you need JavaScript in order to use it.
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
+- Fix npm-web-out.yaml so that "instructions.html", its CSS, and the Lanky head icon all get pushed out to the gh-pages branch...I put them in there by hand, but the next run of that file takes them all away again.
+- Implement the B. Locker barriers in some way.
 - K. Rool's phase selector will only light up in yellow if you have all five phases set and one of them is Tiny Phase without Feathers or Mad Jack without Ponytail Twirl. Alex was unable to fix this while updating the K. Rool selector to account for the "use K. Rool phases as bosses" option in the Randomizer. Since all regulation "season" seeds that Alex has seen on YouTube (going back to Season 2) have only three phases, must fix this.
 - Make the left side of the tracker sticky...either Alex really sucks at using the "position: sticky;" CSS command, or something else about the tracker's design is stopping it from being sticky.
 - Having Snide turned off in the "Moves" section makes all Kasplats unavailable. This, obviously, is a stupid way to check whether or not you can turn in Blueprints for a seed, since most Randomizer seeds are highly unlikely to have them on Kasplats...must find a better way to implement Snide.
