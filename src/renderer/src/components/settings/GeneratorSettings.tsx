@@ -8,7 +8,7 @@ import CheckIcon from './CheckIcon'
 import CountSelector from './CountSelector'
 import HelmSelector from './HelmSelector'
 import SimpleIcon from './SimpleIcon'
-import SlamSelector from '../moves/SlamSelector'
+/*import SlamSelector from '../moves/SlamSelector'*/
 
 import beanIcon from '../../assets/images/bean.png'
 import chunkyIcon from '../../assets/images/chunky.png'
