@@ -10474,6 +10474,7 @@ const useShuffledArenas = () => useDonkStore(useShallow((state) => state.setting
 const useShuffledShops = () => useDonkStore(useShallow((state) => state.settings.shuffleShops));
 const useFreeTradeRestricted = () => useDonkStore(useShallow((state) => state.settings.freeTrade)) != 0;
 const useFreeTradeFull = () => useDonkStore(useShallow((state) => state.settings.freeTrade)) == 2;
+const useChunkySlamLevel = () => useDonkStore(useShallow((state) => state.settings.chunkySlamLevel));
 const BananaMedalPool = ({ children }) => usePoolBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const ArenaPool = ({ children }) => usePoolCrowns() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const VanillaArena = ({ children }) => useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
@@ -12878,6 +12879,7 @@ const useSingleHelmNum = (val) => {
 };
 const useSingleRoolCheck = (val) => {
   const balancedRool = useBalancedRoolPhase();
+  const chunkySlam = useChunkySlamLevel();
   const dk2 = useDk();
   const blast = useBlast();
   const peanut = usePeanut();
@@ -12891,9 +12893,10 @@ const useSingleRoolCheck = (val) => {
   const tinyBreak = orange && mini;
   const slam = useSlam();
   const superSlam = useSuperSlam();
+  const duperSlam = useSuperDuperSlam();
   const gone = useGone();
   const punch = usePunch();
-  const chunky = useHunky() && (balancedRool ? slam : superSlam) && gone && punch;
+  const chunky = useHunky() && (chunkySlam <= 1 ? slam : chunkySlam == 2 ? superSlam : duperSlam) && gone && punch;
   const hasTwirl = useTwirl();
   const madJackBreak = useTiny();
   const isBreathing = useAnyKong();
@@ -29946,6 +29949,38 @@ const SlamSelector = () => {
     }
   ) });
 };
+const KRoolSlamSelector = () => {
+  const chunkySlamLevel = useChunkySlamLevel();
+  const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]));
+  const handleNextLevel = () => {
+    setSetting("chunkySlamLevel", nextSlam(chunkySlamLevel));
+  };
+  const handlePrevLevel = (e2) => {
+    e2.preventDefault();
+    setSetting("chunkySlamLevel", prevSlam(chunkySlamLevel));
+  };
+  const handleWheel = (e2) => {
+    if (e2.deltaY >= 0) {
+      setSetting("chunkySlamLevel", nextSlam(chunkySlamLevel));
+    } else {
+      setSetting("chunkySlamLevel", prevSlam(chunkySlamLevel));
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "img",
+    {
+      className: "simple-icon",
+      height: 24,
+      alt: slamName(chunkySlamLevel),
+      title: slamName(chunkySlamLevel),
+      src: slamToIcon(chunkySlamLevel),
+      onClick: handleNextLevel,
+      onContextMenu: handlePrevLevel,
+      onWheel: handleWheel,
+      style: { filter: `grayscale(${chunkySlamLevel != 0 ? "0" : "1"})` }
+    }
+  ) });
+};
 const goldBananaIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAsCAMAAADcpCGDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAv1QTFRFSDYA//8AWEQAdlgA////ZEoAaVIAmXYAMyUA/94A/+8A//cBjGsApXsA/84A//6J/9YAhGMA//4k//8UqoQA//6ZlWsA/8YAs4wA//53//9X//81//65zpQA/+cAvYwAtYQA//7ZzpwA///rxpQArXsA//+q2JwB//8I3LcA77UAu5QA970AemMA//9KxowA///K//9jxZwA7MoAjWMA1qUA/70Ap5cA3q0A560A770Ay6UA//9C//9r3qUA98YA570ApXMA/84L57UA/to1/us1/tol///31a0A/+1X9NYA/scV3JkU15QG/dgWtngA984A+9l0/sok/70Mv4QAc0oA/9tI760ApI0E55wP97UAxr4Ag2sA/+0TumxL49wA56Ymi3UA//dM/dtW/upp/t4KhloEyYUO0IwF97UN/usl56UA2Zgq3MoE6qUTpqUB/+p3//c7wq8FQywa/9YIglge9+8A/+xI+K0Eakg8+49z9d4B9+cA/ecOmYgA/uyKvXsN/+8I+6+N//cV884O/7cW//dtEFwS56UI/8YI8KUJ7KhA+9ST/syy8K0tk2gf/++59K0V/vdhlm02Y0ce/M428GxZ87hRmmVT0owXXTYv6ckVF5Ezpd5l8rZtlqWNESZW+rgk0JBU77Y3/7UA/cxG9tYK770K/7UId59ZChCCA70K760J/OyY470LlD419/cAmXMN0sqrkExBr4mJ7LUR9MYL6ecCRyZS7cpC/eqr3LcSYWdpQGYuQqG484xQCxTVrXMA/9rIFpxU970+1KGG560ODU+fxpQQe0od3qUI76UAzrIx1qpg57UIuN6qh1CU68YlxHslqokhwohzYKcO7NYV78Y5FV5U3q0LqKI0zrVPVm8I0rUd8//eUjnO77kl8rioQnOcedmB970IyZwLWjalUmfSqXcY26UVnZBTStJCxq3OvYQM1qUIjGsQqWsA9+/G1sM0/8xd/+/n5+f3e18279Yp1rW1/+fWtYwQjNbWhGMIxpQIAAAANnrqQwAAAP90Uk5T//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AZvyKWQAAAiBJREFUeNpi+EcIMKBytU0JqLDOttLGq4JdS8eCDa8KK3stbby2GG1rscLr0jr5i27n8KqwTp+QxItPRZn/PJa17HhUcDu8/cKihseMeK+DZ1lYZJbhVFFUo39wE1CFGU4VclamOYosLGszzXGo0BaQk3ORUVQMrBDBocJZh5u7kF9NJjDPC7sKZiUlAU5pQ37RlA4+7CrYFVRNLYT0bCU98zixqxBj51VQECqUMvT0ETfHqqKUnZ1XVVjIRkovhw+7is2laSZAFdJ6Un3icthVzJjcz8sNMuR6BydWFTM2x/WLVQMNkSr3wbAGrKJy/YxSk2gNYSE9qcUrOLGpmFU5pZStCKTCNnkiuiGQMGVgYw1lBqqwseU/0smJVQUzM3OokIawtK0af5AANzYVrEAlPEBDpNQU+Vs5ubHEPhMbG7OghrCwDb+yu6g3ihKoCg6oEiFDGRYWNTcB7miMVAhUwpxmDjTE1oCFRTHMiYsRIyUzgJTkA70jCVSizB/EyRWNnhtAFumeAQYsSAmLYoEf1DVIOQqohJVtMlCJrZoyUI1Bip8cF1q+5WBiYmJlcxWW1pOUAamR8fQWQMv7QCUMTLpFoHRgKypjoKgm6emHXgYxsDIxhSZqNgsLZbna6CUlSYWxM6AnByZWVlYebc0SIEhNTS3Z9o8BSyZjZYuRMPLw8LCw8tD+h00FyD2suokiIonMWMpCwqXlgKkACDAAt/Uws1o1F4UAAAAASUVORK5CYII=";
 const bananaMedalIcon$1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHUUExURaOQMe/IFuvHOb2jPei6OPvSbcqZAee6FHhlADEbAE85AJh1FNaxREYxALyLFtm3IMiKEphoAVhDAEYlALiIAcyXFHY5AJhWAN57E71rENVzCtZzGMp3ENZ7CqloFJdGAKpWAMtmAuh7EeqEE95zCtuGIog1AOd7CJJSCqlHAdNrCN57CPCMDOaECL1aC7toAMh1APiLGd5zAIhGAPCECGMxANZrAJp1AWs5ANZzALlWAaqGAKlnAIdYAad2AfzrWVUnAP/8jP/va7dKAclYAeq6Af/9V///2v3IFpc2AGtSAP/+JP/+vfvaPsiJAe+MAK80Af//C//9dv/gTOmrAVoxAFIxAPqJAOeEAHklAGdGALh4AP/9Q/etAFo5AO+EAP/nDP/tFf3MJvfGAKeXAXhEAN57AP/eAPC1BammAXhWAOd7AIplAdyoAf7OC//GCPKtCP/nAPfOAP+9Cv/3APO9CPLWAPfnAP/vAP/WALqWAP/OAP/eD9qXAP/3CuzKAPfvAP/WCNF7ANu6APyZAOTcAF9SCNmHAP+lAJiGBOeMAP+tAP+1AO97AP+9AOplAGQoAMmnAf/GANpIAe9zAN5rANxVAPp4AP//AOfnANXIAQAAABNOIP4AAACcdFJOU///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AL9nXxsAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAW0SURBVGhD7Zj7VxJbFIDrVpNYljxCwgzGSCMjCAniZRZSWSlaFIQ9TApUJMPIeFQWYlaalqX31vyzd+9hgzws6/7AsPR+a7k4s/dhPtae8xp3cFVge0t27PjDb9WkZOfOv/7atWvX7t179lDkN6hBCcPs3VtXJxKJ6uv37du/n6Kbsj0lDQ0Mc+AAXdTXHzxIzU2pQUljo1hMFxJJYyM1N6XmJFKpTFYkOXSImptSWxK5XN7U1NioUBw+rFQqm5uPHGlpOXqUkptQKxKVSq1m2dbW1mPHFAqNRpHnWI7jxzd11YakrU2jaW8HBaLRKJUKBd8kRZ4TJ6j/RmwPiVarPQloNB1Ae3s7PpHmZl6C9z0F8IIcCgV9rRKBJXI5y7I6XUcH1ignAjSa06f1ej3LGgwoOXPmDH4gvIm+W4agEpXKaNQhOQkPy1Iyj0jU2dnZ0oIi/DOZTBvXTEDJ2bNmM1Und3+1mjKIxWKhFiISnTun0xXGQGsrxYsQTKJSsazVajRarVaz+eRJm43ieex2e2FbQeD0IlIqTSYoLlTM5HBQvMAWlkilUlzZzWY0gKLkaeRoaGiw251OukLyGh6djqIFhJHANgszHSSosTY1UbgYkHR1nT9PVzlQQ+UymcqXZCEk3d1qLFZOAmsUhUuRSCQy2YULFy/SdQ7UiDo6UFReMCEkcrnL5erpyUkoVgFI3O5Lly5fvnKFIohUShJckptK6lx9iUjU2wsSmw0lKhVFK7h69SrDXLt2/XpfX39/PwVx7Eul3d2nTnk820QilQ4MkKRigyoCJDLZ4OCNGzdver1eCsIvvHXr1u3bHo/P5/H4/X4KI9WX3Lmj1ZLk58WSSAKBwNDQ4ODdu3199+7dW1+QIX7/vsHg8Tx4ILSkt7cgocgGSCRQrqGh4eGHD0dGgsHgo0eU4B4/fhwIOBwPgFAoREFEGAmAGopsQCAAkv7+cHhkZHQ0HA6PjVGCczqd4+N6PZTKH4lEKIhUX8IrtNqBgZ8/do6bmBCLxdHokyeTk0+fxmKxEonTqdeDIPKLclVF4nINDIDE5ZLLKVKBxdLVBWvJ1NTk5LNnXm88HqcElBHWEqeTZUEQKp3MW1Ris8EsQdraKFKGxRIMTk253e5w+Plzr9ftnp6ephQ8EZCIxXq90RgKwSZOYaT6EpwgPHRdht3+4kUikUwmEolgMBplGLebMgiMObHY4cDzrdFIMaL6EputpwcULLvB2TSVSsXjsVg6nUi8fPkyGn31imG6uijJcVgph8NhMGCxSiYJIIQEt0TY361WiuSZnobBGg4nk69fz8xEo9HRUZlsYoKSOHzF4qYmkFitoVAkUr6IV1+iVmMn6OX3d3ZSjOPq6t68SSTS6fTbt8PDbjfDwLhlmPFxSiMweEGRyWRw3fL7S44qwBaVcFwkAnsnnmoKm47FEg4Hg/zcnp1lmNnZqSmZTCaRUBqBZwHo9fT7yseWMBK/3+fzZXloiKRSOLcZBobUzMzcXCr17h0fLzA/n8no9QYAZjpqiipNCCHJZHjBe8DngymDMYvFbof5nkp9+FAu4PjeHz/Oz4dCuGSBZKO3MyEkHLeQYxH49OnTr85GQ0PZLN8XRR4Pjl44QFCyBGEksIEvrbO83NPz+TOlivjyZWXl/Xu+rouL2MhmfT4Y/ZX/V0G2sATwemGhyrO8/PXr8vK3b6urqyyLh4zVVbhzLBYOLy1BAyULC/iZzcJUoTuUIZiE45JJOK7nGR1dW/sbyWZzRqjN4mIslkyuIEtLqFlYWH8PrkBACcfNzMDBB4FtF0inceIs+nxra2YzLG8rK/g7kkmoZ05TdKaoRFAJx83N/VNBPE7qRAIfPS9Jp9ff5X+CwBIeunkxufqBDTVw9qaev6IWJBw3Nvb9O92+hETixw/qsinbSFLED571V+rfpuYk/5n/JX9EFSQc9y/Ls1G0Pmf+zwAAAABJRU5ErkJggg==";
 const barrelIcon = "" + new URL("barrel2-CIOHUXl8.png", import.meta.url).href;
@@ -31247,8 +31282,8 @@ const GeneratorSettings = () => {
                   updateItem: setSetting
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level required for Chunky phase of K. Rool" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("del", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "UNDER CONSTRUCTION" }) }) })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level required for Chunky phase of K. Rool:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(KRoolSlamSelector, {})
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fast Barrier Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
