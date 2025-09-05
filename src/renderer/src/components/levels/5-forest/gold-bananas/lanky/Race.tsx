@@ -1,5 +1,5 @@
 import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
-import { useLankyRaceGb } from '@renderer/hooks/caves'
+import { useLankyRaceGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const RabbitRace: React.FC = () => {
