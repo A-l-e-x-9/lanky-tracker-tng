@@ -11727,7 +11727,7 @@ const useDkRotateGb = () => {
   const slam = useSlam();
   return inStage && bongos && slam;
 };
-const useLankyRaceGb = () => {
+const useLankyRaceGb$1 = () => {
   const inStage = usePlayCaves();
   const canSlam = useSlamCaves();
   const balloon = useBalloon();
@@ -12386,6 +12386,16 @@ const useLankyMushGb = () => {
   return {
     in: roof.in && lanky && canSlam,
     out: logicBreak(roof) && lanky && canSlam
+  };
+};
+const useLankyRaceGb = () => {
+  const isDay = useForestDay();
+  const owl = useForestOwl();
+  const trombone = useTrombone();
+  const sprint = useSprint();
+  return {
+    in: isDay.in && owl && trombone && sprint,
+    out: isDay.out && owl && trombone && sprint
   };
 };
 const useTinyMushGb = () => {
@@ -26499,7 +26509,7 @@ const DkBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExpor
   /* @__PURE__ */ jsxRuntimeExports.jsx(DkGauntletCabin, {})
 ] });
 const BeetleRace = () => {
-  const raceGb = useLankyRaceGb();
+  const raceGb = useLankyRaceGb$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
