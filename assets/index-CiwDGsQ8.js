@@ -23353,16 +23353,29 @@ const ChunkyMedal$3 = () => {
   const inLogic = useChunkyMedalInLogic$3();
   const outLogic = useChunkyMedalOutLogic$3();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    GalleonCheck,
-    {
-      id: 4104,
-      name: "Galleon Chunky Medal",
-      region: "Galleon Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4104,
+        name: "Galleon Chunky Medal",
+        region: "Galleon Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4204,
+        name: "Galleon Chunky Half-Medal",
+        region: "Galleon Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDiddyMedalCommonLogic$3 = () => {
   const outskirts = useGalleonOutskirts();
@@ -23449,16 +23462,29 @@ const DiddyMedal$3 = () => {
   const inLogic = useDiddyMedalInLogic$3();
   const outLogic = useDiddyMedalOutLogic$3();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    GalleonCheck,
-    {
-      id: 4101,
-      name: "Galleon Diddy Medal",
-      region: "Galleon Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4101,
+        name: "Galleon Diddy Medal",
+        region: "Galleon Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4201,
+        name: "Galleon Diddy Half-Medal",
+        region: "Galleon Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDkMedalCommonLogic$3 = () => {
   const outskirts = useGalleonOutskirts();
@@ -23554,16 +23580,29 @@ const DkMedal$3 = () => {
   const inLogic = useDkMedalInLogic$3();
   const outLogic = useDkMedalOutLogic$3();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    GalleonCheck,
-    {
-      id: 4100,
-      name: "Galleon DK Medal",
-      region: "Galleon Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4100,
+        name: "Galleon DK Medal",
+        region: "Galleon Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4200,
+        name: "Galleon DK Half-Medal",
+        region: "Galleon Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useLankyMedalCommonLogic$3 = () => {
   const canSlam = useSlamGalleon();
@@ -23651,16 +23690,29 @@ const LankyMedal$3 = () => {
   const inLogic = useLankyMedalInLogic$3();
   const outLogic = useLankyMedalOutLogic$3();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    GalleonCheck,
-    {
-      id: 4102,
-      name: "Galleon Lanky Medal",
-      region: "Galleon Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4102,
+        name: "Galleon Lanky Medal",
+        region: "Galleon Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4202,
+        name: "Galleon Lanky Half-Medal",
+        region: "Galleon Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useTinyMedalCommonLogic$3 = () => {
   const canSlam = useSlamGalleon();
@@ -23761,16 +23813,29 @@ const TinyMedal$3 = () => {
   const inLogic = useTinyMedalInLogic$3();
   const outLogic = useTinyMedalOutLogic$3();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    GalleonCheck,
-    {
-      id: 4103,
-      name: "Galleon Tiny Medal",
-      region: "Galleon Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4103,
+        name: "Galleon Tiny Medal",
+        region: "Galleon Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4203,
+        name: "Galleon Tiny Half-Medal",
+        region: "Galleon Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const Shuffled$n = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4190, name: "Galleon Arena", canGetLogic: useGeneralThing$1() }) });
