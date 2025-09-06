@@ -6,8 +6,10 @@ const TinyMedal: React.FC = () => {
   const inLogic = useTinyMedalInLogic()
   const outLogic = useTinyMedalOutLogic()
   const cbCount = useCbCount()
+  const halfMedal = Math.round(cbCount / 2)
 
   return (
+  <>
     <ForestCheck
       id={5103}
       name="Forest Tiny Medal"
@@ -15,6 +17,14 @@ const TinyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <ForestCheck
+      id={5203}
+      name="Forest Tiny Half-Medal"
+      region="Forest Medal Rewards"
+      canGetLogic={inLogic >= halfMedal}
+      canGetBreak={outLogic >= halfMedal}
+    />
+  </>
   )
 }
 
