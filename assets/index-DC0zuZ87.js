@@ -20060,16 +20060,29 @@ const ChunkyMedal$5 = () => {
   const inLogic = useChunkyMedalInLogic$5();
   const outLogic = useChunkyMedalOutLogic$5();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    AztecCheck,
-    {
-      id: 2104,
-      name: "Aztec Chunky Medal",
-      region: "Aztec Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2104,
+        name: "Aztec Chunky Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2204,
+        name: "Aztec Chunky Half-Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDiddyMedalInLogic$5 = () => {
   const inStage = useAztecFront();
@@ -20183,16 +20196,29 @@ const DiddyMedal$5 = () => {
   const inLogic = useDiddyMedalInLogic$5();
   const outLogic = useDiddyMedalOutLogic$5();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    AztecCheck,
-    {
-      id: 2101,
-      name: "Aztec Diddy Medal",
-      region: "Aztec Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2101,
+        name: "Aztec Diddy Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2201,
+        name: "Aztec Diddy Half-Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDkMedalInLogic$5 = () => {
   const inStage = useAztecFront();
@@ -20285,16 +20311,29 @@ const DkMedal$5 = () => {
   const inLogic = useDkMedalInLogic$5();
   const outLogic = useDkMedalOutLogic$5();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    AztecCheck,
-    {
-      id: 2100,
-      name: "Aztec DK Medal",
-      region: "Aztec Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2100,
+        name: "Aztec DK Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2200,
+        name: "Aztec DK Half-Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useLankyMedalInLogic$5 = () => {
   const inStage = useAztecFront();
@@ -20401,16 +20440,29 @@ const LankyMedal$5 = () => {
   const inLogic = useLankyMedalInLogic$5();
   const outLogic = useLankyMedalOutLogic$5();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    AztecCheck,
-    {
-      id: 2102,
-      name: "Aztec Lanky Medal",
-      region: "Aztec Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2102,
+        name: "Aztec Lanky Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2202,
+        name: "Aztec Lanky Half-Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useTinyMedalInLogic$5 = () => {
   const inStage = useAztecFront();
@@ -20521,16 +20573,29 @@ const TinyMedal$5 = () => {
   const inLogic = useTinyMedalInLogic$5();
   const outLogic = useTinyMedalOutLogic$5();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    AztecCheck,
-    {
-      id: 2103,
-      name: "Aztec Tiny Medal",
-      region: "Aztec Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2103,
+        name: "Aztec Tiny Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2203,
+        name: "Aztec Tiny Half-Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const Shuffled$z = () => {
   const thing = useGeneralThing$6();
