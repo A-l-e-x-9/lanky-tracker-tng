@@ -22,7 +22,6 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 - Make it so that the tracker doesn't get wider when you set Fungi Forest time to dusk...instead, make it so that the tracker is wide all the time.
 - Alex took out the "Region Hints" section of the original Tracker because he thought it was poorly done, as well as the "Location Shuffle Settings" section of the settings...should reimplement both somehow.
 - Need an easy way to reset the tracker if need be.
-- Since Alex redesigned this tracker, the Dev Randomizer came out with a new feature called "half medals"...should probably implement this. For now (until Alex has a chance to play/view on YouTube a seed with the feature active), just assume that a half medal requires half the Colored Bananas you need for a full medal, rounded to the nearest whole number (so, 38 for a half medal in the original game).
 
 ## Unlikely Features
 - As with the original, if there is a way to enable autotracking with the underlying languages, it's not known at this time, so this car is only available with a manual transmission.
