@@ -27115,16 +27115,29 @@ const ChunkyMedal$1 = () => {
   const inLogic = useChunkyMedalInLogic$1();
   const outLogic = useChunkyMedalOutLogic$1();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CavesCheck,
-    {
-      id: 6104,
-      name: "Caves Chunky Medal",
-      region: "Caves Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6104,
+        name: "Caves Chunky Medal",
+        region: "Caves Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6204,
+        name: "Caves Chunky Half-Medal",
+        region: "Caves Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDiddyMedalCommonLogic$1 = () => {
   const igloo = useCavesIgloo();
@@ -27214,16 +27227,29 @@ const DiddyMedal$1 = () => {
   const inLogic = useDiddyMedalInLogic$1();
   const outLogic = useDiddyMedalOutLogic$1();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CavesCheck,
-    {
-      id: 6101,
-      name: "Caves Diddy Medal",
-      region: "Caves Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6101,
+        name: "Caves Diddy Medal",
+        region: "Caves Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6201,
+        name: "Caves Diddy Half-Medal",
+        region: "Caves Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDkMedalCommonLogic$1 = () => {
   const igloo = useCavesIgloo();
@@ -27297,16 +27323,29 @@ const DkMedal$1 = () => {
   const inLogic = useDkMedalInLogic$1();
   const outLogic = useDkMedalOutLogic$1();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CavesCheck,
-    {
-      id: 6100,
-      name: "Caves DK Medal",
-      region: "Caves Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6100,
+        name: "Caves DK Medal",
+        region: "Caves Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6200,
+        name: "Caves DK Half-Medal",
+        region: "Caves Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useLankyMedalCommonLogic$1 = () => {
   const canSlam = useSlamCaves();
@@ -27395,16 +27434,29 @@ const LankyMedal$1 = () => {
   const inLogic = useLankyMedalInLogic$1();
   const outLogic = useLankyMedalOutLogic$1();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CavesCheck,
-    {
-      id: 6102,
-      name: "Caves Lanky Medal",
-      region: "Caves Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6102,
+        name: "Caves Lanky Medal",
+        region: "Caves Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6202,
+        name: "Caves Lanky Half-Medal",
+        region: "Caves Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useTinyMedalCommonLogic$1 = () => {
   const igloo = useCavesIgloo();
@@ -27502,16 +27554,29 @@ const TinyMedal$1 = () => {
   const inLogic = useTinyMedalInLogic$1();
   const outLogic = useTinyMedalOutLogic$1();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CavesCheck,
-    {
-      id: 6103,
-      name: "Caves Tiny Medal",
-      region: "Caves Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6103,
+        name: "Caves Tiny Medal",
+        region: "Caves Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6203,
+        name: "Caves Tiny Half-Medal",
+        region: "Caves Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const Shuffled$b = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CavesCheck, { id: 6190, name: "Caves Arena", canGetLogic: useGeneralThing$4() }) });
