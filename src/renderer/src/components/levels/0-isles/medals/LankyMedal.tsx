@@ -6,8 +6,10 @@ const LankyMedal: React.FC = (): JSX.Element => {
   const inLogic = useLankyMedalInLogic()
   const outLogic = useLankyMedalOutLogic()
   const cbCount = useCbCount()
+  const halfMedal = Math.round(cbCount / 2)
 
   return (
+  <>
     <IslesCheck
       id={102}
       name="Isles Lanky Medal"
@@ -15,6 +17,14 @@ const LankyMedal: React.FC = (): JSX.Element => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <IslesCheck
+      id={202}
+      name="Isles Lanky Half-Medal"
+      region="Isles Medal Rewards"
+      canGetLogic={inLogic >= halfMedal}
+      canGetBreak={outLogic >= halfMedal}
+    />
+  </>
   )
 }
 
