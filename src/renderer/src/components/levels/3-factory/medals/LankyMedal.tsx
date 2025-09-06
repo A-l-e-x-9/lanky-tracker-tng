@@ -1,6 +1,6 @@
-import { useLankyMedalInLogic, useLankyMedalOutLogic } from '@renderer/hooks/aztec/medals/lanky'
+import { useLankyMedalInLogic, useLankyMedalOutLogic } from '@renderer/hooks/factory/medals/lanky'
 import { useCbCount } from '@renderer/hooks/settings'
-import AztecCheck from '../check'
+import FactoryCheck from '../check'
 
 const LankyMedal: React.FC = () => {
   const inLogic = useLankyMedalInLogic()
@@ -10,17 +10,17 @@ const LankyMedal: React.FC = () => {
 
   return (
   <>
-    <AztecCheck
-      id={2102}
-      name="Aztec Lanky Medal"
-      region="Aztec Medal Rewards"
+    <FactoryCheck
+      id={3102}
+      name="Factory Lanky Medal"
+      region="Factory Medal Rewards"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
-    <AztecCheck
-      id={2202}
-      name="Aztec Lanky Half-Medal"
-      region="Aztec Medal Rewards"
+    <FactoryCheck
+      id={3202}
+      name="Factory Lanky Half-Medal"
+      region="Factory Medal Rewards"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />

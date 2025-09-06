@@ -1,6 +1,6 @@
-import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/hooks/aztec/medals/dk'
+import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/hooks/factory/medals/dk'
 import { useCbCount } from '@renderer/hooks/settings'
-import AztecCheck from '../check'
+import FactoryCheck from '../check'
 
 const DkMedal: React.FC = () => {
   const inLogic = useDkMedalInLogic()
@@ -10,17 +10,17 @@ const DkMedal: React.FC = () => {
 
   return (
   <>
-    <AztecCheck
-      id={2100}
-      name="Aztec DK Medal"
-      region="Aztec Medal Rewards"
+    <FactoryCheck
+      id={3100}
+      name="Factory DK Medal"
+      region="Factory Medal Rewards"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
-    <AztecCheck
-      id={2200}
-      name="Aztec DK Half-Medal"
-      region="Aztec Medal Rewards"
+    <FactoryCheck
+      id={3200}
+      name="Factory DK Half-Medal"
+      region="Factory Medal Rewards"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />

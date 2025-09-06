@@ -1,6 +1,6 @@
-import { useTinyMedalInLogic, useTinyMedalOutLogic } from '@renderer/hooks/aztec/medals/tiny'
+import { useTinyMedalInLogic, useTinyMedalOutLogic } from '@renderer/hooks/factory/medals/tiny'
 import { useCbCount } from '@renderer/hooks/settings'
-import AztecCheck from '../check'
+import FactoryCheck from '../check'
 
 const TinyMedal: React.FC = () => {
   const inLogic = useTinyMedalInLogic()
@@ -10,17 +10,17 @@ const TinyMedal: React.FC = () => {
 
   return (
   <>
-    <AztecCheck
-      id={2103}
-      name="Aztec Tiny Medal"
-      region="Aztec Medal Rewards"
+    <FactoryCheck
+      id={3103}
+      name="Factory Tiny Medal"
+      region="Factory Medal Rewards"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
-    <AztecCheck
-      id={2203}
-      name="Aztec Tiny Half-Medal"
-      region="Aztec Medal Rewards"
+    <FactoryCheck
+      id={3203}
+      name="Factory Tiny Half-Medal"
+      region="Factory Medal Rewards"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />

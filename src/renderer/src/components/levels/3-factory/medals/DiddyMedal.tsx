@@ -1,6 +1,6 @@
-import { useDiddyMedalInLogic, useDiddyMedalOutLogic } from '@renderer/hooks/aztec/medals/diddy'
+import { useDiddyMedalInLogic, useDiddyMedalOutLogic } from '@renderer/hooks/factory/medals/diddy'
 import { useCbCount } from '@renderer/hooks/settings'
-import AztecCheck from '../check'
+import FactoryCheck from '../check'
 
 const DiddyMedal: React.FC = () => {
   const inLogic = useDiddyMedalInLogic()
@@ -10,17 +10,17 @@ const DiddyMedal: React.FC = () => {
 
   return (
   <>
-    <AztecCheck
-      id={2101}
-      name="Aztec Diddy Medal"
-      region="Aztec Medal Rewards"
+    <FactoryCheck
+      id={3101}
+      name="Factory Diddy Medal"
+      region="Factory Medal Rewards"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
-    <AztecCheck
-      id={2201}
-      name="Aztec Diddy Half-Medal"
-      region="Aztec Medal Rewards"
+    <FactoryCheck
+      id={3201}
+      name="Factory Diddy Half-Medal"
+      region="Factory Medal Rewards"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />
