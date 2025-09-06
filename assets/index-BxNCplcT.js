@@ -17228,16 +17228,29 @@ const ChunkyMedal$6 = () => {
   const inLogic = useChunkyMedalInLogic$6();
   const outLogic = useChunkyMedalOutLogic$6();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    JapesCheck,
-    {
-      id: 1104,
-      name: "Japes Chunky Medal",
-      region: "Japes Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1104,
+        name: "Japes Chunky Medal",
+        region: "Japes Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1204,
+        name: "Japes Chunky Half-Medal",
+        region: "Japes Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDiddyMedalCommonLogic$5 = () => {
   const haveRambiCage = useJapesRambi();
@@ -17326,16 +17339,29 @@ const DiddyMedal$6 = () => {
   const inLogic = useDiddyMedalInLogic$6();
   const outLogic = useDiddyMedalOutLogic$6();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    JapesCheck,
-    {
-      id: 1101,
-      name: "Japes Diddy Medal",
-      region: "Japes Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1101,
+        name: "Japes Diddy Medal",
+        region: "Japes Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1201,
+        name: "Japes Diddy Half-Medal",
+        region: "Japes Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDkMedalInLogic$6 = () => {
   const inStage = usePlayJapes();
@@ -17406,16 +17432,29 @@ const DkMedal$6 = () => {
   const inLogic = useDkMedalInLogic$6();
   const outLogic = useDkMedalOutLogic$6();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    JapesCheck,
-    {
-      id: 1100,
-      name: "Japes DK Medal",
-      region: "Japes Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1100,
+        name: "Japes DK Medal",
+        region: "Japes Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1200,
+        name: "Japes DK Half-Medal",
+        region: "Japes Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useLankyMedalCommonLogic$5 = () => {
   const haveRambiCage = useJapesRambi();
@@ -17514,16 +17553,29 @@ const LankyMedal$6 = () => {
   const inLogic = useLankyMedalInLogic$6();
   const outLogic = useLankyMedalOutLogic$6();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    JapesCheck,
-    {
-      id: 1102,
-      name: "Japes Lanky Medal",
-      region: "Japes Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1102,
+        name: "Japes Lanky Medal",
+        region: "Japes Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1202,
+        name: "Japes Lanky Half-Medal",
+        region: "Japes Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useTinyMedalInLogic$6 = () => {
   const inStage = usePlayJapes();
@@ -17584,16 +17636,29 @@ const TinyMedal$6 = () => {
   const inLogic = useTinyMedalInLogic$6();
   const outLogic = useTinyMedalOutLogic$6();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    JapesCheck,
-    {
-      id: 1103,
-      name: "Japes Tiny Medal",
-      region: "Japes Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1103,
+        name: "Japes Tiny Medal",
+        region: "Japes Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1203,
+        name: "Japes Tiny Half-Medal",
+        region: "Japes Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const Shuffled$F = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1190, name: "Japes Arena", canGetLogic: useGeneralThing() }) });
