@@ -6,8 +6,10 @@ const ChunkyMedal: React.FC = () => {
   const inLogic = useChunkyMedalInLogic()
   const outLogic = useChunkyMedalOutLogic()
   const cbCount = useCbCount()
+  const halfMedal = Math.round(cbcount / 2)
 
   return (
+  <>
     <AztecCheck
       id={2104}
       name="Aztec Chunky Medal"
@@ -15,6 +17,14 @@ const ChunkyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <AztecCheck
+      id={2204}
+      name="Aztec Chunky Half-Medal"
+      region="Aztec Medal Rewards"
+      canGetLogic={inLogic >= halfMedal}
+      canGetBreak={outLogic >= halfMedal}
+    />
+  </>
   )
 }
 
