@@ -11895,13 +11895,6 @@ const useFactoryProductionEnabled = () => {
   const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
   return inStage && (removeBarriers.factoryProduction || coconut && grab && testing);
 };
-const useFactoryProductionTop = () => {
-  const inStage = usePlayFactory();
-  const factoryOn = useFactoryProductionEnabled();
-  const climbing = useClimbing();
-  const warpAll = useBananaportAll();
-  return factoryOn && climbing || inStage && warpAll;
-};
 const useChunkyKaijuGb = () => {
   const testing = useFactoryTesting();
   const climbing = useClimbing();
@@ -15202,7 +15195,7 @@ const IslesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {})
 ] });
-const useChunkyMedalInLogic$7 = () => {
+const useChunkyMedalInLogic$6 = () => {
   const kong = useChunky();
   const barrel = useBarrel();
   const crystal = useHunky();
@@ -15214,10 +15207,10 @@ const useChunkyMedalInLogic$7 = () => {
   }
   return bananas;
 };
-const useChunkyMedalOutLogic$7 = () => useChunkyMedalInLogic$7();
+const useChunkyMedalOutLogic$6 = () => useChunkyMedalInLogic$6();
 const ChunkyMedal$7 = () => {
-  const inLogic = useChunkyMedalInLogic$7();
-  const outLogic = useChunkyMedalOutLogic$7();
+  const inLogic = useChunkyMedalInLogic$6();
+  const outLogic = useChunkyMedalOutLogic$6();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -15243,7 +15236,7 @@ const ChunkyMedal$7 = () => {
     )
   ] });
 };
-const useDiddyMedalInLogic$7 = () => {
+const useDiddyMedalInLogic$6 = () => {
   const kong = useDiddy();
   const gun = usePeanut();
   const shuffleBananas = useShuffleColoredBananas();
@@ -15253,7 +15246,7 @@ const useDiddyMedalInLogic$7 = () => {
   }
   return bananas;
 };
-const useDiddyMedalOutLogic$7 = () => {
+const useDiddyMedalOutLogic$6 = () => {
   const kong = useDiddy();
   const gun = usePeanut();
   const highGrab = useHighGrab();
@@ -15271,8 +15264,8 @@ const useDiddyMedalOutLogic$7 = () => {
   return bananas;
 };
 const DiddyMedal$7 = () => {
-  const inLogic = useDiddyMedalInLogic$7();
-  const outLogic = useDiddyMedalOutLogic$7();
+  const inLogic = useDiddyMedalInLogic$6();
+  const outLogic = useDiddyMedalOutLogic$6();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -15298,7 +15291,7 @@ const DiddyMedal$7 = () => {
     )
   ] });
 };
-const useDkMedalInLogic$7 = () => {
+const useDkMedalInLogic$6 = () => {
   const kong = useDk();
   const vine = useVine();
   const gun = useCoconut();
@@ -15309,10 +15302,10 @@ const useDkMedalInLogic$7 = () => {
   }
   return bananas;
 };
-const useDkMedalOutLogic$7 = () => {
+const useDkMedalOutLogic$6 = () => {
   const kong = useDk();
   const vine = useVine();
-  const bananas = useDkMedalInLogic$7();
+  const bananas = useDkMedalInLogic$6();
   const shuffleBananas = useShuffleColoredBananas();
   if (!kong) {
     return 0;
@@ -15323,8 +15316,8 @@ const useDkMedalOutLogic$7 = () => {
   return vine ? bananas : bananas + 5;
 };
 const DkMedal$7 = () => {
-  const inLogic = useDkMedalInLogic$7();
-  const outLogic = useDkMedalOutLogic$7();
+  const inLogic = useDkMedalInLogic$6();
+  const outLogic = useDkMedalOutLogic$6();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -15350,7 +15343,7 @@ const DkMedal$7 = () => {
     )
   ] });
 };
-const useLankyMedalInLogic$7 = () => {
+const useLankyMedalInLogic$6 = () => {
   const kong = useLanky();
   const gun = useGrape();
   const move = useStand();
@@ -15361,7 +15354,7 @@ const useLankyMedalInLogic$7 = () => {
   }
   return bananas;
 };
-const useLankyMedalOutLogic$7 = () => {
+const useLankyMedalOutLogic$6 = () => {
   const kong = useLanky();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = 0;
@@ -15374,8 +15367,8 @@ const useLankyMedalOutLogic$7 = () => {
   return bananas;
 };
 const LankyMedal$7 = () => {
-  const inLogic = useLankyMedalInLogic$7();
-  const outLogic = useLankyMedalOutLogic$7();
+  const inLogic = useLankyMedalInLogic$6();
+  const outLogic = useLankyMedalOutLogic$6();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -15401,7 +15394,7 @@ const LankyMedal$7 = () => {
     )
   ] });
 };
-const useTinyMedalInLogic$7 = () => {
+const useTinyMedalInLogic$6 = () => {
   const kong = useTiny();
   const gun = useFeather();
   const mini = useMini();
@@ -15412,10 +15405,10 @@ const useTinyMedalInLogic$7 = () => {
   }
   return bananas;
 };
-const useTinyMedalOutLogic$7 = () => useTinyMedalInLogic$7();
+const useTinyMedalOutLogic$6 = () => useTinyMedalInLogic$6();
 const TinyMedal$7 = () => {
-  const inLogic = useTinyMedalInLogic$7();
-  const outLogic = useTinyMedalOutLogic$7();
+  const inLogic = useTinyMedalInLogic$6();
+  const outLogic = useTinyMedalOutLogic$6();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -17181,7 +17174,7 @@ const useChunkyMedalCommonLogic$2 = () => {
   }
   return bananas;
 };
-const useChunkyMedalInLogic$6 = () => {
+const useChunkyMedalInLogic$5 = () => {
   const inStage = usePlayJapes();
   const kong = useChunky();
   const hiveGate = useJapesHive();
@@ -17203,7 +17196,7 @@ const useChunkyMedalInLogic$6 = () => {
   }
   return bananas;
 };
-const useChunkyMedalOutLogic$6 = () => {
+const useChunkyMedalOutLogic$5 = () => {
   const inStage = usePlayJapes();
   const kong = useChunky();
   const hiveGate = useJapesHive();
@@ -17225,8 +17218,8 @@ const useChunkyMedalOutLogic$6 = () => {
   return bananas;
 };
 const ChunkyMedal$6 = () => {
-  const inLogic = useChunkyMedalInLogic$6();
-  const outLogic = useChunkyMedalOutLogic$6();
+  const inLogic = useChunkyMedalInLogic$5();
+  const outLogic = useChunkyMedalOutLogic$5();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -17252,7 +17245,7 @@ const ChunkyMedal$6 = () => {
     )
   ] });
 };
-const useDiddyMedalCommonLogic$5 = () => {
+const useDiddyMedalCommonLogic$4 = () => {
   const haveRambiCage = useJapesRambi();
   const sideArea = useJapesSideArea();
   const canSlam = useSlamJapes();
@@ -17288,7 +17281,7 @@ const useDiddyMedalCommonLogic$5 = () => {
   }
   return bananas;
 };
-const useDiddyMedalInLogic$6 = () => {
+const useDiddyMedalInLogic$5 = () => {
   const inStage = usePlayJapes();
   const canSlam = useSlamJapes();
   const kong = useDiddy();
@@ -17297,7 +17290,7 @@ const useDiddyMedalInLogic$6 = () => {
   const shuffleBananas = useShuffleColoredBananas();
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
-  let bananas = useDiddyMedalCommonLogic$5();
+  let bananas = useDiddyMedalCommonLogic$4();
   if (!inStage) {
     return 0;
   }
@@ -17312,7 +17305,7 @@ const useDiddyMedalInLogic$6 = () => {
   }
   return bananas;
 };
-const useDiddyMedalOutLogic$6 = () => {
+const useDiddyMedalOutLogic$5 = () => {
   const inStage = usePlayJapes();
   const kong = useDiddy();
   const gun = usePeanut();
@@ -17320,7 +17313,7 @@ const useDiddyMedalOutLogic$6 = () => {
   const shuffleBananas = useShuffleColoredBananas();
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
-  let bananas = useDiddyMedalCommonLogic$5();
+  let bananas = useDiddyMedalCommonLogic$4();
   if (!inStage) {
     return 0;
   }
@@ -17336,8 +17329,8 @@ const useDiddyMedalOutLogic$6 = () => {
   return bananas;
 };
 const DiddyMedal$6 = () => {
-  const inLogic = useDiddyMedalInLogic$6();
-  const outLogic = useDiddyMedalOutLogic$6();
+  const inLogic = useDiddyMedalInLogic$5();
+  const outLogic = useDiddyMedalOutLogic$5();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -17363,7 +17356,7 @@ const DiddyMedal$6 = () => {
     )
   ] });
 };
-const useDkMedalInLogic$6 = () => {
+const useDkMedalInLogic$5 = () => {
   const inStage = usePlayJapes();
   const haveRambiCage = useJapesRambi();
   const kongGates = useJapesKongGates();
@@ -17410,12 +17403,12 @@ const useDkMedalInLogic$6 = () => {
   }
   return bananas;
 };
-const useDkMedalOutLogic$6 = () => {
+const useDkMedalOutLogic$5 = () => {
   const inStage = usePlayJapes();
   const kong = useDk();
   const vine = useVine();
   const climbing = useClimbing();
-  const bananas = useDkMedalInLogic$6();
+  const bananas = useDkMedalInLogic$5();
   const shuffleBananas = useShuffleColoredBananas();
   if (!inStage) {
     return 0;
@@ -17429,8 +17422,8 @@ const useDkMedalOutLogic$6 = () => {
   return vine && climbing ? bananas : bananas + 5;
 };
 const DkMedal$6 = () => {
-  const inLogic = useDkMedalInLogic$6();
-  const outLogic = useDkMedalOutLogic$6();
+  const inLogic = useDkMedalInLogic$5();
+  const outLogic = useDkMedalOutLogic$5();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -17456,7 +17449,7 @@ const DkMedal$6 = () => {
     )
   ] });
 };
-const useLankyMedalCommonLogic$5 = () => {
+const useLankyMedalCommonLogic$4 = () => {
   const haveRambiCage = useJapesRambi();
   const kongGates = useJapesKongGates();
   const sideArea = useJapesSideArea();
@@ -17484,7 +17477,7 @@ const useLankyMedalCommonLogic$5 = () => {
   }
   return bananas;
 };
-const useLankyMedalInLogic$6 = () => {
+const useLankyMedalInLogic$5 = () => {
   const inStage = usePlayJapes();
   const kongGates = useJapesKongGates();
   const japesPaintingOutside = useJapesPaintingOutside();
@@ -17493,7 +17486,7 @@ const useLankyMedalInLogic$6 = () => {
   const gun = useGrape();
   const move = useStand();
   const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useLankyMedalCommonLogic$5();
+  let bananas = useLankyMedalCommonLogic$4();
   if (!inStage) {
     return 0;
   }
@@ -17517,7 +17510,7 @@ const useLankyMedalInLogic$6 = () => {
   }
   return bananas;
 };
-const useLankyMedalOutLogic$6 = () => {
+const useLankyMedalOutLogic$5 = () => {
   const inStage = usePlayJapes();
   const kongGates = useJapesKongGates();
   const japesPaintingOutside = useJapesPaintingOutside();
@@ -17525,7 +17518,7 @@ const useLankyMedalOutLogic$6 = () => {
   const kong = useLanky();
   const gun = useGrape();
   const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useLankyMedalCommonLogic$5();
+  let bananas = useLankyMedalCommonLogic$4();
   if (!inStage) {
     return 0;
   }
@@ -17550,8 +17543,8 @@ const useLankyMedalOutLogic$6 = () => {
   return bananas;
 };
 const LankyMedal$6 = () => {
-  const inLogic = useLankyMedalInLogic$6();
-  const outLogic = useLankyMedalOutLogic$6();
+  const inLogic = useLankyMedalInLogic$5();
+  const outLogic = useLankyMedalOutLogic$5();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -17577,7 +17570,7 @@ const LankyMedal$6 = () => {
     )
   ] });
 };
-const useTinyMedalInLogic$6 = () => {
+const useTinyMedalInLogic$5 = () => {
   const inStage = usePlayJapes();
   const hiveGate = useJapesHive();
   const sideArea = useJapesSideArea();
@@ -17631,10 +17624,10 @@ const useTinyMedalInLogic$6 = () => {
   }
   return currLogic;
 };
-const useTinyMedalOutLogic$6 = () => useTinyMedalInLogic$6();
+const useTinyMedalOutLogic$5 = () => useTinyMedalInLogic$5();
 const TinyMedal$6 = () => {
-  const inLogic = useTinyMedalInLogic$6();
-  const outLogic = useTinyMedalOutLogic$6();
+  const inLogic = useTinyMedalInLogic$5();
+  const outLogic = useTinyMedalOutLogic$5();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -19976,7 +19969,7 @@ const KasplatLocations$5 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$5, {})
 ] });
-const useChunkyMedalInLogic$5 = () => {
+const useChunkyMedalInLogic$4 = () => {
   const inStage = useAztecFront();
   const tinyTemple = useAztecTinyTemple();
   const iceMelted = useTinyTempleIce();
@@ -20016,7 +20009,7 @@ const useChunkyMedalInLogic$5 = () => {
   }
   return bananas;
 };
-const useChunkyMedalOutLogic$5 = () => {
+const useChunkyMedalOutLogic$4 = () => {
   const inStage = useAztecFront();
   const tinyTemple = useAztecTinyTemple();
   const aztecBack = useAztecBack();
@@ -20057,8 +20050,8 @@ const useChunkyMedalOutLogic$5 = () => {
   return bananas;
 };
 const ChunkyMedal$5 = () => {
-  const inLogic = useChunkyMedalInLogic$5();
-  const outLogic = useChunkyMedalOutLogic$5();
+  const inLogic = useChunkyMedalInLogic$4();
+  const outLogic = useChunkyMedalOutLogic$4();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -20084,7 +20077,7 @@ const ChunkyMedal$5 = () => {
     )
   ] });
 };
-const useDiddyMedalInLogic$5 = () => {
+const useDiddyMedalInLogic$4 = () => {
   const inStage = useAztecFront();
   const tinyTemple = useAztecTinyTemple();
   const iceMelted = useTinyTempleIce();
@@ -20138,7 +20131,7 @@ const useDiddyMedalInLogic$5 = () => {
   }
   return bananas;
 };
-const useDiddyMedalOutLogic$5 = () => {
+const useDiddyMedalOutLogic$4 = () => {
   const inStage = useAztecFront();
   const tinyTemple = useAztecTinyTemple();
   const iceMelted = useTinyTempleIce();
@@ -20193,8 +20186,8 @@ const useDiddyMedalOutLogic$5 = () => {
   return bananas;
 };
 const DiddyMedal$5 = () => {
-  const inLogic = useDiddyMedalInLogic$5();
-  const outLogic = useDiddyMedalOutLogic$5();
+  const inLogic = useDiddyMedalInLogic$4();
+  const outLogic = useDiddyMedalOutLogic$4();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -20220,7 +20213,7 @@ const DiddyMedal$5 = () => {
     )
   ] });
 };
-const useDkMedalInLogic$5 = () => {
+const useDkMedalInLogic$4 = () => {
   const inStage = useAztecFront();
   const kasplat = useAztecFrontKasplat();
   const aztecBack = useAztecBack();
@@ -20264,7 +20257,7 @@ const useDkMedalInLogic$5 = () => {
   }
   return bananas;
 };
-const useDkMedalOutLogic$5 = () => {
+const useDkMedalOutLogic$4 = () => {
   const inStage = useAztecFront();
   const kasplat = useAztecFrontKasplat();
   const aztecBack = useAztecBack();
@@ -20308,8 +20301,8 @@ const useDkMedalOutLogic$5 = () => {
   return bananas;
 };
 const DkMedal$5 = () => {
-  const inLogic = useDkMedalInLogic$5();
-  const outLogic = useDkMedalOutLogic$5();
+  const inLogic = useDkMedalInLogic$4();
+  const outLogic = useDkMedalOutLogic$4();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -20335,7 +20328,7 @@ const DkMedal$5 = () => {
     )
   ] });
 };
-const useLankyMedalInLogic$5 = () => {
+const useLankyMedalInLogic$4 = () => {
   const inStage = useAztecFront();
   const tinyTemple = useAztecTinyTemple();
   const iceMelted = useTinyTempleIce();
@@ -20385,7 +20378,7 @@ const useLankyMedalInLogic$5 = () => {
   }
   return bananas;
 };
-const useLankyMedalOutLogic$5 = () => {
+const useLankyMedalOutLogic$4 = () => {
   const inStage = useAztecFront();
   const tinyTemple = useAztecTinyTemple();
   const iceMelted = useTinyTempleIce();
@@ -20437,8 +20430,8 @@ const useLankyMedalOutLogic$5 = () => {
   return bananas;
 };
 const LankyMedal$5 = () => {
-  const inLogic = useLankyMedalInLogic$5();
-  const outLogic = useLankyMedalOutLogic$5();
+  const inLogic = useLankyMedalInLogic$4();
+  const outLogic = useLankyMedalOutLogic$4();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -20464,7 +20457,7 @@ const LankyMedal$5 = () => {
     )
   ] });
 };
-const useTinyMedalInLogic$5 = () => {
+const useTinyMedalInLogic$4 = () => {
   const inStage = useAztecFront();
   const aztecBack = useAztecBack();
   const tinyTemple = useAztecTinyTemple();
@@ -20519,7 +20512,7 @@ const useTinyMedalInLogic$5 = () => {
   }
   return bananas;
 };
-const useTinyMedalOutLogic$5 = () => {
+const useTinyMedalOutLogic$4 = () => {
   const inStage = useAztecFront();
   const aztecBack = useAztecBack();
   const iceMelted = useTinyTempleIce();
@@ -20570,8 +20563,8 @@ const useTinyMedalOutLogic$5 = () => {
   return bananas;
 };
 const TinyMedal$5 = () => {
-  const inLogic = useTinyMedalInLogic$5();
-  const outLogic = useTinyMedalOutLogic$5();
+  const inLogic = useTinyMedalInLogic$4();
+  const outLogic = useTinyMedalOutLogic$4();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -21818,373 +21811,145 @@ const KasplatLocations$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$4, {})
 ] });
-const useChunkyMedalInLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const testing = useFactoryTesting();
-  const prodTop = useFactoryProductionTop();
-  const kong = useChunky();
-  const gun = usePineapple();
-  const music = useTriangle();
-  const move = usePunch();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 20;
-  if (gun) {
-    bananas += 10;
-  }
-  if (move) {
-    bananas += 15;
-  }
-  if (testing) {
-    bananas += 5;
-    if (gun) {
-      bananas += 10;
-    }
-    if (music && move) {
-      bananas += 10;
-      if (gun) {
-        bananas += 10;
-      }
-    }
-  }
-  if (prodTop) {
-    bananas += 20;
-  }
-  return bananas;
-};
-const useChunkyMedalOutLogic$4 = () => useChunkyMedalInLogic$4();
 const ChunkyMedal$4 = () => {
   const inLogic = useChunkyMedalInLogic$4();
   const outLogic = useChunkyMedalOutLogic$4();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    FactoryCheck,
-    {
-      id: 3104,
-      name: "Factory Chunky Medal",
-      region: "Factory Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
-};
-const useDiddyMedalCommonLogic$4 = () => {
-  const testing = useFactoryTesting();
-  const production = useFactoryProductionEnabled();
-  const gun = usePeanut();
-  const music = useGuitar();
-  const climbing = useClimbing();
-  let bananas = 12;
-  if (climbing) {
-    bananas += 10;
-  }
-  if (production) {
-    bananas += 15;
-  }
-  if (testing) {
-    bananas += 13;
-    if (music && gun) {
-      bananas += 30;
-    }
-  }
-  return bananas;
-};
-const useDiddyMedalInLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const testing = useFactoryTesting();
-  const kong = useDiddy();
-  const pad = useSpring();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDiddyMedalCommonLogic$4();
-  if (!inStage) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (testing && pad) {
-    bananas += 20;
-  }
-  return bananas;
-};
-const useDiddyMedalOutLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const testing = useFactoryTesting();
-  const kong = useDiddy();
-  const highGrab = useHighGrab();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDiddyMedalCommonLogic$4();
-  if (!inStage) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (testing && highGrab) {
-    bananas += 20;
-  }
-  return bananas;
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 2104,
+        name: "Aztec Chunky Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 2204,
+        name: "Aztec Chunky Half-Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const DiddyMedal$4 = () => {
   const inLogic = useDiddyMedalInLogic$4();
   const outLogic = useDiddyMedalOutLogic$4();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    FactoryCheck,
-    {
-      id: 3101,
-      name: "Factory Diddy Medal",
-      region: "Factory Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
-};
-const useDkMedalCommonLogic$4 = () => {
-  const testing = useFactoryTesting();
-  const coconut = useCoconut();
-  const blast = useBlast();
-  let bananas = 15;
-  if (blast) {
-    bananas += 20;
-  }
-  if (coconut) {
-    bananas += 10;
-  }
-  if (testing) {
-    bananas += 5;
-    if (coconut) {
-      bananas += 35;
-    }
-  }
-  return bananas;
-};
-const useDkMedalInLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const production = useFactoryProductionEnabled();
-  const kong = useDk();
-  const strong = useStrong();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDkMedalCommonLogic$4();
-  if (!inStage) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (production && strong) {
-    bananas += 15;
-  }
-  return bananas;
-};
-const useDkMedalOutLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const production = useFactoryProductionEnabled();
-  const kong = useDk();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDkMedalCommonLogic$4();
-  if (!inStage) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (production) {
-    bananas += 15;
-  }
-  return bananas;
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 2101,
+        name: "Aztec Diddy Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 2201,
+        name: "Aztec Diddy Half-Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const DkMedal$4 = () => {
   const inLogic = useDkMedalInLogic$4();
   const outLogic = useDkMedalOutLogic$4();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    FactoryCheck,
-    {
-      id: 3100,
-      name: "Factory DK Medal",
-      region: "Factory Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
-};
-const useLankyMedalCommonLogic$4 = () => {
-  const testing = useFactoryTesting();
-  const production = useFactoryProductionEnabled();
-  const prodTop = useFactoryProductionTop();
-  const gun = useGrape();
-  const music = useTrombone();
-  let bananas = 10;
-  if (testing) {
-    bananas += 15;
-    if (gun && music) {
-      bananas += 10;
-    }
-  }
-  if (prodTop) {
-    bananas += 15;
-  }
-  if (production) {
-    bananas += 20;
-  }
-  return bananas;
-};
-const useLankyMedalInLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const production = useFactoryProductionEnabled();
-  const kong = useLanky();
-  const move = useStand();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useLankyMedalCommonLogic$4();
-  if (!inStage) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (move) {
-    bananas += 5;
-    if (production) {
-      bananas += 25;
-    }
-  }
-  return bananas;
-};
-const useLankyMedalOutLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const kong = useLanky();
-  const shuffleBananas = useShuffleColoredBananas();
-  const bananas = useLankyMedalCommonLogic$4();
-  if (!inStage) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  return bananas + 30;
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 2100,
+        name: "Aztec DK Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 2200,
+        name: "Aztec DK Half-Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const LankyMedal$4 = () => {
   const inLogic = useLankyMedalInLogic$4();
   const outLogic = useLankyMedalOutLogic$4();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    FactoryCheck,
-    {
-      id: 3102,
-      name: "Factory Lanky Medal",
-      region: "Factory Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
-};
-const useTinyMedalCommonLogic$4 = () => {
-  const testing = useFactoryTesting();
-  const production = useFactoryProductionEnabled();
-  const prodTop = useFactoryProductionTop();
-  const gun = useFeather();
-  const crystal = useMini();
-  let banana = 15;
-  if (testing) {
-    banana += 25;
-    if (crystal) {
-      banana += 5;
-    }
-    if (gun) {
-      banana += 20;
-    }
-  }
-  if (prodTop) {
-    banana += 10;
-  }
-  if (production) {
-    banana += 20;
-  }
-  return banana;
-};
-const useTinyMedalInLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const production = useFactoryProductionEnabled();
-  const kong = useTiny();
-  const move = useTwirl();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useTinyMedalCommonLogic$4();
-  if (!inStage) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (production && move) {
-    bananas += 5;
-  }
-  return bananas;
-};
-const useTinyMedalOutLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const production = useFactoryProductionEnabled();
-  const kong = useTiny();
-  const dk2 = useDk();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useTinyMedalCommonLogic$4();
-  if (!inStage) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (production && dk2) {
-    bananas += 5;
-  }
-  return bananas;
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 2102,
+        name: "Aztec Lanky Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 2202,
+        name: "Aztec Lanky Half-Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const TinyMedal$4 = () => {
   const inLogic = useTinyMedalInLogic$4();
   const outLogic = useTinyMedalOutLogic$4();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    FactoryCheck,
-    {
-      id: 3103,
-      name: "Factory Tiny Medal",
-      region: "Factory Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 2103,
+        name: "Aztec Tiny Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 2203,
+        name: "Aztec Tiny Half-Medal",
+        region: "Aztec Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const Shuffled$t = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3190, name: "Factory Arena", canGetLogic: useGeneralThing$3() }) });
