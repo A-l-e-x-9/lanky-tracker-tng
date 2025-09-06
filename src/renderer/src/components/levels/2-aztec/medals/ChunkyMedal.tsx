@@ -6,7 +6,7 @@ const ChunkyMedal: React.FC = () => {
   const inLogic = useChunkyMedalInLogic()
   const outLogic = useChunkyMedalOutLogic()
   const cbCount = useCbCount()
-  const halfMedal = Math.round(cbcount / 2)
+  const halfMedal = Math.round(cbCount / 2)
 
   return (
   <>
