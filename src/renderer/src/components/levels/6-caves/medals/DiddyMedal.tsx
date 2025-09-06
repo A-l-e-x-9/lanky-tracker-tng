@@ -6,8 +6,10 @@ const DiddyMedal: React.FC = () => {
   const inLogic = useDiddyMedalInLogic()
   const outLogic = useDiddyMedalOutLogic()
   const cbCount = useCbCount()
+  const halfMedal = Math.round(cbCount / 2)
 
   return (
+  <>
     <CavesCheck
       id={6101}
       name="Caves Diddy Medal"
@@ -15,6 +17,14 @@ const DiddyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <CavesCheck
+      id={6201}
+      name="Caves Diddy Half-Medal"
+      region="Caves Medal Rewards"
+      canGetLogic={inLogic >= halfMedal}
+      canGetBreak={outLogic >= halfMedal}
+    />
+  </>
   )
 }
 
