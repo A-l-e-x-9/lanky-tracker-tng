@@ -6,7 +6,7 @@ const LankyMedal: React.FC = () => {
   const inLogic = useLankyMedalInLogic()
   const outLogic = useLankyMedalOutLogic()
   const cbCount = useCbCount()
-  const halfMedal = Math.round(cbcount / 2)
+  const halfMedal = Math.round(cbCount / 2)
 
   return (
   <>
