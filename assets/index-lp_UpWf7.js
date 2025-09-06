@@ -25678,16 +25678,29 @@ const ChunkyMedal$2 = () => {
   const inLogic = useChunkyMedalInLogic$2();
   const outLogic = useChunkyMedalOutLogic$2();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ForestCheck,
-    {
-      id: 5104,
-      name: "Forest Chunky Medal",
-      region: "Forest Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5104,
+        name: "Forest Chunky Medal",
+        region: "Forest Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5204,
+        name: "Forest Chunky Half-Medal",
+        region: "Forest Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDiddyMedalCommonLogic$2 = () => {
   const top = useForestMushroomTop();
@@ -25778,16 +25791,29 @@ const DiddyMedal$2 = () => {
   const inLogic = useDiddyMedalInLogic$2();
   const outLogic = useDiddyMedalOutLogic$2();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ForestCheck,
-    {
-      id: 5101,
-      name: "Forest Diddy Medal",
-      region: "Forest Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5101,
+        name: "Forest Diddy Medal",
+        region: "Forest Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5201,
+        name: "Forest Diddy Half-Medal",
+        region: "Forest Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDkMedalCommonLogic$2 = () => {
   const top = useForestMushroomTop();
@@ -25887,16 +25913,29 @@ const DkMedal$2 = () => {
   const inLogic = useDkMedalInLogic$2();
   const outLogic = useDkMedalOutLogic$2();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ForestCheck,
-    {
-      id: 5100,
-      name: "Forest DK Medal",
-      region: "Forest Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5100,
+        name: "Forest DK Medal",
+        region: "Forest Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5200,
+        name: "Forest DK Half-Medal",
+        region: "Forest Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useLankyMedalCommonLogic$2 = () => {
   const top = useForestMushroomTop();
@@ -25977,16 +26016,29 @@ const LankyMedal$2 = () => {
   const inLogic = useLankyMedalInLogic$2();
   const outLogic = useLankyMedalOutLogic$2();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ForestCheck,
-    {
-      id: 5102,
-      name: "Forest Lanky Medal",
-      region: "Forest Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5102,
+        name: "Forest Lanky Medal",
+        region: "Forest Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5202,
+        name: "Forest Lanky Half-Medal",
+        region: "Forest Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useTinyMedalCommonLogic$2 = () => {
   const owl = useForestOwl();
@@ -26096,16 +26148,29 @@ const TinyMedal$2 = () => {
   const inLogic = useTinyMedalInLogic$2();
   const outLogic = useTinyMedalOutLogic$2();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ForestCheck,
-    {
-      id: 5103,
-      name: "Forest Tiny Medal",
-      region: "Forest Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5103,
+        name: "Forest Tiny Medal",
+        region: "Forest Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5203,
+        name: "Forest Tiny Half-Medal",
+        region: "Forest Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const Shuffled$h = () => {
   const thing = useGeneralThing$2();
