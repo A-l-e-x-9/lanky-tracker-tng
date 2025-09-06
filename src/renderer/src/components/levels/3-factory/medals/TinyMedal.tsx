@@ -6,7 +6,7 @@ const TinyMedal: React.FC = () => {
   const inLogic = useTinyMedalInLogic()
   const outLogic = useTinyMedalOutLogic()
   const cbCount = useCbCount()
-  const halfMedal = Math.round(cbcount / 2)
+  const halfMedal = Math.round(cbCount / 2)
 
   return (
   <>
