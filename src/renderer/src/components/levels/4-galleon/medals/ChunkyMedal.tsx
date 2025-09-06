@@ -9,8 +9,10 @@ const ChunkyMedal: React.FC = () => {
   const inLogic = useChunkyMedalInLogic()
   const outLogic = useChunkyMedalOutLogic()
   const cbCount = useCbCount()
+  const halfMedal = Math.round(cbCount / 2)
 
   return (
+  <>
     <GalleonCheck
       id={4104}
       name="Galleon Chunky Medal"
@@ -18,6 +20,14 @@ const ChunkyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <GalleonCheck
+      id={4204}
+      name="Galleon Chunky Half-Medal"
+      region="Galleon Medal Rewards"
+      canGetLogic={inLogic >= halfMedal}
+      canGetBreak={outLogic >= halfMedal}
+    />
+  </>
   )
 }
 

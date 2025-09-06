@@ -6,8 +6,10 @@ const DiddyMedal: React.FC = () => {
   const inLogic = useDiddyMedalInLogic()
   const outLogic = useDiddyMedalOutLogic()
   const cbCount = useCbCount()
+  const halfMedal = Math.round(cbCount / 2)
 
   return (
+  <>
     <GalleonCheck
       id={4101}
       name="Galleon Diddy Medal"
@@ -15,6 +17,14 @@ const DiddyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <GalleonCheck
+      id={4201}
+      name="Galleon Diddy Half-Medal"
+      region="Galleon Medal Rewards"
+      canGetLogic={inLogic >= halfMedal}
+      canGetBreak={outLogic >= halfMedal}
+    />
+  </>
   )
 }
 
