@@ -6,7 +6,7 @@ const DiddyMedal: React.FC = () => {
   const inLogic = useDiddyMedalInLogic()
   const outLogic = useDiddyMedalOutLogic()
   const cbCount = useCbCount()
-  const halfMedal = Math.round(cbcount / 2)
+  const halfMedal = Math.round(cbCount / 2)
 
   return (
   <>
