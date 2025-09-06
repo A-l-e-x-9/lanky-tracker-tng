@@ -6,8 +6,10 @@ const DiddyMedal: React.FC = (): JSX.Element => {
   const inLogic = useDiddyMedalInLogic()
   const outLogic = useDiddyMedalOutLogic()
   const cbCount = useCbCount()
+  const halfMedal = Math.round(cbCount / 2)
 
   return (
+  <>
     <JapesCheck
       id={1101}
       name="Japes Diddy Medal"
@@ -15,6 +17,14 @@ const DiddyMedal: React.FC = (): JSX.Element => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <JapesCheck
+      id={1201}
+      name="Japes Diddy Half-Medal"
+      region="Japes Medal Rewards"
+      canGetLogic={inLogic >= halfMedal}
+      canGetBreak={outLogic >= halfMedal}
+    />
+  </>
   )
 }
 
