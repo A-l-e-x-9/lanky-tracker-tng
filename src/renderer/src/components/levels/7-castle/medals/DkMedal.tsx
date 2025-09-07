@@ -6,8 +6,10 @@ const DkMedal: React.FC = () => {
   const inLogic = useDkMedalInLogic()
   const outLogic = useDkMedalOutLogic()
   const cbCount = useCbCount()
+  const halfMedal = Math.round(cbCount / 2)
 
   return (
+  <>
     <CastleCheck
       id={7100}
       name="Castle DK Medal"
@@ -15,6 +17,14 @@ const DkMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <CastleCheck
+      id={7200}
+      name="Castle DK Half-Medal"
+      region="Castle Medal Rewards"
+      canGetLogic={inLogic >= halfMedal}
+      canGetBreak={outLogic >= halfMedal}
+    />
+  </>
   )
 }
 

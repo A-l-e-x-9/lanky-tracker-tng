@@ -6,8 +6,10 @@ const TinyMedal: React.FC = () => {
   const inLogic = useTinyMedalInLogic()
   const outLogic = useTinyMedalOutLogic()
   const cbCount = useCbCount()
+  const halfMedal = Math.round(cbCount / 2)
 
   return (
+  <>
     <CastleCheck
       id={7103}
       name="Castle Tiny Medal"
@@ -15,6 +17,14 @@ const TinyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <CastleCheck
+      id={7203}
+      name="Castle Tiny Half-Medal"
+      region="Castle Medal Rewards"
+      canGetLogic={inLogic >= halfMedal}
+      canGetBreak={outLogic >= halfMedal}
+    />
+  </>
   )
 }
 
