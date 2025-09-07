@@ -62,14 +62,14 @@ const TotemEnemies: React.FC = () => {
         canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
       />
       <AztecCheck
-        id={2414}
+        id={2514}
         name="Aztec Enemy Photo: Outside the Gong Tower"
         region="Aztec Oasis And Totem Area"
         canGetLogic={inStage.in && anyKong && hasFairyCam}
         canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
       />
       <AztecCheck
-        id={2514}
+        id={2515}
         name="Aztec Enemy Photo: In Front of Snide's"
         region="Aztec Oasis And Totem Area"
         canGetLogic={inStage.in && anyKong && hasFairyCam}
