@@ -78,63 +78,63 @@ const Dk5Enemies: React.FC = () => {
       />
       <AztecCheck
         id={2419}
-        name="Aztec Enemy: DK 5DT Start Trap 0"
+        name="Aztec Enemy Photo: DK 5DT Start Trap 0"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && kaboom && hasFairyCam}
         canGetBreak={logicBreak(door) && coconut && kaboom && hasFairyCam}
       />
       <AztecCheck
         id={2420}
-        name="Aztec Enemy: DK 5DT Start Trap 1"
+        name="Aztec Enemy Photo: DK 5DT Start Trap 1"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && kaboom && hasFairyCam}
         canGetBreak={logicBreak(door) && coconut && kaboom && hasFairyCam}
       />
       <AztecCheck
         id={2421}
-        name="Aztec Enemy: DK 5DT Start Trap 2"
+        name="Aztec Enemy Photo: DK 5DT Start Trap 2"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && kaboom && hasFairyCam}
         canGetBreak={logicBreak(door) && coconut && kaboom && hasFairyCam}
       />
       <AztecCheck
         id={2422}
-        name="Aztec Enemy: DK 5DT End Trap 0"
+        name="Aztec Enemy Photo: DK 5DT End Trap 0"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && kaboom && hasFairyCam}
         canGetBreak={logicBreak(door) && coconut && kaboom && hasFairyCam}
       />
       <AztecCheck
         id={2423}
-        name="Aztec Enemy: DK 5DT End Trap 1"
+        name="Aztec Enemy Photo: DK 5DT End Trap 1"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && kaboom && hasFairyCam}
         canGetBreak={logicBreak(door) && coconut && kaboom && hasFairyCam}
       />
       <AztecCheck
         id={2424}
-        name="Aztec Enemy: DK 5DT End Trap 2"
+        name="Aztec Enemy Photo: DK 5DT End Trap 2"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && kaboom && hasFairyCam}
         canGetBreak={logicBreak(door) && coconut && kaboom && hasFairyCam}
       />
       <AztecCheck
         id={2425}
-        name="Aztec Enemy: DK 5DT End Path 0"
+        name="Aztec Enemy Photo: DK 5DT End Path 0"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && klaptrap && hasFairyCam}
         canGetBreak={logicBreak(door) && coconut && klaptrap && hasFairyCam}
       />
       <AztecCheck
         id={2426}
-        name="Aztec Enemy: DK 5DT End Path 1"
+        name="Aztec Enemy Photo: DK 5DT End Path 1"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && klaptrap && hasFairyCam}
         canGetBreak={logicBreak(door) && coconut && klaptrap && hasFairyCam}
       />
       <AztecCheck
         id={2427}
-        name="Aztec Enemy: DK 5DT Start Path"
+        name="Aztec Enemy Photo: DK 5DT Start Path"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && klaptrap && hasFairyCam}
         canGetBreak={logicBreak(door) && coconut && klaptrap && hasFairyCam}
