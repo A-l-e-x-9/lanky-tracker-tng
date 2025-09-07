@@ -29316,16 +29316,29 @@ const ChunkyMedal = () => {
   const inLogic = useChunkyMedalInLogic();
   const outLogic = useChunkyMedalOutLogic();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CastleCheck,
-    {
-      id: 7104,
-      name: "Castle Chunky Medal",
-      region: "Castle Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7104,
+        name: "Castle Chunky Medal",
+        region: "Castle Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7204,
+        name: "Castle Chunky Half-Medal",
+        region: "Castle Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDiddyMedalCommonLogic = () => {
   const canSlam = useSlamCastle();
@@ -29410,16 +29423,29 @@ const DiddyMedal = () => {
   const inLogic = useDiddyMedalInLogic();
   const outLogic = useDiddyMedalOutLogic();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CastleCheck,
-    {
-      id: 7101,
-      name: "Castle Diddy Medal",
-      region: "Castle Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7101,
+        name: "Castle Diddy Medal",
+        region: "Castle Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7201,
+        name: "Castle Diddy Half-Medal",
+        region: "Castle Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDkMedalCommonLogic = () => {
   const tree = useCastleTree();
@@ -29490,16 +29516,29 @@ const DkMedal = () => {
   const inLogic = useDkMedalInLogic();
   const outLogic = useDkMedalOutLogic();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CastleCheck,
-    {
-      id: 7100,
-      name: "Castle DK Medal",
-      region: "Castle Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7100,
+        name: "Castle DK Medal",
+        region: "Castle Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7200,
+        name: "Castle DK Half-Medal",
+        region: "Castle Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useLankyMedalCommonLogic = () => {
   const canSlam = useSlamCastle();
@@ -29576,16 +29615,29 @@ const LankyMedal = () => {
   const inLogic = useLankyMedalInLogic();
   const outLogic = useLankyMedalOutLogic();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CastleCheck,
-    {
-      id: 7102,
-      name: "Castle Lanky Medal",
-      region: "Castle Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7102,
+        name: "Castle Lanky Medal",
+        region: "Castle Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7202,
+        name: "Castle Lanky Half-Medal",
+        region: "Castle Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useTinyMedalCommonLogic = () => {
   const canSlam = useSlamCastle();
@@ -29650,16 +29702,29 @@ const TinyMedal = () => {
   const inLogic = useTinyMedalInLogic();
   const outLogic = useTinyMedalOutLogic();
   const cbCount = useCbCount();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CastleCheck,
-    {
-      id: 7103,
-      name: "Castle Tiny Medal",
-      region: "Castle Medal Rewards",
-      canGetLogic: inLogic >= cbCount,
-      canGetBreak: outLogic >= cbCount
-    }
-  );
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7103,
+        name: "Castle Tiny Medal",
+        region: "Castle Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7203,
+        name: "Castle Tiny Half-Medal",
+        region: "Castle Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const Shuffled$5 = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CastleCheck, { id: 7190, name: "Castle Arena", canGetLogic: useGeneralThing$5() }) });
