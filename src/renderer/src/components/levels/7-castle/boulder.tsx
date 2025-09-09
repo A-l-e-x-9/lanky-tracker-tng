@@ -1,4 +1,4 @@
-import BoulderPool from '@renderer/components/pools/Bosses'
+import BoulderPool from '@renderer/components/pools/Boulders'
 import { useChunkyRoomGb } from '@renderer/hooks/castle'
 import CastleCheck from './check'
 
