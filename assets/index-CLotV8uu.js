@@ -24301,7 +24301,7 @@ const CenterEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5412,
+        id: 5509,
         name: "Forest Enemy Photo: Green Tunnel",
         region: "Forest Center And Beanstalk",
         canGetLogic: beanHalf && zinger && hasFairyCam
@@ -24319,7 +24319,7 @@ const CenterEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5411,
+        id: 5510,
         name: "Forest Enemy Photo: Near Beanstalk 1",
         region: "Forest Center And Beanstalk",
         canGetLogic: beanstalk && klump && hasFairyCam
