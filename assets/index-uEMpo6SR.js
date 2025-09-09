@@ -29926,7 +29926,7 @@ const CastleRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
 ] });
 const BoulderCheck = () => {
   const canDoMuseum = useChunkyRoomGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BossPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CastleCheck,
     {
       id: 7205,
