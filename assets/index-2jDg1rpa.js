@@ -12892,6 +12892,7 @@ const useSingleRoolCheck = (val) => {
   const chunkySlam = useChunkySlamLevel();
   const dk2 = useDk();
   const blast = useBlast();
+  const climbing = useClimbing();
   const peanut = usePeanut();
   const diddy = useRocket() && peanut;
   const barrel = useBarrel();
@@ -12915,7 +12916,7 @@ const useSingleRoolCheck = (val) => {
   switch (check) {
     case 1:
       return {
-        in: dk2 && (!balancedRool || blast),
+        in: dk2 && (!balancedRool || blast) && climbing,
         out: dk2 && (!balancedRool || blast)
       };
     case 2:
