@@ -24745,7 +24745,8 @@ const MushExteriorEnemies = () => {
         id: 5322,
         name: "Forest Enemy: Top Of Mushroom",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && roof && anyKong && klump
+        canGetLogic: inStage && roof.in && klump,
+        canGetBreak: inStage && roof.out && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24862,7 +24863,8 @@ const MushExteriorEnemies = () => {
         id: 5422,
         name: "Forest Enemy Photo: Top Of Mushroom",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && roof && anyKong && klump && hasFairyCam
+        canGetLogic: inStage && roof.in && klump && hasFairyCam,
+        canGetBreak: inStage && roof.out && klump && hasFairyCam
       }
     )
   ] });
