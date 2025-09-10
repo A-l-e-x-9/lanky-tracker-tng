@@ -30855,6 +30855,7 @@ const bossState = (boss) => {
   const anyKong = useAnyKong();
   const barrel = useBarrel();
   const blast = useBlast();
+  const climbing = useClimbing();
   const dk2 = useDk();
   const dkRequiresBlast = useBalancedRoolPhase();
   const feathers = useFeather();
@@ -30915,10 +30916,14 @@ const bossState = (boss) => {
         return "not-available";
       }
     case "DK Phase of K. Rool":
-      if (dkRequiresBlast && blast) {
+      if (climbing && dkRequiresBlast && blast) {
         return "available";
+      } else if (climbing && dk2 != dkRequiresBlast) {
+        return "available";
+      } else if (dkRequiresBlast && blast) {
+        return "logic-break";
       } else if (dk2 != dkRequiresBlast) {
-        return "available";
+        return "logic-break";
       } else {
         return "not-available";
       }
