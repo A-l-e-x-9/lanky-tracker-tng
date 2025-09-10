@@ -89,7 +89,8 @@ const MushExteriorEnemies: React.FC = () => {
         id={5322}
         name="Forest Enemy: Top Of Mushroom"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && roof && anyKong && klump}
+        canGetLogic={inStage && roof.in && klump}
+        canGetBreak={inStage && roof.out && klump}
       />
       <ForestCheck
         id={5426}
@@ -167,7 +168,8 @@ const MushExteriorEnemies: React.FC = () => {
         id={5422}
         name="Forest Enemy Photo: Top Of Mushroom"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && roof && anyKong && klump && hasFairyCam}
+        canGetLogic={inStage && roof.in && klump && hasFairyCam}
+        canGetBreak={instage && roof.out && klump && hasFairyCam}
       />
     </DropPool>
   )
