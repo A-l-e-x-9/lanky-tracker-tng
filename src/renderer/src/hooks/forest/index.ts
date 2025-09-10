@@ -460,7 +460,7 @@ export const useBarnKasplat = (): LogicBool => {
   const dusk = useForestDusk()
   const kong = useFtaDkBlueprint()
   return {
-    in: hasSnide && kong && inStage && (night.in || dusk)
+    in: hasSnide && kong && inStage && (night.in || dusk),
     out: hasSnide && kong && inStage && (night.in || night.out || dusk)
   }
 }
