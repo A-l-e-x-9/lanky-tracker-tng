@@ -21,7 +21,8 @@ import {
   useTrombone,
   useTwirl,
   useTiny,
-  useAnyKong
+  useAnyKong,
+  useClimbing
 } from './kongs'
 import { useShallow } from 'zustand/react/shallow'
 import { LogicBool } from './world'
@@ -75,6 +76,7 @@ export const useSingleRoolCheck = (val: number): LogicBool => {
   const chunkySlam = useChunkySlamLevel()
   const dk = useDk()
   const blast = useBlast()
+  const climbing = useClimbing()
   const peanut = usePeanut()
   const diddy = useRocket() && peanut
   const barrel = useBarrel()
@@ -100,7 +102,7 @@ export const useSingleRoolCheck = (val: number): LogicBool => {
   switch (check) {
     case 1:
       return {
-        in: dk && (!balancedRool || blast),
+        in: dk && (!balancedRool || blast) && climbing,
         out: dk && (!balancedRool || blast)
       }
     case 2:
