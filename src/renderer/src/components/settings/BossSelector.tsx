@@ -3,7 +3,7 @@ import { useShallow } from 'zustand/react/shallow'
 
 import useDonkStore from '@renderer/store'
 import { Boss } from '@renderer/store/common'
-import { useAnyKong, useBarrel, useBlast, useDk, useFeather, useGone, useHunky, useMini, useOrange, usePeanut, usePunch, useRocket, useSlam, useTiny, useTrombone, useTwirl } from '@renderer/hooks/kongs'
+import { useAnyKong, useBarrel, useBlast, useDk, useFeather, useGone, useHunky, useMini, useOrange, usePeanut, usePunch, useRocket, useSlam, useTiny, useTrombone, useTwirl, useClimbing } from '@renderer/hooks/kongs'
 import { useBalancedRoolPhase } from '@renderer/hooks/settings'
 
 import dogadon1Icon from '../../assets/images/dogadon-1.png'
@@ -59,6 +59,7 @@ const bossState = (boss: Boss): string => {
   const anyKong = useAnyKong()
   const barrel = useBarrel()
   const blast = useBlast()
+  const climbing = useClimbing()
   const dk = useDk()
   const dkRequiresBlast = useBalancedRoolPhase()
   const feathers = useFeather()
@@ -119,10 +120,14 @@ const bossState = (boss: Boss): string => {
         return 'not-available'
       }
     case 'DK Phase of K. Rool':
-      if (dkRequiresBlast && blast) {
+      if (climbing && dkRequiresBlast && blast) {
         return 'available'
+      } else if (climbing && dk != dkRequiresBlast) {
+        return 'available'
+      } else if (dkRequiresBlast && blast) {
+        return 'logic-break'
       } else if (dk != dkRequiresBlast) {
-        return 'available'
+        return 'logic-break'
       } else {
         return 'not-available'
       }
