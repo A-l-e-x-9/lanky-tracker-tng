@@ -169,7 +169,7 @@ const MushExteriorEnemies: React.FC = () => {
         name="Forest Enemy Photo: Top Of Mushroom"
         region="Giant Mushroom Exterior"
         canGetLogic={inStage && roof.in && klump && hasFairyCam}
-        canGetBreak={instage && roof.out && klump && hasFairyCam}
+        canGetBreak={inStage && roof.out && klump && hasFairyCam}
       />
     </DropPool>
   )
