@@ -49,14 +49,14 @@ import { LogicBool, logicBreak } from '../world'
  * Can we play in Frantic Factory?
  * @returns true if we can play in Frantic Factory.
  */
-export const usePlayFactory = (): boolean => usePlayLevel('Factory')
+export const usePlayFactory = (): boolean => usePlayLevel('Frantic Factory')
 
 /**
  * Can we slam down switches in Frantic Factory?
  * @todo Handle both options of the progressive slam setting.
  * @returns true if we can slam switches in Frantic Factory.
  */
-export const useSlamFactory = (): boolean => useSlamLevel('Factory')
+export const useSlamFactory = (): boolean => useSlamLevel('Frantic Factory')
 
 /**
  * Can we access the Testing Area in Factory?
