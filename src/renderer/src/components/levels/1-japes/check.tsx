@@ -10,7 +10,7 @@ const JapesCheck: React.FC<LevelCheckProps> = (props) => {
       <ItemCheck
         id={props.id}
         name={props.name}
-        level="Japes"
+        level="Jungle Japes"
         region={props.region ?? ''}
         canGetLogic={props.canGetLogic}
         canGetBreak={props.canGetBreak}
