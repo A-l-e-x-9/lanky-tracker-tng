@@ -30321,15 +30321,15 @@ const HelmChecks = () => {
 const Checklist = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("article", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Tabs, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(TabList, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Isles" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Japes" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Aztec" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Factory" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Galleon" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Forest" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Caves" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Castle" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Helm" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "DK Isles" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Jungle Japes" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Angry Aztec" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Frantic Factory" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Gloomy Galleon" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Fungi Forest" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Crystal Caves" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Creepy Castle" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Hideout Helm" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TabPanel, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(IsleChecks, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TabPanel, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(JapesChecks, {}) }),
