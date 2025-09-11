@@ -10,7 +10,7 @@ const CavesCheck: React.FC<LevelCheckProps> = (props) => {
       <ItemCheck
         id={props.id}
         name={props.name}
-        level="Caves"
+        level="Crystal Caves"
         region={props.region}
         canGetLogic={props.canGetLogic}
         canGetBreak={props.canGetBreak}
