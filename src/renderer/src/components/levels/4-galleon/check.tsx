@@ -10,7 +10,7 @@ const GalleonCheck: React.FC<LevelCheckProps> = (props) => {
       <ItemCheck
         id={props.id}
         name={props.name}
-        level="Galleon"
+        level="Gloomy Galleon"
         region={props.region}
         canGetLogic={props.canGetLogic}
         canGetBreak={props.canGetBreak}
