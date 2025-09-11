@@ -49,14 +49,14 @@ import { LogicBool } from '../world'
  * Can we play in Creepy Castle?
  * @returns true if we can play in Creepy Castle.
  */
-export const usePlayCastle = (): boolean => usePlayLevel('Castle')
+export const usePlayCastle = (): boolean => usePlayLevel('Creepy Castle')
 
 /**
  * Can we slam down switches in Creepy Castle?
  * @todo Handle both options of the progressive slam setting.
  * @returns true if we can slam switches in Creepy Castle.
  */
-export const useSlamCastle = (): boolean => useSlamLevel('Castle')
+export const useSlamCastle = (): boolean => useSlamLevel('Creepy Castle')
 
 /**
  * Can we enter the Tree in Castle?
