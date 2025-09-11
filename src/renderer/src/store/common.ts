@@ -745,15 +745,15 @@ export type UiSlice = UiState & UiActions
 
 export type Level =
   | ''
-  | 'Isles'
-  | 'Japes'
-  | 'Aztec'
-  | 'Factory'
-  | 'Galleon'
-  | 'Forest'
-  | 'Caves'
-  | 'Castle'
-  | 'Helm'
+  | 'DK Isles'
+  | 'Jungle Japes'
+  | 'Angry Aztec'
+  | 'Frantic Factory'
+  | 'Gloomy Galleon'
+  | 'Fungi Forest'
+  | 'Crystal Caves'
+  | 'Creepy Castle'
+  | 'Hideout Helm'
 
 export type Boss =
   | ''
