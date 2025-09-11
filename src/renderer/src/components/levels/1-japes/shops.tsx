@@ -17,14 +17,14 @@ const Vanilla: React.FC = () => {
       <ShopGenerator
         baseId={1110}
         baseName="Japes Cranky"
-        level="Japes"
+        level="Jungle Japes"
         region="Japes Shops"
         inLogic={kongGates && hasCranky}
       />
       <ShopGenerator
         baseId={1120}
         baseName="Japes Funky"
-        level="Japes"
+        level="Jungle Japes"
         region="Japes Shops"
         inLogic={playJapes && (climbing || bananaport) && hasFunky}
       />
@@ -45,21 +45,21 @@ const Shuffled: React.FC = () => {
       <ShopGenerator
         baseId={1140}
         baseName="Japes Cranky Location"
-        level="Japes"
+        level="Jungle Japes"
         region="Japes Shops"
         inLogic={hasCranky && (kongGates || (climbing || bananaport))}
       />
       <ShopGenerator
         baseId={1150}
         baseName="Japes Funky Location"
-        level="Japes"
+        level="Jungle Japes"
         region="Japes Shops"
         inLogic={hasFunky && (kongGates || (climbing || bananaport))}
       />
       <ShopGenerator
         baseId={1170}
         baseName="Japes Snide Location"
-        level="Japes"
+        level="Jungle Japes"
         region="Japes Shops"
         inLogic={hasSnide && (kongGates || (climbing || bananaport))}
       />
