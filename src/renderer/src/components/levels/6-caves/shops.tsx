@@ -15,21 +15,21 @@ const Vanilla: React.FC = () => {
       <ShopGenerator
         baseId={6110}
         baseName="Caves Cranky"
-        level="Caves"
+        level="Crystal Caves"
         region="Caves Shops"
         inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={6120}
         baseName="Caves Funky"
-        level="Caves"
+        level="Crystal Caves"
         region="Caves Shops"
         inLogic={hasFunky && inStage}
       />
       <ShopGenerator
         baseId={6130}
         baseName="Caves Candy"
-        level="Caves"
+        level="Crystal Caves"
         region="Caves Shops"
         inLogic={hasCandy && inStage}
       />
@@ -49,28 +49,28 @@ const Shuffled: React.FC = () => {
       <ShopGenerator
         baseId={6140}
         baseName="Caves Cranky Location"
-        level="Caves"
+        level="Crystal Caves"
         region="Caves Shops"
         inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={6150}
         baseName="Caves Funky Location"
-        level="Caves"
+        level="Crystal Caves"
         region="Caves Shops"
         inLogic={hasFunky && inStage}
       />
       <ShopGenerator
         baseId={6160}
         baseName="Caves Candy Location"
-        level="Caves"
+        level="Crystal Caves"
         region="Caves Shops"
         inLogic={hasCandy && inStage}
       />
       <ShopGenerator
         baseId={6170}
         baseName="Caves Snide Location"
-        level="Caves"
+        level="Crystal Caves"
         region="Caves Shops"
         inLogic={hasSnide}
       />
