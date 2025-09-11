@@ -190,6 +190,7 @@ export const useIslesKremTop = (): boolean => {
  * @returns true if we can activate the vines in the Helm Lobby.
  */
 export const useIslesHelmEntry = (): boolean => {
+  const hasBananaports = useBananaport() /*At some indeterminate point in Season 4's existence (before the Season 4 tournament hit the DK64 Speedrunning YouTube channel), the Bananaports in the Helm Lobby were changed to be pre-activated if you selected the appropriate setting in the Randomizer. Must now account for this.*/
   const bongos = useBongos()
   const guitar = useGuitar()
   const trombone = useTrombone()
@@ -203,21 +204,21 @@ export const useIslesHelmEntry = (): boolean => {
   const target = isSwitchsanity ? islesHelm : 0
   switch (target) {
     default:
-      return gone
+      return hasBananaports != 0 || gone
     case 1:
-      return grab
+      return hasBananaports != 0 || grab
     case 2:
-      return charge
+      return hasBananaports != 0 || charge
     case 3:
-      return bongos
+      return hasBananaports != 0 || bongos
     case 4:
-      return guitar
+      return hasBananaports != 0 || guitar
     case 5:
-      return trombone
+      return hasBananaports != 0 || trombone
     case 6:
-      return sax
+      return hasBananaports != 0 || sax
     case 7:
-      return triangle
+      return hasBananaports != 0 || triangle
   }
 }
 
