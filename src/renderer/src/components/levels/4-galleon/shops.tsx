@@ -21,21 +21,21 @@ const Vanilla: React.FC = () => {
       <ShopGenerator
         baseId={4110}
         baseName="Galleon Cranky"
-        level="Galleon"
+        level="Gloomy Galleon"
         region="Galleon Shops"
         inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={4120}
         baseName="Galleon Funky"
-        level="Galleon"
+        level="Gloomy Galleon"
         region="Galleon Shops"
         inLogic={hasFunky && outskirts}
       />
       <ShopGenerator
         baseId={4130}
         baseName="Galleon Candy"
-        level="Galleon"
+        level="Gloomy Galleon"
         region="Galleon Shops"
         inLogic={hasCandy && outskirts}
       />
@@ -58,28 +58,28 @@ const Shuffled: React.FC = () => {
       <ShopGenerator
         baseId={4140}
         baseName="Galleon Cranky Location"
-        level="Galleon"
+        level="Gloomy Galleon"
         region="Galleon Shops"
         inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={4150}
         baseName="Galleon Funky Location"
-        level="Galleon"
+        level="Gloomy Galleon"
         region="Galleon Shops"
         inLogic={hasFunky && outskirts}
       />
       <ShopGenerator
         baseId={4160}
         baseName="Galleon Candy Location"
-        level="Galleon"
+        level="Gloomy Galleon"
         region="Galleon Shops"
         inLogic={hasCandy && outskirts}
       />
       <ShopGenerator
         baseId={4170}
         baseName="Galleon Snide Location"
-        level="Galleon"
+        level="Gloomy Galleon"
         region="Galleon Shops"
         inLogic={hasSnide && lighthouseArea && highTide}
         outLogic={hasSnide && lighthouseArea}
