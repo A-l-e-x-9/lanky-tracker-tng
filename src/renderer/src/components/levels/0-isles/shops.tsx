@@ -10,7 +10,7 @@ const Vanilla: React.FC = () => {
     <ShopGenerator
       baseId={110}
       baseName="Isles Cranky"
-      level="Isles"
+      level="DK Isles"
       region="Isles Shops"
       inLogic={cranky}
     />
@@ -27,14 +27,14 @@ const Shuffled: React.FC = () => {
       <ShopGenerator
         baseId={140}
         baseName="Isles Cranky Location"
-        level="Isles"
+        level="DK Isles"
         region="Isles Shops"
         inLogic={cranky}
       />
       <ShopGenerator
         baseId={170}
         baseName="Isles Snide Location"
-        level="Isles"
+        level="DK Isles"
         region="Isles Shops"
         inLogic={kremAscent && snide}
       />
