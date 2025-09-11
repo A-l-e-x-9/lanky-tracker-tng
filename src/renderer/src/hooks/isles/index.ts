@@ -314,14 +314,14 @@ export const useSlamLevel = (level: Level): boolean => {
 
   if (!progressiveSlams) {
     switch (level) {
-      case 'Japes':
-      case 'Aztec':
-      case 'Factory':
-      case 'Galleon':
+      case 'Jungle Japes':
+      case 'Angry Aztec':
+      case 'Frantic Factory':
+      case 'Gloomy Galleon':
         return slam
-      case 'Isles':
-      case 'Forest':
-      case 'Caves':
+      case 'DK Isles':
+      case 'Fungi Forest':
+      case 'Crystal Caves':
         return superSlam
       default:
         return duperSlam
