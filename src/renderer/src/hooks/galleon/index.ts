@@ -44,14 +44,14 @@ import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
  * Can we play in Gloomy Galleon?
  * @returns true if we can play in Gloomy Galleon.
  */
-export const usePlayGalleon = (): boolean => usePlayLevel('Galleon')
+export const usePlayGalleon = (): boolean => usePlayLevel('Gloomy Galleon')
 
 /**
  * Can we slam down switches in Gloomy Galleon?
  * @todo Handle both options of the progressive slam setting.
  * @returns true if we can slam switches in Gloomy Galleon.
  */
-export const useSlamGalleon = (): boolean => useSlamLevel('Galleon')
+export const useSlamGalleon = (): boolean => useSlamLevel('Gloomy Galleon')
 
 /**
  * Can we enter the Lighthouse area in Galleon?
