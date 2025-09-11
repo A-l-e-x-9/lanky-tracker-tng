@@ -10862,8 +10862,8 @@ const useSwitchsanityKong = (id2, normal) => {
       return chunky;
   }
 };
-const usePlayAztec = () => usePlayLevel("Aztec");
-const useSlamAztec = () => useSlamLevel("Aztec");
+const usePlayAztec = () => usePlayLevel("Angry Aztec");
+const useSlamAztec = () => useSlamLevel("Angry Aztec");
 const useAztecCoconutSwitch = () => useSwitchsanityGun("aztecBlueprint", 0);
 const useAztecGuitarSwitch = () => useSwitchsanityMusicPad("aztecBack", 1);
 const useAztecLlamaCoconutSwitch = () => useSwitchsanityGun("aztecLlama1", 0);
@@ -11322,8 +11322,8 @@ const useVases = () => {
     out: hasAccess.out && hasBarrels && hasPineapples
   };
 };
-const usePlayCastle = () => usePlayLevel("Castle");
-const useSlamCastle = () => useSlamLevel("Castle");
+const usePlayCastle = () => usePlayLevel("Creepy Castle");
+const useSlamCastle = () => useSlamLevel("Creepy Castle");
 const useCastleTree = () => {
   const inStage = usePlayCastle();
   const blast = useBlast();
@@ -11586,8 +11586,8 @@ const useCrate = () => {
     out: useAnyKong() && inStage
   };
 };
-const usePlayCaves = () => usePlayLevel("Caves");
-const useSlamCaves = () => useSlamLevel("Caves");
+const usePlayCaves = () => usePlayLevel("Crystal Caves");
+const useSlamCaves = () => useSlamLevel("Crystal Caves");
 const useCavesIgloo = () => {
   const inStage = usePlayCaves();
   const rocket = useRocket();
@@ -11867,8 +11867,8 @@ const useCurrentFairyCount = () => useDonkStore(useShallow((state) => state.cons
 const useBean = () => useDonkStore(useShallow((state) => state.consumables.bean));
 const useFastArcade = () => useDonkStore(useShallow((state) => state.fastChecks.factoryArcade));
 const useFastMermaid = () => useDonkStore(useShallow((state) => state.fastChecks.galleonMermaid));
-const usePlayFactory = () => usePlayLevel("Factory");
-const useSlamFactory = () => useSlamLevel("Factory");
+const usePlayFactory = () => usePlayLevel("Frantic Factory");
+const useSlamFactory = () => useSlamLevel("Frantic Factory");
 const useFactoryTesting = () => {
   const inStage = usePlayFactory();
   const slam = useSlam();
@@ -12167,8 +12167,8 @@ const useBlockKasplat = () => {
   const hasSnide = useSnide();
   return useFtaChunkyBlueprint() && inStage && canReachTesting && hasSnide;
 };
-const usePlayForest = () => usePlayLevel("Forest");
-const useSlamForest = () => useSlamLevel("Forest");
+const usePlayForest = () => usePlayLevel("Fungi Forest");
+const useSlamForest = () => useSlamLevel("Fungi Forest");
 const useForestDay = () => {
   const inStage = usePlayForest();
   const anyGun = useAnyGun();
@@ -12514,8 +12514,8 @@ const useMillBackKeg = () => {
   const hasBarrels = useBarrel();
   return canEnterMills && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels;
 };
-const usePlayGalleon = () => usePlayLevel("Galleon");
-const useSlamGalleon = () => useSlamLevel("Galleon");
+const usePlayGalleon = () => usePlayLevel("Gloomy Galleon");
+const useSlamGalleon = () => useSlamLevel("Gloomy Galleon");
 const useGalleonLighthouseArea = () => {
   const inStage = usePlayGalleon();
   const target = useSwitchsanityGun("galleonLighthouse", 0);
@@ -13009,7 +13009,7 @@ const useSingleRoolNum = (val) => {
       return 0;
   }
 };
-const usePlayHelm = () => usePlayLevel("Helm");
+const usePlayHelm = () => usePlayLevel("Hideout Helm");
 const useHelmEnter = () => {
   const access = useIslesHelmEntry();
   const kremTop = useIslesKremTop();
@@ -13084,8 +13084,8 @@ const useCanFightRool = () => {
     out: check1.out && check2.out && check3.out && check4.out && check5.out
   };
 };
-const usePlayJapes = () => usePlayLevel("Japes");
-const useSlamJapes = () => useSlamLevel("Japes");
+const usePlayJapes = () => usePlayLevel("Jungle Japes");
+const useSlamJapes = () => useSlamLevel("Jungle Japes");
 const useJapesKongGates = () => {
   const inStage = usePlayJapes();
   const [barriers, checks] = useDonkStore(
@@ -13582,14 +13582,14 @@ const useSlamLevel = (level) => {
   }
   if (!progressiveSlams) {
     switch (level) {
-      case "Japes":
-      case "Aztec":
-      case "Factory":
-      case "Galleon":
+      case "Jungle Japes":
+      case "Angry Aztec":
+      case "Frantic Factory":
+      case "Gloomy Galleon":
         return slam;
-      case "Isles":
-      case "Forest":
-      case "Caves":
+      case "DK Isles":
+      case "Fungi Forest":
+      case "Crystal Caves":
         return superSlam;
       default:
         return duperSlam;
@@ -14036,7 +14036,7 @@ const IslesCheck = (props) => {
     {
       id: props.id,
       name: props.name,
-      level: "Isles",
+      level: "DK Isles",
       region: props.region ?? "",
       canGetLogic: props.canGetLogic,
       canGetBreak: props.canGetBreak,
@@ -15058,7 +15058,7 @@ const Vanilla$8 = () => {
     {
       baseId: 110,
       baseName: "Isles Cranky",
-      level: "Isles",
+      level: "DK Isles",
       region: "Isles Shops",
       inLogic: cranky
     }
@@ -15074,7 +15074,7 @@ const Shuffled$G = () => {
       {
         baseId: 140,
         baseName: "Isles Cranky Location",
-        level: "Isles",
+        level: "DK Isles",
         region: "Isles Shops",
         inLogic: cranky
       }
@@ -15084,7 +15084,7 @@ const Shuffled$G = () => {
       {
         baseId: 170,
         baseName: "Isles Snide Location",
-        level: "Isles",
+        level: "DK Isles",
         region: "Isles Shops",
         inLogic: kremAscent && snide
       }
@@ -15972,7 +15972,7 @@ const JapesCheck = (props) => {
     {
       id: props.id,
       name: props.name,
-      level: "Japes",
+      level: "Jungle Japes",
       region: props.region ?? "",
       canGetLogic: props.canGetLogic,
       canGetBreak: props.canGetBreak,
@@ -17725,7 +17725,7 @@ const Vanilla$7 = () => {
       {
         baseId: 1110,
         baseName: "Japes Cranky",
-        level: "Japes",
+        level: "Jungle Japes",
         region: "Japes Shops",
         inLogic: kongGates && hasCranky
       }
@@ -17735,7 +17735,7 @@ const Vanilla$7 = () => {
       {
         baseId: 1120,
         baseName: "Japes Funky",
-        level: "Japes",
+        level: "Jungle Japes",
         region: "Japes Shops",
         inLogic: playJapes && (climbing || bananaport) && hasFunky
       }
@@ -17755,7 +17755,7 @@ const Shuffled$A = () => {
       {
         baseId: 1140,
         baseName: "Japes Cranky Location",
-        level: "Japes",
+        level: "Jungle Japes",
         region: "Japes Shops",
         inLogic: hasCranky && (kongGates || (climbing || bananaport))
       }
@@ -17765,7 +17765,7 @@ const Shuffled$A = () => {
       {
         baseId: 1150,
         baseName: "Japes Funky Location",
-        level: "Japes",
+        level: "Jungle Japes",
         region: "Japes Shops",
         inLogic: hasFunky && (kongGates || (climbing || bananaport))
       }
@@ -17775,7 +17775,7 @@ const Shuffled$A = () => {
       {
         baseId: 1170,
         baseName: "Japes Snide Location",
-        level: "Japes",
+        level: "Jungle Japes",
         region: "Japes Shops",
         inLogic: hasSnide && (kongGates || (climbing || bananaport))
       }
@@ -17907,7 +17907,7 @@ const AztecCheck = (props) => {
     {
       id: props.id,
       name: props.name,
-      level: "Aztec",
+      level: "Angry Aztec",
       region: props.region,
       canGetLogic: props.canGetLogic,
       canGetBreak: props.canGetBreak,
@@ -20739,7 +20739,7 @@ const Vanilla$6 = () => {
       {
         baseId: 2110,
         baseName: "Aztec Cranky",
-        level: "Aztec",
+        level: "Angry Aztec",
         region: "Aztec Shops",
         inLogic: hasCranky && aztecBack.in,
         outLogic: hasCranky && aztecBack.out
@@ -20750,7 +20750,7 @@ const Vanilla$6 = () => {
       {
         baseId: 2120,
         baseName: "Aztec Funky",
-        level: "Aztec",
+        level: "Angry Aztec",
         region: "Aztec Shops",
         inLogic: hasFunky && aztecBack.in,
         outLogic: hasFunky && aztecBack.out
@@ -20761,7 +20761,7 @@ const Vanilla$6 = () => {
       {
         baseId: 2130,
         baseName: "Aztec Candy",
-        level: "Aztec",
+        level: "Angry Aztec",
         region: "Aztec Shops",
         inLogic: hasCandy && aztecFront.in,
         outLogic: hasCandy && aztecFront.out
@@ -20782,7 +20782,7 @@ const Shuffled$u = () => {
       {
         baseId: 2140,
         baseName: "Aztec Cranky Location",
-        level: "Aztec",
+        level: "Angry Aztec",
         region: "Aztec Shops",
         inLogic: hasCranky && aztecBack.in,
         outLogic: hasCranky && aztecBack.out
@@ -20793,7 +20793,7 @@ const Shuffled$u = () => {
       {
         baseId: 2150,
         baseName: "Aztec Funky Location",
-        level: "Aztec",
+        level: "Angry Aztec",
         region: "Aztec Shops",
         inLogic: hasFunky && aztecBack.in,
         outLogic: hasFunky && aztecBack.out
@@ -20804,7 +20804,7 @@ const Shuffled$u = () => {
       {
         baseId: 2160,
         baseName: "Aztec Candy Location",
-        level: "Aztec",
+        level: "Angry Aztec",
         region: "Aztec Shops",
         inLogic: hasCandy && aztecFront.in,
         outLogic: hasCandy && aztecFront.out
@@ -20815,7 +20815,7 @@ const Shuffled$u = () => {
       {
         baseId: 2170,
         baseName: "Aztec Snide Location",
-        level: "Aztec",
+        level: "Angry Aztec",
         region: "Aztec Shops",
         inLogic: hasSnide && aztecBack.in,
         outLogic: hasSnide && aztecBack.out
@@ -21018,7 +21018,7 @@ const FactoryCheck = (props) => {
     {
       id: props.id,
       name: props.name,
-      level: "Factory",
+      level: "Frantic Factory",
       region: props.region,
       canGetLogic: props.canGetLogic,
       canGetBreak: props.canGetBreak,
@@ -22304,7 +22304,7 @@ const Vanilla$5 = () => {
       {
         baseId: 3110,
         baseName: "Factory Cranky",
-        level: "Factory",
+        level: "Frantic Factory",
         region: "Factory Shops",
         inLogic: hasCranky && inStage
       }
@@ -22314,7 +22314,7 @@ const Vanilla$5 = () => {
       {
         baseId: 3120,
         baseName: "Factory Funky",
-        level: "Factory",
+        level: "Frantic Factory",
         region: "Factory Shops",
         inLogic: hasFunky && testing
       }
@@ -22324,7 +22324,7 @@ const Vanilla$5 = () => {
       {
         baseId: 3130,
         baseName: "Factory Candy",
-        level: "Factory",
+        level: "Frantic Factory",
         region: "Factory Shops",
         inLogic: hasCandy && inStage
       }
@@ -22344,7 +22344,7 @@ const Shuffled$o = () => {
       {
         baseId: 3140,
         baseName: "Factory Cranky Location",
-        level: "Factory",
+        level: "Frantic Factory",
         region: "Factory Shops",
         inLogic: hasCranky && inStage
       }
@@ -22354,7 +22354,7 @@ const Shuffled$o = () => {
       {
         baseId: 3150,
         baseName: "Factory Funky Location",
-        level: "Factory",
+        level: "Frantic Factory",
         region: "Factory Shops",
         inLogic: hasFunky && testing
       }
@@ -22364,7 +22364,7 @@ const Shuffled$o = () => {
       {
         baseId: 3160,
         baseName: "Factory Candy Location",
-        level: "Factory",
+        level: "Frantic Factory",
         region: "Factory Shops",
         inLogic: hasCandy && inStage
       }
@@ -22374,7 +22374,7 @@ const Shuffled$o = () => {
       {
         baseId: 3170,
         baseName: "Factory Snide Location",
-        level: "Factory",
+        level: "Frantic Factory",
         region: "Factory Shops",
         inLogic: hasSnide && testing
       }
@@ -22482,7 +22482,7 @@ const GalleonCheck = (props) => {
     {
       id: props.id,
       name: props.name,
-      level: "Galleon",
+      level: "Gloomy Galleon",
       region: props.region,
       canGetLogic: props.canGetLogic,
       canGetBreak: props.canGetBreak,
@@ -23890,7 +23890,7 @@ const Vanilla$4 = () => {
       {
         baseId: 4110,
         baseName: "Galleon Cranky",
-        level: "Galleon",
+        level: "Gloomy Galleon",
         region: "Galleon Shops",
         inLogic: hasCranky && inStage
       }
@@ -23900,7 +23900,7 @@ const Vanilla$4 = () => {
       {
         baseId: 4120,
         baseName: "Galleon Funky",
-        level: "Galleon",
+        level: "Gloomy Galleon",
         region: "Galleon Shops",
         inLogic: hasFunky && outskirts
       }
@@ -23910,7 +23910,7 @@ const Vanilla$4 = () => {
       {
         baseId: 4130,
         baseName: "Galleon Candy",
-        level: "Galleon",
+        level: "Gloomy Galleon",
         region: "Galleon Shops",
         inLogic: hasCandy && outskirts
       }
@@ -23932,7 +23932,7 @@ const Shuffled$i = () => {
       {
         baseId: 4140,
         baseName: "Galleon Cranky Location",
-        level: "Galleon",
+        level: "Gloomy Galleon",
         region: "Galleon Shops",
         inLogic: hasCranky && inStage
       }
@@ -23942,7 +23942,7 @@ const Shuffled$i = () => {
       {
         baseId: 4150,
         baseName: "Galleon Funky Location",
-        level: "Galleon",
+        level: "Gloomy Galleon",
         region: "Galleon Shops",
         inLogic: hasFunky && outskirts
       }
@@ -23952,7 +23952,7 @@ const Shuffled$i = () => {
       {
         baseId: 4160,
         baseName: "Galleon Candy Location",
-        level: "Galleon",
+        level: "Gloomy Galleon",
         region: "Galleon Shops",
         inLogic: hasCandy && outskirts
       }
@@ -23962,7 +23962,7 @@ const Shuffled$i = () => {
       {
         baseId: 4170,
         baseName: "Galleon Snide Location",
-        level: "Galleon",
+        level: "Gloomy Galleon",
         region: "Galleon Shops",
         inLogic: hasSnide && lighthouseArea && highTide,
         outLogic: hasSnide && lighthouseArea
@@ -24071,7 +24071,7 @@ const ForestCheck = (props) => {
     {
       id: props.id,
       name: props.name,
-      level: "Forest",
+      level: "Fungi Forest",
       region: props.region,
       canGetLogic: props.canGetLogic,
       canGetBreak: props.canGetBreak,
@@ -26227,7 +26227,7 @@ const Vanilla$3 = () => {
       {
         baseId: 5110,
         baseName: "Forest Cranky",
-        level: "Forest",
+        level: "Fungi Forest",
         region: "Forest Shops",
         inLogic: hasCranky && inStage
       }
@@ -26237,7 +26237,7 @@ const Vanilla$3 = () => {
       {
         baseId: 5120,
         baseName: "Forest Funky",
-        level: "Forest",
+        level: "Fungi Forest",
         region: "Forest Shops",
         inLogic: hasFunky && beanstalk
       }
@@ -26257,7 +26257,7 @@ const Shuffled$c = () => {
       {
         baseId: 5140,
         baseName: "Forest Cranky Location",
-        level: "Forest",
+        level: "Fungi Forest",
         region: "Forest Shops",
         inLogic: hasCranky && inStage
       }
@@ -26267,7 +26267,7 @@ const Shuffled$c = () => {
       {
         baseId: 5150,
         baseName: "Forest Funky Location",
-        level: "Forest",
+        level: "Fungi Forest",
         region: "Forest Shops",
         inLogic: hasFunky && beanstalk
       }
@@ -26277,7 +26277,7 @@ const Shuffled$c = () => {
       {
         baseId: 5170,
         baseName: "Forest Snide Location",
-        level: "Forest",
+        level: "Fungi Forest",
         region: "Forest Shops",
         inLogic: hasSnide && day.in,
         outLogic: hasSnide && day.out
@@ -26432,7 +26432,7 @@ const CavesCheck = (props) => {
     {
       id: props.id,
       name: props.name,
-      level: "Caves",
+      level: "Crystal Caves",
       region: props.region,
       canGetLogic: props.canGetLogic,
       canGetBreak: props.canGetBreak,
@@ -27632,7 +27632,7 @@ const Vanilla$1 = () => {
       {
         baseId: 6110,
         baseName: "Caves Cranky",
-        level: "Caves",
+        level: "Crystal Caves",
         region: "Caves Shops",
         inLogic: hasCranky && inStage
       }
@@ -27642,7 +27642,7 @@ const Vanilla$1 = () => {
       {
         baseId: 6120,
         baseName: "Caves Funky",
-        level: "Caves",
+        level: "Crystal Caves",
         region: "Caves Shops",
         inLogic: hasFunky && inStage
       }
@@ -27652,7 +27652,7 @@ const Vanilla$1 = () => {
       {
         baseId: 6130,
         baseName: "Caves Candy",
-        level: "Caves",
+        level: "Crystal Caves",
         region: "Caves Shops",
         inLogic: hasCandy && inStage
       }
@@ -27671,7 +27671,7 @@ const Shuffled$6 = () => {
       {
         baseId: 6140,
         baseName: "Caves Cranky Location",
-        level: "Caves",
+        level: "Crystal Caves",
         region: "Caves Shops",
         inLogic: hasCranky && inStage
       }
@@ -27681,7 +27681,7 @@ const Shuffled$6 = () => {
       {
         baseId: 6150,
         baseName: "Caves Funky Location",
-        level: "Caves",
+        level: "Crystal Caves",
         region: "Caves Shops",
         inLogic: hasFunky && inStage
       }
@@ -27691,7 +27691,7 @@ const Shuffled$6 = () => {
       {
         baseId: 6160,
         baseName: "Caves Candy Location",
-        level: "Caves",
+        level: "Crystal Caves",
         region: "Caves Shops",
         inLogic: hasCandy && inStage
       }
@@ -27701,7 +27701,7 @@ const Shuffled$6 = () => {
       {
         baseId: 6170,
         baseName: "Caves Snide Location",
-        level: "Caves",
+        level: "Crystal Caves",
         region: "Caves Shops",
         inLogic: hasSnide
       }
@@ -27829,7 +27829,7 @@ const CastleCheck = (props) => {
     {
       id: props.id,
       name: props.name,
-      level: "Castle",
+      level: "Creepy Castle",
       region: props.region,
       canGetLogic: props.canGetLogic,
       canGetBreak: props.canGetBreak,
@@ -29781,7 +29781,7 @@ const Vanilla = () => {
       {
         baseId: 7110,
         baseName: "Castle Cranky",
-        level: "Castle",
+        level: "Creepy Castle",
         region: "Castle Shops",
         inLogic: hasCranky && inStage
       }
@@ -29791,7 +29791,7 @@ const Vanilla = () => {
       {
         baseId: 7120,
         baseName: "Castle Funky",
-        level: "Castle",
+        level: "Creepy Castle",
         region: "Castle Shops",
         inLogic: hasFunky && inStage && hasClimbing,
         outLogic: hasFunky && inStage
@@ -29802,7 +29802,7 @@ const Vanilla = () => {
       {
         baseId: 7130,
         baseName: "Castle Candy",
-        level: "Castle",
+        level: "Creepy Castle",
         region: "Castle Shops",
         inLogic: hasCandy && inStage
       }
@@ -29817,7 +29817,7 @@ const Shuffled = () => {
       {
         baseId: 7140,
         baseName: "Castle Cranky Location",
-        level: "Castle",
+        level: "Creepy Castle",
         region: "Castle Shops",
         inLogic: inStage
       }
@@ -29827,7 +29827,7 @@ const Shuffled = () => {
       {
         baseId: 7150,
         baseName: "Castle Funky Location",
-        level: "Castle",
+        level: "Creepy Castle",
         region: "Castle Shops",
         inLogic: inStage
       }
@@ -29837,7 +29837,7 @@ const Shuffled = () => {
       {
         baseId: 7160,
         baseName: "Castle Candy Location",
-        level: "Castle",
+        level: "Creepy Castle",
         region: "Castle Shops",
         inLogic: inStage
       }
@@ -29847,7 +29847,7 @@ const Shuffled = () => {
       {
         baseId: 7170,
         baseName: "Castle Snide Location",
-        level: "Castle",
+        level: "Creepy Castle",
         region: "Castle Shops",
         inLogic: inStage
       }
@@ -29980,7 +29980,7 @@ const HelmCheck = (props) => {
     {
       id: props.id,
       name: props.name,
-      level: "Helm",
+      level: "Hideout Helm",
       region: "Hideout Helm",
       canGetLogic: props.canGetLogic,
       canGetBreak: props.canGetBreak,
@@ -31291,21 +31291,21 @@ const japesIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAYCAMAAAC
 const unknownIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAAWCAMAAABJyRRpAAAAP1BMVEUAAAAAAAB/f39ZWVkuLi5KSkpUVFQpKSkMDAxPT089PT0bGxt9fX15eXl4eHhxcXFoaGhlZWVgYGBAQEABAQGw1hR4AAAAAXRSTlMAQObYZgAAAGRJREFUOMvlx7cRgDAQBVFxRhYP/dfKnWYoQD8gYaO3YeoFb9ypXmIHWYuqVhvA8eDIRW3GnSXuG59sM2yLl5kIdCKCnUH7OBUzeRNkeQm40dpu0D3UkrITsRCxEXf43t6PjPcAerkJ8kalH9QAAAAASUVORK5CYII=";
 const levelToIcon = (level) => {
   switch (level) {
-    case "Aztec":
+    case "Angry Aztec":
       return aztecIcon;
-    case "Castle":
+    case "Creepy Castle":
       return castleIcon;
-    case "Caves":
+    case "Crystal Caves":
       return cavesIcon;
-    case "Factory":
+    case "Frantic Factory":
       return factoryIcon;
-    case "Forest":
+    case "Fungi Forest":
       return forestIcon;
-    case "Galleon":
+    case "Gloomy Galleon":
       return galleonIcon;
-    case "Helm":
+    case "Hideout Helm":
       return helmIcon;
-    case "Japes":
+    case "Jungle Japes":
       return japesIcon;
     default:
       return unknownIcon;
@@ -31313,46 +31313,46 @@ const levelToIcon = (level) => {
 };
 const nextLevel = (level) => {
   switch (level) {
-    case "Japes":
-      return "Aztec";
-    case "Aztec":
-      return "Factory";
-    case "Factory":
-      return "Galleon";
-    case "Galleon":
-      return "Forest";
-    case "Forest":
-      return "Caves";
-    case "Caves":
-      return "Castle";
-    case "Castle":
-      return "Helm";
-    case "Helm":
+    case "Jungle Japes":
+      return "Angry Aztec";
+    case "Angry Aztec":
+      return "Frantic Factory";
+    case "Frantic Factory":
+      return "Gloomy Galleon";
+    case "Gloomy Galleon":
+      return "Fungi Forest";
+    case "Fungi Forest":
+      return "Crystal Caves";
+    case "Crystal Caves":
+      return "Creepy Castle";
+    case "Creepy Castle":
+      return "Hideout Helm";
+    case "Hideout Helm":
       return "";
     default:
-      return "Japes";
+      return "Jungle Japes";
   }
 };
 const prevLevel = (level) => {
   switch (level) {
-    case "Japes":
+    case "Jungle Japes":
       return "";
-    case "Aztec":
-      return "Japes";
-    case "Factory":
-      return "Aztec";
-    case "Galleon":
-      return "Factory";
-    case "Forest":
-      return "Galleon";
-    case "Caves":
-      return "Forest";
-    case "Castle":
-      return "Caves";
-    case "Helm":
-      return "Castle";
+    case "Angry Aztec":
+      return "Jungle Japes";
+    case "Frantic Factory":
+      return "Angry Aztec";
+    case "Gloomy Galleon":
+      return "Frantic Factory";
+    case "Fungi Forest":
+      return "Gloomy Galleon";
+    case "Crystal Caves":
+      return "Fungi Forest";
+    case "Creepy Castle":
+      return "Crystal Caves";
+    case "Hideout Helm":
+      return "Creepy Castle";
     default:
-      return "Helm";
+      return "Hideout Helm";
   }
 };
 const LevelSelector = ({ storeKey }) => {
