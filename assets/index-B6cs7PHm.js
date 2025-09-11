@@ -13464,6 +13464,7 @@ const useIslesKremTop = () => {
   }
 };
 const useIslesHelmEntry = () => {
+  const hasBananaports = useBananaport();
   const bongos = useBongos();
   const guitar = useGuitar();
   const trombone = useTrombone();
@@ -13477,21 +13478,21 @@ const useIslesHelmEntry = () => {
   const target = isSwitchsanity ? islesHelm : 0;
   switch (target) {
     default:
-      return gone;
+      return hasBananaports != 0 || gone;
     case 1:
-      return grab;
+      return hasBananaports != 0 || grab;
     case 2:
-      return charge;
+      return hasBananaports != 0 || charge;
     case 3:
-      return bongos;
+      return hasBananaports != 0 || bongos;
     case 4:
-      return guitar;
+      return hasBananaports != 0 || guitar;
     case 5:
-      return trombone;
+      return hasBananaports != 0 || trombone;
     case 6:
-      return sax;
+      return hasBananaports != 0 || sax;
     case 7:
-      return triangle;
+      return hasBananaports != 0 || triangle;
   }
 };
 const usePlayLevel = (level) => {
