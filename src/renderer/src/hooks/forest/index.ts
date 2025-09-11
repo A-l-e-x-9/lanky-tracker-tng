@@ -54,14 +54,14 @@ import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
  * Can we play in Fungi Forest?
  * @returns true if we can play in Fungi Forest.
  */
-export const usePlayForest = (): boolean => usePlayLevel('Forest')
+export const usePlayForest = (): boolean => usePlayLevel('Fungi Forest')
 
 /**
  * Can we slam down switches in Fungi Forest?
  * @todo Handle both options of the progressive slam setting.
  * @returns true if we can slam switches in Fungi Forest.
  */
-export const useSlamForest = (): boolean => useSlamLevel('Forest')
+export const useSlamForest = (): boolean => useSlamLevel('Fungi Forest')
 
 /**
  * Do we have access to Fungi Forest during the daytime?
