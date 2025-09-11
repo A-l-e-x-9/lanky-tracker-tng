@@ -10,7 +10,7 @@ const ForestCheck: React.FC<LevelCheckProps> = (props) => {
       <ItemCheck
         id={props.id}
         name={props.name}
-        level="Forest"
+        level="Fungi Forest"
         region={props.region}
         canGetLogic={props.canGetLogic}
         canGetBreak={props.canGetBreak}
