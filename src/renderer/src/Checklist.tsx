@@ -15,15 +15,15 @@ const Checklist: React.FC = () => {
     <article>
       <Tabs>
         <TabList>
-          <Tab>Isles</Tab>
-          <Tab>Japes</Tab>
-          <Tab>Aztec</Tab>
-          <Tab>Factory</Tab>
-          <Tab>Galleon</Tab>
-          <Tab>Forest</Tab>
-          <Tab>Caves</Tab>
-          <Tab>Castle</Tab>
-          <Tab>Helm</Tab>
+          <Tab>DK Isles</Tab>
+          <Tab>Jungle Japes</Tab>
+          <Tab>Angry Aztec</Tab>
+          <Tab>Frantic Factory</Tab>
+          <Tab>Gloomy Galleon</Tab>
+          <Tab>Fungi Forest</Tab>
+          <Tab>Crystal Caves</Tab>
+          <Tab>Creepy Castle</Tab>
+          <Tab>Hideout Helm</Tab>
         </TabList>
         <TabPanel>
           <IsleChecks />
