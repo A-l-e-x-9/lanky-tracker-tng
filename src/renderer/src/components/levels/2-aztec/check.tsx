@@ -10,7 +10,7 @@ const AztecCheck: React.FC<LevelCheckProps> = (props) => {
       <ItemCheck
         id={props.id}
         name={props.name}
-        level="Aztec"
+        level="Angry Aztec"
         region={props.region}
         canGetLogic={props.canGetLogic}
         canGetBreak={props.canGetBreak}
