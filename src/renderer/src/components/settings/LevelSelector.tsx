@@ -20,21 +20,21 @@ type LevelSelectorProps = {
 
 const levelToIcon = (level: Level): string => {
   switch (level) {
-    case 'Aztec':
+    case 'Angry Aztec':
       return aztecIcon
-    case 'Castle':
+    case 'Creepy Castle':
       return castleIcon
-    case 'Caves':
+    case 'Crystal Caves':
       return cavesIcon
-    case 'Factory':
+    case 'Frantic Factory':
       return factoryIcon
-    case 'Forest':
+    case 'Fungi Forest':
       return forestIcon
-    case 'Galleon':
+    case 'Gloomy Galleon':
       return galleonIcon
-    case 'Helm':
+    case 'Hideout Helm':
       return helmIcon
-    case 'Japes':
+    case 'Jungle Japes':
       return japesIcon
     default:
       return unknownIcon
@@ -43,47 +43,47 @@ const levelToIcon = (level: Level): string => {
 
 const nextLevel = (level: Level): Level => {
   switch (level) {
-    case 'Japes':
-      return 'Aztec'
-    case 'Aztec':
-      return 'Factory'
-    case 'Factory':
-      return 'Galleon'
-    case 'Galleon':
-      return 'Forest'
-    case 'Forest':
-      return 'Caves'
-    case 'Caves':
-      return 'Castle'
-    case 'Castle':
-      return 'Helm'
-    case 'Helm':
+    case 'Jungle Japes':
+      return 'Angry Aztec'
+    case 'Angry Aztec':
+      return 'Frantic Factory'
+    case 'Frantic Factory':
+      return 'Gloomy Galleon'
+    case 'Gloomy Galleon':
+      return 'Fungi Forest'
+    case 'Fungi Forest':
+      return 'Crystal Caves'
+    case 'Crystal Caves':
+      return 'Creepy Castle'
+    case 'Creepy Castle':
+      return 'Hideout Helm'
+    case 'Hideout Helm':
       return ''
     default:
-      return 'Japes'
+      return 'Jungle Japes'
   }
 }
 
 const prevLevel = (level: Level): Level => {
   switch (level) {
-    case 'Japes':
+    case 'Jungle Japes':
       return ''
-    case 'Aztec':
-      return 'Japes'
-    case 'Factory':
-      return 'Aztec'
-    case 'Galleon':
-      return 'Factory'
-    case 'Forest':
-      return 'Galleon'
-    case 'Caves':
-      return 'Forest'
-    case 'Castle':
-      return 'Caves'
-    case 'Helm':
-      return 'Castle'
+    case 'Angry Aztec':
+      return 'Jungle Japes'
+    case 'Frantic Factory':
+      return 'Angry Aztec'
+    case 'Gloomy Galleon':
+      return 'Frantic Factory'
+    case 'Fungi Forest':
+      return 'Gloomy Galleon'
+    case 'Crystal Caves':
+      return 'Fungi Forest'
+    case 'Creepy Castle':
+      return 'Crystal Caves'
+    case 'Hideout Helm':
+      return 'Creepy Castle'
     default:
-      return 'Helm'
+      return 'Hideout Helm'
   }
 }
 
