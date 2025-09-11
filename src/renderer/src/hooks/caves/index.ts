@@ -50,14 +50,14 @@ import { LogicBool, logicBreak } from '../world'
  * Can we play in Crystal Caves?
  * @returns true if we can play in Crystal Caves.
  */
-export const usePlayCaves = (): boolean => usePlayLevel('Caves')
+export const usePlayCaves = (): boolean => usePlayLevel('Crystal Caves')
 
 /**
  * Can we slam down switches in Crystal Caves?
  * @todo Handle both options of the progressive slam setting.
  * @returns true if we can slam switches in Crystal Caves.
  */
-export const useSlamCaves = (): boolean => useSlamLevel('Caves')
+export const useSlamCaves = (): boolean => useSlamLevel('Crystal Caves')
 
 /**
  * Can we enter the Igloo in Caves?
