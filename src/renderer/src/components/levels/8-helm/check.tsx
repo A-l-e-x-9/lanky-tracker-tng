@@ -10,7 +10,7 @@ const HelmCheck: React.FC<LevelCheckProps> = (props) => {
       <ItemCheck
         id={props.id}
         name={props.name}
-        level="Helm"
+        level="Hideout Helm"
         region="Hideout Helm"
         canGetLogic={props.canGetLogic}
         canGetBreak={props.canGetBreak}
