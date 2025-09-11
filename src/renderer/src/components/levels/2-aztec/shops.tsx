@@ -16,7 +16,7 @@ const Vanilla: React.FC = () => {
       <ShopGenerator
         baseId={2110}
         baseName="Aztec Cranky"
-        level="Aztec"
+        level="Angry Aztec"
         region="Aztec Shops"
         inLogic={hasCranky && aztecBack.in}
         outLogic={hasCranky && aztecBack.out}
@@ -24,7 +24,7 @@ const Vanilla: React.FC = () => {
       <ShopGenerator
         baseId={2120}
         baseName="Aztec Funky"
-        level="Aztec"
+        level="Angry Aztec"
         region="Aztec Shops"
         inLogic={hasFunky && aztecBack.in}
         outLogic={hasFunky && aztecBack.out}
@@ -32,7 +32,7 @@ const Vanilla: React.FC = () => {
       <ShopGenerator
         baseId={2130}
         baseName="Aztec Candy"
-        level="Aztec"
+        level="Angry Aztec"
         region="Aztec Shops"
         inLogic={hasCandy && aztecFront.in}
         outLogic={hasCandy && aztecFront.out}
@@ -54,7 +54,7 @@ const Shuffled: React.FC = () => {
       <ShopGenerator
         baseId={2140}
         baseName="Aztec Cranky Location"
-        level="Aztec"
+        level="Angry Aztec"
         region="Aztec Shops"
         inLogic={hasCranky && aztecBack.in}
         outLogic={hasCranky && aztecBack.out}
@@ -62,7 +62,7 @@ const Shuffled: React.FC = () => {
       <ShopGenerator
         baseId={2150}
         baseName="Aztec Funky Location"
-        level="Aztec"
+        level="Angry Aztec"
         region="Aztec Shops"
         inLogic={hasFunky && aztecBack.in}
         outLogic={hasFunky && aztecBack.out}
@@ -70,7 +70,7 @@ const Shuffled: React.FC = () => {
       <ShopGenerator
         baseId={2160}
         baseName="Aztec Candy Location"
-        level="Aztec"
+        level="Angry Aztec"
         region="Aztec Shops"
         inLogic={hasCandy && aztecFront.in}
         outLogic={hasCandy && aztecFront.out}
@@ -78,7 +78,7 @@ const Shuffled: React.FC = () => {
       <ShopGenerator
         baseId={2170}
         baseName="Aztec Snide Location"
-        level="Aztec"
+        level="Angry Aztec"
         region="Aztec Shops"
         inLogic={hasSnide && aztecBack.in}
         outLogic={hasSnide && aztecBack.out}
