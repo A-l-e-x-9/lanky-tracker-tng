@@ -64,7 +64,8 @@ import {
   useVine,
   useClimbing,
   useSnide,
-  useBarrel
+  useBarrel,
+  useOrange
 } from '../kongs'
 import {
   useAutoBonus,
@@ -190,7 +191,7 @@ export const useIslesKremTop = (): boolean => {
  * @returns true if we can activate the vines in the Helm Lobby.
  */
 export const useIslesHelmEntry = (): boolean => {
-  const hasBananaports = useBananaport() /*At some indeterminate point in Season 4's existence (before the Season 4 tournament hit the DK64 Speedrunning YouTube channel), the Bananaports in the Helm Lobby were changed to be pre-activated if you selected the appropriate setting in the Randomizer. Must now account for this.*/
+  const hasBananaports = useBananaport() /*At some indeterminate point in Season 4's existence (I think when Season 4 began on the DK64 Speedrunning Twitch channel), the Bananaports in the Helm Lobby were changed to be pre-activated if you selected the appropriate setting in the Randomizer. Must now account for this.*/
   const bongos = useBongos()
   const guitar = useGuitar()
   const trombone = useTrombone()
@@ -219,6 +220,38 @@ export const useIslesHelmEntry = (): boolean => {
       return hasBananaports != 0 || sax
     case 7:
       return hasBananaports != 0 || triangle
+  }
+}
+
+export const useIslesHelmEntryWithoutBananaports = (): boolean => {
+  const bongos = useBongos()
+  const guitar = useGuitar()
+  const trombone = useTrombone()
+  const sax = useSax()
+  const triangle = useTriangle()
+  const charge = useCharge()
+  const grab = useGrab()
+  const gone = useGone()
+  const isSwitchsanity = useIsSwitchsanity()
+  const [islesHelm] = useDonkStore(useShallow((state) => [state.switchsanitySwitches.islesHelm]))
+  const target = isSwitchsanity ? islesHelm : 0
+  switch (target) {
+    default:
+      return gone
+    case 1:
+      return grab
+    case 2:
+      return charge
+    case 3:
+      return bongos
+    case 4:
+      return guitar
+    case 5:
+      return trombone
+    case 6:
+      return sax
+    case 7:
+      return triangle
   }
 }
 
@@ -561,12 +594,13 @@ export const useCheckChunkyPound = (): boolean => {
 
 export const useCheckChunkyHelm = (): LogicBool => {
   const playHelm = usePlayHelm()
-  const helmEntry = useIslesHelmEntry()
+  const helmEntry = useIslesHelmEntryWithoutBananaports()
   const vine = useVine()
   const twirl = useTwirl()
+  const orangeYourself = useOrange()
   return {
     in: playHelm && helmEntry && vine,
-    out: playHelm && helmEntry && twirl
+    out: playHelm && helmEntry && (twirl || orangeYourself)
   }
 }
 
@@ -666,15 +700,16 @@ export const useKremFairy = (): boolean => {
 }
 
 export const useHelmKasplat = (): LogicBool => {
-  const playHelm = usePlayHelm()
+  const playHelm = usePlayHelmWithoutBananaports()
   const snide = useSnide()
   const sniper = useSniper()
   const coconut = useCoconut()
   const twirl = useTwirl()
   const FtaDkBlueprint = useFtaDkBlueprint()
+  const orangeYourself = useOrange()
   return {
     in: snide && playHelm && sniper && coconut,
-    out: snide && FtaDkBlueprint && playHelm && twirl
+    out: snide && FtaDkBlueprint && playHelm && (twirl || orangeYourself)
   }
 }
 
