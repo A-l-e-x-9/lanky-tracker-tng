@@ -158,8 +158,15 @@ main > article:last-child {
 
 .level-list > section, .boss-list section {
   display: grid;
-  grid-template-columns: 1fr 14ex 1fr;
   justify-items: center;
+}
+
+.level-list > section {
+  grid-template-columns: 1fr 14ex 1fr 1fr;
+}
+
+.boss-list section {
+  grid-template-columns: 1fr 14ex 1fr;
 }
 
 .level-list > .level2, .boss-list > .boss2 {
