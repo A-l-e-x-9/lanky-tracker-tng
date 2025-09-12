@@ -13801,7 +13801,7 @@ const useCheckChunkyHelm = () => {
   const orangeYourself = useOrange();
   return {
     in: playHelm && helmEntry && vine,
-    out: playHelm && helmEntry && (twirl || orangeYourself)
+    out: playHelm && (twirl || orangeYourself)
   };
 };
 const useSnideArena = () => {
