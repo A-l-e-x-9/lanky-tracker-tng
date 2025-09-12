@@ -64,8 +64,7 @@ import {
   useVine,
   useClimbing,
   useSnide,
-  useBarrel,
-  useOrange
+  useBarrel
 } from '../kongs'
 import {
   useAutoBonus,
@@ -700,7 +699,7 @@ export const useKremFairy = (): boolean => {
 }
 
 export const useHelmKasplat = (): LogicBool => {
-  const playHelm = usePlayHelmWithoutBananaports()
+  const playHelm = usePlayHelm()
   const snide = useSnide()
   const sniper = useSniper()
   const coconut = useCoconut()
