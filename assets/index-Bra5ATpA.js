@@ -13495,6 +13495,37 @@ const useIslesHelmEntry = () => {
       return hasBananaports != 0 || triangle;
   }
 };
+const useIslesHelmEntryWithoutBananaports = () => {
+  const bongos = useBongos();
+  const guitar = useGuitar();
+  const trombone = useTrombone();
+  const sax = useSax();
+  const triangle = useTriangle();
+  const charge = useCharge();
+  const grab = useGrab();
+  const gone = useGone();
+  const isSwitchsanity = useIsSwitchsanity();
+  const [islesHelm] = useDonkStore(useShallow((state) => [state.switchsanitySwitches.islesHelm]));
+  const target = isSwitchsanity ? islesHelm : 0;
+  switch (target) {
+    default:
+      return gone;
+    case 1:
+      return grab;
+    case 2:
+      return charge;
+    case 3:
+      return bongos;
+    case 4:
+      return guitar;
+    case 5:
+      return trombone;
+    case 6:
+      return sax;
+    case 7:
+      return triangle;
+  }
+};
 const usePlayLevel = (level) => {
   const dive = useDive();
   const openLobbies = useOpenLobbies();
@@ -13764,12 +13795,13 @@ const useCheckChunkyPound = () => {
 };
 const useCheckChunkyHelm = () => {
   const playHelm = usePlayHelm();
-  const helmEntry = useIslesHelmEntry();
+  const helmEntry = useIslesHelmEntryWithoutBananaports();
   const vine = useVine();
   const twirl = useTwirl();
+  const orangeYourself = useOrange();
   return {
     in: playHelm && helmEntry && vine,
-    out: playHelm && helmEntry && twirl
+    out: playHelm && helmEntry && (twirl || orangeYourself)
   };
 };
 const useSnideArena = () => {
@@ -13856,9 +13888,10 @@ const useHelmKasplat = () => {
   const coconut = useCoconut();
   const twirl = useTwirl();
   const FtaDkBlueprint = useFtaDkBlueprint();
+  const orangeYourself = useOrange();
   return {
     in: snide && playHelm && sniper && coconut,
-    out: snide && FtaDkBlueprint && playHelm && twirl
+    out: snide && FtaDkBlueprint && playHelm && (twirl || orangeYourself)
   };
 };
 const useCastleKasplat = () => {
