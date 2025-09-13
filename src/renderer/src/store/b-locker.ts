@@ -35,4 +35,4 @@ const BLockerSlice: StateCreator<AllSlice, [], [], bLockerSlice> = (set) => {
   }
 }
 
-export default bLockerSlice
+export default BLockerSlice
