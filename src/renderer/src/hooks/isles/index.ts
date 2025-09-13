@@ -1,11 +1,10 @@
 import { useShallow } from 'zustand/react/shallow'
-
 import useDonkStore from '@renderer/store'
 import { Level } from '@renderer/store/common'
 import { usePlayAztec } from '../aztec'
 import { usePlayCastle } from '../castle'
 import { usePlayCaves } from '../caves'
-import { useCurrentFairyCount } from '../consumables'
+import { useCurrentFairyCount, useCurrentGBCount } from '../consumables'
 import { usePlayFactory } from '../factory'
 import { usePlayForest } from '../forest'
 import { usePlayGalleon, useSlamGalleon } from '../galleon'
@@ -292,30 +291,52 @@ export const usePlayLevel = (level: Level): boolean => {
   const islesKremTop = useIslesKremTop()
   const islesKremAscent = useIslesKremAscent()
   const islesFungiIsland = useIslesFungiIsland()
+  const currentGB = useCurrentGBCount()
+  const [
+    bLocker1,
+    bLocker2,
+    bLocker3,
+    bLocker4,
+    bLocker5,
+    bLocker6,
+    bLocker7,
+    bLocker8
+  ] = useDonkStore(
+    useShallow((state) => [
+      state.bLocker.bLocker1,
+      state.bLocker.bLocker2,
+      state.bLocker.bLocker3,
+      state.bLocker.bLocker4,
+      state.bLocker.bLocker5,
+      state.bLocker.bLocker6,
+      state.bLocker.bLocker7,
+      state.bLocker.bLocker8
+    ])
+  ) 
 
   if (level1 === level) {
-    return true
+    return currentGB >= bLocker1
   }
   if (level2 === level) {
-    return islesUpper && (openLobbies || key1)
+    return (currentGB >= bLocker2) && islesUpper && (openLobbies || key1)
   }
   if (level3 === level) {
-    return islesKremAscent && (openLobbies || key2)
+    return (currentGB >= bLocker3) && islesKremAscent && (openLobbies || key2)
   }
   if (level4 === level) {
-    return (openLobbies || key2) && dive
+    return (currentGB >= bLocker4) && (openLobbies || key2) && dive
   }
   if (level5 === level) {
-    return islesFungiIsland
+    return (currentGB >= bLocker5) && islesFungiIsland
   }
   if (level6 === level) {
-    return islesUpper && (openLobbies || key5)
+    return (currentGB >= bLocker6) && islesUpper && (openLobbies || key5)
   }
   if (level7 === level) {
-    return openLobbies || key5
+    return (currentGB >= bLocker7) && (openLobbies || key5)
   }
   if (level8 === level) {
-    return islesKremTop && (openLobbies || (key6 && key7))
+    return (currentGB >= bLocker8) && islesKremTop && (openLobbies || (key6 && key7))
   }
 
   return false
