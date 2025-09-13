@@ -10,7 +10,8 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
 - Fix npm-web-out.yaml so that "instructions.html", its CSS, and the Lanky head icon all get pushed out to the gh-pages branch...I put them in there by hand, but the next run of that file takes them all away again.
-- Implement the B. Locker and Hideout Helm barriers in some way.
+- Implement the Hideout Helm barriers in some way.
+  - Right now, the B. Locker barriers available in the tracker can only accept bananas, so if you're playing a "Chaos B. Lockers" seed (where he often requires things other than bananas so that you can get into the level), you're out of luck. :(
   - Somewhat related: make it so that you can just type how many bananas, etc., you have in the "count" selectors (such as "Colored bananas needed for medal" in Settings) so you don't have to click so much.
 - Also implement the "shuffled DK Portals" function (and rarely-seen "Shuffle Start Location" function, too?) (a shuffled portal can make all the difference in what checks are accessible to you, after all!).
 - K. Rool's phase selector will only light up in yellow if you have all five phases set and one of them is Tiny Phase without Feathers or Mad Jack without Ponytail Twirl. Alex was unable to fix this while updating the K. Rool selector to account for the "use K. Rool phases as bosses" option in the Randomizer. Since all regulation "season" seeds that Alex has seen on YouTube (going back to Season 2) have only three phases, must fix this.
