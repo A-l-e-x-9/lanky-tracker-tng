@@ -13063,6 +13063,7 @@ const useHelmMachine = () => {
   };
 };
 const useHelmDoors = () => {
+  const inLevel = usePlayHelm();
   const entry = useHelmEnter();
   const anyMusic = useAnyMusic();
   const machine = useHelmMachine();
@@ -13071,8 +13072,8 @@ const useHelmDoors = () => {
   const punch = usePunch();
   const helmAccess = useHelmStartPosition();
   return {
-    in: entry && (helmAccess == 2 || anyMusic && (helmAccess == 1 || machine.in && grab && rocket && punch)),
-    out: entry && logicBreak(machine) && grab && rocket && punch
+    in: inLevel && entry && (helmAccess == 2 || anyMusic && (helmAccess == 1 || machine.in && grab && rocket && punch)),
+    out: inLevel && entry && logicBreak(machine) && grab && rocket && punch
   };
 };
 const useCanDeactivateHelm = () => {
