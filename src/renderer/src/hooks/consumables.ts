@@ -27,3 +27,6 @@ export const useCurrentFairyCount = (): number =>
  * @returns true if we have the bean.
  */
 export const useBean = (): boolean => useDonkStore(useShallow((state) => state.consumables.bean))
+
+export const useCurrentGBCount = (): number =>
+  useDonkStore(useShallow((state) => state.consumables.goldBananas))
