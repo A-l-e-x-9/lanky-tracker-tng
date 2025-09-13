@@ -1,5 +1,5 @@
 import { StateCreator } from 'zustand'
-import { AllSlice, bLockerSlice bLockerState, donkResetFns } from './common'
+import { AllSlice, bLockerSlice, bLockerState, donkResetFns } from './common'
 
 export const initialBLocker: bLockerState = {
   bLocker: {
@@ -14,7 +14,7 @@ export const initialBLocker: bLockerState = {
   }
 }
 
-const (typeof bLockerSlice): StateCreator<AllSlice, [], [], bLockerSlice> = (set) => {
+const BLockerSlice: StateCreator<AllSlice, [], [], bLockerSlice> = (set) => {
   donkResetFns.add(() => set(initialBLocker))
   return {
     ...initialBLocker,
