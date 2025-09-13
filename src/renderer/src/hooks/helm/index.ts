@@ -66,6 +66,7 @@ export const useHelmMachine = (): LogicBool => {
  * @returns true if we can access the Helm doors.
  */
 export const useHelmDoors = (): LogicBool => {
+  const inLevel = usePlayHelm()
   const entry = useHelmEnter()
   const anyMusic = useAnyMusic()
   const machine = useHelmMachine()
@@ -76,10 +77,10 @@ export const useHelmDoors = (): LogicBool => {
 
   return {
     in:
-      entry &&
+      inLevel && entry &&
       (helmAccess == 2 ||
         (anyMusic && (helmAccess == 1 || (machine.in && grab && rocket && punch)))),
-    out: entry && logicBreak(machine) && grab && rocket && punch
+    out: inLevel && entry && logicBreak(machine) && grab && rocket && punch
   }
 }
 
