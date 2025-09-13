@@ -4,6 +4,7 @@ import { persist } from 'zustand/middleware'
 import { AllSlice } from './common'
 
 import barrierSlice from './barriers'
+import bLockerSlice from './b-locker'
 import bossSlice from './boss'
 import coreSlice from './checks'
 import consumablesSlice from './consumables'
@@ -20,6 +21,7 @@ const initializer: StateCreator<AllSlice, [['zustand/persist', unknown]], []> = 
   ...coreSlice(...d),
   ...settingSlice(...d),
   ...levelSlice(...d),
+  ...bLockerSlice(...d),
   ...hintSlice(...d),
   ...moveSlice(...d),
   ...bossSlice(...d),

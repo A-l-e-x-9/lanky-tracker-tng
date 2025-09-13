@@ -883,6 +883,29 @@ interface BossActions {
 
 export type BossSlice = BossState & BossActions
 
+//#region B. Lockers
+interface bLockerCollection {
+  bLocker1: GoldBananaRange
+  bLocker2: GoldBananaRange
+  bLocker3: GoldBananaRange
+  bLocker4: GoldBananaRange
+  bLocker5: GoldBananaRange
+  bLocker6: GoldBananaRange
+  bLocker7: GoldBananaRange
+  bLocker8: GoldBananaRange
+}
+
+export interface bLockerState {
+  bLocker: bLockerCollection
+}
+
+interface bLockerActions {
+  setBLocker: (id: string, val: number) => void
+}
+
+export type bLockerSlice = bLockerState & bLockerActions
+//#endregion
+
 export type AllSlice = CheckSlice &
   MoveSlice &
   ConsumablesSlice &
@@ -890,6 +913,7 @@ export type AllSlice = CheckSlice &
   BarrierSlice &
   SettingSlice &
   LevelSlice &
+  bLockerSlice &
   BossSlice &
   HintSlice &
   FastCheckSlice &
