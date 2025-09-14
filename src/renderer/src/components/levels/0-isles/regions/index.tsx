@@ -1,9 +1,10 @@
-import ShuffledArenas from '../arenas/Shuffled'
-import ShuffledCrates from '../crates/Shuffled'
-import ShuffledDirtLocations from '../dirt/Shuffled'
-import ShuffledFairies from '../fairies/Shuffled'
+import BananaMedalPool from '@renderer/components/pools/BananaMedals'
+import ChunkyMedal from '../medals/ChunkyMedal'
+import DiddyMedal from '../medals/DiddyMedal'
+import DkMedal from '../medals/DkMedal'
+import LankyMedal from '../medals/LankyMedal'
+import TinyMedal from '../medals/TinyMedal'
 import JetpacCheck from '../jetpac'
-import ShuffledKasplats from '../kasplats/Shuffled'
 import ShopLocations from '../shops'
 import AztecLobbyChecks from './AztecLobby'
 import CastleLobbyChecks from './CastleLobby'
@@ -26,6 +27,13 @@ import TrainingGroundsChecks from './TrainingGrounds'
 
 const IslesRegionChecks: React.FC = () => (
   <div className="grid">
+    <BananaMedalPool>
+      <DkMedal />
+      <DiddyMedal />
+      <LankyMedal />
+      <TinyMedal />
+      <ChunkyMedal />
+    </BananaMedalPool>
     <TrainingGroundsChecks />
     <IslesMainChecks />
     <IslesMainUpperChecks />
@@ -44,11 +52,6 @@ const IslesRegionChecks: React.FC = () => (
     <CavesLobbyChecks />
     <CastleLobbyChecks />
     <HelmLobbyChecks />
-    <ShuffledKasplats />
-    <ShuffledCrates />
-    <ShuffledDirtLocations />
-    <ShuffledFairies />
-    <ShuffledArenas />
     <ShopLocations />
     <JetpacCheck />
   </div>
