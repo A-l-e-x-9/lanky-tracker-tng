@@ -15013,68 +15013,245 @@ const KasplatLocations$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$7, {})
 ] });
-const Shuffled$L = () => {
-  const anyKong = useAnyKong();
-  if (!useShuffledArenas()) {
-    return null;
+const useChunkyMedalInLogic$7 = () => {
+  const kong = useChunky();
+  const barrel = useBarrel();
+  const crystal = useHunky();
+  const gun = usePineapple();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = 0;
+  if (kong && barrel && gun && crystal || kong && shuffleBananas) {
+    bananas += 100;
   }
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 190, name: "Isles Arena Location #1", canGetLogic: anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 191, name: "Isles Arena Location #2", canGetLogic: anyKong })
-  ] });
+  return bananas;
 };
-const ShuffledArenas$7 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$L, {});
-const Shuffled$K = () => {
-  const anyKong = useAnyKong();
-  if (!useShuffleCrates()) {
-    return null;
-  }
+const useChunkyMedalOutLogic$7 = () => useChunkyMedalInLogic$7();
+const ChunkyMedal$7 = () => {
+  const inLogic = useChunkyMedalInLogic$7();
+  const outLogic = useChunkyMedalOutLogic$7();
+  const cbCount = useCbCount();
+  const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 260, name: "Isles Crate Location #1 (maybe)", canGetLogic: anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 261, name: "Isles Crate Location #2 (maybe)", canGetLogic: anyKong })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 104,
+        name: "Isles Chunky Medal",
+        region: "Isles Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 204,
+        name: "Isles Chunky Half-Medal",
+        region: "Isles Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
   ] });
 };
-const ShuffledCrates$7 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$K, {}) : null;
-const Shuffled$J = () => {
-  const dirt = useGeneralDirt();
-  if (!useShuffleDirt()) {
-    return null;
+const useDiddyMedalInLogic$7 = () => {
+  const kong = useDiddy();
+  const gun = usePeanut();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = 0;
+  if (kong && gun || kong && shuffleBananas) {
+    bananas += 100;
   }
+  return bananas;
+};
+const useDiddyMedalOutLogic$7 = () => {
+  const kong = useDiddy();
+  const gun = usePeanut();
+  const highGrab = useHighGrab();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = 0;
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (gun && highGrab) {
+    bananas += 5;
+  }
+  return bananas;
+};
+const DiddyMedal$7 = () => {
+  const inLogic = useDiddyMedalInLogic$7();
+  const outLogic = useDiddyMedalOutLogic$7();
+  const cbCount = useCbCount();
+  const halfMedal = Math.round(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 270, name: "Isles Dirt Location #1", canGetLogic: dirt }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 271, name: "Isles Dirt Location #2", canGetLogic: dirt }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 272, name: "Isles Dirt Location #3", canGetLogic: dirt }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 273, name: "Isles Dirt Location #4", canGetLogic: dirt })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 101,
+        name: "Isles Diddy Medal",
+        region: "Isles Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 201,
+        name: "Isles Diddy Half-Medal",
+        region: "Isles Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
   ] });
 };
-const ShuffledDirtLocations$7 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$J, {}) : null;
-const Shuffled$I = () => {
-  const fairy = useGeneralFairy();
-  if (!useShuffleFairies()) {
-    return null;
+const useDkMedalInLogic$7 = () => {
+  const kong = useDk();
+  const vine = useVine();
+  const gun = useCoconut();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = 0;
+  if (kong && gun && vine || kong && shuffleBananas) {
+    bananas += 100;
   }
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 280, name: "Isles Fairy Location #1", canGetLogic: fairy }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 281, name: "Isles Fairy Location #2", canGetLogic: fairy }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 282, name: "Isles Fairy Location #3", canGetLogic: fairy }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 283, name: "Isles Fairy Location #4", canGetLogic: fairy })
-  ] });
+  return bananas;
 };
-const ShuffledFairies$7 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$I, {}) : null;
-const Shuffled$H = () => {
-  const anyKong = useAnyKong();
-  if (!useShuffleKasplats()) {
-    return null;
+const useDkMedalOutLogic$7 = () => {
+  const kong = useDk();
+  const vine = useVine();
+  const bananas = useDkMedalInLogic$7();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!kong) {
+    return 0;
   }
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 250, name: "Isles Kasplat Location #1", canGetLogic: anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 251, name: "Isles Kasplat Location #2", canGetLogic: anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 252, name: "Isles Kasplat Location #3", canGetLogic: anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 253, name: "Isles Kasplat Location #4", canGetLogic: anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 254, name: "Isles Kasplat Location #5", canGetLogic: anyKong })
+  if (shuffleBananas) {
+    return 100;
+  }
+  return vine ? bananas : bananas + 5;
+};
+const DkMedal$7 = () => {
+  const inLogic = useDkMedalInLogic$7();
+  const outLogic = useDkMedalOutLogic$7();
+  const cbCount = useCbCount();
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 100,
+        name: "Isles DK Medal",
+        region: "Isles Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 200,
+        name: "Isles DK Half-Medal",
+        region: "Isles Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
   ] });
 };
-const ShuffledKasplats$7 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$H, {}) : null;
+const useLankyMedalInLogic$7 = () => {
+  const kong = useLanky();
+  const gun = useGrape();
+  const move = useStand();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = 0;
+  if (kong && gun && move || kong && shuffleBananas) {
+    bananas += 100;
+  }
+  return bananas;
+};
+const useLankyMedalOutLogic$7 = () => {
+  const kong = useLanky();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = 0;
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  return bananas;
+};
+const LankyMedal$7 = () => {
+  const inLogic = useLankyMedalInLogic$7();
+  const outLogic = useLankyMedalOutLogic$7();
+  const cbCount = useCbCount();
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 102,
+        name: "Isles Lanky Medal",
+        region: "Isles Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 202,
+        name: "Isles Lanky Half-Medal",
+        region: "Isles Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
+};
+const useTinyMedalInLogic$7 = () => {
+  const kong = useTiny();
+  const gun = useFeather();
+  const mini = useMini();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = 0;
+  if (kong && gun && mini || kong && shuffleBananas) {
+    bananas += 100;
+  }
+  return bananas;
+};
+const useTinyMedalOutLogic$7 = () => useTinyMedalInLogic$7();
+const TinyMedal$7 = () => {
+  const inLogic = useTinyMedalInLogic$7();
+  const outLogic = useTinyMedalOutLogic$7();
+  const cbCount = useCbCount();
+  const halfMedal = Math.round(cbCount / 2);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 103,
+        name: "Isles Tiny Medal",
+        region: "Isles Medal Rewards",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 203,
+        name: "Isles Tiny Half-Medal",
+        region: "Isles Medal Rewards",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
+};
 const useShopLogic = (id2) => {
   const dk2 = useDk();
   const diddy = useDiddy();
@@ -15761,6 +15938,13 @@ const TrainingGroundsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(Rainb
   /* @__PURE__ */ jsxRuntimeExports.jsx(Hoard, {})
 ] });
 const IslesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$7, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$7, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$7, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$7, {})
+  ] }),
   /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingGroundsChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainUpperChecks, {}),
@@ -15779,253 +15963,9 @@ const IslesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(HelmLobbyChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$7, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$7, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations$7, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {})
 ] });
-const useChunkyMedalInLogic$7 = () => {
-  const kong = useChunky();
-  const barrel = useBarrel();
-  const crystal = useHunky();
-  const gun = usePineapple();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = 0;
-  if (kong && barrel && gun && crystal || kong && shuffleBananas) {
-    bananas += 100;
-  }
-  return bananas;
-};
-const useChunkyMedalOutLogic$7 = () => useChunkyMedalInLogic$7();
-const ChunkyMedal$7 = () => {
-  const inLogic = useChunkyMedalInLogic$7();
-  const outLogic = useChunkyMedalOutLogic$7();
-  const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 104,
-        name: "Isles Chunky Medal",
-        region: "Isles Medal Rewards",
-        canGetLogic: inLogic >= cbCount,
-        canGetBreak: outLogic >= cbCount
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 204,
-        name: "Isles Chunky Half-Medal",
-        region: "Isles Medal Rewards",
-        canGetLogic: inLogic >= halfMedal,
-        canGetBreak: outLogic >= halfMedal
-      }
-    )
-  ] });
-};
-const useDiddyMedalInLogic$7 = () => {
-  const kong = useDiddy();
-  const gun = usePeanut();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = 0;
-  if (kong && gun || kong && shuffleBananas) {
-    bananas += 100;
-  }
-  return bananas;
-};
-const useDiddyMedalOutLogic$7 = () => {
-  const kong = useDiddy();
-  const gun = usePeanut();
-  const highGrab = useHighGrab();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = 0;
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (gun && highGrab) {
-    bananas += 5;
-  }
-  return bananas;
-};
-const DiddyMedal$7 = () => {
-  const inLogic = useDiddyMedalInLogic$7();
-  const outLogic = useDiddyMedalOutLogic$7();
-  const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 101,
-        name: "Isles Diddy Medal",
-        region: "Isles Medal Rewards",
-        canGetLogic: inLogic >= cbCount,
-        canGetBreak: outLogic >= cbCount
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 201,
-        name: "Isles Diddy Half-Medal",
-        region: "Isles Medal Rewards",
-        canGetLogic: inLogic >= halfMedal,
-        canGetBreak: outLogic >= halfMedal
-      }
-    )
-  ] });
-};
-const useDkMedalInLogic$7 = () => {
-  const kong = useDk();
-  const vine = useVine();
-  const gun = useCoconut();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = 0;
-  if (kong && gun && vine || kong && shuffleBananas) {
-    bananas += 100;
-  }
-  return bananas;
-};
-const useDkMedalOutLogic$7 = () => {
-  const kong = useDk();
-  const vine = useVine();
-  const bananas = useDkMedalInLogic$7();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  return vine ? bananas : bananas + 5;
-};
-const DkMedal$7 = () => {
-  const inLogic = useDkMedalInLogic$7();
-  const outLogic = useDkMedalOutLogic$7();
-  const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 100,
-        name: "Isles DK Medal",
-        region: "Isles Medal Rewards",
-        canGetLogic: inLogic >= cbCount,
-        canGetBreak: outLogic >= cbCount
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 200,
-        name: "Isles DK Half-Medal",
-        region: "Isles Medal Rewards",
-        canGetLogic: inLogic >= halfMedal,
-        canGetBreak: outLogic >= halfMedal
-      }
-    )
-  ] });
-};
-const useLankyMedalInLogic$7 = () => {
-  const kong = useLanky();
-  const gun = useGrape();
-  const move = useStand();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = 0;
-  if (kong && gun && move || kong && shuffleBananas) {
-    bananas += 100;
-  }
-  return bananas;
-};
-const useLankyMedalOutLogic$7 = () => {
-  const kong = useLanky();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = 0;
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  return bananas;
-};
-const LankyMedal$7 = () => {
-  const inLogic = useLankyMedalInLogic$7();
-  const outLogic = useLankyMedalOutLogic$7();
-  const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 102,
-        name: "Isles Lanky Medal",
-        region: "Isles Medal Rewards",
-        canGetLogic: inLogic >= cbCount,
-        canGetBreak: outLogic >= cbCount
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 202,
-        name: "Isles Lanky Half-Medal",
-        region: "Isles Medal Rewards",
-        canGetLogic: inLogic >= halfMedal,
-        canGetBreak: outLogic >= halfMedal
-      }
-    )
-  ] });
-};
-const useTinyMedalInLogic$7 = () => {
-  const kong = useTiny();
-  const gun = useFeather();
-  const mini = useMini();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = 0;
-  if (kong && gun && mini || kong && shuffleBananas) {
-    bananas += 100;
-  }
-  return bananas;
-};
-const useTinyMedalOutLogic$7 = () => useTinyMedalInLogic$7();
-const TinyMedal$7 = () => {
-  const inLogic = useTinyMedalInLogic$7();
-  const outLogic = useTinyMedalOutLogic$7();
-  const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 103,
-        name: "Isles Tiny Medal",
-        region: "Isles Medal Rewards",
-        canGetLogic: inLogic >= cbCount,
-        canGetBreak: outLogic >= cbCount
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 203,
-        name: "Isles Tiny Half-Medal",
-        region: "Isles Medal Rewards",
-        canGetLogic: inLogic >= halfMedal,
-        canGetBreak: outLogic >= halfMedal
-      }
-    )
-  ] });
-};
 const BoulderLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyTrombonePad, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyTrianglePad, {}),
