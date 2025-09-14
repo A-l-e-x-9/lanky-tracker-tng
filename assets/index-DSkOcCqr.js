@@ -15185,7 +15185,70 @@ const ShopLocations$7 = () => {
   const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$G, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$8, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
-const AztecLobbyChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsx(AztecBarrel, {});
+const WrinklyPool = ({ children }) => usePoolWrinkly() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const AztecLobbyDK = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 16,
+      name: "Aztec Lobby DK",
+      region: "Wrinkly Kong Doors",
+      canGetLogic: useAztecLobbyGeneric()
+    }
+  ) });
+};
+const AztecLobbyDiddy = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 15,
+      name: "Aztec Lobby Diddy",
+      region: "Wrinkly Kong Doors",
+      canGetLogic: useAztecLobbyGeneric()
+    }
+  ) });
+};
+const AztecLobbyLanky = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 17,
+      name: "Aztec Lobby Lanky",
+      region: "Wrinkly Kong Doors",
+      canGetLogic: useAztecLobbyGeneric()
+    }
+  ) });
+};
+const AztecLobbyTiny = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 18,
+      name: "Aztec Lobby Tiny",
+      region: "Wrinkly Kong Doors",
+      canGetLogic: useAztecLobbyGeneric()
+    }
+  ) });
+};
+const AztecLobbyChunky = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 14,
+      name: "Aztec Lobby Chunky",
+      region: "Wrinkly Kong Doors",
+      canGetLogic: useAztecLobbyChunky()
+    }
+  ) });
+};
+const AztecLobbyChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecBarrel, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyDK, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyDiddy, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyLanky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyTiny, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyChunky, {})
+] });
 const CastleLobbyChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(CastleBarrel, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$7, {}),
@@ -15596,7 +15659,6 @@ const BoulderLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobby, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobby, {})
 ] });
-const WrinklyPool = ({ children }) => usePoolWrinkly() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const JapesLobbyDK = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
@@ -15649,61 +15711,6 @@ const JapesLobbyChunky = () => {
       name: "Japes Lobby Chunky",
       region: "Wrinkly Kong Doors",
       canGetLogic: useJapesLobbyGeneric()
-    }
-  ) });
-};
-const AztecLobbyDK = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    IslesCheck,
-    {
-      id: 16,
-      name: "Aztec Lobby DK",
-      region: "Wrinkly Kong Doors",
-      canGetLogic: useAztecLobbyGeneric()
-    }
-  ) });
-};
-const AztecLobbyDiddy = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    IslesCheck,
-    {
-      id: 15,
-      name: "Aztec Lobby Diddy",
-      region: "Wrinkly Kong Doors",
-      canGetLogic: useAztecLobbyGeneric()
-    }
-  ) });
-};
-const AztecLobbyLanky = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    IslesCheck,
-    {
-      id: 17,
-      name: "Aztec Lobby Lanky",
-      region: "Wrinkly Kong Doors",
-      canGetLogic: useAztecLobbyGeneric()
-    }
-  ) });
-};
-const AztecLobbyTiny = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    IslesCheck,
-    {
-      id: 18,
-      name: "Aztec Lobby Tiny",
-      region: "Wrinkly Kong Doors",
-      canGetLogic: useAztecLobbyGeneric()
-    }
-  ) });
-};
-const AztecLobbyChunky = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    IslesCheck,
-    {
-      id: 14,
-      name: "Aztec Lobby Chunky",
-      region: "Wrinkly Kong Doors",
-      canGetLogic: useAztecLobbyChunky()
     }
   ) });
 };
