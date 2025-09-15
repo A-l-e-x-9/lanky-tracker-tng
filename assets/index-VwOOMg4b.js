@@ -13046,9 +13046,8 @@ const useSingleRoolNum = (val) => {
 const usePlayHelm = () => usePlayLevel("Hideout Helm");
 const useHelmEnter = () => {
   const access = useIslesHelmEntry();
-  const kremTop = useIslesKremTop();
   const vine = useVine();
-  return access && kremTop && vine;
+  return access && vine;
 };
 const useHelmMachine = () => {
   const inLevel = usePlayHelm();
