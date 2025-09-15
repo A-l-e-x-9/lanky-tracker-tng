@@ -10511,6 +10511,13 @@ const useChunkySlamLevel = () => useDonkStore(useShallow((state) => state.settin
 const BananaMedalPool = ({ children }) => usePoolBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const ArenaPool = ({ children }) => usePoolCrowns() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const VanillaArena = ({ children }) => useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
+const useCurrentBananaMedalCount = () => useDonkStore(useShallow((state) => state.consumables.bananaMedals));
+const useCurrentPearlCount = () => useDonkStore(useShallow((state) => state.consumables.pearls));
+const useCurrentFairyCount = () => useDonkStore(useShallow((state) => state.consumables.fairies));
+const useBean = () => useDonkStore(useShallow((state) => state.consumables.bean));
+const useCurrentGBCount = () => useDonkStore(useShallow((state) => state.consumables.goldBananas));
+const useFastArcade = () => useDonkStore(useShallow((state) => state.fastChecks.factoryArcade));
+const useFastMermaid = () => useDonkStore(useShallow((state) => state.fastChecks.galleonMermaid));
 const useDk = () => {
   const kong = useDonkStore(useShallow((state) => state.moves.dk));
   return kong;
@@ -10824,277 +10831,6 @@ const useSnide = () => {
   const shopkeep = useDonkStore(useShallow((state) => state.moves.snide));
   return shopkeep;
 };
-const usePlayCastle = () => usePlayLevel("Creepy Castle");
-const useSlamCastle = () => useSlamLevel("Creepy Castle");
-const useCastleTree = () => {
-  const inStage = usePlayCastle();
-  const blast = useBlast();
-  return inStage && blast;
-};
-const useOpenCrypt = () => {
-  const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
-  return removeBarriers.castleCrypt;
-};
-const useChunkyShedGb = () => {
-  const inStage = usePlayCastle();
-  const punch = usePunch();
-  const triangle = useTriangle();
-  const gone = useGone();
-  const pineapple = usePineapple();
-  const anyMusic = useAnyMusic();
-  const hasAGun = useAnyGun();
-  return {
-    in: inStage && punch && (triangle || gone && pineapple),
-    out: inStage && punch && (anyMusic || hasAGun)
-  };
-};
-const useChunkyTreeGb = () => {
-  const tree = useCastleTree();
-  const punch = usePunch();
-  const pineapple = usePineapple();
-  const sniper = useSniper();
-  const hardShooting = useHardShooting();
-  return {
-    in: tree && punch && pineapple && (sniper || hardShooting),
-    out: tree && punch && pineapple
-  };
-};
-const useChunkyRoomGb = () => {
-  const inStage = usePlayCastle();
-  const slam = useSlamCastle();
-  const boulder = useBoulderTech();
-  const punch = usePunch();
-  return inStage && slam && boulder && punch;
-};
-const useChunkyCryptGb = () => {
-  const inStage = usePlayCastle();
-  const pineapple = usePineapple();
-  const punch = usePunch();
-  const preOpened = useOpenCrypt();
-  const hasClimbing = useClimbing();
-  return {
-    in: inStage && (pineapple || preOpened) && punch && hasClimbing,
-    out: inStage && (pineapple || preOpened) && punch
-  };
-};
-const useDiddyTopGb$1 = () => {
-  const rocket = useRocket();
-  return usePlayCastle() && rocket;
-};
-const useDiddyRoomGb = () => {
-  const topGb = useDiddyTopGb$1();
-  return useSlamCastle() && topGb;
-};
-const useDiddyCryptGb = () => {
-  const peanut = usePeanut();
-  const cryptPreOpened = useOpenCrypt();
-  const charge = useCharge();
-  const hasClimbing = useClimbing();
-  return {
-    in: usePlayCastle() && (peanut || cryptPreOpened) && charge && hasClimbing,
-    out: usePlayCastle() && (peanut || cryptPreOpened) && charge
-  };
-};
-const useDiddyDungeonGb = () => {
-  const canSlam = useSlamCastle();
-  const peanut = usePeanut();
-  const sniper = useSniper();
-  const vine = useVine();
-  return usePlayCastle() && canSlam && peanut && sniper && vine;
-};
-const useDkTreeGb = () => {
-  const coconut = useCoconut();
-  const sniper = useSniper();
-  return useCastleTree() && coconut && sniper;
-};
-const useDkRoomGb = () => {
-  const inStage = usePlayCastle();
-  const slam = useSlamCastle();
-  const dk2 = useDk();
-  const strong = useStrong();
-  return {
-    in: inStage && slam && strong,
-    out: inStage && slam && dk2
-  };
-};
-const useDkCryptGb = () => {
-  const coconut = useCoconut();
-  const cryptPreOpened = useOpenCrypt();
-  const grab = useGrab();
-  const hasClimbing = useClimbing();
-  return {
-    in: usePlayCastle() && (coconut || cryptPreOpened) && grab && hasClimbing,
-    out: usePlayCastle() && (coconut || cryptPreOpened) && grab
-  };
-};
-const useDkDungeonGb = () => {
-  const dk2 = useDk();
-  const slam = useSlamCastle();
-  return usePlayCastle() && dk2 && slam;
-};
-const useLankyRoomGb = () => {
-  const inStage = usePlayCastle();
-  const slam = useSlamCastle();
-  const grape = useGrape();
-  const balloon = useBalloon();
-  const sniper = useSniper();
-  const homing = useHoming();
-  return {
-    in: inStage && slam && grape && balloon && sniper,
-    out: inStage && slam && grape && balloon && homing
-  };
-};
-const useLankyGreenhouseGb = () => {
-  const lanky = useLanky();
-  const slam = useSlamCastle();
-  return usePlayCastle() && lanky && slam;
-};
-const useArena$4 = () => {
-  const didGreenhouseBanana = useLankyGreenhouseGb();
-  return didGreenhouseBanana;
-};
-const useLankyMausoleumGb = () => {
-  const inStage = usePlayCastle();
-  const grape = useGrape();
-  const preOpened = useOpenCrypt();
-  const sprint = useSprint();
-  const vine = useVine();
-  const trombone = useTrombone();
-  const dk2 = useDk();
-  const diddy = useDiddy();
-  const hasClimbing = useClimbing();
-  return {
-    in: inStage && (grape || preOpened) && sprint && vine && trombone && hasClimbing,
-    out: inStage && (grape || preOpened) && (sprint || dk2 || diddy)
-  };
-};
-const useLankyDungeonGb = () => {
-  const inStage = usePlayCastle();
-  const canSlam = useSlamCastle();
-  const trombone = useTrombone();
-  const balloon = useBalloon();
-  const twirl = useTwirl();
-  return {
-    in: inStage && canSlam && trombone && balloon,
-    out: inStage && canSlam && trombone && twirl
-  };
-};
-const useTinyRoomGb = () => {
-  const inStage = usePlayCastle();
-  const diddy = useDiddy();
-  const canSlam = useSlamCastle();
-  const port = useMonkeyport();
-  const mini = useMini();
-  return inStage && diddy && canSlam && port && mini;
-};
-const useTinyTrashGb = () => {
-  const inStage = usePlayCastle();
-  const mini = useMini();
-  const sax = useAnyMusic();
-  const homing = useHoming();
-  const hardShooting = useHardShooting();
-  const anyGun = useAnyGun();
-  return {
-    in: inStage && mini && (sax || anyGun && (homing || hardShooting)),
-    out: inStage && mini && (sax || anyGun)
-  };
-};
-const useTinyMausoleumGb = () => {
-  const inStage = usePlayCastle();
-  const feather = useFeather();
-  const canSlam = useSlamCastle();
-  const twirl = useTwirl();
-  const grape = useGrape();
-  const dk2 = useDk();
-  const hasClimbing = useClimbing();
-  const preOpened = useOpenCrypt();
-  return {
-    in: inStage && (feather || grape || preOpened) && canSlam && twirl && hasClimbing,
-    out: useFtaTinyBanana() && inStage && (feather || grape || preOpened) && canSlam && (dk2 || twirl)
-  };
-};
-const useTinyChasmGb = () => {
-  const twirl = useTwirl();
-  return usePlayCastle() && twirl;
-};
-const useGeneralThing$6 = () => {
-  const inStage = usePlayCastle();
-  return useAnyKong() && inStage;
-};
-const useGeneralDirt$7 = () => {
-  const inStage = useGeneralThing$6();
-  return useShockwave() && inStage;
-};
-const useGeneralFairy$6 = () => {
-  const inStage = useGeneralThing$6();
-  return useCamera() && inStage;
-};
-const useTreeFairy = () => {
-  const tree = useTreeKasplat();
-  const camera = useCamera();
-  return tree && camera;
-};
-const useRoomFairy = () => {
-  const slam = useSlamCastle();
-  const inStage = usePlayCastle();
-  const diddy = useDiddy();
-  const port = useMonkeyport();
-  const camera = useCamera();
-  const chunky = useChunky();
-  return {
-    in: inStage && slam && camera && diddy && port,
-    out: inStage && slam && camera && chunky
-  };
-};
-const useTreeKasplat = () => {
-  const tree = useCastleTree();
-  const coconut = useCoconut();
-  const hasSnide = useSnide();
-  return tree && coconut && hasSnide;
-};
-const useMausoleumKasplat = () => {
-  const inStage = usePlayCastle();
-  const hasSnide = useSnide();
-  const hasClimbing = useClimbing();
-  return {
-    in: useFtaDiddyBlueprint() && hasSnide && inStage && hasClimbing,
-    out: useFtaDiddyBlueprint() && hasSnide && inStage
-  };
-};
-const usePathKasplat = () => {
-  const inStage = usePlayCastle();
-  const hasSnide = useSnide();
-  return useFtaLankyBlueprint() && hasSnide && inStage;
-};
-const useLonelyKasplat = () => {
-  const inStage = usePlayCastle();
-  const hasSnide = useSnide();
-  const hasClimbing = useClimbing();
-  return {
-    in: useFtaTinyBlueprint() && inStage && hasSnide && hasClimbing,
-    out: useFtaTinyBlueprint() && inStage && hasSnide
-  };
-};
-const useDungeonKasplat = () => {
-  const inStage = usePlayCastle();
-  const hasSnide = useSnide();
-  return useFtaChunkyBlueprint() && hasSnide && inStage;
-};
-const useCrate = () => {
-  const inStage = usePlayCastle();
-  const hasClimbing = useClimbing();
-  return {
-    in: useAnyKong() && inStage && hasClimbing,
-    out: useAnyKong() && inStage
-  };
-};
-const useCurrentBananaMedalCount = () => useDonkStore(useShallow((state) => state.consumables.bananaMedals));
-const useCurrentPearlCount = () => useDonkStore(useShallow((state) => state.consumables.pearls));
-const useCurrentFairyCount = () => useDonkStore(useShallow((state) => state.consumables.fairies));
-const useBean = () => useDonkStore(useShallow((state) => state.consumables.bean));
-const useCurrentGBCount = () => useDonkStore(useShallow((state) => state.consumables.goldBananas));
-const useFastArcade = () => useDonkStore(useShallow((state) => state.fastChecks.factoryArcade));
-const useFastMermaid = () => useDonkStore(useShallow((state) => state.fastChecks.galleonMermaid));
 const logicBreak = (check) => check.in || check.out;
 const useSwitchsanityMusicPad = (id2, normal) => {
   const bongos = useBongos();
@@ -11426,11 +11162,11 @@ const useTinyClams = () => {
     out: treasure.out && mini
   };
 };
-const useGeneralThing$5 = () => {
+const useGeneralThing$6 = () => {
   const inStage = usePlayGalleon();
   return useAnyKong() && inStage;
 };
-const useArena$3 = () => {
+const useArena$4 = () => {
   const inStage = usePlayGalleon();
   return usePunch() && inStage;
 };
@@ -11446,8 +11182,8 @@ const useLighthouseDirt = () => {
     out: inside.out && dirt
   };
 };
-const useGeneralDirt$6 = () => {
-  const thing = useGeneralThing$5();
+const useGeneralDirt$7 = () => {
+  const thing = useGeneralThing$6();
   return useShockwave() && thing;
 };
 const useChestFairy = () => {
@@ -11460,8 +11196,8 @@ const useShipFairy = () => {
   const fairy = useCamera();
   return ship && fairy;
 };
-const useGeneralFairy$5 = () => {
-  const thing = useGeneralThing$5();
+const useGeneralFairy$6 = () => {
+  const thing = useGeneralThing$6();
   return useCamera() && thing;
 };
 const useTreasureKasplat = () => {
@@ -12149,7 +11885,7 @@ const useCheckLankyMusicPad = () => {
   return playJapes && boulderTech && trombone;
 };
 const useCheckLankyCastle = () => {
-  const playCastle = usePlayCastle();
+  const playCastle = usePlayLobby("Creepy Castle");
   const boulderTech = useBoulderTech();
   const balloon = useBalloon();
   const tiny = useTiny();
@@ -12237,19 +11973,19 @@ const useForestArena = () => {
   const gone = useGone();
   return playForest && allGun2 && gone;
 };
-const useGeneralDirt$5 = () => {
+const useGeneralDirt$6 = () => {
   const anyKong = useAnyKong();
   const shockwave = useShockwave();
   return anyKong && shockwave;
 };
 const useHoardDirt = () => {
-  const dirt = useGeneralDirt$5();
+  const dirt = useGeneralDirt$6();
   const vine = useVine();
   const climbing = useClimbing();
   return dirt && vine && climbing;
 };
 const useIslandDirt = () => {
-  const dirt = useGeneralDirt$5();
+  const dirt = useGeneralDirt$6();
   const fungi = useIslesFungiIsland();
   return dirt && fungi;
 };
@@ -12258,7 +11994,7 @@ const useCastleDirt = () => {
   const boulderTech = useBoulderTech();
   const tiny = useTiny();
   const balloon = useBalloon();
-  const playCastle = usePlayCastle();
+  const playCastle = usePlayLobby("Creepy Castle");
   return {
     in: playCastle && boulderTech && balloon && shockwave,
     out: playCastle && tiny && shockwave
@@ -12281,7 +12017,7 @@ const useAztecDirt = () => {
     out: shockwave && (islesUpper && boulderTech && (diddy || tiny) || crossFungi && (dk2 || tiny && twirl))
   };
 };
-const useGeneralFairy$4 = () => {
+const useGeneralFairy$5 = () => {
   const anyKong = useAnyKong();
   const camera = useCamera();
   return anyKong && camera;
@@ -12317,7 +12053,7 @@ const useHelmKasplat = () => {
   };
 };
 const useCastleKasplat = () => {
-  const playCastle = usePlayCastle();
+  const playCastle = usePlayLobby("Creepy Castle");
   const snide = useSnide();
   const coconut = useCoconut();
   const FtaDiddyBlueprint = useFtaDiddyBlueprint();
@@ -12361,7 +12097,7 @@ const useAztecLobbyTrianglePad = () => {
   return (bananaport || climbing && vines) && chunky && barrels;
 };
 const useCastleLobby = () => {
-  const canEnterCastle = usePlayCastle();
+  const canEnterCastle = usePlayLobby("Creepy Castle");
   const chunky = useChunky();
   const barrels = useBarrel();
   return canEnterCastle && chunky && barrels;
@@ -12432,7 +12168,7 @@ const useCavesLobbyDiddy = () => {
   };
 };
 const useCastleLobbyGeneric = () => {
-  const canEnterCastle = usePlayCastle();
+  const canEnterCastle = usePlayLobby("Creepy Castle");
   return canEnterCastle;
 };
 const ItemCheck = (props) => {
@@ -12570,7 +12306,7 @@ const Hoard = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { chi
   }
 ) }) });
 const PrisonDirt = () => {
-  const dirt = useGeneralDirt$5();
+  const dirt = useGeneralDirt$6();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -12585,7 +12321,7 @@ const PrisonDirt = () => {
   ] });
 };
 const TrainingRear = () => {
-  const dirt = useGeneralDirt$5();
+  const dirt = useGeneralDirt$6();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
@@ -12597,7 +12333,7 @@ const TrainingRear = () => {
   ) }) });
 };
 const UnderCaves = () => {
-  const dirt = useGeneralDirt$5();
+  const dirt = useGeneralDirt$6();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
@@ -13027,7 +12763,7 @@ const SmallIslandFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, 
     id: 80,
     name: "Isles Fairy (Small Island)",
     region: "Outer Isles",
-    canGetLogic: useGeneralFairy$4()
+    canGetLogic: useGeneralFairy$5()
   }
 ) }) });
 const UpperKremFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14646,7 +14382,7 @@ const useTinyHiveGb = () => {
     out: hive && canSlam
   };
 };
-const useGeneralThing$4 = () => {
+const useGeneralThing$5 = () => {
   const anyKong = useAnyKong();
   return usePlayJapes() && anyKong;
 };
@@ -14662,7 +14398,7 @@ const usePaintingDirt = () => {
     out: shockwave && japesPaintingOutside.out
   };
 };
-const useGeneralDirt$4 = () => {
+const useGeneralDirt$5 = () => {
   const shockwave = useShockwave();
   const inStage = usePlayJapes();
   return inStage && shockwave;
@@ -14680,7 +14416,7 @@ const usePaintingFairy = () => {
     out: camera && banana.out
   };
 };
-const useGeneralFairy$3 = () => {
+const useGeneralFairy$4 = () => {
   const camera = useCamera();
   return usePlayJapes() && camera;
 };
@@ -14740,7 +14476,7 @@ const FunkyArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { chil
     id: 1090,
     name: "Japes Arena (Near Funky)",
     region: "Japes Hillside",
-    canGetLogic: useGeneralThing$4()
+    canGetLogic: useGeneralThing$5()
   }
 ) }) });
 const BossPool = ({ children }) => usePoolKeys() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -16417,7 +16153,7 @@ const TinyMedal$6 = () => {
   ] });
 };
 const Shuffled$F = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1190, name: "Japes Arena", canGetLogic: useGeneralThing$4() }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1190, name: "Japes Arena", canGetLogic: useGeneralThing$5() }) });
 };
 const ShuffledArenas$6 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$F, {});
 const Shuffled$E = () => {
@@ -16427,7 +16163,7 @@ const Shuffled$E = () => {
       {
         id: 1260,
         name: "Japes Crate Location #1 (maybe)",
-        canGetLogic: useGeneralThing$4()
+        canGetLogic: useGeneralThing$5()
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16435,7 +16171,7 @@ const Shuffled$E = () => {
       {
         id: 1261,
         name: "Japes Crate Location #2 (maybe)",
-        canGetLogic: useGeneralThing$4()
+        canGetLogic: useGeneralThing$5()
       }
     )
   ] });
@@ -16443,20 +16179,20 @@ const Shuffled$E = () => {
 const ShuffledCrates$6 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$E, {}) : null;
 const Shuffled$D = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1270, name: "Japes Dirt Location #1", canGetLogic: useGeneralDirt$4() }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1271, name: "Japes Dirt Location #2", canGetLogic: useGeneralDirt$4() })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1270, name: "Japes Dirt Location #1", canGetLogic: useGeneralDirt$5() }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1271, name: "Japes Dirt Location #2", canGetLogic: useGeneralDirt$5() })
   ] });
 };
 const ShuffledDirtLocations$6 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
 const Shuffled$C = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1280, name: "Japes Fairy Location #1", canGetLogic: useGeneralFairy$3() }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1281, name: "Japes Fairy Location #2", canGetLogic: useGeneralFairy$3() })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1280, name: "Japes Fairy Location #1", canGetLogic: useGeneralFairy$4() }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1281, name: "Japes Fairy Location #2", canGetLogic: useGeneralFairy$4() })
   ] });
 };
 const ShuffledFairies$6 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$C, {}) : null;
 const Shuffled$B = () => {
-  const kasplat = useGeneralThing$4();
+  const kasplat = useGeneralThing$5();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1250, name: "Japes Kasplat Location #1", canGetLogic: kasplat }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1251, name: "Japes Kasplat Location #2", canGetLogic: kasplat }),
@@ -16924,7 +16660,7 @@ const useLankyVultureGb = () => {
     out: logicBreak(tinyTemple) && iceMelted && dive && canSlam && lanky && anyGun
   };
 };
-const useArena$2 = () => {
+const useArena$3 = () => {
   const didVultureGb = useLankyVultureGb();
   return {
     in: didVultureGb.in,
@@ -16997,7 +16733,7 @@ const useTinyLavaGb = () => {
     out: ftaTiny && logicBreak(lava) && kuruKuru
   };
 };
-const useGeneralThing$3 = () => {
+const useGeneralThing$4 = () => {
   const inStage = useAztecFront();
   const anyKong = useAnyKong();
   return {
@@ -17016,8 +16752,8 @@ const useLlamaOutsideCrate = () => {
     out: hasTiny && kuruKuru && back.out
   };
 };
-const useGeneralDirt$3 = () => {
-  const thing = useGeneralThing$3();
+const useGeneralDirt$4 = () => {
+  const thing = useGeneralThing$4();
   const shockwave = useShockwave();
   return {
     in: shockwave && thing.in,
@@ -17032,7 +16768,7 @@ const useTempleDirt = () => {
     out: shockwave && thing.out
   };
 };
-const useGeneralFairy$2 = () => {
+const useGeneralFairy$3 = () => {
   const thing = useAztecFront();
   const camera = useCamera();
   return {
@@ -17131,7 +16867,7 @@ const AztecCheck = (props) => {
   ) });
 };
 const VultureArena = () => {
-  const vulture = useArena$2();
+  const vulture = useArena$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaArena, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
@@ -17202,7 +16938,7 @@ const CrateLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(GongCrate, {})
 ] });
 const OasisDirt = () => {
-  const thing = useGeneralDirt$3();
+  const thing = useGeneralDirt$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
@@ -19815,12 +19551,12 @@ const TinyMedal$5 = () => {
   ] });
 };
 const Shuffled$z = () => {
-  const thing = useGeneralThing$3();
+  const thing = useGeneralThing$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecCheck, { id: 2190, name: "Aztec Arena", canGetLogic: thing.in, canGetBreak: thing.out }) });
 };
 const ShuffledArenas$5 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$z, {});
 const Shuffled$y = () => {
-  const thing = useGeneralThing$3();
+  const thing = useGeneralThing$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -19844,7 +19580,7 @@ const Shuffled$y = () => {
 };
 const ShuffledCrates$5 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$y, {}) : null;
 const Shuffled$x = () => {
-  const thing = useGeneralDirt$3();
+  const thing = useGeneralDirt$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -19868,7 +19604,7 @@ const Shuffled$x = () => {
 };
 const ShuffledDirtLocations$5 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$x, {}) : null;
 const Shuffled$w = () => {
-  const fairyLogic = useGeneralFairy$2();
+  const fairyLogic = useGeneralFairy$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -19892,7 +19628,7 @@ const Shuffled$w = () => {
 };
 const ShuffledFairies$5 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$w, {}) : null;
 const Shuffled$v = () => {
-  const thing = useGeneralThing$3();
+  const thing = useGeneralThing$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -20465,12 +20201,12 @@ const useTinyProductionGb = () => {
     out: useFtaTinyBanana() && production && canSlam && (twirl || dk2)
   };
 };
-const useGeneralThing$2 = () => {
+const useGeneralThing$3 = () => {
   const inStage = usePlayFactory();
   const anyKong = useAnyKong();
   return inStage && anyKong;
 };
-const useArena$1 = () => {
+const useArena$2 = () => {
   const inStage = useFactoryTesting();
   const grab = useGrab();
   return inStage && grab;
@@ -20480,8 +20216,8 @@ const useGeneralTest = () => {
   const anyKong = useAnyKong();
   return inStage && anyKong;
 };
-const useGeneralDirt$2 = () => {
-  const thing = useGeneralThing$2();
+const useGeneralDirt$3 = () => {
+  const thing = useGeneralThing$3();
   const dirt = useShockwave();
   return thing && dirt;
 };
@@ -20491,8 +20227,8 @@ const useFactoryDirt = () => {
   const punch = usePunch();
   return inStage && punch && shockwave;
 };
-const useGeneralFairy$1 = () => {
-  const thing = useGeneralThing$2();
+const useGeneralFairy$2 = () => {
+  const thing = useGeneralThing$3();
   const camera = useCamera();
   return thing && camera;
 };
@@ -20554,7 +20290,7 @@ const RNDArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { childr
     id: 3090,
     name: "Factory Arena (Under R and D Grate)",
     region: "R&D Area",
-    canGetLogic: useArena$1()
+    canGetLogic: useArena$2()
   }
 ) }) });
 const BossCheck$5 = () => {
@@ -20576,7 +20312,7 @@ const CandyCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { chil
     id: 3060,
     name: "Factory Crate: Near Candy",
     region: "Storage And Arcade",
-    canGetLogic: useGeneralThing$2()
+    canGetLogic: useGeneralThing$3()
   }
 ) }) });
 const FunkyCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaCrate, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21776,11 +21512,11 @@ const TinyMedal$4 = () => {
   ] });
 };
 const Shuffled$t = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3190, name: "Factory Arena", canGetLogic: useGeneralThing$2() }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3190, name: "Factory Arena", canGetLogic: useGeneralThing$3() }) });
 };
 const ShuffledArenas$4 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {});
 const Shuffled$s = () => {
-  const thing = useGeneralThing$2();
+  const thing = useGeneralThing$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 1260, name: "Factory Crate Location #1 (maybe)", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 1261, name: "Factory Crate Location #2 (maybe)", canGetLogic: thing })
@@ -21788,7 +21524,7 @@ const Shuffled$s = () => {
 };
 const ShuffledCrates$4 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : null;
 const Shuffled$r = () => {
-  const dirt = useGeneralDirt$2();
+  const dirt = useGeneralDirt$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3270, name: "Factory Dirt Location #1", canGetLogic: dirt }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3271, name: "Factory Dirt Location #2", canGetLogic: dirt })
@@ -21796,7 +21532,7 @@ const Shuffled$r = () => {
 };
 const ShuffledDirtLocations$4 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$r, {}) : null;
 const Shuffled$q = () => {
-  const thing = useGeneralFairy$1();
+  const thing = useGeneralFairy$2();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3280, name: "Factory Fairy Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3281, name: "Factory Fairy Location #2", canGetLogic: thing })
@@ -21804,7 +21540,7 @@ const Shuffled$q = () => {
 };
 const ShuffledFairies$4 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$q, {}) : null;
 const Shuffled$p = () => {
-  const kasplat = useGeneralThing$2();
+  const kasplat = useGeneralThing$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3250, name: "Factory Kasplat Location #1", canGetLogic: kasplat }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3251, name: "Factory Kasplat Location #2", canGetLogic: kasplat }),
@@ -22019,7 +21755,7 @@ const CavernArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { chi
     id: 4090,
     name: "Galleon Arena (Under Cranky)",
     region: "Galleon Caverns",
-    canGetLogic: useArena$3()
+    canGetLogic: useArena$4()
   }
 ) }) });
 const BossCheck$4 = () => {
@@ -23363,11 +23099,11 @@ const TinyMedal$3 = () => {
   ] });
 };
 const Shuffled$n = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4190, name: "Galleon Arena", canGetLogic: useGeneralThing$5() }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4190, name: "Galleon Arena", canGetLogic: useGeneralThing$6() }) });
 };
 const ShuffledArenas$3 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {});
 const Shuffled$m = () => {
-  const thing = useGeneralThing$5();
+  const thing = useGeneralThing$6();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4260, name: "Galleon Crate Location #1 (maybe)", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4261, name: "Galleon Crate Location #2 (maybe)", canGetLogic: thing })
@@ -23375,7 +23111,7 @@ const Shuffled$m = () => {
 };
 const ShuffledCrates$3 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$m, {}) : null;
 const Shuffled$l = () => {
-  const thing = useGeneralDirt$6();
+  const thing = useGeneralDirt$7();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4270, name: "Galleon Dirt Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4271, name: "Galleon Dirt Location #2", canGetLogic: thing })
@@ -23383,7 +23119,7 @@ const Shuffled$l = () => {
 };
 const ShuffledDirtLocations$3 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
 const Shuffled$k = () => {
-  const thing = useGeneralFairy$5();
+  const thing = useGeneralFairy$6();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4280, name: "Galleon Fairy Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4281, name: "Galleon Fairy Location #2", canGetLogic: thing })
@@ -23391,7 +23127,7 @@ const Shuffled$k = () => {
 };
 const ShuffledFairies$3 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$k, {}) : null;
 const Shuffled$j = () => {
-  const thing = useGeneralThing$5();
+  const thing = useGeneralThing$6();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4250, name: "Galleon Kasplat Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4251, name: "Galleon Kasplat Location #2", canGetLogic: thing }),
@@ -23701,7 +23437,7 @@ const useChunkyMillGb = () => {
     out: inStage && logicBreak(day) && boulderTech && punch && triangle
   };
 };
-const useDiddyTopGb = () => {
+const useDiddyTopGb$1 = () => {
   const inStage = usePlayForest();
   const rocket = useRocket();
   const diddy = useDiddy();
@@ -23847,12 +23583,12 @@ const useTinyBeanGb = () => {
   const sax = useSax();
   return beanstalk && bean && mini && sax;
 };
-const useGeneralThing$1 = () => {
+const useGeneralThing$2 = () => {
   const inStage = usePlayForest();
   const anyKong = useAnyKong();
   return inStage && anyKong;
 };
-const useArena = () => {
+const useArena$1 = () => {
   const top = useForestMushroomTop();
   const anyKong = useAnyKong();
   return top && anyKong;
@@ -23861,7 +23597,7 @@ const useBeanDirt = () => {
   const beanstalk = useForestBean();
   return useShockwave() && beanstalk;
 };
-const useGeneralDirt$1 = () => {
+const useGeneralDirt$2 = () => {
   const inStage = usePlayForest();
   return useShockwave() && inStage;
 };
@@ -23882,8 +23618,8 @@ const useRaftersFairy = () => {
     out: rafters.out && camera
   };
 };
-const useGeneralFairy = () => {
-  const thing = useGeneralThing$1();
+const useGeneralFairy$1 = () => {
+  const thing = useGeneralThing$2();
   const camera = useCamera();
   return thing && camera;
 };
@@ -23955,7 +23691,7 @@ const MushroomArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { c
     id: 5090,
     name: "Forest Arena (Mushroom High Platform)",
     region: "Giant Mushroom Exterior",
-    canGetLogic: useArena()
+    canGetLogic: useArena$1()
   }
 ) }) });
 const BossCheck$3 = () => {
@@ -24013,7 +23749,7 @@ const RaftersCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { ch
     id: 5060,
     name: "Forest Crate: Behind Dark Attic",
     region: "Forest Mills",
-    canGetLogic: useGeneralThing$1()
+    canGetLogic: useGeneralThing$2()
   }
 ) }) });
 const CrateLocations$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -24037,7 +23773,7 @@ const MillsGrassDirt = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPo
     id: 5071,
     name: "The infamous Mills Grass dirt patch!",
     region: "Forest Mills",
-    canGetLogic: useGeneralDirt$1()
+    canGetLogic: useGeneralDirt$2()
   }
 ) }) });
 const DirtLocations = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -25220,7 +24956,7 @@ const DarkRafters = () => {
   );
 };
 const MushroomTop = () => {
-  const topGb = useDiddyTopGb();
+  const topGb = useDiddyTopGb$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
@@ -26047,12 +25783,12 @@ const TinyMedal$2 = () => {
   ] });
 };
 const Shuffled$h = () => {
-  const thing = useGeneralThing$1();
+  const thing = useGeneralThing$2();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5190, name: "Forest Arena", canGetLogic: thing }) });
 };
 const ShuffledArenas$2 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$h, {});
 const Shuffled$g = () => {
-  const thing = useGeneralThing$1();
+  const thing = useGeneralThing$2();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5260, name: "Forest Crate Location #1 (maybe)", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5261, name: "Forest Crate Location #2 (maybe)", canGetLogic: thing })
@@ -26060,7 +25796,7 @@ const Shuffled$g = () => {
 };
 const ShuffledCrates$2 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$g, {}) : null;
 const Shuffled$f = () => {
-  const dirt = useGeneralDirt$1();
+  const dirt = useGeneralDirt$2();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5270, name: "Forest Dirt Location #1", canGetLogic: dirt }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5271, name: "Forest Dirt Location #2", canGetLogic: dirt })
@@ -26068,7 +25804,7 @@ const Shuffled$f = () => {
 };
 const ShuffledDirtLocations$2 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$f, {}) : null;
 const Shuffled$e = () => {
-  const thing = useGeneralFairy();
+  const thing = useGeneralFairy$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5280, name: "Forest Fairy Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5281, name: "Forest Fairy Location #2", canGetLogic: thing })
@@ -26076,7 +25812,7 @@ const Shuffled$e = () => {
 };
 const ShuffledFairies$2 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$e, {}) : null;
 const Shuffled$d = () => {
-  const thing = useGeneralThing$1();
+  const thing = useGeneralThing$2();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5250, name: "Forest Kasplat Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5251, name: "Forest Kasplat Location #2", canGetLogic: thing }),
@@ -26500,11 +26236,11 @@ const useTinyCabinGb = () => {
   const orange = useOrange();
   return inStage && sax && orange;
 };
-const useGeneralThing = () => {
+const useGeneralThing$1 = () => {
   const inStage = usePlayCaves();
   return useAnyKong() && inStage;
 };
-const useGeneralDirt = () => {
+const useGeneralDirt$1 = () => {
   const inStage = usePlayCaves();
   return useShockwave() && inStage;
 };
@@ -27731,11 +27467,11 @@ const TinyMedal$1 = () => {
   ] });
 };
 const Shuffled$b = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CavesCheck, { id: 6190, name: "Caves Arena", canGetLogic: useGeneralThing() }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CavesCheck, { id: 6190, name: "Caves Arena", canGetLogic: useGeneralThing$1() }) });
 };
 const ShuffledArenas$1 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$b, {});
 const Shuffled$a = () => {
-  const thing = useGeneralThing();
+  const thing = useGeneralThing$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(CavesCheck, { id: 6260, name: "Caves Crate Location #1 (maybe)", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(CavesCheck, { id: 6261, name: "Caves Crate Location #2 (maybe)", canGetLogic: thing })
@@ -27743,7 +27479,7 @@ const Shuffled$a = () => {
 };
 const ShuffledCrates$1 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$a, {}) : null;
 const Shuffled$9 = () => {
-  const dirt = useGeneralDirt();
+  const dirt = useGeneralDirt$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(CavesCheck, { id: 6270, name: "Caves Dirt Location #1", canGetLogic: dirt }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(CavesCheck, { id: 6271, name: "Caves Dirt Location #2", canGetLogic: dirt })
@@ -27759,7 +27495,7 @@ const Shuffled$8 = () => {
 };
 const ShuffledFairies$1 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$8, {}) : null;
 const Shuffled$7 = () => {
-  const thing = useGeneralThing();
+  const thing = useGeneralThing$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(CavesCheck, { id: 6250, name: "Caves Kasplat Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(CavesCheck, { id: 6251, name: "Caves Kasplat Location #2", canGetLogic: thing }),
@@ -27972,6 +27708,270 @@ const CavesChecks = () => {
   const grp = useDonkStore(useShallow((state) => state.ui.groupByRegion));
   return grp ? /* @__PURE__ */ jsxRuntimeExports.jsx(CavesRegionChecks, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(ClassicChecks$1, {});
 };
+const usePlayCastle = () => usePlayLevel("Creepy Castle");
+const useSlamCastle = () => useSlamLevel("Creepy Castle");
+const useCastleTree = () => {
+  const inStage = usePlayCastle();
+  const blast = useBlast();
+  return inStage && blast;
+};
+const useOpenCrypt = () => {
+  const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
+  return removeBarriers.castleCrypt;
+};
+const useChunkyShedGb = () => {
+  const inStage = usePlayCastle();
+  const punch = usePunch();
+  const triangle = useTriangle();
+  const gone = useGone();
+  const pineapple = usePineapple();
+  const anyMusic = useAnyMusic();
+  const hasAGun = useAnyGun();
+  return {
+    in: inStage && punch && (triangle || gone && pineapple),
+    out: inStage && punch && (anyMusic || hasAGun)
+  };
+};
+const useChunkyTreeGb = () => {
+  const tree = useCastleTree();
+  const punch = usePunch();
+  const pineapple = usePineapple();
+  const sniper = useSniper();
+  const hardShooting = useHardShooting();
+  return {
+    in: tree && punch && pineapple && (sniper || hardShooting),
+    out: tree && punch && pineapple
+  };
+};
+const useChunkyRoomGb = () => {
+  const inStage = usePlayCastle();
+  const slam = useSlamCastle();
+  const boulder = useBoulderTech();
+  const punch = usePunch();
+  return inStage && slam && boulder && punch;
+};
+const useChunkyCryptGb = () => {
+  const inStage = usePlayCastle();
+  const pineapple = usePineapple();
+  const punch = usePunch();
+  const preOpened = useOpenCrypt();
+  const hasClimbing = useClimbing();
+  return {
+    in: inStage && (pineapple || preOpened) && punch && hasClimbing,
+    out: inStage && (pineapple || preOpened) && punch
+  };
+};
+const useDiddyTopGb = () => {
+  const rocket = useRocket();
+  return usePlayCastle() && rocket;
+};
+const useDiddyRoomGb = () => {
+  const topGb = useDiddyTopGb();
+  return useSlamCastle() && topGb;
+};
+const useDiddyCryptGb = () => {
+  const peanut = usePeanut();
+  const cryptPreOpened = useOpenCrypt();
+  const charge = useCharge();
+  const hasClimbing = useClimbing();
+  return {
+    in: usePlayCastle() && (peanut || cryptPreOpened) && charge && hasClimbing,
+    out: usePlayCastle() && (peanut || cryptPreOpened) && charge
+  };
+};
+const useDiddyDungeonGb = () => {
+  const canSlam = useSlamCastle();
+  const peanut = usePeanut();
+  const sniper = useSniper();
+  const vine = useVine();
+  return usePlayCastle() && canSlam && peanut && sniper && vine;
+};
+const useDkTreeGb = () => {
+  const coconut = useCoconut();
+  const sniper = useSniper();
+  return useCastleTree() && coconut && sniper;
+};
+const useDkRoomGb = () => {
+  const inStage = usePlayCastle();
+  const slam = useSlamCastle();
+  const dk2 = useDk();
+  const strong = useStrong();
+  return {
+    in: inStage && slam && strong,
+    out: inStage && slam && dk2
+  };
+};
+const useDkCryptGb = () => {
+  const coconut = useCoconut();
+  const cryptPreOpened = useOpenCrypt();
+  const grab = useGrab();
+  const hasClimbing = useClimbing();
+  return {
+    in: usePlayCastle() && (coconut || cryptPreOpened) && grab && hasClimbing,
+    out: usePlayCastle() && (coconut || cryptPreOpened) && grab
+  };
+};
+const useDkDungeonGb = () => {
+  const dk2 = useDk();
+  const slam = useSlamCastle();
+  return usePlayCastle() && dk2 && slam;
+};
+const useLankyRoomGb = () => {
+  const inStage = usePlayCastle();
+  const slam = useSlamCastle();
+  const grape = useGrape();
+  const balloon = useBalloon();
+  const sniper = useSniper();
+  const homing = useHoming();
+  return {
+    in: inStage && slam && grape && balloon && sniper,
+    out: inStage && slam && grape && balloon && homing
+  };
+};
+const useLankyGreenhouseGb = () => {
+  const lanky = useLanky();
+  const slam = useSlamCastle();
+  return usePlayCastle() && lanky && slam;
+};
+const useArena = () => {
+  const didGreenhouseBanana = useLankyGreenhouseGb();
+  return didGreenhouseBanana;
+};
+const useLankyMausoleumGb = () => {
+  const inStage = usePlayCastle();
+  const grape = useGrape();
+  const preOpened = useOpenCrypt();
+  const sprint = useSprint();
+  const vine = useVine();
+  const trombone = useTrombone();
+  const dk2 = useDk();
+  const diddy = useDiddy();
+  const hasClimbing = useClimbing();
+  return {
+    in: inStage && (grape || preOpened) && sprint && vine && trombone && hasClimbing,
+    out: inStage && (grape || preOpened) && (sprint || dk2 || diddy)
+  };
+};
+const useLankyDungeonGb = () => {
+  const inStage = usePlayCastle();
+  const canSlam = useSlamCastle();
+  const trombone = useTrombone();
+  const balloon = useBalloon();
+  const twirl = useTwirl();
+  return {
+    in: inStage && canSlam && trombone && balloon,
+    out: inStage && canSlam && trombone && twirl
+  };
+};
+const useTinyRoomGb = () => {
+  const inStage = usePlayCastle();
+  const diddy = useDiddy();
+  const canSlam = useSlamCastle();
+  const port = useMonkeyport();
+  const mini = useMini();
+  return inStage && diddy && canSlam && port && mini;
+};
+const useTinyTrashGb = () => {
+  const inStage = usePlayCastle();
+  const mini = useMini();
+  const sax = useAnyMusic();
+  const homing = useHoming();
+  const hardShooting = useHardShooting();
+  const anyGun = useAnyGun();
+  return {
+    in: inStage && mini && (sax || anyGun && (homing || hardShooting)),
+    out: inStage && mini && (sax || anyGun)
+  };
+};
+const useTinyMausoleumGb = () => {
+  const inStage = usePlayCastle();
+  const feather = useFeather();
+  const canSlam = useSlamCastle();
+  const twirl = useTwirl();
+  const grape = useGrape();
+  const dk2 = useDk();
+  const hasClimbing = useClimbing();
+  const preOpened = useOpenCrypt();
+  return {
+    in: inStage && (feather || grape || preOpened) && canSlam && twirl && hasClimbing,
+    out: useFtaTinyBanana() && inStage && (feather || grape || preOpened) && canSlam && (dk2 || twirl)
+  };
+};
+const useTinyChasmGb = () => {
+  const twirl = useTwirl();
+  return usePlayCastle() && twirl;
+};
+const useGeneralThing = () => {
+  const inStage = usePlayCastle();
+  return useAnyKong() && inStage;
+};
+const useGeneralDirt = () => {
+  const inStage = useGeneralThing();
+  return useShockwave() && inStage;
+};
+const useGeneralFairy = () => {
+  const inStage = useGeneralThing();
+  return useCamera() && inStage;
+};
+const useTreeFairy = () => {
+  const tree = useTreeKasplat();
+  const camera = useCamera();
+  return tree && camera;
+};
+const useRoomFairy = () => {
+  const slam = useSlamCastle();
+  const inStage = usePlayCastle();
+  const diddy = useDiddy();
+  const port = useMonkeyport();
+  const camera = useCamera();
+  const chunky = useChunky();
+  return {
+    in: inStage && slam && camera && diddy && port,
+    out: inStage && slam && camera && chunky
+  };
+};
+const useTreeKasplat = () => {
+  const tree = useCastleTree();
+  const coconut = useCoconut();
+  const hasSnide = useSnide();
+  return tree && coconut && hasSnide;
+};
+const useMausoleumKasplat = () => {
+  const inStage = usePlayCastle();
+  const hasSnide = useSnide();
+  const hasClimbing = useClimbing();
+  return {
+    in: useFtaDiddyBlueprint() && hasSnide && inStage && hasClimbing,
+    out: useFtaDiddyBlueprint() && hasSnide && inStage
+  };
+};
+const usePathKasplat = () => {
+  const inStage = usePlayCastle();
+  const hasSnide = useSnide();
+  return useFtaLankyBlueprint() && hasSnide && inStage;
+};
+const useLonelyKasplat = () => {
+  const inStage = usePlayCastle();
+  const hasSnide = useSnide();
+  const hasClimbing = useClimbing();
+  return {
+    in: useFtaTinyBlueprint() && inStage && hasSnide && hasClimbing,
+    out: useFtaTinyBlueprint() && inStage && hasSnide
+  };
+};
+const useDungeonKasplat = () => {
+  const inStage = usePlayCastle();
+  const hasSnide = useSnide();
+  return useFtaChunkyBlueprint() && hasSnide && inStage;
+};
+const useCrate = () => {
+  const inStage = usePlayCastle();
+  const hasClimbing = useClimbing();
+  return {
+    in: useAnyKong() && inStage && hasClimbing,
+    out: useAnyKong() && inStage
+  };
+};
 const CastleCheck = (props) => {
   const checks = useDonkStore(useShallow((state) => state.checks));
   return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27993,7 +27993,7 @@ const GreenhouseArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, {
     id: 7090,
     name: "Castle Arena (Greenhouse: Center)",
     region: "Castle Surroundings",
-    canGetLogic: useArena$4()
+    canGetLogic: useArena()
   }
 ) }) });
 const BossCheck$1 = () => {
@@ -28028,7 +28028,7 @@ const TopFloorDirt = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool
     id: 7070,
     name: "Castle Dirt: Top Floor",
     region: "Castle Surroundings",
-    canGetLogic: useGeneralDirt$7()
+    canGetLogic: useGeneralDirt()
   }
 ) }) });
 const BallroomEnemies = () => {
@@ -29204,7 +29204,7 @@ const CastleTop = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     id: 7010,
     name: "Castle Diddy Above Castle",
     region: "Castle Surroundings",
-    canGetLogic: useDiddyTopGb$1()
+    canGetLogic: useDiddyTopGb()
   }
 );
 const DiddyBananas = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -29881,11 +29881,11 @@ const TinyMedal = () => {
   ] });
 };
 const Shuffled$5 = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CastleCheck, { id: 7190, name: "Castle Arena", canGetLogic: useGeneralThing$6() }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CastleCheck, { id: 7190, name: "Castle Arena", canGetLogic: useGeneralThing() }) });
 };
 const ShuffledArenas = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$5, {});
 const Shuffled$4 = () => {
-  const thing = useGeneralThing$6();
+  const thing = useGeneralThing();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(CastleCheck, { id: 7260, name: "Castle Crate Location #1 (maybe)", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(CastleCheck, { id: 7261, name: "Castle Crate Location #2 (maybe)", canGetLogic: thing })
@@ -29893,7 +29893,7 @@ const Shuffled$4 = () => {
 };
 const ShuffledCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$4, {}) : null;
 const Shuffled$3 = () => {
-  const dirt = useGeneralDirt$7();
+  const dirt = useGeneralDirt();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(CastleCheck, { id: 7270, name: "Castle Dirt Location #1", canGetLogic: dirt }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(CastleCheck, { id: 7271, name: "Castle Dirt Location #2", canGetLogic: dirt })
@@ -29901,7 +29901,7 @@ const Shuffled$3 = () => {
 };
 const ShuffledDirtLocations = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$3, {}) : null;
 const Shuffled$2 = () => {
-  const fairy = useGeneralFairy$6();
+  const fairy = useGeneralFairy();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(CastleCheck, { id: 7280, name: "Castle Fairy Location #1", canGetLogic: fairy }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(CastleCheck, { id: 7281, name: "Castle Fairy Location #2", canGetLogic: fairy })
@@ -29909,7 +29909,7 @@ const Shuffled$2 = () => {
 };
 const ShuffledFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2, {}) : null;
 const Shuffled$1 = () => {
-  const kasplat = useGeneralThing$6();
+  const kasplat = useGeneralThing();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(CastleCheck, { id: 7250, name: "Castle Kasplat Location #1", canGetLogic: kasplat }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(CastleCheck, { id: 7251, name: "Castle Kasplat Location #2", canGetLogic: kasplat }),
