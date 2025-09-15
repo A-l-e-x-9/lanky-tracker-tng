@@ -2,7 +2,6 @@ import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import { Level } from '@renderer/store/common'
 import { usePlayCastle } from '../castle'
-import { usePlayCaves } from '../caves'
 import { useCurrentFairyCount, useCurrentGBCount } from '../consumables'
 import { useSlamGalleon } from '../galleon'
 import { usePlayHelm } from '../helm'
@@ -498,7 +497,7 @@ export const useCheckDkMusicPad = (): LogicBool => {
  * @returns truthy if we can grab the banana in Caves Lobby.
  */
 export const useCheckDkCavesLobby = (): LogicBool => {
-  const playCaves = usePlayCaves()
+  const playCaves = usePlayLobby('Crystal Caves')
   const punch = usePunch()
   const strong = useStrong()
   const twirl = useTwirl()
@@ -548,7 +547,7 @@ export const useCheckDiddySummit = (): LogicBool => {
 }
 
 export const useCheckDiddyCaves = (): LogicBool => {
-  const playCaves = usePlayCaves()
+  const playCaves = usePlayLobby('Crystal Caves')
   const rocket = useRocket()
   const guitar = useGuitar()
   const boulderTech = useBoulderTech()
@@ -805,7 +804,7 @@ export const useCastleKasplat = (): boolean => {
 }
 
 export const useCavesKasplat = (): boolean => {
-  const playCaves = usePlayCaves()
+  const playCaves = usePlayLobby('Crystal Caves')
   const punch = usePunch()
   const snide = useSnide()
   const FtaLankyBlueprint = useFtaLankyBlueprint()
@@ -854,7 +853,7 @@ export const useCastleLobby = (): boolean => {
 }
 
 export const useCavesLobby = (): boolean => {
-  const canEnterCaves = usePlayCaves()
+  const canEnterCaves = usePlayLobby('Crystal Caves')
   const chunky = useChunky()
   const barrels = useBarrel()
   const punch = usePunch()
@@ -912,12 +911,12 @@ export const useForestLobbyGeneric = (): boolean => {
 }
 
 export const useCavesLobbyGeneric = (): boolean => {
-  const canEnterCaves = usePlayCaves()
+  const canEnterCaves = usePlayLobby('Crystal Caves')
   return canEnterCaves
 }
 
 export const useCavesLobbyDiddy = (): LogicBool => {
-  const canEnterCaves = usePlayCaves()
+  const canEnterCaves = usePlayLobby('Crystal Caves')
   const hasJetbarrel = useRocket()
   const boulderTech = useBoulderTech()
   const hasTiny = useTiny()
