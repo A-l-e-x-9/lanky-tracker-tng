@@ -6,7 +6,7 @@ This is an updated version of a tracker originally written by Wolfman2000 and li
 
 The instructions on how to use this thing can be found in "instructions.html".
 
-As with the original, this tracker was written in JavaScript, primarily with an [electron-vite](https://electron-vite.org/) setup in addition to Facebook/the Meta Group's [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/). Obviously, you need JavaScript in order to use it.
+As with the original, this tracker was written in JavaScript, primarily with an [electron-vite](https://electron-vite.org/) setup in addition to Facebook/the Meta Group's [React](https://reactjs.org/) and Microsoft's [TypeScript](https://www.typescriptlang.org/). Obviously, you need JavaScript in order to use it.
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
 - Fix npm-web-out.yaml so that "instructions.html", its CSS, and the Lanky head icon all get pushed out to the gh-pages branch...I put them in there by hand, but the next run of that file takes them all away again.
