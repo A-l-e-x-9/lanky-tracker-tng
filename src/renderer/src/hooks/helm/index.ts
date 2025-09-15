@@ -38,7 +38,6 @@ export const useSlamHelm = (): boolean => useSlamLevel('Hideout Helm')
  */
 export const useHelmEnter = (): boolean => {
   const access = useIslesHelmEntry()
-  const kremTop = useIslesKremTop()
   const vine = useVine()
   return access && kremTop && vine
 }
