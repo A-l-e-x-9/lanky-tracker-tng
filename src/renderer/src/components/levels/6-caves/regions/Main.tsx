@@ -8,6 +8,8 @@ import MiniBarrel from '../gold-bananas/tiny/Mini'
 import DiddyKasplat from '../kasplats/Diddy'
 import DkKasplat from '../kasplats/Dk'
 import LankyKasplat from '../kasplats/Lanky'
+import KooshyKomeiji from '../boulders/SmallRock'
+import Okuu from '../boulders/BeegRock'
 
 const MainChecks: React.FC = () => (
   <>
@@ -17,6 +19,8 @@ const MainChecks: React.FC = () => (
     <BeetleRace />
     <MiniBarrel />
     <EarlyGone />
+    <KooshyKomeiji />
+    <Okuu />
     <DkKasplat />
     <DiddyKasplat />
     <LankyKasplat />
