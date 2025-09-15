@@ -26403,6 +26403,39 @@ const OwlChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports
   /* @__PURE__ */ jsxRuntimeExports.jsx(OwlCrate, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(OwlEnemies, {})
 ] });
+const MillBackKeg = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    ForestCheck,
+    {
+      id: 5008,
+      name: "Forest Boulder: Mill Back Keg",
+      region: "Forest Mills",
+      canGetLogic: useMillBackKeg()
+    }
+  ) });
+};
+const MillFrontKeg1 = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    ForestCheck,
+    {
+      id: 5006,
+      name: "Forest Boulder: Mill Front Keg near Crusher",
+      region: "Forest Mills",
+      canGetLogic: useMillFrontKegs()
+    }
+  ) });
+};
+const MillFrontKeg2 = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    ForestCheck,
+    {
+      id: 5007,
+      name: "Forest Boulder: Mill Front Keg in Back of Room",
+      region: "Forest Mills",
+      canGetLogic: useMillFrontKegs()
+    }
+  ) });
+};
 const MillsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(MillsGrassDirt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(RaftersCrate, {}),
@@ -26413,6 +26446,9 @@ const MillsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExpor
   /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMill, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(SpiderBoss, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMill, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(MillBackKeg, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(MillFrontKeg1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(MillFrontKeg2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BarnOutsideCrate, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DkBarn, {}),
@@ -26441,39 +26477,6 @@ const ForestRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$3, {})
 ] });
-const MillFrontKeg1 = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ForestCheck,
-    {
-      id: 5006,
-      name: "Forest Boulder: Mill Front Keg near Crusher",
-      region: "Forest Mills",
-      canGetLogic: useMillFrontKegs()
-    }
-  ) });
-};
-const MillFrontKeg2 = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ForestCheck,
-    {
-      id: 5007,
-      name: "Forest Boulder: Mill Front Keg in Back of Room",
-      region: "Forest Mills",
-      canGetLogic: useMillFrontKegs()
-    }
-  ) });
-};
-const MillBackKeg = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ForestCheck,
-    {
-      id: 5008,
-      name: "Forest Boulder: Mill Back Keg",
-      region: "Forest Mills",
-      canGetLogic: useMillBackKeg()
-    }
-  ) });
-};
 const BoulderLocations$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(MillFrontKeg1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(MillFrontKeg2, {}),
