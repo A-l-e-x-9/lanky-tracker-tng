@@ -1,6 +1,6 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import { usePlayLevel, usePlayLobby, useSlamLevel } from '../isles'
+import { usePlayLevel, useSlamLevel } from '../isles'
 import {
   useAnyGun,
   useAnyKong,
@@ -48,7 +48,6 @@ import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
  * @returns true if we can play in Jungle Japes.
  */
 export const usePlayJapes = (): boolean => usePlayLevel('Jungle Japes')
-export const usePlayJapesLobby = (): boolean => usePlayLobby('Jungle Japes')
 
 /**
  * Can we slam down switches in Jungle Japes?
