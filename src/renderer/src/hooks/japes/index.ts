@@ -1,470 +1,961 @@
-import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import { usePlayLevel, useSlamLevel } from '../isles'
+import useDonkStore from '@renderer/store'
+import { Level } from '@renderer/store/common'
+import { usePlayAztec } from '../aztec'
+import { usePlayCastle } from '../castle'
+import { usePlayCaves } from '../caves'
+import { useCurrentFairyCount, useCurrentGBCount } from '../consumables'
+import { usePlayFactory } from '../factory'
+import { usePlayForest } from '../forest'
+import { usePlayGalleon, useSlamGalleon } from '../galleon'
+import { usePlayHelm } from '../helm'
+import { usePlayJapesLobby } from '../japes'
 import {
-  useAnyGun,
+  useAllGun,
   useAnyKong,
-  useAnyMusic,
+  useBalloon,
   useBlast,
+  useBongos,
   useBoulderTech,
   useCamera,
   useCharge,
   useChunky,
   useCoconut,
   useDiddy,
+  useDive,
   useDk,
   useFeather,
-  useFtaChunkyBanana,
+  useFtaChunkyBlueprint,
   useFtaDiddyBanana,
   useFtaDiddyBlueprint,
+  useFtaDkBanana,
   useFtaDkBlueprint,
   useFtaLankyBanana,
   useFtaLankyBlueprint,
+  useFtaTinyBanana,
   useFtaTinyBlueprint,
+  useGone,
+  useGrab,
   useGrape,
+  useGuitar,
   useHighGrab,
   useHunky,
-  useLanky,
   useMini,
+  useMonkeyport,
   useOrange,
   usePeanut,
   usePineapple,
+  usePunch,
+  useRocket,
   useSax,
   useShockwave,
   useSlam,
-  useStand,
+  useSniper,
+  useSpring,
+  useSprint,
+  useStrong,
+  useSuperDuperSlam,
+  useSuperSlam,
   useTiny,
+  useTriangle,
   useTrombone,
   useTwirl,
   useVine,
   useClimbing,
-  useSnide
+  useSnide,
+  useBarrel
 } from '../kongs'
-import { useBananaportAll } from '../settings'
-import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
+import {
+  useAutoBonus,
+  useBananaport,
+  useFairyCount,
+  useIsSwitchsanity,
+  useOpenLobbies,
+  useProgressiveSlams,
+} from '../settings'
+import { LogicBool, logicBreak, useSwitchsanityGun, useSwitchsanityMusicPad } from '../world'
 
 /**
- * Can we play in Jungle Japes?
- * @returns true if we can play in Jungle Japes.
+ * What is needed to turn on the rocket barrel in Isles?
+ * @returns the requirements needed to activate the rocket barrel in Isles.
  */
-export const usePlayJapes = (): boolean => usePlayLevel('Jungle Japes')
+const useIslesRocketSwitch = (): boolean => useSwitchsanityMusicPad('islesTrombone', 2)
 
 /**
- * Can we slam down switches in Jungle Japes?
- * @todo Handle both options of the progressive slam setting.
- * @returns true if we can slam switches in Jungle Japes.
+ * What is needed to reveal the fairy hiding in the Forest Lobby?
+ * @returns the requirements needed to reveal the fairy in the Forest Lobby.
  */
-export const useSlamJapes = (): boolean => useSlamLevel('Jungle Japes')
-
-export const useJapesKongGates = (): boolean => {
-  const inStage = usePlayJapes()
-  const [barriers, checks] = useDonkStore(
-    useShallow((state) => [state.removeBarriers, state.checks])
-  )
-
-  return inStage && (checks[1002] || barriers.japesCoconutGates)
-}
+export const useIslesFairySwitch = (): boolean => useSwitchsanityGun('islesForest', 3)
 
 /**
- * Can we open the Rambi cage with the correct gun?
- * @returns true if we can shoot the switch to use Rambi.
- */
-const useJapesRambiSwitch = (): boolean => useSwitchsanityGun('japesRambi', 0)
-/**
- * Do we have what we need to enter the side area with three checks?
- * @returns true if we can open the side area.
- */
-const useJapesSideSwitch = (): boolean => useSwitchsanityGun('japesSide', 1)
-/**
- * What do we need to access the Hive area when using a gun?
+ * Can we reach the outer Fungi island?
  *
- * Note that if all bananaports are active immediately, this check can be bypassed.
- * @returns true if we can access the Hive via gun.
+ * Logically, we need either Key 4 or Open Lobbies for this one.
+ * @returns true if we can reach the outer Fungi island.
  */
-const useJapesHiveSwitch = (): boolean => useSwitchsanityGun('japesHive', 3)
-/**
- * What do we need to enter the Painting Room?
- * @returns true if we can enter the Painting Room.
- */
-const useJapesPaintingSwitch = (): boolean => useSwitchsanityGun('japesPainting', 1)
-
-/**
- * Can we access the side area at the start of Japes with one free item and two gated bonus stages?
- * @returns true if we can access the side area at the start of Japes.
- */
-export const useJapesSideArea = (): boolean => {
-  const inStage = usePlayJapes()
-  const canAccess = useJapesSideSwitch()
-  return inStage && canAccess
+export const useIslesFungiIsland = (): boolean => {
+  const [key4] = useDonkStore(useShallow((state) => [state.key4]))
+  const openLobbies = useOpenLobbies()
+  return key4 || openLobbies
 }
 
 /**
- * Can we access the Rambi cage in Japes?
- * @returns true if we can access the Rambi cage in Japes.
+ * Can we get to the outer Fungi Isle, then get across to the other side?
+ * @returns true if we can get from the outer Fungi Isle back to the main isle.
  */
-export const useJapesRambi = (): boolean => {
-  const canPlay = useJapesKongGates()
-  const rambiSwitch = useJapesRambiSwitch()
-  return rambiSwitch && canPlay
-}
-
-/**
- * Can Diddy access the mines?
- *
- * There is no switchsanity here: all checks are Diddy exclusive.
- * @returns true if Diddy can access the mines.
- */
-export const useJapesMine = (): boolean => {
-  const peanut = usePeanut()
-  const canPlay = usePlayJapes()
-  const hasClimbing = useClimbing()
-  const hasBananaports = useBananaportAll()
-  return peanut && (hasClimbing || hasBananaports) && canPlay
-}
-
-/**
- * Can we access the hive area past the tunnel?
- * @returns true if we have access to the Hive area past the tunnel.
- */
-export const useJapesHive = (): boolean => {
-  const hiveSwitch = useJapesHiveSwitch()
-  const canPlay = usePlayJapes()
-  const coconutGates = useJapesKongGates()
-  const japesMine = useJapesMine()
-  const warpAll = useBananaportAll()
-  const [hiveGateOpen] = useDonkStore(useShallow((state) => [state.removeBarriers.japesHiveGate]))
-  return canPlay && ((coconutGates && (hiveGateOpen || hiveSwitch)) || (warpAll && japesMine))
-}
-
-/**
- * Can we get on top of Painting Hill?
- * @returns true if we can get to the top of the hill.
- */
-export const useJapesPaintingOutside = (): LogicBool => {
-  const inStage = usePlayJapes()
-  const stand = useStand()
+export const useIslesCrossFungi = (): LogicBool => {
+  const fungiIsland = useIslesFungiIsland()
+  const boulderTech = useBoulderTech()
+  const rocketEnabled = useIslesRocketSwitch()
   const twirl = useTwirl()
-  const climbing = useClimbing()
+  const rocket = useRocket()
   const dk = useDk()
-  const tiny = useTiny()
+  const diddy = useDiddy()
   const chunky = useChunky()
   return {
-    in: inStage && (stand || (climbing && twirl)),
-    out: inStage && climbing && (dk || tiny || chunky)
+    in: fungiIsland && (twirl || (boulderTech && rocketEnabled && rocket)),
+    out: fungiIsland && (dk || chunky || diddy)
   }
 }
 
 /**
- * Can we enter the painting room on top of the hill?
- * @returns true if we can enter the painting room on top of the hill.
+ * Do we have access to the main isle area?
+ * @returns true if we can access the upper part of Main Isle.
  */
-export const useJapesPainting = (): LogicBool => {
-  const canPlay = useJapesPaintingOutside()
-  const paintingSwitch = useJapesPaintingSwitch()
-  return {
-    in: canPlay.in && paintingSwitch,
-    out: logicBreak(canPlay) && paintingSwitch
-  }
-}
-
-/**
- * Can we access the underground via the power of Boulder Tech?
- * @returns true if we can access the underground.
- */
-export const useJapesUnderground = (): boolean => {
-  const slam = useSlam()
-  const boulderTech = useBoulderTech()
-  const inStage = usePlayJapes()
-  return inStage && boulderTech && slam
-}
-
-export const useChunkyBoulderGb = (): boolean => {
-  const inStage = usePlayJapes()
-  const boulderTech = useBoulderTech()
-  return inStage && boulderTech
-}
-
-export const useChunkyCagedGb = (): boolean => {
-  const boulderTech = useBoulderTech()
-  const canSlam = useSlamJapes()
-  const rambi = useJapesRambi()
-  const climbing = useClimbing()
-  const hasBananaports = useBananaportAll()
-  return rambi && boulderTech && canSlam && (climbing || hasBananaports)
-}
-
-export const useChunkyHiveGb = (): LogicBool => {
-  const hive = useJapesHive()
-  const hunky = useHunky()
-  const climbing = useClimbing()
-  return {
-    in: hive && hunky && climbing,
-    out: hive && hunky
-  }
-}
-
-export const useChunkyUndergroundGb = (): LogicBool => {
-  const under = useJapesUnderground()
-  const pineapple = usePineapple()
+export const useIslesUpper = (): LogicBool => {
   const vine = useVine()
-  const dk = useDk()
-  const twirl = useTwirl()
-  const tiny = useTiny()
-  const diddy = useDiddy()
+  const bananawarp = useBananaport()
+  const crossFungi = useIslesCrossFungi()
   return {
-    in: under && pineapple && vine,
-    out: useFtaChunkyBanana() && under && (dk || twirl || ((tiny || diddy) && vine))
-  }
-}
-
-export const useChunkyKasplat = (): LogicBool => {
-  const canGoUnderground = useChunkyUndergroundGb()
-  const hasSnide = useSnide()
-  return {
-    in: hasSnide && canGoUnderground.in,
-    out: hasSnide && canGoUnderground.out
-  }
-}
-
-export const useDiddyCagedGb = (): boolean => {
-  const rambi = useJapesRambi()
-  const diddy = useDiddy()
-  const canSlam = useSlamJapes()
-  return rambi && diddy && canSlam
-}
-
-export const useDiddyMountainGb = (): boolean => {
-  const mine = useJapesMine()
-  const canSlam = useSlamJapes()
-  return useFtaDiddyBanana() && mine && canSlam
-}
-
-export const useDiddyTunnelGb = (): boolean => {
-  const side = useJapesSideArea()
-  return useFtaDiddyBanana() && side
-}
-
-export const useDiddyMinecartGb = (): LogicBool => {
-  const mine = useJapesMine()
-  const canSlam = useSlamJapes()
-  const charge = useCharge()
-  const highGrab = useHighGrab()
-  return {
-    in: mine && canSlam && charge,
-    out: mine && highGrab
+    in: crossFungi.in || vine || bananawarp != 0,
+    out: crossFungi.out
   }
 }
 
 /**
- * Can we grab the item in front of the Diddy Kong Cage?
+ * Do we have access to enabling the Rocket barrel in Outer Isles?
+ * @returns true if we can enable the Rocket barrel in Outer Isles.
+ */
+export const useIslesRocket = (): boolean => {
+  const islesUpper = useIslesUpper()
+  const boulderTech = useBoulderTech()
+  const target = useIslesRocketSwitch()
+  return islesUpper && boulderTech && target
+}
+
+/**
+ * Do we have access to the Frantic Factory door?
+ * @returns true if we can access the top portion of Krem Isle where the Frantic Factory lobby resides in vanilla.
+ */
+export const useIslesKremAscent = (): boolean => {
+  const canRocket = useIslesRocket()
+  const fungiIsland = useIslesFungiIsland()
+  const rocket = useRocket()
+  const bananaport = useBananaport()
+  const openLobbies = useOpenLobbies()
+  const [key2] = useDonkStore(useShallow((state) => [state.key2]))
+  return openLobbies || key2 || bananaport != 0 || (canRocket && fungiIsland && rocket)
+}
+
+/**
+ * Do we have access to the tip top of Krem Isle?
  *
- * This location is likely not restricted to FTA.
- * @returns true if this item can be attained.
+ * In vanilla, there's a banana fairy, sax pad, and Helm access.
+ * @returns true if we can head to the tip top of Krem Isle where Helm awaits.
  */
-export const useDkFreebieGb = (): boolean => {
-  const inStage = usePlayJapes()
-  const anyKong = useAnyKong()
-  const hasClimbing = useClimbing()
-  const hasBananaports = useBananaportAll()
-  return inStage && anyKong && (hasClimbing || hasBananaports)
-}
-
-const useFreeDiddySwitch = (): boolean => {
-  const dk = useCoconut()
-  const diddy = usePeanut()
-  const lanky = useGrape()
-  const tiny = useFeather()
-  const chunky = usePineapple()
-  const freeDiddy = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeDiddy))
-  switch (freeDiddy) {
-    case 1:
-      return dk
-    case 2:
-      return diddy
-    case 3:
-      return lanky
-    case 4:
-      return tiny
-    case 5:
-      return chunky
-    default:
-      return true
-  }
-}
-
-export const useDkFreeDiddyGb = (): boolean => {
-  const inStage = usePlayJapes()
-  const climbing = useClimbing()
-  const hasBananaports = useBananaportAll()
-  return useFreeDiddySwitch() && inStage && (climbing || hasBananaports)
-}
-
-export const useDkCagedGb = (): boolean => {
-  const rambi = useJapesRambi()
-  const dk = useDk()
-  const canSlam = useSlamJapes()
-  return rambi && dk && canSlam
-}
-
-export const useDkBlastGb = (): boolean => {
-  const inStage = usePlayJapes()
+export const useIslesKremTop = (): boolean => {
+  const port = useMonkeyport()
   const blast = useBlast()
-  const vine = useVine()
-  const climbing = useClimbing()
-  return inStage && blast && vine && climbing
-}
-
-export const useLankyCagedGb = (): boolean => {
-  const rambi = useJapesRambi()
-  const lanky = useLanky()
-  const canSlam = useSlamJapes()
-  const hasClimbing = useClimbing()
-  const hasBananaports = useBananaportAll()
-  return rambi && lanky && canSlam && (hasClimbing || hasBananaports)
-}
-
-export const useLankyGateGb = (): boolean => {
-  const side = useJapesSideArea()
-  const grape = useGrape()
-  return side && grape
-}
-
-export const useLankySlopeGb = (): LogicBool => {
-  const tunnel = useJapesKongGates()
-  const stand = useStand()
-  const anyKong = useAnyKong()
-  return {
-    in: tunnel && stand,
-    out: useFtaLankyBanana() && tunnel && anyKong
+  const balloon = useBalloon()
+  const isSwitchsanity = useIsSwitchsanity()
+  const [padPort] = useDonkStore(
+    useShallow((state) => [state.switchsanitySwitches.islesMonkeyport])
+  )
+  const target = isSwitchsanity ? padPort : 0
+  switch (target) {
+    case 0:
+      return port
+    case 1:
+      return blast
+    default:
+      return balloon
   }
 }
 
-export const useLankyPaintingGb = (): LogicBool => {
-  const painting = useJapesPainting()
-  const grape = useGrape()
+/**
+ * Can we activate the vines and turn them visible in the Helm Lobby?
+ *
+ * Some seed settings will give you a hint on what you need when you approach the pad/apparatus.
+ * @returns true if we can activate the vines in the Helm Lobby.
+ */
+export const useIslesHelmEntry = (): boolean => {
+  const hasBananaports = useBananaport() /*At some indeterminate point in Season 4's existence (I think when Season 4 began on the DK64 Speedrunning Twitch channel), the Bananaports in the Helm Lobby were changed to be pre-activated if you selected the appropriate setting in the Randomizer. Must now account for this.*/
+  const bongos = useBongos()
+  const guitar = useGuitar()
   const trombone = useTrombone()
-  const lanky = useLanky()
-  const slam = useSlam()
-  const anyGun = useAnyGun()
-  const anyMusic = useAnyMusic()
-  return {
-    in: lanky && slam && painting.in && (grape || trombone),
-    out: lanky && slam && logicBreak(painting) && (anyGun || anyMusic)
+  const sax = useSax()
+  const triangle = useTriangle()
+  const charge = useCharge()
+  const grab = useGrab()
+  const gone = useGone()
+  const isSwitchsanity = useIsSwitchsanity()
+  const [islesHelm] = useDonkStore(useShallow((state) => [state.switchsanitySwitches.islesHelm]))
+  const target = isSwitchsanity ? islesHelm : 0
+  switch (target) {
+    default:
+      return hasBananaports != 0 || gone
+    case 1:
+      return hasBananaports != 0 || grab
+    case 2:
+      return hasBananaports != 0 || charge
+    case 3:
+      return hasBananaports != 0 || bongos
+    case 4:
+      return hasBananaports != 0 || guitar
+    case 5:
+      return hasBananaports != 0 || trombone
+    case 6:
+      return hasBananaports != 0 || sax
+    case 7:
+      return hasBananaports != 0 || triangle
   }
 }
 
-export const useTinyCagedGb = (): boolean => {
-  const rambi = useJapesRambi()
-  const tiny = useTiny()
-  const canSlam = useSlamJapes()
-  return rambi && tiny && canSlam
-}
-
-export const useTinyGateGb = (): boolean => {
-  const side = useJapesSideArea()
-  const feather = useFeather()
-  return side && feather
-}
-
-export const useTinyStumpGb = (): boolean => {
-  const hive = useJapesHive()
-  const mini = useMini()
-  return hive && mini
-}
-
-export const useTinyHiveGb = (): LogicBool => {
-  const hive = useTinyStumpGb()
-  const canSlam = useSlamJapes()
+export const useIslesHelmEntryWithoutBananaports = (): boolean => {
+  const bongos = useBongos()
+  const guitar = useGuitar()
+  const trombone = useTrombone()
   const sax = useSax()
+  const triangle = useTriangle()
+  const charge = useCharge()
+  const grab = useGrab()
+  const gone = useGone()
+  const isSwitchsanity = useIsSwitchsanity()
+  const [islesHelm] = useDonkStore(useShallow((state) => [state.switchsanitySwitches.islesHelm]))
+  const target = isSwitchsanity ? islesHelm : 0
+  switch (target) {
+    default:
+      return gone
+    case 1:
+      return grab
+    case 2:
+      return charge
+    case 3:
+      return bongos
+    case 4:
+      return guitar
+    case 5:
+      return trombone
+    case 6:
+      return sax
+    case 7:
+      return triangle
+  }
+}
+
+export const usePlayLevel = (level: Level): boolean => {
+  const dive = useDive()
+  const openLobbies = useOpenLobbies()
+  const [
+    level1,
+    level2,
+    level3,
+    level4,
+    level5,
+    level6,
+    level7,
+    level8,
+    key1,
+    key2,
+    key5,
+    key6,
+    key7
+  ] = useDonkStore(
+    useShallow((state) => [
+      state.level1,
+      state.level2,
+      state.level3,
+      state.level4,
+      state.level5,
+      state.level6,
+      state.level7,
+      state.level8,
+      state.key1,
+      state.key2,
+      state.key5,
+      state.key6,
+      state.key7
+    ])
+  )
+  const islesUpper = useIslesUpper()
+  const islesKremTop = useIslesKremTop()
+  const islesKremAscent = useIslesKremAscent()
+  const islesFungiIsland = useIslesFungiIsland()
+  const currentGB = useCurrentGBCount()
+  const [
+    bLocker1,
+    bLocker2,
+    bLocker3,
+    bLocker4,
+    bLocker5,
+    bLocker6,
+    bLocker7,
+    bLocker8
+  ] = useDonkStore(
+    useShallow((state) => [
+      state.bLocker.bLocker1,
+      state.bLocker.bLocker2,
+      state.bLocker.bLocker3,
+      state.bLocker.bLocker4,
+      state.bLocker.bLocker5,
+      state.bLocker.bLocker6,
+      state.bLocker.bLocker7,
+      state.bLocker.bLocker8
+    ])
+  ) 
+
+  if (level1 === level) {
+    return currentGB >= bLocker1
+  }
+  if (level2 === level) {
+    return (currentGB >= bLocker2) && islesUpper && (openLobbies || key1)
+  }
+  if (level3 === level) {
+    return (currentGB >= bLocker3) && islesKremAscent && (openLobbies || key2)
+  }
+  if (level4 === level) {
+    return (currentGB >= bLocker4) && (openLobbies || key2) && dive
+  }
+  if (level5 === level) {
+    return (currentGB >= bLocker5) && islesFungiIsland
+  }
+  if (level6 === level) {
+    return (currentGB >= bLocker6) && islesUpper && (openLobbies || key5)
+  }
+  if (level7 === level) {
+    return (currentGB >= bLocker7) && (openLobbies || key5)
+  }
+  if (level8 === level) {
+    return (currentGB >= bLocker8) && islesKremTop && (openLobbies || (key6 && key7))
+  }
+
+  return false
+}
+
+export const usePlayLobby = (level: Level): boolean => {
+  const dive = useDive()
+  const openLobbies = useOpenLobbies()
+  const [
+    level1,
+    level2,
+    level3,
+    level4,
+    level5,
+    level6,
+    level7,
+    level8,
+    key1,
+    key2,
+    key5,
+    key6,
+    key7
+  ] = useDonkStore(
+    useShallow((state) => [
+      state.level1,
+      state.level2,
+      state.level3,
+      state.level4,
+      state.level5,
+      state.level6,
+      state.level7,
+      state.level8,
+      state.key1,
+      state.key2,
+      state.key5,
+      state.key6,
+      state.key7
+    ])
+  )
+  const islesUpper = useIslesUpper()
+  const islesKremTop = useIslesKremTop()
+  const islesKremAscent = useIslesKremAscent()
+  const islesFungiIsland = useIslesFungiIsland()
+  const currentGB = useCurrentGBCount()
+  const [
+    bLocker1,
+    bLocker2,
+    bLocker3,
+    bLocker4,
+    bLocker5,
+    bLocker6,
+    bLocker7,
+    bLocker8
+  ] = useDonkStore(
+    useShallow((state) => [
+      state.bLocker.bLocker1,
+      state.bLocker.bLocker2,
+      state.bLocker.bLocker3,
+      state.bLocker.bLocker4,
+      state.bLocker.bLocker5,
+      state.bLocker.bLocker6,
+      state.bLocker.bLocker7,
+      state.bLocker.bLocker8
+    ])
+  ) 
+
+  if (level1 === level) {
+    return true
+  }
+  if (level2 === level) {
+    return islesUpper && (openLobbies || key1)
+  }
+  if (level3 === level) {
+    return islesKremAscent && (openLobbies || key2)
+  }
+  if (level4 === level) {
+    return (openLobbies || key2) && dive
+  }
+  if (level5 === level) {
+    return islesFungiIsland
+  }
+  if (level6 === level) {
+    return islesUpper && (openLobbies || key5)
+  }
+  if (level7 === level) {
+    return (openLobbies || key5)
+  }
+  if (level8 === level) {
+    return islesKremTop && (openLobbies || (key6 && key7))
+  }
+
+  return false
+}
+
+export const useSlamLevel = (level: Level): boolean => {
+  const canPlay = usePlayLevel(level)
+  const slam = useSlam()
+  const superSlam = useSuperSlam()
+  const duperSlam = useSuperDuperSlam()
+  const progressiveSlams = useProgressiveSlams()
+  const [level1, level2, level3, level4, level5, level6, level7, level8] = useDonkStore(
+    useShallow((state) => [
+      state.level1,
+      state.level2,
+      state.level3,
+      state.level4,
+      state.level5,
+      state.level6,
+      state.level7,
+      state.level8
+    ])
+  )
+
+  if (!canPlay) {
+    return false
+  }
+
+  if (!progressiveSlams) {
+    switch (level) {
+      case 'Jungle Japes':
+      case 'Angry Aztec':
+      case 'Frantic Factory':
+      case 'Gloomy Galleon':
+        return slam
+      case 'DK Isles':
+      case 'Fungi Forest':
+      case 'Crystal Caves':
+        return superSlam
+      default:
+        return duperSlam
+    }
+  }
+
+  const predicate = (e: Level): boolean => e === level
+
+  if ([level1, level2, level3, level4].some(predicate)) {
+    return slam
+  }
+
+  if ([level5, level6].some(predicate)) {
+    return superSlam
+  }
+
+  if ([level7, level8].some(predicate)) {
+    return duperSlam
+  }
+
+  return false
+}
+
+/**
+ * Can we control someone to get the first check in the game?
+ * @returns true if we can get the first check in the game.
+ */
+export const useCheckDkJapesRock = (): boolean => useAnyKong()
+
+/**
+ * Can we access the cage on Krem Isle and open it with the Coconut Gun?
+ * @returns true if we can access the cage.
+ */
+export const useCheckDkCoconutCage = (): boolean => {
+  const coconut = useCoconut()
+  const kremAscent = useIslesKremAscent()
+  return coconut && kremAscent
+}
+
+/**
+ * Can we access the Factory Lobby and play the Bongos to release a check?
+ * @returns truthy if we can play the Bongos in the Factory Lobby.
+ */
+export const useCheckDkMusicPad = (): LogicBool => {
+  const playFactory = usePlayFactory()
+  const bongos = useBongos()
+  const grab = useGrab()
+  const diddy = useDiddy()
+  const tiny = useTiny()
+  return {
+    in: playFactory && bongos && grab,
+    out: playFactory && bongos && (diddy || tiny)
+  }
+}
+
+/**
+ * Can we grab the banana above the boiling lava in Caves Lobby?
+ * @returns truthy if we can grab the banana in Caves Lobby.
+ */
+export const useCheckDkCavesLobby = (): LogicBool => {
+  const playCaves = usePlayCaves()
+  const punch = usePunch()
+  const strong = useStrong()
+  const twirl = useTwirl()
   const orange = useOrange()
   return {
-    in: hive && canSlam && (sax || orange),
-    out: hive && canSlam
+    in: playCaves && punch && strong,
+    out: useFtaDkBanana() && playCaves && punch && (twirl || orange)
   }
 }
 
-export const useGeneralThing = (): boolean => {
+export const useCheckDiddySnide = (): LogicBool => {
+  const kremAscent = useIslesKremAscent()
+  const spring = useSpring()
+  const autoBonus = useAutoBonus()
+  const boulderTech = useBoulderTech()
+  const highGrab = useHighGrab()
+  const twirl = useTwirl()
+  const diddy = useFtaDiddyBanana()
   const anyKong = useAnyKong()
-  return usePlayJapes() && anyKong
-}
-
-export const useRambiCrate = (): boolean => {
-  const anyKong = useAnyKong()
-  return useJapesRambi() && anyKong
-}
-
-export const usePaintingDirt = (): LogicBool => {
-  const japesPaintingOutside = useJapesPaintingOutside()
-  const shockwave = useShockwave()
   return {
-    in: shockwave && japesPaintingOutside.in,
-    out: shockwave && japesPaintingOutside.out
+    in: kremAscent && anyKong && diddy && (spring || autoBonus),
+    out: kremAscent && anyKong && diddy && ((boulderTech && highGrab) || twirl)
   }
+}
+
+export const useCheckDiddyCage = (): LogicBool => {
+  const crossFungi = useIslesCrossFungi()
+  const peanut = usePeanut()
+  return {
+    in: crossFungi.in && peanut,
+    out: logicBreak(crossFungi) && peanut
+  }
+}
+
+export const useCheckDiddySummit = (): LogicBool => {
+  const fungiIsland = useIslesFungiIsland()
+  // Redundancy due to avoiding infinite loops.
+  const islesUpper = useIslesUpper()
+  const boulderTech = useBoulderTech()
+  const target = useIslesRocketSwitch()
+  const rocket = useRocket()
+  const twirl = useTwirl()
+  return {
+    in: fungiIsland && islesUpper && boulderTech && target && rocket,
+    out: useFtaDiddyBanana() && fungiIsland && twirl
+  }
+}
+
+export const useCheckDiddyCaves = (): LogicBool => {
+  const playCaves = usePlayCaves()
+  const rocket = useRocket()
+  const guitar = useGuitar()
+  const boulderTech = useBoulderTech()
+  const twirl = useTwirl()
+  return {
+    in: playCaves && rocket && guitar,
+    out: playCaves && boulderTech && twirl && guitar
+  }
+}
+
+export const useCheckLankyCage = (): boolean => useGrape()
+
+export const useCheckLankyPrison = (): LogicBool => {
+  const sprint = useSprint()
+  const dk = useDk()
+  return {
+    in: sprint,
+    out: useFtaLankyBanana() && dk
+  }
+}
+
+export const useCheckLankyMusicPad = (): boolean => {
+  const playJapes = usePlayJapesLobby()
+  const boulderTech = useBoulderTech()
+  const trombone = useTrombone()
+  return playJapes && boulderTech && trombone
+}
+
+export const useCheckLankyCastle = (): LogicBool => {
+  const playCastle = usePlayCastle()
+  const boulderTech = useBoulderTech()
+  const balloon = useBalloon()
+  const tiny = useTiny()
+  return {
+    in: playCastle && boulderTech && balloon,
+    out: useFtaLankyBanana() && playCastle && tiny
+  }
+}
+
+/**
+ * Can we open the feather cage on Banana Fairy Island and claim its check?
+ * @returns true if we have access to the feather cage check.
+ */
+export const useCheckTinyFeatherCage = (): boolean => useFeather()
+
+/**
+ * Can we get to the top of Krem Isle, then play on the music pad?
+ * @returns true if we can play the music pad on the top of Krem Isle.
+ */
+export const useCheckTinyMusicPad = (): boolean => {
+  const kremTop = useIslesKremTop()
+  const sax = useSax()
+  return kremTop && sax
+}
+
+/**
+ * Can we bang the gongs in Aztec Lobby for Tiny to get a check?
+ * @returns truthy if we can get the item in Aztec Lobby.
+ */
+export const useCheckTinyAztecLobby = (): LogicBool => {
+  const playAztec = usePlayAztec()
+  const tiny = useFtaTinyBanana()
+  const autoBonus = useAutoBonus()
+  const twirl = useTwirl()
+  const charge = useCharge()
+  return {
+    in: playAztec && ((autoBonus && tiny) || (charge && twirl)),
+    out: playAztec && charge
+  }
+}
+
+const useGalleonLobbySlam = (): boolean => {
+  const progSlam = useSlamGalleon()
+  const normSlam = useSuperSlam()
+  return useProgressiveSlams() ? progSlam : normSlam
+}
+
+/**
+ * Can we slam a switch to open a mini tunnel, then sneak in with Tiny?
+ * @returns truthy if we can access the hidden tunnel in Galleon Lobby.
+ */
+export const useCheckTinyGalleonLobby = (): LogicBool => {
+  const playGalleon = usePlayGalleon()
+  const slam = useGalleonLobbySlam()
+  const chunky = useChunky()
+  const twirl = useTwirl()
+  const mini = useMini()
+  const dive = useDive()
+  return {
+    in: playGalleon && slam && chunky && dive && mini && twirl,
+    out: playGalleon && slam && chunky && dive && mini
+  }
+}
+/*Alex addition: Can we access the inital BFI check (that would get us Cam and Shockwave in vanilla)?*/
+export const useCheckBFIInitial = (): boolean => {
+  const mini = useMini()
+  return mini
+}
+
+/**
+ * Can we access the Banana Fairy Island (BFI) check?
+ * @returns true if we can access the BFI check.
+ */
+export const useCheckBananaFairyIsle = (): boolean => {
+  const fairies = useCurrentFairyCount()
+  const fairyCount = useFairyCount()
+  const mini = useMini()
+  return fairies >= fairyCount && mini
+}
+
+export const useCheckChunkyCage = (): boolean => usePineapple()
+
+export const useCheckChunkyMusicPad = (): boolean => {
+  const upper = useIslesUpper()
+  const boulderTech = useBoulderTech()
+  const triangle = useTriangle()
+  return upper && boulderTech && triangle
+}
+
+export const useCheckChunkyPound = (): boolean => {
+  const tinySax = useCheckTinyMusicPad()
+  const hunky = useHunky()
+  const slam = useSlam()
+  return tinySax && hunky && slam
+}
+
+export const useCheckChunkyHelm = (): LogicBool => {
+  const playHelm = usePlayHelm()
+  const helmEntry = useIslesHelmEntryWithoutBananaports()
+  const vine = useVine()
+  const twirl = useTwirl()
+  const orangeYourself = useOrange()
+  return {
+    in: playHelm && helmEntry && vine,
+    out: playHelm && (twirl || orangeYourself)
+  }
+}
+
+export const useSnideArena = (): boolean => {
+  const islesKremAscent = useIslesKremAscent()
+  const boulderTech = useBoulderTech()
+  return islesKremAscent && boulderTech
+}
+
+export const useForestArena = (): boolean => {
+  const playForest = usePlayForest()
+  const allGun = useAllGun()
+  const gone = useGone()
+  return playForest && allGun && gone
 }
 
 export const useGeneralDirt = (): boolean => {
+  const anyKong = useAnyKong()
   const shockwave = useShockwave()
-  const inStage = usePlayJapes()
-  return inStage && shockwave
+  return anyKong && shockwave
 }
 
-export const useRambiFairy = (): boolean => {
-  const camera = useCamera()
-  const japesRambi = useJapesRambi()
-  return japesRambi && camera
+/**
+ * Can we reach the dirt patch in the banana hoard?
+ * @todo Moonkick possibilities?
+ * @returns true if we can reach the hoard dirt.
+ */
+export const useHoardDirt = (): boolean => {
+  const dirt = useGeneralDirt()
+  const vine = useVine()
+  const climbing = useClimbing()
+  return dirt && vine && climbing
 }
 
-export const usePaintingFairy = (): LogicBool => {
-  const camera = useCamera()
-  const banana = useLankyPaintingGb()
+export const useIslandDirt = (): boolean => {
+  const dirt = useGeneralDirt()
+  const fungi = useIslesFungiIsland()
+  return dirt && fungi
+}
+
+export const useCastleDirt = (): LogicBool => {
+  const shockwave = useShockwave()
+  const boulderTech = useBoulderTech()
+  const tiny = useTiny()
+  const balloon = useBalloon()
+  const playCastle = usePlayCastle()
   return {
-    in: camera && banana.in,
-    out: camera && banana.out
+    in: playCastle && boulderTech && balloon && shockwave,
+    out: playCastle && tiny && shockwave
+  }
+}
+
+export const useAztecDirt = (): LogicBool => {
+  const crossFungi = useIslesCrossFungi()
+  const islesFungi = useIslesFungiIsland()
+  const islesRocket = useIslesRocket()
+  const islesUpper = useIslesUpper()
+  const boulderTech = useBoulderTech()
+  const shockwave = useShockwave()
+  const dk = useDk()
+  const diddy = useDiddy()
+  const rocket = useRocket()
+  const tiny = useTiny()
+  const twirl = useTwirl()
+  return {
+    in: islesRocket && islesFungi && diddy && rocket && shockwave,
+    out:
+      shockwave &&
+      ((islesUpper && boulderTech && (diddy || tiny)) || (crossFungi && (dk || (tiny && twirl))))
   }
 }
 
 export const useGeneralFairy = (): boolean => {
-  const camera = useCamera()
-  return usePlayJapes() && camera
-}
-
-export const useGateKasplat = (): boolean => {
-  const hasSnide = useSnide()
-  const kongGates = useJapesKongGates()
   const anyKong = useAnyKong()
-  return hasSnide && kongGates && anyKong
+  const camera = useCamera()
+  return anyKong && camera
 }
 
-export const useDkKasplat = (): boolean => {
-  const hasSnide = useSnide()
-  const gate = useGateKasplat()
-  const ftaBP = useFtaDkBlueprint()
-  return hasSnide && ftaBP && gate
+export const useFactoryFairy = (): boolean => {
+  const camera = useCamera()
+  const punch = usePunch()
+  const factory = usePlayFactory()
+  return factory && punch && camera
 }
 
-export const useDiddyKasplat = (): boolean => {
-  const gate = useGateKasplat()
-  const hasSnide = useSnide()
-  const ftaBP = useFtaDiddyBlueprint()
-  return hasSnide && ftaBP && gate
+export const useForestFairy = (): boolean => {
+  const forest = usePlayForest()
+  const camera = useCamera()
+  const islesSwitch = useIslesFairySwitch()
+  return forest && camera && islesSwitch
 }
 
-export const useLankyKasplat = (): boolean => {
-  const hasSnide = useSnide()
-  const gate = useGateKasplat()
-  const ftaBP = useFtaLankyBlueprint()
-  return hasSnide && ftaBP && gate
+export const useKremFairy = (): boolean => {
+  const top = useIslesKremTop()
+  const camera = useCamera()
+  return top && camera
 }
 
-export const useTinyKasplat = (): boolean => {
-  const gate = useGateKasplat()
-  const ftaBP = useFtaTinyBlueprint()
-  const hasSnide = useSnide()
-  return hasSnide && ftaBP && gate
+export const useHelmKasplat = (): LogicBool => {
+  const playHelm = usePlayHelm()
+  const snide = useSnide()
+  const sniper = useSniper()
+  const coconut = useCoconut()
+  const twirl = useTwirl()
+  const FtaDkBlueprint = useFtaDkBlueprint()
+  const orangeYourself = useOrange()
+  return {
+    in: snide && playHelm && sniper && coconut,
+    out: snide && FtaDkBlueprint && playHelm && (twirl || orangeYourself)
+  }
 }
 
-export const useMtnCrate = (): boolean => {
-  const hasClimbing = useClimbing()
-  const hasBananaports = useBananaportAll()
-  return hasClimbing || hasBananaports
+export const useCastleKasplat = (): boolean => {
+  const playCastle = usePlayCastle()
+  const snide = useSnide()
+  const coconut = useCoconut()
+  const FtaDiddyBlueprint = useFtaDiddyBlueprint()
+  return snide && FtaDiddyBlueprint && playCastle && coconut
+}
+
+export const useCavesKasplat = (): boolean => {
+  const playCaves = usePlayCaves()
+  const punch = usePunch()
+  const snide = useSnide()
+  const FtaLankyBlueprint = useFtaLankyBlueprint()
+  return snide && FtaLankyBlueprint && playCaves && punch
+}
+
+export const useFactoryKasplat = (): boolean => {
+  const playFactory = usePlayFactory()
+  const punch = usePunch()
+  const FtaTinyBlueprint = useFtaTinyBlueprint()
+  const snide = useSnide()
+  return snide && FtaTinyBlueprint && playFactory && punch
+}
+
+export const useGalleonKasplat = (): boolean => {
+  const playGalleon = usePlayGalleon()
+  const anyKong = useAnyKong()
+  const snide = useSnide()
+  const FtaChunkyBlueprint = useFtaChunkyBlueprint()
+  return snide && FtaChunkyBlueprint && playGalleon && anyKong
+}
+
+export const useAztecLobbyTrombonePad = (): boolean => {
+  const bananaport = useBananaport()
+  const chunky = useChunky()
+  const barrels = useBarrel()
+  const climbing = useClimbing()
+  const vines = useVine()
+  return (bananaport || climbing && vines) && chunky && barrels
+}
+
+export const useAztecLobbyTrianglePad = (): boolean => {
+  const bananaport = useBananaport()
+  const chunky = useChunky()
+  const barrels = useBarrel()
+  const climbing = useClimbing()
+  const vines = useVine()
+  return (bananaport || climbing && vines) && chunky && barrels
+}
+
+export const useCastleLobby = (): boolean => {
+  const canEnterCastle = usePlayCastle()
+  const chunky = useChunky()
+  const barrels = useBarrel()
+  return canEnterCastle && chunky && barrels
+}
+
+export const useCavesLobby = (): boolean => {
+  const canEnterCaves = usePlayCaves()
+  const chunky = useChunky()
+  const barrels = useBarrel()
+  const punch = usePunch()
+  return canEnterCaves && chunky && barrels && punch
+}
+
+export const useJapesLobby = (): boolean => {
+  const canEnterJapes = usePlayJapesLobby()
+  const chunky = useChunky()
+  const barrels = useBarrel()
+  return canEnterJapes && chunky && barrels
+}
+
+export const useJapesLobbyGeneric = (): boolean => {
+  const canEnterJapes = usePlayJapesLobby()
+  return canEnterJapes
+}
+
+export const useAztecLobbyGeneric = (): boolean => {
+  const canEnterAztec = usePlayAztec()
+  return canEnterAztec
+}
+
+export const useAztecLobbyChunky = (): boolean => {
+  const canEnterAztec = usePlayAztec()
+  const feathers = useFeather()
+  return canEnterAztec && feathers
+}
+
+export const useFactoryLobbyLower = (): boolean => {
+  const canEnterFactory = usePlayFactory()
+  return canEnterFactory
+}
+
+export const useFactoryLobbyUpper = (): LogicBool => {
+  const canEnterFactory = usePlayFactory()
+  const grab = useGrab()
+  const hasDiddy = useDiddy()
+  const hasTiny = useTiny()
+  const hasChunky = useChunky()
+  return {
+    in: canEnterFactory && grab,
+    out: canEnterFactory && (hasDiddy || hasTiny || hasChunky)
+  }
+}
+
+export const useGalleonLobbyGeneric = (): boolean => {
+  const canEnterGalleon = usePlayGalleon()
+  return canEnterGalleon
+}
+
+export const useForestLobbyGeneric = (): boolean => {
+  const canEnterForest = usePlayForest()
+  return canEnterForest
+}
+
+export const useCavesLobbyGeneric = (): boolean => {
+  const canEnterCaves = usePlayCaves()
+  return canEnterCaves
+}
+
+export const useCavesLobbyDiddy = (): LogicBool => {
+  const canEnterCaves = usePlayCaves()
+  const hasJetbarrel = useRocket()
+  const boulderTech = useBoulderTech()
+  const hasTiny = useTiny()
+  const hasTwirl = useTwirl()
+  const highGrab = useHighGrab()
+  return {
+    in: canEnterCaves && hasJetbarrel,
+    out: canEnterCaves && boulderTech && hasTiny && hasTwirl && highGrab
+  }
+}
+
+export const useCastleLobbyGeneric = (): boolean => {
+  const canEnterCastle = usePlayCastle()
+  return canEnterCastle
 }
