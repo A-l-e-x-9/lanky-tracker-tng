@@ -12652,7 +12652,7 @@ const useDefeatRoboKremling = () => {
   return klaptrap || punch;
 };
 const CastleLobbyEnemies = () => {
-  const playCastle = usePlayCastle();
+  const playCastle = usePlayLobby("Creepy Castle");
   const anyKong = useAnyKong();
   const kosha = useDefeatKosha();
   const hasFairyCam = useCamera();
