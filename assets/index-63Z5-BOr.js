@@ -11439,308 +11439,6 @@ const useCurrentPearlCount = () => useDonkStore(useShallow((state) => state.cons
 const useCurrentFairyCount = () => useDonkStore(useShallow((state) => state.consumables.fairies));
 const useBean = () => useDonkStore(useShallow((state) => state.consumables.bean));
 const useCurrentGBCount = () => useDonkStore(useShallow((state) => state.consumables.goldBananas));
-const useFastArcade = () => useDonkStore(useShallow((state) => state.fastChecks.factoryArcade));
-const useFastMermaid = () => useDonkStore(useShallow((state) => state.fastChecks.galleonMermaid));
-const usePlayFactory = () => usePlayLevel("Frantic Factory");
-const useSlamFactory = () => useSlamLevel("Frantic Factory");
-const useFactoryTesting = () => {
-  const inStage = usePlayFactory();
-  const slam = useSlam();
-  const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
-  const hasClimbing = useClimbing();
-  const hasBananaport = useBananaportAll();
-  return inStage && ((removeBarriers.factoryTesting || slam) && hasClimbing || hasBananaport);
-};
-const useFactoryHut = () => {
-  const inStage = usePlayFactory();
-  const testing = useFactoryTesting();
-  const diddy = useDiddy();
-  const tiny = useTiny();
-  return {
-    in: testing,
-    out: inStage && (diddy || tiny)
-  };
-};
-const useFactoryProductionEnabled = () => {
-  const inStage = usePlayFactory();
-  const testing = useFactoryTesting();
-  const coconut = useCoconut();
-  const grab = useGrab();
-  const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
-  return inStage && (removeBarriers.factoryProduction || coconut && grab && testing);
-};
-const useFactoryProductionTop = () => {
-  const inStage = usePlayFactory();
-  const factoryOn = useFactoryProductionEnabled();
-  const climbing = useClimbing();
-  const warpAll = useBananaportAll();
-  return factoryOn && climbing || inStage && warpAll;
-};
-const useChunkyKaijuGb = () => {
-  const testing = useFactoryTesting();
-  const climbing = useClimbing();
-  const highGrab = useHighGrab();
-  const punch = usePunch();
-  const triangle = useTriangle();
-  const hunky = useHunky();
-  return {
-    in: testing && climbing && punch && triangle && hunky,
-    out: testing && highGrab && punch && triangle && hunky
-  };
-};
-const useChunkyArcadeGb = () => {
-  const inStage = usePlayFactory();
-  const hasClimbing = useClimbing();
-  const hasBananaport = useBananaportAll();
-  const punch = usePunch();
-  return inStage && (hasClimbing || hasBananaport) && punch;
-};
-const useChunkyDarkGb = () => {
-  const inStage = usePlayFactory();
-  const hasPunch = usePunch();
-  const canSlam = useSlamFactory();
-  return inStage && hasPunch && canSlam;
-};
-const useChunkyProductionGb = () => {
-  const production = useFactoryProductionEnabled();
-  const chunky = useChunky();
-  const canSlam = useSlamFactory();
-  return production && chunky && canSlam;
-};
-const useDiddyBlockGb = () => {
-  const testing = useFactoryTesting();
-  const spring = useSpring();
-  const highGrab = useHighGrab();
-  return {
-    in: testing && spring,
-    out: useFtaDiddyBanana() && testing && highGrab
-  };
-};
-const useDiddyEnemyGb = () => {
-  const testing = useFactoryTesting();
-  const guitar = useGuitar();
-  const charge = useCharge();
-  return testing && guitar && charge;
-};
-const useDiddyStorageGb = () => {
-  const hut = useFactoryHut();
-  const canSlam = useSlamFactory();
-  const diddy = useDiddy();
-  const autoBonus = useAutoBonus();
-  const vine = useVine();
-  const dk2 = useDk();
-  const chunky = useChunky();
-  const twirl = useTwirl();
-  return {
-    in: hut.in && canSlam && diddy && (autoBonus || vine),
-    out: logicBreak(hut) && canSlam && diddy && (autoBonus || vine || dk2 || chunky || twirl)
-  };
-};
-const useDiddyProductionGb = () => {
-  const production = useFactoryProductionEnabled();
-  const canSlam = useSlamFactory();
-  const diddy = useDiddy();
-  const spring = useSpring();
-  const highGrab = useHighGrab();
-  const tinyProd = useTinyProductionGb();
-  return {
-    in: production && canSlam && diddy && spring,
-    out: production && canSlam && diddy && (logicBreak(tinyProd) || highGrab)
-  };
-};
-const useDkNumberGb = () => {
-  const testing = useFactoryTesting();
-  const dk2 = useDk();
-  const canSlam = useSlamFactory();
-  return testing && dk2 && canSlam;
-};
-const useDkHutGb = () => {
-  const hut = useFactoryHut();
-  const coconut = useCoconut();
-  const grab = useGrab();
-  const productionPower = useDonkStore(
-    useShallow((state) => state.removeBarriers.factoryProduction)
-  );
-  return {
-    in: hut.in && coconut && (productionPower || grab),
-    out: hut.out && coconut && (productionPower || grab)
-  };
-};
-const useDkBlastGb$4 = () => {
-  const inStage = usePlayFactory();
-  const blast = useBlast();
-  const fastArcade = useFastArcade();
-  const grab = useGrab();
-  const hasClimbing = useClimbing();
-  const hasBananaport = useBananaportAll();
-  return inStage && blast && (fastArcade || (hasClimbing || hasBananaport) && grab);
-};
-const useDkCoin = () => {
-  const blast = useDkBlastGb$4();
-  const grab = useGrab();
-  const climbing = useClimbing();
-  const warps = useBananaportAll();
-  return blast && (climbing || warps) && grab;
-};
-const useDkProdGb = () => {
-  const production = useFactoryProductionEnabled();
-  const strong = useStrong();
-  const dk2 = useDk();
-  const diddy = useDiddy();
-  return {
-    in: production && strong,
-    out: useFtaDkBanana() && production && (dk2 || diddy)
-  };
-};
-const useLankyTestingGb = () => {
-  const testing = useFactoryTesting();
-  const balloon = useBalloon();
-  const anyKong = useAnyKong();
-  return {
-    in: testing && balloon,
-    out: useFtaLankyBanana() && testing && anyKong
-  };
-};
-const useLankyPianoGb = () => {
-  const testing = useFactoryTesting();
-  const canSlam = useSlamFactory();
-  const trombone = useTrombone();
-  return testing && canSlam && trombone;
-};
-const useFreeChunkySwitch = () => {
-  const slam = useSlamFactory();
-  const dk2 = useDk();
-  const diddy = useDiddy();
-  const lanky = useLanky();
-  const tiny = useTiny();
-  const chunky = useChunky();
-  const freeChunky2 = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeChunky));
-  switch (freeChunky2) {
-    case 1:
-      return dk2 && slam;
-    case 2:
-      return diddy && slam;
-    case 3:
-      return lanky && slam;
-    case 4:
-      return tiny && slam;
-    case 5:
-      return chunky && slam;
-    default:
-      return true;
-  }
-};
-const useLankyFreeChunkyGb = () => {
-  const inStage = usePlayFactory();
-  return useFreeChunkySwitch() && inStage;
-};
-const useLankyProductionGb = () => {
-  const production = useFactoryProductionEnabled();
-  const canSlam = useSlamFactory();
-  const hasLanky = useLanky();
-  const stand = useStand();
-  const tiny = useTiny();
-  return {
-    in: production && canSlam && hasLanky && stand,
-    out: useFtaLankyBanana() && production && canSlam && hasLanky && (stand || tiny)
-  };
-};
-const useTinyRaceGb = () => {
-  const testing = useFactoryTesting();
-  const mini = useMini();
-  return testing && mini;
-};
-const useTinyDartGb = () => {
-  const car = useTinyRaceGb();
-  const feather = useFeather();
-  const canSlam = useSlamFactory();
-  return car && feather && canSlam;
-};
-const useTinyArcadeGb = () => {
-  const inStage = usePlayFactory();
-  const mini = useMini();
-  const climbing = useClimbing();
-  const hasBananaport = useBananaportAll();
-  return inStage && (climbing || hasBananaport) && mini;
-};
-const useTinyProductionGb = () => {
-  const production = useFactoryProductionEnabled();
-  const canSlam = useSlamFactory();
-  const twirl = useTwirl();
-  const dk2 = useDk();
-  return {
-    in: production && canSlam && twirl,
-    out: useFtaTinyBanana() && production && canSlam && (twirl || dk2)
-  };
-};
-const useGeneralThing$4 = () => {
-  const inStage = usePlayFactory();
-  const anyKong = useAnyKong();
-  return inStage && anyKong;
-};
-const useArena$3 = () => {
-  const inStage = useFactoryTesting();
-  const grab = useGrab();
-  return inStage && grab;
-};
-const useGeneralTest = () => {
-  const inStage = useFactoryTesting();
-  const anyKong = useAnyKong();
-  return inStage && anyKong;
-};
-const useGeneralDirt$5 = () => {
-  const thing = useGeneralThing$4();
-  const dirt = useShockwave();
-  return thing && dirt;
-};
-const useFactoryDirt = () => {
-  const inStage = usePlayFactory();
-  const shockwave = useShockwave();
-  const punch = usePunch();
-  return inStage && punch && shockwave;
-};
-const useGeneralFairy$5 = () => {
-  const thing = useGeneralThing$4();
-  const camera = useCamera();
-  return thing && camera;
-};
-const useNumberFairy = () => {
-  const testing = useFactoryTesting();
-  const camera = useCamera();
-  return testing && camera;
-};
-const useDartFairy = () => {
-  const banana = useTinyDartGb();
-  const camera = useCamera();
-  return banana && camera;
-};
-const useProductionTopKasplat = () => {
-  const production = useFactoryProductionEnabled();
-  const hasSnide = useSnide();
-  return useFtaDkBlueprint() && production && hasSnide;
-};
-const useProductionBaseKasplat = () => {
-  const inStage = usePlayFactory();
-  const hasSnide = useSnide();
-  return useFtaDiddyBlueprint() && inStage && hasSnide;
-};
-const useResearchKasplat = () => {
-  const inStage = usePlayFactory();
-  const canReachTesting = useFactoryTesting();
-  const hasSnide = useSnide();
-  return useFtaLankyBlueprint() && inStage && canReachTesting && hasSnide;
-};
-const useStorageKasplat = () => {
-  const inStage = usePlayFactory();
-  const hasSnide = useSnide();
-  return useFtaTinyBlueprint() && inStage && hasSnide;
-};
-const useBlockKasplat = () => {
-  const inStage = usePlayFactory();
-  const canReachTesting = useFactoryTesting();
-  const hasSnide = useSnide();
-  return useFtaChunkyBlueprint() && inStage && canReachTesting && hasSnide;
-};
 const usePlayForest = () => usePlayLevel("Fungi Forest");
 const useSlamForest = () => useSlamLevel("Fungi Forest");
 const useForestDay = () => {
@@ -11900,7 +11598,7 @@ const useDiddyRaftersGb = () => {
     out: useFtaDiddyBanana() && inStage && logicBreak(night) && (spring || highGrab)
   };
 };
-const useDkBlastGb$3 = () => {
+const useDkBlastGb$4 = () => {
   const inStage = usePlayForest();
   return useBlast() && inStage;
 };
@@ -12001,12 +11699,12 @@ const useTinyBeanGb = () => {
   const sax = useSax();
   return beanstalk && bean && mini && sax;
 };
-const useGeneralThing$3 = () => {
+const useGeneralThing$4 = () => {
   const inStage = usePlayForest();
   const anyKong = useAnyKong();
   return inStage && anyKong;
 };
-const useArena$2 = () => {
+const useArena$3 = () => {
   const top = useForestMushroomTop();
   const anyKong = useAnyKong();
   return top && anyKong;
@@ -12015,7 +11713,7 @@ const useBeanDirt = () => {
   const beanstalk = useForestBean();
   return useShockwave() && beanstalk;
 };
-const useGeneralDirt$4 = () => {
+const useGeneralDirt$5 = () => {
   const inStage = usePlayForest();
   return useShockwave() && inStage;
 };
@@ -12036,8 +11734,8 @@ const useRaftersFairy = () => {
     out: rafters.out && camera
   };
 };
-const useGeneralFairy$4 = () => {
-  const thing = useGeneralThing$3();
+const useGeneralFairy$5 = () => {
+  const thing = useGeneralThing$4();
   const camera = useCamera();
   return thing && camera;
 };
@@ -12088,6 +11786,8 @@ const useMillBackKeg = () => {
   const hasBarrels = useBarrel();
   return canEnterMills && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels;
 };
+const useFastArcade = () => useDonkStore(useShallow((state) => state.fastChecks.factoryArcade));
+const useFastMermaid = () => useDonkStore(useShallow((state) => state.fastChecks.galleonMermaid));
 const usePlayGalleon = () => usePlayLevel("Gloomy Galleon");
 const useSlamGalleon = () => useSlamLevel("Gloomy Galleon");
 const useGalleonLighthouseArea = () => {
@@ -12268,7 +11968,7 @@ const useDiddy5DoorShipGb = () => {
   const dive = useDive();
   return outskirts && lowTide && guitar && dive;
 };
-const useDkBlastGb$2 = () => {
+const useDkBlastGb$3 = () => {
   const lighthouse = useGalleonLighthouseArea();
   const blast = useBlast();
   const outskirts = useGalleonOutskirts();
@@ -12348,11 +12048,11 @@ const useTinyClams = () => {
     out: treasure.out && mini
   };
 };
-const useGeneralThing$2 = () => {
+const useGeneralThing$3 = () => {
   const inStage = usePlayGalleon();
   return useAnyKong() && inStage;
 };
-const useArena$1 = () => {
+const useArena$2 = () => {
   const inStage = usePlayGalleon();
   return usePunch() && inStage;
 };
@@ -12368,8 +12068,8 @@ const useLighthouseDirt = () => {
     out: inside.out && dirt
   };
 };
-const useGeneralDirt$3 = () => {
-  const thing = useGeneralThing$2();
+const useGeneralDirt$4 = () => {
+  const thing = useGeneralThing$3();
   return useShockwave() && thing;
 };
 const useChestFairy = () => {
@@ -12382,8 +12082,8 @@ const useShipFairy = () => {
   const fairy = useCamera();
   return ship && fairy;
 };
-const useGeneralFairy$3 = () => {
-  const thing = useGeneralThing$2();
+const useGeneralFairy$4 = () => {
+  const thing = useGeneralThing$3();
   return useCamera() && thing;
 };
 const useTreasureKasplat = () => {
@@ -12989,7 +12689,7 @@ const useCheckDkCoconutCage = () => {
   return coconut && kremAscent;
 };
 const useCheckDkMusicPad = () => {
-  const playFactory = usePlayFactory();
+  const playFactory = usePlayLobby("Frantic Factory");
   const bongos = useBongos();
   const grab = useGrab();
   const diddy = useDiddy();
@@ -13159,19 +12859,19 @@ const useForestArena = () => {
   const gone = useGone();
   return playForest && allGun2 && gone;
 };
-const useGeneralDirt$2 = () => {
+const useGeneralDirt$3 = () => {
   const anyKong = useAnyKong();
   const shockwave = useShockwave();
   return anyKong && shockwave;
 };
 const useHoardDirt = () => {
-  const dirt = useGeneralDirt$2();
+  const dirt = useGeneralDirt$3();
   const vine = useVine();
   const climbing = useClimbing();
   return dirt && vine && climbing;
 };
 const useIslandDirt = () => {
-  const dirt = useGeneralDirt$2();
+  const dirt = useGeneralDirt$3();
   const fungi = useIslesFungiIsland();
   return dirt && fungi;
 };
@@ -13203,7 +12903,7 @@ const useAztecDirt = () => {
     out: shockwave && (islesUpper && boulderTech && (diddy || tiny) || crossFungi && (dk2 || tiny && twirl))
   };
 };
-const useGeneralFairy$2 = () => {
+const useGeneralFairy$3 = () => {
   const anyKong = useAnyKong();
   const camera = useCamera();
   return anyKong && camera;
@@ -13211,7 +12911,7 @@ const useGeneralFairy$2 = () => {
 const useFactoryFairy = () => {
   const camera = useCamera();
   const punch = usePunch();
-  const factory = usePlayFactory();
+  const factory = usePlayLobby("Frantic Factory");
   return factory && punch && camera;
 };
 const useForestFairy = () => {
@@ -13253,7 +12953,7 @@ const useCavesKasplat = () => {
   return snide && FtaLankyBlueprint && playCaves && punch;
 };
 const useFactoryKasplat = () => {
-  const playFactory = usePlayFactory();
+  const playFactory = usePlayLobby("Frantic Factory");
   const punch = usePunch();
   const FtaTinyBlueprint = useFtaTinyBlueprint();
   const snide = useSnide();
@@ -13315,11 +13015,11 @@ const useAztecLobbyChunky = () => {
   return canEnterAztec && feathers;
 };
 const useFactoryLobbyLower = () => {
-  const canEnterFactory = usePlayFactory();
+  const canEnterFactory = usePlayLobby("Frantic Factory");
   return canEnterFactory;
 };
 const useFactoryLobbyUpper = () => {
-  const canEnterFactory = usePlayFactory();
+  const canEnterFactory = usePlayLobby("Frantic Factory");
   const grab = useGrab();
   const hasDiddy = useDiddy();
   const hasTiny = useTiny();
@@ -13492,7 +13192,7 @@ const Hoard = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { chi
   }
 ) }) });
 const PrisonDirt = () => {
-  const dirt = useGeneralDirt$2();
+  const dirt = useGeneralDirt$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -13507,7 +13207,7 @@ const PrisonDirt = () => {
   ] });
 };
 const TrainingRear = () => {
-  const dirt = useGeneralDirt$2();
+  const dirt = useGeneralDirt$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
@@ -13519,7 +13219,7 @@ const TrainingRear = () => {
   ) }) });
 };
 const UnderCaves = () => {
-  const dirt = useGeneralDirt$2();
+  const dirt = useGeneralDirt$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
@@ -13734,7 +13434,7 @@ const IslesMainEnemies = () => {
 };
 const FactoryLobbyEnemies = () => {
   const anyKong = useAnyKong();
-  const playFactory = usePlayFactory();
+  const playFactory = usePlayLobby("Frantic Factory");
   const zinger = useDefeatZinger();
   const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
@@ -13949,7 +13649,7 @@ const SmallIslandFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, 
     id: 80,
     name: "Isles Fairy (Small Island)",
     region: "Outer Isles",
-    canGetLogic: useGeneralFairy$2()
+    canGetLogic: useGeneralFairy$3()
   }
 ) }) });
 const UpperKremFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15500,7 +15200,7 @@ const useDkCagedGb = () => {
   const canSlam = useSlamJapes();
   return rambi && dk2 && canSlam;
 };
-const useDkBlastGb$1 = () => {
+const useDkBlastGb$2 = () => {
   const inStage = usePlayJapes();
   const blast = useBlast();
   const vine = useVine();
@@ -15568,7 +15268,7 @@ const useTinyHiveGb = () => {
     out: hive && canSlam
   };
 };
-const useGeneralThing$1 = () => {
+const useGeneralThing$2 = () => {
   const anyKong = useAnyKong();
   return usePlayJapes() && anyKong;
 };
@@ -15584,7 +15284,7 @@ const usePaintingDirt = () => {
     out: shockwave && japesPaintingOutside.out
   };
 };
-const useGeneralDirt$1 = () => {
+const useGeneralDirt$2 = () => {
   const shockwave = useShockwave();
   const inStage = usePlayJapes();
   return inStage && shockwave;
@@ -15602,7 +15302,7 @@ const usePaintingFairy = () => {
     out: camera && banana.out
   };
 };
-const useGeneralFairy$1 = () => {
+const useGeneralFairy$2 = () => {
   const camera = useCamera();
   return usePlayJapes() && camera;
 };
@@ -15662,7 +15362,7 @@ const FunkyArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { chil
     id: 1090,
     name: "Japes Arena (Near Funky)",
     region: "Japes Hillside",
-    canGetLogic: useGeneralThing$1()
+    canGetLogic: useGeneralThing$2()
   }
 ) }) });
 const BossPool = ({ children }) => usePoolKeys() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -16618,7 +16318,7 @@ const BaboonBlast = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     id: 1004,
     name: "Japes DK Baboon Blast",
     region: "Japes Lowlands",
-    canGetLogic: useDkBlastGb$1()
+    canGetLogic: useDkBlastGb$2()
   }
 );
 const DiddyCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17339,7 +17039,7 @@ const TinyMedal$6 = () => {
   ] });
 };
 const Shuffled$F = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1190, name: "Japes Arena", canGetLogic: useGeneralThing$1() }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1190, name: "Japes Arena", canGetLogic: useGeneralThing$2() }) });
 };
 const ShuffledArenas$6 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$F, {});
 const Shuffled$E = () => {
@@ -17349,7 +17049,7 @@ const Shuffled$E = () => {
       {
         id: 1260,
         name: "Japes Crate Location #1 (maybe)",
-        canGetLogic: useGeneralThing$1()
+        canGetLogic: useGeneralThing$2()
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17357,7 +17057,7 @@ const Shuffled$E = () => {
       {
         id: 1261,
         name: "Japes Crate Location #2 (maybe)",
-        canGetLogic: useGeneralThing$1()
+        canGetLogic: useGeneralThing$2()
       }
     )
   ] });
@@ -17365,20 +17065,20 @@ const Shuffled$E = () => {
 const ShuffledCrates$6 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$E, {}) : null;
 const Shuffled$D = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1270, name: "Japes Dirt Location #1", canGetLogic: useGeneralDirt$1() }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1271, name: "Japes Dirt Location #2", canGetLogic: useGeneralDirt$1() })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1270, name: "Japes Dirt Location #1", canGetLogic: useGeneralDirt$2() }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1271, name: "Japes Dirt Location #2", canGetLogic: useGeneralDirt$2() })
   ] });
 };
 const ShuffledDirtLocations$6 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
 const Shuffled$C = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1280, name: "Japes Fairy Location #1", canGetLogic: useGeneralFairy$1() }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1281, name: "Japes Fairy Location #2", canGetLogic: useGeneralFairy$1() })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1280, name: "Japes Fairy Location #1", canGetLogic: useGeneralFairy$2() }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1281, name: "Japes Fairy Location #2", canGetLogic: useGeneralFairy$2() })
   ] });
 };
 const ShuffledFairies$6 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$C, {}) : null;
 const Shuffled$B = () => {
-  const kasplat = useGeneralThing$1();
+  const kasplat = useGeneralThing$2();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1250, name: "Japes Kasplat Location #1", canGetLogic: kasplat }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1251, name: "Japes Kasplat Location #2", canGetLogic: kasplat }),
@@ -17774,7 +17474,7 @@ const useDiddy5DoorGb = () => {
     out: door.out && peanut
   };
 };
-const useDkBlastGb = () => {
+const useDkBlastGb$1 = () => {
   const back = useAztecBack();
   const blast = useBlast();
   return {
@@ -17846,7 +17546,7 @@ const useLankyVultureGb = () => {
     out: logicBreak(tinyTemple) && iceMelted && dive && canSlam && lanky && anyGun
   };
 };
-const useArena = () => {
+const useArena$1 = () => {
   const didVultureGb = useLankyVultureGb();
   return {
     in: didVultureGb.in,
@@ -17919,7 +17619,7 @@ const useTinyLavaGb = () => {
     out: ftaTiny && logicBreak(lava) && kuruKuru
   };
 };
-const useGeneralThing = () => {
+const useGeneralThing$1 = () => {
   const inStage = useAztecFront();
   const anyKong = useAnyKong();
   return {
@@ -17938,8 +17638,8 @@ const useLlamaOutsideCrate = () => {
     out: hasTiny && kuruKuru && back.out
   };
 };
-const useGeneralDirt = () => {
-  const thing = useGeneralThing();
+const useGeneralDirt$1 = () => {
+  const thing = useGeneralThing$1();
   const shockwave = useShockwave();
   return {
     in: shockwave && thing.in,
@@ -17954,7 +17654,7 @@ const useTempleDirt = () => {
     out: shockwave && thing.out
   };
 };
-const useGeneralFairy = () => {
+const useGeneralFairy$1 = () => {
   const thing = useAztecFront();
   const camera = useCamera();
   return {
@@ -18053,7 +17753,7 @@ const AztecCheck = (props) => {
   ) });
 };
 const VultureArena = () => {
-  const vulture = useArena();
+  const vulture = useArena$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaArena, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
@@ -18124,7 +17824,7 @@ const CrateLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(GongCrate, {})
 ] });
 const OasisDirt = () => {
-  const thing = useGeneralDirt();
+  const thing = useGeneralDirt$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
@@ -19895,7 +19595,7 @@ const FreeLanky = () => {
   );
 };
 const FreeLlama = () => {
-  const blastGb = useDkBlastGb();
+  const blastGb = useDkBlastGb$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
@@ -20737,12 +20437,12 @@ const TinyMedal$5 = () => {
   ] });
 };
 const Shuffled$z = () => {
-  const thing = useGeneralThing();
+  const thing = useGeneralThing$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecCheck, { id: 2190, name: "Aztec Arena", canGetLogic: thing.in, canGetBreak: thing.out }) });
 };
 const ShuffledArenas$5 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$z, {});
 const Shuffled$y = () => {
-  const thing = useGeneralThing();
+  const thing = useGeneralThing$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -20766,7 +20466,7 @@ const Shuffled$y = () => {
 };
 const ShuffledCrates$5 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$y, {}) : null;
 const Shuffled$x = () => {
-  const thing = useGeneralDirt();
+  const thing = useGeneralDirt$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -20790,7 +20490,7 @@ const Shuffled$x = () => {
 };
 const ShuffledDirtLocations$5 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$x, {}) : null;
 const Shuffled$w = () => {
-  const fairyLogic = useGeneralFairy();
+  const fairyLogic = useGeneralFairy$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -20814,7 +20514,7 @@ const Shuffled$w = () => {
 };
 const ShuffledFairies$5 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$w, {}) : null;
 const Shuffled$v = () => {
-  const thing = useGeneralThing();
+  const thing = useGeneralThing$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -21155,6 +20855,306 @@ const AztecChecks = () => {
   const grp = useDonkStore(useShallow((state) => state.ui.groupByRegion));
   return grp ? /* @__PURE__ */ jsxRuntimeExports.jsx(AztecRegionChecks, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(ClassicChecks$5, {});
 };
+const usePlayFactory = () => usePlayLevel("Frantic Factory");
+const useSlamFactory = () => useSlamLevel("Frantic Factory");
+const useFactoryTesting = () => {
+  const inStage = usePlayFactory();
+  const slam = useSlam();
+  const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
+  const hasClimbing = useClimbing();
+  const hasBananaport = useBananaportAll();
+  return inStage && ((removeBarriers.factoryTesting || slam) && hasClimbing || hasBananaport);
+};
+const useFactoryHut = () => {
+  const inStage = usePlayFactory();
+  const testing = useFactoryTesting();
+  const diddy = useDiddy();
+  const tiny = useTiny();
+  return {
+    in: testing,
+    out: inStage && (diddy || tiny)
+  };
+};
+const useFactoryProductionEnabled = () => {
+  const inStage = usePlayFactory();
+  const testing = useFactoryTesting();
+  const coconut = useCoconut();
+  const grab = useGrab();
+  const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
+  return inStage && (removeBarriers.factoryProduction || coconut && grab && testing);
+};
+const useFactoryProductionTop = () => {
+  const inStage = usePlayFactory();
+  const factoryOn = useFactoryProductionEnabled();
+  const climbing = useClimbing();
+  const warpAll = useBananaportAll();
+  return factoryOn && climbing || inStage && warpAll;
+};
+const useChunkyKaijuGb = () => {
+  const testing = useFactoryTesting();
+  const climbing = useClimbing();
+  const highGrab = useHighGrab();
+  const punch = usePunch();
+  const triangle = useTriangle();
+  const hunky = useHunky();
+  return {
+    in: testing && climbing && punch && triangle && hunky,
+    out: testing && highGrab && punch && triangle && hunky
+  };
+};
+const useChunkyArcadeGb = () => {
+  const inStage = usePlayFactory();
+  const hasClimbing = useClimbing();
+  const hasBananaport = useBananaportAll();
+  const punch = usePunch();
+  return inStage && (hasClimbing || hasBananaport) && punch;
+};
+const useChunkyDarkGb = () => {
+  const inStage = usePlayFactory();
+  const hasPunch = usePunch();
+  const canSlam = useSlamFactory();
+  return inStage && hasPunch && canSlam;
+};
+const useChunkyProductionGb = () => {
+  const production = useFactoryProductionEnabled();
+  const chunky = useChunky();
+  const canSlam = useSlamFactory();
+  return production && chunky && canSlam;
+};
+const useDiddyBlockGb = () => {
+  const testing = useFactoryTesting();
+  const spring = useSpring();
+  const highGrab = useHighGrab();
+  return {
+    in: testing && spring,
+    out: useFtaDiddyBanana() && testing && highGrab
+  };
+};
+const useDiddyEnemyGb = () => {
+  const testing = useFactoryTesting();
+  const guitar = useGuitar();
+  const charge = useCharge();
+  return testing && guitar && charge;
+};
+const useDiddyStorageGb = () => {
+  const hut = useFactoryHut();
+  const canSlam = useSlamFactory();
+  const diddy = useDiddy();
+  const autoBonus = useAutoBonus();
+  const vine = useVine();
+  const dk2 = useDk();
+  const chunky = useChunky();
+  const twirl = useTwirl();
+  return {
+    in: hut.in && canSlam && diddy && (autoBonus || vine),
+    out: logicBreak(hut) && canSlam && diddy && (autoBonus || vine || dk2 || chunky || twirl)
+  };
+};
+const useDiddyProductionGb = () => {
+  const production = useFactoryProductionEnabled();
+  const canSlam = useSlamFactory();
+  const diddy = useDiddy();
+  const spring = useSpring();
+  const highGrab = useHighGrab();
+  const tinyProd = useTinyProductionGb();
+  return {
+    in: production && canSlam && diddy && spring,
+    out: production && canSlam && diddy && (logicBreak(tinyProd) || highGrab)
+  };
+};
+const useDkNumberGb = () => {
+  const testing = useFactoryTesting();
+  const dk2 = useDk();
+  const canSlam = useSlamFactory();
+  return testing && dk2 && canSlam;
+};
+const useDkHutGb = () => {
+  const hut = useFactoryHut();
+  const coconut = useCoconut();
+  const grab = useGrab();
+  const productionPower = useDonkStore(
+    useShallow((state) => state.removeBarriers.factoryProduction)
+  );
+  return {
+    in: hut.in && coconut && (productionPower || grab),
+    out: hut.out && coconut && (productionPower || grab)
+  };
+};
+const useDkBlastGb = () => {
+  const inStage = usePlayFactory();
+  const blast = useBlast();
+  const fastArcade = useFastArcade();
+  const grab = useGrab();
+  const hasClimbing = useClimbing();
+  const hasBananaport = useBananaportAll();
+  return inStage && blast && (fastArcade || (hasClimbing || hasBananaport) && grab);
+};
+const useDkCoin = () => {
+  const blast = useDkBlastGb();
+  const grab = useGrab();
+  const climbing = useClimbing();
+  const warps = useBananaportAll();
+  return blast && (climbing || warps) && grab;
+};
+const useDkProdGb = () => {
+  const production = useFactoryProductionEnabled();
+  const strong = useStrong();
+  const dk2 = useDk();
+  const diddy = useDiddy();
+  return {
+    in: production && strong,
+    out: useFtaDkBanana() && production && (dk2 || diddy)
+  };
+};
+const useLankyTestingGb = () => {
+  const testing = useFactoryTesting();
+  const balloon = useBalloon();
+  const anyKong = useAnyKong();
+  return {
+    in: testing && balloon,
+    out: useFtaLankyBanana() && testing && anyKong
+  };
+};
+const useLankyPianoGb = () => {
+  const testing = useFactoryTesting();
+  const canSlam = useSlamFactory();
+  const trombone = useTrombone();
+  return testing && canSlam && trombone;
+};
+const useFreeChunkySwitch = () => {
+  const slam = useSlamFactory();
+  const dk2 = useDk();
+  const diddy = useDiddy();
+  const lanky = useLanky();
+  const tiny = useTiny();
+  const chunky = useChunky();
+  const freeChunky2 = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeChunky));
+  switch (freeChunky2) {
+    case 1:
+      return dk2 && slam;
+    case 2:
+      return diddy && slam;
+    case 3:
+      return lanky && slam;
+    case 4:
+      return tiny && slam;
+    case 5:
+      return chunky && slam;
+    default:
+      return true;
+  }
+};
+const useLankyFreeChunkyGb = () => {
+  const inStage = usePlayFactory();
+  return useFreeChunkySwitch() && inStage;
+};
+const useLankyProductionGb = () => {
+  const production = useFactoryProductionEnabled();
+  const canSlam = useSlamFactory();
+  const hasLanky = useLanky();
+  const stand = useStand();
+  const tiny = useTiny();
+  return {
+    in: production && canSlam && hasLanky && stand,
+    out: useFtaLankyBanana() && production && canSlam && hasLanky && (stand || tiny)
+  };
+};
+const useTinyRaceGb = () => {
+  const testing = useFactoryTesting();
+  const mini = useMini();
+  return testing && mini;
+};
+const useTinyDartGb = () => {
+  const car = useTinyRaceGb();
+  const feather = useFeather();
+  const canSlam = useSlamFactory();
+  return car && feather && canSlam;
+};
+const useTinyArcadeGb = () => {
+  const inStage = usePlayFactory();
+  const mini = useMini();
+  const climbing = useClimbing();
+  const hasBananaport = useBananaportAll();
+  return inStage && (climbing || hasBananaport) && mini;
+};
+const useTinyProductionGb = () => {
+  const production = useFactoryProductionEnabled();
+  const canSlam = useSlamFactory();
+  const twirl = useTwirl();
+  const dk2 = useDk();
+  return {
+    in: production && canSlam && twirl,
+    out: useFtaTinyBanana() && production && canSlam && (twirl || dk2)
+  };
+};
+const useGeneralThing = () => {
+  const inStage = usePlayFactory();
+  const anyKong = useAnyKong();
+  return inStage && anyKong;
+};
+const useArena = () => {
+  const inStage = useFactoryTesting();
+  const grab = useGrab();
+  return inStage && grab;
+};
+const useGeneralTest = () => {
+  const inStage = useFactoryTesting();
+  const anyKong = useAnyKong();
+  return inStage && anyKong;
+};
+const useGeneralDirt = () => {
+  const thing = useGeneralThing();
+  const dirt = useShockwave();
+  return thing && dirt;
+};
+const useFactoryDirt = () => {
+  const inStage = usePlayFactory();
+  const shockwave = useShockwave();
+  const punch = usePunch();
+  return inStage && punch && shockwave;
+};
+const useGeneralFairy = () => {
+  const thing = useGeneralThing();
+  const camera = useCamera();
+  return thing && camera;
+};
+const useNumberFairy = () => {
+  const testing = useFactoryTesting();
+  const camera = useCamera();
+  return testing && camera;
+};
+const useDartFairy = () => {
+  const banana = useTinyDartGb();
+  const camera = useCamera();
+  return banana && camera;
+};
+const useProductionTopKasplat = () => {
+  const production = useFactoryProductionEnabled();
+  const hasSnide = useSnide();
+  return useFtaDkBlueprint() && production && hasSnide;
+};
+const useProductionBaseKasplat = () => {
+  const inStage = usePlayFactory();
+  const hasSnide = useSnide();
+  return useFtaDiddyBlueprint() && inStage && hasSnide;
+};
+const useResearchKasplat = () => {
+  const inStage = usePlayFactory();
+  const canReachTesting = useFactoryTesting();
+  const hasSnide = useSnide();
+  return useFtaLankyBlueprint() && inStage && canReachTesting && hasSnide;
+};
+const useStorageKasplat = () => {
+  const inStage = usePlayFactory();
+  const hasSnide = useSnide();
+  return useFtaTinyBlueprint() && inStage && hasSnide;
+};
+const useBlockKasplat = () => {
+  const inStage = usePlayFactory();
+  const canReachTesting = useFactoryTesting();
+  const hasSnide = useSnide();
+  return useFtaChunkyBlueprint() && inStage && canReachTesting && hasSnide;
+};
 const FactoryCheck = (props) => {
   const checks = useDonkStore(useShallow((state) => state.checks));
   return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21176,7 +21176,7 @@ const RNDArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { childr
     id: 3090,
     name: "Factory Arena (Under R and D Grate)",
     region: "R&D Area",
-    canGetLogic: useArena$3()
+    canGetLogic: useArena()
   }
 ) }) });
 const BossCheck$5 = () => {
@@ -21198,7 +21198,7 @@ const CandyCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { chil
     id: 3060,
     name: "Factory Crate: Near Candy",
     region: "Storage And Arcade",
-    canGetLogic: useGeneralThing$4()
+    canGetLogic: useGeneralThing()
   }
 ) }) });
 const FunkyCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaCrate, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21751,7 +21751,7 @@ const NintendoCoin = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CompanyPool, { 
 const FactoryBlast = () => {
   const fastArcade = useFastArcade();
   if (fastArcade) {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3003, name: "Factory DK Barrel Blast", region: "Storage And Arcade", canGetLogic: useDkBlastGb$4() });
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3003, name: "Factory DK Barrel Blast", region: "Storage And Arcade", canGetLogic: useDkBlastGb() });
   } else {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -21759,7 +21759,7 @@ const FactoryBlast = () => {
         id: 3003,
         name: "Factory DK Barrel Blast and DK Arcade Round 1",
         region: "Storage And Arcade",
-        canGetLogic: useDkBlastGb$4()
+        canGetLogic: useDkBlastGb()
       }
     ) });
   }
@@ -22398,11 +22398,11 @@ const TinyMedal$4 = () => {
   ] });
 };
 const Shuffled$t = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3190, name: "Factory Arena", canGetLogic: useGeneralThing$4() }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3190, name: "Factory Arena", canGetLogic: useGeneralThing() }) });
 };
 const ShuffledArenas$4 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {});
 const Shuffled$s = () => {
-  const thing = useGeneralThing$4();
+  const thing = useGeneralThing();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 1260, name: "Factory Crate Location #1 (maybe)", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 1261, name: "Factory Crate Location #2 (maybe)", canGetLogic: thing })
@@ -22410,7 +22410,7 @@ const Shuffled$s = () => {
 };
 const ShuffledCrates$4 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : null;
 const Shuffled$r = () => {
-  const dirt = useGeneralDirt$5();
+  const dirt = useGeneralDirt();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3270, name: "Factory Dirt Location #1", canGetLogic: dirt }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3271, name: "Factory Dirt Location #2", canGetLogic: dirt })
@@ -22418,7 +22418,7 @@ const Shuffled$r = () => {
 };
 const ShuffledDirtLocations$4 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$r, {}) : null;
 const Shuffled$q = () => {
-  const thing = useGeneralFairy$5();
+  const thing = useGeneralFairy();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3280, name: "Factory Fairy Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3281, name: "Factory Fairy Location #2", canGetLogic: thing })
@@ -22426,7 +22426,7 @@ const Shuffled$q = () => {
 };
 const ShuffledFairies$4 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$q, {}) : null;
 const Shuffled$p = () => {
-  const kasplat = useGeneralThing$4();
+  const kasplat = useGeneralThing();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3250, name: "Factory Kasplat Location #1", canGetLogic: kasplat }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3251, name: "Factory Kasplat Location #2", canGetLogic: kasplat }),
@@ -22641,7 +22641,7 @@ const CavernArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { chi
     id: 4090,
     name: "Galleon Arena (Under Cranky)",
     region: "Galleon Caverns",
-    canGetLogic: useArena$1()
+    canGetLogic: useArena$2()
   }
 ) }) });
 const BossCheck$4 = () => {
@@ -23144,7 +23144,7 @@ const DiddyBananas$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(Diddy5Ship, {})
 ] });
 const FreeSeal = () => {
-  const blastGb = useDkBlastGb$2();
+  const blastGb = useDkBlastGb$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     GalleonCheck,
     {
@@ -23170,7 +23170,7 @@ const DkLighthouse = () => {
   );
 };
 const SealRace = () => {
-  const blastGb = useDkBlastGb$2();
+  const blastGb = useDkBlastGb$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     GalleonCheck,
     {
@@ -23985,11 +23985,11 @@ const TinyMedal$3 = () => {
   ] });
 };
 const Shuffled$n = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4190, name: "Galleon Arena", canGetLogic: useGeneralThing$2() }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4190, name: "Galleon Arena", canGetLogic: useGeneralThing$3() }) });
 };
 const ShuffledArenas$3 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {});
 const Shuffled$m = () => {
-  const thing = useGeneralThing$2();
+  const thing = useGeneralThing$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4260, name: "Galleon Crate Location #1 (maybe)", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4261, name: "Galleon Crate Location #2 (maybe)", canGetLogic: thing })
@@ -23997,7 +23997,7 @@ const Shuffled$m = () => {
 };
 const ShuffledCrates$3 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$m, {}) : null;
 const Shuffled$l = () => {
-  const thing = useGeneralDirt$3();
+  const thing = useGeneralDirt$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4270, name: "Galleon Dirt Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4271, name: "Galleon Dirt Location #2", canGetLogic: thing })
@@ -24005,7 +24005,7 @@ const Shuffled$l = () => {
 };
 const ShuffledDirtLocations$3 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
 const Shuffled$k = () => {
-  const thing = useGeneralFairy$3();
+  const thing = useGeneralFairy$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4280, name: "Galleon Fairy Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4281, name: "Galleon Fairy Location #2", canGetLogic: thing })
@@ -24013,7 +24013,7 @@ const Shuffled$k = () => {
 };
 const ShuffledFairies$3 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$k, {}) : null;
 const Shuffled$j = () => {
-  const thing = useGeneralThing$2();
+  const thing = useGeneralThing$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4250, name: "Galleon Kasplat Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4251, name: "Galleon Kasplat Location #2", canGetLogic: thing }),
@@ -24230,7 +24230,7 @@ const MushroomArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { c
     id: 5090,
     name: "Forest Arena (Mushroom High Platform)",
     region: "Giant Mushroom Exterior",
-    canGetLogic: useArena$2()
+    canGetLogic: useArena$3()
   }
 ) }) });
 const BossCheck$3 = () => {
@@ -24288,7 +24288,7 @@ const RaftersCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { ch
     id: 5060,
     name: "Forest Crate: Behind Dark Attic",
     region: "Forest Mills",
-    canGetLogic: useGeneralThing$3()
+    canGetLogic: useGeneralThing$4()
   }
 ) }) });
 const CrateLocations$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -24312,7 +24312,7 @@ const MillsGrassDirt = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPo
     id: 5071,
     name: "The infamous Mills Grass dirt patch!",
     region: "Forest Mills",
-    canGetLogic: useGeneralDirt$4()
+    canGetLogic: useGeneralDirt$5()
   }
 ) }) });
 const DirtLocations = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -25545,7 +25545,7 @@ const ForestBlast = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanan
     id: 5001,
     name: "Forest DK Baboon Blast",
     region: "Giant Mushroom Exterior",
-    canGetLogic: useDkBlastGb$3()
+    canGetLogic: useDkBlastGb$4()
   }
 ) });
 const DkMill = () => {
@@ -26322,12 +26322,12 @@ const TinyMedal$2 = () => {
   ] });
 };
 const Shuffled$h = () => {
-  const thing = useGeneralThing$3();
+  const thing = useGeneralThing$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5190, name: "Forest Arena", canGetLogic: thing }) });
 };
 const ShuffledArenas$2 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$h, {});
 const Shuffled$g = () => {
-  const thing = useGeneralThing$3();
+  const thing = useGeneralThing$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5260, name: "Forest Crate Location #1 (maybe)", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5261, name: "Forest Crate Location #2 (maybe)", canGetLogic: thing })
@@ -26335,7 +26335,7 @@ const Shuffled$g = () => {
 };
 const ShuffledCrates$2 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$g, {}) : null;
 const Shuffled$f = () => {
-  const dirt = useGeneralDirt$4();
+  const dirt = useGeneralDirt$5();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5270, name: "Forest Dirt Location #1", canGetLogic: dirt }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5271, name: "Forest Dirt Location #2", canGetLogic: dirt })
@@ -26343,7 +26343,7 @@ const Shuffled$f = () => {
 };
 const ShuffledDirtLocations$2 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$f, {}) : null;
 const Shuffled$e = () => {
-  const thing = useGeneralFairy$4();
+  const thing = useGeneralFairy$5();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5280, name: "Forest Fairy Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5281, name: "Forest Fairy Location #2", canGetLogic: thing })
@@ -26351,7 +26351,7 @@ const Shuffled$e = () => {
 };
 const ShuffledFairies$2 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$e, {}) : null;
 const Shuffled$d = () => {
-  const thing = useGeneralThing$3();
+  const thing = useGeneralThing$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5250, name: "Forest Kasplat Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5251, name: "Forest Kasplat Location #2", canGetLogic: thing }),
