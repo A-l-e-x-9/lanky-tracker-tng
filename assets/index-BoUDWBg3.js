@@ -22488,6 +22488,7 @@ const RNDChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports
 const StorageChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(PowerHut, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(StorageBarrel, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyCage, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FreeChunky, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryBlast, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$4, {}),
