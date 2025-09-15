@@ -5,7 +5,7 @@ import { usePlayCastle } from '../castle'
 import { usePlayCaves } from '../caves'
 import { useCurrentFairyCount, useCurrentGBCount } from '../consumables'
 import { usePlayForest } from '../forest'
-import { usePlayGalleon, useSlamGalleon } from '../galleon'
+import { useSlamGalleon } from '../galleon'
 import { usePlayHelm } from '../helm'
 import {
   useAllGun,
@@ -632,7 +632,7 @@ const useGalleonLobbySlam = (): boolean => {
  * @returns truthy if we can access the hidden tunnel in Galleon Lobby.
  */
 export const useCheckTinyGalleonLobby = (): LogicBool => {
-  const playGalleon = usePlayGalleon()
+  const playGalleon = usePlayLobby('Gloomy Galleon')
   const slam = useGalleonLobbySlam()
   const chunky = useChunky()
   const twirl = useTwirl()
@@ -822,7 +822,7 @@ export const useFactoryKasplat = (): boolean => {
 }
 
 export const useGalleonKasplat = (): boolean => {
-  const playGalleon = usePlayGalleon()
+  const playGalleon = usePlayLobby('Gloomy Galleon')
   const anyKong = useAnyKong()
   const snide = useSnide()
   const FtaChunkyBlueprint = useFtaChunkyBlueprint()
@@ -903,7 +903,7 @@ export const useFactoryLobbyUpper = (): LogicBool => {
 }
 
 export const useGalleonLobbyGeneric = (): boolean => {
-  const canEnterGalleon = usePlayGalleon()
+  const canEnterGalleon = usePlayLobby('Gloomy Galleon')
   return canEnterGalleon
 }
 
