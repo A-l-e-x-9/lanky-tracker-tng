@@ -4,7 +4,7 @@ import {
   useSingleRoolCheck,
   useSingleRoolNum
 } from '../endings'
-import { useIslesHelmEntry, useIslesKremTop, usePlayLevel, useSlamLevel } from '../isles'
+import { useIslesHelmEntry, usePlayLevel, useSlamLevel } from '../isles'
 import {
   useAllMusic,
   useAnyMusic,
@@ -39,7 +39,7 @@ export const useSlamHelm = (): boolean => useSlamLevel('Hideout Helm')
 export const useHelmEnter = (): boolean => {
   const access = useIslesHelmEntry()
   const vine = useVine()
-  return access && kremTop && vine
+  return access && vine
 }
 
 /**
