@@ -19,7 +19,6 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 - Make the left side of the tracker sticky...either Alex really sucks at using the "position: sticky;" CSS command, or something else about the tracker's design is stopping it from being sticky.
 - Having Snide turned off in the "Moves" section makes all Kasplats unavailable. This, obviously, is a stupid way to check whether or not you can turn in Blueprints for a seed, since most Randomizer seeds are highly unlikely to have them on Kasplats...must find a better way to implement Snide.
 - The Banana Medal checks may not have been properly updated to account for whether Climbing is required for them or not, and Alex probably poorly implemented the Isles Medals.
-- When grouping by regions, the new checks that weren't in the original Lanky Tracker don't show up...must find what went wrong there.
 - Change the progressive Slam settings to account for the fact that you can now customize how progressive they are as of the Version 5 Dev Randomizer.
 - Alex took out the "Region Hints" section of the original Tracker because he thought it was poorly done, as well as the "Location Shuffle Settings" section of the settings...should reimplement both somehow.
 - Need an easy way to reset the tracker if need be.
