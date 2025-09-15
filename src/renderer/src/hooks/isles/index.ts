@@ -9,7 +9,7 @@ import { usePlayFactory } from '../factory'
 import { usePlayForest } from '../forest'
 import { usePlayGalleon, useSlamGalleon } from '../galleon'
 import { usePlayHelm } from '../helm'
-import { usePlayJapes } from '../japes'
+import { usePlayJapesLobby } from '../japes'
 import {
   useAllGun,
   useAnyKong,
@@ -342,6 +342,95 @@ export const usePlayLevel = (level: Level): boolean => {
   return false
 }
 
+export const usePlayLobby = (level: Level): boolean => {
+  const dive = useDive()
+  const openLobbies = useOpenLobbies()
+  const [
+    level1,
+    level2,
+    level3,
+    level4,
+    level5,
+    level6,
+    level7,
+    level8,
+    key1,
+    key2,
+    key5,
+    key6,
+    key7
+  ] = useDonkStore(
+    useShallow((state) => [
+      state.level1,
+      state.level2,
+      state.level3,
+      state.level4,
+      state.level5,
+      state.level6,
+      state.level7,
+      state.level8,
+      state.key1,
+      state.key2,
+      state.key5,
+      state.key6,
+      state.key7
+    ])
+  )
+  const islesUpper = useIslesUpper()
+  const islesKremTop = useIslesKremTop()
+  const islesKremAscent = useIslesKremAscent()
+  const islesFungiIsland = useIslesFungiIsland()
+  const currentGB = useCurrentGBCount()
+  const [
+    bLocker1,
+    bLocker2,
+    bLocker3,
+    bLocker4,
+    bLocker5,
+    bLocker6,
+    bLocker7,
+    bLocker8
+  ] = useDonkStore(
+    useShallow((state) => [
+      state.bLocker.bLocker1,
+      state.bLocker.bLocker2,
+      state.bLocker.bLocker3,
+      state.bLocker.bLocker4,
+      state.bLocker.bLocker5,
+      state.bLocker.bLocker6,
+      state.bLocker.bLocker7,
+      state.bLocker.bLocker8
+    ])
+  ) 
+
+  if (level1 === level) {
+    return true
+  }
+  if (level2 === level) {
+    return islesUpper && (openLobbies || key1)
+  }
+  if (level3 === level) {
+    return islesKremAscent && (openLobbies || key2)
+  }
+  if (level4 === level) {
+    return (openLobbies || key2) && dive
+  }
+  if (level5 === level) {
+    return islesFungiIsland
+  }
+  if (level6 === level) {
+    return islesUpper && (openLobbies || key5)
+  }
+  if (level7 === level) {
+    return (openLobbies || key5)
+  }
+  if (level8 === level) {
+    return islesKremTop && (openLobbies || (key6 && key7))
+  }
+
+  return false
+}
+
 export const useSlamLevel = (level: Level): boolean => {
   const canPlay = usePlayLevel(level)
   const slam = useSlam()
@@ -508,7 +597,7 @@ export const useCheckLankyPrison = (): LogicBool => {
 }
 
 export const useCheckLankyMusicPad = (): boolean => {
-  const playJapes = usePlayJapes()
+  const playJapes = usePlayJapesLobby()
   const boulderTech = useBoulderTech()
   const trombone = useTrombone()
   return playJapes && boulderTech && trombone
@@ -799,14 +888,14 @@ export const useCavesLobby = (): boolean => {
 }
 
 export const useJapesLobby = (): boolean => {
-  const canEnterJapes = usePlayJapes()
+  const canEnterJapes = usePlayJapesLobby()
   const chunky = useChunky()
   const barrels = useBarrel()
   return canEnterJapes && chunky && barrels
 }
 
 export const useJapesLobbyGeneric = (): boolean => {
-  const canEnterJapes = usePlayJapes()
+  const canEnterJapes = usePlayJapesLobby()
   return canEnterJapes
 }
 
