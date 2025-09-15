@@ -13,6 +13,9 @@ import DkMill from '../gold-bananas/dk/Mill'
 import LankyMill from '../gold-bananas/lanky/Mill'
 import SpiderBoss from '../gold-bananas/tiny/Spider'
 import DkKasplat from '../kasplats/Dk'
+import MillBackKeg from '../boulders/MillBackKeg'
+import MillFrontKeg1 from '../boulders/MillFrontKeg1'
+import MillFrontKeg2 from '../boulders/MillFrontKeg2'
 
 const MillsChecks: React.FC = () => (
   <>
@@ -25,6 +28,9 @@ const MillsChecks: React.FC = () => (
     <LankyMill />
     <SpiderBoss />
     <ChunkyMill />
+    <MillBackKeg />
+    <MillFrontKeg1 />
+    <MillFrontKeg2 />
     <BarnOutsideCrate />
     <DkKasplat />
     <DkBarn />
