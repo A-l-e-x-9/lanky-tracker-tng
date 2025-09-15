@@ -12803,7 +12803,7 @@ const useGalleonLobbySlam = () => {
   return useProgressiveSlams() ? progSlam : normSlam;
 };
 const useCheckTinyGalleonLobby = () => {
-  const playGalleon = usePlayGalleon();
+  const playGalleon = usePlayLobby("Gloomy Galleon");
   const slam = useGalleonLobbySlam();
   const chunky = useChunky();
   const twirl = useTwirl();
@@ -12960,7 +12960,7 @@ const useFactoryKasplat = () => {
   return snide && FtaTinyBlueprint && playFactory && punch;
 };
 const useGalleonKasplat = () => {
-  const playGalleon = usePlayGalleon();
+  const playGalleon = usePlayLobby("Gloomy Galleon");
   const anyKong = useAnyKong();
   const snide = useSnide();
   const FtaChunkyBlueprint = useFtaChunkyBlueprint();
@@ -13030,7 +13030,7 @@ const useFactoryLobbyUpper = () => {
   };
 };
 const useGalleonLobbyGeneric = () => {
-  const canEnterGalleon = usePlayGalleon();
+  const canEnterGalleon = usePlayLobby("Gloomy Galleon");
   return canEnterGalleon;
 };
 const useForestLobbyGeneric = () => {
