@@ -20901,13 +20901,83 @@ const ShopLocations$5 = () => {
   const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$6, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
+const CircleVase = () => {
+  const hasLogic = useVases();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    AztecCheck,
+    {
+      id: 2006,
+      name: "Aztec Boulder: Circle Vase",
+      region: "Various Aztec Tunnels",
+      canGetLogic: hasLogic.in,
+      canGetBreak: hasLogic.out
+    }
+  ) });
+};
+const ColonVase = () => {
+  const hasLogic = useVases();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    AztecCheck,
+    {
+      id: 2007,
+      name: "Aztec Boulder: Colon Vase",
+      region: "Various Aztec Tunnels",
+      canGetLogic: hasLogic.in,
+      canGetBreak: hasLogic.out
+    }
+  ) });
+};
+const PlusVase = () => {
+  const hasLogic = useVases();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    AztecCheck,
+    {
+      id: 2009,
+      name: "Aztec Boulder: Plus Vase",
+      region: "Various Aztec Tunnels",
+      canGetLogic: hasLogic.in,
+      canGetBreak: hasLogic.out
+    }
+  ) });
+};
+const TriangleVase = () => {
+  const hasLogic = useVases();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    AztecCheck,
+    {
+      id: 2008,
+      name: "Aztec Boulder: Triangle Vase",
+      region: "Various Aztec Tunnels",
+      canGetLogic: hasLogic.in,
+      canGetBreak: hasLogic.out
+    }
+  ) });
+};
 const BeforeOasisChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CircleVase, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ColonVase, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(PlusVase, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleVase, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(VaseBanana, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BeforeOasisEnemies, {})
 ] });
+const TunnelBoulder = () => {
+  const hasLogic = useTunnelBoulder();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    AztecCheck,
+    {
+      id: 2106,
+      name: "Aztec Boulder: Giant Boulder",
+      region: "Various Aztec Tunnels",
+      canGetLogic: hasLogic.in,
+      canGetBreak: hasLogic.out
+    }
+  ) });
+};
 const ConnectorTunnelChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(TunnelBarrel, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TunnelBoulder, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ConnectorTunnelEnemies, {})
 ] });
@@ -20927,6 +20997,7 @@ const DoorTempleChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(Chunky5Enemies, {})
 ] });
 const LlamaTempleChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx(FreeLanky, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FreeLanky$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaBarrel, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(MatchGame, {}),
@@ -20948,6 +21019,7 @@ const TinyStartChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeE
 ] });
 const TinySwimChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKlaptrap, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(FreeTiny, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FreeTiny$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(VultureShoot, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(VultureArena, {}),
@@ -20986,71 +21058,6 @@ const AztecRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$6, {})
 ] });
-const TunnelBoulder = () => {
-  const hasLogic = useTunnelBoulder();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    AztecCheck,
-    {
-      id: 2106,
-      name: "Aztec Boulder: Giant Boulder",
-      region: "Various Aztec Tunnels",
-      canGetLogic: hasLogic.in,
-      canGetBreak: hasLogic.out
-    }
-  ) });
-};
-const CircleVase = () => {
-  const hasLogic = useVases();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    AztecCheck,
-    {
-      id: 2006,
-      name: "Aztec Boulder: Circle Vase",
-      region: "Various Aztec Tunnels",
-      canGetLogic: hasLogic.in,
-      canGetBreak: hasLogic.out
-    }
-  ) });
-};
-const ColonVase = () => {
-  const hasLogic = useVases();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    AztecCheck,
-    {
-      id: 2007,
-      name: "Aztec Boulder: Colon Vase",
-      region: "Various Aztec Tunnels",
-      canGetLogic: hasLogic.in,
-      canGetBreak: hasLogic.out
-    }
-  ) });
-};
-const TriangleVase = () => {
-  const hasLogic = useVases();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    AztecCheck,
-    {
-      id: 2008,
-      name: "Aztec Boulder: Triangle Vase",
-      region: "Various Aztec Tunnels",
-      canGetLogic: hasLogic.in,
-      canGetBreak: hasLogic.out
-    }
-  ) });
-};
-const PlusVase = () => {
-  const hasLogic = useVases();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    AztecCheck,
-    {
-      id: 2009,
-      name: "Aztec Boulder: Plus Vase",
-      region: "Various Aztec Tunnels",
-      canGetLogic: hasLogic.in,
-      canGetBreak: hasLogic.out
-    }
-  ) });
-};
 const BoulderLocations$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(TunnelBoulder, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CircleVase, {}),
