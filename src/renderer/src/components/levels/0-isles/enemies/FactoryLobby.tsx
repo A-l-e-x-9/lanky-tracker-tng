@@ -1,12 +1,12 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatZinger } from '@renderer/hooks/enemies'
-import { usePlayFactory } from '@renderer/hooks/factory'
+import { usePlayLobby } from '@renderer/hooks/factory'
 import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 
 const FactoryLobbyEnemies: React.FC = () => {
   const anyKong = useAnyKong()
-  const playFactory = usePlayFactory()
+  const playFactory = usePlayLobby('Frantic Factory')
   const zinger = useDefeatZinger()
   const hasFairyCam = useCamera()
   return (
