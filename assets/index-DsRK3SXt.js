@@ -17879,6 +17879,7 @@ const JapesMainChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeE
   /* @__PURE__ */ jsxRuntimeExports.jsx(LankyTimedCage, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyTimedCage, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyTimedCage, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyCage, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FreeDiddy, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FunkyArena, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingHillDirt, {}),
