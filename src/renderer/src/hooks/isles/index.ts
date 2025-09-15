@@ -4,7 +4,6 @@ import { Level } from '@renderer/store/common'
 import { usePlayCastle } from '../castle'
 import { usePlayCaves } from '../caves'
 import { useCurrentFairyCount, useCurrentGBCount } from '../consumables'
-import { usePlayFactory } from '../factory'
 import { usePlayForest } from '../forest'
 import { usePlayGalleon, useSlamGalleon } from '../galleon'
 import { usePlayHelm } from '../helm'
@@ -484,7 +483,7 @@ export const useCheckDkCoconutCage = (): boolean => {
  * @returns truthy if we can play the Bongos in the Factory Lobby.
  */
 export const useCheckDkMusicPad = (): LogicBool => {
-  const playFactory = usePlayFactory()
+  const playFactory = usePlayLobby('Frantic Factory')
   const bongos = useBongos()
   const grab = useGrab()
   const diddy = useDiddy()
@@ -767,7 +766,7 @@ export const useGeneralFairy = (): boolean => {
 export const useFactoryFairy = (): boolean => {
   const camera = useCamera()
   const punch = usePunch()
-  const factory = usePlayFactory()
+  const factory = usePlayLobby('Frantic Factory')
   return factory && punch && camera
 }
 
@@ -815,7 +814,7 @@ export const useCavesKasplat = (): boolean => {
 }
 
 export const useFactoryKasplat = (): boolean => {
-  const playFactory = usePlayFactory()
+  const playFactory = usePlayLobby('Frantic Factory')
   const punch = usePunch()
   const FtaTinyBlueprint = useFtaTinyBlueprint()
   const snide = useSnide()
@@ -887,12 +886,12 @@ export const useAztecLobbyChunky = (): boolean => {
 }
 
 export const useFactoryLobbyLower = (): boolean => {
-  const canEnterFactory = usePlayFactory()
+  const canEnterFactory = usePlayLobby('Frantic Factory')
   return canEnterFactory
 }
 
 export const useFactoryLobbyUpper = (): LogicBool => {
-  const canEnterFactory = usePlayFactory()
+  const canEnterFactory = usePlayLobby('Frantic Factory')
   const grab = useGrab()
   const hasDiddy = useDiddy()
   const hasTiny = useTiny()
