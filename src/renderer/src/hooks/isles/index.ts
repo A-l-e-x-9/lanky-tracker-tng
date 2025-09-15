@@ -4,7 +4,6 @@ import { Level } from '@renderer/store/common'
 import { usePlayCastle } from '../castle'
 import { usePlayCaves } from '../caves'
 import { useCurrentFairyCount, useCurrentGBCount } from '../consumables'
-import { usePlayForest } from '../forest'
 import { useSlamGalleon } from '../galleon'
 import { usePlayHelm } from '../helm'
 import {
@@ -695,7 +694,7 @@ export const useSnideArena = (): boolean => {
 }
 
 export const useForestArena = (): boolean => {
-  const playForest = usePlayForest()
+  const playForest = usePlayLobby('Fungi Forest')
   const allGun = useAllGun()
   const gone = useGone()
   return playForest && allGun && gone
@@ -771,7 +770,7 @@ export const useFactoryFairy = (): boolean => {
 }
 
 export const useForestFairy = (): boolean => {
-  const forest = usePlayForest()
+  const forest = usePlayLobby('Fungi Forest')
   const camera = useCamera()
   const islesSwitch = useIslesFairySwitch()
   return forest && camera && islesSwitch
@@ -908,7 +907,7 @@ export const useGalleonLobbyGeneric = (): boolean => {
 }
 
 export const useForestLobbyGeneric = (): boolean => {
-  const canEnterForest = usePlayForest()
+  const canEnterForest = usePlayLobby('Fungi Forest')
   return canEnterForest
 }
 
