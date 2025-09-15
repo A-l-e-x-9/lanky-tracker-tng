@@ -1,7 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import { Level } from '@renderer/store/common'
-import { usePlayAztec } from '../aztec'
 import { usePlayCastle } from '../castle'
 import { usePlayCaves } from '../caves'
 import { useCurrentFairyCount, useCurrentGBCount } from '../consumables'
@@ -612,7 +611,7 @@ export const useCheckTinyMusicPad = (): boolean => {
  * @returns truthy if we can get the item in Aztec Lobby.
  */
 export const useCheckTinyAztecLobby = (): LogicBool => {
-  const playAztec = usePlayAztec()
+  const playAztec = usePlayLobby('Angry Aztec')
   const tiny = useFtaTinyBanana()
   const autoBonus = useAutoBonus()
   const twirl = useTwirl()
@@ -877,12 +876,12 @@ export const useJapesLobbyGeneric = (): boolean => {
 }
 
 export const useAztecLobbyGeneric = (): boolean => {
-  const canEnterAztec = usePlayAztec()
+  const canEnterAztec = usePlayLobby('Angry Aztec')
   return canEnterAztec
 }
 
 export const useAztecLobbyChunky = (): boolean => {
-  const canEnterAztec = usePlayAztec()
+  const canEnterAztec = usePlayLobby('Angry Aztec')
   const feathers = useFeather()
   return canEnterAztec && feathers
 }
