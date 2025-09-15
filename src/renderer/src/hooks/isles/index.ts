@@ -3,7 +3,6 @@ import useDonkStore from '@renderer/store'
 import { Level } from '@renderer/store/common'
 import { useCurrentFairyCount, useCurrentGBCount } from '../consumables'
 import { useSlamGalleon } from '../galleon'
-import { usePlayHelm } from '../helm'
 import {
   useAllGun,
   useAnyKong,
@@ -674,7 +673,7 @@ export const useCheckChunkyPound = (): boolean => {
 }
 
 export const useCheckChunkyHelm = (): LogicBool => {
-  const playHelm = usePlayHelm()
+  const playHelm = usePlayLobby('Hideout Helm')
   const helmEntry = useIslesHelmEntryWithoutBananaports()
   const vine = useVine()
   const twirl = useTwirl()
@@ -781,7 +780,7 @@ export const useKremFairy = (): boolean => {
 }
 
 export const useHelmKasplat = (): LogicBool => {
-  const playHelm = usePlayHelm()
+  const playHelm = usePlayLobby('Hideout Helm')
   const snide = useSnide()
   const sniper = useSniper()
   const coconut = useCoconut()
