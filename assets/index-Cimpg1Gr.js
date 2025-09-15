@@ -11235,243 +11235,6 @@ const useCactusKasplat = () => {
   const outskirts = useGalleonOutskirts();
   return useFtaChunkyBlueprint() && outskirts;
 };
-const useSingleHelmCheck = (val) => {
-  const dk2 = useBongos();
-  const diddy = useGuitar();
-  const hasJetbarrel = useRocket();
-  const lanky = useTrombone();
-  const tiny = useSax();
-  const chunky = useTriangle();
-  const check = useDonkStore(useShallow((state) => state["helm" + val]));
-  switch (check) {
-    case 1:
-      return dk2;
-    case 2:
-      return diddy && hasJetbarrel;
-    case 3:
-      return lanky;
-    case 4:
-      return tiny;
-    case 5:
-      return chunky;
-    default:
-      return true;
-  }
-};
-const useSingleHelmNum = (val) => {
-  const check = useDonkStore(useShallow((state) => state["helm" + val]));
-  switch (check) {
-    case 1:
-      return 1;
-    case 2:
-      return 2;
-    case 3:
-      return 3;
-    case 4:
-      return 4;
-    case 5:
-      return 5;
-    default:
-      return 0;
-  }
-};
-const useSingleRoolCheck = (val) => {
-  const balancedRool = useBalancedRoolPhase();
-  const chunkySlam = useChunkySlamLevel();
-  const dk2 = useDk();
-  const blast = useBlast();
-  const climbing = useClimbing();
-  const peanut = usePeanut();
-  const diddy = useRocket() && peanut;
-  const barrel = useBarrel();
-  const lanky = useTrombone() && barrel;
-  const mini = useMini();
-  const orange = useOrange();
-  const feather = useFeather();
-  const tiny = feather && mini;
-  const tinyBreak = orange && mini;
-  const slam = useSlam();
-  const superSlam = useSuperSlam();
-  const duperSlam = useSuperDuperSlam();
-  const gone = useGone();
-  const punch = usePunch();
-  const chunky = useHunky() && (chunkySlam <= 1 ? slam : chunkySlam == 2 ? superSlam : duperSlam) && gone && punch;
-  const hasTwirl = useTwirl();
-  const madJackBreak = useTiny();
-  const isBreathing = useAnyKong();
-  const hunky = useHunky();
-  const check = useDonkStore(useShallow((state) => state["rool" + val]));
-  switch (check) {
-    case 1:
-      return {
-        in: dk2 && (!balancedRool || blast) && climbing,
-        out: dk2 && (!balancedRool || blast)
-      };
-    case 2:
-      return {
-        in: diddy,
-        out: diddy
-      };
-    case 3:
-      return {
-        in: lanky,
-        out: lanky
-      };
-    case 4:
-      return {
-        in: tiny,
-        out: tinyBreak
-      };
-    case 5:
-      return {
-        in: chunky,
-        out: chunky
-      };
-    case 6:
-      return {
-        in: barrel,
-        out: barrel
-      };
-    case 7:
-      return {
-        in: barrel,
-        out: barrel
-      };
-    case 8:
-      return {
-        in: hasTwirl,
-        out: dk2 || madJackBreak
-      };
-    case 9:
-      return {
-        in: isBreathing,
-        out: isBreathing
-      };
-    case 10:
-      return {
-        in: barrel && hunky,
-        out: barrel && hunky
-      };
-    case 11:
-      return {
-        in: barrel,
-        out: barrel
-      };
-    case 12:
-      return {
-        in: isBreathing,
-        out: isBreathing
-      };
-    default:
-      return { in: true };
-  }
-};
-const useSingleRoolNum = (val) => {
-  const check = useDonkStore(useShallow((state) => state["rool" + val]));
-  switch (check) {
-    case 1:
-      return 1;
-    case 2:
-      return 2;
-    case 3:
-      return 3;
-    case 4:
-      return 4;
-    case 5:
-      return 5;
-    case 6:
-      return 6;
-    case 7:
-      return 7;
-    case 8:
-      return 8;
-    case 9:
-      return 9;
-    case 10:
-      return 10;
-    case 11:
-      return 11;
-    case 12:
-      return 12;
-    default:
-      return 0;
-  }
-};
-const usePlayHelm = () => usePlayLevel("Hideout Helm");
-const useHelmEnter = () => {
-  const access = useIslesHelmEntry();
-  const vine = useVine();
-  return access && vine;
-};
-const useHelmMachine = () => {
-  const inLevel = usePlayHelm();
-  const entry = useHelmEnter();
-  const stand = useStand();
-  const pineapple = usePineapple();
-  const vine = useVine();
-  const mini = useMini();
-  const helmAccess = useHelmStartPosition();
-  return {
-    in: inLevel && entry && (helmAccess != 0 || stand && pineapple && vine && mini),
-    out: inLevel && entry && pineapple && vine && mini
-  };
-};
-const useHelmDoors = () => {
-  const inLevel = usePlayHelm();
-  const entry = useHelmEnter();
-  const anyMusic = useAnyMusic();
-  const machine = useHelmMachine();
-  const grab = useGrab();
-  const rocket = useRocket();
-  const punch = usePunch();
-  const helmAccess = useHelmStartPosition();
-  return {
-    in: inLevel && entry && (helmAccess == 2 || anyMusic && (helmAccess == 1 || machine.in && grab && rocket && punch)),
-    out: inLevel && entry && logicBreak(machine) && grab && rocket && punch
-  };
-};
-const useCanDeactivateHelm = () => {
-  const allMusic2 = useAllMusic();
-  const rocket = useRocket();
-  const num1 = useSingleHelmNum(1);
-  const num2 = useSingleHelmNum(2);
-  const num3 = useSingleHelmNum(3);
-  const num4 = useSingleHelmNum(4);
-  const num5 = useSingleHelmNum(5);
-  const check1 = useSingleHelmCheck(1);
-  const check2 = useSingleHelmCheck(2);
-  const check3 = useSingleHelmCheck(3);
-  const check4 = useSingleHelmCheck(4);
-  const check5 = useSingleHelmCheck(5);
-  if (allMusic2 && rocket) {
-    return true;
-  }
-  if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
-    return false;
-  }
-  return check1 && check2 && check3 && check4 && check5;
-};
-const useCanFightRool = () => {
-  const num1 = useSingleRoolNum(1);
-  const num2 = useSingleRoolNum(2);
-  const num3 = useSingleRoolNum(3);
-  const num4 = useSingleRoolNum(4);
-  const num5 = useSingleRoolNum(5);
-  const check1 = useSingleRoolCheck(1);
-  const check2 = useSingleRoolCheck(2);
-  const check3 = useSingleRoolCheck(3);
-  const check4 = useSingleRoolCheck(4);
-  const check5 = useSingleRoolCheck(5);
-  if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
-    return {
-      in: false
-    };
-  }
-  return {
-    in: check1.in && check2.in && check3.in && check4.in && check5.in,
-    out: check1.out && check2.out && check3.out && check4.out && check5.out
-  };
-};
 const useIslesRocketSwitch = () => useSwitchsanityMusicPad("islesTrombone", 2);
 const useIslesFairySwitch = () => useSwitchsanityGun("islesForest", 3);
 const useIslesFungiIsland = () => {
@@ -11952,7 +11715,7 @@ const useCheckChunkyPound = () => {
   return tinySax && hunky && slam;
 };
 const useCheckChunkyHelm = () => {
-  const playHelm = usePlayHelm();
+  const playHelm = usePlayLobby("Hideout Helm");
   const helmEntry = useIslesHelmEntryWithoutBananaports();
   const vine = useVine();
   const twirl = useTwirl();
@@ -12040,7 +11803,7 @@ const useKremFairy = () => {
   return top && camera;
 };
 const useHelmKasplat = () => {
-  const playHelm = usePlayHelm();
+  const playHelm = usePlayLobby("Hideout Helm");
   const snide = useSnide();
   const sniper = useSniper();
   const coconut = useCoconut();
@@ -30122,6 +29885,243 @@ const ClassicChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { chil
 const CastleChecks = () => {
   const grp = useDonkStore(useShallow((state) => state.ui.groupByRegion));
   return grp ? /* @__PURE__ */ jsxRuntimeExports.jsx(CastleRegionChecks, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(ClassicChecks, {});
+};
+const useSingleHelmCheck = (val) => {
+  const dk2 = useBongos();
+  const diddy = useGuitar();
+  const hasJetbarrel = useRocket();
+  const lanky = useTrombone();
+  const tiny = useSax();
+  const chunky = useTriangle();
+  const check = useDonkStore(useShallow((state) => state["helm" + val]));
+  switch (check) {
+    case 1:
+      return dk2;
+    case 2:
+      return diddy && hasJetbarrel;
+    case 3:
+      return lanky;
+    case 4:
+      return tiny;
+    case 5:
+      return chunky;
+    default:
+      return true;
+  }
+};
+const useSingleHelmNum = (val) => {
+  const check = useDonkStore(useShallow((state) => state["helm" + val]));
+  switch (check) {
+    case 1:
+      return 1;
+    case 2:
+      return 2;
+    case 3:
+      return 3;
+    case 4:
+      return 4;
+    case 5:
+      return 5;
+    default:
+      return 0;
+  }
+};
+const useSingleRoolCheck = (val) => {
+  const balancedRool = useBalancedRoolPhase();
+  const chunkySlam = useChunkySlamLevel();
+  const dk2 = useDk();
+  const blast = useBlast();
+  const climbing = useClimbing();
+  const peanut = usePeanut();
+  const diddy = useRocket() && peanut;
+  const barrel = useBarrel();
+  const lanky = useTrombone() && barrel;
+  const mini = useMini();
+  const orange = useOrange();
+  const feather = useFeather();
+  const tiny = feather && mini;
+  const tinyBreak = orange && mini;
+  const slam = useSlam();
+  const superSlam = useSuperSlam();
+  const duperSlam = useSuperDuperSlam();
+  const gone = useGone();
+  const punch = usePunch();
+  const chunky = useHunky() && (chunkySlam <= 1 ? slam : chunkySlam == 2 ? superSlam : duperSlam) && gone && punch;
+  const hasTwirl = useTwirl();
+  const madJackBreak = useTiny();
+  const isBreathing = useAnyKong();
+  const hunky = useHunky();
+  const check = useDonkStore(useShallow((state) => state["rool" + val]));
+  switch (check) {
+    case 1:
+      return {
+        in: dk2 && (!balancedRool || blast) && climbing,
+        out: dk2 && (!balancedRool || blast)
+      };
+    case 2:
+      return {
+        in: diddy,
+        out: diddy
+      };
+    case 3:
+      return {
+        in: lanky,
+        out: lanky
+      };
+    case 4:
+      return {
+        in: tiny,
+        out: tinyBreak
+      };
+    case 5:
+      return {
+        in: chunky,
+        out: chunky
+      };
+    case 6:
+      return {
+        in: barrel,
+        out: barrel
+      };
+    case 7:
+      return {
+        in: barrel,
+        out: barrel
+      };
+    case 8:
+      return {
+        in: hasTwirl,
+        out: dk2 || madJackBreak
+      };
+    case 9:
+      return {
+        in: isBreathing,
+        out: isBreathing
+      };
+    case 10:
+      return {
+        in: barrel && hunky,
+        out: barrel && hunky
+      };
+    case 11:
+      return {
+        in: barrel,
+        out: barrel
+      };
+    case 12:
+      return {
+        in: isBreathing,
+        out: isBreathing
+      };
+    default:
+      return { in: true };
+  }
+};
+const useSingleRoolNum = (val) => {
+  const check = useDonkStore(useShallow((state) => state["rool" + val]));
+  switch (check) {
+    case 1:
+      return 1;
+    case 2:
+      return 2;
+    case 3:
+      return 3;
+    case 4:
+      return 4;
+    case 5:
+      return 5;
+    case 6:
+      return 6;
+    case 7:
+      return 7;
+    case 8:
+      return 8;
+    case 9:
+      return 9;
+    case 10:
+      return 10;
+    case 11:
+      return 11;
+    case 12:
+      return 12;
+    default:
+      return 0;
+  }
+};
+const usePlayHelm = () => usePlayLevel("Hideout Helm");
+const useHelmEnter = () => {
+  const access = useIslesHelmEntry();
+  const vine = useVine();
+  return access && vine;
+};
+const useHelmMachine = () => {
+  const inLevel = usePlayHelm();
+  const entry = useHelmEnter();
+  const stand = useStand();
+  const pineapple = usePineapple();
+  const vine = useVine();
+  const mini = useMini();
+  const helmAccess = useHelmStartPosition();
+  return {
+    in: inLevel && entry && (helmAccess != 0 || stand && pineapple && vine && mini),
+    out: inLevel && entry && pineapple && vine && mini
+  };
+};
+const useHelmDoors = () => {
+  const inLevel = usePlayHelm();
+  const entry = useHelmEnter();
+  const anyMusic = useAnyMusic();
+  const machine = useHelmMachine();
+  const grab = useGrab();
+  const rocket = useRocket();
+  const punch = usePunch();
+  const helmAccess = useHelmStartPosition();
+  return {
+    in: inLevel && entry && (helmAccess == 2 || anyMusic && (helmAccess == 1 || machine.in && grab && rocket && punch)),
+    out: inLevel && entry && logicBreak(machine) && grab && rocket && punch
+  };
+};
+const useCanDeactivateHelm = () => {
+  const allMusic2 = useAllMusic();
+  const rocket = useRocket();
+  const num1 = useSingleHelmNum(1);
+  const num2 = useSingleHelmNum(2);
+  const num3 = useSingleHelmNum(3);
+  const num4 = useSingleHelmNum(4);
+  const num5 = useSingleHelmNum(5);
+  const check1 = useSingleHelmCheck(1);
+  const check2 = useSingleHelmCheck(2);
+  const check3 = useSingleHelmCheck(3);
+  const check4 = useSingleHelmCheck(4);
+  const check5 = useSingleHelmCheck(5);
+  if (allMusic2 && rocket) {
+    return true;
+  }
+  if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
+    return false;
+  }
+  return check1 && check2 && check3 && check4 && check5;
+};
+const useCanFightRool = () => {
+  const num1 = useSingleRoolNum(1);
+  const num2 = useSingleRoolNum(2);
+  const num3 = useSingleRoolNum(3);
+  const num4 = useSingleRoolNum(4);
+  const num5 = useSingleRoolNum(5);
+  const check1 = useSingleRoolCheck(1);
+  const check2 = useSingleRoolCheck(2);
+  const check3 = useSingleRoolCheck(3);
+  const check4 = useSingleRoolCheck(4);
+  const check5 = useSingleRoolCheck(5);
+  if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
+    return {
+      in: false
+    };
+  }
+  return {
+    in: check1.in && check2.in && check3.in && check4.in && check5.in,
+    out: check1.out && check2.out && check3.out && check4.out && check5.out
+  };
 };
 const HelmCheck = (props) => {
   const checks = useDonkStore(useShallow((state) => state.checks));
