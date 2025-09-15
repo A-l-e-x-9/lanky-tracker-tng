@@ -13118,322 +13118,6 @@ const useCanFightRool = () => {
     out: check1.out && check2.out && check3.out && check4.out && check5.out
   };
 };
-const usePlayJapes = () => usePlayLevel("Jungle Japes");
-const useSlamJapes = () => useSlamLevel("Jungle Japes");
-const useJapesKongGates = () => {
-  const inStage = usePlayJapes();
-  const [barriers, checks] = useDonkStore(
-    useShallow((state) => [state.removeBarriers, state.checks])
-  );
-  return inStage && (checks[1002] || barriers.japesCoconutGates);
-};
-const useJapesRambiSwitch = () => useSwitchsanityGun("japesRambi", 0);
-const useJapesSideSwitch = () => useSwitchsanityGun("japesSide", 1);
-const useJapesHiveSwitch = () => useSwitchsanityGun("japesHive", 3);
-const useJapesPaintingSwitch = () => useSwitchsanityGun("japesPainting", 1);
-const useJapesSideArea = () => {
-  const inStage = usePlayJapes();
-  const canAccess = useJapesSideSwitch();
-  return inStage && canAccess;
-};
-const useJapesRambi = () => {
-  const canPlay = useJapesKongGates();
-  const rambiSwitch = useJapesRambiSwitch();
-  return rambiSwitch && canPlay;
-};
-const useJapesMine = () => {
-  const peanut = usePeanut();
-  const canPlay = usePlayJapes();
-  const hasClimbing = useClimbing();
-  const hasBananaports = useBananaportAll();
-  return peanut && (hasClimbing || hasBananaports) && canPlay;
-};
-const useJapesHive = () => {
-  const hiveSwitch = useJapesHiveSwitch();
-  const canPlay = usePlayJapes();
-  const coconutGates = useJapesKongGates();
-  const japesMine = useJapesMine();
-  const warpAll = useBananaportAll();
-  const [hiveGateOpen] = useDonkStore(useShallow((state) => [state.removeBarriers.japesHiveGate]));
-  return canPlay && (coconutGates && (hiveGateOpen || hiveSwitch) || warpAll && japesMine);
-};
-const useJapesPaintingOutside = () => {
-  const inStage = usePlayJapes();
-  const stand = useStand();
-  const twirl = useTwirl();
-  const climbing = useClimbing();
-  const dk2 = useDk();
-  const tiny = useTiny();
-  const chunky = useChunky();
-  return {
-    in: inStage && (stand || climbing && twirl),
-    out: inStage && climbing && (dk2 || tiny || chunky)
-  };
-};
-const useJapesPainting = () => {
-  const canPlay = useJapesPaintingOutside();
-  const paintingSwitch = useJapesPaintingSwitch();
-  return {
-    in: canPlay.in && paintingSwitch,
-    out: logicBreak(canPlay) && paintingSwitch
-  };
-};
-const useJapesUnderground = () => {
-  const slam = useSlam();
-  const boulderTech = useBoulderTech();
-  const inStage = usePlayJapes();
-  return inStage && boulderTech && slam;
-};
-const useChunkyBoulderGb = () => {
-  const inStage = usePlayJapes();
-  const boulderTech = useBoulderTech();
-  return inStage && boulderTech;
-};
-const useChunkyCagedGb = () => {
-  const boulderTech = useBoulderTech();
-  const canSlam = useSlamJapes();
-  const rambi = useJapesRambi();
-  const climbing = useClimbing();
-  const hasBananaports = useBananaportAll();
-  return rambi && boulderTech && canSlam && (climbing || hasBananaports);
-};
-const useChunkyHiveGb = () => {
-  const hive = useJapesHive();
-  const hunky = useHunky();
-  const climbing = useClimbing();
-  return {
-    in: hive && hunky && climbing,
-    out: hive && hunky
-  };
-};
-const useChunkyUndergroundGb = () => {
-  const under = useJapesUnderground();
-  const pineapple = usePineapple();
-  const vine = useVine();
-  const dk2 = useDk();
-  const twirl = useTwirl();
-  const tiny = useTiny();
-  const diddy = useDiddy();
-  return {
-    in: under && pineapple && vine,
-    out: useFtaChunkyBanana() && under && (dk2 || twirl || (tiny || diddy) && vine)
-  };
-};
-const useChunkyKasplat = () => {
-  const canGoUnderground = useChunkyUndergroundGb();
-  const hasSnide = useSnide();
-  return {
-    in: hasSnide && canGoUnderground.in,
-    out: hasSnide && canGoUnderground.out
-  };
-};
-const useDiddyCagedGb = () => {
-  const rambi = useJapesRambi();
-  const diddy = useDiddy();
-  const canSlam = useSlamJapes();
-  return rambi && diddy && canSlam;
-};
-const useDiddyMountainGb = () => {
-  const mine = useJapesMine();
-  const canSlam = useSlamJapes();
-  return useFtaDiddyBanana() && mine && canSlam;
-};
-const useDiddyTunnelGb = () => {
-  const side = useJapesSideArea();
-  return useFtaDiddyBanana() && side;
-};
-const useDiddyMinecartGb = () => {
-  const mine = useJapesMine();
-  const canSlam = useSlamJapes();
-  const charge = useCharge();
-  const highGrab = useHighGrab();
-  return {
-    in: mine && canSlam && charge,
-    out: mine && highGrab
-  };
-};
-const useDkFreebieGb = () => {
-  const inStage = usePlayJapes();
-  const anyKong = useAnyKong();
-  const hasClimbing = useClimbing();
-  const hasBananaports = useBananaportAll();
-  return inStage && anyKong && (hasClimbing || hasBananaports);
-};
-const useFreeDiddySwitch = () => {
-  const dk2 = useCoconut();
-  const diddy = usePeanut();
-  const lanky = useGrape();
-  const tiny = useFeather();
-  const chunky = usePineapple();
-  const freeDiddy2 = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeDiddy));
-  switch (freeDiddy2) {
-    case 1:
-      return dk2;
-    case 2:
-      return diddy;
-    case 3:
-      return lanky;
-    case 4:
-      return tiny;
-    case 5:
-      return chunky;
-    default:
-      return true;
-  }
-};
-const useDkFreeDiddyGb = () => {
-  const inStage = usePlayJapes();
-  const climbing = useClimbing();
-  const hasBananaports = useBananaportAll();
-  return useFreeDiddySwitch() && inStage && (climbing || hasBananaports);
-};
-const useDkCagedGb = () => {
-  const rambi = useJapesRambi();
-  const dk2 = useDk();
-  const canSlam = useSlamJapes();
-  return rambi && dk2 && canSlam;
-};
-const useDkBlastGb = () => {
-  const inStage = usePlayJapes();
-  const blast = useBlast();
-  const vine = useVine();
-  const climbing = useClimbing();
-  return inStage && blast && vine && climbing;
-};
-const useLankyCagedGb = () => {
-  const rambi = useJapesRambi();
-  const lanky = useLanky();
-  const canSlam = useSlamJapes();
-  const hasClimbing = useClimbing();
-  const hasBananaports = useBananaportAll();
-  return rambi && lanky && canSlam && (hasClimbing || hasBananaports);
-};
-const useLankyGateGb = () => {
-  const side = useJapesSideArea();
-  const grape = useGrape();
-  return side && grape;
-};
-const useLankySlopeGb = () => {
-  const tunnel = useJapesKongGates();
-  const stand = useStand();
-  const anyKong = useAnyKong();
-  return {
-    in: tunnel && stand,
-    out: useFtaLankyBanana() && tunnel && anyKong
-  };
-};
-const useLankyPaintingGb = () => {
-  const painting = useJapesPainting();
-  const grape = useGrape();
-  const trombone = useTrombone();
-  const lanky = useLanky();
-  const slam = useSlam();
-  const anyGun = useAnyGun();
-  const anyMusic = useAnyMusic();
-  return {
-    in: lanky && slam && painting.in && (grape || trombone),
-    out: lanky && slam && logicBreak(painting) && (anyGun || anyMusic)
-  };
-};
-const useTinyCagedGb = () => {
-  const rambi = useJapesRambi();
-  const tiny = useTiny();
-  const canSlam = useSlamJapes();
-  return rambi && tiny && canSlam;
-};
-const useTinyGateGb = () => {
-  const side = useJapesSideArea();
-  const feather = useFeather();
-  return side && feather;
-};
-const useTinyStumpGb = () => {
-  const hive = useJapesHive();
-  const mini = useMini();
-  return hive && mini;
-};
-const useTinyHiveGb = () => {
-  const hive = useTinyStumpGb();
-  const canSlam = useSlamJapes();
-  const sax = useSax();
-  const orange = useOrange();
-  return {
-    in: hive && canSlam && (sax || orange),
-    out: hive && canSlam
-  };
-};
-const useGeneralThing = () => {
-  const anyKong = useAnyKong();
-  return usePlayJapes() && anyKong;
-};
-const useRambiCrate = () => {
-  const anyKong = useAnyKong();
-  return useJapesRambi() && anyKong;
-};
-const usePaintingDirt = () => {
-  const japesPaintingOutside = useJapesPaintingOutside();
-  const shockwave = useShockwave();
-  return {
-    in: shockwave && japesPaintingOutside.in,
-    out: shockwave && japesPaintingOutside.out
-  };
-};
-const useGeneralDirt$1 = () => {
-  const shockwave = useShockwave();
-  const inStage = usePlayJapes();
-  return inStage && shockwave;
-};
-const useRambiFairy = () => {
-  const camera = useCamera();
-  const japesRambi = useJapesRambi();
-  return japesRambi && camera;
-};
-const usePaintingFairy = () => {
-  const camera = useCamera();
-  const banana = useLankyPaintingGb();
-  return {
-    in: camera && banana.in,
-    out: camera && banana.out
-  };
-};
-const useGeneralFairy$1 = () => {
-  const camera = useCamera();
-  return usePlayJapes() && camera;
-};
-const useGateKasplat = () => {
-  const hasSnide = useSnide();
-  const kongGates = useJapesKongGates();
-  const anyKong = useAnyKong();
-  return hasSnide && kongGates && anyKong;
-};
-const useDkKasplat = () => {
-  const hasSnide = useSnide();
-  const gate = useGateKasplat();
-  const ftaBP = useFtaDkBlueprint();
-  return hasSnide && ftaBP && gate;
-};
-const useDiddyKasplat = () => {
-  const gate = useGateKasplat();
-  const hasSnide = useSnide();
-  const ftaBP = useFtaDiddyBlueprint();
-  return hasSnide && ftaBP && gate;
-};
-const useLankyKasplat = () => {
-  const hasSnide = useSnide();
-  const gate = useGateKasplat();
-  const ftaBP = useFtaLankyBlueprint();
-  return hasSnide && ftaBP && gate;
-};
-const useTinyKasplat = () => {
-  const gate = useGateKasplat();
-  const ftaBP = useFtaTinyBlueprint();
-  const hasSnide = useSnide();
-  return hasSnide && ftaBP && gate;
-};
-const useMtnCrate = () => {
-  const hasClimbing = useClimbing();
-  const hasBananaports = useBananaportAll();
-  return hasClimbing || hasBananaports;
-};
 const useIslesRocketSwitch = () => useSwitchsanityMusicPad("islesTrombone", 2);
 const useIslesFairySwitch = () => useSwitchsanityGun("islesForest", 3);
 const useIslesFungiIsland = () => {
@@ -13646,6 +13330,70 @@ const usePlayLevel = (level) => {
   }
   return false;
 };
+const usePlayLobby = (level) => {
+  const dive = useDive();
+  const openLobbies = useOpenLobbies();
+  const [
+    level1,
+    level2,
+    level3,
+    level4,
+    level5,
+    level6,
+    level7,
+    level8,
+    key1,
+    key2,
+    key5,
+    key6,
+    key7
+  ] = useDonkStore(
+    useShallow((state) => [
+      state.level1,
+      state.level2,
+      state.level3,
+      state.level4,
+      state.level5,
+      state.level6,
+      state.level7,
+      state.level8,
+      state.key1,
+      state.key2,
+      state.key5,
+      state.key6,
+      state.key7
+    ])
+  );
+  const islesUpper = useIslesUpper();
+  const islesKremTop = useIslesKremTop();
+  const islesKremAscent = useIslesKremAscent();
+  const islesFungiIsland = useIslesFungiIsland();
+  if (level1 === level) {
+    return true;
+  }
+  if (level2 === level) {
+    return islesUpper && (openLobbies || key1);
+  }
+  if (level3 === level) {
+    return islesKremAscent && (openLobbies || key2);
+  }
+  if (level4 === level) {
+    return (openLobbies || key2) && dive;
+  }
+  if (level5 === level) {
+    return islesFungiIsland;
+  }
+  if (level6 === level) {
+    return islesUpper && (openLobbies || key5);
+  }
+  if (level7 === level) {
+    return openLobbies || key5;
+  }
+  if (level8 === level) {
+    return islesKremTop && (openLobbies || key6 && key7);
+  }
+  return false;
+};
 const useSlamLevel = (level) => {
   const canPlay = usePlayLevel(level);
   const slam = useSlam();
@@ -13777,7 +13525,7 @@ const useCheckLankyPrison = () => {
   };
 };
 const useCheckLankyMusicPad = () => {
-  const playJapes = usePlayJapes();
+  const playJapes = usePlayLobby("Jungle Japes");
   const boulderTech = useBoulderTech();
   const trombone = useTrombone();
   return playJapes && boulderTech && trombone;
@@ -13871,19 +13619,19 @@ const useForestArena = () => {
   const gone = useGone();
   return playForest && allGun2 && gone;
 };
-const useGeneralDirt = () => {
+const useGeneralDirt$1 = () => {
   const anyKong = useAnyKong();
   const shockwave = useShockwave();
   return anyKong && shockwave;
 };
 const useHoardDirt = () => {
-  const dirt = useGeneralDirt();
+  const dirt = useGeneralDirt$1();
   const vine = useVine();
   const climbing = useClimbing();
   return dirt && vine && climbing;
 };
 const useIslandDirt = () => {
-  const dirt = useGeneralDirt();
+  const dirt = useGeneralDirt$1();
   const fungi = useIslesFungiIsland();
   return dirt && fungi;
 };
@@ -13915,7 +13663,7 @@ const useAztecDirt = () => {
     out: shockwave && (islesUpper && boulderTech && (diddy || tiny) || crossFungi && (dk2 || tiny && twirl))
   };
 };
-const useGeneralFairy = () => {
+const useGeneralFairy$1 = () => {
   const anyKong = useAnyKong();
   const camera = useCamera();
   return anyKong && camera;
@@ -14008,13 +13756,13 @@ const useCavesLobby = () => {
   return canEnterCaves && chunky && barrels && punch;
 };
 const useJapesLobby = () => {
-  const canEnterJapes = usePlayJapes();
+  const canEnterJapes = usePlayLobby("Jungle Japes");
   const chunky = useChunky();
   const barrels = useBarrel();
   return canEnterJapes && chunky && barrels;
 };
 const useJapesLobbyGeneric = () => {
-  const canEnterJapes = usePlayJapes();
+  const canEnterJapes = usePlayLobby("Jungle Japes");
   return canEnterJapes;
 };
 const useAztecLobbyGeneric = () => {
@@ -14204,7 +13952,7 @@ const Hoard = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { chi
   }
 ) }) });
 const PrisonDirt = () => {
-  const dirt = useGeneralDirt();
+  const dirt = useGeneralDirt$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14219,7 +13967,7 @@ const PrisonDirt = () => {
   ] });
 };
 const TrainingRear = () => {
-  const dirt = useGeneralDirt();
+  const dirt = useGeneralDirt$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
@@ -14231,7 +13979,7 @@ const TrainingRear = () => {
   ) }) });
 };
 const UnderCaves = () => {
-  const dirt = useGeneralDirt();
+  const dirt = useGeneralDirt$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
@@ -14472,7 +14220,7 @@ const FactoryLobbyEnemies = () => {
 };
 const JapesLobbyEnemies = () => {
   const anyKong = useAnyKong();
-  const playJapes = usePlayJapes();
+  const playJapes = usePlayLobby("Jungle Japes");
   const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14661,7 +14409,7 @@ const SmallIslandFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, 
     id: 80,
     name: "Isles Fairy (Small Island)",
     region: "Outer Isles",
-    canGetLogic: useGeneralFairy()
+    canGetLogic: useGeneralFairy$1()
   }
 ) }) });
 const UpperKremFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16036,6 +15784,322 @@ const ClassicChecks$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
 const IsleChecks = () => {
   const grp = useDonkStore(useShallow((state) => state.ui.groupByRegion));
   return grp ? /* @__PURE__ */ jsxRuntimeExports.jsx(IslesRegionChecks, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(ClassicChecks$7, {});
+};
+const usePlayJapes = () => usePlayLevel("Jungle Japes");
+const useSlamJapes = () => useSlamLevel("Jungle Japes");
+const useJapesKongGates = () => {
+  const inStage = usePlayJapes();
+  const [barriers, checks] = useDonkStore(
+    useShallow((state) => [state.removeBarriers, state.checks])
+  );
+  return inStage && (checks[1002] || barriers.japesCoconutGates);
+};
+const useJapesRambiSwitch = () => useSwitchsanityGun("japesRambi", 0);
+const useJapesSideSwitch = () => useSwitchsanityGun("japesSide", 1);
+const useJapesHiveSwitch = () => useSwitchsanityGun("japesHive", 3);
+const useJapesPaintingSwitch = () => useSwitchsanityGun("japesPainting", 1);
+const useJapesSideArea = () => {
+  const inStage = usePlayJapes();
+  const canAccess = useJapesSideSwitch();
+  return inStage && canAccess;
+};
+const useJapesRambi = () => {
+  const canPlay = useJapesKongGates();
+  const rambiSwitch = useJapesRambiSwitch();
+  return rambiSwitch && canPlay;
+};
+const useJapesMine = () => {
+  const peanut = usePeanut();
+  const canPlay = usePlayJapes();
+  const hasClimbing = useClimbing();
+  const hasBananaports = useBananaportAll();
+  return peanut && (hasClimbing || hasBananaports) && canPlay;
+};
+const useJapesHive = () => {
+  const hiveSwitch = useJapesHiveSwitch();
+  const canPlay = usePlayJapes();
+  const coconutGates = useJapesKongGates();
+  const japesMine = useJapesMine();
+  const warpAll = useBananaportAll();
+  const [hiveGateOpen] = useDonkStore(useShallow((state) => [state.removeBarriers.japesHiveGate]));
+  return canPlay && (coconutGates && (hiveGateOpen || hiveSwitch) || warpAll && japesMine);
+};
+const useJapesPaintingOutside = () => {
+  const inStage = usePlayJapes();
+  const stand = useStand();
+  const twirl = useTwirl();
+  const climbing = useClimbing();
+  const dk2 = useDk();
+  const tiny = useTiny();
+  const chunky = useChunky();
+  return {
+    in: inStage && (stand || climbing && twirl),
+    out: inStage && climbing && (dk2 || tiny || chunky)
+  };
+};
+const useJapesPainting = () => {
+  const canPlay = useJapesPaintingOutside();
+  const paintingSwitch = useJapesPaintingSwitch();
+  return {
+    in: canPlay.in && paintingSwitch,
+    out: logicBreak(canPlay) && paintingSwitch
+  };
+};
+const useJapesUnderground = () => {
+  const slam = useSlam();
+  const boulderTech = useBoulderTech();
+  const inStage = usePlayJapes();
+  return inStage && boulderTech && slam;
+};
+const useChunkyBoulderGb = () => {
+  const inStage = usePlayJapes();
+  const boulderTech = useBoulderTech();
+  return inStage && boulderTech;
+};
+const useChunkyCagedGb = () => {
+  const boulderTech = useBoulderTech();
+  const canSlam = useSlamJapes();
+  const rambi = useJapesRambi();
+  const climbing = useClimbing();
+  const hasBananaports = useBananaportAll();
+  return rambi && boulderTech && canSlam && (climbing || hasBananaports);
+};
+const useChunkyHiveGb = () => {
+  const hive = useJapesHive();
+  const hunky = useHunky();
+  const climbing = useClimbing();
+  return {
+    in: hive && hunky && climbing,
+    out: hive && hunky
+  };
+};
+const useChunkyUndergroundGb = () => {
+  const under = useJapesUnderground();
+  const pineapple = usePineapple();
+  const vine = useVine();
+  const dk2 = useDk();
+  const twirl = useTwirl();
+  const tiny = useTiny();
+  const diddy = useDiddy();
+  return {
+    in: under && pineapple && vine,
+    out: useFtaChunkyBanana() && under && (dk2 || twirl || (tiny || diddy) && vine)
+  };
+};
+const useChunkyKasplat = () => {
+  const canGoUnderground = useChunkyUndergroundGb();
+  const hasSnide = useSnide();
+  return {
+    in: hasSnide && canGoUnderground.in,
+    out: hasSnide && canGoUnderground.out
+  };
+};
+const useDiddyCagedGb = () => {
+  const rambi = useJapesRambi();
+  const diddy = useDiddy();
+  const canSlam = useSlamJapes();
+  return rambi && diddy && canSlam;
+};
+const useDiddyMountainGb = () => {
+  const mine = useJapesMine();
+  const canSlam = useSlamJapes();
+  return useFtaDiddyBanana() && mine && canSlam;
+};
+const useDiddyTunnelGb = () => {
+  const side = useJapesSideArea();
+  return useFtaDiddyBanana() && side;
+};
+const useDiddyMinecartGb = () => {
+  const mine = useJapesMine();
+  const canSlam = useSlamJapes();
+  const charge = useCharge();
+  const highGrab = useHighGrab();
+  return {
+    in: mine && canSlam && charge,
+    out: mine && highGrab
+  };
+};
+const useDkFreebieGb = () => {
+  const inStage = usePlayJapes();
+  const anyKong = useAnyKong();
+  const hasClimbing = useClimbing();
+  const hasBananaports = useBananaportAll();
+  return inStage && anyKong && (hasClimbing || hasBananaports);
+};
+const useFreeDiddySwitch = () => {
+  const dk2 = useCoconut();
+  const diddy = usePeanut();
+  const lanky = useGrape();
+  const tiny = useFeather();
+  const chunky = usePineapple();
+  const freeDiddy2 = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeDiddy));
+  switch (freeDiddy2) {
+    case 1:
+      return dk2;
+    case 2:
+      return diddy;
+    case 3:
+      return lanky;
+    case 4:
+      return tiny;
+    case 5:
+      return chunky;
+    default:
+      return true;
+  }
+};
+const useDkFreeDiddyGb = () => {
+  const inStage = usePlayJapes();
+  const climbing = useClimbing();
+  const hasBananaports = useBananaportAll();
+  return useFreeDiddySwitch() && inStage && (climbing || hasBananaports);
+};
+const useDkCagedGb = () => {
+  const rambi = useJapesRambi();
+  const dk2 = useDk();
+  const canSlam = useSlamJapes();
+  return rambi && dk2 && canSlam;
+};
+const useDkBlastGb = () => {
+  const inStage = usePlayJapes();
+  const blast = useBlast();
+  const vine = useVine();
+  const climbing = useClimbing();
+  return inStage && blast && vine && climbing;
+};
+const useLankyCagedGb = () => {
+  const rambi = useJapesRambi();
+  const lanky = useLanky();
+  const canSlam = useSlamJapes();
+  const hasClimbing = useClimbing();
+  const hasBananaports = useBananaportAll();
+  return rambi && lanky && canSlam && (hasClimbing || hasBananaports);
+};
+const useLankyGateGb = () => {
+  const side = useJapesSideArea();
+  const grape = useGrape();
+  return side && grape;
+};
+const useLankySlopeGb = () => {
+  const tunnel = useJapesKongGates();
+  const stand = useStand();
+  const anyKong = useAnyKong();
+  return {
+    in: tunnel && stand,
+    out: useFtaLankyBanana() && tunnel && anyKong
+  };
+};
+const useLankyPaintingGb = () => {
+  const painting = useJapesPainting();
+  const grape = useGrape();
+  const trombone = useTrombone();
+  const lanky = useLanky();
+  const slam = useSlam();
+  const anyGun = useAnyGun();
+  const anyMusic = useAnyMusic();
+  return {
+    in: lanky && slam && painting.in && (grape || trombone),
+    out: lanky && slam && logicBreak(painting) && (anyGun || anyMusic)
+  };
+};
+const useTinyCagedGb = () => {
+  const rambi = useJapesRambi();
+  const tiny = useTiny();
+  const canSlam = useSlamJapes();
+  return rambi && tiny && canSlam;
+};
+const useTinyGateGb = () => {
+  const side = useJapesSideArea();
+  const feather = useFeather();
+  return side && feather;
+};
+const useTinyStumpGb = () => {
+  const hive = useJapesHive();
+  const mini = useMini();
+  return hive && mini;
+};
+const useTinyHiveGb = () => {
+  const hive = useTinyStumpGb();
+  const canSlam = useSlamJapes();
+  const sax = useSax();
+  const orange = useOrange();
+  return {
+    in: hive && canSlam && (sax || orange),
+    out: hive && canSlam
+  };
+};
+const useGeneralThing = () => {
+  const anyKong = useAnyKong();
+  return usePlayJapes() && anyKong;
+};
+const useRambiCrate = () => {
+  const anyKong = useAnyKong();
+  return useJapesRambi() && anyKong;
+};
+const usePaintingDirt = () => {
+  const japesPaintingOutside = useJapesPaintingOutside();
+  const shockwave = useShockwave();
+  return {
+    in: shockwave && japesPaintingOutside.in,
+    out: shockwave && japesPaintingOutside.out
+  };
+};
+const useGeneralDirt = () => {
+  const shockwave = useShockwave();
+  const inStage = usePlayJapes();
+  return inStage && shockwave;
+};
+const useRambiFairy = () => {
+  const camera = useCamera();
+  const japesRambi = useJapesRambi();
+  return japesRambi && camera;
+};
+const usePaintingFairy = () => {
+  const camera = useCamera();
+  const banana = useLankyPaintingGb();
+  return {
+    in: camera && banana.in,
+    out: camera && banana.out
+  };
+};
+const useGeneralFairy = () => {
+  const camera = useCamera();
+  return usePlayJapes() && camera;
+};
+const useGateKasplat = () => {
+  const hasSnide = useSnide();
+  const kongGates = useJapesKongGates();
+  const anyKong = useAnyKong();
+  return hasSnide && kongGates && anyKong;
+};
+const useDkKasplat = () => {
+  const hasSnide = useSnide();
+  const gate = useGateKasplat();
+  const ftaBP = useFtaDkBlueprint();
+  return hasSnide && ftaBP && gate;
+};
+const useDiddyKasplat = () => {
+  const gate = useGateKasplat();
+  const hasSnide = useSnide();
+  const ftaBP = useFtaDiddyBlueprint();
+  return hasSnide && ftaBP && gate;
+};
+const useLankyKasplat = () => {
+  const hasSnide = useSnide();
+  const gate = useGateKasplat();
+  const ftaBP = useFtaLankyBlueprint();
+  return hasSnide && ftaBP && gate;
+};
+const useTinyKasplat = () => {
+  const gate = useGateKasplat();
+  const ftaBP = useFtaTinyBlueprint();
+  const hasSnide = useSnide();
+  return hasSnide && ftaBP && gate;
+};
+const useMtnCrate = () => {
+  const hasClimbing = useClimbing();
+  const hasBananaports = useBananaportAll();
+  return hasClimbing || hasBananaports;
 };
 const JapesCheck = (props) => {
   const checks = useDonkStore(useShallow((state) => state.checks));
@@ -17761,15 +17825,15 @@ const Shuffled$E = () => {
 const ShuffledCrates$6 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$E, {}) : null;
 const Shuffled$D = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1270, name: "Japes Dirt Location #1", canGetLogic: useGeneralDirt$1() }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1271, name: "Japes Dirt Location #2", canGetLogic: useGeneralDirt$1() })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1270, name: "Japes Dirt Location #1", canGetLogic: useGeneralDirt() }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1271, name: "Japes Dirt Location #2", canGetLogic: useGeneralDirt() })
   ] });
 };
 const ShuffledDirtLocations$6 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
 const Shuffled$C = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1280, name: "Japes Fairy Location #1", canGetLogic: useGeneralFairy$1() }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1281, name: "Japes Fairy Location #2", canGetLogic: useGeneralFairy$1() })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1280, name: "Japes Fairy Location #1", canGetLogic: useGeneralFairy() }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1281, name: "Japes Fairy Location #2", canGetLogic: useGeneralFairy() })
   ] });
 };
 const ShuffledFairies$6 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$C, {}) : null;
