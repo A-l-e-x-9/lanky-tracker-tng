@@ -10,11 +10,13 @@ import PowerHut from '../gold-bananas/dk/Hut'
 import FreeChunky from '../gold-bananas/lanky/FreeChunky'
 import TinyVent from '../gold-bananas/tiny/Vent'
 import TinyKasplat from '../kasplats/Tiny'
+import ChunkyCage from '../gold-bananas/lanky/ChunkyCage'
 
 const StorageChecks: React.FC = () => (
   <>
     <PowerHut />
     <StorageBarrel />
+    <ChunkyCage />
     <FreeChunky />
     <FactoryBlast />
     <TinyKasplat />
