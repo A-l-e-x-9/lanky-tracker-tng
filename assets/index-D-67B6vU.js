@@ -27796,6 +27796,28 @@ const ShopLocations$1 = () => {
   const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$6, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$1, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
+const KooshyKomeiji = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    CavesCheck,
+    {
+      id: 6008,
+      name: "Caves Boulder: Small Boulder Near Ice Castle",
+      region: "Main Caves Area",
+      canGetLogic: useSatoriKomeiji()
+    }
+  ) });
+};
+const Okuu = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    CavesCheck,
+    {
+      id: 5009,
+      name: "Caves Boulder: Big Boulder Near Cranky's",
+      region: "Main Caves Area",
+      canGetLogic: useOrin()
+    }
+  ) });
+};
 const MainChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(CavesBlast, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(WaterfallBarrel, {}),
@@ -27803,6 +27825,8 @@ const MainChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExport
   /* @__PURE__ */ jsxRuntimeExports.jsx(BeetleRace, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(MiniBarrel, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(EarlyGone, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(KooshyKomeiji, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(Okuu, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$1, {}),
@@ -27853,28 +27877,6 @@ const CavesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$2, {})
 ] });
-const KooshyKomeiji = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CavesCheck,
-    {
-      id: 6008,
-      name: "Caves Boulder: Small Boulder Near Ice Castle",
-      region: "Main Caves Area",
-      canGetLogic: useSatoriKomeiji()
-    }
-  ) });
-};
-const Okuu = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CavesCheck,
-    {
-      id: 5009,
-      name: "Caves Boulder: Big Boulder Near Cranky's",
-      region: "Main Caves Area",
-      canGetLogic: useOrin()
-    }
-  ) });
-};
 const BoulderLocations = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(KooshyKomeiji, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(Okuu, {})
