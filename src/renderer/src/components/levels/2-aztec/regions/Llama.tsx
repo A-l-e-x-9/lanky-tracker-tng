@@ -6,9 +6,11 @@ import LlamaBarrel from '../gold-bananas/lanky/Llama'
 import MatchGame from '../gold-bananas/lanky/Match'
 import LavaPedestal from '../gold-bananas/tiny/Lava'
 import LankyKasplat from '../kasplats/Lanky'
+import LankyCage from '../gold-bananas/dk/LankyCage'
 
 const LlamaTempleChecks: React.FC = () => (
   <>
+    <LankyCage />
     <FreeLanky />
     <LlamaBarrel />
     <MatchGame />
