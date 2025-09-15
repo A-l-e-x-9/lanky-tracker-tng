@@ -1,7 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import { Level } from '@renderer/store/common'
-import { usePlayCastle } from '../castle'
 import { useCurrentFairyCount, useCurrentGBCount } from '../consumables'
 import { useSlamGalleon } from '../galleon'
 import { usePlayHelm } from '../helm'
@@ -577,7 +576,7 @@ export const useCheckLankyMusicPad = (): boolean => {
 }
 
 export const useCheckLankyCastle = (): LogicBool => {
-  const playCastle = usePlayCastle()
+  const playCastle = usePlayLobby('Creepy Castle')
   const boulderTech = useBoulderTech()
   const balloon = useBalloon()
   const tiny = useTiny()
@@ -728,7 +727,7 @@ export const useCastleDirt = (): LogicBool => {
   const boulderTech = useBoulderTech()
   const tiny = useTiny()
   const balloon = useBalloon()
-  const playCastle = usePlayCastle()
+  const playCastle = usePlayLobby('Creepy Castle')
   return {
     in: playCastle && boulderTech && balloon && shockwave,
     out: playCastle && tiny && shockwave
@@ -796,7 +795,7 @@ export const useHelmKasplat = (): LogicBool => {
 }
 
 export const useCastleKasplat = (): boolean => {
-  const playCastle = usePlayCastle()
+  const playCastle = usePlayLobby('Creepy Castle')
   const snide = useSnide()
   const coconut = useCoconut()
   const FtaDiddyBlueprint = useFtaDiddyBlueprint()
@@ -846,7 +845,7 @@ export const useAztecLobbyTrianglePad = (): boolean => {
 }
 
 export const useCastleLobby = (): boolean => {
-  const canEnterCastle = usePlayCastle()
+  const canEnterCastle = usePlayLobby('Creepy Castle')
   const chunky = useChunky()
   const barrels = useBarrel()
   return canEnterCastle && chunky && barrels
@@ -929,6 +928,6 @@ export const useCavesLobbyDiddy = (): LogicBool => {
 }
 
 export const useCastleLobbyGeneric = (): boolean => {
-  const canEnterCastle = usePlayCastle()
+  const canEnterCastle = usePlayLobby('Creepy Castle')
   return canEnterCastle
 }
