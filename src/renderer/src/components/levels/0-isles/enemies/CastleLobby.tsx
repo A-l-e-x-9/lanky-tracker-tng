@@ -1,11 +1,11 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { usePlayCastle } from '@renderer/hooks/castle'
+import { usePlayLobby } from '@renderer/hooks/isles'
 import { useDefeatKosha } from '@renderer/hooks/enemies'
 import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 
 const CastleLobbyEnemies: React.FC = () => {
-  const playCastle = usePlayCastle()
+  const playCastle = usePlayLobby('Creepy Castle')
   const anyKong = useAnyKong()
   const kosha = useDefeatKosha()
   const hasFairyCam = useCamera()
