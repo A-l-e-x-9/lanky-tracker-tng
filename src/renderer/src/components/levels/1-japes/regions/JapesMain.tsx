@@ -8,6 +8,7 @@ import FreeDiddy from '../gold-bananas/dk/FreeDiddy'
 import FrontCage from '../gold-bananas/dk/FrontCage'
 import LankyTimedCage from '../gold-bananas/lanky/TimedCage'
 import TinyTimedCage from '../gold-bananas/tiny/TimedCage'
+import DiddyCage from '../gold-bananas/dk/DiddyCage'
 
 const JapesMainChecks: React.FC = () => (
   <>
@@ -16,6 +17,7 @@ const JapesMainChecks: React.FC = () => (
     <LankyTimedCage />
     <TinyTimedCage />
     <ChunkyTimedCage />
+    <DiddyCage />
     <FreeDiddy />
     <FunkyArena />
     <PaintingHillDirt />
