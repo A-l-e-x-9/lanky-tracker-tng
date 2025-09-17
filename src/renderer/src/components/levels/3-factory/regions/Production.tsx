@@ -5,6 +5,7 @@ import LankyProduction from '../gold-bananas/lanky/Production'
 import TinyProduction from '../gold-bananas/tiny/Production'
 import DiddyKasplat from '../kasplats/Diddy'
 import DkKasplat from '../kasplats/Dk'
+import ProductionEnemies from '../enemies/Production'
 
 const ProductionChecks: React.FC = () => (
   <>
@@ -15,6 +16,7 @@ const ProductionChecks: React.FC = () => (
     <DkKasplat />
     <LankyProduction />
     <TinyProduction />
+    <ProductionEnemies />
   </>
 )
 
