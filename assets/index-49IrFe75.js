@@ -21448,7 +21448,8 @@ const ProductionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyProduction, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(LankyProduction, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyProduction, {})
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyProduction, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ProductionEnemies, {})
 ] });
 const FactoryRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
   /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
