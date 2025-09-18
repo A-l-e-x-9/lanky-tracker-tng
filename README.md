@@ -10,6 +10,7 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
 - Fix npm-web-out.yaml so that "instructions.html", its CSS, and the Lanky head icon all get pushed out to the gh-pages branch...I put them in there by hand, but the next run of that file takes them all away again.
+- Missed some enemies in at least Castle, that are not eligible for Dropsanity but can have pictures taken of them for rewards.
 - Right now, the B. Locker barriers available in the tracker can only accept bananas, so if you're playing a "Chaos B. Lockers" seed (where he often requires things other than bananas so that you can get into the level), you're out of luck. :(
 - Make it so that you can just type how many bananas, etc., you have in the "count" selectors (such as "Colored bananas needed for medal" in Settings) so you don't have to click so much.
 - Also implement the "shuffled DK Portals" function (and rarely-seen "Shuffle Start Location" function, too?) (a shuffled portal can make all the difference in what checks are accessible to you, after all!).
