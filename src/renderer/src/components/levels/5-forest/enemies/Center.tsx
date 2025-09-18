@@ -2,7 +2,7 @@ import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatKlump, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useForestBean, useForestBeanHalf, usePlayForest } from '@renderer/hooks/forest'
 import ForestCheck from '../check'
-import { useHunky, useCamera } from '@renderer/hooks/kongs'
+import { /*useHunky, */useCamera } from '@renderer/hooks/kongs'
 
 const CenterEnemies: React.FC = () => {
   const inStage = usePlayForest()
@@ -10,7 +10,7 @@ const CenterEnemies: React.FC = () => {
   const klump = useDefeatKlump()
   const beanstalk = useForestBean()
   const beanHalf = useForestBeanHalf()
-  const hasHunky = useHunky()
+/*  const hasHunky = useHunky()*/
   const hasFairyCam = useCamera()
   return (
     <DropPool>
@@ -51,30 +51,6 @@ const CenterEnemies: React.FC = () => {
         canGetLogic={beanstalk && klump}
       />
       <ForestCheck
-        id={5411}
-        name="Forest Enemy: Giant Tomato 0"
-        region="Forest Center And Beanstalk"
-        canGetLogic={beanstalk && hasHunky}
-      />
-      <ForestCheck
-        id={5412}
-        name="Forest Enemy: Giant Tomato 1"
-        region="Forest Center And Beanstalk"
-        canGetLogic={beanstalk && hasHunky}
-      />
-      <ForestCheck
-        id={5413}
-        name="Forest Enemy: Giant Tomato 2"
-        region="Forest Center And Beanstalk"
-        canGetLogic={beanstalk && hasHunky}
-      />
-      <ForestCheck
-        id={5414}
-        name="Forest Enemy: Giant Tomato 3"
-        region="Forest Center And Beanstalk"
-        canGetLogic={beanstalk && hasHunky}
-      />
-      <ForestCheck
         id={5423}
         name="Forest Enemy Photo: Near Apple Dropoff"
         region="Forest Center And Beanstalk"
@@ -110,6 +86,37 @@ const CenterEnemies: React.FC = () => {
         region="Forest Center And Beanstalk"
         canGetLogic={beanstalk && klump && hasFairyCam}
       />
+    </DropPool>
+  )
+}
+
+export default CenterEnemies
+
+/*As of September 18, 2025, it seems that the Randomizer has decided to give up on making the tomatoes eligible for Dropsanity. Preserving here in case they change their minds:
+      <ForestCheck
+        id={5411}
+        name="Forest Enemy: Giant Tomato 0"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && hasHunky}
+      />
+      <ForestCheck
+        id={5412}
+        name="Forest Enemy: Giant Tomato 1"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && hasHunky}
+      />
+      <ForestCheck
+        id={5413}
+        name="Forest Enemy: Giant Tomato 2"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && hasHunky}
+      />
+      <ForestCheck
+        id={5414}
+        name="Forest Enemy: Giant Tomato 3"
+        region="Forest Center And Beanstalk"
+        canGetLogic={beanstalk && hasHunky}
+      />
       <ForestCheck
         id={5511}
         name="Forest Enemy Photo: Giant Tomato 0"
@@ -134,8 +141,4 @@ const CenterEnemies: React.FC = () => {
         region="Forest Center And Beanstalk"
         canGetLogic={beanstalk && hasHunky && hasFairyCam}
       />
-    </DropPool>
-  )
-}
-
-export default CenterEnemies
+*/
