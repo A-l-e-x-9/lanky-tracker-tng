@@ -19,7 +19,8 @@ const IslesMainEnemies: React.FC = () => {
         id={301}
         name="Isles Enemy: Pineapple Cage 1"
         region="Main Isle"
-        canGetLogic={anyKong && zinger}
+        canGetLogic={anyKong && zinger.in}
+        canGetBreak={anyKong && zinger.out}
       />
       <IslesCheck
         id={302}
@@ -31,7 +32,8 @@ const IslesMainEnemies: React.FC = () => {
         id={303}
         name="Isles Enemy: Fungi Cannon 1"
         region="Main Isle"
-        canGetLogic={anyKong && zinger}
+        canGetLogic={anyKong && zinger.in}
+        canGetBreak={anyKong && zinger.out}
       />
       <IslesCheck
         id={304}
@@ -49,7 +51,7 @@ const IslesMainEnemies: React.FC = () => {
         id={401}
         name="Isles Enemy Photo: Pineapple Cage 1"
         region="Main Isle"
-        canGetLogic={anyKong && zinger && hasFairyCam}
+        canGetLogic={anyKong && zinger.out && hasFairyCam}
       />
       <IslesCheck
         id={402}
@@ -61,7 +63,7 @@ const IslesMainEnemies: React.FC = () => {
         id={403}
         name="Isles Enemy Photo: Fungi Cannon 1"
         region="Main Isle"
-        canGetLogic={anyKong && zinger && hasFairyCam}
+        canGetLogic={anyKong && zinger.out && hasFairyCam}
       />
       <IslesCheck
         id={404}

@@ -15,13 +15,14 @@ const FactoryLobbyEnemies: React.FC = () => {
         id={314}
         name="Isles Enemy: Factory Lobby"
         region="Japes-Forest Lobbies"
-        canGetLogic={anyKong && playFactory && zinger}
+        canGetLogic={anyKong && playFactory && zinger.in}
+        canGetBreak={anyKong && playFactory && zinger.out}
       />
       <IslesCheck
         id={414}
         name="Isles Enemy Photo: Factory Lobby"
         region="Japes-Forest Lobbies"
-        canGetLogic={anyKong && playFactory && zinger && hasFairyCam}
+        canGetLogic={anyKong && playFactory && zinger.out && hasFairyCam}
       />
     </DropPool>
   )

@@ -15,37 +15,40 @@ const CastleLobbyEnemies: React.FC = () => {
         id={315}
         name="Isles Enemy: Castle Lobby Left"
         region="Caves-Helm Lobbies"
-        canGetLogic={anyKong && playCastle && kosha}
+        canGetLogic={anyKong && playCastle && kosha.in}
+        canGetBreak={anyKong && playCastle && kosha.out}
       />
       <IslesCheck
         id={316}
         name="Isles Enemy: Castle Lobby Near Right"
         region="Caves-Helm Lobbies"
-        canGetLogic={anyKong && playCastle && kosha}
+        canGetLogic={anyKong && playCastle && kosha.in}
+        canGetBreak={anyKong && playCastle && kosha.out}
       />
       <IslesCheck
         id={317}
         name="Isles Enemy: Castle Lobby Far Right"
         region="Caves-Helm Lobbies"
-        canGetLogic={anyKong && playCastle && kosha}
+        canGetLogic={anyKong && playCastle && kosha.in}
+        canGetBreak={anyKong && playCastle && kosha.out}
       />
       <IslesCheck
         id={415}
         name="Isles Enemy Photo: Castle Lobby Left"
         region="Caves-Helm Lobbies"
-        canGetLogic={anyKong && playCastle && kosha && hasFairyCam}
+        canGetLogic={anyKong && playCastle && kosha.out && hasFairyCam}
       />
       <IslesCheck
         id={416}
         name="Isles Enemy Photo: Castle Lobby Near Right"
         region="Caves-Helm Lobbies"
-        canGetLogic={anyKong && playCastle && kosha && hasFairyCam}
+        canGetLogic={anyKong && playCastle && kosha.out && hasFairyCam}
       />
       <IslesCheck
         id={417}
         name="Isles Enemy Photo: Castle Lobby Far Right"
         region="Caves-Helm Lobbies"
-        canGetLogic={anyKong && playCastle && kosha && hasFairyCam}
+        canGetLogic={anyKong && playCastle && kosha.out && hasFairyCam}
       />
     </DropPool>
   )

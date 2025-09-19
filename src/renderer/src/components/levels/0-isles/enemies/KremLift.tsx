@@ -21,13 +21,15 @@ const KremLiftEnemies: React.FC = () => {
         id={308}
         name="Isles Enemy: Lower Factory Path 0"
         region="Krem Isle"
-        canGetLogic={anyKong && kremAscent && zinger}
+        canGetLogic={anyKong && kremAscent && zinger.in}
+        canGetBreak={anyKong && kremAscent && zinger.out}
       />
       <IslesCheck
         id={309}
         name="Isles Enemy: Lower Factory Path 1"
         region="Krem Isle"
-        canGetLogic={anyKong && kremAscent && zinger}
+        canGetLogic={anyKong && kremAscent && zinger.in}
+        canGetBreak={anyKong && kremAscent && zinger.out}
       />
       <IslesCheck
         id={406}
@@ -39,13 +41,13 @@ const KremLiftEnemies: React.FC = () => {
         id={408}
         name="Isles Enemy Photo: Lower Factory Path 0"
         region="Krem Isle"
-        canGetLogic={anyKong && kremAscent && zinger && hasFairyCam}
+        canGetLogic={anyKong && kremAscent && zinger.out && hasFairyCam}
       />
       <IslesCheck
         id={409}
         name="Isles Enemy Photo: Lower Factory Path 1"
         region="Krem Isle"
-        canGetLogic={anyKong && kremAscent && zinger && hasFairyCam}
+        canGetLogic={anyKong && kremAscent && zinger.out && hasFairyCam}
       />
     </DropPool>
   )

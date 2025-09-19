@@ -13,13 +13,14 @@ const NearAztecEnemies: React.FC = () => {
         id={307}
         name="Isles Enemy: Near Aztec"
         region="Main Isle"
-        canGetLogic={anyKong && zinger}
+        canGetLogic={anyKong && zinger.in}
+        canGetBreak={anyKong && zinger.out}
       />
       <IslesCheck
         id={407}
         name="Isles Enemy Photo: Near Aztec"
         region="Main Isle"
-        canGetLogic={anyKong && zinger && hasFairyCam}
+        canGetLogic={anyKong && zinger.out && hasFairyCam}
       />
     </DropPool>
   )
