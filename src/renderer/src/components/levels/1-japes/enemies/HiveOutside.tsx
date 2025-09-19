@@ -15,19 +15,22 @@ const HiveOutsideEnemies: React.FC = () => {
         id={1307}
         name="Japes Enemy: Hive Area 0"
         region="Hive Tunnel Area"
-        canGetLogic={hiveOut && zinger}
+        canGetLogic={hiveOut && zinger.in}
+        canGetBreak={hiveOut && zinger.out}
       />
       <JapesCheck
         id={1308}
         name="Japes Enemy: Hive Area 1"
         region="Hive Tunnel Area"
-        canGetLogic={hiveOut && zinger}
+        canGetLogic={hiveOut && zinger.in}
+        canGetBreak={hiveOut && zinger.out}
       />
       <JapesCheck
         id={1309}
         name="Japes Enemy: Hive Area 2"
         region="Hive Tunnel Area"
-        canGetLogic={hiveOut && zinger}
+        canGetLogic={hiveOut && zinger.in}
+        canGetBreak={hiveOut && zinger.out}
       />
       <JapesCheck
         id={1310}
@@ -45,19 +48,19 @@ const HiveOutsideEnemies: React.FC = () => {
         id={1407}
         name="Japes Enemy Photo: Hive Area 0"
         region="Hive Tunnel Area"
-        canGetLogic={hiveOut && zinger && hasFairyCam}
+        canGetLogic={hiveOut && hasFairyCam}
       />
       <JapesCheck
         id={1408}
         name="Japes Enemy Photo: Hive Area 1"
         region="Hive Tunnel Area"
-        canGetLogic={hiveOut && zinger && hasFairyCam}
+        canGetLogic={hiveOut && hasFairyCam}
       />
       <JapesCheck
         id={1409}
         name="Japes Enemy Photo: Hive Area 2"
         region="Hive Tunnel Area"
-        canGetLogic={hiveOut && zinger && hasFairyCam}
+        canGetLogic={hiveOut && hasFairyCam}
       />
       <JapesCheck
         id={1410}

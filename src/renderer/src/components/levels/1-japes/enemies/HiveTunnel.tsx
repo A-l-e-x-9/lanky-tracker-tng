@@ -14,13 +14,14 @@ const HiveTunnelEnemies: React.FC = () => {
         id={1318}
         name="Japes Enemy: Feather Tunnel"
         region="Hive Tunnel Area"
-        canGetLogic={kongGates && zinger}
+        canGetLogic={kongGates && zinger.in}
+        canGetBreak={kongGates && zinger.out}
       />
       <JapesCheck
         id={1418}
         name="Japes Enemy Photo: Feather Tunnel"
         region="Hive Tunnel Area"
-        canGetLogic={kongGates && zinger && hasFairyCam}
+        canGetLogic={kongGates && hasFairyCam}
       />
     </DropPool>
   )

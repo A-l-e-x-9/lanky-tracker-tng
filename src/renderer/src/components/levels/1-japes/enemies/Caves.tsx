@@ -1,5 +1,5 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { useDefeatKlump } from '@renderer/hooks/enemies'
+import { useDefeatKlump, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useJapesMine, useSlamJapes } from '@renderer/hooks/japes'
 import { useCharge, useCamera } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
@@ -10,6 +10,7 @@ const CaveEnemies: React.FC = () => {
   const klump = useDefeatKlump()
   const charge = useCharge()
   const hasFairyCam = useCamera()
+  const isZinger = useDefeatZinger
   return (
     <DropPool>
       <JapesCheck
@@ -34,25 +35,29 @@ const CaveEnemies: React.FC = () => {
         id={1328}
         name="Japes Enemy: Mountain Start 3"
         region="Japes Caves And Mines"
-        canGetLogic={mine}
+        canGetLogic={mine && isZinger.in}
+        canGetBreak={mine && isZinger.out}
       />
       <JapesCheck
         id={1329}
         name="Japes Enemy: Mountain Start 4"
         region="Japes Caves And Mines"
-        canGetLogic={mine}
+        canGetLogic={mine && isZinger.in}
+        canGetBreak={mine && isZinger.out}
       />
       <JapesCheck
         id={1330}
         name="Japes Enemy: Mountain Gate 0"
         region="Japes Caves And Mines"
-        canGetLogic={mine}
+        canGetLogic={mine && isZinger.in}
+        canGetBreak={mine && isZinger.out}
       />
       <JapesCheck
         id={1331}
         name="Japes Enemy: Mountain Gate 1"
         region="Japes Caves And Mines"
-        canGetLogic={mine}
+        canGetLogic={mine && isZinger.in}
+        canGetBreak={mine && isZinger.out}
       />
       <JapesCheck
         id={1332}

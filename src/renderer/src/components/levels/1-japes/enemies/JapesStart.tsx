@@ -39,7 +39,8 @@ const JapesStartEnemies: React.FC = () => {
         id={1313}
         name="Japes Enemy: Near Underground"
         region="Japes Lowlands"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <JapesCheck
         id={1400}
@@ -69,7 +70,7 @@ const JapesStartEnemies: React.FC = () => {
         id={1413}
         name="Japes Enemy Photo: Near Underground"
         region="Japes Lowlands"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
     </DropPool>
   )

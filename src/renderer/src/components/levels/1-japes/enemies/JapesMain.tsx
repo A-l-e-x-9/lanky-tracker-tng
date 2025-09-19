@@ -27,13 +27,15 @@ const JapesMainEnemies: React.FC = () => {
         id={1316}
         name="Japes Enemy: Near Painting 2"
         region="Japes Hillside"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <JapesCheck
         id={1317}
         name="Japes Enemy: Mountain"
         region="Japes Hillside"
-        canGetLogic={inStage && anyKong}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <JapesCheck
         id={1414}
@@ -51,13 +53,13 @@ const JapesMainEnemies: React.FC = () => {
         id={1416}
         name="Japes Enemy Photo: Near Painting 2"
         region="Japes Hillside"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <JapesCheck
         id={1417}
         name="Japes Enemy Photo: Mountain"
         region="Japes Hillside"
-        canGetLogic={inStage && anyKong && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
     </DropPool>
   )
