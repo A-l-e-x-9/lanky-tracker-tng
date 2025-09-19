@@ -10,7 +10,7 @@ const CaveEnemies: React.FC = () => {
   const klump = useDefeatKlump()
   const charge = useCharge()
   const hasFairyCam = useCamera()
-  const isZinger = useDefeatZinger
+  const isZinger = useDefeatZinger()
   return (
     <DropPool>
       <JapesCheck
