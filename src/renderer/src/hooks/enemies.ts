@@ -1,4 +1,5 @@
-import { useAnyGun, useAnyMusic, useOrange, usePunch, useShockwave } from './kongs'
+import { useAnyKong, useAnyGun, useAnyMusic, useOrange, usePunch, useShockwave } from './kongs'
+import { LogicBool } from './world'
 
 /**
  * Can you defeat a Zinger, fly, or bat?
