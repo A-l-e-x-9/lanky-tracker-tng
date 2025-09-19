@@ -28,13 +28,15 @@ const SurroundingsEnemies: React.FC = () => {
         id={7302}
         name="Castle Enemy: Wooden Extrusion 0"
         region="Castle Surroundings"
-        canGetLogic={inStage && anyKong && kosha}
+        canGetLogic={inStage && anyKong && kosha.in}
+        canGetBreak={inStage && anyKong && kosha.out}
       />
       <CastleCheck
         id={7303}
         name="Castle Enemy: Wooden Extrusion 1"
         region="Castle Surroundings"
-        canGetLogic={inStage && anyKong && kosha}
+        canGetLogic={inStage && anyKong && kosha.in}
+        canGetBreak={inStage && anyKong && kosha.out}
       />
       <CastleCheck
         id={7304}
@@ -52,7 +54,8 @@ const SurroundingsEnemies: React.FC = () => {
         id={7306}
         name="Castle Enemy: Near Tower"
         region="Castle Surroundings"
-        canGetLogic={inStage && anyKong && kosha}
+        canGetLogic={inStage && anyKong && kosha.in}
+        canGetBreak={inStage && anyKong && kosha.out}
       />
       <CastleCheck
         id={7307}
@@ -109,13 +112,13 @@ const SurroundingsEnemies: React.FC = () => {
         id={7402}
         name="Castle Enemy Photo: Wooden Extrusion 0"
         region="Castle Surroundings"
-        canGetLogic={inStage && anyKong && kosha && hasFairyCam}
+        canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <CastleCheck
         id={7403}
         name="Castle Enemy Photo: Wooden Extrusion 1"
         region="Castle Surroundings"
-        canGetLogic={inStage && anyKong && kosha && hasFairyCam}
+        canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <CastleCheck
         id={7404}
@@ -133,7 +136,7 @@ const SurroundingsEnemies: React.FC = () => {
         id={7406}
         name="Castle Enemy Photo: Near Tower"
         region="Castle Surroundings"
-        canGetLogic={inStage && anyKong && kosha && hasFairyCam}
+        canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <CastleCheck
         id={7407}
