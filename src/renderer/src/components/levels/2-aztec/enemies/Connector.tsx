@@ -16,15 +16,15 @@ const ConnectorTunnelEnemies: React.FC = () => {
         id={2302}
         name="Aztec Enemy: Tunnel Pad 0"
         region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && zinger}
-        canGetBreak={logicBreak(inStage) && zinger}
+        canGetLogic={inStage.in && zinger.in}
+        canGetBreak={logicBreak(inStage) && zinger.out}
       />
       <AztecCheck
         id={2303}
         name="Aztec Enemy: Tunnel Pad 1"
         region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && zinger}
-        canGetBreak={logicBreak(inStage) && zinger}
+        canGetLogic={inStage.in && zinger.in}
+        canGetBreak={logicBreak(inStage) && zinger.out}
       />
       <AztecCheck
         id={2304}
@@ -58,15 +58,15 @@ const ConnectorTunnelEnemies: React.FC = () => {
         id={2402}
         name="Aztec Enemy Photo: Tunnel Pad 0"
         region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && zinger && hasFairyCam}
-        canGetBreak={logicBreak(inStage) && zinger && hasFairyCam}
+        canGetLogic={inStage.in && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && hasFairyCam}
       />
       <AztecCheck
         id={2403}
         name="Aztec Enemy Photo: Tunnel Pad 1"
         region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && zinger && hasFairyCam}
-        canGetBreak={logicBreak(inStage) && zinger && hasFairyCam}
+        canGetLogic={inStage.in && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && hasFairyCam}
       />
       <AztecCheck
         id={2404}

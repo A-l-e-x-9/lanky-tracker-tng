@@ -44,8 +44,8 @@ const TotemEnemies: React.FC = () => {
         id={2317}
         name="Aztec Enemy: Outside 5DT"
         region="Aztec Oasis And Totem Area"
-        canGetLogic={inStage.in && zinger}
-        canGetBreak={logicBreak(inStage) && zinger}
+        canGetLogic={inStage.in && zinger.in}
+        canGetBreak={logicBreak(inStage) && zinger.out}
       />
       <AztecCheck
         id={2318}
@@ -62,14 +62,14 @@ const TotemEnemies: React.FC = () => {
         canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
       />
       <AztecCheck
-        id={2514}
+        id={2414}
         name="Aztec Enemy Photo: Outside the Gong Tower"
         region="Aztec Oasis And Totem Area"
         canGetLogic={inStage.in && anyKong && hasFairyCam}
         canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
       />
       <AztecCheck
-        id={2515}
+        id={2514}
         name="Aztec Enemy Photo: In Front of Snide's"
         region="Aztec Oasis And Totem Area"
         canGetLogic={inStage.in && anyKong && hasFairyCam}
@@ -86,8 +86,8 @@ const TotemEnemies: React.FC = () => {
         id={2417}
         name="Aztec Enemy Photo: Outside 5DT"
         region="Aztec Oasis And Totem Area"
-        canGetLogic={inStage.in && zinger && hasFairyCam}
-        canGetBreak={logicBreak(inStage) && zinger && hasFairyCam}
+        canGetLogic={inStage.in && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && hasFairyCam}
       />
       <AztecCheck
         id={2418}

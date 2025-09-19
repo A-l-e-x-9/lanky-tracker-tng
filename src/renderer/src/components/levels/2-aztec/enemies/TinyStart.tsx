@@ -3,25 +3,27 @@ import { useAztecTinyTemple } from '@renderer/hooks/aztec'
 import { logicBreak } from '@renderer/hooks/world'
 import { useCamera } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
+import { useDefeatKlobber } from '@renderer/hooks/enemies'
 
 const TinyStartEnemies: React.FC = () => {
   const tiny = useAztecTinyTemple()
   const hasFairyCam = useCamera()
+  const klobber = useDefeatKlobber()
   return (
     <DropPool>
       <AztecCheck
         id={2379}
         name="Aztec Enemy: TT Guard 0"
         region="Tiny Temple"
-        canGetLogic={tiny.in}
-        canGetBreak={logicBreak(tiny)}
+        canGetLogic={tiny.in && klobber}
+        canGetBreak={logicBreak(tiny) && klobber}
       />
       <AztecCheck
         id={2380}
         name="Aztec Enemy: TT Guard 1"
         region="Tiny Temple"
-        canGetLogic={tiny.in}
-        canGetBreak={logicBreak(tiny)}
+        canGetLogic={tiny.in && klobber}
+        canGetBreak={logicBreak(tiny) && klobber}
       />
       <AztecCheck
         id={2381}

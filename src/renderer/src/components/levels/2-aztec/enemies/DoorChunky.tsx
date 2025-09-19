@@ -45,8 +45,8 @@ const Chunky5Enemies: React.FC = () => {
         id={2350}
         name="Aztec Enemy: Chunky 5DT Reward"
         region="5 Door Temple"
-        canGetLogic={door.in && pineapple && zinger}
-        canGetBreak={logicBreak(door) && pineapple && zinger}
+        canGetLogic={door.in && pineapple && zinger.in}
+        canGetBreak={logicBreak(door) && pineapple && zinger.out}
       />
       <AztecCheck
         id={2446}
@@ -80,8 +80,8 @@ const Chunky5Enemies: React.FC = () => {
         id={2450}
         name="Aztec Enemy Photo: Chunky 5DT Reward"
         region="5 Door Temple"
-        canGetLogic={door.in && pineapple && zinger && hasFairyCam}
-        canGetBreak={logicBreak(door) && pineapple && zinger && hasFairyCam}
+        canGetLogic={door.in && pineapple && hasFairyCam}
+        canGetBreak={logicBreak(door) && pineapple && hasFairyCam}
       />
     </DropPool>
   )

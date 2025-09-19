@@ -16,8 +16,8 @@ const OasisEnemies: React.FC = () => {
         id={2315}
         name="Aztec Enemy: Near Candy"
         region="Aztec Oasis And Totem Area"
-        canGetLogic={inStage.in && zinger}
-        canGetBreak={logicBreak(inStage) && zinger}
+        canGetLogic={inStage.in && zinger.in}
+        canGetBreak={logicBreak(inStage) && zinger.out}
       />
       <AztecCheck
         id={2312}
@@ -30,8 +30,8 @@ const OasisEnemies: React.FC = () => {
         id={2415}
         name="Aztec Enemy Photo: Near Candy"
         region="Aztec Oasis And Totem Area"
-        canGetLogic={inStage.in && zinger && hasFairyCam}
-        canGetBreak={logicBreak(inStage) && zinger && hasFairyCam}
+        canGetLogic={inStage.in && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && hasFairyCam}
       />
       <AztecCheck
         id={2412}

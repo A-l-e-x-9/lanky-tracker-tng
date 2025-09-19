@@ -17,22 +17,22 @@ const BeforeOasisEnemies: React.FC = () => {
         id={2300}
         name="Aztec Enemy: Vase 0"
         region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && pineapple}
-        canGetBreak={logicBreak(inStage) && pineapple}
+        canGetLogic={inStage.in && pineapple && zinger.in}
+        canGetBreak={logicBreak(inStage) && pineapple && zinger.out}
       />
       <AztecCheck
         id={2301}
         name="Aztec Enemy: Vase 1"
         region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && pineapple}
-        canGetBreak={logicBreak(inStage) && pineapple}
+        canGetLogic={inStage.in && pineapple && zinger.in}
+        canGetBreak={logicBreak(inStage) && pineapple && zinger.out}
       />
       <AztecCheck
         id={2402}
         name="Aztec Enemy: Vase 2"
         region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && pineapple}
-        canGetBreak={logicBreak(inStage) && pineapple}
+        canGetLogic={inStage.in && pineapple && zinger.in}
+        canGetBreak={logicBreak(inStage) && pineapple && zinger.out}
       />
       <AztecCheck
         id={2308}
@@ -52,15 +52,15 @@ const BeforeOasisEnemies: React.FC = () => {
         id={2310}
         name="Aztec Enemy: Starting Tunnel 2"
         region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && zinger}
-        canGetBreak={logicBreak(inStage) && zinger}
+        canGetLogic={inStage.in && zinger.in}
+        canGetBreak={logicBreak(inStage) && zinger.out}
       />
       <AztecCheck
         id={2311}
         name="Aztec Enemy: Starting Tunnel 3"
         region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && zinger}
-        canGetBreak={logicBreak(inStage) && zinger}
+        canGetLogic={inStage.in && zinger.in}
+        canGetBreak={logicBreak(inStage) && zinger.out}
       />
       <AztecCheck
         id={2400}
@@ -101,15 +101,15 @@ const BeforeOasisEnemies: React.FC = () => {
         id={2410}
         name="Aztec Enemy Photo: Starting Tunnel 2"
         region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && zinger && hasFairyCam}
-        canGetBreak={logicBreak(inStage) && zinger && hasFairyCam}
+        canGetLogic={inStage.in && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && hasFairyCam}
       />
       <AztecCheck
         id={2411}
         name="Aztec Enemy Photo: Starting Tunnel 3"
         region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && zinger && hasFairyCam}
-        canGetBreak={logicBreak(inStage) && zinger && hasFairyCam}
+        canGetLogic={inStage.in && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && hasFairyCam}
       />
     </DropPool>
   )
