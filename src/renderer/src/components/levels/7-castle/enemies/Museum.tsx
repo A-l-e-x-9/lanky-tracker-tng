@@ -16,7 +16,8 @@ const MuseumEnemies: React.FC = () => {
         id={7361}
         name="Castle Enemy: Museum Start"
         region="Castle Rooms"
-        canGetLogic={inStage && chunky && canSlam && kosha}
+        canGetLogic={inStage && chunky && canSlam && kosha.in}
+        canGetBreak={inStage && chunky && canSlam && kosha.out}
       />
       <CastleCheck
         id={7362}
@@ -46,7 +47,7 @@ const MuseumEnemies: React.FC = () => {
         id={7461}
         name="Castle Enemy Photo: Museum Start"
         region="Castle Rooms"
-        canGetLogic={inStage && chunky && canSlam && kosha && hasFairyCam}
+        canGetLogic={inStage && chunky && canSlam && hasFairyCam}
       />
       <CastleCheck
         id={7462}
