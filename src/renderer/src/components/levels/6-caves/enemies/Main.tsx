@@ -28,19 +28,22 @@ const MainEnemies: React.FC = () => {
         id={6304}
         name="Caves Enemy: Near Funky"
         region="Main Caves Area"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <CavesCheck
         id={6306}
         name="Caves Enemy: Near Bonus Room"
         region="Main Caves Area"
-        canGetLogic={inStage && kosha}
+        canGetLogic={inStage && kosha.in}
+        canGetBreak={inStage && kosha.out}
       />
       <CavesCheck
         id={6305}
         name="Caves Enemy: Near Snide"
         region="Main Caves Area"
-        canGetLogic={inStage && kosha}
+        canGetLogic={inStage && kosha.in}
+        canGetBreak={inStage && kosha.out}
       />
       <CavesCheck
         id={6400}
@@ -58,19 +61,19 @@ const MainEnemies: React.FC = () => {
         id={6404}
         name="Caves Enemy Photo: Near Funky"
         region="Main Caves Area"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <CavesCheck
         id={6406}
         name="Caves Enemy Photo: Near Bonus Room"
         region="Main Caves Area"
-        canGetLogic={inStage && kosha && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <CavesCheck
         id={6405}
         name="Caves Enemy Photo: Near Snide"
         region="Main Caves Area"
-        canGetLogic={inStage && kosha && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
     </DropPool>
   )

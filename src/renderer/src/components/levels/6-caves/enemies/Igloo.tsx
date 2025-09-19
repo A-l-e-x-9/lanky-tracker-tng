@@ -16,37 +16,40 @@ const IglooEnemies: React.FC = () => {
         id={6309}
         name="Caves Enemy: DK Igloo Right"
         region="Igloo Area"
-        canGetLogic={igloo && bongos && kosha}
+        canGetLogic={igloo && bongos && kosha.in}
+        canGetBreak={igloo && bongos && kosha.out}
       />
       <CavesCheck
         id={6310}
         name="Caves Enemy: DK Igloo Left"
         region="Igloo Area"
-        canGetLogic={igloo && bongos && kosha}
+        canGetLogic={igloo && bongos && kosha.in}
+        canGetBreak={igloo && bongos && kosha.out}
       />
       <CavesCheck
         id={6316}
         name="Caves Enemy: Tiny Igloo Big"
         region="Igloo Area"
-        canGetLogic={igloo && sax && kosha}
+        canGetLogic={igloo && sax && kosha.in}
+        canGetBreak={igloo && sax && kosha.out}
       />
       <CavesCheck
         id={6409}
         name="Caves Enemy Photo: DK Igloo Right"
         region="Igloo Area"
-        canGetLogic={igloo && bongos && kosha && hasFairyCam}
+        canGetLogic={igloo && bongos && hasFairyCam}
       />
       <CavesCheck
         id={6410}
         name="Caves Enemy Photo: DK Igloo Left"
         region="Igloo Area"
-        canGetLogic={igloo && bongos && kosha && hasFairyCam}
+        canGetLogic={igloo && bongos && hasFairyCam}
       />
       <CavesCheck
         id={6416}
         name="Caves Enemy Photo: Tiny Igloo Big"
         region="Igloo Area"
-        canGetLogic={igloo && sax && kosha && hasFairyCam}
+        canGetLogic={igloo && sax && hasFairyCam}
       />
     </DropPool>
   )
