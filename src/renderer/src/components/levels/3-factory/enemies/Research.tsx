@@ -22,7 +22,7 @@ const RNDEnemies: React.FC = () => {
         name="Factory Enemy: Tunnel to Race 1"
         region="R&D Area"
         canGetLogic={testing && zinger.in}
-        canGetBreak-{testing && zinger.out}
+        canGetBreak={testing && zinger.out}
       />
       <FactoryCheck
         id={3412}
