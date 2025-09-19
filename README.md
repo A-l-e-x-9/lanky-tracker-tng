@@ -37,32 +37,20 @@ For those that wish to contribute to this project, committing directly to main i
 ### IDE Alex actually used:
 - The GNOME text editor packed with Ubuntu since version 24.04 LTS, Firefox, and a LOT of trial and error.
 
-## Project Setup
-
-### Install
-
+## How to use if the site is down or you wish to suggest an improvement/correction:
+First, open your command prompt and type
+```bash
+$ git clone https://github.com/A-l-e-x-9/lanky-tracker-tng
+```
+Then, ensure you have NPM installed on your computer. If so, open a command prompt from within the newly-created folder and type...
 ```bash
 $ npm install
 ```
-
-### Development
-
+Then to run it, type...
 ```bash
 $ npm run dev
 ```
-
-### Build
-
-```bash
-# For windows
-$ npm run build:win
-
-# For macOS
-$ npm run build:mac
-
-# For Linux
-$ npm run build:linux
-```
+If you get an "access denied" error (usually with the file /node_modules/electron/dist/chrome-sandbox), you should be able to fix it by doing what the error message says to make it accessible.
 
 # Special Thanks
 
