@@ -17,13 +17,15 @@ const OwlEnemies: React.FC = () => {
         id={5327}
         name="Forest Enemy: Yellow Tunnel 1"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger}
+        canGetLogic={owlTree && zinger.in}
+        canGetBreak={owlTree && zinger.out}
       />
       <ForestCheck
         id={5328}
         name="Forest Enemy: Yellow Tunnel 2"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger}
+        canGetLogic={owlTree && zinger.in}
+        canGetBreak={owlTree && zinger.out}
       />
       <ForestCheck
         id={5329}
@@ -47,25 +49,29 @@ const OwlEnemies: React.FC = () => {
         id={5302}
         name="Forest Enemy: Hollow Tree Entrance"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger}
+        canGetLogic={owlTree && zinger.in}
+        canGetBreak={owlTree && zinger.out}
       />
       <ForestCheck
         id={5303}
         name="Forest Enemy: Tree Melon Crate 0"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger}
+        canGetLogic={owlTree && zinger.in}
+        canGetBreak={owlTree && zinger.out}
       />
       <ForestCheck
         id={5304}
         name="Forest Enemy: Tree Melon Crate 1"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger}
+        canGetLogic={owlTree && zinger.in}
+        canGetBreak={owlTree && zinger.out}
       />
       <ForestCheck
         id={5305}
         name="Forest Enemy: Tree Melon Crate 2"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger}
+        canGetLogic={owlTree && zinger.in}
+        canGetBreak={owlTree && zinger.out}
       />
       <ForestCheck
         id={5340}
@@ -95,13 +101,13 @@ const OwlEnemies: React.FC = () => {
         id={5427}
         name="Forest Enemy Photo: Yellow Tunnel 1"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger && hasFairyCam}
+        canGetLogic={owlTree && hasFairyCam}
       />
       <ForestCheck
         id={5428}
         name="Forest Enemy Photo: Yellow Tunnel 2"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger && hasFairyCam}
+        canGetLogic={owlTree && hasFairyCam}
       />
       <ForestCheck
         id={5429}
@@ -125,25 +131,25 @@ const OwlEnemies: React.FC = () => {
         id={5402}
         name="Forest Enemy Photo: Hollow Tree Entrance"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger && hasFairyCam}
+        canGetLogic={owlTree && hasFairyCam}
       />
       <ForestCheck
         id={5403}
         name="Forest Enemy Photo: Tree Melon Crate 0"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger && hasFairyCam}
+        canGetLogic={owlTree && hasFairyCam}
       />
       <ForestCheck
         id={5404}
         name="Forest Enemy Photo: Tree Melon Crate 1"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger && hasFairyCam}
+        canGetLogic={owlTree && hasFairyCam}
       />
       <ForestCheck
         id={5405}
         name="Forest Enemy Photo: Tree Melon Crate 2"
         region="Owl Tree"
-        canGetLogic={owlTree && zinger && hasFairyCam}
+        canGetLogic={owlTree && hasFairyCam}
       />
       <ForestCheck
         id={5440}

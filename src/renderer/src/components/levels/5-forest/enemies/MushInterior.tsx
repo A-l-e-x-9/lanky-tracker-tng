@@ -26,33 +26,36 @@ const MushInteriorEnemies: React.FC = () => {
         id={5349}
         name="Forest Enemy: Mushroom Path 0"
         region="Giant Mushroom Insides"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5350}
         name="Forest Enemy: Mushroom Path 1"
         region="Giant Mushroom Insides"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5354}
         name="Forest Enemy: Mushroom Leap 0"
         region="Giant Mushroom Insides"
-        canGetLogic={roof.in && lanky && canSlam && zinger}
-        canGetBreak={logicBreak(roof) && lanky && canSlam && zinger}
+        canGetLogic={roof.in && lanky && canSlam && zinger.in}
+        canGetBreak={logicBreak(roof) && lanky && canSlam && zinger.out}
       />
       <ForestCheck
         id={5355}
         name="Forest Enemy: Mushroom Leap 1"
         region="Giant Mushroom Insides"
-        canGetLogic={roof.in && lanky && canSlam && zinger}
-        canGetBreak={logicBreak(roof) && lanky && canSlam && zinger}
+        canGetLogic={roof.in && lanky && canSlam && zinger.in}
+        canGetBreak={logicBreak(roof) && lanky && canSlam && zinger.out}
       />
       <ForestCheck
         id={5356}
         name="Forest Enemy: Face Puzzle"
         region="Giant Mushroom Insides"
-        canGetLogic={inStage && chunky && canSlam && zinger}
+        canGetLogic={inStage && chunky && canSlam && zinger.in}
+        canGetBreak={inStage && chunky && canSlam && zinger.out}
       />
       <ForestCheck
         id={5448}
@@ -64,33 +67,33 @@ const MushInteriorEnemies: React.FC = () => {
         id={5449}
         name="Forest Enemy Photo: Mushroom Path 0"
         region="Giant Mushroom Insides"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5450}
         name="Forest Enemy Photo: Mushroom Path 1"
         region="Giant Mushroom Insides"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5454}
         name="Forest Enemy Photo: Mushroom Leap 0"
         region="Giant Mushroom Insides"
-        canGetLogic={roof.in && lanky && canSlam && zinger && hasFairyCam}
-        canGetBreak={logicBreak(roof) && lanky && canSlam && zinger && hasFairyCam}
+        canGetLogic={roof.in && lanky && canSlam && hasFairyCam}
+        canGetBreak={logicBreak(roof) && lanky && canSlam && hasFairyCam}
       />
       <ForestCheck
         id={5455}
         name="Forest Enemy Photo: Mushroom Leap 1"
         region="Giant Mushroom Insides"
-        canGetLogic={roof.in && lanky && canSlam && zinger && hasFairyCam}
-        canGetBreak={logicBreak(roof) && lanky && canSlam && zinger && hasFairyCam}
+        canGetLogic={roof.in && lanky && canSlam && hasFairyCam}
+        canGetBreak={logicBreak(roof) && lanky && canSlam &&hasFairyCam}
       />
       <ForestCheck
         id={5456}
         name="Forest Enemy Photo: Face Puzzle"
         region="Giant Mushroom Insides"
-        canGetLogic={inStage && chunky && canSlam && zinger && hasFairyCam}
+        canGetLogic={inStage && chunky && canSlam && hasFairyCam}
       />
     </DropPool>
   )

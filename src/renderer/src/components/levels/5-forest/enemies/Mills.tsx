@@ -38,7 +38,8 @@ const MillsEnemies: React.FC = () => {
         id={5331}
         name="Forest Enemy: Near the Infamous Dirt Patch"
         region="Forest Mills"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5333}
@@ -50,7 +51,8 @@ const MillsEnemies: React.FC = () => {
         id={5334}
         name="Forest Enemy: Near Well Exit"
         region="Forest Mills"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5335}
@@ -62,21 +64,22 @@ const MillsEnemies: React.FC = () => {
         id={5346}
         name="Forest Enemy: Mill Inside Front"
         region="Forest Mills"
-        canGetLogic={day.in && zinger}
-        canGetBreak={logicBreak(day) && zinger}
+        canGetLogic={day.in && zinger.in}
+        canGetBreak={logicBreak(day) && zinger.out}
       />
       <ForestCheck
         id={5347}
         name="Forest Enemy: Mill Inside Rear"
         region="Forest Mills"
-        canGetLogic={day.in && (punch || hasMiniMonkey) && zinger}
-        canGetBreak={logicBreak(day) && (punch || hasMiniMonkey) && zinger}
+        canGetLogic={day.in && (punch || hasMiniMonkey) && zinger.in}
+        canGetBreak={logicBreak(day) && (punch || hasMiniMonkey) && zinger.out}
       />
       <ForestCheck
         id={5344}
         name="Forest Enemy: Winch Inside"
         region="Forest Mills"
-        canGetLogic={inStage && diddy && canSlam && bat}
+        canGetLogic={inStage && diddy && canSlam && bat.in}
+        canGetBreak={inStage && diddy && canSlam && bat.out}
       />
       <ForestCheck
         id={5336}
@@ -94,7 +97,8 @@ const MillsEnemies: React.FC = () => {
         id={5338}
         name="Forest Enemy: Thornvine 2"
         region="Forest Mills"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5339}
@@ -106,8 +110,8 @@ const MillsEnemies: React.FC = () => {
         id={5345}
         name="Forest Enemy: Thornvine Barn Inside"
         region="Forest Mills"
-        canGetLogic={night.in && strong && canSlam && kosha}
-        canGetBreak={logicBreak(night) && dk && canSlam && kosha}
+        canGetLogic={night.in && strong && canSlam && kosha.in}
+        canGetBreak={logicBreak(night) && dk && canSlam && kosha.out}
       />
       <ForestCheck
         id={5430}
@@ -119,7 +123,7 @@ const MillsEnemies: React.FC = () => {
         id={5431}
         name="Forest Enemy Photo: Near the Infamous Dirt Patch"
         region="Forest Mills"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5433}
@@ -131,7 +135,7 @@ const MillsEnemies: React.FC = () => {
         id={5434}
         name="Forest Enemy Photo: Near Well Exit"
         region="Forest Mills"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5435}
@@ -143,21 +147,21 @@ const MillsEnemies: React.FC = () => {
         id={5446}
         name="Forest Enemy Photo: Mill Inside Front"
         region="Forest Mills"
-        canGetLogic={day.in && zinger && hasFairyCam}
-        canGetBreak={logicBreak(day) && zinger && hasFairyCam}
+        canGetLogic={day.in && hasFairyCam}
+        canGetBreak={logicBreak(day) && hasFairyCam}
       />
       <ForestCheck
         id={5447}
         name="Forest Enemy Photo: Mill Inside Rear"
         region="Forest Mills"
-        canGetLogic={day.in && (punch || hasMiniMonkey) && zinger && hasFairyCam}
-        canGetBreak={logicBreak(day) && (punch || hasMiniMonkey) && zinger && hasFairyCam}
+        canGetLogic={day.in && (punch || hasMiniMonkey) && hasFairyCam}
+        canGetBreak={logicBreak(day) && (punch || hasMiniMonkey) && hasFairyCam}
       />
       <ForestCheck
         id={5444}
         name="Forest Enemy Photo: Winch Inside"
         region="Forest Mills"
-        canGetLogic={inStage && diddy && canSlam && bat && hasFairyCam}
+        canGetLogic={inStage && diddy && canSlam && hasFairyCam}
       />
       <ForestCheck
         id={5436}
@@ -175,7 +179,7 @@ const MillsEnemies: React.FC = () => {
         id={5438}
         name="Forest Enemy Photo: Thornvine 2"
         region="Forest Mills"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5439}
@@ -187,8 +191,8 @@ const MillsEnemies: React.FC = () => {
         id={5445}
         name="Forest Enemy Photo: Thornvine Barn Inside"
         region="Forest Mills"
-        canGetLogic={night.in && strong && canSlam && kosha && hasFairyCam}
-        canGetBreak={logicBreak(night) && dk && canSlam && kosha && hasFairyCam}
+        canGetLogic={night.in && strong && canSlam && kosha.in && hasFairyCam}
+        canGetBreak={logicBreak(night) && dk && canSlam && kosha.out && hasFairyCam}
       />
     </DropPool>
   )

@@ -41,49 +41,57 @@ const MushExteriorEnemies: React.FC = () => {
         id={5316}
         name="Forest Enemy: b/t Rocket & Yellow Tunnel"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5317}
         name="Forest Enemy: Near Cranky"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5332}
         name="Forest Enemy: Near Pink Tunnel"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5318}
         name="Forest Enemy: Rear Tag"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5418}
         name="Forest Enemy: Near DK Pad"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5319}
         name="Forest Enemy: Near Face Puzzle"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5320}
         name="Forest Enemy: Near Crown"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5321}
         name="Forest Enemy: Near High Warp 5"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5322}
@@ -120,49 +128,49 @@ const MushExteriorEnemies: React.FC = () => {
         id={5416}
         name="Forest Enemy Photo: b/t Rocket & Yellow Tunnel"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5417}
         name="Forest Enemy Photo: Near Cranky"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5432}
         name="Forest Enemy Photo: Near Pink Tunnel"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5518}
         name="Forest Enemy Photo: Rear Tag"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5519}
         name="Forest Enemy Photo: Near DK Pad"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5419}
         name="Forest Enemy Photo: Near Face Puzzle"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5420}
         name="Forest Enemy Photo: Near Crown"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5421}
         name="Forest Enemy Photo: Near High Warp 5"
         region="Giant Mushroom Exterior"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5422}

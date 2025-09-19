@@ -18,25 +18,29 @@ const CenterEnemies: React.FC = () => {
         id={5323}
         name="Forest Enemy: Near Apple Dropoff"
         region="Forest Center And Beanstalk"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5324}
         name="Forest Enemy: Near Vanilla DK Portal"
         region="Forest Center And Beanstalk"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5325}
         name="Forest Enemy: Near Well Tag"
         region="Forest Center And Beanstalk"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5312}
         name="Forest Enemy: Green Tunnel"
         region="Forest Center And Beanstalk"
-        canGetLogic={beanHalf && zinger}
+        canGetLogic={beanHalf && zinger.in}
+        canGetBreak={beanHalf && zinger.out}
       />
       <ForestCheck
         id={5310}
@@ -54,25 +58,25 @@ const CenterEnemies: React.FC = () => {
         id={5423}
         name="Forest Enemy Photo: Near Apple Dropoff"
         region="Forest Center And Beanstalk"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5424}
         name="Forest Enemy Photo: Near Vanilla DK Portal"
         region="Forest Center And Beanstalk"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5425}
         name="Forest Enemy Photo: Near Well Tag"
         region="Forest Center And Beanstalk"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5509}
         name="Forest Enemy Photo: Green Tunnel"
         region="Forest Center And Beanstalk"
-        canGetLogic={beanHalf && zinger && hasFairyCam}
+        canGetLogic={beanHalf && hasFairyCam}
       />
       <ForestCheck
         id={5410}
