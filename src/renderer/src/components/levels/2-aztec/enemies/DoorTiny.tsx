@@ -23,7 +23,7 @@ const Tiny5Enemies: React.FC = () => {
         id={2339}
         name="Aztec Enemy: Tiny 5DT Start Left Back"
         region="5 Door Temple"
-        canGetLogic={door.in && feather && zinger.ihn}
+        canGetLogic={door.in && feather && zinger.in}
         canGetBreak={logicBreak(door) && feather && zinger.out}
       />
       <AztecCheck
