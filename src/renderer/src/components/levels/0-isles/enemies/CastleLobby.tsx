@@ -36,19 +36,19 @@ const CastleLobbyEnemies: React.FC = () => {
         id={415}
         name="Isles Enemy Photo: Castle Lobby Left"
         region="Caves-Helm Lobbies"
-        canGetLogic={anyKong && playCastle && kosha.out && hasFairyCam}
+        canGetLogic={anyKong && playCastle && hasFairyCam}
       />
       <IslesCheck
         id={416}
         name="Isles Enemy Photo: Castle Lobby Near Right"
         region="Caves-Helm Lobbies"
-        canGetLogic={anyKong && playCastle && kosha.out && hasFairyCam}
+        canGetLogic={anyKong && playCastle && hasFairyCam}
       />
       <IslesCheck
         id={417}
         name="Isles Enemy Photo: Castle Lobby Far Right"
         region="Caves-Helm Lobbies"
-        canGetLogic={anyKong && playCastle && kosha.out && hasFairyCam}
+        canGetLogic={anyKong && playCastle && hasFairyCam}
       />
     </DropPool>
   )

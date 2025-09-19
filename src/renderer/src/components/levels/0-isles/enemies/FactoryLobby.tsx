@@ -22,7 +22,7 @@ const FactoryLobbyEnemies: React.FC = () => {
         id={414}
         name="Isles Enemy Photo: Factory Lobby"
         region="Japes-Forest Lobbies"
-        canGetLogic={anyKong && playFactory && zinger.out && hasFairyCam}
+        canGetLogic={anyKong && playFactory && hasFairyCam}
       />
     </DropPool>
   )

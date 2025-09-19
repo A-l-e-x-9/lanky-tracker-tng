@@ -51,7 +51,7 @@ const IslesMainEnemies: React.FC = () => {
         id={401}
         name="Isles Enemy Photo: Pineapple Cage 1"
         region="Main Isle"
-        canGetLogic={anyKong && zinger.out && hasFairyCam}
+        canGetLogic={anyKong && hasFairyCam}
       />
       <IslesCheck
         id={402}
@@ -63,7 +63,7 @@ const IslesMainEnemies: React.FC = () => {
         id={403}
         name="Isles Enemy Photo: Fungi Cannon 1"
         region="Main Isle"
-        canGetLogic={anyKong && zinger.out && hasFairyCam}
+        canGetLogic={anyKong && hasFairyCam}
       />
       <IslesCheck
         id={404}

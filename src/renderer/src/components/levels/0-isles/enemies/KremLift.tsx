@@ -41,13 +41,13 @@ const KremLiftEnemies: React.FC = () => {
         id={408}
         name="Isles Enemy Photo: Lower Factory Path 0"
         region="Krem Isle"
-        canGetLogic={anyKong && kremAscent && zinger.out && hasFairyCam}
+        canGetLogic={anyKong && kremAscent && hasFairyCam}
       />
       <IslesCheck
         id={409}
         name="Isles Enemy Photo: Lower Factory Path 1"
         region="Krem Isle"
-        canGetLogic={anyKong && kremAscent && zinger.out && hasFairyCam}
+        canGetLogic={anyKong && kremAscent && hasFairyCam}
       />
     </DropPool>
   )
