@@ -10490,7 +10490,6 @@ const usePoolMisc = () => useDonkStore(useShallow((state) => state.settings.pool
 const usePoolBlueprints = () => useDonkStore(useShallow((state) => state.settings.poolBlueprints));
 const usePoolFairies = () => useDonkStore(useShallow((state) => state.settings.poolFairies));
 const usePoolDrops = () => useDonkStore(useShallow((state) => state.settings.poolDrops));
-const useShuffleEnemies = () => useDonkStore(useShallow((state) => state.settings.shuffleEnemies));
 const useShuffleColoredBananas = () => useDonkStore(useShallow((state) => state.settings.shuffleColoredBananas));
 const usePoolKeys = () => useDonkStore(useShallow((state) => state.settings.poolKeys));
 const usePoolCrates = () => useDonkStore(useShallow((state) => state.settings.poolCrates));
@@ -12120,30 +12119,44 @@ const DropPool = ({ children }) => usePoolDrops() ? /* @__PURE__ */ jsxRuntimeEx
 const useDefeatZinger = () => {
   const anyGun = useAnyGun();
   const anyMusic = useAnyMusic();
-  const enemyShuffle = useShuffleEnemies();
-  return enemyShuffle || anyGun || anyMusic;
+  const hasOranges = useOrange();
+  return {
+    in: anyGun || anyMusic,
+    out: hasOranges
+  };
 };
 const useDefeatBat = () => useDefeatZinger();
 const useDefeatKosha = () => {
   const anyMusic = useAnyMusic();
   const shockwave = useShockwave();
-  const enemyShuffle = useShuffleEnemies();
-  return enemyShuffle || anyMusic || shockwave;
+  const hasOranges = useOrange();
+  return {
+    in: anyMusic || shockwave,
+    out: hasOranges
+    /*To kill a Kosha with Oranges, it must use its overhead club attack on you. You must then orange it while it's picking up its club.*/
+  };
 };
 const useDefeatKlump = () => {
   const orange = useOrange();
   const shockwave = useShockwave();
   const anyMusic = useAnyMusic();
-  const enemyShuffle = useShuffleEnemies();
-  return enemyShuffle || orange || shockwave || anyMusic;
+  return orange || shockwave || anyMusic;
 };
 const useDefeatKlobber = () => useDefeatKlump();
-const useDefeatKaboom = () => useDefeatKlump();
+const useDefeatKaboom = () => {
+  const hasOranges = useOrange();
+  const hasGun = useAnyGun();
+  const isBreathing = useAnyKong();
+  return {
+    in: hasOranges || hasGun,
+    out: isBreathing
+    /*You can kill a Kaboom just by running into it, although this will damage you.*/
+  };
+};
 const useDefeatPurpleKlaptrap = () => {
   const orange = useOrange();
   const anyMusic = useAnyMusic();
-  const enemyShuffle = useShuffleEnemies();
-  return enemyShuffle || orange || anyMusic;
+  return orange || anyMusic;
 };
 const useDefeatRoboKremling = () => {
   const klaptrap = useDefeatKlump();
@@ -12162,7 +12175,8 @@ const CastleLobbyEnemies = () => {
         id: 315,
         name: "Isles Enemy: Castle Lobby Left",
         region: "Caves-Helm Lobbies",
-        canGetLogic: anyKong && playCastle && kosha
+        canGetLogic: anyKong && playCastle && kosha.in,
+        canGetBreak: anyKong && playCastle && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12171,7 +12185,8 @@ const CastleLobbyEnemies = () => {
         id: 316,
         name: "Isles Enemy: Castle Lobby Near Right",
         region: "Caves-Helm Lobbies",
-        canGetLogic: anyKong && playCastle && kosha
+        canGetLogic: anyKong && playCastle && kosha.in,
+        canGetBreak: anyKong && playCastle && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12180,7 +12195,8 @@ const CastleLobbyEnemies = () => {
         id: 317,
         name: "Isles Enemy: Castle Lobby Far Right",
         region: "Caves-Helm Lobbies",
-        canGetLogic: anyKong && playCastle && kosha
+        canGetLogic: anyKong && playCastle && kosha.in,
+        canGetBreak: anyKong && playCastle && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12189,7 +12205,7 @@ const CastleLobbyEnemies = () => {
         id: 415,
         name: "Isles Enemy Photo: Castle Lobby Left",
         region: "Caves-Helm Lobbies",
-        canGetLogic: anyKong && playCastle && kosha && hasFairyCam
+        canGetLogic: anyKong && playCastle && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12198,7 +12214,7 @@ const CastleLobbyEnemies = () => {
         id: 416,
         name: "Isles Enemy Photo: Castle Lobby Near Right",
         region: "Caves-Helm Lobbies",
-        canGetLogic: anyKong && playCastle && kosha && hasFairyCam
+        canGetLogic: anyKong && playCastle && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12207,7 +12223,7 @@ const CastleLobbyEnemies = () => {
         id: 417,
         name: "Isles Enemy Photo: Castle Lobby Far Right",
         region: "Caves-Helm Lobbies",
-        canGetLogic: anyKong && playCastle && kosha && hasFairyCam
+        canGetLogic: anyKong && playCastle && hasFairyCam
       }
     )
   ] });
@@ -12232,7 +12248,8 @@ const IslesMainEnemies = () => {
         id: 301,
         name: "Isles Enemy: Pineapple Cage 1",
         region: "Main Isle",
-        canGetLogic: anyKong && zinger
+        canGetLogic: anyKong && zinger.in,
+        canGetBreak: anyKong && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12250,7 +12267,8 @@ const IslesMainEnemies = () => {
         id: 303,
         name: "Isles Enemy: Fungi Cannon 1",
         region: "Main Isle",
-        canGetLogic: anyKong && zinger
+        canGetLogic: anyKong && zinger.in,
+        canGetBreak: anyKong && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12277,7 +12295,7 @@ const IslesMainEnemies = () => {
         id: 401,
         name: "Isles Enemy Photo: Pineapple Cage 1",
         region: "Main Isle",
-        canGetLogic: anyKong && zinger && hasFairyCam
+        canGetLogic: anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12295,7 +12313,7 @@ const IslesMainEnemies = () => {
         id: 403,
         name: "Isles Enemy Photo: Fungi Cannon 1",
         region: "Main Isle",
-        canGetLogic: anyKong && zinger && hasFairyCam
+        canGetLogic: anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12321,7 +12339,8 @@ const FactoryLobbyEnemies = () => {
         id: 314,
         name: "Isles Enemy: Factory Lobby",
         region: "Japes-Forest Lobbies",
-        canGetLogic: anyKong && playFactory && zinger
+        canGetLogic: anyKong && playFactory && zinger.in,
+        canGetBreak: anyKong && playFactory && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12330,7 +12349,7 @@ const FactoryLobbyEnemies = () => {
         id: 414,
         name: "Isles Enemy Photo: Factory Lobby",
         region: "Japes-Forest Lobbies",
-        canGetLogic: anyKong && playFactory && zinger && hasFairyCam
+        canGetLogic: anyKong && playFactory && hasFairyCam
       }
     )
   ] });
@@ -12426,7 +12445,8 @@ const KremLiftEnemies = () => {
         id: 308,
         name: "Isles Enemy: Lower Factory Path 0",
         region: "Krem Isle",
-        canGetLogic: anyKong && kremAscent && zinger
+        canGetLogic: anyKong && kremAscent && zinger.in,
+        canGetBreak: anyKong && kremAscent && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12435,7 +12455,8 @@ const KremLiftEnemies = () => {
         id: 309,
         name: "Isles Enemy: Lower Factory Path 1",
         region: "Krem Isle",
-        canGetLogic: anyKong && kremAscent && zinger
+        canGetLogic: anyKong && kremAscent && zinger.in,
+        canGetBreak: anyKong && kremAscent && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12453,7 +12474,7 @@ const KremLiftEnemies = () => {
         id: 408,
         name: "Isles Enemy Photo: Lower Factory Path 0",
         region: "Krem Isle",
-        canGetLogic: anyKong && kremAscent && zinger && hasFairyCam
+        canGetLogic: anyKong && kremAscent && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12462,7 +12483,7 @@ const KremLiftEnemies = () => {
         id: 409,
         name: "Isles Enemy Photo: Lower Factory Path 1",
         region: "Krem Isle",
-        canGetLogic: anyKong && kremAscent && zinger && hasFairyCam
+        canGetLogic: anyKong && kremAscent && hasFairyCam
       }
     )
   ] });
@@ -12478,7 +12499,8 @@ const NearAztecEnemies = () => {
         id: 307,
         name: "Isles Enemy: Near Aztec",
         region: "Main Isle",
-        canGetLogic: anyKong && zinger
+        canGetLogic: anyKong && zinger.in,
+        canGetBreak: anyKong && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12487,7 +12509,7 @@ const NearAztecEnemies = () => {
         id: 407,
         name: "Isles Enemy Photo: Near Aztec",
         region: "Main Isle",
-        canGetLogic: anyKong && zinger && hasFairyCam
+        canGetLogic: anyKong && hasFairyCam
       }
     )
   ] });
@@ -14305,6 +14327,7 @@ const CaveEnemies = () => {
   const klump = useDefeatKlump();
   const charge = useCharge();
   const hasFairyCam = useCamera();
+  const isZinger = useDefeatZinger();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -14339,7 +14362,8 @@ const CaveEnemies = () => {
         id: 1328,
         name: "Japes Enemy: Mountain Start 3",
         region: "Japes Caves And Mines",
-        canGetLogic: mine
+        canGetLogic: mine && isZinger.in,
+        canGetBreak: mine && isZinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14348,7 +14372,8 @@ const CaveEnemies = () => {
         id: 1329,
         name: "Japes Enemy: Mountain Start 4",
         region: "Japes Caves And Mines",
-        canGetLogic: mine
+        canGetLogic: mine && isZinger.in,
+        canGetBreak: mine && isZinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14357,7 +14382,8 @@ const CaveEnemies = () => {
         id: 1330,
         name: "Japes Enemy: Mountain Gate 0",
         region: "Japes Caves And Mines",
-        canGetLogic: mine
+        canGetLogic: mine && isZinger.in,
+        canGetBreak: mine && isZinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14366,7 +14392,8 @@ const CaveEnemies = () => {
         id: 1331,
         name: "Japes Enemy: Mountain Gate 1",
         region: "Japes Caves And Mines",
-        canGetLogic: mine
+        canGetLogic: mine && isZinger.in,
+        canGetBreak: mine && isZinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14547,7 +14574,8 @@ const HiveInteriorEnemies = () => {
         id: 1340,
         name: "Japes Enemy: Hive Third Room 2",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && zinger && canSlam
+        canGetLogic: hiveIn && zinger.in && canSlam,
+        canGetBreak: hiveIn && zinger.out && canSlam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14556,7 +14584,8 @@ const HiveInteriorEnemies = () => {
         id: 1341,
         name: "Japes Enemy: Hive Third Room 3",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && zinger && canSlam
+        canGetLogic: hiveIn && zinger.in && canSlam,
+        canGetBreak: hiveIn && zinger.out && canSlam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14565,7 +14594,8 @@ const HiveInteriorEnemies = () => {
         id: 1342,
         name: "Japes Enemy: Hive Main Room",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && zinger
+        canGetLogic: hiveIn && zinger.in,
+        canGetBreak: hiveIn && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14574,7 +14604,7 @@ const HiveInteriorEnemies = () => {
         id: 1435,
         name: "Japes Enemy Photo: Hive First Room",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && klaptrap && hasFairyCam
+        canGetLogic: hiveIn && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14583,7 +14613,7 @@ const HiveInteriorEnemies = () => {
         id: 1436,
         name: "Japes Enemy Photo: Hive Second Room 0",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && klaptrap && canSlam && hasFairyCam
+        canGetLogic: hiveIn && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14592,7 +14622,7 @@ const HiveInteriorEnemies = () => {
         id: 1437,
         name: "Japes Enemy Photo: Hive Second Room 1",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && klaptrap && canSlam && hasFairyCam
+        canGetLogic: hiveIn && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14601,7 +14631,7 @@ const HiveInteriorEnemies = () => {
         id: 1438,
         name: "Japes Enemy Photo: Hive Third Room 0",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && klaptrap && canSlam && hasFairyCam
+        canGetLogic: hiveIn && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14610,7 +14640,7 @@ const HiveInteriorEnemies = () => {
         id: 1439,
         name: "Japes Enemy Photo: Hive Third Room 1",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && klaptrap && canSlam && hasFairyCam
+        canGetLogic: hiveIn && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14619,7 +14649,7 @@ const HiveInteriorEnemies = () => {
         id: 1440,
         name: "Japes Enemy Photo: Hive Third Room 2",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && zinger && canSlam && hasFairyCam
+        canGetLogic: hiveIn && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14628,7 +14658,7 @@ const HiveInteriorEnemies = () => {
         id: 1441,
         name: "Japes Enemy Photo: Hive Third Room 3",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && zinger && canSlam && hasFairyCam
+        canGetLogic: hiveIn && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14637,7 +14667,7 @@ const HiveInteriorEnemies = () => {
         id: 1442,
         name: "Japes Enemy Photo: Hive Main Room",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && zinger && hasFairyCam
+        canGetLogic: hiveIn && hasFairyCam
       }
     )
   ] });
@@ -14654,7 +14684,8 @@ const HiveOutsideEnemies = () => {
         id: 1307,
         name: "Japes Enemy: Hive Area 0",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveOut && zinger
+        canGetLogic: hiveOut && zinger.in,
+        canGetBreak: hiveOut && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14663,7 +14694,8 @@ const HiveOutsideEnemies = () => {
         id: 1308,
         name: "Japes Enemy: Hive Area 1",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveOut && zinger
+        canGetLogic: hiveOut && zinger.in,
+        canGetBreak: hiveOut && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14672,7 +14704,8 @@ const HiveOutsideEnemies = () => {
         id: 1309,
         name: "Japes Enemy: Hive Area 2",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveOut && zinger
+        canGetLogic: hiveOut && zinger.in,
+        canGetBreak: hiveOut && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14699,7 +14732,7 @@ const HiveOutsideEnemies = () => {
         id: 1407,
         name: "Japes Enemy Photo: Hive Area 0",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveOut && zinger && hasFairyCam
+        canGetLogic: hiveOut && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14708,7 +14741,7 @@ const HiveOutsideEnemies = () => {
         id: 1408,
         name: "Japes Enemy Photo: Hive Area 1",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveOut && zinger && hasFairyCam
+        canGetLogic: hiveOut && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14717,7 +14750,7 @@ const HiveOutsideEnemies = () => {
         id: 1409,
         name: "Japes Enemy Photo: Hive Area 2",
         region: "Hive Tunnel Area",
-        canGetLogic: hiveOut && zinger && hasFairyCam
+        canGetLogic: hiveOut && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14751,7 +14784,8 @@ const HiveTunnelEnemies = () => {
         id: 1318,
         name: "Japes Enemy: Feather Tunnel",
         region: "Hive Tunnel Area",
-        canGetLogic: kongGates && zinger
+        canGetLogic: kongGates && zinger.in,
+        canGetBreak: kongGates && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14760,7 +14794,7 @@ const HiveTunnelEnemies = () => {
         id: 1418,
         name: "Japes Enemy Photo: Feather Tunnel",
         region: "Hive Tunnel Area",
-        canGetLogic: kongGates && zinger && hasFairyCam
+        canGetLogic: kongGates && hasFairyCam
       }
     )
   ] });
@@ -14795,7 +14829,8 @@ const JapesMainEnemies = () => {
         id: 1316,
         name: "Japes Enemy: Near Painting 2",
         region: "Japes Hillside",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14804,7 +14839,8 @@ const JapesMainEnemies = () => {
         id: 1317,
         name: "Japes Enemy: Mountain",
         region: "Japes Hillside",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14831,7 +14867,7 @@ const JapesMainEnemies = () => {
         id: 1416,
         name: "Japes Enemy Photo: Near Painting 2",
         region: "Japes Hillside",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14840,7 +14876,7 @@ const JapesMainEnemies = () => {
         id: 1417,
         name: "Japes Enemy Photo: Mountain",
         region: "Japes Hillside",
-        canGetLogic: inStage && anyKong && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     )
   ] });
@@ -14893,7 +14929,8 @@ const JapesStartEnemies = () => {
         id: 1313,
         name: "Japes Enemy: Near Underground",
         region: "Japes Lowlands",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14938,7 +14975,7 @@ const JapesStartEnemies = () => {
         id: 1413,
         name: "Japes Enemy Photo: Near Underground",
         region: "Japes Lowlands",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     )
   ] });
@@ -16743,8 +16780,8 @@ const BeforeOasisEnemies = () => {
         id: 2300,
         name: "Aztec Enemy: Vase 0",
         region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && pineapple,
-        canGetBreak: logicBreak(inStage) && pineapple
+        canGetLogic: inStage.in && pineapple && zinger.in,
+        canGetBreak: logicBreak(inStage) && pineapple && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16753,8 +16790,8 @@ const BeforeOasisEnemies = () => {
         id: 2301,
         name: "Aztec Enemy: Vase 1",
         region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && pineapple,
-        canGetBreak: logicBreak(inStage) && pineapple
+        canGetLogic: inStage.in && pineapple && zinger.in,
+        canGetBreak: logicBreak(inStage) && pineapple && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16763,8 +16800,8 @@ const BeforeOasisEnemies = () => {
         id: 2402,
         name: "Aztec Enemy: Vase 2",
         region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && pineapple,
-        canGetBreak: logicBreak(inStage) && pineapple
+        canGetLogic: inStage.in && pineapple && zinger.in,
+        canGetBreak: logicBreak(inStage) && pineapple && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16793,8 +16830,8 @@ const BeforeOasisEnemies = () => {
         id: 2310,
         name: "Aztec Enemy: Starting Tunnel 2",
         region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && zinger,
-        canGetBreak: logicBreak(inStage) && zinger
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: logicBreak(inStage) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16803,8 +16840,8 @@ const BeforeOasisEnemies = () => {
         id: 2311,
         name: "Aztec Enemy: Starting Tunnel 3",
         region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && zinger,
-        canGetBreak: logicBreak(inStage) && zinger
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: logicBreak(inStage) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16863,8 +16900,8 @@ const BeforeOasisEnemies = () => {
         id: 2410,
         name: "Aztec Enemy Photo: Starting Tunnel 2",
         region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && zinger && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && zinger && hasFairyCam
+        canGetLogic: inStage.in && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16873,8 +16910,8 @@ const BeforeOasisEnemies = () => {
         id: 2411,
         name: "Aztec Enemy Photo: Starting Tunnel 3",
         region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && zinger && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && zinger && hasFairyCam
+        canGetLogic: inStage.in && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && hasFairyCam
       }
     )
   ] });
@@ -16891,8 +16928,8 @@ const ConnectorTunnelEnemies = () => {
         id: 2302,
         name: "Aztec Enemy: Tunnel Pad 0",
         region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && zinger,
-        canGetBreak: logicBreak(inStage) && zinger
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: logicBreak(inStage) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16901,8 +16938,8 @@ const ConnectorTunnelEnemies = () => {
         id: 2303,
         name: "Aztec Enemy: Tunnel Pad 1",
         region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && zinger,
-        canGetBreak: logicBreak(inStage) && zinger
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: logicBreak(inStage) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16951,8 +16988,8 @@ const ConnectorTunnelEnemies = () => {
         id: 2402,
         name: "Aztec Enemy Photo: Tunnel Pad 0",
         region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && zinger && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && zinger && hasFairyCam
+        canGetLogic: inStage.in && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16961,8 +16998,8 @@ const ConnectorTunnelEnemies = () => {
         id: 2403,
         name: "Aztec Enemy Photo: Tunnel Pad 1",
         region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && zinger && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && zinger && hasFairyCam
+        canGetLogic: inStage.in && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17060,8 +17097,8 @@ const Chunky5Enemies = () => {
         id: 2350,
         name: "Aztec Enemy: Chunky 5DT Reward",
         region: "5 Door Temple",
-        canGetLogic: door.in && pineapple && zinger,
-        canGetBreak: logicBreak(door) && pineapple && zinger
+        canGetLogic: door.in && pineapple && zinger.in,
+        canGetBreak: logicBreak(door) && pineapple && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17110,8 +17147,8 @@ const Chunky5Enemies = () => {
         id: 2450,
         name: "Aztec Enemy Photo: Chunky 5DT Reward",
         region: "5 Door Temple",
-        canGetLogic: door.in && pineapple && zinger && hasFairyCam,
-        canGetBreak: logicBreak(door) && pineapple && zinger && hasFairyCam
+        canGetLogic: door.in && pineapple && hasFairyCam,
+        canGetBreak: logicBreak(door) && pineapple && hasFairyCam
       }
     )
   ] });
@@ -17278,8 +17315,8 @@ const Dk5Enemies = () => {
         id: 2319,
         name: "Aztec Enemy: DK 5DT Start Trap 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom,
-        canGetBreak: logicBreak(door) && coconut && kaboom
+        canGetLogic: door.in && coconut && kaboom.in,
+        canGetBreak: logicBreak(door) && coconut && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17288,8 +17325,8 @@ const Dk5Enemies = () => {
         id: 2320,
         name: "Aztec Enemy: DK 5DT Start Trap 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom,
-        canGetBreak: logicBreak(door) && coconut && kaboom
+        canGetLogic: door.in && coconut && kaboom.in,
+        canGetBreak: logicBreak(door) && coconut && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17298,8 +17335,8 @@ const Dk5Enemies = () => {
         id: 2321,
         name: "Aztec Enemy: DK 5DT Start Trap 2",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom,
-        canGetBreak: logicBreak(door) && coconut && kaboom
+        canGetLogic: door.in && coconut && kaboom.in,
+        canGetBreak: logicBreak(door) && coconut && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17308,8 +17345,8 @@ const Dk5Enemies = () => {
         id: 2322,
         name: "Aztec Enemy: DK 5DT End Trap 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom,
-        canGetBreak: logicBreak(door) && coconut && kaboom
+        canGetLogic: door.in && coconut && kaboom.in,
+        canGetBreak: logicBreak(door) && coconut && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17318,8 +17355,8 @@ const Dk5Enemies = () => {
         id: 2323,
         name: "Aztec Enemy: DK 5DT End Trap 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom,
-        canGetBreak: logicBreak(door) && coconut && kaboom
+        canGetLogic: door.in && coconut && kaboom.in,
+        canGetBreak: logicBreak(door) && coconut && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17328,8 +17365,8 @@ const Dk5Enemies = () => {
         id: 2324,
         name: "Aztec Enemy: DK 5DT End Trap 2",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom,
-        canGetBreak: logicBreak(door) && coconut && kaboom
+        canGetLogic: door.in && coconut && kaboom.in,
+        canGetBreak: logicBreak(door) && coconut && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17368,8 +17405,8 @@ const Dk5Enemies = () => {
         id: 2419,
         name: "Aztec Enemy Photo: DK 5DT Start Trap 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && kaboom && hasFairyCam
+        canGetLogic: door.in && coconut && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17378,8 +17415,8 @@ const Dk5Enemies = () => {
         id: 2420,
         name: "Aztec Enemy Photo: DK 5DT Start Trap 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && kaboom && hasFairyCam
+        canGetLogic: door.in && coconut && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17388,8 +17425,8 @@ const Dk5Enemies = () => {
         id: 2421,
         name: "Aztec Enemy Photo: DK 5DT Start Trap 2",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && kaboom && hasFairyCam
+        canGetLogic: door.in && coconut && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17398,8 +17435,8 @@ const Dk5Enemies = () => {
         id: 2422,
         name: "Aztec Enemy Photo: DK 5DT End Trap 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && kaboom && hasFairyCam
+        canGetLogic: door.in && coconut && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17408,8 +17445,8 @@ const Dk5Enemies = () => {
         id: 2423,
         name: "Aztec Enemy Photo: DK 5DT End Trap 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && kaboom && hasFairyCam
+        canGetLogic: door.in && coconut && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17418,8 +17455,8 @@ const Dk5Enemies = () => {
         id: 2424,
         name: "Aztec Enemy Photo: DK 5DT End Trap 2",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && kaboom && hasFairyCam
+        canGetLogic: door.in && coconut && hasFairyCam,
+        canGetBreak: logicBreak(door) && coconut && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17534,8 +17571,8 @@ const Tiny5Enemies = () => {
         id: 2338,
         name: "Aztec Enemy: Tiny 5DT Start Right Front",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger,
-        canGetBreak: logicBreak(door) && feather && zinger
+        canGetLogic: door.in && feather && zinger.in,
+        canGetBreak: logicBreak(door) && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17544,8 +17581,8 @@ const Tiny5Enemies = () => {
         id: 2339,
         name: "Aztec Enemy: Tiny 5DT Start Left Back",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger,
-        canGetBreak: logicBreak(door) && feather && zinger
+        canGetLogic: door.in && feather && zinger.in,
+        canGetBreak: logicBreak(door) && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17554,8 +17591,8 @@ const Tiny5Enemies = () => {
         id: 2340,
         name: "Aztec Enemy: Tiny 5DT Start Right Back",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger,
-        canGetBreak: logicBreak(door) && feather && zinger
+        canGetLogic: door.in && feather && zinger.in,
+        canGetBreak: logicBreak(door) && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17564,8 +17601,8 @@ const Tiny5Enemies = () => {
         id: 2341,
         name: "Aztec Enemy: Tiny 5DT Start Left Front",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger,
-        canGetBreak: logicBreak(door) && feather && zinger
+        canGetLogic: door.in && feather && zinger.in,
+        canGetBreak: logicBreak(door) && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17574,8 +17611,8 @@ const Tiny5Enemies = () => {
         id: 2342,
         name: "Aztec Enemy: Tiny 5DT Reward 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger,
-        canGetBreak: logicBreak(door) && feather && zinger
+        canGetLogic: door.in && feather && zinger.in,
+        canGetBreak: logicBreak(door) && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17584,8 +17621,8 @@ const Tiny5Enemies = () => {
         id: 2343,
         name: "Aztec Enemy: Tiny 5DT Reward 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger,
-        canGetBreak: logicBreak(door) && feather && zinger
+        canGetLogic: door.in && feather && zinger.in,
+        canGetBreak: logicBreak(door) && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17594,8 +17631,8 @@ const Tiny5Enemies = () => {
         id: 2344,
         name: "Aztec Enemy: Tiny 5DT Dead End 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger,
-        canGetBreak: logicBreak(door) && feather && zinger
+        canGetLogic: door.in && feather && zinger.in,
+        canGetBreak: logicBreak(door) && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17604,8 +17641,8 @@ const Tiny5Enemies = () => {
         id: 2345,
         name: "Aztec Enemy: Tiny 5DT Dead End 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger,
-        canGetBreak: logicBreak(door) && feather && zinger
+        canGetLogic: door.in && feather && zinger.in,
+        canGetBreak: logicBreak(door) && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17614,8 +17651,8 @@ const Tiny5Enemies = () => {
         id: 2438,
         name: "Aztec Enemy Photo: Tiny 5DT Start Right Front",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+        canGetLogic: door.in && feather && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17624,8 +17661,8 @@ const Tiny5Enemies = () => {
         id: 2439,
         name: "Aztec Enemy Photo: Tiny 5DT Start Left Back",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+        canGetLogic: door.in && feather && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17634,8 +17671,8 @@ const Tiny5Enemies = () => {
         id: 2440,
         name: "Aztec Enemy Photo: Tiny 5DT Start Right Back",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+        canGetLogic: door.in && feather && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17644,8 +17681,8 @@ const Tiny5Enemies = () => {
         id: 2441,
         name: "Aztec Enemy Photo: Tiny 5DT Start Left Front",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+        canGetLogic: door.in && feather && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17654,8 +17691,8 @@ const Tiny5Enemies = () => {
         id: 2442,
         name: "Aztec Enemy Photo: Tiny 5DT Reward 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+        canGetLogic: door.in && feather && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17664,8 +17701,8 @@ const Tiny5Enemies = () => {
         id: 2443,
         name: "Aztec Enemy Photo: Tiny 5DT Reward 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+        canGetLogic: door.in && feather && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17674,8 +17711,8 @@ const Tiny5Enemies = () => {
         id: 2444,
         name: "Aztec Enemy Photo: Tiny 5DT Dead End 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+        canGetLogic: door.in && feather && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17684,8 +17721,8 @@ const Tiny5Enemies = () => {
         id: 2445,
         name: "Aztec Enemy Photo: Tiny 5DT Dead End 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && zinger && hasFairyCam
+        canGetLogic: door.in && feather && hasFairyCam,
+        canGetBreak: logicBreak(door) && feather && hasFairyCam
       }
     )
   ] });
@@ -17870,8 +17907,8 @@ const OasisEnemies = () => {
         id: 2315,
         name: "Aztec Enemy: Near Candy",
         region: "Aztec Oasis And Totem Area",
-        canGetLogic: inStage.in && zinger,
-        canGetBreak: logicBreak(inStage) && zinger
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: logicBreak(inStage) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17890,8 +17927,8 @@ const OasisEnemies = () => {
         id: 2415,
         name: "Aztec Enemy Photo: Near Candy",
         region: "Aztec Oasis And Totem Area",
-        canGetLogic: inStage.in && zinger && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && zinger && hasFairyCam
+        canGetLogic: inStage.in && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17909,6 +17946,7 @@ const OasisEnemies = () => {
 const TinyStartEnemies = () => {
   const tiny = useAztecTinyTemple();
   const hasFairyCam = useCamera();
+  const klobber = useDefeatKlobber();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -17916,8 +17954,8 @@ const TinyStartEnemies = () => {
         id: 2379,
         name: "Aztec Enemy: TT Guard 0",
         region: "Tiny Temple",
-        canGetLogic: tiny.in,
-        canGetBreak: logicBreak(tiny)
+        canGetLogic: tiny.in && klobber,
+        canGetBreak: logicBreak(tiny) && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17926,8 +17964,8 @@ const TinyStartEnemies = () => {
         id: 2380,
         name: "Aztec Enemy: TT Guard 1",
         region: "Tiny Temple",
-        canGetLogic: tiny.in,
-        canGetBreak: logicBreak(tiny)
+        canGetLogic: tiny.in && klobber,
+        canGetBreak: logicBreak(tiny) && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -18182,8 +18220,8 @@ const TotemEnemies = () => {
         id: 2317,
         name: "Aztec Enemy: Outside 5DT",
         region: "Aztec Oasis And Totem Area",
-        canGetLogic: inStage.in && zinger,
-        canGetBreak: logicBreak(inStage) && zinger
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: logicBreak(inStage) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -18209,7 +18247,7 @@ const TotemEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2514,
+        id: 2414,
         name: "Aztec Enemy Photo: Outside the Gong Tower",
         region: "Aztec Oasis And Totem Area",
         canGetLogic: inStage.in && anyKong && hasFairyCam,
@@ -18219,7 +18257,7 @@ const TotemEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2515,
+        id: 2514,
         name: "Aztec Enemy Photo: In Front of Snide's",
         region: "Aztec Oasis And Totem Area",
         canGetLogic: inStage.in && anyKong && hasFairyCam,
@@ -18242,8 +18280,8 @@ const TotemEnemies = () => {
         id: 2417,
         name: "Aztec Enemy Photo: Outside 5DT",
         region: "Aztec Oasis And Totem Area",
-        canGetLogic: inStage.in && zinger && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && zinger && hasFairyCam
+        canGetLogic: inStage.in && hasFairyCam,
+        canGetBreak: logicBreak(inStage) && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20141,7 +20179,8 @@ const ProductionEnemies = () => {
         id: 3315,
         name: "Factory Enemy: Diddy Switch",
         region: "Production Room",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20177,7 +20216,7 @@ const ProductionEnemies = () => {
         id: 3415,
         name: "Factory Enemy Photo: Diddy Switch",
         region: "Production Room",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     )
   ] });
@@ -20203,7 +20242,8 @@ const RNDEnemies = () => {
         id: 3313,
         name: "Factory Enemy: Tunnel to Race 1",
         region: "R&D Area",
-        canGetLogic: testing && zinger
+        canGetLogic: testing && zinger.in,
+        canGetBreak: testing && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20221,7 +20261,7 @@ const RNDEnemies = () => {
         id: 3413,
         name: "Factory Enemy Photo: Tunnel to Race 1",
         region: "R&D Area",
-        canGetLogic: testing && zinger && hasFairyCam
+        canGetLogic: testing && hasFairyCam
       }
     )
   ] });
@@ -20319,7 +20359,8 @@ const StorageEnemies = () => {
         id: 3304,
         name: "Factory Enemy: Storage Room",
         region: "Storage And Arcade",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20328,7 +20369,8 @@ const StorageEnemies = () => {
         id: 3317,
         name: "Factory Enemy: Dark Room 0",
         region: "Storage And Arcade",
-        canGetLogic: inStage && punch && zinger
+        canGetLogic: inStage && punch && zinger.in,
+        canGetBreak: inStage && punch && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20337,7 +20379,8 @@ const StorageEnemies = () => {
         id: 3318,
         name: "Factory Enemy: Dark Room 1",
         region: "Storage And Arcade",
-        canGetLogic: inStage && punch && zinger
+        canGetLogic: inStage && punch && zinger.in,
+        canGetBreak: inStage && punch && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20373,7 +20416,7 @@ const StorageEnemies = () => {
         id: 3417,
         name: "Factory Enemy Photo: Dark Room 0",
         region: "Storage And Arcade",
-        canGetLogic: inStage && punch && zinger && hasFairyCam
+        canGetLogic: inStage && punch && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20382,7 +20425,7 @@ const StorageEnemies = () => {
         id: 3418,
         name: "Factory Enemy Photo: Dark Room 1",
         region: "Storage And Arcade",
-        canGetLogic: inStage && punch && zinger && hasFairyCam
+        canGetLogic: inStage && punch && hasFairyCam
       }
     )
   ] });
@@ -20437,7 +20480,8 @@ const TestingEnemies = () => {
         id: 3316,
         name: "Factory Enemy: To Block Tower Tunnel",
         region: "Testing Area",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20482,7 +20526,7 @@ const TestingEnemies = () => {
         id: 3416,
         name: "Factory Enemy Photo: To Block Tower Tunnel",
         region: "Testing Area",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     )
   ] });
@@ -21583,7 +21627,8 @@ const CavernsEnemies = () => {
         id: 4301,
         name: "Galleon Enemy: Chest Room 1",
         region: "Galleon Caverns",
-        canGetLogic: inStage && kaboom
+        canGetLogic: inStage && kaboom.in,
+        canGetBreak: inStage && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21592,7 +21637,8 @@ const CavernsEnemies = () => {
         id: 4302,
         name: "Galleon Enemy: Vine Cannon",
         region: "Galleon Caverns",
-        canGetLogic: inStage && kaboom
+        canGetLogic: inStage && kaboom.in,
+        canGetBreak: inStage && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21601,7 +21647,8 @@ const CavernsEnemies = () => {
         id: 4303,
         name: "Galleon Enemy: Cranky Cannon",
         region: "Galleon Caverns",
-        canGetLogic: inStage && kaboom
+        canGetLogic: inStage && kaboom.in,
+        canGetBreak: inStage && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21610,7 +21657,8 @@ const CavernsEnemies = () => {
         id: 4304,
         name: "Galleon Enemy: Peanut Tunnel",
         region: "Galleon Caverns",
-        canGetLogic: inStage && kosha
+        canGetLogic: inStage && kosha.in,
+        canGetBreak: inStage && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21637,7 +21685,7 @@ const CavernsEnemies = () => {
         id: 4401,
         name: "Galleon Enemy Photo: Chest Room 1",
         region: "Galleon Caverns",
-        canGetLogic: inStage && kaboom && hasCamera
+        canGetLogic: inStage && hasCamera
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21646,7 +21694,7 @@ const CavernsEnemies = () => {
         id: 4402,
         name: "Galleon Enemy Photo: Vine Cannon",
         region: "Galleon Caverns",
-        canGetLogic: inStage && kaboom && hasCamera
+        canGetLogic: inStage && hasCamera
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21655,7 +21703,7 @@ const CavernsEnemies = () => {
         id: 4403,
         name: "Galleon Enemy Photo: Cranky Cannon",
         region: "Galleon Caverns",
-        canGetLogic: inStage && kaboom && hasCamera
+        canGetLogic: inStage && hasCamera
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21664,7 +21712,7 @@ const CavernsEnemies = () => {
         id: 4404,
         name: "Galleon Enemy Photo: Peanut Tunnel",
         region: "Galleon Caverns",
-        canGetLogic: inStage && kosha && hasCamera
+        canGetLogic: inStage && hasCamera
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23558,7 +23606,8 @@ const CenterEnemies = () => {
         id: 5323,
         name: "Forest Enemy: Near Apple Dropoff",
         region: "Forest Center And Beanstalk",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23567,7 +23616,8 @@ const CenterEnemies = () => {
         id: 5324,
         name: "Forest Enemy: Near Vanilla DK Portal",
         region: "Forest Center And Beanstalk",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23576,7 +23626,8 @@ const CenterEnemies = () => {
         id: 5325,
         name: "Forest Enemy: Near Well Tag",
         region: "Forest Center And Beanstalk",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23585,7 +23636,8 @@ const CenterEnemies = () => {
         id: 5312,
         name: "Forest Enemy: Green Tunnel",
         region: "Forest Center And Beanstalk",
-        canGetLogic: beanHalf && zinger
+        canGetLogic: beanHalf && zinger.in,
+        canGetBreak: beanHalf && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23612,7 +23664,7 @@ const CenterEnemies = () => {
         id: 5423,
         name: "Forest Enemy Photo: Near Apple Dropoff",
         region: "Forest Center And Beanstalk",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23621,7 +23673,7 @@ const CenterEnemies = () => {
         id: 5424,
         name: "Forest Enemy Photo: Near Vanilla DK Portal",
         region: "Forest Center And Beanstalk",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23630,7 +23682,7 @@ const CenterEnemies = () => {
         id: 5425,
         name: "Forest Enemy Photo: Near Well Tag",
         region: "Forest Center And Beanstalk",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23639,7 +23691,7 @@ const CenterEnemies = () => {
         id: 5509,
         name: "Forest Enemy Photo: Green Tunnel",
         region: "Forest Center And Beanstalk",
-        canGetLogic: beanHalf && zinger && hasFairyCam
+        canGetLogic: beanHalf && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23694,7 +23746,8 @@ const MillsEnemies = () => {
         id: 5331,
         name: "Forest Enemy: Near the Infamous Dirt Patch",
         region: "Forest Mills",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23712,7 +23765,8 @@ const MillsEnemies = () => {
         id: 5334,
         name: "Forest Enemy: Near Well Exit",
         region: "Forest Mills",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23730,8 +23784,8 @@ const MillsEnemies = () => {
         id: 5346,
         name: "Forest Enemy: Mill Inside Front",
         region: "Forest Mills",
-        canGetLogic: day.in && zinger,
-        canGetBreak: logicBreak(day) && zinger
+        canGetLogic: day.in && zinger.in,
+        canGetBreak: logicBreak(day) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23740,8 +23794,8 @@ const MillsEnemies = () => {
         id: 5347,
         name: "Forest Enemy: Mill Inside Rear",
         region: "Forest Mills",
-        canGetLogic: day.in && (punch || hasMiniMonkey) && zinger,
-        canGetBreak: logicBreak(day) && (punch || hasMiniMonkey) && zinger
+        canGetLogic: day.in && (punch || hasMiniMonkey) && zinger.in,
+        canGetBreak: logicBreak(day) && (punch || hasMiniMonkey) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23750,7 +23804,8 @@ const MillsEnemies = () => {
         id: 5344,
         name: "Forest Enemy: Winch Inside",
         region: "Forest Mills",
-        canGetLogic: inStage && diddy && canSlam && bat
+        canGetLogic: inStage && diddy && canSlam && bat.in,
+        canGetBreak: inStage && diddy && canSlam && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23777,7 +23832,8 @@ const MillsEnemies = () => {
         id: 5338,
         name: "Forest Enemy: Thornvine 2",
         region: "Forest Mills",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23795,8 +23851,8 @@ const MillsEnemies = () => {
         id: 5345,
         name: "Forest Enemy: Thornvine Barn Inside",
         region: "Forest Mills",
-        canGetLogic: night.in && strong && canSlam && kosha,
-        canGetBreak: logicBreak(night) && dk2 && canSlam && kosha
+        canGetLogic: night.in && strong && canSlam && kosha.in,
+        canGetBreak: logicBreak(night) && dk2 && canSlam && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23814,7 +23870,7 @@ const MillsEnemies = () => {
         id: 5431,
         name: "Forest Enemy Photo: Near the Infamous Dirt Patch",
         region: "Forest Mills",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23832,7 +23888,7 @@ const MillsEnemies = () => {
         id: 5434,
         name: "Forest Enemy Photo: Near Well Exit",
         region: "Forest Mills",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23850,8 +23906,8 @@ const MillsEnemies = () => {
         id: 5446,
         name: "Forest Enemy Photo: Mill Inside Front",
         region: "Forest Mills",
-        canGetLogic: day.in && zinger && hasFairyCam,
-        canGetBreak: logicBreak(day) && zinger && hasFairyCam
+        canGetLogic: day.in && hasFairyCam,
+        canGetBreak: logicBreak(day) && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23860,8 +23916,8 @@ const MillsEnemies = () => {
         id: 5447,
         name: "Forest Enemy Photo: Mill Inside Rear",
         region: "Forest Mills",
-        canGetLogic: day.in && (punch || hasMiniMonkey) && zinger && hasFairyCam,
-        canGetBreak: logicBreak(day) && (punch || hasMiniMonkey) && zinger && hasFairyCam
+        canGetLogic: day.in && (punch || hasMiniMonkey) && hasFairyCam,
+        canGetBreak: logicBreak(day) && (punch || hasMiniMonkey) && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23870,7 +23926,7 @@ const MillsEnemies = () => {
         id: 5444,
         name: "Forest Enemy Photo: Winch Inside",
         region: "Forest Mills",
-        canGetLogic: inStage && diddy && canSlam && bat && hasFairyCam
+        canGetLogic: inStage && diddy && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23897,7 +23953,7 @@ const MillsEnemies = () => {
         id: 5438,
         name: "Forest Enemy Photo: Thornvine 2",
         region: "Forest Mills",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23915,8 +23971,8 @@ const MillsEnemies = () => {
         id: 5445,
         name: "Forest Enemy Photo: Thornvine Barn Inside",
         region: "Forest Mills",
-        canGetLogic: night.in && strong && canSlam && kosha && hasFairyCam,
-        canGetBreak: logicBreak(night) && dk2 && canSlam && kosha && hasFairyCam
+        canGetLogic: night.in && strong && canSlam && kosha.in && hasFairyCam,
+        canGetBreak: logicBreak(night) && dk2 && canSlam && kosha.out && hasFairyCam
       }
     )
   ] });
@@ -23971,7 +24027,8 @@ const MushExteriorEnemies = () => {
         id: 5316,
         name: "Forest Enemy: b/t Rocket & Yellow Tunnel",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23980,7 +24037,8 @@ const MushExteriorEnemies = () => {
         id: 5317,
         name: "Forest Enemy: Near Cranky",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23989,7 +24047,8 @@ const MushExteriorEnemies = () => {
         id: 5332,
         name: "Forest Enemy: Near Pink Tunnel",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23998,7 +24057,8 @@ const MushExteriorEnemies = () => {
         id: 5318,
         name: "Forest Enemy: Rear Tag",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24007,7 +24067,8 @@ const MushExteriorEnemies = () => {
         id: 5418,
         name: "Forest Enemy: Near DK Pad",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24016,7 +24077,8 @@ const MushExteriorEnemies = () => {
         id: 5319,
         name: "Forest Enemy: Near Face Puzzle",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24025,7 +24087,8 @@ const MushExteriorEnemies = () => {
         id: 5320,
         name: "Forest Enemy: Near Crown",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24034,7 +24097,8 @@ const MushExteriorEnemies = () => {
         id: 5321,
         name: "Forest Enemy: Near High Warp 5",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24089,7 +24153,7 @@ const MushExteriorEnemies = () => {
         id: 5416,
         name: "Forest Enemy Photo: b/t Rocket & Yellow Tunnel",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24098,7 +24162,7 @@ const MushExteriorEnemies = () => {
         id: 5417,
         name: "Forest Enemy Photo: Near Cranky",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24107,7 +24171,7 @@ const MushExteriorEnemies = () => {
         id: 5432,
         name: "Forest Enemy Photo: Near Pink Tunnel",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24116,7 +24180,7 @@ const MushExteriorEnemies = () => {
         id: 5518,
         name: "Forest Enemy Photo: Rear Tag",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24125,7 +24189,7 @@ const MushExteriorEnemies = () => {
         id: 5519,
         name: "Forest Enemy Photo: Near DK Pad",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24134,7 +24198,7 @@ const MushExteriorEnemies = () => {
         id: 5419,
         name: "Forest Enemy Photo: Near Face Puzzle",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24143,7 +24207,7 @@ const MushExteriorEnemies = () => {
         id: 5420,
         name: "Forest Enemy Photo: Near Crown",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24152,7 +24216,7 @@ const MushExteriorEnemies = () => {
         id: 5421,
         name: "Forest Enemy Photo: Near High Warp 5",
         region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24192,7 +24256,8 @@ const MushInteriorEnemies = () => {
         id: 5349,
         name: "Forest Enemy: Mushroom Path 0",
         region: "Giant Mushroom Insides",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24201,7 +24266,8 @@ const MushInteriorEnemies = () => {
         id: 5350,
         name: "Forest Enemy: Mushroom Path 1",
         region: "Giant Mushroom Insides",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24210,8 +24276,8 @@ const MushInteriorEnemies = () => {
         id: 5354,
         name: "Forest Enemy: Mushroom Leap 0",
         region: "Giant Mushroom Insides",
-        canGetLogic: roof.in && lanky && canSlam && zinger,
-        canGetBreak: logicBreak(roof) && lanky && canSlam && zinger
+        canGetLogic: roof.in && lanky && canSlam && zinger.in,
+        canGetBreak: logicBreak(roof) && lanky && canSlam && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24220,8 +24286,8 @@ const MushInteriorEnemies = () => {
         id: 5355,
         name: "Forest Enemy: Mushroom Leap 1",
         region: "Giant Mushroom Insides",
-        canGetLogic: roof.in && lanky && canSlam && zinger,
-        canGetBreak: logicBreak(roof) && lanky && canSlam && zinger
+        canGetLogic: roof.in && lanky && canSlam && zinger.in,
+        canGetBreak: logicBreak(roof) && lanky && canSlam && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24230,7 +24296,8 @@ const MushInteriorEnemies = () => {
         id: 5356,
         name: "Forest Enemy: Face Puzzle",
         region: "Giant Mushroom Insides",
-        canGetLogic: inStage && chunky && canSlam && zinger
+        canGetLogic: inStage && chunky && canSlam && zinger.in,
+        canGetBreak: inStage && chunky && canSlam && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24248,7 +24315,7 @@ const MushInteriorEnemies = () => {
         id: 5449,
         name: "Forest Enemy Photo: Mushroom Path 0",
         region: "Giant Mushroom Insides",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24257,7 +24324,7 @@ const MushInteriorEnemies = () => {
         id: 5450,
         name: "Forest Enemy Photo: Mushroom Path 1",
         region: "Giant Mushroom Insides",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24266,8 +24333,8 @@ const MushInteriorEnemies = () => {
         id: 5454,
         name: "Forest Enemy Photo: Mushroom Leap 0",
         region: "Giant Mushroom Insides",
-        canGetLogic: roof.in && lanky && canSlam && zinger && hasFairyCam,
-        canGetBreak: logicBreak(roof) && lanky && canSlam && zinger && hasFairyCam
+        canGetLogic: roof.in && lanky && canSlam && hasFairyCam,
+        canGetBreak: logicBreak(roof) && lanky && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24276,8 +24343,8 @@ const MushInteriorEnemies = () => {
         id: 5455,
         name: "Forest Enemy Photo: Mushroom Leap 1",
         region: "Giant Mushroom Insides",
-        canGetLogic: roof.in && lanky && canSlam && zinger && hasFairyCam,
-        canGetBreak: logicBreak(roof) && lanky && canSlam && zinger && hasFairyCam
+        canGetLogic: roof.in && lanky && canSlam && hasFairyCam,
+        canGetBreak: logicBreak(roof) && lanky && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24286,7 +24353,7 @@ const MushInteriorEnemies = () => {
         id: 5456,
         name: "Forest Enemy Photo: Face Puzzle",
         region: "Giant Mushroom Insides",
-        canGetLogic: inStage && chunky && canSlam && zinger && hasFairyCam
+        canGetLogic: inStage && chunky && canSlam && hasFairyCam
       }
     )
   ] });
@@ -24305,7 +24372,8 @@ const OwlEnemies = () => {
         id: 5327,
         name: "Forest Enemy: Yellow Tunnel 1",
         region: "Owl Tree",
-        canGetLogic: owlTree && zinger
+        canGetLogic: owlTree && zinger.in,
+        canGetBreak: owlTree && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24314,7 +24382,8 @@ const OwlEnemies = () => {
         id: 5328,
         name: "Forest Enemy: Yellow Tunnel 2",
         region: "Owl Tree",
-        canGetLogic: owlTree && zinger
+        canGetLogic: owlTree && zinger.in,
+        canGetBreak: owlTree && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24350,7 +24419,8 @@ const OwlEnemies = () => {
         id: 5302,
         name: "Forest Enemy: Hollow Tree Entrance",
         region: "Owl Tree",
-        canGetLogic: owlTree && zinger
+        canGetLogic: owlTree && zinger.in,
+        canGetBreak: owlTree && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24359,7 +24429,8 @@ const OwlEnemies = () => {
         id: 5303,
         name: "Forest Enemy: Tree Melon Crate 0",
         region: "Owl Tree",
-        canGetLogic: owlTree && zinger
+        canGetLogic: owlTree && zinger.in,
+        canGetBreak: owlTree && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24368,7 +24439,8 @@ const OwlEnemies = () => {
         id: 5304,
         name: "Forest Enemy: Tree Melon Crate 1",
         region: "Owl Tree",
-        canGetLogic: owlTree && zinger
+        canGetLogic: owlTree && zinger.in,
+        canGetBreak: owlTree && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24377,7 +24449,8 @@ const OwlEnemies = () => {
         id: 5305,
         name: "Forest Enemy: Tree Melon Crate 2",
         region: "Owl Tree",
-        canGetLogic: owlTree && zinger
+        canGetLogic: owlTree && zinger.in,
+        canGetBreak: owlTree && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24422,7 +24495,7 @@ const OwlEnemies = () => {
         id: 5427,
         name: "Forest Enemy Photo: Yellow Tunnel 1",
         region: "Owl Tree",
-        canGetLogic: owlTree && zinger && hasFairyCam
+        canGetLogic: owlTree && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24431,7 +24504,7 @@ const OwlEnemies = () => {
         id: 5428,
         name: "Forest Enemy Photo: Yellow Tunnel 2",
         region: "Owl Tree",
-        canGetLogic: owlTree && zinger && hasFairyCam
+        canGetLogic: owlTree && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24467,7 +24540,7 @@ const OwlEnemies = () => {
         id: 5402,
         name: "Forest Enemy Photo: Hollow Tree Entrance",
         region: "Owl Tree",
-        canGetLogic: owlTree && zinger && hasFairyCam
+        canGetLogic: owlTree && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24476,7 +24549,7 @@ const OwlEnemies = () => {
         id: 5403,
         name: "Forest Enemy Photo: Tree Melon Crate 0",
         region: "Owl Tree",
-        canGetLogic: owlTree && zinger && hasFairyCam
+        canGetLogic: owlTree && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24485,7 +24558,7 @@ const OwlEnemies = () => {
         id: 5404,
         name: "Forest Enemy Photo: Tree Melon Crate 1",
         region: "Owl Tree",
-        canGetLogic: owlTree && zinger && hasFairyCam
+        canGetLogic: owlTree && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24494,7 +24567,7 @@ const OwlEnemies = () => {
         id: 5405,
         name: "Forest Enemy Photo: Tree Melon Crate 2",
         region: "Owl Tree",
-        canGetLogic: owlTree && zinger && hasFairyCam
+        canGetLogic: owlTree && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26066,7 +26139,8 @@ const CabinsEnemies = () => {
         id: 6302,
         name: "Caves Enemy: Outside 5 Door Cabin",
         region: "Cabins Area",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26084,7 +26158,8 @@ const CabinsEnemies = () => {
         id: 6307,
         name: "Caves Enemy: Lanky Cabin Headphones",
         region: "Cabins Area",
-        canGetLogic: inStage && anyKong && kosha
+        canGetLogic: inStage && anyKong && kosha.in,
+        canGetBreak: inStage && anyKong && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26093,8 +26168,8 @@ const CabinsEnemies = () => {
         id: 6317,
         name: "Caves Enemy: Lanky Cabin Inside Near Pad and Barrel",
         region: "Cabins Area",
-        canGetLogic: lankyCabin.in && kosha,
-        canGetBreak: lankyCabin.out && kosha
+        canGetLogic: lankyCabin.in && kosha.in,
+        canGetBreak: lankyCabin.out && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26103,7 +26178,7 @@ const CabinsEnemies = () => {
         id: 6402,
         name: "Caves Enemy Photo: Outside 5 Door Cabin",
         region: "Cabins Area",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26121,7 +26196,7 @@ const CabinsEnemies = () => {
         id: 6407,
         name: "Caves Enemy Photo: Lanky Cabin Headphones",
         region: "Cabins Area",
-        canGetLogic: inStage && anyKong && kosha && hasFairyCam
+        canGetLogic: inStage && anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26130,8 +26205,8 @@ const CabinsEnemies = () => {
         id: 6417,
         name: "Caves Enemy Photo: Lanky Cabin Inside Near Pad and Barrel",
         region: "Cabins Area",
-        canGetLogic: lankyCabin.in && kosha && hasFairyCam,
-        canGetBreak: lankyCabin.out && kosha && hasFairyCam
+        canGetLogic: lankyCabin.in && hasFairyCam,
+        canGetBreak: lankyCabin.out && hasFairyCam
       }
     )
   ] });
@@ -26149,7 +26224,8 @@ const IglooEnemies = () => {
         id: 6309,
         name: "Caves Enemy: DK Igloo Right",
         region: "Igloo Area",
-        canGetLogic: igloo && bongos && kosha
+        canGetLogic: igloo && bongos && kosha.in,
+        canGetBreak: igloo && bongos && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26158,7 +26234,8 @@ const IglooEnemies = () => {
         id: 6310,
         name: "Caves Enemy: DK Igloo Left",
         region: "Igloo Area",
-        canGetLogic: igloo && bongos && kosha
+        canGetLogic: igloo && bongos && kosha.in,
+        canGetBreak: igloo && bongos && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26167,7 +26244,8 @@ const IglooEnemies = () => {
         id: 6316,
         name: "Caves Enemy: Tiny Igloo Big",
         region: "Igloo Area",
-        canGetLogic: igloo && sax && kosha
+        canGetLogic: igloo && sax && kosha.in,
+        canGetBreak: igloo && sax && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26176,7 +26254,7 @@ const IglooEnemies = () => {
         id: 6409,
         name: "Caves Enemy Photo: DK Igloo Right",
         region: "Igloo Area",
-        canGetLogic: igloo && bongos && kosha && hasFairyCam
+        canGetLogic: igloo && bongos && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26185,7 +26263,7 @@ const IglooEnemies = () => {
         id: 6410,
         name: "Caves Enemy Photo: DK Igloo Left",
         region: "Igloo Area",
-        canGetLogic: igloo && bongos && kosha && hasFairyCam
+        canGetLogic: igloo && bongos && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26194,7 +26272,7 @@ const IglooEnemies = () => {
         id: 6416,
         name: "Caves Enemy Photo: Tiny Igloo Big",
         region: "Igloo Area",
-        canGetLogic: igloo && sax && kosha && hasFairyCam
+        canGetLogic: igloo && sax && hasFairyCam
       }
     )
   ] });
@@ -26230,7 +26308,8 @@ const MainEnemies = () => {
         id: 6304,
         name: "Caves Enemy: Near Funky",
         region: "Main Caves Area",
-        canGetLogic: inStage && zinger
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26239,7 +26318,8 @@ const MainEnemies = () => {
         id: 6306,
         name: "Caves Enemy: Near Bonus Room",
         region: "Main Caves Area",
-        canGetLogic: inStage && kosha
+        canGetLogic: inStage && kosha.in,
+        canGetBreak: inStage && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26248,7 +26328,8 @@ const MainEnemies = () => {
         id: 6305,
         name: "Caves Enemy: Near Snide",
         region: "Main Caves Area",
-        canGetLogic: inStage && kosha
+        canGetLogic: inStage && kosha.in,
+        canGetBreak: inStage && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26275,7 +26356,7 @@ const MainEnemies = () => {
         id: 6404,
         name: "Caves Enemy Photo: Near Funky",
         region: "Main Caves Area",
-        canGetLogic: inStage && zinger && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26284,7 +26365,7 @@ const MainEnemies = () => {
         id: 6406,
         name: "Caves Enemy Photo: Near Bonus Room",
         region: "Main Caves Area",
-        canGetLogic: inStage && kosha && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26293,7 +26374,7 @@ const MainEnemies = () => {
         id: 6405,
         name: "Caves Enemy Photo: Near Snide",
         region: "Main Caves Area",
-        canGetLogic: inStage && kosha && hasFairyCam
+        canGetLogic: inStage && hasFairyCam
       }
     )
   ] });
@@ -27735,7 +27816,8 @@ const BallroomEnemies = () => {
         id: 7313,
         name: "Castle Enemy: Ballroom Start",
         region: "Castle Rooms",
-        canGetLogic: inStage && diddy && canSlam && kosha
+        canGetLogic: inStage && diddy && canSlam && kosha.in,
+        canGetBreak: inStage && diddy && canSlam && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27744,7 +27826,7 @@ const BallroomEnemies = () => {
         id: 7413,
         name: "Castle Enemy Photo: Ballroom Start",
         region: "Castle Rooms",
-        canGetLogic: inStage && diddy && canSlam && kosha && hasFairyCam
+        canGetLogic: inStage && diddy && canSlam && hasFairyCam
       }
     )
   ] });
@@ -27762,7 +27844,8 @@ const MuseumEnemies = () => {
         id: 7361,
         name: "Castle Enemy: Museum Start",
         region: "Castle Rooms",
-        canGetLogic: inStage && chunky && canSlam && kosha
+        canGetLogic: inStage && chunky && canSlam && kosha.in,
+        canGetBreak: inStage && chunky && canSlam && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27807,7 +27890,7 @@ const MuseumEnemies = () => {
         id: 7461,
         name: "Castle Enemy Photo: Museum Start",
         region: "Castle Rooms",
-        canGetLogic: inStage && chunky && canSlam && kosha && hasFairyCam
+        canGetLogic: inStage && chunky && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27861,7 +27944,8 @@ const LibraryEnemies = () => {
         id: 7357,
         name: "Castle Enemy: Library Gauntlet Fork Left 0",
         region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && bat
+        canGetLogic: inStage && dk2 && canSlam && bat.in,
+        canGetBreak: inStage && dk2 && canSlam && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27870,7 +27954,8 @@ const LibraryEnemies = () => {
         id: 7358,
         name: "Castle Enemy: Library Gauntlet Fork Left 1",
         region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && bat
+        canGetLogic: inStage && dk2 && canSlam && bat.in,
+        canGetBreak: inStage && dk2 && canSlam && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27879,7 +27964,8 @@ const LibraryEnemies = () => {
         id: 7359,
         name: "Castle Enemy: Library Gauntlet Fork Center",
         region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && bat
+        canGetLogic: inStage && dk2 && canSlam && bat.in,
+        canGetBreak: inStage && dk2 && canSlam && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27888,7 +27974,8 @@ const LibraryEnemies = () => {
         id: 7360,
         name: "Castle Enemy: Library Gauntlet Fork Right",
         region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && bat
+        canGetLogic: inStage && dk2 && canSlam && bat.in,
+        canGetBreak: inStage && dk2 && canSlam && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27897,7 +27984,7 @@ const LibraryEnemies = () => {
         id: 7457,
         name: "Castle Enemy Photo: Library Gauntlet Fork Left 0",
         region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && bat && hasFairyCam
+        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27906,7 +27993,7 @@ const LibraryEnemies = () => {
         id: 7458,
         name: "Castle Enemy Photo: Library Gauntlet Fork Left 1",
         region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && bat && hasFairyCam
+        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27915,7 +28002,7 @@ const LibraryEnemies = () => {
         id: 7459,
         name: "Castle Enemy Photo: Library Gauntlet Fork Center",
         region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && bat && hasFairyCam
+        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27924,7 +28011,61 @@ const LibraryEnemies = () => {
         id: 7460,
         name: "Castle Enemy Photo: Library Gauntlet Fork Right",
         region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && bat && hasFairyCam
+        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7472,
+        name: "Castle Enemy Photo: Library Book 0",
+        region: "Castle Rooms",
+        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7473,
+        name: "Castle Enemy Photo: Library Book 1",
+        region: "Castle Rooms",
+        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7474,
+        name: "Castle Enemy Photo: Library Book 2",
+        region: "Castle Rooms",
+        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7475,
+        name: "Castle Enemy Photo: Library Book 3",
+        region: "Castle Rooms",
+        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7476,
+        name: "Castle Enemy Photo: Library Book 4",
+        region: "Castle Rooms",
+        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7477,
+        name: "Castle Enemy Photo: Library Book 5",
+        region: "Castle Rooms",
+        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
       }
     )
   ] });
@@ -27960,7 +28101,8 @@ const SurroundingsEnemies = () => {
         id: 7302,
         name: "Castle Enemy: Wooden Extrusion 0",
         region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && kosha
+        canGetLogic: inStage && anyKong && kosha.in,
+        canGetBreak: inStage && anyKong && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27969,7 +28111,8 @@ const SurroundingsEnemies = () => {
         id: 7303,
         name: "Castle Enemy: Wooden Extrusion 1",
         region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && kosha
+        canGetLogic: inStage && anyKong && kosha.in,
+        canGetBreak: inStage && anyKong && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27996,7 +28139,8 @@ const SurroundingsEnemies = () => {
         id: 7306,
         name: "Castle Enemy: Near Tower",
         region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && kosha
+        canGetLogic: inStage && anyKong && kosha.in,
+        canGetBreak: inStage && anyKong && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28080,7 +28224,7 @@ const SurroundingsEnemies = () => {
         id: 7402,
         name: "Castle Enemy Photo: Wooden Extrusion 0",
         region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && kosha && hasFairyCam
+        canGetLogic: inStage && anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28089,7 +28233,7 @@ const SurroundingsEnemies = () => {
         id: 7403,
         name: "Castle Enemy Photo: Wooden Extrusion 1",
         region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && kosha && hasFairyCam
+        canGetLogic: inStage && anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28116,7 +28260,7 @@ const SurroundingsEnemies = () => {
         id: 7406,
         name: "Castle Enemy Photo: Near Tower",
         region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && kosha && hasFairyCam
+        canGetLogic: inStage && anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28189,7 +28333,8 @@ const TreeEnemies = () => {
         id: 7370,
         name: "Castle Enemy: Tree Start 0",
         region: "Castle Surroundings",
-        canGetLogic: tree && bat
+        canGetLogic: tree && bat.in,
+        canGetBreak: tree && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28198,7 +28343,8 @@ const TreeEnemies = () => {
         id: 7371,
         name: "Castle Enemy: Tree Start 1",
         region: "Castle Surroundings",
-        canGetLogic: tree && bat
+        canGetLogic: tree && bat.in,
+        canGetBreak: tree && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28207,7 +28353,7 @@ const TreeEnemies = () => {
         id: 7470,
         name: "Castle Enemy Photo: Tree Start 0",
         region: "Castle Surroundings",
-        canGetLogic: tree && bat && hasFairyCam
+        canGetLogic: tree && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28216,7 +28362,7 @@ const TreeEnemies = () => {
         id: 7471,
         name: "Castle Enemy Photo: Tree Start 1",
         region: "Castle Surroundings",
-        canGetLogic: tree && bat && hasFairyCam
+        canGetLogic: tree && hasFairyCam
       }
     )
   ] });
@@ -28246,8 +28392,8 @@ const UndergroundEnemies = () => {
         id: 7327,
         name: "Castle Enemy: Low Cave Near Crypt",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && kosha && hasClimbing,
-        canGetBreak: inStage && anyKong && kosha
+        canGetLogic: inStage && anyKong && kosha.in && hasClimbing,
+        canGetBreak: inStage && anyKong && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28256,8 +28402,8 @@ const UndergroundEnemies = () => {
         id: 7328,
         name: "Castle Enemy: Low Cave Near Stair Right",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && kosha && hasClimbing,
-        canGetBreak: inStage && anyKong && kosha
+        canGetLogic: inStage && anyKong && kosha.in && hasClimbing,
+        canGetBreak: inStage && anyKong && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28276,8 +28422,8 @@ const UndergroundEnemies = () => {
         id: 7330,
         name: "Castle Enemy: Low Cave Near Mausoleum",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && bat && hasClimbing,
-        canGetBreak: inStage && anyKong && bat
+        canGetLogic: inStage && anyKong && bat.in && hasClimbing,
+        canGetBreak: inStage && anyKong && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28286,8 +28432,8 @@ const UndergroundEnemies = () => {
         id: 7331,
         name: "Castle Enemy: Low Cave Near Funky",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && bat && hasClimbing,
-        canGetBreak: inStage && anyKong && bat
+        canGetLogic: inStage && anyKong && bat.in && hasClimbing,
+        canGetBreak: inStage && anyKong && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28296,8 +28442,8 @@ const UndergroundEnemies = () => {
         id: 7332,
         name: "Castle Enemy: Low Cave Near Tag",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && bat && hasClimbing,
-        canGetBreak: inStage && anyKong && bat
+        canGetLogic: inStage && anyKong && bat.in && hasClimbing,
+        canGetBreak: inStage && anyKong && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28456,7 +28602,8 @@ const UndergroundEnemies = () => {
         id: 7348,
         name: "Castle Enemy: Upper Cave Near Dungeon",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && bat
+        canGetLogic: inStage && anyKong && bat.in,
+        canGetBreak: inStage && anyKong && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28465,7 +28612,8 @@ const UndergroundEnemies = () => {
         id: 7350,
         name: "Castle Enemy: Upper Cave Near Warp 1 Entrance",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && bat
+        canGetLogic: inStage && anyKong && bat.in,
+        canGetBreak: inStage && anyKong && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28492,7 +28640,8 @@ const UndergroundEnemies = () => {
         id: 7320,
         name: "Castle Enemy: Dungeon Chair Room",
         region: "Castle Underground",
-        canGetLogic: inStage && diddy && canSlam && kosha
+        canGetLogic: inStage && diddy && canSlam && kosha.in,
+        canGetBreak: inStage && diddy && canSlam && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28501,7 +28650,8 @@ const UndergroundEnemies = () => {
         id: 7321,
         name: "Castle Enemy: Dungeon Outside Lanky Room",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && kosha
+        canGetLogic: inStage && anyKong && kosha.in,
+        canGetBreak: inStage && anyKong && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28510,8 +28660,8 @@ const UndergroundEnemies = () => {
         id: 7427,
         name: "Castle Enemy Photo: Low Cave Near Crypt",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && kosha && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && kosha && hasFairyCam
+        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
+        canGetBreak: inStage && anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28520,8 +28670,8 @@ const UndergroundEnemies = () => {
         id: 7428,
         name: "Castle Enemy Photo: Low Cave Near Stair Right",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && kosha && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && kosha && hasFairyCam
+        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
+        canGetBreak: inStage && anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28540,8 +28690,8 @@ const UndergroundEnemies = () => {
         id: 7430,
         name: "Castle Enemy Photo: Low Cave Near Mausoleum",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && bat && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && bat && hasFairyCam
+        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
+        canGetBreak: inStage && anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28550,8 +28700,8 @@ const UndergroundEnemies = () => {
         id: 7431,
         name: "Castle Enemy Photo: Low Cave Near Funky",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && bat && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && bat && hasFairyCam
+        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
+        canGetBreak: inStage && anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28560,8 +28710,8 @@ const UndergroundEnemies = () => {
         id: 7432,
         name: "Castle Enemy Photo: Low Cave Near Tag",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && bat && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && bat && hasFairyCam
+        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
+        canGetBreak: inStage && anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28720,7 +28870,7 @@ const UndergroundEnemies = () => {
         id: 7448,
         name: "Castle Enemy Photo: Upper Cave Near Dungeon",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && bat && hasFairyCam
+        canGetLogic: inStage && anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28729,7 +28879,7 @@ const UndergroundEnemies = () => {
         id: 7450,
         name: "Castle Enemy Photo: Upper Cave Near Warp 1 Entrance",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && bat && hasFairyCam
+        canGetLogic: inStage && anyKong && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28756,7 +28906,7 @@ const UndergroundEnemies = () => {
         id: 7420,
         name: "Castle Enemy Photo: Dungeon Chair Room",
         region: "Castle Underground",
-        canGetLogic: inStage && diddy && canSlam && kosha && hasFairyCam
+        canGetLogic: inStage && diddy && canSlam && hasFairyCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28765,7 +28915,7 @@ const UndergroundEnemies = () => {
         id: 7421,
         name: "Castle Enemy Photo: Dungeon Outside Lanky Room",
         region: "Castle Underground",
-        canGetLogic: inStage && anyKong && kosha && hasFairyCam
+        canGetLogic: inStage && anyKong && hasFairyCam
       }
     )
   ] });
