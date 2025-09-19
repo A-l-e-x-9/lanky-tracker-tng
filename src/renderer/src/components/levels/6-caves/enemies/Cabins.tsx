@@ -18,7 +18,7 @@ const CabinsEnemies: React.FC = () => {
         name="Caves Enemy: Outside 5 Door Cabin"
         region="Cabins Area"
         canGetLogic={inStage && zinger.in}
-        canGetBreak={instage && zinger.out}
+        canGetBreak={inStage && zinger.out}
       />
       <CavesCheck
         id={6303}
@@ -31,7 +31,7 @@ const CabinsEnemies: React.FC = () => {
         name="Caves Enemy: Lanky Cabin Headphones"
         region="Cabins Area"
         canGetLogic={inStage && anyKong && kosha.in}
-        canGetBreak={instage && anyKong && kosha.out}
+        canGetBreak={inStage && anyKong && kosha.out}
       />
       <CavesCheck
         id={6317}
