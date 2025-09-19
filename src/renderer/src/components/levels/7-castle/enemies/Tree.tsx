@@ -14,25 +14,27 @@ const TreeEnemies: React.FC = () => {
         id={7370}
         name="Castle Enemy: Tree Start 0"
         region="Castle Surroundings"
-        canGetLogic={tree && bat}
+        canGetLogic={tree && bat.in}
+        canGetBreak={tree && bat.out}
       />
       <CastleCheck
         id={7371}
         name="Castle Enemy: Tree Start 1"
         region="Castle Surroundings"
-        canGetLogic={tree && bat}
+        canGetLogic={tree && bat.in}
+        canGetBreak={tree && bat.out}
       />
       <CastleCheck
         id={7470}
         name="Castle Enemy Photo: Tree Start 0"
         region="Castle Surroundings"
-        canGetLogic={tree && bat && hasFairyCam}
+        canGetLogic={tree && hasFairyCam}
       />
       <CastleCheck
         id={7471}
         name="Castle Enemy Photo: Tree Start 1"
         region="Castle Surroundings"
-        canGetLogic={tree && bat && hasFairyCam}
+        canGetLogic={tree && hasFairyCam}
       />
     </DropPool>
   )

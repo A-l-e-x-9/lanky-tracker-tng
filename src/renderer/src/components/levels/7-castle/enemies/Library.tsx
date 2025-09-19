@@ -65,37 +65,37 @@ const LibraryEnemies: React.FC = () => {
         canGetLogic={inStage && dk && canSlam && hasFairyCam}
       />
       <CastleCheck
-        id={7466}
+        id={7472}
         name="Castle Enemy Photo: Library Book 0"
         region="Castle Rooms"
         canGetLogic={inStage && dk && canSlam && hasFairyCam}
       />
       <CastleCheck
-        id={7467}
+        id={7473}
         name="Castle Enemy Photo: Library Book 1"
         region="Castle Rooms"
         canGetLogic={inStage && dk && canSlam && hasFairyCam}
       />
       <CastleCheck
-        id={7468}
+        id={7474}
         name="Castle Enemy Photo: Library Book 2"
         region="Castle Rooms"
         canGetLogic={inStage && dk && canSlam && hasFairyCam}
       />
       <CastleCheck
-        id={7469}
+        id={7475}
         name="Castle Enemy Photo: Library Book 3"
         region="Castle Rooms"
         canGetLogic={inStage && dk && canSlam && hasFairyCam}
       />
       <CastleCheck
-        id={7470}
+        id={7476}
         name="Castle Enemy Photo: Library Book 4"
         region="Castle Rooms"
         canGetLogic={inStage && dk && canSlam && hasFairyCam}
       />
       <CastleCheck
-        id={7471}
+        id={7477}
         name="Castle Enemy Photo: Library Book 5"
         region="Castle Rooms"
         canGetLogic={inStage && dk && canSlam && hasFairyCam}
