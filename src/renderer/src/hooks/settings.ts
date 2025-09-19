@@ -148,14 +148,6 @@ export const usePoolDrops = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.poolDrops))
 
 /**
- * Are the enemies (potentially) different from their defaults?
- *
- * @returns true if the enemies are shuffled.
- */
-export const useShuffleEnemies = (): boolean =>
-  useDonkStore(useShallow((state) => state.settings.shuffleEnemies))
-
-/**
  * Do we shuffle where each colored banana, banana bunch, and banana balloon is located?
  * @returns true if we do shuffle the colored banana locations.
  */

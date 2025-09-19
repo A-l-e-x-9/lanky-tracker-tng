@@ -1,43 +1,54 @@
 import { useAnyGun, useAnyMusic, useOrange, usePunch, useShockwave } from './kongs'
-import { useShuffleEnemies } from './settings'
 
 /**
- * Can you defeat a Zinger?
- * @returns true if you can defeat a Zinger.
+ * Can you defeat a Zinger, fly, or bat?
+ * @returns true if you can defeat a Zinger. Returns "logic-break" if you have Oranges, but no guns or music (but Mecha-Zingers and orange-throwing organic Zingers will be much harder to kill this way than stinging organic ones/flies/bats).
  */
-export const useDefeatZinger = (): boolean => {
+export const useDefeatZinger = (): LogicBool => {
   const anyGun = useAnyGun()
   const anyMusic = useAnyMusic()
-  const enemyShuffle = useShuffleEnemies()
-  return enemyShuffle || anyGun || anyMusic
+  const hasOranges = useOrange()
+  return {
+    in: anyGun || anyMusic,
+    out: hasOranges
+  }
 }
 
-export const useDefeatBat = (): boolean => useDefeatZinger()
+export const useDefeatBat = (): LogicBool => useDefeatZinger()
 
-export const useDefeatKosha = (): boolean => {
+export const useDefeatKosha = (): LogicBool => {
   const anyMusic = useAnyMusic()
   const shockwave = useShockwave()
-  const enemyShuffle = useShuffleEnemies()
-  return enemyShuffle || anyMusic || shockwave
+  const hasOranges = useOrange()
+  return {
+    in: anyMusic || shockwave,
+    out: hasOranges /*To kill a Kosha with Oranges, it must use its overhead club attack on you. You must then orange it while it's picking up its club.*/
+  }
 }
 
 export const useDefeatKlump = (): boolean => {
   const orange = useOrange()
   const shockwave = useShockwave()
   const anyMusic = useAnyMusic()
-  const enemyShuffle = useShuffleEnemies()
-  return enemyShuffle || orange || shockwave || anyMusic
+  return orange || shockwave || anyMusic
 }
 
 export const useDefeatKlobber = (): boolean => useDefeatKlump()
 
-export const useDefeatKaboom = (): boolean => useDefeatKlump()
+export const useDefeatKaboom = (): LogicBool => {
+  const hasOranges = useOrange()
+  const hasGun = useAnyGun()
+  const isBreathing = useAnyKong()
+  return {
+    in: hasOranges || hasGun,
+    out: isBreathing /*You can kill a Kaboom just by running into it, although this will damage you.*/
+  }
+}
 
 export const useDefeatPurpleKlaptrap = (): boolean => {
   const orange = useOrange()
   const anyMusic = useAnyMusic()
-  const enemyShuffle = useShuffleEnemies()
-  return enemyShuffle || orange || anyMusic
+  return orange || anyMusic
 }
 
 export const useDefeatRoboKremling = (): boolean => {
