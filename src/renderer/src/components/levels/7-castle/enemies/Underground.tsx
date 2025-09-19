@@ -41,15 +41,15 @@ const UndergroundEnemies: React.FC = () => {
         id={7327}
         name="Castle Enemy: Low Cave Near Crypt"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && kosha && hasClimbing}
-        canGetBreak={inStage && anyKong && kosha}
+        canGetLogic={inStage && anyKong && kosha.in && hasClimbing}
+        canGetBreak={inStage && anyKong && kosha.out}
       />
       <CastleCheck
         id={7328}
         name="Castle Enemy: Low Cave Near Stair Right"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && kosha && hasClimbing}
-        canGetBreak={inStage && anyKong && kosha}
+        canGetLogic={inStage && anyKong && kosha.in && hasClimbing}
+        canGetBreak={inStage && anyKong && kosha.out}
       />
       <CastleCheck
         id={7320}
@@ -62,22 +62,22 @@ const UndergroundEnemies: React.FC = () => {
         id={7330}
         name="Castle Enemy: Low Cave Near Mausoleum"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && bat && hasClimbing}
-        canGetBreak={inStage && anyKong && bat}
+        canGetLogic={inStage && anyKong && bat.in && hasClimbing}
+        canGetBreak={inStage && anyKong && bat.out}
       />
       <CastleCheck
         id={7331}
         name="Castle Enemy: Low Cave Near Funky"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && bat && hasClimbing}
-        canGetBreak={inStage && anyKong && bat}
+        canGetLogic={inStage && anyKong && bat.in && hasClimbing}
+        canGetBreak={inStage && anyKong && bat.out}
       />
       <CastleCheck
         id={7332}
         name="Castle Enemy: Low Cave Near Tag"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && bat && hasClimbing}
-        canGetBreak={inStage && anyKong && bat}
+        canGetLogic={inStage && anyKong && bat.in && hasClimbing}
+        canGetBreak={inStage && anyKong && bat.out}
       />
       <CastleCheck
         id={7333}
@@ -188,13 +188,15 @@ const UndergroundEnemies: React.FC = () => {
         id={7348}
         name="Castle Enemy: Upper Cave Near Dungeon"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && bat}
+        canGetLogic={inStage && anyKong && bat.in}
+        canGetBreak={inStage && anyKong && bat.out}
       />
       <CastleCheck
         id={7350}
         name="Castle Enemy: Upper Cave Near Warp 1 Entrance"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && bat}
+        canGetLogic={inStage && anyKong && bat.in}
+        canGetBreak={inStage && anyKong && bat.out}
       />
       <CastleCheck
         id={7351}
@@ -212,27 +214,29 @@ const UndergroundEnemies: React.FC = () => {
         id={7320}
         name="Castle Enemy: Dungeon Chair Room"
         region="Castle Underground"
-        canGetLogic={inStage && diddy && canSlam && kosha}
+        canGetLogic={inStage && diddy && canSlam && kosha.in}
+        canGetBreak={inStage && diddy && canSlam && kosha.out}
       />
       <CastleCheck
         id={7321}
         name="Castle Enemy: Dungeon Outside Lanky Room"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && kosha}
+        canGetLogic={inStage && anyKong && kosha.in}
+        canGetBreak={inStage && anyKong && kosha.out}
       />
       <CastleCheck
         id={7427}
         name="Castle Enemy Photo: Low Cave Near Crypt"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && kosha && hasClimbing && hasFairyCam}
-        canGetBreak={inStage && anyKong && kosha && hasFairyCam}
+        canGetLogic={inStage && anyKong && hasClimbing && hasFairyCam}
+        canGetBreak={inStage && anyKong && hasFairyCam}
       />
       <CastleCheck
         id={7428}
         name="Castle Enemy Photo: Low Cave Near Stair Right"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && kosha && hasClimbing && hasFairyCam}
-        canGetBreak={inStage && anyKong && kosha && hasFairyCam}
+        canGetLogic={inStage && anyKong && hasClimbing && hasFairyCam}
+        canGetBreak={inStage && anyKong && hasFairyCam}
       />
       <CastleCheck
         id={7420}
@@ -245,22 +249,22 @@ const UndergroundEnemies: React.FC = () => {
         id={7430}
         name="Castle Enemy Photo: Low Cave Near Mausoleum"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && bat && hasClimbing && hasFairyCam}
-        canGetBreak={inStage && anyKong && bat && hasFairyCam}
+        canGetLogic={inStage && anyKong && hasClimbing && hasFairyCam}
+        canGetBreak={inStage && anyKong && hasFairyCam}
       />
       <CastleCheck
         id={7431}
         name="Castle Enemy Photo: Low Cave Near Funky"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && bat && hasClimbing && hasFairyCam}
-        canGetBreak={inStage && anyKong && bat && hasFairyCam}
+        canGetLogic={inStage && anyKong && hasClimbing && hasFairyCam}
+        canGetBreak={inStage && anyKong && hasFairyCam}
       />
       <CastleCheck
         id={7432}
         name="Castle Enemy Photo: Low Cave Near Tag"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && bat && hasClimbing && hasFairyCam}
-        canGetBreak={inStage && anyKong && bat && hasFairyCam}
+        canGetLogic={inStage && anyKong && hasClimbing && hasFairyCam}
+        canGetBreak={inStage && anyKong && hasFairyCam}
       />
       <CastleCheck
         id={7433}
@@ -371,13 +375,13 @@ const UndergroundEnemies: React.FC = () => {
         id={7448}
         name="Castle Enemy Photo: Upper Cave Near Dungeon"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && bat && hasFairyCam}
+        canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <CastleCheck
         id={7450}
         name="Castle Enemy Photo: Upper Cave Near Warp 1 Entrance"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && bat && hasFairyCam}
+        canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <CastleCheck
         id={7451}
@@ -395,13 +399,13 @@ const UndergroundEnemies: React.FC = () => {
         id={7420}
         name="Castle Enemy Photo: Dungeon Chair Room"
         region="Castle Underground"
-        canGetLogic={inStage && diddy && canSlam && kosha && hasFairyCam}
+        canGetLogic={inStage && diddy && canSlam && hasFairyCam}
       />
       <CastleCheck
         id={7421}
         name="Castle Enemy Photo: Dungeon Outside Lanky Room"
         region="Castle Underground"
-        canGetLogic={inStage && anyKong && kosha && hasFairyCam}
+        canGetLogic={inStage && anyKong && hasFairyCam}
       />
     </DropPool>
   )
