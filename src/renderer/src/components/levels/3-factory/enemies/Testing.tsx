@@ -41,7 +41,8 @@ const TestingEnemies: React.FC = () => {
         id={3316}
         name="Factory Enemy: To Block Tower Tunnel"
         region="Testing Area"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <FactoryCheck
         id={3405}
@@ -71,7 +72,7 @@ const TestingEnemies: React.FC = () => {
         id={3416}
         name="Factory Enemy Photo: To Block Tower Tunnel"
         region="Testing Area"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
     </DropPool>
   )

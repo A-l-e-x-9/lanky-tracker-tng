@@ -28,19 +28,22 @@ const StorageEnemies: React.FC = () => {
         id={3304}
         name="Factory Enemy: Storage Room"
         region="Storage And Arcade"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <FactoryCheck
         id={3317}
         name="Factory Enemy: Dark Room 0"
         region="Storage And Arcade"
-        canGetLogic={inStage && punch && zinger}
+        canGetLogic={inStage && punch && zinger.in}
+        canGetBreak={inStage && punch && zinger.out}
       />
       <FactoryCheck
         id={3318}
         name="Factory Enemy: Dark Room 1"
         region="Storage And Arcade"
-        canGetLogic={inStage && punch && zinger}
+        canGetLogic={inStage && punch && zinger.in}
+        canGetBreak={inStage && punch && zinger.out}
       />
       <FactoryCheck
         id={3400}
@@ -64,13 +67,13 @@ const StorageEnemies: React.FC = () => {
         id={3417}
         name="Factory Enemy Photo: Dark Room 0"
         region="Storage And Arcade"
-        canGetLogic={inStage && punch && zinger && hasFairyCam}
+        canGetLogic={inStage && punch && hasFairyCam}
       />
       <FactoryCheck
         id={3418}
         name="Factory Enemy Photo: Dark Room 1"
         region="Storage And Arcade"
-        canGetLogic={inStage && punch && zinger && hasFairyCam}
+        canGetLogic={inStage && punch && hasFairyCam}
       />
     </DropPool>
   )

@@ -35,7 +35,8 @@ const ProductionEnemies: React.FC = () => {
         id={3315}
         name="Factory Enemy: Diddy Switch"
         region="Production Room"
-        canGetLogic={inStage && zinger}
+        canGetLogic={inStage && zinger.in}
+        canGetBreak={inStage && zinger.out}
       />
       <FactoryCheck
         id={3409}
@@ -59,7 +60,7 @@ const ProductionEnemies: React.FC = () => {
         id={3415}
         name="Factory Enemy Photo: Diddy Switch"
         region="Production Room"
-        canGetLogic={inStage && zinger && hasFairyCam}
+        canGetLogic={inStage && hasFairyCam}
       />
     </DropPool>
   )

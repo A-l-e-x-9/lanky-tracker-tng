@@ -21,7 +21,8 @@ const RNDEnemies: React.FC = () => {
         id={3313}
         name="Factory Enemy: Tunnel to Race 1"
         region="R&D Area"
-        canGetLogic={testing && zinger}
+        canGetLogic={testing && zinger.in}
+        canGetBreak-{testing && zinger.out}
       />
       <FactoryCheck
         id={3412}
@@ -33,7 +34,7 @@ const RNDEnemies: React.FC = () => {
         id={3413}
         name="Factory Enemy Photo: Tunnel to Race 1"
         region="R&D Area"
-        canGetLogic={testing && zinger && hasFairyCam}
+        canGetLogic={testing && hasFairyCam}
       />
     </DropPool>
   )
