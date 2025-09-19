@@ -23,25 +23,29 @@ const CavernsEnemies: React.FC = () => {
         id={4301}
         name="Galleon Enemy: Chest Room 1"
         region="Galleon Caverns"
-        canGetLogic={inStage && kaboom}
+        canGetLogic={inStage && kaboom.in}
+        canGetBreak={inStage && kaboom.out}
       />
       <GalleonCheck
         id={4302}
         name="Galleon Enemy: Vine Cannon"
         region="Galleon Caverns"
-        canGetLogic={inStage && kaboom}
+        canGetLogic={inStage && kaboom.in}
+        canGetBreak={inStage && kaboom.out}
       />
       <GalleonCheck
         id={4303}
         name="Galleon Enemy: Cranky Cannon"
         region="Galleon Caverns"
-        canGetLogic={inStage && kaboom}
+        canGetLogic={inStage && kaboom.in}
+        canGetBreak={inStage && kaboom.out}
       />
       <GalleonCheck
         id={4304}
         name="Galleon Enemy: Peanut Tunnel"
         region="Galleon Caverns"
-        canGetLogic={inStage && kosha}
+        canGetLogic={inStage && kosha.in}
+        canGetBreak={inStage && kosha.out}
       />
       <GalleonCheck
         id={4306}
@@ -59,25 +63,25 @@ const CavernsEnemies: React.FC = () => {
         id={4401}
         name="Galleon Enemy Photo: Chest Room 1"
         region="Galleon Caverns"
-        canGetLogic={inStage && kaboom && hasCamera}
+        canGetLogic={inStage && hasCamera}
       />
       <GalleonCheck
         id={4402}
         name="Galleon Enemy Photo: Vine Cannon"
         region="Galleon Caverns"
-        canGetLogic={inStage && kaboom && hasCamera}
+        canGetLogic={inStage && hasCamera}
       />
       <GalleonCheck
         id={4403}
         name="Galleon Enemy Photo: Cranky Cannon"
         region="Galleon Caverns"
-        canGetLogic={inStage && kaboom && hasCamera}
+        canGetLogic={inStage && hasCamera}
       />
       <GalleonCheck
         id={4404}
         name="Galleon Enemy Photo: Peanut Tunnel"
         region="Galleon Caverns"
-        canGetLogic={inStage && kosha && hasCamera}
+        canGetLogic={inStage && hasCamera}
       />
       <GalleonCheck
         id={4406}
