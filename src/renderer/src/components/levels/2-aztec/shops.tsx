@@ -10,7 +10,7 @@ const Vanilla: React.FC = () => {
   const hasCranky = useCranky()
   const hasFunky = whatAFunky()
   const hasCandy = useCandy()
-
+  const hasSnide = useSnide()
   return (
     <>
       <ShopGenerator
