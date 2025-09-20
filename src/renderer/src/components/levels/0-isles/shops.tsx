@@ -5,8 +5,11 @@ import { useShuffledShops } from '@renderer/hooks/settings'
 import { useCranky, useSnide } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
+  const kremAscent = useIslesKremAscent()
   const cranky = useCranky()
+  const snide = useSnide()
   return (
+  <>
     <ShopGenerator
       baseId={110}
       baseName="Isles Cranky"
@@ -14,6 +17,14 @@ const Vanilla: React.FC = () => {
       region="Isles Shops"
       inLogic={cranky}
     />
+    <ShopGenerator
+      baseId={140}
+      baseName="Turn in Isles Blueprint for"
+      level="DK Isles"
+      region="Isles Shops"
+      inLogic={kremAscent && snide}
+    />
+  </>
   )
 }
 
