@@ -16018,6 +16018,7 @@ const Vanilla$7 = () => {
   const bananaport = useBananaportAll();
   const hasCranky = useCranky();
   const hasFunky = whatAFunky();
+  const hasSnide = useSnide();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
@@ -16037,6 +16038,16 @@ const Vanilla$7 = () => {
         level: "Jungle Japes",
         region: "Japes Shops",
         inLogic: playJapes && (climbing || bananaport) && hasFunky
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ShopGenerator,
+      {
+        baseId: 1140,
+        baseName: "Turn in Japes Blueprint for",
+        level: "Jungle Japes",
+        region: "Japes Shops",
+        inLogic: playJapes && (climbing || bananaport) && hasSnide
       }
     )
   ] });
