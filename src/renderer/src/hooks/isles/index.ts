@@ -55,7 +55,6 @@ import {
   useTwirl,
   useVine,
   useClimbing,
-  useSnide,
   useBarrel
 } from '../kongs'
 import {
@@ -781,48 +780,43 @@ export const useKremFairy = (): boolean => {
 
 export const useHelmKasplat = (): LogicBool => {
   const playHelm = usePlayLobby('Hideout Helm')
-  const snide = useSnide()
   const sniper = useSniper()
   const coconut = useCoconut()
   const twirl = useTwirl()
   const FtaDkBlueprint = useFtaDkBlueprint()
   const orangeYourself = useOrange()
   return {
-    in: snide && playHelm && sniper && coconut,
-    out: snide && FtaDkBlueprint && playHelm && (twirl || orangeYourself)
+    in: playHelm && sniper && coconut,
+    out: FtaDkBlueprint && playHelm && (twirl || orangeYourself)
   }
 }
 
 export const useCastleKasplat = (): boolean => {
   const playCastle = usePlayLobby('Creepy Castle')
-  const snide = useSnide()
   const coconut = useCoconut()
   const FtaDiddyBlueprint = useFtaDiddyBlueprint()
-  return snide && FtaDiddyBlueprint && playCastle && coconut
+  return FtaDiddyBlueprint && playCastle && coconut
 }
 
 export const useCavesKasplat = (): boolean => {
   const playCaves = usePlayLobby('Crystal Caves')
   const punch = usePunch()
-  const snide = useSnide()
   const FtaLankyBlueprint = useFtaLankyBlueprint()
-  return snide && FtaLankyBlueprint && playCaves && punch
+  return FtaLankyBlueprint && playCaves && punch
 }
 
 export const useFactoryKasplat = (): boolean => {
   const playFactory = usePlayLobby('Frantic Factory')
   const punch = usePunch()
   const FtaTinyBlueprint = useFtaTinyBlueprint()
-  const snide = useSnide()
-  return snide && FtaTinyBlueprint && playFactory && punch
+  return FtaTinyBlueprint && playFactory && punch
 }
 
 export const useGalleonKasplat = (): boolean => {
   const playGalleon = usePlayLobby('Gloomy Galleon')
   const anyKong = useAnyKong()
-  const snide = useSnide()
   const FtaChunkyBlueprint = useFtaChunkyBlueprint()
-  return snide && FtaChunkyBlueprint && playGalleon && anyKong
+  return FtaChunkyBlueprint && playGalleon && anyKong
 }
 
 export const useAztecLobbyTrombonePad = (): boolean => {
