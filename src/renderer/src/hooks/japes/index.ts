@@ -37,8 +37,7 @@ import {
   useTrombone,
   useTwirl,
   useVine,
-  useClimbing,
-  useSnide
+  useClimbing
 } from '../kongs'
 import { useBananaportAll } from '../settings'
 import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
@@ -219,10 +218,9 @@ export const useChunkyUndergroundGb = (): LogicBool => {
 
 export const useChunkyKasplat = (): LogicBool => {
   const canGoUnderground = useChunkyUndergroundGb()
-  const hasSnide = useSnide()
   return {
-    in: hasSnide && canGoUnderground.in,
-    out: hasSnide && canGoUnderground.out
+    in: canGoUnderground.in,
+    out: canGoUnderground.out
   }
 }
 
@@ -429,38 +427,33 @@ export const useGeneralFairy = (): boolean => {
 }
 
 export const useGateKasplat = (): boolean => {
-  const hasSnide = useSnide()
   const kongGates = useJapesKongGates()
   const anyKong = useAnyKong()
-  return hasSnide && kongGates && anyKong
+  return kongGates && anyKong
 }
 
 export const useDkKasplat = (): boolean => {
-  const hasSnide = useSnide()
   const gate = useGateKasplat()
   const ftaBP = useFtaDkBlueprint()
-  return hasSnide && ftaBP && gate
+  return ftaBP && gate
 }
 
 export const useDiddyKasplat = (): boolean => {
   const gate = useGateKasplat()
-  const hasSnide = useSnide()
   const ftaBP = useFtaDiddyBlueprint()
-  return hasSnide && ftaBP && gate
+  return ftaBP && gate
 }
 
 export const useLankyKasplat = (): boolean => {
-  const hasSnide = useSnide()
   const gate = useGateKasplat()
   const ftaBP = useFtaLankyBlueprint()
-  return hasSnide && ftaBP && gate
+  return ftaBP && gate
 }
 
 export const useTinyKasplat = (): boolean => {
   const gate = useGateKasplat()
   const ftaBP = useFtaTinyBlueprint()
-  const hasSnide = useSnide()
-  return hasSnide && ftaBP && gate
+  return ftaBP && gate
 }
 
 export const useMtnCrate = (): boolean => {
