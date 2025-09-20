@@ -14036,10 +14036,9 @@ const useChunkyUndergroundGb = () => {
 };
 const useChunkyKasplat$1 = () => {
   const canGoUnderground = useChunkyUndergroundGb();
-  const hasSnide = useSnide();
   return {
-    in: hasSnide && canGoUnderground.in,
-    out: hasSnide && canGoUnderground.out
+    in: canGoUnderground.in,
+    out: canGoUnderground.out
   };
 };
 const useDiddyCagedGb = () => {
@@ -14215,34 +14214,29 @@ const useGeneralFairy$4 = () => {
   return usePlayJapes() && camera;
 };
 const useGateKasplat = () => {
-  const hasSnide = useSnide();
   const kongGates = useJapesKongGates();
   const anyKong = useAnyKong();
-  return hasSnide && kongGates && anyKong;
+  return kongGates && anyKong;
 };
 const useDkKasplat = () => {
-  const hasSnide = useSnide();
   const gate = useGateKasplat();
   const ftaBP = useFtaDkBlueprint();
-  return hasSnide && ftaBP && gate;
+  return ftaBP && gate;
 };
 const useDiddyKasplat = () => {
   const gate = useGateKasplat();
-  const hasSnide = useSnide();
   const ftaBP = useFtaDiddyBlueprint();
-  return hasSnide && ftaBP && gate;
+  return ftaBP && gate;
 };
 const useLankyKasplat = () => {
-  const hasSnide = useSnide();
   const gate = useGateKasplat();
   const ftaBP = useFtaLankyBlueprint();
-  return hasSnide && ftaBP && gate;
+  return ftaBP && gate;
 };
 const useTinyKasplat = () => {
   const gate = useGateKasplat();
   const ftaBP = useFtaTinyBlueprint();
-  const hasSnide = useSnide();
-  return hasSnide && ftaBP && gate;
+  return ftaBP && gate;
 };
 const useMtnCrate = () => {
   const hasClimbing = useClimbing();
