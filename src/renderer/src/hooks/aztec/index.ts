@@ -36,7 +36,6 @@ import {
   useTrombone,
   useTwirl,
   useVine,
-  useSnide,
   useDiddy
 } from '../kongs'
 import { useBananaportAll } from '../settings'
@@ -258,10 +257,9 @@ export const useChunky5DoorGb = (): LogicBool => {
 
 export const useChunkyKasplat = (): LogicBool => {
   const canEnter5DT = useChunky5DoorGb()
-  const hasSnide = useSnide()
   return {
-    in: hasSnide && canEnter5DT.in,
-    out: hasSnide && canEnter5DT.out
+    in: canEnter5DT.in,
+    out: canEnter5DT.out
   }
 }
 
@@ -551,10 +549,9 @@ export const useCoconutKasplat = (): LogicBool => {
   const coconut = useCoconut()
   const strong = useStrong()
   const twirl = useTwirl()
-  const hasSnide = useSnide()
   return {
-    in: hasSnide && aztecFront.in && coconut && (strong || twirl),
-    out: hasSnide && aztecFront.out && coconut
+    in: aztecFront.in && coconut && (strong || twirl),
+    out: aztecFront.out && coconut
   }
 }
 
@@ -562,30 +559,27 @@ export const useOasisKasplat = (): LogicBool => {
   const thing = useAztecFront()
   const rocket = useRocket()
   const climbing = useClimbing()
-  const hasSnide = useSnide()
   return {
-    in: hasSnide && climbing && rocket && thing.in,
-    out: hasSnide && climbing && rocket && thing.out
+    in: climbing && rocket && thing.in,
+    out: climbing && rocket && thing.out
   }
 }
 
 export const useLlamaLavaKasplat = (): LogicBool => {
   const lava = useAztecLlamaLava()
   const kong = useFtaLankyBlueprint()
-  const hasSnide = useSnide()
   return {
-    in: hasSnide && kong && lava.in,
-    out: hasSnide && kong && lava.out
+    in: kong && lava.in,
+    out: kong && lava.out
   }
 }
 
 export const useTunnelKasplat = (): LogicBool => {
   const back = useAztecBack()
   const kong = useFtaTinyBlueprint()
-  const hasSnide = useSnide()
   return {
-    in: hasSnide && kong && back.in,
-    out: hasSnide && kong && back.out
+    in: kong && back.in,
+    out: kong && back.out
   }
 }
 
