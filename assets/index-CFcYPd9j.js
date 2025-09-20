@@ -13205,17 +13205,31 @@ const ShopGenerator = (props) => {
 };
 const ShopPool = ({ children }) => usePoolShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const Vanilla$8 = () => {
+  const kremAscent = useIslesKremAscent();
   const cranky = useCranky();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ShopGenerator,
-    {
-      baseId: 110,
-      baseName: "Isles Cranky",
-      level: "DK Isles",
-      region: "Isles Shops",
-      inLogic: cranky
-    }
-  );
+  const snide = useSnide();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ShopGenerator,
+      {
+        baseId: 110,
+        baseName: "Isles Cranky",
+        level: "DK Isles",
+        region: "Isles Shops",
+        inLogic: cranky
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ShopGenerator,
+      {
+        baseId: 140,
+        baseName: "Turn in Isles Blueprint for",
+        level: "DK Isles",
+        region: "Isles Shops",
+        inLogic: kremAscent && snide
+      }
+    )
+  ] });
 };
 const Shuffled$G = () => {
   const kremAscent = useIslesKremAscent();
