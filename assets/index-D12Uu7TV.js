@@ -16348,10 +16348,9 @@ const useChunky5DoorGb = () => {
 };
 const useChunkyKasplat = () => {
   const canEnter5DT = useChunky5DoorGb();
-  const hasSnide = useSnide();
   return {
-    in: hasSnide && canEnter5DT.in,
-    out: hasSnide && canEnter5DT.out
+    in: canEnter5DT.in,
+    out: canEnter5DT.out
   };
 };
 const useFreeTinySwitch = () => {
@@ -16613,38 +16612,34 @@ const useCoconutKasplat = () => {
   const coconut = useCoconut();
   const strong = useStrong();
   const twirl = useTwirl();
-  const hasSnide = useSnide();
   return {
-    in: hasSnide && aztecFront.in && coconut && (strong || twirl),
-    out: hasSnide && aztecFront.out && coconut
+    in: aztecFront.in && coconut && (strong || twirl),
+    out: aztecFront.out && coconut
   };
 };
 const useOasisKasplat = () => {
   const thing = useAztecFront();
   const rocket = useRocket();
   const climbing = useClimbing();
-  const hasSnide = useSnide();
   return {
-    in: hasSnide && climbing && rocket && thing.in,
-    out: hasSnide && climbing && rocket && thing.out
+    in: climbing && rocket && thing.in,
+    out: climbing && rocket && thing.out
   };
 };
 const useLlamaLavaKasplat = () => {
   const lava = useAztecLlamaLava();
   const kong = useFtaLankyBlueprint();
-  const hasSnide = useSnide();
   return {
-    in: hasSnide && kong && lava.in,
-    out: hasSnide && kong && lava.out
+    in: kong && lava.in,
+    out: kong && lava.out
   };
 };
 const useTunnelKasplat = () => {
   const back = useAztecBack();
   const kong = useFtaTinyBlueprint();
-  const hasSnide = useSnide();
   return {
-    in: hasSnide && kong && back.in,
-    out: hasSnide && kong && back.out
+    in: kong && back.in,
+    out: kong && back.out
   };
 };
 const useTunnelBoulder = () => {
@@ -19499,6 +19494,7 @@ const Vanilla$6 = () => {
   const hasCranky = useCranky();
   const hasFunky = whatAFunky();
   const hasCandy = useCandy();
+  const hasSnide = useSnide();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
@@ -19531,6 +19527,17 @@ const Vanilla$6 = () => {
         region: "Aztec Shops",
         inLogic: hasCandy && aztecFront.in,
         outLogic: hasCandy && aztecFront.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ShopGenerator,
+      {
+        baseId: 2140,
+        baseName: "Turn in Aztec Blueprint for",
+        level: "Angry Aztec",
+        region: "Aztec Shops",
+        inLogic: hasSnide && aztecBack.in,
+        outLogic: hasSnide && aztecBack.out
       }
     )
   ] });
