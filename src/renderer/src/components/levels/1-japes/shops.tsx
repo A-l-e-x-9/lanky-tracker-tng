@@ -11,6 +11,7 @@ const Vanilla: React.FC = () => {
   const bananaport = useBananaportAll()
   const hasCranky = useCranky()
   const hasFunky = whatAFunky()
+  const hasSnide = useSnide()
 
   return (
     <>
@@ -28,6 +29,14 @@ const Vanilla: React.FC = () => {
         region="Japes Shops"
         inLogic={playJapes && (climbing || bananaport) && hasFunky}
       />
+      <ShopGenerator
+        baseId={1140}
+        baseName="Turn in Japes Blueprint for"
+        level="Jungle Japes"
+        region="Japes Shops"
+        inLogic={playJapes && (climbing || bananaport) && hasSnide}
+      />
+
     </>
   )
 }
