@@ -37,6 +37,14 @@ const Vanilla: React.FC = () => {
         inLogic={hasCandy && aztecFront.in}
         outLogic={hasCandy && aztecFront.out}
       />
+      <ShopGenerator
+        baseId={2140}
+        baseName="Turn in Aztec Blueprint for"
+        level="Angry Aztec"
+        region="Aztec Shops"
+        inLogic={hasSnide && aztecBack.in}
+        outLogic={hasSnide && aztecBack.out}
+      />
     </>
   )
 }
