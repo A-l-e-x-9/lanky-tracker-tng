@@ -23639,6 +23639,7 @@ const CenterEnemies = () => {
   const klump = useDefeatKlump();
   const beanstalk = useForestBean();
   const beanHalf = useForestBeanHalf();
+  const hasHunky = useHunky();
   const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23702,6 +23703,42 @@ const CenterEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
+        id: 5411,
+        name: "Forest Enemy: Giant Tomato 0",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && hasHunky
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5412,
+        name: "Forest Enemy: Giant Tomato 1",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && hasHunky
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5413,
+        name: "Forest Enemy: Giant Tomato 2",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && hasHunky
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5414,
+        name: "Forest Enemy: Giant Tomato 3",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && hasHunky
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
         id: 5423,
         name: "Forest Enemy Photo: Near Apple Dropoff",
         region: "Forest Center And Beanstalk",
@@ -23751,6 +23788,42 @@ const CenterEnemies = () => {
         name: "Forest Enemy Photo: Near Beanstalk 1",
         region: "Forest Center And Beanstalk",
         canGetLogic: beanstalk && klump && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5511,
+        name: "Forest Enemy Photo: Giant Tomato 0",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && hasHunky && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5512,
+        name: "Forest Enemy Photo: Giant Tomato 1",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && hasHunky && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5513,
+        name: "Forest Enemy Photo: Giant Tomato 2",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && hasHunky && hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5514,
+        name: "Forest Enemy Photo: Giant Tomato 3",
+        region: "Forest Center And Beanstalk",
+        canGetLogic: beanstalk && hasHunky && hasFairyCam
       }
     )
   ] });
