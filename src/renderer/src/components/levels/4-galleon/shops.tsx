@@ -12,10 +12,12 @@ import { useCranky, whatAFunky, useCandy, useSnide } from '@renderer/hooks/kongs
 const Vanilla: React.FC = () => {
   const inStage = usePlayGalleon()
   const outskirts = useGalleonOutskirts()
+  const lighthouseArea = useGalleonLighthouseArea()
+  const highTide = useGalleonHighTide()
   const hasCranky = useCranky()
   const hasFunky = whatAFunky()
   const hasCandy = useCandy()
-
+  const hasSnide = useSnide()
   return (
     <>
       <ShopGenerator
@@ -38,6 +40,14 @@ const Vanilla: React.FC = () => {
         level="Gloomy Galleon"
         region="Galleon Shops"
         inLogic={hasCandy && outskirts}
+      />
+      <ShopGenerator
+        baseId={4140}
+        baseName="Turn in Galleon Blueprint for"
+        level="Gloomy Galleon"
+        region="Galleon Shops"
+        inLogic={hasSnide && lighthouseArea && highTide}
+        outLogic={hasSnide && lighthouseArea}
       />
     </>
   )
