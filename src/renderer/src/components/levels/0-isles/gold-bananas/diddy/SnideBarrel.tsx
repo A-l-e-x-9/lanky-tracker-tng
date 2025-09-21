@@ -1,4 +1,4 @@
-import { useCheckDiddySnide } from '@renderer/hooks/isles'
+import { useCheckDiddySnide } from '@renderer/src/hooks/isles'
 import IslesCheck from '../../check'
 
 const SnideBarrel: React.FC = () => {

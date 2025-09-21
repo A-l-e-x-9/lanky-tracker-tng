@@ -1,4 +1,4 @@
-import { useCheckDiddyCage } from '@renderer/hooks/isles'
+import { useCheckDiddyCage } from '@renderer/src/hooks/isles'
 import IslesCheck from '../../check'
 
 export const PeanutCage: React.FC = () => {
