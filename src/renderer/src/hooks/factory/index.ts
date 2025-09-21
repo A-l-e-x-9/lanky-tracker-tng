@@ -39,8 +39,7 @@ import {
   useTrombone,
   useTwirl,
   useVine,
-  useClimbing,
-  useSnide
+  useClimbing
 } from '../kongs'
 import { useAutoBonus, useBananaportAll } from '../settings'
 import { LogicBool, logicBreak } from '../world'
@@ -387,32 +386,27 @@ export const useDartFairy = (): boolean => {
 
 export const useProductionTopKasplat = (): boolean => {
   const production = useFactoryProductionEnabled()
-  const hasSnide = useSnide()
-  return useFtaDkBlueprint() && production && hasSnide
+  return useFtaDkBlueprint() && production
 }
 
 export const useProductionBaseKasplat = (): boolean => {
   const inStage = usePlayFactory()
-  const hasSnide = useSnide()
-  return useFtaDiddyBlueprint() && inStage && hasSnide
+  return useFtaDiddyBlueprint() && inStage
 }
 
 export const useResearchKasplat = (): boolean => {
   const inStage = usePlayFactory()
   const canReachTesting = useFactoryTesting()
-  const hasSnide = useSnide()
-  return useFtaLankyBlueprint() && inStage && canReachTesting && hasSnide
+  return useFtaLankyBlueprint() && inStage && canReachTesting
 }
 
 export const useStorageKasplat = (): boolean => {
   const inStage = usePlayFactory()
-  const hasSnide = useSnide()
-  return useFtaTinyBlueprint() && inStage && hasSnide
+  return useFtaTinyBlueprint() && inStage
 }
 
 export const useBlockKasplat = (): boolean => {
   const inStage = usePlayFactory()
   const canReachTesting = useFactoryTesting()
-  const hasSnide = useSnide()
-  return useFtaChunkyBlueprint() && inStage && canReachTesting && hasSnide
+  return useFtaChunkyBlueprint() && inStage && canReachTesting
 }
