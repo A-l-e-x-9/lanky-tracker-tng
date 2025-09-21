@@ -27833,36 +27833,31 @@ const useRoomFairy = () => {
 const useTreeKasplat = () => {
   const tree = useCastleTree();
   const coconut = useCoconut();
-  const hasSnide = useSnide();
-  return tree && coconut && hasSnide;
+  return tree && coconut;
 };
 const useMausoleumKasplat = () => {
   const inStage = usePlayCastle();
-  const hasSnide = useSnide();
   const hasClimbing = useClimbing();
   return {
-    in: useFtaDiddyBlueprint() && hasSnide && inStage && hasClimbing,
-    out: useFtaDiddyBlueprint() && hasSnide && inStage
+    in: useFtaDiddyBlueprint() && inStage && hasClimbing,
+    out: useFtaDiddyBlueprint() && inStage
   };
 };
 const usePathKasplat = () => {
   const inStage = usePlayCastle();
-  const hasSnide = useSnide();
-  return useFtaLankyBlueprint() && hasSnide && inStage;
+  return useFtaLankyBlueprint() && inStage;
 };
 const useLonelyKasplat = () => {
   const inStage = usePlayCastle();
-  const hasSnide = useSnide();
   const hasClimbing = useClimbing();
   return {
-    in: useFtaTinyBlueprint() && inStage && hasSnide && hasClimbing,
-    out: useFtaTinyBlueprint() && inStage && hasSnide
+    in: useFtaTinyBlueprint() && inStage && hasClimbing,
+    out: useFtaTinyBlueprint() && inStage
   };
 };
 const useDungeonKasplat = () => {
   const inStage = usePlayCastle();
-  const hasSnide = useSnide();
-  return useFtaChunkyBlueprint() && hasSnide && inStage;
+  return useFtaChunkyBlueprint() && inStage;
 };
 const useCrate = () => {
   const inStage = usePlayCastle();
