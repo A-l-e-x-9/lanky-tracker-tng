@@ -1,4 +1,4 @@
-import { useCheckTinyFeatherCage } from '@renderer/hooks/isles'
+import { useCheckTinyFeatherCage } from '@renderer/src/hooks/isles'
 import IslesCheck from '../../check'
 
 const FeatherCage: React.FC = () => {

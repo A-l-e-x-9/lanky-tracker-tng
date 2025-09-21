@@ -1,4 +1,4 @@
-import { useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
+import { useCheckTinyGalleonLobby } from '@renderer/src/hooks/isles'
 import IslesCheck from '../../check'
 
 const GalleonSwim: React.FC = () => {

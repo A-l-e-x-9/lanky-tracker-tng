@@ -1,4 +1,4 @@
-import { useCheckTinyAztecLobby } from '@renderer/hooks/isles'
+import { useCheckTinyAztecLobby } from '@renderer/src/hooks/isles'
 import IslesCheck from '../../check'
 
 const AztecBarrel: React.FC = () => {

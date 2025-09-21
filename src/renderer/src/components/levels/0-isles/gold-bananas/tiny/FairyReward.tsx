@@ -1,4 +1,4 @@
-import { useCheckBFIInitial } from '@renderer/hooks/isles'
+import { useCheckBFIInitial } from '@renderer/src/hooks/isles'
 import IslesCheck from '../../check'
 
 export const FairyReward: React.FC = () => {
