@@ -40,6 +40,7 @@ import {
   useTriangle,
   useTrombone,
   useTwirl,
+  useSnide
   useChunky
 } from '../kongs'
 import { useBananaportAll, useHardShooting } from '../settings'
@@ -81,7 +82,8 @@ export const useIceWalls = (): boolean => {
 export const useCanAccessSnide = (): boolean => {
   const iceWalls = useIceWalls()
   const hasPunch = usePunch()
-  return (iceWalls || hasPunch)
+  const hasSnide = useSnide()
+  return (iceWalls || hasPunch) && hasSnide
 }
 
 /**
