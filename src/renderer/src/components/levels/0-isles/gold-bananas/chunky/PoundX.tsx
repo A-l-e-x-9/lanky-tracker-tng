@@ -1,4 +1,4 @@
-import { useCheckChunkyPound } from '@renderer/hooks/isles'
+import { useCheckChunkyPound } from '@renderer/src/hooks/isles'
 import IslesCheck from '../../check'
 
 const PoundX: React.FC = () => {
