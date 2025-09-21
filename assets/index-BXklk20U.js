@@ -20066,30 +20066,25 @@ const useDartFairy = () => {
 };
 const useProductionTopKasplat = () => {
   const production = useFactoryProductionEnabled();
-  const hasSnide = useSnide();
-  return useFtaDkBlueprint() && production && hasSnide;
+  return useFtaDkBlueprint() && production;
 };
 const useProductionBaseKasplat = () => {
   const inStage = usePlayFactory();
-  const hasSnide = useSnide();
-  return useFtaDiddyBlueprint() && inStage && hasSnide;
+  return useFtaDiddyBlueprint() && inStage;
 };
 const useResearchKasplat = () => {
   const inStage = usePlayFactory();
   const canReachTesting = useFactoryTesting();
-  const hasSnide = useSnide();
-  return useFtaLankyBlueprint() && inStage && canReachTesting && hasSnide;
+  return useFtaLankyBlueprint() && inStage && canReachTesting;
 };
 const useStorageKasplat = () => {
   const inStage = usePlayFactory();
-  const hasSnide = useSnide();
-  return useFtaTinyBlueprint() && inStage && hasSnide;
+  return useFtaTinyBlueprint() && inStage;
 };
 const useBlockKasplat = () => {
   const inStage = usePlayFactory();
   const canReachTesting = useFactoryTesting();
-  const hasSnide = useSnide();
-  return useFtaChunkyBlueprint() && inStage && canReachTesting && hasSnide;
+  return useFtaChunkyBlueprint() && inStage && canReachTesting;
 };
 const FactoryCheck = (props) => {
   const checks = useDonkStore(useShallow((state) => state.checks));
