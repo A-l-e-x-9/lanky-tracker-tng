@@ -29894,6 +29894,7 @@ const Vanilla = () => {
   const hasFunky = whatAFunky();
   const hasCandy = useCandy();
   const hasClimbing = useClimbing();
+  const hasSnide = useSnide();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
@@ -29924,6 +29925,16 @@ const Vanilla = () => {
         level: "Creepy Castle",
         region: "Castle Shops",
         inLogic: hasCandy && inStage
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ShopGenerator,
+      {
+        baseId: 7140,
+        baseName: "Turn in Castle Blueprint for",
+        level: "Creepy Castle",
+        region: "Castle Shops",
+        inLogic: hasSnide && inStage
       }
     )
   ] });
