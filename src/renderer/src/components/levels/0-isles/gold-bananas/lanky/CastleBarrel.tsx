@@ -1,4 +1,4 @@
-import { useCheckLankyCastle } from '@renderer/hooks/isles'
+import { useCheckLankyCastle } from '@renderer/src/hooks/isles'
 import IslesCheck from '../../check'
 
 const CastleBarrel: React.FC = () => {

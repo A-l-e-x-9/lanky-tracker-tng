@@ -1,4 +1,4 @@
-import { useCheckLankyPrison } from '@renderer/hooks/isles'
+import { useCheckLankyPrison } from '@renderer/src/hooks/isles'
 import IslesCheck from '../../check'
 
 export const PrisonSprint: React.FC = () => {
