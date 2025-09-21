@@ -1,6 +1,6 @@
 import DropPool from '@renderer/src/components/pools/Drops'
 import { usePlayLobby } from '@renderer/src/hooks/isles'
-import { useDefeatKosha } from '@renderer/hooks/src/enemies'
+import { useDefeatKosha } from '@renderer/src/hooks/enemies'
 import { useAnyKong, useCamera } from '@renderer/src/hooks/kongs'
 import IslesCheck from '../check'
 
