@@ -1,5 +1,5 @@
-import BananaMedalPool from '@renderer/components/pools/BananaMedals'
-import useDonkStore from '@renderer/store'
+import BananaMedalPool from '@renderer/src/components/pools/BananaMedals'
+import useDonkStore from '@renderer/src/store'
 import { useShallow } from 'zustand/react/shallow'
 import ArenaLocations from './arenas'
 import CrateLocations from './crates'
@@ -21,7 +21,8 @@ import DkMedal from './medals/DkMedal'
 import LankyMedal from './medals/LankyMedal'
 import TinyMedal from './medals/TinyMedal'
 import BoulderLocations from './boulders'
-import WrinklyDoors from './wrinkly/index'
+import WrinklyDoors from './wrinkly'
+import ShuffledBananas from './ShuffledBananas'
 
 const ClassicChecks: React.FC = () => (
   <div className="grid">
