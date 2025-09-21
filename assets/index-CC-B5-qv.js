@@ -27404,6 +27404,7 @@ const Vanilla$1 = () => {
   const hasCranky = useCranky();
   const hasFunky = whatAFunky();
   const hasCandy = useCandy();
+  const hasSnide = useCanAccessSnide();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
@@ -27433,6 +27434,16 @@ const Vanilla$1 = () => {
         level: "Crystal Caves",
         region: "Caves Shops",
         inLogic: hasCandy && inStage
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ShopGenerator,
+      {
+        baseId: 6140,
+        baseName: "Turn in Caves Blueprint for",
+        level: "Crystal Caves",
+        region: "Caves Shops",
+        inLogic: hasSnide
       }
     )
   ] });
