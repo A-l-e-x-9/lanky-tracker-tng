@@ -40,7 +40,7 @@ import {
   useTriangle,
   useTrombone,
   useTwirl,
-  useSnide
+  useSnide,
   useChunky
 } from '../kongs'
 import { useBananaportAll, useHardShooting } from '../settings'
