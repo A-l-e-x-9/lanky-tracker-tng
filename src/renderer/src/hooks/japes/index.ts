@@ -457,7 +457,8 @@ export const useTinyKasplat = (): boolean => {
 }
 
 export const useMtnCrate = (): boolean => {
+  const canEnterLevel = usePlayJapes()
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
-  return hasClimbing || hasBananaports
+  return canEnterLevel && (hasClimbing || hasBananaports)
 }
