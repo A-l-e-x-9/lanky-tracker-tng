@@ -1,8 +1,8 @@
 import { ChangeEvent } from 'react'
 import { useShallow } from 'zustand/react/shallow'
 
-import useDonkStore from '@renderer/store'
-import { SelectableRegionValues, SelectableRegions } from '@renderer/store/common'
+import useDonkStore from '@renderer/src/store'
+import { SelectableRegionValues, SelectableRegions } from '@renderer/src/store/common'
 
 type FoolishLocation = {
   id: string
