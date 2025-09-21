@@ -1,7 +1,7 @@
-import DropPool from '@renderer/components/pools/Drops'
-import { useDefeatZinger } from '@renderer/hooks/enemies'
-import { useIslesKremAscent } from '@renderer/hooks/isles'
-import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
+import DropPool from '@renderer/src/components/pools/Drops'
+import { useDefeatZinger } from '@renderer/src/hooks/enemies'
+import { useIslesKremAscent } from '@renderer/src/hooks/isles'
+import { useAnyKong, useCamera } from '@renderer/src/hooks/kongs'
 import IslesCheck from '../check'
 
 const KremLiftEnemies: React.FC = () => {

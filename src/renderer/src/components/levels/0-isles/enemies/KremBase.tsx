@@ -1,6 +1,6 @@
-import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
+import { useAnyKong, useCamera } from '@renderer/src/hooks/kongs'
 import IslesCheck from '../check'
-import DropPool from '@renderer/components/pools/Drops'
+import DropPool from '@renderer/src/components/pools/Drops'
 
 const KremBaseEnemies: React.FC = () => {
 const hasFairyCam = useCamera()
