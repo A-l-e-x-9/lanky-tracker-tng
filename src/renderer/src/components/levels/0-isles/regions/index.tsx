@@ -1,4 +1,4 @@
-import BananaMedalPool from '@renderer/components/pools/BananaMedals'
+import BananaMedalPool from '@renderer/src/components/pools/BananaMedals'
 import ChunkyMedal from '../medals/ChunkyMedal'
 import DiddyMedal from '../medals/DiddyMedal'
 import DkMedal from '../medals/DkMedal'
