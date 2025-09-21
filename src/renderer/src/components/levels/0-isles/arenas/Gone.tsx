@@ -1,6 +1,6 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import VanillaArena from '@renderer/components/pools/VanillaArena'
-import { useForestArena } from '@renderer/hooks/isles'
+import ArenaPool from '@renderer/src/components/pools/Arenas'
+import VanillaArena from '@renderer/src/components/pools/VanillaArena'
+import { useForestArena } from '@renderer/src/hooks/isles'
 import IslesCheck from '../check'
 
 const GoneArena: React.FC = () => (
