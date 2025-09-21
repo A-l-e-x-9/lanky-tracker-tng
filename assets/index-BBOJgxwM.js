@@ -14239,9 +14239,10 @@ const useTinyKasplat = () => {
   return ftaBP && gate;
 };
 const useMtnCrate = () => {
+  const canEnterLevel = usePlayJapes();
   const hasClimbing = useClimbing();
   const hasBananaports = useBananaportAll();
-  return hasClimbing || hasBananaports;
+  return canEnterLevel && (hasClimbing || hasBananaports);
 };
 const JapesCheck = (props) => {
   const checks = useDonkStore(useShallow((state) => state.checks));
