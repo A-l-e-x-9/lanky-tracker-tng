@@ -1,6 +1,6 @@
-import KasplatPool from '@renderer/components/pools/Kasplats'
-import VanillaKasplat from '@renderer/components/pools/VanillaKasplat'
-import { useGalleonKasplat } from '@renderer/hooks/isles'
+import KasplatPool from '@renderer/src/components/pools/Kasplats'
+import VanillaKasplat from '@renderer/src/components/pools/VanillaKasplat'
+import { useGalleonKasplat } from '@renderer/src/hooks/isles'
 import IslesCheck from '../check'
 
 const ChunkyKasplat: React.FC = () => (
