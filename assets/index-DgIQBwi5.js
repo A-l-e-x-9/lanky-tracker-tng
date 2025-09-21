@@ -23477,37 +23477,32 @@ const useGeneralFairy$1 = () => {
   return thing && camera;
 };
 const useBarnKasplat = () => {
-  const hasSnide = useSnide();
   const inStage = usePlayForest();
   const night = useForestNight();
   const dusk = useForestDusk();
   const kong = useFtaDkBlueprint();
   return {
-    in: hasSnide && kong && inStage && (night.in || dusk),
-    out: hasSnide && kong && inStage && (night.in || night.out || dusk)
+    in: kong && inStage && (night.in || dusk),
+    out: kong && inStage && (night.in || night.out || dusk)
   };
 };
 const useOwlKasplat = () => {
-  const hasSnide = useSnide();
   const inStage = useForestOwl();
   const anyKong = useAnyKong();
-  return useFtaLankyBlueprint() && hasSnide && inStage && anyKong;
+  return useFtaLankyBlueprint() && inStage && anyKong;
 };
 const useNightKasplat = () => {
-  const hasSnide = useSnide();
   const inStage = useForestMushroomTop();
   const anyKong = useAnyKong();
-  return useFtaChunkyBlueprint() && hasSnide && inStage && anyKong;
+  return useFtaChunkyBlueprint() && inStage && anyKong;
 };
 const useMushInteriorKasplat = () => {
-  const hasSnide = useSnide();
   const inStage = usePlayForest();
-  return useFtaDiddyBlueprint() && hasSnide && inStage;
+  return useFtaDiddyBlueprint() && inStage;
 };
 const useMushExteriorKasplat = () => {
-  const hasSnide = useSnide();
   const inStage = usePlayForest();
-  return useFtaTinyBlueprint() && hasSnide && inStage;
+  return useFtaTinyBlueprint() && inStage;
 };
 const useMillFrontKegs = () => {
   const canEnterMills = useForestDay();
