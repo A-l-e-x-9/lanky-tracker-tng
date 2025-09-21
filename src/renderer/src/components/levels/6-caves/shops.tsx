@@ -9,7 +9,7 @@ const Vanilla: React.FC = () => {
   const hasCranky = useCranky()
   const hasFunky = whatAFunky()
   const hasCandy = useCandy()
-
+  const hasSnide = useCanAccessSnide()
   return (
     <>
       <ShopGenerator
@@ -32,6 +32,13 @@ const Vanilla: React.FC = () => {
         level="Crystal Caves"
         region="Caves Shops"
         inLogic={hasCandy && inStage}
+      />
+      <ShopGenerator
+        baseId={6140}
+        baseName="Turn in Caves Blueprint for"
+        level="Crystal Caves"
+        region="Caves Shops"
+        inLogic={hasSnide}
       />
     </>
   )
