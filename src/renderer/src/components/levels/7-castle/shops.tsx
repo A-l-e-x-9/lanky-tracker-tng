@@ -2,7 +2,7 @@ import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { usePlayCastle } from '@renderer/hooks/castle'
 import { useShuffledShops } from '@renderer/hooks/settings'
-import { useCranky, whatAFunky, useCandy, useClimbing } from '@renderer/hooks/kongs'
+import { useCranky, whatAFunky, useCandy, useSnide, useClimbing } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
   const inStage = usePlayCastle()
@@ -10,7 +10,7 @@ const Vanilla: React.FC = () => {
   const hasFunky = whatAFunky()
   const hasCandy = useCandy()
   const hasClimbing = useClimbing()
-
+  const hasSnide = useSnide()
   return (
     <>
       <ShopGenerator
@@ -34,6 +34,13 @@ const Vanilla: React.FC = () => {
         level="Creepy Castle"
         region="Castle Shops"
         inLogic={hasCandy && inStage}
+      />
+      <ShopGenerator
+        baseId={7140}
+        baseName="Turn in Castle Blueprint for"
+        level="Creepy Castle"
+        region="Castle Shops"
+        inLogic={hasSnide && inStage}
       />
     </>
   )
