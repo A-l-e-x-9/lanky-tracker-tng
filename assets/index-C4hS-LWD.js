@@ -25630,8 +25630,10 @@ const ShuffledKasplats$2 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRunti
 const Vanilla$3 = () => {
   const inStage = usePlayForest();
   const beanstalk = useForestBean();
+  const day = useForestDay();
   const hasCranky = useCranky();
   const hasFunky = whatAFunky();
+  const hasSnide = useSnide();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
@@ -25651,6 +25653,17 @@ const Vanilla$3 = () => {
         level: "Fungi Forest",
         region: "Forest Shops",
         inLogic: hasFunky && beanstalk
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ShopGenerator,
+      {
+        baseId: 5140,
+        baseName: "Turn in Forest Blueprint for",
+        level: "Fungi Forest",
+        region: "Forest Shops",
+        inLogic: hasSnide && day.in,
+        outLogic: hasSnide && day.out
       }
     )
   ] });
