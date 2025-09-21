@@ -22,7 +22,6 @@ import LankyMedal from './medals/LankyMedal'
 import TinyMedal from './medals/TinyMedal'
 import BoulderLocations from './boulders'
 import WrinklyDoors from './wrinkly'
-import ShuffledBananas from './ShuffledBananas'
 
 const ClassicChecks: React.FC = () => (
   <div className="grid">
