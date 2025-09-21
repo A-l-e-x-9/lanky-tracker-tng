@@ -10,7 +10,7 @@ const Vanilla: React.FC = () => {
   const hasCranky = useCranky()
   const hasFunky = whatAFunky()
   const hasCandy = useCandy()
-
+  const hasSnide = useSnide()
   return (
     <>
       <ShopGenerator
@@ -33,6 +33,13 @@ const Vanilla: React.FC = () => {
         level="Frantic Factory"
         region="Factory Shops"
         inLogic={hasCandy && inStage}
+      />
+      <ShopGenerator
+        baseId={3140}
+        baseName="Turn in Factory Blueprint for"
+        level="Frantic Factory"
+        region="Factory Shops"
+        inLogic={hasSnide && testing}
       />
     </>
   )
