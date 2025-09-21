@@ -25,6 +25,7 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 - As with the original, if there is a way to enable autotracking with the underlying languages, it's not known at this time, so this car is only available with a manual transmission.
 - Alex also took out the "presets" dropdown underneath the Switchsanity settings, and will probably NOT re-implement this.
 - Alex tried to implement the Helm doors, but he was unable to get the "CountSelector" object working within a "HelmItemSelector" file. Furthermore, only three checks are ever blocked by the doors ("The End of Helm" and both Banana Fairies), so it was too much effort for too little gain.
+- Any way to take the Loading Zone Randomizer into account...you're completely on your own there. At worst, this tracker was made for Complex Level Order seeds with the possibility of Hideout Helm being shuffled.
 
 # Development
 
