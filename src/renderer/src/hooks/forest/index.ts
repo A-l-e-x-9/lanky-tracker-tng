@@ -44,7 +44,6 @@ import {
   useVine,
   useClimbing,
   useBalloon,
-  useSnide,
   useBarrel
 } from '../kongs'
 import { useBananaportAll, useForestTime, useHardShooting } from '../settings'
@@ -454,41 +453,36 @@ export const useGeneralFairy = (): boolean => {
 }
 
 export const useBarnKasplat = (): LogicBool => {
-  const hasSnide = useSnide()
   const inStage = usePlayForest()
   const night = useForestNight()
   const dusk = useForestDusk()
   const kong = useFtaDkBlueprint()
   return {
-    in: hasSnide && kong && inStage && (night.in || dusk),
-    out: hasSnide && kong && inStage && (night.in || night.out || dusk)
+    in: kong && inStage && (night.in || dusk),
+    out: kong && inStage && (night.in || night.out || dusk)
   }
 }
 
 export const useOwlKasplat = (): boolean => {
-  const hasSnide = useSnide()
   const inStage = useForestOwl()
   const anyKong = useAnyKong()
-  return useFtaLankyBlueprint() && hasSnide && inStage && anyKong
+  return useFtaLankyBlueprint() && inStage && anyKong
 }
 
 export const useNightKasplat = (): boolean => {
-  const hasSnide = useSnide()
   const inStage = useForestMushroomTop()
   const anyKong = useAnyKong()
-  return useFtaChunkyBlueprint() && hasSnide && inStage && anyKong
+  return useFtaChunkyBlueprint() && inStage && anyKong
 }
 
 export const useMushInteriorKasplat = (): boolean => {
-  const hasSnide = useSnide()
   const inStage = usePlayForest()
-  return useFtaDiddyBlueprint() && hasSnide && inStage
+  return useFtaDiddyBlueprint() && inStage
 }
 
 export const useMushExteriorKasplat = (): boolean => {
-  const hasSnide = useSnide()
   const inStage = usePlayForest()
-  return useFtaTinyBlueprint() && hasSnide && inStage
+  return useFtaTinyBlueprint() && inStage
 }
 
 export const useMillFrontKegs = (): boolean => {
