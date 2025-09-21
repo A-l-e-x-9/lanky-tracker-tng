@@ -22979,9 +22979,12 @@ const ShuffledKasplats$3 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRunti
 const Vanilla$4 = () => {
   const inStage = usePlayGalleon();
   const outskirts = useGalleonOutskirts();
+  const lighthouseArea = useGalleonLighthouseArea();
+  const highTide = useGalleonHighTide();
   const hasCranky = useCranky();
   const hasFunky = whatAFunky();
   const hasCandy = useCandy();
+  const hasSnide = useSnide();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
@@ -23011,6 +23014,17 @@ const Vanilla$4 = () => {
         level: "Gloomy Galleon",
         region: "Galleon Shops",
         inLogic: hasCandy && outskirts
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ShopGenerator,
+      {
+        baseId: 4140,
+        baseName: "Turn in Galleon Blueprint for",
+        level: "Gloomy Galleon",
+        region: "Galleon Shops",
+        inLogic: hasSnide && lighthouseArea && highTide,
+        outLogic: hasSnide && lighthouseArea
       }
     )
   ] });
