@@ -7,9 +7,10 @@ import { useCranky, whatAFunky, useSnide } from '@renderer/hooks/kongs'
 const Vanilla: React.FC = () => {
   const inStage = usePlayForest()
   const beanstalk = useForestBean()
+  const day = useForestDay()
   const hasCranky = useCranky()
   const hasFunky = whatAFunky()
-
+  const hasSnide = useSnide()
   return (
     <>
       <ShopGenerator
@@ -25,6 +26,14 @@ const Vanilla: React.FC = () => {
         level="Fungi Forest"
         region="Forest Shops"
         inLogic={hasFunky && beanstalk}
+      />
+      <ShopGenerator
+        baseId={5140}
+        baseName="Turn in Forest Blueprint for"
+        level="Fungi Forest"
+        region="Forest Shops"
+        inLogic={hasSnide && day.in}
+        outLogic={hasSnide && day.out}
       />
     </>
   )
