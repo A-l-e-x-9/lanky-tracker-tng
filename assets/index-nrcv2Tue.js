@@ -25937,7 +25937,8 @@ const useIceWalls = () => {
 const useCanAccessSnide = () => {
   const iceWalls = useIceWalls();
   const hasPunch = usePunch();
-  return iceWalls || hasPunch;
+  const hasSnide = useSnide();
+  return (iceWalls || hasPunch) && hasSnide;
 };
 const useCavesMiniFunky = () => {
   const inStage = usePlayCaves();
