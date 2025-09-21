@@ -39,8 +39,7 @@ import {
   useTrombone,
   useTwirl,
   useVine,
-  useClimbing,
-  useSnide
+  useClimbing
 } from '../kongs'
 import { useHardShooting } from '../settings'
 import { LogicBool } from '../world'
@@ -325,40 +324,35 @@ export const useRoomFairy = (): LogicBool => {
 export const useTreeKasplat = (): boolean => {
   const tree = useCastleTree()
   const coconut = useCoconut()
-  const hasSnide = useSnide()
-  return tree && coconut && hasSnide
+  return tree && coconut
 }
 
 export const useMausoleumKasplat = (): LogicBool => {
   const inStage = usePlayCastle()
-  const hasSnide = useSnide()
   const hasClimbing = useClimbing()
   return {
-    in: useFtaDiddyBlueprint() && hasSnide && inStage && hasClimbing,
-    out: useFtaDiddyBlueprint() && hasSnide && inStage
+    in: useFtaDiddyBlueprint() && inStage && hasClimbing,
+    out: useFtaDiddyBlueprint() && inStage
   }
 }
 
 export const usePathKasplat = (): boolean => {
   const inStage = usePlayCastle()
-  const hasSnide = useSnide()
-  return useFtaLankyBlueprint() && hasSnide && inStage
+  return useFtaLankyBlueprint() && inStage
 }
 
 export const useLonelyKasplat = (): LogicBool => {
   const inStage = usePlayCastle()
-  const hasSnide = useSnide()
   const hasClimbing = useClimbing()
   return {
-    in: useFtaTinyBlueprint() && inStage && hasSnide && hasClimbing,
-    out: useFtaTinyBlueprint() && inStage && hasSnide
+    in: useFtaTinyBlueprint() && inStage && hasClimbing,
+    out: useFtaTinyBlueprint() && inStage
   }
 }
 
 export const useDungeonKasplat = (): boolean => {
   const inStage = usePlayCastle()
-  const hasSnide = useSnide()
-  return useFtaChunkyBlueprint() && hasSnide && inStage
+  return useFtaChunkyBlueprint() && inStage
 }
 
 export const useCrate = (): LogicBool => {
