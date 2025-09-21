@@ -25937,8 +25937,7 @@ const useIceWalls = () => {
 const useCanAccessSnide = () => {
   const iceWalls = useIceWalls();
   const hasPunch = usePunch();
-  const hasSnide = useSnide();
-  return (iceWalls || hasPunch) && hasSnide;
+  return iceWalls || hasPunch;
 };
 const useCavesMiniFunky = () => {
   const inStage = usePlayCaves();
@@ -26154,33 +26153,28 @@ const useCabinFairy = () => {
 };
 const useIceCastleKasplat = () => {
   const inStage = usePlayCaves();
-  const hasSnide = useCanAccessSnide();
-  return useFtaDkBlueprint() && hasSnide && inStage;
+  return useFtaDkBlueprint() && inStage;
 };
 const useFunkyKasplat = () => {
   const miniFunky = useCavesMiniFunky();
   const kong = useFtaDiddyBlueprint();
-  const hasSnide = useCanAccessSnide();
-  return hasSnide && kong && miniFunky;
+  return kong && miniFunky;
 };
 const usePillarKasplat = () => {
   const pillar = useCavesPillar();
   const kong = useFtaLankyBlueprint();
-  const hasSnide = useCanAccessSnide();
   return {
-    in: hasSnide && kong && pillar.in,
-    out: hasSnide && kong && pillar.out
+    in: kong && pillar.in,
+    out: kong && pillar.out
   };
 };
 const useCabinKasplat = () => {
   const inStage = usePlayCaves();
-  const hasSnide = useCanAccessSnide();
-  return useFtaTinyBlueprint() && hasSnide && inStage;
+  return useFtaTinyBlueprint() && inStage;
 };
 const useIglooKasplat = () => {
   const inStage = usePlayCaves();
-  const hasSnide = useCanAccessSnide();
-  return useFtaChunkyBlueprint() && hasSnide && inStage;
+  return useFtaChunkyBlueprint() && inStage;
 };
 const useSatoriKomeiji = () => {
   const inStage = usePlayCaves();
