@@ -21384,6 +21384,7 @@ const Vanilla$5 = () => {
   const hasCranky = useCranky();
   const hasFunky = whatAFunky();
   const hasCandy = useCandy();
+  const hasSnide = useSnide();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
@@ -21413,6 +21414,16 @@ const Vanilla$5 = () => {
         level: "Frantic Factory",
         region: "Factory Shops",
         inLogic: hasCandy && inStage
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ShopGenerator,
+      {
+        baseId: 3140,
+        baseName: "Turn in Factory Blueprint for",
+        level: "Frantic Factory",
+        region: "Factory Shops",
+        inLogic: hasSnide && testing
       }
     )
   ] });
