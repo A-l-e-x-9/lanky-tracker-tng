@@ -1,5 +1,5 @@
-import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/hooks/isles/medals/dk'
-import { useCbCount } from '@renderer/hooks/settings'
+import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/src/hooks/isles/medals/dk'
+import { useCbCount } from '@renderer/src/hooks/settings'
 import IslesCheck from '../check'
 
 /**
