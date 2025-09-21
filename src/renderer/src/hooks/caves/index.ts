@@ -40,7 +40,6 @@ import {
   useTriangle,
   useTrombone,
   useTwirl,
-  useSnide,
   useChunky
 } from '../kongs'
 import { useBananaportAll, useHardShooting } from '../settings'
@@ -82,8 +81,7 @@ export const useIceWalls = (): boolean => {
 export const useCanAccessSnide = (): boolean => {
   const iceWalls = useIceWalls()
   const hasPunch = usePunch()
-  const hasSnide = useSnide()
-  return (iceWalls || hasPunch) && hasSnide
+  return (iceWalls || hasPunch)
 }
 
 /**
@@ -361,37 +359,32 @@ export const useCabinFairy = (): boolean => {
 
 export const useIceCastleKasplat = (): boolean => {
   const inStage = usePlayCaves()
-  const hasSnide = useCanAccessSnide()
-  return useFtaDkBlueprint() && hasSnide && inStage
+  return useFtaDkBlueprint() && inStage
 }
 
 export const useFunkyKasplat = (): boolean => {
   const miniFunky = useCavesMiniFunky()
   const kong = useFtaDiddyBlueprint()
-  const hasSnide = useCanAccessSnide()
-  return hasSnide && kong && miniFunky
+  return kong && miniFunky
 }
 
 export const usePillarKasplat = (): LogicBool => {
   const pillar = useCavesPillar()
   const kong = useFtaLankyBlueprint()
-  const hasSnide = useCanAccessSnide()
   return {
-    in: hasSnide && kong && pillar.in,
-    out: hasSnide && kong && pillar.out
+    in: kong && pillar.in,
+    out: kong && pillar.out
   }
 }
 
 export const useCabinKasplat = (): boolean => {
   const inStage = usePlayCaves()
-  const hasSnide = useCanAccessSnide()
-  return useFtaTinyBlueprint() && hasSnide && inStage
+  return useFtaTinyBlueprint() && inStage
 }
 
 export const useIglooKasplat = (): boolean => {
   const inStage = usePlayCaves()
-  const hasSnide = useCanAccessSnide()
-  return useFtaChunkyBlueprint() && hasSnide && inStage
+  return useFtaChunkyBlueprint() && inStage
 }
 
 export const useSatoriKomeiji = (): boolean => {
