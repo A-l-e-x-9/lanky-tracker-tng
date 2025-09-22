@@ -1,4 +1,4 @@
-import { useTinyCagedGb } from '@renderer/hooks/japes'
+import { useTinyCagedGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const TinyTimedCage: React.FC = () => (

@@ -1,4 +1,4 @@
-import { useTinyStumpGb } from '@renderer/hooks/japes'
+import { useTinyStumpGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const HiveStump: React.FC = () => (

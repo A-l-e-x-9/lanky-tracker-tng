@@ -1,4 +1,4 @@
-import { useTinyGateGb } from '@renderer/hooks/japes'
+import { useTinyGateGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const FeatherGate: React.FC = () => (
