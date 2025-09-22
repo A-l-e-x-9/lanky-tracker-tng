@@ -1,5 +1,5 @@
-import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/hooks/japes/medals/dk'
-import { useCbCount } from '@renderer/hooks/settings'
+import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/src/hooks/japes/medals/dk'
+import { useCbCount } from '@renderer/src/hooks/settings'
 import JapesCheck from '../check'
 
 /**
