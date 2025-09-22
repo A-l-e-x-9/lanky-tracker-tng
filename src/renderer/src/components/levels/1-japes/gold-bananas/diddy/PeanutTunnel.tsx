@@ -1,4 +1,4 @@
-import { useDiddyTunnelGb } from '@renderer/hooks/japes'
+import { useDiddyTunnelGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const PeanutTunnel: React.FC = () => (

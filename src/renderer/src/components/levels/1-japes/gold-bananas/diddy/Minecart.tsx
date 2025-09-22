@@ -1,5 +1,5 @@
-import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
-import { useDiddyMinecartGb } from '@renderer/hooks/japes'
+import ToughGoldenBanana from '@renderer/src/components/pools/ToughGoldenBanana'
+import { useDiddyMinecartGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const Minecart: React.FC = () => {

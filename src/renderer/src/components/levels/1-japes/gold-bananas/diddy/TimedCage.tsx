@@ -1,4 +1,4 @@
-import { useDiddyCagedGb } from '@renderer/hooks/japes'
+import { useDiddyCagedGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const DiddyTimedCage: React.FC = () => (
