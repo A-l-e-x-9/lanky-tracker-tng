@@ -1,6 +1,6 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing } from '@renderer/hooks/aztec'
-import { useShuffledArenas } from '@renderer/hooks/settings'
+import ArenaPool from '@renderer/src/components/pools/Arenas'
+import { useGeneralThing } from '@renderer/src/hooks/aztec'
+import { useShuffledArenas } from '@renderer/src/hooks/settings'
 import AztecCheck from '../check'
 
 const Shuffled: React.FC = () => {
