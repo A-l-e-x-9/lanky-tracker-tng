@@ -1,4 +1,4 @@
-import { useTiny5DoorShipGb } from '@renderer/hooks/galleon'
+import { useTiny5DoorShipGb } from '@renderer/src/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const Tiny5Ship: React.FC = () => (

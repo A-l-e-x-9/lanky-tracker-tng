@@ -1,6 +1,6 @@
-import CratePool from '@renderer/components/pools/Crates'
-import VanillaCrate from '@renderer/components/pools/VanillaCrate'
-import { useGeneralOutskirts } from '@renderer/hooks/galleon'
+import CratePool from '@renderer/src/components/pools/Crates'
+import VanillaCrate from '@renderer/src/components/pools/VanillaCrate'
+import { useGeneralOutskirts } from '@renderer/src/hooks/galleon'
 import GalleonCheck from '../check'
 
 const CactusCrate: React.FC = () => (

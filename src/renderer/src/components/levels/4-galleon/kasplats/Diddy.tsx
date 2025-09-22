@@ -1,6 +1,6 @@
-import KasplatPool from '@renderer/components/pools/Kasplats'
-import VanillaKasplat from '@renderer/components/pools/VanillaKasplat'
-import { useKevin } from '@renderer/hooks/galleon'
+import KasplatPool from '@renderer/src/components/pools/Kasplats'
+import VanillaKasplat from '@renderer/src/components/pools/VanillaKasplat'
+import { useKevin } from '@renderer/src/hooks/galleon'
 import GalleonCheck from '../check'
 
 const DiddyKasplat: React.FC = () => (

@@ -1,4 +1,4 @@
-import { useTinyMermaidGb } from '@renderer/hooks/galleon'
+import { useTinyMermaidGb } from '@renderer/src/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const MermaidReward: React.FC = () => (

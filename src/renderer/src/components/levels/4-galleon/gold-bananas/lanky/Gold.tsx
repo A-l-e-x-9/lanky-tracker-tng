@@ -1,4 +1,4 @@
-import { useLankyGoldGb } from '@renderer/hooks/galleon'
+import { useLankyGoldGb } from '@renderer/src/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const LankyGold: React.FC = () => {

@@ -1,6 +1,6 @@
-import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy } from '@renderer/hooks/galleon'
-import { useShuffleFairies } from '@renderer/hooks/settings'
+import FairyPool from '@renderer/src/components/pools/Fairies'
+import { useGeneralFairy } from '@renderer/src/hooks/galleon'
+import { useShuffleFairies } from '@renderer/src/hooks/settings'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {

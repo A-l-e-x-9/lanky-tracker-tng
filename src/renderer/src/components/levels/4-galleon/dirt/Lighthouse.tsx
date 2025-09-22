@@ -1,6 +1,6 @@
-import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import VanillaDirt from '@renderer/components/pools/VanillaDirt'
-import { useLighthouseDirt } from '@renderer/hooks/galleon'
+import RainbowCoinPool from '@renderer/src/components/pools/RainbowCoins'
+import VanillaDirt from '@renderer/src/components/pools/VanillaDirt'
+import { useLighthouseDirt } from '@renderer/src/hooks/galleon'
 import GalleonCheck from '../check'
 
 const LighthouseDirt: React.FC = () => {

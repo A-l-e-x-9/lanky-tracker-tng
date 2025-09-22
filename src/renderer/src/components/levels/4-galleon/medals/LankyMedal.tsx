@@ -1,5 +1,5 @@
-import { useLankyMedalInLogic, useLankyMedalOutLogic } from '@renderer/hooks/galleon/medals/lanky'
-import { useCbCount } from '@renderer/hooks/settings'
+import { useLankyMedalInLogic, useLankyMedalOutLogic } from '@renderer/src/hooks/galleon/medals/lanky'
+import { useCbCount } from '@renderer/src/hooks/settings'
 import GalleonCheck from '../check'
 
 const LankyMedal: React.FC = () => {

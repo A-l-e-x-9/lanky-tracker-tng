@@ -1,4 +1,4 @@
-import { useDiddy5DoorShipGb } from '@renderer/hooks/galleon'
+import { useDiddy5DoorShipGb } from '@renderer/src/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const Diddy5Ship: React.FC = () => (

@@ -1,8 +1,8 @@
 import {
   useChunkyMedalInLogic,
   useChunkyMedalOutLogic
-} from '@renderer/hooks/galleon/medals/chunky'
-import { useCbCount } from '@renderer/hooks/settings'
+} from '@renderer/src/hooks/galleon/medals/chunky'
+import { useCbCount } from '@renderer/src/hooks/settings'
 import GalleonCheck from '../check'
 
 const ChunkyMedal: React.FC = () => {

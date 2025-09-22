@@ -1,4 +1,4 @@
-import { useChunkySeasickGb } from '@renderer/hooks/galleon'
+import { useChunkySeasickGb } from '@renderer/src/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const SeasickShip: React.FC = () => (

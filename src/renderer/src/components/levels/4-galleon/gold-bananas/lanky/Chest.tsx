@@ -1,4 +1,4 @@
-import { useLankyChestGb } from '@renderer/hooks/galleon'
+import { useLankyChestGb } from '@renderer/src/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const EnguardeChest: React.FC = () => (

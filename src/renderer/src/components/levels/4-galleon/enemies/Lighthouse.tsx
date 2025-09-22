@@ -1,7 +1,7 @@
-import DropPool from '@renderer/components/pools/Drops'
-import { useDefeatKlump } from '@renderer/hooks/enemies'
-import { useGalleonLighthousePlatform, useSlamGalleon } from '@renderer/hooks/galleon'
-import { useDk, useCamera } from '@renderer/hooks/kongs'
+import DropPool from '@renderer/src/components/pools/Drops'
+import { useDefeatKlump } from '@renderer/src/hooks/enemies'
+import { useGalleonLighthousePlatform, useSlamGalleon } from '@renderer/src/hooks/galleon'
+import { useDk, useCamera } from '@renderer/src/hooks/kongs'
 import GalleonCheck from '../check'
 
 const LighthouseEnemies: React.FC = () => {

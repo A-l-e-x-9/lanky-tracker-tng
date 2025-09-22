@@ -1,7 +1,7 @@
 /*Version 5 of the DK64 Randomizer, currently in the Dev Branch, allows you to take pictures of enemies to complete checks. This file accounts for some enemies that only have these checks and can't be killed normally for Dropsanity.*/
-import DropPool from '@renderer/components/pools/Drops'
-import { useGalleonOutskirts, useDk5DoorShipGb, useDiddy5DoorShipGb, useLanky5DoorShipGb, useTiny5DoorShipGb, useChunky5DoorShipGb, useTiny2DoorShipGb, useTinySubGb } from '@renderer/hooks/galleon'
-import { useCamera, useDive } from '@renderer/hooks/kongs'
+import DropPool from '@renderer/src/components/pools/Drops'
+import { useGalleonOutskirts, useDk5DoorShipGb, useDiddy5DoorShipGb, useLanky5DoorShipGb, useTiny5DoorShipGb, useChunky5DoorShipGb, useTiny2DoorShipGb, useTinySubGb } from '@renderer/src/hooks/galleon'
+import { useCamera, useDive } from '@renderer/src/hooks/kongs'
 import GalleonCheck from '../check'
 
 const UnderwaterEnemies: React.FC = () => {

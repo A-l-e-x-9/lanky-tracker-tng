@@ -1,7 +1,7 @@
-import DropPool from '@renderer/components/pools/Drops'
-import { useDefeatKaboom, useDefeatKlobber, useDefeatKosha } from '@renderer/hooks/enemies'
-import { usePlayGalleon } from '@renderer/hooks/galleon'
-import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
+import DropPool from '@renderer/src/components/pools/Drops'
+import { useDefeatKaboom, useDefeatKlobber, useDefeatKosha } from '@renderer/src/hooks/enemies'
+import { usePlayGalleon } from '@renderer/src/hooks/galleon'
+import { useAnyKong, useCamera } from '@renderer/src/hooks/kongs'
 import GalleonCheck from '../check'
 
 const CavernsEnemies: React.FC = () => {

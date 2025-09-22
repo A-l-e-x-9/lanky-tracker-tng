@@ -1,4 +1,4 @@
-import { useDiddyGoldGb } from '@renderer/hooks/galleon'
+import { useDiddyGoldGb } from '@renderer/src/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const DiddyGold: React.FC = () => {
