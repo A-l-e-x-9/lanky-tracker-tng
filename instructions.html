@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lanky Tracker | Instructions</title>
+    <link rel="stylesheet" type="text/css" href="./src/assets/base.css">
+    <link rel="stylesheet" type="text/css" href="./src/assets/main.css">
+    <style type="text/css">
+      body {display: block; padding: 175px 100px 0px;}
+      h3 {font-size: 2em;}
+      strong {font-weight: bold;}
+      li {list-style-type: disc;}
+    </style>
+    <link rel="icon" href="./src/assets/lanky.ico">
+  </head>
+  <body>
+    <header>
+      <h1>Lanky Tracker!</h1>
+      <h2>The Next Generation</h2>
+    </header>
+  <h3>It has no style. It has no grace. This tracker's got a funny face!</h3>
+  
+  <p><strong>So, what's this thing all about?</strong><br>
+  This website allows you to track your progress in the video game <a href="https://mariowiki.com/Donkey_Kong_64"><em>Donkey Kong 64</em></a>. It was originally made for ROM hacks of the game that were made using the <a href="https://dev.dk64randomizer.com/randomizer.html">DK64 Randomizer</a>, but this website can be used with the original game, too.</p>
+  
+  <p>Why "The Next Generation"? Because this tracker was originally made on GitHub by someone named Wolfman2000; however, on or by August 17, 2025, he appeared to vanish off of GitHub completely for reasons unknown, and the original Lanky Tracker went down with him. As Alex enjoyed using the Lanky Tracker, this made him very angry. So, in his anger, he managed to find a fork/mirror of the project hosted by someone else on GitHub and downloaded a copy. However, the tracker had become hideously outdated by this point (it was made during <a href="https://www.youtube.com/@dk64speedrunning">the DK64 Speedrunning YouTube channel</a>'s "Season 2.5" and appears to have never been updated), so Alex has taken it upon himself to update the tracker. <span style="font-size: .75em;">Also, <em>Star Trek: The Next Generation</em> was the first version of Star Trek Alex ever watched.</span></p>
+  
+  <p>It should be noted that, because Alex prefers the Dev Randomizer over the regular one, this tracker is kept to the Dev Randomizer's standards. However, if you made a seed using the regular Randomizer, this tracker should work.</p>
+  
+  <p>Here's how you use it:</p>
+  <ul>
+  <li>The "Moves, Kongs, and Major Collectibles" section should be somewhat self-explanatory. For most of the icons there, click on an icon to indicate that you have the indicated move or Kong. Click again if you made a mistake to indicate that you don't. The leftmost column indicates your Kongs, while the second column shows which guns you have, followed by musical instruments, miscellaneous Cranky moves, barrel moves, and pad moves.<ul>
+  <li>The seventh column indicates how many Blueprints you have per Kong, and can be clicked up to eight times per Kong. Right click on these icons to decrease Blueprints.</li>
+  <li>The eighth column shows training moves. Diving, Oranges, and Barrel Throwing work just like the first six moves. The Simian Slam indicator indicates what level of Simian Slam you currently have. Left-click it to increase your slam level, and right-click it to decrease. The vine indicator indicates Vines and Climbing. Left-click it if you have Vines, and right-click it if you have Climbing; click the respective buttons again to turn these moves off.</li>
+  <li>The Fairy Cam, Homing, and coin icons in the ninth column work like the Vines/Climbing indicator. The Fairy Cam icon indicates Fairy Cam and Shockwave, the Homing icon indicates whether you have Homing Ammo or the Sniper Scope, and the coin indicators indicate if you have the Nintendo and Rareware Coins. Below that is an icon for The Bean™ and for indicating how many Pearls you have.</li>
+  <li>The rightmost column indicates how many Battle Arena Crowns, Banana Medals, Rainbow Coins, Banana Fairies, and Golden Bananas (in that order, top to bottom) you have. You can click these multiple times, up to the maximum number of each item.</li>
+  <li>Finally, the four heads at the bottom indicate your shopkeeps. Click these to indicate whether or not you have Cranky, Funky, Candy, or Snide, from left to right. This will enable or disable their checks. Why is Snide here? Because if you don't have him, the Kasplat checks will light up in red even if you can get the Kasplats, because you still can't turn in Blueprints. (TO DO: This is really pointless since most seeds have Blueprints shuffled; make something better.)</li>
+  </ul></li>
+  <li>The "Level Order and Keys" section should be self-explanatory: Click the question marks to set your level order, and click the key icons to indicate whether or not you have a Key.</li>
+  <li>The "Bosses" section indicates whether or not you can fight a boss. Setting them works just like the levels. K. Rool phases are included! <strong>These are not to be confused with each level's "Boss Defeated" check on the right side...those checks see if you can access the Troff 'n' Scoff, while these checks see if you can actually fight the boss.</strong> (TO DO: Find a way to implement both.)</li>
+  <li>Use the "Helm" section to indicate your Hideout Helm order. If not all five Kongs are taking down Helm this seed, just leave the unused icons blank.</li>
+  <li>The K. Rool section works the same way. Use it to indicate your K. Rool order. (<strong>CURRENT KNOWN GLITCHES:</strong> Unfortunately, the bosses aren't currently available due to Helm and K. Rool both using the same selector. Also, the Chunky Phase checker currently just checks whether you have a Slam at all, regardless of level. Finally, altering the "Slam level required for Chunky phase of K. Rool" setting also alters what slam level you have in the move tracker...must find a way to decouple those.)</li>
+  <li>Click on the gear icon next to "Settings" to change certain settings. Below that, click the arrow and sun/moon icons to indicate your current water level in Gloomy Galleon and time of day in Fungi Forest, respectively.</li>
+  <li>Under the "Switchsanity" tab, by default, you'll always be able to set which Kong rescues Diddy, Lanky, Tiny, and Chunky. You should leave these blank most of the time (except "Free Lanky" which you can't leave blank), unless there's actually a Kong in a cage in your seed. If you actually have Switchsanity on, the checks affected by Switchsanity also show up here. Unfortunately, right now, this tracker does not differentiate between "Helm Access Only" and "On". (<strong>TO DO:</strong> Fix that?)</li>
+  <li>Finally, on the right side of the page, you'll see all your checks, organized by level. A <strong class="not-available">red dot</strong> means you can't do the check, and a <strong class="available">green dot</strong> indicates you can. A <strong class="logic-break">yellow dot</strong> means you can do the check, but you have to go "out of logic" and/or abuse glitches to do so. This tracker assumes you made your seed with the "Glitchless Logic" setting and does not take "Glitch Logic" and "No Logic" seeds into account.</li>
+  </ul>
+  <p><a href="./">Now click here to go back to the Tracker.</a></p>
+  </body>
+</html>
