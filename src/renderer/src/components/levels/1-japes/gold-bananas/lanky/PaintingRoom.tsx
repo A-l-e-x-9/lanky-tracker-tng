@@ -1,4 +1,4 @@
-import { useLankyPaintingGb } from '@renderer/hooks/japes'
+import { useLankyPaintingGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const PaintingRoom: React.FC = () => {

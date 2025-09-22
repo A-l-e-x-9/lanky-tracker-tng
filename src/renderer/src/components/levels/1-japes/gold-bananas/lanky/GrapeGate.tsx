@@ -1,4 +1,4 @@
-import { useLankyGateGb } from '@renderer/hooks/japes'
+import { useLankyGateGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const GrapeGate: React.FC = () => (
