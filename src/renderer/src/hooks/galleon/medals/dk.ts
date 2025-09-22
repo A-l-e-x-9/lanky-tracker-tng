@@ -1,6 +1,6 @@
-import { useBlast, useBongos, useCoconut, useDive, useDk, useLanky } from '@renderer/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { logicBreak } from '@renderer/hooks/world'
+import { useBlast, useBongos, useCoconut, useDive, useDk, useLanky } from '@renderer/src/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
+import { logicBreak } from '@renderer/src/hooks/world'
 import {
   useGalleonLighthouseArea,
   useGalleonLighthousePlatform,

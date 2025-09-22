@@ -1,5 +1,5 @@
 import { useShallow } from 'zustand/react/shallow'
-import useDonkStore from '@renderer/store'
+import useDonkStore from '@renderer/src/store'
 
 /**
  * How many banana medals do we actually have?

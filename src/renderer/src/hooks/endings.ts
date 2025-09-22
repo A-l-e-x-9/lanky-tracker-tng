@@ -1,4 +1,4 @@
-import useDonkStore from '@renderer/store'
+import useDonkStore from '@renderer/src/store'
 import {
   useBarrel,
   useBlast,

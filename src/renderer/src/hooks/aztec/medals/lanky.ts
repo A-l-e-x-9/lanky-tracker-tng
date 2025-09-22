@@ -1,6 +1,6 @@
-import { useAnyMusic, useClimbing, useDive, useGrape, useLanky, useRocket, useVine } from '@renderer/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { logicBreak } from '@renderer/hooks/world'
+import { useAnyMusic, useClimbing, useDive, useGrape, useLanky, useRocket, useVine } from '@renderer/src/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
+import { logicBreak } from '@renderer/src/hooks/world'
 import {
   useAztec5DoorTemple,
   useAztecBack,

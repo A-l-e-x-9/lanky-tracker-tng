@@ -6,8 +6,8 @@ import {
   usePineapple,
   usePunch,
   useRocket
-} from '@renderer/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/hooks/settings'
+} from '@renderer/src/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
 import { usePlayCastle, useSlamCastle } from '..'
 
 const useDiddyMedalCommonLogic = (): number => {

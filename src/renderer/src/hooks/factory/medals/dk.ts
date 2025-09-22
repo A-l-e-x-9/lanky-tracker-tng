@@ -1,5 +1,5 @@
-import { useBlast, useCoconut, useDk, useStrong } from '@renderer/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/hooks/settings'
+import { useBlast, useCoconut, useDk, useStrong } from '@renderer/src/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
 import { useFactoryProductionEnabled, useFactoryTesting, usePlayFactory } from '..'
 
 const useDkMedalCommonLogic = (): number => {

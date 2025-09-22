@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
-import useDonkStore from '@renderer/store'
-import { Level } from '@renderer/store/common'
+import useDonkStore from '@renderer/src/store'
+import { Level } from '@renderer/src/store/common'
 import { useCurrentFairyCount, useCurrentGBCount } from '../consumables'
 import { useSlamGalleon } from '../galleon'
 import {

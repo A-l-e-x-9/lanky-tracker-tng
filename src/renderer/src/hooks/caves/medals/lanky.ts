@@ -1,6 +1,6 @@
-import { useBalloon, useGrape, useHighGrab, useLanky, useTrombone } from '@renderer/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { logicBreak } from '@renderer/hooks/world'
+import { useBalloon, useGrape, useHighGrab, useLanky, useTrombone } from '@renderer/src/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
+import { logicBreak } from '@renderer/src/hooks/world'
 import { useCavesIgloo, useCavesPillar, usePlayCaves, useSlamCaves } from '..'
 
 const useLankyMedalCommonLogic = (): number => {

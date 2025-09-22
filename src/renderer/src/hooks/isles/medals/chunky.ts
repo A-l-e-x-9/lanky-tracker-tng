@@ -1,5 +1,5 @@
-import { useBarrel, useChunky, useHunky, usePineapple } from '@renderer/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/hooks/settings'
+import { useBarrel, useChunky, useHunky, usePineapple } from '@renderer/src/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
 
 export const useChunkyMedalInLogic = (): number => {
   const kong = useChunky()

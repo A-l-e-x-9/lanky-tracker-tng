@@ -8,8 +8,8 @@ import {
   usePunch,
   useSlam,
   useTriangle
-} from '@renderer/hooks/kongs'
-import { useBananaportAll, useShuffleColoredBananas } from '@renderer/hooks/settings'
+} from '@renderer/src/hooks/kongs'
+import { useBananaportAll, useShuffleColoredBananas } from '@renderer/src/hooks/settings'
 import { useCavesIgloo, usePlayCaves, useIceWalls } from '..'
 
 export const useChunkyMedalInLogic = (): number => {

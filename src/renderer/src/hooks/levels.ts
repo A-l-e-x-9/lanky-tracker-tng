@@ -1,4 +1,4 @@
-import useDonkStore from '@renderer/store'
+import useDonkStore from '@renderer/src/store'
 
 export const useKey1 = (): boolean => {
   const key = useDonkStore((state) => state.key1)

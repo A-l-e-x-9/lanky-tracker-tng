@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react'
 
-import useDonkStore from '@renderer/store'
-import { resetAllSlices } from '@renderer/store/common'
+import useDonkStore from '@renderer/src/store'
+import { resetAllSlices } from '@renderer/src/store/common'
 import { useLevel2, useLevel8 } from './levels'
 
 beforeEach(() => {

@@ -1,5 +1,5 @@
-import { useDiddy, useGuitar, usePeanut, useRocket, useSpring } from '@renderer/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/hooks/settings'
+import { useDiddy, useGuitar, usePeanut, useRocket, useSpring } from '@renderer/src/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
 import { useCavesIgloo, useCavesMiniFunky, usePlayCaves } from '..'
 
 const useDiddyMedalCommonLogic = (): number => {
