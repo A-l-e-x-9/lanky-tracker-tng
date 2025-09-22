@@ -1,4 +1,4 @@
-import { useShuffleDirt } from '@renderer/hooks/settings'
+import { useShuffleDirt } from '@renderer/src/hooks/settings'
 
 const VanillaDirt: React.FC<React.PropsWithChildren> = ({ children }) =>
   useShuffleDirt() ? null : <>{children}</>
