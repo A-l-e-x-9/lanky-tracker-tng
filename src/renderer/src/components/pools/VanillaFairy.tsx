@@ -1,4 +1,4 @@
-import { useShuffleFairies } from '@renderer/hooks/settings'
+import { useShuffleFairies } from '@renderer/src/hooks/settings'
 
 const VanillaFairy: React.FC<React.PropsWithChildren> = ({ children }) =>
   useShuffleFairies() ? null : <>{children}</>

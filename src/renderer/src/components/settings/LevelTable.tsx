@@ -1,7 +1,7 @@
 import useDonkStore from '@renderer/src/store'
 import { useShallow } from 'zustand/react/shallow'
 
-import SimpleKey from '@renderer/components/settings/SimpleKey'
+import SimpleKey from '@renderer/src/components/settings/SimpleKey'
 import LevelSelector from './LevelSelector'
 import CountSelector from './CountSelector'
 

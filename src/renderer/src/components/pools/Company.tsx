@@ -1,4 +1,4 @@
-import { usePoolCompanyCoins } from '@renderer/hooks/settings'
+import { usePoolCompanyCoins } from '@renderer/src/hooks/settings'
 
 const CompanyPool: React.FC<React.PropsWithChildren> = ({ children }) =>
   usePoolCompanyCoins() ? <>{children}</> : null

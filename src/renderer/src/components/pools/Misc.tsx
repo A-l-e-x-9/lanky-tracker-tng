@@ -1,4 +1,4 @@
-import { usePoolMisc } from '@renderer/hooks/settings'
+import { usePoolMisc } from '@renderer/src/hooks/settings'
 
 const MiscPool: React.FC<React.PropsWithChildren> = ({ children }) =>
   usePoolMisc() ? <>{children}</> : null

@@ -1,10 +1,10 @@
 import { MouseEvent, WheelEvent } from 'react'
 import { useShallow } from 'zustand/react/shallow'
 
-import useDonkStore from '@renderer/store'
-import { BananaportRange } from '@renderer/store/common'
+import useDonkStore from '@renderer/src/store'
+import { BananaportRange } from '@renderer/src/store/common'
 
-import { useHelmStartPosition } from '@renderer/hooks/settings'
+import { useHelmStartPosition } from '@renderer/src/hooks/settings'
 import helmFullIcon from '../../assets/images/settings/krem_isle.png'
 import helmHalfIcon from '../../assets/images/settings/krem_isle_half.png'
 

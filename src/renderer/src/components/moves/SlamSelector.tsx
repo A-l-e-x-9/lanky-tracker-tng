@@ -1,6 +1,6 @@
-import useDonkStore from '@renderer/store'
+import useDonkStore from '@renderer/src/store'
 import { useShallow } from 'zustand/react/shallow'
-import { useChunkySlamLevel } from '@renderer/hooks/settings'
+import { useChunkySlamLevel } from '@renderer/src/hooks/settings'
 import slamIcon from '../../assets/images/slam1.png'
 import superIcon from '../../assets/images/slam2.png'
 import duperIcon from '../../assets/images/slam3.png'
