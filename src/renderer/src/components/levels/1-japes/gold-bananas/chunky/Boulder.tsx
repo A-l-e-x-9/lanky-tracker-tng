@@ -1,4 +1,4 @@
-import { useChunkyBoulderGb } from '@renderer/hooks/japes'
+import { useChunkyBoulderGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const Boulder: React.FC = () => {

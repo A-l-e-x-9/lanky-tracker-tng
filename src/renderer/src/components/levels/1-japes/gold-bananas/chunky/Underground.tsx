@@ -1,4 +1,4 @@
-import { useChunkyUndergroundGb } from '@renderer/hooks/japes'
+import { useChunkyUndergroundGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const Underground: React.FC = () => {

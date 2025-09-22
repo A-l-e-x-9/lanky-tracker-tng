@@ -1,4 +1,4 @@
-import { useChunkyHiveGb } from '@renderer/hooks/japes'
+import { useChunkyHiveGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const HiveBarrel: React.FC = () => {
