@@ -36,7 +36,7 @@ jobs:
         name: test-artifact
         path: out/renderer/
         if-no-files-found: error
-        overwrite: true
+        overwrite: false
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.5.0
       with:
