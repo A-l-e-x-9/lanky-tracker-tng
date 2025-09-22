@@ -1,5 +1,5 @@
-import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/hooks/factory/medals/dk'
-import { useCbCount } from '@renderer/hooks/settings'
+import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/src/hooks/factory/medals/dk'
+import { useCbCount } from '@renderer/src/hooks/settings'
 import FactoryCheck from '../check'
 
 const DkMedal: React.FC = () => {

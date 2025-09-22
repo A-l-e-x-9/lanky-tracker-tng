@@ -1,6 +1,6 @@
-import BossPool from '@renderer/components/pools/Bosses'
-import { usePlayFactory } from '@renderer/hooks/factory'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import BossPool from '@renderer/src/components/pools/Bosses'
+import { usePlayFactory } from '@renderer/src/hooks/factory'
+import { useAnyKong } from '@renderer/src/hooks/kongs'
 import FactoryCheck from './check'
 
 const BossCheck: React.FC = () => {

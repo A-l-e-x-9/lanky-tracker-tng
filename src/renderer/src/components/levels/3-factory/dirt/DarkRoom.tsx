@@ -1,6 +1,6 @@
-import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import VanillaDirt from '@renderer/components/pools/VanillaDirt'
-import { useFactoryDirt } from '@renderer/hooks/factory'
+import RainbowCoinPool from '@renderer/src/components/pools/RainbowCoins'
+import VanillaDirt from '@renderer/src/components/pools/VanillaDirt'
+import { useFactoryDirt } from '@renderer/src/hooks/factory'
 import FactoryCheck from '../check'
 
 const DarkRoomDirt: React.FC = () => (

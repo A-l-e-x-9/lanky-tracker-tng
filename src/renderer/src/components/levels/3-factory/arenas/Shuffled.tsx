@@ -1,6 +1,6 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing } from '@renderer/hooks/factory'
-import { useShuffledArenas } from '@renderer/hooks/settings'
+import ArenaPool from '@renderer/src/components/pools/Arenas'
+import { useGeneralThing } from '@renderer/src/hooks/factory'
+import { useShuffledArenas } from '@renderer/src/hooks/settings'
 import FactoryCheck from '../check'
 
 const Shuffled: React.FC = () => {

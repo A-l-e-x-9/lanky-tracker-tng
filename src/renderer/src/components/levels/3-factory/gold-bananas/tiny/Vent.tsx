@@ -1,4 +1,4 @@
-import { useTinyArcadeGb } from '@renderer/hooks/factory'
+import { useTinyArcadeGb } from '@renderer/src/hooks/factory'
 import FactoryCheck from '../../check'
 
 const TinyVent: React.FC = () => (

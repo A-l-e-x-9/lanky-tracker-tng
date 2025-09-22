@@ -1,4 +1,4 @@
-import { useDiddyBlockGb } from '@renderer/hooks/factory'
+import { useDiddyBlockGb } from '@renderer/src/hooks/factory'
 import FactoryCheck from '../../check'
 
 const BlockTower: React.FC = () => {

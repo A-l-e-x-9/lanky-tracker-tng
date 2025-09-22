@@ -1,4 +1,4 @@
-import { useDiddyProductionGb } from '@renderer/hooks/factory'
+import { useDiddyProductionGb } from '@renderer/src/hooks/factory'
 import FactoryCheck from '../../check'
 
 const DiddyProduction: React.FC = () => {

@@ -1,4 +1,4 @@
-import { useTinyRaceGb } from '@renderer/hooks/factory'
+import { useTinyRaceGb } from '@renderer/src/hooks/factory'
 import FactoryCheck from '../../check'
 
 const CarRace: React.FC = () => (

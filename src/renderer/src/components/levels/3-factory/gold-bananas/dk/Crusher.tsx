@@ -1,4 +1,4 @@
-import { useDkProdGb } from '@renderer/hooks/factory'
+import { useDkProdGb } from '@renderer/src/hooks/factory'
 import FactoryCheck from '../../check'
 
 const CrusherRoom: React.FC = () => {

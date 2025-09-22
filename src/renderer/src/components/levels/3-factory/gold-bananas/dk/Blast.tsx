@@ -1,6 +1,6 @@
-import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
-import { useDkBlastGb } from '@renderer/hooks/factory'
-import { useFastArcade } from '@renderer/hooks/fast-checks'
+import ToughGoldenBanana from '@renderer/src/components/pools/ToughGoldenBanana'
+import { useDkBlastGb } from '@renderer/src/hooks/factory'
+import { useFastArcade } from '@renderer/src/hooks/fast-checks'
 import FactoryCheck from '../../check'
 
 const FactoryBlast: React.FC = () => {

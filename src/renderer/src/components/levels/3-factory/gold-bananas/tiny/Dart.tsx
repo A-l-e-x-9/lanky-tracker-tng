@@ -1,4 +1,4 @@
-import { useTinyDartGb } from '@renderer/hooks/factory'
+import { useTinyDartGb } from '@renderer/src/hooks/factory'
 import FactoryCheck from '../../check'
 
 const TinyDartboard: React.FC = () => (

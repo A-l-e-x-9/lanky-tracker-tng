@@ -1,4 +1,4 @@
-import { useChunkyArcadeGb } from '@renderer/hooks/factory'
+import { useChunkyArcadeGb } from '@renderer/src/hooks/factory'
 import FactoryCheck from '../../check'
 
 const ArcadeBarrel: React.FC = () => (

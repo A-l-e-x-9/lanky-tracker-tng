@@ -1,4 +1,4 @@
-import { useDkHutGb } from '@renderer/hooks/factory'
+import { useDkHutGb } from '@renderer/src/hooks/factory'
 import FactoryCheck from '../../check'
 
 const PowerHut: React.FC = () => {
