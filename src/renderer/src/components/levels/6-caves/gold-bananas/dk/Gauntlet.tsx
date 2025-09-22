@@ -1,4 +1,4 @@
-import { useDkCabinGb } from '@renderer/hooks/caves'
+import { useDkCabinGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../../check'
 
 const DkGauntletCabin: React.FC = () => {

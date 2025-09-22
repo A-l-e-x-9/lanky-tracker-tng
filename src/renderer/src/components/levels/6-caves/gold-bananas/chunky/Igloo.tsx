@@ -1,4 +1,4 @@
-import { useChunkyIglooGb } from '@renderer/hooks/caves'
+import { useChunkyIglooGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../../check'
 
 const ChunkyIgloo: React.FC = () => (

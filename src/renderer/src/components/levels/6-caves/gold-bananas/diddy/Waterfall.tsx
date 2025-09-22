@@ -1,4 +1,4 @@
-import { useDiddyWaterfallGb } from '@renderer/hooks/caves'
+import { useDiddyWaterfallGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../../check'
 
 const WaterfallBarrel: React.FC = () => {

@@ -1,4 +1,4 @@
-import { useLankyDungeonGb } from '@renderer/hooks/castle'
+import { useLankyDungeonGb } from '@renderer/src/hooks/castle'
 import CastleCheck from '../../check'
 
 const LankyDungeon: React.FC = () => {

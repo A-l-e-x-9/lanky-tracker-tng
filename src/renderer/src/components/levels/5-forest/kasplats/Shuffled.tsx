@@ -1,6 +1,6 @@
-import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing } from '@renderer/hooks/forest'
-import { useShuffleKasplats } from '@renderer/hooks/settings'
+import KasplatPool from '@renderer/src/components/pools/Kasplats'
+import { useGeneralThing } from '@renderer/src/hooks/forest'
+import { useShuffleKasplats } from '@renderer/src/hooks/settings'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {

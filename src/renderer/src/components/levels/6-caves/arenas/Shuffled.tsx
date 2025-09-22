@@ -1,6 +1,6 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing } from '@renderer/hooks/caves'
-import { useShuffledArenas } from '@renderer/hooks/settings'
+import ArenaPool from '@renderer/src/components/pools/Arenas'
+import { useGeneralThing } from '@renderer/src/hooks/caves'
+import { useShuffledArenas } from '@renderer/src/hooks/settings'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {

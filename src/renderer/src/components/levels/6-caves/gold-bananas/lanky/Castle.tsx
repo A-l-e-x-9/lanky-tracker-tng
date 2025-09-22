@@ -1,4 +1,4 @@
-import { useLankyCastleGb } from '@renderer/hooks/caves'
+import { useLankyCastleGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../../check'
 
 const CastleSlam: React.FC = () => (

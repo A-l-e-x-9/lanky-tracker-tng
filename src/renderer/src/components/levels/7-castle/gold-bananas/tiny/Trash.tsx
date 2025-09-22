@@ -1,4 +1,4 @@
-import { useTinyTrashGb } from '@renderer/hooks/castle'
+import { useTinyTrashGb } from '@renderer/src/hooks/castle'
 import CastleCheck from '../../check'
 
 const TinyTrash: React.FC = () => {

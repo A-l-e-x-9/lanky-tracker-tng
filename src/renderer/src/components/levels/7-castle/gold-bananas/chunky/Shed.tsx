@@ -1,4 +1,4 @@
-import { useChunkyShedGb } from '@renderer/hooks/castle'
+import { useChunkyShedGb } from '@renderer/src/hooks/castle'
 import CastleCheck from '../../check'
 
 const ChunkyShed: React.FC = () => {

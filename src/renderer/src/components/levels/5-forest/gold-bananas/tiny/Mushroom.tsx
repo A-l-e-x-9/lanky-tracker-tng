@@ -1,4 +1,4 @@
-import { useTinyMushGb } from '@renderer/hooks/forest'
+import { useTinyMushGb } from '@renderer/src/hooks/forest'
 import ForestCheck from '../../check'
 
 const MushroomBarrel: React.FC = () => (

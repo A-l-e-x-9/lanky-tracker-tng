@@ -1,6 +1,6 @@
-import FairyPool from '@renderer/components/pools/Fairies'
-import VanillaFairy from '@renderer/components/pools/VanillaFairy'
-import { useIglooFairy } from '@renderer/hooks/caves'
+import FairyPool from '@renderer/src/components/pools/Fairies'
+import VanillaFairy from '@renderer/src/components/pools/VanillaFairy'
+import { useIglooFairy } from '@renderer/src/hooks/caves'
 import CavesCheck from '../check'
 
 const IglooFairy: React.FC = () => (

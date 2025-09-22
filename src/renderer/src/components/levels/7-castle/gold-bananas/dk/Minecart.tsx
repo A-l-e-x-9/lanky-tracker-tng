@@ -1,5 +1,5 @@
-import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
-import { useDkCryptGb } from '@renderer/hooks/castle'
+import ToughGoldenBanana from '@renderer/src/components/pools/ToughGoldenBanana'
+import { useDkCryptGb } from '@renderer/src/hooks/castle'
 import CastleCheck from '../../check'
 
 const DkMinecart: React.FC = () => {

@@ -1,4 +1,4 @@
-import { useChunkyCabinGb } from '@renderer/hooks/caves'
+import { useChunkyCabinGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../../check'
 
 const ChunkyCabin: React.FC = () => (

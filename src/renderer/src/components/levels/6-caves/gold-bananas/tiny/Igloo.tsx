@@ -1,4 +1,4 @@
-import { useTinyIglooGb } from '@renderer/hooks/caves'
+import { useTinyIglooGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../../check'
 
 const TinyIgloo: React.FC = () => (

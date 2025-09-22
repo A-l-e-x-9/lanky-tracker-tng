@@ -1,4 +1,4 @@
-import { useChunkyClearGb } from '@renderer/hooks/caves'
+import { useChunkyClearGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../../check'
 
 const TransparentIgloo: React.FC = () => {

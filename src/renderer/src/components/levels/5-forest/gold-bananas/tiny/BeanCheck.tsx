@@ -1,4 +1,4 @@
-import { useTinyBeanGb } from '@renderer/hooks/forest'
+import { useTinyBeanGb } from '@renderer/src/hooks/forest'
 import ForestCheck from '../../check'
 
 const BeanCheck: React.FC = () => (

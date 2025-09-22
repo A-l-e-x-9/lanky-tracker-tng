@@ -1,4 +1,4 @@
-import { useDiddyIglooGb } from '@renderer/hooks/caves'
+import { useDiddyIglooGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../../check'
 
 const DiddyIgloo: React.FC = () => (

@@ -1,4 +1,4 @@
-import BananaMedalPool from '@renderer/components/pools/BananaMedals'
+import BananaMedalPool from '@renderer/src/components/pools/BananaMedals'
 import ShuffledArenas from '../arenas/Shuffled'
 import BossCheck from '../boss'
 import ShuffledCrates from '../crates/Shuffled'

@@ -1,8 +1,8 @@
-import ShopGenerator from '@renderer/components/pools/ShopGenerator'
-import ShopPool from '@renderer/components/pools/Shops'
-import { usePlayCaves, useCanAccessSnide } from '@renderer/hooks/caves'
-import { useCranky, whatAFunky, useCandy } from '@renderer/hooks/kongs'
-import { useShuffledShops } from '@renderer/hooks/settings'
+import ShopGenerator from '@renderer/src/components/pools/ShopGenerator'
+import ShopPool from '@renderer/src/components/pools/Shops'
+import { usePlayCaves, useCanAccessSnide } from '@renderer/src/hooks/caves'
+import { useCranky, whatAFunky, useCandy } from '@renderer/src/hooks/kongs'
+import { useShuffledShops } from '@renderer/src/hooks/settings'
 
 const Vanilla: React.FC = () => {
   const inStage = usePlayCaves()

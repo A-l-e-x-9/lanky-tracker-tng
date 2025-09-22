@@ -1,7 +1,7 @@
-import FairyPool from '@renderer/components/pools/Fairies'
-import VanillaFairy from '@renderer/components/pools/VanillaFairy'
-import { useHelmDoors } from '@renderer/hooks/helm'
-import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
+import FairyPool from '@renderer/src/components/pools/Fairies'
+import VanillaFairy from '@renderer/src/components/pools/VanillaFairy'
+import { useHelmDoors } from '@renderer/src/hooks/helm'
+import { useAnyKong, useCamera } from '@renderer/src/hooks/kongs'
 import HelmCheck from '../check'
 
 const EndOfHelmFairies: React.FC = () => {

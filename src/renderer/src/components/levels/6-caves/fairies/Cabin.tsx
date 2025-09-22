@@ -1,6 +1,6 @@
-import FairyPool from '@renderer/components/pools/Fairies'
-import VanillaFairy from '@renderer/components/pools/VanillaFairy'
-import { useCabinFairy } from '@renderer/hooks/caves'
+import FairyPool from '@renderer/src/components/pools/Fairies'
+import VanillaFairy from '@renderer/src/components/pools/VanillaFairy'
+import { useCabinFairy } from '@renderer/src/hooks/caves'
 import CavesCheck from '../check'
 
 const CabinFairy: React.FC = () => {

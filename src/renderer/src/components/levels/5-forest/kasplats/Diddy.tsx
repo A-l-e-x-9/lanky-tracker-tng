@@ -1,6 +1,6 @@
-import KasplatPool from '@renderer/components/pools/Kasplats'
-import VanillaKasplat from '@renderer/components/pools/VanillaKasplat'
-import { useMushInteriorKasplat } from '@renderer/hooks/forest'
+import KasplatPool from '@renderer/src/components/pools/Kasplats'
+import VanillaKasplat from '@renderer/src/components/pools/VanillaKasplat'
+import { useMushInteriorKasplat } from '@renderer/src/hooks/forest'
 import ForestCheck from '../check'
 
 const DiddyKasplat: React.FC = () => (

@@ -1,4 +1,4 @@
-import { useTinyMausoleumGb } from '@renderer/hooks/castle'
+import { useTinyMausoleumGb } from '@renderer/src/hooks/castle'
 import CastleCheck from '../../check'
 
 const TinyMausoleum: React.FC = () => {

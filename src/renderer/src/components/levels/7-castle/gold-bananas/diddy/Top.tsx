@@ -1,4 +1,4 @@
-import { useDiddyTopGb } from '@renderer/hooks/castle'
+import { useDiddyTopGb } from '@renderer/src/hooks/castle'
 import CastleCheck from '../../check'
 
 const CastleTop: React.FC = () => (

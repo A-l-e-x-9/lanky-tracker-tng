@@ -1,6 +1,6 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import VanillaArena from '@renderer/components/pools/VanillaArena'
-import { useDkRotateGb } from '@renderer/hooks/caves'
+import ArenaPool from '@renderer/src/components/pools/Arenas'
+import VanillaArena from '@renderer/src/components/pools/VanillaArena'
+import { useDkRotateGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../check'
 
 const CabinArena: React.FC = () => (

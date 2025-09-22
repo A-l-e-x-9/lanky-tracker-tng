@@ -1,4 +1,4 @@
-import { useTinyCabinGb } from '@renderer/hooks/caves'
+import { useTinyCabinGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../../check'
 
 const TinyCabin: React.FC = () => {

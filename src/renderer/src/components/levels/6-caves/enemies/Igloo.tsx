@@ -1,7 +1,7 @@
-import DropPool from '@renderer/components/pools/Drops'
-import { useCavesIgloo } from '@renderer/hooks/caves'
-import { useDefeatKosha } from '@renderer/hooks/enemies'
-import { useBongos, useSax, useCamera } from '@renderer/hooks/kongs'
+import DropPool from '@renderer/src/components/pools/Drops'
+import { useCavesIgloo } from '@renderer/src/hooks/caves'
+import { useDefeatKosha } from '@renderer/src/hooks/enemies'
+import { useBongos, useSax, useCamera } from '@renderer/src/hooks/kongs'
 import CavesCheck from '../check'
 
 const IglooEnemies: React.FC = () => {

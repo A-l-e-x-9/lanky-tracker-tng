@@ -1,4 +1,4 @@
-import { useDkRoomGb } from '@renderer/hooks/castle'
+import { useDkRoomGb } from '@renderer/src/hooks/castle'
 import CastleCheck from '../../check'
 
 const DkLibrary: React.FC = () => {

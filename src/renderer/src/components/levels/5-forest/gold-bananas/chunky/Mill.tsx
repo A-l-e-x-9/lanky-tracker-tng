@@ -1,4 +1,4 @@
-import { useChunkyMillGb } from '@renderer/hooks/forest'
+import { useChunkyMillGb } from '@renderer/src/hooks/forest'
 import ForestCheck from '../../check'
 
 const ChunkyMill: React.FC = () => {

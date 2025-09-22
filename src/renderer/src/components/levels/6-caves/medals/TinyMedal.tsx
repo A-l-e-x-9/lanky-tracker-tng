@@ -1,5 +1,5 @@
-import { useTinyMedalInLogic, useTinyMedalOutLogic } from '@renderer/hooks/caves/medals/tiny'
-import { useCbCount } from '@renderer/hooks/settings'
+import { useTinyMedalInLogic, useTinyMedalOutLogic } from '@renderer/src/hooks/caves/medals/tiny'
+import { useCbCount } from '@renderer/src/hooks/settings'
 import CavesCheck from '../check'
 
 const TinyMedal: React.FC = () => {

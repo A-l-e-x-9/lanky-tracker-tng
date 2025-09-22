@@ -1,4 +1,4 @@
-import { useLankyMushGb } from '@renderer/hooks/forest'
+import { useLankyMushGb } from '@renderer/src/hooks/forest'
 import ForestCheck from '../../check'
 
 const MushroomSlam: React.FC = () => {

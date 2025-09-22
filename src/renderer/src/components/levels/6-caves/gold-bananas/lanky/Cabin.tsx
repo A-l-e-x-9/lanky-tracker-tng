@@ -1,4 +1,4 @@
-import { useLankyCabinGb } from '@renderer/hooks/caves'
+import { useLankyCabinGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../../check'
 
 const SprintCabin: React.FC = () => {

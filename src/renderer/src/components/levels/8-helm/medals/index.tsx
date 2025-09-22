@@ -1,5 +1,5 @@
-import BananaMedalPool from '@renderer/components/pools/BananaMedals'
-import { useHelmMachine } from '@renderer/hooks/helm'
+import BananaMedalPool from '@renderer/src/components/pools/BananaMedals'
+import { useHelmMachine } from '@renderer/src/hooks/helm'
 import {
   useBongos,
   useGuitar,
@@ -7,7 +7,7 @@ import {
   useSax,
   useTriangle,
   useTrombone
-} from '@renderer/hooks/kongs'
+} from '@renderer/src/hooks/kongs'
 import HelmCheck from '../check'
 
 const MedalLocations: React.FC = () => {

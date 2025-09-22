@@ -1,4 +1,4 @@
-import { useChunkyGoneGb } from '@renderer/hooks/caves'
+import { useChunkyGoneGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../../check'
 
 const EarlyGone: React.FC = () => (

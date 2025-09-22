@@ -1,7 +1,7 @@
-import DropPool from '@renderer/components/pools/Drops'
-import { useDefeatKlump, useDefeatZinger } from '@renderer/hooks/enemies'
-import { useForestMushroomRoof, usePlayForest } from '@renderer/hooks/forest'
-import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
+import DropPool from '@renderer/src/components/pools/Drops'
+import { useDefeatKlump, useDefeatZinger } from '@renderer/src/hooks/enemies'
+import { useForestMushroomRoof, usePlayForest } from '@renderer/src/hooks/forest'
+import { useAnyKong, useCamera } from '@renderer/src/hooks/kongs'
 import ForestCheck from '../check'
 
 const MushExteriorEnemies: React.FC = () => {

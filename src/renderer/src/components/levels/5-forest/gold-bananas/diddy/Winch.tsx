@@ -1,4 +1,4 @@
-import { useDiddyCageGb } from '@renderer/hooks/forest'
+import { useDiddyCageGb } from '@renderer/src/hooks/forest'
 import ForestCheck from '../../check'
 
 const MillWinch: React.FC = () => {

@@ -1,4 +1,4 @@
-import { useDkDungeonGb } from '@renderer/hooks/castle'
+import { useDkDungeonGb } from '@renderer/src/hooks/castle'
 import CastleCheck from '../../check'
 
 const DkDungeon: React.FC = () => (

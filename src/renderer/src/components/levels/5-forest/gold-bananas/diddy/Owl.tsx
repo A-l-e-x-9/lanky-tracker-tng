@@ -1,5 +1,5 @@
-import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
-import { useDiddyOwlGb } from '@renderer/hooks/forest'
+import ToughGoldenBanana from '@renderer/src/components/pools/ToughGoldenBanana'
+import { useDiddyOwlGb } from '@renderer/src/hooks/forest'
 import ForestCheck from '../../check'
 
 const OwlRace: React.FC = () => {

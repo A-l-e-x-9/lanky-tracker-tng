@@ -1,4 +1,4 @@
-import { useDiddyDungeonGb } from '@renderer/hooks/castle'
+import { useDiddyDungeonGb } from '@renderer/src/hooks/castle'
 import CastleCheck from '../../check'
 
 const DiddyDungeon: React.FC = () => (

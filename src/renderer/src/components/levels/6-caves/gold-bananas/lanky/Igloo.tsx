@@ -1,4 +1,4 @@
-import { useLankyIglooGb } from '@renderer/hooks/caves'
+import { useLankyIglooGb } from '@renderer/src/hooks/caves'
 import CavesCheck from '../../check'
 
 const LankyIgloo: React.FC = () => {

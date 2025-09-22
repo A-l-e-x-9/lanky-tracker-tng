@@ -1,6 +1,6 @@
-import CratePool from '@renderer/components/pools/Crates'
-import VanillaCrate from '@renderer/components/pools/VanillaCrate'
-import { useCrate } from '@renderer/hooks/castle'
+import CratePool from '@renderer/src/components/pools/Crates'
+import VanillaCrate from '@renderer/src/components/pools/VanillaCrate'
+import { useCrate } from '@renderer/src/hooks/castle'
 import CastleCheck from '../check'
 
 const MausoleumCrate: React.FC = () => {

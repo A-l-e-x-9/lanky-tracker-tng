@@ -1,4 +1,4 @@
-import { useDkMillGb } from '@renderer/hooks/forest'
+import { useDkMillGb } from '@renderer/src/hooks/forest'
 import ForestCheck from '../../check'
 
 const DkMill: React.FC = () => {

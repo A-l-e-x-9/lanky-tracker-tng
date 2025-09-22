@@ -1,4 +1,4 @@
-import { useTinyRoomGb } from '@renderer/hooks/castle'
+import { useTinyRoomGb } from '@renderer/src/hooks/castle'
 import CastleCheck from '../../check'
 
 const TinyRace: React.FC = () => (

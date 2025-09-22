@@ -1,6 +1,6 @@
-import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import VanillaDirt from '@renderer/components/pools/VanillaDirt'
-import { useKoshaDirt } from '@renderer/hooks/caves'
+import RainbowCoinPool from '@renderer/src/components/pools/RainbowCoins'
+import VanillaDirt from '@renderer/src/components/pools/VanillaDirt'
+import { useKoshaDirt } from '@renderer/src/hooks/caves'
 import CavesCheck from '../check'
 
 const KoshaDirt: React.FC = () => {

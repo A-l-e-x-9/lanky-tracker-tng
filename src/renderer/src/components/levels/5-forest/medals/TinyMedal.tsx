@@ -1,5 +1,5 @@
-import { useTinyMedalInLogic, useTinyMedalOutLogic } from '@renderer/hooks/forest/medals/tiny'
-import { useCbCount } from '@renderer/hooks/settings'
+import { useTinyMedalInLogic, useTinyMedalOutLogic } from '@renderer/src/hooks/forest/medals/tiny'
+import { useCbCount } from '@renderer/src/hooks/settings'
 import ForestCheck from '../check'
 
 const TinyMedal: React.FC = () => {

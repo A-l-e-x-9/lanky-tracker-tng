@@ -1,6 +1,6 @@
-import BossPool from '@renderer/components/pools/Bosses'
-import { usePlayForest } from '@renderer/hooks/forest'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import BossPool from '@renderer/src/components/pools/Bosses'
+import { usePlayForest } from '@renderer/src/hooks/forest'
+import { useAnyKong } from '@renderer/src/hooks/kongs'
 import ForestCheck from './check'
 
 const BossCheck: React.FC = () => {
