@@ -1,4 +1,4 @@
-import useDonkStore from '@renderer/src/src/store'
+import useDonkStore from '@renderer/src/store'
 import { useShallow } from 'zustand/react/shallow'
 
 import SimpleKey from '@renderer/src/components/settings/SimpleKey'
