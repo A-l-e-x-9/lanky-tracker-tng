@@ -11181,7 +11181,7 @@ const useLighthouseDirt = () => {
     out: inside.out && dirt
   };
 };
-const useGeneralDirt$7 = () => {
+const useGeneralDirt$6 = () => {
   const thing = useGeneralThing$6();
   return useShockwave() && thing;
 };
@@ -11195,7 +11195,7 @@ const useShipFairy = () => {
   const fairy = useCamera();
   return ship && fairy;
 };
-const useGeneralFairy$6 = () => {
+const useGeneralFairy$5 = () => {
   const thing = useGeneralThing$6();
   return useCamera() && thing;
 };
@@ -11735,19 +11735,19 @@ const useForestArena = () => {
   const gone = useGone();
   return playForest && allGun2 && gone;
 };
-const useGeneralDirt$6 = () => {
+const useGeneralDirt$5 = () => {
   const anyKong = useAnyKong();
   const shockwave = useShockwave();
   return anyKong && shockwave;
 };
 const useHoardDirt = () => {
-  const dirt = useGeneralDirt$6();
+  const dirt = useGeneralDirt$5();
   const vine = useVine();
   const climbing = useClimbing();
   return dirt && vine && climbing;
 };
 const useIslandDirt = () => {
-  const dirt = useGeneralDirt$6();
+  const dirt = useGeneralDirt$5();
   const fungi = useIslesFungiIsland();
   return dirt && fungi;
 };
@@ -11779,7 +11779,7 @@ const useAztecDirt = () => {
     out: shockwave && (islesUpper && boulderTech && (diddy || tiny) || crossFungi && (dk2 || tiny && twirl))
   };
 };
-const useGeneralFairy$5 = () => {
+const useGeneralFairy$4 = () => {
   const anyKong = useAnyKong();
   const camera = useCamera();
   return anyKong && camera;
@@ -12063,7 +12063,7 @@ const Hoard = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { chi
   }
 ) }) });
 const PrisonDirt = () => {
-  const dirt = useGeneralDirt$6();
+  const dirt = useGeneralDirt$5();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -12078,7 +12078,7 @@ const PrisonDirt = () => {
   ] });
 };
 const TrainingRear = () => {
-  const dirt = useGeneralDirt$6();
+  const dirt = useGeneralDirt$5();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
@@ -12090,7 +12090,7 @@ const TrainingRear = () => {
   ) }) });
 };
 const UnderCaves = () => {
-  const dirt = useGeneralDirt$6();
+  const dirt = useGeneralDirt$5();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
@@ -12543,7 +12543,7 @@ const SmallIslandFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, 
     id: 80,
     name: "Isles Fairy (Small Island)",
     region: "Outer Isles",
-    canGetLogic: useGeneralFairy$5()
+    canGetLogic: useGeneralFairy$4()
   }
 ) }) });
 const UpperKremFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -13226,7 +13226,7 @@ const Vanilla$8 = () => {
     )
   ] });
 };
-const Shuffled$G = () => {
+const Shuffled$B = () => {
   const kremAscent = useIslesKremAscent();
   const cranky = useCranky();
   const snide = useSnide();
@@ -13254,7 +13254,7 @@ const Shuffled$G = () => {
   ] });
 };
 const ShopLocations$7 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$G, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$8, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$B, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$8, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const WrinklyPool = ({ children }) => usePoolWrinkly() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -14191,11 +14191,6 @@ const usePaintingDirt = () => {
     out: shockwave && japesPaintingOutside.out
   };
 };
-const useGeneralDirt$5 = () => {
-  const shockwave = useShockwave();
-  const inStage = usePlayJapes();
-  return inStage && shockwave;
-};
 const useRambiFairy = () => {
   const camera = useCamera();
   const japesRambi = useJapesRambi();
@@ -14208,10 +14203,6 @@ const usePaintingFairy = () => {
     in: camera && banana.in,
     out: camera && banana.out
   };
-};
-const useGeneralFairy$4 = () => {
-  const camera = useCamera();
-  return usePlayJapes() && camera;
 };
 const useGateKasplat = () => {
   const kongGates = useJapesKongGates();
@@ -15956,56 +15947,6 @@ const TinyMedal$6 = () => {
     )
   ] });
 };
-const Shuffled$F = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1190, name: "Japes Arena", canGetLogic: useGeneralThing$5() }) });
-};
-const ShuffledArenas$6 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$F, {});
-const Shuffled$E = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1260,
-        name: "Japes Crate Location #1 (maybe)",
-        canGetLogic: useGeneralThing$5()
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1261,
-        name: "Japes Crate Location #2 (maybe)",
-        canGetLogic: useGeneralThing$5()
-      }
-    )
-  ] });
-};
-const ShuffledCrates$6 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$E, {}) : null;
-const Shuffled$D = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1270, name: "Japes Dirt Location #1", canGetLogic: useGeneralDirt$5() }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1271, name: "Japes Dirt Location #2", canGetLogic: useGeneralDirt$5() })
-  ] });
-};
-const ShuffledDirtLocations$6 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
-const Shuffled$C = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1280, name: "Japes Fairy Location #1", canGetLogic: useGeneralFairy$4() }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1281, name: "Japes Fairy Location #2", canGetLogic: useGeneralFairy$4() })
-  ] });
-};
-const ShuffledFairies$6 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$C, {}) : null;
-const Shuffled$B = () => {
-  const kasplat = useGeneralThing$5();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1250, name: "Japes Kasplat Location #1", canGetLogic: kasplat }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1251, name: "Japes Kasplat Location #2", canGetLogic: kasplat }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1252, name: "Japes Kasplat Location #3", canGetLogic: kasplat }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1253, name: "Japes Kasplat Location #4", canGetLogic: kasplat }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesCheck, { id: 1254, name: "Japes Kasplat Location #5", canGetLogic: kasplat })
-  ] });
-};
-const ShuffledKasplats$6 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$B, {}) : null;
 const Vanilla$7 = () => {
   const playJapes = usePlayJapes();
   const kongGates = useJapesKongGates();
@@ -16172,11 +16113,6 @@ const JapesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(MineChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingRoomChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(UndergroundChecks$1, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {})
 ] });
@@ -22951,7 +22887,7 @@ const Shuffled$m = () => {
 };
 const ShuffledCrates$3 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$m, {}) : null;
 const Shuffled$l = () => {
-  const thing = useGeneralDirt$7();
+  const thing = useGeneralDirt$6();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4270, name: "Galleon Dirt Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4271, name: "Galleon Dirt Location #2", canGetLogic: thing })
@@ -22959,7 +22895,7 @@ const Shuffled$l = () => {
 };
 const ShuffledDirtLocations$3 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
 const Shuffled$k = () => {
-  const thing = useGeneralFairy$6();
+  const thing = useGeneralFairy$5();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4280, name: "Galleon Fairy Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4281, name: "Galleon Fairy Location #2", canGetLogic: thing })
