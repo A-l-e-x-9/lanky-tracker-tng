@@ -1,7 +1,7 @@
 import { MouseEvent, WheelEvent } from 'react'
 import { useShallow } from 'zustand/react/shallow'
 
-import useDonkStore from '@renderer/store'
+import useDonkStore from '@renderer/src/store'
 
 type CountSelectorProps = {
   title: string

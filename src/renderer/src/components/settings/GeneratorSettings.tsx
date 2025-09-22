@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Modal from 'react-modal'
 import { useShallow } from 'zustand/react/shallow'
 
-import useDonkStore from '@renderer/store'
+import useDonkStore from '@renderer/src/store'
 import BananaportSelector from './BananaportSelector'
 import CheckIcon from './CheckIcon'
 import CountSelector from './CountSelector'

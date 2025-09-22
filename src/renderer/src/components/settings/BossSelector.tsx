@@ -1,10 +1,10 @@
 import { WheelEvent } from 'react'
 import { useShallow } from 'zustand/react/shallow'
 
-import useDonkStore from '@renderer/store'
-import { Boss } from '@renderer/store/common'
-import { useAnyKong, useBarrel, useBlast, useDk, useFeather, useGone, useHunky, useMini, useOrange, usePeanut, usePunch, useRocket, useSlam, useTiny, useTrombone, useTwirl, useClimbing } from '@renderer/hooks/kongs'
-import { useBalancedRoolPhase } from '@renderer/hooks/settings'
+import useDonkStore from '@renderer/src/store'
+import { Boss } from '@renderer/src/store/common'
+import { useAnyKong, useBarrel, useBlast, useDk, useFeather, useGone, useHunky, useMini, useOrange, usePeanut, usePunch, useRocket, useSlam, useTiny, useTrombone, useTwirl, useClimbing } from '@renderer/src/hooks/kongs'
+import { useBalancedRoolPhase } from '@renderer/src/hooks/settings'
 
 import dogadon1Icon from '../../assets/images/dogadon-1.png'
 import kutoutIcon from '../../assets/images/kutout.png'
