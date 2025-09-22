@@ -1,12 +1,7 @@
-import BananaMedalPool from '@renderer/components/pools/BananaMedals'
-import ShuffledArenas from '../arenas/Shuffled'
+import BananaMedalPool from '@renderer/src/components/pools/BananaMedals'
 import BossCheck from '../boss'
-import ShuffledCrates from '../crates/Shuffled'
-import ShuffledDirtLocations from '../dirt/Shuffled'
-import ShuffledFairies from '../fairies/Shuffled'
 import TopMountain from '../gold-bananas/diddy/TopMountain'
 import BaboonBlast from '../gold-bananas/dk/BaboonBlast'
-import ShuffledKasplats from '../kasplats/Shuffled'
 import ChunkyMedal from '../medals/ChunkyMedal'
 import DiddyMedal from '../medals/DiddyMedal'
 import DkMedal from '../medals/DkMedal'
@@ -47,11 +42,6 @@ const JapesRegionChecks: React.FC = () => (
     <MineChecks />
     <PaintingRoomChecks />
     <UndergroundChecks />
-    <ShuffledKasplats />
-    <ShuffledCrates />
-    <ShuffledDirtLocations />
-    <ShuffledFairies />
-    <ShuffledArenas />
     <ShopLocations />
     <BossCheck />
   </div>
