@@ -1,4 +1,4 @@
-import { useDkCagedGb } from '@renderer/src/hooks/japes'
+import { useDkCagedGb } from '@renderer/hooks/japes'
 import JapesCheck from '../../check'
 
 export const FloorCage: React.FC = () => (

@@ -1,4 +1,4 @@
-import { useTinySubGb } from '@renderer/src/hooks/galleon'
+import { useTinySubGb } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const TinySub: React.FC = () => (

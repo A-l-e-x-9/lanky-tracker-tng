@@ -1,4 +1,4 @@
-import { useChunkyHunkyGb } from '@renderer/src/hooks/aztec'
+import { useChunkyHunkyGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../../check'
 
 const TunnelBarrel: React.FC = () => {

@@ -1,5 +1,5 @@
-import { useBlast, useBongos, useCoconut, useDk, usePunch, useStrong } from '@renderer/src/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
+import { useBlast, useBongos, useCoconut, useDk, usePunch, useStrong } from '@renderer/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { useCavesIgloo, usePlayCaves, useIceWalls } from '..'
 
 const useDkMedalCommonLogic = (): number => {

@@ -1,7 +1,7 @@
-import FairyPool from '@renderer/src/components/pools/Fairies'
-import { useHelmEnter } from '@renderer/src/hooks/helm'
-import { useAnyKong, useCamera } from '@renderer/src/hooks/kongs'
-import { useShuffleFairies } from '@renderer/src/hooks/settings'
+import FairyPool from '@renderer/components/pools/Fairies'
+import { useHelmEnter } from '@renderer/hooks/helm'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
+import { useShuffleFairies } from '@renderer/hooks/settings'
 import HelmCheck from '../check'
 
 const Shuffled: React.FC = () => {

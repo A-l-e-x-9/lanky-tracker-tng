@@ -1,5 +1,5 @@
-import BoulderPool from '@renderer/src/components/pools/Boulders'
-import { useMillFrontKegs } from '@renderer/src/hooks/forest'
+import BoulderPool from '@renderer/components/pools/Boulders'
+import { useMillFrontKegs } from '@renderer/hooks/forest'
 import ForestCheck from '../check'
 
 /*Version 5 of the Randomizer now allows you to have major rewards in the boulders that Chunky can toss. This is for the kegs in Fungi Forest.*/

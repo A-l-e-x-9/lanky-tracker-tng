@@ -1,4 +1,4 @@
-import DropPool from '@renderer/src/components/pools/Drops'
+import DropPool from '@renderer/components/pools/Drops'
 import BlastArena from './arenas/Blast'
 import BossCheck from './boss'
 import EnemyLocations from './enemies'

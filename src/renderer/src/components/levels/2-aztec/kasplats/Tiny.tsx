@@ -1,6 +1,6 @@
-import KasplatPool from '@renderer/src/components/pools/Kasplats'
-import VanillaKasplat from '@renderer/src/components/pools/VanillaKasplat'
-import { useTunnelKasplat } from '@renderer/src/hooks/aztec'
+import KasplatPool from '@renderer/components/pools/Kasplats'
+import VanillaKasplat from '@renderer/components/pools/VanillaKasplat'
+import { useTunnelKasplat } from '@renderer/hooks/aztec'
 import AztecCheck from '../check'
 
 const TinyKasplat: React.FC = () => {

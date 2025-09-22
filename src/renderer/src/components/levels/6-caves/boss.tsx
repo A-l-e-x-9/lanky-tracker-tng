@@ -1,6 +1,6 @@
-import BossPool from '@renderer/src/components/pools/Bosses'
-import { usePlayCaves } from '@renderer/src/hooks/caves'
-import { useAnyKong } from '@renderer/src/hooks/kongs'
+import BossPool from '@renderer/components/pools/Bosses'
+import { usePlayCaves } from '@renderer/hooks/caves'
+import { useAnyKong } from '@renderer/hooks/kongs'
 import CavesCheck from './check'
 
 const BossCheck: React.FC = () => {

@@ -1,4 +1,4 @@
-import { useLankyVultureGb } from '@renderer/src/hooks/aztec'
+import { useLankyVultureGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../../check'
 
 const VultureShoot: React.FC = () => {

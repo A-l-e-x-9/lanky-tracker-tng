@@ -1,5 +1,5 @@
-import { useChunkyMedalInLogic, useChunkyMedalOutLogic } from '@renderer/src/hooks/japes/medals/chunky'
-import { useCbCount } from '@renderer/src/hooks/settings'
+import { useChunkyMedalInLogic, useChunkyMedalOutLogic } from '@renderer/hooks/japes/medals/chunky'
+import { useCbCount } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
 
 const ChunkyMedal: React.FC = () => {

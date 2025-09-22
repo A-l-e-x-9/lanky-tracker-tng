@@ -1,4 +1,4 @@
-import { useDiddyGauntletGb } from '@renderer/src/hooks/caves'
+import { useDiddyGauntletGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
 
 const DiddyGauntletCabin: React.FC = () => {

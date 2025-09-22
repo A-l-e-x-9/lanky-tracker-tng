@@ -1,4 +1,4 @@
-import RainbowCoinPool from '@renderer/src/components/pools/RainbowCoins'
+import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import Hoard from '../dirt/Hoard'
 import TrainingRear from '../dirt/TrainingRear'
 

@@ -1,4 +1,4 @@
-import { useDiddyMountainGb } from '@renderer/src/hooks/japes'
+import { useDiddyMountainGb } from '@renderer/hooks/japes'
 import JapesCheck from '../../check'
 
 const TopMountain: React.FC = () => (

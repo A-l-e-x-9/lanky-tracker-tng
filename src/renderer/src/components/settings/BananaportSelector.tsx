@@ -1,9 +1,9 @@
 import { MouseEvent, WheelEvent } from 'react'
 import { useShallow } from 'zustand/react/shallow'
 
-import { useBananaport } from '@renderer/src/hooks/settings'
-import useDonkStore from '@renderer/src/store'
-import { BananaportRange } from '@renderer/src/store/common'
+import { useBananaport } from '@renderer/hooks/settings'
+import useDonkStore from '@renderer/store'
+import { BananaportRange } from '@renderer/store/common'
 
 import portFullIcon from '../../assets/images/settings/bananaport.png'
 import portHalfIcon from '../../assets/images/settings/bananaport_isles.png'

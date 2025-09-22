@@ -1,4 +1,4 @@
-import { useCheckDkMusicPad } from '@renderer/src/hooks/isles'
+import { useCheckDkMusicPad } from '@renderer/hooks/isles'
 import IslesCheck from '../../check'
 
 const BongosPad: React.FC = () => {

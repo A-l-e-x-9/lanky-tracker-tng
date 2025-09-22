@@ -1,4 +1,4 @@
-import { useCheckLankyCage } from '@renderer/src/hooks/isles'
+import { useCheckLankyCage } from '@renderer/hooks/isles'
 import IslesCheck from '../../check'
 
 const GrapeCage: React.FC = () => {

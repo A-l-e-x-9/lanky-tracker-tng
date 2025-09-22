@@ -1,6 +1,6 @@
-import ArenaPool from '@renderer/src/components/pools/Arenas'
-import { useGeneralThing } from '@renderer/src/hooks/galleon'
-import { useShuffledArenas } from '@renderer/src/hooks/settings'
+import ArenaPool from '@renderer/components/pools/Arenas'
+import { useGeneralThing } from '@renderer/hooks/galleon'
+import { useShuffledArenas } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {

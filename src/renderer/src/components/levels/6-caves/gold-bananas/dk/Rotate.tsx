@@ -1,4 +1,4 @@
-import { useDkRotateGb } from '@renderer/src/hooks/caves'
+import { useDkRotateGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
 
 const RotatingCabin: React.FC = () => (

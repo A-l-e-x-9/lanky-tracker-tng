@@ -1,4 +1,4 @@
-import { useDiddyCryptGb } from '@renderer/src/hooks/castle'
+import { useDiddyCryptGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
 
 const DiddyCrypt: React.FC = () => {

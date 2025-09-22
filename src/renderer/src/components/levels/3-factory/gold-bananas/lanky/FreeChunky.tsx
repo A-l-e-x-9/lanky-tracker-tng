@@ -1,4 +1,4 @@
-import { useLankyFreeChunkyGb } from '@renderer/src/hooks/factory'
+import { useLankyFreeChunkyGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const FreeChunky: React.FC = () => (

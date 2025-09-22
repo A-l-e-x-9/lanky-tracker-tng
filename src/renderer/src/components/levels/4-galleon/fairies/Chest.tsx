@@ -1,6 +1,6 @@
-import FairyPool from '@renderer/src/components/pools/Fairies'
-import VanillaFairy from '@renderer/src/components/pools/VanillaFairy'
-import { useChestFairy } from '@renderer/src/hooks/galleon'
+import FairyPool from '@renderer/components/pools/Fairies'
+import VanillaFairy from '@renderer/components/pools/VanillaFairy'
+import { useChestFairy } from '@renderer/hooks/galleon'
 import GalleonCheck from '../check'
 
 const ChestFairy: React.FC = () => (

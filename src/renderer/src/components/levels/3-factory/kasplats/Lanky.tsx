@@ -1,6 +1,6 @@
-import KasplatPool from '@renderer/src/components/pools/Kasplats'
-import VanillaKasplat from '@renderer/src/components/pools/VanillaKasplat'
-import { useResearchKasplat } from '@renderer/src/hooks/factory'
+import KasplatPool from '@renderer/components/pools/Kasplats'
+import VanillaKasplat from '@renderer/components/pools/VanillaKasplat'
+import { useResearchKasplat } from '@renderer/hooks/factory'
 import FactoryCheck from '../check'
 
 const LankyKasplat: React.FC = () => (

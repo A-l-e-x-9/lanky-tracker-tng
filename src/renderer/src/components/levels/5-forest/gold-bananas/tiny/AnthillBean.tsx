@@ -1,5 +1,5 @@
-import MiscPool from '@renderer/src/components/pools/Misc'
-import { useTinyAntGb } from '@renderer/src/hooks/forest'
+import MiscPool from '@renderer/components/pools/Misc'
+import { useTinyAntGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const AnthillBean: React.FC = () => (

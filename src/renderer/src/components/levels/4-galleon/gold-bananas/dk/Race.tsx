@@ -1,5 +1,5 @@
-import ToughGoldenBanana from '@renderer/src/components/pools/ToughGoldenBanana'
-import { useDkBlastGb } from '@renderer/src/hooks/galleon'
+import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
+import { useDkBlastGb } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const SealRace: React.FC = () => {

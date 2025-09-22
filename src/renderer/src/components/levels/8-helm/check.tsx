@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 
-import useDonkStore from '@renderer/src/store'
+import useDonkStore from '@renderer/store'
 import ItemCheck, { LevelCheckProps } from '../ItemCheck'
 
 const HelmCheck: React.FC<LevelCheckProps> = (props) => {

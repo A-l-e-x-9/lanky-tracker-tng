@@ -1,5 +1,5 @@
-import BananaMedalPool from '@renderer/src/components/pools/BananaMedals'
-import useDonkStore from '@renderer/src/store'
+import BananaMedalPool from '@renderer/components/pools/BananaMedals'
+import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import ArenaLocations from './arenas'
 import CrateLocations from './crates'

@@ -1,5 +1,5 @@
-import { useLankyMedalInLogic, useLankyMedalOutLogic } from '@renderer/src/hooks/aztec/medals/lanky'
-import { useCbCount } from '@renderer/src/hooks/settings'
+import { useLankyMedalInLogic, useLankyMedalOutLogic } from '@renderer/hooks/aztec/medals/lanky'
+import { useCbCount } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
 
 const LankyMedal: React.FC = () => {

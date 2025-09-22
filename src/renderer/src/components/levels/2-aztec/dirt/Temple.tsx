@@ -1,6 +1,6 @@
-import RainbowCoinPool from '@renderer/src/components/pools/RainbowCoins'
-import VanillaDirt from '@renderer/src/components/pools/VanillaDirt'
-import { useTempleDirt } from '@renderer/src/hooks/aztec'
+import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
+import VanillaDirt from '@renderer/components/pools/VanillaDirt'
+import { useTempleDirt } from '@renderer/hooks/aztec'
 import AztecCheck from '../check'
 
 const TempleDirt: React.FC = () => {

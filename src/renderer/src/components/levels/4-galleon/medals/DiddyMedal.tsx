@@ -1,5 +1,5 @@
-import { useDiddyMedalInLogic, useDiddyMedalOutLogic } from '@renderer/src/hooks/galleon/medals/diddy'
-import { useCbCount } from '@renderer/src/hooks/settings'
+import { useDiddyMedalInLogic, useDiddyMedalOutLogic } from '@renderer/hooks/galleon/medals/diddy'
+import { useCbCount } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
 
 const DiddyMedal: React.FC = () => {

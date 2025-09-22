@@ -1,5 +1,5 @@
-import useDonkStore from '@renderer/src/store'
-import { EndingState, endingPhase, PearlRange, RoolRange } from '@renderer/src/store/common'
+import useDonkStore from '@renderer/store'
+import { EndingState, endingPhase, PearlRange, RoolRange } from '@renderer/store/common'
 import { useShallow } from 'zustand/react/shallow'
 
 import chunkyFace from '../../assets/images/chunky.png'

@@ -1,6 +1,6 @@
-import FairyPool from '@renderer/src/components/pools/Fairies'
-import { useGeneralFairy } from '@renderer/src/hooks/factory'
-import { useShuffleFairies } from '@renderer/src/hooks/settings'
+import FairyPool from '@renderer/components/pools/Fairies'
+import { useGeneralFairy } from '@renderer/hooks/factory'
+import { useShuffleFairies } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
 
 const Shuffled: React.FC = () => {

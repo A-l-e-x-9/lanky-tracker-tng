@@ -1,6 +1,6 @@
-import CratePool from '@renderer/src/components/pools/Crates'
-import VanillaCrate from '@renderer/src/components/pools/VanillaCrate'
-import { useForestDusk, useForestNight } from '@renderer/src/hooks/forest'
+import CratePool from '@renderer/components/pools/Crates'
+import VanillaCrate from '@renderer/components/pools/VanillaCrate'
+import { useForestDusk, useForestNight } from '@renderer/hooks/forest'
 import ForestCheck from '../check'
 
 const BarnOutsideCrate: React.FC = () => {

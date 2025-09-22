@@ -1,4 +1,4 @@
-import { useDiddyTopGb } from '@renderer/src/hooks/forest'
+import { useDiddyTopGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const MushroomTop: React.FC = () => {

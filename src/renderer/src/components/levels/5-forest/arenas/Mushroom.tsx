@@ -1,6 +1,6 @@
-import ArenaPool from '@renderer/src/components/pools/Arenas'
-import VanillaArena from '@renderer/src/components/pools/VanillaArena'
-import { useArena } from '@renderer/src/hooks/forest'
+import ArenaPool from '@renderer/components/pools/Arenas'
+import VanillaArena from '@renderer/components/pools/VanillaArena'
+import { useArena } from '@renderer/hooks/forest'
 import ForestCheck from '../check'
 
 const MushroomArena: React.FC = () => (

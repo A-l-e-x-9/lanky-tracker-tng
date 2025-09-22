@@ -1,4 +1,4 @@
-import { useTinyPortGb } from '@renderer/src/hooks/caves'
+import { useTinyPortGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
 
 const MonkeyportIgloo: React.FC = () => {

@@ -1,4 +1,4 @@
-import { useDkTreeGb } from '@renderer/src/hooks/castle'
+import { useDkTreeGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
 
 const DkTree: React.FC = () => (

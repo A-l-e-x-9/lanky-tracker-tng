@@ -1,6 +1,6 @@
-import CratePool from '@renderer/src/components/pools/Crates'
-import { useGeneralThing } from '@renderer/src/hooks/galleon'
-import { useShuffleCrates } from '@renderer/src/hooks/settings'
+import CratePool from '@renderer/components/pools/Crates'
+import { useGeneralThing } from '@renderer/hooks/galleon'
+import { useShuffleCrates } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {

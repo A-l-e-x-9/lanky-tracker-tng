@@ -1,4 +1,4 @@
-import { useDiddyCandleGb } from '@renderer/src/hooks/caves'
+import { useDiddyCandleGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
 
 const DiddyCandleCabin: React.FC = () => {

@@ -1,7 +1,7 @@
-import CompanyPool from '@renderer/src/components/pools/Company'
-import { useCurrentBananaMedalCount } from '@renderer/src/hooks/consumables'
-import { useAnyKong, useCranky } from '@renderer/src/hooks/kongs'
-import { useJetpacCount } from '@renderer/src/hooks/settings'
+import CompanyPool from '@renderer/components/pools/Company'
+import { useCurrentBananaMedalCount } from '@renderer/hooks/consumables'
+import { useAnyKong, useCranky } from '@renderer/hooks/kongs'
+import { useJetpacCount } from '@renderer/hooks/settings'
 import IslesCheck from './check'
 
 const JetpacCheck: React.FC = () => {

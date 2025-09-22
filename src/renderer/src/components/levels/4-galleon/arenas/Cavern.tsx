@@ -1,6 +1,6 @@
-import ArenaPool from '@renderer/src/components/pools/Arenas'
-import VanillaArena from '@renderer/src/components/pools/VanillaArena'
-import { useArena } from '@renderer/src/hooks/galleon'
+import ArenaPool from '@renderer/components/pools/Arenas'
+import VanillaArena from '@renderer/components/pools/VanillaArena'
+import { useArena } from '@renderer/hooks/galleon'
 import GalleonCheck from '../check'
 
 const CavernArena: React.FC = () => (

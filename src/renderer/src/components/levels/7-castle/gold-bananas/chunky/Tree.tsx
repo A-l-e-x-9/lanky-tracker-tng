@@ -1,4 +1,4 @@
-import { useChunkyTreeGb } from '@renderer/src/hooks/castle'
+import { useChunkyTreeGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
 
 const ChunkyTree: React.FC = () => {

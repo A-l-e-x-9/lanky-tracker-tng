@@ -1,4 +1,4 @@
-import { useChunkyCannonGb } from '@renderer/src/hooks/galleon'
+import { useChunkyCannonGb } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const CannonGame: React.FC = () => {

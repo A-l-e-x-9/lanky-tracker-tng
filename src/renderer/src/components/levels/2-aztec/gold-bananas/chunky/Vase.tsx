@@ -1,4 +1,4 @@
-import { useChunkyVaseGb } from '@renderer/src/hooks/aztec'
+import { useChunkyVaseGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../../check'
 
 const VaseBanana: React.FC = () => {

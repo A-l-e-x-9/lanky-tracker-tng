@@ -1,5 +1,5 @@
-import BossPool from '@renderer/src/components/pools/Bosses'
-import { useHelmDoors } from '@renderer/src/hooks/helm'
+import BossPool from '@renderer/components/pools/Bosses'
+import { useHelmDoors } from '@renderer/hooks/helm'
 import HelmCheck from './check'
 
 const BossCheck: React.FC = () => {

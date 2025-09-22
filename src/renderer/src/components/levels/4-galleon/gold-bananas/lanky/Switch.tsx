@@ -1,4 +1,4 @@
-import { useLanky2DoorShipGb } from '@renderer/src/hooks/galleon'
+import { useLanky2DoorShipGb } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const Lanky2Ship: React.FC = () => (

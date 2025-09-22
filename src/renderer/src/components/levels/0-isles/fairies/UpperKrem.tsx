@@ -1,6 +1,6 @@
-import FairyPool from '@renderer/src/components/pools/Fairies'
-import VanillaFairy from '@renderer/src/components/pools/VanillaFairy'
-import { useKremFairy } from '@renderer/src/hooks/isles'
+import FairyPool from '@renderer/components/pools/Fairies'
+import VanillaFairy from '@renderer/components/pools/VanillaFairy'
+import { useKremFairy } from '@renderer/hooks/isles'
 import IslesCheck from '../check'
 
 const UpperKremFairy: React.FC = () => (

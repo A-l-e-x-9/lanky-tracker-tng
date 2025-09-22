@@ -1,4 +1,4 @@
-import { useDiddyMechGb } from '@renderer/src/hooks/galleon'
+import { useDiddyMechGb } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const Mechfish: React.FC = () => {

@@ -1,7 +1,7 @@
 import { useShallow } from 'zustand/react/shallow'
 
-import useDonkStore from '@renderer/src/store'
-import { Level, SelectableRegionValues } from '@renderer/src/store/common'
+import useDonkStore from '@renderer/store'
+import { Level, SelectableRegionValues } from '@renderer/store/common'
 
 export type LevelCheckProps = {
   id: number

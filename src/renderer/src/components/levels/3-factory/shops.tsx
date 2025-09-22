@@ -1,8 +1,8 @@
-import ShopGenerator from '@renderer/src/components/pools/ShopGenerator'
-import ShopPool from '@renderer/src/components/pools/Shops'
-import { useFactoryTesting, usePlayFactory } from '@renderer/src/hooks/factory'
-import { useShuffledShops } from '@renderer/src/hooks/settings'
-import { useCranky, whatAFunky, useCandy, useSnide } from '@renderer/src/hooks/kongs'
+import ShopGenerator from '@renderer/components/pools/ShopGenerator'
+import ShopPool from '@renderer/components/pools/Shops'
+import { useFactoryTesting, usePlayFactory } from '@renderer/hooks/factory'
+import { useShuffledShops } from '@renderer/hooks/settings'
+import { useCranky, whatAFunky, useCandy, useSnide } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
   const inStage = usePlayFactory()

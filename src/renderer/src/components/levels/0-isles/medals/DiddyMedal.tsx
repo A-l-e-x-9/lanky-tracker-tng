@@ -1,5 +1,5 @@
-import { useDiddyMedalInLogic, useDiddyMedalOutLogic } from '@renderer/src/hooks/isles/medals/diddy'
-import { useCbCount } from '@renderer/src/hooks/settings'
+import { useDiddyMedalInLogic, useDiddyMedalOutLogic } from '@renderer/hooks/isles/medals/diddy'
+import { useCbCount } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
 
 const DiddyMedal: React.FC = (): JSX.Element => {

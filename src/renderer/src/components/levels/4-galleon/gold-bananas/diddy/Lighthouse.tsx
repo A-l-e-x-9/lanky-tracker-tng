@@ -1,4 +1,4 @@
-import { useDiddyLighthouseGb } from '@renderer/src/hooks/galleon'
+import { useDiddyLighthouseGb } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const DiddyLighthouse: React.FC = () => {

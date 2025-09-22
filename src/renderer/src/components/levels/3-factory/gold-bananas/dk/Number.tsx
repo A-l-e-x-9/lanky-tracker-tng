@@ -1,4 +1,4 @@
-import { useDkNumberGb } from '@renderer/src/hooks/factory'
+import { useDkNumberGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const NumberGame: React.FC = () => (

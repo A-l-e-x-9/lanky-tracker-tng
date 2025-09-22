@@ -1,5 +1,5 @@
-import MiscPool from '@renderer/src/components/pools/Misc'
-import { useTinyClams } from '@renderer/src/hooks/galleon'
+import MiscPool from '@renderer/components/pools/Misc'
+import { useTinyClams } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const TreasureClams: React.FC = () => {

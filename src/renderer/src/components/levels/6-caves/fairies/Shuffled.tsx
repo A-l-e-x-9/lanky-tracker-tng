@@ -1,6 +1,6 @@
-import FairyPool from '@renderer/src/components/pools/Fairies'
-import { useGenericFairy } from '@renderer/src/hooks/caves'
-import { useShuffleFairies } from '@renderer/src/hooks/settings'
+import FairyPool from '@renderer/components/pools/Fairies'
+import { useGenericFairy } from '@renderer/hooks/caves'
+import { useShuffleFairies } from '@renderer/hooks/settings'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {

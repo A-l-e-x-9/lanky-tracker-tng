@@ -1,7 +1,7 @@
-import ArenaPool from '@renderer/src/components/pools/Arenas'
-import { useHelmEnter } from '@renderer/src/hooks/helm'
-import { useAnyKong } from '@renderer/src/hooks/kongs'
-import { useShuffledArenas } from '@renderer/src/hooks/settings'
+import ArenaPool from '@renderer/components/pools/Arenas'
+import { useHelmEnter } from '@renderer/hooks/helm'
+import { useAnyKong } from '@renderer/hooks/kongs'
+import { useShuffledArenas } from '@renderer/hooks/settings'
 import HelmCheck from '../check'
 
 const Shuffled: React.FC = () => {

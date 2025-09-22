@@ -1,4 +1,4 @@
-import { useTinyCaveGb } from '@renderer/src/hooks/caves'
+import { useTinyCaveGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
 
 const MiniBarrel: React.FC = () => (

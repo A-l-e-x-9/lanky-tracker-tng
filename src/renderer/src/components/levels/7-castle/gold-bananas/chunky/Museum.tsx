@@ -1,4 +1,4 @@
-import { useChunkyRoomGb } from '@renderer/src/hooks/castle'
+import { useChunkyRoomGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
 
 const ChunkyMuseum: React.FC = () => (

@@ -1,7 +1,7 @@
-import { useGeneralThing } from '@renderer/src/hooks/factory'
-import { useShuffleKasplats } from '@renderer/src/hooks/settings'
+import { useGeneralThing } from '@renderer/hooks/factory'
+import { useShuffleKasplats } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
-import KasplatPool from '@renderer/src/components/pools/Kasplats'
+import KasplatPool from '@renderer/components/pools/Kasplats'
 
 const Shuffled: React.FC = () => {
   const kasplat = useGeneralThing()

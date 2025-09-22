@@ -1,5 +1,5 @@
-import { useClimbing, useFeather, useMini, useTiny } from '@renderer/src/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
+import { useClimbing, useFeather, useMini, useTiny } from '@renderer/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useJapesHive,
   useJapesKongGates,

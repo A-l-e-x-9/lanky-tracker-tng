@@ -1,4 +1,4 @@
-import { useLankyTestingGb } from '@renderer/src/hooks/factory'
+import { useLankyTestingGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const TestingBarrel: React.FC = () => {

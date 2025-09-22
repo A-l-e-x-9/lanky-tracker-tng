@@ -1,4 +1,4 @@
-import { useDkMushGb } from '@renderer/src/hooks/forest'
+import { useDkMushGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const MushroomCannon: React.FC = () => (

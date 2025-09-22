@@ -1,4 +1,4 @@
-import { useDiddyFreeTinyGb } from '@renderer/src/hooks/aztec'
+import { useDiddyFreeTinyGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../../check'
 
 const FreeTiny: React.FC = () => {

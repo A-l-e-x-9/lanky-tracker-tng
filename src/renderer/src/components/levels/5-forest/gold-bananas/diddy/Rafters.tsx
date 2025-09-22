@@ -1,4 +1,4 @@
-import { useDiddyRaftersGb } from '@renderer/src/hooks/forest'
+import { useDiddyRaftersGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const DarkRafters: React.FC = () => {

@@ -1,4 +1,4 @@
-import { useLankyPianoGb } from '@renderer/src/hooks/factory'
+import { useLankyPianoGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const PianoGame: React.FC = () => (

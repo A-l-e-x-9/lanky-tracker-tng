@@ -1,6 +1,6 @@
-import KasplatPool from '@renderer/src/components/pools/Kasplats'
-import { useGeneralThing } from '@renderer/src/hooks/galleon'
-import { useShuffleKasplats } from '@renderer/src/hooks/settings'
+import KasplatPool from '@renderer/components/pools/Kasplats'
+import { useGeneralThing } from '@renderer/hooks/galleon'
+import { useShuffleKasplats } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {

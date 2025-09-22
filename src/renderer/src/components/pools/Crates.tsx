@@ -1,4 +1,4 @@
-import { usePoolCrates } from '@renderer/src/hooks/settings'
+import { usePoolCrates } from '@renderer/hooks/settings'
 
 const CratePool: React.FC<React.PropsWithChildren> = ({ children }) =>
   usePoolCrates() ? <>{children}</> : null

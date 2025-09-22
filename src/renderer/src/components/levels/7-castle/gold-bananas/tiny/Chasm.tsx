@@ -1,4 +1,4 @@
-import { useTinyChasmGb } from '@renderer/src/hooks/castle'
+import { useTinyChasmGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
 
 const TinyChasm: React.FC = () => (

@@ -8,8 +8,8 @@ import {
   useSax,
   useTiny,
   useTwirl
-} from '@renderer/src/hooks/kongs'
-import { useBananaportAll, useShuffleColoredBananas } from '@renderer/src/hooks/settings'
+} from '@renderer/hooks/kongs'
+import { useBananaportAll, useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { useCavesIgloo, usePlayCaves, useIceWalls } from '..'
 
 const useTinyMedalCommonLogic = (): number => {

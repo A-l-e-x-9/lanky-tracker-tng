@@ -1,5 +1,5 @@
-import { useTinyMedalInLogic, useTinyMedalOutLogic } from '@renderer/src/hooks/factory/medals/tiny'
-import { useCbCount } from '@renderer/src/hooks/settings'
+import { useTinyMedalInLogic, useTinyMedalOutLogic } from '@renderer/hooks/factory/medals/tiny'
+import { useCbCount } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
 
 const TinyMedal: React.FC = () => {

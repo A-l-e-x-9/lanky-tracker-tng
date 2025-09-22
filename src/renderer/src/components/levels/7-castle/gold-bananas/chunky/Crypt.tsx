@@ -1,4 +1,4 @@
-import { useChunkyCryptGb } from '@renderer/src/hooks/castle'
+import { useChunkyCryptGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
 
 const ChunkyCrypt: React.FC = () => {

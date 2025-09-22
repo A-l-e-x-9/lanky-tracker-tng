@@ -1,6 +1,6 @@
-import RainbowCoinPool from '@renderer/src/components/pools/RainbowCoins'
-import VanillaDirt from '@renderer/src/components/pools/VanillaDirt'
-import { useAztecDirt } from '@renderer/src/hooks/isles'
+import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
+import VanillaDirt from '@renderer/components/pools/VanillaDirt'
+import { useAztecDirt } from '@renderer/hooks/isles'
 import IslesCheck from '../check'
 
 /**

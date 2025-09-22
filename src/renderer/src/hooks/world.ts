@@ -1,5 +1,5 @@
-import useDonkStore from '@renderer/src/store'
-import { KongRange, SwitchsanitySwitches } from '@renderer/src/store/common'
+import useDonkStore from '@renderer/store'
+import { KongRange, SwitchsanitySwitches } from '@renderer/store/common'
 import { useShallow } from 'zustand/react/shallow'
 import {
   useBongos,

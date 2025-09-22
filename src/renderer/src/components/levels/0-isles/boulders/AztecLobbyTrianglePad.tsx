@@ -1,5 +1,5 @@
-import BoulderPool from '@renderer/src/components/pools/Boulders'
-import { useAztecLobbyTrianglePad } from '@renderer/src/hooks/isles'
+import BoulderPool from '@renderer/components/pools/Boulders'
+import { useAztecLobbyTrianglePad } from '@renderer/hooks/isles'
 import IslesCheck from '../check'
 
 /*Version 5 of the Randomizer now allows you to have major rewards in the boulders that Chunky can toss. This is for the boulder on the Triangle Pad in between the Aztec and Caves lobbies.*/

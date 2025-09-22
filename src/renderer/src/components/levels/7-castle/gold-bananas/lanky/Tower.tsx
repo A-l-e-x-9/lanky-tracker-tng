@@ -1,4 +1,4 @@
-import { useLankyRoomGb } from '@renderer/src/hooks/castle'
+import { useLankyRoomGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
 
 const LankyTower: React.FC = () => {

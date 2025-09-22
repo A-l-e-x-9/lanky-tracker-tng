@@ -1,5 +1,5 @@
-import { useHelmDoors } from '@renderer/src/hooks/helm'
-import { useAnyKong, useCamera } from '@renderer/src/hooks/kongs'
+import { useHelmDoors } from '@renderer/hooks/helm'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import HelmCheck from '../check'
 
 const HelmDoorsEnemies: React.FC = () => {

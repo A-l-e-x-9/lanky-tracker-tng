@@ -1,6 +1,6 @@
-import CratePool from '@renderer/src/components/pools/Crates'
-import VanillaCrate from '@renderer/src/components/pools/VanillaCrate'
-import { useGeneralTest } from '@renderer/src/hooks/factory'
+import CratePool from '@renderer/components/pools/Crates'
+import VanillaCrate from '@renderer/components/pools/VanillaCrate'
+import { useGeneralTest } from '@renderer/hooks/factory'
 import FactoryCheck from '../check'
 
 const FunkyCrate: React.FC = () => (

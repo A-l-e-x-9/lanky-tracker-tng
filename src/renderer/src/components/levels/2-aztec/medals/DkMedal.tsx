@@ -1,5 +1,5 @@
-import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/src/hooks/aztec/medals/dk'
-import { useCbCount } from '@renderer/src/hooks/settings'
+import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/hooks/aztec/medals/dk'
+import { useCbCount } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
 
 const DkMedal: React.FC = () => {

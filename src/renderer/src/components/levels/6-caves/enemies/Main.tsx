@@ -1,7 +1,7 @@
-import DropPool from '@renderer/src/components/pools/Drops'
-import { usePlayCaves } from '@renderer/src/hooks/caves'
-import { useDefeatKosha, useDefeatZinger } from '@renderer/src/hooks/enemies'
-import { useAnyKong, useCamera } from '@renderer/src/hooks/kongs'
+import DropPool from '@renderer/components/pools/Drops'
+import { usePlayCaves } from '@renderer/hooks/caves'
+import { useDefeatKosha, useDefeatZinger } from '@renderer/hooks/enemies'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const MainEnemies: React.FC = () => {

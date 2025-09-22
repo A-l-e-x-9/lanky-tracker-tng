@@ -1,5 +1,5 @@
-import { useDiddy, useHighGrab, usePeanut } from '@renderer/src/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
+import { useDiddy, useHighGrab, usePeanut } from '@renderer/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 
 export const useDiddyMedalInLogic = (): number => {
   const kong = useDiddy()

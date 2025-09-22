@@ -1,7 +1,7 @@
-import DropPool from '@renderer/src/components/pools/Drops'
-import { useDefeatZinger } from '@renderer/src/hooks/enemies'
-import { usePlayFactory } from '@renderer/src/hooks/factory'
-import { useAnyKong, usePunch, useCamera } from '@renderer/src/hooks/kongs'
+import DropPool from '@renderer/components/pools/Drops'
+import { useDefeatZinger } from '@renderer/hooks/enemies'
+import { usePlayFactory } from '@renderer/hooks/factory'
+import { useAnyKong, usePunch, useCamera } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 
 const StorageEnemies: React.FC = () => {

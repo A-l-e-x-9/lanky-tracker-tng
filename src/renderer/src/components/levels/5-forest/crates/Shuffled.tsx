@@ -1,6 +1,6 @@
-import CratePool from '@renderer/src/components/pools/Crates'
-import { useGeneralThing } from '@renderer/src/hooks/forest'
-import { useShuffleCrates } from '@renderer/src/hooks/settings'
+import CratePool from '@renderer/components/pools/Crates'
+import { useGeneralThing } from '@renderer/hooks/forest'
+import { useShuffleCrates } from '@renderer/hooks/settings'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {

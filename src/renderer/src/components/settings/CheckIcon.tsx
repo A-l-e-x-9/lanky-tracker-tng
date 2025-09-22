@@ -1,4 +1,4 @@
-import { UiCollection } from '@renderer/src/store/common'
+import { UiCollection } from '@renderer/store/common'
 import useDonkStore from '../../store'
 
 type CheckIconProps = {

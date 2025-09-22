@@ -1,4 +1,4 @@
-import { useDkLighthouseGb } from '@renderer/src/hooks/galleon'
+import { useDkLighthouseGb } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const DkLighthouse: React.FC = () => {

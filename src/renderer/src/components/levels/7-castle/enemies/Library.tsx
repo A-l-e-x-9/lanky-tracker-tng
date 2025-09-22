@@ -1,7 +1,7 @@
-import DropPool from '@renderer/src/components/pools/Drops'
-import { usePlayCastle, useSlamCastle } from '@renderer/src/hooks/castle'
-import { useDefeatBat } from '@renderer/src/hooks/enemies'
-import { useDk, useCamera } from '@renderer/src/hooks/kongs'
+import DropPool from '@renderer/components/pools/Drops'
+import { usePlayCastle, useSlamCastle } from '@renderer/hooks/castle'
+import { useDefeatBat } from '@renderer/hooks/enemies'
+import { useDk, useCamera } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const LibraryEnemies: React.FC = () => {

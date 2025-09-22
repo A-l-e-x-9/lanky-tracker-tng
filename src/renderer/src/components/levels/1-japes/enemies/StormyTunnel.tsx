@@ -1,6 +1,6 @@
-import DropPool from '@renderer/src/components/pools/Drops'
-import { useJapesKongGates } from '@renderer/src/hooks/japes'
-import { useAnyKong, useCamera } from '@renderer/src/hooks/kongs'
+import DropPool from '@renderer/components/pools/Drops'
+import { useJapesKongGates } from '@renderer/hooks/japes'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
 const StormyTunnelEnemies: React.FC = () => {

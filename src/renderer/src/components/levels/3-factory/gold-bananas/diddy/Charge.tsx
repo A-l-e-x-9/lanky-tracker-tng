@@ -1,4 +1,4 @@
-import { useDiddyEnemyGb } from '@renderer/src/hooks/factory'
+import { useDiddyEnemyGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const ChargeTest: React.FC = () => (

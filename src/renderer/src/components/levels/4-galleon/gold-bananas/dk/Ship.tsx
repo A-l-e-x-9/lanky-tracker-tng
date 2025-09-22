@@ -1,4 +1,4 @@
-import { useDk5DoorShipGb } from '@renderer/src/hooks/galleon'
+import { useDk5DoorShipGb } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const Dk5Ship: React.FC = () => (

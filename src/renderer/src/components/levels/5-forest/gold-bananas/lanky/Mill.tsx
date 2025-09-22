@@ -1,4 +1,4 @@
-import { useLankyMillGb } from '@renderer/src/hooks/forest'
+import { useLankyMillGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const LankyMill: React.FC = () => {

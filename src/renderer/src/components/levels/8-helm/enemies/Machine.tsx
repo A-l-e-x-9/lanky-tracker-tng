@@ -1,5 +1,5 @@
-import { useDefeatKlump } from '@renderer/src/hooks/enemies'
-import { useHelmMachine } from '@renderer/src/hooks/helm'
+import { useDefeatKlump } from '@renderer/hooks/enemies'
+import { useHelmMachine } from '@renderer/hooks/helm'
 import {
   useBongos,
   useGuitar,
@@ -8,7 +8,7 @@ import {
   useTriangle,
   useTrombone,
   useCamera
-} from '@renderer/src/hooks/kongs'
+} from '@renderer/hooks/kongs'
 import HelmCheck from '../check'
 
 const HelmMachineEnemies: React.FC = () => {

@@ -1,13 +1,13 @@
-import DropPool from '@renderer/src/components/pools/Drops'
+import DropPool from '@renderer/components/pools/Drops'
 import {
   useDefeatBat,
   useDefeatKlump,
   useDefeatKosha,
   useDefeatZinger
-} from '@renderer/src/hooks/enemies'
-import { useForestDay, useForestNight, usePlayForest, useSlamForest } from '@renderer/src/hooks/forest'
-import { useAnyKong, useDiddy, useDk, usePunch, useStrong, useMini, useCamera } from '@renderer/src/hooks/kongs'
-import { logicBreak } from '@renderer/src/hooks/world'
+} from '@renderer/hooks/enemies'
+import { useForestDay, useForestNight, usePlayForest, useSlamForest } from '@renderer/hooks/forest'
+import { useAnyKong, useDiddy, useDk, usePunch, useStrong, useMini, useCamera } from '@renderer/hooks/kongs'
+import { logicBreak } from '@renderer/hooks/world'
 import ForestCheck from '../check'
 
 const MillsEnemies: React.FC = () => {

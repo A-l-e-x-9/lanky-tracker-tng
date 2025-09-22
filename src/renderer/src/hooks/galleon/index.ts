@@ -1,4 +1,4 @@
-import useDonkStore from '@renderer/src/store'
+import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import { useCurrentPearlCount } from '../consumables'
 import { useFastMermaid } from '../fast-checks'

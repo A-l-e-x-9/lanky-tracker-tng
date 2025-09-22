@@ -1,5 +1,5 @@
-import { useBlast, useClimbing, useCoconut, useDk, useVine } from '@renderer/src/hooks/kongs'
-import { useShuffleColoredBananas, useBananaportAll } from '@renderer/src/hooks/settings'
+import { useBlast, useClimbing, useCoconut, useDk, useVine } from '@renderer/hooks/kongs'
+import { useShuffleColoredBananas, useBananaportAll } from '@renderer/hooks/settings'
 import { useJapesKongGates, useJapesRambi, usePlayJapes } from '..'
 
 export const useDkMedalInLogic = (): number => {

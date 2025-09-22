@@ -1,6 +1,6 @@
-import { useDive, useFeather, useMini, usePunch, useSax, useTiny, useClimbing } from '@renderer/src/hooks/kongs'
-import { useForestTime, useShuffleColoredBananas } from '@renderer/src/hooks/settings'
-import { logicBreak } from '@renderer/src/hooks/world'
+import { useDive, useFeather, useMini, usePunch, useSax, useTiny, useClimbing } from '@renderer/hooks/kongs'
+import { useForestTime, useShuffleColoredBananas } from '@renderer/hooks/settings'
+import { logicBreak } from '@renderer/hooks/world'
 import {
   useForestBean,
   useForestBeanHalf,

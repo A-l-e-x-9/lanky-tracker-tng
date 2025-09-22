@@ -1,6 +1,6 @@
-import { useDefeatKlump } from '@renderer/src/hooks/enemies'
-import { usePlayHelm } from '@renderer/src/hooks/helm'
-import { useAnyKong, useCamera } from '@renderer/src/hooks/kongs'
+import { useDefeatKlump } from '@renderer/hooks/enemies'
+import { usePlayHelm } from '@renderer/hooks/helm'
+import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
 import HelmCheck from '../check'
 
 const HelmEntryEnemies: React.FC = () => {

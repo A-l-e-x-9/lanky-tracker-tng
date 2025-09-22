@@ -1,7 +1,7 @@
-import ArenaPool from '@renderer/src/components/pools/Arenas'
-import VanillaArena from '@renderer/src/components/pools/VanillaArena'
-import { useHelmMachine } from '@renderer/src/hooks/helm'
-import { useRocket } from '@renderer/src/hooks/kongs'
+import ArenaPool from '@renderer/components/pools/Arenas'
+import VanillaArena from '@renderer/components/pools/VanillaArena'
+import { useHelmMachine } from '@renderer/hooks/helm'
+import { useRocket } from '@renderer/hooks/kongs'
 import HelmCheck from '../check'
 
 const BlastArena: React.FC = () => {

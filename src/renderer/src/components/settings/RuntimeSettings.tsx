@@ -1,9 +1,9 @@
 import { useShallow } from 'zustand/react/shallow'
 
-import useDonkStore from '@renderer/src/store'
-import { BananaportRange } from '@renderer/src/store/common'
+import useDonkStore from '@renderer/store'
+import { BananaportRange } from '@renderer/store/common'
 import GeneratorSettings from './GeneratorSettings'
-import { useForestTime, useGalleonTideStartHigh } from '@renderer/src/hooks/settings'
+import { useForestTime, useGalleonTideStartHigh } from '@renderer/hooks/settings'
 
 const timeToString = (time: BananaportRange): string => {
   switch (time) {

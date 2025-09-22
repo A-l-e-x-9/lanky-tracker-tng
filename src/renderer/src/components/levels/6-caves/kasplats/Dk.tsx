@@ -1,6 +1,6 @@
-import KasplatPool from '@renderer/src/components/pools/Kasplats'
-import VanillaKasplat from '@renderer/src/components/pools/VanillaKasplat'
-import { useIceCastleKasplat } from '@renderer/src/hooks/caves'
+import KasplatPool from '@renderer/components/pools/Kasplats'
+import VanillaKasplat from '@renderer/components/pools/VanillaKasplat'
+import { useIceCastleKasplat } from '@renderer/hooks/caves'
 import CavesCheck from '../check'
 
 const DkKasplat: React.FC = () => (

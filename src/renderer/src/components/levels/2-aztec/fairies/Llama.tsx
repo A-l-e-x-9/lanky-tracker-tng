@@ -1,6 +1,6 @@
-import FairyPool from '@renderer/src/components/pools/Fairies'
-import VanillaFairy from '@renderer/src/components/pools/VanillaFairy'
-import { useLlamaFairy } from '@renderer/src/hooks/aztec'
+import FairyPool from '@renderer/components/pools/Fairies'
+import VanillaFairy from '@renderer/components/pools/VanillaFairy'
+import { useLlamaFairy } from '@renderer/hooks/aztec'
 import AztecCheck from '../check'
 
 const LlamaFairy: React.FC = () => {

@@ -1,5 +1,5 @@
-import ToughGoldenBanana from '@renderer/src/components/pools/ToughGoldenBanana'
-import { useLankyRaceGb } from '@renderer/src/hooks/caves'
+import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
+import { useLankyRaceGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
 
 const BeetleRace: React.FC = () => {

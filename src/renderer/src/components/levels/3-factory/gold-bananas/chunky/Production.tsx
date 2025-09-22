@@ -1,4 +1,4 @@
-import { useChunkyProductionGb } from '@renderer/src/hooks/factory'
+import { useChunkyProductionGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const ChunkyProduction: React.FC = () => (

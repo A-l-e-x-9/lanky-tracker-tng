@@ -1,5 +1,5 @@
-import CompanyPool from '@renderer/src/components/pools/Company'
-import { useDkCoin } from '@renderer/src/hooks/factory'
+import CompanyPool from '@renderer/components/pools/Company'
+import { useDkCoin } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const NintendoCoin: React.FC = () => (

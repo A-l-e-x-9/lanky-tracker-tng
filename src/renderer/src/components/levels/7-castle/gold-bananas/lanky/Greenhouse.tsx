@@ -1,4 +1,4 @@
-import { useLankyGreenhouseGb } from '@renderer/src/hooks/castle'
+import { useLankyGreenhouseGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
 
 const LankyGreenhouse: React.FC = () => (

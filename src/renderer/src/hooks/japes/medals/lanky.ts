@@ -1,6 +1,6 @@
-import { useClimbing, useDive, useGrape, useLanky, useStand } from '@renderer/src/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
-import { logicBreak } from '@renderer/src/hooks/world'
+import { useClimbing, useDive, useGrape, useLanky, useStand } from '@renderer/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/hooks/settings'
+import { logicBreak } from '@renderer/hooks/world'
 import {
   useJapesKongGates,
   useJapesPainting,

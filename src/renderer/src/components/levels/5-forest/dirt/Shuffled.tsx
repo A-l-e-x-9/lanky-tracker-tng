@@ -1,6 +1,6 @@
-import RainbowCoinPool from '@renderer/src/components/pools/RainbowCoins'
-import { useGeneralDirt } from '@renderer/src/hooks/forest'
-import { useShuffleDirt } from '@renderer/src/hooks/settings'
+import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
+import { useGeneralDirt } from '@renderer/hooks/forest'
+import { useShuffleDirt } from '@renderer/hooks/settings'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {

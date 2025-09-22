@@ -1,4 +1,4 @@
-import { useCheckTinyMusicPad } from '@renderer/src/hooks/isles'
+import { useCheckTinyMusicPad } from '@renderer/hooks/isles'
 import IslesCheck from '../../check'
 
 const SaxPad: React.FC = () => {

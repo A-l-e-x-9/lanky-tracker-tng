@@ -1,7 +1,7 @@
-import useDonkStore from '@renderer/src/store'
+import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 
-import { useIsSwitchsanity } from '@renderer/src/hooks/settings'
+import { useIsSwitchsanity } from '@renderer/hooks/settings'
 import SwitchsanitySwitch from './SwitchsanitySwitch'
 
 import chunkyKongIcon from '../../assets/images/chunky.png'

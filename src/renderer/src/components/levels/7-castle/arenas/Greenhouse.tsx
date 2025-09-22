@@ -1,6 +1,6 @@
-import ArenaPool from '@renderer/src/components/pools/Arenas'
-import VanillaArena from '@renderer/src/components/pools/VanillaArena'
-import { useArena } from '@renderer/src/hooks/castle'
+import ArenaPool from '@renderer/components/pools/Arenas'
+import VanillaArena from '@renderer/components/pools/VanillaArena'
+import { useArena } from '@renderer/hooks/castle'
 import CastleCheck from '../check'
 
 const GreenhouseArena: React.FC = () => (

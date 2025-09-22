@@ -1,4 +1,4 @@
-import { useShuffleKasplats } from '@renderer/src/hooks/settings'
+import { useShuffleKasplats } from '@renderer/hooks/settings'
 
 const VanillaKasplat: React.FC<React.PropsWithChildren> = ({ children }) =>
   useShuffleKasplats() ? null : <>{children}</>

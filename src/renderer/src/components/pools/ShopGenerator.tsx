@@ -1,9 +1,9 @@
 import { useShallow } from 'zustand/react/shallow'
 
-import { useDk, useDiddy, useLanky, useTiny, useChunky, useAnyKong } from '@renderer/src/hooks/kongs'
-import { Level, SelectableRegionValues } from '@renderer/src/store/common'
+import { useDk, useDiddy, useLanky, useTiny, useChunky, useAnyKong } from '@renderer/hooks/kongs'
+import { Level, SelectableRegionValues } from '@renderer/store/common'
 import ItemCheck from '../levels/ItemCheck'
-import useDonkStore from '@renderer/src/store'
+import useDonkStore from '@renderer/store'
 
 type ShopGeneratorProps = {
   baseId: number

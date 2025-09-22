@@ -1,5 +1,5 @@
-import useDonkStore from '@renderer/src/store'
-import { BananaportRange, SlamRange } from '@renderer/src/store/common'
+import useDonkStore from '@renderer/store'
+import { BananaportRange, SlamRange } from '@renderer/store/common'
 import { useShallow } from 'zustand/react/shallow'
 
 export const useBalancedRoolPhase = (): boolean =>

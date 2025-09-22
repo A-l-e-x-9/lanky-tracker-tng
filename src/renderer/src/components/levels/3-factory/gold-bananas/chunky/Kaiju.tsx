@@ -1,4 +1,4 @@
-import { useChunkyKaijuGb } from '@renderer/src/hooks/factory'
+import { useChunkyKaijuGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const ToyMonster: React.FC = () => {

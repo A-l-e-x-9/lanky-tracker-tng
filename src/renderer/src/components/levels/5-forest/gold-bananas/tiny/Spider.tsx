@@ -1,4 +1,4 @@
-import { useTinySpiderGb } from '@renderer/src/hooks/forest'
+import { useTinySpiderGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const SpiderBoss: React.FC = () => {

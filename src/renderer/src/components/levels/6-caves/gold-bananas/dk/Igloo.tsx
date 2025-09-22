@@ -1,4 +1,4 @@
-import { useDkIglooGb } from '@renderer/src/hooks/caves'
+import { useDkIglooGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
 
 const DkIgloo: React.FC = () => {

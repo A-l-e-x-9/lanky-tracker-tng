@@ -1,4 +1,4 @@
-import useDonkStore from '@renderer/src/store'
+import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import { useFastArcade } from '../fast-checks'
 import { usePlayLevel, useSlamLevel } from '../isles'

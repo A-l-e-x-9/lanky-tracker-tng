@@ -1,6 +1,6 @@
-import BossPool from '@renderer/src/components/pools/Bosses'
-import { useAztecFront } from '@renderer/src/hooks/aztec'
-import { useAnyKong } from '@renderer/src/hooks/kongs'
+import BossPool from '@renderer/components/pools/Bosses'
+import { useAztecFront } from '@renderer/hooks/aztec'
+import { useAnyKong } from '@renderer/hooks/kongs'
 import AztecCheck from './check'
 
 const BossCheck: React.FC = () => {

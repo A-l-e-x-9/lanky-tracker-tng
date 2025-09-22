@@ -1,4 +1,4 @@
-import { useChunkyFaceGb } from '@renderer/src/hooks/forest'
+import { useChunkyFaceGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const ChunkyFace: React.FC = () => (

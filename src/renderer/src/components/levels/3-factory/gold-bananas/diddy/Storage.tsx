@@ -1,4 +1,4 @@
-import { useDiddyStorageGb } from '@renderer/src/hooks/factory'
+import { useDiddyStorageGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const StorageBarrel: React.FC = () => {

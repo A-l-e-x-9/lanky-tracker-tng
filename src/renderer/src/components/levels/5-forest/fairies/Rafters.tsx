@@ -1,6 +1,6 @@
-import FairyPool from '@renderer/src/components/pools/Fairies'
-import VanillaFairy from '@renderer/src/components/pools/VanillaFairy'
-import { useRaftersFairy } from '@renderer/src/hooks/forest'
+import FairyPool from '@renderer/components/pools/Fairies'
+import VanillaFairy from '@renderer/components/pools/VanillaFairy'
+import { useRaftersFairy } from '@renderer/hooks/forest'
 import ForestCheck from '../check'
 
 const RaftersFairy: React.FC = () => {

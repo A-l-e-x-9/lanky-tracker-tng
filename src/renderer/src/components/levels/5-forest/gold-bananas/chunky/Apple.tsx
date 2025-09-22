@@ -1,4 +1,4 @@
-import { useChunkyAppleGb } from '@renderer/src/hooks/forest'
+import { useChunkyAppleGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const ChunkyApple: React.FC = () => (

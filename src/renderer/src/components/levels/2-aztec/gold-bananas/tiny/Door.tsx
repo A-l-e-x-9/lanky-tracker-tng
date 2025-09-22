@@ -1,4 +1,4 @@
-import { useTiny5DoorGb } from '@renderer/src/hooks/aztec'
+import { useTiny5DoorGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../../check'
 
 const TinyDoorTemple: React.FC = () => {

@@ -1,4 +1,4 @@
-import { usePoolBlueprints } from '@renderer/src/hooks/settings'
+import { usePoolBlueprints } from '@renderer/hooks/settings'
 
 const KasplatPool: React.FC<React.PropsWithChildren> = ({ children }) =>
   usePoolBlueprints() ? <>{children}</> : null

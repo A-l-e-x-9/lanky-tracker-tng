@@ -1,8 +1,8 @@
-import { useDefeatRoboKremling } from '@renderer/src/hooks/enemies'
-import { usePlayFactory, useFactoryTesting } from '@renderer/src/hooks/factory'
-import { useCamera } from '@renderer/src/hooks/kongs'
+import { useDefeatRoboKremling } from '@renderer/hooks/enemies'
+import { usePlayFactory, useFactoryTesting } from '@renderer/hooks/factory'
+import { useCamera } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
-import DropPool from '@renderer/src/components/pools/Drops'
+import DropPool from '@renderer/components/pools/Drops'
 
 const StartEnemies: React.FC = () => {
   const inStage = usePlayFactory()

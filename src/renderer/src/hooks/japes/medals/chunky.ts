@@ -1,5 +1,5 @@
-import { useBarrel, useChunky, useClimbing, useHunky, usePineapple } from '@renderer/src/hooks/kongs'
-import { useShuffleColoredBananas, useBananaportAll } from '@renderer/src/hooks/settings'
+import { useBarrel, useChunky, useClimbing, useHunky, usePineapple } from '@renderer/hooks/kongs'
+import { useShuffleColoredBananas, useBananaportAll } from '@renderer/hooks/settings'
 import {
   useJapesHive,
   useJapesKongGates,

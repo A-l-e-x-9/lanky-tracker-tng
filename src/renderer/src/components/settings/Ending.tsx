@@ -1,4 +1,4 @@
-import { useCanDeactivateHelm, useCanFightRool } from '@renderer/src/hooks/helm'
+import { useCanDeactivateHelm, useCanFightRool } from '@renderer/hooks/helm'
 import { EndingSelector, RoolSelector } from './EndingSelector'
 
 const Ending: React.FC = () => {

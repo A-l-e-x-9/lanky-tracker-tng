@@ -1,4 +1,4 @@
-import { useLankyCagedGb } from '@renderer/src/hooks/japes'
+import { useLankyCagedGb } from '@renderer/hooks/japes'
 import JapesCheck from '../../check'
 
 const LankyTimedCage: React.FC = () => (

@@ -1,7 +1,7 @@
-import DropPool from '@renderer/src/components/pools/Drops'
-import { useDefeatRoboKremling, useDefeatZinger } from '@renderer/src/hooks/enemies'
-import { useFactoryTesting } from '@renderer/src/hooks/factory'
-import { useCamera } from '@renderer/src/hooks/kongs'
+import DropPool from '@renderer/components/pools/Drops'
+import { useDefeatRoboKremling, useDefeatZinger } from '@renderer/hooks/enemies'
+import { useFactoryTesting } from '@renderer/hooks/factory'
+import { useCamera } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 
 const RNDEnemies: React.FC = () => {

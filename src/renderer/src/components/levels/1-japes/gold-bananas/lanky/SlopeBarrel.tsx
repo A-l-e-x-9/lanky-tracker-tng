@@ -1,4 +1,4 @@
-import { useLankySlopeGb } from '@renderer/src/hooks/japes'
+import { useLankySlopeGb } from '@renderer/hooks/japes'
 import JapesCheck from '../../check'
 
 const SlopeBarrel: React.FC = () => {

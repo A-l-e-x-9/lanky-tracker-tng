@@ -1,8 +1,8 @@
 import {
   useChunkyMedalInLogic,
   useChunkyMedalOutLogic
-} from '@renderer/src/hooks/factory/medals/chunky'
-import { useCbCount } from '@renderer/src/hooks/settings'
+} from '@renderer/hooks/factory/medals/chunky'
+import { useCbCount } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
 
 const ChunkyMedal: React.FC = () => {

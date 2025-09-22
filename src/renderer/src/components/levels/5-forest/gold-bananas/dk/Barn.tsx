@@ -1,4 +1,4 @@
-import { useDkBarnGb } from '@renderer/src/hooks/forest'
+import { useDkBarnGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const DkBarn: React.FC = () => {

@@ -1,7 +1,7 @@
-import DropPool from '@renderer/src/components/pools/Drops'
-import { useDefeatKlump, useDefeatZinger } from '@renderer/src/hooks/enemies'
-import { useForestOwl } from '@renderer/src/hooks/forest'
-import { useMini, useSax, useCamera } from '@renderer/src/hooks/kongs'
+import DropPool from '@renderer/components/pools/Drops'
+import { useDefeatKlump, useDefeatZinger } from '@renderer/hooks/enemies'
+import { useForestOwl } from '@renderer/hooks/forest'
+import { useMini, useSax, useCamera } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const OwlEnemies: React.FC = () => {

@@ -1,6 +1,6 @@
-import KasplatPool from '@renderer/src/components/pools/Kasplats'
-import VanillaKasplat from '@renderer/src/components/pools/VanillaKasplat'
-import { useCannonKasplat } from '@renderer/src/hooks/galleon'
+import KasplatPool from '@renderer/components/pools/Kasplats'
+import VanillaKasplat from '@renderer/components/pools/VanillaKasplat'
+import { useCannonKasplat } from '@renderer/hooks/galleon'
 import GalleonCheck from '../check'
 
 const LankyKasplat: React.FC = () => {

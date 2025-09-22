@@ -1,5 +1,5 @@
-import ToughGoldenBanana from '@renderer/src/components/pools/ToughGoldenBanana'
-import { useTinyBeetleGb } from '@renderer/src/hooks/aztec'
+import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
+import { useTinyBeetleGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../../check'
 
 const BeetleRace: React.FC = () => {

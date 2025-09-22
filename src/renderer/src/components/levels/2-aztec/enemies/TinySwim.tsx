@@ -1,7 +1,7 @@
-import DropPool from '@renderer/src/components/pools/Drops'
-import { useAztecTinyTemple, useTinyTempleIce } from '@renderer/src/hooks/aztec'
-import { useDive, useCamera } from '@renderer/src/hooks/kongs'
-import { logicBreak } from '@renderer/src/hooks/world'
+import DropPool from '@renderer/components/pools/Drops'
+import { useAztecTinyTemple, useTinyTempleIce } from '@renderer/hooks/aztec'
+import { useDive, useCamera } from '@renderer/hooks/kongs'
+import { logicBreak } from '@renderer/hooks/world'
 import AztecCheck from '../check'
 
 const TinySwimEnemies: React.FC = () => {

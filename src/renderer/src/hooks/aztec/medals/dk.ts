@@ -1,6 +1,6 @@
-import { useCoconut, useClimbing, useDk, useStrong } from '@renderer/src/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
-import { logicBreak } from '@renderer/src/hooks/world'
+import { useCoconut, useClimbing, useDk, useStrong } from '@renderer/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/hooks/settings'
+import { logicBreak } from '@renderer/hooks/world'
 import {
   useAztecBack,
   useAztecBackTunnel,

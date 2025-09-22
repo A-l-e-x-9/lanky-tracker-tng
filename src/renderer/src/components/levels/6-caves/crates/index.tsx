@@ -1,4 +1,4 @@
-import { useShuffleCrates } from '@renderer/src/hooks/settings'
+import { useShuffleCrates } from '@renderer/hooks/settings'
 
 const Vanilla: React.FC = () => null
 

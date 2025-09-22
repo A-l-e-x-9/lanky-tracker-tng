@@ -1,5 +1,5 @@
-import { useCoconut, useDk, usePeanut, usePineapple, useStrong } from '@renderer/src/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/src/hooks/settings'
+import { useCoconut, useDk, usePeanut, usePineapple, useStrong } from '@renderer/hooks/kongs'
+import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { useCastleTree, usePlayCastle, useSlamCastle } from '..'
 
 const useDkMedalCommonLogic = (): number => {

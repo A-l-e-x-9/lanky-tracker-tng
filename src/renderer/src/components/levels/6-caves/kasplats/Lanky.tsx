@@ -1,6 +1,6 @@
-import KasplatPool from '@renderer/src/components/pools/Kasplats'
-import VanillaKasplat from '@renderer/src/components/pools/VanillaKasplat'
-import { usePillarKasplat } from '@renderer/src/hooks/caves'
+import KasplatPool from '@renderer/components/pools/Kasplats'
+import VanillaKasplat from '@renderer/components/pools/VanillaKasplat'
+import { usePillarKasplat } from '@renderer/hooks/caves'
 import CavesCheck from '../check'
 
 const LankyKasplat: React.FC = () => {

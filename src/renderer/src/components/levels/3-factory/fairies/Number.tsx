@@ -1,6 +1,6 @@
-import FairyPool from '@renderer/src/components/pools/Fairies'
-import VanillaFairy from '@renderer/src/components/pools/VanillaFairy'
-import { useNumberFairy } from '@renderer/src/hooks/factory'
+import FairyPool from '@renderer/components/pools/Fairies'
+import VanillaFairy from '@renderer/components/pools/VanillaFairy'
+import { useNumberFairy } from '@renderer/hooks/factory'
 import FactoryCheck from '../check'
 
 const NumberFairy: React.FC = () => (

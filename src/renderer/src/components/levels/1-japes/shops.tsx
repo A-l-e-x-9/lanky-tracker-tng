@@ -1,8 +1,8 @@
-import ShopGenerator from '@renderer/src/components/pools/ShopGenerator'
-import ShopPool from '@renderer/src/components/pools/Shops'
-import { useJapesKongGates, usePlayJapes } from '@renderer/src/hooks/japes'
-import { useShuffledShops, useBananaportAll } from '@renderer/src/hooks/settings'
-import { useCranky, whatAFunky, useSnide, useClimbing } from '@renderer/src/hooks/kongs'
+import ShopGenerator from '@renderer/components/pools/ShopGenerator'
+import ShopPool from '@renderer/components/pools/Shops'
+import { useJapesKongGates, usePlayJapes } from '@renderer/hooks/japes'
+import { useShuffledShops, useBananaportAll } from '@renderer/hooks/settings'
+import { useCranky, whatAFunky, useSnide, useClimbing } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
   const playJapes = usePlayJapes()

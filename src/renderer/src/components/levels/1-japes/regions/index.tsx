@@ -1,4 +1,4 @@
-import BananaMedalPool from '@renderer/src/components/pools/BananaMedals'
+import BananaMedalPool from '@renderer/components/pools/BananaMedals'
 import BossCheck from '../boss'
 import TopMountain from '../gold-bananas/diddy/TopMountain'
 import BaboonBlast from '../gold-bananas/dk/BaboonBlast'

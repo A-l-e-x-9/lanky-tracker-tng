@@ -1,4 +1,4 @@
-import { useTinyHiveGb } from '@renderer/src/hooks/japes'
+import { useTinyHiveGb } from '@renderer/hooks/japes'
 import JapesCheck from '../../check'
 
 const HiveInside: React.FC = () => {

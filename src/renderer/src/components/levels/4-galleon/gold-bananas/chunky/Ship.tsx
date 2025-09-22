@@ -1,4 +1,4 @@
-import { useChunky5DoorShipGb } from '@renderer/src/hooks/galleon'
+import { useChunky5DoorShipGb } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const Chunky5Ship: React.FC = () => (

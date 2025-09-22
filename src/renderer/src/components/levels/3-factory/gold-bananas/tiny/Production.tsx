@@ -1,4 +1,4 @@
-import { useTinyProductionGb } from '@renderer/src/hooks/factory'
+import { useTinyProductionGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const TinyProduction: React.FC = () => {

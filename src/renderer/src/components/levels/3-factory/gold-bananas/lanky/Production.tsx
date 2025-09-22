@@ -1,4 +1,4 @@
-import { useLankyProductionGb } from '@renderer/src/hooks/factory'
+import { useLankyProductionGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const LankyProduction: React.FC = () => {

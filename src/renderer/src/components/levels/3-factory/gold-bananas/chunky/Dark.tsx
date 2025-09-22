@@ -1,4 +1,4 @@
-import { useChunkyDarkGb } from '@renderer/src/hooks/factory'
+import { useChunkyDarkGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const DarkRoom: React.FC = () => (

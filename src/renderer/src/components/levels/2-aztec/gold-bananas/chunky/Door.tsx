@@ -1,4 +1,4 @@
-import { useChunky5DoorGb } from '@renderer/src/hooks/aztec'
+import { useChunky5DoorGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../../check'
 
 const ChunkyDoorTemple: React.FC = () => {

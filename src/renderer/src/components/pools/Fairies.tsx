@@ -1,4 +1,4 @@
-import { usePoolFairies } from '@renderer/src/hooks/settings'
+import { usePoolFairies } from '@renderer/hooks/settings'
 
 const FairyPool: React.FC<React.PropsWithChildren> = ({ children }) =>
   usePoolFairies() ? <>{children}</> : null
