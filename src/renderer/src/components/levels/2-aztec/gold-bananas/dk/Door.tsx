@@ -1,4 +1,4 @@
-import { useDk5DoorGb } from '@renderer/hooks/aztec'
+import { useDk5DoorGb } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../../check'
 
 const DonkeyDoorTemple: React.FC = () => {

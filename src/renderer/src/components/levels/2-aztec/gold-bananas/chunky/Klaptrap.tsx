@@ -1,4 +1,4 @@
-import { useChunkyKlaptrapGb } from '@renderer/hooks/aztec'
+import { useChunkyKlaptrapGb } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../../check'
 
 const ChunkyKlaptrap: React.FC = () => {

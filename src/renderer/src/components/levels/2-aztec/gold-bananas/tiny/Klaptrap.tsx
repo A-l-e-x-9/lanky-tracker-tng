@@ -1,4 +1,4 @@
-import { useTinyKlaptrapGb } from '@renderer/hooks/aztec'
+import { useTinyKlaptrapGb } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../../check'
 
 const TinyKlaptrap: React.FC = () => {

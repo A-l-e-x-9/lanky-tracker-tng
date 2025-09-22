@@ -1,6 +1,6 @@
-import CratePool from '@renderer/components/pools/Crates'
-import VanillaCrate from '@renderer/components/pools/VanillaCrate'
-import { useLlamaOutsideCrate } from '@renderer/hooks/aztec'
+import CratePool from '@renderer/src/components/pools/Crates'
+import VanillaCrate from '@renderer/src/components/pools/VanillaCrate'
+import { useLlamaOutsideCrate } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../check'
 
 const LlamaOutsideCrate: React.FC = () => {

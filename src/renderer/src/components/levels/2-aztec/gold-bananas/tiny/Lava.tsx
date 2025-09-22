@@ -1,4 +1,4 @@
-import { useTinyLavaGb } from '@renderer/hooks/aztec'
+import { useTinyLavaGb } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../../check'
 
 const LavaPedestal: React.FC = () => {

@@ -1,4 +1,4 @@
-import { useDkTunnelGb } from '@renderer/hooks/aztec'
+import { useDkTunnelGb } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../../check'
 
 const QuicksandTunnel: React.FC = () => {

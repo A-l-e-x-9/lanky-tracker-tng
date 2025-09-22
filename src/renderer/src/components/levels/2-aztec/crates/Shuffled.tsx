@@ -1,6 +1,6 @@
-import CratePool from '@renderer/components/pools/Crates'
-import { useGeneralThing } from '@renderer/hooks/aztec'
-import { useShuffleCrates } from '@renderer/hooks/settings'
+import CratePool from '@renderer/src/components/pools/Crates'
+import { useGeneralThing } from '@renderer/src/hooks/aztec'
+import { useShuffleCrates } from '@renderer/src/hooks/settings'
 import AztecCheck from '../check'
 
 const Shuffled: React.FC = () => {

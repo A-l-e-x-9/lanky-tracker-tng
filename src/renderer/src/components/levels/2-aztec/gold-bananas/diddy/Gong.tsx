@@ -1,4 +1,4 @@
-import { useDiddyGongGb } from '@renderer/hooks/aztec'
+import { useDiddyGongGb } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../../check'
 
 const RamGongs: React.FC = () => {

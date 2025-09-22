@@ -1,4 +1,4 @@
-import { useLankySnakeGb } from '@renderer/hooks/aztec'
+import { useLankySnakeGb } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../../check'
 
 const LlamaBarrel: React.FC = () => {

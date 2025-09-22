@@ -1,8 +1,8 @@
-import DropPool from '@renderer/components/pools/Drops'
-import { useAztec5DoorTemple } from '@renderer/hooks/aztec'
-import { useDefeatZinger } from '@renderer/hooks/enemies'
-import { useFeather, useCamera } from '@renderer/hooks/kongs'
-import { logicBreak } from '@renderer/hooks/world'
+import DropPool from '@renderer/src/components/pools/Drops'
+import { useAztec5DoorTemple } from '@renderer/src/hooks/aztec'
+import { useDefeatZinger } from '@renderer/src/hooks/enemies'
+import { useFeather, useCamera } from '@renderer/src/hooks/kongs'
+import { logicBreak } from '@renderer/src/hooks/world'
 import AztecCheck from '../check'
 
 const Tiny5Enemies: React.FC = () => {

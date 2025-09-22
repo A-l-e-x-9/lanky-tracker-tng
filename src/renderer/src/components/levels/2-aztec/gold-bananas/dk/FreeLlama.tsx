@@ -1,4 +1,4 @@
-import { useDkBlastGb } from '@renderer/hooks/aztec'
+import { useDkBlastGb } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../../check'
 
 const FreeLlama: React.FC = () => {

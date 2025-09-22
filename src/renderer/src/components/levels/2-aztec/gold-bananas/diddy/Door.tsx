@@ -1,4 +1,4 @@
-import { useDiddy5DoorGb } from '@renderer/hooks/aztec'
+import { useDiddy5DoorGb } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../../check'
 
 const DiddyDoorTemple: React.FC = () => {

@@ -1,9 +1,9 @@
-import { useAztecBack } from '@renderer/hooks/aztec'
-import { useDefeatZinger } from '@renderer/hooks/enemies'
-import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
-import { logicBreak } from '@renderer/hooks/world'
+import { useAztecBack } from '@renderer/src/hooks/aztec'
+import { useDefeatZinger } from '@renderer/src/hooks/enemies'
+import { useAnyKong, useCamera } from '@renderer/src/hooks/kongs'
+import { logicBreak } from '@renderer/src/hooks/world'
 import AztecCheck from '../check'
-import DropPool from '@renderer/components/pools/Drops'
+import DropPool from '@renderer/src/components/pools/Drops'
 
 const ConnectorTunnelEnemies: React.FC = () => {
   const anyKong = useAnyKong()

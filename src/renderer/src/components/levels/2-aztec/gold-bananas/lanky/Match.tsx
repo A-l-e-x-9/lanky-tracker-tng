@@ -1,4 +1,4 @@
-import { useLankyMatchGb } from '@renderer/hooks/aztec'
+import { useLankyMatchGb } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../../check'
 
 const MatchGame: React.FC = () => {

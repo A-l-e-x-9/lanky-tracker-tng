@@ -1,7 +1,7 @@
-import CratePool from '@renderer/components/pools/Crates'
-import VanillaCrate from '@renderer/components/pools/VanillaCrate'
-import { useAztecBack } from '@renderer/hooks/aztec'
-import { logicBreak } from '@renderer/hooks/world'
+import CratePool from '@renderer/src/components/pools/Crates'
+import VanillaCrate from '@renderer/src/components/pools/VanillaCrate'
+import { useAztecBack } from '@renderer/src/hooks/aztec'
+import { logicBreak } from '@renderer/src/hooks/world'
 import AztecCheck from '../check'
 
 const GongCrate: React.FC = () => {

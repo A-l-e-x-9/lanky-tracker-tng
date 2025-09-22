@@ -1,4 +1,4 @@
-import { useLanky5DoorGb } from '@renderer/hooks/aztec'
+import { useLanky5DoorGb } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../../check'
 
 const LankyDoorTemple: React.FC = () => {

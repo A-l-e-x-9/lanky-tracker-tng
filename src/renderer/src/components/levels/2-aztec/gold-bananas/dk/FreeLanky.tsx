@@ -1,4 +1,4 @@
-import { useDkFreeLankyGb } from '@renderer/hooks/aztec'
+import { useDkFreeLankyGb } from '@renderer/src/hooks/aztec'
 import AztecCheck from '../../check'
 
 const FreeLanky: React.FC = () => {
