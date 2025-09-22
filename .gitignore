@@ -1,6 +1,10 @@
 # The little backup files JEdit created when I needed to use it for a big job
 *.tsx~
 *.ts~
+#*.tsx#
+#*.tsx~#
+#*.ts#
+#*.ts~#
 
 # Logs
 logs
