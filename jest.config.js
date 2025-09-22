@@ -2,7 +2,7 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   moduleNameMapper: {
-    '^@renderer/(.*)': '<rootDir>/src/renderer/$1'
+    '^@renderer/(.*)': '<rootDir>/src/renderer/src/$1'
   },
   transform: {
     '^.+\\.(ts|tsx)$': [`ts-jest`, { tsconfig: 'tsconfig.web.json' }]
