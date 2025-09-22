@@ -1,6 +1,6 @@
-import FairyPool from '@renderer/components/pools/Fairies'
-import VanillaFairy from '@renderer/components/pools/VanillaFairy'
-import { usePaintingFairy } from '@renderer/hooks/japes'
+import FairyPool from '@renderer/src/components/pools/Fairies'
+import VanillaFairy from '@renderer/src/components/pools/VanillaFairy'
+import { usePaintingFairy } from '@renderer/src/hooks/japes'
 import JapesCheck from '../check'
 
 const PaintingFairy: React.FC = () => {
