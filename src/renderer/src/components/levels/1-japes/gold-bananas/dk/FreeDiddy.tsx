@@ -1,4 +1,4 @@
-import { useDkFreeDiddyGb } from '@renderer/hooks/japes'
+import { useDkFreeDiddyGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const FreeDiddy: React.FC = () => (

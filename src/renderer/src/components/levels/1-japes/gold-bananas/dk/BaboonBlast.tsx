@@ -1,4 +1,4 @@
-import { useDkBlastGb } from '@renderer/hooks/japes'
+import { useDkBlastGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const BaboonBlast: React.FC = () => (

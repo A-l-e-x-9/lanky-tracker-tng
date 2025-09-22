@@ -1,4 +1,4 @@
-import { useDkFreebieGb } from '@renderer/hooks/japes'
+import { useDkFreebieGb } from '@renderer/src/hooks/japes'
 import JapesCheck from '../../check'
 
 const FrontCage: React.FC = () => (
