@@ -603,6 +603,7 @@ interface SettingCollection {
    * Are the golden bananas considered to be tougher than normal shuffled?
    */
   poolToughBananas: boolean
+  poolMiniboss: boolean
   /**
    * Are the blueprints held by kasplats shuffled?
    */
