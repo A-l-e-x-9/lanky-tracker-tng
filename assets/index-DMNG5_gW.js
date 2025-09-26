@@ -10487,6 +10487,7 @@ const useHelmStartPosition = () => useDonkStore(useShallow((state) => state.sett
 const useShuffleCrates = () => useDonkStore(useShallow((state) => state.settings.shuffleCrates));
 const usePoolShops = () => useDonkStore(useShallow((state) => state.settings.poolShops));
 const usePoolToughBananas = () => useDonkStore(useShallow((state) => state.settings.poolToughBananas));
+const usePoolMiniboss = () => useDonkStore(useShallow((state) => state.settings.poolMiniboss));
 const usePoolMisc = () => useDonkStore(useShallow((state) => state.settings.poolMisc));
 const usePoolBlueprints = () => useDonkStore(useShallow((state) => state.settings.poolBlueprints));
 const usePoolFairies = () => useDonkStore(useShallow((state) => state.settings.poolFairies));
@@ -15094,9 +15095,10 @@ const EnemyLocations$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(CaveEnemies, {})
   ] });
 };
+const Miniboss = ({ children }) => usePoolMiniboss() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const PaintingFairy = () => {
   const painting = usePaintingFairy();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     JapesCheck,
     {
       id: 1081,
@@ -15105,7 +15107,7 @@ const PaintingFairy = () => {
       canGetLogic: painting.in,
       canGetBreak: painting.out
     }
-  ) }) });
+  ) }) }) });
 };
 const RambiFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
@@ -15288,7 +15290,7 @@ const GrapeGate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
 );
 const PaintingRoom = () => {
   const paintingGb = useLankyPaintingGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     JapesCheck,
     {
       id: 1023,
@@ -15297,7 +15299,7 @@ const PaintingRoom = () => {
       canGetLogic: paintingGb.in,
       canGetBreak: paintingGb.out
     }
-  );
+  ) });
 };
 const SlopeBarrel = () => {
   const slopeGb = useLankySlopeGb();
@@ -18305,7 +18307,7 @@ const ChunkyDoorTemple = () => {
 };
 const ChunkyKlaptrap = () => {
   const klaptrapGb = useChunkyKlaptrapGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2041,
@@ -18314,7 +18316,7 @@ const ChunkyKlaptrap = () => {
       canGetLogic: klaptrapGb.in,
       canGetBreak: klaptrapGb.out
     }
-  );
+  ) });
 };
 const TunnelBarrel = () => {
   const hunkyGb = useChunkyHunkyGb();
@@ -18578,7 +18580,7 @@ const TinyDoorTemple = () => {
 };
 const TinyKlaptrap = () => {
   const klaptrapGb = useTinyKlaptrapGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2030,
@@ -18587,7 +18589,7 @@ const TinyKlaptrap = () => {
       canGetLogic: klaptrapGb.in,
       canGetBreak: klaptrapGb.out
     }
-  );
+  ) });
 };
 const LavaPedestal = () => {
   const lavaGb = useTinyLavaGb();
@@ -20537,7 +20539,7 @@ const DarkRoom = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
 );
 const ToyMonster = () => {
   const inLogic = useChunkyKaijuGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     FactoryCheck,
     {
       id: 3040,
@@ -20546,7 +20548,7 @@ const ToyMonster = () => {
       canGetLogic: inLogic.in,
       canGetBreak: inLogic.out
     }
-  );
+  ) });
 };
 const ChunkyProduction = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
@@ -20576,7 +20578,7 @@ const BlockTower = () => {
     }
   );
 };
-const ChargeTest = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const ChargeTest = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3011,
@@ -20584,7 +20586,7 @@ const ChargeTest = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "R&D Area",
     canGetLogic: useDiddyEnemyGb()
   }
-);
+) });
 const DiddyProduction = () => {
   const prodGb = useDiddyProductionGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20753,7 +20755,7 @@ const TinyProduction = () => {
     }
   );
 };
-const CarRace = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const CarRace = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3031,
@@ -20761,7 +20763,7 @@ const CarRace = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "R&D Area",
     canGetLogic: useTinyRaceGb()
   }
-);
+) });
 const TinyVent = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
@@ -24843,7 +24845,7 @@ const DkBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExpor
 ] });
 const LankyMill = () => {
   const millGb = useLankyMillGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5020,
@@ -24852,7 +24854,7 @@ const LankyMill = () => {
       canGetLogic: millGb.in,
       canGetBreak: millGb.out
     }
-  );
+  ) });
 };
 const RabbitRace = () => {
   const raceGb = useLankyRaceGb$1();
@@ -24899,7 +24901,7 @@ const LankyBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(RabbitRace, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ZingerBounce, {})
 ] });
-const AnthillBanana = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const AnthillBanana = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5031,
@@ -24907,8 +24909,8 @@ const AnthillBanana = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Owl Tree",
     canGetLogic: useTinyAntGb()
   }
-);
-const AnthillBean = () => /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+) });
+const AnthillBean = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5034,
@@ -24916,8 +24918,8 @@ const AnthillBean = () => /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { chil
     region: "Owl Tree",
     canGetLogic: useTinyAntGb()
   }
-) });
-const BeanCheck = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+) }) });
+const BeanCheck = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5033,
@@ -24925,7 +24927,7 @@ const BeanCheck = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Forest Center And Beanstalk",
     canGetLogic: useTinyBeanGb()
   }
-);
+) });
 const MushroomBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
@@ -24937,7 +24939,7 @@ const MushroomBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
 );
 const SpiderBoss = () => {
   const spiderGb = useTinySpiderGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5032,
@@ -24946,7 +24948,7 @@ const SpiderBoss = () => {
       canGetLogic: spiderGb.in,
       canGetBreak: spiderGb.out
     }
-  );
+  ) });
 };
 const TinyBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(MushroomBarrel, {}),
@@ -26434,7 +26436,7 @@ const EnemyLocations$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
 ] });
 const CabinFairy = () => {
   const cabin = useCabinFairy();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6081,
@@ -26442,7 +26444,7 @@ const CabinFairy = () => {
       region: "Cabins Area",
       canGetLogic: cabin
     }
-  ) }) });
+  ) }) }) });
 };
 const IglooFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
@@ -26488,7 +26490,7 @@ const EarlyGone = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     canGetLogic: useChunkyGoneGb()
   }
 );
-const ChunkyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const ChunkyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
   {
     id: 6042,
@@ -26496,7 +26498,7 @@ const ChunkyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Igloo Area",
     canGetLogic: useChunkyIglooGb()
   }
-);
+) });
 const ChunkyBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(EarlyGone, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(TransparentIgloo, {}),
@@ -26505,7 +26507,7 @@ const ChunkyBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeE
 ] });
 const DiddyCandleCabin = () => {
   const candleGb = useDiddyCandleGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6013,
@@ -26513,11 +26515,11 @@ const DiddyCandleCabin = () => {
       region: "Cabins Area",
       canGetLogic: candleGb
     }
-  );
+  ) });
 };
 const DiddyGauntletCabin = () => {
   const cabinGauntlet = useDiddyGauntletGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6012,
@@ -26526,7 +26528,7 @@ const DiddyGauntletCabin = () => {
       canGetLogic: cabinGauntlet.in,
       canGetBreak: cabinGauntlet.out
     }
-  );
+  ) });
 };
 const DiddyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
@@ -26570,7 +26572,7 @@ const CavesBlast = () => (
 );
 const DkGauntletCabin = () => {
   const cabinGb = useDkCabinGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6004,
@@ -26579,7 +26581,7 @@ const DkGauntletCabin = () => {
       canGetLogic: cabinGb.in,
       canGetBreak: cabinGb.out
     }
-  );
+  ) });
 };
 const DkIgloo = () => {
   const iglooGb = useDkIglooGb();
@@ -26646,7 +26648,7 @@ const CastleSlam = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
 );
 const LankyIgloo = () => {
   const iglooGb = useLankyIglooGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6022,
@@ -26655,7 +26657,7 @@ const LankyIgloo = () => {
       canGetLogic: iglooGb.in,
       canGetBreak: iglooGb.out
     }
-  );
+  ) });
 };
 const LankyBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(BeetleRace, {}),
@@ -26665,7 +26667,7 @@ const LankyBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
 ] });
 const TinyCabin = () => {
   const cabinCb = useTinyCabinGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6033,
@@ -26673,7 +26675,7 @@ const TinyCabin = () => {
       region: "Cabins Area",
       canGetLogic: cabinCb
     }
-  );
+  ) });
 };
 const TinyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
@@ -26939,28 +26941,53 @@ const DiddyMedal$1 = () => {
   const outLogic = useDiddyMedalOutLogic$1();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6101,
-        name: "Caves Diddy Medal",
-        region: "Caves Medal Rewards",
-        canGetLogic: inLogic >= cbCount,
-        canGetBreak: outLogic >= cbCount
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6201,
-        name: "Caves Diddy Half-Medal",
-        region: "Caves Medal Rewards",
-        canGetLogic: inLogic >= halfMedal,
-        canGetBreak: outLogic >= halfMedal
-      }
-    )
-  ] });
+  if (cbCount >= 85) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(Miniboss, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        CavesCheck,
+        {
+          id: 6101,
+          name: "Caves Diddy Medal",
+          region: "Caves Medal Rewards",
+          canGetLogic: inLogic >= cbCount,
+          canGetBreak: outLogic >= cbCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        CavesCheck,
+        {
+          id: 6201,
+          name: "Caves Diddy Half-Medal",
+          region: "Caves Medal Rewards",
+          canGetLogic: inLogic >= halfMedal,
+          canGetBreak: outLogic >= halfMedal
+        }
+      )
+    ] });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        CavesCheck,
+        {
+          id: 6101,
+          name: "Caves Diddy Medal",
+          region: "Caves Medal Rewards",
+          canGetLogic: inLogic >= cbCount,
+          canGetBreak: outLogic >= cbCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        CavesCheck,
+        {
+          id: 6201,
+          name: "Caves Diddy Half-Medal",
+          region: "Caves Medal Rewards",
+          canGetLogic: inLogic >= halfMedal,
+          canGetBreak: outLogic >= halfMedal
+        }
+      )
+    ] });
+  }
 };
 const useDkMedalCommonLogic$1 = () => {
   const igloo = useCavesIgloo();
@@ -27146,28 +27173,53 @@ const LankyMedal$1 = () => {
   const outLogic = useLankyMedalOutLogic$1();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6102,
-        name: "Caves Lanky Medal",
-        region: "Caves Medal Rewards",
-        canGetLogic: inLogic >= cbCount,
-        canGetBreak: outLogic >= cbCount
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6202,
-        name: "Caves Lanky Half-Medal",
-        region: "Caves Medal Rewards",
-        canGetLogic: inLogic >= halfMedal,
-        canGetBreak: outLogic >= halfMedal
-      }
-    )
-  ] });
+  if (cbCount >= 90) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(Miniboss, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        CavesCheck,
+        {
+          id: 6102,
+          name: "Caves Lanky Medal",
+          region: "Caves Medal Rewards",
+          canGetLogic: inLogic >= cbCount,
+          canGetBreak: outLogic >= cbCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        CavesCheck,
+        {
+          id: 6202,
+          name: "Caves Lanky Half-Medal",
+          region: "Caves Medal Rewards",
+          canGetLogic: inLogic >= halfMedal,
+          canGetBreak: outLogic >= halfMedal
+        }
+      )
+    ] });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        CavesCheck,
+        {
+          id: 6102,
+          name: "Caves Lanky Medal",
+          region: "Caves Medal Rewards",
+          canGetLogic: inLogic >= cbCount,
+          canGetBreak: outLogic >= cbCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        CavesCheck,
+        {
+          id: 6202,
+          name: "Caves Lanky Half-Medal",
+          region: "Caves Medal Rewards",
+          canGetLogic: inLogic >= halfMedal,
+          canGetBreak: outLogic >= halfMedal
+        }
+      )
+    ] });
+  }
 };
 const useTinyMedalCommonLogic$1 = () => {
   const igloo = useCavesIgloo();
