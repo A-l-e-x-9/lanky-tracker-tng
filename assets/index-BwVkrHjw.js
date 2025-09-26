@@ -10277,6 +10277,7 @@ const initialSettings = {
     shuffleArenas: false,
     poolGoldBananas: true,
     poolToughBananas: true,
+    poolMiniboss: true,
     poolBlueprints: true,
     shuffleKasplats: false,
     poolFairies: true,
@@ -12796,18 +12797,20 @@ const FairyReward = () => {
     }
   );
 };
-const ToughGoldenBanana = ({ children }) => usePoolToughBananas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const ReturnFairies = () => {
   const checkBfi = useCheckBananaFairyIsle();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    IslesCheck,
-    {
-      id: 47,
-      name: "Returning the Banana Fairies",
-      region: "Outer Isles",
-      canGetLogic: checkBfi
-    }
-  ) });
+  return (
+    //    <ToughGoldenBanana>
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 47,
+        name: "Returning the Banana Fairies",
+        region: "Outer Isles",
+        canGetLogic: checkBfi
+      }
+    )
+  );
 };
 const SaxPad = () => {
   const pad = useCheckTinyMusicPad();
@@ -15175,6 +15178,7 @@ const ChunkyBananas$6 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Underground, {})
   ] });
 };
+const ToughGoldenBanana = ({ children }) => usePoolToughBananas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const Minecart = () => {
   const mineGb = useDiddyMinecartGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20623,20 +20627,7 @@ const NintendoCoin = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CompanyPool, { 
   }
 ) });
 const FactoryBlast = () => {
-  const fastArcade = useFastArcade();
-  if (fastArcade) {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3003, name: "Factory DK Barrel Blast", region: "Storage And Arcade", canGetLogic: useDkBlastGb$2() });
-  } else {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3003,
-        name: "Factory DK Barrel Blast and DK Arcade Round 1",
-        region: "Storage And Arcade",
-        canGetLogic: useDkBlastGb$2()
-      }
-    ) });
-  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3003, name: "Factory DK Barrel Blast/DK Arcade Round 1", region: "Storage And Arcade", canGetLogic: useDkBlastGb$2() });
 };
 const CrusherRoom = () => {
   const prodGb = useDkProdGb();
@@ -24810,15 +24801,18 @@ const DkBarn = () => {
     }
   );
 };
-const ForestBlast = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  ForestCheck,
-  {
-    id: 5001,
-    name: "Forest DK Baboon Blast",
-    region: "Giant Mushroom Exterior",
-    canGetLogic: useDkBlastGb$1()
-  }
-) });
+const ForestBlast = () => (
+  /*  <ToughGoldenBanana>*/
+  /* @__PURE__ */ jsxRuntimeExports.jsx(
+    ForestCheck,
+    {
+      id: 5001,
+      name: "Forest DK Baboon Blast",
+      region: "Giant Mushroom Exterior",
+      canGetLogic: useDkBlastGb$1()
+    }
+  )
+);
 const DkMill = () => {
   const millGb = useDkMillGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26562,15 +26556,18 @@ const DiddyBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyGauntletCabin, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyCandleCabin, {})
 ] });
-const CavesBlast = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  CavesCheck,
-  {
-    id: 6001,
-    name: "Caves DK Baboon Blast",
-    region: "Main Caves Area",
-    canGetLogic: useDkBlastGb()
-  }
-) });
+const CavesBlast = () => (
+  //  <ToughGoldenBanana>
+  /* @__PURE__ */ jsxRuntimeExports.jsx(
+    CavesCheck,
+    {
+      id: 6001,
+      name: "Caves DK Baboon Blast",
+      region: "Main Caves Area",
+      canGetLogic: useDkBlastGb()
+    }
+  )
+);
 const DkGauntletCabin = () => {
   const cabinGb = useDkCabinGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
