@@ -31956,13 +31956,24 @@ const GeneratorSettings = () => {
                   updateItem: setSetting
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Tough Golden Bananas?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Minecarts and Races?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
                   imgUrl: toughBananaIcon,
-                  title: "Puts certain Bananas in the pool that the DK64 Randomizer makers mark as hard to get.",
+                  title: "Puts minecart and race-themed bananas in the pool.",
                   storeKey: "poolToughBananas",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Gauntlets and Minibosses?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: hardShootIcon,
+                  title: "Puts enemy gauntlet and miniboss bananas in the pool.",
+                  storeKey: "poolMiniboss",
                   prefix: "settings",
                   updateItem: setSetting
                 }
