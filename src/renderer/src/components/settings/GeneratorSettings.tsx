@@ -81,11 +81,19 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
-              <p>Tough Golden Bananas?</p>
+              <p>Minecarts and Races?</p>
               <SimpleIcon
                 imgUrl={toughBananaIcon}
-                title="Puts certain Bananas in the pool that the DK64 Randomizer makers mark as hard to get."
+                title="Puts minecart and race-themed bananas in the pool."
                 storeKey="poolToughBananas"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Gauntlets and Minibosses?</p>
+              <SimpleIcon
+                imgUrl={hardShootIcon}
+                title="Puts enemy gauntlet and miniboss bananas in the pool."
+                storeKey="poolMiniboss"
                 prefix="settings"
                 updateItem={setSetting}
               />
