@@ -1,15 +1,15 @@
-import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
+//import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
 import { useDkBlastGb } from '@renderer/hooks/factory'
 import { useFastArcade } from '@renderer/hooks/fast-checks'
 import FactoryCheck from '../../check'
 
 const FactoryBlast: React.FC = () => {
-  const fastArcade = useFastArcade()
-  if (fastArcade) {
+/*  const fastArcade = useFastArcade()
+    if (fastArcade) {*/
   return (
-    <FactoryCheck id={3003} name="Factory DK Barrel Blast" region="Storage And Arcade" canGetLogic={useDkBlastGb()} />
+    <FactoryCheck id={3003} name="Factory DK Barrel Blast/DK Arcade Round 1" region="Storage And Arcade" canGetLogic={useDkBlastGb()} />
   )
-  } else {
+/*  } else {
   return (
     <ToughGoldenBanana>
     <FactoryCheck
@@ -20,7 +20,7 @@ const FactoryBlast: React.FC = () => {
     />
     </ToughGoldenBanana>
   )
-  }
+  }*/
 }
 
 export default FactoryBlast

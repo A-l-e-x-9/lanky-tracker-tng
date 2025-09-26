@@ -1,16 +1,16 @@
-import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
+/*import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'*/
 import { useDkBlastGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const ForestBlast: React.FC = () => (
-  <ToughGoldenBanana>
+/*  <ToughGoldenBanana>*/
     <ForestCheck
       id={5001}
       name="Forest DK Baboon Blast"
       region="Giant Mushroom Exterior"
       canGetLogic={useDkBlastGb()}
     />
-  </ToughGoldenBanana>
+/*  </ToughGoldenBanana>*/
 )
 
 export default ForestBlast

@@ -1,16 +1,16 @@
-import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
+//import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
 import { useDkBlastGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
 
 const CavesBlast: React.FC = () => (
-  <ToughGoldenBanana>
+//  <ToughGoldenBanana>
     <CavesCheck
       id={6001}
       name="Caves DK Baboon Blast"
       region="Main Caves Area"
       canGetLogic={useDkBlastGb()}
     />
-  </ToughGoldenBanana>
+//  </ToughGoldenBanana>
 )
 
 export default CavesBlast

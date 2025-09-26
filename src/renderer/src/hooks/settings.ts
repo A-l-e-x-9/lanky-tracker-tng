@@ -113,11 +113,16 @@ export const usePoolShops = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.poolShops))
 
 /**
- * Are the tough golden bananas in the rando pool?
- * @returns true if the tough golden bananas are in the pool.
+ * Are minecarts and races in the rando pool?
+ * @returns true if so
  */
 export const usePoolToughBananas = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.poolToughBananas))
+
+/*Are enemy gauntlets and minibosses in the rando pool?
+  @returns true if so*/
+export const usePoolMiniboss = (): boolean =>
+  useDonkStore(useShallow((state) => state.settings.poolMiniboss))
 
 /**
  * Are the miscellaneous items in the rando pool?
