@@ -1,8 +1,10 @@
+import Miniboss from '@renderer/components/pools/Miniboss'
 import MiscPool from '@renderer/components/pools/Misc'
 import { useTinyAntGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const AnthillBean: React.FC = () => (
+<Miniboss>
   <MiscPool>
     <ForestCheck
       id={5034}
@@ -11,6 +13,7 @@ const AnthillBean: React.FC = () => (
       canGetLogic={useTinyAntGb()}
     />
   </MiscPool>
+</Miniboss>
 )
 
 export default AnthillBean

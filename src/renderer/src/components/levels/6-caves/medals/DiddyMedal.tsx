@@ -1,3 +1,4 @@
+import Miniboss from '@renderer/components/pools/Miniboss'
 import { useDiddyMedalInLogic, useDiddyMedalOutLogic } from '@renderer/hooks/caves/medals/diddy'
 import { useCbCount } from '@renderer/hooks/settings'
 import CavesCheck from '../check'
@@ -7,7 +8,26 @@ const DiddyMedal: React.FC = () => {
   const outLogic = useDiddyMedalOutLogic()
   const cbCount = useCbCount()
   const halfMedal = Math.round(cbCount / 2)
-
+  if (cbCount >= 85) {
+  return (
+  <Miniboss>
+    <CavesCheck
+      id={6101}
+      name="Caves Diddy Medal"
+      region="Caves Medal Rewards"
+      canGetLogic={inLogic >= cbCount}
+      canGetBreak={outLogic >= cbCount}
+    />
+    <CavesCheck
+      id={6201}
+      name="Caves Diddy Half-Medal"
+      region="Caves Medal Rewards"
+      canGetLogic={inLogic >= halfMedal}
+      canGetBreak={outLogic >= halfMedal}
+    />
+  </Miniboss>
+  )
+  } else {
   return (
   <>
     <CavesCheck
@@ -26,6 +46,7 @@ const DiddyMedal: React.FC = () => {
     />
   </>
   )
+  }
 }
 
 export default DiddyMedal

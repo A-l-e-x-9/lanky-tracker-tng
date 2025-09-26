@@ -1,9 +1,11 @@
+import Miniboss from '@renderer/components/pools/Miniboss'
 import { useDkCabinGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
 
 const DkGauntletCabin: React.FC = () => {
   const cabinGb = useDkCabinGb()
   return (
+  <Miniboss>
     <CavesCheck
       id={6004}
       name="Caves DK 5 Door Cabin"
@@ -11,6 +13,7 @@ const DkGauntletCabin: React.FC = () => {
       canGetLogic={cabinGb.in}
       canGetBreak={cabinGb.out}
     />
+  </Miniboss>
   )
 }
 

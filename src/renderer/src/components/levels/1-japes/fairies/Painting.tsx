@@ -1,3 +1,4 @@
+import Miniboss from '@renderer/components/pools/Miniboss'
 import FairyPool from '@renderer/components/pools/Fairies'
 import VanillaFairy from '@renderer/components/pools/VanillaFairy'
 import { usePaintingFairy } from '@renderer/hooks/japes'
@@ -6,6 +7,7 @@ import JapesCheck from '../check'
 const PaintingFairy: React.FC = () => {
   const painting = usePaintingFairy()
   return (
+  <Miniboss>
     <FairyPool>
       <VanillaFairy>
         <JapesCheck
@@ -17,6 +19,7 @@ const PaintingFairy: React.FC = () => {
         />
       </VanillaFairy>
     </FairyPool>
+  </Miniboss>
   )
 }
 

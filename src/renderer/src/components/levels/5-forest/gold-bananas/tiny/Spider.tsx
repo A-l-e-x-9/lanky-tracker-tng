@@ -1,9 +1,11 @@
+import Miniboss from '@renderer/components/pools/Miniboss'
 import { useTinySpiderGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const SpiderBoss: React.FC = () => {
   const spiderGb = useTinySpiderGb()
   return (
+  <Miniboss>
     <ForestCheck
       id={5032}
       name="Forest Tiny Spider Boss"
@@ -11,6 +13,7 @@ const SpiderBoss: React.FC = () => {
       canGetLogic={spiderGb.in}
       canGetBreak={spiderGb.out}
     />
+  </Miniboss>
   )
 }
 
