@@ -9,7 +9,6 @@ The instructions on how to use this thing can be found in "instructions.html".
 As with the original, this tracker was written in JavaScript, primarily with an [electron-vite](https://electron-vite.org/) setup in addition to Facebook/the Meta Group's [React](https://reactjs.org/) and Microsoft's [TypeScript](https://www.typescriptlang.org/). Obviously, you need JavaScript in order to use it.
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
-- Add in the following things that were added to the Dev Randomizer as of September 25, 2025: "Snide Rewards" and the "Max Snide Reward Limit"?
 - Fix npm-web-out.yaml so that "instructions.html", its CSS, and the Lanky head icon all get pushed out to the gh-pages branch...I put them in there by hand, but the next run of that file takes them all away again.
 - Right now, the B. Locker barriers available in the tracker can only accept bananas, so if you're playing a "Chaos B. Lockers" seed (where he often requires things other than bananas so that you can get into the level), you're out of luck. :(
 - Make it so that you can just type how many bananas, etc., you have in the "count" selectors (such as "Colored bananas needed for medal" in Settings) so you don't have to click so much.
@@ -28,6 +27,8 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 - Alex tried to implement the Helm doors, but he was unable to get the "CountSelector" object working within a "HelmItemSelector" file. Furthermore, only three checks are ever blocked by the doors ("The End of Helm" and both Banana Fairies), so it was too much effort for too little gain.
 - Any way to take the Loading Zone Randomizer into account...you're completely on your own there. At worst, this tracker was made for Complex Level Order seeds with the possibility of Hideout Helm being shuffled.
 - Could possibly add in the new "Item Count Modifier" feature, but I don't think it'll have much effect.
+- Snide Rewards and the Max Snide Reward Limit...they seem a little too unpredictable for me to implement.
+  - And on that note, progressive Wrinkly hints, something that's been a feature since at least Season 3 (and was used in official Season 3 seeds; retired in favor of bringing back the doors, but with the "Dos's Doors" shuffle)
 
 # Development
 
