@@ -12026,7 +12026,7 @@ const AztecRoof = () => {
     IslesCheck,
     {
       id: 74,
-      name: "Isles Dirt: Aztec Roof",
+      name: "Aztec Lobby Roof Dirt",
       region: "Main Isle",
       canGetLogic: dirt.in,
       canGetBreak: dirt.out
@@ -12754,7 +12754,7 @@ const AztecBarrel = () => {
     IslesCheck,
     {
       id: 32,
-      name: "Isles Tiny Aztec Lobby Barrel",
+      name: "Aztec Lobby Barrel",
       region: "Japes-Forest Lobbies",
       canGetLogic: checkTinyAztec.in,
       canGetBreak: checkTinyAztec.out
@@ -13705,7 +13705,7 @@ const AztecLobbyTrombonePad = () => {
     IslesCheck,
     {
       id: 6,
-      name: "Isles Boulder: On top of the Trombone Pad near Aztec Lobby",
+      name: "Boulder: On top of the Trombone Pad near Aztec Lobby",
       region: "Main Isle",
       canGetLogic: useAztecLobbyTrombonePad()
     }
@@ -13716,7 +13716,7 @@ const AztecLobbyTrianglePad = () => {
     IslesCheck,
     {
       id: 5,
-      name: "Isles Boulder: On top of the Triangle Pad near Aztec Lobby",
+      name: "Boulder: On top of the Triangle Pad near Aztec Lobby",
       region: "Main Isle",
       canGetLogic: useAztecLobbyTrianglePad()
     }
@@ -20523,7 +20523,7 @@ const ArcadeBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3042,
-    name: "Factory Chunky Barrel by Arcade",
+    name: "Chunky's Barrel by the Arcade",
     region: "Storage And Arcade",
     canGetLogic: useChunkyArcadeGb()
   }
@@ -24690,7 +24690,7 @@ const ChunkyApple = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5043,
-    name: "Forest Chunky Apple Rescue",
+    name: "Chunky's Apple Rescue",
     region: "Forest Center And Beanstalk",
     canGetLogic: useChunkyAppleGb()
   }
@@ -24905,7 +24905,7 @@ const AnthillBanana = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { ch
   ForestCheck,
   {
     id: 5031,
-    name: "Forest Tiny Anthill Banana",
+    name: "Tree Stump Gauntlet",
     region: "Owl Tree",
     canGetLogic: useTinyAntGb()
   }
@@ -24914,7 +24914,7 @@ const AnthillBean = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { chil
   ForestCheck,
   {
     id: 5034,
-    name: "THE BEAN!!! (Forest Tiny Anthill Second Reward)",
+    name: "THE BEAN (Tree Stump Gauntlet's Second Reward)",
     region: "Owl Tree",
     canGetLogic: useTinyAntGb()
   }
