@@ -8,7 +8,7 @@ const AztecLobbyTrianglePad: React.FC = () => {
     <BoulderPool>
         <IslesCheck
           id={5}
-          name="Isles Boulder: On top of the Triangle Pad near Aztec Lobby"
+          name="Boulder: On top of the Triangle Pad near Aztec Lobby"
           region="Main Isle"
           canGetLogic={useAztecLobbyTrianglePad()}
         />

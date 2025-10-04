@@ -15,7 +15,7 @@ const AztecRoof: React.FC = () => {
       <VanillaDirt>
         <IslesCheck
           id={74}
-          name="Isles Dirt: Aztec Roof"
+          name="Aztec Lobby Roof Dirt"
           region="Main Isle"
           canGetLogic={dirt.in}
           canGetBreak={dirt.out}

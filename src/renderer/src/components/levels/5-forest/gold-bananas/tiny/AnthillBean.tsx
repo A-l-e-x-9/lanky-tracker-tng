@@ -8,7 +8,7 @@ const AnthillBean: React.FC = () => (
   <MiscPool>
     <ForestCheck
       id={5034}
-      name="THE BEAN!!! (Forest Tiny Anthill Second Reward)"
+      name="THE BEAN (Tree Stump Gauntlet's Second Reward)"
       region="Owl Tree"
       canGetLogic={useTinyAntGb()}
     />

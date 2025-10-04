@@ -8,7 +8,7 @@ const AztecLobbyTrombonePad: React.FC = () => {
     <BoulderPool>
         <IslesCheck
           id={6}
-          name="Isles Boulder: On top of the Trombone Pad near Aztec Lobby"
+          name="Boulder: On top of the Trombone Pad near Aztec Lobby"
           region="Main Isle"
           canGetLogic={useAztecLobbyTrombonePad()}
         />

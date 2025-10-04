@@ -6,7 +6,7 @@ const AztecBarrel: React.FC = () => {
   return (
     <IslesCheck
       id={32}
-      name="Isles Tiny Aztec Lobby Barrel"
+      name="Aztec Lobby Barrel"
       region="Japes-Forest Lobbies"
       canGetLogic={checkTinyAztec.in}
       canGetBreak={checkTinyAztec.out}

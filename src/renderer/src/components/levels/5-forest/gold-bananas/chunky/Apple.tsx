@@ -4,7 +4,7 @@ import ForestCheck from '../../check'
 const ChunkyApple: React.FC = () => (
   <ForestCheck
     id={5043}
-    name="Forest Chunky Apple Rescue"
+    name="Chunky's Apple Rescue"
     region="Forest Center And Beanstalk"
     canGetLogic={useChunkyAppleGb()}
   />

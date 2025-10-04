@@ -6,7 +6,7 @@ const AnthillBanana: React.FC = () => (
 <Miniboss>
   <ForestCheck
     id={5031}
-    name="Forest Tiny Anthill Banana"
+    name="Tree Stump Gauntlet"
     region="Owl Tree"
     canGetLogic={useTinyAntGb()}
   />
