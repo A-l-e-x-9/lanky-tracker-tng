@@ -12658,7 +12658,7 @@ const BongosPad = () => {
     IslesCheck,
     {
       id: 3,
-      name: "Isles DK Bongos Pad",
+      name: "DK's Bongo Pad",
       region: "Japes-Forest Lobbies",
       canGetLogic: pad.in,
       canGetBreak: pad.out
@@ -14275,7 +14275,7 @@ const BossCheck$7 = () => {
     JapesCheck,
     {
       id: 1105,
-      name: "Japes Boss Defeated",
+      name: "Japes Boss",
       region: "Troff 'N' Scoff",
       canGetLogic: inStage && anyKong && (vine && climbing || japesSide || japesRambi),
       canGetBreak: inStage && anyKong
@@ -15128,7 +15128,7 @@ const Boulder = () => {
     JapesCheck,
     {
       id: 1040,
-      name: "Japes Chunky Boulder",
+      name: "Boulder Over Chunky's Cave",
       region: "Japes Lowlands",
       canGetLogic: chunkyBoulderGb
     }
@@ -15231,7 +15231,7 @@ const BaboonBlast = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1004,
-    name: "Japes DK Baboon Blast",
+    name: "Baboon Blast Course",
     region: "Japes Lowlands",
     canGetLogic: useDkBlastGb$4()
   }
@@ -16638,7 +16638,7 @@ const BossCheck$6 = () => {
     AztecCheck,
     {
       id: 2105,
-      name: "Aztec Boss Defeated",
+      name: "Aztec Boss",
       region: "Troff 'N' Scoff",
       canGetLogic: aztecFront.in && anyKong,
       canGetBreak: aztecFront.out && anyKong
@@ -16730,7 +16730,7 @@ const BeforeOasisEnemies = () => {
       AztecCheck,
       {
         id: 2300,
-        name: "Aztec Enemy: Vase 0",
+        name: "Vase Room Enemy 0",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && pineapple && zinger.in,
         canGetBreak: logicBreak(inStage) && pineapple && zinger.out
@@ -16740,7 +16740,7 @@ const BeforeOasisEnemies = () => {
       AztecCheck,
       {
         id: 2301,
-        name: "Aztec Enemy: Vase 1",
+        name: "Vase Room Enemy 1",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && pineapple && zinger.in,
         canGetBreak: logicBreak(inStage) && pineapple && zinger.out
@@ -16749,8 +16749,8 @@ const BeforeOasisEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2402,
-        name: "Aztec Enemy: Vase 2",
+        id: 2302,
+        name: "Vase Room Enemy 2",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && pineapple && zinger.in,
         canGetBreak: logicBreak(inStage) && pineapple && zinger.out
@@ -16759,8 +16759,8 @@ const BeforeOasisEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2308,
-        name: "Aztec Enemy: Starting Tunnel 0",
+        id: 2303,
+        name: "Starting Tunnel Area Enemy 0",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
@@ -16769,8 +16769,8 @@ const BeforeOasisEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2309,
-        name: "Aztec Enemy: Starting Tunnel 1",
+        id: 2304,
+        name: "Starting Tunnel Area Enemy 1",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
@@ -16779,8 +16779,8 @@ const BeforeOasisEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2310,
-        name: "Aztec Enemy: Starting Tunnel 2",
+        id: 2305,
+        name: "Starting Tunnel Area Enemy 2",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && zinger.in,
         canGetBreak: logicBreak(inStage) && zinger.out
@@ -16789,8 +16789,8 @@ const BeforeOasisEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2311,
-        name: "Aztec Enemy: Starting Tunnel 3",
+        id: 2306,
+        name: "Starting Tunnel Area Enemy 3",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && zinger.in,
         canGetBreak: logicBreak(inStage) && zinger.out
@@ -16800,7 +16800,7 @@ const BeforeOasisEnemies = () => {
       AztecCheck,
       {
         id: 2400,
-        name: "Aztec Enemy Photo: Vase 0",
+        name: "Vase Room Enemy 0 Photo",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && pineapple && hasFairyCam,
         canGetBreak: logicBreak(inStage) && pineapple && hasFairyCam
@@ -16810,7 +16810,7 @@ const BeforeOasisEnemies = () => {
       AztecCheck,
       {
         id: 2401,
-        name: "Aztec Enemy Photo: Vase 1",
+        name: "Vase Room Enemy 1 Photo",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && pineapple && hasFairyCam,
         canGetBreak: logicBreak(inStage) && pineapple && hasFairyCam
@@ -16819,8 +16819,8 @@ const BeforeOasisEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2502,
-        name: "Aztec Enemy Photo: Vase 2",
+        id: 2402,
+        name: "Vase Room Enemy 2 Photo",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && pineapple && hasFairyCam,
         canGetBreak: logicBreak(inStage) && pineapple && hasFairyCam
@@ -16829,8 +16829,8 @@ const BeforeOasisEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2408,
-        name: "Aztec Enemy Photo: Starting Tunnel 0",
+        id: 2403,
+        name: "Starting Tunnel Area Enemy 0 Photo",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && anyKong && hasFairyCam,
         canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
@@ -16839,8 +16839,8 @@ const BeforeOasisEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2409,
-        name: "Aztec Enemy Photo: Starting Tunnel 1",
+        id: 2404,
+        name: "Starting Tunnel Area Enemy 1 Photo",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && anyKong && hasFairyCam,
         canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
@@ -16849,8 +16849,8 @@ const BeforeOasisEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2410,
-        name: "Aztec Enemy Photo: Starting Tunnel 2",
+        id: 2405,
+        name: "Starting Tunnel Area Enemy 2 Photo",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && hasFairyCam,
         canGetBreak: logicBreak(inStage) && hasFairyCam
@@ -16859,8 +16859,8 @@ const BeforeOasisEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2411,
-        name: "Aztec Enemy Photo: Starting Tunnel 3",
+        id: 2406,
+        name: "Starting Tunnel Area Enemy 3 Photo",
         region: "Various Aztec Tunnels",
         canGetLogic: inStage.in && hasFairyCam,
         canGetBreak: logicBreak(inStage) && hasFairyCam
@@ -18558,7 +18558,7 @@ const BeetleRace$1 = () => {
     AztecCheck,
     {
       id: 2032,
-      name: "Aztec Tiny Beetle Race",
+      name: "Tiny's Beetle Race",
       region: "Aztec Oasis And Totem Area",
       canGetLogic: beetleGb.in,
       canGetBreak: beetleGb.out
@@ -20060,7 +20060,7 @@ const BossCheck$5 = () => {
     FactoryCheck,
     {
       id: 3105,
-      name: "Factory Boss Defeated",
+      name: "Factory Boss",
       region: "Troff 'N' Scoff",
       canGetLogic: inStage && anyKong
     }
@@ -20571,7 +20571,7 @@ const BlockTower = () => {
     FactoryCheck,
     {
       id: 3010,
-      name: "Factory Diddy Block Tower",
+      name: "Diddy's Block Tower",
       region: "Testing Area",
       canGetLogic: blockGb.in,
       canGetBreak: blockGb.out
@@ -20629,7 +20629,7 @@ const NintendoCoin = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CompanyPool, { 
   }
 ) });
 const FactoryBlast = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3003, name: "Factory DK Barrel Blast/DK Arcade Round 1", region: "Storage And Arcade", canGetLogic: useDkBlastGb$2() });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3003, name: "Barrel Blast course and/or DK Arcade Round 1", region: "Storage And Arcade", canGetLogic: useDkBlastGb$2() });
 };
 const CrusherRoom = () => {
   const prodGb = useDkProdGb();
@@ -21532,7 +21532,7 @@ const BossCheck$4 = () => {
     GalleonCheck,
     {
       id: 4105,
-      name: "Galleon Boss Defeated",
+      name: "Galleon Boss",
       region: "Troff 'N' Scoff",
       canGetLogic: top.in || dive && (lighthouseArea || outskirts),
       canGetBreak: top.out
@@ -22032,7 +22032,7 @@ const FreeSeal = () => {
     GalleonCheck,
     {
       id: 4002,
-      name: "Galleon DK Free the Seal",
+      name: "Freeing the Seal",
       region: "Shipyard Outskirts",
       canGetLogic: blastGb.in,
       canGetBreak: blastGb.out
@@ -23479,7 +23479,7 @@ const BossCheck$3 = () => {
     ForestCheck,
     {
       id: 5105,
-      name: "Forest Boss Defeated",
+      name: "Forest Boss",
       region: "Troff 'N' Scoff",
       canGetLogic: inStage && anyKong
     }
@@ -23491,7 +23491,7 @@ const BarnInsideCrate = () => {
     ForestCheck,
     {
       id: 5063,
-      name: "Forest Crate: In Thornvine Barn",
+      name: "Thornvine Barn Melon Crate",
       region: "Forest Mills",
       canGetLogic: barn.in,
       canGetBreak: barn.out
@@ -23505,7 +23505,7 @@ const BarnOutsideCrate = () => {
     ForestCheck,
     {
       id: 5062,
-      name: "Forest Crate: Near Thornvine Barn",
+      name: "Melon Crate Outside Thornvine Barn",
       region: "Forest Mills",
       canGetLogic: dusk || night.in,
       canGetBreak: night.out
@@ -23540,7 +23540,7 @@ const BeanstalkDirt = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPoo
   ForestCheck,
   {
     id: 5070,
-    name: "Forest Dirt: Beanstalk",
+    name: "Dirt in front of The Bean's patch",
     region: "Forest Center And Beanstalk",
     canGetLogic: useBeanDirt()
   }
@@ -24662,7 +24662,7 @@ const BarnFairy = () => {
     ForestCheck,
     {
       id: 5081,
-      name: "Forest Fairy (Thornvine Barn)",
+      name: "Thornvine Barn Fairy",
       region: "Forest Mills",
       canGetLogic: barn.in,
       canGetBreak: barn.out
@@ -24796,7 +24796,7 @@ const DkBarn = () => {
     ForestCheck,
     {
       id: 5004,
-      name: "Forest DK Thornvine Barn Barrel",
+      name: "Thornvine Barn Barrel",
       region: "Forest Mills",
       canGetLogic: barnGb.in,
       canGetBreak: barnGb.out
@@ -24809,7 +24809,7 @@ const ForestBlast = () => (
     ForestCheck,
     {
       id: 5001,
-      name: "Forest DK Baboon Blast",
+      name: "Baboon Blast Barrel",
       region: "Giant Mushroom Exterior",
       canGetLogic: useDkBlastGb$1()
     }
@@ -24923,7 +24923,7 @@ const BeanCheck = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { childr
   ForestCheck,
   {
     id: 5033,
-    name: "Forest Tiny Top of the Beanstalk",
+    name: "Planting The Bean",
     region: "Forest Center And Beanstalk",
     canGetLogic: useTinyBeanGb()
   }
@@ -26154,7 +26154,7 @@ const BossCheck$2 = () => {
     CavesCheck,
     {
       id: 6105,
-      name: "Caves Boss Defeated",
+      name: "Caves Boss",
       region: "Troff 'N' Scoff",
       canGetLogic: inStage && anyKong
     }
@@ -26564,7 +26564,7 @@ const CavesBlast = () => (
     CavesCheck,
     {
       id: 6001,
-      name: "Caves DK Baboon Blast",
+      name: "Baboon Blast Barrel",
       region: "Main Caves Area",
       canGetLogic: useDkBlastGb()
     }
@@ -26617,7 +26617,7 @@ const BeetleRace = () => {
     CavesCheck,
     {
       id: 6020,
-      name: "Caves Lanky Beetle Race",
+      name: "Lanky's Beetle Race",
       region: "Main Caves Area",
       canGetLogic: raceGb.in,
       canGetBreak: raceGb.out
@@ -27498,7 +27498,7 @@ const Okuu = () => {
     CavesCheck,
     {
       id: 5009,
-      name: "Caves Boulder: Big Boulder Near Cranky's",
+      name: "Big Boulder Near Cranky's",
       region: "Main Caves Area",
       canGetLogic: useOrin()
     }
@@ -27884,7 +27884,7 @@ const BossCheck$1 = () => {
     CastleCheck,
     {
       id: 7105,
-      name: "Castle Boss Defeated",
+      name: "Castle Boss",
       region: "Troff 'N' Scoff",
       canGetLogic: inStage && anyKong
     }
@@ -27923,7 +27923,7 @@ const BallroomEnemies = () => {
       CastleCheck,
       {
         id: 7313,
-        name: "Castle Enemy: Ballroom Start",
+        name: "Ballroom Start Enemy",
         region: "Castle Rooms",
         canGetLogic: inStage && diddy && canSlam && kosha.in,
         canGetBreak: inStage && diddy && canSlam && kosha.out
@@ -27933,7 +27933,7 @@ const BallroomEnemies = () => {
       CastleCheck,
       {
         id: 7413,
-        name: "Castle Enemy Photo: Ballroom Start",
+        name: "Ballroom Start Enemy Photo",
         region: "Castle Rooms",
         canGetLogic: inStage && diddy && canSlam && hasFairyCam
       }
@@ -29121,7 +29121,7 @@ const DiddyBallroom = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { ch
   CastleCheck,
   {
     id: 7011,
-    name: "Castle Diddy Ballroom",
+    name: "Diddy's Ballroom Barrel",
     region: "Castle Rooms",
     canGetLogic: useDiddyRoomGb()
   }
@@ -30045,7 +30045,7 @@ const BoulderCheck = () => {
     CastleCheck,
     {
       id: 7205,
-      name: "Castle Boulder: In the Museum",
+      name: "Museum Boulder",
       region: "Castle Rooms",
       canGetLogic: canDoMuseum
     }
@@ -30343,7 +30343,7 @@ const BlastArena = () => {
     HelmCheck,
     {
       id: 8090,
-      name: "Helm Arena (Top of Blast-o-Matic)",
+      name: "Battle Arena",
       canGetLogic: helmMachine.in && rocket,
       canGetBreak: helmMachine.out && rocket
     }
