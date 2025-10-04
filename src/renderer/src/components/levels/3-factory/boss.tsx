@@ -10,7 +10,7 @@ const BossCheck: React.FC = () => {
     <BossPool>
       <FactoryCheck
         id={3105}
-        name="Factory Boss Defeated"
+        name="Factory Boss"
         region="Troff 'N' Scoff"
         canGetLogic={inStage && anyKong}
       />

@@ -6,7 +6,7 @@ const BeanCheck: React.FC = () => (
 <Miniboss>
   <ForestCheck
     id={5033}
-    name="Forest Tiny Top of the Beanstalk"
+    name="Planting The Bean"
     region="Forest Center And Beanstalk"
     canGetLogic={useTinyBeanGb()}
   />

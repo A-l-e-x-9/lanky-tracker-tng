@@ -6,7 +6,7 @@ const BlockTower: React.FC = () => {
   return (
     <FactoryCheck
       id={3010}
-      name="Factory Diddy Block Tower"
+      name="Diddy's Block Tower"
       region="Testing Area"
       canGetLogic={blockGb.in}
       canGetBreak={blockGb.out}

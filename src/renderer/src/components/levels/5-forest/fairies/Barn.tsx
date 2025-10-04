@@ -10,7 +10,7 @@ const BarnFairy: React.FC = () => {
       <VanillaFairy>
         <ForestCheck
           id={5081}
-          name="Forest Fairy (Thornvine Barn)"
+          name="Thornvine Barn Fairy"
           region="Forest Mills"
           canGetLogic={barn.in}
           canGetBreak={barn.out}

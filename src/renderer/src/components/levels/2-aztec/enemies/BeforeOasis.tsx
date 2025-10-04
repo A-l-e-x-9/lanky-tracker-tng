@@ -15,98 +15,98 @@ const BeforeOasisEnemies: React.FC = () => {
     <DropPool>
       <AztecCheck
         id={2300}
-        name="Aztec Enemy: Vase 0"
+        name="Vase Room Enemy 0"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && pineapple && zinger.in}
         canGetBreak={logicBreak(inStage) && pineapple && zinger.out}
       />
       <AztecCheck
         id={2301}
-        name="Aztec Enemy: Vase 1"
+        name="Vase Room Enemy 1"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && pineapple && zinger.in}
         canGetBreak={logicBreak(inStage) && pineapple && zinger.out}
       />
       <AztecCheck
-        id={2402}
-        name="Aztec Enemy: Vase 2"
+        id={2302}
+        name="Vase Room Enemy 2"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && pineapple && zinger.in}
         canGetBreak={logicBreak(inStage) && pineapple && zinger.out}
       />
       <AztecCheck
-        id={2308}
-        name="Aztec Enemy: Starting Tunnel 0"
+        id={2303}
+        name="Starting Tunnel Area Enemy 0"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && anyKong}
         canGetBreak={logicBreak(inStage) && anyKong}
       />
       <AztecCheck
-        id={2309}
-        name="Aztec Enemy: Starting Tunnel 1"
+        id={2304}
+        name="Starting Tunnel Area Enemy 1"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && anyKong}
         canGetBreak={logicBreak(inStage) && anyKong}
       />
       <AztecCheck
-        id={2310}
-        name="Aztec Enemy: Starting Tunnel 2"
+        id={2305}
+        name="Starting Tunnel Area Enemy 2"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && zinger.in}
         canGetBreak={logicBreak(inStage) && zinger.out}
       />
       <AztecCheck
-        id={2311}
-        name="Aztec Enemy: Starting Tunnel 3"
+        id={2306}
+        name="Starting Tunnel Area Enemy 3"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && zinger.in}
         canGetBreak={logicBreak(inStage) && zinger.out}
       />
       <AztecCheck
         id={2400}
-        name="Aztec Enemy Photo: Vase 0"
+        name="Vase Room Enemy 0 Photo"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && pineapple && hasFairyCam}
         canGetBreak={logicBreak(inStage) && pineapple && hasFairyCam}
       />
       <AztecCheck
         id={2401}
-        name="Aztec Enemy Photo: Vase 1"
+        name="Vase Room Enemy 1 Photo"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && pineapple && hasFairyCam}
         canGetBreak={logicBreak(inStage) && pineapple && hasFairyCam}
       />
       <AztecCheck
-        id={2502}
-        name="Aztec Enemy Photo: Vase 2"
+        id={2402}
+        name="Vase Room Enemy 2 Photo"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && pineapple && hasFairyCam}
         canGetBreak={logicBreak(inStage) && pineapple && hasFairyCam}
       />
       <AztecCheck
-        id={2408}
-        name="Aztec Enemy Photo: Starting Tunnel 0"
+        id={2403}
+        name="Starting Tunnel Area Enemy 0 Photo"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && anyKong && hasFairyCam}
         canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
       />
       <AztecCheck
-        id={2409}
-        name="Aztec Enemy Photo: Starting Tunnel 1"
+        id={2404}
+        name="Starting Tunnel Area Enemy 1 Photo"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && anyKong && hasFairyCam}
         canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
       />
       <AztecCheck
-        id={2410}
-        name="Aztec Enemy Photo: Starting Tunnel 2"
+        id={2405}
+        name="Starting Tunnel Area Enemy 2 Photo"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && hasFairyCam}
         canGetBreak={logicBreak(inStage) && hasFairyCam}
       />
       <AztecCheck
-        id={2411}
-        name="Aztec Enemy Photo: Starting Tunnel 3"
+        id={2406}
+        name="Starting Tunnel Area Enemy 3 Photo"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && hasFairyCam}
         canGetBreak={logicBreak(inStage) && hasFairyCam}

@@ -6,7 +6,7 @@ const BongosPad: React.FC = () => {
   return (
     <IslesCheck
       id={3}
-      name="Isles DK Bongos Pad"
+      name="DK's Bongo Pad"
       region="Japes-Forest Lobbies"
       canGetLogic={pad.in}
       canGetBreak={pad.out}

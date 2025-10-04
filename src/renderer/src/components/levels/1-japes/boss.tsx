@@ -14,7 +14,7 @@ const BossCheck: React.FC = () => {
     <BossPool>
       <JapesCheck
         id={1105}
-        name="Japes Boss Defeated"
+        name="Japes Boss"
         region="Troff 'N' Scoff"
         canGetLogic={inStage && anyKong && ((vine && climbing) || japesSide || japesRambi)}
         canGetBreak={inStage && anyKong}

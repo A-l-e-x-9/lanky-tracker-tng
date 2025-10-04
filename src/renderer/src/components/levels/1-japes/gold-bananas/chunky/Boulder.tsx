@@ -6,7 +6,7 @@ const Boulder: React.FC = () => {
   return (
     <JapesCheck
       id={1040}
-      name="Japes Chunky Boulder"
+      name="Boulder Over Chunky's Cave"
       region="Japes Lowlands"
       canGetLogic={chunkyBoulderGb}
     />

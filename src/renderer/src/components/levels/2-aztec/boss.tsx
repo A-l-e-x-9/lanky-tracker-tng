@@ -10,7 +10,7 @@ const BossCheck: React.FC = () => {
     <BossPool>
       <AztecCheck
         id={2105}
-        name="Aztec Boss Defeated"
+        name="Aztec Boss"
         region="Troff 'N' Scoff"
         canGetLogic={aztecFront.in && anyKong}
         canGetBreak={aztecFront.out && anyKong}

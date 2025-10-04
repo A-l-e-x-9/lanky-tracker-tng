@@ -6,7 +6,7 @@ const FreeSeal: React.FC = () => {
   return (
     <GalleonCheck
       id={4002}
-      name="Galleon DK Free the Seal"
+      name="Freeing the Seal"
       region="Shipyard Outskirts"
       canGetLogic={blastGb.in}
       canGetBreak={blastGb.out}

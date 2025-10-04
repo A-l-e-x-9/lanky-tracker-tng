@@ -8,7 +8,7 @@ const BeetleRace: React.FC = () => {
     <ToughGoldenBanana>
       <CavesCheck
         id={6020}
-        name="Caves Lanky Beetle Race"
+        name="Lanky's Beetle Race"
         region="Main Caves Area"
         canGetLogic={raceGb.in}
         canGetBreak={raceGb.out}

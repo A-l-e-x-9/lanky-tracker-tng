@@ -14,14 +14,14 @@ const BallroomEnemies: React.FC = () => {
     <DropPool>
       <CastleCheck
         id={7313}
-        name="Castle Enemy: Ballroom Start"
+        name="Ballroom Start Enemy"
         region="Castle Rooms"
         canGetLogic={inStage && diddy && canSlam && kosha.in}
         canGetBreak={inStage && diddy && canSlam && kosha.out}
       />
       <CastleCheck
         id={7413}
-        name="Castle Enemy Photo: Ballroom Start"
+        name="Ballroom Start Enemy Photo"
         region="Castle Rooms"
         canGetLogic={inStage && diddy && canSlam && hasFairyCam}
       />
