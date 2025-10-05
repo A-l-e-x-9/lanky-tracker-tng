@@ -54,51 +54,50 @@ const ConnectorTunnelEnemies: React.FC = () => {
         canGetLogic={inStage.in && anyKong}
         canGetBreak={logicBreak(inStage) && anyKong}
       />
+      <AztecCheck
+        id={2407}
+        name="Photo of Middle Tunnel Pad Enemy 0"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && hasFairyCam}
+      />
+      <AztecCheck
+        id={2408}
+        name="Photo of Middle Tunnel Pad Enemy 1"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && hasFairyCam}
+      />
+      <AztecCheck
+        id={2409}
+        name="Photo of Middle Tunnel Cage Enemy 0"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && anyKong && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
+      />
+      <AztecCheck
+        id={2410}
+        name="Photo of Middle Tunnel Cage Enemy 1"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && anyKong && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
+      />
+      <AztecCheck
+        id={2411}
+        name="Photo of Middle Tunnel Cage Enemy 2"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && anyKong && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
+      />
+      <AztecCheck
+        id={2412}
+        name="Photo of Middle Tunnel Cage Enemy 3"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && anyKong && hasFairyCam}
+        canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
+      />
     </DropPool>
   )
 }
 
 export default ConnectorTunnelEnemies
-
-/*      <AztecCheck
-        id={2402}
-        name="Aztec Enemy Photo: Tunnel Pad 0"
-        region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && hasFairyCam}
-        canGetBreak={logicBreak(inStage) && hasFairyCam}
-      />
-      <AztecCheck
-        id={2403}
-        name="Aztec Enemy Photo: Tunnel Pad 1"
-        region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && hasFairyCam}
-        canGetBreak={logicBreak(inStage) && hasFairyCam}
-      />
-      <AztecCheck
-        id={2404}
-        name="Aztec Enemy Photo: Tunnel Cage 0"
-        region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && anyKong && hasFairyCam}
-        canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
-      />
-      <AztecCheck
-        id={2405}
-        name="Aztec Enemy Photo: Tunnel Cage 1"
-        region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && anyKong && hasFairyCam}
-        canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
-      />
-      <AztecCheck
-        id={2406}
-        name="Aztec Enemy Photo: Tunnel Cage 2"
-        region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && anyKong && hasFairyCam}
-        canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
-      />
-      <AztecCheck
-        id={2407}
-        name="Aztec Enemy Photo: Tunnel Cage 3"
-        region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && anyKong && hasFairyCam}
-        canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
-      />*/
