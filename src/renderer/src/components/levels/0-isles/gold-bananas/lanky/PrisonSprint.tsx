@@ -6,8 +6,8 @@ export const PrisonSprint: React.FC = () => {
   return (
     <IslesCheck
       id={21}
-      name="Isles Lanky Sprint Cage"
-      region="Krem Isle"
+      name="Lanky's Sprint Banana in K. Lumsy's Prison"
+      region="K. Rool's Island"
       canGetLogic={prison.in}
       canGetBreak={prison.out}
     />

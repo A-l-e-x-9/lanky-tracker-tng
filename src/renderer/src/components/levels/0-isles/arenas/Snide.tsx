@@ -8,8 +8,8 @@ const SnideArena: React.FC = () => (
     <VanillaArena>
       <IslesCheck
         id={90}
-        name="Isles Arena 1 (Snide's Room: Under Rock)"
-        region="Krem Isle"
+        name="Battle Arena at Snide's"
+        region="K. Rool's Island"
         canGetLogic={useSnideArena()}
       />
     </VanillaArena>

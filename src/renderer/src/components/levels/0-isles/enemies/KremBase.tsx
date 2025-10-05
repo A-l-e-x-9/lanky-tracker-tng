@@ -8,14 +8,14 @@ return (
   <DropPool>
     <IslesCheck
       id={305}
-      name="Isles Enemy: Monkeyport Pad"
-      region="Krem Isle"
+      name="Enemy at Monkeyport Pad"
+      region="K. Rool's Island"
       canGetLogic={useAnyKong()}
     />
     <IslesCheck
       id={405}
-      name="Isles Enemy Photo: Monkeyport Pad"
-      region="Krem Isle"
+      name="Photo of Enemy at Monkeyport Pad"
+      region="K. Rool's Island"
       canGetLogic={useAnyKong() && hasFairyCam}
     />
   </DropPool>

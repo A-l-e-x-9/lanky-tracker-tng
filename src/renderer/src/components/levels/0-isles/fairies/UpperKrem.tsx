@@ -8,8 +8,8 @@ const UpperKremFairy: React.FC = () => (
     <VanillaFairy>
       <IslesCheck
         id={83}
-        name="Isles Fairy (Upper Krem Isles)"
-        region="Krem Isle"
+        name="Fairy Behind Helm Lobby"
+        region="K. Rool's Island"
         canGetLogic={useKremFairy()}
       />
     </VanillaFairy>

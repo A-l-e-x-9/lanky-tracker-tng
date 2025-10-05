@@ -6,8 +6,8 @@ const SnideBarrel: React.FC = () => {
   return (
     <IslesCheck
       id={10}
-      name="Isles Diddy Snide's Spring Barrel"
-      region="Krem Isle"
+      name="Spring Barrel at Snide's"
+      region="K. Rool's Island"
       canGetLogic={snide.in}
       canGetBreak={snide.out}
     />

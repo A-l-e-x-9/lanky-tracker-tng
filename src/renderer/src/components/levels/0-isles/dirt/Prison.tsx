@@ -10,8 +10,8 @@ const PrisonDirt: React.FC = () => {
       <VanillaDirt>
         <IslesCheck
           id={72}
-          name="Isles Dirt: Back of Prison"
-          region="Krem Isle"
+          name="Dirt in K. Lumsy's Prison"
+          region="K. Rool's Island"
           canGetLogic={dirt}
         />
       </VanillaDirt>{' '}

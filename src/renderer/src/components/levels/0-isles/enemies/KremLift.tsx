@@ -13,40 +13,40 @@ const KremLiftEnemies: React.FC = () => {
     <DropPool>
       <IslesCheck
         id={306}
-        name="Isles Enemy: Upper Factory Path"
-        region="Krem Isle"
+        name="Enemy at Upper Factory Path"
+        region="K. Rool's Island"
         canGetLogic={anyKong && kremAscent}
       />
       <IslesCheck
         id={308}
-        name="Isles Enemy: Lower Factory Path 0"
-        region="Krem Isle"
+        name="Enemy 0 at Lower Factory Path"
+        region="K. Rool's Island"
         canGetLogic={anyKong && kremAscent && zinger.in}
         canGetBreak={anyKong && kremAscent && zinger.out}
       />
       <IslesCheck
         id={309}
-        name="Isles Enemy: Lower Factory Path 1"
-        region="Krem Isle"
+        name="Enemy 1 at Lower Factory Path"
+        region="K. Rool's Island"
         canGetLogic={anyKong && kremAscent && zinger.in}
         canGetBreak={anyKong && kremAscent && zinger.out}
       />
       <IslesCheck
         id={406}
-        name="Isles Enemy Photo: Upper Factory Path"
-        region="Krem Isle"
+        name="Photo of Enemy Upper Factory Path"
+        region="K. Rool's Island"
         canGetLogic={anyKong && kremAscent && hasFairyCam}
       />
       <IslesCheck
         id={408}
-        name="Isles Enemy Photo: Lower Factory Path 0"
-        region="Krem Isle"
+        name="Photo of Enemy 0 at Lower Factory Path"
+        region="K. Rool's Island"
         canGetLogic={anyKong && kremAscent && hasFairyCam}
       />
       <IslesCheck
         id={409}
-        name="Isles Enemy Photo: Lower Factory Path 1"
-        region="Krem Isle"
+        name="Photo of Enemy 1 at Lower Factory Path"
+        region="K. Rool's Island"
         canGetLogic={anyKong && kremAscent && hasFairyCam}
       />
     </DropPool>
