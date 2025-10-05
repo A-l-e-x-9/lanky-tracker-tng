@@ -10,8 +10,8 @@ const UnderCaves: React.FC = () => {
       <VanillaDirt>
         <IslesCheck
           id={73}
-          name="Isles Dirt: Under Caves Lobby"
-          region="Main Isle"
+          name="Dirt Under Caves Lobby"
+          region="DK Island"
           canGetLogic={dirt}
         />
       </VanillaDirt>

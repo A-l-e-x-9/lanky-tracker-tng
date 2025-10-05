@@ -10,8 +10,8 @@ const TrainingRear: React.FC = () => {
       <VanillaDirt>
         <IslesCheck
           id={70}
-          name="Isles Dirt: Training Grounds Rear Tunnel"
-          region="Main Isle"
+          name="Dirt Near Cranky's"
+          region="DK Island"
           canGetLogic={dirt}
         />
       </VanillaDirt>

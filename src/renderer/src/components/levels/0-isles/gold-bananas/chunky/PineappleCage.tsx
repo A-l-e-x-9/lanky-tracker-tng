@@ -4,7 +4,7 @@ import IslesCheck from '../../check'
 const PineappleCage: React.FC = () => {
   const cage = useCheckChunkyCage()
   return (
-    <IslesCheck id={40} name="Isles Chunky Pineapple Cage" region="Main Isle" canGetLogic={cage} />
+    <IslesCheck id={40} name="Chunky's Pineapple Cage" region="DK Island" canGetLogic={cage} />
   )
 }
 

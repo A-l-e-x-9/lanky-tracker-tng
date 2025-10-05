@@ -8,8 +8,8 @@ const Hoard: React.FC = () => (
     <VanillaDirt>
       <IslesCheck
         id={71}
-        name="Isles Dirt: Banana Hoard"
-        region="Main Isle"
+        name="Dirt Inside Banana Hoard"
+        region="DK Island"
         canGetLogic={useHoardDirt()}
       />
     </VanillaDirt>

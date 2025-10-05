@@ -6,8 +6,8 @@ export const JapesRock: React.FC = () => {
   return (
     <IslesCheck
       id={1}
-      name="Isles Japes Lobby Entrance Item"
-      region="Main Isle"
+      name="The First Banana (Japes lobby entrance)"
+      region="DK Island"
       canGetLogic={japesRock}
     />
   )

@@ -6,8 +6,8 @@ const SummitBarrel: React.FC = () => {
   return (
     <IslesCheck
       id={12}
-      name="Isles Diddy Summit Barrel"
-      region="Main Isle"
+      name="Diddy's Summit Barrel"
+      region="DK Island"
       canGetLogic={summit.in}
       canGetBreak={summit.out}
     />

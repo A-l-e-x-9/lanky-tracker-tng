@@ -6,8 +6,8 @@ export const PeanutCage: React.FC = () => {
   return (
     <IslesCheck
       id={11}
-      name="Isles Diddy Peanut Cage"
-      region="Main Isle"
+      name="Diddy's Peanut Cage"
+      region="DK Island"
       canGetLogic={cage.in}
       canGetBreak={cage.out}
     />

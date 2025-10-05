@@ -11,64 +11,64 @@ const IslesMainEnemies: React.FC = () => {
     <DropPool>
       <IslesCheck
         id={300}
-        name="Isles Enemy: Pineapple Cage 0"
-        region="Main Isle"
+        name="Enemy Near Pineapple Cage 0"
+        region="DK Island"
         canGetLogic={anyKong}
       />
       <IslesCheck
         id={301}
-        name="Isles Enemy: Pineapple Cage 1"
-        region="Main Isle"
+        name="Enemy Near Pineapple Cage 1"
+        region="DK Island"
         canGetLogic={anyKong && zinger.in}
         canGetBreak={anyKong && zinger.out}
       />
       <IslesCheck
         id={302}
-        name="Isles Enemy: Fungi Cannon 0"
-        region="Main Isle"
+        name="Enemy Near Fungi Cannon 0"
+        region="DK Island"
         canGetLogic={anyKong}
       />
       <IslesCheck
         id={303}
-        name="Isles Enemy: Fungi Cannon 1"
-        region="Main Isle"
+        name="Enemy Near Fungi Cannon 1"
+        region="DK Island"
         canGetLogic={anyKong && zinger.in}
         canGetBreak={anyKong && zinger.out}
       />
       <IslesCheck
         id={304}
-        name="Isles Enemy: Japes Entrance"
-        region="Main Isle"
+        name="Enemy Near Japes Entrance"
+        region="DK Island"
         canGetLogic={anyKong}
       />
       <IslesCheck
         id={400}
-        name="Isles Enemy Photo: Pineapple Cage 0"
-        region="Main Isle"
+        name="Photo of Enemy Near Pineapple Cage 0"
+        region="DK Island"
         canGetLogic={anyKong && hasFairyCam}
       />
       <IslesCheck
         id={401}
-        name="Isles Enemy Photo: Pineapple Cage 1"
-        region="Main Isle"
+        name="Photo of Enemy Near Pineapple Cage 1"
+        region="DK Island"
         canGetLogic={anyKong && hasFairyCam}
       />
       <IslesCheck
         id={402}
-        name="Isles Enemy Photo: Fungi Cannon 0"
-        region="Main Isle"
+        name="Photo of Enemy Near Fungi Cannon 0"
+        region="DK Island"
         canGetLogic={anyKong && hasFairyCam}
       />
       <IslesCheck
         id={403}
-        name="Isles Enemy Photo: Fungi Cannon 1"
-        region="Main Isle"
+        name="Photo of Enemy Near Fungi Cannon 1"
+        region="DK Island"
         canGetLogic={anyKong && hasFairyCam}
       />
       <IslesCheck
         id={404}
-        name="Isles Enemy Photo: Japes Entrance"
-        region="Main Isle"
+        name="Photo of Enemy Near Japes Entrance"
+        region="DK Island"
         canGetLogic={anyKong && hasFairyCam}
       />
     </DropPool>
