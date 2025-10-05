@@ -13,15 +13,15 @@ const LankyMedal: React.FC = () => {
   <Miniboss>
     <CavesCheck
       id={6102}
-      name="Caves Lanky Medal"
-      region="Caves Medal Rewards"
+      name="Lanky's Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
     <CavesCheck
       id={6202}
-      name="Caves Lanky Half-Medal"
-      region="Caves Medal Rewards"
+      name="Lanky's Half-Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />
@@ -32,15 +32,15 @@ const LankyMedal: React.FC = () => {
   <>
     <CavesCheck
       id={6102}
-      name="Caves Lanky Medal"
-      region="Caves Medal Rewards"
+      name="Lanky's Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
     <CavesCheck
       id={6202}
-      name="Caves Lanky Half-Medal"
-      region="Caves Medal Rewards"
+      name="Lanky's Half-Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />

@@ -12,15 +12,15 @@ const DkMedal: React.FC = () => {
   <>
     <CavesCheck
       id={6100}
-      name="Caves DK Medal"
-      region="Caves Medal Rewards"
+      name="DK's Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
     <CavesCheck
       id={6200}
-      name="Caves DK Half-Medal"
-      region="Caves Medal Rewards"
+      name="DK's Half-Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />

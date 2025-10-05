@@ -12,15 +12,15 @@ const TinyMedal: React.FC = () => {
   <>
     <AztecCheck
       id={2103}
-      name="Aztec Tiny Medal"
-      region="Aztec Medal Rewards"
+      name="Tiny's Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
     <AztecCheck
       id={2203}
-      name="Aztec Tiny Half-Medal"
-      region="Aztec Medal Rewards"
+      name="Tiny's Half-Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />

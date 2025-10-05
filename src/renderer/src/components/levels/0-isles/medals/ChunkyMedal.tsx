@@ -13,14 +13,14 @@ const ChunkyMedal: React.FC = () => {
     <IslesCheck
       id={104}
       name="Chunky's Medal"
-      region="Isles Medal Rewards"
+      region="Banana Medals"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
     <IslesCheck
       id={204}
       name="Chunky's Half-Medal"
-      region="Isles Medal Rewards"
+      region="Banana Medals"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />

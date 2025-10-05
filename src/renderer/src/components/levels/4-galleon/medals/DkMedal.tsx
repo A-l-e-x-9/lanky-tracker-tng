@@ -12,15 +12,15 @@ const DkMedal: React.FC = () => {
   <>
     <GalleonCheck
       id={4100}
-      name="Galleon DK Medal"
-      region="Galleon Medal Rewards"
+      name="DK's Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
     <GalleonCheck
       id={4200}
-      name="Galleon DK Half-Medal"
-      region="Galleon Medal Rewards"
+      name="DK's Half-Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />

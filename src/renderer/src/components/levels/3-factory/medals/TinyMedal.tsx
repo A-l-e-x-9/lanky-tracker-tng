@@ -12,15 +12,15 @@ const TinyMedal: React.FC = () => {
   <>
     <FactoryCheck
       id={3103}
-      name="Factory Tiny Medal"
-      region="Factory Medal Rewards"
+      name="Tiny's Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
     <FactoryCheck
       id={3203}
-      name="Factory Tiny Half-Medal"
-      region="Factory Medal Rewards"
+      name="Tiny's Half-Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />

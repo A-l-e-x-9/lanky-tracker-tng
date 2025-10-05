@@ -12,15 +12,15 @@ const DiddyMedal: React.FC = () => {
   <>
     <ForestCheck
       id={5101}
-      name="Forest Diddy Medal"
-      region="Forest Medal Rewards"
+      name="Diddy's Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
     <ForestCheck
       id={5201}
-      name="Forest Diddy Half-Medal"
-      region="Forest Medal Rewards"
+      name="Diddy's Half-Medal"
+      region="Banana Medals"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />
