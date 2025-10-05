@@ -15,77 +15,77 @@ const CavernsEnemies: React.FC = () => {
     <DropPool>
       <GalleonCheck
         id={4300}
-        name="Galleon Enemy: Chest Room 0"
+        name="Chest Room Enemy 0"
         region="Galleon Caverns"
         canGetLogic={inStage && klobber}
       />
       <GalleonCheck
         id={4301}
-        name="Galleon Enemy: Chest Room 1"
+        name="Chest Room Enemy 1"
         region="Galleon Caverns"
         canGetLogic={inStage && kaboom.in}
         canGetBreak={inStage && kaboom.out}
       />
       <GalleonCheck
         id={4302}
-        name="Galleon Enemy: Vine Cannon"
+        name="Vine Cannon Enemy"
         region="Galleon Caverns"
         canGetLogic={inStage && kaboom.in}
         canGetBreak={inStage && kaboom.out}
       />
       <GalleonCheck
         id={4303}
-        name="Galleon Enemy: Cranky Cannon"
+        name="Cranky Cannon Enemy"
         region="Galleon Caverns"
         canGetLogic={inStage && kaboom.in}
         canGetBreak={inStage && kaboom.out}
       />
       <GalleonCheck
         id={4304}
-        name="Galleon Enemy: Peanut Tunnel"
+        name="Peanut Tunnel Enemy"
         region="Galleon Caverns"
         canGetLogic={inStage && kosha.in}
         canGetBreak={inStage && kosha.out}
       />
       <GalleonCheck
         id={4306}
-        name="Galleon Enemy: Coconut Tunnel"
+        name="Coconut Tunnel Enemy"
         region="Galleon Caverns"
         canGetLogic={inStage && anyKong}
       />
       <GalleonCheck
         id={4400}
-        name="Galleon Enemy Photo: Chest Room 0"
+        name="Photo of Chest Room Enemy 0"
         region="Galleon Caverns"
         canGetLogic={inStage && klobber && hasCamera}
       />
       <GalleonCheck
         id={4401}
-        name="Galleon Enemy Photo: Chest Room 1"
+        name="Photo of Chest Room Enemy 1"
         region="Galleon Caverns"
         canGetLogic={inStage && hasCamera}
       />
       <GalleonCheck
         id={4402}
-        name="Galleon Enemy Photo: Vine Cannon"
+        name="Photo of Vine Cannon Enemy"
         region="Galleon Caverns"
         canGetLogic={inStage && hasCamera}
       />
       <GalleonCheck
         id={4403}
-        name="Galleon Enemy Photo: Cranky Cannon"
+        name="Photo of Cranky Cannon Enemy"
         region="Galleon Caverns"
         canGetLogic={inStage && hasCamera}
       />
       <GalleonCheck
         id={4404}
-        name="Galleon Enemy Photo: Peanut Tunnel"
+        name="Photo of Peanut Tunnel Enemy"
         region="Galleon Caverns"
         canGetLogic={inStage && hasCamera}
       />
       <GalleonCheck
         id={4406}
-        name="Galleon Enemy Photo: Coconut Tunnel"
+        name="Photo of Coconut Tunnel Enemy"
         region="Galleon Caverns"
         canGetLogic={inStage && anyKong && hasCamera}
       />

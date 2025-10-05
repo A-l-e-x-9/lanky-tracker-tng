@@ -8,7 +8,7 @@ const CavernArena: React.FC = () => (
     <VanillaArena>
       <GalleonCheck
         id={4090}
-        name="Galleon Arena (Under Cranky)"
+        name="Battle Arena (under Cranky's)"
         region="Galleon Caverns"
         canGetLogic={useArena()}
       />

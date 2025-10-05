@@ -4,7 +4,7 @@ import CavesCheck from '../../check'
 const CastleSlam: React.FC = () => (
   <CavesCheck
     id={6021}
-    name="Caves Lanky Ice Castle Slam Challenge"
+    name="Ice Castle Slamming"
     region="Main Caves Area"
     canGetLogic={useLankyCastleGb()}
   />

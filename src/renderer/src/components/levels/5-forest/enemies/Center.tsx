@@ -16,69 +16,75 @@ const CenterEnemies: React.FC = () => {
     <DropPool>
       <ForestCheck
         id={5323}
-        name="Forest Enemy: Near Apple Dropoff"
+        name="Enemy in Front of Tunnel to Mills"
         region="Forest Center And Beanstalk"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5324}
-        name="Forest Enemy: Near Vanilla DK Portal"
+        name="Enemy in Front of Tunnel to Giant Shroom"
         region="Forest Center And Beanstalk"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5325}
-        name="Forest Enemy: Near Well Tag"
+        name="Enemy Near Well Entrance"
         region="Forest Center And Beanstalk"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5312}
-        name="Forest Enemy: Green Tunnel"
+        name="Enemy in Tunnel to Bean Zone"
         region="Forest Center And Beanstalk"
         canGetLogic={beanHalf && zinger.in}
         canGetBreak={beanHalf && zinger.out}
       />
       <ForestCheck
         id={5310}
-        name="Forest Enemy: Near Beanstalk 0"
+        name="Enemy 0 at Beanstalk"
         region="Forest Center And Beanstalk"
         canGetLogic={beanstalk && klump}
       />
       <ForestCheck
         id={5311}
-        name="Forest Enemy: Near Beanstalk 1"
+        name="Enemy 1 at Beanstalk"
         region="Forest Center And Beanstalk"
         canGetLogic={beanstalk && klump}
       />
       <ForestCheck
-        id={5411}
-        name="Forest Enemy: Giant Tomato 0"
+        id={5326}
+        name="Giant Tomato 0"
         region="Forest Center And Beanstalk"
         canGetLogic={beanstalk && hasHunky}
       />
       <ForestCheck
-        id={5412}
-        name="Forest Enemy: Giant Tomato 1"
+        id={5327}
+        name="Giant Tomato 1"
         region="Forest Center And Beanstalk"
         canGetLogic={beanstalk && hasHunky}
       />
       <ForestCheck
-        id={5413}
-        name="Forest Enemy: Giant Tomato 2"
+        id={5328}
+        name="Giant Tomato 2"
         region="Forest Center And Beanstalk"
         canGetLogic={beanstalk && hasHunky}
       />
       <ForestCheck
-        id={5414}
-        name="Forest Enemy: Giant Tomato 3"
+        id={5329}
+        name="Giant Tomato 3"
         region="Forest Center And Beanstalk"
         canGetLogic={beanstalk && hasHunky}
       />
-      <ForestCheck
+    </DropPool>
+  )
+}
+
+export default CenterEnemies
+
+/*      <ForestCheck
         id={5423}
         name="Forest Enemy Photo: Near Apple Dropoff"
         region="Forest Center And Beanstalk"
@@ -137,9 +143,4 @@ const CenterEnemies: React.FC = () => {
         name="Forest Enemy Photo: Giant Tomato 3"
         region="Forest Center And Beanstalk"
         canGetLogic={beanstalk && hasHunky && hasFairyCam}
-      />
-    </DropPool>
-  )
-}
-
-export default CenterEnemies
+      />*/

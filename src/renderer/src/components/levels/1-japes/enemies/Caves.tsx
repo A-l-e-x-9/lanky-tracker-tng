@@ -15,69 +15,75 @@ const CaveEnemies: React.FC = () => {
     <DropPool>
       <JapesCheck
         id={1325}
-        name="Japes Enemy: Mountain Start 0"
+        name="Diddy's Mountain Start Area Enemy 0"
         region="Japes Caves And Mines"
         canGetLogic={mine}
       />
       <JapesCheck
         id={1326}
-        name="Japes Enemy: Mountain Start 1"
+        name="Diddy's Mountain Start Area Enemy 1"
         region="Japes Caves And Mines"
         canGetLogic={mine}
       />
       <JapesCheck
         id={1327}
-        name="Japes Enemy: Mountain Start 2"
+        name="Diddy's Mountain Start Area Enemy 2"
         region="Japes Caves And Mines"
         canGetLogic={mine}
       />
       <JapesCheck
         id={1328}
-        name="Japes Enemy: Mountain Start 3"
+        name="Diddy's Mountain Start Area Enemy 3"
         region="Japes Caves And Mines"
         canGetLogic={mine && isZinger.in}
         canGetBreak={mine && isZinger.out}
       />
       <JapesCheck
         id={1329}
-        name="Japes Enemy: Mountain Start 4"
+        name="Diddy's Mountain Start Area Start 4"
         region="Japes Caves And Mines"
         canGetLogic={mine && isZinger.in}
         canGetBreak={mine && isZinger.out}
       />
       <JapesCheck
         id={1330}
-        name="Japes Enemy: Mountain Gate 0"
+        name="Diddy's Mountain Enemy 0 at the Gate"
         region="Japes Caves And Mines"
         canGetLogic={mine && isZinger.in}
         canGetBreak={mine && isZinger.out}
       />
       <JapesCheck
         id={1331}
-        name="Japes Enemy: Mountain Gate 1"
+        name="Diddy's Mountain Enemy 1 at the Gate"
         region="Japes Caves And Mines"
         canGetLogic={mine && isZinger.in}
         canGetBreak={mine && isZinger.out}
       />
       <JapesCheck
         id={1332}
-        name="Japes Enemy: Mountain Charge Switch"
+        name="Diddy's Mountain Enemy at the Conveyor Belt Controls"
         region="Japes Caves And Mines"
         canGetLogic={mine && charge && klump}
       />
       <JapesCheck
         id={1333}
-        name="Japes Enemy: Mountain Conveyor 0"
+        name="Diddy's Mountain Enemy 0 in the Conveyor Area"
         region="Japes Caves And Mines"
         canGetLogic={mine && canSlam && klump}
       />
       <JapesCheck
         id={1334}
-        name="Japes Enemy: Mountain Conveyor 1"
+        name="Diddy's Mountain Enemy 1 in the Conveyor Area"
         region="Japes Caves And Mines"
         canGetLogic={mine && canSlam && klump}
       />
-      <JapesCheck
+    </DropPool>
+  )
+}
+
+export default CaveEnemies
+
+/*      <JapesCheck
         id={1425}
         name="Japes Enemy Photo: Mountain Start 0"
         region="Japes Caves And Mines"
@@ -136,9 +142,4 @@ const CaveEnemies: React.FC = () => {
         name="Japes Enemy Photo: Mountain Conveyor 1"
         region="Japes Caves And Mines"
         canGetLogic={mine && canSlam && klump && hasFairyCam}
-      />
-    </DropPool>
-  )
-}
-
-export default CaveEnemies
+      />*/

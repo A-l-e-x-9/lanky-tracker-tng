@@ -8,7 +8,7 @@ const ChunkyKasplat: React.FC = () => (
     <VanillaKasplat>
       <ForestCheck
         id={5054}
-        name="Forest Kasplat: Mushroom Night Door"
+        name="Kasplat Beyond the Giant Mushroom's Night Door"
         region="Giant Mushroom Exterior"
         canGetLogic={useNightKasplat()}
       />

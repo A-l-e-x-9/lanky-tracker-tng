@@ -9,7 +9,7 @@ const CircleVase: React.FC = () => {
     <BoulderPool>
         <AztecCheck
           id={2006}
-          name="Aztec Boulder: Circle Vase"
+          name="Circle Vase"
           region="Various Aztec Tunnels"
           canGetLogic={hasLogic.in}
           canGetBreak={hasLogic.out}

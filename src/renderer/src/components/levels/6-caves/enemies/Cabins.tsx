@@ -15,52 +15,52 @@ const CabinsEnemies: React.FC = () => {
     <DropPool>
       <CavesCheck
         id={6302}
-        name="Caves Enemy: Outside 5 Door Cabin"
+        name="Enemy Outside 5 Door Cabin"
         region="Cabins Area"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <CavesCheck
         id={6303}
-        name="Caves Enemy: Waterfall Lanky Cabin"
+        name="Enemy Outside Lanky's Cabin"
         region="Cabins Area"
         canGetLogic={inStage && anyKong}
       />
       <CavesCheck
         id={6307}
-        name="Caves Enemy: Lanky Cabin Headphones"
+        name="Enemy at Headphones Below Lanky's Cabin"
         region="Cabins Area"
         canGetLogic={inStage && anyKong && kosha.in}
         canGetBreak={inStage && anyKong && kosha.out}
       />
       <CavesCheck
         id={6317}
-        name="Caves Enemy: Lanky Cabin Inside Near Pad and Barrel"
+        name="Enemy Inside Lanky Cabin, Near the Pad and Barrel"
         region="Cabins Area"
         canGetLogic={lankyCabin.in && kosha.in}
         canGetBreak={lankyCabin.out && kosha.out}
       />
       <CavesCheck
         id={6402}
-        name="Caves Enemy Photo: Outside 5 Door Cabin"
+        name="Photo of Enemy Outside 5 Door Cabin"
         region="Cabins Area"
         canGetLogic={inStage && hasFairyCam}
       />
       <CavesCheck
         id={6403}
-        name="Caves Enemy Photo: Waterfall Lanky Cabin"
+        name="Photo of Enemy Outside Lanky's Cabin"
         region="Cabins Area"
         canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <CavesCheck
         id={6407}
-        name="Caves Enemy Photo: Lanky Cabin Headphones"
+        name="Photo of Enemy at Headphones Below Lanky's Cabin"
         region="Cabins Area"
         canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <CavesCheck
         id={6417}
-        name="Caves Enemy Photo: Lanky Cabin Inside Near Pad and Barrel"
+        name="Photo of Enemy Inside Lanky's Cabin, Near the Pad and Barrel"
         region="Cabins Area"
         canGetLogic={lankyCabin.in && hasFairyCam}
         canGetBreak={lankyCabin.out && hasFairyCam}

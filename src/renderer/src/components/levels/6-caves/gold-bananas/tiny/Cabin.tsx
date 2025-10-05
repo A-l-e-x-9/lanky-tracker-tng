@@ -8,7 +8,7 @@ const TinyCabin: React.FC = () => {
   <Miniboss>
     <CavesCheck
       id={6033}
-      name="Caves Tiny 5 Door Cabin"
+      name="Tiny's 5 Door Cabin"
       region="Cabins Area"
       canGetLogic={cabinCb}
     />

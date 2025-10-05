@@ -10,7 +10,7 @@ const ChunkyKasplat: React.FC = () => {
       <VanillaKasplat>
         <JapesCheck
           id={1054}
-          name="Japes Kasplat: Underground"
+          name="Kasplat in Chunky's Cave"
           region="Japes Caves And Mines"
           canGetLogic={under.in}
           canGetBreak={under.out}

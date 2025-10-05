@@ -8,7 +8,7 @@ const CastleLobby: React.FC = () => {
     <BoulderPool>
         <IslesCheck
           id={7}
-          name="Isles Boulder: On top of the Lanky Pad in Castle Lobby"
+          name="Boulder on the Lanky Pad in Castle Lobby"
           region="Caves-Helm Lobbies"
           canGetLogic={useCastleLobby()}
         />

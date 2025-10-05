@@ -12,7 +12,7 @@ const CabinFairy: React.FC = () => {
       <VanillaFairy>
         <CavesCheck
           id={6081}
-          name="Caves Fairy (Diddy Candles Cabin)"
+          name="Diddy Upper Cabin Fairy"
           region="Cabins Area"
           canGetLogic={cabin}
         />

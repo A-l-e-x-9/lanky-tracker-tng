@@ -8,7 +8,7 @@ const ChunkyKasplat: React.FC = () => (
     <VanillaKasplat>
       <GalleonCheck
         id={4054}
-        name="Galleon Kasplat: Musical Cactus"
+        name="Kasplat on the 'Cactus' Near Funky's"
         region="Shipyard Outskirts"
         canGetLogic={useCactusKasplat()}
       />

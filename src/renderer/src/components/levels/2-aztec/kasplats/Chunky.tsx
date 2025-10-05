@@ -10,7 +10,7 @@ const ChunkyKasplat: React.FC = () => {
       <VanillaKasplat>
         <AztecCheck
           id={2054}
-          name="Aztec Kasplat: Chunky 5-Door Temple"
+          name="Kasplat in Chunky's 5-Door Temple Room"
           region="5 Door Temple"
           canGetLogic={chunky.in}
           canGetBreak={chunky.out}

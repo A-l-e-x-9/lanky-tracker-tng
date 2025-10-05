@@ -6,7 +6,7 @@ const SprintCabin: React.FC = () => {
   return (
     <CavesCheck
       id={6023}
-      name="Caves Lanky Sprint Cabin"
+      name="Lanky's Sprint Cabin"
       region="Cabins Area"
       canGetLogic={cabinGb.in}
       canGetBreak={cabinGb.out}

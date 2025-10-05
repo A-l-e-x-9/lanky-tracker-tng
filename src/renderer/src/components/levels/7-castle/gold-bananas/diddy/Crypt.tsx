@@ -6,7 +6,7 @@ const doCheck = useDiddyCryptGb()
 return (
   <CastleCheck
     id={7012}
-    name="Castle Diddy Crypt"
+    name="Diddy's Crypt"
     region="Castle Underground"
     canGetLogic={doCheck.in}
     canGetBreak={doCheck.out}

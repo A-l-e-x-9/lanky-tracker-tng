@@ -12,14 +12,14 @@ const ChunkyMedal: React.FC = () => {
   <>
     <ForestCheck
       id={5104}
-      name="Forest Chunky Medal"
+      name="Chunky's Medal"
       region="Forest Medal Rewards"
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
     <ForestCheck
       id={5204}
-      name="Forest Chunky Half-Medal"
+      name="Chunky's Half-Medal"
       region="Forest Medal Rewards"
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}

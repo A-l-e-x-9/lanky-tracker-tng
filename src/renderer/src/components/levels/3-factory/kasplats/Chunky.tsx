@@ -8,7 +8,7 @@ const ChunkyKasplat: React.FC = () => (
     <VanillaKasplat>
       <FactoryCheck
         id={3054}
-        name="Factory Kasplat: Block Tower"
+        name="Kasplat near the Block Tower"
         region="Testing Area"
         canGetLogic={useBlockKasplat()}
       />

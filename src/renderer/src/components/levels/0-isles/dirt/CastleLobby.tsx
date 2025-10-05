@@ -10,7 +10,7 @@ const CastleLobby: React.FC = () => {
       <VanillaDirt>
         <IslesCheck
           id={76}
-          name="Isles Dirt: Castle Lobby"
+          name="Dirt in Castle Lobby"
           region="Caves-Helm Lobbies"
           canGetLogic={castle.in}
           canGetBreak={castle.out}

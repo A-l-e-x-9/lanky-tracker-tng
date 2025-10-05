@@ -4,7 +4,7 @@ import GalleonCheck from '../../check'
 const EnguardeChest: React.FC = () => (
   <GalleonCheck
     id={4020}
-    name="Galleon Lanky Enguarde Chest"
+    name="Enguarde's Chest Near the Mermaid"
     region="Lighthouse Area"
     canGetLogic={useLankyChestGb()}
   />

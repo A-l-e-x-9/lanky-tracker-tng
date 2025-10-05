@@ -6,7 +6,7 @@ const canDoCheck = useChunkyCryptGb()
 return (
   <CastleCheck
     id={7043}
-    name="Castle Chunky Crypt"
+    name="Chunky's Crypt Bonus Barrel"
     region="Castle Underground"
     canGetLogic={canDoCheck.in}
     canGetBreak={canDoCheck.out}

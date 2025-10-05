@@ -6,7 +6,7 @@ const CastleBarrel: React.FC = () => {
   return (
     <IslesCheck
       id={23}
-      name="Isles Lanky Castle Lobby Barrel"
+      name="Lanky's Barrel in Castle Lobby"
       region="Caves-Helm Lobbies"
       canGetLogic={lobby.in}
       canGetBreak={lobby.out}

@@ -6,7 +6,7 @@ const TransparentIgloo: React.FC = () => {
   return (
     <CavesCheck
       id={6041}
-      name="Caves Chunky Transparent Igloo"
+      name="Chunky's Transparent Igloo to the Giant Kosha"
       region="Igloo Area"
       canGetLogic={clearGb.in}
       canGetBreak={clearGb.out}

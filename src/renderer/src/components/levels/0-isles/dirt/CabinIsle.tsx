@@ -8,7 +8,7 @@ const CabinIsleDirt: React.FC = () => (
     <VanillaDirt>
       <IslesCheck
         id={75}
-        name="Isles Dirt: Cabin Isle"
+        name="Dirt Patch on Forest Lobby Island"
         region="Outer Isles"
         canGetLogic={useIslandDirt()}
       />

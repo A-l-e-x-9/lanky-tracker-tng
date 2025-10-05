@@ -13,48 +13,54 @@ const ConnectorTunnelEnemies: React.FC = () => {
   return (
     <DropPool>
       <AztecCheck
-        id={2302}
-        name="Aztec Enemy: Tunnel Pad 0"
-        region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && zinger.in}
-        canGetBreak={logicBreak(inStage) && zinger.out}
-      />
-      <AztecCheck
-        id={2303}
-        name="Aztec Enemy: Tunnel Pad 1"
-        region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && zinger.in}
-        canGetBreak={logicBreak(inStage) && zinger.out}
-      />
-      <AztecCheck
-        id={2304}
-        name="Aztec Enemy: Tunnel Cage 0"
-        region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && anyKong}
-        canGetBreak={logicBreak(inStage) && anyKong}
-      />
-      <AztecCheck
-        id={2305}
-        name="Aztec Enemy: Tunnel Cage 1"
-        region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && anyKong}
-        canGetBreak={logicBreak(inStage) && anyKong}
-      />
-      <AztecCheck
-        id={2306}
-        name="Aztec Enemy: Tunnel Cage 2"
-        region="Various Aztec Tunnels"
-        canGetLogic={inStage.in && anyKong}
-        canGetBreak={logicBreak(inStage) && anyKong}
-      />
-      <AztecCheck
         id={2307}
-        name="Aztec Enemy: Tunnel Cage 3"
+        name="Middle Tunnel Pad Enemy 0"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && zinger.in}
+        canGetBreak={logicBreak(inStage) && zinger.out}
+      />
+      <AztecCheck
+        id={2308}
+        name="Middle Tunnel Pad Enemy 1"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && zinger.in}
+        canGetBreak={logicBreak(inStage) && zinger.out}
+      />
+      <AztecCheck
+        id={2309}
+        name="Middle Tunnel Cage Enemy 0"
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && anyKong}
         canGetBreak={logicBreak(inStage) && anyKong}
       />
       <AztecCheck
+        id={2310}
+        name="Middle Tunnel Cage Enemy 1"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && anyKong}
+        canGetBreak={logicBreak(inStage) && anyKong}
+      />
+      <AztecCheck
+        id={2311}
+        name="Middle Tunnel Cage Enemy 2"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && anyKong}
+        canGetBreak={logicBreak(inStage) && anyKong}
+      />
+      <AztecCheck
+        id={2312}
+        name="Middle Tunnel Cage Enemy 3"
+        region="Various Aztec Tunnels"
+        canGetLogic={inStage.in && anyKong}
+        canGetBreak={logicBreak(inStage) && anyKong}
+      />
+    </DropPool>
+  )
+}
+
+export default ConnectorTunnelEnemies
+
+/*      <AztecCheck
         id={2402}
         name="Aztec Enemy Photo: Tunnel Pad 0"
         region="Various Aztec Tunnels"
@@ -95,9 +101,4 @@ const ConnectorTunnelEnemies: React.FC = () => {
         region="Various Aztec Tunnels"
         canGetLogic={inStage.in && anyKong && hasFairyCam}
         canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
-      />
-    </DropPool>
-  )
-}
-
-export default ConnectorTunnelEnemies
+      />*/

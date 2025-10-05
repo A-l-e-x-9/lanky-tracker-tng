@@ -8,7 +8,7 @@ const ChunkyKasplat: React.FC = () => (
     <VanillaKasplat>
       <IslesCheck
         id={54}
-        name="Isles Kasplat: Galleon Lobby"
+        name="Galleon Lobby Kasplat"
         region="Japes-Forest Lobbies"
         canGetLogic={useGalleonKasplat()}
       />

@@ -6,7 +6,7 @@ const CannonGame: React.FC = () => {
   return (
     <GalleonCheck
       id={4041}
-      name="Galleon Chunky Cannon Game"
+      name="Chunky's Cannon Game"
       region="Galleon Caverns"
       canGetLogic={cannonGb.in}
       canGetBreak={cannonGb.out}

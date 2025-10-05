@@ -4,7 +4,7 @@ import IslesCheck from '../../check'
 const CoconutCage: React.FC = () => {
   const cage = useCheckDkCoconutCage()
   return (
-    <IslesCheck id={2} name="Isles DK Coconut Cage" region="Krem Isle" canGetLogic={cage} />
+    <IslesCheck id={2} name="DK's Coconut Cage" region="Krem Isle" canGetLogic={cage} />
   )
 }
 
