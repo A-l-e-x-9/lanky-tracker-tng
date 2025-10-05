@@ -77,69 +77,68 @@ const CaveEnemies: React.FC = () => {
         region="Japes Caves And Mines"
         canGetLogic={mine && canSlam && klump}
       />
-    </DropPool>
-  )
-}
-
-export default CaveEnemies
-
-/*      <JapesCheck
+      <JapesCheck
         id={1425}
-        name="Japes Enemy Photo: Mountain Start 0"
+        name="Photo of Diddy's Mountain Start Area Enemy 0"
         region="Japes Caves And Mines"
         canGetLogic={mine && hasFairyCam}
       />
       <JapesCheck
         id={1426}
-        name="Japes Enemy Photo: Mountain Start 1"
+        name="Photo of Diddy's Mountain Start Area Enemy 1"
         region="Japes Caves And Mines"
         canGetLogic={mine && hasFairyCam}
       />
       <JapesCheck
         id={1427}
-        name="Japes Enemy Photo: Mountain Start 2"
+        name="Photo of Diddy's Mountain Start Area Enemy 2"
         region="Japes Caves And Mines"
         canGetLogic={mine && hasFairyCam}
       />
       <JapesCheck
         id={1428}
-        name="Japes Enemy Photo: Mountain Start 3"
+        name="Photo of Diddy's Mountain Start Area Enemy 3"
         region="Japes Caves And Mines"
         canGetLogic={mine && hasFairyCam}
       />
       <JapesCheck
         id={1429}
-        name="Japes Enemy Photo: Mountain Start 4"
+        name="Photo of Diddy's Mountain Start Area Enemy 4"
         region="Japes Caves And Mines"
         canGetLogic={mine && hasFairyCam}
       />
       <JapesCheck
         id={1430}
-        name="Japes Enemy Photo: Mountain Gate 0"
+        name="Photo of Diddy's Mountain Enemy 0 at the Gate"
         region="Japes Caves And Mines"
         canGetLogic={mine && hasFairyCam}
       />
       <JapesCheck
         id={1431}
-        name="Japes Enemy Photo: Mountain Gate 1"
+        name="Photo of Diddy's Mountain Enemy 1 at the Gate"
         region="Japes Caves And Mines"
         canGetLogic={mine && hasFairyCam}
       />
       <JapesCheck
         id={1432}
-        name="Japes Enemy Photo: Mountain Charge Switch"
+        name="Photo of Diddy's Mountain Enemy at the Conveyor Belt Controls"
         region="Japes Caves And Mines"
         canGetLogic={mine && charge && klump && hasFairyCam}
       />
       <JapesCheck
         id={1433}
-        name="Japes Enemy Photo: Mountain Conveyor 0"
+        name="Photo of Diddy's Mountain Enemy 0 in the Conveyor Area"
         region="Japes Caves And Mines"
         canGetLogic={mine && canSlam && klump && hasFairyCam}
       />
       <JapesCheck
         id={1434}
-        name="Japes Enemy Photo: Mountain Conveyor 1"
+        name="Photo of Diddy's Mountain Enemy 1 in the Conveyor Area"
         region="Japes Caves And Mines"
         canGetLogic={mine && canSlam && klump && hasFairyCam}
-      />*/
+      />
+    </DropPool>
+  )
+}
+
+export default CaveEnemies
