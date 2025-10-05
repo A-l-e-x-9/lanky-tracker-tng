@@ -139,3 +139,6 @@ dist
 
 # MacOSX Cache Files
 .DS_Store
+
+# Any "-prime" files I make in case I need to revert controversial changes
+*-prime.ts*
