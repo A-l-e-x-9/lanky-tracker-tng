@@ -6,8 +6,8 @@ const VaseBanana: React.FC = () => {
   return (
     <AztecCheck
       id={2040}
-      name="Aztec Chunky Vases"
-      region="Various Aztec Tunnels"
+      name="Chunky's Vases"
+      region="Aztec Caves"
       canGetLogic={vaseGb.in}
       canGetBreak={vaseGb.out}
     />

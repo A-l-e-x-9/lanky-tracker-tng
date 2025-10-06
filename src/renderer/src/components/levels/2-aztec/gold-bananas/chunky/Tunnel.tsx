@@ -6,8 +6,8 @@ const TunnelBarrel: React.FC = () => {
   return (
     <AztecCheck
       id={2042}
-      name="Aztec Chunky Hunky Chunky Barrel"
-      region="Various Aztec Tunnels"
+      name="Hunky Chunky Caged Bonus Barrel"
+      region="Aztec Caves"
       canGetLogic={hunkyGb.in}
       canGetBreak={hunkyGb.out}
     />

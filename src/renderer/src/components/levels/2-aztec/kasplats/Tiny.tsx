@@ -10,8 +10,8 @@ const TinyKasplat: React.FC = () => {
       <VanillaKasplat>
         <AztecCheck
           id={2053}
-          name="Aztec Kasplat: Hunky Chunky Barrel"
-          region="Various Aztec Tunnels"
+          name="Kasplat near Cranky's"
+          region="Aztec Caves"
           canGetLogic={tunnel.in}
           canGetBreak={tunnel.out}
         />

@@ -9,8 +9,8 @@ const TunnelBoulder: React.FC = () => {
     <BoulderPool>
         <AztecCheck
           id={2106}
-          name="Aztec Boulder: Giant Boulder"
-          region="Various Aztec Tunnels"
+          name="Giant Chunky Boulder"
+          region="Aztec Caves"
           canGetLogic={hasLogic.in}
           canGetBreak={hasLogic.out}
         />

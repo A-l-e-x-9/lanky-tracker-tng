@@ -10,8 +10,8 @@ const DkKasplat: React.FC = () => {
       <VanillaKasplat>
         <AztecCheck
           id={2050}
-          name="Aztec Kasplat: Behind DK Stone Door"
-          region="Various Aztec Tunnels"
+          name="Kasplat Behind DK's Stone Door"
+          region="Aztec Caves"
           canGetLogic={coconut.in}
           canGetBreak={coconut.out}
         />
