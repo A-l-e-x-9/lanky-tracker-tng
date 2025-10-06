@@ -6,7 +6,7 @@ const TestingBarrel: React.FC = () => {
   return (
     <FactoryCheck
       id={3020}
-      name="Factory Lanky Testing Room Barrel"
+      name="Lanky's Balloon Barrel"
       region="Testing Area"
       canGetLogic={testGb.in}
       canGetBreak={testGb.out}
