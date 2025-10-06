@@ -8,8 +8,8 @@ const DarkRoomDirt: React.FC = () => (
     <VanillaDirt>
       <FactoryCheck
         id={3070}
-        name="Factory Dirt: Dark Room"
-        region="Storage And Arcade"
+        name="Dark Room Dirt"
+        region="Storage and Arcade Area"
         canGetLogic={useFactoryDirt()}
       />
     </VanillaDirt>

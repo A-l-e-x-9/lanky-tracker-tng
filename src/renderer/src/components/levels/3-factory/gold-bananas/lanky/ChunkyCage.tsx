@@ -5,7 +5,7 @@ const ChunkyCage: React.FC = () => (
   <FactoryCheck
     id={3025}
     name="Chunky's Cage"
-    region="Storage And Arcade"
+    region="Storage and Arcade Area"
     canGetLogic={useLankyFreeChunkyGb()}
   />
 )

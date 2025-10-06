@@ -4,7 +4,8 @@ import { useShallow } from 'zustand/react/shallow'
 /**
  * Can we skip playing the arcade in Factory for the check and just complete the blast course instead?
  * @returns true if playing the arcade machine in Factory is not required for the check.
- */
+ *Alex update: Not currently needed as the sole check that used it no longer does.
+
 export const useFastArcade = (): boolean =>
   useDonkStore(useShallow((state) => state.fastChecks.factoryArcade))
 

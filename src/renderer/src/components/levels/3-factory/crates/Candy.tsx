@@ -9,7 +9,7 @@ const CandyCrate: React.FC = () => (
       <FactoryCheck
         id={3060}
         name="Melon Crate in front of Candy"
-        region="Storage And Arcade"
+        region="Storage and Arcade Area"
         canGetLogic={useGeneralThing()}
       />
     </VanillaCrate>

@@ -400,7 +400,7 @@ export type SwitchSlice = SwitchState & SwitchActions
 interface FastCheckCollection {
   /**
    * Can the arcade game be skipped for Round 1?
-   */
+     Alex update: Phasing out; not currently needed
   factoryArcade: boolean
   /**
     How many Pearls are needed for the Mermaid's reward?
@@ -413,7 +413,7 @@ export interface FastCheckState {
 }
 
 interface FastCheckActions {
-  setFastCheck: (id: string, val: boolean | number) => void
+  setFastCheck: (id: string, val: number) => void
 }
 
 export type FastCheckSlice = FastCheckState & FastCheckActions

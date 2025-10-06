@@ -14,65 +14,65 @@ const StorageEnemies: React.FC = () => {
     <DropPool>
       <FactoryCheck
         id={3300}
-        name="Factory Enemy: Shops 0"
-        region="Storage And Arcade"
+        name="Enemy 0 in front of Cranky/Candy"
+        region="Storage and Arcade Area"
         canGetLogic={inStage && anyKong}
       />
       <FactoryCheck
         id={3301}
-        name="Factory Enemy: Shops 1"
-        region="Storage And Arcade"
+        name="Enemy 1 in front of Cranky/Candy"
+        region="Storage and Arcade Area"
         canGetLogic={inStage && anyKong}
       />
       <FactoryCheck
         id={3304}
-        name="Factory Enemy: Storage Room"
-        region="Storage And Arcade"
+        name="Enemy patrolling Chunky's Cage"
+        region="Storage and Arcade Area"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <FactoryCheck
         id={3317}
-        name="Factory Enemy: Dark Room 0"
-        region="Storage And Arcade"
+        name="Dark Room Enemy 0"
+        region="Storage and Arcade Area"
         canGetLogic={inStage && punch && zinger.in}
         canGetBreak={inStage && punch && zinger.out}
       />
       <FactoryCheck
         id={3318}
-        name="Factory Enemy: Dark Room 1"
-        region="Storage And Arcade"
+        name="Dark Room Enemy 1"
+        region="Storage and Arcade Area"
         canGetLogic={inStage && punch && zinger.in}
         canGetBreak={inStage && punch && zinger.out}
       />
       <FactoryCheck
         id={3400}
-        name="Factory Enemy Photo: Shops 0"
-        region="Storage And Arcade"
+        name="Photo of Enemy 0 in front of Cranky/Candy"
+        region="Storage and Arcade Area"
         canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <FactoryCheck
         id={3401}
-        name="Factory Enemy Photo: Shops 1"
-        region="Storage And Arcade"
+        name="Photo of Enemy 1 in front of Cranky/Candy"
+        region="Storage and Arcade Area"
         canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <FactoryCheck
         id={3404}
-        name="Factory Enemy Photo: Storage Room"
-        region="Storage And Arcade"
+        name="Photo of enemy patrolling Chunky's Cage"
+        region="Storage and Arcade Area"
         canGetLogic={inStage && zinger && hasFairyCam}
       />
       <FactoryCheck
         id={3417}
-        name="Factory Enemy Photo: Dark Room 0"
-        region="Storage And Arcade"
+        name="Photo of Dark Room Enemy 0"
+        region="Storage and Arcade Area"
         canGetLogic={inStage && punch && hasFairyCam}
       />
       <FactoryCheck
         id={3418}
-        name="Factory Enemy Photo: Dark Room 1"
-        region="Storage And Arcade"
+        name="Photo of Dark Room Enemy 1"
+        region="Storage and Arcade Area"
         canGetLogic={inStage && punch && hasFairyCam}
       />
     </DropPool>

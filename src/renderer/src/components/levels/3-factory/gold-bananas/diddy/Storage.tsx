@@ -6,8 +6,8 @@ const StorageBarrel: React.FC = () => {
   return (
     <FactoryCheck
       id={3012}
-      name="Factory Diddy Storage Room Barrel"
-      region="Storage And Arcade"
+      name="Diddy's Storage Room Barrel"
+      region="Storage and Arcade Area"
       canGetLogic={storageGb.in}
       canGetBreak={storageGb.out}
     />

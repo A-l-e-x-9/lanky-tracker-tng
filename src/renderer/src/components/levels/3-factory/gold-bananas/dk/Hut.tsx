@@ -6,8 +6,8 @@ const PowerHut: React.FC = () => {
   return (
     <FactoryCheck
       id={3002}
-      name="Factory DK Power Hut"
-      region="Storage And Arcade"
+      name="DK's Prod Room Power Hut"
+      region="Storage and Arcade Area"
       canGetLogic={hutGb.in}
       canGetBreak={hutGb.out}
     />

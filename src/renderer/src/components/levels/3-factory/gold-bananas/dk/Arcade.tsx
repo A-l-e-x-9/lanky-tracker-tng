@@ -7,7 +7,7 @@ const NintendoCoin: React.FC = () => (
     <FactoryCheck
       id={3005}
       name="DK Arcade Round 2"
-      region="Storage And Arcade"
+      region="Storage and Arcade Area"
       canGetLogic={useDkCoin()}
     />
   </CompanyPool>

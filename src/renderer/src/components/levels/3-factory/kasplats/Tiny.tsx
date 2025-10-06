@@ -8,8 +8,8 @@ const TinyKasplat: React.FC = () => (
     <VanillaKasplat>
       <FactoryCheck
         id={3053}
-        name="Factory Kasplat: Pole to Arcade"
-        region="Storage And Arcade"
+        name="Kasplat at Pole to Arcade"
+        region="Storage and Arcade Area"
         canGetLogic={useStorageKasplat()}
       />
     </VanillaKasplat>

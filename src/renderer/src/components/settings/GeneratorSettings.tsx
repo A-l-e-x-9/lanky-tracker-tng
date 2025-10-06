@@ -424,14 +424,6 @@ const GeneratorSettings: React.FC = () => {
             </>
             <h3>Fast Check Settings</h3>
             <>
-              <p>Fast Factory Arcade?</p>
-              <SimpleIcon
-                imgUrl={dkPadIcon}
-                title="If this is on, then you only have to play DK Arcade once. What would normally be the first reward instead replaces the star at the end of DK's Barrel Blast course in Factory."
-                storeKey="factoryArcade"
-                prefix="fastChecks"
-                updateItem={setFastCheck}
-              />
               <p>Number of pearls the Mermaid requires:</p>
               <CountSelector
                 storeKey="galleonMermaid"
@@ -455,3 +447,12 @@ const GeneratorSettings: React.FC = () => {
 }
 
 export default GeneratorSettings
+
+/*              <p>Fast Factory Arcade?</p>
+              <SimpleIcon
+                imgUrl={dkPadIcon}
+                title="If this is on, then you only have to play DK Arcade once. What would normally be the first reward instead replaces the star at the end of DK's Barrel Blast course in Factory."
+                storeKey="factoryArcade"
+                prefix="fastChecks"
+                updateItem={setFastCheck}
+              />*/
