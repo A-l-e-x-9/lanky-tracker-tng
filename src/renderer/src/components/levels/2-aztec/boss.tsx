@@ -11,7 +11,7 @@ const BossCheck: React.FC = () => {
       <AztecCheck
         id={2105}
         name="Aztec Boss"
-        region="Troff 'N' Scoff"
+        region="Bosses"
         canGetLogic={aztecFront.in && anyKong}
         canGetBreak={aztecFront.out && anyKong}
       />

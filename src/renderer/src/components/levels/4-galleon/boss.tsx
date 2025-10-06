@@ -17,7 +17,7 @@ const BossCheck: React.FC = () => {
       <GalleonCheck
         id={4105}
         name="Galleon Boss"
-        region="Troff 'N' Scoff"
+        region="Bosses"
         canGetLogic={top.in || (dive && (lighthouseArea || outskirts))}
         canGetBreak={top.out}
       />

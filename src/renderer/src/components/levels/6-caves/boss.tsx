@@ -11,7 +11,7 @@ const BossCheck: React.FC = () => {
       <CavesCheck
         id={6105}
         name="Caves Boss"
-        region="Troff 'N' Scoff"
+        region="Bosses"
         canGetLogic={inStage && anyKong}
       />
     </BossPool>
