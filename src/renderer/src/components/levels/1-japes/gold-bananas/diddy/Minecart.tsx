@@ -8,8 +8,8 @@ const Minecart: React.FC = () => {
     <ToughGoldenBanana>
       <JapesCheck
         id={1013}
-        name="Japes Diddy Minecart"
-        region="Japes Caves And Mines"
+        name="Diddy's Minecart"
+        region="Japes Caves and Mines"
         canGetLogic={mineGb.in}
         canGetBreak={mineGb.out}
       />

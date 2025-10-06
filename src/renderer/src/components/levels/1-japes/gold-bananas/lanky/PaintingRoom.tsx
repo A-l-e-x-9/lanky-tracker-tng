@@ -8,8 +8,8 @@ const PaintingRoom: React.FC = () => {
   <Miniboss>
     <JapesCheck
       id={1023}
-      name="Japes Lanky Painting Room Zingers"
-      region="Japes Caves And Mines"
+      name="Lanky's Painting Room"
+      region="Japes Caves and Mines"
       canGetLogic={paintingGb.in}
       canGetBreak={paintingGb.out}
     />

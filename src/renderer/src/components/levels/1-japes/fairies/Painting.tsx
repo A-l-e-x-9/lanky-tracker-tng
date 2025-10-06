@@ -12,8 +12,8 @@ const PaintingFairy: React.FC = () => {
       <VanillaFairy>
         <JapesCheck
           id={1081}
-          name="Japes Fairy (Painting Room)"
-          region="Japes Caves And Mines"
+          name="Fairy in the Painting Room"
+          region="Japes Caves and Mines"
           canGetLogic={painting.in}
           canGetBreak={painting.out}
         />

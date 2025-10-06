@@ -6,8 +6,8 @@ const Underground: React.FC = () => {
   return (
     <JapesCheck
       id={1043}
-      name="Japes Chunky Underground"
-      region="Japes Caves And Mines"
+      name="Chunky's Cave"
+      region="Japes Caves and Mines"
       canGetLogic={chunkyUndergroundGb.in}
       canGetBreak={chunkyUndergroundGb.out}
     />
