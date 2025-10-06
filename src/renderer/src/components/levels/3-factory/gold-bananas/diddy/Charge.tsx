@@ -7,7 +7,7 @@ const ChargeTest: React.FC = () => (
   <FactoryCheck
     id={3011}
     name="Diddy's Pincode Room"
-    region="R&D Area"
+    region="R&D Room"
     canGetLogic={useDiddyEnemyGb()}
   />
 </Miniboss>

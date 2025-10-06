@@ -8,8 +8,8 @@ const RNDArena: React.FC = () => (
     <VanillaArena>
       <FactoryCheck
         id={3090}
-        name="Factory Arena (Under R and D Grate)"
-        region="R&D Area"
+        name="Arena (Under Grate)"
+        region="R&D Room"
         canGetLogic={useArena()}
       />
     </VanillaArena>

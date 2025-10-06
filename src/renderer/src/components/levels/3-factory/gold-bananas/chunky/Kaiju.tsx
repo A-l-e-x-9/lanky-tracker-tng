@@ -8,8 +8,8 @@ const ToyMonster: React.FC = () => {
 <Miniboss>
   <FactoryCheck
     id={3040}
-    name="Factory Chunky Toy Monster"
-    region="R&D Area"
+    name="Chunky's Toy Monster Battle"
+    region="R&D Room"
     canGetLogic={inLogic.in}
     canGetBreak={inLogic.out}
   />

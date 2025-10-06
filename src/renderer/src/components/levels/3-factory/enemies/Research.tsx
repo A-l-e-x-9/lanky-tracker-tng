@@ -13,27 +13,27 @@ const RNDEnemies: React.FC = () => {
     <DropPool>
       <FactoryCheck
         id={3312}
-        name="Factory Enemy: Tunnel to Race 0"
-        region="R&D Area"
+        name="Tunnel to Race Enemy 0"
+        region="R&D Room"
         canGetLogic={testing && robo}
       />
       <FactoryCheck
         id={3313}
-        name="Factory Enemy: Tunnel to Race 1"
-        region="R&D Area"
+        name="Tunnel to Race Enemy 1"
+        region="R&D Room"
         canGetLogic={testing && zinger.in}
         canGetBreak={testing && zinger.out}
       />
       <FactoryCheck
         id={3412}
-        name="Factory Enemy Photo: Tunnel to Race 0"
-        region="R&D Area"
+        name="Photo of Tunnel to Race Enemy 0"
+        region="R&D Room"
         canGetLogic={testing && robo && hasFairyCam}
       />
       <FactoryCheck
         id={3413}
-        name="Factory Enemy Photo: Tunnel to Race 1"
-        region="R&D Area"
+        name="Photo of Tunnel to Race Enemy 1"
+        region="R&D Room"
         canGetLogic={testing && hasFairyCam}
       />
     </DropPool>

@@ -8,8 +8,8 @@ const LankyKasplat: React.FC = () => (
     <VanillaKasplat>
       <FactoryCheck
         id={3052}
-        name="Factory Kasplat: Research and Development"
-        region="R&D Area"
+        name="Kasplat in R&D"
+        region="R&D Room"
         canGetLogic={useResearchKasplat()}
       />
     </VanillaKasplat>

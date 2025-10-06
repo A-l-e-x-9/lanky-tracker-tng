@@ -6,8 +6,8 @@ const CarRace: React.FC = () => (
 <ToughGoldenBanana>
   <FactoryCheck
     id={3031}
-    name="Factory Tiny Car Race"
-    region="R&D Area"
+    name="Tiny's Car Race"
+    region="R&D Room"
     canGetLogic={useTinyRaceGb()}
   />
 </ToughGoldenBanana>
