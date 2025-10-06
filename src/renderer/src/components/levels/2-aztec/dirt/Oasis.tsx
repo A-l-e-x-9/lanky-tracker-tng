@@ -10,8 +10,8 @@ const OasisDirt: React.FC = () => {
       <VanillaDirt>
         <AztecCheck
           id={2070}
-          name="Aztec Dirt: Oasis"
-          region="Aztec Oasis And Totem Area"
+          name="Oasis Dirt"
+          region="Aztec Main Area"
           canGetLogic={thing.in}
           canGetBreak={thing.out}
         />

@@ -10,8 +10,8 @@ const DiddyKasplat: React.FC = () => {
       <VanillaKasplat>
         <AztecCheck
           id={2051}
-          name="Aztec Kasplat: On Tiny Temple"
-          region="Aztec Oasis And Totem Area"
+          name="Kasplat on top of the Tiny Temple"
+          region="Aztec Main Area"
           canGetLogic={oasis.in}
           canGetBreak={oasis.out}
         />

@@ -9,7 +9,7 @@ const BeetleRace: React.FC = () => {
       <AztecCheck
         id={2032}
         name="Tiny's Beetle Race"
-        region="Aztec Oasis And Totem Area"
+        region="Aztec Main Area"
         canGetLogic={beetleGb.in}
         canGetBreak={beetleGb.out}
       />

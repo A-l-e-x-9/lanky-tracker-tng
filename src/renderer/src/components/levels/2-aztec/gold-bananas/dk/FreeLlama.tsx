@@ -6,8 +6,8 @@ const FreeLlama: React.FC = () => {
   return (
     <AztecCheck
       id={2001}
-      name="Aztec DK Free Llama Blast"
-      region="Aztec Oasis And Totem Area"
+      name="Freeing the Llama"
+      region="Aztec Main Area"
       canGetLogic={blastGb.in}
       canGetBreak={blastGb.out}
     />

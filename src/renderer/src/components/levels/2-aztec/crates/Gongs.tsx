@@ -11,8 +11,8 @@ const GongCrate: React.FC = () => {
       <VanillaCrate>
         <AztecCheck
           id={2062}
-          name="Aztec Crate: Near Gong Tower"
-          region="Aztec Oasis And Totem Area"
+          name="Crate Near the Gong Tower"
+          region="Aztec Main Area"
           canGetLogic={aztecBack.in}
           canGetBreak={logicBreak(aztecBack)}
         />

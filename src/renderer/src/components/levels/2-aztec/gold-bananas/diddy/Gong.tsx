@@ -6,8 +6,8 @@ const RamGongs: React.FC = () => {
   return (
     <AztecCheck
       id={2011}
-      name="Aztec Diddy Ram Gongs"
-      region="Aztec Oasis And Totem Area"
+      name="Diddy's Gongs"
+      region="Aztec Main Area"
       canGetLogic={gongGb.in}
       canGetBreak={gongGb.out}
     />

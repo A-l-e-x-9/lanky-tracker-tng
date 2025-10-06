@@ -8,8 +8,8 @@ const VultureRace: React.FC = () => {
     <ToughGoldenBanana>
       <AztecCheck
         id={2012}
-        name="Aztec Diddy Vulture Race"
-        region="Aztec Oasis And Totem Area"
+        name="Diddy's Vulture Race"
+        region="Aztec Main Area"
         canGetLogic={vultureGb.in}
         canGetBreak={vultureGb.out}
       />

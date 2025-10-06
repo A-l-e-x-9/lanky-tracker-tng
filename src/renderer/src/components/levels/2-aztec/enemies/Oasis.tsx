@@ -13,30 +13,30 @@ const OasisEnemies: React.FC = () => {
   return (
     <DropPool>
       <AztecCheck
-        id={2315}
-        name="Aztec Enemy: Near Candy"
-        region="Aztec Oasis And Totem Area"
+        id={2319}
+        name="Enemy Near Candy's"
+        region="Aztec Main Area"
         canGetLogic={inStage.in && zinger.in}
         canGetBreak={logicBreak(inStage) && zinger.out}
       />
       <AztecCheck
-        id={2312}
-        name="Aztec Enemy: Oasis Door"
-        region="Aztec Oasis And Totem Area"
+        id={2320}
+        name="Enemy Near Llama's Prison"
+        region="Aztec Main Area"
         canGetLogic={inStage.in && anyKong}
         canGetBreak={logicBreak(inStage) && anyKong}
       />
       <AztecCheck
-        id={2415}
-        name="Aztec Enemy Photo: Near Candy"
-        region="Aztec Oasis And Totem Area"
+        id={2419}
+        name="Photo of Enemy Near Candy's"
+        region="Aztec Main Area"
         canGetLogic={inStage.in && hasFairyCam}
         canGetBreak={logicBreak(inStage) && hasFairyCam}
       />
       <AztecCheck
-        id={2412}
-        name="Aztec Enemy Photo: Oasis Door"
-        region="Aztec Oasis And Totem Area"
+        id={2420}
+        name="Photo of Enemy Near Llama's Prison"
+        region="Aztec Main Area"
         canGetLogic={inStage.in && anyKong && hasFairyCam}
         canGetBreak={logicBreak(inStage) && anyKong && hasFairyCam}
       />

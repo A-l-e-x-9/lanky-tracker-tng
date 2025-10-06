@@ -10,8 +10,8 @@ const LlamaOutsideCrate: React.FC = () => {
       <VanillaCrate>
         <AztecCheck
           id={2061}
-          name="Aztec Crate: On Llama Temple"
-          region="Aztec Oasis And Totem Area"
+          name="Crate on top of the Llama Temple"
+          region="Aztec Main Area"
           canGetLogic={outside.in}
           canGetBreak={outside.out}
         />
