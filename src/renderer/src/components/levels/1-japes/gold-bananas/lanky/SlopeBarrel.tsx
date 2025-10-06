@@ -6,8 +6,8 @@ const SlopeBarrel: React.FC = () => {
   return (
     <JapesCheck
       id={1022}
-      name="Japes Lanky Slope Barrel"
-      region="Stormy Tunnel Area"
+      name="Lanky's Slope Barrel"
+      region="Stormy Area"
       canGetLogic={slopeGb.in}
       canGetBreak={slopeGb.out}
     />

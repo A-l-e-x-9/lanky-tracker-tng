@@ -8,8 +8,8 @@ const RambiCrate: React.FC = () => (
     <VanillaCrate>
       <JapesCheck
         id={1061}
-        name="Japes Crate: In the Rambi Cave"
-        region="Stormy Tunnel Area"
+        name="Melon Crate in Rambi's Cave"
+        region="Stormy Area"
         canGetLogic={useRambiCrate()}
       />
     </VanillaCrate>

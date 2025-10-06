@@ -8,8 +8,8 @@ const RambiFairy: React.FC = () => (
     <VanillaFairy>
       <JapesCheck
         id={1080}
-        name="Japes Fairy (Rambi Door Pool)"
-        region="Stormy Tunnel Area"
+        name="Fairy at Pool in Rambi's Area"
+        region="Stormy Area"
         canGetLogic={useRambiFairy()}
       />
     </VanillaFairy>

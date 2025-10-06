@@ -11,50 +11,50 @@ const StormyTunnelEnemies: React.FC = () => {
     <DropPool>
       <JapesCheck
         id={1304}
-        name="Japes Enemy: Stormy Tunnel 0"
-        region="Stormy Tunnel Area"
+        name="Stormy Area Enemy 0"
+        region="Stormy Area"
         canGetLogic={kongGates && anyKong}
       />
       <JapesCheck
         id={1305}
-        name="Japes Enemy: Stormy Tunnel 1"
-        region="Stormy Tunnel Area"
+        name="Stormy Area Enemy 1"
+        region="Stormy Area"
         canGetLogic={kongGates && anyKong}
       />
       <JapesCheck
         id={1306}
-        name="Japes Enemy: Stormy Tunnel 2"
-        region="Stormy Tunnel Area"
+        name="Stormy Area 2"
+        region="Stormy Area"
         canGetLogic={kongGates && anyKong}
       />
       <JapesCheck
         id={1319}
-        name="Japes Enemy: Middle Tunnel"
-        region="Stormy Tunnel Area"
+        name="Middle Tunnel Enemy"
+        region="Stormy Area"
         canGetLogic={kongGates && anyKong}
       />
       <JapesCheck
         id={1404}
-        name="Japes Enemy Photo: Stormy Tunnel 0"
-        region="Stormy Tunnel Area"
+        name="Photo of Stormy Area Enemy 0"
+        region="Stormy Area"
         canGetLogic={kongGates && anyKong && hasFairyCam}
       />
       <JapesCheck
         id={1405}
-        name="Japes Enemy Photo: Stormy Tunnel 1"
-        region="Stormy Tunnel Area"
+        name="Photo of Stormy Area Enemy 1"
+        region="Stormy Area"
         canGetLogic={kongGates && anyKong && hasFairyCam}
       />
       <JapesCheck
         id={1406}
-        name="Japes Enemy Photo: Stormy Tunnel 2"
-        region="Stormy Tunnel Area"
+        name="Photo of Stormy Area Enemy 2"
+        region="Stormy Area"
         canGetLogic={kongGates && anyKong && hasFairyCam}
       />
       <JapesCheck
         id={1419}
-        name="Japes Enemy Photo: Middle Tunnel"
-        region="Stormy Tunnel Area"
+        name="Photo of Middle Tunnel Enemy"
+        region="Stormy Area"
         canGetLogic={kongGates && anyKong && hasFairyCam}
       />
     </DropPool>

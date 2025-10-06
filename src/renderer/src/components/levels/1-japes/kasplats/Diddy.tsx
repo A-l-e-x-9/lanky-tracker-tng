@@ -8,8 +8,8 @@ const DiddyKasplat: React.FC = () => (
     <VanillaKasplat>
       <JapesCheck
         id={1051}
-        name="Japes Kasplat: Near Painting Room"
-        region="Stormy Tunnel Area"
+        name="Kasplat Near the Painting Room"
+        region="Stormy Area"
         canGetLogic={useDiddyKasplat()}
       />
     </VanillaKasplat>

@@ -8,8 +8,8 @@ const LankyKasplat: React.FC = () => (
     <VanillaKasplat>
       <JapesCheck
         id={1052}
-        name="Japes Kasplat: By Lanky Slope Bonus"
-        region="Stormy Tunnel Area"
+        name="Kasplat at Lanky's Slope Barrel"
+        region="Stormy Area"
         canGetLogic={useLankyKasplat()}
       />
     </VanillaKasplat>
