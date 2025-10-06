@@ -8,8 +8,8 @@ const DkKasplat: React.FC = () => (
     <VanillaKasplat>
       <JapesCheck
         id={1050}
-        name="Japes Kasplat: Hive Tunnel Lower"
-        region="Hive Tunnel Area"
+        name="Lower Kasplat at Tunnel to Hive"
+        region="Hive Area"
         canGetLogic={useDkKasplat()}
       />
     </VanillaKasplat>

@@ -6,8 +6,8 @@ const HiveInside: React.FC = () => {
   return (
     <JapesCheck
       id={1033}
-      name="Japes Tiny Inside the Hive"
-      region="Hive Tunnel Area"
+      name="Inside Tiny's Hive"
+      region="Hive Area"
       canGetLogic={hiveGb.in}
       canGetBreak={hiveGb.out}
     />

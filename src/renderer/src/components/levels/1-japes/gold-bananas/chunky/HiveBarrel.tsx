@@ -6,8 +6,8 @@ const HiveBarrel: React.FC = () => {
   return (
     <JapesCheck
       id={1042}
-      name="Japes Chunky Giant Bonus Barrel"
-      region="Hive Tunnel Area"
+      name="Chunky's Giant Bonus Barrel"
+      region="Hive Area"
       canGetLogic={chunkyHiveGb.in}
       canGetBreak={chunkyHiveGb.out}
     />

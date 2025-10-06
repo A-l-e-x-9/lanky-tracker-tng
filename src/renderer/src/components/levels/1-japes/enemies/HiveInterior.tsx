@@ -14,103 +14,103 @@ const HiveInteriorEnemies: React.FC = () => {
   return (
     <DropPool>
       <JapesCheck
+        id={1342}
+        name="Enemy in the Hive's Main Room"
+        region="Hive Area"
+        canGetLogic={hiveIn && zinger.in}
+        canGetBreak={hiveIn && zinger.out}
+      />
+      <JapesCheck
         id={1335}
-        name="Japes Enemy: Hive First Room"
-        region="Hive Tunnel Area"
+        name="Enemy in the Hive's First Room"
+        region="Hive Area"
         canGetLogic={hiveIn && klaptrap}
       />
       <JapesCheck
         id={1336}
-        name="Japes Enemy: Hive Second Room 0"
-        region="Hive Tunnel Area"
+        name="Enemy 0 in the Hive's Second Room"
+        region="Hive Area"
         canGetLogic={hiveIn && klaptrap && canSlam}
       />
       <JapesCheck
         id={1337}
-        name="Japes Enemy: Hive Second Room 1"
-        region="Hive Tunnel Area"
+        name="Enemy 1 in the Hive's Second Room"
+        region="Hive Area"
         canGetLogic={hiveIn && klaptrap && canSlam}
       />
       <JapesCheck
         id={1338}
-        name="Japes Enemy: Hive Third Room 0"
-        region="Hive Tunnel Area"
+        name="Enemy 0 in the Hive's Third Room"
+        region="Hive Area"
         canGetLogic={hiveIn && klaptrap && canSlam}
       />
       <JapesCheck
         id={1339}
-        name="Japes Enemy: Hive Third Room 1"
-        region="Hive Tunnel Area"
+        name="Enemy 1 in the Hive's Third Room"
+        region="Hive Area"
         canGetLogic={hiveIn && klaptrap && canSlam}
       />
       <JapesCheck
         id={1340}
-        name="Japes Enemy: Hive Third Room 2"
-        region="Hive Tunnel Area"
+        name="Enemy 2 in the Hive's Third Room"
+        region="Hive Area"
         canGetLogic={hiveIn && zinger.in && canSlam}
         canGetBreak={hiveIn && zinger.out && canSlam}
       />
       <JapesCheck
         id={1341}
-        name="Japes Enemy: Hive Third Room 3"
-        region="Hive Tunnel Area"
+        name="Enemy 3 in the Hive's Third Room"
+        region="Hive Area"
         canGetLogic={hiveIn && zinger.in && canSlam}
         canGetBreak={hiveIn && zinger.out && canSlam}
       />
       <JapesCheck
-        id={1342}
-        name="Japes Enemy: Hive Main Room"
-        region="Hive Tunnel Area"
-        canGetLogic={hiveIn && zinger.in}
-        canGetBreak={hiveIn && zinger.out}
+        id={1442}
+        name="Photo of Enemy in the Hive's Main Room"
+        region="Hive Area"
+        canGetLogic={hiveIn && hasFairyCam}
       />
       <JapesCheck
         id={1435}
-        name="Japes Enemy Photo: Hive First Room"
-        region="Hive Tunnel Area"
+        name="Photo of Enemy in the Hive's First Room"
+        region="Hive Area"
         canGetLogic={hiveIn && hasFairyCam}
       />
       <JapesCheck
         id={1436}
-        name="Japes Enemy Photo: Hive Second Room 0"
-        region="Hive Tunnel Area"
+        name="Photo of Enemy 0 in the Hive's Second Room"
+        region="Hive Area"
         canGetLogic={hiveIn && canSlam && hasFairyCam}
       />
       <JapesCheck
         id={1437}
-        name="Japes Enemy Photo: Hive Second Room 1"
-        region="Hive Tunnel Area"
+        name="Photo of Enemy 1 in the Hive's Second Room"
+        region="Hive Area"
         canGetLogic={hiveIn && canSlam && hasFairyCam}
       />
       <JapesCheck
         id={1438}
-        name="Japes Enemy Photo: Hive Third Room 0"
-        region="Hive Tunnel Area"
+        name="Photo of Enemy 0 in the Hive's Third Room"
+        region="Hive Area"
         canGetLogic={hiveIn && canSlam && hasFairyCam}
       />
       <JapesCheck
         id={1439}
-        name="Japes Enemy Photo: Hive Third Room 1"
-        region="Hive Tunnel Area"
+        name="Photo of Enemy 1 in the Hive's Third Room"
+        region="Hive Area"
         canGetLogic={hiveIn && canSlam && hasFairyCam}
       />
       <JapesCheck
         id={1440}
-        name="Japes Enemy Photo: Hive Third Room 2"
-        region="Hive Tunnel Area"
+        name="Photo of Enemy 2 in the Hive's Third Room"
+        region="Hive Area"
         canGetLogic={hiveIn && canSlam && hasFairyCam}
       />
       <JapesCheck
         id={1441}
-        name="Japes Enemy Photo: Hive Third Room 3"
-        region="Hive Tunnel Area"
+        name="Photo of Enemy 3 in the Hive's Third Room"
+        region="Hive Area"
         canGetLogic={hiveIn && canSlam && hasFairyCam}
-      />
-      <JapesCheck
-        id={1442}
-        name="Japes Enemy Photo: Hive Main Room"
-        region="Hive Tunnel Area"
-        canGetLogic={hiveIn && hasFairyCam}
       />
     </DropPool>
   )
