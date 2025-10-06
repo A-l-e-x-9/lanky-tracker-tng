@@ -14,14 +14,14 @@ const Vanilla: React.FC = () => {
       baseId={110}
       baseName="Isles Cranky"
       level="DK Isles"
-      region="Isles Shops"
+      region="Shops"
       inLogic={cranky}
     />
     <ShopGenerator
       baseId={140}
       baseName="Turn in Isles Blueprint for"
       level="DK Isles"
-      region="Isles Shops"
+      region="Shops"
       inLogic={kremAscent && snide}
     />
   </>
@@ -39,14 +39,14 @@ const Shuffled: React.FC = () => {
         baseId={140}
         baseName="Isles Cranky Location"
         level="DK Isles"
-        region="Isles Shops"
+        region="Shops"
         inLogic={cranky}
       />
       <ShopGenerator
         baseId={170}
         baseName="Isles Snide Location"
         level="DK Isles"
-        region="Isles Shops"
+        region="Shops"
         inLogic={kremAscent && snide}
       />
     </>

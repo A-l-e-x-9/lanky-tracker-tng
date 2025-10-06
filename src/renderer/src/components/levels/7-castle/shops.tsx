@@ -17,14 +17,14 @@ const Vanilla: React.FC = () => {
         baseId={7110}
         baseName="Castle Cranky"
         level="Creepy Castle"
-        region="Castle Shops"
+        region="Shops"
         inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={7120}
         baseName="Castle Funky"
         level="Creepy Castle"
-        region="Castle Shops"
+        region="Shops"
         inLogic={hasFunky && inStage && hasClimbing}
         outLogic={hasFunky && inStage}
       />
@@ -32,14 +32,14 @@ const Vanilla: React.FC = () => {
         baseId={7130}
         baseName="Castle Candy"
         level="Creepy Castle"
-        region="Castle Shops"
+        region="Shops"
         inLogic={hasCandy && inStage}
       />
       <ShopGenerator
         baseId={7140}
         baseName="Turn in Castle Blueprint for"
         level="Creepy Castle"
-        region="Castle Shops"
+        region="Shops"
         inLogic={hasSnide && inStage}
       />
     </>
@@ -55,28 +55,28 @@ const Shuffled: React.FC = () => {
         baseId={7140}
         baseName="Castle Cranky Location"
         level="Creepy Castle"
-        region="Castle Shops"
+        region="Shops"
         inLogic={inStage}
       />
       <ShopGenerator
         baseId={7150}
         baseName="Castle Funky Location"
         level="Creepy Castle"
-        region="Castle Shops"
+        region="Shops"
         inLogic={inStage}
       />
       <ShopGenerator
         baseId={7160}
         baseName="Castle Candy Location"
         level="Creepy Castle"
-        region="Castle Shops"
+        region="Shops"
         inLogic={inStage}
       />
       <ShopGenerator
         baseId={7170}
         baseName="Castle Snide Location"
         level="Creepy Castle"
-        region="Castle Shops"
+        region="Shops"
         inLogic={inStage}
       />
     </>

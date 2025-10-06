@@ -17,28 +17,28 @@ const Vanilla: React.FC = () => {
         baseId={3110}
         baseName="Factory Cranky"
         level="Frantic Factory"
-        region="Factory Shops"
+        region="Shops"
         inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={3120}
         baseName="Factory Funky"
         level="Frantic Factory"
-        region="Factory Shops"
+        region="Shops"
         inLogic={hasFunky && testing}
       />
       <ShopGenerator
         baseId={3130}
         baseName="Factory Candy"
         level="Frantic Factory"
-        region="Factory Shops"
+        region="Shops"
         inLogic={hasCandy && inStage}
       />
       <ShopGenerator
         baseId={3140}
         baseName="Turn in Factory Blueprint for"
         level="Frantic Factory"
-        region="Factory Shops"
+        region="Shops"
         inLogic={hasSnide && testing}
       />
     </>
@@ -59,28 +59,28 @@ const Shuffled: React.FC = () => {
         baseId={3140}
         baseName="Factory Cranky Location"
         level="Frantic Factory"
-        region="Factory Shops"
+        region="Shops"
         inLogic={hasCranky && inStage}
       />
       <ShopGenerator
         baseId={3150}
         baseName="Factory Funky Location"
         level="Frantic Factory"
-        region="Factory Shops"
+        region="Shops"
         inLogic={hasFunky && testing}
       />
       <ShopGenerator
         baseId={3160}
         baseName="Factory Candy Location"
         level="Frantic Factory"
-        region="Factory Shops"
+        region="Shops"
         inLogic={hasCandy && inStage}
       />
       <ShopGenerator
         baseId={3170}
         baseName="Factory Snide Location"
         level="Frantic Factory"
-        region="Factory Shops"
+        region="Shops"
         inLogic={hasSnide && testing}
       />
     </>
