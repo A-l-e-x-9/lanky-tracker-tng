@@ -15,63 +15,63 @@ const TestingEnemies: React.FC = () => {
     <DropPool>
       <FactoryCheck
         id={3305}
-        name="Factory Enemy: Block Tower 0"
-        region="Testing Area"
+        name="Block Tower Enemy 0"
+        region="Testing Room"
         canGetLogic={testing && anyKong}
       />
       <FactoryCheck
         id={3306}
-        name="Factory Enemy: Block Tower 1"
-        region="Testing Area"
+        name="Block Tower Enemy 1"
+        region="Testing Room"
         canGetLogic={testing && anyKong}
       />
       <FactoryCheck
         id={3307}
-        name="Factory Enemy: Block Tower 2"
-        region="Testing Area"
+        name="Block Tower Enemy 2"
+        region="Testing Room"
         canGetLogic={testing && anyKong}
       />
       <FactoryCheck
         id={3311}
-        name="Factory Enemy: Tunnel to Block Tower"
-        region="Testing Area"
+        name="Enemy at T-intersection between Snide's and block tower"
+        region="Testing Room"
         canGetLogic={testing && robo}
       />
       <FactoryCheck
         id={3316}
-        name="Factory Enemy: To Block Tower Tunnel"
-        region="Testing Area"
+        name="Enemy at pole to block tower"
+        region="Testing Room"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <FactoryCheck
         id={3405}
-        name="Factory Enemy Photo: Block Tower 0"
-        region="Testing Area"
+        name="Photo of Block Tower Enemy 0"
+        region="Testing Room"
         canGetLogic={testing && anyKong && hasFairyCam}
       />
       <FactoryCheck
         id={3406}
-        name="Factory Enemy Photo: Block Tower 1"
-        region="Testing Area"
+        name="Photo of Block Tower Enemy 1"
+        region="Testing Room"
         canGetLogic={testing && anyKong && hasFairyCam}
       />
       <FactoryCheck
         id={3407}
-        name="Factory Enemy Photo: Block Tower 2"
-        region="Testing Area"
+        name="Photo of Block Tower Enemy 2"
+        region="Testing Room"
         canGetLogic={testing && anyKong && hasFairyCam}
       />
       <FactoryCheck
         id={3411}
-        name="Factory Enemy Photo: Tunnel to Block Tower"
-        region="Testing Area"
+        name="Photo of Enemy at T-intersection between Snide's and block tower"
+        region="Testing Room"
         canGetLogic={testing && robo && hasFairyCam}
       />
       <FactoryCheck
         id={3416}
-        name="Factory Enemy Photo: To Block Tower Tunnel"
-        region="Testing Area"
+        name="Photo of enemy at pole to block tower"
+        region="Testing Room"
         canGetLogic={inStage && hasFairyCam}
       />
     </DropPool>

@@ -8,8 +8,8 @@ const FunkyFairy: React.FC = () => (
     <VanillaFairy>
       <FactoryCheck
         id={3081}
-        name="Factory Fairy (Near Funky's)"
-        region="Testing Area"
+        name="Fairy from the Dartboard GB, at Funky's"
+        region="Testing Room"
         canGetLogic={useDartFairy()}
       />
     </VanillaFairy>

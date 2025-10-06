@@ -4,8 +4,8 @@ import FactoryCheck from '../../check'
 const TinyDartboard: React.FC = () => (
   <FactoryCheck
     id={3030}
-    name="Factory Tiny Dartboard"
-    region="Testing Area"
+    name="Tiny's Dartboard"
+    region="Testing Room"
     canGetLogic={useTinyDartGb()}
   />
 )

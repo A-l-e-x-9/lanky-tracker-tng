@@ -8,8 +8,8 @@ const FunkyCrate: React.FC = () => (
     <VanillaCrate>
       <FactoryCheck
         id={3061}
-        name="Factory Crate: Near Funky"
-        region="Testing Area"
+        name="Crate Near Funky's"
+        region="Testing Room"
         canGetLogic={useGeneralTest()}
       />
     </VanillaCrate>
