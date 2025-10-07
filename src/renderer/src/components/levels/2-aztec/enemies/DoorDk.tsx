@@ -10,7 +10,6 @@ const Dk5Enemies: React.FC = () => {
   const coconut = useCoconut()
   const kaboom = useDefeatKaboom()
   const klaptrap = useDefeatPurpleKlaptrap()
-  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <AztecCheck

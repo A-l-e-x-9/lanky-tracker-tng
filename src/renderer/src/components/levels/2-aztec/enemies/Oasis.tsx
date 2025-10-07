@@ -9,7 +9,6 @@ const OasisEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const inStage = useAztecFront()
   const zinger = useDefeatZinger()
-  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <AztecCheck

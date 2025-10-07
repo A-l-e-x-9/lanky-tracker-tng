@@ -10,7 +10,6 @@ const BeforeOasisEnemies: React.FC = () => {
   const inStage = useAztecFront()
   const pineapple = usePineapple()
   const zinger = useDefeatZinger()
-  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <AztecCheck
