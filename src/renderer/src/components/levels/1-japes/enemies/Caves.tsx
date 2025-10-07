@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatKlump, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useJapesMine, useSlamJapes } from '@renderer/hooks/japes'
-import { useCharge, useCamera } from '@renderer/hooks/kongs'
+import { useCharge } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
 const CaveEnemies: React.FC = () => {
@@ -9,7 +9,6 @@ const CaveEnemies: React.FC = () => {
   const mine = useJapesMine()
   const klump = useDefeatKlump()
   const charge = useCharge()
-  const hasFairyCam = useCamera()
   const isZinger = useDefeatZinger()
   return (
     <DropPool>
