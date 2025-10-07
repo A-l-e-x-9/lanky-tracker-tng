@@ -7,10 +7,7 @@ import { useHunky } from '@renderer/hooks/kongs'
 const CenterEnemies: React.FC = () => {
   const inStage = usePlayForest()
   const zinger = useDefeatZinger()
-  const klump = useDefeatKlump()
-  const beanstalk = useForestBean()
   const beanHalf = useForestBeanHalf()
-  const hasHunky = useHunky()
   return (
     <DropPool>
       <ForestCheck
