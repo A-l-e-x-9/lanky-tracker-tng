@@ -6,8 +6,8 @@ const ChunkyMinecart: React.FC = () => (
   <ToughGoldenBanana>
     <ForestCheck
       id={5040}
-      name="Forest Chunky Minecart"
-      region="Forest Center And Beanstalk"
+      name="Chunky's Well Minecart"
+      region="Forest Central Area"
       canGetLogic={useChunkyMineGb()}
     />
   </ToughGoldenBanana>
