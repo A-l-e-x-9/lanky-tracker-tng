@@ -9,7 +9,7 @@ const ChestFairy: React.FC = () => (
       <GalleonCheck
         id={4080}
         name="Fairy in Chunky's Left Chest"
-        region="Galleon Caverns"
+        region="Galleon Caves"
         canGetLogic={useChestFairy()}
       />
     </VanillaFairy>

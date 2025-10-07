@@ -10,8 +10,8 @@ const TinyKasplat: React.FC = () => {
       <VanillaKasplat>
         <GalleonCheck
           id={4053}
-          name="Galleon Kasplat: Past Vines"
-          region="Galleon Caverns"
+          name="Kasplat Past the Vines"
+          region="Galleon Caves"
           canGetLogic={galleonTop.in}
           canGetBreak={galleonTop.out}
         />

@@ -7,7 +7,7 @@ const CannonGame: React.FC = () => {
     <GalleonCheck
       id={4041}
       name="Chunky's Cannon Game"
-      region="Galleon Caverns"
+      region="Galleon Caves"
       canGetLogic={cannonGb.in}
       canGetBreak={cannonGb.out}
     />

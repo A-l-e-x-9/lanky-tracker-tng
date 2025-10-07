@@ -5,7 +5,7 @@ const GalleonChest: React.FC = () => (
   <GalleonCheck
     id={4040}
     name="Chunky's Right Chest"
-    region="Galleon Caverns"
+    region="Galleon Caves"
     canGetLogic={useChunkyChestGb()}
   />
 )

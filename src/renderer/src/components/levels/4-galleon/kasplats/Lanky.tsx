@@ -10,8 +10,8 @@ const LankyKasplat: React.FC = () => {
       <VanillaKasplat>
         <GalleonCheck
           id={4052}
-          name="Galleon Kasplat: Cannon Game Room"
-          region="Galleon Caverns"
+          name="Kasplat in the Cannon Game Room"
+          region="Galleon Caves"
           canGetLogic={cannon.in}
           canGetBreak={cannon.out}
         />
