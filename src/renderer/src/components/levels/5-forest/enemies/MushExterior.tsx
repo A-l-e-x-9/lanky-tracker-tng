@@ -15,167 +15,167 @@ const MushExteriorEnemies: React.FC = () => {
     <DropPool>
       <ForestCheck
         id={5326}
-        name="Forest Enemy: Yellow Tunnel 0"
-        region="Giant Mushroom Exterior"
+        name="Enemy 0 at the Yellow Tunnel"
+        region="Forest Area 3"
         canGetLogic={inStage && anyKong}
       />
       <ForestCheck
         id={5313}
-        name="Forest Enemy: Near Low Warp 5"
-        region="Giant Mushroom Exterior"
+        name="Enemy at Low Warp 5"
+        region="Forest Area 3"
         canGetLogic={inStage && anyKong}
       />
       <ForestCheck
         id={5314}
-        name="Forest Enemy: Near Pink Tunnel Bounce Tag Barrel"
-        region="Giant Mushroom Exterior"
+        name="Enemy Between Bounce Tag and Cranky's"
+        region="Forest Area 3"
         canGetLogic={inStage && anyKong}
       />
       <ForestCheck
         id={5315}
-        name="Forest Enemy: Near Mushroom Rocket Barrel"
-        region="Giant Mushroom Exterior"
+        name="Enemy at Giant Shroom's Rocketbarrel"
+        region="Forest Area 3"
         canGetLogic={inStage && anyKong}
       />
       <ForestCheck
         id={5316}
-        name="Forest Enemy: b/t Rocket & Yellow Tunnel"
-        region="Giant Mushroom Exterior"
+        name="Enemy between Rocketbarrel and Yellow Tunnel"
+        region="Forest Area 3"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5317}
-        name="Forest Enemy: Near Cranky"
-        region="Giant Mushroom Exterior"
+        name="Enemy Near Cranky's"
+        region="Forest Area 3"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5332}
-        name="Forest Enemy: Near Pink Tunnel"
-        region="Giant Mushroom Exterior"
+        name="Enemy at Pink Tunnel Bouncy Tag Barrel"
+        region="Forest Area 3"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5318}
-        name="Forest Enemy: Rear Tag"
-        region="Giant Mushroom Exterior"
+        name="Enemy at Rear Tag"
+        region="Forest Area 3"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
-        id={5418}
-        name="Forest Enemy: Near DK Pad"
-        region="Giant Mushroom Exterior"
+        id={5333}
+        name="Enemy Near DK Pad"
+        region="Forest Area 3"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5319}
-        name="Forest Enemy: Near Face Puzzle"
-        region="Giant Mushroom Exterior"
+        name="Enemy Near Face Puzzle Entrance"
+        region="Forest Area 3"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5320}
-        name="Forest Enemy: Near Crown"
-        region="Giant Mushroom Exterior"
+        name="Enemy Near Battle Arena"
+        region="Forest Area 3"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5321}
-        name="Forest Enemy: Near High Warp 5"
-        region="Giant Mushroom Exterior"
+        name="Enemy Near High Warp 5"
+        region="Forest Area 3"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5322}
-        name="Forest Enemy: Top Of Mushroom"
-        region="Giant Mushroom Exterior"
+        name="Enemy at Top Of Mushroom"
+        region="Forest Area 3"
         canGetLogic={inStage && roof.in && klump}
         canGetBreak={inStage && roof.out && klump}
       />
       <ForestCheck
         id={5426}
-        name="Forest Enemy Photo: Yellow Tunnel 0"
-        region="Giant Mushroom Exterior"
+        name="Photo of Enemy 0 at the Yellow Tunnel"
+        region="Forest Area 3"
         canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <ForestCheck
         id={5413}
-        name="Forest Enemy Photo: Near Low Warp 5"
-        region="Giant Mushroom Exterior"
+        name="Photo of Enemy Near Low Warp 5"
+        region="Forest Area 3"
         canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <ForestCheck
         id={5414}
-        name="Forest Enemy Photo: Near Pink Tunnel Bounce Tag Barrel"
-        region="Giant Mushroom Exterior"
+        name="Photo of Enemy Between Bounce Tag and Cranky's"
+        region="Forest Area 3"
         canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <ForestCheck
         id={5415}
-        name="Forest Enemy Photo: Near Mushroom Rocket Barrel"
-        region="Giant Mushroom Exterior"
+        name="Photo of Enemy at Giant Shroom's Rocketbarrel"
+        region="Forest Area 3"
         canGetLogic={inStage && anyKong && hasFairyCam}
       />
       <ForestCheck
         id={5416}
-        name="Forest Enemy Photo: b/t Rocket & Yellow Tunnel"
-        region="Giant Mushroom Exterior"
+        name="Photo of Enemy between Rocketbarrel and Yellow Tunnel"
+        region="Forest Area 3"
         canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5417}
-        name="Forest Enemy Photo: Near Cranky"
-        region="Giant Mushroom Exterior"
+        name="Photo of Enemy Near Cranky's"
+        region="Forest Area 3"
         canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5432}
-        name="Forest Enemy Photo: Near Pink Tunnel"
-        region="Giant Mushroom Exterior"
+        name="Photo of Enemy at Pink Tunnel Bouncy Tag Barrel"
+        region="Forest Area 3"
         canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
-        id={5518}
-        name="Forest Enemy Photo: Rear Tag"
-        region="Giant Mushroom Exterior"
+        id={5418}
+        name="Photo of Enemy at Rear Tag"
+        region="Forest Area 3"
         canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
-        id={5519}
-        name="Forest Enemy Photo: Near DK Pad"
-        region="Giant Mushroom Exterior"
+        id={5433}
+        name="Photo of Enemy Near DK Pad"
+        region="Forest Area 3"
         canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5419}
-        name="Forest Enemy Photo: Near Face Puzzle"
-        region="Giant Mushroom Exterior"
+        name="Photo of Enemy Near Face Puzzle Entrance"
+        region="Forest Area 3"
         canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5420}
-        name="Forest Enemy Photo: Near Crown"
-        region="Giant Mushroom Exterior"
+        name="Photo of Enemy Near Battle Arena"
+        region="Forest Area 3"
         canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5421}
-        name="Forest Enemy Photo: Near High Warp 5"
-        region="Giant Mushroom Exterior"
+        name="Photo of Enemy Near High Warp 5"
+        region="Forest Area 3"
         canGetLogic={inStage && hasFairyCam}
       />
       <ForestCheck
         id={5422}
-        name="Forest Enemy Photo: Top Of Mushroom"
-        region="Giant Mushroom Exterior"
+        name="Photo of Enemy at Top Of Mushroom"
+        region="Forest Area 3"
         canGetLogic={inStage && roof.in && klump && hasFairyCam}
         canGetBreak={inStage && roof.out && klump && hasFairyCam}
       />

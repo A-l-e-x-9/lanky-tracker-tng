@@ -6,8 +6,8 @@ const MushroomTop: React.FC = () => {
   return (
     <ForestCheck
       id={5010}
-      name="Forest Diddy Top of Mushroom Barrel"
-      region="Giant Mushroom Exterior"
+      name="Bonus Barrel above the Mushroom"
+      region="Forest Area 3"
       canGetLogic={topGb.in}
       canGetBreak={topGb.out}
     />

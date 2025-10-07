@@ -8,8 +8,8 @@ const MushroomArena: React.FC = () => (
     <VanillaArena>
       <ForestCheck
         id={5090}
-        name="Forest Arena (Mushroom High Platform)"
-        region="Giant Mushroom Exterior"
+        name="Battle Arena at Mushroom Top"
+        region="Forest Area 3"
         canGetLogic={useArena()}
       />
     </VanillaArena>

@@ -7,7 +7,7 @@ const ForestBlast: React.FC = () => (
     <ForestCheck
       id={5001}
       name="Baboon Blast Barrel"
-      region="Giant Mushroom Exterior"
+      region="Forest Area 3"
       canGetLogic={useDkBlastGb()}
     />
 /*  </ToughGoldenBanana>*/

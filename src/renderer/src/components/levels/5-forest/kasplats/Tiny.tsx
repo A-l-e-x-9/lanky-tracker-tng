@@ -8,8 +8,8 @@ const TinyKasplat: React.FC = () => (
     <VanillaKasplat>
       <ForestCheck
         id={5053}
-        name="Forest Kasplat: Low Mushroom Exterior"
-        region="Giant Mushroom Exterior"
+        name="Kasplat at the middle of the Mushroom"
+        region="Forest Area 3"
         canGetLogic={useMushExteriorKasplat()}
       />
     </VanillaKasplat>
