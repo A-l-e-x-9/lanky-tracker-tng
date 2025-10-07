@@ -10,8 +10,8 @@ const DkKasplat: React.FC = () => {
       <VanillaKasplat>
         <ForestCheck
           id={5050}
-          name="Forest Kasplat: Behind DK's Barn"
-          region="Forest Mills"
+          name="Kasplat behind Thornvine"
+          region="Forest Area 1"
           canGetLogic={barn.in}
           canGetBreak={barn.out}
         />

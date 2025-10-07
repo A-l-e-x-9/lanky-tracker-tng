@@ -6,8 +6,8 @@ const DarkRafters: React.FC = () => {
   return (
     <ForestCheck
       id={5013}
-      name="Forest Diddy Dark Rafters"
-      region="Forest Mills"
+      name="Diddy's Dark Rafters"
+      region="Forest Area 1"
       canGetLogic={raftersGb.in}
       canGetBreak={raftersGb.out}
     />

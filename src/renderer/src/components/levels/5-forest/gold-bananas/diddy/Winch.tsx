@@ -6,8 +6,8 @@ const MillWinch: React.FC = () => {
   return (
   <ForestCheck
     id={5012}
-    name="Forest Diddy Winch Cage"
-    region="Forest Mills"
+    name="Diddy's Winch"
+    region="Forest Area 1"
     canGetLogic={canCheck.in}
     canGetBreak={canCheck.out}
   />

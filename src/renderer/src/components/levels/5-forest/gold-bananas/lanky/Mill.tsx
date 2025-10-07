@@ -8,8 +8,8 @@ const LankyMill: React.FC = () => {
   <Miniboss>
     <ForestCheck
       id={5020}
-      name="Forest Lanky Attic Shooting"
-      region="Forest Mills"
+      name="Lanky's Attic Shooting"
+      region="Forest Area 1"
       canGetLogic={millGb.in}
       canGetBreak={millGb.out}
     />

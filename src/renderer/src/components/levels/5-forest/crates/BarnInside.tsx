@@ -11,7 +11,7 @@ const BarnInsideCrate: React.FC = () => {
         <ForestCheck
           id={5063}
           name="Thornvine Barn Melon Crate"
-          region="Forest Mills"
+          region="Forest Area 1"
           canGetLogic={barn.in}
           canGetBreak={barn.out}
         />

@@ -8,8 +8,8 @@ const MillFrontKeg2: React.FC = () => {
     <BoulderPool>
         <ForestCheck
           id={5007}
-          name="Forest Boulder: Mill Front Keg in Back of Room"
-          region="Forest Mills"
+          name="Front Mill Keg in Back of Room"
+          region="Forest Area 1"
           canGetLogic={useMillFrontKegs()}
         />
     </BoulderPool>

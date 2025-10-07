@@ -8,8 +8,8 @@ const RaftersCrate: React.FC = () => (
     <VanillaCrate>
       <ForestCheck
         id={5060}
-        name="Forest Crate: Behind Dark Attic"
-        region="Forest Mills"
+        name="Melon Crate behind Diddy's dark rafter barn"
+        region="Forest Area 1"
         canGetLogic={useGeneralThing()}
       />
     </VanillaCrate>

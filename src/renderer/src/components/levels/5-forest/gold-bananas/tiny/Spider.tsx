@@ -8,8 +8,8 @@ const SpiderBoss: React.FC = () => {
   <Miniboss>
     <ForestCheck
       id={5032}
-      name="Forest Tiny Spider Boss"
-      region="Forest Mills"
+      name="Spider Boss"
+      region="Forest Area 1"
       canGetLogic={spiderGb.in}
       canGetBreak={spiderGb.out}
     />

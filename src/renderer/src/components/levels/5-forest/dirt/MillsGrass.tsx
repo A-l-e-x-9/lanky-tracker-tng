@@ -9,7 +9,7 @@ const MillsGrassDirt: React.FC = () => (
       <ForestCheck
         id={5071}
         name="The infamous Mills Grass dirt patch!"
-        region="Forest Mills"
+        region="Forest Area 1"
         canGetLogic={useGeneralDirt()}
       />
     </VanillaDirt>

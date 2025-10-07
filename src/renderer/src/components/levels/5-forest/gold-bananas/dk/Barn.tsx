@@ -7,7 +7,7 @@ const DkBarn: React.FC = () => {
     <ForestCheck
       id={5004}
       name="Thornvine Barn Barrel"
-      region="Forest Mills"
+      region="Forest Area 1"
       canGetLogic={barnGb.in}
       canGetBreak={barnGb.out}
     />

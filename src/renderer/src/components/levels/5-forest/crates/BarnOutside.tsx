@@ -12,7 +12,7 @@ const BarnOutsideCrate: React.FC = () => {
         <ForestCheck
           id={5062}
           name="Melon Crate Outside Thornvine Barn"
-          region="Forest Mills"
+          region="Forest Area 1"
           canGetLogic={dusk || night.in}
           canGetBreak={night.out}
         />

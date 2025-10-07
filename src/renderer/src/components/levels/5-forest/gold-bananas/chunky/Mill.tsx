@@ -6,8 +6,8 @@ const ChunkyMill: React.FC = () => {
   return (
     <ForestCheck
       id={5042}
-      name="Forest Chunky Keg Crushing"
-      region="Forest Mills"
+      name="Chunky's Keg Crushing"
+      region="Forest Area 1"
       canGetLogic={millGb.in}
       canGetBreak={millGb.out}
     />
