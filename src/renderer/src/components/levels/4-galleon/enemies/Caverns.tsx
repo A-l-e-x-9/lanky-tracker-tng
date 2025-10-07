@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatKaboom, useDefeatKlobber, useDefeatKosha } from '@renderer/hooks/enemies'
 import { usePlayGalleon } from '@renderer/hooks/galleon'
-import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
+import { useAnyKong } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
 const CavernsEnemies: React.FC = () => {
@@ -10,7 +10,6 @@ const CavernsEnemies: React.FC = () => {
   const kaboom = useDefeatKaboom()
   const kosha = useDefeatKosha()
   const anyKong = useAnyKong()
-  const hasCamera = useCamera()
   return (
     <DropPool>
       <GalleonCheck
@@ -52,42 +51,6 @@ const CavernsEnemies: React.FC = () => {
         name="Coconut Tunnel Enemy"
         region="Galleon Caves"
         canGetLogic={inStage && anyKong}
-      />
-      <GalleonCheck
-        id={4400}
-        name="Photo of Chest Room Enemy 0"
-        region="Galleon Caves"
-        canGetLogic={inStage && klobber && hasCamera}
-      />
-      <GalleonCheck
-        id={4401}
-        name="Photo of Chest Room Enemy 1"
-        region="Galleon Caves"
-        canGetLogic={inStage && hasCamera}
-      />
-      <GalleonCheck
-        id={4402}
-        name="Photo of Vine Cannon Enemy"
-        region="Galleon Caves"
-        canGetLogic={inStage && hasCamera}
-      />
-      <GalleonCheck
-        id={4403}
-        name="Photo of Cranky Cannon Enemy"
-        region="Galleon Caves"
-        canGetLogic={inStage && hasCamera}
-      />
-      <GalleonCheck
-        id={4404}
-        name="Photo of Peanut Tunnel Enemy"
-        region="Galleon Caves"
-        canGetLogic={inStage && hasCamera}
-      />
-      <GalleonCheck
-        id={4406}
-        name="Photo of Coconut Tunnel Enemy"
-        region="Galleon Caves"
-        canGetLogic={inStage && anyKong && hasCamera}
       />
     </DropPool>
   )

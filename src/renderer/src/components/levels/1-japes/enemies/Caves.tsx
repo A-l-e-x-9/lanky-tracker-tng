@@ -77,66 +77,6 @@ const CaveEnemies: React.FC = () => {
         region="Japes Caves and Mines"
         canGetLogic={mine && canSlam && klump}
       />
-      <JapesCheck
-        id={1425}
-        name="Photo of Diddy's Mountain Start Area Enemy 0"
-        region="Japes Caves and Mines"
-        canGetLogic={mine && hasFairyCam}
-      />
-      <JapesCheck
-        id={1426}
-        name="Photo of Diddy's Mountain Start Area Enemy 1"
-        region="Japes Caves and Mines"
-        canGetLogic={mine && hasFairyCam}
-      />
-      <JapesCheck
-        id={1427}
-        name="Photo of Diddy's Mountain Start Area Enemy 2"
-        region="Japes Caves and Mines"
-        canGetLogic={mine && hasFairyCam}
-      />
-      <JapesCheck
-        id={1428}
-        name="Photo of Diddy's Mountain Start Area Enemy 3"
-        region="Japes Caves and Mines"
-        canGetLogic={mine && hasFairyCam}
-      />
-      <JapesCheck
-        id={1429}
-        name="Photo of Diddy's Mountain Start Area Enemy 4"
-        region="Japes Caves and Mines"
-        canGetLogic={mine && hasFairyCam}
-      />
-      <JapesCheck
-        id={1430}
-        name="Photo of Diddy's Mountain Enemy 0 at the Gate"
-        region="Japes Caves and Mines"
-        canGetLogic={mine && hasFairyCam}
-      />
-      <JapesCheck
-        id={1431}
-        name="Photo of Diddy's Mountain Enemy 1 at the Gate"
-        region="Japes Caves and Mines"
-        canGetLogic={mine && hasFairyCam}
-      />
-      <JapesCheck
-        id={1432}
-        name="Photo of Diddy's Mountain Enemy at the Conveyor Belt Controls"
-        region="Japes Caves and Mines"
-        canGetLogic={mine && charge && klump && hasFairyCam}
-      />
-      <JapesCheck
-        id={1433}
-        name="Photo of Diddy's Mountain Enemy 0 in the Conveyor Area"
-        region="Japes Caves and Mines"
-        canGetLogic={mine && canSlam && klump && hasFairyCam}
-      />
-      <JapesCheck
-        id={1434}
-        name="Photo of Diddy's Mountain Enemy 1 in the Conveyor Area"
-        region="Japes Caves and Mines"
-        canGetLogic={mine && canSlam && klump && hasFairyCam}
-      />
     </DropPool>
   )
 }

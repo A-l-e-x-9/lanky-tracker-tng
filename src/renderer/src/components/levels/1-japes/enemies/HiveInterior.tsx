@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatPurpleKlaptrap, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useJapesHive, useSlamJapes } from '@renderer/hooks/japes'
-import { useMini, useCamera } from '@renderer/hooks/kongs'
+import { useMini } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
 const HiveInteriorEnemies: React.FC = () => {
@@ -10,7 +10,6 @@ const HiveInteriorEnemies: React.FC = () => {
   const zinger = useDefeatZinger()
   const klaptrap = useDefeatPurpleKlaptrap()
   const canSlam = useSlamJapes()
-  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <JapesCheck
@@ -63,54 +62,6 @@ const HiveInteriorEnemies: React.FC = () => {
         region="Hive Area"
         canGetLogic={hiveIn && zinger.in && canSlam}
         canGetBreak={hiveIn && zinger.out && canSlam}
-      />
-      <JapesCheck
-        id={1442}
-        name="Photo of Enemy in the Hive's Main Room"
-        region="Hive Area"
-        canGetLogic={hiveIn && hasFairyCam}
-      />
-      <JapesCheck
-        id={1435}
-        name="Photo of Enemy in the Hive's First Room"
-        region="Hive Area"
-        canGetLogic={hiveIn && hasFairyCam}
-      />
-      <JapesCheck
-        id={1436}
-        name="Photo of Enemy 0 in the Hive's Second Room"
-        region="Hive Area"
-        canGetLogic={hiveIn && canSlam && hasFairyCam}
-      />
-      <JapesCheck
-        id={1437}
-        name="Photo of Enemy 1 in the Hive's Second Room"
-        region="Hive Area"
-        canGetLogic={hiveIn && canSlam && hasFairyCam}
-      />
-      <JapesCheck
-        id={1438}
-        name="Photo of Enemy 0 in the Hive's Third Room"
-        region="Hive Area"
-        canGetLogic={hiveIn && canSlam && hasFairyCam}
-      />
-      <JapesCheck
-        id={1439}
-        name="Photo of Enemy 1 in the Hive's Third Room"
-        region="Hive Area"
-        canGetLogic={hiveIn && canSlam && hasFairyCam}
-      />
-      <JapesCheck
-        id={1440}
-        name="Photo of Enemy 2 in the Hive's Third Room"
-        region="Hive Area"
-        canGetLogic={hiveIn && canSlam && hasFairyCam}
-      />
-      <JapesCheck
-        id={1441}
-        name="Photo of Enemy 3 in the Hive's Third Room"
-        region="Hive Area"
-        canGetLogic={hiveIn && canSlam && hasFairyCam}
       />
     </DropPool>
   )
