@@ -1,8 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { useDefeatKlump, useDefeatZinger } from '@renderer/hooks/enemies'
-import { useForestBean, useForestBeanHalf, usePlayForest } from '@renderer/hooks/forest'
+import { useDefeatZinger } from '@renderer/hooks/enemies'
+import { useForestBeanHalf, usePlayForest } from '@renderer/hooks/forest'
 import ForestCheck from '../check'
-import { useHunky } from '@renderer/hooks/kongs'
 
 const CenterEnemies: React.FC = () => {
   const inStage = usePlayForest()
