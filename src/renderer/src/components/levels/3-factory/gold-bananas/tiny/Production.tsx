@@ -6,8 +6,8 @@ const TinyProduction: React.FC = () => {
   return (
     <FactoryCheck
       id={3033}
-      name="Factory Tiny Production Room"
-      region="Production Room"
+      name="Tiny's Twirling Bonus Barrel"
+      region="Prod Room"
       canGetLogic={prodGb.in}
       canGetBreak={prodGb.out}
     />

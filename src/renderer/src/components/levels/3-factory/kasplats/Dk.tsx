@@ -8,8 +8,8 @@ const DkKasplat: React.FC = () => (
     <VanillaKasplat>
       <FactoryCheck
         id={3050}
-        name="Factory Kasplat: Upper Production Pipe"
-        region="Production Room"
+        name="Kasplat at Upper Production Pipe"
+        region="Prod Room"
         canGetLogic={useProductionTopKasplat()}
       />
     </VanillaKasplat>

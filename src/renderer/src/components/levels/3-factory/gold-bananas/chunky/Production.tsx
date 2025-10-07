@@ -4,8 +4,8 @@ import FactoryCheck from '../../check'
 const ChunkyProduction: React.FC = () => (
   <FactoryCheck
     id={3043}
-    name="Factory Chunky Production Timer"
-    region="Production Room"
+    name="Chunky's Production Timer"
+    region="Prod Room"
     canGetLogic={useChunkyProductionGb()}
   />
 )

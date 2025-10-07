@@ -8,8 +8,8 @@ const DiddyKasplat: React.FC = () => (
     <VanillaKasplat>
       <FactoryCheck
         id={3051}
-        name="Factory Kasplat: Base of Production"
-        region="Production Room"
+        name="Kasplat at Prod Room Base"
+        region="Prod Room"
         canGetLogic={useProductionBaseKasplat()}
       />
     </VanillaKasplat>

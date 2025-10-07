@@ -15,51 +15,51 @@ const ProductionEnemies: React.FC = () => {
     <DropPool>
       <FactoryCheck
         id={3309}
-        name="Factory Enemy: Tunnel to Prod 0"
-        region="Production Room"
+        name="Enemy 0 Down the Hatch"
+        region="Prod Room"
         canGetLogic={testing && anyKong}
       />
       <FactoryCheck
         id={3310}
-        name="Factory Enemy: Tunnel to Prod 1"
-        region="Production Room"
+        name="Enemy 1 Down the Hatch"
+        region="Prod Room"
         canGetLogic={testing && robo}
       />
       <FactoryCheck
         id={3314}
-        name="Factory Enemy: Low Warp 4"
-        region="Production Room"
+        name="Enemy at Low Warp 4"
+        region="Prod Room"
         canGetLogic={inStage && robo}
       />
       <FactoryCheck
         id={3315}
-        name="Factory Enemy: Diddy Switch"
-        region="Production Room"
+        name="Enemy at Diddy's Prod Room Switch"
+        region="Prod Room"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <FactoryCheck
         id={3409}
-        name="Factory Enemy Photo: Tunnel to Prod 0"
-        region="Production Room"
+        name="Photo of Enemy 0 Down the Hatch"
+        region="Prod Room"
         canGetLogic={testing && anyKong && hasFairyCam}
       />
       <FactoryCheck
         id={3410}
-        name="Factory Enemy Photo: Tunnel to Prod 1"
-        region="Production Room"
+        name="Photo of Enemy 1 Down the Hatch"
+        region="Prod Room"
         canGetLogic={testing && robo && hasFairyCam}
       />
       <FactoryCheck
         id={3414}
-        name="Factory Enemy Photo: Low Warp 4"
-        region="Production Room"
+        name="Photo of Enemy at Low Warp 4"
+        region="Prod Room"
         canGetLogic={inStage && robo && hasFairyCam}
       />
       <FactoryCheck
         id={3415}
-        name="Factory Enemy Photo: Diddy Switch"
-        region="Production Room"
+        name="Photo of Enemy at Diddy's Prod Room Switch"
+        region="Prod Room"
         canGetLogic={inStage && hasFairyCam}
       />
     </DropPool>

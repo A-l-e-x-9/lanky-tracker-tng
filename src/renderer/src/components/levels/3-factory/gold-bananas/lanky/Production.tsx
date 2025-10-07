@@ -6,8 +6,8 @@ const LankyProduction: React.FC = () => {
   return (
     <FactoryCheck
       id={3023}
-      name="Factory Lanky Production Room"
-      region="Production Room"
+      name="Lanky's Prod Room Handstand"
+      region="Prod Room"
       canGetLogic={prodGb.in}
       canGetBreak={prodGb.out}
     />
