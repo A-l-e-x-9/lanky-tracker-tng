@@ -4,8 +4,8 @@ import ForestCheck from '../../check'
 const ChunkyFace: React.FC = () => (
   <ForestCheck
     id={5041}
-    name="Forest Chunky Face Puzzle"
-    region="Giant Mushroom Insides"
+    name="Chunky's Face Puzzle"
+    region="Inside the Giant Mushroom"
     canGetLogic={useChunkyFaceGb()}
   />
 )

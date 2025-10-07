@@ -6,8 +6,8 @@ const MushroomSlam: React.FC = () => {
   return (
     <ForestCheck
       id={5021}
-      name="Forest Lanky Colored Mushroom Slam"
-      region="Giant Mushroom Insides"
+      name="Lanky's Colored Mushroom Slam"
+      region="Inside the Giant Mushroom"
       canGetLogic={mushGb.in}
       canGetBreak={mushGb.out}
     />

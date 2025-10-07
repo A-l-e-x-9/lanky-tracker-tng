@@ -6,8 +6,8 @@ const ZingerBounce: React.FC = () => {
   return (
     <ForestCheck
       id={5023}
-      name="Forest Lanky Zinger Bounce"
-      region="Giant Mushroom Insides"
+      name="Lanky's Zinger Bounce"
+      region="Inside the Giant Mushroom"
       canGetLogic={mushGb.in}
       canGetBreak={mushGb.out}
     />

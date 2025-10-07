@@ -17,42 +17,42 @@ const MushInteriorEnemies: React.FC = () => {
     <DropPool>
       <ForestCheck
         id={5336}
-        name="Forest Enemy: Mushroom Night Door"
-        region="Giant Mushroom Insides"
+        name="Enemy Near the Mushroom Night Door"
+        region="Inside the Giant Mushroom"
         canGetLogic={inStage && klump}
       />
       <ForestCheck
         id={5337}
-        name="Forest Enemy: Mushroom Path 0"
-        region="Giant Mushroom Insides"
+        name="Enemy Near Kasplat 0"
+        region="Inside the Giant Mushroom"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5338}
-        name="Forest Enemy: Mushroom Path 1"
-        region="Giant Mushroom Insides"
+        name="Enemy Near Kasplat 1"
+        region="Inside the Giant Mushroom"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <ForestCheck
         id={5339}
-        name="Forest Enemy: Mushroom Leap 0"
-        region="Giant Mushroom Insides"
+        name="Enemy 0 in Lanky's Mushroom Bounce Room"
+        region="Inside the Giant Mushroom"
         canGetLogic={roof.in && lanky && canSlam && zinger.in}
         canGetBreak={logicBreak(roof) && lanky && canSlam && zinger.out}
       />
       <ForestCheck
         id={5340}
-        name="Forest Enemy: Mushroom Leap 1"
-        region="Giant Mushroom Insides"
+        name="Enemy 1 in Lanky's Mushroom Bounce Room"
+        region="Inside the Giant Mushroom"
         canGetLogic={roof.in && lanky && canSlam && zinger.in}
         canGetBreak={logicBreak(roof) && lanky && canSlam && zinger.out}
       />
       <ForestCheck
         id={5341}
-        name="Forest Enemy: Face Puzzle"
-        region="Giant Mushroom Insides"
+        name="Enemy in Chunky's Face Puzzle Room"
+        region="Inside the Giant Mushroom"
         canGetLogic={inStage && chunky && canSlam && zinger.in}
         canGetBreak={inStage && chunky && canSlam && zinger.out}
       />

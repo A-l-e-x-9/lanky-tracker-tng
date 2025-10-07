@@ -805,7 +805,7 @@ export const SelectableRegions = [
   'Forest Area 1',
   'Forest Area 2',
   'Forest Area 3',
-  'Inside the Giant Shroom',
+  'Inside the Giant Mushroom',
   'Forest Area 4',
   'Crystal Caves Main',
   'Caves Igloo',

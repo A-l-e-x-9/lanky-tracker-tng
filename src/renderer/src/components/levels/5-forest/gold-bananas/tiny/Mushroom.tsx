@@ -4,8 +4,8 @@ import ForestCheck from '../../check'
 const MushroomBarrel: React.FC = () => (
   <ForestCheck
     id={5030}
-    name="Forest Tiny Mushroom Barrel"
-    region="Giant Mushroom Insides"
+    name="Tiny's Mushroom Barrel"
+    region="Inside the Giant Mushroom"
     canGetLogic={useTinyMushGb()}
   />
 )
