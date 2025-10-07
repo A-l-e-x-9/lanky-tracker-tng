@@ -5,7 +5,7 @@ const ChunkyApple: React.FC = () => (
   <ForestCheck
     id={5043}
     name="Chunky's Apple Rescue"
-    region="Forest Center And Beanstalk"
+    region="Forest Area 2"
     canGetLogic={useChunkyAppleGb()}
   />
 )

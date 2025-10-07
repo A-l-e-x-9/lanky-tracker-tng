@@ -9,7 +9,7 @@ const BeanstalkDirt: React.FC = () => (
       <ForestCheck
         id={5070}
         name="Dirt in front of The Bean's patch"
-        region="Forest Center And Beanstalk"
+        region="Forest Area 2"
         canGetLogic={useBeanDirt()}
       />
     </VanillaDirt>
