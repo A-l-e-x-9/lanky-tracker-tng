@@ -8,8 +8,8 @@ const OwlRace: React.FC = () => {
     <ToughGoldenBanana>
       <ForestCheck
         id={5011}
-        name="Forest Diddy Owl Race"
-        region="Owl Tree"
+        name="Diddy's Owl Race"
+        region="Forest Area 4"
         canGetLogic={owlGb.in}
         canGetBreak={owlGb.out}
       />

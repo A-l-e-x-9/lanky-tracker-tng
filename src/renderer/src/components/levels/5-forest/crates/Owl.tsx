@@ -8,8 +8,8 @@ const OwlCrate: React.FC = () => (
     <VanillaCrate>
       <ForestCheck
         id={5061}
-        name="Forest Crate: Near Owl Tree"
-        region="Owl Tree"
+        name="Melon Crate in grass near big tree"
+        region="Forest Area 4"
         canGetLogic={useForestOwl()}
       />
     </VanillaCrate>

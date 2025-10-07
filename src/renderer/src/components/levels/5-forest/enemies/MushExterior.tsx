@@ -15,7 +15,7 @@ const MushExteriorEnemies: React.FC = () => {
     <DropPool>
       <ForestCheck
         id={5326}
-        name="Enemy 0 at the Yellow Tunnel"
+        name="Enemy 0 in the Yellow Tunnel"
         region="Forest Area 3"
         canGetLogic={inStage && anyKong}
       />

@@ -8,8 +8,8 @@ const LankyKasplat: React.FC = () => (
     <VanillaKasplat>
       <ForestCheck
         id={5052}
-        name="Forest Kasplat: Under Owl Tree"
-        region="Owl Tree"
+        name="Kasplat in the big tree's tunnel"
+        region="Forest Area 4"
         canGetLogic={useOwlKasplat()}
       />
     </VanillaKasplat>

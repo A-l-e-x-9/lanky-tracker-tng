@@ -8,8 +8,8 @@ const RabbitRace: React.FC = () => {
     <ToughGoldenBanana>
       <ForestCheck
         id={5022}
-        name="Forest Lanky Rabbit Race"
-        region="Owl Tree"
+        name="The Infamous Rabbit Race"
+        region="Forest Area 4"
         canGetLogic={raceGb.in}
         canGetBreak={raceGb.out}
       />
