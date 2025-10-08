@@ -9,7 +9,6 @@ const MainEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const zinger = useDefeatZinger()
   const kosha = useDefeatKosha()
-  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <CavesCheck
