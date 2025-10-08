@@ -9,7 +9,7 @@ const CabinArena: React.FC = () => (
       <CavesCheck
         id={6090}
         name="Battle Arena (in DK's rotating cabin)"
-        region="Cabins Area"
+        region="Caves Cabins"
         canGetLogic={useDkRotateGb()}
       />
     </VanillaArena>

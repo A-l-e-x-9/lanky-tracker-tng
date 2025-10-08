@@ -5,7 +5,7 @@ const ChunkyCabin: React.FC = () => (
   <CavesCheck
     id={6043}
     name="Chunky's 5 Door Cabin"
-    region="Cabins Area"
+    region="Caves Cabins"
     canGetLogic={useChunkyCabinGb()}
   />
 )

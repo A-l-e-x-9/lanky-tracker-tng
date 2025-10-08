@@ -8,8 +8,8 @@ const TinyKasplat: React.FC = () => (
     <VanillaKasplat>
       <CavesCheck
         id={6053}
-        name="Caves Kasplat: By the Far Warp 2 (Cabins)"
-        region="Cabins Area"
+        name="Kasplat in the Cabins Area"
+        region="Caves Cabins"
         canGetLogic={useCabinKasplat()}
       />
     </VanillaKasplat>

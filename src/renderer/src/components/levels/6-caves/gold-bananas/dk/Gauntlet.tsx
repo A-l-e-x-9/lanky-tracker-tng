@@ -8,8 +8,8 @@ const DkGauntletCabin: React.FC = () => {
   <Miniboss>
     <CavesCheck
       id={6004}
-      name="Caves DK 5 Door Cabin"
-      region="Cabins Area"
+      name="DK's 5 Door Cabin"
+      region="Caves Cabins"
       canGetLogic={cabinGb.in}
       canGetBreak={cabinGb.out}
     />

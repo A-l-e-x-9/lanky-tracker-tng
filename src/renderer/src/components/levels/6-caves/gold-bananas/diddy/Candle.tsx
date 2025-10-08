@@ -9,7 +9,7 @@ const DiddyCandleCabin: React.FC = () => {
     <CavesCheck
       id={6013}
       name="Diddy's Upper 5 Door Cabin"
-      region="Cabins Area"
+      region="Caves Cabins"
       canGetLogic={candleGb}
     />
   </Miniboss>
