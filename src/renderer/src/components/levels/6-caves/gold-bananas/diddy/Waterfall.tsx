@@ -6,8 +6,8 @@ const WaterfallBarrel: React.FC = () => {
   return (
     <CavesCheck
       id={6010}
-      name="Caves Diddy Jetpack Barrel"
-      region="Main Caves Area"
+      name="Diddy's Waterfall Barrel"
+      region="Crystal Caves Main"
       canGetLogic={waterfallGb.in}
       canGetBreak={waterfallGb.out}
     />

@@ -8,8 +8,8 @@ const KooshyKomeiji: React.FC = () => {
     <BoulderPool>
         <CavesCheck
           id={6008}
-          name="Caves Boulder: Small Boulder Near Ice Castle"
-          region="Main Caves Area"
+          name="Small Boulder Near Ice Castle"
+          region="Crystal Caves Main"
           canGetLogic={useSatoriKomeiji()}
         />
     </BoulderPool>

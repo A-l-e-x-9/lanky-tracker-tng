@@ -9,7 +9,7 @@ const Okuu: React.FC = () => {
         <CavesCheck
           id={5009}
           name="Big Boulder Near Cranky's"
-          region="Main Caves Area"
+          region="Crystal Caves Main"
           canGetLogic={useOrin()}
         />
     </BoulderPool>

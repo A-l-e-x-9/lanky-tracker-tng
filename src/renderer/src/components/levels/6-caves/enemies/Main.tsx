@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { usePlayCaves } from '@renderer/hooks/caves'
 import { useDefeatKosha, useDefeatZinger } from '@renderer/hooks/enemies'
-import { useAnyKong, useCamera } from '@renderer/hooks/kongs'
+import { useAnyKong } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const MainEnemies: React.FC = () => {
@@ -14,66 +14,36 @@ const MainEnemies: React.FC = () => {
     <DropPool>
       <CavesCheck
         id={6300}
-        name="Caves Enemy: Start"
-        region="Main Caves Area"
+        name="Enemy at the Start"
+        region="Crystal Caves Main"
         canGetLogic={inStage && anyKong}
       />
       <CavesCheck
         id={6301}
-        name="Caves Enemy: Near Ice Castle"
-        region="Main Caves Area"
+        name="Enemy Near the Ice Castle"
+        region="Crystal Caves Main"
         canGetLogic={inStage && anyKong}
       />
       <CavesCheck
         id={6304}
-        name="Caves Enemy: Near Funky"
-        region="Main Caves Area"
+        name="Enemy Near Funky's"
+        region="Crystal Caves Main"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <CavesCheck
         id={6306}
-        name="Caves Enemy: Near Bonus Room"
-        region="Main Caves Area"
+        name="Enemy Near Tiny's Bonus Room"
+        region="Crystal Caves Main"
         canGetLogic={inStage && kosha.in}
         canGetBreak={inStage && kosha.out}
       />
       <CavesCheck
         id={6305}
-        name="Caves Enemy: Near Snide"
-        region="Main Caves Area"
+        name="Enemy Near Snide's"
+        region="Crystal Caves Main"
         canGetLogic={inStage && kosha.in}
         canGetBreak={inStage && kosha.out}
-      />
-      <CavesCheck
-        id={6400}
-        name="Caves Enemy Photo: Start"
-        region="Main Caves Area"
-        canGetLogic={inStage && anyKong && hasFairyCam}
-      />
-      <CavesCheck
-        id={6401}
-        name="Caves Enemy Photo: Near Ice Castle"
-        region="Main Caves Area"
-        canGetLogic={inStage && anyKong && hasFairyCam}
-      />
-      <CavesCheck
-        id={6404}
-        name="Caves Enemy Photo: Near Funky"
-        region="Main Caves Area"
-        canGetLogic={inStage && hasFairyCam}
-      />
-      <CavesCheck
-        id={6406}
-        name="Caves Enemy Photo: Near Bonus Room"
-        region="Main Caves Area"
-        canGetLogic={inStage && hasFairyCam}
-      />
-      <CavesCheck
-        id={6405}
-        name="Caves Enemy Photo: Near Snide"
-        region="Main Caves Area"
-        canGetLogic={inStage && hasFairyCam}
       />
     </DropPool>
   )

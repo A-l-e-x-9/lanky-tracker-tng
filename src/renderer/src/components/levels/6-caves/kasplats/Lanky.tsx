@@ -10,8 +10,8 @@ const LankyKasplat: React.FC = () => {
       <VanillaKasplat>
         <CavesCheck
           id={6052}
-          name="Caves Kasplat: On the Pillar"
-          region="Main Caves Area"
+          name="Kasplat On the Big Pillar"
+          region="Crystal Caves Main"
           canGetLogic={pillar.in}
           canGetBreak={pillar.out}
         />

@@ -4,8 +4,8 @@ import CavesCheck from '../../check'
 const EarlyGone: React.FC = () => (
   <CavesCheck
     id={6040}
-    name="Caves Chunky Gorilla Gone"
-    region="Main Caves Area"
+    name="Chunky's Gorilla Gone Room Near the Start"
+    region="Crystal Caves Main"
     canGetLogic={useChunkyGoneGb()}
   />
 )

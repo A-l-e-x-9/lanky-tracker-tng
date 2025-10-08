@@ -10,8 +10,8 @@ const DiddyKasplat: React.FC = () => {
       <VanillaKasplat>
         <CavesCheck
           id={6051}
-          name="Caves Kasplat: Mini Room by Funky"
-          region="Main Caves Area"
+          name="Kasplat in the Mini/Warp 4 Room by Funky's"
+          region="Crystal Caves Main"
           canGetLogic={miniFunky}
         />
       </VanillaKasplat>

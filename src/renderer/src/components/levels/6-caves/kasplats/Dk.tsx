@@ -8,8 +8,8 @@ const DkKasplat: React.FC = () => (
     <VanillaKasplat>
       <CavesCheck
         id={6050}
-        name="Caves Kasplat: Near Ice Castle"
-        region="Main Caves Area"
+        name="Kasplat Near the Ice Castle"
+        region="Crystal Caves Main"
         canGetLogic={useIceCastleKasplat()}
       />
     </VanillaKasplat>
