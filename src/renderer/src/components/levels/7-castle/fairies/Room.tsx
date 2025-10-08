@@ -10,8 +10,8 @@ const RoomFairy: React.FC = () => {
       <VanillaFairy>
         <CastleCheck
           id={7081}
-          name="Castle Fairy (Near Car Race)"
-          region="Castle Rooms"
+          name="Fairy in Museum Near Car Race"
+          region="Various Castle Rooms"
           canGetLogic={room.in}
           canGetBreak={room.out}
         />

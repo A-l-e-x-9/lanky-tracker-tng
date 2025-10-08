@@ -6,8 +6,8 @@ const TinyRace: React.FC = () => (
 <ToughGoldenBanana>
   <CastleCheck
     id={7030}
-    name="Castle Tiny Car Race"
-    region="Castle Rooms"
+    name="Tiny's Car Race"
+    region="Various Castle Rooms"
     canGetLogic={useTinyRoomGb()}
   />
 </ToughGoldenBanana>

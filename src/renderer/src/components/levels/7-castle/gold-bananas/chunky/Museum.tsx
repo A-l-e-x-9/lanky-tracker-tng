@@ -4,8 +4,8 @@ import CastleCheck from '../../check'
 const ChunkyMuseum: React.FC = () => (
   <CastleCheck
     id={7042}
-    name="Castle Chunky Museum"
-    region="Castle Rooms"
+    name="Chunky's Museum"
+    region="Various Castle Rooms"
     canGetLogic={useChunkyRoomGb()}
   />
 )

@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { usePlayCastle, useSlamCastle } from '@renderer/hooks/castle'
 import { useDefeatKosha } from '@renderer/hooks/enemies'
-import { useChunky, useCamera } from '@renderer/hooks/kongs'
+import { useChunky } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const MuseumEnemies: React.FC = () => {
@@ -9,69 +9,38 @@ const MuseumEnemies: React.FC = () => {
   const canSlam = useSlamCastle()
   const chunky = useChunky()
   const kosha = useDefeatKosha()
-  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <CastleCheck
         id={7361}
-        name="Castle Enemy: Museum Start"
-        region="Castle Rooms"
+        name="Enemy at Museum Start"
+        region="Various Castle Rooms"
         canGetLogic={inStage && chunky && canSlam && kosha.in}
         canGetBreak={inStage && chunky && canSlam && kosha.out}
       />
       <CastleCheck
         id={7362}
-        name="Castle Enemy: Museum Main 0"
-        region="Castle Rooms"
+        name="Museum Enemy 0"
+        region="Various Castle Rooms"
         canGetLogic={inStage && chunky && canSlam}
       />
       <CastleCheck
         id={7363}
-        name="Castle Enemy: Museum Main 1"
-        region="Castle Rooms"
+        name="Museum Enemy 1"
+        region="Various Castle Rooms"
         canGetLogic={inStage && chunky && canSlam}
       />
       <CastleCheck
         id={7364}
-        name="Castle Enemy: Museum Main 2"
-        region="Castle Rooms"
+        name="Museum Enemy 2"
+        region="Various Castle Rooms"
         canGetLogic={inStage && chunky && canSlam}
       />
       <CastleCheck
         id={7365}
-        name="Castle Enemy: Museum Main 3"
-        region="Castle Rooms"
+        name="Museum Enemy 3"
+        region="Various Castle Rooms"
         canGetLogic={inStage && chunky && canSlam}
-      />
-      <CastleCheck
-        id={7461}
-        name="Castle Enemy Photo: Museum Start"
-        region="Castle Rooms"
-        canGetLogic={inStage && chunky && canSlam && hasFairyCam}
-      />
-      <CastleCheck
-        id={7462}
-        name="Castle Enemy Photo: Museum Main 0"
-        region="Castle Rooms"
-        canGetLogic={inStage && chunky && canSlam && hasFairyCam}
-      />
-      <CastleCheck
-        id={7463}
-        name="Castle Enemy Photo: Museum Main 1"
-        region="Castle Rooms"
-        canGetLogic={inStage && chunky && canSlam && hasFairyCam}
-      />
-      <CastleCheck
-        id={7464}
-        name="Castle Enemy Photo: Museum Main 2"
-        region="Castle Rooms"
-        canGetLogic={inStage && chunky && canSlam && hasFairyCam}
-      />
-      <CastleCheck
-        id={7465}
-        name="Castle Enemy Photo: Museum Main 3"
-        region="Castle Rooms"
-        canGetLogic={inStage && chunky && canSlam && hasFairyCam}
       />
     </DropPool>
   )

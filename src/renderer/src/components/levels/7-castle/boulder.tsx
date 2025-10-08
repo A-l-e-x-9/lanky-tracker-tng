@@ -9,7 +9,7 @@ const BoulderCheck: React.FC = () => {
       <CastleCheck
         id={7205}
         name="Museum Boulder"
-        region="Castle Rooms"
+        region="Various Castle Rooms"
         canGetLogic={canDoMuseum}
       />
     </BoulderPool>

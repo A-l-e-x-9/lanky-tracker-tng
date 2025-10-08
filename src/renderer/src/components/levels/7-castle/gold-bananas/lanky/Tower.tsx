@@ -8,8 +8,8 @@ const LankyTower: React.FC = () => {
   <Miniboss>
     <CastleCheck
       id={7020}
-      name="Castle Lanky Tower"
-      region="Castle Rooms"
+      name="Lanky's Wind Tunnel"
+      region="Various Castle Rooms"
       canGetLogic={roomGb.in}
       canGetBreak={roomGb.out}
     />

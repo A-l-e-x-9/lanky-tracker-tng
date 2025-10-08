@@ -7,7 +7,7 @@ const DiddyBallroom: React.FC = () => (
   <CastleCheck
     id={7011}
     name="Diddy's Ballroom Barrel"
-    region="Castle Rooms"
+    region="Various Castle Rooms"
     canGetLogic={useDiddyRoomGb()}
   />
 </Miniboss>
