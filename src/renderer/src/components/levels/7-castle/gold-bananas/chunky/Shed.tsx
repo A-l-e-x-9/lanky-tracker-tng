@@ -8,8 +8,8 @@ const ChunkyShed: React.FC = () => {
   <Miniboss>
     <CastleCheck
       id={7041}
-      name="Castle Chunky Shed"
-      region="Castle Surroundings"
+      name="Chunky's Shed"
+      region="Creepy Castle Main"
       canGetLogic={shedGb.in}
       canGetBreak={shedGb.out}
     />

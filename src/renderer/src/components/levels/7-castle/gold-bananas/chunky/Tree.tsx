@@ -6,8 +6,8 @@ const ChunkyTree: React.FC = () => {
   return (
     <CastleCheck
       id={7040}
-      name="Castle Chunky Tree Sniping Barrel"
-      region="Castle Surroundings"
+      name="Chunky's Tree Sniping Barrel"
+      region="Creepy Castle Main"
       canGetLogic={treeGb.in}
       canGetBreak={treeGb.out}
     />

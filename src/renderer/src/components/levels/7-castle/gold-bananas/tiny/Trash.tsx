@@ -8,8 +8,8 @@ const TinyTrash: React.FC = () => {
   <Miniboss>
     <CastleCheck
       id={7031}
-      name="Castle Tiny Trash Can"
-      region="Castle Surroundings"
+      name="Tiny's Trash Can"
+      region="Creepy Castle Main"
       canGetLogic={trashGb.in}
       canGetBreak={trashGb.out}
     />

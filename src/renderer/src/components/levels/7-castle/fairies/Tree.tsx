@@ -8,8 +8,8 @@ const TreeFairy: React.FC = () => (
     <VanillaFairy>
       <CastleCheck
         id={7080}
-        name="Castle Fairy (Tree Sniper Room)"
-        region="Castle Surroundings"
+        name="Fairy in the Tree"
+        region="Creepy Castle Main"
         canGetLogic={useTreeFairy()}
       />
     </VanillaFairy>

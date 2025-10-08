@@ -8,8 +8,8 @@ const DkKasplat: React.FC = () => (
     <VanillaKasplat>
       <CastleCheck
         id={7050}
-        name="Castle Kasplat: Inside the Tree"
-        region="Castle Surroundings"
+        name="Kasplat in the Tree"
+        region="Creepy Castle Main"
         canGetLogic={useTreeKasplat()}
       />
     </VanillaKasplat>

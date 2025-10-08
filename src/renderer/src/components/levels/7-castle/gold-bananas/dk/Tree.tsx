@@ -4,8 +4,8 @@ import CastleCheck from '../../check'
 const DkTree: React.FC = () => (
     <CastleCheck
       id={7001}
-      name="Castle DK Tree Sniping"
-      region="Castle Surroundings"
+      name="DK's Tree Sniping"
+      region="Creepy Castle Main"
       canGetLogic={useDkTreeGb()}
     />
 )

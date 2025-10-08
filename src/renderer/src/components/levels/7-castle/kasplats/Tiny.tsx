@@ -10,8 +10,8 @@ return (
     <VanillaKasplat>
       <CastleCheck
         id={7053}
-        name="Castle Kasplat: On a lone platform"
-        region="Castle Surroundings"
+        name="Kasplat on Lone Low Platform Past Crypt Entrance"
+        region="Creepy Castle Main"
         canGetLogic={canDoCheck.in}
         canGetBreak={canDoCheck.out}
       />

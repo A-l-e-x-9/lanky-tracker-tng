@@ -8,8 +8,8 @@ const GreenhouseArena: React.FC = () => (
     <VanillaArena>
       <CastleCheck
         id={7090}
-        name="Castle Arena (Greenhouse: Center)"
-        region="Castle Surroundings"
+        name="Arena in the Greenhouse"
+        region="Creepy Castle Main"
         canGetLogic={useArena()}
       />
     </VanillaArena>

@@ -8,8 +8,8 @@ const TopFloorDirt: React.FC = () => (
     <VanillaDirt>
       <CastleCheck
         id={7070}
-        name="Castle Dirt: Top Floor"
-        region="Castle Surroundings"
+        name="Dirt Behind Snide's"
+        region="Creepy Castle Main"
         canGetLogic={useGeneralDirt()}
       />
     </VanillaDirt>
