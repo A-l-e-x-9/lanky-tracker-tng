@@ -9,7 +9,7 @@ const ChunkyKasplat: React.FC = () => (
       <CavesCheck
         id={6054}
         name="Kasplat On Top of 5-Door Igloo"
-        region="Igloo Area"
+        region="Caves Igloo"
         canGetLogic={useIglooKasplat()}
       />
     </VanillaKasplat>

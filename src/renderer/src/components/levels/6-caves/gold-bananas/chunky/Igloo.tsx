@@ -7,8 +7,8 @@ const ChunkyIgloo: React.FC = () => (
 <Miniboss>
   <CavesCheck
     id={6042}
-    name="Caves Chunky 5 Door Igloo"
-    region="Igloo Area"
+    name="Chunky's 5 Door Igloo"
+    region="Caves Igloo"
     canGetLogic={useChunkyIglooGb()}
   />
 </Miniboss>

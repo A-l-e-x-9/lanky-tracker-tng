@@ -1,7 +1,7 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useCavesIgloo } from '@renderer/hooks/caves'
 import { useDefeatKosha } from '@renderer/hooks/enemies'
-import { useBongos, useSax, useCamera } from '@renderer/hooks/kongs'
+import { useBongos, useSax } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const IglooEnemies: React.FC = () => {
@@ -9,47 +9,28 @@ const IglooEnemies: React.FC = () => {
   const kosha = useDefeatKosha()
   const bongos = useBongos()
   const sax = useSax()
-  const hasFairyCam = useCamera()
   return (
     <DropPool>
       <CavesCheck
         id={6309}
-        name="Caves Enemy: DK Igloo Right"
-        region="Igloo Area"
+        name="DK's 5-Door Igloo Right Enemy"
+        region="Caves Igloo"
         canGetLogic={igloo && bongos && kosha.in}
         canGetBreak={igloo && bongos && kosha.out}
       />
       <CavesCheck
         id={6310}
-        name="Caves Enemy: DK Igloo Left"
-        region="Igloo Area"
+        name="DK's 5-Door Igloo Left Enemy"
+        region="Caves Igloo"
         canGetLogic={igloo && bongos && kosha.in}
         canGetBreak={igloo && bongos && kosha.out}
       />
       <CavesCheck
         id={6316}
-        name="Caves Enemy: Tiny Igloo Big"
-        region="Igloo Area"
+        name="Enemy in Tiny's 5-Door Igloo"
+        region="Caves Igloo"
         canGetLogic={igloo && sax && kosha.in}
         canGetBreak={igloo && sax && kosha.out}
-      />
-      <CavesCheck
-        id={6409}
-        name="Caves Enemy Photo: DK Igloo Right"
-        region="Igloo Area"
-        canGetLogic={igloo && bongos && hasFairyCam}
-      />
-      <CavesCheck
-        id={6410}
-        name="Caves Enemy Photo: DK Igloo Left"
-        region="Igloo Area"
-        canGetLogic={igloo && bongos && hasFairyCam}
-      />
-      <CavesCheck
-        id={6416}
-        name="Caves Enemy Photo: Tiny Igloo Big"
-        region="Igloo Area"
-        canGetLogic={igloo && sax && hasFairyCam}
       />
     </DropPool>
   )

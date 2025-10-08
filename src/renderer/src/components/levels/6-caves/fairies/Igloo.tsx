@@ -8,8 +8,8 @@ const IglooFairy: React.FC = () => (
     <VanillaFairy>
       <CavesCheck
         id={6080}
-        name="Caves Fairy (Tiny Igloo)"
-        region="Igloo Area"
+        name="Fairy in Tiny's 5-Door Igloo"
+        region="Caves Igloo"
         canGetLogic={useIglooFairy()}
       />
     </VanillaFairy>

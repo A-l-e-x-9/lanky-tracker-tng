@@ -10,8 +10,8 @@ const KoshaDirt: React.FC = () => {
       <VanillaDirt>
         <CavesCheck
           id={6070}
-          name="Caves Dirt: Giant Kosha"
-          region="Igloo Area"
+          name="The Giant Kosha's Dirt"
+          region="Caves Igloo"
           canGetLogic={dirt.in}
           canGetBreak={dirt.out}
         />

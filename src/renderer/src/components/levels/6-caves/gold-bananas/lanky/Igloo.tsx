@@ -8,8 +8,8 @@ const LankyIgloo: React.FC = () => {
   <Miniboss>
     <CavesCheck
       id={6022}
-      name="Caves Lanky 5 Door Igloo"
-      region="Igloo Area"
+      name="Lanky's 5 Door Igloo"
+      region="Caves Igloo"
       canGetLogic={iglooGb.in}
       canGetBreak={iglooGb.out}
     />

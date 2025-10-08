@@ -6,8 +6,8 @@ const MonkeyportIgloo: React.FC = () => {
   return (
     <CavesCheck
       id={6031}
-      name="Caves Tiny Monkeyport Igloo"
-      region="Igloo Area"
+      name="Tiny's Monkeyport Igloo"
+      region="Caves Igloo"
       canGetLogic={portGb}
     />
   )

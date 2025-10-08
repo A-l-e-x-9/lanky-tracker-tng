@@ -6,8 +6,8 @@ const DkIgloo: React.FC = () => {
   return (
     <CavesCheck
       id={6002}
-      name="Caves DK 5 Door Igloo"
-      region="Igloo Area"
+      name="DK's 5 Door Igloo"
+      region="Caves Igloo"
       canGetLogic={iglooGb.in}
       canGetBreak={iglooGb.out}
     />
