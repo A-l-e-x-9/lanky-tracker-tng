@@ -27512,40 +27512,23 @@ const HelmEntryEnemies = () => {
   const helmEntry = usePlayHelm();
   const anyKong = useAnyKong();
   const klump = useDefeatKlump();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8300, name: "Helm Enemy: Start 0", canGetLogic: helmEntry && anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8301, name: "Helm Enemy: Start 1", canGetLogic: helmEntry && anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8302, name: "Helm Enemy: Hill", canGetLogic: helmEntry && anyKong && klump }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8300, name: "Enemy 0 at Start", canGetLogic: helmEntry && anyKong }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8301, name: "Enemy 1 at Start", canGetLogic: helmEntry && anyKong }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8302, name: "Enemy Halfway Up Hill", canGetLogic: helmEntry && anyKong && klump }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       HelmCheck,
       {
         id: 8303,
-        name: "Helm Enemy: Switch Room 0",
+        name: "Enemy 0 Near Pineapple Switch",
         canGetLogic: helmEntry && anyKong && klump
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8304, name: "Helm Enemy: Switch Room 1", canGetLogic: helmEntry && anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8305, name: "Helm Enemy: Mini Room 0", canGetLogic: helmEntry && anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8306, name: "Helm Enemy: Mini Room 1", canGetLogic: helmEntry && anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8307, name: "Helm Enemy: Mini Room 2", canGetLogic: helmEntry && anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8308, name: "Helm Enemy: Mini Room 3", canGetLogic: helmEntry && anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8400, name: "Helm Enemy Photo: Start 0", canGetLogic: helmEntry && anyKong && hasFairyCam }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8401, name: "Helm Enemy Photo: Start 1", canGetLogic: helmEntry && anyKong && hasFairyCam }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8402, name: "Helm Enemy Photo: Hill", canGetLogic: helmEntry && anyKong && klump && hasFairyCam }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8403,
-        name: "Helm Enemy Photo: Switch Room 0",
-        canGetLogic: helmEntry && anyKong && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8404, name: "Helm Enemy Photo: Switch Room 1", canGetLogic: helmEntry && anyKong && hasFairyCam }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8405, name: "Helm Enemy Photo: Mini Room 0", canGetLogic: helmEntry && anyKong && hasFairyCam }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8406, name: "Helm Enemy Photo: Mini Room 1", canGetLogic: helmEntry && anyKong && hasFairyCam }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8407, name: "Helm Enemy Photo: Mini Room 2", canGetLogic: helmEntry && anyKong && hasFairyCam }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8408, name: "Helm Enemy Photo: Mini Room 3", canGetLogic: helmEntry && anyKong && hasFairyCam })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8304, name: "Enemy 1 Near Pineapple Switch", canGetLogic: helmEntry && anyKong }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8305, name: "Enemy 0 at Mini Room", canGetLogic: helmEntry && anyKong }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8306, name: "Enemy 1 at Mini Room", canGetLogic: helmEntry && anyKong }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8307, name: "Enemy 2 at Mini Room", canGetLogic: helmEntry && anyKong }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8308, name: "Enemy 3 at Mini Room", canGetLogic: helmEntry && anyKong })
   ] });
 };
 const HelmMachineEnemies = () => {
@@ -27721,7 +27704,7 @@ const EndOfHelmFairies = () => {
       HelmCheck,
       {
         id: 8110,
-        name: "Helm Fairy 1 (Key 8 room)",
+        name: "Fairy 1 in Key 8's room",
         canGetLogic: helmDoors.in && camera && anyKong,
         canGetBreak: helmDoors.out && camera && anyKong
       }
@@ -27730,7 +27713,7 @@ const EndOfHelmFairies = () => {
       HelmCheck,
       {
         id: 8111,
-        name: "Helm Fairy 2 (Key 8 room)",
+        name: "Fairy 2 in Key 8's room",
         canGetLogic: helmDoors.in && camera && anyKong,
         canGetBreak: helmDoors.out && camera && anyKong
       }
