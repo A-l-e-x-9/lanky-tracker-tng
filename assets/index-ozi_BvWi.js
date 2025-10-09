@@ -10054,7 +10054,7 @@ const roolSlice = (set) => {
 };
 const initialFastChecks = {
   fastChecks: {
-    factoryArcade: false,
+    //    factoryArcade: false,
     galleonMermaid: 5
   }
 };
@@ -10517,7 +10517,6 @@ const useCurrentPearlCount = () => useDonkStore(useShallow((state) => state.cons
 const useCurrentFairyCount = () => useDonkStore(useShallow((state) => state.consumables.fairies));
 const useBean = () => useDonkStore(useShallow((state) => state.consumables.bean));
 const useCurrentGBCount = () => useDonkStore(useShallow((state) => state.consumables.goldBananas));
-const useFastArcade = () => useDonkStore(useShallow((state) => state.fastChecks.factoryArcade));
 const useFastMermaid = () => useDonkStore(useShallow((state) => state.fastChecks.galleonMermaid));
 const useDk = () => {
   const kong = useDonkStore(useShallow((state) => state.moves.dk));
@@ -11197,7 +11196,7 @@ const useShipFairy = () => {
   const fairy = useCamera();
   return ship && fairy;
 };
-const useGeneralFairy$5 = () => {
+const useGeneralFairy$4 = () => {
   const thing = useGeneralThing$6();
   return useCamera() && thing;
 };
@@ -11781,7 +11780,7 @@ const useAztecDirt = () => {
     out: shockwave && (islesUpper && boulderTech && (diddy || tiny) || crossFungi && (dk2 || tiny && twirl))
   };
 };
-const useGeneralFairy$4 = () => {
+const useGeneralFairy$3 = () => {
   const anyKong = useAnyKong();
   const camera = useCamera();
   return anyKong && camera;
@@ -12007,8 +12006,8 @@ const SnideArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { chil
   IslesCheck,
   {
     id: 90,
-    name: "Isles Arena 1 (Snide's Room: Under Rock)",
-    region: "Krem Isle",
+    name: "Battle Arena at Snide's",
+    region: "K. Rool's Island",
     canGetLogic: useSnideArena()
   }
 ) }) });
@@ -12027,7 +12026,7 @@ const AztecRoof = () => {
     {
       id: 74,
       name: "Aztec Lobby Roof Dirt",
-      region: "Main Isle",
+      region: "DK Island",
       canGetLogic: dirt.in,
       canGetBreak: dirt.out
     }
@@ -12059,8 +12058,8 @@ const Hoard = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { chi
   IslesCheck,
   {
     id: 71,
-    name: "Isles Dirt: Banana Hoard",
-    region: "Main Isle",
+    name: "Dirt Inside Banana Hoard",
+    region: "DK Island",
     canGetLogic: useHoardDirt()
   }
 ) }) });
@@ -12071,8 +12070,8 @@ const PrisonDirt = () => {
       IslesCheck,
       {
         id: 72,
-        name: "Isles Dirt: Back of Prison",
-        region: "Krem Isle",
+        name: "Dirt in K. Lumsy's Prison",
+        region: "K. Rool's Island",
         canGetLogic: dirt
       }
     ) }),
@@ -12085,8 +12084,8 @@ const TrainingRear = () => {
     IslesCheck,
     {
       id: 70,
-      name: "Isles Dirt: Training Grounds Rear Tunnel",
-      region: "Main Isle",
+      name: "Dirt Near Cranky's",
+      region: "DK Island",
       canGetLogic: dirt
     }
   ) }) });
@@ -12097,8 +12096,8 @@ const UnderCaves = () => {
     IslesCheck,
     {
       id: 73,
-      name: "Isles Dirt: Under Caves Lobby",
-      region: "Main Isle",
+      name: "Dirt Under Caves Lobby",
+      region: "DK Island",
       canGetLogic: dirt
     }
   ) }) });
@@ -12164,7 +12163,6 @@ const CastleLobbyEnemies = () => {
   const playCastle = usePlayLobby("Creepy Castle");
   const anyKong = useAnyKong();
   const kosha = useDefeatKosha();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -12195,47 +12193,19 @@ const CastleLobbyEnemies = () => {
         canGetLogic: anyKong && playCastle && kosha.in,
         canGetBreak: anyKong && playCastle && kosha.out
       }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 415,
-        name: "Photo of Castle Lobby Left Enemy",
-        region: "Caves-Helm Lobbies",
-        canGetLogic: anyKong && playCastle && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 416,
-        name: "Photo of Castle Lobby Near Right Enemy",
-        region: "Caves-Helm Lobbies",
-        canGetLogic: anyKong && playCastle && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 417,
-        name: "Photo of Castle Lobby Far Right Enemy",
-        region: "Caves-Helm Lobbies",
-        canGetLogic: anyKong && playCastle && hasFairyCam
-      }
     )
   ] });
 };
 const IslesMainEnemies = () => {
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
         id: 300,
-        name: "Isles Enemy: Pineapple Cage 0",
-        region: "Main Isle",
+        name: "Enemy Near Pineapple Cage 0",
+        region: "DK Island",
         canGetLogic: anyKong
       }
     ),
@@ -12243,8 +12213,8 @@ const IslesMainEnemies = () => {
       IslesCheck,
       {
         id: 301,
-        name: "Isles Enemy: Pineapple Cage 1",
-        region: "Main Isle",
+        name: "Enemy Near Pineapple Cage 1",
+        region: "DK Island",
         canGetLogic: anyKong && zinger.in,
         canGetBreak: anyKong && zinger.out
       }
@@ -12253,8 +12223,8 @@ const IslesMainEnemies = () => {
       IslesCheck,
       {
         id: 302,
-        name: "Isles Enemy: Fungi Cannon 0",
-        region: "Main Isle",
+        name: "Enemy Near Fungi Cannon 0",
+        region: "DK Island",
         canGetLogic: anyKong
       }
     ),
@@ -12262,8 +12232,8 @@ const IslesMainEnemies = () => {
       IslesCheck,
       {
         id: 303,
-        name: "Isles Enemy: Fungi Cannon 1",
-        region: "Main Isle",
+        name: "Enemy Near Fungi Cannon 1",
+        region: "DK Island",
         canGetLogic: anyKong && zinger.in,
         canGetBreak: anyKong && zinger.out
       }
@@ -12272,54 +12242,9 @@ const IslesMainEnemies = () => {
       IslesCheck,
       {
         id: 304,
-        name: "Isles Enemy: Japes Entrance",
-        region: "Main Isle",
+        name: "Enemy Near Japes Entrance",
+        region: "DK Island",
         canGetLogic: anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 400,
-        name: "Isles Enemy Photo: Pineapple Cage 0",
-        region: "Main Isle",
-        canGetLogic: anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 401,
-        name: "Isles Enemy Photo: Pineapple Cage 1",
-        region: "Main Isle",
-        canGetLogic: anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 402,
-        name: "Isles Enemy Photo: Fungi Cannon 0",
-        region: "Main Isle",
-        canGetLogic: anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 403,
-        name: "Isles Enemy Photo: Fungi Cannon 1",
-        region: "Main Isle",
-        canGetLogic: anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 404,
-        name: "Isles Enemy Photo: Japes Entrance",
-        region: "Main Isle",
-        canGetLogic: anyKong && hasFairyCam
       }
     )
   ] });
@@ -12328,33 +12253,20 @@ const FactoryLobbyEnemies = () => {
   const anyKong = useAnyKong();
   const playFactory = usePlayLobby("Frantic Factory");
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 314,
-        name: "Isles Enemy: Factory Lobby",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: anyKong && playFactory && zinger.in,
-        canGetBreak: anyKong && playFactory && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 414,
-        name: "Isles Enemy Photo: Factory Lobby",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: anyKong && playFactory && hasFairyCam
-      }
-    )
-  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 314,
+      name: "Isles Enemy: Factory Lobby",
+      region: "Japes-Forest Lobbies",
+      canGetLogic: anyKong && playFactory && zinger.in,
+      canGetBreak: anyKong && playFactory && zinger.out
+    }
+  ) });
 };
 const JapesLobbyEnemies = () => {
   const anyKong = useAnyKong();
   const playJapes = usePlayLobby("Jungle Japes");
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -12373,24 +12285,6 @@ const JapesLobbyEnemies = () => {
         region: "Japes-Forest Lobbies",
         canGetLogic: anyKong && playJapes
       }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 410,
-        name: "Isles Enemy Photo: Japes Lobby 0",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: anyKong && playJapes && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 411,
-        name: "Isles Enemy Photo: Japes Lobby 1",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: anyKong && playJapes && hasFairyCam
-      }
     )
   ] });
 };
@@ -12399,40 +12293,27 @@ const JapesForestEnemies = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyEnemies, {})
 ] });
 const KremBaseEnemies = () => {
-  const hasFairyCam = useCamera();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 305,
-        name: "Isles Enemy: Monkeyport Pad",
-        region: "Krem Isle",
-        canGetLogic: useAnyKong()
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 405,
-        name: "Isles Enemy Photo: Monkeyport Pad",
-        region: "Krem Isle",
-        canGetLogic: useAnyKong() && hasFairyCam
-      }
-    )
-  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 305,
+      name: "Enemy at Monkeyport Pad",
+      region: "K. Rool's Island",
+      canGetLogic: useAnyKong()
+    }
+  ) });
 };
 const KremLiftEnemies = () => {
   const anyKong = useAnyKong();
   const kremAscent = useIslesKremAscent();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
         id: 306,
-        name: "Isles Enemy: Upper Factory Path",
-        region: "Krem Isle",
+        name: "Enemy at Upper Factory Path",
+        region: "K. Rool's Island",
         canGetLogic: anyKong && kremAscent
       }
     ),
@@ -12440,8 +12321,8 @@ const KremLiftEnemies = () => {
       IslesCheck,
       {
         id: 308,
-        name: "Isles Enemy: Lower Factory Path 0",
-        region: "Krem Isle",
+        name: "Enemy 0 at Lower Factory Path",
+        region: "K. Rool's Island",
         canGetLogic: anyKong && kremAscent && zinger.in,
         canGetBreak: anyKong && kremAscent && zinger.out
       }
@@ -12450,37 +12331,10 @@ const KremLiftEnemies = () => {
       IslesCheck,
       {
         id: 309,
-        name: "Isles Enemy: Lower Factory Path 1",
-        region: "Krem Isle",
+        name: "Enemy 1 at Lower Factory Path",
+        region: "K. Rool's Island",
         canGetLogic: anyKong && kremAscent && zinger.in,
         canGetBreak: anyKong && kremAscent && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 406,
-        name: "Isles Enemy Photo: Upper Factory Path",
-        region: "Krem Isle",
-        canGetLogic: anyKong && kremAscent && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 408,
-        name: "Isles Enemy Photo: Lower Factory Path 0",
-        region: "Krem Isle",
-        canGetLogic: anyKong && kremAscent && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 409,
-        name: "Isles Enemy Photo: Lower Factory Path 1",
-        region: "Krem Isle",
-        canGetLogic: anyKong && kremAscent && hasFairyCam
       }
     )
   ] });
@@ -12488,28 +12342,16 @@ const KremLiftEnemies = () => {
 const NearAztecEnemies = () => {
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 307,
-        name: "Isles Enemy: Near Aztec",
-        region: "Main Isle",
-        canGetLogic: anyKong && zinger.in,
-        canGetBreak: anyKong && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 407,
-        name: "Isles Enemy Photo: Near Aztec",
-        region: "Main Isle",
-        canGetLogic: anyKong && hasFairyCam
-      }
-    )
-  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 307,
+      name: "Enemy Near Aztec Lobby",
+      region: "DK Island",
+      canGetLogic: anyKong && zinger.in,
+      canGetBreak: anyKong && zinger.out
+    }
+  ) });
 };
 const EnemyLocations$8 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainEnemies, {}),
@@ -12545,15 +12387,15 @@ const SmallIslandFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, 
     id: 80,
     name: "Isles Fairy (Small Island)",
     region: "Outer Isles",
-    canGetLogic: useGeneralFairy$4()
+    canGetLogic: useGeneralFairy$3()
   }
 ) }) });
 const UpperKremFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   IslesCheck,
   {
     id: 83,
-    name: "Isles Fairy (Upper Krem Isles)",
-    region: "Krem Isle",
+    name: "Fairy Behind Helm Lobby",
+    region: "K. Rool's Island",
     canGetLogic: useKremFairy()
   }
 ) }) });
@@ -12578,7 +12420,7 @@ const HelmBarrel = () => {
 };
 const PineappleCage = () => {
   const cage = useCheckChunkyCage();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 40, name: "Isles Chunky Pineapple Cage", region: "Main Isle", canGetLogic: cage });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 40, name: "Chunky's Pineapple Cage", region: "DK Island", canGetLogic: cage });
 };
 const PoundX = () => {
   const pound = useCheckChunkyPound();
@@ -12586,7 +12428,7 @@ const PoundX = () => {
 };
 const TrianglePad = () => {
   const music = useCheckChunkyMusicPad();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 41, name: "Isles Chunky Triangle Pad", region: "Main Isle", canGetLogic: music });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 41, name: "Chunky's Triangle Pad", region: "DK Island", canGetLogic: music });
 };
 const ChunkyBananas$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(PineappleCage, {}),
@@ -12613,8 +12455,8 @@ const PeanutCage = () => {
     IslesCheck,
     {
       id: 11,
-      name: "Isles Diddy Peanut Cage",
-      region: "Main Isle",
+      name: "Diddy's Peanut Cage",
+      region: "DK Island",
       canGetLogic: cage.in,
       canGetBreak: cage.out
     }
@@ -12626,8 +12468,8 @@ const SnideBarrel = () => {
     IslesCheck,
     {
       id: 10,
-      name: "Isles Diddy Snide's Spring Barrel",
-      region: "Krem Isle",
+      name: "Spring Barrel at Snide's",
+      region: "K. Rool's Island",
       canGetLogic: snide.in,
       canGetBreak: snide.out
     }
@@ -12639,8 +12481,8 @@ const SummitBarrel = () => {
     IslesCheck,
     {
       id: 12,
-      name: "Isles Diddy Summit Barrel",
-      region: "Main Isle",
+      name: "Diddy's Summit Barrel",
+      region: "DK Island",
       canGetLogic: summit.in,
       canGetBreak: summit.out
     }
@@ -12680,7 +12522,7 @@ const CavesLava = () => {
 };
 const CoconutCage = () => {
   const cage = useCheckDkCoconutCage();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 2, name: "DK's Coconut Cage", region: "Krem Isle", canGetLogic: cage });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 2, name: "DK's Coconut Cage", region: "K. Rool's Island", canGetLogic: cage });
 };
 const JapesRock = () => {
   const japesRock = useCheckDkJapesRock();
@@ -12688,8 +12530,8 @@ const JapesRock = () => {
     IslesCheck,
     {
       id: 1,
-      name: "Isles Japes Lobby Entrance Item",
-      region: "Main Isle",
+      name: "The First Banana (Japes lobby entrance)",
+      region: "DK Island",
       canGetLogic: japesRock
     }
   );
@@ -12715,7 +12557,7 @@ const CastleBarrel = () => {
 };
 const GrapeCage = () => {
   const cage = useCheckLankyCage();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 20, name: "Isles Lanky Grape Cage", region: "Krem Isle", canGetLogic: cage });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 20, name: "Lanky's Grape Cage at Back of K. Lumsy's Island", region: "K. Rool's Island", canGetLogic: cage });
 };
 const PrisonSprint = () => {
   const prison = useCheckLankyPrison();
@@ -12723,8 +12565,8 @@ const PrisonSprint = () => {
     IslesCheck,
     {
       id: 21,
-      name: "Isles Lanky Sprint Cage",
-      region: "Krem Isle",
+      name: "Lanky's Sprint Banana in K. Lumsy's Prison",
+      region: "K. Rool's Island",
       canGetLogic: prison.in,
       canGetBreak: prison.out
     }
@@ -12815,7 +12657,7 @@ const ReturnFairies = () => {
 };
 const SaxPad = () => {
   const pad = useCheckTinyMusicPad();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 31, name: "Isles Tiny Saxophone Pad", region: "Krem Isle", canGetLogic: pad });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 31, name: "Tiny's Saxophone Pad", region: "K. Rool's Island", canGetLogic: pad });
 };
 const TinyBananas$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(FeatherCage, {}),
@@ -12836,6 +12678,7 @@ const JetpacCheck = () => {
     {
       id: 105,
       name: "Jetpac",
+      region: "Shops",
       canGetLogic: cranky && anyKong && medals >= jetpacCount
     }
   ) });
@@ -12922,7 +12765,7 @@ const ChunkyMedal$7 = () => {
       {
         id: 104,
         name: "Chunky's Medal",
-        region: "Isles Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -12932,7 +12775,7 @@ const ChunkyMedal$7 = () => {
       {
         id: 204,
         name: "Chunky's Half-Medal",
-        region: "Isles Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -12976,8 +12819,8 @@ const DiddyMedal$7 = () => {
       IslesCheck,
       {
         id: 101,
-        name: "Isles Diddy Medal",
-        region: "Isles Medal Rewards",
+        name: "Diddy's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -12986,8 +12829,8 @@ const DiddyMedal$7 = () => {
       IslesCheck,
       {
         id: 201,
-        name: "Isles Diddy Half-Medal",
-        region: "Isles Medal Rewards",
+        name: "Diddy's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -13028,8 +12871,8 @@ const DkMedal$7 = () => {
       IslesCheck,
       {
         id: 100,
-        name: "Isles DK Medal",
-        region: "Isles Medal Rewards",
+        name: "DK's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -13038,8 +12881,8 @@ const DkMedal$7 = () => {
       IslesCheck,
       {
         id: 200,
-        name: "Isles DK Half-Medal",
-        region: "Isles Medal Rewards",
+        name: "DK's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -13079,8 +12922,8 @@ const LankyMedal$7 = () => {
       IslesCheck,
       {
         id: 102,
-        name: "Isles Lanky Medal",
-        region: "Isles Medal Rewards",
+        name: "Lanky's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -13089,8 +12932,8 @@ const LankyMedal$7 = () => {
       IslesCheck,
       {
         id: 202,
-        name: "Isles Lanky Half-Medal",
-        region: "Isles Medal Rewards",
+        name: "Lanky's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -13119,8 +12962,8 @@ const TinyMedal$7 = () => {
       IslesCheck,
       {
         id: 103,
-        name: "Isles Tiny Medal",
-        region: "Isles Medal Rewards",
+        name: "Tiny's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -13129,8 +12972,8 @@ const TinyMedal$7 = () => {
       IslesCheck,
       {
         id: 203,
-        name: "Isles Tiny Half-Medal",
-        region: "Isles Medal Rewards",
+        name: "Tiny's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -13214,7 +13057,7 @@ const Vanilla$8 = () => {
         baseId: 110,
         baseName: "Isles Cranky",
         level: "DK Isles",
-        region: "Isles Shops",
+        region: "Shops",
         inLogic: cranky
       }
     ),
@@ -13224,13 +13067,13 @@ const Vanilla$8 = () => {
         baseId: 140,
         baseName: "Turn in Isles Blueprint for",
         level: "DK Isles",
-        region: "Isles Shops",
+        region: "Shops",
         inLogic: kremAscent && snide
       }
     )
   ] });
 };
-const Shuffled$B = () => {
+const Shuffled$w = () => {
   const kremAscent = useIslesKremAscent();
   const cranky = useCranky();
   const snide = useSnide();
@@ -13241,7 +13084,7 @@ const Shuffled$B = () => {
         baseId: 140,
         baseName: "Isles Cranky Location",
         level: "DK Isles",
-        region: "Isles Shops",
+        region: "Shops",
         inLogic: cranky
       }
     ),
@@ -13251,14 +13094,14 @@ const Shuffled$B = () => {
         baseId: 170,
         baseName: "Isles Snide Location",
         level: "DK Isles",
-        region: "Isles Shops",
+        region: "Shops",
         inLogic: kremAscent && snide
       }
     )
   ] });
 };
 const ShopLocations$7 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$B, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$8, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$w, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$8, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const WrinklyPool = ({ children }) => usePoolWrinkly() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -13705,8 +13548,8 @@ const AztecLobbyTrombonePad = () => {
     IslesCheck,
     {
       id: 6,
-      name: "Boulder: On top of the Trombone Pad near Aztec Lobby",
-      region: "Main Isle",
+      name: "Boulder on top of the Trombone Pad near Aztec Lobby",
+      region: "DK Island",
       canGetLogic: useAztecLobbyTrombonePad()
     }
   ) });
@@ -13716,8 +13559,8 @@ const AztecLobbyTrianglePad = () => {
     IslesCheck,
     {
       id: 5,
-      name: "Boulder: On top of the Triangle Pad near Aztec Lobby",
-      region: "Main Isle",
+      name: "Boulder on top of the Triangle Pad near Aztec Lobby",
+      region: "DK Island",
       canGetLogic: useAztecLobbyTrianglePad()
     }
   ) });
@@ -14276,7 +14119,7 @@ const BossCheck$7 = () => {
     {
       id: 1105,
       name: "Japes Boss",
-      region: "Troff 'N' Scoff",
+      region: "Bosses",
       canGetLogic: inStage && anyKong && (vine && climbing || japesSide || japesRambi),
       canGetBreak: inStage && anyKong
     }
@@ -14297,8 +14140,8 @@ const RambiCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { chil
   JapesCheck,
   {
     id: 1061,
-    name: "Japes Crate: In the Rambi Cave",
-    region: "Stormy Tunnel Area",
+    name: "Melon Crate in Rambi's Cave",
+    region: "Stormy Area",
     canGetLogic: useRambiCrate()
   }
 ) }) });
@@ -14325,7 +14168,6 @@ const CaveEnemies = () => {
   const mine = useJapesMine();
   const klump = useDefeatKlump();
   const charge = useCharge();
-  const hasFairyCam = useCamera();
   const isZinger = useDefeatZinger();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14333,7 +14175,7 @@ const CaveEnemies = () => {
       {
         id: 1325,
         name: "Diddy's Mountain Start Area Enemy 0",
-        region: "Japes Caves And Mines",
+        region: "Japes Caves and Mines",
         canGetLogic: mine
       }
     ),
@@ -14342,7 +14184,7 @@ const CaveEnemies = () => {
       {
         id: 1326,
         name: "Diddy's Mountain Start Area Enemy 1",
-        region: "Japes Caves And Mines",
+        region: "Japes Caves and Mines",
         canGetLogic: mine
       }
     ),
@@ -14351,7 +14193,7 @@ const CaveEnemies = () => {
       {
         id: 1327,
         name: "Diddy's Mountain Start Area Enemy 2",
-        region: "Japes Caves And Mines",
+        region: "Japes Caves and Mines",
         canGetLogic: mine
       }
     ),
@@ -14360,7 +14202,7 @@ const CaveEnemies = () => {
       {
         id: 1328,
         name: "Diddy's Mountain Start Area Enemy 3",
-        region: "Japes Caves And Mines",
+        region: "Japes Caves and Mines",
         canGetLogic: mine && isZinger.in,
         canGetBreak: mine && isZinger.out
       }
@@ -14370,7 +14212,7 @@ const CaveEnemies = () => {
       {
         id: 1329,
         name: "Diddy's Mountain Start Area Start 4",
-        region: "Japes Caves And Mines",
+        region: "Japes Caves and Mines",
         canGetLogic: mine && isZinger.in,
         canGetBreak: mine && isZinger.out
       }
@@ -14380,7 +14222,7 @@ const CaveEnemies = () => {
       {
         id: 1330,
         name: "Diddy's Mountain Enemy 0 at the Gate",
-        region: "Japes Caves And Mines",
+        region: "Japes Caves and Mines",
         canGetLogic: mine && isZinger.in,
         canGetBreak: mine && isZinger.out
       }
@@ -14390,7 +14232,7 @@ const CaveEnemies = () => {
       {
         id: 1331,
         name: "Diddy's Mountain Enemy 1 at the Gate",
-        region: "Japes Caves And Mines",
+        region: "Japes Caves and Mines",
         canGetLogic: mine && isZinger.in,
         canGetBreak: mine && isZinger.out
       }
@@ -14400,7 +14242,7 @@ const CaveEnemies = () => {
       {
         id: 1332,
         name: "Diddy's Mountain Enemy at the Conveyor Belt Controls",
-        region: "Japes Caves And Mines",
+        region: "Japes Caves and Mines",
         canGetLogic: mine && charge && klump
       }
     ),
@@ -14409,7 +14251,7 @@ const CaveEnemies = () => {
       {
         id: 1333,
         name: "Diddy's Mountain Enemy 0 in the Conveyor Area",
-        region: "Japes Caves And Mines",
+        region: "Japes Caves and Mines",
         canGetLogic: mine && canSlam && klump
       }
     ),
@@ -14418,98 +14260,8 @@ const CaveEnemies = () => {
       {
         id: 1334,
         name: "Diddy's Mountain Enemy 1 in the Conveyor Area",
-        region: "Japes Caves And Mines",
+        region: "Japes Caves and Mines",
         canGetLogic: mine && canSlam && klump
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1425,
-        name: "Photo of Diddy's Mountain Start Area Enemy 0",
-        region: "Japes Caves And Mines",
-        canGetLogic: mine && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1426,
-        name: "Photo of Diddy's Mountain Start Area Enemy 1",
-        region: "Japes Caves And Mines",
-        canGetLogic: mine && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1427,
-        name: "Photo of Diddy's Mountain Start Area Enemy 2",
-        region: "Japes Caves And Mines",
-        canGetLogic: mine && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1428,
-        name: "Photo of Diddy's Mountain Start Area Enemy 3",
-        region: "Japes Caves And Mines",
-        canGetLogic: mine && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1429,
-        name: "Photo of Diddy's Mountain Start Area Enemy 4",
-        region: "Japes Caves And Mines",
-        canGetLogic: mine && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1430,
-        name: "Photo of Diddy's Mountain Enemy 0 at the Gate",
-        region: "Japes Caves And Mines",
-        canGetLogic: mine && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1431,
-        name: "Photo of Diddy's Mountain Enemy 1 at the Gate",
-        region: "Japes Caves And Mines",
-        canGetLogic: mine && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1432,
-        name: "Photo of Diddy's Mountain Enemy at the Conveyor Belt Controls",
-        region: "Japes Caves And Mines",
-        canGetLogic: mine && charge && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1433,
-        name: "Photo of Diddy's Mountain Enemy 0 in the Conveyor Area",
-        region: "Japes Caves And Mines",
-        canGetLogic: mine && canSlam && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1434,
-        name: "Photo of Diddy's Mountain Enemy 1 in the Conveyor Area",
-        region: "Japes Caves And Mines",
-        canGetLogic: mine && canSlam && klump && hasFairyCam
       }
     )
   ] });
@@ -14520,14 +14272,23 @@ const HiveInteriorEnemies = () => {
   const zinger = useDefeatZinger();
   const klaptrap = useDefeatPurpleKlaptrap();
   const canSlam = useSlamJapes();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
+        id: 1342,
+        name: "Enemy in the Hive's Main Room",
+        region: "Hive Area",
+        canGetLogic: hiveIn && zinger.in,
+        canGetBreak: hiveIn && zinger.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
         id: 1335,
-        name: "Japes Enemy: Hive First Room",
-        region: "Hive Tunnel Area",
+        name: "Enemy in the Hive's First Room",
+        region: "Hive Area",
         canGetLogic: hiveIn && klaptrap
       }
     ),
@@ -14535,8 +14296,8 @@ const HiveInteriorEnemies = () => {
       JapesCheck,
       {
         id: 1336,
-        name: "Japes Enemy: Hive Second Room 0",
-        region: "Hive Tunnel Area",
+        name: "Enemy 0 in the Hive's Second Room",
+        region: "Hive Area",
         canGetLogic: hiveIn && klaptrap && canSlam
       }
     ),
@@ -14544,8 +14305,8 @@ const HiveInteriorEnemies = () => {
       JapesCheck,
       {
         id: 1337,
-        name: "Japes Enemy: Hive Second Room 1",
-        region: "Hive Tunnel Area",
+        name: "Enemy 1 in the Hive's Second Room",
+        region: "Hive Area",
         canGetLogic: hiveIn && klaptrap && canSlam
       }
     ),
@@ -14553,8 +14314,8 @@ const HiveInteriorEnemies = () => {
       JapesCheck,
       {
         id: 1338,
-        name: "Japes Enemy: Hive Third Room 0",
-        region: "Hive Tunnel Area",
+        name: "Enemy 0 in the Hive's Third Room",
+        region: "Hive Area",
         canGetLogic: hiveIn && klaptrap && canSlam
       }
     ),
@@ -14562,8 +14323,8 @@ const HiveInteriorEnemies = () => {
       JapesCheck,
       {
         id: 1339,
-        name: "Japes Enemy: Hive Third Room 1",
-        region: "Hive Tunnel Area",
+        name: "Enemy 1 in the Hive's Third Room",
+        region: "Hive Area",
         canGetLogic: hiveIn && klaptrap && canSlam
       }
     ),
@@ -14571,8 +14332,8 @@ const HiveInteriorEnemies = () => {
       JapesCheck,
       {
         id: 1340,
-        name: "Japes Enemy: Hive Third Room 2",
-        region: "Hive Tunnel Area",
+        name: "Enemy 2 in the Hive's Third Room",
+        region: "Hive Area",
         canGetLogic: hiveIn && zinger.in && canSlam,
         canGetBreak: hiveIn && zinger.out && canSlam
       }
@@ -14581,92 +14342,10 @@ const HiveInteriorEnemies = () => {
       JapesCheck,
       {
         id: 1341,
-        name: "Japes Enemy: Hive Third Room 3",
-        region: "Hive Tunnel Area",
+        name: "Enemy 3 in the Hive's Third Room",
+        region: "Hive Area",
         canGetLogic: hiveIn && zinger.in && canSlam,
         canGetBreak: hiveIn && zinger.out && canSlam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1342,
-        name: "Japes Enemy: Hive Main Room",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && zinger.in,
-        canGetBreak: hiveIn && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1435,
-        name: "Japes Enemy Photo: Hive First Room",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1436,
-        name: "Japes Enemy Photo: Hive Second Room 0",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1437,
-        name: "Japes Enemy Photo: Hive Second Room 1",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1438,
-        name: "Japes Enemy Photo: Hive Third Room 0",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1439,
-        name: "Japes Enemy Photo: Hive Third Room 1",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1440,
-        name: "Japes Enemy Photo: Hive Third Room 2",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1441,
-        name: "Japes Enemy Photo: Hive Third Room 3",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1442,
-        name: "Japes Enemy Photo: Hive Main Room",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveIn && hasFairyCam
       }
     )
   ] });
@@ -14675,14 +14354,13 @@ const HiveOutsideEnemies = () => {
   const anyKong = useAnyKong();
   const hiveOut = useJapesHive();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
         id: 1307,
-        name: "Japes Enemy: Hive Area 0",
-        region: "Hive Tunnel Area",
+        name: "Enemy 0 Outside the Hive",
+        region: "Hive Area",
         canGetLogic: hiveOut && zinger.in,
         canGetBreak: hiveOut && zinger.out
       }
@@ -14691,8 +14369,8 @@ const HiveOutsideEnemies = () => {
       JapesCheck,
       {
         id: 1308,
-        name: "Japes Enemy: Hive Area 1",
-        region: "Hive Tunnel Area",
+        name: "Enemy 1 Outside the Hive",
+        region: "Hive Area",
         canGetLogic: hiveOut && zinger.in,
         canGetBreak: hiveOut && zinger.out
       }
@@ -14701,8 +14379,8 @@ const HiveOutsideEnemies = () => {
       JapesCheck,
       {
         id: 1309,
-        name: "Japes Enemy: Hive Area 2",
-        region: "Hive Tunnel Area",
+        name: "Enemy 2 Outside the Hive",
+        region: "Hive Area",
         canGetLogic: hiveOut && zinger.in,
         canGetBreak: hiveOut && zinger.out
       }
@@ -14711,8 +14389,8 @@ const HiveOutsideEnemies = () => {
       JapesCheck,
       {
         id: 1310,
-        name: "Japes Enemy: Hive Area 3",
-        region: "Hive Tunnel Area",
+        name: "Enemy 3 Outside the Hive",
+        region: "Hive Area",
         canGetLogic: hiveOut && anyKong
       }
     ),
@@ -14720,54 +14398,9 @@ const HiveOutsideEnemies = () => {
       JapesCheck,
       {
         id: 1311,
-        name: "Japes Enemy: Hive Area 4",
-        region: "Hive Tunnel Area",
+        name: "Enemy 4 Outside the Hive",
+        region: "Hive Area",
         canGetLogic: hiveOut && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1407,
-        name: "Japes Enemy Photo: Hive Area 0",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveOut && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1408,
-        name: "Japes Enemy Photo: Hive Area 1",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveOut && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1409,
-        name: "Japes Enemy Photo: Hive Area 2",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveOut && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1410,
-        name: "Japes Enemy Photo: Hive Area 3",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveOut && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1411,
-        name: "Japes Enemy Photo: Hive Area 4",
-        region: "Hive Tunnel Area",
-        canGetLogic: hiveOut && anyKong && hasFairyCam
       }
     )
   ] });
@@ -14775,34 +14408,21 @@ const HiveOutsideEnemies = () => {
 const HiveTunnelEnemies = () => {
   const zinger = useDefeatZinger();
   const kongGates = useJapesKongGates();
-  const hasFairyCam = useCamera();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1318,
-        name: "Japes Enemy: Feather Tunnel",
-        region: "Hive Tunnel Area",
-        canGetLogic: kongGates && zinger.in,
-        canGetBreak: kongGates && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1418,
-        name: "Japes Enemy Photo: Feather Tunnel",
-        region: "Hive Tunnel Area",
-        canGetLogic: kongGates && hasFairyCam
-      }
-    )
-  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    JapesCheck,
+    {
+      id: 1318,
+      name: "Enemy in Feather Tunnel",
+      region: "Hive Area",
+      canGetLogic: kongGates && zinger.in,
+      canGetBreak: kongGates && zinger.out
+    }
+  ) });
 };
 const JapesMainEnemies = () => {
   const anyKong = useAnyKong();
   const inStage = usePlayJapes();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -14841,42 +14461,6 @@ const JapesMainEnemies = () => {
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1414,
-        name: "Japes Enemy Photo: Near Painting 0",
-        region: "Japes Hillside",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1415,
-        name: "Japes Enemy Photo: Near Painting 1",
-        region: "Japes Hillside",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1416,
-        name: "Japes Enemy Photo: Near Painting 2",
-        region: "Japes Hillside",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1417,
-        name: "Japes Enemy Photo: Mountain",
-        region: "Japes Hillside",
-        canGetLogic: inStage && hasFairyCam
-      }
     )
   ] });
 };
@@ -14884,7 +14468,6 @@ const JapesStartEnemies = () => {
   const anyKong = useAnyKong();
   const inStage = usePlayJapes();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -14931,90 +14514,32 @@ const JapesStartEnemies = () => {
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1400,
-        name: "Japes Enemy Photo: Start",
-        region: "Japes Lowlands",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1402,
-        name: "Japes Enemy Photo: Early Tunnel 0",
-        region: "Japes Lowlands",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1403,
-        name: "Japes Enemy Photo: Early Tunnel 1",
-        region: "Japes Lowlands",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1412,
-        name: "Japes Enemy Photo: Demo Death",
-        region: "Japes Lowlands",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1413,
-        name: "Japes Enemy Photo: Near Underground",
-        region: "Japes Lowlands",
-        canGetLogic: inStage && hasFairyCam
-      }
     )
   ] });
 };
 const PeanutGateEnemies = () => {
   const anyKong = useAnyKong();
   const japesSide = useJapesSideArea();
-  const hasFairyCam = useCamera();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1301,
-        name: "Japes Enemy: Diddy Cavern",
-        region: "Japes Lowlands",
-        canGetLogic: japesSide && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1401,
-        name: "Japes Enemy Photo: Diddy Cavern",
-        region: "Japes Lowlands",
-        canGetLogic: japesSide && anyKong && hasFairyCam
-      }
-    )
-  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    JapesCheck,
+    {
+      id: 1301,
+      name: "Japes Enemy: Diddy Cavern",
+      region: "Japes Lowlands",
+      canGetLogic: japesSide && anyKong
+    }
+  ) });
 };
 const StormyTunnelEnemies = () => {
   const anyKong = useAnyKong();
   const kongGates = useJapesKongGates();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
         id: 1304,
-        name: "Japes Enemy: Stormy Tunnel 0",
-        region: "Stormy Tunnel Area",
+        name: "Stormy Area Enemy 0",
+        region: "Stormy Area",
         canGetLogic: kongGates && anyKong
       }
     ),
@@ -15022,8 +14547,8 @@ const StormyTunnelEnemies = () => {
       JapesCheck,
       {
         id: 1305,
-        name: "Japes Enemy: Stormy Tunnel 1",
-        region: "Stormy Tunnel Area",
+        name: "Stormy Area Enemy 1",
+        region: "Stormy Area",
         canGetLogic: kongGates && anyKong
       }
     ),
@@ -15031,8 +14556,8 @@ const StormyTunnelEnemies = () => {
       JapesCheck,
       {
         id: 1306,
-        name: "Japes Enemy: Stormy Tunnel 2",
-        region: "Stormy Tunnel Area",
+        name: "Stormy Area 2",
+        region: "Stormy Area",
         canGetLogic: kongGates && anyKong
       }
     ),
@@ -15040,45 +14565,9 @@ const StormyTunnelEnemies = () => {
       JapesCheck,
       {
         id: 1319,
-        name: "Japes Enemy: Middle Tunnel",
-        region: "Stormy Tunnel Area",
+        name: "Middle Tunnel Enemy",
+        region: "Stormy Area",
         canGetLogic: kongGates && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1404,
-        name: "Japes Enemy Photo: Stormy Tunnel 0",
-        region: "Stormy Tunnel Area",
-        canGetLogic: kongGates && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1405,
-        name: "Japes Enemy Photo: Stormy Tunnel 1",
-        region: "Stormy Tunnel Area",
-        canGetLogic: kongGates && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1406,
-        name: "Japes Enemy Photo: Stormy Tunnel 2",
-        region: "Stormy Tunnel Area",
-        canGetLogic: kongGates && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 1419,
-        name: "Japes Enemy Photo: Middle Tunnel",
-        region: "Stormy Tunnel Area",
-        canGetLogic: kongGates && anyKong && hasFairyCam
       }
     )
   ] });
@@ -15102,8 +14591,8 @@ const PaintingFairy = () => {
     JapesCheck,
     {
       id: 1081,
-      name: "Japes Fairy (Painting Room)",
-      region: "Japes Caves And Mines",
+      name: "Fairy in the Painting Room",
+      region: "Japes Caves and Mines",
       canGetLogic: painting.in,
       canGetBreak: painting.out
     }
@@ -15113,8 +14602,8 @@ const RambiFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { chil
   JapesCheck,
   {
     id: 1080,
-    name: "Japes Fairy (Rambi Door Pool)",
-    region: "Stormy Tunnel Area",
+    name: "Fairy at Pool in Rambi's Area",
+    region: "Stormy Area",
     canGetLogic: useRambiFairy()
   }
 ) }) });
@@ -15140,8 +14629,8 @@ const HiveBarrel = () => {
     JapesCheck,
     {
       id: 1042,
-      name: "Japes Chunky Giant Bonus Barrel",
-      region: "Hive Tunnel Area",
+      name: "Chunky's Giant Bonus Barrel",
+      region: "Hive Area",
       canGetLogic: chunkyHiveGb.in,
       canGetBreak: chunkyHiveGb.out
     }
@@ -15165,8 +14654,8 @@ const Underground = () => {
     JapesCheck,
     {
       id: 1043,
-      name: "Japes Chunky Underground",
-      region: "Japes Caves And Mines",
+      name: "Chunky's Cave",
+      region: "Japes Caves and Mines",
       canGetLogic: chunkyUndergroundGb.in,
       canGetBreak: chunkyUndergroundGb.out
     }
@@ -15187,8 +14676,8 @@ const Minecart = () => {
     JapesCheck,
     {
       id: 1013,
-      name: "Japes Diddy Minecart",
-      region: "Japes Caves And Mines",
+      name: "Diddy's Minecart",
+      region: "Japes Caves and Mines",
       canGetLogic: mineGb.in,
       canGetBreak: mineGb.out
     }
@@ -15294,8 +14783,8 @@ const PaintingRoom = () => {
     JapesCheck,
     {
       id: 1023,
-      name: "Japes Lanky Painting Room Zingers",
-      region: "Japes Caves And Mines",
+      name: "Lanky's Painting Room",
+      region: "Japes Caves and Mines",
       canGetLogic: paintingGb.in,
       canGetBreak: paintingGb.out
     }
@@ -15307,8 +14796,8 @@ const SlopeBarrel = () => {
     JapesCheck,
     {
       id: 1022,
-      name: "Japes Lanky Slope Barrel",
-      region: "Stormy Tunnel Area",
+      name: "Lanky's Slope Barrel",
+      region: "Stormy Area",
       canGetLogic: slopeGb.in,
       canGetBreak: slopeGb.out
     }
@@ -15344,8 +14833,8 @@ const HiveInside = () => {
     JapesCheck,
     {
       id: 1033,
-      name: "Japes Tiny Inside the Hive",
-      region: "Hive Tunnel Area",
+      name: "Inside Tiny's Hive",
+      region: "Hive Area",
       canGetLogic: hiveGb.in,
       canGetBreak: hiveGb.out
     }
@@ -15355,8 +14844,8 @@ const HiveStump = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1032,
-    name: "Japes Tiny Stump",
-    region: "Hive Tunnel Area",
+    name: "Tiny's Stump",
+    region: "Hive Area",
     canGetLogic: useTinyStumpGb()
   }
 );
@@ -15382,7 +14871,7 @@ const ChunkyKasplat$6 = () => {
     {
       id: 1054,
       name: "Kasplat in Chunky's Cave",
-      region: "Japes Caves And Mines",
+      region: "Japes Caves and Mines",
       canGetLogic: under.in,
       canGetBreak: under.out
     }
@@ -15392,8 +14881,8 @@ const DiddyKasplat$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, 
   JapesCheck,
   {
     id: 1051,
-    name: "Japes Kasplat: Near Painting Room",
-    region: "Stormy Tunnel Area",
+    name: "Kasplat Near the Painting Room",
+    region: "Stormy Area",
     canGetLogic: useDiddyKasplat()
   }
 ) }) });
@@ -15401,8 +14890,8 @@ const DkKasplat$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { c
   JapesCheck,
   {
     id: 1050,
-    name: "Japes Kasplat: Hive Tunnel Lower",
-    region: "Hive Tunnel Area",
+    name: "Lower Kasplat at Tunnel to Hive",
+    region: "Hive Area",
     canGetLogic: useDkKasplat()
   }
 ) }) });
@@ -15410,8 +14899,8 @@ const LankyKasplat$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, 
   JapesCheck,
   {
     id: 1052,
-    name: "Japes Kasplat: By Lanky Slope Bonus",
-    region: "Stormy Tunnel Area",
+    name: "Kasplat at Lanky's Slope Barrel",
+    region: "Stormy Area",
     canGetLogic: useLankyKasplat()
   }
 ) }) });
@@ -15419,8 +14908,8 @@ const TinyKasplat$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, {
   JapesCheck,
   {
     id: 1053,
-    name: "Japes Kasplat: Hive Tunnel Upper",
-    region: "Hive Tunnel Area",
+    name: "Upper Kasplat at Tunnel to Hive",
+    region: "Hive Area",
     canGetLogic: useTinyKasplat()
   }
 ) }) });
@@ -15528,7 +15017,7 @@ const ChunkyMedal$6 = () => {
       {
         id: 1104,
         name: "Chunky's Medal",
-        region: "Japes Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -15538,7 +15027,7 @@ const ChunkyMedal$6 = () => {
       {
         id: 1204,
         name: "Chunky's Half-Medal",
-        region: "Japes Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -15638,8 +15127,8 @@ const DiddyMedal$6 = () => {
       JapesCheck,
       {
         id: 1101,
-        name: "Japes Diddy Medal",
-        region: "Japes Medal Rewards",
+        name: "Diddy's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -15648,8 +15137,8 @@ const DiddyMedal$6 = () => {
       JapesCheck,
       {
         id: 1201,
-        name: "Japes Diddy Half-Medal",
-        region: "Japes Medal Rewards",
+        name: "Diddy's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -15731,8 +15220,8 @@ const DkMedal$6 = () => {
       JapesCheck,
       {
         id: 1100,
-        name: "Japes DK Medal",
-        region: "Japes Medal Rewards",
+        name: "DK's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -15741,8 +15230,8 @@ const DkMedal$6 = () => {
       JapesCheck,
       {
         id: 1200,
-        name: "Japes DK Half-Medal",
-        region: "Japes Medal Rewards",
+        name: "DK's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -15852,8 +15341,8 @@ const LankyMedal$6 = () => {
       JapesCheck,
       {
         id: 1102,
-        name: "Japes Lanky Medal",
-        region: "Japes Medal Rewards",
+        name: "Lanky's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -15862,8 +15351,8 @@ const LankyMedal$6 = () => {
       JapesCheck,
       {
         id: 1202,
-        name: "Japes Lanky Half-Medal",
-        region: "Japes Medal Rewards",
+        name: "Lanky's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -15935,8 +15424,8 @@ const TinyMedal$6 = () => {
       JapesCheck,
       {
         id: 1103,
-        name: "Japes Tiny Medal",
-        region: "Japes Medal Rewards",
+        name: "Tiny's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -15945,8 +15434,8 @@ const TinyMedal$6 = () => {
       JapesCheck,
       {
         id: 1203,
-        name: "Japes Tiny Half-Medal",
-        region: "Japes Medal Rewards",
+        name: "Tiny's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -15968,7 +15457,7 @@ const Vanilla$7 = () => {
         baseId: 1110,
         baseName: "Japes Cranky",
         level: "Jungle Japes",
-        region: "Japes Shops",
+        region: "Shops",
         inLogic: kongGates && hasCranky
       }
     ),
@@ -15978,7 +15467,7 @@ const Vanilla$7 = () => {
         baseId: 1120,
         baseName: "Japes Funky",
         level: "Jungle Japes",
-        region: "Japes Shops",
+        region: "Shops",
         inLogic: playJapes && (climbing || bananaport) && hasFunky
       }
     ),
@@ -15988,13 +15477,13 @@ const Vanilla$7 = () => {
         baseId: 1140,
         baseName: "Turn in Japes Blueprint for",
         level: "Jungle Japes",
-        region: "Japes Shops",
+        region: "Shops",
         inLogic: playJapes && (climbing || bananaport) && hasSnide
       }
     )
   ] });
 };
-const Shuffled$A = () => {
+const Shuffled$v = () => {
   const kongGates = useJapesKongGates();
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
@@ -16008,7 +15497,7 @@ const Shuffled$A = () => {
         baseId: 1140,
         baseName: "Japes Cranky Location",
         level: "Jungle Japes",
-        region: "Japes Shops",
+        region: "Shops",
         inLogic: hasCranky && (kongGates || (climbing || bananaport))
       }
     ),
@@ -16018,7 +15507,7 @@ const Shuffled$A = () => {
         baseId: 1150,
         baseName: "Japes Funky Location",
         level: "Jungle Japes",
-        region: "Japes Shops",
+        region: "Shops",
         inLogic: hasFunky && (kongGates || (climbing || bananaport))
       }
     ),
@@ -16028,14 +15517,14 @@ const Shuffled$A = () => {
         baseId: 1170,
         baseName: "Japes Snide Location",
         level: "Jungle Japes",
-        region: "Japes Shops",
+        region: "Shops",
         inLogic: hasSnide && (kongGates || (climbing || bananaport))
       }
     )
   ] });
 };
 const ShopLocations$6 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$A, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$v, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const HiveInteriorChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -16524,7 +16013,7 @@ const useTempleDirt = () => {
     out: shockwave && thing.out
   };
 };
-const useGeneralFairy$3 = () => {
+const useGeneralFairy$2 = () => {
   const thing = useAztecFront();
   const camera = useCamera();
   return {
@@ -16639,7 +16128,7 @@ const BossCheck$6 = () => {
     {
       id: 2105,
       name: "Aztec Boss",
-      region: "Troff 'N' Scoff",
+      region: "Bosses",
       canGetLogic: aztecFront.in && anyKong,
       canGetBreak: aztecFront.out && anyKong
     }
@@ -16651,8 +16140,8 @@ const GongCrate = () => {
     AztecCheck,
     {
       id: 2062,
-      name: "Aztec Crate: Near Gong Tower",
-      region: "Aztec Oasis And Totem Area",
+      name: "Crate Near the Gong Tower",
+      region: "Aztec Main Area",
       canGetLogic: aztecBack.in,
       canGetBreak: logicBreak(aztecBack)
     }
@@ -16677,8 +16166,8 @@ const LlamaOutsideCrate = () => {
     AztecCheck,
     {
       id: 2061,
-      name: "Aztec Crate: On Llama Temple",
-      region: "Aztec Oasis And Totem Area",
+      name: "Crate on top of the Llama Temple",
+      region: "Aztec Main Area",
       canGetLogic: outside.in,
       canGetBreak: outside.out
     }
@@ -16695,8 +16184,8 @@ const OasisDirt = () => {
     AztecCheck,
     {
       id: 2070,
-      name: "Aztec Dirt: Oasis",
-      region: "Aztec Oasis And Totem Area",
+      name: "Oasis Dirt",
+      region: "Aztec Main Area",
       canGetLogic: thing.in,
       canGetBreak: thing.out
     }
@@ -16724,14 +16213,13 @@ const BeforeOasisEnemies = () => {
   const inStage = useAztecFront();
   const pineapple = usePineapple();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2300,
         name: "Vase Room Enemy 0",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && pineapple && zinger.in,
         canGetBreak: logicBreak(inStage) && pineapple && zinger.out
       }
@@ -16741,7 +16229,7 @@ const BeforeOasisEnemies = () => {
       {
         id: 2301,
         name: "Vase Room Enemy 1",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && pineapple && zinger.in,
         canGetBreak: logicBreak(inStage) && pineapple && zinger.out
       }
@@ -16751,7 +16239,7 @@ const BeforeOasisEnemies = () => {
       {
         id: 2302,
         name: "Vase Room Enemy 2",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && pineapple && zinger.in,
         canGetBreak: logicBreak(inStage) && pineapple && zinger.out
       }
@@ -16761,7 +16249,7 @@ const BeforeOasisEnemies = () => {
       {
         id: 2303,
         name: "Starting Tunnel Area Enemy 0",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
       }
@@ -16771,7 +16259,7 @@ const BeforeOasisEnemies = () => {
       {
         id: 2304,
         name: "Starting Tunnel Area Enemy 1",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
       }
@@ -16781,7 +16269,7 @@ const BeforeOasisEnemies = () => {
       {
         id: 2305,
         name: "Starting Tunnel Area Enemy 2",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && zinger.in,
         canGetBreak: logicBreak(inStage) && zinger.out
       }
@@ -16791,79 +16279,9 @@ const BeforeOasisEnemies = () => {
       {
         id: 2306,
         name: "Starting Tunnel Area Enemy 3",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && zinger.in,
         canGetBreak: logicBreak(inStage) && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2400,
-        name: "Vase Room Enemy 0 Photo",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && pineapple && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && pineapple && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2401,
-        name: "Vase Room Enemy 1 Photo",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && pineapple && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && pineapple && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2402,
-        name: "Vase Room Enemy 2 Photo",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && pineapple && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && pineapple && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2403,
-        name: "Starting Tunnel Area Enemy 0 Photo",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && anyKong && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2404,
-        name: "Starting Tunnel Area Enemy 1 Photo",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && anyKong && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2405,
-        name: "Starting Tunnel Area Enemy 2 Photo",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2406,
-        name: "Starting Tunnel Area Enemy 3 Photo",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && hasFairyCam
       }
     )
   ] });
@@ -16872,14 +16290,13 @@ const ConnectorTunnelEnemies = () => {
   const anyKong = useAnyKong();
   const inStage = useAztecBack();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2307,
         name: "Middle Tunnel Pad Enemy 0",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && zinger.in,
         canGetBreak: logicBreak(inStage) && zinger.out
       }
@@ -16889,7 +16306,7 @@ const ConnectorTunnelEnemies = () => {
       {
         id: 2308,
         name: "Middle Tunnel Pad Enemy 1",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && zinger.in,
         canGetBreak: logicBreak(inStage) && zinger.out
       }
@@ -16899,7 +16316,7 @@ const ConnectorTunnelEnemies = () => {
       {
         id: 2309,
         name: "Middle Tunnel Cage Enemy 0",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
       }
@@ -16909,7 +16326,7 @@ const ConnectorTunnelEnemies = () => {
       {
         id: 2310,
         name: "Middle Tunnel Cage Enemy 1",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
       }
@@ -16919,7 +16336,7 @@ const ConnectorTunnelEnemies = () => {
       {
         id: 2311,
         name: "Middle Tunnel Cage Enemy 2",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
       }
@@ -16929,69 +16346,9 @@ const ConnectorTunnelEnemies = () => {
       {
         id: 2312,
         name: "Middle Tunnel Cage Enemy 3",
-        region: "Various Aztec Tunnels",
+        region: "Aztec Caves",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2407,
-        name: "Photo of Middle Tunnel Pad Enemy 0",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2408,
-        name: "Photo of Middle Tunnel Pad Enemy 1",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2409,
-        name: "Photo of Middle Tunnel Cage Enemy 0",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && anyKong && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2410,
-        name: "Photo of Middle Tunnel Cage Enemy 1",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && anyKong && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2411,
-        name: "Photo of Middle Tunnel Cage Enemy 2",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && anyKong && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2412,
-        name: "Photo of Middle Tunnel Cage Enemy 3",
-        region: "Various Aztec Tunnels",
-        canGetLogic: inStage.in && anyKong && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
       }
     )
   ] });
@@ -17001,12 +16358,11 @@ const Chunky5Enemies = () => {
   const pineapple = usePineapple();
   const zinger = useDefeatZinger();
   const klobber = useDefeatKlobber();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2346,
+        id: 2349,
         name: "Aztec Enemy: Chunky 5DT Start Right",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && klobber,
@@ -17016,7 +16372,7 @@ const Chunky5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2347,
+        id: 2350,
         name: "Aztec Enemy: Chunky 5DT Start Left",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && klobber,
@@ -17026,7 +16382,7 @@ const Chunky5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2348,
+        id: 2351,
         name: "Aztec Enemy: Chunky 5DT Second Right",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && klobber,
@@ -17036,7 +16392,7 @@ const Chunky5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2349,
+        id: 2352,
         name: "Aztec Enemy: Chunky 5DT Second Left",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && klobber,
@@ -17046,61 +16402,11 @@ const Chunky5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2350,
+        id: 2353,
         name: "Aztec Enemy: Chunky 5DT Reward",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && zinger.in,
         canGetBreak: logicBreak(door) && pineapple && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2446,
-        name: "Aztec Enemy Photo: Chunky 5DT Start Right",
-        region: "5 Door Temple",
-        canGetLogic: door.in && pineapple && klobber && hasFairyCam,
-        canGetBreak: logicBreak(door) && pineapple && klobber && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2447,
-        name: "Aztec Enemy Photo: Chunky 5DT Start Left",
-        region: "5 Door Temple",
-        canGetLogic: door.in && pineapple && klobber && hasFairyCam,
-        canGetBreak: logicBreak(door) && pineapple && klobber && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2448,
-        name: "Aztec Enemy Photo: Chunky 5DT Second Right",
-        region: "5 Door Temple",
-        canGetLogic: door.in && pineapple && klobber && hasFairyCam,
-        canGetBreak: logicBreak(door) && pineapple && klobber && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2449,
-        name: "Aztec Enemy Photo: Chunky 5DT Second Left",
-        region: "5 Door Temple",
-        canGetLogic: door.in && pineapple && klobber && hasFairyCam,
-        canGetBreak: logicBreak(door) && pineapple && klobber && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2450,
-        name: "Aztec Enemy Photo: Chunky 5DT Reward",
-        region: "5 Door Temple",
-        canGetLogic: door.in && pineapple && hasFairyCam,
-        canGetBreak: logicBreak(door) && pineapple && hasFairyCam
       }
     )
   ] });
@@ -17110,12 +16416,11 @@ const Diddy5Enemies = () => {
   const peanut = usePeanut();
   const klobber = useDefeatKlobber();
   const klump = useDefeatKlump();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2328,
+        id: 2331,
         name: "Aztec Enemy: Diddy 5DT End Trap 0",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut && klobber,
@@ -17125,7 +16430,7 @@ const Diddy5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2329,
+        id: 2332,
         name: "Aztec Enemy: Diddy 5DT End Trap 1",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut && klobber,
@@ -17135,7 +16440,7 @@ const Diddy5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2330,
+        id: 2333,
         name: "Aztec Enemy: Diddy 5DT End Trap 2",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut && klobber,
@@ -17145,7 +16450,7 @@ const Diddy5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2331,
+        id: 2334,
         name: "Aztec Enemy: Diddy 5DT Start Left 0",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut,
@@ -17155,7 +16460,7 @@ const Diddy5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2332,
+        id: 2335,
         name: "Aztec Enemy: Diddy 5DT Start Left 1",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut,
@@ -17165,7 +16470,7 @@ const Diddy5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2333,
+        id: 2336,
         name: "Aztec Enemy: Diddy 5DT Reward",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut && klump,
@@ -17175,81 +16480,11 @@ const Diddy5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2334,
+        id: 2337,
         name: "Aztec Enemy: Diddy 5DT Second Switch",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut,
         canGetBreak: logicBreak(door) && peanut
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2428,
-        name: "Aztec Enemy Photo: Diddy 5DT End Trap 0",
-        region: "5 Door Temple",
-        canGetLogic: door.in && peanut && klobber && hasFairyCam,
-        canGetBreak: logicBreak(door) && peanut && klobber && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2429,
-        name: "Aztec Enemy Photo: Diddy 5DT End Trap 1",
-        region: "5 Door Temple",
-        canGetLogic: door.in && peanut && klobber && hasFairyCam,
-        canGetBreak: logicBreak(door) && peanut && klobber && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2430,
-        name: "Aztec Enemy Photo: Diddy 5DT End Trap 2",
-        region: "5 Door Temple",
-        canGetLogic: door.in && peanut && klobber && hasFairyCam,
-        canGetBreak: logicBreak(door) && peanut && klobber && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2431,
-        name: "Aztec Enemy Photo: Diddy 5DT Start Left 0",
-        region: "5 Door Temple",
-        canGetLogic: door.in && peanut && hasFairyCam,
-        canGetBreak: logicBreak(door) && peanut && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2432,
-        name: "Aztec Enemy Photo: Diddy 5DT Start Left 1",
-        region: "5 Door Temple",
-        canGetLogic: door.in && peanut && hasFairyCam,
-        canGetBreak: logicBreak(door) && peanut && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2433,
-        name: "Aztec Enemy Photo: Diddy 5DT Reward",
-        region: "5 Door Temple",
-        canGetLogic: door.in && peanut && klump && hasFairyCam,
-        canGetBreak: logicBreak(door) && peanut && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2434,
-        name: "Aztec Enemy Photo: Diddy 5DT Second Switch",
-        region: "5 Door Temple",
-        canGetLogic: door.in && peanut && hasFairyCam,
-        canGetBreak: logicBreak(door) && peanut && hasFairyCam
       }
     )
   ] });
@@ -17259,12 +16494,11 @@ const Dk5Enemies = () => {
   const coconut = useCoconut();
   const kaboom = useDefeatKaboom();
   const klaptrap = useDefeatPurpleKlaptrap();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2319,
+        id: 2322,
         name: "Aztec Enemy: DK 5DT Start Trap 0",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
@@ -17274,7 +16508,7 @@ const Dk5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2320,
+        id: 2323,
         name: "Aztec Enemy: DK 5DT Start Trap 1",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
@@ -17284,7 +16518,7 @@ const Dk5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2321,
+        id: 2324,
         name: "Aztec Enemy: DK 5DT Start Trap 2",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
@@ -17294,7 +16528,7 @@ const Dk5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2322,
+        id: 2325,
         name: "Aztec Enemy: DK 5DT End Trap 0",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
@@ -17304,7 +16538,7 @@ const Dk5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2323,
+        id: 2326,
         name: "Aztec Enemy: DK 5DT End Trap 1",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
@@ -17314,7 +16548,7 @@ const Dk5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2324,
+        id: 2327,
         name: "Aztec Enemy: DK 5DT End Trap 2",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
@@ -17324,7 +16558,7 @@ const Dk5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2325,
+        id: 2328,
         name: "Aztec Enemy: DK 5DT End Path 0",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && klaptrap,
@@ -17334,7 +16568,7 @@ const Dk5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2326,
+        id: 2329,
         name: "Aztec Enemy: DK 5DT End Path 1",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && klaptrap,
@@ -17344,101 +16578,11 @@ const Dk5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2327,
+        id: 2330,
         name: "Aztec Enemy: DK 5DT Start Path",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && klaptrap,
         canGetBreak: logicBreak(door) && coconut && klaptrap
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2419,
-        name: "Aztec Enemy Photo: DK 5DT Start Trap 0",
-        region: "5 Door Temple",
-        canGetLogic: door.in && coconut && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2420,
-        name: "Aztec Enemy Photo: DK 5DT Start Trap 1",
-        region: "5 Door Temple",
-        canGetLogic: door.in && coconut && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2421,
-        name: "Aztec Enemy Photo: DK 5DT Start Trap 2",
-        region: "5 Door Temple",
-        canGetLogic: door.in && coconut && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2422,
-        name: "Aztec Enemy Photo: DK 5DT End Trap 0",
-        region: "5 Door Temple",
-        canGetLogic: door.in && coconut && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2423,
-        name: "Aztec Enemy Photo: DK 5DT End Trap 1",
-        region: "5 Door Temple",
-        canGetLogic: door.in && coconut && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2424,
-        name: "Aztec Enemy Photo: DK 5DT End Trap 2",
-        region: "5 Door Temple",
-        canGetLogic: door.in && coconut && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2425,
-        name: "Aztec Enemy Photo: DK 5DT End Path 0",
-        region: "5 Door Temple",
-        canGetLogic: door.in && coconut && klaptrap && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && klaptrap && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2426,
-        name: "Aztec Enemy Photo: DK 5DT End Path 1",
-        region: "5 Door Temple",
-        canGetLogic: door.in && coconut && klaptrap && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && klaptrap && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2427,
-        name: "Aztec Enemy Photo: DK 5DT Start Path",
-        region: "5 Door Temple",
-        canGetLogic: door.in && coconut && klaptrap && hasFairyCam,
-        canGetBreak: logicBreak(door) && coconut && klaptrap && hasFairyCam
       }
     )
   ] });
@@ -17447,12 +16591,11 @@ const Lanky5Enemies = () => {
   const door = useAztec5DoorTemple();
   const grape = useGrape();
   const klump = useDefeatKlump();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2335,
+        id: 2338,
         name: "Aztec Enemy: Lanky 5DT Joining Paths",
         region: "5 Door Temple",
         canGetLogic: door.in && grape && klump,
@@ -17462,7 +16605,7 @@ const Lanky5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2336,
+        id: 2339,
         name: "Aztec Enemy: Lanky 5DT End Trap",
         region: "5 Door Temple",
         canGetLogic: door.in && grape && klump,
@@ -17472,41 +16615,11 @@ const Lanky5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2337,
+        id: 2340,
         name: "Aztec Enemy: Lanky 5DT Reward",
         region: "5 Door Temple",
         canGetLogic: door.in && grape && klump,
         canGetBreak: logicBreak(door) && grape && klump
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2435,
-        name: "Aztec Enemy Photo: Lanky 5DT Joining Paths",
-        region: "5 Door Temple",
-        canGetLogic: door.in && grape && klump && hasFairyCam,
-        canGetBreak: logicBreak(door) && grape && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2436,
-        name: "Aztec Enemy Photo: Lanky 5DT End Trap",
-        region: "5 Door Temple",
-        canGetLogic: door.in && grape && klump && hasFairyCam,
-        canGetBreak: logicBreak(door) && grape && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2437,
-        name: "Aztec Enemy Photo: Lanky 5DT Reward",
-        region: "5 Door Temple",
-        canGetLogic: door.in && grape && klump && hasFairyCam,
-        canGetBreak: logicBreak(door) && grape && klump && hasFairyCam
       }
     )
   ] });
@@ -17515,12 +16628,11 @@ const Tiny5Enemies = () => {
   const door = useAztec5DoorTemple();
   const feather = useFeather();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2338,
+        id: 2341,
         name: "Aztec Enemy: Tiny 5DT Start Right Front",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
@@ -17530,7 +16642,7 @@ const Tiny5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2339,
+        id: 2342,
         name: "Aztec Enemy: Tiny 5DT Start Left Back",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
@@ -17540,7 +16652,7 @@ const Tiny5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2340,
+        id: 2343,
         name: "Aztec Enemy: Tiny 5DT Start Right Back",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
@@ -17550,7 +16662,7 @@ const Tiny5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2341,
+        id: 2344,
         name: "Aztec Enemy: Tiny 5DT Start Left Front",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
@@ -17560,7 +16672,7 @@ const Tiny5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2342,
+        id: 2345,
         name: "Aztec Enemy: Tiny 5DT Reward 0",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
@@ -17570,7 +16682,7 @@ const Tiny5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2343,
+        id: 2346,
         name: "Aztec Enemy: Tiny 5DT Reward 1",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
@@ -17580,7 +16692,7 @@ const Tiny5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2344,
+        id: 2347,
         name: "Aztec Enemy: Tiny 5DT Dead End 0",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
@@ -17590,91 +16702,11 @@ const Tiny5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2345,
+        id: 2348,
         name: "Aztec Enemy: Tiny 5DT Dead End 1",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
         canGetBreak: logicBreak(door) && feather && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2438,
-        name: "Aztec Enemy Photo: Tiny 5DT Start Right Front",
-        region: "5 Door Temple",
-        canGetLogic: door.in && feather && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2439,
-        name: "Aztec Enemy Photo: Tiny 5DT Start Left Back",
-        region: "5 Door Temple",
-        canGetLogic: door.in && feather && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2440,
-        name: "Aztec Enemy Photo: Tiny 5DT Start Right Back",
-        region: "5 Door Temple",
-        canGetLogic: door.in && feather && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2441,
-        name: "Aztec Enemy Photo: Tiny 5DT Start Left Front",
-        region: "5 Door Temple",
-        canGetLogic: door.in && feather && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2442,
-        name: "Aztec Enemy Photo: Tiny 5DT Reward 0",
-        region: "5 Door Temple",
-        canGetLogic: door.in && feather && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2443,
-        name: "Aztec Enemy Photo: Tiny 5DT Reward 1",
-        region: "5 Door Temple",
-        canGetLogic: door.in && feather && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2444,
-        name: "Aztec Enemy Photo: Tiny 5DT Dead End 0",
-        region: "5 Door Temple",
-        canGetLogic: door.in && feather && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2445,
-        name: "Aztec Enemy Photo: Tiny 5DT Dead End 1",
-        region: "5 Door Temple",
-        canGetLogic: door.in && feather && hasFairyCam,
-        canGetBreak: logicBreak(door) && feather && hasFairyCam
       }
     )
   ] });
@@ -17683,12 +16715,11 @@ const LlamaTempleEnemies = () => {
   const llama = useAztecLlamaTemple();
   const klaptrap = useDefeatPurpleKlaptrap();
   const hasGrapes = useGrape();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2351,
+        id: 2354,
         name: "Aztec Enemy: Llama Kong Free Music",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
@@ -17698,7 +16729,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2352,
+        id: 2355,
         name: "Aztec Enemy: Llama Dino Music",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
@@ -17708,7 +16739,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2353,
+        id: 2356,
         name: "Aztec Enemy: Lanky Matching Room 0",
         region: "Llama Temple",
         canGetLogic: llama.in && hasGrapes,
@@ -17718,7 +16749,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2354,
+        id: 2357,
         name: "Aztec Enemy: Lanky Matching Room 1",
         region: "Llama Temple",
         canGetLogic: llama.in && hasGrapes,
@@ -17728,7 +16759,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2355,
+        id: 2358,
         name: "Aztec Enemy: Llama Right",
         region: "Llama Temple",
         canGetLogic: llama.in,
@@ -17738,7 +16769,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2356,
+        id: 2359,
         name: "Aztec Enemy: Llama Left",
         region: "Llama Temple",
         canGetLogic: llama.in,
@@ -17748,7 +16779,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2357,
+        id: 2360,
         name: "Aztec Enemy: Llama Melon Crate",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
@@ -17758,91 +16789,11 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2358,
+        id: 2361,
         name: "Aztec Enemy: Llama Slam Switch",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
         canGetBreak: logicBreak(llama) && klaptrap
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2451,
-        name: "Aztec Enemy Photo: Llama Kong Free Music",
-        region: "Llama Temple",
-        canGetLogic: llama.in && klaptrap && hasFairyCam,
-        canGetBreak: logicBreak(llama) && klaptrap && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2452,
-        name: "Aztec Enemy Photo: Llama Dino Music",
-        region: "Llama Temple",
-        canGetLogic: llama.in && klaptrap && hasFairyCam,
-        canGetBreak: logicBreak(llama) && klaptrap && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2453,
-        name: "Aztec Enemy Photo: Lanky Matching Room 0",
-        region: "Llama Temple",
-        canGetLogic: llama.in && hasGrapes && hasFairyCam,
-        canGetBreak: logicBreak(llama) && hasGrapes && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2454,
-        name: "Aztec Enemy Photo: Lanky Matching Room 1",
-        region: "Llama Temple",
-        canGetLogic: llama.in && hasGrapes && hasFairyCam,
-        canGetBreak: logicBreak(llama) && hasGrapes && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2455,
-        name: "Aztec Enemy Photo: Llama Right",
-        region: "Llama Temple",
-        canGetLogic: llama.in && hasFairyCam,
-        canGetBreak: logicBreak(llama) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2456,
-        name: "Aztec Enemy Photo: Llama Left",
-        region: "Llama Temple",
-        canGetLogic: llama.in && hasFairyCam,
-        canGetBreak: logicBreak(llama) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2457,
-        name: "Aztec Enemy Photo: Llama Melon Crate",
-        region: "Llama Temple",
-        canGetLogic: llama.in && klaptrap && hasFairyCam,
-        canGetBreak: logicBreak(llama) && klaptrap && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2458,
-        name: "Aztec Enemy Photo: Llama Slam Switch",
-        region: "Llama Temple",
-        canGetLogic: llama.in && klaptrap && hasFairyCam,
-        canGetBreak: logicBreak(llama) && klaptrap && hasFairyCam
       }
     )
   ] });
@@ -17851,14 +16802,13 @@ const OasisEnemies = () => {
   const anyKong = useAnyKong();
   const inStage = useAztecFront();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2315,
-        name: "Aztec Enemy: Near Candy",
-        region: "Aztec Oasis And Totem Area",
+        id: 2320,
+        name: "Enemy Near Candy's",
+        region: "Aztec Main Area",
         canGetLogic: inStage.in && zinger.in,
         canGetBreak: logicBreak(inStage) && zinger.out
       }
@@ -17866,64 +16816,23 @@ const OasisEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2312,
-        name: "Aztec Enemy: Oasis Door",
-        region: "Aztec Oasis And Totem Area",
+        id: 2321,
+        name: "Enemy Near Llama's Prison",
+        region: "Aztec Main Area",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2415,
-        name: "Aztec Enemy Photo: Near Candy",
-        region: "Aztec Oasis And Totem Area",
-        canGetLogic: inStage.in && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2412,
-        name: "Aztec Enemy Photo: Oasis Door",
-        region: "Aztec Oasis And Totem Area",
-        canGetLogic: inStage.in && anyKong && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
       }
     )
   ] });
 };
 const TinyStartEnemies = () => {
   const tiny = useAztecTinyTemple();
-  const hasFairyCam = useCamera();
   const klobber = useDefeatKlobber();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2379,
-        name: "Aztec Enemy: TT Guard 0",
-        region: "Tiny Temple",
-        canGetLogic: tiny.in && klobber,
-        canGetBreak: logicBreak(tiny) && klobber
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2380,
-        name: "Aztec Enemy: TT Guard 1",
-        region: "Tiny Temple",
-        canGetLogic: tiny.in && klobber,
-        canGetBreak: logicBreak(tiny) && klobber
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2381,
+        id: 2362,
         name: "Aztec Enemy: TT Main 0",
         region: "Tiny Temple",
         canGetLogic: tiny.in,
@@ -17933,7 +16842,7 @@ const TinyStartEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2382,
+        id: 2363,
         name: "Aztec Enemy: TT Main 1",
         region: "Tiny Temple",
         canGetLogic: tiny.in,
@@ -17943,7 +16852,7 @@ const TinyStartEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2383,
+        id: 2364,
         name: "Aztec Enemy: TT Main 2",
         region: "Tiny Temple",
         canGetLogic: tiny.in,
@@ -17953,51 +16862,21 @@ const TinyStartEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2479,
-        name: "Aztec Enemy Photo: TT Guard 0",
+        id: 2365,
+        name: "Aztec Enemy: TT Guard 0",
         region: "Tiny Temple",
-        canGetLogic: tiny.in && hasFairyCam,
-        canGetBreak: logicBreak(tiny) && hasFairyCam
+        canGetLogic: tiny.in && klobber,
+        canGetBreak: logicBreak(tiny) && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2480,
-        name: "Aztec Enemy Photo: TT Guard 1",
+        id: 2366,
+        name: "Aztec Enemy: TT Guard 1",
         region: "Tiny Temple",
-        canGetLogic: tiny.in && hasFairyCam,
-        canGetBreak: logicBreak(tiny) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2481,
-        name: "Aztec Enemy Photo: TT Main 0",
-        region: "Tiny Temple",
-        canGetLogic: tiny.in && hasFairyCam,
-        canGetBreak: logicBreak(tiny) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2482,
-        name: "Aztec Enemy Photo: TT Main 1",
-        region: "Tiny Temple",
-        canGetLogic: tiny.in && hasFairyCam,
-        canGetBreak: logicBreak(tiny) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2483,
-        name: "Aztec Enemy Photo: TT Main 2",
-        region: "Tiny Temple",
-        canGetLogic: tiny.in && hasFairyCam,
-        canGetBreak: logicBreak(tiny) && hasFairyCam
+        canGetLogic: tiny.in && klobber,
+        canGetBreak: logicBreak(tiny) && klobber
       }
     )
   ] });
@@ -18006,12 +16885,11 @@ const TinySwimEnemies = () => {
   const tiny = useAztecTinyTemple();
   const dive = useDive();
   const iceMelted = useTinyTempleIce();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2384,
+        id: 2367,
         name: "Aztec Enemy: TT Kong 0",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive,
@@ -18021,7 +16899,7 @@ const TinySwimEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2385,
+        id: 2368,
         name: "Aztec Enemy: TT Kong 1",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive,
@@ -18031,7 +16909,7 @@ const TinySwimEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2386,
+        id: 2369,
         name: "Aztec Enemy: TT Kong 2",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive,
@@ -18041,7 +16919,7 @@ const TinySwimEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2387,
+        id: 2370,
         name: "Aztec Enemy: TT Kong 3",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive,
@@ -18051,71 +16929,11 @@ const TinySwimEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2388,
+        id: 2371,
         name: "Aztec Enemy: TT Kong 4",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive,
         canGetBreak: logicBreak(tiny) && iceMelted && dive
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2484,
-        name: "Aztec Enemy Photo: TT Kong 0",
-        region: "Tiny Temple",
-        canGetLogic: tiny.in && iceMelted && dive && hasFairyCam,
-        canGetBreak: logicBreak(tiny) && iceMelted && dive && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2485,
-        name: "Aztec Enemy Photo: TT Kong 1",
-        region: "Tiny Temple",
-        canGetLogic: tiny.in && iceMelted && dive && hasFairyCam,
-        canGetBreak: logicBreak(tiny) && iceMelted && dive && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2486,
-        name: "Aztec Enemy Photo: TT Kong 2",
-        region: "Tiny Temple",
-        canGetLogic: tiny.in && iceMelted && dive && hasFairyCam,
-        canGetBreak: logicBreak(tiny) && iceMelted && dive && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2487,
-        name: "Aztec Enemy Photo: TT Kong 3",
-        region: "Tiny Temple",
-        canGetLogic: tiny.in && iceMelted && dive && hasFairyCam,
-        canGetBreak: logicBreak(tiny) && iceMelted && dive && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2488,
-        name: "Aztec Enemy Photo: TT Kong 4",
-        region: "Tiny Temple",
-        canGetLogic: tiny.in && iceMelted && dive && hasFairyCam,
-        canGetBreak: logicBreak(tiny) && iceMelted && dive && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2489,
-        name: "Aztec Enemy Photo: Underwater enemy near vulture GB",
-        region: "Tiny Temple",
-        canGetLogic: tiny.in && iceMelted && dive && hasFairyCam,
-        canGetBreak: logicBreak(tiny) && iceMelted && dive && hasFairyCam
       }
     )
   ] });
@@ -18124,14 +16942,13 @@ const TotemEnemies = () => {
   const anyKong = useAnyKong();
   const inStage = useAztecBack();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2313,
-        name: "Aztec Enemy: Outside Llama Temple",
-        region: "Aztec Oasis And Totem Area",
+        name: "Enemy Near the Llama Temple",
+        region: "Aztec Main Area",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
       }
@@ -18140,8 +16957,8 @@ const TotemEnemies = () => {
       AztecCheck,
       {
         id: 2314,
-        name: "Aztec Enemy: Outside the Gong Tower",
-        region: "Aztec Oasis And Totem Area",
+        name: "Enemy Near the Gong Tower",
+        region: "Aztec Main Area",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
       }
@@ -18149,9 +16966,9 @@ const TotemEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2414,
-        name: "Aztec Enemy: In Front of Snide's",
-        region: "Aztec Oasis And Totem Area",
+        id: 2315,
+        name: "Enemy in Front of Snide's",
+        region: "Aztec Main Area",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
       }
@@ -18160,8 +16977,8 @@ const TotemEnemies = () => {
       AztecCheck,
       {
         id: 2316,
-        name: "Aztec Enemy: Between Totem and Quicksand Tunnel",
-        region: "Aztec Oasis And Totem Area",
+        name: "Enemy Near the Quicksand Tunnel",
+        region: "Aztec Main Area",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
       }
@@ -18170,8 +16987,8 @@ const TotemEnemies = () => {
       AztecCheck,
       {
         id: 2317,
-        name: "Aztec Enemy: Outside 5DT",
-        region: "Aztec Oasis And Totem Area",
+        name: "Enemy Near the 5DT",
+        region: "Aztec Main Area",
         canGetLogic: inStage.in && zinger.in,
         canGetBreak: logicBreak(inStage) && zinger.out
       }
@@ -18180,70 +16997,10 @@ const TotemEnemies = () => {
       AztecCheck,
       {
         id: 2318,
-        name: "Aztec Enemy: Near Funky's",
-        region: "Aztec Oasis And Totem Area",
+        name: "Enemy Near Funky's",
+        region: "Aztec Main Area",
         canGetLogic: inStage.in && anyKong,
         canGetBreak: logicBreak(inStage) && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2413,
-        name: "Aztec Enemy Photo: Outside Llama Temple",
-        region: "Aztec Oasis And Totem Area",
-        canGetLogic: inStage.in && anyKong && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2414,
-        name: "Aztec Enemy Photo: Outside the Gong Tower",
-        region: "Aztec Oasis And Totem Area",
-        canGetLogic: inStage.in && anyKong && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2514,
-        name: "Aztec Enemy Photo: In Front of Snide's",
-        region: "Aztec Oasis And Totem Area",
-        canGetLogic: inStage.in && anyKong && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2416,
-        name: "Aztec Enemy Photo: Between Totem and Quicksand Tunnel",
-        region: "Aztec Oasis And Totem Area",
-        canGetLogic: inStage.in && anyKong && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2417,
-        name: "Aztec Enemy Photo: Outside 5DT",
-        region: "Aztec Oasis And Totem Area",
-        canGetLogic: inStage.in && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2418,
-        name: "Aztec Enemy Photo: Near Funky's",
-        region: "Aztec Oasis And Totem Area",
-        canGetLogic: inStage.in && anyKong && hasFairyCam,
-        canGetBreak: logicBreak(inStage) && anyKong && hasFairyCam
       }
     )
   ] });
@@ -18324,8 +17081,8 @@ const TunnelBarrel = () => {
     AztecCheck,
     {
       id: 2042,
-      name: "Aztec Chunky Hunky Chunky Barrel",
-      region: "Various Aztec Tunnels",
+      name: "Hunky Chunky Caged Bonus Barrel",
+      region: "Aztec Caves",
       canGetLogic: hunkyGb.in,
       canGetBreak: hunkyGb.out
     }
@@ -18337,8 +17094,8 @@ const VaseBanana = () => {
     AztecCheck,
     {
       id: 2040,
-      name: "Aztec Chunky Vases",
-      region: "Various Aztec Tunnels",
+      name: "Chunky's Vases",
+      region: "Aztec Caves",
       canGetLogic: vaseGb.in,
       canGetBreak: vaseGb.out
     }
@@ -18382,8 +17139,8 @@ const RamGongs = () => {
     AztecCheck,
     {
       id: 2011,
-      name: "Aztec Diddy Ram Gongs",
-      region: "Aztec Oasis And Totem Area",
+      name: "Diddy's Gongs",
+      region: "Aztec Main Area",
       canGetLogic: gongGb.in,
       canGetBreak: gongGb.out
     }
@@ -18408,8 +17165,8 @@ const VultureRace = () => {
     AztecCheck,
     {
       id: 2012,
-      name: "Aztec Diddy Vulture Race",
-      region: "Aztec Oasis And Totem Area",
+      name: "Diddy's Vulture Race",
+      region: "Aztec Main Area",
       canGetLogic: vultureGb.in,
       canGetBreak: vultureGb.out
     }
@@ -18467,8 +17224,8 @@ const FreeLlama = () => {
     AztecCheck,
     {
       id: 2001,
-      name: "Aztec DK Free Llama Blast",
-      region: "Aztec Oasis And Totem Area",
+      name: "Freeing the Llama",
+      region: "Aztec Main Area",
       canGetLogic: blastGb.in,
       canGetBreak: blastGb.out
     }
@@ -18480,8 +17237,8 @@ const QuicksandTunnel = () => {
     AztecCheck,
     {
       id: 2002,
-      name: "Aztec DK Quicksand Tunnel Barrel",
-      region: "Various Aztec Tunnels",
+      name: "DK's Quicksand Tunnel Bonus Barrel",
+      region: "Aztec Caves",
       canGetLogic: tunnelGb.in,
       canGetBreak: tunnelGb.out
     }
@@ -18559,7 +17316,7 @@ const BeetleRace$1 = () => {
     {
       id: 2032,
       name: "Tiny's Beetle Race",
-      region: "Aztec Oasis And Totem Area",
+      region: "Aztec Main Area",
       canGetLogic: beetleGb.in,
       canGetBreak: beetleGb.out
     }
@@ -18629,8 +17386,8 @@ const DiddyKasplat$5 = () => {
     AztecCheck,
     {
       id: 2051,
-      name: "Aztec Kasplat: On Tiny Temple",
-      region: "Aztec Oasis And Totem Area",
+      name: "Kasplat on top of the Tiny Temple",
+      region: "Aztec Main Area",
       canGetLogic: oasis.in,
       canGetBreak: oasis.out
     }
@@ -18642,8 +17399,8 @@ const DkKasplat$5 = () => {
     AztecCheck,
     {
       id: 2050,
-      name: "Aztec Kasplat: Behind DK Stone Door",
-      region: "Various Aztec Tunnels",
+      name: "Kasplat Behind DK's Stone Door",
+      region: "Aztec Caves",
       canGetLogic: coconut.in,
       canGetBreak: coconut.out
     }
@@ -18668,8 +17425,8 @@ const TinyKasplat$5 = () => {
     AztecCheck,
     {
       id: 2053,
-      name: "Aztec Kasplat: Hunky Chunky Barrel",
-      region: "Various Aztec Tunnels",
+      name: "Kasplat near Cranky's",
+      region: "Aztec Caves",
       canGetLogic: tunnel.in,
       canGetBreak: tunnel.out
     }
@@ -18773,7 +17530,7 @@ const ChunkyMedal$5 = () => {
       {
         id: 2104,
         name: "Chunky's Medal",
-        region: "Aztec Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -18783,7 +17540,7 @@ const ChunkyMedal$5 = () => {
       {
         id: 2204,
         name: "Chunky's Half-Medal",
-        region: "Aztec Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -18908,8 +17665,8 @@ const DiddyMedal$5 = () => {
       AztecCheck,
       {
         id: 2101,
-        name: "Aztec Diddy Medal",
-        region: "Aztec Medal Rewards",
+        name: "Diddy's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -18918,8 +17675,8 @@ const DiddyMedal$5 = () => {
       AztecCheck,
       {
         id: 2201,
-        name: "Aztec Diddy Half-Medal",
-        region: "Aztec Medal Rewards",
+        name: "Diddy's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -19023,8 +17780,8 @@ const DkMedal$5 = () => {
       AztecCheck,
       {
         id: 2100,
-        name: "Aztec DK Medal",
-        region: "Aztec Medal Rewards",
+        name: "DK's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -19033,8 +17790,8 @@ const DkMedal$5 = () => {
       AztecCheck,
       {
         id: 2200,
-        name: "Aztec DK Half-Medal",
-        region: "Aztec Medal Rewards",
+        name: "DK's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -19152,8 +17909,8 @@ const LankyMedal$5 = () => {
       AztecCheck,
       {
         id: 2102,
-        name: "Aztec Lanky Medal",
-        region: "Aztec Medal Rewards",
+        name: "Lanky's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -19162,8 +17919,8 @@ const LankyMedal$5 = () => {
       AztecCheck,
       {
         id: 2202,
-        name: "Aztec Lanky Half-Medal",
-        region: "Aztec Medal Rewards",
+        name: "Lanky's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -19285,8 +18042,8 @@ const TinyMedal$5 = () => {
       AztecCheck,
       {
         id: 2103,
-        name: "Aztec Tiny Medal",
-        region: "Aztec Medal Rewards",
+        name: "Tiny's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -19295,20 +18052,20 @@ const TinyMedal$5 = () => {
       AztecCheck,
       {
         id: 2203,
-        name: "Aztec Tiny Half-Medal",
-        region: "Aztec Medal Rewards",
+        name: "Tiny's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
     )
   ] });
 };
-const Shuffled$z = () => {
+const Shuffled$u = () => {
   const thing = useGeneralThing$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecCheck, { id: 2190, name: "Aztec Arena", canGetLogic: thing.in, canGetBreak: thing.out }) });
 };
-const ShuffledArenas$5 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$z, {});
-const Shuffled$y = () => {
+const ShuffledArenas$4 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {});
+const Shuffled$t = () => {
   const thing = useGeneralThing$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -19331,8 +18088,8 @@ const Shuffled$y = () => {
     )
   ] });
 };
-const ShuffledCrates$5 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$y, {}) : null;
-const Shuffled$x = () => {
+const ShuffledCrates$4 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {}) : null;
+const Shuffled$s = () => {
   const thing = useGeneralDirt$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -19355,9 +18112,9 @@ const Shuffled$x = () => {
     )
   ] });
 };
-const ShuffledDirtLocations$5 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$x, {}) : null;
-const Shuffled$w = () => {
-  const fairyLogic = useGeneralFairy$3();
+const ShuffledDirtLocations$4 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : null;
+const Shuffled$r = () => {
+  const fairyLogic = useGeneralFairy$2();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -19379,8 +18136,8 @@ const Shuffled$w = () => {
     )
   ] });
 };
-const ShuffledFairies$5 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$w, {}) : null;
-const Shuffled$v = () => {
+const ShuffledFairies$4 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$r, {}) : null;
+const Shuffled$q = () => {
   const thing = useGeneralThing$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -19430,7 +18187,7 @@ const Shuffled$v = () => {
     )
   ] });
 };
-const ShuffledKasplats$5 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$v, {}) : null;
+const ShuffledKasplats$4 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$q, {}) : null;
 const Vanilla$6 = () => {
   const aztecFront = useAztecFront();
   const aztecBack = useAztecBack();
@@ -19445,7 +18202,7 @@ const Vanilla$6 = () => {
         baseId: 2110,
         baseName: "Aztec Cranky",
         level: "Angry Aztec",
-        region: "Aztec Shops",
+        region: "Shops",
         inLogic: hasCranky && aztecBack.in,
         outLogic: hasCranky && aztecBack.out
       }
@@ -19456,7 +18213,7 @@ const Vanilla$6 = () => {
         baseId: 2120,
         baseName: "Aztec Funky",
         level: "Angry Aztec",
-        region: "Aztec Shops",
+        region: "Shops",
         inLogic: hasFunky && aztecBack.in,
         outLogic: hasFunky && aztecBack.out
       }
@@ -19467,7 +18224,7 @@ const Vanilla$6 = () => {
         baseId: 2130,
         baseName: "Aztec Candy",
         level: "Angry Aztec",
-        region: "Aztec Shops",
+        region: "Shops",
         inLogic: hasCandy && aztecFront.in,
         outLogic: hasCandy && aztecFront.out
       }
@@ -19478,14 +18235,14 @@ const Vanilla$6 = () => {
         baseId: 2140,
         baseName: "Turn in Aztec Blueprint for",
         level: "Angry Aztec",
-        region: "Aztec Shops",
+        region: "Shops",
         inLogic: hasSnide && aztecBack.in,
         outLogic: hasSnide && aztecBack.out
       }
     )
   ] });
 };
-const Shuffled$u = () => {
+const Shuffled$p = () => {
   const aztecFront = useAztecFront();
   const aztecBack = useAztecBack();
   const hasCranky = useCranky();
@@ -19499,7 +18256,7 @@ const Shuffled$u = () => {
         baseId: 2140,
         baseName: "Aztec Cranky Location",
         level: "Angry Aztec",
-        region: "Aztec Shops",
+        region: "Shops",
         inLogic: hasCranky && aztecBack.in,
         outLogic: hasCranky && aztecBack.out
       }
@@ -19510,7 +18267,7 @@ const Shuffled$u = () => {
         baseId: 2150,
         baseName: "Aztec Funky Location",
         level: "Angry Aztec",
-        region: "Aztec Shops",
+        region: "Shops",
         inLogic: hasFunky && aztecBack.in,
         outLogic: hasFunky && aztecBack.out
       }
@@ -19521,7 +18278,7 @@ const Shuffled$u = () => {
         baseId: 2160,
         baseName: "Aztec Candy Location",
         level: "Angry Aztec",
-        region: "Aztec Shops",
+        region: "Shops",
         inLogic: hasCandy && aztecFront.in,
         outLogic: hasCandy && aztecFront.out
       }
@@ -19532,7 +18289,7 @@ const Shuffled$u = () => {
         baseId: 2170,
         baseName: "Aztec Snide Location",
         level: "Angry Aztec",
-        region: "Aztec Shops",
+        region: "Shops",
         inLogic: hasSnide && aztecBack.in,
         outLogic: hasSnide && aztecBack.out
       }
@@ -19540,7 +18297,7 @@ const Shuffled$u = () => {
   ] });
 };
 const ShopLocations$5 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$6, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$6, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const CircleVase = () => {
@@ -19550,7 +18307,7 @@ const CircleVase = () => {
     {
       id: 2006,
       name: "Circle Vase",
-      region: "Various Aztec Tunnels",
+      region: "Aztec Caves",
       canGetLogic: hasLogic.in,
       canGetBreak: hasLogic.out
     }
@@ -19563,7 +18320,7 @@ const ColonVase = () => {
     {
       id: 2007,
       name: "Colon Vase",
-      region: "Various Aztec Tunnels",
+      region: "Aztec Caves",
       canGetLogic: hasLogic.in,
       canGetBreak: hasLogic.out
     }
@@ -19575,8 +18332,8 @@ const PlusVase = () => {
     AztecCheck,
     {
       id: 2009,
-      name: "Aztec Boulder: Plus Vase",
-      region: "Various Aztec Tunnels",
+      name: "Plus Vase",
+      region: "Aztec Caves",
       canGetLogic: hasLogic.in,
       canGetBreak: hasLogic.out
     }
@@ -19588,8 +18345,8 @@ const TriangleVase = () => {
     AztecCheck,
     {
       id: 2008,
-      name: "Aztec Boulder: Triangle Vase",
-      region: "Various Aztec Tunnels",
+      name: "Triangle Vase",
+      region: "Aztec Caves",
       canGetLogic: hasLogic.in,
       canGetBreak: hasLogic.out
     }
@@ -19610,8 +18367,8 @@ const TunnelBoulder = () => {
     AztecCheck,
     {
       id: 2106,
-      name: "Aztec Boulder: Giant Boulder",
-      region: "Various Aztec Tunnels",
+      name: "Giant Chunky Boulder",
+      region: "Aztec Caves",
       canGetLogic: hasLogic.in,
       canGetBreak: hasLogic.out
     }
@@ -19692,11 +18449,11 @@ const AztecRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinySwimChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DoorTempleChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaTempleChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$5, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$5, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations$5, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$5, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$5, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$4, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$4, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations$4, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$4, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$6, {})
 ] });
@@ -19862,11 +18619,10 @@ const useDkHutGb = () => {
 const useDkBlastGb$2 = () => {
   const inStage = usePlayFactory();
   const blast = useBlast();
-  const fastArcade = useFastArcade();
   const grab = useGrab();
   const hasClimbing = useClimbing();
   const hasBananaport = useBananaportAll();
-  return inStage && blast && (fastArcade || (hasClimbing || hasBananaport) && grab);
+  return inStage && blast && (hasClimbing || hasBananaport) && grab;
 };
 const useDkCoin = () => {
   const blast = useDkBlastGb$2();
@@ -19992,7 +18748,7 @@ const useFactoryDirt = () => {
   const punch = usePunch();
   return inStage && punch && shockwave;
 };
-const useGeneralFairy$2 = () => {
+const useGeneralFairy$1 = () => {
   const thing = useGeneralThing$3();
   const camera = useCamera();
   return thing && camera;
@@ -20048,8 +18804,8 @@ const RNDArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { childr
   FactoryCheck,
   {
     id: 3090,
-    name: "Factory Arena (Under R and D Grate)",
-    region: "R&D Area",
+    name: "Arena (Under Grate)",
+    region: "R&D Room",
     canGetLogic: useArena$2()
   }
 ) }) });
@@ -20061,7 +18817,7 @@ const BossCheck$5 = () => {
     {
       id: 3105,
       name: "Factory Boss",
-      region: "Troff 'N' Scoff",
+      region: "Bosses",
       canGetLogic: inStage && anyKong
     }
   ) });
@@ -20071,7 +18827,7 @@ const CandyCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { chil
   {
     id: 3060,
     name: "Melon Crate in front of Candy",
-    region: "Storage And Arcade",
+    region: "Storage and Arcade Area",
     canGetLogic: useGeneralThing$3()
   }
 ) }) });
@@ -20079,8 +18835,8 @@ const FunkyCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { chil
   FactoryCheck,
   {
     id: 3061,
-    name: "Factory Crate: Near Funky",
-    region: "Testing Area",
+    name: "Crate Near Funky's",
+    region: "Testing Room",
     canGetLogic: useGeneralTest()
   }
 ) }) });
@@ -20092,8 +18848,8 @@ const DarkRoomDirt = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool
   FactoryCheck,
   {
     id: 3070,
-    name: "Factory Dirt: Dark Room",
-    region: "Storage And Arcade",
+    name: "Dark Room Dirt",
+    region: "Storage and Arcade Area",
     canGetLogic: useFactoryDirt()
   }
 ) }) });
@@ -20103,14 +18859,13 @@ const ProductionEnemies = () => {
   const anyKong = useAnyKong();
   const robo = useDefeatRoboKremling();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
         id: 3309,
-        name: "Factory Enemy: Tunnel to Prod 0",
-        region: "Production Room",
+        name: "Enemy 0 Down the Hatch",
+        region: "Prod Room",
         canGetLogic: testing && anyKong
       }
     ),
@@ -20118,8 +18873,8 @@ const ProductionEnemies = () => {
       FactoryCheck,
       {
         id: 3310,
-        name: "Factory Enemy: Tunnel to Prod 1",
-        region: "Production Room",
+        name: "Enemy 1 Down the Hatch",
+        region: "Prod Room",
         canGetLogic: testing && robo
       }
     ),
@@ -20127,8 +18882,8 @@ const ProductionEnemies = () => {
       FactoryCheck,
       {
         id: 3314,
-        name: "Factory Enemy: Low Warp 4",
-        region: "Production Room",
+        name: "Enemy at Low Warp 4",
+        region: "Prod Room",
         canGetLogic: inStage && robo
       }
     ),
@@ -20136,46 +18891,10 @@ const ProductionEnemies = () => {
       FactoryCheck,
       {
         id: 3315,
-        name: "Factory Enemy: Diddy Switch",
-        region: "Production Room",
+        name: "Enemy at Diddy's Prod Room Switch",
+        region: "Prod Room",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3409,
-        name: "Factory Enemy Photo: Tunnel to Prod 0",
-        region: "Production Room",
-        canGetLogic: testing && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3410,
-        name: "Factory Enemy Photo: Tunnel to Prod 1",
-        region: "Production Room",
-        canGetLogic: testing && robo && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3414,
-        name: "Factory Enemy Photo: Low Warp 4",
-        region: "Production Room",
-        canGetLogic: inStage && robo && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3415,
-        name: "Factory Enemy Photo: Diddy Switch",
-        region: "Production Room",
-        canGetLogic: inStage && hasFairyCam
       }
     )
   ] });
@@ -20184,14 +18903,13 @@ const RNDEnemies = () => {
   const testing = useFactoryTesting();
   const robo = useDefeatRoboKremling();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
         id: 3312,
-        name: "Factory Enemy: Tunnel to Race 0",
-        region: "R&D Area",
+        name: "Tunnel to Race Enemy 0",
+        region: "R&D Room",
         canGetLogic: testing && robo
       }
     ),
@@ -20199,28 +18917,10 @@ const RNDEnemies = () => {
       FactoryCheck,
       {
         id: 3313,
-        name: "Factory Enemy: Tunnel to Race 1",
-        region: "R&D Area",
+        name: "Tunnel to Race Enemy 1",
+        region: "R&D Room",
         canGetLogic: testing && zinger.in,
         canGetBreak: testing && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3412,
-        name: "Factory Enemy Photo: Tunnel to Race 0",
-        region: "R&D Area",
-        canGetLogic: testing && robo && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3413,
-        name: "Factory Enemy Photo: Tunnel to Race 1",
-        region: "R&D Area",
-        canGetLogic: testing && hasFairyCam
       }
     )
   ] });
@@ -20229,14 +18929,13 @@ const StartEnemies = () => {
   const inStage = usePlayFactory();
   const testing = useFactoryTesting();
   const robo = useDefeatRoboKremling();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
         id: 3302,
-        name: "Factory Enemy: Lobby Left",
-        region: "Factory Start",
+        name: "Enemy at Lobby Left",
+        region: "Factory Start Area",
         canGetLogic: inStage && robo
       }
     ),
@@ -20244,8 +18943,8 @@ const StartEnemies = () => {
       FactoryCheck,
       {
         id: 3303,
-        name: "Factory Enemy: Lobby Right",
-        region: "Factory Start",
+        name: "Enemy at Lobby Right",
+        region: "Factory Start Area",
         canGetLogic: inStage && robo
       }
     ),
@@ -20253,36 +18952,9 @@ const StartEnemies = () => {
       FactoryCheck,
       {
         id: 3308,
-        name: "Factory Enemy: Tunnel to Hatch",
-        region: "Factory Start",
+        name: "Enemy in the Tunnel to Hatch",
+        region: "Factory Start Area",
         canGetLogic: testing && robo
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3402,
-        name: "Factory Enemy Photo: Lobby Left",
-        region: "Factory Start",
-        canGetLogic: inStage && robo && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3403,
-        name: "Factory Enemy Photo: Lobby Right",
-        region: "Factory Start",
-        canGetLogic: inStage && robo && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3408,
-        name: "Factory Enemy Photo: Tunnel to Hatch",
-        region: "Factory Start",
-        canGetLogic: testing && robo && hasFairyCam
       }
     )
   ] });
@@ -20292,14 +18964,13 @@ const StorageEnemies = () => {
   const punch = usePunch();
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
         id: 3300,
-        name: "Factory Enemy: Shops 0",
-        region: "Storage And Arcade",
+        name: "Enemy 0 in front of Cranky/Candy",
+        region: "Storage and Arcade Area",
         canGetLogic: inStage && anyKong
       }
     ),
@@ -20307,8 +18978,8 @@ const StorageEnemies = () => {
       FactoryCheck,
       {
         id: 3301,
-        name: "Factory Enemy: Shops 1",
-        region: "Storage And Arcade",
+        name: "Enemy 1 in front of Cranky/Candy",
+        region: "Storage and Arcade Area",
         canGetLogic: inStage && anyKong
       }
     ),
@@ -20316,8 +18987,8 @@ const StorageEnemies = () => {
       FactoryCheck,
       {
         id: 3304,
-        name: "Factory Enemy: Storage Room",
-        region: "Storage And Arcade",
+        name: "Enemy patrolling Chunky's Cage",
+        region: "Storage and Arcade Area",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -20326,8 +18997,8 @@ const StorageEnemies = () => {
       FactoryCheck,
       {
         id: 3317,
-        name: "Factory Enemy: Dark Room 0",
-        region: "Storage And Arcade",
+        name: "Dark Room Enemy 0",
+        region: "Storage and Arcade Area",
         canGetLogic: inStage && punch && zinger.in,
         canGetBreak: inStage && punch && zinger.out
       }
@@ -20336,55 +19007,10 @@ const StorageEnemies = () => {
       FactoryCheck,
       {
         id: 3318,
-        name: "Factory Enemy: Dark Room 1",
-        region: "Storage And Arcade",
+        name: "Dark Room Enemy 1",
+        region: "Storage and Arcade Area",
         canGetLogic: inStage && punch && zinger.in,
         canGetBreak: inStage && punch && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3400,
-        name: "Factory Enemy Photo: Shops 0",
-        region: "Storage And Arcade",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3401,
-        name: "Factory Enemy Photo: Shops 1",
-        region: "Storage And Arcade",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3404,
-        name: "Factory Enemy Photo: Storage Room",
-        region: "Storage And Arcade",
-        canGetLogic: inStage && zinger && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3417,
-        name: "Factory Enemy Photo: Dark Room 0",
-        region: "Storage And Arcade",
-        canGetLogic: inStage && punch && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3418,
-        name: "Factory Enemy Photo: Dark Room 1",
-        region: "Storage And Arcade",
-        canGetLogic: inStage && punch && hasFairyCam
       }
     )
   ] });
@@ -20395,14 +19021,13 @@ const TestingEnemies = () => {
   const anyKong = useAnyKong();
   const robo = useDefeatRoboKremling();
   const zinger = useDefeatZinger();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
         id: 3305,
-        name: "Factory Enemy: Block Tower 0",
-        region: "Testing Area",
+        name: "Block Tower Enemy 0",
+        region: "Testing Room",
         canGetLogic: testing && anyKong
       }
     ),
@@ -20410,8 +19035,8 @@ const TestingEnemies = () => {
       FactoryCheck,
       {
         id: 3306,
-        name: "Factory Enemy: Block Tower 1",
-        region: "Testing Area",
+        name: "Block Tower Enemy 1",
+        region: "Testing Room",
         canGetLogic: testing && anyKong
       }
     ),
@@ -20419,8 +19044,8 @@ const TestingEnemies = () => {
       FactoryCheck,
       {
         id: 3307,
-        name: "Factory Enemy: Block Tower 2",
-        region: "Testing Area",
+        name: "Block Tower Enemy 2",
+        region: "Testing Room",
         canGetLogic: testing && anyKong
       }
     ),
@@ -20428,8 +19053,8 @@ const TestingEnemies = () => {
       FactoryCheck,
       {
         id: 3311,
-        name: "Factory Enemy: Tunnel to Block Tower",
-        region: "Testing Area",
+        name: "Enemy at T-intersection between Snide's and block tower",
+        region: "Testing Room",
         canGetLogic: testing && robo
       }
     ),
@@ -20437,55 +19062,10 @@ const TestingEnemies = () => {
       FactoryCheck,
       {
         id: 3316,
-        name: "Factory Enemy: To Block Tower Tunnel",
-        region: "Testing Area",
+        name: "Enemy at pole to block tower",
+        region: "Testing Room",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3405,
-        name: "Factory Enemy Photo: Block Tower 0",
-        region: "Testing Area",
-        canGetLogic: testing && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3406,
-        name: "Factory Enemy Photo: Block Tower 1",
-        region: "Testing Area",
-        canGetLogic: testing && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3407,
-        name: "Factory Enemy Photo: Block Tower 2",
-        region: "Testing Area",
-        canGetLogic: testing && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3411,
-        name: "Factory Enemy Photo: Tunnel to Block Tower",
-        region: "Testing Area",
-        canGetLogic: testing && robo && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 3416,
-        name: "Factory Enemy Photo: To Block Tower Tunnel",
-        region: "Testing Area",
-        canGetLogic: inStage && hasFairyCam
       }
     )
   ] });
@@ -20501,8 +19081,8 @@ const FunkyFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { chil
   FactoryCheck,
   {
     id: 3081,
-    name: "Factory Fairy (Near Funky's)",
-    region: "Testing Area",
+    name: "Fairy from the Dartboard GB, at Funky's",
+    region: "Testing Room",
     canGetLogic: useDartFairy()
   }
 ) }) });
@@ -20510,8 +19090,8 @@ const NumberFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { chi
   FactoryCheck,
   {
     id: 3080,
-    name: "Factory Fairy (Number Game)",
-    region: "Testing Area",
+    name: "Fairy at tunnel to DK's number game",
+    region: "Testing Room",
     canGetLogic: useNumberFairy()
   }
 ) }) });
@@ -20524,7 +19104,7 @@ const ArcadeBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   {
     id: 3042,
     name: "Chunky's Barrel by the Arcade",
-    region: "Storage And Arcade",
+    region: "Storage and Arcade Area",
     canGetLogic: useChunkyArcadeGb()
   }
 );
@@ -20532,8 +19112,8 @@ const DarkRoom = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3041,
-    name: "Factory Chunky Dark Room",
-    region: "Storage And Arcade",
+    name: "Chunky's Dark Room",
+    region: "Storage and Arcade Area",
     canGetLogic: useChunkyDarkGb()
   }
 );
@@ -20543,8 +19123,8 @@ const ToyMonster = () => {
     FactoryCheck,
     {
       id: 3040,
-      name: "Factory Chunky Toy Monster",
-      region: "R&D Area",
+      name: "Chunky's Toy Monster Battle",
+      region: "R&D Room",
       canGetLogic: inLogic.in,
       canGetBreak: inLogic.out
     }
@@ -20554,8 +19134,8 @@ const ChunkyProduction = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3043,
-    name: "Factory Chunky Production Timer",
-    region: "Production Room",
+    name: "Chunky's Production Timer",
+    region: "Prod Room",
     canGetLogic: useChunkyProductionGb()
   }
 );
@@ -20572,7 +19152,7 @@ const BlockTower = () => {
     {
       id: 3010,
       name: "Diddy's Block Tower",
-      region: "Testing Area",
+      region: "Testing Room",
       canGetLogic: blockGb.in,
       canGetBreak: blockGb.out
     }
@@ -20583,7 +19163,7 @@ const ChargeTest = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { child
   {
     id: 3011,
     name: "Diddy's Pincode Room",
-    region: "R&D Area",
+    region: "R&D Room",
     canGetLogic: useDiddyEnemyGb()
   }
 ) });
@@ -20593,8 +19173,8 @@ const DiddyProduction = () => {
     FactoryCheck,
     {
       id: 3013,
-      name: "Factory Diddy Production Room",
-      region: "Production Room",
+      name: "Diddy's Prod Room Bounce",
+      region: "Prod Room",
       canGetLogic: prodGb.in,
       canGetBreak: prodGb.out
     }
@@ -20606,8 +19186,8 @@ const StorageBarrel = () => {
     FactoryCheck,
     {
       id: 3012,
-      name: "Factory Diddy Storage Room Barrel",
-      region: "Storage And Arcade",
+      name: "Diddy's Storage Room Barrel",
+      region: "Storage and Arcade Area",
       canGetLogic: storageGb.in,
       canGetBreak: storageGb.out
     }
@@ -20624,12 +19204,12 @@ const NintendoCoin = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CompanyPool, { 
   {
     id: 3005,
     name: "DK Arcade Round 2",
-    region: "Storage And Arcade",
+    region: "Storage and Arcade Area",
     canGetLogic: useDkCoin()
   }
 ) });
 const FactoryBlast = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3003, name: "Barrel Blast course and/or DK Arcade Round 1", region: "Storage And Arcade", canGetLogic: useDkBlastGb$2() });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3003, name: "Barrel Blast course and/or DK Arcade Round 1", region: "Storage and Arcade Area", canGetLogic: useDkBlastGb$2() });
 };
 const CrusherRoom = () => {
   const prodGb = useDkProdGb();
@@ -20638,7 +19218,7 @@ const CrusherRoom = () => {
     {
       id: 3004,
       name: "DK's Crusher Room",
-      region: "Production Room",
+      region: "Prod Room",
       canGetLogic: prodGb.in,
       canGetBreak: prodGb.out
     }
@@ -20650,8 +19230,8 @@ const PowerHut = () => {
     FactoryCheck,
     {
       id: 3002,
-      name: "Factory DK Power Hut",
-      region: "Storage And Arcade",
+      name: "DK's Prod Room Power Hut",
+      region: "Storage and Arcade Area",
       canGetLogic: hutGb.in,
       canGetBreak: hutGb.out
     }
@@ -20661,8 +19241,8 @@ const NumberGame = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3001,
-    name: "Factory DK Number Game",
-    region: "Testing Area",
+    name: "DK's Number Game",
+    region: "Testing Room",
     canGetLogic: useDkNumberGb()
   }
 );
@@ -20677,8 +19257,8 @@ const FreeChunky = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3022,
-    name: "Factory Free Chunky Item",
-    region: "Storage And Arcade",
+    name: "Freeing Chunky Kong",
+    region: "Storage and Arcade Area",
     canGetLogic: useLankyFreeChunkyGb()
   }
 );
@@ -20686,8 +19266,8 @@ const PianoGame = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3021,
-    name: "Factory Lanky Piano Game",
-    region: "R&D Area",
+    name: "Lanky's Piano Game",
+    region: "R&D Room",
     canGetLogic: useLankyPianoGb()
   }
 );
@@ -20697,8 +19277,8 @@ const LankyProduction = () => {
     FactoryCheck,
     {
       id: 3023,
-      name: "Factory Lanky Production Room",
-      region: "Production Room",
+      name: "Lanky's Prod Room Handstand",
+      region: "Prod Room",
       canGetLogic: prodGb.in,
       canGetBreak: prodGb.out
     }
@@ -20710,8 +19290,8 @@ const TestingBarrel = () => {
     FactoryCheck,
     {
       id: 3020,
-      name: "Factory Lanky Testing Room Barrel",
-      region: "Testing Area",
+      name: "Lanky's Balloon Barrel",
+      region: "Testing Room",
       canGetLogic: testGb.in,
       canGetBreak: testGb.out
     }
@@ -20722,7 +19302,7 @@ const ChunkyCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   {
     id: 3025,
     name: "Chunky's Cage",
-    region: "Storage And Arcade",
+    region: "Storage and Arcade Area",
     canGetLogic: useLankyFreeChunkyGb()
   }
 );
@@ -20737,8 +19317,8 @@ const TinyDartboard = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3030,
-    name: "Factory Tiny Dartboard",
-    region: "Testing Area",
+    name: "Tiny's Dartboard",
+    region: "Testing Room",
     canGetLogic: useTinyDartGb()
   }
 );
@@ -20748,8 +19328,8 @@ const TinyProduction = () => {
     FactoryCheck,
     {
       id: 3033,
-      name: "Factory Tiny Production Room",
-      region: "Production Room",
+      name: "Tiny's Twirling Bonus Barrel",
+      region: "Prod Room",
       canGetLogic: prodGb.in,
       canGetBreak: prodGb.out
     }
@@ -20759,8 +19339,8 @@ const CarRace = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, {
   FactoryCheck,
   {
     id: 3031,
-    name: "Factory Tiny Car Race",
-    region: "R&D Area",
+    name: "Tiny's Car Race",
+    region: "R&D Room",
     canGetLogic: useTinyRaceGb()
   }
 ) });
@@ -20768,8 +19348,8 @@ const TinyVent = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3032,
-    name: "Factory Tiny Mini by Arcade",
-    region: "Storage And Arcade",
+    name: "Tiny's Vent Behind the Arcade",
+    region: "Storage and Arcade Area",
     canGetLogic: useTinyArcadeGb()
   }
 );
@@ -20784,7 +19364,7 @@ const ChunkyKasplat$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool,
   {
     id: 3054,
     name: "Kasplat near the Block Tower",
-    region: "Testing Area",
+    region: "Testing Room",
     canGetLogic: useBlockKasplat()
   }
 ) }) });
@@ -20792,8 +19372,8 @@ const DiddyKasplat$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, 
   FactoryCheck,
   {
     id: 3051,
-    name: "Factory Kasplat: Base of Production",
-    region: "Production Room",
+    name: "Kasplat at Prod Room Base",
+    region: "Prod Room",
     canGetLogic: useProductionBaseKasplat()
   }
 ) }) });
@@ -20801,8 +19381,8 @@ const DkKasplat$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { c
   FactoryCheck,
   {
     id: 3050,
-    name: "Factory Kasplat: Upper Production Pipe",
-    region: "Production Room",
+    name: "Kasplat at Upper Production Pipe",
+    region: "Prod Room",
     canGetLogic: useProductionTopKasplat()
   }
 ) }) });
@@ -20810,8 +19390,8 @@ const LankyKasplat$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, 
   FactoryCheck,
   {
     id: 3052,
-    name: "Factory Kasplat: Research and Development",
-    region: "R&D Area",
+    name: "Kasplat in R&D",
+    region: "R&D Room",
     canGetLogic: useResearchKasplat()
   }
 ) }) });
@@ -20819,8 +19399,8 @@ const TinyKasplat$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, {
   FactoryCheck,
   {
     id: 3053,
-    name: "Factory Kasplat: Pole to Arcade",
-    region: "Storage And Arcade",
+    name: "Kasplat at Pole to Arcade",
+    region: "Storage and Arcade Area",
     canGetLogic: useStorageKasplat()
   }
 ) }) });
@@ -20885,7 +19465,7 @@ const ChunkyMedal$4 = () => {
       {
         id: 3104,
         name: "Chunky's Medal",
-        region: "Factory Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -20895,7 +19475,7 @@ const ChunkyMedal$4 = () => {
       {
         id: 3204,
         name: "Chunky's Half-Medal",
-        region: "Factory Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -20975,8 +19555,8 @@ const DiddyMedal$4 = () => {
       FactoryCheck,
       {
         id: 3101,
-        name: "Factory Diddy Medal",
-        region: "Factory Medal Rewards",
+        name: "Diddy's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -20985,8 +19565,8 @@ const DiddyMedal$4 = () => {
       FactoryCheck,
       {
         id: 3201,
-        name: "Factory Diddy Half-Medal",
-        region: "Factory Medal Rewards",
+        name: "Diddy's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -21063,8 +19643,8 @@ const DkMedal$4 = () => {
       FactoryCheck,
       {
         id: 3100,
-        name: "Factory DK Medal",
-        region: "Factory Medal Rewards",
+        name: "DK's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -21073,8 +19653,8 @@ const DkMedal$4 = () => {
       FactoryCheck,
       {
         id: 3200,
-        name: "Factory DK Half-Medal",
-        region: "Factory Medal Rewards",
+        name: "DK's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -21152,8 +19732,8 @@ const LankyMedal$4 = () => {
       FactoryCheck,
       {
         id: 3102,
-        name: "Factory Lanky Medal",
-        region: "Factory Medal Rewards",
+        name: "Lanky's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -21162,8 +19742,8 @@ const LankyMedal$4 = () => {
       FactoryCheck,
       {
         id: 3202,
-        name: "Factory Lanky Half-Medal",
-        region: "Factory Medal Rewards",
+        name: "Lanky's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -21246,8 +19826,8 @@ const TinyMedal$4 = () => {
       FactoryCheck,
       {
         id: 3103,
-        name: "Factory Tiny Medal",
-        region: "Factory Medal Rewards",
+        name: "Tiny's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -21256,43 +19836,43 @@ const TinyMedal$4 = () => {
       FactoryCheck,
       {
         id: 3203,
-        name: "Factory Tiny Half-Medal",
-        region: "Factory Medal Rewards",
+        name: "Tiny's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
     )
   ] });
 };
-const Shuffled$t = () => {
+const Shuffled$o = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3190, name: "Factory Arena", canGetLogic: useGeneralThing$3() }) });
 };
-const ShuffledArenas$4 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {});
-const Shuffled$s = () => {
+const ShuffledArenas$3 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$o, {});
+const Shuffled$n = () => {
   const thing = useGeneralThing$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 1260, name: "Factory Crate Location #1 (maybe)", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 1261, name: "Factory Crate Location #2 (maybe)", canGetLogic: thing })
   ] });
 };
-const ShuffledCrates$4 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : null;
-const Shuffled$r = () => {
+const ShuffledCrates$3 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {}) : null;
+const Shuffled$m = () => {
   const dirt = useGeneralDirt$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3270, name: "Factory Dirt Location #1", canGetLogic: dirt }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3271, name: "Factory Dirt Location #2", canGetLogic: dirt })
   ] });
 };
-const ShuffledDirtLocations$4 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$r, {}) : null;
-const Shuffled$q = () => {
-  const thing = useGeneralFairy$2();
+const ShuffledDirtLocations$3 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$m, {}) : null;
+const Shuffled$l = () => {
+  const thing = useGeneralFairy$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3280, name: "Factory Fairy Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3281, name: "Factory Fairy Location #2", canGetLogic: thing })
   ] });
 };
-const ShuffledFairies$4 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$q, {}) : null;
-const Shuffled$p = () => {
+const ShuffledFairies$3 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
+const Shuffled$k = () => {
   const kasplat = useGeneralThing$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3250, name: "Factory Kasplat Location #1", canGetLogic: kasplat }),
@@ -21302,7 +19882,7 @@ const Shuffled$p = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3254, name: "Factory Kasplat Location #5", canGetLogic: kasplat })
   ] });
 };
-const ShuffledKasplats$4 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : null;
+const ShuffledKasplats$3 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$k, {}) : null;
 const Vanilla$5 = () => {
   const inStage = usePlayFactory();
   const testing = useFactoryTesting();
@@ -21317,7 +19897,7 @@ const Vanilla$5 = () => {
         baseId: 3110,
         baseName: "Factory Cranky",
         level: "Frantic Factory",
-        region: "Factory Shops",
+        region: "Shops",
         inLogic: hasCranky && inStage
       }
     ),
@@ -21327,7 +19907,7 @@ const Vanilla$5 = () => {
         baseId: 3120,
         baseName: "Factory Funky",
         level: "Frantic Factory",
-        region: "Factory Shops",
+        region: "Shops",
         inLogic: hasFunky && testing
       }
     ),
@@ -21337,7 +19917,7 @@ const Vanilla$5 = () => {
         baseId: 3130,
         baseName: "Factory Candy",
         level: "Frantic Factory",
-        region: "Factory Shops",
+        region: "Shops",
         inLogic: hasCandy && inStage
       }
     ),
@@ -21347,13 +19927,13 @@ const Vanilla$5 = () => {
         baseId: 3140,
         baseName: "Turn in Factory Blueprint for",
         level: "Frantic Factory",
-        region: "Factory Shops",
+        region: "Shops",
         inLogic: hasSnide && testing
       }
     )
   ] });
 };
-const Shuffled$o = () => {
+const Shuffled$j = () => {
   const inStage = usePlayFactory();
   const testing = useFactoryTesting();
   const hasCranky = useCranky();
@@ -21367,7 +19947,7 @@ const Shuffled$o = () => {
         baseId: 3140,
         baseName: "Factory Cranky Location",
         level: "Frantic Factory",
-        region: "Factory Shops",
+        region: "Shops",
         inLogic: hasCranky && inStage
       }
     ),
@@ -21377,7 +19957,7 @@ const Shuffled$o = () => {
         baseId: 3150,
         baseName: "Factory Funky Location",
         level: "Frantic Factory",
-        region: "Factory Shops",
+        region: "Shops",
         inLogic: hasFunky && testing
       }
     ),
@@ -21387,7 +19967,7 @@ const Shuffled$o = () => {
         baseId: 3160,
         baseName: "Factory Candy Location",
         level: "Frantic Factory",
-        region: "Factory Shops",
+        region: "Shops",
         inLogic: hasCandy && inStage
       }
     ),
@@ -21397,14 +19977,14 @@ const Shuffled$o = () => {
         baseId: 3170,
         baseName: "Factory Snide Location",
         level: "Frantic Factory",
-        region: "Factory Shops",
+        region: "Shops",
         inLogic: hasSnide && testing
       }
     )
   ] });
 };
 const ShopLocations$4 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$o, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$5, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$j, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$5, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const TestingChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -21465,11 +20045,11 @@ const FactoryRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", 
   /* @__PURE__ */ jsxRuntimeExports.jsx(RNDChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(StorageChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ProductionChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$5, {})
 ] });
@@ -21519,7 +20099,7 @@ const CavernArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { chi
   {
     id: 4090,
     name: "Battle Arena (under Cranky's)",
-    region: "Galleon Caverns",
+    region: "Galleon Caves",
     canGetLogic: useArena$4()
   }
 ) }) });
@@ -21533,7 +20113,7 @@ const BossCheck$4 = () => {
     {
       id: 4105,
       name: "Galleon Boss",
-      region: "Troff 'N' Scoff",
+      region: "Bosses",
       canGetLogic: top.in || dive && (lighthouseArea || outskirts),
       canGetBreak: top.out
     }
@@ -21567,14 +20147,13 @@ const CavernsEnemies = () => {
   const kaboom = useDefeatKaboom();
   const kosha = useDefeatKosha();
   const anyKong = useAnyKong();
-  const hasCamera = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
         id: 4300,
         name: "Chest Room Enemy 0",
-        region: "Galleon Caverns",
+        region: "Galleon Caves",
         canGetLogic: inStage && klobber
       }
     ),
@@ -21583,7 +20162,7 @@ const CavernsEnemies = () => {
       {
         id: 4301,
         name: "Chest Room Enemy 1",
-        region: "Galleon Caverns",
+        region: "Galleon Caves",
         canGetLogic: inStage && kaboom.in,
         canGetBreak: inStage && kaboom.out
       }
@@ -21593,7 +20172,7 @@ const CavernsEnemies = () => {
       {
         id: 4302,
         name: "Vine Cannon Enemy",
-        region: "Galleon Caverns",
+        region: "Galleon Caves",
         canGetLogic: inStage && kaboom.in,
         canGetBreak: inStage && kaboom.out
       }
@@ -21603,7 +20182,7 @@ const CavernsEnemies = () => {
       {
         id: 4303,
         name: "Cranky Cannon Enemy",
-        region: "Galleon Caverns",
+        region: "Galleon Caves",
         canGetLogic: inStage && kaboom.in,
         canGetBreak: inStage && kaboom.out
       }
@@ -21613,7 +20192,7 @@ const CavernsEnemies = () => {
       {
         id: 4304,
         name: "Peanut Tunnel Enemy",
-        region: "Galleon Caverns",
+        region: "Galleon Caves",
         canGetLogic: inStage && kosha.in,
         canGetBreak: inStage && kosha.out
       }
@@ -21623,62 +20202,8 @@ const CavernsEnemies = () => {
       {
         id: 4306,
         name: "Coconut Tunnel Enemy",
-        region: "Galleon Caverns",
+        region: "Galleon Caves",
         canGetLogic: inStage && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4400,
-        name: "Photo of Chest Room Enemy 0",
-        region: "Galleon Caverns",
-        canGetLogic: inStage && klobber && hasCamera
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4401,
-        name: "Photo of Chest Room Enemy 1",
-        region: "Galleon Caverns",
-        canGetLogic: inStage && hasCamera
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4402,
-        name: "Photo of Vine Cannon Enemy",
-        region: "Galleon Caverns",
-        canGetLogic: inStage && hasCamera
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4403,
-        name: "Photo of Cranky Cannon Enemy",
-        region: "Galleon Caverns",
-        canGetLogic: inStage && hasCamera
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4404,
-        name: "Photo of Peanut Tunnel Enemy",
-        region: "Galleon Caverns",
-        canGetLogic: inStage && hasCamera
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4406,
-        name: "Photo of Coconut Tunnel Enemy",
-        region: "Galleon Caverns",
-        canGetLogic: inStage && anyKong && hasCamera
       }
     )
   ] });
@@ -21688,7 +20213,6 @@ const LighthouseEnemies = () => {
   const klump = useDefeatKlump();
   const dk2 = useDk();
   const canSlam = useSlamGalleon();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
@@ -21709,207 +20233,19 @@ const LighthouseEnemies = () => {
         canGetLogic: lighthouse.in && dk2 && canSlam && klump,
         canGetBreak: lighthouse.out && dk2 && canSlam && klump
       }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4407,
-        name: "Galleon Enemy Photo: Lighthouse 0",
-        region: "Lighthouse Area",
-        canGetLogic: lighthouse.in && dk2 && canSlam && klump && hasFairyCam,
-        canGetBreak: lighthouse.out && dk2 && canSlam && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4408,
-        name: "Galleon Enemy Photo: Lighthouse 1",
-        region: "Lighthouse Area",
-        canGetLogic: lighthouse.in && dk2 && canSlam && klump && hasFairyCam,
-        canGetBreak: lighthouse.out && dk2 && canSlam && klump && hasFairyCam
-      }
-    )
-  ] });
-};
-const UnderwaterEnemies = () => {
-  const hasFairyCam = useCamera();
-  const canReachShips = useGalleonOutskirts();
-  const hasDiving = useDive();
-  const canReachDK5DS = useDk5DoorShipGb();
-  const canReachDiddy5DS = useDiddy5DoorShipGb();
-  const canReachLanky5DS = useLanky5DoorShipGb();
-  const canReachTiny5DS = useTiny5DoorShipGb();
-  const canReachChunky5DS = useChunky5DoorShipGb();
-  const canReach2DS = useTiny2DoorShipGb();
-  const canReachSub = useTinySubGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4409,
-        name: "Galleon Enemy Photo: In front of sub and Tiny barrel",
-        region: "Shipyard Outskirts",
-        canGetLogic: hasFairyCam && canReachShips && hasDiving
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4410,
-        name: "Galleon Enemy Photo: Around bottom of 5-Door Ship 0",
-        region: "Shipyard Outskirts",
-        canGetLogic: hasFairyCam && canReachShips && hasDiving
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4411,
-        name: "Galleon Enemy Photo: Around bottom of 5-Door Ship 1",
-        region: "Shipyard Outskirts",
-        canGetLogic: hasFairyCam && canReachShips && hasDiving
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4412,
-        name: "Galleon Enemy Photo: Inside DK's 5-Door Ship room 0",
-        region: "5 Door Ship",
-        canGetLogic: hasFairyCam && canReachDK5DS
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4413,
-        name: "Galleon Enemy Photo: Inside DK's 5-Door Ship room 1",
-        region: "5 Door Ship",
-        canGetLogic: hasFairyCam && canReachDK5DS
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4414,
-        name: "Galleon Enemy Photo: Inside DK's 5-Door Ship room 2",
-        region: "5 Door Ship",
-        canGetLogic: hasFairyCam && canReachDK5DS
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4415,
-        name: "Galleon Enemy Photo: Inside Diddy's 5-Door Ship room",
-        region: "5 Door Ship",
-        canGetLogic: hasFairyCam && canReachDiddy5DS
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4416,
-        name: "Galleon Enemy Photo: Inside Lanky's 5-Door Ship room",
-        region: "5 Door Ship",
-        canGetLogic: hasFairyCam && canReachLanky5DS
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4417,
-        name: "Galleon Enemy Photo: Inside Tiny's 5-Door Ship room, in the GB cage",
-        region: "5 Door Ship",
-        canGetLogic: hasFairyCam && canReachTiny5DS
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4418,
-        name: "Galleon Enemy Photo: Inside Tiny's 5-Door Ship room, on the bed",
-        region: "5 Door Ship",
-        canGetLogic: hasFairyCam && canReachTiny5DS
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4419,
-        name: "Galleon Enemy Photo: Inside Chunky's 5-Door Ship room",
-        region: "5 Door Ship",
-        canGetLogic: hasFairyCam && canReachChunky5DS
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4420,
-        name: "Galleon Enemy Photo: Inside Tiny's 2-Door Ship room, near entrance",
-        region: "Shipyard Outskirts",
-        canGetLogic: hasFairyCam && canReach2DS
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4421,
-        name: "Galleon Enemy Photo: Inside Tiny's 2-Door Ship room, near Bonus Barrel",
-        region: "Shipyard Outskirts",
-        canGetLogic: hasFairyCam && canReach2DS
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4422,
-        name: "Galleon Enemy Photo: Inside Tiny's sub, near entrance left",
-        region: "Shipyard Outskirts",
-        canGetLogic: hasFairyCam && canReachSub
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4423,
-        name: "Galleon Enemy Photo: Inside Tiny's sub, near entrance right",
-        region: "Shipyard Outskirts",
-        canGetLogic: hasFairyCam && canReachSub
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4424,
-        name: "Galleon Enemy Photo: Inside Tiny's sub, near Bonus Barrel left",
-        region: "Shipyard Outskirts",
-        canGetLogic: hasFairyCam && canReachSub
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4425,
-        name: "Galleon Enemy Photo: Inside Tiny's sub, near Bonus Barrel right",
-        region: "Shipyard Outskirts",
-        canGetLogic: hasFairyCam && canReachSub
-      }
     )
   ] });
 };
 const EnemyLocations$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(CavernsEnemies, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(LighthouseEnemies, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(UnderwaterEnemies, {})
+  /* @__PURE__ */ jsxRuntimeExports.jsx(LighthouseEnemies, {})
 ] });
 const ChestFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
     id: 4080,
     name: "Fairy in Chunky's Left Chest",
-    region: "Galleon Caverns",
+    region: "Galleon Caves",
     canGetLogic: useChestFairy()
   }
 ) }) });
@@ -21933,7 +20269,7 @@ const CannonGame = () => {
     {
       id: 4041,
       name: "Chunky's Cannon Game",
-      region: "Galleon Caverns",
+      region: "Galleon Caves",
       canGetLogic: cannonGb.in,
       canGetBreak: cannonGb.out
     }
@@ -21944,7 +20280,7 @@ const GalleonChest = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   {
     id: 4040,
     name: "Chunky's Right Chest",
-    region: "Galleon Caverns",
+    region: "Galleon Caves",
     canGetLogic: useChunkyChestGb()
   }
 );
@@ -22262,8 +20598,8 @@ const LankyKasplat$3 = () => {
     GalleonCheck,
     {
       id: 4052,
-      name: "Galleon Kasplat: Cannon Game Room",
-      region: "Galleon Caverns",
+      name: "Kasplat in the Cannon Game Room",
+      region: "Galleon Caves",
       canGetLogic: cannon.in,
       canGetBreak: cannon.out
     }
@@ -22275,8 +20611,8 @@ const TinyKasplat$3 = () => {
     GalleonCheck,
     {
       id: 4053,
-      name: "Galleon Kasplat: Past Vines",
-      region: "Galleon Caverns",
+      name: "Kasplat Past the Vines",
+      region: "Galleon Caves",
       canGetLogic: galleonTop.in,
       canGetBreak: galleonTop.out
     }
@@ -22390,7 +20726,7 @@ const ChunkyMedal$3 = () => {
       {
         id: 4104,
         name: "Chunky's Medal",
-        region: "Galleon Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -22400,7 +20736,7 @@ const ChunkyMedal$3 = () => {
       {
         id: 4204,
         name: "Chunky's Half-Medal",
-        region: "Galleon Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -22498,8 +20834,8 @@ const DiddyMedal$3 = () => {
       GalleonCheck,
       {
         id: 4101,
-        name: "Galleon Diddy Medal",
-        region: "Galleon Medal Rewards",
+        name: "Diddy's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -22508,8 +20844,8 @@ const DiddyMedal$3 = () => {
       GalleonCheck,
       {
         id: 4201,
-        name: "Galleon Diddy Half-Medal",
-        region: "Galleon Medal Rewards",
+        name: "Diddy's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -22616,8 +20952,8 @@ const DkMedal$3 = () => {
       GalleonCheck,
       {
         id: 4100,
-        name: "Galleon DK Medal",
-        region: "Galleon Medal Rewards",
+        name: "DK's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -22626,8 +20962,8 @@ const DkMedal$3 = () => {
       GalleonCheck,
       {
         id: 4200,
-        name: "Galleon DK Half-Medal",
-        region: "Galleon Medal Rewards",
+        name: "DK's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -22726,8 +21062,8 @@ const LankyMedal$3 = () => {
       GalleonCheck,
       {
         id: 4102,
-        name: "Galleon Lanky Medal",
-        region: "Galleon Medal Rewards",
+        name: "Lanky's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -22736,8 +21072,8 @@ const LankyMedal$3 = () => {
       GalleonCheck,
       {
         id: 4202,
-        name: "Galleon Lanky Half-Medal",
-        region: "Galleon Medal Rewards",
+        name: "Lanky's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -22849,8 +21185,8 @@ const TinyMedal$3 = () => {
       GalleonCheck,
       {
         id: 4103,
-        name: "Galleon Tiny Medal",
-        region: "Galleon Medal Rewards",
+        name: "Tiny's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -22859,43 +21195,43 @@ const TinyMedal$3 = () => {
       GalleonCheck,
       {
         id: 4203,
-        name: "Galleon Tiny Half-Medal",
-        region: "Galleon Medal Rewards",
+        name: "Tiny's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
     )
   ] });
 };
-const Shuffled$n = () => {
+const Shuffled$i = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4190, name: "Galleon Arena", canGetLogic: useGeneralThing$6() }) });
 };
-const ShuffledArenas$3 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {});
-const Shuffled$m = () => {
+const ShuffledArenas$2 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$i, {});
+const Shuffled$h = () => {
   const thing = useGeneralThing$6();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4260, name: "Galleon Crate Location #1 (maybe)", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4261, name: "Galleon Crate Location #2 (maybe)", canGetLogic: thing })
   ] });
 };
-const ShuffledCrates$3 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$m, {}) : null;
-const Shuffled$l = () => {
+const ShuffledCrates$2 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$h, {}) : null;
+const Shuffled$g = () => {
   const thing = useGeneralDirt$6();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4270, name: "Galleon Dirt Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4271, name: "Galleon Dirt Location #2", canGetLogic: thing })
   ] });
 };
-const ShuffledDirtLocations$3 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
-const Shuffled$k = () => {
-  const thing = useGeneralFairy$5();
+const ShuffledDirtLocations$2 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$g, {}) : null;
+const Shuffled$f = () => {
+  const thing = useGeneralFairy$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4280, name: "Galleon Fairy Location #1", canGetLogic: thing }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4281, name: "Galleon Fairy Location #2", canGetLogic: thing })
   ] });
 };
-const ShuffledFairies$3 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$k, {}) : null;
-const Shuffled$j = () => {
+const ShuffledFairies$2 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$f, {}) : null;
+const Shuffled$e = () => {
   const thing = useGeneralThing$6();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4250, name: "Galleon Kasplat Location #1", canGetLogic: thing }),
@@ -22905,7 +21241,7 @@ const Shuffled$j = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonCheck, { id: 4254, name: "Galleon Kasplat Location #5", canGetLogic: thing })
   ] });
 };
-const ShuffledKasplats$3 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$j, {}) : null;
+const ShuffledKasplats$2 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$e, {}) : null;
 const Vanilla$4 = () => {
   const inStage = usePlayGalleon();
   const outskirts = useGalleonOutskirts();
@@ -22922,7 +21258,7 @@ const Vanilla$4 = () => {
         baseId: 4110,
         baseName: "Galleon Cranky",
         level: "Gloomy Galleon",
-        region: "Galleon Shops",
+        region: "Shops",
         inLogic: hasCranky && inStage
       }
     ),
@@ -22932,7 +21268,7 @@ const Vanilla$4 = () => {
         baseId: 4120,
         baseName: "Galleon Funky",
         level: "Gloomy Galleon",
-        region: "Galleon Shops",
+        region: "Shops",
         inLogic: hasFunky && outskirts
       }
     ),
@@ -22942,7 +21278,7 @@ const Vanilla$4 = () => {
         baseId: 4130,
         baseName: "Galleon Candy",
         level: "Gloomy Galleon",
-        region: "Galleon Shops",
+        region: "Shops",
         inLogic: hasCandy && outskirts
       }
     ),
@@ -22952,14 +21288,14 @@ const Vanilla$4 = () => {
         baseId: 4140,
         baseName: "Turn in Galleon Blueprint for",
         level: "Gloomy Galleon",
-        region: "Galleon Shops",
+        region: "Shops",
         inLogic: hasSnide && lighthouseArea && highTide,
         outLogic: hasSnide && lighthouseArea
       }
     )
   ] });
 };
-const Shuffled$i = () => {
+const Shuffled$d = () => {
   const inStage = usePlayGalleon();
   const outskirts = useGalleonOutskirts();
   const lighthouseArea = useGalleonLighthouseArea();
@@ -22975,7 +21311,7 @@ const Shuffled$i = () => {
         baseId: 4140,
         baseName: "Galleon Cranky Location",
         level: "Gloomy Galleon",
-        region: "Galleon Shops",
+        region: "Shops",
         inLogic: hasCranky && inStage
       }
     ),
@@ -22985,7 +21321,7 @@ const Shuffled$i = () => {
         baseId: 4150,
         baseName: "Galleon Funky Location",
         level: "Gloomy Galleon",
-        region: "Galleon Shops",
+        region: "Shops",
         inLogic: hasFunky && outskirts
       }
     ),
@@ -22995,7 +21331,7 @@ const Shuffled$i = () => {
         baseId: 4160,
         baseName: "Galleon Candy Location",
         level: "Gloomy Galleon",
-        region: "Galleon Shops",
+        region: "Shops",
         inLogic: hasCandy && outskirts
       }
     ),
@@ -23005,7 +21341,7 @@ const Shuffled$i = () => {
         baseId: 4170,
         baseName: "Galleon Snide Location",
         level: "Gloomy Galleon",
-        region: "Galleon Shops",
+        region: "Shops",
         inLogic: hasSnide && lighthouseArea && highTide,
         outLogic: hasSnide && lighthouseArea
       }
@@ -23013,7 +21349,7 @@ const Shuffled$i = () => {
   ] });
 };
 const ShopLocations$3 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$i, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$4, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$d, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$4, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const CavernsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -23072,11 +21408,11 @@ const GalleonRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(OutskirtsChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(TreasureChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FiveShipChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$3, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$3, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations$3, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$3, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$4, {})
 ] }) });
@@ -23401,11 +21737,6 @@ const useRaftersFairy = () => {
     out: rafters.out && camera
   };
 };
-const useGeneralFairy$1 = () => {
-  const thing = useGeneralThing$2();
-  const camera = useCamera();
-  return thing && camera;
-};
 const useBarnKasplat = () => {
   const inStage = usePlayForest();
   const night = useForestNight();
@@ -23467,8 +21798,8 @@ const MushroomArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { c
   ForestCheck,
   {
     id: 5090,
-    name: "Forest Arena (Mushroom High Platform)",
-    region: "Giant Mushroom Exterior",
+    name: "Battle Arena at Mushroom Top",
+    region: "Forest Area 3",
     canGetLogic: useArena$1()
   }
 ) }) });
@@ -23480,7 +21811,7 @@ const BossCheck$3 = () => {
     {
       id: 5105,
       name: "Forest Boss",
-      region: "Troff 'N' Scoff",
+      region: "Bosses",
       canGetLogic: inStage && anyKong
     }
   ) });
@@ -23492,7 +21823,7 @@ const BarnInsideCrate = () => {
     {
       id: 5063,
       name: "Thornvine Barn Melon Crate",
-      region: "Forest Mills",
+      region: "Forest Area 1",
       canGetLogic: barn.in,
       canGetBreak: barn.out
     }
@@ -23506,7 +21837,7 @@ const BarnOutsideCrate = () => {
     {
       id: 5062,
       name: "Melon Crate Outside Thornvine Barn",
-      region: "Forest Mills",
+      region: "Forest Area 1",
       canGetLogic: dusk || night.in,
       canGetBreak: night.out
     }
@@ -23516,8 +21847,8 @@ const OwlCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { childr
   ForestCheck,
   {
     id: 5061,
-    name: "Forest Crate: Near Owl Tree",
-    region: "Owl Tree",
+    name: "Melon Crate in grass near big tree",
+    region: "Forest Area 4",
     canGetLogic: useForestOwl()
   }
 ) }) });
@@ -23525,8 +21856,8 @@ const RaftersCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { ch
   ForestCheck,
   {
     id: 5060,
-    name: "Forest Crate: Behind Dark Attic",
-    region: "Forest Mills",
+    name: "Melon Crate behind Diddy's dark rafter barn",
+    region: "Forest Area 1",
     canGetLogic: useGeneralThing$2()
   }
 ) }) });
@@ -23541,7 +21872,7 @@ const BeanstalkDirt = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPoo
   {
     id: 5070,
     name: "Dirt in front of The Bean's patch",
-    region: "Forest Center And Beanstalk",
+    region: "Forest Area 2",
     canGetLogic: useBeanDirt()
   }
 ) }) });
@@ -23550,7 +21881,7 @@ const MillsGrassDirt = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPo
   {
     id: 5071,
     name: "The infamous Mills Grass dirt patch!",
-    region: "Forest Mills",
+    region: "Forest Area 1",
     canGetLogic: useGeneralDirt$2()
   }
 ) }) });
@@ -23561,18 +21892,14 @@ const DirtLocations = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExp
 const CenterEnemies = () => {
   const inStage = usePlayForest();
   const zinger = useDefeatZinger();
-  const klump = useDefeatKlump();
-  const beanstalk = useForestBean();
   const beanHalf = useForestBeanHalf();
-  const hasHunky = useHunky();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5323,
+        id: 5300,
         name: "Enemy in Front of Tunnel to Mills",
-        region: "Forest Center And Beanstalk",
+        region: "Forest Central Area",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -23580,9 +21907,9 @@ const CenterEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5324,
+        id: 5301,
         name: "Enemy in Front of Tunnel to Giant Shroom",
-        region: "Forest Center And Beanstalk",
+        region: "Forest Central Area",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -23590,9 +21917,9 @@ const CenterEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5325,
+        id: 5302,
         name: "Enemy Near Well Entrance",
-        region: "Forest Center And Beanstalk",
+        region: "Forest Central Area",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -23600,155 +21927,11 @@ const CenterEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5312,
+        id: 5303,
         name: "Enemy in Tunnel to Bean Zone",
-        region: "Forest Center And Beanstalk",
+        region: "Forest Central Area",
         canGetLogic: beanHalf && zinger.in,
         canGetBreak: beanHalf && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5310,
-        name: "Enemy 0 at Beanstalk",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanstalk && klump
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5311,
-        name: "Enemy 1 at Beanstalk",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanstalk && klump
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5326,
-        name: "Giant Tomato 0",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanstalk && hasHunky
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5327,
-        name: "Giant Tomato 1",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanstalk && hasHunky
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5328,
-        name: "Giant Tomato 2",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanstalk && hasHunky
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5329,
-        name: "Giant Tomato 3",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanstalk && hasHunky
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5423,
-        name: "Photo of Enemy in Front of Tunnel to Mills",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5424,
-        name: "Photo of Enemy in Front of Tunnel to Giant Shroom",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5425,
-        name: "Photo of Enemy Near Well Entrance",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5412,
-        name: "Photo of Enemy in Tunnel to Bean Zone",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanHalf && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5410,
-        name: "Photo of Enemy 0 at Beanstalk",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanstalk && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5411,
-        name: "Photo of Enemy ! at Beanstalk",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanstalk && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5426,
-        name: "Photo of Giant Tomato 0",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanstalk && hasHunky && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5427,
-        name: "Photo of Giant Tomato 1",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanstalk && hasHunky && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5428,
-        name: "Photo of Giant Tomato 2",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanstalk && hasHunky && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5429,
-        name: "Photo of Giant Tomato 3",
-        region: "Forest Center And Beanstalk",
-        canGetLogic: beanstalk && hasHunky && hasFairyCam
       }
     )
   ] });
@@ -23768,23 +21951,22 @@ const MillsEnemies = () => {
   const day = useForestDay();
   const punch = usePunch();
   const hasMiniMonkey = useMini();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5330,
-        name: "Forest Enemy: Near Snide",
-        region: "Forest Mills",
+        id: 5304,
+        name: "Enemy Near Snide's",
+        region: "Forest Area 1",
         canGetLogic: inStage && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5331,
-        name: "Forest Enemy: Near the Infamous Dirt Patch",
-        region: "Forest Mills",
+        id: 5305,
+        name: "Enemy Near the Infamous Dirt Patch",
+        region: "Forest Area 1",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -23792,18 +21974,18 @@ const MillsEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5333,
-        name: "Forest Enemy: Near Dark Attic",
-        region: "Forest Mills",
+        id: 5306,
+        name: "Enemy Near the Dark Attic",
+        region: "Forest Area 1",
         canGetLogic: inStage && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5334,
-        name: "Forest Enemy: Near Well Exit",
-        region: "Forest Mills",
+        id: 5307,
+        name: "Enemy Near the Well Exit",
+        region: "Forest Area 1",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -23811,18 +21993,18 @@ const MillsEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5335,
-        name: "Forest Enemy: Near Blue Tunnel",
-        region: "Forest Mills",
+        id: 5308,
+        name: "Enemy Near the Blue Tunnel",
+        region: "Forest Area 1",
         canGetLogic: inStage && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5346,
-        name: "Forest Enemy: Mill Inside Front",
-        region: "Forest Mills",
+        id: 5309,
+        name: "Enemy in the Front Mill",
+        region: "Forest Area 1",
         canGetLogic: day.in && zinger.in,
         canGetBreak: logicBreak(day) && zinger.out
       }
@@ -23830,9 +22012,9 @@ const MillsEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5347,
-        name: "Forest Enemy: Mill Inside Rear",
-        region: "Forest Mills",
+        id: 5310,
+        name: "Enemy in the Back Mill",
+        region: "Forest Area 1",
         canGetLogic: day.in && (punch || hasMiniMonkey) && zinger.in,
         canGetBreak: logicBreak(day) && (punch || hasMiniMonkey) && zinger.out
       }
@@ -23840,9 +22022,9 @@ const MillsEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5344,
-        name: "Forest Enemy: Winch Inside",
-        region: "Forest Mills",
+        id: 5311,
+        name: "Enemy in the Winch Room",
+        region: "Forest Area 1",
         canGetLogic: inStage && diddy && canSlam && bat.in,
         canGetBreak: inStage && diddy && canSlam && bat.out
       }
@@ -23850,27 +22032,36 @@ const MillsEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5336,
-        name: "Forest Enemy: Thornvine 0",
-        region: "Forest Mills",
+        id: 5312,
+        name: "Enemy at Thornvine Barn Area Entrance",
+        region: "Forest Area 1",
         canGetLogic: inStage && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5337,
-        name: "Forest Enemy: Thornvine 1",
-        region: "Forest Mills",
+        id: 5313,
+        name: "Thornvine Outside Enemy 0",
+        region: "Forest Area 1",
         canGetLogic: inStage && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5338,
-        name: "Forest Enemy: Thornvine 2",
-        region: "Forest Mills",
+        id: 5314,
+        name: "Thornvine Outside Enemy 1",
+        region: "Forest Area 1",
+        canGetLogic: inStage && klump
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5315,
+        name: "Thornvine Outside Enemy 2",
+        region: "Forest Area 1",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -23878,140 +22069,72 @@ const MillsEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5339,
-        name: "Forest Enemy: Thornvine Entrance",
-        region: "Forest Mills",
-        canGetLogic: inStage && klump
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5345,
-        name: "Forest Enemy: Thornvine Barn Inside",
-        region: "Forest Mills",
+        id: 5316,
+        name: "Enemy Inside Thornvine Barn",
+        region: "Forest Area 1",
         canGetLogic: night.in && strong && canSlam && kosha.in,
         canGetBreak: logicBreak(night) && dk2 && canSlam && kosha.out
       }
-    ),
+    )
+  ] });
+};
+const BeanstalkEnemies = () => {
+  const klump = useDefeatKlump();
+  const beanstalk = useForestBean();
+  const hasHunky = useHunky();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5430,
-        name: "Forest Enemy Photo: Near Snide",
-        region: "Forest Mills",
-        canGetLogic: inStage && anyKong && hasFairyCam
+        id: 5317,
+        name: "Enemy 0 at Beanstalk",
+        region: "Forest Area 2",
+        canGetLogic: beanstalk && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5431,
-        name: "Forest Enemy Photo: Near the Infamous Dirt Patch",
-        region: "Forest Mills",
-        canGetLogic: inStage && hasFairyCam
+        id: 5318,
+        name: "Enemy 1 at Beanstalk",
+        region: "Forest Area 2",
+        canGetLogic: beanstalk && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5433,
-        name: "Forest Enemy Photo: Near Dark Attic",
-        region: "Forest Mills",
-        canGetLogic: inStage && klump && hasFairyCam
+        id: 5319,
+        name: "Giant Tomato 0",
+        region: "Forest Area 2",
+        canGetLogic: beanstalk && hasHunky
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5434,
-        name: "Forest Enemy Photo: Near Well Exit",
-        region: "Forest Mills",
-        canGetLogic: inStage && hasFairyCam
+        id: 5320,
+        name: "Giant Tomato 1",
+        region: "Forest Area 2",
+        canGetLogic: beanstalk && hasHunky
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5435,
-        name: "Forest Enemy Photo: Near Blue Tunnel",
-        region: "Forest Mills",
-        canGetLogic: inStage && klump && hasFairyCam
+        id: 5321,
+        name: "Giant Tomato 2",
+        region: "Forest Area 2",
+        canGetLogic: beanstalk && hasHunky
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5446,
-        name: "Forest Enemy Photo: Mill Inside Front",
-        region: "Forest Mills",
-        canGetLogic: day.in && hasFairyCam,
-        canGetBreak: logicBreak(day) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5447,
-        name: "Forest Enemy Photo: Mill Inside Rear",
-        region: "Forest Mills",
-        canGetLogic: day.in && (punch || hasMiniMonkey) && hasFairyCam,
-        canGetBreak: logicBreak(day) && (punch || hasMiniMonkey) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5444,
-        name: "Forest Enemy Photo: Winch Inside",
-        region: "Forest Mills",
-        canGetLogic: inStage && diddy && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5436,
-        name: "Forest Enemy Photo: Thornvine 0",
-        region: "Forest Mills",
-        canGetLogic: inStage && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5437,
-        name: "Forest Enemy Photo: Thornvine 1",
-        region: "Forest Mills",
-        canGetLogic: inStage && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5438,
-        name: "Forest Enemy Photo: Thornvine 2",
-        region: "Forest Mills",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5439,
-        name: "Forest Enemy Photo: Thornvine Entrance",
-        region: "Forest Mills",
-        canGetLogic: inStage && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5445,
-        name: "Forest Enemy Photo: Thornvine Barn Inside",
-        region: "Forest Mills",
-        canGetLogic: night.in && strong && canSlam && kosha.in && hasFairyCam,
-        canGetBreak: logicBreak(night) && dk2 && canSlam && kosha.out && hasFairyCam
+        id: 5322,
+        name: "Giant Tomato 3",
+        region: "Forest Area 2",
+        canGetLogic: beanstalk && hasHunky
       }
     )
   ] });
@@ -24022,50 +22145,49 @@ const MushExteriorEnemies = () => {
   const klump = useDefeatKlump();
   const zinger = useDefeatZinger();
   const anyKong = useAnyKong();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
+        id: 5323,
+        name: "Enemy 0 in the Yellow Tunnel",
+        region: "Forest Area 3",
+        canGetLogic: inStage && anyKong
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5324,
+        name: "Enemy at Low Warp 5",
+        region: "Forest Area 3",
+        canGetLogic: inStage && anyKong
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5325,
+        name: "Enemy Between Bounce Tag and Cranky's",
+        region: "Forest Area 3",
+        canGetLogic: inStage && anyKong
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
         id: 5326,
-        name: "Forest Enemy: Yellow Tunnel 0",
-        region: "Giant Mushroom Exterior",
+        name: "Enemy at Giant Shroom's Rocketbarrel",
+        region: "Forest Area 3",
         canGetLogic: inStage && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5313,
-        name: "Forest Enemy: Near Low Warp 5",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5314,
-        name: "Forest Enemy: Near Pink Tunnel Bounce Tag Barrel",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5315,
-        name: "Forest Enemy: Near Mushroom Rocket Barrel",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5316,
-        name: "Forest Enemy: b/t Rocket & Yellow Tunnel",
-        region: "Giant Mushroom Exterior",
+        id: 5327,
+        name: "Enemy between Rocketbarrel and Yellow Tunnel",
+        region: "Forest Area 3",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -24073,9 +22195,39 @@ const MushExteriorEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5317,
-        name: "Forest Enemy: Near Cranky",
-        region: "Giant Mushroom Exterior",
+        id: 5328,
+        name: "Enemy Near Cranky's",
+        region: "Forest Area 3",
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5329,
+        name: "Enemy at Pink Tunnel Bouncy Tag Barrel",
+        region: "Forest Area 3",
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5330,
+        name: "Enemy at Rear Tag",
+        region: "Forest Area 3",
+        canGetLogic: inStage && zinger.in,
+        canGetBreak: inStage && zinger.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5331,
+        name: "Enemy Near DK Pad",
+        region: "Forest Area 3",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -24084,8 +22236,8 @@ const MushExteriorEnemies = () => {
       ForestCheck,
       {
         id: 5332,
-        name: "Forest Enemy: Near Pink Tunnel",
-        region: "Giant Mushroom Exterior",
+        name: "Enemy Near Face Puzzle Entrance",
+        region: "Forest Area 3",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -24093,9 +22245,9 @@ const MushExteriorEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5318,
-        name: "Forest Enemy: Rear Tag",
-        region: "Giant Mushroom Exterior",
+        id: 5333,
+        name: "Enemy Near Battle Arena",
+        region: "Forest Area 3",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -24103,9 +22255,9 @@ const MushExteriorEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5418,
-        name: "Forest Enemy: Near DK Pad",
-        region: "Giant Mushroom Exterior",
+        id: 5334,
+        name: "Enemy Near High Warp 5",
+        region: "Forest Area 3",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -24113,159 +22265,11 @@ const MushExteriorEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5319,
-        name: "Forest Enemy: Near Face Puzzle",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5320,
-        name: "Forest Enemy: Near Crown",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5321,
-        name: "Forest Enemy: Near High Warp 5",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5322,
-        name: "Forest Enemy: Top Of Mushroom",
-        region: "Giant Mushroom Exterior",
+        id: 5335,
+        name: "Enemy at Top Of Mushroom",
+        region: "Forest Area 3",
         canGetLogic: inStage && roof.in && klump,
         canGetBreak: inStage && roof.out && klump
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5426,
-        name: "Forest Enemy Photo: Yellow Tunnel 0",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5413,
-        name: "Forest Enemy Photo: Near Low Warp 5",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5414,
-        name: "Forest Enemy Photo: Near Pink Tunnel Bounce Tag Barrel",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5415,
-        name: "Forest Enemy Photo: Near Mushroom Rocket Barrel",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5416,
-        name: "Forest Enemy Photo: b/t Rocket & Yellow Tunnel",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5417,
-        name: "Forest Enemy Photo: Near Cranky",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5432,
-        name: "Forest Enemy Photo: Near Pink Tunnel",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5518,
-        name: "Forest Enemy Photo: Rear Tag",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5519,
-        name: "Forest Enemy Photo: Near DK Pad",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5419,
-        name: "Forest Enemy Photo: Near Face Puzzle",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5420,
-        name: "Forest Enemy Photo: Near Crown",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5421,
-        name: "Forest Enemy Photo: Near High Warp 5",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5422,
-        name: "Forest Enemy Photo: Top Of Mushroom",
-        region: "Giant Mushroom Exterior",
-        canGetLogic: inStage && roof.in && klump && hasFairyCam,
-        canGetBreak: inStage && roof.out && klump && hasFairyCam
       }
     )
   ] });
@@ -24278,23 +22282,22 @@ const MushInteriorEnemies = () => {
   const chunky = useChunky();
   const roof = useForestMushroomRoof();
   const canSlam = useSlamForest();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5348,
-        name: "Forest Enemy: Mushroom Night Door",
-        region: "Giant Mushroom Insides",
+        id: 5336,
+        name: "Enemy Near the Mushroom Night Door",
+        region: "Inside the Giant Mushroom",
         canGetLogic: inStage && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5349,
-        name: "Forest Enemy: Mushroom Path 0",
-        region: "Giant Mushroom Insides",
+        id: 5337,
+        name: "Enemy Near Kasplat 0",
+        region: "Inside the Giant Mushroom",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -24302,9 +22305,9 @@ const MushInteriorEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5350,
-        name: "Forest Enemy: Mushroom Path 1",
-        region: "Giant Mushroom Insides",
+        id: 5338,
+        name: "Enemy Near Kasplat 1",
+        region: "Inside the Giant Mushroom",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -24312,9 +22315,9 @@ const MushInteriorEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5354,
-        name: "Forest Enemy: Mushroom Leap 0",
-        region: "Giant Mushroom Insides",
+        id: 5339,
+        name: "Enemy 0 in Lanky's Mushroom Bounce Room",
+        region: "Inside the Giant Mushroom",
         canGetLogic: roof.in && lanky && canSlam && zinger.in,
         canGetBreak: logicBreak(roof) && lanky && canSlam && zinger.out
       }
@@ -24322,9 +22325,9 @@ const MushInteriorEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5355,
-        name: "Forest Enemy: Mushroom Leap 1",
-        region: "Giant Mushroom Insides",
+        id: 5340,
+        name: "Enemy 1 in Lanky's Mushroom Bounce Room",
+        region: "Inside the Giant Mushroom",
         canGetLogic: roof.in && lanky && canSlam && zinger.in,
         canGetBreak: logicBreak(roof) && lanky && canSlam && zinger.out
       }
@@ -24332,67 +22335,11 @@ const MushInteriorEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5356,
-        name: "Forest Enemy: Face Puzzle",
-        region: "Giant Mushroom Insides",
+        id: 5341,
+        name: "Enemy in Chunky's Face Puzzle Room",
+        region: "Inside the Giant Mushroom",
         canGetLogic: inStage && chunky && canSlam && zinger.in,
         canGetBreak: inStage && chunky && canSlam && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5448,
-        name: "Forest Enemy Photo: Mushroom Night Door",
-        region: "Giant Mushroom Insides",
-        canGetLogic: inStage && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5449,
-        name: "Forest Enemy Photo: Mushroom Path 0",
-        region: "Giant Mushroom Insides",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5450,
-        name: "Forest Enemy Photo: Mushroom Path 1",
-        region: "Giant Mushroom Insides",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5454,
-        name: "Forest Enemy Photo: Mushroom Leap 0",
-        region: "Giant Mushroom Insides",
-        canGetLogic: roof.in && lanky && canSlam && hasFairyCam,
-        canGetBreak: logicBreak(roof) && lanky && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5455,
-        name: "Forest Enemy Photo: Mushroom Leap 1",
-        region: "Giant Mushroom Insides",
-        canGetLogic: roof.in && lanky && canSlam && hasFairyCam,
-        canGetBreak: logicBreak(roof) && lanky && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5456,
-        name: "Forest Enemy Photo: Face Puzzle",
-        region: "Giant Mushroom Insides",
-        canGetLogic: inStage && chunky && canSlam && hasFairyCam
       }
     )
   ] });
@@ -24403,246 +22350,128 @@ const OwlEnemies = () => {
   const zinger = useDefeatZinger();
   const mini = useMini();
   const sax = useSax();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5327,
-        name: "Forest Enemy: Yellow Tunnel 1",
-        region: "Owl Tree",
-        canGetLogic: owlTree && zinger.in,
-        canGetBreak: owlTree && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5328,
-        name: "Forest Enemy: Yellow Tunnel 2",
-        region: "Owl Tree",
-        canGetLogic: owlTree && zinger.in,
-        canGetBreak: owlTree && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5329,
-        name: "Forest Enemy: Yellow Tunnel 3",
-        region: "Owl Tree",
-        canGetLogic: owlTree && klump
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5300,
-        name: "Forest Enemy: Hollow Tree 0",
-        region: "Owl Tree",
-        canGetLogic: owlTree && klump
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5301,
-        name: "Forest Enemy: Hollow Tree 1",
-        region: "Owl Tree",
-        canGetLogic: owlTree && klump
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5302,
-        name: "Forest Enemy: Hollow Tree Entrance",
-        region: "Owl Tree",
-        canGetLogic: owlTree && zinger.in,
-        canGetBreak: owlTree && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5303,
-        name: "Forest Enemy: Tree Melon Crate 0",
-        region: "Owl Tree",
-        canGetLogic: owlTree && zinger.in,
-        canGetBreak: owlTree && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5304,
-        name: "Forest Enemy: Tree Melon Crate 1",
-        region: "Owl Tree",
-        canGetLogic: owlTree && zinger.in,
-        canGetBreak: owlTree && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5305,
-        name: "Forest Enemy: Tree Melon Crate 2",
-        region: "Owl Tree",
-        canGetLogic: owlTree && zinger.in,
-        canGetBreak: owlTree && zinger.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5340,
-        name: "Forest Enemy: Anthill Gauntlet 0",
-        region: "Owl Tree",
-        canGetLogic: owlTree && mini && sax
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5341,
-        name: "Forest Enemy: Anthill Gauntlet 1",
-        region: "Owl Tree",
-        canGetLogic: owlTree && mini && sax
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
         id: 5342,
-        name: "Forest Enemy: Anthill Gauntlet 2",
-        region: "Owl Tree",
-        canGetLogic: owlTree && mini && sax
+        name: "Enemy 1 in the Yellow Tunnel",
+        region: "Forest Area 4",
+        canGetLogic: owlTree && zinger.in,
+        canGetBreak: owlTree && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
         id: 5343,
-        name: "Forest Enemy: Anthill Gauntlet 3",
-        region: "Owl Tree",
+        name: "Enemy 2 in the Yellow Tunnel",
+        region: "Forest Area 4",
+        canGetLogic: owlTree && zinger.in,
+        canGetBreak: owlTree && zinger.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5344,
+        name: "Enemy 3 in the Yellow Tunnel",
+        region: "Forest Area 4",
+        canGetLogic: owlTree && klump
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5345,
+        name: "Enemy 0 surrounding the big tree",
+        region: "Forest Area 4",
+        canGetLogic: owlTree && klump
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5346,
+        name: "Enemy 1 surrounding the big tree",
+        region: "Forest Area 4",
+        canGetLogic: owlTree && klump
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5347,
+        name: "Enemy at exit of yellow tunnel",
+        region: "Forest Area 4",
+        canGetLogic: owlTree && zinger.in,
+        canGetBreak: owlTree && zinger.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5348,
+        name: "Enemy 0 at Melon Crate",
+        region: "Forest Area 4",
+        canGetLogic: owlTree && zinger.in,
+        canGetBreak: owlTree && zinger.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5349,
+        name: "Enemy 1 at Melon Crate",
+        region: "Forest Area 4",
+        canGetLogic: owlTree && zinger.in,
+        canGetBreak: owlTree && zinger.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5350,
+        name: "Enemy 2 at Melon Crate",
+        region: "Forest Area 4",
+        canGetLogic: owlTree && zinger.in,
+        canGetBreak: owlTree && zinger.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5351,
+        name: "Enemy 0 in the tree stump's gauntlet",
+        region: "Forest Area 4",
         canGetLogic: owlTree && mini && sax
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5427,
-        name: "Forest Enemy Photo: Yellow Tunnel 1",
-        region: "Owl Tree",
-        canGetLogic: owlTree && hasFairyCam
+        id: 5352,
+        name: "Enemy 1 in the tree stump's gauntlet",
+        region: "Forest Area 4",
+        canGetLogic: owlTree && mini && sax
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5428,
-        name: "Forest Enemy Photo: Yellow Tunnel 2",
-        region: "Owl Tree",
-        canGetLogic: owlTree && hasFairyCam
+        id: 5353,
+        name: "Enemy 2 in the tree stump's gauntlet",
+        region: "Forest Area 4",
+        canGetLogic: owlTree && mini && sax
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 5429,
-        name: "Forest Enemy Photo: Yellow Tunnel 3",
-        region: "Owl Tree",
-        canGetLogic: owlTree && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5400,
-        name: "Forest Enemy Photo: Hollow Tree 0",
-        region: "Owl Tree",
-        canGetLogic: owlTree && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5401,
-        name: "Forest Enemy Photo: Hollow Tree 1",
-        region: "Owl Tree",
-        canGetLogic: owlTree && klump && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5402,
-        name: "Forest Enemy Photo: Hollow Tree Entrance",
-        region: "Owl Tree",
-        canGetLogic: owlTree && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5403,
-        name: "Forest Enemy Photo: Tree Melon Crate 0",
-        region: "Owl Tree",
-        canGetLogic: owlTree && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5404,
-        name: "Forest Enemy Photo: Tree Melon Crate 1",
-        region: "Owl Tree",
-        canGetLogic: owlTree && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5405,
-        name: "Forest Enemy Photo: Tree Melon Crate 2",
-        region: "Owl Tree",
-        canGetLogic: owlTree && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5440,
-        name: "Forest Enemy Photo: Anthill Gauntlet 0",
-        region: "Owl Tree",
-        canGetLogic: owlTree && mini && sax && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5441,
-        name: "Forest Enemy Photo: Anthill Gauntlet 1",
-        region: "Owl Tree",
-        canGetLogic: owlTree && mini && sax && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5442,
-        name: "Forest Enemy Photo: Anthill Gauntlet 2",
-        region: "Owl Tree",
-        canGetLogic: owlTree && mini && sax && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5443,
-        name: "Forest Enemy Photo: Anthill Gauntlet 3",
-        region: "Owl Tree",
-        canGetLogic: owlTree && mini && sax && hasFairyCam
+        id: 5354,
+        name: "Enemy 3 in the tree stump's gauntlet",
+        region: "Forest Area 4",
+        canGetLogic: owlTree && mini && sax
       }
     )
   ] });
@@ -24650,10 +22479,11 @@ const OwlEnemies = () => {
 const EnemyLocations$3 = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(CenterEnemies, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(MillsEnemies, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(BeanstalkEnemies, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(MushExteriorEnemies, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(MushInteriorEnemies, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(OwlEnemies, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(MillsEnemies, {})
+    /* @__PURE__ */ jsxRuntimeExports.jsx(OwlEnemies, {})
   ] });
 };
 const BarnFairy = () => {
@@ -24663,7 +22493,7 @@ const BarnFairy = () => {
     {
       id: 5081,
       name: "Thornvine Barn Fairy",
-      region: "Forest Mills",
+      region: "Forest Area 1",
       canGetLogic: barn.in,
       canGetBreak: barn.out
     }
@@ -24675,8 +22505,8 @@ const RaftersFairy = () => {
     ForestCheck,
     {
       id: 5080,
-      name: "Forest Fairy (Dark Rafters)",
-      region: "Forest Mills",
+      name: "Fairy in the Dark Rafters",
+      region: "Forest Area 1",
       canGetLogic: rafters.in,
       canGetBreak: rafters.out
     }
@@ -24691,7 +22521,7 @@ const ChunkyApple = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   {
     id: 5043,
     name: "Chunky's Apple Rescue",
-    region: "Forest Center And Beanstalk",
+    region: "Forest Area 2",
     canGetLogic: useChunkyAppleGb()
   }
 );
@@ -24699,8 +22529,8 @@ const ChunkyFace = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5041,
-    name: "Forest Chunky Face Puzzle",
-    region: "Giant Mushroom Insides",
+    name: "Chunky's Face Puzzle",
+    region: "Inside the Giant Mushroom",
     canGetLogic: useChunkyFaceGb()
   }
 );
@@ -24710,8 +22540,8 @@ const ChunkyMill = () => {
     ForestCheck,
     {
       id: 5042,
-      name: "Forest Chunky Keg Crushing",
-      region: "Forest Mills",
+      name: "Chunky's Keg Crushing",
+      region: "Forest Area 1",
       canGetLogic: millGb.in,
       canGetBreak: millGb.out
     }
@@ -24721,8 +22551,8 @@ const ChunkyMinecart = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBa
   ForestCheck,
   {
     id: 5040,
-    name: "Forest Chunky Minecart",
-    region: "Forest Center And Beanstalk",
+    name: "Chunky's Well Minecart",
+    region: "Forest Central Area",
     canGetLogic: useChunkyMineGb()
   }
 ) });
@@ -24738,8 +22568,8 @@ const OwlRace = () => {
     ForestCheck,
     {
       id: 5011,
-      name: "Forest Diddy Owl Race",
-      region: "Owl Tree",
+      name: "Diddy's Owl Race",
+      region: "Forest Area 4",
       canGetLogic: owlGb.in,
       canGetBreak: owlGb.out
     }
@@ -24751,8 +22581,8 @@ const DarkRafters = () => {
     ForestCheck,
     {
       id: 5013,
-      name: "Forest Diddy Dark Rafters",
-      region: "Forest Mills",
+      name: "Diddy's Dark Rafters",
+      region: "Forest Area 1",
       canGetLogic: raftersGb.in,
       canGetBreak: raftersGb.out
     }
@@ -24764,8 +22594,8 @@ const MushroomTop = () => {
     ForestCheck,
     {
       id: 5010,
-      name: "Forest Diddy Top of Mushroom Barrel",
-      region: "Giant Mushroom Exterior",
+      name: "Bonus Barrel above the Mushroom",
+      region: "Forest Area 3",
       canGetLogic: topGb.in,
       canGetBreak: topGb.out
     }
@@ -24777,8 +22607,8 @@ const MillWinch = () => {
     ForestCheck,
     {
       id: 5012,
-      name: "Forest Diddy Winch Cage",
-      region: "Forest Mills",
+      name: "Diddy's Winch",
+      region: "Forest Area 1",
       canGetLogic: canCheck.in,
       canGetBreak: canCheck.out
     }
@@ -24797,7 +22627,7 @@ const DkBarn = () => {
     {
       id: 5004,
       name: "Thornvine Barn Barrel",
-      region: "Forest Mills",
+      region: "Forest Area 1",
       canGetLogic: barnGb.in,
       canGetBreak: barnGb.out
     }
@@ -24810,7 +22640,7 @@ const ForestBlast = () => (
     {
       id: 5001,
       name: "Baboon Blast Barrel",
-      region: "Giant Mushroom Exterior",
+      region: "Forest Area 3",
       canGetLogic: useDkBlastGb$1()
     }
   )
@@ -24821,8 +22651,8 @@ const DkMill = () => {
     ForestCheck,
     {
       id: 5003,
-      name: "Forest DK Mill Levers",
-      region: "Forest Mills",
+      name: "DK's Mill Levers",
+      region: "Forest Area 1",
       canGetLogic: millGb.in,
       canGetBreak: millGb.out
     }
@@ -24832,8 +22662,8 @@ const MushroomCannon = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5002,
-    name: "The Check of Legends (Forest DK Mushroom Cannons)",
-    region: "Giant Mushroom Insides",
+    name: "The Check of Legends (DK's Mushroom Cannons)",
+    region: "Inside the Giant Mushroom",
     canGetLogic: useDkMushGb()
   }
 );
@@ -24849,8 +22679,8 @@ const LankyMill = () => {
     ForestCheck,
     {
       id: 5020,
-      name: "Forest Lanky Attic Shooting",
-      region: "Forest Mills",
+      name: "Lanky's Attic Shooting",
+      region: "Forest Area 1",
       canGetLogic: millGb.in,
       canGetBreak: millGb.out
     }
@@ -24862,8 +22692,8 @@ const RabbitRace = () => {
     ForestCheck,
     {
       id: 5022,
-      name: "Forest Lanky Rabbit Race",
-      region: "Owl Tree",
+      name: "The Infamous Rabbit Race",
+      region: "Forest Area 4",
       canGetLogic: raceGb.in,
       canGetBreak: raceGb.out
     }
@@ -24875,8 +22705,8 @@ const MushroomSlam = () => {
     ForestCheck,
     {
       id: 5021,
-      name: "Forest Lanky Colored Mushroom Slam",
-      region: "Giant Mushroom Insides",
+      name: "Lanky's Colored Mushroom Slam",
+      region: "Inside the Giant Mushroom",
       canGetLogic: mushGb.in,
       canGetBreak: mushGb.out
     }
@@ -24888,8 +22718,8 @@ const ZingerBounce = () => {
     ForestCheck,
     {
       id: 5023,
-      name: "Forest Lanky Zinger Bounce",
-      region: "Giant Mushroom Insides",
+      name: "Lanky's Zinger Bounce",
+      region: "Inside the Giant Mushroom",
       canGetLogic: mushGb.in,
       canGetBreak: mushGb.out
     }
@@ -24906,7 +22736,7 @@ const AnthillBanana = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { ch
   {
     id: 5031,
     name: "Tree Stump Gauntlet",
-    region: "Owl Tree",
+    region: "Forest Area 4",
     canGetLogic: useTinyAntGb()
   }
 ) });
@@ -24915,7 +22745,7 @@ const AnthillBean = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { chil
   {
     id: 5034,
     name: "THE BEAN (Tree Stump Gauntlet's Second Reward)",
-    region: "Owl Tree",
+    region: "Forest Area 4",
     canGetLogic: useTinyAntGb()
   }
 ) }) });
@@ -24924,7 +22754,7 @@ const BeanCheck = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { childr
   {
     id: 5033,
     name: "Planting The Bean",
-    region: "Forest Center And Beanstalk",
+    region: "Forest Area 2",
     canGetLogic: useTinyBeanGb()
   }
 ) });
@@ -24932,8 +22762,8 @@ const MushroomBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5030,
-    name: "Forest Tiny Mushroom Barrel",
-    region: "Giant Mushroom Insides",
+    name: "Tiny's Mushroom Barrel",
+    region: "Inside the Giant Mushroom",
     canGetLogic: useTinyMushGb()
   }
 );
@@ -24943,8 +22773,8 @@ const SpiderBoss = () => {
     ForestCheck,
     {
       id: 5032,
-      name: "Forest Tiny Spider Boss",
-      region: "Forest Mills",
+      name: "Spider Boss",
+      region: "Forest Area 1",
       canGetLogic: spiderGb.in,
       canGetBreak: spiderGb.out
     }
@@ -24962,7 +22792,7 @@ const ChunkyKasplat$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool,
   {
     id: 5054,
     name: "Kasplat Beyond the Giant Mushroom's Night Door",
-    region: "Giant Mushroom Exterior",
+    region: "Forest Area 3",
     canGetLogic: useNightKasplat()
   }
 ) }) });
@@ -24970,8 +22800,8 @@ const DiddyKasplat$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, 
   ForestCheck,
   {
     id: 5051,
-    name: "Forest Kasplat: Inside Giant Mushroom",
-    region: "Giant Mushroom Insides",
+    name: "Kasplat in the Giant Mushroom",
+    region: "Inside the Giant Mushroom",
     canGetLogic: useMushInteriorKasplat()
   }
 ) }) });
@@ -24981,8 +22811,8 @@ const DkKasplat$2 = () => {
     ForestCheck,
     {
       id: 5050,
-      name: "Forest Kasplat: Behind DK's Barn",
-      region: "Forest Mills",
+      name: "Kasplat behind Thornvine",
+      region: "Forest Area 1",
       canGetLogic: barn.in,
       canGetBreak: barn.out
     }
@@ -24992,8 +22822,8 @@ const LankyKasplat$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, 
   ForestCheck,
   {
     id: 5052,
-    name: "Forest Kasplat: Under Owl Tree",
-    region: "Owl Tree",
+    name: "Kasplat in the big tree's tunnel",
+    region: "Forest Area 4",
     canGetLogic: useOwlKasplat()
   }
 ) }) });
@@ -25001,8 +22831,8 @@ const TinyKasplat$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, {
   ForestCheck,
   {
     id: 5053,
-    name: "Forest Kasplat: Low Mushroom Exterior",
-    region: "Giant Mushroom Exterior",
+    name: "Kasplat at the middle of the Mushroom",
+    region: "Forest Area 3",
     canGetLogic: useMushExteriorKasplat()
   }
 ) }) });
@@ -25101,7 +22931,7 @@ const ChunkyMedal$2 = () => {
       {
         id: 5104,
         name: "Chunky's Medal",
-        region: "Forest Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -25111,7 +22941,7 @@ const ChunkyMedal$2 = () => {
       {
         id: 5204,
         name: "Chunky's Half-Medal",
-        region: "Forest Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -25213,8 +23043,8 @@ const DiddyMedal$2 = () => {
       ForestCheck,
       {
         id: 5101,
-        name: "Forest Diddy Medal",
-        region: "Forest Medal Rewards",
+        name: "Diddy's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -25223,8 +23053,8 @@ const DiddyMedal$2 = () => {
       ForestCheck,
       {
         id: 5201,
-        name: "Forest Diddy Half-Medal",
-        region: "Forest Medal Rewards",
+        name: "Diddy's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -25335,8 +23165,8 @@ const DkMedal$2 = () => {
       ForestCheck,
       {
         id: 5100,
-        name: "Forest DK Medal",
-        region: "Forest Medal Rewards",
+        name: "DK's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -25345,8 +23175,8 @@ const DkMedal$2 = () => {
       ForestCheck,
       {
         id: 5200,
-        name: "Forest DK Half-Medal",
-        region: "Forest Medal Rewards",
+        name: "DK's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -25438,8 +23268,8 @@ const LankyMedal$2 = () => {
       ForestCheck,
       {
         id: 5102,
-        name: "Forest Lanky Medal",
-        region: "Forest Medal Rewards",
+        name: "Lanky's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -25448,8 +23278,8 @@ const LankyMedal$2 = () => {
       ForestCheck,
       {
         id: 5202,
-        name: "Forest Lanky Half-Medal",
-        region: "Forest Medal Rewards",
+        name: "Lanky's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -25570,8 +23400,8 @@ const TinyMedal$2 = () => {
       ForestCheck,
       {
         id: 5103,
-        name: "Forest Tiny Medal",
-        region: "Forest Medal Rewards",
+        name: "Tiny's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -25580,54 +23410,20 @@ const TinyMedal$2 = () => {
       ForestCheck,
       {
         id: 5203,
-        name: "Forest Tiny Half-Medal",
-        region: "Forest Medal Rewards",
+        name: "Tiny's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
     )
   ] });
 };
-const Shuffled$h = () => {
-  const thing = useGeneralThing$2();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5190, name: "Forest Arena", canGetLogic: thing }) });
-};
-const ShuffledArenas$2 = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$h, {});
-const Shuffled$g = () => {
-  const thing = useGeneralThing$2();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5260, name: "Forest Crate Location #1 (maybe)", canGetLogic: thing }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5261, name: "Forest Crate Location #2 (maybe)", canGetLogic: thing })
-  ] });
-};
-const ShuffledCrates$2 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$g, {}) : null;
-const Shuffled$f = () => {
-  const dirt = useGeneralDirt$2();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5270, name: "Forest Dirt Location #1", canGetLogic: dirt }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5271, name: "Forest Dirt Location #2", canGetLogic: dirt })
-  ] });
-};
-const ShuffledDirtLocations$2 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$f, {}) : null;
-const Shuffled$e = () => {
-  const thing = useGeneralFairy$1();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5280, name: "Forest Fairy Location #1", canGetLogic: thing }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5281, name: "Forest Fairy Location #2", canGetLogic: thing })
-  ] });
-};
-const ShuffledFairies$2 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$e, {}) : null;
-const Shuffled$d = () => {
-  const thing = useGeneralThing$2();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5250, name: "Forest Kasplat Location #1", canGetLogic: thing }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5251, name: "Forest Kasplat Location #2", canGetLogic: thing }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5252, name: "Forest Kasplat Location #3", canGetLogic: thing }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5253, name: "Forest Kasplat Location #4", canGetLogic: thing }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestCheck, { id: 5254, name: "Forest Kasplat Location #5", canGetLogic: thing })
-  ] });
-};
-const ShuffledKasplats$2 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$d, {}) : null;
+const BeanstalkChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx(BeanCheck, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyApple, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(BeanstalkDirt, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(BeanstalkEnemies, {})
+] });
 const Vanilla$3 = () => {
   const inStage = usePlayForest();
   const beanstalk = useForestBean();
@@ -25642,7 +23438,7 @@ const Vanilla$3 = () => {
         baseId: 5110,
         baseName: "Forest Cranky",
         level: "Fungi Forest",
-        region: "Forest Shops",
+        region: "Shops",
         inLogic: hasCranky && inStage
       }
     ),
@@ -25652,7 +23448,7 @@ const Vanilla$3 = () => {
         baseId: 5120,
         baseName: "Forest Funky",
         level: "Fungi Forest",
-        region: "Forest Shops",
+        region: "Shops",
         inLogic: hasFunky && beanstalk
       }
     ),
@@ -25662,7 +23458,7 @@ const Vanilla$3 = () => {
         baseId: 5140,
         baseName: "Turn in Forest Blueprint for",
         level: "Fungi Forest",
-        region: "Forest Shops",
+        region: "Shops",
         inLogic: hasSnide && day.in,
         outLogic: hasSnide && day.out
       }
@@ -25683,7 +23479,7 @@ const Shuffled$c = () => {
         baseId: 5140,
         baseName: "Forest Cranky Location",
         level: "Fungi Forest",
-        region: "Forest Shops",
+        region: "Shops",
         inLogic: hasCranky && inStage
       }
     ),
@@ -25693,7 +23489,7 @@ const Shuffled$c = () => {
         baseId: 5150,
         baseName: "Forest Funky Location",
         level: "Fungi Forest",
-        region: "Forest Shops",
+        region: "Shops",
         inLogic: hasFunky && beanstalk
       }
     ),
@@ -25703,7 +23499,7 @@ const Shuffled$c = () => {
         baseId: 5170,
         baseName: "Forest Snide Location",
         level: "Fungi Forest",
-        region: "Forest Shops",
+        region: "Shops",
         inLogic: hasSnide && day.in,
         outLogic: hasSnide && day.out
       }
@@ -25715,10 +23511,7 @@ const ShopLocations$2 = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const CenterChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(BeanCheck, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyApple, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMinecart, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(BeanstalkDirt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CenterEnemies, {})
 ] });
 const MushExteriorChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -25752,8 +23545,8 @@ const MillBackKeg = () => {
     ForestCheck,
     {
       id: 5008,
-      name: "Forest Boulder: Mill Back Keg",
-      region: "Forest Mills",
+      name: "Back Mill Keg",
+      region: "Forest Area 1",
       canGetLogic: useMillBackKeg()
     }
   ) });
@@ -25763,8 +23556,8 @@ const MillFrontKeg1 = () => {
     ForestCheck,
     {
       id: 5006,
-      name: "Forest Boulder: Mill Front Keg near Crusher",
-      region: "Forest Mills",
+      name: "Front Mill Keg near Crusher",
+      region: "Forest Area 1",
       canGetLogic: useMillFrontKegs()
     }
   ) });
@@ -25774,8 +23567,8 @@ const MillFrontKeg2 = () => {
     ForestCheck,
     {
       id: 5007,
-      name: "Forest Boulder: Mill Front Keg in Back of Room",
-      region: "Forest Mills",
+      name: "Front Mill Keg in Back of Room",
+      region: "Forest Area 1",
       canGetLogic: useMillFrontKegs()
     }
   ) });
@@ -25809,15 +23602,11 @@ const ForestRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
     /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$2, {})
   ] }),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CenterChecks, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(MillsChecks, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(BeanstalkChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(MushExteriorChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(MushInteriorChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(OwlChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(MillsChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$2, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$2, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations$2, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$2, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$3, {})
 ] });
@@ -26143,7 +23932,7 @@ const CabinArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { chil
   {
     id: 6090,
     name: "Battle Arena (in DK's rotating cabin)",
-    region: "Cabins Area",
+    region: "Caves Cabins",
     canGetLogic: useDkRotateGb()
   }
 ) }) });
@@ -26155,7 +23944,7 @@ const BossCheck$2 = () => {
     {
       id: 6105,
       name: "Caves Boss",
-      region: "Troff 'N' Scoff",
+      region: "Bosses",
       canGetLogic: inStage && anyKong
     }
   ) });
@@ -26168,8 +23957,8 @@ const KoshaDirt = () => {
     CavesCheck,
     {
       id: 6070,
-      name: "Caves Dirt: Giant Kosha",
-      region: "Igloo Area",
+      name: "The Giant Kosha's Dirt",
+      region: "Caves Igloo",
       canGetLogic: dirt.in,
       canGetBreak: dirt.out
     }
@@ -26181,14 +23970,13 @@ const CabinsEnemies = () => {
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
   const kosha = useDefeatKosha();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
         id: 6302,
         name: "Enemy Outside 5 Door Cabin",
-        region: "Cabins Area",
+        region: "Caves Cabins",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -26198,7 +23986,7 @@ const CabinsEnemies = () => {
       {
         id: 6303,
         name: "Enemy Outside Lanky's Cabin",
-        region: "Cabins Area",
+        region: "Caves Cabins",
         canGetLogic: inStage && anyKong
       }
     ),
@@ -26207,7 +23995,7 @@ const CabinsEnemies = () => {
       {
         id: 6307,
         name: "Enemy at Headphones Below Lanky's Cabin",
-        region: "Cabins Area",
+        region: "Caves Cabins",
         canGetLogic: inStage && anyKong && kosha.in,
         canGetBreak: inStage && anyKong && kosha.out
       }
@@ -26217,46 +24005,9 @@ const CabinsEnemies = () => {
       {
         id: 6317,
         name: "Enemy Inside Lanky Cabin, Near the Pad and Barrel",
-        region: "Cabins Area",
+        region: "Caves Cabins",
         canGetLogic: lankyCabin.in && kosha.in,
         canGetBreak: lankyCabin.out && kosha.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6402,
-        name: "Photo of Enemy Outside 5 Door Cabin",
-        region: "Cabins Area",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6403,
-        name: "Photo of Enemy Outside Lanky's Cabin",
-        region: "Cabins Area",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6407,
-        name: "Photo of Enemy at Headphones Below Lanky's Cabin",
-        region: "Cabins Area",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6417,
-        name: "Photo of Enemy Inside Lanky's Cabin, Near the Pad and Barrel",
-        region: "Cabins Area",
-        canGetLogic: lankyCabin.in && hasFairyCam,
-        canGetBreak: lankyCabin.out && hasFairyCam
       }
     )
   ] });
@@ -26266,14 +24017,13 @@ const IglooEnemies = () => {
   const kosha = useDefeatKosha();
   const bongos = useBongos();
   const sax = useSax();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
         id: 6309,
-        name: "Caves Enemy: DK Igloo Right",
-        region: "Igloo Area",
+        name: "DK's 5-Door Igloo Right Enemy",
+        region: "Caves Igloo",
         canGetLogic: igloo && bongos && kosha.in,
         canGetBreak: igloo && bongos && kosha.out
       }
@@ -26282,8 +24032,8 @@ const IglooEnemies = () => {
       CavesCheck,
       {
         id: 6310,
-        name: "Caves Enemy: DK Igloo Left",
-        region: "Igloo Area",
+        name: "DK's 5-Door Igloo Left Enemy",
+        region: "Caves Igloo",
         canGetLogic: igloo && bongos && kosha.in,
         canGetBreak: igloo && bongos && kosha.out
       }
@@ -26292,37 +24042,10 @@ const IglooEnemies = () => {
       CavesCheck,
       {
         id: 6316,
-        name: "Caves Enemy: Tiny Igloo Big",
-        region: "Igloo Area",
+        name: "Enemy in Tiny's 5-Door Igloo",
+        region: "Caves Igloo",
         canGetLogic: igloo && sax && kosha.in,
         canGetBreak: igloo && sax && kosha.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6409,
-        name: "Caves Enemy Photo: DK Igloo Right",
-        region: "Igloo Area",
-        canGetLogic: igloo && bongos && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6410,
-        name: "Caves Enemy Photo: DK Igloo Left",
-        region: "Igloo Area",
-        canGetLogic: igloo && bongos && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6416,
-        name: "Caves Enemy Photo: Tiny Igloo Big",
-        region: "Igloo Area",
-        canGetLogic: igloo && sax && hasFairyCam
       }
     )
   ] });
@@ -26332,14 +24055,13 @@ const MainEnemies = () => {
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
   const kosha = useDefeatKosha();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
         id: 6300,
-        name: "Caves Enemy: Start",
-        region: "Main Caves Area",
+        name: "Enemy at the Start",
+        region: "Crystal Caves Main",
         canGetLogic: inStage && anyKong
       }
     ),
@@ -26347,8 +24069,8 @@ const MainEnemies = () => {
       CavesCheck,
       {
         id: 6301,
-        name: "Caves Enemy: Near Ice Castle",
-        region: "Main Caves Area",
+        name: "Enemy Near the Ice Castle",
+        region: "Crystal Caves Main",
         canGetLogic: inStage && anyKong
       }
     ),
@@ -26356,8 +24078,8 @@ const MainEnemies = () => {
       CavesCheck,
       {
         id: 6304,
-        name: "Caves Enemy: Near Funky",
-        region: "Main Caves Area",
+        name: "Enemy Near Funky's",
+        region: "Crystal Caves Main",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
       }
@@ -26366,8 +24088,8 @@ const MainEnemies = () => {
       CavesCheck,
       {
         id: 6306,
-        name: "Caves Enemy: Near Bonus Room",
-        region: "Main Caves Area",
+        name: "Enemy Near Tiny's Bonus Room",
+        region: "Crystal Caves Main",
         canGetLogic: inStage && kosha.in,
         canGetBreak: inStage && kosha.out
       }
@@ -26376,55 +24098,10 @@ const MainEnemies = () => {
       CavesCheck,
       {
         id: 6305,
-        name: "Caves Enemy: Near Snide",
-        region: "Main Caves Area",
+        name: "Enemy Near Snide's",
+        region: "Crystal Caves Main",
         canGetLogic: inStage && kosha.in,
         canGetBreak: inStage && kosha.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6400,
-        name: "Caves Enemy Photo: Start",
-        region: "Main Caves Area",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6401,
-        name: "Caves Enemy Photo: Near Ice Castle",
-        region: "Main Caves Area",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6404,
-        name: "Caves Enemy Photo: Near Funky",
-        region: "Main Caves Area",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6406,
-        name: "Caves Enemy Photo: Near Bonus Room",
-        region: "Main Caves Area",
-        canGetLogic: inStage && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 6405,
-        name: "Caves Enemy Photo: Near Snide",
-        region: "Main Caves Area",
-        canGetLogic: inStage && hasFairyCam
       }
     )
   ] });
@@ -26441,7 +24118,7 @@ const CabinFairy = () => {
     {
       id: 6081,
       name: "Diddy Upper Cabin Fairy",
-      region: "Cabins Area",
+      region: "Caves Cabins",
       canGetLogic: cabin
     }
   ) }) }) });
@@ -26450,8 +24127,8 @@ const IglooFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { chil
   CavesCheck,
   {
     id: 6080,
-    name: "Caves Fairy (Tiny Igloo)",
-    region: "Igloo Area",
+    name: "Fairy in Tiny's 5-Door Igloo",
+    region: "Caves Igloo",
     canGetLogic: useIglooFairy()
   }
 ) }) });
@@ -26464,7 +24141,7 @@ const ChunkyCabin = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   {
     id: 6043,
     name: "Chunky's 5 Door Cabin",
-    region: "Cabins Area",
+    region: "Caves Cabins",
     canGetLogic: useChunkyCabinGb()
   }
 );
@@ -26475,7 +24152,7 @@ const TransparentIgloo = () => {
     {
       id: 6041,
       name: "Chunky's Transparent Igloo to the Giant Kosha",
-      region: "Igloo Area",
+      region: "Caves Igloo",
       canGetLogic: clearGb.in,
       canGetBreak: clearGb.out
     }
@@ -26485,8 +24162,8 @@ const EarlyGone = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
   {
     id: 6040,
-    name: "Caves Chunky Gorilla Gone",
-    region: "Main Caves Area",
+    name: "Chunky's Gorilla Gone Room Near the Start",
+    region: "Crystal Caves Main",
     canGetLogic: useChunkyGoneGb()
   }
 );
@@ -26494,8 +24171,8 @@ const ChunkyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { chil
   CavesCheck,
   {
     id: 6042,
-    name: "Caves Chunky 5 Door Igloo",
-    region: "Igloo Area",
+    name: "Chunky's 5 Door Igloo",
+    region: "Caves Igloo",
     canGetLogic: useChunkyIglooGb()
   }
 ) });
@@ -26512,7 +24189,7 @@ const DiddyCandleCabin = () => {
     {
       id: 6013,
       name: "Diddy's Upper 5 Door Cabin",
-      region: "Cabins Area",
+      region: "Caves Cabins",
       canGetLogic: candleGb
     }
   ) });
@@ -26523,8 +24200,8 @@ const DiddyGauntletCabin = () => {
     CavesCheck,
     {
       id: 6012,
-      name: "Caves Diddy 5 Door Cabin Lower (Gauntlet)",
-      region: "Cabins Area",
+      name: "Diddy's Lower 5-Door Cabin",
+      region: "Caves Cabins",
       canGetLogic: cabinGauntlet.in,
       canGetBreak: cabinGauntlet.out
     }
@@ -26534,8 +24211,8 @@ const DiddyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
   {
     id: 6011,
-    name: "Caves Diddy 5 Door Igloo",
-    region: "Igloo Area",
+    name: "Diddy's 5 Door Igloo",
+    region: "Caves Igloo",
     canGetLogic: useDiddyIglooGb()
   }
 );
@@ -26545,8 +24222,8 @@ const WaterfallBarrel = () => {
     CavesCheck,
     {
       id: 6010,
-      name: "Caves Diddy Jetpack Barrel",
-      region: "Main Caves Area",
+      name: "Diddy's Waterfall Barrel",
+      region: "Crystal Caves Main",
       canGetLogic: waterfallGb.in,
       canGetBreak: waterfallGb.out
     }
@@ -26565,7 +24242,7 @@ const CavesBlast = () => (
     {
       id: 6001,
       name: "Baboon Blast Barrel",
-      region: "Main Caves Area",
+      region: "Crystal Caves Main",
       canGetLogic: useDkBlastGb()
     }
   )
@@ -26576,8 +24253,8 @@ const DkGauntletCabin = () => {
     CavesCheck,
     {
       id: 6004,
-      name: "Caves DK 5 Door Cabin",
-      region: "Cabins Area",
+      name: "DK's 5 Door Cabin",
+      region: "Caves Cabins",
       canGetLogic: cabinGb.in,
       canGetBreak: cabinGb.out
     }
@@ -26589,8 +24266,8 @@ const DkIgloo = () => {
     CavesCheck,
     {
       id: 6002,
-      name: "Caves DK 5 Door Igloo",
-      region: "Igloo Area",
+      name: "DK's 5 Door Igloo",
+      region: "Caves Igloo",
       canGetLogic: iglooGb.in,
       canGetBreak: iglooGb.out
     }
@@ -26600,8 +24277,8 @@ const RotatingCabin = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
   {
     id: 6003,
-    name: "Caves DK Rotating Cabin",
-    region: "Cabins Area",
+    name: "DK's Rotating Cabin",
+    region: "Caves Cabins",
     canGetLogic: useDkRotateGb()
   }
 );
@@ -26618,7 +24295,7 @@ const BeetleRace = () => {
     {
       id: 6020,
       name: "Lanky's Beetle Race",
-      region: "Main Caves Area",
+      region: "Crystal Caves Main",
       canGetLogic: raceGb.in,
       canGetBreak: raceGb.out
     }
@@ -26631,7 +24308,7 @@ const SprintCabin = () => {
     {
       id: 6023,
       name: "Lanky's Sprint Cabin",
-      region: "Cabins Area",
+      region: "Caves Cabins",
       canGetLogic: cabinGb.in,
       canGetBreak: cabinGb.out
     }
@@ -26642,7 +24319,7 @@ const CastleSlam = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   {
     id: 6021,
     name: "Ice Castle Slamming",
-    region: "Main Caves Area",
+    region: "Crystal Caves Main",
     canGetLogic: useLankyCastleGb()
   }
 );
@@ -26652,8 +24329,8 @@ const LankyIgloo = () => {
     CavesCheck,
     {
       id: 6022,
-      name: "Caves Lanky 5 Door Igloo",
-      region: "Igloo Area",
+      name: "Lanky's 5 Door Igloo",
+      region: "Caves Igloo",
       canGetLogic: iglooGb.in,
       canGetBreak: iglooGb.out
     }
@@ -26672,7 +24349,7 @@ const TinyCabin = () => {
     {
       id: 6033,
       name: "Tiny's 5 Door Cabin",
-      region: "Cabins Area",
+      region: "Caves Cabins",
       canGetLogic: cabinCb
     }
   ) });
@@ -26681,8 +24358,8 @@ const TinyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
   {
     id: 6032,
-    name: "Caves Tiny 5 Door Igloo",
-    region: "Igloo Area",
+    name: "Tiny's 5 Door Igloo",
+    region: "Caves Igloo",
     canGetLogic: useTinyIglooGb()
   }
 );
@@ -26690,8 +24367,8 @@ const MiniBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
   {
     id: 6030,
-    name: "Caves Tiny Mini Cave Barrel",
-    region: "Main Caves Area",
+    name: "Tiny's Mini Cave Barrel",
+    region: "Crystal Caves Main",
     canGetLogic: useTinyCaveGb()
   }
 );
@@ -26701,8 +24378,8 @@ const MonkeyportIgloo = () => {
     CavesCheck,
     {
       id: 6031,
-      name: "Caves Tiny Monkeyport Igloo",
-      region: "Igloo Area",
+      name: "Tiny's Monkeyport Igloo",
+      region: "Caves Igloo",
       canGetLogic: portGb
     }
   );
@@ -26718,7 +24395,7 @@ const ChunkyKasplat$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool,
   {
     id: 6054,
     name: "Kasplat On Top of 5-Door Igloo",
-    region: "Igloo Area",
+    region: "Caves Igloo",
     canGetLogic: useIglooKasplat()
   }
 ) }) });
@@ -26728,8 +24405,8 @@ const DiddyKasplat$1 = () => {
     CavesCheck,
     {
       id: 6051,
-      name: "Caves Kasplat: Mini Room by Funky",
-      region: "Main Caves Area",
+      name: "Kasplat in the Mini/Warp 4 Room by Funky's",
+      region: "Crystal Caves Main",
       canGetLogic: miniFunky
     }
   ) }) });
@@ -26738,8 +24415,8 @@ const DkKasplat$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { c
   CavesCheck,
   {
     id: 6050,
-    name: "Caves Kasplat: Near Ice Castle",
-    region: "Main Caves Area",
+    name: "Kasplat Near the Ice Castle",
+    region: "Crystal Caves Main",
     canGetLogic: useIceCastleKasplat()
   }
 ) }) });
@@ -26749,8 +24426,8 @@ const LankyKasplat$1 = () => {
     CavesCheck,
     {
       id: 6052,
-      name: "Caves Kasplat: On the Pillar",
-      region: "Main Caves Area",
+      name: "Kasplat On the Big Pillar",
+      region: "Crystal Caves Main",
       canGetLogic: pillar.in,
       canGetBreak: pillar.out
     }
@@ -26760,8 +24437,8 @@ const TinyKasplat$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, {
   CavesCheck,
   {
     id: 6053,
-    name: "Caves Kasplat: By the Far Warp 2 (Cabins)",
-    region: "Cabins Area",
+    name: "Kasplat in the Cabins Area",
+    region: "Caves Cabins",
     canGetLogic: useCabinKasplat()
   }
 ) }) });
@@ -26835,7 +24512,7 @@ const ChunkyMedal$1 = () => {
       {
         id: 6104,
         name: "Chunky's Medal",
-        region: "Caves Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -26845,7 +24522,7 @@ const ChunkyMedal$1 = () => {
       {
         id: 6204,
         name: "Chunky's Half-Medal",
-        region: "Caves Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -26947,8 +24624,8 @@ const DiddyMedal$1 = () => {
         CavesCheck,
         {
           id: 6101,
-          name: "Caves Diddy Medal",
-          region: "Caves Medal Rewards",
+          name: "Diddy's Medal",
+          region: "Banana Medals",
           canGetLogic: inLogic >= cbCount,
           canGetBreak: outLogic >= cbCount
         }
@@ -26957,8 +24634,8 @@ const DiddyMedal$1 = () => {
         CavesCheck,
         {
           id: 6201,
-          name: "Caves Diddy Half-Medal",
-          region: "Caves Medal Rewards",
+          name: "Diddy's Half-Medal",
+          region: "Banana Medals",
           canGetLogic: inLogic >= halfMedal,
           canGetBreak: outLogic >= halfMedal
         }
@@ -26970,8 +24647,8 @@ const DiddyMedal$1 = () => {
         CavesCheck,
         {
           id: 6101,
-          name: "Caves Diddy Medal",
-          region: "Caves Medal Rewards",
+          name: "Diddy's Medal",
+          region: "Banana Medals",
           canGetLogic: inLogic >= cbCount,
           canGetBreak: outLogic >= cbCount
         }
@@ -26980,8 +24657,8 @@ const DiddyMedal$1 = () => {
         CavesCheck,
         {
           id: 6201,
-          name: "Caves Diddy Half-Medal",
-          region: "Caves Medal Rewards",
+          name: "Diddy's Half-Medal",
+          region: "Banana Medals",
           canGetLogic: inLogic >= halfMedal,
           canGetBreak: outLogic >= halfMedal
         }
@@ -27067,8 +24744,8 @@ const DkMedal$1 = () => {
       CavesCheck,
       {
         id: 6100,
-        name: "Caves DK Medal",
-        region: "Caves Medal Rewards",
+        name: "DK's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -27077,8 +24754,8 @@ const DkMedal$1 = () => {
       CavesCheck,
       {
         id: 6200,
-        name: "Caves DK Half-Medal",
-        region: "Caves Medal Rewards",
+        name: "DK's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -27179,8 +24856,8 @@ const LankyMedal$1 = () => {
         CavesCheck,
         {
           id: 6102,
-          name: "Caves Lanky Medal",
-          region: "Caves Medal Rewards",
+          name: "Lanky's Medal",
+          region: "Banana Medals",
           canGetLogic: inLogic >= cbCount,
           canGetBreak: outLogic >= cbCount
         }
@@ -27189,8 +24866,8 @@ const LankyMedal$1 = () => {
         CavesCheck,
         {
           id: 6202,
-          name: "Caves Lanky Half-Medal",
-          region: "Caves Medal Rewards",
+          name: "Lanky's Half-Medal",
+          region: "Banana Medals",
           canGetLogic: inLogic >= halfMedal,
           canGetBreak: outLogic >= halfMedal
         }
@@ -27202,8 +24879,8 @@ const LankyMedal$1 = () => {
         CavesCheck,
         {
           id: 6102,
-          name: "Caves Lanky Medal",
-          region: "Caves Medal Rewards",
+          name: "Lanky's Medal",
+          region: "Banana Medals",
           canGetLogic: inLogic >= cbCount,
           canGetBreak: outLogic >= cbCount
         }
@@ -27212,8 +24889,8 @@ const LankyMedal$1 = () => {
         CavesCheck,
         {
           id: 6202,
-          name: "Caves Lanky Half-Medal",
-          region: "Caves Medal Rewards",
+          name: "Lanky's Half-Medal",
+          region: "Banana Medals",
           canGetLogic: inLogic >= halfMedal,
           canGetBreak: outLogic >= halfMedal
         }
@@ -27323,8 +25000,8 @@ const TinyMedal$1 = () => {
       CavesCheck,
       {
         id: 6103,
-        name: "Caves Tiny Medal",
-        region: "Caves Medal Rewards",
+        name: "Tiny's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -27333,8 +25010,8 @@ const TinyMedal$1 = () => {
       CavesCheck,
       {
         id: 6203,
-        name: "Caves Tiny Half-Medal",
-        region: "Caves Medal Rewards",
+        name: "Tiny's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -27393,7 +25070,7 @@ const Vanilla$1 = () => {
         baseId: 6110,
         baseName: "Caves Cranky",
         level: "Crystal Caves",
-        region: "Caves Shops",
+        region: "Shops",
         inLogic: hasCranky && inStage
       }
     ),
@@ -27403,7 +25080,7 @@ const Vanilla$1 = () => {
         baseId: 6120,
         baseName: "Caves Funky",
         level: "Crystal Caves",
-        region: "Caves Shops",
+        region: "Shops",
         inLogic: hasFunky && inStage
       }
     ),
@@ -27413,7 +25090,7 @@ const Vanilla$1 = () => {
         baseId: 6130,
         baseName: "Caves Candy",
         level: "Crystal Caves",
-        region: "Caves Shops",
+        region: "Shops",
         inLogic: hasCandy && inStage
       }
     ),
@@ -27423,7 +25100,7 @@ const Vanilla$1 = () => {
         baseId: 6140,
         baseName: "Turn in Caves Blueprint for",
         level: "Crystal Caves",
-        region: "Caves Shops",
+        region: "Shops",
         inLogic: hasSnide
       }
     )
@@ -27442,7 +25119,7 @@ const Shuffled$6 = () => {
         baseId: 6140,
         baseName: "Caves Cranky Location",
         level: "Crystal Caves",
-        region: "Caves Shops",
+        region: "Shops",
         inLogic: hasCranky && inStage
       }
     ),
@@ -27452,7 +25129,7 @@ const Shuffled$6 = () => {
         baseId: 6150,
         baseName: "Caves Funky Location",
         level: "Crystal Caves",
-        region: "Caves Shops",
+        region: "Shops",
         inLogic: hasFunky && inStage
       }
     ),
@@ -27462,7 +25139,7 @@ const Shuffled$6 = () => {
         baseId: 6160,
         baseName: "Caves Candy Location",
         level: "Crystal Caves",
-        region: "Caves Shops",
+        region: "Shops",
         inLogic: hasCandy && inStage
       }
     ),
@@ -27472,7 +25149,7 @@ const Shuffled$6 = () => {
         baseId: 6170,
         baseName: "Caves Snide Location",
         level: "Crystal Caves",
-        region: "Caves Shops",
+        region: "Shops",
         inLogic: hasSnide
       }
     )
@@ -27487,8 +25164,8 @@ const KooshyKomeiji = () => {
     CavesCheck,
     {
       id: 6008,
-      name: "Caves Boulder: Small Boulder Near Ice Castle",
-      region: "Main Caves Area",
+      name: "Small Boulder Near Ice Castle",
+      region: "Crystal Caves Main",
       canGetLogic: useSatoriKomeiji()
     }
   ) });
@@ -27499,7 +25176,7 @@ const Okuu = () => {
     {
       id: 5009,
       name: "Big Boulder Near Cranky's",
-      region: "Main Caves Area",
+      region: "Crystal Caves Main",
       canGetLogic: useOrin()
     }
   ) });
@@ -27872,8 +25549,8 @@ const GreenhouseArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, {
   CastleCheck,
   {
     id: 7090,
-    name: "Castle Arena (Greenhouse: Center)",
-    region: "Castle Surroundings",
+    name: "Arena in the Greenhouse",
+    region: "Creepy Castle Main",
     canGetLogic: useArena()
   }
 ) }) });
@@ -27885,7 +25562,7 @@ const BossCheck$1 = () => {
     {
       id: 7105,
       name: "Castle Boss",
-      region: "Troff 'N' Scoff",
+      region: "Bosses",
       canGetLogic: inStage && anyKong
     }
   ) });
@@ -27896,8 +25573,8 @@ const MausoleumCrate = () => {
     CastleCheck,
     {
       id: 7060,
-      name: "Castle Crate: Behind Mausoleum Entrance",
-      region: "Castle Underground",
+      name: "Melon Crate Behind Mausoleum",
+      region: "Castle Crypt and Dungeon",
       canGetLogic: canDoCheck.in,
       canGetBreak: canDoCheck.out
     }
@@ -27907,8 +25584,8 @@ const TopFloorDirt = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool
   CastleCheck,
   {
     id: 7070,
-    name: "Castle Dirt: Top Floor",
-    region: "Castle Surroundings",
+    name: "Dirt Behind Snide's",
+    region: "Creepy Castle Main",
     canGetLogic: useGeneralDirt()
   }
 ) }) });
@@ -27917,42 +25594,29 @@ const BallroomEnemies = () => {
   const canSlam = useSlamCastle();
   const diddy = useDiddy();
   const kosha = useDefeatKosha();
-  const hasFairyCam = useCamera();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7313,
-        name: "Ballroom Start Enemy",
-        region: "Castle Rooms",
-        canGetLogic: inStage && diddy && canSlam && kosha.in,
-        canGetBreak: inStage && diddy && canSlam && kosha.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7413,
-        name: "Ballroom Start Enemy Photo",
-        region: "Castle Rooms",
-        canGetLogic: inStage && diddy && canSlam && hasFairyCam
-      }
-    )
-  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    CastleCheck,
+    {
+      id: 7313,
+      name: "Ballroom Start Enemy",
+      region: "Various Castle Rooms",
+      canGetLogic: inStage && diddy && canSlam && kosha.in,
+      canGetBreak: inStage && diddy && canSlam && kosha.out
+    }
+  ) });
 };
 const MuseumEnemies = () => {
   const inStage = usePlayCastle();
   const canSlam = useSlamCastle();
   const chunky = useChunky();
   const kosha = useDefeatKosha();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
         id: 7361,
-        name: "Castle Enemy: Museum Start",
-        region: "Castle Rooms",
+        name: "Enemy at Museum Start",
+        region: "Various Castle Rooms",
         canGetLogic: inStage && chunky && canSlam && kosha.in,
         canGetBreak: inStage && chunky && canSlam && kosha.out
       }
@@ -27961,8 +25625,8 @@ const MuseumEnemies = () => {
       CastleCheck,
       {
         id: 7362,
-        name: "Castle Enemy: Museum Main 0",
-        region: "Castle Rooms",
+        name: "Museum Enemy 0",
+        region: "Various Castle Rooms",
         canGetLogic: inStage && chunky && canSlam
       }
     ),
@@ -27970,8 +25634,8 @@ const MuseumEnemies = () => {
       CastleCheck,
       {
         id: 7363,
-        name: "Castle Enemy: Museum Main 1",
-        region: "Castle Rooms",
+        name: "Museum Enemy 1",
+        region: "Various Castle Rooms",
         canGetLogic: inStage && chunky && canSlam
       }
     ),
@@ -27979,8 +25643,8 @@ const MuseumEnemies = () => {
       CastleCheck,
       {
         id: 7364,
-        name: "Castle Enemy: Museum Main 2",
-        region: "Castle Rooms",
+        name: "Museum Enemy 2",
+        region: "Various Castle Rooms",
         canGetLogic: inStage && chunky && canSlam
       }
     ),
@@ -27988,54 +25652,9 @@ const MuseumEnemies = () => {
       CastleCheck,
       {
         id: 7365,
-        name: "Castle Enemy: Museum Main 3",
-        region: "Castle Rooms",
+        name: "Museum Enemy 3",
+        region: "Various Castle Rooms",
         canGetLogic: inStage && chunky && canSlam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7461,
-        name: "Castle Enemy Photo: Museum Start",
-        region: "Castle Rooms",
-        canGetLogic: inStage && chunky && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7462,
-        name: "Castle Enemy Photo: Museum Main 0",
-        region: "Castle Rooms",
-        canGetLogic: inStage && chunky && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7463,
-        name: "Castle Enemy Photo: Museum Main 1",
-        region: "Castle Rooms",
-        canGetLogic: inStage && chunky && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7464,
-        name: "Castle Enemy Photo: Museum Main 2",
-        region: "Castle Rooms",
-        canGetLogic: inStage && chunky && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7465,
-        name: "Castle Enemy Photo: Museum Main 3",
-        region: "Castle Rooms",
-        canGetLogic: inStage && chunky && canSlam && hasFairyCam
       }
     )
   ] });
@@ -28045,14 +25664,13 @@ const LibraryEnemies = () => {
   const canSlam = useSlamCastle();
   const dk2 = useDk();
   const bat = useDefeatBat();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
         id: 7357,
-        name: "Castle Enemy: Library Gauntlet Fork Left 0",
-        region: "Castle Rooms",
+        name: "Library Entrance Enemy Left 0",
+        region: "Various Castle Rooms",
         canGetLogic: inStage && dk2 && canSlam && bat.in,
         canGetBreak: inStage && dk2 && canSlam && bat.out
       }
@@ -28061,8 +25679,8 @@ const LibraryEnemies = () => {
       CastleCheck,
       {
         id: 7358,
-        name: "Castle Enemy: Library Gauntlet Fork Left 1",
-        region: "Castle Rooms",
+        name: "Library Entrance Enemy Left 1",
+        region: "Various Castle Rooms",
         canGetLogic: inStage && dk2 && canSlam && bat.in,
         canGetBreak: inStage && dk2 && canSlam && bat.out
       }
@@ -28071,8 +25689,8 @@ const LibraryEnemies = () => {
       CastleCheck,
       {
         id: 7359,
-        name: "Castle Enemy: Library Gauntlet Fork Center",
-        region: "Castle Rooms",
+        name: "Library Entrance Enemy Center",
+        region: "Various Castle Rooms",
         canGetLogic: inStage && dk2 && canSlam && bat.in,
         canGetBreak: inStage && dk2 && canSlam && bat.out
       }
@@ -28081,100 +25699,10 @@ const LibraryEnemies = () => {
       CastleCheck,
       {
         id: 7360,
-        name: "Castle Enemy: Library Gauntlet Fork Right",
-        region: "Castle Rooms",
+        name: "Library Entrance Enemy Right",
+        region: "Various Castle Rooms",
         canGetLogic: inStage && dk2 && canSlam && bat.in,
         canGetBreak: inStage && dk2 && canSlam && bat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7457,
-        name: "Castle Enemy Photo: Library Gauntlet Fork Left 0",
-        region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7458,
-        name: "Castle Enemy Photo: Library Gauntlet Fork Left 1",
-        region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7459,
-        name: "Castle Enemy Photo: Library Gauntlet Fork Center",
-        region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7460,
-        name: "Castle Enemy Photo: Library Gauntlet Fork Right",
-        region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7472,
-        name: "Castle Enemy Photo: Library Book 0",
-        region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7473,
-        name: "Castle Enemy Photo: Library Book 1",
-        region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7474,
-        name: "Castle Enemy Photo: Library Book 2",
-        region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7475,
-        name: "Castle Enemy Photo: Library Book 3",
-        region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7476,
-        name: "Castle Enemy Photo: Library Book 4",
-        region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7477,
-        name: "Castle Enemy Photo: Library Book 5",
-        region: "Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
       }
     )
   ] });
@@ -28184,14 +25712,13 @@ const SurroundingsEnemies = () => {
   const anyKong = useAnyKong();
   const kosha = useDefeatKosha();
   const hasClimbing = useClimbing();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
         id: 7300,
-        name: "Castle Enemy: Near Bridge 0",
-        region: "Castle Surroundings",
+        name: "Enemy Near Folding Bridge Over Moat",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong
       }
     ),
@@ -28199,8 +25726,8 @@ const SurroundingsEnemies = () => {
       CastleCheck,
       {
         id: 7301,
-        name: "Castle Enemy: Near Bridge 1",
-        region: "Castle Surroundings",
+        name: "Enemy Near Bottom Wooden Extrusion",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong
       }
     ),
@@ -28208,8 +25735,8 @@ const SurroundingsEnemies = () => {
       CastleCheck,
       {
         id: 7302,
-        name: "Castle Enemy: Wooden Extrusion 0",
-        region: "Castle Surroundings",
+        name: "Enemy on Bottom Wooden Extrusion",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong && kosha.in,
         canGetBreak: inStage && anyKong && kosha.out
       }
@@ -28218,8 +25745,8 @@ const SurroundingsEnemies = () => {
       CastleCheck,
       {
         id: 7303,
-        name: "Castle Enemy: Wooden Extrusion 1",
-        region: "Castle Surroundings",
+        name: "Enemy on Wooden Extrusion Near Cranky's",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong && kosha.in,
         canGetBreak: inStage && anyKong && kosha.out
       }
@@ -28228,8 +25755,8 @@ const SurroundingsEnemies = () => {
       CastleCheck,
       {
         id: 7304,
-        name: "Castle Enemy: Near Shed",
-        region: "Castle Surroundings",
+        name: "Enemy Between Museum and Shed",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong
       }
     ),
@@ -28237,8 +25764,8 @@ const SurroundingsEnemies = () => {
       CastleCheck,
       {
         id: 7305,
-        name: "Castle Enemy: Near Library",
-        region: "Castle Surroundings",
+        name: "Enemy Near Library Switch",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong
       }
     ),
@@ -28246,8 +25773,8 @@ const SurroundingsEnemies = () => {
       CastleCheck,
       {
         id: 7306,
-        name: "Castle Enemy: Near Tower",
-        region: "Castle Surroundings",
+        name: "Enemy Near Snide's",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong && kosha.in,
         canGetBreak: inStage && anyKong && kosha.out
       }
@@ -28256,8 +25783,8 @@ const SurroundingsEnemies = () => {
       CastleCheck,
       {
         id: 7307,
-        name: "Castle Enemy: Museum Steps",
-        region: "Castle Surroundings",
+        name: "Enemy Between Cranky's and Museum",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong
       }
     ),
@@ -28265,8 +25792,8 @@ const SurroundingsEnemies = () => {
       CastleCheck,
       {
         id: 7308,
-        name: "Castle Enemy: Near Low Caves",
-        region: "Castle Surroundings",
+        name: "Enemy at Crypt Entrance",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong && hasClimbing,
         canGetBreak: inStage && anyKong
       }
@@ -28275,8 +25802,8 @@ const SurroundingsEnemies = () => {
       CastleCheck,
       {
         id: 7309,
-        name: "Castle Enemy: Path to Low Kasplat",
-        region: "Castle Surroundings",
+        name: "Enemy Near Low Kasplat",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong && hasClimbing,
         canGetBreak: inStage && anyKong
       }
@@ -28285,8 +25812,8 @@ const SurroundingsEnemies = () => {
       CastleCheck,
       {
         id: 7310,
-        name: "Castle Enemy: Low Boss Portal",
-        region: "Castle Surroundings",
+        name: "Enemy Near Lowest Troff 'n' Scoff Door",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong && hasClimbing,
         canGetBreak: inStage && anyKong
       }
@@ -28295,8 +25822,8 @@ const SurroundingsEnemies = () => {
       CastleCheck,
       {
         id: 7311,
-        name: "Castle Enemy: Path to Dungeon",
-        region: "Castle Surroundings",
+        name: "Enemy Near Steps to Dungeon",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong
       }
     ),
@@ -28304,129 +25831,9 @@ const SurroundingsEnemies = () => {
       CastleCheck,
       {
         id: 7312,
-        name: "Castle Enemy: Near Headphones",
-        region: "Castle Surroundings",
+        name: "Enemy Between Tree and Ladder to Headphones",
+        region: "Creepy Castle Main",
         canGetLogic: inStage && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7400,
-        name: "Castle Enemy Photo: Near Bridge 0",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7401,
-        name: "Castle Enemy Photo: Near Bridge 1",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7402,
-        name: "Castle Enemy Photo: Wooden Extrusion 0",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7403,
-        name: "Castle Enemy Photo: Wooden Extrusion 1",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7404,
-        name: "Castle Enemy Photo: Near Shed",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7405,
-        name: "Castle Enemy Photo: Near Library",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7406,
-        name: "Castle Enemy Photo: Near Tower",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7407,
-        name: "Castle Enemy Photo: Museum Steps",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7408,
-        name: "Castle Enemy Photo: Near Low Caves",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7409,
-        name: "Castle Enemy Photo: Path to Low Kasplat",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7410,
-        name: "Castle Enemy Photo: Low Boss Portal",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7411,
-        name: "Castle Enemy Photo: Path to Dungeon",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7412,
-        name: "Castle Enemy Photo: Near Headphones",
-        region: "Castle Surroundings",
-        canGetLogic: inStage && anyKong && hasFairyCam
       }
     )
   ] });
@@ -28434,14 +25841,13 @@ const SurroundingsEnemies = () => {
 const TreeEnemies = () => {
   const tree = useCastleTree();
   const bat = useDefeatBat();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
         id: 7370,
-        name: "Castle Enemy: Tree Start 0",
-        region: "Castle Surroundings",
+        name: "Tree Enemy 0",
+        region: "Creepy Castle Main",
         canGetLogic: tree && bat.in,
         canGetBreak: tree && bat.out
       }
@@ -28450,28 +25856,10 @@ const TreeEnemies = () => {
       CastleCheck,
       {
         id: 7371,
-        name: "Castle Enemy: Tree Start 1",
-        region: "Castle Surroundings",
+        name: "Tree Enemy 1",
+        region: "Creepy Castle Main",
         canGetLogic: tree && bat.in,
         canGetBreak: tree && bat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7470,
-        name: "Castle Enemy Photo: Tree Start 0",
-        region: "Castle Surroundings",
-        canGetLogic: tree && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7471,
-        name: "Castle Enemy Photo: Tree Start 1",
-        region: "Castle Surroundings",
-        canGetLogic: tree && hasFairyCam
       }
     )
   ] });
@@ -28493,14 +25881,13 @@ const UndergroundEnemies = () => {
   const feather = useFeather();
   const hasClimbing = useClimbing();
   const preOpenedCrypt = useOpenCrypt();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
         id: 7327,
-        name: "Castle Enemy: Low Cave Near Crypt",
-        region: "Castle Underground",
+        name: "Enemy in front of Crypt",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && anyKong && kosha.in && hasClimbing,
         canGetBreak: inStage && anyKong && kosha.out
       }
@@ -28509,8 +25896,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7328,
-        name: "Castle Enemy: Low Cave Near Stair Right",
-        region: "Castle Underground",
+        name: "Enemy at the Right Stairs to Crypt",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && anyKong && kosha.in && hasClimbing,
         canGetBreak: inStage && anyKong && kosha.out
       }
@@ -28519,8 +25906,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7320,
-        name: "Castle Enemy: Low Cave Near Stair Left",
-        region: "Castle Underground",
+        name: "Enemy at the Left Stairs to Crypt",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && anyKong && hasClimbing,
         canGetBreak: inStage && anyKong
       }
@@ -28529,8 +25916,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7330,
-        name: "Castle Enemy: Low Cave Near Mausoleum",
-        region: "Castle Underground",
+        name: "Enemy Guarding the Mausoleum",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && anyKong && bat.in && hasClimbing,
         canGetBreak: inStage && anyKong && bat.out
       }
@@ -28539,8 +25926,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7331,
-        name: "Castle Enemy: Low Cave Near Funky",
-        region: "Castle Underground",
+        name: "Enemy Guarding Funky's",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && anyKong && bat.in && hasClimbing,
         canGetBreak: inStage && anyKong && bat.out
       }
@@ -28549,8 +25936,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7332,
-        name: "Castle Enemy: Low Cave Near Tag",
-        region: "Castle Underground",
+        name: "Enemy Between Funky's and Nearby Tag Barrel",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && anyKong && bat.in && hasClimbing,
         canGetBreak: inStage && anyKong && bat.out
       }
@@ -28559,8 +25946,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7333,
-        name: "Castle Enemy: Crypt Diddy Coffin 0",
-        region: "Castle Underground",
+        name: "Enemy 0 inside Diddy's Coffins",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (peanut || preOpenedCrypt) && charge && hasClimbing,
         canGetBreak: inStage && (peanut || preOpenedCrypt) && charge
       }
@@ -28569,8 +25956,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7334,
-        name: "Castle Enemy: Crypt Diddy Coffin 1",
-        region: "Castle Underground",
+        name: "Enemy 1 inside Diddy's Coffins",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (peanut || preOpenedCrypt) && charge && hasClimbing,
         canGetBreak: inStage && (peanut || preOpenedCrypt) && charge
       }
@@ -28579,8 +25966,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7335,
-        name: "Castle Enemy: Crypt Diddy Coffin 2",
-        region: "Castle Underground",
+        name: "Enemy 2 inside Diddy's Coffins",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (peanut || preOpenedCrypt) && charge && hasClimbing,
         canGetBreak: inStage && (peanut || preOpenedCrypt) && charge
       }
@@ -28589,8 +25976,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7336,
-        name: "Castle Enemy: Crypt Diddy Coffin 3",
-        region: "Castle Underground",
+        name: "Enemy 3 inside Diddy's Coffins",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (peanut || preOpenedCrypt) && charge && hasClimbing,
         canGetBreak: inStage && (peanut || preOpenedCrypt) && charge
       }
@@ -28599,8 +25986,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7337,
-        name: "Castle Enemy: Crypt Chunky Coffin 0",
-        region: "Castle Underground",
+        name: "Enemy 0 inside Chunky's Coffin",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (pineapple || preOpenedCrypt) && slam && hasClimbing,
         canGetBreak: inStage && (pineapple || preOpenedCrypt) && slam
       }
@@ -28609,8 +25996,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7338,
-        name: "Castle Enemy: Crypt Chunky Coffin 1",
-        region: "Castle Underground",
+        name: "Enemy 1 inside Chunky's Coffin",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (pineapple || preOpenedCrypt) && slam && hasClimbing,
         canGetBreak: inStage && (pineapple || preOpenedCrypt) && slam
       }
@@ -28619,8 +26006,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7339,
-        name: "Castle Enemy: Crypt Chunky Coffin 2",
-        region: "Castle Underground",
+        name: "Enemy 2 inside Chunky's Coffin",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (pineapple || preOpenedCrypt) && slam && hasClimbing,
         canGetBreak: inStage && (pineapple || preOpenedCrypt) && slam
       }
@@ -28629,8 +26016,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7340,
-        name: "Castle Enemy: Crypt Chunky Coffin 3",
-        region: "Castle Underground",
+        name: "Enemy 3 inside Chunky's Coffin",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (pineapple || preOpenedCrypt) && slam && hasClimbing,
         canGetBreak: inStage && (pineapple || preOpenedCrypt) && slam
       }
@@ -28639,8 +26026,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7341,
-        name: "Castle Enemy: Crypt Minecart Entry",
-        region: "Castle Underground",
+        name: "Enemy at DK's Minecart Entry",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (coconut || preOpenedCrypt) && hasClimbing,
         canGetBreak: inStage && (coconut || preOpenedCrypt)
       }
@@ -28649,8 +26036,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7342,
-        name: "Castle Enemy: Crypt Fork",
-        region: "Castle Underground",
+        name: "Enemy at Fork to DK and Diddy's Crypts",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing,
         canGetBreak: inStage && (coconut || peanut || pineapple || preOpenedCrypt)
       }
@@ -28659,8 +26046,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7343,
-        name: "Castle Enemy: Crypt Near Diddy",
-        region: "Castle Underground",
+        name: "Enemy Outside Diddy's Crypt",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing,
         canGetBreak: inStage && (coconut || peanut || pineapple || preOpenedCrypt)
       }
@@ -28669,8 +26056,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7344,
-        name: "Castle Enemy: Crypt Near Chunky",
-        region: "Castle Underground",
+        name: "Enemy Outside Chunky's Crypt",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing,
         canGetBreak: inStage && (coconut || peanut || pineapple || preOpenedCrypt)
       }
@@ -28679,8 +26066,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7345,
-        name: "Castle Enemy: Mausoleum Tiny",
-        region: "Castle Underground",
+        name: "Enemy Outside Tiny's Mausoleum Room",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (feather || grape || preOpenedCrypt) && hasClimbing,
         canGetBreak: inStage && (feather || grape || preOpenedCrypt)
       }
@@ -28689,8 +26076,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7346,
-        name: "Castle Enemy: Mausoleum Lanky Switch",
-        region: "Castle Underground",
+        name: "Enemy on Lanky's Mausolem Path, at Switch",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (feather || grape || preOpenedCrypt) && hasClimbing,
         canGetBreak: inStage && (feather || grape || preOpenedCrypt)
       }
@@ -28699,8 +26086,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7347,
-        name: "Castle Enemy: Mausoleum Lanky Gate",
-        region: "Castle Underground",
+        name: "Enemy near Lanky's Mausoleum Gate",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && (feather || grape || preOpenedCrypt) && hasClimbing,
         canGetBreak: inStage && (feather || grape || preOpenedCrypt)
       }
@@ -28709,8 +26096,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7348,
-        name: "Castle Enemy: Upper Cave Near Dungeon",
-        region: "Castle Underground",
+        name: "Enemy at Upper Cave Dungeon Entrance",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && anyKong && bat.in,
         canGetBreak: inStage && anyKong && bat.out
       }
@@ -28719,8 +26106,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7350,
-        name: "Castle Enemy: Upper Cave Near Warp 1 Entrance",
-        region: "Castle Underground",
+        name: "Enemy at Upper Cave Lower Warp 1 Entrance",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && anyKong && bat.in,
         canGetBreak: inStage && anyKong && bat.out
       }
@@ -28729,8 +26116,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7351,
-        name: "Castle Enemy: Upper Cave Near Central Warp Area Entrance",
-        region: "Castle Underground",
+        name: "Enemy at Upper Cave Central Warp Area Entrance",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && anyKong
       }
     ),
@@ -28738,8 +26125,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7319,
-        name: "Castle Enemy: Dungeon Face Room",
-        region: "Castle Underground",
+        name: "Enemy in DK's Face Dungeon",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && dk2 && canSlam
       }
     ),
@@ -28747,8 +26134,8 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7320,
-        name: "Castle Enemy: Dungeon Chair Room",
-        region: "Castle Underground",
+        name: "Enemy in Diddy's Chair Dungeon",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && diddy && canSlam && kosha.in,
         canGetBreak: inStage && diddy && canSlam && kosha.out
       }
@@ -28757,274 +26144,10 @@ const UndergroundEnemies = () => {
       CastleCheck,
       {
         id: 7321,
-        name: "Castle Enemy: Dungeon Outside Lanky Room",
-        region: "Castle Underground",
+        name: "Enemy Outside Lanky's Acid Dungeon",
+        region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && anyKong && kosha.in,
         canGetBreak: inStage && anyKong && kosha.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7427,
-        name: "Castle Enemy Photo: Low Cave Near Crypt",
-        region: "Castle Underground",
-        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7428,
-        name: "Castle Enemy Photo: Low Cave Near Stair Right",
-        region: "Castle Underground",
-        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7420,
-        name: "Castle Enemy Photo: Low Cave Near Stair Left",
-        region: "Castle Underground",
-        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7430,
-        name: "Castle Enemy Photo: Low Cave Near Mausoleum",
-        region: "Castle Underground",
-        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7431,
-        name: "Castle Enemy Photo: Low Cave Near Funky",
-        region: "Castle Underground",
-        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7432,
-        name: "Castle Enemy Photo: Low Cave Near Tag",
-        region: "Castle Underground",
-        canGetLogic: inStage && anyKong && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7433,
-        name: "Castle Enemy Photo: Crypt Diddy Coffin 0",
-        region: "Castle Underground",
-        canGetLogic: inStage && (peanut || preOpenedCrypt) && charge && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (peanut || preOpenedCrypt) && charge && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7434,
-        name: "Castle Enemy Photo: Crypt Diddy Coffin 1",
-        region: "Castle Underground",
-        canGetLogic: inStage && (peanut || preOpenedCrypt) && charge && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (peanut || preOpenedCrypt) && charge && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7435,
-        name: "Castle Enemy Photo: Crypt Diddy Coffin 2",
-        region: "Castle Underground",
-        canGetLogic: inStage && (peanut || preOpenedCrypt) && charge && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (peanut || preOpenedCrypt) && charge && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7436,
-        name: "Castle Enemy Photo: Crypt Diddy Coffin 3",
-        region: "Castle Underground",
-        canGetLogic: inStage && (peanut || preOpenedCrypt) && charge && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (peanut || preOpenedCrypt) && charge && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7437,
-        name: "Castle Enemy Photo: Crypt Chunky Coffin 0",
-        region: "Castle Underground",
-        canGetLogic: inStage && (pineapple || preOpenedCrypt) && slam && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (pineapple || preOpenedCrypt) && slam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7438,
-        name: "Castle Enemy Photo: Crypt Chunky Coffin 1",
-        region: "Castle Underground",
-        canGetLogic: inStage && (pineapple || preOpenedCrypt) && slam && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (pineapple || preOpenedCrypt) && slam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7439,
-        name: "Castle Enemy Photo: Crypt Chunky Coffin 2",
-        region: "Castle Underground",
-        canGetLogic: inStage && (pineapple || preOpenedCrypt) && slam && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (pineapple || preOpenedCrypt) && slam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7440,
-        name: "Castle Enemy Photo: Crypt Chunky Coffin 3",
-        region: "Castle Underground",
-        canGetLogic: inStage && (pineapple || preOpenedCrypt) && slam && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (pineapple || preOpenedCrypt) && slam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7441,
-        name: "Castle Enemy Photo: Crypt Minecart Entry",
-        region: "Castle Underground",
-        canGetLogic: inStage && (coconut || preOpenedCrypt) && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (coconut || preOpenedCrypt) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7442,
-        name: "Castle Enemy Photo: Crypt Fork",
-        region: "Castle Underground",
-        canGetLogic: inStage && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (coconut || peanut || pineapple || preOpenedCrypt) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7443,
-        name: "Castle Enemy Photo: Crypt Near Diddy",
-        region: "Castle Underground",
-        canGetLogic: inStage && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (coconut || peanut || pineapple || preOpenedCrypt) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7444,
-        name: "Castle Enemy Photo: Crypt Near Chunky",
-        region: "Castle Underground",
-        canGetLogic: inStage && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (coconut || peanut || pineapple || preOpenedCrypt) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7445,
-        name: "Castle Enemy Photo: Mausoleum Tiny",
-        region: "Castle Underground",
-        canGetLogic: inStage && (feather || grape || preOpenedCrypt) && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (feather || grape || preOpenedCrypt) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7446,
-        name: "Castle Enemy Photo: Mausoleum Lanky Switch",
-        region: "Castle Underground",
-        canGetLogic: inStage && (feather || grape || preOpenedCrypt) && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (feather || grape || preOpenedCrypt) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7447,
-        name: "Castle Enemy Photo: Mausoleum Lanky Gate",
-        region: "Castle Underground",
-        canGetLogic: inStage && (feather || grape || preOpenedCrypt) && hasClimbing && hasFairyCam,
-        canGetBreak: inStage && (feather || grape || preOpenedCrypt) && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7448,
-        name: "Castle Enemy Photo: Upper Cave Near Dungeon",
-        region: "Castle Underground",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7450,
-        name: "Castle Enemy Photo: Upper Cave Near Warp 1 Entrance",
-        region: "Castle Underground",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7451,
-        name: "Castle Enemy Photo: Upper Cave Near Central Warp Area Entrance",
-        region: "Castle Underground",
-        canGetLogic: inStage && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7419,
-        name: "Castle Enemy Photo: Dungeon Face Room",
-        region: "Castle Underground",
-        canGetLogic: inStage && dk2 && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7420,
-        name: "Castle Enemy Photo: Dungeon Chair Room",
-        region: "Castle Underground",
-        canGetLogic: inStage && diddy && canSlam && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7421,
-        name: "Castle Enemy Photo: Dungeon Outside Lanky Room",
-        region: "Castle Underground",
-        canGetLogic: inStage && anyKong && hasFairyCam
       }
     )
   ] });
@@ -29043,8 +26166,8 @@ const RoomFairy = () => {
     CastleCheck,
     {
       id: 7081,
-      name: "Castle Fairy (Near Car Race)",
-      region: "Castle Rooms",
+      name: "Fairy in Museum Near Car Race",
+      region: "Various Castle Rooms",
       canGetLogic: room.in,
       canGetBreak: room.out
     }
@@ -29054,8 +26177,8 @@ const TreeFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { child
   CastleCheck,
   {
     id: 7080,
-    name: "Castle Fairy (Tree Sniper Room)",
-    region: "Castle Surroundings",
+    name: "Fairy in the Tree",
+    region: "Creepy Castle Main",
     canGetLogic: useTreeFairy()
   }
 ) }) });
@@ -29070,7 +26193,7 @@ const ChunkyCrypt = () => {
     {
       id: 7043,
       name: "Chunky's Crypt Bonus Barrel",
-      region: "Castle Underground",
+      region: "Castle Crypt and Dungeon",
       canGetLogic: canDoCheck.in,
       canGetBreak: canDoCheck.out
     }
@@ -29080,8 +26203,8 @@ const ChunkyMuseum = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CastleCheck,
   {
     id: 7042,
-    name: "Castle Chunky Museum",
-    region: "Castle Rooms",
+    name: "Chunky's Museum",
+    region: "Various Castle Rooms",
     canGetLogic: useChunkyRoomGb()
   }
 );
@@ -29091,8 +26214,8 @@ const ChunkyShed = () => {
     CastleCheck,
     {
       id: 7041,
-      name: "Castle Chunky Shed",
-      region: "Castle Surroundings",
+      name: "Chunky's Shed",
+      region: "Creepy Castle Main",
       canGetLogic: shedGb.in,
       canGetBreak: shedGb.out
     }
@@ -29104,8 +26227,8 @@ const ChunkyTree = () => {
     CastleCheck,
     {
       id: 7040,
-      name: "Castle Chunky Tree Sniping Barrel",
-      region: "Castle Surroundings",
+      name: "Chunky's Tree Sniping Barrel",
+      region: "Creepy Castle Main",
       canGetLogic: treeGb.in,
       canGetBreak: treeGb.out
     }
@@ -29122,7 +26245,7 @@ const DiddyBallroom = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { ch
   {
     id: 7011,
     name: "Diddy's Ballroom Barrel",
-    region: "Castle Rooms",
+    region: "Various Castle Rooms",
     canGetLogic: useDiddyRoomGb()
   }
 ) });
@@ -29133,7 +26256,7 @@ const DiddyCrypt = () => {
     {
       id: 7012,
       name: "Diddy's Crypt",
-      region: "Castle Underground",
+      region: "Castle Crypt and Dungeon",
       canGetLogic: doCheck.in,
       canGetBreak: doCheck.out
     }
@@ -29143,8 +26266,8 @@ const DiddyDungeon = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CastleCheck,
   {
     id: 7013,
-    name: "Castle Diddy Dungeon",
-    region: "Castle Underground",
+    name: "Diddy's Dungeon Sniper Challenge",
+    region: "Castle Crypt and Dungeon",
     canGetLogic: useDiddyDungeonGb()
   }
 );
@@ -29152,8 +26275,8 @@ const CastleTop = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CastleCheck,
   {
     id: 7010,
-    name: "Castle Diddy Above Castle",
-    region: "Castle Surroundings",
+    name: "Diddy's Barrel Above Lanky's Wind Tunnel",
+    region: "Creepy Castle Main",
     canGetLogic: useDiddyTopGb()
   }
 );
@@ -29167,8 +26290,8 @@ const DkDungeon = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CastleCheck,
   {
     id: 7004,
-    name: "Castle DK Dungeon",
-    region: "Castle Underground",
+    name: "DK's Face Puzzle",
+    region: "Castle Crypt and Dungeon",
     canGetLogic: useDkDungeonGb()
   }
 );
@@ -29178,8 +26301,8 @@ const DkLibrary = () => {
     CastleCheck,
     {
       id: 7002,
-      name: "Castle DK Library",
-      region: "Castle Rooms",
+      name: "DK's Library",
+      region: "Various Castle Rooms",
       canGetLogic: roomGb.in,
       canGetBreak: roomGb.out
     }
@@ -29191,8 +26314,8 @@ const DkMinecart = () => {
     CastleCheck,
     {
       id: 7003,
-      name: "Castle DK Minecart",
-      region: "Castle Underground",
+      name: "DK's Minecart",
+      region: "Castle Crypt and Dungeon",
       canGetLogic: doCheck.in,
       canGetBreak: doCheck.out
     }
@@ -29202,8 +26325,8 @@ const DkTree = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CastleCheck,
   {
     id: 7001,
-    name: "Castle DK Tree Sniping",
-    region: "Castle Surroundings",
+    name: "DK's Tree Sniping",
+    region: "Creepy Castle Main",
     canGetLogic: useDkTreeGb()
   }
 );
@@ -29219,8 +26342,8 @@ const LankyDungeon = () => {
     CastleCheck,
     {
       id: 7023,
-      name: "Castle Lanky Dungeon",
-      region: "Castle Underground",
+      name: "Lanky's Dungeon Acid Barrel",
+      region: "Castle Crypt and Dungeon",
       canGetLogic: dungeonGb.in,
       canGetBreak: dungeonGb.out
     }
@@ -29230,8 +26353,8 @@ const LankyGreenhouse = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CastleCheck,
   {
     id: 7021,
-    name: "Castle Lanky Greenhouse",
-    region: "Castle Surroundings",
+    name: "Lanky's Greenhouse",
+    region: "Creepy Castle Main",
     canGetLogic: useLankyGreenhouseGb()
   }
 );
@@ -29241,8 +26364,8 @@ const LankyMausoleum = () => {
     CastleCheck,
     {
       id: 7022,
-      name: "Castle Lanky Mausoleum",
-      region: "Castle Underground",
+      name: "Lanky's Mausoleum Room",
+      region: "Castle Crypt and Dungeon",
       canGetLogic: mausoleumGb.in,
       canGetBreak: mausoleumGb.out
     }
@@ -29254,8 +26377,8 @@ const LankyTower = () => {
     CastleCheck,
     {
       id: 7020,
-      name: "Castle Lanky Tower",
-      region: "Castle Rooms",
+      name: "Lanky's Wind Tunnel",
+      region: "Various Castle Rooms",
       canGetLogic: roomGb.in,
       canGetBreak: roomGb.out
     }
@@ -29272,7 +26395,7 @@ const TinyChasm = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   {
     id: 7033,
     name: "Tiny's Bonus Barrel Over the Chasm",
-    region: "Castle Underground",
+    region: "Castle Crypt and Dungeon",
     canGetLogic: useTinyChasmGb()
   }
 );
@@ -29282,8 +26405,8 @@ const TinyMausoleum = () => {
     CastleCheck,
     {
       id: 7032,
-      name: "Castle Tiny Mausoleum",
-      region: "Castle Underground",
+      name: "Tiny's Mausoleum Hand Walk",
+      region: "Castle Crypt and Dungeon",
       canGetLogic: mausoleumGb.in,
       canGetBreak: mausoleumGb.out
     }
@@ -29293,8 +26416,8 @@ const TinyRace = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, 
   CastleCheck,
   {
     id: 7030,
-    name: "Castle Tiny Car Race",
-    region: "Castle Rooms",
+    name: "Tiny's Car Race",
+    region: "Various Castle Rooms",
     canGetLogic: useTinyRoomGb()
   }
 ) });
@@ -29304,8 +26427,8 @@ const TinyTrash = () => {
     CastleCheck,
     {
       id: 7031,
-      name: "Castle Tiny Trash Can",
-      region: "Castle Surroundings",
+      name: "Tiny's Trash Can",
+      region: "Creepy Castle Main",
       canGetLogic: trashGb.in,
       canGetBreak: trashGb.out
     }
@@ -29322,7 +26445,7 @@ const ChunkyKasplat = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, {
   {
     id: 7054,
     name: "Kasplat in Front of Candy's",
-    region: "Castle Underground",
+    region: "Castle Crypt and Dungeon",
     canGetLogic: useDungeonKasplat()
   }
 ) }) });
@@ -29332,8 +26455,8 @@ const DiddyKasplat = () => {
     CastleCheck,
     {
       id: 7051,
-      name: "Castle Kasplat: Lower Cave Center",
-      region: "Castle Underground",
+      name: "Kasplat at Crypt Center",
+      region: "Castle Crypt and Dungeon",
       canGetLogic: canDoCheck.in,
       canGetBreak: canDoCheck.out
     }
@@ -29343,8 +26466,8 @@ const DkKasplat = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { chi
   CastleCheck,
   {
     id: 7050,
-    name: "Castle Kasplat: Inside the Tree",
-    region: "Castle Surroundings",
+    name: "Kasplat in the Tree",
+    region: "Creepy Castle Main",
     canGetLogic: useTreeKasplat()
   }
 ) }) });
@@ -29352,8 +26475,8 @@ const LankyKasplat = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { 
   CastleCheck,
   {
     id: 7052,
-    name: "Castle Kasplat: Near Upper Warp 2",
-    region: "Castle Surroundings",
+    name: "Kasplat Near Upper Warp 2",
+    region: "Creepy Castle Main",
     canGetLogic: usePathKasplat()
   }
 ) }) });
@@ -29363,8 +26486,8 @@ const TinyKasplat = () => {
     CastleCheck,
     {
       id: 7053,
-      name: "Castle Kasplat: On a lone platform",
-      region: "Castle Surroundings",
+      name: "Kasplat on Lone Low Platform Past Crypt Entrance",
+      region: "Creepy Castle Main",
       canGetLogic: canDoCheck.in,
       canGetBreak: canDoCheck.out
     }
@@ -29427,7 +26550,7 @@ const ChunkyMedal = () => {
       {
         id: 7104,
         name: "Chunky's Medal",
-        region: "Castle Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -29437,7 +26560,7 @@ const ChunkyMedal = () => {
       {
         id: 7204,
         name: "Chunky's Half-Medal",
-        region: "Castle Medal Rewards",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -29533,8 +26656,8 @@ const DiddyMedal = () => {
       CastleCheck,
       {
         id: 7101,
-        name: "Castle Diddy Medal",
-        region: "Castle Medal Rewards",
+        name: "Diddy's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -29543,8 +26666,8 @@ const DiddyMedal = () => {
       CastleCheck,
       {
         id: 7201,
-        name: "Castle Diddy Half-Medal",
-        region: "Castle Medal Rewards",
+        name: "Diddy's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -29626,8 +26749,8 @@ const DkMedal = () => {
       CastleCheck,
       {
         id: 7100,
-        name: "Castle DK Medal",
-        region: "Castle Medal Rewards",
+        name: "DK's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -29636,8 +26759,8 @@ const DkMedal = () => {
       CastleCheck,
       {
         id: 7200,
-        name: "Castle DK Half-Medal",
-        region: "Castle Medal Rewards",
+        name: "DK's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -29725,8 +26848,8 @@ const LankyMedal = () => {
       CastleCheck,
       {
         id: 7102,
-        name: "Castle Lanky Medal",
-        region: "Castle Medal Rewards",
+        name: "Lanky's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -29735,8 +26858,8 @@ const LankyMedal = () => {
       CastleCheck,
       {
         id: 7202,
-        name: "Castle Lanky Half-Medal",
-        region: "Castle Medal Rewards",
+        name: "Lanky's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -29812,8 +26935,8 @@ const TinyMedal = () => {
       CastleCheck,
       {
         id: 7103,
-        name: "Castle Tiny Medal",
-        region: "Castle Medal Rewards",
+        name: "Tiny's Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
@@ -29822,8 +26945,8 @@ const TinyMedal = () => {
       CastleCheck,
       {
         id: 7203,
-        name: "Castle Tiny Half-Medal",
-        region: "Castle Medal Rewards",
+        name: "Tiny's Half-Medal",
+        region: "Banana Medals",
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
@@ -29883,7 +27006,7 @@ const Vanilla = () => {
         baseId: 7110,
         baseName: "Castle Cranky",
         level: "Creepy Castle",
-        region: "Castle Shops",
+        region: "Shops",
         inLogic: hasCranky && inStage
       }
     ),
@@ -29893,7 +27016,7 @@ const Vanilla = () => {
         baseId: 7120,
         baseName: "Castle Funky",
         level: "Creepy Castle",
-        region: "Castle Shops",
+        region: "Shops",
         inLogic: hasFunky && inStage && hasClimbing,
         outLogic: hasFunky && inStage
       }
@@ -29904,7 +27027,7 @@ const Vanilla = () => {
         baseId: 7130,
         baseName: "Castle Candy",
         level: "Creepy Castle",
-        region: "Castle Shops",
+        region: "Shops",
         inLogic: hasCandy && inStage
       }
     ),
@@ -29914,7 +27037,7 @@ const Vanilla = () => {
         baseId: 7140,
         baseName: "Turn in Castle Blueprint for",
         level: "Creepy Castle",
-        region: "Castle Shops",
+        region: "Shops",
         inLogic: hasSnide && inStage
       }
     )
@@ -29929,7 +27052,7 @@ const Shuffled = () => {
         baseId: 7140,
         baseName: "Castle Cranky Location",
         level: "Creepy Castle",
-        region: "Castle Shops",
+        region: "Shops",
         inLogic: inStage
       }
     ),
@@ -29939,7 +27062,7 @@ const Shuffled = () => {
         baseId: 7150,
         baseName: "Castle Funky Location",
         level: "Creepy Castle",
-        region: "Castle Shops",
+        region: "Shops",
         inLogic: inStage
       }
     ),
@@ -29949,7 +27072,7 @@ const Shuffled = () => {
         baseId: 7160,
         baseName: "Castle Candy Location",
         level: "Creepy Castle",
-        region: "Castle Shops",
+        region: "Shops",
         inLogic: inStage
       }
     ),
@@ -29959,7 +27082,7 @@ const Shuffled = () => {
         baseId: 7170,
         baseName: "Castle Snide Location",
         level: "Creepy Castle",
-        region: "Castle Shops",
+        region: "Shops",
         inLogic: inStage
       }
     )
@@ -30046,7 +27169,7 @@ const BoulderCheck = () => {
     {
       id: 7205,
       name: "Museum Boulder",
-      region: "Castle Rooms",
+      region: "Various Castle Rooms",
       canGetLogic: canDoMuseum
     }
   ) });
@@ -32466,17 +29589,6 @@ const GeneratorSettings = () => {
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fast Check Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Fast Factory Arcade?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: dkPadIcon,
-                  title: "If this is on, then you only have to play DK Arcade once. What would normally be the first reward instead replaces the star at the end of DK's Barrel Blast course in Factory.",
-                  storeKey: "factoryArcade",
-                  prefix: "fastChecks",
-                  updateItem: setFastCheck
-                }
-              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of pearls the Mermaid requires:" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 CountSelector,
