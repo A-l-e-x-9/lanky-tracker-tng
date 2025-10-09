@@ -29,6 +29,7 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 - Could possibly add in the new "Item Count Modifier" feature, but I don't think it'll have much effect.
 - Snide Rewards and the Max Snide Reward Limit...they seem a little too unpredictable for me to implement.
   - And on that note, progressive Wrinkly hints, something that's been a feature since at least Season 3 (and was used in official Season 3 seeds; retired in favor of bringing back the doors, but with the "Dos's Doors" shuffle)
+- The Plandomizer mentions enemy photo checks (listed under "All Kongs" for each level in the style of "Photo of (enemy eligible for Dropsanity)" (with a few enemies NOT eligible in there, too, such as the underwater Galleon enemies!). However, Alex has yet to actually GET one of these in any Version 5 seed he's played so far, so either 2dos and his friends made one big fakeout, are advertising an unimplemented feature, or Alex has to do a "Kremling Kapture" seed. Either way, Alex took out the photo checks and will not put them back in until he can confirm that taking pictures of enemies will yield rewards.
 
 # Development
 
