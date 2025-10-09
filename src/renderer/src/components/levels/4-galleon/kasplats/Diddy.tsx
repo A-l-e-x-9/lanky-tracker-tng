@@ -8,7 +8,7 @@ const DiddyKasplat: React.FC = () => (
     <VanillaKasplat>
       <GalleonCheck
         id={4051}
-        name="Kevin the Kasplat (Galleon Kasplat: Lighthouse Alcove)"
+        name="Kevin the Kasplat (Lighthouse Alcove)"
         region="Lighthouse Area"
         canGetLogic={useKevin()}
       />

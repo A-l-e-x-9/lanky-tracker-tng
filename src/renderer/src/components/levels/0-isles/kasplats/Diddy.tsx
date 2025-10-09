@@ -8,7 +8,7 @@ const DiddyKasplat: React.FC = () => (
     <VanillaKasplat>
       <IslesCheck
         id={51}
-        name="Isles Kasplat: Castle Lobby"
+        name="Kasplat in the Castle Lobby"
         region="Caves-Helm Lobbies"
         canGetLogic={useCastleKasplat()}
       />

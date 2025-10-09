@@ -14,66 +14,66 @@ const Dk5Enemies: React.FC = () => {
     <DropPool>
       <AztecCheck
         id={2322}
-        name="Aztec Enemy: DK 5DT Start Trap 0"
+        name="DK 5DT Start Trap Enemy 0"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && kaboom.in}
         canGetBreak={logicBreak(door) && coconut && kaboom.out}
       />
       <AztecCheck
         id={2323}
-        name="Aztec Enemy: DK 5DT Start Trap 1"
+        name="DK 5DT Start Trap Enemy 1"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && kaboom.in}
         canGetBreak={logicBreak(door) && coconut && kaboom.out}
       />
       <AztecCheck
         id={2324}
-        name="Aztec Enemy: DK 5DT Start Trap 2"
+        name="DK 5DT Start Trap Enemy 2"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && kaboom.in}
         canGetBreak={logicBreak(door) && coconut && kaboom.out}
       />
       <AztecCheck
         id={2325}
-        name="Aztec Enemy: DK 5DT End Trap 0"
+        name="Enemy at DK 5DT Start Path"
         region="5 Door Temple"
-        canGetLogic={door.in && coconut && kaboom.in}
-        canGetBreak={logicBreak(door) && coconut && kaboom.out}
+        canGetLogic={door.in && coconut && klaptrap}
+        canGetBreak={logicBreak(door) && coconut && klaptrap}
       />
       <AztecCheck
         id={2326}
-        name="Aztec Enemy: DK 5DT End Trap 1"
+        name="DK 5DT End Path Enemy 0"
         region="5 Door Temple"
-        canGetLogic={door.in && coconut && kaboom.in}
-        canGetBreak={logicBreak(door) && coconut && kaboom.out}
+        canGetLogic={door.in && coconut && klaptrap}
+        canGetBreak={logicBreak(door) && coconut && klaptrap}
       />
       <AztecCheck
         id={2327}
-        name="Aztec Enemy: DK 5DT End Trap 2"
+        name="DK 5DT End Path Enemy 1"
+        region="5 Door Temple"
+        canGetLogic={door.in && coconut && klaptrap}
+        canGetBreak={logicBreak(door) && coconut && klaptrap}
+      />
+      <AztecCheck
+        id={2328}
+        name="DK 5DT End Trap Enemy 0"
         region="5 Door Temple"
         canGetLogic={door.in && coconut && kaboom.in}
         canGetBreak={logicBreak(door) && coconut && kaboom.out}
       />
       <AztecCheck
-        id={2328}
-        name="Aztec Enemy: DK 5DT End Path 0"
-        region="5 Door Temple"
-        canGetLogic={door.in && coconut && klaptrap}
-        canGetBreak={logicBreak(door) && coconut && klaptrap}
-      />
-      <AztecCheck
         id={2329}
-        name="Aztec Enemy: DK 5DT End Path 1"
+        name="DK 5DT End Trap Enemy 1"
         region="5 Door Temple"
-        canGetLogic={door.in && coconut && klaptrap}
-        canGetBreak={logicBreak(door) && coconut && klaptrap}
+        canGetLogic={door.in && coconut && kaboom.in}
+        canGetBreak={logicBreak(door) && coconut && kaboom.out}
       />
       <AztecCheck
         id={2330}
-        name="Aztec Enemy: DK 5DT Start Path"
+        name="DK 5DT End Trap Enemy 2"
         region="5 Door Temple"
-        canGetLogic={door.in && coconut && klaptrap}
-        canGetBreak={logicBreak(door) && coconut && klaptrap}
+        canGetLogic={door.in && coconut && kaboom.in}
+        canGetBreak={logicBreak(door) && coconut && kaboom.out}
       />
     </DropPool>
   )

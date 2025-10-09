@@ -13,21 +13,21 @@ const Lanky5Enemies: React.FC = () => {
     <DropPool>
       <AztecCheck
         id={2338}
-        name="Aztec Enemy: Lanky 5DT Joining Paths"
+        name="Lanky 5DT Enemy at the Joining Paths"
         region="5 Door Temple"
         canGetLogic={door.in && grape && klump}
         canGetBreak={logicBreak(door) && grape && klump}
       />
       <AztecCheck
         id={2339}
-        name="Aztec Enemy: Lanky 5DT End Trap"
+        name="Lanky 5DT End Trap Enemy"
         region="5 Door Temple"
         canGetLogic={door.in && grape && klump}
         canGetBreak={logicBreak(door) && grape && klump}
       />
       <AztecCheck
         id={2340}
-        name="Aztec Enemy: Lanky 5DT Reward"
+        name="Lanky 5DT Reward Enemy"
         region="5 Door Temple"
         canGetLogic={door.in && grape && klump}
         canGetBreak={logicBreak(door) && grape && klump}

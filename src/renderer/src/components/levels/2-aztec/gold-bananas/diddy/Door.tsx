@@ -6,7 +6,7 @@ const DiddyDoorTemple: React.FC = () => {
   return (
     <AztecCheck
       id={2013}
-      name="Aztec Diddy 5 Door Temple"
+      name="Diddy's 5 Door Temple"
       region="5 Door Temple"
       canGetLogic={doorGb.in}
       canGetBreak={doorGb.out}

@@ -10,7 +10,7 @@ const DkKasplat: React.FC = () => {
       <VanillaKasplat>
         <GalleonCheck
           id={4050}
-          name="Galleon Kasplat: Diddy Gold Tower"
+          name="Kasplat on Diddy's Gold Tower"
           region="Treasure Room"
           canGetLogic={treasure.in}
           canGetBreak={treasure.out}

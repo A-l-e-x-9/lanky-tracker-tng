@@ -10,7 +10,7 @@ const DoorFairy: React.FC = () => {
       <VanillaFairy>
         <AztecCheck
           id={2081}
-          name="Aztec Fairy (Tiny 5-Door Temple)"
+          name="Fairy in Tiny's 5-Door Temple"
           region="5 Door Temple"
           canGetLogic={door.in}
           canGetBreak={door.out}

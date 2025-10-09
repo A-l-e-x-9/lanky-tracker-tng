@@ -13,56 +13,56 @@ const Tiny5Enemies: React.FC = () => {
     <DropPool>
       <AztecCheck
         id={2341}
-        name="Aztec Enemy: Tiny 5DT Start Right Front"
+        name="Tiny 5DT Start Left Front Enemy"
         region="5 Door Temple"
         canGetLogic={door.in && feather && zinger.in}
         canGetBreak={logicBreak(door) && feather && zinger.out}
       />
       <AztecCheck
         id={2342}
-        name="Aztec Enemy: Tiny 5DT Start Left Back"
+        name="Tiny 5DT Start Left Back Enemy"
         region="5 Door Temple"
         canGetLogic={door.in && feather && zinger.in}
         canGetBreak={logicBreak(door) && feather && zinger.out}
       />
       <AztecCheck
         id={2343}
-        name="Aztec Enemy: Tiny 5DT Start Right Back"
+        name="Tiny 5DT Start Right Back Enemy"
         region="5 Door Temple"
         canGetLogic={door.in && feather && zinger.in}
         canGetBreak={logicBreak(door) && feather && zinger.out}
       />
       <AztecCheck
         id={2344}
-        name="Aztec Enemy: Tiny 5DT Start Left Front"
+        name="Tiny 5DT Start Right Front Enemy"
         region="5 Door Temple"
         canGetLogic={door.in && feather && zinger.in}
         canGetBreak={logicBreak(door) && feather && zinger.out}
       />
       <AztecCheck
         id={2345}
-        name="Aztec Enemy: Tiny 5DT Reward 0"
+        name="Tiny 5DT Dead End Enemy 0"
         region="5 Door Temple"
         canGetLogic={door.in && feather && zinger.in}
         canGetBreak={logicBreak(door) && feather && zinger.out}
       />
       <AztecCheck
         id={2346}
-        name="Aztec Enemy: Tiny 5DT Reward 1"
+        name="Tiny 5DT Dead End Enemy 1"
         region="5 Door Temple"
         canGetLogic={door.in && feather && zinger.in}
         canGetBreak={logicBreak(door) && feather && zinger.out}
       />
       <AztecCheck
         id={2347}
-        name="Aztec Enemy: Tiny 5DT Dead End 0"
+        name="Tiny 5DT Reward Enemy 0"
         region="5 Door Temple"
         canGetLogic={door.in && feather && zinger.in}
         canGetBreak={logicBreak(door) && feather && zinger.out}
       />
       <AztecCheck
         id={2348}
-        name="Aztec Enemy: Tiny 5DT Dead End 1"
+        name="Tiny 5DT Reward Enemy 1"
         region="5 Door Temple"
         canGetLogic={door.in && feather && zinger.in}
         canGetBreak={logicBreak(door) && feather && zinger.out}

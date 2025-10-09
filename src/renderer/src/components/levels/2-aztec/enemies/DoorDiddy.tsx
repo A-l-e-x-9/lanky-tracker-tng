@@ -14,52 +14,52 @@ const Diddy5Enemies: React.FC = () => {
     <DropPool>
       <AztecCheck
         id={2331}
-        name="Aztec Enemy: Diddy 5DT End Trap 0"
+        name="Diddy 5DT Start Left Enemy 0"
         region="5 Door Temple"
-        canGetLogic={door.in && peanut && klobber}
-        canGetBreak={logicBreak(door) && peanut && klobber}
+        canGetLogic={door.in && peanut}
+        canGetBreak={logicBreak(door) && peanut}
       />
       <AztecCheck
         id={2332}
-        name="Aztec Enemy: Diddy 5DT End Trap 1"
+        name="Diddy 5DT Start Left Enemy 1"
         region="5 Door Temple"
-        canGetLogic={door.in && peanut && klobber}
-        canGetBreak={logicBreak(door) && peanut && klobber}
+        canGetLogic={door.in && peanut}
+        canGetBreak={logicBreak(door) && peanut}
       />
       <AztecCheck
         id={2333}
-        name="Aztec Enemy: Diddy 5DT End Trap 2"
+        name="Diddy 5DT Second Switch Enemy"
+        region="5 Door Temple"
+        canGetLogic={door.in && peanut}
+        canGetBreak={logicBreak(door) && peanut}
+      />
+      <AztecCheck
+        id={2334}
+        name="Diddy 5DT End Trap Enemy 0"
         region="5 Door Temple"
         canGetLogic={door.in && peanut && klobber}
         canGetBreak={logicBreak(door) && peanut && klobber}
       />
       <AztecCheck
-        id={2334}
-        name="Aztec Enemy: Diddy 5DT Start Left 0"
-        region="5 Door Temple"
-        canGetLogic={door.in && peanut}
-        canGetBreak={logicBreak(door) && peanut}
-      />
-      <AztecCheck
         id={2335}
-        name="Aztec Enemy: Diddy 5DT Start Left 1"
+        name="Diddy 5DT End Trap Enemy 1"
         region="5 Door Temple"
-        canGetLogic={door.in && peanut}
-        canGetBreak={logicBreak(door) && peanut}
+        canGetLogic={door.in && peanut && klobber}
+        canGetBreak={logicBreak(door) && peanut && klobber}
       />
       <AztecCheck
         id={2336}
-        name="Aztec Enemy: Diddy 5DT Reward"
+        name="Diddy 5DT End Trap Enemy 2"
         region="5 Door Temple"
-        canGetLogic={door.in && peanut && klump}
-        canGetBreak={logicBreak(door) && peanut && klump}
+        canGetLogic={door.in && peanut && klobber}
+        canGetBreak={logicBreak(door) && peanut && klobber}
       />
       <AztecCheck
         id={2337}
-        name="Aztec Enemy: Diddy 5DT Second Switch"
+        name="Enemy at Diddy 5DT Reward"
         region="5 Door Temple"
-        canGetLogic={door.in && peanut}
-        canGetBreak={logicBreak(door) && peanut}
+        canGetLogic={door.in && peanut && klump}
+        canGetBreak={logicBreak(door) && peanut && klump}
       />
     </DropPool>
   )

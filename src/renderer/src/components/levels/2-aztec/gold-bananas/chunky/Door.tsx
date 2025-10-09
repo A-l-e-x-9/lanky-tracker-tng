@@ -6,7 +6,7 @@ const ChunkyDoorTemple: React.FC = () => {
   return (
     <AztecCheck
       id={2043}
-      name="Aztec Chunky 5 Door Temple"
+      name="Chunky's 5 Door Temple"
       region="5 Door Temple"
       canGetLogic={doorGb.in}
       canGetBreak={doorGb.out}

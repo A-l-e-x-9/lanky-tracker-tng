@@ -10,7 +10,7 @@ const DkKasplat: React.FC = () => {
       <VanillaKasplat>
         <IslesCheck
           id={50}
-          name="Isles Kasplat: Helm Lobby"
+          name="Kasplat in the Helm Lobby"
           region="Caves-Helm Lobbies"
           canGetLogic={helmKasplat.in}
           canGetBreak={helmKasplat.out}
