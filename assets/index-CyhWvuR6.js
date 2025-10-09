@@ -12698,7 +12698,7 @@ const DiddyKasplat$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, 
   IslesCheck,
   {
     id: 51,
-    name: "Isles Kasplat: Castle Lobby",
+    name: "Kasplat in the Castle Lobby",
     region: "Caves-Helm Lobbies",
     canGetLogic: useCastleKasplat()
   }
@@ -12709,7 +12709,7 @@ const DkKasplat$7 = () => {
     IslesCheck,
     {
       id: 50,
-      name: "Isles Kasplat: Helm Lobby",
+      name: "Kasplat in the Helm Lobby",
       region: "Caves-Helm Lobbies",
       canGetLogic: helmKasplat.in,
       canGetBreak: helmKasplat.out
@@ -16363,7 +16363,7 @@ const Chunky5Enemies = () => {
       AztecCheck,
       {
         id: 2349,
-        name: "Aztec Enemy: Chunky 5DT Start Right",
+        name: "Chunky 5DT Start Left Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && klobber,
         canGetBreak: logicBreak(door) && pineapple && klobber
@@ -16373,7 +16373,7 @@ const Chunky5Enemies = () => {
       AztecCheck,
       {
         id: 2350,
-        name: "Aztec Enemy: Chunky 5DT Start Left",
+        name: "Chunky 5DT Start Right Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && klobber,
         canGetBreak: logicBreak(door) && pineapple && klobber
@@ -16383,7 +16383,7 @@ const Chunky5Enemies = () => {
       AztecCheck,
       {
         id: 2351,
-        name: "Aztec Enemy: Chunky 5DT Second Right",
+        name: "Chunky 5DT Second Left Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && klobber,
         canGetBreak: logicBreak(door) && pineapple && klobber
@@ -16393,7 +16393,7 @@ const Chunky5Enemies = () => {
       AztecCheck,
       {
         id: 2352,
-        name: "Aztec Enemy: Chunky 5DT Second Left",
+        name: "Chunky 5DT Second Right Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && klobber,
         canGetBreak: logicBreak(door) && pineapple && klobber
@@ -16403,7 +16403,7 @@ const Chunky5Enemies = () => {
       AztecCheck,
       {
         id: 2353,
-        name: "Aztec Enemy: Chunky 5DT Reward",
+        name: "Enemy at Chunky 5DT Reward",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && zinger.in,
         canGetBreak: logicBreak(door) && pineapple && zinger.out
@@ -16421,27 +16421,37 @@ const Diddy5Enemies = () => {
       AztecCheck,
       {
         id: 2331,
-        name: "Aztec Enemy: Diddy 5DT End Trap 0",
+        name: "Diddy 5DT Start Left Enemy 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && peanut && klobber,
-        canGetBreak: logicBreak(door) && peanut && klobber
+        canGetLogic: door.in && peanut,
+        canGetBreak: logicBreak(door) && peanut
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2332,
-        name: "Aztec Enemy: Diddy 5DT End Trap 1",
+        name: "Diddy 5DT Start Left Enemy 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && peanut && klobber,
-        canGetBreak: logicBreak(door) && peanut && klobber
+        canGetLogic: door.in && peanut,
+        canGetBreak: logicBreak(door) && peanut
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2333,
-        name: "Aztec Enemy: Diddy 5DT End Trap 2",
+        name: "Diddy 5DT Second Switch Enemy",
+        region: "5 Door Temple",
+        canGetLogic: door.in && peanut,
+        canGetBreak: logicBreak(door) && peanut
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2334,
+        name: "Diddy 5DT End Trap Enemy 0",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut && klobber,
         canGetBreak: logicBreak(door) && peanut && klobber
@@ -16450,41 +16460,31 @@ const Diddy5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2334,
-        name: "Aztec Enemy: Diddy 5DT Start Left 0",
-        region: "5 Door Temple",
-        canGetLogic: door.in && peanut,
-        canGetBreak: logicBreak(door) && peanut
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
         id: 2335,
-        name: "Aztec Enemy: Diddy 5DT Start Left 1",
+        name: "Diddy 5DT End Trap Enemy 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && peanut,
-        canGetBreak: logicBreak(door) && peanut
+        canGetLogic: door.in && peanut && klobber,
+        canGetBreak: logicBreak(door) && peanut && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2336,
-        name: "Aztec Enemy: Diddy 5DT Reward",
+        name: "Diddy 5DT End Trap Enemy 2",
         region: "5 Door Temple",
-        canGetLogic: door.in && peanut && klump,
-        canGetBreak: logicBreak(door) && peanut && klump
+        canGetLogic: door.in && peanut && klobber,
+        canGetBreak: logicBreak(door) && peanut && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2337,
-        name: "Aztec Enemy: Diddy 5DT Second Switch",
+        name: "Enemy at Diddy 5DT Reward",
         region: "5 Door Temple",
-        canGetLogic: door.in && peanut,
-        canGetBreak: logicBreak(door) && peanut
+        canGetLogic: door.in && peanut && klump,
+        canGetBreak: logicBreak(door) && peanut && klump
       }
     )
   ] });
@@ -16499,7 +16499,7 @@ const Dk5Enemies = () => {
       AztecCheck,
       {
         id: 2322,
-        name: "Aztec Enemy: DK 5DT Start Trap 0",
+        name: "DK 5DT Start Trap Enemy 0",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
         canGetBreak: logicBreak(door) && coconut && kaboom.out
@@ -16509,7 +16509,7 @@ const Dk5Enemies = () => {
       AztecCheck,
       {
         id: 2323,
-        name: "Aztec Enemy: DK 5DT Start Trap 1",
+        name: "DK 5DT Start Trap Enemy 1",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
         canGetBreak: logicBreak(door) && coconut && kaboom.out
@@ -16519,7 +16519,7 @@ const Dk5Enemies = () => {
       AztecCheck,
       {
         id: 2324,
-        name: "Aztec Enemy: DK 5DT Start Trap 2",
+        name: "DK 5DT Start Trap Enemy 2",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
         canGetBreak: logicBreak(door) && coconut && kaboom.out
@@ -16529,27 +16529,37 @@ const Dk5Enemies = () => {
       AztecCheck,
       {
         id: 2325,
-        name: "Aztec Enemy: DK 5DT End Trap 0",
+        name: "Enemy at DK 5DT Start Path",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom.in,
-        canGetBreak: logicBreak(door) && coconut && kaboom.out
+        canGetLogic: door.in && coconut && klaptrap,
+        canGetBreak: logicBreak(door) && coconut && klaptrap
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2326,
-        name: "Aztec Enemy: DK 5DT End Trap 1",
+        name: "DK 5DT End Path Enemy 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboom.in,
-        canGetBreak: logicBreak(door) && coconut && kaboom.out
+        canGetLogic: door.in && coconut && klaptrap,
+        canGetBreak: logicBreak(door) && coconut && klaptrap
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2327,
-        name: "Aztec Enemy: DK 5DT End Trap 2",
+        name: "DK 5DT End Path Enemy 1",
+        region: "5 Door Temple",
+        canGetLogic: door.in && coconut && klaptrap,
+        canGetBreak: logicBreak(door) && coconut && klaptrap
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2328,
+        name: "DK 5DT End Trap Enemy 0",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
         canGetBreak: logicBreak(door) && coconut && kaboom.out
@@ -16558,31 +16568,21 @@ const Dk5Enemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2328,
-        name: "Aztec Enemy: DK 5DT End Path 0",
-        region: "5 Door Temple",
-        canGetLogic: door.in && coconut && klaptrap,
-        canGetBreak: logicBreak(door) && coconut && klaptrap
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
         id: 2329,
-        name: "Aztec Enemy: DK 5DT End Path 1",
+        name: "DK 5DT End Trap Enemy 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && klaptrap,
-        canGetBreak: logicBreak(door) && coconut && klaptrap
+        canGetLogic: door.in && coconut && kaboom.in,
+        canGetBreak: logicBreak(door) && coconut && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2330,
-        name: "Aztec Enemy: DK 5DT Start Path",
+        name: "DK 5DT End Trap Enemy 2",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && klaptrap,
-        canGetBreak: logicBreak(door) && coconut && klaptrap
+        canGetLogic: door.in && coconut && kaboom.in,
+        canGetBreak: logicBreak(door) && coconut && kaboom.out
       }
     )
   ] });
@@ -16596,7 +16596,7 @@ const Lanky5Enemies = () => {
       AztecCheck,
       {
         id: 2338,
-        name: "Aztec Enemy: Lanky 5DT Joining Paths",
+        name: "Lanky 5DT Enemy at the Joining Paths",
         region: "5 Door Temple",
         canGetLogic: door.in && grape && klump,
         canGetBreak: logicBreak(door) && grape && klump
@@ -16606,7 +16606,7 @@ const Lanky5Enemies = () => {
       AztecCheck,
       {
         id: 2339,
-        name: "Aztec Enemy: Lanky 5DT End Trap",
+        name: "Lanky 5DT End Trap Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && grape && klump,
         canGetBreak: logicBreak(door) && grape && klump
@@ -16616,7 +16616,7 @@ const Lanky5Enemies = () => {
       AztecCheck,
       {
         id: 2340,
-        name: "Aztec Enemy: Lanky 5DT Reward",
+        name: "Lanky 5DT Reward Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && grape && klump,
         canGetBreak: logicBreak(door) && grape && klump
@@ -16633,7 +16633,7 @@ const Tiny5Enemies = () => {
       AztecCheck,
       {
         id: 2341,
-        name: "Aztec Enemy: Tiny 5DT Start Right Front",
+        name: "Tiny 5DT Start Left Front Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
         canGetBreak: logicBreak(door) && feather && zinger.out
@@ -16643,7 +16643,7 @@ const Tiny5Enemies = () => {
       AztecCheck,
       {
         id: 2342,
-        name: "Aztec Enemy: Tiny 5DT Start Left Back",
+        name: "Tiny 5DT Start Left Back Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
         canGetBreak: logicBreak(door) && feather && zinger.out
@@ -16653,7 +16653,7 @@ const Tiny5Enemies = () => {
       AztecCheck,
       {
         id: 2343,
-        name: "Aztec Enemy: Tiny 5DT Start Right Back",
+        name: "Tiny 5DT Start Right Back Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
         canGetBreak: logicBreak(door) && feather && zinger.out
@@ -16663,7 +16663,7 @@ const Tiny5Enemies = () => {
       AztecCheck,
       {
         id: 2344,
-        name: "Aztec Enemy: Tiny 5DT Start Left Front",
+        name: "Tiny 5DT Start Right Front Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
         canGetBreak: logicBreak(door) && feather && zinger.out
@@ -16673,7 +16673,7 @@ const Tiny5Enemies = () => {
       AztecCheck,
       {
         id: 2345,
-        name: "Aztec Enemy: Tiny 5DT Reward 0",
+        name: "Tiny 5DT Dead End Enemy 0",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
         canGetBreak: logicBreak(door) && feather && zinger.out
@@ -16683,7 +16683,7 @@ const Tiny5Enemies = () => {
       AztecCheck,
       {
         id: 2346,
-        name: "Aztec Enemy: Tiny 5DT Reward 1",
+        name: "Tiny 5DT Dead End Enemy 1",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
         canGetBreak: logicBreak(door) && feather && zinger.out
@@ -16693,7 +16693,7 @@ const Tiny5Enemies = () => {
       AztecCheck,
       {
         id: 2347,
-        name: "Aztec Enemy: Tiny 5DT Dead End 0",
+        name: "Tiny 5DT Reward Enemy 0",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
         canGetBreak: logicBreak(door) && feather && zinger.out
@@ -16703,7 +16703,7 @@ const Tiny5Enemies = () => {
       AztecCheck,
       {
         id: 2348,
-        name: "Aztec Enemy: Tiny 5DT Dead End 1",
+        name: "Tiny 5DT Reward Enemy 1",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
         canGetBreak: logicBreak(door) && feather && zinger.out
@@ -17025,7 +17025,7 @@ const DoorFairy = () => {
     AztecCheck,
     {
       id: 2081,
-      name: "Aztec Fairy (Tiny 5-Door Temple)",
+      name: "Fairy in Tiny's 5-Door Temple",
       region: "5 Door Temple",
       canGetLogic: door.in,
       canGetBreak: door.out
@@ -17055,7 +17055,7 @@ const ChunkyDoorTemple = () => {
     AztecCheck,
     {
       id: 2043,
-      name: "Aztec Chunky 5 Door Temple",
+      name: "Chunky's 5 Door Temple",
       region: "5 Door Temple",
       canGetLogic: doorGb.in,
       canGetBreak: doorGb.out
@@ -17113,7 +17113,7 @@ const DiddyDoorTemple = () => {
     AztecCheck,
     {
       id: 2013,
-      name: "Aztec Diddy 5 Door Temple",
+      name: "Diddy's 5 Door Temple",
       region: "5 Door Temple",
       canGetLogic: doorGb.in,
       canGetBreak: doorGb.out
@@ -17185,7 +17185,7 @@ const DonkeyDoorTemple = () => {
     AztecCheck,
     {
       id: 2003,
-      name: "Aztec DK 5 Door Temple",
+      name: "DK's 5 Door Temple",
       region: "5 Door Temple",
       canGetLogic: doorGb.in,
       canGetBreak: doorGb.out
@@ -17257,7 +17257,7 @@ const LankyDoorTemple = () => {
     AztecCheck,
     {
       id: 2021,
-      name: "Aztec Lanky 5 Door Temple",
+      name: "Lanky's 5 Door Temple",
       region: "5 Door Temple",
       canGetLogic: doorGb.in,
       canGetBreak: doorGb.out
@@ -17328,7 +17328,7 @@ const TinyDoorTemple = () => {
     AztecCheck,
     {
       id: 2031,
-      name: "Aztec Tiny 5 Door Temple",
+      name: "Tiny's 5 Door Temple",
       region: "5 Door Temple",
       canGetLogic: doorGb.in,
       canGetBreak: doorGb.out
@@ -20574,7 +20574,7 @@ const DiddyKasplat$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, 
   GalleonCheck,
   {
     id: 4051,
-    name: "Kevin the Kasplat (Galleon Kasplat: Lighthouse Alcove)",
+    name: "Kevin the Kasplat (Lighthouse Alcove)",
     region: "Lighthouse Area",
     canGetLogic: useKevin()
   }
@@ -20585,7 +20585,7 @@ const DkKasplat$3 = () => {
     GalleonCheck,
     {
       id: 4050,
-      name: "Galleon Kasplat: Diddy Gold Tower",
+      name: "Kasplat on Diddy's Gold Tower",
       region: "Treasure Room",
       canGetLogic: treasure.in,
       canGetBreak: treasure.out
@@ -27487,13 +27487,12 @@ const BossCheck = () => {
 const HelmDoorsEnemies = () => {
   const helmDoors = useHelmDoors();
   const anyKong = useAnyKong();
-  const hasFairyCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       HelmCheck,
       {
         id: 8317,
-        name: "Helm Enemy: Nav Room Left",
+        name: "Nav Room Enemy Left",
         canGetLogic: helmDoors.in && anyKong,
         canGetBreak: helmDoors.out && anyKong
       }
@@ -27502,27 +27501,9 @@ const HelmDoorsEnemies = () => {
       HelmCheck,
       {
         id: 8318,
-        name: "Helm Enemy: Nav Room Right",
+        name: "Nav Room Enemy Right",
         canGetLogic: helmDoors.in && anyKong,
         canGetBreak: helmDoors.out && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8417,
-        name: "Helm Enemy Photo: Nav Room Left",
-        canGetLogic: helmDoors.in && anyKong && hasFairyCam,
-        canGetBreak: helmDoors.out && anyKong && hasFairyCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8418,
-        name: "Helm Enemy Photo: Nav Room Right",
-        canGetLogic: helmDoors.in && anyKong && hasFairyCam,
-        canGetBreak: helmDoors.out && anyKong && hasFairyCam
       }
     )
   ] });
