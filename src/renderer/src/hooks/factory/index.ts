@@ -1,6 +1,6 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import { useFastArcade } from '../fast-checks'
+//import { useFastArcade } from '../fast-checks'
 import { usePlayLevel, useSlamLevel } from '../isles'
 import {
   useAnyKong,
@@ -219,11 +219,11 @@ export const useDkHutGb = (): LogicBool => {
 export const useDkBlastGb = (): boolean => {
   const inStage = usePlayFactory()
   const blast = useBlast()
-  const fastArcade = useFastArcade()
+//  const fastArcade = useFastArcade()
   const grab = useGrab()
   const hasClimbing = useClimbing()
   const hasBananaport = useBananaportAll()
-  return inStage && blast && (fastArcade || (hasClimbing || hasBananaport) && grab)
+  return inStage && blast && (hasClimbing || hasBananaport) && grab
 }
 
 export const useDkCoin = (): boolean => {
