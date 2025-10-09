@@ -7,7 +7,7 @@ return (
   <CastleCheck
     id={7012}
     name="Diddy's Crypt"
-    region="Castle Underground"
+    region="Castle Crypt and Dungeon"
     canGetLogic={doCheck.in}
     canGetBreak={doCheck.out}
   />

@@ -5,7 +5,7 @@ const TinyChasm: React.FC = () => (
   <CastleCheck
     id={7033}
     name="Tiny's Bonus Barrel Over the Chasm"
-    region="Castle Underground"
+    region="Castle Crypt and Dungeon"
     canGetLogic={useTinyChasmGb()}
   />
 )

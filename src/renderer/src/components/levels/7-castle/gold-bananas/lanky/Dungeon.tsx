@@ -6,8 +6,8 @@ const LankyDungeon: React.FC = () => {
   return (
     <CastleCheck
       id={7023}
-      name="Castle Lanky Dungeon"
-      region="Castle Underground"
+      name="Lanky's Dungeon Acid Barrel"
+      region="Castle Crypt and Dungeon"
       canGetLogic={dungeonGb.in}
       canGetBreak={dungeonGb.out}
     />

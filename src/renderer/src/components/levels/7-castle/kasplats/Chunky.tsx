@@ -9,7 +9,7 @@ const ChunkyKasplat: React.FC = () => (
       <CastleCheck
         id={7054}
         name="Kasplat in Front of Candy's"
-        region="Castle Underground"
+        region="Castle Crypt and Dungeon"
         canGetLogic={useDungeonKasplat()}
       />
     </VanillaKasplat>

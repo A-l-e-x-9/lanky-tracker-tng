@@ -14,6 +14,7 @@ const JetpacCheck: React.FC = () => {
       <IslesCheck
         id={105}
         name="Jetpac"
+        region="Shops"
         canGetLogic={cranky && anyKong && medals >= jetpacCount}
       />
     </CompanyPool>

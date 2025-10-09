@@ -10,8 +10,8 @@ return (
     <VanillaCrate>
       <CastleCheck
         id={7060}
-        name="Castle Crate: Behind Mausoleum Entrance"
-        region="Castle Underground"
+        name="Melon Crate Behind Mausoleum"
+        region="Castle Crypt and Dungeon"
         canGetLogic={canDoCheck.in}
         canGetBreak={canDoCheck.out}
       />

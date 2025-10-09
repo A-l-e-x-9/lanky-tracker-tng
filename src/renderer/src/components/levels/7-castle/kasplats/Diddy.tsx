@@ -10,8 +10,8 @@ return (
     <VanillaKasplat>
       <CastleCheck
         id={7051}
-        name="Castle Kasplat: Lower Cave Center"
-        region="Castle Underground"
+        name="Kasplat at Crypt Center"
+        region="Castle Crypt and Dungeon"
         canGetLogic={canDoCheck.in}
         canGetBreak={canDoCheck.out}
       />

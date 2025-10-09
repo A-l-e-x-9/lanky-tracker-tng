@@ -8,8 +8,8 @@ return (
 <ToughGoldenBanana>
   <CastleCheck
     id={7003}
-    name="Castle DK Minecart"
-    region="Castle Underground"
+    name="DK's Minecart"
+    region="Castle Crypt and Dungeon"
     canGetLogic={doCheck.in}
     canGetBreak={doCheck.out}
   />

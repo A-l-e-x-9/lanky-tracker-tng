@@ -4,8 +4,8 @@ import CastleCheck from '../../check'
 const DkDungeon: React.FC = () => (
   <CastleCheck
     id={7004}
-    name="Castle DK Dungeon"
-    region="Castle Underground"
+    name="DK's Face Puzzle"
+    region="Castle Crypt and Dungeon"
     canGetLogic={useDkDungeonGb()}
   />
 )

@@ -7,7 +7,7 @@ return (
   <CastleCheck
     id={7043}
     name="Chunky's Crypt Bonus Barrel"
-    region="Castle Underground"
+    region="Castle Crypt and Dungeon"
     canGetLogic={canDoCheck.in}
     canGetBreak={canDoCheck.out}
   />
