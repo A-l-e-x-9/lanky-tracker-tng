@@ -3,7 +3,7 @@ import { AllSlice, FastCheckSlice, FastCheckState, donkResetFns } from './common
 
 export const initialFastChecks: FastCheckState = {
   fastChecks: {
-    factoryArcade: false,
+//    factoryArcade: false,
     galleonMermaid: 5
   }
 }
@@ -14,7 +14,7 @@ const fastCheckSlice: StateCreator<AllSlice, [], [], FastCheckSlice> = (set) => 
     ...initialFastChecks,
     setFastCheck: (id, val): void => {
       set((state) => {
-        const target: Record<string, boolean | number> = {}
+        const target: Record<string, number> = {}
         target[id] = val
         state = {
           ...state,
