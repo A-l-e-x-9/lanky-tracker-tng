@@ -27729,19 +27729,19 @@ const MedalLocations = () => {
   const sax = useSax();
   const triangle = useTriangle();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8100, name: "Helm DK Banana Medal", canGetLogic: helmMachine.in && bongos, canGetBreak: helmMachine.out && bongos }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8100, name: "Shutting Off the Blast-o-Matic: DK", canGetLogic: helmMachine.in && bongos, canGetBreak: helmMachine.out && bongos }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       HelmCheck,
       {
         id: 8101,
-        name: "Helm Diddy Banana Medal",
+        name: "Shutting Off the Blast-o-Matic: Diddy",
         canGetLogic: helmMachine.in && guitar && rocket,
         canGetBreak: helmMachine.out && guitar && rocket
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8102, name: "Helm Lanky Banana Medal", canGetLogic: helmMachine.in && trombone, canGetBreak: helmMachine.out && trombone }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8103, name: "Helm Tiny Banana Medal", canGetLogic: helmMachine.in && sax, canGetBreak: helmMachine.out && sax }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8104, name: "Helm Chunky Banana Medal", canGetLogic: helmMachine.in && triangle, canGetBreak: helmMachine.out && triangle })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8102, name: "Shutting Off the Blast-o-Matic: Lanky", canGetLogic: helmMachine.in && trombone, canGetBreak: helmMachine.out && trombone }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8103, name: "Shutting Off the Blast-o-Matic: Tiny", canGetLogic: helmMachine.in && sax, canGetBreak: helmMachine.out && sax }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8104, name: "Shutting Off the Blast-o-Matic: Chunky", canGetLogic: helmMachine.in && triangle, canGetBreak: helmMachine.out && triangle })
   ] });
 };
 const HelmChecks = () => {
