@@ -12257,7 +12257,7 @@ const FactoryLobbyEnemies = () => {
     IslesCheck,
     {
       id: 314,
-      name: "Isles Enemy: Factory Lobby",
+      name: "Factory Lobby Enemy",
       region: "Japes-Forest Lobbies",
       canGetLogic: anyKong && playFactory && zinger.in,
       canGetBreak: anyKong && playFactory && zinger.out
@@ -12367,7 +12367,7 @@ const FactoryLobbyFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool,
   IslesCheck,
   {
     id: 81,
-    name: "Isles Fairy (Factory Lobby)",
+    name: "Factory Lobby Fairy",
     region: "Japes-Forest Lobbies",
     canGetLogic: useFactoryFairy()
   }
@@ -12376,7 +12376,7 @@ const ForestLobbyFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, 
   IslesCheck,
   {
     id: 82,
-    name: "Isles Fairy (Fungi Lobby)",
+    name: "The Dreaded Forest Lobby Fairy",
     region: "Japes-Forest Lobbies",
     canGetLogic: useForestFairy()
   }
@@ -12609,7 +12609,7 @@ const FeatherCage = () => {
     IslesCheck,
     {
       id: 30,
-      name: "Isles Tiny Feather Cage",
+      name: "Tiny's Feather Cage",
       region: "Outer Isles",
       canGetLogic: checkFeatherCage
     }
@@ -14738,7 +14738,7 @@ const FloorCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1003,
-    name: "Japes DK Floor Cage Banana",
+    name: "DK's Floor Cage Banana",
     region: "Japes Lowlands",
     canGetLogic: useDkCagedGb()
   }
@@ -14747,7 +14747,7 @@ const FreeDiddy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1002,
-    name: "Japes Free Diddy Item",
+    name: "Freeing Diddy",
     region: "Japes Hillside",
     canGetLogic: useDkFreeDiddyGb()
   }
@@ -14756,7 +14756,7 @@ const FrontCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1001,
-    name: "Japes DK Front of Diddy Cage",
+    name: "In Front of Diddy's Cage",
     region: "Japes Hillside",
     canGetLogic: useDkFreebieGb()
   }
@@ -14822,7 +14822,7 @@ const FeatherGate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1031,
-    name: "Japes Tiny Feather Gate Barrel",
+    name: "Tiny's Feather Gate Barrel",
     region: "Japes Lowlands",
     canGetLogic: useTinyGateGb()
   }
@@ -17126,7 +17126,7 @@ const FreeTiny$1 = () => {
     AztecCheck,
     {
       id: 2010,
-      name: "Aztec Free Tiny Item",
+      name: "Freeing Tiny Kong",
       region: "Tiny Temple",
       canGetLogic: freeGb.in,
       canGetBreak: freeGb.out
@@ -17198,7 +17198,7 @@ const FreeLanky$1 = () => {
     AztecCheck,
     {
       id: 2004,
-      name: "Aztec Free Lanky Item",
+      name: "Freeing Lanky Kong",
       region: "Llama Temple",
       canGetLogic: freeGb.in,
       canGetBreak: freeGb.out
