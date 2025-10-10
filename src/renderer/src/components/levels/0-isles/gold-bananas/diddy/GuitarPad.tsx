@@ -6,7 +6,7 @@ const GuitarPad: React.FC = () => {
   return (
     <IslesCheck
       id={13}
-      name="Isles Diddy Guitar Pad"
+      name="Diddy's Guitar Pad"
       region="Caves-Helm Lobbies"
       canGetLogic={cave.in}
       canGetBreak={cave.out}

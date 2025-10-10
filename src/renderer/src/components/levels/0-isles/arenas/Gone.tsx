@@ -8,7 +8,7 @@ const GoneArena: React.FC = () => (
     <VanillaArena>
       <IslesCheck
         id={91}
-        name="Isles Arena 2 (Fungi Lobby: Gone Box)"
+        name="Battle Arena 2 (Check of Legends 2 in Forest Lobby)"
         region="Japes-Forest Lobbies"
         canGetLogic={useForestArena()}
       />

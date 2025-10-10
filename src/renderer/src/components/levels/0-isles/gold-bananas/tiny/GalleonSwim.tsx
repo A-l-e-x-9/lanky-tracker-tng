@@ -6,7 +6,7 @@ const GalleonSwim: React.FC = () => {
   return (
     <IslesCheck
       id={33}
-      name="Isles Tiny Galleon Lobby Swim"
+      name="Tiny's Galleon Lobby Swimming Banana"
       region="Japes-Forest Lobbies"
       canGetLogic={checkTinyGalleon.in}
       canGetBreak={checkTinyGalleon.out}
