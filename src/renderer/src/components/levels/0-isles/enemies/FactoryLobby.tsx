@@ -12,7 +12,7 @@ const FactoryLobbyEnemies: React.FC = () => {
     <DropPool>
       <IslesCheck
         id={314}
-        name="Isles Enemy: Factory Lobby"
+        name="Factory Lobby Enemy"
         region="Japes-Forest Lobbies"
         canGetLogic={anyKong && playFactory && zinger.in}
         canGetBreak={anyKong && playFactory && zinger.out}

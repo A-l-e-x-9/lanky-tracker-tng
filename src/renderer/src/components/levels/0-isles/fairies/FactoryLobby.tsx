@@ -8,7 +8,7 @@ const FactoryLobbyFairy: React.FC = () => (
     <VanillaFairy>
       <IslesCheck
         id={81}
-        name="Isles Fairy (Factory Lobby)"
+        name="Factory Lobby Fairy"
         region="Japes-Forest Lobbies"
         canGetLogic={useFactoryFairy()}
       />

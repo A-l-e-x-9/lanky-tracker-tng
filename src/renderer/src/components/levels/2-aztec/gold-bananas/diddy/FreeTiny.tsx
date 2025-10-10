@@ -6,7 +6,7 @@ const FreeTiny: React.FC = () => {
   return (
     <AztecCheck
       id={2010}
-      name="Aztec Free Tiny Item"
+      name="Freeing Tiny Kong"
       region="Tiny Temple"
       canGetLogic={freeGb.in}
       canGetBreak={freeGb.out}

@@ -8,7 +8,7 @@ const ForestLobbyFairy: React.FC = () => (
     <VanillaFairy>
       <IslesCheck
         id={82}
-        name="Isles Fairy (Fungi Lobby)"
+        name="The Dreaded Forest Lobby Fairy"
         region="Japes-Forest Lobbies"
         canGetLogic={useForestFairy()}
       />

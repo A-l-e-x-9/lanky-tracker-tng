@@ -4,7 +4,7 @@ import JapesCheck from '../../check'
 const FrontCage: React.FC = () => (
   <JapesCheck
     id={1001}
-    name="Japes DK Front of Diddy Cage"
+    name="In Front of Diddy's Cage"
     region="Japes Hillside"
     canGetLogic={useDkFreebieGb()}
   />

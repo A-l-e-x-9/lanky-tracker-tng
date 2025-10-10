@@ -6,7 +6,7 @@ const FeatherCage: React.FC = () => {
   return (
     <IslesCheck
       id={30}
-      name="Isles Tiny Feather Cage"
+      name="Tiny's Feather Cage"
       region="Outer Isles"
       canGetLogic={checkFeatherCage}
     />
