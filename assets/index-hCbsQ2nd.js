@@ -11997,7 +11997,7 @@ const GoneArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { child
   IslesCheck,
   {
     id: 91,
-    name: "Isles Arena 2 (Fungi Lobby: Gone Box)",
+    name: "Battle Arena 2 (Check of Legends 2 in Forest Lobby)",
     region: "Japes-Forest Lobbies",
     canGetLogic: useForestArena()
   }
@@ -12442,7 +12442,7 @@ const GuitarPad = () => {
     IslesCheck,
     {
       id: 13,
-      name: "Isles Diddy Guitar Pad",
+      name: "Diddy's Guitar Pad",
       region: "Caves-Helm Lobbies",
       canGetLogic: cave.in,
       canGetBreak: cave.out
@@ -12621,7 +12621,7 @@ const GalleonSwim = () => {
     IslesCheck,
     {
       id: 33,
-      name: "Isles Tiny Galleon Lobby Swim",
+      name: "Tiny's Galleon Lobby Swimming Banana",
       region: "Japes-Forest Lobbies",
       canGetLogic: checkTinyGalleon.in,
       canGetBreak: checkTinyGalleon.out
@@ -14772,7 +14772,7 @@ const GrapeGate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1021,
-    name: "Japes Lanky Grape Gate Barrel",
+    name: "Lanky's Grape Gate Barrel",
     region: "Japes Lowlands",
     canGetLogic: useLankyGateGb()
   }
@@ -20314,7 +20314,7 @@ const DiddyGold = () => {
     GalleonCheck,
     {
       id: 4011,
-      name: "Galleon Diddy Gold Tower Barrel",
+      name: "Diddy's Gold Tower Barrel",
       region: "Treasure Room",
       canGetLogic: goldGb.in,
       canGetBreak: goldGb.out
@@ -20431,7 +20431,7 @@ const LankyGold = () => {
     GalleonCheck,
     {
       id: 4021,
-      name: "Galleon Lanky Gold Tower Barrel",
+      name: "Lanky's Gold Tower Barrel",
       region: "Treasure Room",
       canGetLogic: goldGb.in,
       canGetBreak: goldGb.out
