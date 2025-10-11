@@ -12,57 +12,57 @@ const LlamaTempleEnemies: React.FC = () => {
   return (
     <DropPool>
       <AztecCheck
-        id={2354}
-        name="Aztec Enemy: Llama Kong Free Music"
+        id={2351}
+        name="Enemy at Music Pad to Free Lanky"
         region="Llama Temple"
         canGetLogic={llama.in && klaptrap}
         canGetBreak={logicBreak(llama) && klaptrap}
+      />
+      <AztecCheck
+        id={2352}
+        name="Enemy at Music Pad to Raise Statues"
+        region="Llama Temple"
+        canGetLogic={llama.in && klaptrap}
+        canGetBreak={logicBreak(llama) && klaptrap}
+      />
+      <AztecCheck
+        id={2353}
+        name="Enemy 0 in the Matching Room"
+        region="Llama Temple"
+        canGetLogic={llama.in && hasGrapes}
+        canGetBreak={logicBreak(llama) && hasGrapes}
+      />
+      <AztecCheck
+        id={2354}
+        name="Enemy 1 in the Matching Room"
+        region="Llama Temple"
+        canGetLogic={llama.in && hasGrapes}
+        canGetBreak={logicBreak(llama) && hasGrapes}
       />
       <AztecCheck
         id={2355}
-        name="Aztec Enemy: Llama Dino Music"
+        name="Enemy at Right of Pool"
         region="Llama Temple"
-        canGetLogic={llama.in && klaptrap}
-        canGetBreak={logicBreak(llama) && klaptrap}
+        canGetLogic={llama.in}
+        canGetBreak={logicBreak(llama)}
       />
       <AztecCheck
         id={2356}
-        name="Aztec Enemy: Lanky Matching Room 0"
+        name="Enemy at Left of Pool"
         region="Llama Temple"
-        canGetLogic={llama.in && hasGrapes}
-        canGetBreak={logicBreak(llama) && hasGrapes}
+        canGetLogic={llama.in}
+        canGetBreak={logicBreak(llama)}
       />
       <AztecCheck
         id={2357}
-        name="Aztec Enemy: Lanky Matching Room 1"
-        region="Llama Temple"
-        canGetLogic={llama.in && hasGrapes}
-        canGetBreak={logicBreak(llama) && hasGrapes}
-      />
-      <AztecCheck
-        id={2358}
-        name="Aztec Enemy: Llama Right"
-        region="Llama Temple"
-        canGetLogic={llama.in}
-        canGetBreak={logicBreak(llama)}
-      />
-      <AztecCheck
-        id={2359}
-        name="Aztec Enemy: Llama Left"
-        region="Llama Temple"
-        canGetLogic={llama.in}
-        canGetBreak={logicBreak(llama)}
-      />
-      <AztecCheck
-        id={2360}
-        name="Aztec Enemy: Llama Melon Crate"
+        name="Enemy at Melon Crate"
         region="Llama Temple"
         canGetLogic={llama.in && klaptrap}
         canGetBreak={logicBreak(llama) && klaptrap}
       />
       <AztecCheck
-        id={2361}
-        name="Aztec Enemy: Llama Slam Switch"
+        id={2358}
+        name="Enemy at Quicksand Tunnel Opening Switch"
         region="Llama Temple"
         canGetLogic={llama.in && klaptrap}
         canGetBreak={logicBreak(llama) && klaptrap}

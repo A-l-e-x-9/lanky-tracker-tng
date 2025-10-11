@@ -6,7 +6,7 @@ const LlamaBarrel: React.FC = () => {
   return (
     <AztecCheck
       id={2022}
-      name="Aztec Lanky Llama Temple Barrel"
+      name="Lanky's Llama Temple Barrel"
       region="Llama Temple"
       canGetLogic={snakeGb.in}
       canGetBreak={snakeGb.out}

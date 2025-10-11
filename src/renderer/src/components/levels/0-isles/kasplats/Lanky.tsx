@@ -8,7 +8,7 @@ const LankyKasplat: React.FC = () => (
     <VanillaKasplat>
       <IslesCheck
         id={52}
-        name="Isles Kasplat: Caves Lobby Punch"
+        name="Kasplat Behind Left Caves Lobby Wall"
         region="Caves-Helm Lobbies"
         canGetLogic={useCavesKasplat()}
       />

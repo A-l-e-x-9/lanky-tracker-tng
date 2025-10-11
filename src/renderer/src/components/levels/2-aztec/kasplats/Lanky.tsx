@@ -10,7 +10,7 @@ const LankyKasplat: React.FC = () => {
       <VanillaKasplat>
         <AztecCheck
           id={2052}
-          name="Aztec Kasplat: Llama Temple Lava"
+          name="Kasplat at the Lava Pedestals"
           region="Llama Temple"
           canGetLogic={lava.in}
           canGetBreak={lava.out}

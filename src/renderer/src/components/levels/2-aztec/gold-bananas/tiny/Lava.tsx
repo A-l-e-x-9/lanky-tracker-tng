@@ -6,7 +6,7 @@ const LavaPedestal: React.FC = () => {
   return (
     <AztecCheck
       id={2033}
-      name="Aztec Tiny Llama Temple Lava Pedestals"
+      name="Tiny's Lava Pedestals"
       region="Llama Temple"
       canGetLogic={lavaGb.in}
       canGetBreak={lavaGb.out}

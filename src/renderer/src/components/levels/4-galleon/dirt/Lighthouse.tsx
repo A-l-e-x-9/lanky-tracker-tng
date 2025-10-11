@@ -10,7 +10,7 @@ const LighthouseDirt: React.FC = () => {
       <VanillaDirt>
         <GalleonCheck
           id={4070}
-          name="Galleon Dirt: Lighthouse"
+          name="Dirt in the Lighthouse"
           region="Lighthouse Area"
           canGetLogic={dirt.in}
           canGetBreak={dirt.out}

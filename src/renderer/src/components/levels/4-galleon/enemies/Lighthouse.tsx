@@ -13,14 +13,14 @@ const LighthouseEnemies: React.FC = () => {
     <DropPool>
       <GalleonCheck
         id={4307}
-        name="Galleon Enemy: Lighthouse 0"
+        name="Enemy 0 Inside the Lighthouse"
         region="Lighthouse Area"
         canGetLogic={lighthouse.in && dk && canSlam && klump}
         canGetBreak={lighthouse.out && dk && canSlam && klump}
       />
       <GalleonCheck
         id={4308}
-        name="Galleon Enemy: Lighthouse 1"
+        name="Enemy 1 Inside the Lighthouse"
         region="Lighthouse Area"
         canGetLogic={lighthouse.in && dk && canSlam && klump}
         canGetBreak={lighthouse.out && dk && canSlam && klump}

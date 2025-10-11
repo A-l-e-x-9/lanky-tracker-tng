@@ -6,7 +6,7 @@ const DiddyLighthouse: React.FC = () => {
   return (
     <GalleonCheck
       id={4010}
-      name="Galleon Diddy Top of Lighthouse"
+      name="Top of the Lighthouse"
       region="Lighthouse Area"
       canGetLogic={shipGb.in}
       canGetBreak={shipGb.out}

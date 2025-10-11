@@ -6,7 +6,7 @@ const DkLighthouse: React.FC = () => {
   return (
     <GalleonCheck
       id={4001}
-      name="Galleon DK Lighthouse"
+      name="Inside the Lighthouse"
       region="Lighthouse Area"
       canGetLogic={lighthouseGb.in}
       canGetBreak={lighthouseGb.out}

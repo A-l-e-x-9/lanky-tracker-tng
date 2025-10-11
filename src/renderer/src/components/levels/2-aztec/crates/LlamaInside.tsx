@@ -11,7 +11,7 @@ const LlamaInsideCrate: React.FC = () => {
       <VanillaCrate>
         <AztecCheck
           id={2060}
-          name="Aztec Crate: Llama Temple Entrance"
+          name="Melon Crate in the Llama Temple"
           region="Llama Temple"
           canGetLogic={llama.in}
           canGetBreak={logicBreak(llama)}

@@ -10,7 +10,7 @@ const LlamaFairy: React.FC = () => {
       <VanillaFairy>
         <AztecCheck
           id={2080}
-          name="Aztec Fairy (Llama Temple)"
+          name="That Damn Methed-Out Llama Temple Fairy"
           region="Llama Temple"
           canGetLogic={llama.in}
           canGetBreak={llama.out}
