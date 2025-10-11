@@ -10,6 +10,8 @@ import HelmSelector from './HelmSelector'
 import SimpleIcon from './SimpleIcon'
 import { KRoolSlamSelector } from '../moves/SlamSelector'
 
+import gbIcon from '../../assets/images/GB.png'
+import dkIcon from '../../assets/images/dk.png'
 import beanIcon from '../../assets/images/bean.png'
 import chunkyIcon from '../../assets/images/chunky.png'
 import crownIcon from '../../assets/images/crown.png'
@@ -73,14 +75,14 @@ const GeneratorSettings: React.FC = () => {
           <section className="pool">
             <h3>Items in Pool</h3>
             <>
-              <p>Shops?</p>
+              <p>Golden Bananas?</p>
               <SimpleIcon
-                imgUrl={shopIcon}
-                title="Puts Cranky, Funky, and Candy Kong's shops in the pool."
-                storeKey="poolShops"
+                imgUrl={gbIcon}
+                title="Puts Golden Bananas in the pool, other than those in the &quot;minecart&quot; and &quot;miniboss&quot; categories."
+                storeKey="poolGoldenBananas"
                 prefix="settings"
                 updateItem={setSetting}
-              />
+              />            
               <p>Minecarts and Races?</p>
               <SimpleIcon
                 imgUrl={toughBananaIcon}
@@ -97,11 +99,19 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
-              <p>Battle Crowns?</p>
+              <p>Kongs?</p>
               <SimpleIcon
-                imgUrl={crownIcon}
-                title="Puts Battle Arenas in the pool."
-                storeKey="poolCrowns"
+                imgUrl={dkIcon}
+                title="Puts the Kong cages in the pool."
+                storeKey="poolKongs"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Shops?</p>
+              <SimpleIcon
+                imgUrl={shopIcon}
+                title="Puts Cranky, Funky, and Candy Kong's shops in the pool."
+                storeKey="poolShops"
                 prefix="settings"
                 updateItem={setSetting}
               />
@@ -113,27 +123,27 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
-              <p>Boss Keys?</p>
-              <SimpleIcon
-                imgUrl={keyIcon}
-                title="Puts &quot;Boss Defeated&quot; checks in the pool."
-                storeKey="poolKeys"
-                prefix="settings"
-                updateItem={setSetting}
-              />
               <p>Banana Medals?</p>
               <SimpleIcon
                 imgUrl={bananaMedalIcon}
-                title="Puts the Banana Medal checks in the pool."
+                title="Puts the vanilla Banana Medal checks in the pool."
                 storeKey="poolBananaMedals"
                 prefix="settings"
                 updateItem={setSetting}
               />
-              <p>Company Coins?</p>
+              <p>Isles Banana Medals?</p>
               <SimpleIcon
-                imgUrl={companyCoinIcon}
-                title="Puts the Jetpac and DK Arcade checks in the pool."
-                storeKey="poolCompanyCoins"
+                imgUrl={bananaMedalIcon}
+                title="Does your seed have colored bananas in DK Isles?"
+                storeKey="poolIslesMedals"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Battle Crowns?</p>
+              <SimpleIcon
+                imgUrl={crownIcon}
+                title="Puts Battle Arenas in the pool."
+                storeKey="poolCrowns"
                 prefix="settings"
                 updateItem={setSetting}
               />
@@ -142,6 +152,22 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={fairyIcon}
                 title="Puts Banana Fairies in the pool."
                 storeKey="poolFairies"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Boss Keys?</p>
+              <SimpleIcon
+                imgUrl={keyIcon}
+                title="Puts &quot;Boss Defeated&quot; checks in the pool."
+                storeKey="poolKeys"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Company Coins?</p>
+              <SimpleIcon
+                imgUrl={companyCoinIcon}
+                title="Puts the Jetpac and DK Arcade checks in the pool."
+                storeKey="poolCompanyCoins"
                 prefix="settings"
                 updateItem={setSetting}
               />
@@ -188,7 +214,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Boulders?</p>
               <SimpleIcon
                 imgUrl={chunkyIcon}
-                title="Puts the various objects Chunky can pick up in the pool."
+                title="Puts the various objects Chunky can lift with relative ease into the pool."
                 storeKey="poolBoulders"
                 prefix="settings"
                 updateItem={setSetting}
