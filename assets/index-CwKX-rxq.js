@@ -12272,7 +12272,7 @@ const JapesLobbyEnemies = () => {
       IslesCheck,
       {
         id: 310,
-        name: "Isles Enemy: Japes Lobby 0",
+        name: "Japes Lobby Enemy 0",
         region: "Japes-Forest Lobbies",
         canGetLogic: anyKong && playJapes
       }
@@ -12281,7 +12281,7 @@ const JapesLobbyEnemies = () => {
       IslesCheck,
       {
         id: 311,
-        name: "Isles Enemy: Japes Lobby 1",
+        name: "Japes Lobby Enemy 1",
         region: "Japes-Forest Lobbies",
         canGetLogic: anyKong && playJapes
       }
@@ -13576,7 +13576,7 @@ const JapesLobby = () => {
     IslesCheck,
     {
       id: 9,
-      name: "Isles Boulder: In Japes Lobby",
+      name: "Japes Lobby Boulder",
       region: "Japes-Forest Lobbies",
       canGetLogic: useJapesLobby()
     }
@@ -14428,7 +14428,7 @@ const JapesMainEnemies = () => {
       JapesCheck,
       {
         id: 1314,
-        name: "Japes Enemy: Near Painting 0",
+        name: "Enemy Near Painting 0",
         region: "Japes Hillside",
         canGetLogic: inStage && anyKong
       }
@@ -14437,7 +14437,7 @@ const JapesMainEnemies = () => {
       JapesCheck,
       {
         id: 1315,
-        name: "Japes Enemy: Near Painting 1",
+        name: "Enemy Near Painting 1",
         region: "Japes Hillside",
         canGetLogic: inStage && anyKong
       }
@@ -14446,7 +14446,7 @@ const JapesMainEnemies = () => {
       JapesCheck,
       {
         id: 1316,
-        name: "Japes Enemy: Near Painting 2",
+        name: "Enemy Near Painting 2",
         region: "Japes Hillside",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
@@ -14456,7 +14456,7 @@ const JapesMainEnemies = () => {
       JapesCheck,
       {
         id: 1317,
-        name: "Japes Enemy: Mountain",
+        name: "Enemy at Diddy's Mountain",
         region: "Japes Hillside",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
@@ -14473,7 +14473,7 @@ const JapesStartEnemies = () => {
       JapesCheck,
       {
         id: 1300,
-        name: "Japes Enemy: Start",
+        name: "Enemy at Start",
         region: "Japes Lowlands",
         canGetLogic: inStage && anyKong
       }
@@ -14482,7 +14482,7 @@ const JapesStartEnemies = () => {
       JapesCheck,
       {
         id: 1302,
-        name: "Japes Enemy: Early Tunnel 0",
+        name: "Enemy 0 in Early Tunnel",
         region: "Japes Lowlands",
         canGetLogic: inStage && anyKong
       }
@@ -14491,7 +14491,7 @@ const JapesStartEnemies = () => {
       JapesCheck,
       {
         id: 1303,
-        name: "Japes Enemy: Early Tunnel 1",
+        name: "Enemy 1 in Early Tunnel",
         region: "Japes Lowlands",
         canGetLogic: inStage && anyKong
       }
@@ -14500,7 +14500,7 @@ const JapesStartEnemies = () => {
       JapesCheck,
       {
         id: 1312,
-        name: "Japes Enemy: Demo Death",
+        name: "Enemy Killed in the Title Screen's Demo",
         region: "Japes Lowlands",
         canGetLogic: inStage && anyKong
       }
@@ -14509,7 +14509,7 @@ const JapesStartEnemies = () => {
       JapesCheck,
       {
         id: 1313,
-        name: "Japes Enemy: Near Underground",
+        name: "Zinger Near Enemy Killed in the Demo",
         region: "Japes Lowlands",
         canGetLogic: inStage && zinger.in,
         canGetBreak: inStage && zinger.out
@@ -17068,7 +17068,7 @@ const ChunkyKlaptrap = () => {
     AztecCheck,
     {
       id: 2041,
-      name: "Aztec Chunky Klaptrap Room",
+      name: "Chunky's Rotating Klaptrap Room",
       region: "Tiny Temple",
       canGetLogic: klaptrapGb.in,
       canGetBreak: klaptrapGb.out
@@ -17341,7 +17341,7 @@ const TinyKlaptrap = () => {
     AztecCheck,
     {
       id: 2030,
-      name: "Aztec Tiny Klaptrap Room",
+      name: "Tiny's Klaptrap Gauntlet",
       region: "Tiny Temple",
       canGetLogic: klaptrapGb.in,
       canGetBreak: klaptrapGb.out
