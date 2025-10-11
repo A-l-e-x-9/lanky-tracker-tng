@@ -12720,7 +12720,7 @@ const LankyKasplat$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, 
   IslesCheck,
   {
     id: 52,
-    name: "Isles Kasplat: Caves Lobby Punch",
+    name: "Kasplat Behind Left Caves Lobby Wall",
     region: "Caves-Helm Lobbies",
     canGetLogic: useCavesKasplat()
   }
@@ -16153,7 +16153,7 @@ const LlamaInsideCrate = () => {
     AztecCheck,
     {
       id: 2060,
-      name: "Aztec Crate: Llama Temple Entrance",
+      name: "Melon Crate in the Llama Temple",
       region: "Llama Temple",
       canGetLogic: llama.in,
       canGetBreak: logicBreak(llama)
@@ -16719,68 +16719,68 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2354,
-        name: "Aztec Enemy: Llama Kong Free Music",
+        id: 2351,
+        name: "Enemy at Music Pad to Free Lanky",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
         canGetBreak: logicBreak(llama) && klaptrap
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2352,
+        name: "Enemy at Music Pad to Raise Statues",
+        region: "Llama Temple",
+        canGetLogic: llama.in && klaptrap,
+        canGetBreak: logicBreak(llama) && klaptrap
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2353,
+        name: "Enemy 0 in the Matching Room",
+        region: "Llama Temple",
+        canGetLogic: llama.in && hasGrapes,
+        canGetBreak: logicBreak(llama) && hasGrapes
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 2354,
+        name: "Enemy 1 in the Matching Room",
+        region: "Llama Temple",
+        canGetLogic: llama.in && hasGrapes,
+        canGetBreak: logicBreak(llama) && hasGrapes
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2355,
-        name: "Aztec Enemy: Llama Dino Music",
+        name: "Enemy at Right of Pool",
         region: "Llama Temple",
-        canGetLogic: llama.in && klaptrap,
-        canGetBreak: logicBreak(llama) && klaptrap
+        canGetLogic: llama.in,
+        canGetBreak: logicBreak(llama)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2356,
-        name: "Aztec Enemy: Lanky Matching Room 0",
+        name: "Enemy at Left of Pool",
         region: "Llama Temple",
-        canGetLogic: llama.in && hasGrapes,
-        canGetBreak: logicBreak(llama) && hasGrapes
+        canGetLogic: llama.in,
+        canGetBreak: logicBreak(llama)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2357,
-        name: "Aztec Enemy: Lanky Matching Room 1",
-        region: "Llama Temple",
-        canGetLogic: llama.in && hasGrapes,
-        canGetBreak: logicBreak(llama) && hasGrapes
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2358,
-        name: "Aztec Enemy: Llama Right",
-        region: "Llama Temple",
-        canGetLogic: llama.in,
-        canGetBreak: logicBreak(llama)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2359,
-        name: "Aztec Enemy: Llama Left",
-        region: "Llama Temple",
-        canGetLogic: llama.in,
-        canGetBreak: logicBreak(llama)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 2360,
-        name: "Aztec Enemy: Llama Melon Crate",
+        name: "Enemy at Melon Crate",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
         canGetBreak: logicBreak(llama) && klaptrap
@@ -16789,8 +16789,8 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2361,
-        name: "Aztec Enemy: Llama Slam Switch",
+        id: 2358,
+        name: "Enemy at Quicksand Tunnel Opening Switch",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
         canGetBreak: logicBreak(llama) && klaptrap
@@ -17038,7 +17038,7 @@ const LlamaFairy = () => {
     AztecCheck,
     {
       id: 2080,
-      name: "Aztec Fairy (Llama Temple)",
+      name: "That Damn Methed-Out Llama Temple Fairy",
       region: "Llama Temple",
       canGetLogic: llama.in,
       canGetBreak: llama.out
@@ -17270,7 +17270,7 @@ const LlamaBarrel = () => {
     AztecCheck,
     {
       id: 2022,
-      name: "Aztec Lanky Llama Temple Barrel",
+      name: "Lanky's Llama Temple Barrel",
       region: "Llama Temple",
       canGetLogic: snakeGb.in,
       canGetBreak: snakeGb.out
@@ -17354,7 +17354,7 @@ const LavaPedestal = () => {
     AztecCheck,
     {
       id: 2033,
-      name: "Aztec Tiny Llama Temple Lava Pedestals",
+      name: "Tiny's Lava Pedestals",
       region: "Llama Temple",
       canGetLogic: lavaGb.in,
       canGetBreak: lavaGb.out
@@ -17412,7 +17412,7 @@ const LankyKasplat$5 = () => {
     AztecCheck,
     {
       id: 2052,
-      name: "Aztec Kasplat: Llama Temple Lava",
+      name: "Kasplat at the Lava Pedestals",
       region: "Llama Temple",
       canGetLogic: lava.in,
       canGetBreak: lava.out
@@ -20134,7 +20134,7 @@ const LighthouseDirt = () => {
     GalleonCheck,
     {
       id: 4070,
-      name: "Galleon Dirt: Lighthouse",
+      name: "Dirt in the Lighthouse",
       region: "Lighthouse Area",
       canGetLogic: dirt.in,
       canGetBreak: dirt.out
@@ -20218,7 +20218,7 @@ const LighthouseEnemies = () => {
       GalleonCheck,
       {
         id: 4307,
-        name: "Galleon Enemy: Lighthouse 0",
+        name: "Enemy 0 Inside the Lighthouse",
         region: "Lighthouse Area",
         canGetLogic: lighthouse.in && dk2 && canSlam && klump,
         canGetBreak: lighthouse.out && dk2 && canSlam && klump
@@ -20228,7 +20228,7 @@ const LighthouseEnemies = () => {
       GalleonCheck,
       {
         id: 4308,
-        name: "Galleon Enemy: Lighthouse 1",
+        name: "Enemy 1 Inside the Lighthouse",
         region: "Lighthouse Area",
         canGetLogic: lighthouse.in && dk2 && canSlam && klump,
         canGetBreak: lighthouse.out && dk2 && canSlam && klump
@@ -20327,7 +20327,7 @@ const DiddyLighthouse = () => {
     GalleonCheck,
     {
       id: 4010,
-      name: "Galleon Diddy Top of Lighthouse",
+      name: "Top of the Lighthouse",
       region: "Lighthouse Area",
       canGetLogic: shipGb.in,
       canGetBreak: shipGb.out
@@ -20381,7 +20381,7 @@ const DkLighthouse = () => {
     GalleonCheck,
     {
       id: 4001,
-      name: "Galleon DK Lighthouse",
+      name: "Inside the Lighthouse",
       region: "Lighthouse Area",
       canGetLogic: lighthouseGb.in,
       canGetBreak: lighthouseGb.out
