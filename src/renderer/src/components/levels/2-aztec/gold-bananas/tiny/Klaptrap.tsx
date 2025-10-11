@@ -8,7 +8,7 @@ const TinyKlaptrap: React.FC = () => {
   <Miniboss>
     <AztecCheck
       id={2030}
-      name="Aztec Tiny Klaptrap Room"
+      name="Tiny's Klaptrap Gauntlet"
       region="Tiny Temple"
       canGetLogic={klaptrapGb.in}
       canGetBreak={klaptrapGb.out}

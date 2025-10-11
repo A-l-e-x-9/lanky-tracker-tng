@@ -10,13 +10,13 @@ const JapesLobbyEnemies: React.FC = () => {
     <DropPool>
       <IslesCheck
         id={310}
-        name="Isles Enemy: Japes Lobby 0"
+        name="Japes Lobby Enemy 0"
         region="Japes-Forest Lobbies"
         canGetLogic={anyKong && playJapes}
       />
       <IslesCheck
         id={311}
-        name="Isles Enemy: Japes Lobby 1"
+        name="Japes Lobby Enemy 1"
         region="Japes-Forest Lobbies"
         canGetLogic={anyKong && playJapes}
       />

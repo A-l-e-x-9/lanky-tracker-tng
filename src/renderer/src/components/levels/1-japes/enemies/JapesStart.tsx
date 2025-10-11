@@ -12,31 +12,31 @@ const JapesStartEnemies: React.FC = () => {
     <DropPool>
       <JapesCheck
         id={1300}
-        name="Japes Enemy: Start"
+        name="Enemy at Start"
         region="Japes Lowlands"
         canGetLogic={inStage && anyKong}
       />
       <JapesCheck
         id={1302}
-        name="Japes Enemy: Early Tunnel 0"
+        name="Enemy 0 in Early Tunnel"
         region="Japes Lowlands"
         canGetLogic={inStage && anyKong}
       />
       <JapesCheck
         id={1303}
-        name="Japes Enemy: Early Tunnel 1"
+        name="Enemy 1 in Early Tunnel"
         region="Japes Lowlands"
         canGetLogic={inStage && anyKong}
       />
       <JapesCheck
         id={1312}
-        name="Japes Enemy: Demo Death"
+        name="Enemy Killed in the Title Screen's Demo"
         region="Japes Lowlands"
         canGetLogic={inStage && anyKong}
       />
       <JapesCheck
         id={1313}
-        name="Japes Enemy: Near Underground"
+        name="Zinger Near Enemy Killed in the Demo"
         region="Japes Lowlands"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}

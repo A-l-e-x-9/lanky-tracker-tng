@@ -8,7 +8,7 @@ const JapesLobby: React.FC = () => {
     <BoulderPool>
         <IslesCheck
           id={9}
-          name="Isles Boulder: In Japes Lobby"
+          name="Japes Lobby Boulder"
           region="Japes-Forest Lobbies"
           canGetLogic={useJapesLobby()}
         />

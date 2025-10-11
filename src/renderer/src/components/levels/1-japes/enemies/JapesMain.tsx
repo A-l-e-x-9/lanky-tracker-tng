@@ -12,26 +12,26 @@ const JapesMainEnemies: React.FC = () => {
     <DropPool>
       <JapesCheck
         id={1314}
-        name="Japes Enemy: Near Painting 0"
+        name="Enemy Near Painting 0"
         region="Japes Hillside"
         canGetLogic={inStage && anyKong}
       />
       <JapesCheck
         id={1315}
-        name="Japes Enemy: Near Painting 1"
+        name="Enemy Near Painting 1"
         region="Japes Hillside"
         canGetLogic={inStage && anyKong}
       />
       <JapesCheck
         id={1316}
-        name="Japes Enemy: Near Painting 2"
+        name="Enemy Near Painting 2"
         region="Japes Hillside"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
       />
       <JapesCheck
         id={1317}
-        name="Japes Enemy: Mountain"
+        name="Enemy at Diddy's Mountain"
         region="Japes Hillside"
         canGetLogic={inStage && zinger.in}
         canGetBreak={inStage && zinger.out}
