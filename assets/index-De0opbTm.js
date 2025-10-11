@@ -27950,7 +27950,7 @@ const KRoolSlamSelector = () => {
     }
   ) });
 };
-const bLocker = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAsCAMAAADcpCGDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAv1QTFRFSDYA//8AWEQAdlgA////ZEoAaVIAmXYAMyUA/94A/+8A//cBjGsApXsA/84A//6J/9YAhGMA//4k//8UqoQA//6ZlWsA/8YAs4wA//53//9X//81//65zpQA/+cAvYwAtYQA//7ZzpwA///rxpQArXsA//+q2JwB//8I3LcA77UAu5QA970AemMA//9KxowA///K//9jxZwA7MoAjWMA1qUA/70Ap5cA3q0A560A770Ay6UA//9C//9r3qUA98YA570ApXMA/84L57UA/to1/us1/tol///31a0A/+1X9NYA/scV3JkU15QG/dgWtngA984A+9l0/sok/70Mv4QAc0oA/9tI760ApI0E55wP97UAxr4Ag2sA/+0TumxL49wA56Ymi3UA//dM/dtW/upp/t4KhloEyYUO0IwF97UN/usl56UA2Zgq3MoE6qUTpqUB/+p3//c7wq8FQywa/9YIglge9+8A/+xI+K0Eakg8+49z9d4B9+cA/ecOmYgA/uyKvXsN/+8I+6+N//cV884O/7cW//dtEFwS56UI/8YI8KUJ7KhA+9ST/syy8K0tk2gf/++59K0V/vdhlm02Y0ce/M428GxZ87hRmmVT0owXXTYv6ckVF5Ezpd5l8rZtlqWNESZW+rgk0JBU77Y3/7UA/cxG9tYK770K/7UId59ZChCCA70K760J/OyY470LlD419/cAmXMN0sqrkExBr4mJ7LUR9MYL6ecCRyZS7cpC/eqr3LcSYWdpQGYuQqG484xQCxTVrXMA/9rIFpxU970+1KGG560ODU+fxpQQe0od3qUI76UAzrIx1qpg57UIuN6qh1CU68YlxHslqokhwohzYKcO7NYV78Y5FV5U3q0LqKI0zrVPVm8I0rUd8//eUjnO77kl8rioQnOcedmB970IyZwLWjalUmfSqXcY26UVnZBTStJCxq3OvYQM1qUIjGsQqWsA9+/G1sM0/8xd/+/n5+f3e18279Yp1rW1/+fWtYwQjNbWhGMIxpQIAAAANnrqQwAAAP90Uk5T//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AZvyKWQAAAiBJREFUeNpi+EcIMKBytU0JqLDOttLGq4JdS8eCDa8KK3stbby2GG1rscLr0jr5i27n8KqwTp+QxItPRZn/PJa17HhUcDu8/cKihseMeK+DZ1lYZJbhVFFUo39wE1CFGU4VclamOYosLGszzXGo0BaQk3ORUVQMrBDBocJZh5u7kF9NJjDPC7sKZiUlAU5pQ37RlA4+7CrYFVRNLYT0bCU98zixqxBj51VQECqUMvT0ETfHqqKUnZ1XVVjIRkovhw+7is2laSZAFdJ6Un3icthVzJjcz8sNMuR6BydWFTM2x/WLVQMNkSr3wbAGrKJy/YxSk2gNYSE9qcUrOLGpmFU5pZStCKTCNnkiuiGQMGVgYw1lBqqwseU/0smJVQUzM3OokIawtK0af5AANzYVrEAlPEBDpNQU+Vs5ubHEPhMbG7OghrCwDb+yu6g3ihKoCg6oEiFDGRYWNTcB7miMVAhUwpxmDjTE1oCFRTHMiYsRIyUzgJTkA70jCVSizB/EyRWNnhtAFumeAQYsSAmLYoEf1DVIOQqohJVtMlCJrZoyUI1Bip8cF1q+5WBiYmJlcxWW1pOUAamR8fQWQMv7QCUMTLpFoHRgKypjoKgm6emHXgYxsDIxhSZqNgsLZbna6CUlSYWxM6AnByZWVlYebc0SIEhNTS3Z9o8BSyZjZYuRMPLw8LCw8tD+h00FyD2suokiIonMWMpCwqXlgKkACDAAt/Uws1o1F4UAAAAASUVORK5CYII=";
+const gbIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAsCAMAAADcpCGDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAv1QTFRFSDYA//8AWEQAdlgA////ZEoAaVIAmXYAMyUA/94A/+8A//cBjGsApXsA/84A//6J/9YAhGMA//4k//8UqoQA//6ZlWsA/8YAs4wA//53//9X//81//65zpQA/+cAvYwAtYQA//7ZzpwA///rxpQArXsA//+q2JwB//8I3LcA77UAu5QA970AemMA//9KxowA///K//9jxZwA7MoAjWMA1qUA/70Ap5cA3q0A560A770Ay6UA//9C//9r3qUA98YA570ApXMA/84L57UA/to1/us1/tol///31a0A/+1X9NYA/scV3JkU15QG/dgWtngA984A+9l0/sok/70Mv4QAc0oA/9tI760ApI0E55wP97UAxr4Ag2sA/+0TumxL49wA56Ymi3UA//dM/dtW/upp/t4KhloEyYUO0IwF97UN/usl56UA2Zgq3MoE6qUTpqUB/+p3//c7wq8FQywa/9YIglge9+8A/+xI+K0Eakg8+49z9d4B9+cA/ecOmYgA/uyKvXsN/+8I+6+N//cV884O/7cW//dtEFwS56UI/8YI8KUJ7KhA+9ST/syy8K0tk2gf/++59K0V/vdhlm02Y0ce/M428GxZ87hRmmVT0owXXTYv6ckVF5Ezpd5l8rZtlqWNESZW+rgk0JBU77Y3/7UA/cxG9tYK770K/7UId59ZChCCA70K760J/OyY470LlD419/cAmXMN0sqrkExBr4mJ7LUR9MYL6ecCRyZS7cpC/eqr3LcSYWdpQGYuQqG484xQCxTVrXMA/9rIFpxU970+1KGG560ODU+fxpQQe0od3qUI76UAzrIx1qpg57UIuN6qh1CU68YlxHslqokhwohzYKcO7NYV78Y5FV5U3q0LqKI0zrVPVm8I0rUd8//eUjnO77kl8rioQnOcedmB970IyZwLWjalUmfSqXcY26UVnZBTStJCxq3OvYQM1qUIjGsQqWsA9+/G1sM0/8xd/+/n5+f3e18279Yp1rW1/+fWtYwQjNbWhGMIxpQIAAAANnrqQwAAAP90Uk5T//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AZvyKWQAAAiBJREFUeNpi+EcIMKBytU0JqLDOttLGq4JdS8eCDa8KK3stbby2GG1rscLr0jr5i27n8KqwTp+QxItPRZn/PJa17HhUcDu8/cKihseMeK+DZ1lYZJbhVFFUo39wE1CFGU4VclamOYosLGszzXGo0BaQk3ORUVQMrBDBocJZh5u7kF9NJjDPC7sKZiUlAU5pQ37RlA4+7CrYFVRNLYT0bCU98zixqxBj51VQECqUMvT0ETfHqqKUnZ1XVVjIRkovhw+7is2laSZAFdJ6Un3icthVzJjcz8sNMuR6BydWFTM2x/WLVQMNkSr3wbAGrKJy/YxSk2gNYSE9qcUrOLGpmFU5pZStCKTCNnkiuiGQMGVgYw1lBqqwseU/0smJVQUzM3OokIawtK0af5AANzYVrEAlPEBDpNQU+Vs5ubHEPhMbG7OghrCwDb+yu6g3ihKoCg6oEiFDGRYWNTcB7miMVAhUwpxmDjTE1oCFRTHMiYsRIyUzgJTkA70jCVSizB/EyRWNnhtAFumeAQYsSAmLYoEf1DVIOQqohJVtMlCJrZoyUI1Bip8cF1q+5WBiYmJlcxWW1pOUAamR8fQWQMv7QCUMTLpFoHRgKypjoKgm6emHXgYxsDIxhSZqNgsLZbna6CUlSYWxM6AnByZWVlYebc0SIEhNTS3Z9o8BSyZjZYuRMPLw8LCw8tD+h00FyD2suokiIonMWMpCwqXlgKkACDAAt/Uws1o1F4UAAAAASUVORK5CYII=";
 const bananaMedalIcon$1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHUUExURaOQMe/IFuvHOb2jPei6OPvSbcqZAee6FHhlADEbAE85AJh1FNaxREYxALyLFtm3IMiKEphoAVhDAEYlALiIAcyXFHY5AJhWAN57E71rENVzCtZzGMp3ENZ7CqloFJdGAKpWAMtmAuh7EeqEE95zCtuGIog1AOd7CJJSCqlHAdNrCN57CPCMDOaECL1aC7toAMh1APiLGd5zAIhGAPCECGMxANZrAJp1AWs5ANZzALlWAaqGAKlnAIdYAad2AfzrWVUnAP/8jP/va7dKAclYAeq6Af/9V///2v3IFpc2AGtSAP/+JP/+vfvaPsiJAe+MAK80Af//C//9dv/gTOmrAVoxAFIxAPqJAOeEAHklAGdGALh4AP/9Q/etAFo5AO+EAP/nDP/tFf3MJvfGAKeXAXhEAN57AP/eAPC1BammAXhWAOd7AIplAdyoAf7OC//GCPKtCP/nAPfOAP+9Cv/3APO9CPLWAPfnAP/vAP/WALqWAP/OAP/eD9qXAP/3CuzKAPfvAP/WCNF7ANu6APyZAOTcAF9SCNmHAP+lAJiGBOeMAP+tAP+1AO97AP+9AOplAGQoAMmnAf/GANpIAe9zAN5rANxVAPp4AP//AOfnANXIAQAAABNOIP4AAACcdFJOU///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AL9nXxsAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAW0SURBVGhD7Zj7VxJbFIDrVpNYljxCwgzGSCMjCAniZRZSWSlaFIQ9TApUJMPIeFQWYlaalqX31vyzd+9hgzws6/7AsPR+a7k4s/dhPtae8xp3cFVge0t27PjDb9WkZOfOv/7atWvX7t179lDkN6hBCcPs3VtXJxKJ6uv37du/n6Kbsj0lDQ0Mc+AAXdTXHzxIzU2pQUljo1hMFxJJYyM1N6XmJFKpTFYkOXSImptSWxK5XN7U1NioUBw+rFQqm5uPHGlpOXqUkptQKxKVSq1m2dbW1mPHFAqNRpHnWI7jxzd11YakrU2jaW8HBaLRKJUKBd8kRZ4TJ6j/RmwPiVarPQloNB1Ae3s7PpHmZl6C9z0F8IIcCgV9rRKBJXI5y7I6XUcH1ignAjSa06f1ej3LGgwoOXPmDH4gvIm+W4agEpXKaNQhOQkPy1Iyj0jU2dnZ0oIi/DOZTBvXTEDJ2bNmM1Und3+1mjKIxWKhFiISnTun0xXGQGsrxYsQTKJSsazVajRarVaz+eRJm43ieex2e2FbQeD0IlIqTSYoLlTM5HBQvMAWlkilUlzZzWY0gKLkaeRoaGiw251OukLyGh6djqIFhJHANgszHSSosTY1UbgYkHR1nT9PVzlQQ+UymcqXZCEk3d1qLFZOAmsUhUuRSCQy2YULFy/SdQ7UiDo6UFReMCEkcrnL5erpyUkoVgFI3O5Lly5fvnKFIohUShJckptK6lx9iUjU2wsSmw0lKhVFK7h69SrDXLt2/XpfX39/PwVx7Eul3d2nTnk820QilQ4MkKRigyoCJDLZ4OCNGzdver1eCsIvvHXr1u3bHo/P5/H4/X4KI9WX3Lmj1ZLk58WSSAKBwNDQ4ODdu3199+7dW1+QIX7/vsHg8Tx4ILSkt7cgocgGSCRQrqGh4eGHD0dGgsHgo0eU4B4/fhwIOBwPgFAoREFEGAmAGopsQCAAkv7+cHhkZHQ0HA6PjVGCczqd4+N6PZTKH4lEKIhUX8IrtNqBgZ8/do6bmBCLxdHokyeTk0+fxmKxEonTqdeDIPKLclVF4nINDIDE5ZLLKVKBxdLVBWvJ1NTk5LNnXm88HqcElBHWEqeTZUEQKp3MW1Ris8EsQdraKFKGxRIMTk253e5w+Plzr9ftnp6ephQ8EZCIxXq90RgKwSZOYaT6EpwgPHRdht3+4kUikUwmEolgMBplGLebMgiMObHY4cDzrdFIMaL6EputpwcULLvB2TSVSsXjsVg6nUi8fPkyGn31imG6uijJcVgph8NhMGCxSiYJIIQEt0TY361WiuSZnobBGg4nk69fz8xEo9HRUZlsYoKSOHzF4qYmkFitoVAkUr6IV1+iVmMn6OX3d3ZSjOPq6t68SSTS6fTbt8PDbjfDwLhlmPFxSiMweEGRyWRw3fL7S44qwBaVcFwkAnsnnmoKm47FEg4Hg/zcnp1lmNnZqSmZTCaRUBqBZwHo9fT7yseWMBK/3+fzZXloiKRSOLcZBobUzMzcXCr17h0fLzA/n8no9QYAZjpqiipNCCHJZHjBe8DngymDMYvFbof5nkp9+FAu4PjeHz/Oz4dCuGSBZKO3MyEkHLeQYxH49OnTr85GQ0PZLN8XRR4Pjl44QFCyBGEksIEvrbO83NPz+TOlivjyZWXl/Xu+rouL2MhmfT4Y/ZX/V0G2sATwemGhyrO8/PXr8vK3b6urqyyLh4zVVbhzLBYOLy1BAyULC/iZzcJUoTuUIZiE45JJOK7nGR1dW/sbyWZzRqjN4mIslkyuIEtLqFlYWH8PrkBACcfNzMDBB4FtF0inceIs+nxra2YzLG8rK/g7kkmoZ05TdKaoRFAJx83N/VNBPE7qRAIfPS9Jp9ff5X+CwBIeunkxufqBDTVw9qaev6IWJBw3Nvb9O92+hETixw/qsinbSFLED571V+rfpuYk/5n/JX9EFSQc9y/Ls1G0Pmf+zwAAAABJRU5ErkJggg==";
 const barrelIcon = "" + new URL("barrel2-CIOHUXl8.png", import.meta.url).href;
 const beanIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqZQTFRFQSAxORgpzWqLnEpqg0FaxWKDtFp7pFJzlEpie0Fii0FiczlSYjFKajFK1WqLrFJzezlaSiA53nOUWilBOSAxvWKDvVp7ORgxezlS/5y07oOcUilB5nOU1XOL/5SslEpqUik5/7TFrFpz3mqU/6y9/4usQSA5xWqD7nucvWJ7zWKL5nuc/4Ok/73N/83V/8XVajlS3nuU9oukpFJq//+ki0FaYjFBnFJqlEFi/8XNpEpqxVqD/6S99nuki0pi7nOcg0Fi9oOkMRgp1XOUzWKD//aL/4uk5nuU/5y9/+6Di5xBg8VBnL1K/6S0/5S0//aUasU5/+6cvb1a1WKL1c1qtFpztFJzSik5i71B/6zFe0Faczla7oOkrFp7/5ys/+aU3mqLpLRS///N/+acWjFK3py95oOcpHOLYkFK5qS9vVqDOUEpxWqLnFp7//akrKRai1pz5nOcvYuk9nuczZRqg2pKWlI5Mc0pQe4pzZSsOYsge2JKlGqDSiAxEEoIMUEg3qRzIFIQ1ZS0lGpS1ax7WuYx5r2Di6xKQVIpvc1irHOUczlKYvZB/96UatUxxYuki2pSSqQx/5SkxZSs//+9akFSg2JSENUQUkE5pGJqg1pzSkoxIHMQvZRi///Vc3NB5rSDg0pqrJRa/+as/7TNKeYYc2pBYnNKUkExc2JBtIOc9tWLpEpzc1JK7qyD7qSDe1pKUko5g7RB1axqi3NSzc1iSnspIEEYrKxaxbRi/8WDe9U5gzlaSt4p//+0xZRilFJzzWqDvYOcYkpBUlox/73F/96LKUoYi0pqc6w5pGJ7Ymo5nKxSMVoYrFJ7Yu4xnEpic0paEEoQCLQIc1pBKbQgIJQQ9tV77rSUGEoQYko5zYusrMVSSr05xYtz7t5zEEEQAAAAVrtq4gAAAOJ0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AHAeuh8AAASySURBVHja7Jb1d9tmFIYFFtmWZMmyTDLKjh1DHCexk4ZpSZYtTRpek5Rx5XZMHTMzMzMzMzNz/pPdT7bTNE3Xbvttx+85PsfS8fvc917rfFfY7H8UVgaUAWXA/xBgbudWMdy/BXAB8lHy81UU82H7gl9wy82kOK6CRI6b5W76/fw7OW4hoJ1tHG/qPpYSBEpk9kvBcbYcOa5SCUEQEk3icS9ftnLZ9mXvn8vNB9hcDaLaLei6rGmC0NSk77Nva321gRRVSpC1tjZNTzyxcnvdtbe/Xjc4OMjNAaYsuVq6W9gVb2mJt8kjlKaX8Dt3rw80NIo0lZCTHaloqmWX8OOytWvvWbOmDsSVAHYXK6oJOd4T9ada2nRd0y9++83NHHfXxmuuYL+sFWloTfNE3c3N/pQmPH7mG7c980jdEaAiQMrbSNFBaB1+d7M7mmrTNP3mh9dvPvuXk3dvIxsZkVYpQuitcYfSS5qjcf2tc769/sq7fzgSVATgVhsLALnDHQkd0xdN7dH0psBXO0/b+DEjimO0qjooQk72DKSrMhF/XBsZe+ydJ5996Y/R0dESIO9iGZqQPSugxr3NS6MdcU0XRrop1ZDDAf+A7KkBfMjdE5cFNcf9fPyO54aHh4uAzqDFTNIOIemPLKnKpCN9S2FacVkXEgnKEEEIcrLG73b7O5KyQKmN7TeeuuOi1av7SwCJt0EECiIAoSoNfQBiT1yTBYJIJAiQT+7d4KnxeLI+gqJoseHBh178tb+/BMAxq8UUEFUiO70iBIRMJhTpg2nGk7IsCMhPCF1yNpuVfQTqS2xsOOH+T48GzQHsvM1MhmGOHncknQEEpBjwR6eTcpePKMjng28UVUnTIkPmnrrjgsnJybnnwCnlLfC8hyuB4B+ASWYy6fcibn+NBxUliK2xrTEQ5ahU6THws6ZbPnn6KBBXAmBBaIKFDDEfGhaMOxQyAHKXQMQoyoEExemwyNSSZINry7sfvTI0NLQPIHl5l4mtD1dSRNcGz9UwcLe/BwL4kN+wGm7DzrImy3UXPn/5F69dVQLMKphk51EGhnbEiK5sr8cz7Un2Qv4YqjwzEw4zSGAPsGzOxc/u/eyU8y496b4bHigAnBjmhUGazCQTpiGFMTPoHqobsRmmnkQCN2vOmS6Zmt30wVm3fv/dbyd+UzwPMKzCizKYAyQ8+3SlgzIaN2ZumJEVzKCcyWVFlk0v/PT1GX9uKQIURLDyluXtLCCYcNjoeabgDrCt5oJMSC7efuCRBj3AIO1WC7TRCgwSNVxbX3KbCrLZbC4X+KcWORMRoUKyQwibyWQ2G4EDhdJzTpcFxPN5adFDVUEZJrwIgRiIYjaVzGCsrq7mQda8/fTgogCnYmQIetchBEAKMsoiqxWUz9vtQQw7yLGuIAIgYBQQg+erkdNStFrtIK83KElO/KCLBTcIWAUwpKB9nbUow+kNTsBdDHPi+N9sJsxZQBg5oBlvEEmakDAJ3VQUHF/EP3+14fgcohhm3oUTquPYoZYrvpBRkKIgdyfGHcZ2RjFxp1NBM1XACV5kxjvxCu4w1zt+gDrhU81x/+T9YD+/Amau/I5UBpQBZcCh9ZcAAwAGseCjc7PZBQAAAABJRU5ErkJggg==";
@@ -28229,7 +28229,7 @@ const MoveTable = () => {
         {
           storeKey: "goldBananas",
           title: "Golden Bananas",
-          imgUrl: bLocker,
+          imgUrl: gbIcon,
           prefix: "consumables",
           setCount: setConsumable,
           maxValue: 201
@@ -28839,7 +28839,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker1",
             title: "Bananas required for Level 1",
-            imgUrl: bLocker,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -28855,7 +28855,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker2",
             title: "Bananas required for Level 2",
-            imgUrl: bLocker,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -28871,7 +28871,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker3",
             title: "Bananas required for Level 3",
-            imgUrl: bLocker,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -28887,7 +28887,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker4",
             title: "Bananas required for Level 4",
-            imgUrl: bLocker,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -28903,7 +28903,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker5",
             title: "Bananas required for Level 5",
-            imgUrl: bLocker,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -28919,7 +28919,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker6",
             title: "Bananas required for Level 6",
-            imgUrl: bLocker,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -28935,7 +28935,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker7",
             title: "Bananas required for Level 7",
-            imgUrl: bLocker,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -28951,7 +28951,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker8",
             title: "Bananas required for Level 8",
-            imgUrl: bLocker,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -29081,13 +29081,13 @@ const GeneratorSettings = () => {
           /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Items in Pool" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Shops?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Golden Bananas?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: shopIcon,
-                  title: "Puts Cranky, Funky, and Candy Kong's shops in the pool.",
-                  storeKey: "poolShops",
+                  imgUrl: gbIcon,
+                  title: 'Puts Golden Bananas in the pool, other than those in the "minecart" and "miniboss" categories.',
+                  storeKey: "poolGoldenBananas",
                   prefix: "settings",
                   updateItem: setSetting
                 }
@@ -29114,13 +29114,24 @@ const GeneratorSettings = () => {
                   updateItem: setSetting
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Battle Crowns?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Kongs?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: crownIcon,
-                  title: "Puts Battle Arenas in the pool.",
-                  storeKey: "poolCrowns",
+                  imgUrl: dkKongIcon,
+                  title: "Puts the Kong cages in the pool.",
+                  storeKey: "poolKongs",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Shops?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: shopIcon,
+                  title: "Puts Cranky, Funky, and Candy Kong's shops in the pool.",
+                  storeKey: "poolShops",
                   prefix: "settings",
                   updateItem: setSetting
                 }
@@ -29136,35 +29147,35 @@ const GeneratorSettings = () => {
                   updateItem: setSetting
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Boss Keys?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: keyIcon,
-                  title: 'Puts "Boss Defeated" checks in the pool.',
-                  storeKey: "poolKeys",
-                  prefix: "settings",
-                  updateItem: setSetting
-                }
-              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Banana Medals?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
                   imgUrl: bananaMedalIcon,
-                  title: "Puts the Banana Medal checks in the pool.",
+                  title: "Puts the vanilla Banana Medal checks in the pool.",
                   storeKey: "poolBananaMedals",
                   prefix: "settings",
                   updateItem: setSetting
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Company Coins?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Isles Banana Medals?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: companyCoinIcon,
-                  title: "Puts the Jetpac and DK Arcade checks in the pool.",
-                  storeKey: "poolCompanyCoins",
+                  imgUrl: bananaMedalIcon,
+                  title: "Does your seed have colored bananas in DK Isles?",
+                  storeKey: "poolIslesMedals",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Battle Crowns?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: crownIcon,
+                  title: "Puts Battle Arenas in the pool.",
+                  storeKey: "poolCrowns",
                   prefix: "settings",
                   updateItem: setSetting
                 }
@@ -29176,6 +29187,28 @@ const GeneratorSettings = () => {
                   imgUrl: fairyIcon,
                   title: "Puts Banana Fairies in the pool.",
                   storeKey: "poolFairies",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Boss Keys?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: keyIcon,
+                  title: 'Puts "Boss Defeated" checks in the pool.',
+                  storeKey: "poolKeys",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Company Coins?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: companyCoinIcon,
+                  title: "Puts the Jetpac and DK Arcade checks in the pool.",
+                  storeKey: "poolCompanyCoins",
                   prefix: "settings",
                   updateItem: setSetting
                 }
@@ -29240,7 +29273,7 @@ const GeneratorSettings = () => {
                 SimpleIcon,
                 {
                   imgUrl: chunkyKongIcon,
-                  title: "Puts the various objects Chunky can pick up in the pool.",
+                  title: "Puts the various objects Chunky can lift with relative ease into the pool.",
                   storeKey: "poolBoulders",
                   prefix: "settings",
                   updateItem: setSetting
