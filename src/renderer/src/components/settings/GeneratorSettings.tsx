@@ -460,10 +460,37 @@ const GeneratorSettings: React.FC = () => {
                 maxValue={5}
               />
             </>
+            <h3>Glitch Logic Settings</h3>
+            <p className="full-grid">If you made a "glitch logic" seed, specify which glitches you used here. The affected checks will have a <strong className="glitch-logic">purple light</strong> until you are able to get them legitimately, at which point they turn green.</p>
+            <>
+              //B. Locker skipping
+              //General skips
+              //Ledge clipping
+              //THE MOON KICK
+              //Diddy's Moontail
+              //Phase swimming
+              //Phasewalking
+              //The Skew Glitch
+              //Spawn snagging
+              //Swimming through shores
+              //Tag Barrel Storage
+              //Troff 'n' Scoff Bypass
+              //Chunky/Fairy Cam Phase Falling
+            </>
             <h3>UI Settings</h3>
             <>
               <p>Group by Regions?</p>
               <CheckIcon storeKey="groupByRegion" prefix="ui" updateItem={setUi} />
+            </>
+            <h4>Special Settings</h4>
+            <p className="full-grid">Some "joke" options you can play around with. They won't affect your ability to track in any way. Alex put them here just to show off on his part (plus, this is the LANKY Tracker...you wanna be serious, make a Cranky Tracker ;D).</p>
+            <>
+              //The Water is Lava (makes water checks orange)
+              //Mirror Mode (flips the site backwards)
+              //Donk in the Dark World (inverts site colors?)
+              //Donk in the Sky (sets opacity to 50%)
+              //Ice Trap (flips site upside down)
+                //"flipping" options should have a Seija Kijin icon ^^
             </>
           </section>
         </section>

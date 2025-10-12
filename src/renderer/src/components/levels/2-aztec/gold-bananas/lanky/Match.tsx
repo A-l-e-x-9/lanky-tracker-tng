@@ -6,7 +6,7 @@ const MatchGame: React.FC = () => {
   return (
     <AztecCheck
       id={2023}
-      name="Aztec Lanky Matching Game"
+      name="Match Game '64"
       region="Llama Temple"
       canGetLogic={matchGb.in}
       canGetBreak={matchGb.out}

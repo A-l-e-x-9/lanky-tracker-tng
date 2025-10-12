@@ -8,7 +8,7 @@ const MountainCrate: React.FC = () => (
     <VanillaCrate>
       <JapesCheck
         id={1060}
-        name="Japes Crate: Behind the Mountain"
+        name="Melon Crate Behind the Mountain"
         region="Japes Hillside"
         canGetLogic={useMtnCrate()}
       />
