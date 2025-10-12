@@ -1,4 +1,5 @@
 import { useLankyFreeChunkyGb } from '@renderer/hooks/factory'
+import KongCheck from '@renderer/components/pools/Kong'
 import FactoryCheck from '../../check'
 
 const ChunkyCage: React.FC = () => (
