@@ -29193,17 +29193,6 @@ const GeneratorSettings = () => {
                   updateItem: setSetting
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Battle Crowns?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: crownIcon,
-                  title: "Puts Battle Arenas in the pool.",
-                  storeKey: "poolCrowns",
-                  prefix: "settings",
-                  updateItem: setSetting
-                }
-              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Banana Fairies?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
@@ -29215,28 +29204,6 @@ const GeneratorSettings = () => {
                   updateItem: setSetting
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Boss Keys?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: keyIcon,
-                  title: 'Puts "Boss Defeated" checks in the pool.',
-                  storeKey: "poolKeys",
-                  prefix: "settings",
-                  updateItem: setSetting
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Company Coins?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: companyCoinIcon,
-                  title: "Puts the Jetpac and DK Arcade checks in the pool.",
-                  storeKey: "poolCompanyCoins",
-                  prefix: "settings",
-                  updateItem: setSetting
-                }
-              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Rainbow Coins?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
@@ -29244,6 +29211,39 @@ const GeneratorSettings = () => {
                   imgUrl: rainbowCoinIcon,
                   title: "Puts the dirt patches in the pool.",
                   storeKey: "poolRainbowCoins",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Battle Crowns?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: crownIcon,
+                  title: "Puts Battle Arenas in the pool.",
+                  storeKey: "poolCrowns",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Wrinkly Doors?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: wrinkly,
+                  title: "Puts Wrinkly Kong's doors in the pool.",
+                  storeKey: "poolWrinkly",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Boss Keys?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: keyIcon,
+                  title: 'Puts "Boss Defeated" checks in the pool.',
+                  storeKey: "poolKeys",
                   prefix: "settings",
                   updateItem: setSetting
                 }
@@ -29270,24 +29270,13 @@ const GeneratorSettings = () => {
                   updateItem: setSetting
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Dropsanity?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Company Coins?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: dropIcon,
-                  title: "If Dropsanity is enabled for your seed, puts the enemies in the pool.",
-                  storeKey: "poolDrops",
-                  prefix: "settings",
-                  updateItem: setSetting
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Wrinkly Doors?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: wrinkly,
-                  title: "Puts Wrinkly Kong's doors in the pool.",
-                  storeKey: "poolWrinkly",
+                  imgUrl: companyCoinIcon,
+                  title: "Puts the Jetpac and DK Arcade checks in the pool.",
+                  storeKey: "poolCompanyCoins",
                   prefix: "settings",
                   updateItem: setSetting
                 }
@@ -29299,6 +29288,17 @@ const GeneratorSettings = () => {
                   imgUrl: chunkyKongIcon,
                   title: "Puts the various objects Chunky can lift with relative ease into the pool.",
                   storeKey: "poolBoulders",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Dropsanity?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: dropIcon,
+                  title: "If Dropsanity is enabled for your seed, puts the enemies in the pool.",
+                  storeKey: "poolDrops",
                   prefix: "settings",
                   updateItem: setSetting
                 }
