@@ -3,12 +3,14 @@ import KongCheck from '@renderer/components/pools/Kong'
 import FactoryCheck from '../../check'
 
 const ChunkyCage: React.FC = () => (
+<KongCheck>
   <FactoryCheck
     id={3025}
     name="Chunky's Cage"
     region="Storage and Arcade Area"
     canGetLogic={useLankyFreeChunkyGb()}
   />
+</KongCheck>
 )
 
 export default ChunkyCage
