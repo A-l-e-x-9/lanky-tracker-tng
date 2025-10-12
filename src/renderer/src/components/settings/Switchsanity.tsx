@@ -40,13 +40,13 @@ const FreeKongSelector: React.FC = () => {
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]))
   return (
     <>
-      <p>Free Diddy</p>
+      <p>To free Diddy:</p>
       <SwitchsanitySwitch currValue={switches.freeDiddy} storeKey="freeDiddy" images={freeDiddy} />
-      <p>Free Lanky</p>
+      <p>To free Lanky:</p>
       <SwitchsanitySwitch currValue={switches.freeLanky} storeKey="freeLanky" images={allMusic} />
-      <p>Free Tiny</p>
+      <p>To free Tiny:</p>
       <SwitchsanitySwitch currValue={switches.freeTiny} storeKey="freeTiny" images={freeTiny} />
-      <p>Free Chunky</p>
+      <p>To free Chunky:</p>
       <SwitchsanitySwitch
         currValue={switches.freeChunky}
         storeKey="freeChunky"
@@ -60,21 +60,27 @@ const StandardSwitchsanitySelector: React.FC = () => {
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]))
   return (
     <>
-      <p>Isles Rocket Barrel</p>
+      <p>To activate the Diddy Barrel in Isles:</p>
       <SwitchsanitySwitch
         currValue={switches.islesTrombone}
         storeKey="islesTrombone"
         images={allMusic}
       />
-      <p>Isles Forest Lobby</p>
+      <p>To get Chunky's hint in Aztec Lobby:</p>
+      <SwitchsanitySwitch
+        currValue={switches.islesAztec}
+        storeKey="islesAztec"
+        images={allGun}
+      />
+      <p>To get the infamous Forest Lobby fairy:</p>
       <SwitchsanitySwitch currValue={switches.islesForest} storeKey="islesForest" images={allGun} />
-      <p>Isles Krem Top</p>
+      <p>To reach the top of Krem Isle:</p>
       <SwitchsanitySwitch
         currValue={switches.islesMonkeyport}
         storeKey="islesMonkeyport"
         images={[tinyPadIcon, dkPadIcon, lankyPadIcon]}
       />
-      <p>Isles Helm Access</p>
+      <p>To activate the ropes in Helm Lobby:</p>
       <SwitchsanitySwitch
         currValue={switches.islesHelm}
         storeKey="islesHelm"
@@ -89,65 +95,65 @@ const StandardSwitchsanitySelector: React.FC = () => {
           chunkyMusicIcon
         ]}
       />
-      <p>Japes Hive Area</p>
+      <p>To enter Japes Hive Area:</p>
       <SwitchsanitySwitch currValue={switches.japesHive} storeKey="japesHive" images={allGun} />
-      <p>Japes Rambi Cage</p>
+      <p>To get Japes Rambi Cage:</p>
       <SwitchsanitySwitch currValue={switches.japesRambi} storeKey="japesRambi" images={allGun} />
-      <p>Japes Painting Room</p>
+      <p>To enter Japes Painting Room:</p>
       <SwitchsanitySwitch
         currValue={switches.japesPainting}
         storeKey="japesPainting"
         images={allGun}
       />
-      <p>Japes Early Tunnel</p>
+      <p>To open Japes Early Tunnel:</p>
       <SwitchsanitySwitch currValue={switches.japesSide} storeKey="japesSide" images={allGun} />
-      <p>Aztec Early Kasplat</p>
+      <p>To get Aztec Early Kasplat:</p>
       <SwitchsanitySwitch
         currValue={switches.aztecBlueprint}
         storeKey="aztecBlueprint"
         images={allGun}
       />
-      <p>Aztec Back Access</p>
+      <p>To get Aztec Back Access:</p>
       <SwitchsanitySwitch currValue={switches.aztecBack} storeKey="aztecBack" images={allMusic} />
-      <p>Aztec Llama Temple 1</p>
+      <p>To enter Aztec Llama Temple 1:</p>
       <SwitchsanitySwitch currValue={switches.aztecLlama1} storeKey="aztecLlama1" images={allGun} />
-      <p>Aztec Llama Temple 2</p>
+      <p>To enter Aztec Llama Temple 2:</p>
       <SwitchsanitySwitch currValue={switches.aztecLlama2} storeKey="aztecLlama2" images={allGun} />
-      <p>Aztec Llama Temple 3</p>
+      <p>To enter Aztec Llama Temple 3:</p>
       <SwitchsanitySwitch currValue={switches.aztecLlama3} storeKey="aztecLlama3" images={allGun} />
-      <p>Aztec Dead End</p>
+      <p>To open Aztec Quicksand Tunnel:</p>
       <SwitchsanitySwitch
         currValue={switches.aztecDeadEnd}
         storeKey="aztecDeadEnd"
         images={allKong}
       />
-      <p>Galleon Lighthouse Area</p>
+      <p>To open Galleon Lighthouse Area:</p>
       <SwitchsanitySwitch
         currValue={switches.galleonLighthouse}
         storeKey="galleonLighthouse"
         images={allGun}
       />
-      <p>Galleon Outskirts Area</p>
+      <p>To open Galleon Outskirts Area:</p>
       <SwitchsanitySwitch
         currValue={switches.galleonOutskirts}
         storeKey="galleonOutskirts"
         images={allGun}
       />
-      <p>Galleon Cannon Game</p>
+      <p>To reach Galleon Cannon Game:</p>
       <SwitchsanitySwitch
         currValue={switches.galleonCannon}
         storeKey="galleonCannon"
         images={allGun}
       />
-      <p>Forest Owl Tree</p>
+      <p>To reach Forest Area 4:</p>
       <SwitchsanitySwitch
         currValue={switches.forestOwlTree}
         storeKey="forestOwlTree"
         images={allGun}
       />
-      <p>Forest Beanstalk Area 1</p>
+      <p>First switch to open Forest Area 2:</p>
       <SwitchsanitySwitch currValue={switches.forestBean1} storeKey="forestBean1" images={allGun} />
-      <p>Forest Beanstalk Area 2</p>
+      <p>Second switch to open Forest Area 2:</p>
       <SwitchsanitySwitch currValue={switches.forestBean2} storeKey="forestBean2" images={allGun} />
     </>
   )
