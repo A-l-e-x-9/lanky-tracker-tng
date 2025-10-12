@@ -10276,6 +10276,7 @@ const initialSettings = {
     poolRainbowCoins: true,
     poolCrowns: true,
     poolBananaMedals: true,
+    poolIslesMedals: true,
     shuffleArenas: false,
     poolToughBananas: true,
     poolMiniboss: true,
@@ -10510,7 +10511,9 @@ const useShuffledShops = () => useDonkStore(useShallow((state) => state.settings
 const useFreeTradeRestricted = () => useDonkStore(useShallow((state) => state.settings.freeTrade)) != 0;
 const useFreeTradeFull = () => useDonkStore(useShallow((state) => state.settings.freeTrade)) == 2;
 const useChunkySlamLevel = () => useDonkStore(useShallow((state) => state.settings.chunkySlamLevel));
+const useIslesBananaMedals = () => useDonkStore(useShallow((state) => state.settings.poolIslesMedals));
 const BananaMedalPool = ({ children }) => usePoolBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const IslesMedalPool = ({ children }) => useIslesBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const ArenaPool = ({ children }) => usePoolCrowns() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const VanillaArena = ({ children }) => useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
 const useCurrentBananaMedalCount = () => useDonkStore(useShallow((state) => state.consumables.bananaMedals));
@@ -13764,13 +13767,13 @@ const ClassicChecks$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   /* @__PURE__ */ jsxRuntimeExports.jsx(DirtLocations$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaLocations, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$7, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$7, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$7, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$7, {})
-  ] }),
+  ] }) }),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderLocations$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyDoors, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
