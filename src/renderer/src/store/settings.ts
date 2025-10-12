@@ -24,7 +24,6 @@ export const initialSettings: SettingState = {
     poolCrowns: true,
     poolBananaMedals: true,
     shuffleArenas: false,
-    poolGoldBananas: true,
     poolToughBananas: true,
     poolMiniboss: true,
     poolBlueprints: true,
