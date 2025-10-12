@@ -13687,13 +13687,13 @@ const TrainingGroundsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(Rainb
   /* @__PURE__ */ jsxRuntimeExports.jsx(Hoard, {})
 ] });
 const IslesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$7, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$7, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$7, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$7, {})
-  ] }),
+  ] }) }),
   /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingGroundsChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainUpperChecks, {}),
