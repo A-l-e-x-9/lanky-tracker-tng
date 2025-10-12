@@ -666,6 +666,7 @@ interface SettingCollection {
   poolWrinkly: boolean
   poolBoulders: boolean
   poolKongs: boolean
+  poolIslesMedals: boolean
 }
 
 export interface SettingState {
