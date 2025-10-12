@@ -1,4 +1,4 @@
-import BananaMedalPool from '@renderer/components/pools/BananaMedals'
+import BananaMedalPool, { IslesMedalPool } from '@renderer/components/pools/BananaMedals'
 import ChunkyMedal from '../medals/ChunkyMedal'
 import DiddyMedal from '../medals/DiddyMedal'
 import DkMedal from '../medals/DkMedal'
@@ -28,11 +28,13 @@ import TrainingGroundsChecks from './TrainingGrounds'
 const IslesRegionChecks: React.FC = () => (
   <div className="grid">
     <BananaMedalPool>
+      <IslesMedalPool>
       <DkMedal />
       <DiddyMedal />
       <LankyMedal />
       <TinyMedal />
       <ChunkyMedal />
+      </IslesMedalPool>
     </BananaMedalPool>
     <TrainingGroundsChecks />
     <IslesMainChecks />
