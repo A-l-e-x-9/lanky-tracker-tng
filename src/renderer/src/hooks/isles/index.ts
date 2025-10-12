@@ -871,7 +871,7 @@ export const useAztecLobbyGeneric = (): boolean => {
 
 export const useAztecLobbyChunky = (): boolean => {
   const canEnterAztec = usePlayLobby('Angry Aztec')
-  const feathers = useFeather()
+  const feathers = useSwitchsanityGun('islesAztec', 3)
   return canEnterAztec && feathers
 }
 

@@ -665,6 +665,7 @@ interface SettingCollection {
   chunkySlamLevel: SlamRange
   poolWrinkly: boolean
   poolBoulders: boolean
+  poolKongs: boolean
 }
 
 export interface SettingState {

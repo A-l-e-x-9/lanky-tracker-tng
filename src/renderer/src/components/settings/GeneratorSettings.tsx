@@ -79,7 +79,7 @@ const GeneratorSettings: React.FC = () => {
               <SimpleIcon
                 imgUrl={gbIcon}
                 title="Puts Golden Bananas in the pool, other than those in the &quot;minecart&quot; and &quot;miniboss&quot; categories."
-                storeKey="poolGoldenBananas"
+                storeKey="poolGoldBananas"
                 prefix="settings"
                 updateItem={setSetting}
               />            
