@@ -23,6 +23,7 @@ export const initialSettings: SettingState = {
     poolRainbowCoins: true,
     poolCrowns: true,
     poolBananaMedals: true,
+    poolIslesMedals: true,
     shuffleArenas: false,
     poolToughBananas: true,
     poolMiniboss: true,

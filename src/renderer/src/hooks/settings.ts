@@ -244,3 +244,6 @@ export const useFreeTradeFull = (): boolean =>
   
 export const useChunkySlamLevel = (): SlamRange =>
   useDonkStore(useShallow((state) => state.settings.chunkySlamLevel))
+  
+export const useIslesBananaMedals= (): boolean =>
+  useDonkStore(useShallow((state) => state.settings.poolIslesMedals))
