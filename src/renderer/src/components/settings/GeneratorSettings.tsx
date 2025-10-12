@@ -139,14 +139,6 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
-              <p>Battle Crowns?</p>
-              <SimpleIcon
-                imgUrl={crownIcon}
-                title="Puts Battle Arenas in the pool."
-                storeKey="poolCrowns"
-                prefix="settings"
-                updateItem={setSetting}
-              />
               <p>Banana Fairies?</p>
               <SimpleIcon
                 imgUrl={fairyIcon}
@@ -155,27 +147,35 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
-              <p>Boss Keys?</p>
-              <SimpleIcon
-                imgUrl={keyIcon}
-                title="Puts &quot;Boss Defeated&quot; checks in the pool."
-                storeKey="poolKeys"
-                prefix="settings"
-                updateItem={setSetting}
-              />
-              <p>Company Coins?</p>
-              <SimpleIcon
-                imgUrl={companyCoinIcon}
-                title="Puts the Jetpac and DK Arcade checks in the pool."
-                storeKey="poolCompanyCoins"
-                prefix="settings"
-                updateItem={setSetting}
-              />
               <p>Rainbow Coins?</p>
               <SimpleIcon
                 imgUrl={rainbowCoinIcon}
                 title="Puts the dirt patches in the pool."
                 storeKey="poolRainbowCoins"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Battle Crowns?</p>
+              <SimpleIcon
+                imgUrl={crownIcon}
+                title="Puts Battle Arenas in the pool."
+                storeKey="poolCrowns"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Wrinkly Doors?</p>
+              <SimpleIcon
+                imgUrl={wrinkly}
+                title="Puts Wrinkly Kong's doors in the pool."
+                storeKey="poolWrinkly"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Boss Keys?</p>
+              <SimpleIcon
+                imgUrl={keyIcon}
+                title="Puts &quot;Boss Defeated&quot; checks in the pool."
+                storeKey="poolKeys"
                 prefix="settings"
                 updateItem={setSetting}
               />
@@ -195,19 +195,11 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
-              <p>Dropsanity?</p>
+              <p>Company Coins?</p>
               <SimpleIcon
-                imgUrl={dropIcon}
-                title="If Dropsanity is enabled for your seed, puts the enemies in the pool."
-                storeKey="poolDrops"
-                prefix="settings"
-                updateItem={setSetting}
-              />
-              <p>Wrinkly Doors?</p>
-              <SimpleIcon
-                imgUrl={wrinkly}
-                title="Puts Wrinkly Kong's doors in the pool."
-                storeKey="poolWrinkly"
+                imgUrl={companyCoinIcon}
+                title="Puts the Jetpac and DK Arcade checks in the pool."
+                storeKey="poolCompanyCoins"
                 prefix="settings"
                 updateItem={setSetting}
               />
@@ -216,6 +208,14 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={chunkyIcon}
                 title="Puts the various objects Chunky can lift with relative ease into the pool."
                 storeKey="poolBoulders"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Dropsanity?</p>
+              <SimpleIcon
+                imgUrl={dropIcon}
+                title="If Dropsanity is enabled for your seed, puts the enemies in the pool."
+                storeKey="poolDrops"
                 prefix="settings"
                 updateItem={setSetting}
               />
