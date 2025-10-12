@@ -10512,6 +10512,7 @@ const useFreeTradeRestricted = () => useDonkStore(useShallow((state) => state.se
 const useFreeTradeFull = () => useDonkStore(useShallow((state) => state.settings.freeTrade)) == 2;
 const useChunkySlamLevel = () => useDonkStore(useShallow((state) => state.settings.chunkySlamLevel));
 const useIslesBananaMedals = () => useDonkStore(useShallow((state) => state.settings.poolIslesMedals));
+const usePoolKongs = () => useDonkStore(useShallow((state) => state.settings.poolKongs));
 const BananaMedalPool = ({ children }) => usePoolBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const IslesMedalPool = ({ children }) => useIslesBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const ArenaPool = ({ children }) => usePoolCrowns() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -14729,7 +14730,8 @@ const BaboonBlast = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     canGetLogic: useDkBlastGb$4()
   }
 );
-const DiddyCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const KongCheck = ({ children }) => usePoolKongs() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const DiddyCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KongCheck, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1005,
@@ -14737,7 +14739,7 @@ const DiddyCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Japes Hillside",
     canGetLogic: useDkFreeDiddyGb()
   }
-);
+) });
 const FloorCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
@@ -14751,7 +14753,7 @@ const FreeDiddy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1002,
-    name: "Freeing Diddy",
+    name: "Freeing Diddy Kong",
     region: "Japes Hillside",
     canGetLogic: useDkFreeDiddyGb()
   }
@@ -17211,7 +17213,7 @@ const FreeLanky$1 = () => {
 };
 const FreeLanky = () => {
   const freeGb = useDkFreeLankyGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(KongCheck, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2005,
@@ -17220,7 +17222,7 @@ const FreeLanky = () => {
       canGetLogic: freeGb.in,
       canGetBreak: freeGb.out
     }
-  );
+  ) });
 };
 const FreeLlama = () => {
   const blastGb = useDkBlastGb$3();
@@ -19301,7 +19303,7 @@ const TestingBarrel = () => {
     }
   );
 };
-const ChunkyCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const ChunkyCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KongCheck, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3025,
@@ -19309,7 +19311,7 @@ const ChunkyCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Storage and Arcade Area",
     canGetLogic: useLankyFreeChunkyGb()
   }
-);
+) });
 const LankyBananas$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(TestingBarrel, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(PianoGame, {}),
