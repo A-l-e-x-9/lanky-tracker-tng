@@ -250,3 +250,6 @@ export const useIslesBananaMedals = (): boolean =>
 
 export const usePoolKongs = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.poolKongs))
+
+export const usePoolGoldBananas = (): boolean =>
+  useDonkStore(useShallow((state) => state.settings.poolGoldBananas))

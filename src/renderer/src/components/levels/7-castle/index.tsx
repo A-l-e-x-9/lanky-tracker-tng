@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import BananaMedalPool from '@renderer/components/pools/BananaMedals'
 import DropPool from '@renderer/components/pools/Drops'
 import useDonkStore from '@renderer/store'
@@ -27,11 +28,13 @@ const ClassicChecks: React.FC = () => (
 <div>
   <p className="not-available"><strong>WARNING:</strong> If you don't have Climbing and you attempt to do any check in the Crypt area, you won't be able to get back up without killing your Kong or pause-exiting, then re-entering. For that reason, all checks involving this area in some way will be yellow if you indicated that you didn't have Climbing in the moves table!</p>
   <div className="grid">
+  <GBPool>
     <DkBananas />
     <DiddyBananas />
     <LankyBananas />
     <TinyBananas />
     <ChunkyBananas />
+  </GBPool>
     <KasplatLocations />
     <MausoleumCrate />
     <TopFloorDirt />

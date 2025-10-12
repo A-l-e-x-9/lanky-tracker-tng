@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import BananaMedalPool, { IslesMedalPool } from '@renderer/components/pools/BananaMedals'
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
@@ -25,11 +26,13 @@ import WrinklyDoors from './wrinkly'
 
 const ClassicChecks: React.FC = () => (
   <div className="grid">
-    <DkBananas />
-    <DiddyBananas />
-    <LankyBananas />
-    <TinyBananas />
-    <ChunkyBananas />
+    <GBPool>
+      <DkBananas />
+      <DiddyBananas />
+      <LankyBananas />
+      <TinyBananas />
+      <ChunkyBananas />
+    </GBPool>
     <KasplatLocations />
     <CrateLocations />
     <DirtLocations />
