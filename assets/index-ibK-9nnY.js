@@ -10267,15 +10267,16 @@ const initialSettings = {
     forestTime: 0,
     galleonHighTide: false,
     shuffleShops: false,
+    poolGoldBananas: true,
     poolShops: true,
     poolMisc: true,
     poolKeys: true,
+    poolKongs: true,
     shuffleDirt: false,
     poolRainbowCoins: true,
     poolCrowns: true,
     poolBananaMedals: true,
     shuffleArenas: false,
-    poolGoldBananas: true,
     poolToughBananas: true,
     poolMiniboss: true,
     poolBlueprints: true,
@@ -11883,7 +11884,7 @@ const useAztecLobbyGeneric = () => {
 };
 const useAztecLobbyChunky = () => {
   const canEnterAztec = usePlayLobby("Angry Aztec");
-  const feathers = useFeather();
+  const feathers = useSwitchsanityGun("islesAztec", 3);
   return canEnterAztec && feathers;
 };
 const useFactoryLobbyLower = () => {
@@ -29087,7 +29088,7 @@ const GeneratorSettings = () => {
                 {
                   imgUrl: gbIcon,
                   title: 'Puts Golden Bananas in the pool, other than those in the "minecart" and "miniboss" categories.',
-                  storeKey: "poolGoldenBananas",
+                  storeKey: "poolGoldBananas",
                   prefix: "settings",
                   updateItem: setSetting
                 }
