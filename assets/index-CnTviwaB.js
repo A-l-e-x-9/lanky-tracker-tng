@@ -14140,7 +14140,7 @@ const MountainCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { c
   JapesCheck,
   {
     id: 1060,
-    name: "Japes Crate: Behind the Mountain",
+    name: "Melon Crate Behind the Mountain",
     region: "Japes Hillside",
     canGetLogic: useMtnCrate()
   }
@@ -17295,7 +17295,7 @@ const MatchGame = () => {
     AztecCheck,
     {
       id: 2023,
-      name: "Aztec Lanky Matching Game",
+      name: "Match Game '64",
       region: "Llama Temple",
       canGetLogic: matchGb.in,
       canGetBreak: matchGb.out
@@ -20538,7 +20538,7 @@ const MermaidReward = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
     id: 4030,
-    name: "Galleon Tiny Mermaid Reward",
+    name: "The Mermaid's Reward",
     region: "Lighthouse Area",
     canGetLogic: useTinyMermaidGb()
   }
@@ -27564,13 +27564,12 @@ const HelmMachineEnemies = () => {
   const sax = useSax();
   const triangle = useTriangle();
   const klump = useDefeatKlump();
-  const hasCamera = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       HelmCheck,
       {
         id: 8309,
-        name: "Helm Enemy: DK Room",
+        name: "Enemy in DK's Room",
         canGetLogic: helmMachine.in && bongos,
         canGetBreak: helmMachine.out && bongos
       }
@@ -27579,7 +27578,7 @@ const HelmMachineEnemies = () => {
       HelmCheck,
       {
         id: 8310,
-        name: "Helm Enemy: Chunky Room 0",
+        name: "Enemy 0 in Chunky's Room",
         canGetLogic: helmMachine.in && triangle,
         canGetBreak: helmMachine.out && triangle
       }
@@ -27588,7 +27587,7 @@ const HelmMachineEnemies = () => {
       HelmCheck,
       {
         id: 8311,
-        name: "Helm Enemy: Chunky Room 1",
+        name: "Enemy 1 in Chunky's Room",
         canGetLogic: helmMachine.in && triangle,
         canGetBreak: helmMachine.out && triangle
       }
@@ -27597,7 +27596,7 @@ const HelmMachineEnemies = () => {
       HelmCheck,
       {
         id: 8312,
-        name: "Helm Enemy: Tiny Room",
+        name: "Enemy in Tiny's Room",
         canGetLogic: helmMachine.in && sax,
         canGetBreak: helmMachine.out && sax && klump
       }
@@ -27606,7 +27605,7 @@ const HelmMachineEnemies = () => {
       HelmCheck,
       {
         id: 8313,
-        name: "Helm Enemy: Lanky Room 0",
+        name: "Enemy 0 in Lanky's Room",
         canGetLogic: helmMachine.in && trombone,
         canGetBreak: helmMachine.out && trombone && klump
       }
@@ -27615,7 +27614,7 @@ const HelmMachineEnemies = () => {
       HelmCheck,
       {
         id: 8314,
-        name: "Helm Enemy: Lanky Room 1",
+        name: "Enemy 1 in Lanky's Room",
         canGetLogic: helmMachine.in && trombone,
         canGetBreak: helmMachine.out && trombone
       }
@@ -27624,7 +27623,7 @@ const HelmMachineEnemies = () => {
       HelmCheck,
       {
         id: 8315,
-        name: "Helm Enemy: Diddy Room 0",
+        name: "Enemy 0 in Diddy's Room",
         canGetLogic: helmMachine.in && guitar && rocket,
         canGetBreak: helmMachine.out && guitar && rocket
       }
@@ -27633,81 +27632,9 @@ const HelmMachineEnemies = () => {
       HelmCheck,
       {
         id: 8316,
-        name: "Helm Enemy: Diddy Room 1",
+        name: "Enemy 1 in Diddy's Room",
         canGetLogic: helmMachine.in && guitar && rocket,
         canGetBreak: helmMachine.out && guitar && rocket
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8409,
-        name: "Helm Enemy Photo: DK Room",
-        canGetLogic: helmMachine.in && bongos && hasCamera,
-        canGetBreak: helmMachine.out && bongos && hasCamera
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8410,
-        name: "Helm Enemy Photo: Chunky Room 0",
-        canGetLogic: helmMachine.in && triangle && hasCamera,
-        canGetBreak: helmMachine.out && triangle && hasCamera
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8411,
-        name: "Helm Enemy Photo: Chunky Room 1",
-        canGetLogic: helmMachine.in && triangle && hasCamera,
-        canGetBreak: helmMachine.out && triangle && hasCamera
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8412,
-        name: "Helm Enemy Photo: Tiny Room",
-        canGetLogic: helmMachine.in && sax && hasCamera,
-        canGetBreak: helmMachine.out && sax && klump && hasCamera
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8413,
-        name: "Helm Enemy Photo: Lanky Room 0",
-        canGetLogic: helmMachine.in && trombone && hasCamera,
-        canGetBreak: helmMachine.out && trombone && klump && hasCamera
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8414,
-        name: "Helm Enemy Photo: Lanky Room 1",
-        canGetLogic: helmMachine.in && trombone && hasCamera,
-        canGetBreak: helmMachine.out && trombone && hasCamera
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8415,
-        name: "Helm Enemy Photo: Diddy Room 0",
-        canGetLogic: helmMachine.in && guitar && rocket && hasCamera,
-        canGetBreak: helmMachine.out && guitar && rocket && hasCamera
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8416,
-        name: "Helm Enemy Photo: Diddy Room 1",
-        canGetLogic: helmMachine.in && guitar && rocket && hasCamera,
-        canGetBreak: helmMachine.out && guitar && rocket && hasCamera
       }
     )
   ] });
@@ -29623,11 +29550,21 @@ const GeneratorSettings = () => {
                 }
               )
             ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Glitch Logic Settings" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "full-grid", children: [
+              'If you made a "glitch logic" seed, specify which glitches you used here. The affected checks will have a ',
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "glitch-logic", children: "purple light" }),
+              " until you are able to get them legitimately, at which point they turn green."
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "//B. Locker skipping //General skips //Ledge clipping //THE MOON KICK //Diddy's Moontail //Phase swimming //Phasewalking //The Skew Glitch //Spawn snagging //Swimming through shores //Tag Barrel Storage //Troff 'n' Scoff Bypass //Chunky/Fairy Cam Phase Falling" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "UI Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Group by Regions?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "groupByRegion", prefix: "ui", updateItem: setUi })
-            ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Special Settings" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: `Some "joke" options you can play around with. They won't affect your ability to track in any way. Alex put them here just to show off on his part (plus, this is the LANKY Tracker...you wanna be serious, make a Cranky Tracker ;D).` }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: '//The Water is Lava (makes water checks orange) //Mirror Mode (flips the site backwards) //Donk in the Dark World (inverts site colors?) //Donk in the Sky (sets opacity to 50%) //Ice Trap (flips site upside down) //"flipping" options should have a Seija Kijin icon ^^' })
           ] })
         ] })
       }
