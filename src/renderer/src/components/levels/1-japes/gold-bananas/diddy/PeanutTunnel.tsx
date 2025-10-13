@@ -4,7 +4,7 @@ import JapesCheck from '../../check'
 const PeanutTunnel: React.FC = () => (
   <JapesCheck
     id={1012}
-    name="Japes Diddy Peanut Tunnel"
+    name="Diddy's Peanut Tunnel"
     region="Japes Lowlands"
     canGetLogic={useDiddyTunnelGb()}
   />

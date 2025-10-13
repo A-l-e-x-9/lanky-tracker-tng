@@ -4,7 +4,7 @@ import IslesCheck from '../../check'
 const PoundX: React.FC = () => {
   const pound = useCheckChunkyPound()
   return (
-    <IslesCheck id={42} name="Isles Chunky Pound the X" region="Outer Isles" canGetLogic={pound} />
+    <IslesCheck id={42} name="Pounding the X" region="Outer Isles" canGetLogic={pound} />
   )
 }
 

@@ -10,7 +10,7 @@ const PeanutGateEnemies: React.FC = () => {
     <DropPool>
       <JapesCheck
         id={1301}
-        name="Japes Enemy: Diddy Cavern"
+        name="Enemy Inside Diddy's Cavern"
         region="Japes Lowlands"
         canGetLogic={japesSide && anyKong}
       />

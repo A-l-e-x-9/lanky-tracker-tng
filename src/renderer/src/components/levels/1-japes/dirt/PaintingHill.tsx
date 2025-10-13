@@ -10,7 +10,7 @@ const PaintingHillDirt: React.FC = () => {
       <VanillaDirt>
         <JapesCheck
           id={1070}
-          name="Japes Dirt: Painting Hill"
+          name="Dirt in front of Lanky's Painting Room"
           region="Japes Hillside"
           canGetLogic={dirt.in}
           canGetBreak={dirt.out}
