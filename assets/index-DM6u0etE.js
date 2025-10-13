@@ -12431,7 +12431,7 @@ const PineappleCage = () => {
 };
 const PoundX = () => {
   const pound = useCheckChunkyPound();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 42, name: "Isles Chunky Pound the X", region: "Outer Isles", canGetLogic: pound });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 42, name: "Pounding the X", region: "Outer Isles", canGetLogic: pound });
 };
 const TrianglePad = () => {
   const music = useCheckChunkyMusicPad();
@@ -14164,7 +14164,7 @@ const PaintingHillDirt = () => {
     JapesCheck,
     {
       id: 1070,
-      name: "Japes Dirt: Painting Hill",
+      name: "Dirt in front of Lanky's Painting Room",
       region: "Japes Hillside",
       canGetLogic: dirt.in,
       canGetBreak: dirt.out
@@ -14533,7 +14533,7 @@ const PeanutGateEnemies = () => {
     JapesCheck,
     {
       id: 1301,
-      name: "Japes Enemy: Diddy Cavern",
+      name: "Enemy Inside Diddy's Cavern",
       region: "Japes Lowlands",
       canGetLogic: japesSide && anyKong
     }
@@ -14696,7 +14696,7 @@ const PeanutTunnel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1012,
-    name: "Japes Diddy Peanut Tunnel",
+    name: "Diddy's Peanut Tunnel",
     region: "Japes Lowlands",
     canGetLogic: useDiddyTunnelGb()
   }
