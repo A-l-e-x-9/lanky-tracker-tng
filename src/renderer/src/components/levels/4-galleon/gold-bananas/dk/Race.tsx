@@ -8,7 +8,7 @@ const SealRace: React.FC = () => {
     <ToughGoldenBanana>
       <GalleonCheck
         id={4003}
-        name="Galleon DK Seal Race"
+        name="DK's Seal Race"
         region="Shipyard Outskirts"
         canGetLogic={blastGb.in}
         canGetBreak={blastGb.out}

@@ -461,7 +461,7 @@ const GeneratorSettings: React.FC = () => {
               />
             </>
             <h3>Glitch Logic Settings</h3>
-            <p className="full-grid">If you made a "glitch logic" seed, specify which glitches you used here. The affected checks will have a <strong className="glitch-logic">purple light</strong> until you are able to get them legitimately, at which point they turn green.</p>
+            <p className="full-grid">If you made a "glitch logic" seed, specify which glitches you used here. The affected checks will have a <strong className="glitch-logic">purple light</strong> until you are able to get them legitimately, at which point they turn green. Does not cover stuff enabled by "Advanced Glitchless Logic"; those checks show up in yellow.</p>
             <>
               //B. Locker skipping
               //General skips
