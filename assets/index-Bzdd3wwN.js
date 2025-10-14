@@ -20410,7 +20410,7 @@ const SealRace = () => {
     GalleonCheck,
     {
       id: 4003,
-      name: "Galleon DK Seal Race",
+      name: "DK's Seal Race",
       region: "Shipyard Outskirts",
       canGetLogic: blastGb.in,
       canGetBreak: blastGb.out
@@ -29554,7 +29554,7 @@ const GeneratorSettings = () => {
             /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "full-grid", children: [
               'If you made a "glitch logic" seed, specify which glitches you used here. The affected checks will have a ',
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "glitch-logic", children: "purple light" }),
-              " until you are able to get them legitimately, at which point they turn green."
+              ' until you are able to get them legitimately, at which point they turn green. Does not cover stuff enabled by "Advanced Glitchless Logic"; those checks show up in yellow.'
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "//B. Locker skipping //General skips //Ledge clipping //THE MOON KICK //Diddy's Moontail //Phase swimming //Phasewalking //The Skew Glitch //Spawn snagging //Swimming through shores //Tag Barrel Storage //Troff 'n' Scoff Bypass //Chunky/Fairy Cam Phase Falling" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "UI Settings" }),
