@@ -4,7 +4,7 @@ import JapesCheck from '../../check'
 const TopMountain: React.FC = () => (
   <JapesCheck
     id={1011}
-    name="Japes Diddy Top of Mountain"
+    name="Top of Diddy's Mountain"
     region="Japes Hillside"
     canGetLogic={useDiddyMountainGb()}
   />

@@ -12,35 +12,35 @@ const TinySwimEnemies: React.FC = () => {
     <DropPool>
       <AztecCheck
         id={2367}
-        name="Aztec Enemy: TT Kong 0"
+        name="Tiny's Prison Guard 0"
         region="Tiny Temple"
         canGetLogic={tiny.in && iceMelted && dive}
         canGetBreak={logicBreak(tiny) && iceMelted && dive}
       />
       <AztecCheck
         id={2368}
-        name="Aztec Enemy: TT Kong 1"
+        name="Tiny's Prison Guard 1"
         region="Tiny Temple"
         canGetLogic={tiny.in && iceMelted && dive}
         canGetBreak={logicBreak(tiny) && iceMelted && dive}
       />
       <AztecCheck
         id={2369}
-        name="Aztec Enemy: TT Kong 2"
+        name="Tiny's Prison Guard 2"
         region="Tiny Temple"
         canGetLogic={tiny.in && iceMelted && dive}
         canGetBreak={logicBreak(tiny) && iceMelted && dive}
       />
       <AztecCheck
         id={2370}
-        name="Aztec Enemy: TT Kong 3"
+        name="Tiny's Prison Guard 3"
         region="Tiny Temple"
         canGetLogic={tiny.in && iceMelted && dive}
         canGetBreak={logicBreak(tiny) && iceMelted && dive}
       />
       <AztecCheck
         id={2371}
-        name="Aztec Enemy: TT Kong 4"
+        name="Tiny's Prison Guard 4"
         region="Tiny Temple"
         canGetLogic={tiny.in && iceMelted && dive}
         canGetBreak={logicBreak(tiny) && iceMelted && dive}

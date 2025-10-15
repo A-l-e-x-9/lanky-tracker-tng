@@ -10,7 +10,7 @@ const VultureArena: React.FC = () => {
       <VanillaArena>
         <AztecCheck
           id={2090}
-          name="Aztec Arena (Tiny Temple: Vulture Room)"
+          name="The Vulture's Battle Arena"
           region="Tiny Temple"
           canGetLogic={vulture.in}
           canGetBreak={vulture.out}

@@ -8,7 +8,7 @@ const TinyKasplat: React.FC = () => (
     <VanillaKasplat>
       <IslesCheck
         id={53}
-        name="Isles Kasplat: Factory Lobby Box"
+        name="Kasplat in the Factory Lobby Box"
         region="Japes-Forest Lobbies"
         canGetLogic={useFactoryKasplat()}
       />

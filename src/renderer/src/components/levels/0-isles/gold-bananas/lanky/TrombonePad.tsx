@@ -6,7 +6,7 @@ const TrombonePad: React.FC = () => {
   return (
     <IslesCheck
       id={22}
-      name="Isles Lanky Japes Instrument"
+      name="Trombone Pad in Japes Lobby"
       region="Japes-Forest Lobbies"
       canGetLogic={music}
     />

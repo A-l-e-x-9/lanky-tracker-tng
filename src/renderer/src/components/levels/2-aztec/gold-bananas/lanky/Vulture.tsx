@@ -6,7 +6,7 @@ const VultureShoot: React.FC = () => {
   return (
     <AztecCheck
       id={2020}
-      name="Aztec Lanky Vulture Shooting"
+      name="Lanky's Vulture Shooting"
       region="Tiny Temple"
       canGetLogic={vultureGb.in}
       canGetBreak={vultureGb.out}

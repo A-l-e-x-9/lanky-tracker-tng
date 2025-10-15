@@ -10,7 +10,7 @@ const TempleDirt: React.FC = () => {
       <VanillaDirt>
         <AztecCheck
           id={2071}
-          name="Aztec Dirt: Chunky Temple"
+          name="Dirt Patch in Chunky's Room"
           region="5 Door Temple"
           canGetLogic={door.in}
           canGetBreak={door.out}

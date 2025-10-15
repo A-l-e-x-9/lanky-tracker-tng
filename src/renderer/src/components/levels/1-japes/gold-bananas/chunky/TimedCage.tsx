@@ -6,7 +6,7 @@ const ChunkyTimedCage: React.FC = () => {
   return (
     <JapesCheck
       id={1041}
-      name="Japes Chunky Timed Caged Banana"
+      name="Chunky's Timed Caged Banana"
       region="Japes Hillside"
       canGetLogic={cage}
     />

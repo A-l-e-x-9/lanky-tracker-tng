@@ -4,7 +4,7 @@ import JapesCheck from '../../check'
 const LankyTimedCage: React.FC = () => (
   <JapesCheck
     id={1020}
-    name="Japes Lanky Timed Cage Banana"
+    name="Lanky's Timed Cage Banana"
     region="Japes Hillside"
     canGetLogic={useLankyCagedGb()}
   />
