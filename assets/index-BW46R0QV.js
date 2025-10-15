@@ -12623,7 +12623,7 @@ const TrombonePad = () => {
     IslesCheck,
     {
       id: 22,
-      name: "Isles Lanky Japes Instrument",
+      name: "Trombone Pad in Japes Lobby",
       region: "Japes-Forest Lobbies",
       canGetLogic: music
     }
@@ -12774,7 +12774,7 @@ const TinyKasplat$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, {
   IslesCheck,
   {
     id: 53,
-    name: "Isles Kasplat: Factory Lobby Box",
+    name: "Kasplat in the Factory Lobby Box",
     region: "Japes-Forest Lobbies",
     canGetLogic: useFactoryKasplat()
   }
@@ -14689,7 +14689,7 @@ const ChunkyTimedCage = () => {
     JapesCheck,
     {
       id: 1041,
-      name: "Japes Chunky Timed Caged Banana",
+      name: "Chunky's Timed Caged Banana",
       region: "Japes Hillside",
       canGetLogic: cage
     }
@@ -14743,7 +14743,7 @@ const DiddyTimedCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1010,
-    name: "Japes Diddy Timed Caged Banana",
+    name: "Diddy's Timed Caged Banana",
     region: "Japes Hillside",
     canGetLogic: useDiddyCagedGb()
   }
@@ -14752,7 +14752,7 @@ const TopMountain = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1011,
-    name: "Japes Diddy Top of Mountain",
+    name: "Top of Diddy's Mountain",
     region: "Japes Hillside",
     canGetLogic: useDiddyMountainGb()
   }
@@ -14855,7 +14855,7 @@ const LankyTimedCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1020,
-    name: "Japes Lanky Timed Cage Banana",
+    name: "Lanky's Timed Cage Banana",
     region: "Japes Hillside",
     canGetLogic: useLankyCagedGb()
   }
@@ -14901,7 +14901,7 @@ const TinyTimedCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1030,
-    name: "Japes Tiny Timed Cage Banana",
+    name: "Tiny's Timed Cage Banana",
     region: "Japes Hillside",
     canGetLogic: useTinyCagedGb()
   }
@@ -16163,7 +16163,7 @@ const VultureArena = () => {
     AztecCheck,
     {
       id: 2090,
-      name: "Aztec Arena (Tiny Temple: Vulture Room)",
+      name: "The Vulture's Battle Arena",
       region: "Tiny Temple",
       canGetLogic: vulture.in,
       canGetBreak: vulture.out
@@ -16247,7 +16247,7 @@ const TempleDirt = () => {
     AztecCheck,
     {
       id: 2071,
-      name: "Aztec Dirt: Chunky Temple",
+      name: "Dirt Patch in Chunky's Room",
       region: "5 Door Temple",
       canGetLogic: door.in,
       canGetBreak: door.out
@@ -16883,27 +16883,27 @@ const TinyStartEnemies = () => {
       AztecCheck,
       {
         id: 2362,
-        name: "Aztec Enemy: TT Main 0",
+        name: "Chunky Klaptrap Guard 0",
         region: "Tiny Temple",
-        canGetLogic: tiny.in,
-        canGetBreak: logicBreak(tiny)
+        canGetLogic: tiny.in && klobber,
+        canGetBreak: logicBreak(tiny) && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2363,
-        name: "Aztec Enemy: TT Main 1",
+        name: "Chunky Klaptrap Guard 1",
         region: "Tiny Temple",
-        canGetLogic: tiny.in,
-        canGetBreak: logicBreak(tiny)
+        canGetLogic: tiny.in && klobber,
+        canGetBreak: logicBreak(tiny) && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2364,
-        name: "Aztec Enemy: TT Main 2",
+        name: "Main Room Enemy 0",
         region: "Tiny Temple",
         canGetLogic: tiny.in,
         canGetBreak: logicBreak(tiny)
@@ -16913,20 +16913,20 @@ const TinyStartEnemies = () => {
       AztecCheck,
       {
         id: 2365,
-        name: "Aztec Enemy: TT Guard 0",
+        name: "Main Room Enemy 1",
         region: "Tiny Temple",
-        canGetLogic: tiny.in && klobber,
-        canGetBreak: logicBreak(tiny) && klobber
+        canGetLogic: tiny.in,
+        canGetBreak: logicBreak(tiny)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2366,
-        name: "Aztec Enemy: TT Guard 1",
+        name: "Main Room Enemy 2",
         region: "Tiny Temple",
-        canGetLogic: tiny.in && klobber,
-        canGetBreak: logicBreak(tiny) && klobber
+        canGetLogic: tiny.in,
+        canGetBreak: logicBreak(tiny)
       }
     )
   ] });
@@ -16940,7 +16940,7 @@ const TinySwimEnemies = () => {
       AztecCheck,
       {
         id: 2367,
-        name: "Aztec Enemy: TT Kong 0",
+        name: "Tiny's Prison Guard 0",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive,
         canGetBreak: logicBreak(tiny) && iceMelted && dive
@@ -16950,7 +16950,7 @@ const TinySwimEnemies = () => {
       AztecCheck,
       {
         id: 2368,
-        name: "Aztec Enemy: TT Kong 1",
+        name: "Tiny's Prison Guard 1",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive,
         canGetBreak: logicBreak(tiny) && iceMelted && dive
@@ -16960,7 +16960,7 @@ const TinySwimEnemies = () => {
       AztecCheck,
       {
         id: 2369,
-        name: "Aztec Enemy: TT Kong 2",
+        name: "Tiny's Prison Guard 2",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive,
         canGetBreak: logicBreak(tiny) && iceMelted && dive
@@ -16970,7 +16970,7 @@ const TinySwimEnemies = () => {
       AztecCheck,
       {
         id: 2370,
-        name: "Aztec Enemy: TT Kong 3",
+        name: "Tiny's Prison Guard 3",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive,
         canGetBreak: logicBreak(tiny) && iceMelted && dive
@@ -16980,7 +16980,7 @@ const TinySwimEnemies = () => {
       AztecCheck,
       {
         id: 2371,
-        name: "Aztec Enemy: TT Kong 4",
+        name: "Tiny's Prison Guard 4",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive,
         canGetBreak: logicBreak(tiny) && iceMelted && dive
@@ -17198,7 +17198,7 @@ const RamGongs = () => {
 };
 const FreeTiny = () => {
   const freeGb = useDiddyFreeTinyGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(KongCheck, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2015,
@@ -17207,7 +17207,7 @@ const FreeTiny = () => {
       canGetLogic: freeGb.in,
       canGetBreak: freeGb.out
     }
-  );
+  ) });
 };
 const VultureRace = () => {
   const vultureGb = useDiddyVultureGb();
@@ -17346,7 +17346,7 @@ const VultureShoot = () => {
     AztecCheck,
     {
       id: 2020,
-      name: "Aztec Lanky Vulture Shooting",
+      name: "Lanky's Vulture Shooting",
       region: "Tiny Temple",
       canGetLogic: vultureGb.in,
       canGetBreak: vultureGb.out
