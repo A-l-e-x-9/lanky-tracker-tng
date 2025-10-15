@@ -579,50 +579,6 @@ const GeneratorSettings: React.FC = () => {
               <p>Group by Regions?</p>
               <CheckIcon storeKey="groupByRegion" prefix="ui" updateItem={setUi} />
             </>
-            <h4>Special Settings</h4>
-            <p className="full-grid">Some "joke" options you can play around with. They won't affect your ability to track in any way. Alex put them here just to show off on his part (plus, this is the LANKY Tracker...you wanna be serious, make a Cranky Tracker ;D).</p>
-            <>
-              <p>The Water is Lava</p>
-              <SimpleIcon
-                imgUrl={diveIcon}
-                title="There's an option in the Randomizer under Hard Mode that causes you to take damage when you're in any body of water, just like in the Llama Temple pool. Enable this to turn water into lava!"
-                storeKey="waterIsLava"
-                prefix="ui"
-                updateItem={setUi}
-              />
-              <p>Mirror Mode</p>
-              <SimpleIcon
-                imgUrl={lolTouhouHijack}
-                title="Everyone's favorite Mario Kart option, now in DK64!"
-                storeKey="mirrorMode"
-                prefix="ui"
-                updateItem={setUi}
-              />
-              <p>Donk in the Dark World</p>
-              <SimpleIcon
-                imgUrl={guitarIcon}
-                title="Turn on Dark Mode."
-                storeKey="darkWorld"
-                prefix="ui"
-                updateItem={setUi}
-              />
-              <p>Donk in the Sky</p>
-              <SimpleIcon
-                imgUrl={dkPad}
-                title="Send this tracker up into the sky."
-                storeKey="skyWorld"
-                prefix="ui"
-                updateItem={setUi}
-              />
-              <p>Ice Traps?</p>
-              <SimpleIcon
-                imgUrl={lolTouhouHijack}
-                title="Click this if you have ice traps in your seed."
-                storeKey="upsideDown"
-                prefix="ui"
-                updateItem={setUi}
-              />
-            </>
           </section>
         </section>
       </Modal>
