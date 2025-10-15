@@ -10368,6 +10368,43 @@ const switchSlice = (set) => {
     }
   };
 };
+const initialGlitches = {
+  glitchLogic: {
+    bLockerSkip: false,
+    generalSkip: false,
+    ledgeClip: false,
+    moonKick: false,
+    moonTail: false,
+    swimThruVertWalls: false,
+    phaseWalk: false,
+    skewYou: false,
+    spawnSnag: false,
+    swimThruShores: false,
+    tagBarrelStorage: false,
+    bypassTNS: false,
+    phaseFall: false
+  }
+};
+const glitchSlice = (set) => {
+  donkResetFns.add(() => set(initialGlitches));
+  return {
+    ...initialGlitches,
+    setGlitch: (id2, val) => {
+      set((state) => {
+        const target = {};
+        target[id2] = val;
+        state = {
+          ...state,
+          glitchLogic: {
+            ...state.glitchLogic,
+            ...target
+          }
+        };
+        return state;
+      });
+    }
+  };
+};
 const initialUi = {
   ui: {
     groupByRegion: false
@@ -10405,6 +10442,7 @@ const initializer = (...d) => ({
   ...fastCheckSlice(...d),
   ...endingSlice(...d),
   ...roolSlice(...d),
+  ...glitchSlice(...d),
   ...uiSlice(...d)
 });
 const useDonkStore = create()(
@@ -12392,7 +12430,7 @@ const SmallIslandFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, 
   IslesCheck,
   {
     id: 80,
-    name: "Isles Fairy (Small Island)",
+    name: "Fairy on the Small Island near the Fairy Queen's House",
     region: "Outer Isles",
     canGetLogic: useGeneralFairy$3()
   }
@@ -20269,7 +20307,7 @@ const ShipFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { child
   GalleonCheck,
   {
     id: 4081,
-    name: "Galleon Fairy (In Tiny's 5 Door Ship)",
+    name: "Fairy in Tiny's 5 Door Ship",
     region: "5 Door Ship",
     canGetLogic: useShipFairy()
   }
@@ -20304,7 +20342,7 @@ const SeasickShip = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
     id: 4042,
-    name: "Galleon Chunky Seasick",
+    name: "Chunky's Seasick Ship",
     region: "Lighthouse Area",
     canGetLogic: useChunkySeasickGb()
   }
@@ -20313,7 +20351,7 @@ const Chunky5Ship = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
     id: 4043,
-    name: "Galleon Chunky 5 Door Ship",
+    name: "Chunky's Room",
     region: "5 Door Ship",
     canGetLogic: useChunky5DoorShipGb()
   }
@@ -20367,7 +20405,7 @@ const Diddy5Ship = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
     id: 4013,
-    name: "Galleon Diddy 5 Door Ship",
+    name: "Diddy's Room",
     region: "5 Door Ship",
     canGetLogic: useDiddy5DoorShipGb()
   }
@@ -20421,7 +20459,7 @@ const Dk5Ship = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
     id: 4004,
-    name: "Galleon DK 5 Door Ship",
+    name: "DK's Room",
     region: "5 Door Ship",
     canGetLogic: useDk5DoorShipGb()
   }
@@ -20458,7 +20496,7 @@ const Lanky5Ship = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
     id: 4023,
-    name: "Galleon Lanky 5 Door Ship",
+    name: "Lanky's Room",
     region: "5 Door Ship",
     canGetLogic: useLanky5DoorShipGb()
   }
@@ -20467,7 +20505,7 @@ const Lanky2Ship = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
     id: 4022,
-    name: "Galleon Lanky 2 Door Ship",
+    name: "Lanky's 2 Door Ship Room",
     region: "Shipyard Outskirts",
     canGetLogic: useLanky2DoorShipGb()
   }
@@ -20547,7 +20585,7 @@ const Tiny5Ship = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
     id: 4033,
-    name: "Galleon Tiny 5 Door Ship",
+    name: "Tiny's Room",
     region: "5 Door Ship",
     canGetLogic: useTiny5DoorShipGb()
   }
@@ -20556,7 +20594,7 @@ const TinySub = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
     id: 4031,
-    name: "Galleon Tiny Submarine Barrel",
+    name: "Tiny's Foghorn/Sub Barrel",
     region: "Shipyard Outskirts",
     canGetLogic: useTinySubGb()
   }
@@ -20565,7 +20603,7 @@ const Tiny2Ship = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
     id: 4032,
-    name: "Galleon Tiny 2 Door Ship",
+    name: "Tiny's 2 Door Ship Room",
     region: "Shipyard Outskirts",
     canGetLogic: useTiny2DoorShipGb()
   }
@@ -29005,6 +29043,7 @@ const toughBananaIcon = "" + new URL("rabbit-D6O9SrZi.png", import.meta.url).hre
 const slamSwitchIcon = "" + new URL("slam_switch-DrcJ-6n7.png", import.meta.url).href;
 const switchsanityIcon = "" + new URL("switch-D6Og0W-L.png", import.meta.url).href;
 const wrinkly = "" + new URL("wrinkly-COxhSpd3.png", import.meta.url).href;
+const lolTouhouHijack = "" + new URL("seija-kijin-DnR-35zr.png", import.meta.url).href;
 const customStyles = {
   content: {
     backgroundColor: "#002040",
@@ -29013,8 +29052,8 @@ const customStyles = {
 };
 const GeneratorSettings = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
-  const [setSetting, setBarrier, setFastCheck, setUi] = useDonkStore(
-    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi])
+  const [setSetting, setBarrier, setFastCheck, setGlitch, setUi] = useDonkStore(
+    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setGlitch, state.setUi])
   );
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
@@ -29556,15 +29595,156 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "glitch-logic", children: "purple light" }),
               ' until you are able to get them legitimately, at which point they turn green. Does not cover stuff enabled by "Advanced Glitchless Logic"; those checks show up in yellow.'
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "//B. Locker skipping //General skips //Ledge clipping //THE MOON KICK //Diddy's Moontail //Phase swimming //Phasewalking //The Skew Glitch //Spawn snagging //Swimming through shores //Tag Barrel Storage //Troff 'n' Scoff Bypass //Chunky/Fairy Cam Phase Falling" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "B. Locker Skipping" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: lankyKongIcon,
+                  title: "A well-placed standing attack from DK or Lanky on B. Locker's left allows them to reach just far enough into a DK Portal that they can bypass him. Turn this on if required to do this to do a check.",
+                  storeKey: "bLockerSkip",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "General Skips" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: orangeIcon,
+                  title: "Various miscellaneous skips that don't fit into the other categories.",
+                  storeKey: "generalSkip",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Ledge Clipping" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: chunkyKongIcon,
+                  title: "Set this if required to clip out of bounds through floors.",
+                  storeKey: "ledgeClip",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "The Moonkick" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: dkKongIcon,
+                  title: "Do a short-hopped air attack on a ledge with good timing, then do DK's running kick to have him go a long distance.",
+                  storeKey: "moonKick",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Diddy's Moontail" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: diddyKongIcon,
+                  title: "With Diddy, if you can do his standing tail whip attack and jump at the same time, you can gain lots of height.",
+                  storeKey: "moonTail",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Phase Swimming" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: diveIcon,
+                  title: "You can swim through many walls while underwater if you face them straight on, go into first person mode, then zoom out again.",
+                  storeKey: "swimThruVertWalls",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Phase Walking" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: wrinkly,
+                  title: "You can use this to go through many walls in the game (an estimated 25%), but this is triple frame-perfect and not recommended unless you're playing tool-assisted!",
+                  storeKey: "phaseWalk",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "The Skew Glitch" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: lolTouhouHijack,
+                  title: "Use this to flip your active Kong's neutral angle while standing still. You can go through many walls this way.",
+                  storeKey: "skewYou",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Spawn Snagging" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: companyCoinIcon,
+                  title: "Some items are loaded into the game invisible but tangible, and can be collected earlier than intended if you can find where they are. Most notably used to skip DK Arcade. This item only accounts for known non-TAS snags.",
+                  storeKey: "spawnSnag",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Swimming Through Shores" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: diveIcon,
+                  title: "Hold B while swimming completely downwards at a sloped shore line, and you can swim through it. Typically only doable on DK Island and the Banana Fairies' home.",
+                  storeKey: "swimThruShores",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Tag Barrel Storage" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: unknownIcon$1,
+                  title: "There are certain techniques that cause the game to still consider you outside a Tag Barrel while also in it. This glitch enables checks that can be done while in this state.",
+                  storeKey: "tagBarrelStorage",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Troff 'n' Scoff Bypass" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: keyIcon,
+                  title: "It's possible to bypass feeding Troff and Scoff and enter boss rooms without them, as well as enter boss rooms with illegal Kongs.",
+                  storeKey: "bypassTNS",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Phase Falling" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: fairyIcon,
+                  title: "If you have Chunky and the Fairy Cam, you can go through certain walls that would otherwise require phase walking.",
+                  storeKey: "phaseFall",
+                  prefix: "glitchLogic",
+                  updateItem: setGlitch
+                }
+              )
+            ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "UI Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Group by Regions?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "groupByRegion", prefix: "ui", updateItem: setUi })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Special Settings" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: `Some "joke" options you can play around with. They won't affect your ability to track in any way. Alex put them here just to show off on his part (plus, this is the LANKY Tracker...you wanna be serious, make a Cranky Tracker ;D).` }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: '//The Water is Lava (makes water checks orange) //Mirror Mode (flips the site backwards) //Donk in the Dark World (inverts site colors?) //Donk in the Sky (sets opacity to 50%) //Ice Trap (flips site upside down) //"flipping" options should have a Seija Kijin icon ^^' })
+            ] })
           ] })
         ] })
       }
