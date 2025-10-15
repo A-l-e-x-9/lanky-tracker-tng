@@ -6,7 +6,6 @@ import { useDefeatKlobber } from '@renderer/hooks/enemies'
 
 const TinyStartEnemies: React.FC = () => {
   const tiny = useAztecTinyTemple()
-  const hasFairyCam = useCamera()
   const klobber = useDefeatKlobber()
   return (
     <DropPool>
