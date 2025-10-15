@@ -12,7 +12,6 @@ import { KRoolSlamSelector } from '../moves/SlamSelector'
 
 import gbIcon from '../../assets/images/GB.png'
 import dkIcon from '../../assets/images/dk.png'
-import dkPad from '../../assets/images/dkpad.png'
 import beanIcon from '../../assets/images/bean.png'
 import chunkyIcon from '../../assets/images/chunky.png'
 import crownIcon from '../../assets/images/crown.png'
