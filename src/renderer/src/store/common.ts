@@ -894,6 +894,34 @@ interface bLockerActions {
 export type bLockerSlice = bLockerState & bLockerActions
 //#endregion
 
+//#region Glitch Logic stuff
+interface GlitchLogic {
+  bLockerSkip: boolean,
+  generalSkip: boolean,
+  ledgeClip: boolean,
+  moonKick: boolean,
+  moonTail: boolean,
+  swimThruVertWalls: boolean,
+  phaseWalk: boolean,
+  skewYou: boolean,
+  spawnSnag: boolean,
+  swimThruShores: boolean,
+  tagBarrelStorage: boolean,
+  bypassTNS: boolean,
+  phaseFall: boolean
+}
+
+export interface GlitchState {
+  glitchLogic: GlitchLogic
+}
+
+interface GlitchActions {
+  setGlitch: (id: string, val: boolean) => void
+}
+
+export type GlitchSlice = GlitchState & GlitchActions
+//#endregion
+
 export type AllSlice = CheckSlice &
   MoveSlice &
   ConsumablesSlice &
@@ -907,6 +935,7 @@ export type AllSlice = CheckSlice &
   FastCheckSlice &
   EndingSlice &
   RoolSlice &
+  GlitchSlice &
   UiSlice
 
 export const donkResetFns = new Set<() => void>()

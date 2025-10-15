@@ -8,7 +8,7 @@ const SmallIslandFairy: React.FC = () => (
     <VanillaFairy>
       <IslesCheck
         id={80}
-        name="Isles Fairy (Small Island)"
+        name="Fairy on the Small Island near the Fairy Queen's House"
         region="Outer Isles"
         canGetLogic={useGeneralFairy()}
       />

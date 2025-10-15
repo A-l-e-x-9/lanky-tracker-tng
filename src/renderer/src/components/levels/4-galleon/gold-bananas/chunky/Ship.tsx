@@ -4,7 +4,7 @@ import GalleonCheck from '../../check'
 const Chunky5Ship: React.FC = () => (
   <GalleonCheck
     id={4043}
-    name="Galleon Chunky 5 Door Ship"
+    name="Chunky's Room"
     region="5 Door Ship"
     canGetLogic={useChunky5DoorShipGb()}
   />

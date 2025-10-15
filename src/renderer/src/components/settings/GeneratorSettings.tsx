@@ -12,6 +12,7 @@ import { KRoolSlamSelector } from '../moves/SlamSelector'
 
 import gbIcon from '../../assets/images/GB.png'
 import dkIcon from '../../assets/images/dk.png'
+import dkPad from '../../assets/images/dkpad.png'
 import beanIcon from '../../assets/images/bean.png'
 import chunkyIcon from '../../assets/images/chunky.png'
 import crownIcon from '../../assets/images/crown.png'
@@ -42,6 +43,11 @@ import switchsanityIcon from '../../assets/images/settings/switch.png'
 import slamIcon from '../../assets/images/slam1.png'
 import featherIcon from '../../assets/images/tiny_gun.png'
 import wrinkly from '../../assets/images/wrinkly.png'
+import orangeIcon from '../../assets/images/orange.png'
+import diddyIcon from '../../assets/images/diddy.png'
+import diveIcon from '../../assets/images/diving.png'
+import lolTouhouHijack from '../../assets/images/seija-kijin.png'
+import questionMarkIcon from '../../assets/images/unknown-small.png'
 
 const customStyles: Modal.Styles = {
   content: {
@@ -52,8 +58,8 @@ const customStyles: Modal.Styles = {
 
 const GeneratorSettings: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
-  const [setSetting, setBarrier, setFastCheck, setUi] = useDonkStore(
-    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi])
+  const [setSetting, setBarrier, setFastCheck, setGlitch, setUi] = useDonkStore(
+    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setGlitch, state.setUi])
   )
 
   const openModal = (): void => setOpen(true)
@@ -463,19 +469,110 @@ const GeneratorSettings: React.FC = () => {
             <h3>Glitch Logic Settings</h3>
             <p className="full-grid">If you made a "glitch logic" seed, specify which glitches you used here. The affected checks will have a <strong className="glitch-logic">purple light</strong> until you are able to get them legitimately, at which point they turn green. Does not cover stuff enabled by "Advanced Glitchless Logic"; those checks show up in yellow.</p>
             <>
-              //B. Locker skipping
-              //General skips
-              //Ledge clipping
-              //THE MOON KICK
-              //Diddy's Moontail
-              //Phase swimming
-              //Phasewalking
-              //The Skew Glitch
-              //Spawn snagging
-              //Swimming through shores
-              //Tag Barrel Storage
-              //Troff 'n' Scoff Bypass
-              //Chunky/Fairy Cam Phase Falling
+              <p>B. Locker Skipping</p>
+              <SimpleIcon
+                imgUrl={lankyIcon}
+                title="A well-placed standing attack from DK or Lanky on B. Locker's left allows them to reach just far enough into a DK Portal that they can bypass him. Turn this on if required to do this to do a check."
+                storeKey="bLockerSkip"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
+              <p>General Skips</p>
+              <SimpleIcon
+                imgUrl={orangeIcon}
+                title="Various miscellaneous skips that don't fit into the other categories."
+                storeKey="generalSkip"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
+              <p>Ledge Clipping</p>
+              <SimpleIcon
+                imgUrl={chunkyIcon}
+                title="Set this if required to clip out of bounds through floors."
+                storeKey="ledgeClip"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
+              <p>The Moonkick</p>
+              <SimpleIcon
+                imgUrl={dkIcon}
+                title="Do a short-hopped air attack on a ledge with good timing, then do DK's running kick to have him go a long distance."
+                storeKey="moonKick"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
+              <p>Diddy's Moontail</p>
+              <SimpleIcon
+                imgUrl={diddyIcon}
+                title="With Diddy, if you can do his standing tail whip attack and jump at the same time, you can gain lots of height."
+                storeKey="moonTail"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
+              <p>Phase Swimming</p>
+              <SimpleIcon
+                imgUrl={diveIcon}
+                title="You can swim through many walls while underwater if you face them straight on, go into first person mode, then zoom out again."
+                storeKey="swimThruVertWalls"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
+              <p>Phase Walking</p>
+              <SimpleIcon
+                imgUrl={wrinkly}
+                title="You can use this to go through many walls in the game (an estimated 25%), but this is triple frame-perfect and not recommended unless you're playing tool-assisted!"
+                storeKey="phaseWalk"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
+              <p>The Skew Glitch</p>
+              <SimpleIcon
+                imgUrl={lolTouhouHijack}
+                title="Use this to flip your active Kong's neutral angle while standing still. You can go through many walls this way."
+                storeKey="skewYou"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
+              <p>Spawn Snagging</p>
+              <SimpleIcon
+                imgUrl={companyCoinIcon}
+                title="Some items are loaded into the game invisible but tangible, and can be collected earlier than intended if you can find where they are. Most notably used to skip DK Arcade. This item only accounts for known non-TAS snags."
+                storeKey="spawnSnag"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
+              <p>Swimming Through Shores</p>
+              <SimpleIcon
+                imgUrl={diveIcon}
+                title="Hold B while swimming completely downwards at a sloped shore line, and you can swim through it. Typically only doable on DK Island and the Banana Fairies' home."
+                storeKey="swimThruShores"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
+              <p>Tag Barrel Storage</p>
+              <SimpleIcon
+                imgUrl={questionMarkIcon}
+                title="There are certain techniques that cause the game to still consider you outside a Tag Barrel while also in it. This glitch enables checks that can be done while in this state."
+                storeKey="tagBarrelStorage"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
+              <p>Troff 'n' Scoff Bypass</p>
+              <SimpleIcon
+                imgUrl={keyIcon}
+                title="It's possible to bypass feeding Troff and Scoff and enter boss rooms without them, as well as enter boss rooms with illegal Kongs."
+                storeKey="bypassTNS"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
+              <p>Phase Falling</p>
+              <SimpleIcon
+                imgUrl={fairyIcon}
+                title="If you have Chunky and the Fairy Cam, you can go through certain walls that would otherwise require phase walking."
+                storeKey="phaseFall"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
+              />
             </>
             <h3>UI Settings</h3>
             <>
@@ -485,12 +582,46 @@ const GeneratorSettings: React.FC = () => {
             <h4>Special Settings</h4>
             <p className="full-grid">Some "joke" options you can play around with. They won't affect your ability to track in any way. Alex put them here just to show off on his part (plus, this is the LANKY Tracker...you wanna be serious, make a Cranky Tracker ;D).</p>
             <>
-              //The Water is Lava (makes water checks orange)
-              //Mirror Mode (flips the site backwards)
-              //Donk in the Dark World (inverts site colors?)
-              //Donk in the Sky (sets opacity to 50%)
-              //Ice Trap (flips site upside down)
-                //"flipping" options should have a Seija Kijin icon ^^
+              <p>The Water is Lava</p>
+              <SimpleIcon
+                imgUrl={diveIcon}
+                title="There's an option in the Randomizer under Hard Mode that causes you to take damage when you're in any body of water, just like in the Llama Temple pool. Enable this to turn water into lava!"
+                storeKey="waterIsLava"
+                prefix="ui"
+                updateItem={setUi}
+              />
+              <p>Mirror Mode</p>
+              <SimpleIcon
+                imgUrl={lolTouhouHijack}
+                title="Everyone's favorite Mario Kart option, now in DK64!"
+                storeKey="mirrorMode"
+                prefix="ui"
+                updateItem={setUi}
+              />
+              <p>Donk in the Dark World</p>
+              <SimpleIcon
+                imgUrl={guitarIcon}
+                title="Turn on Dark Mode."
+                storeKey="darkWorld"
+                prefix="ui"
+                updateItem={setUi}
+              />
+              <p>Donk in the Sky</p>
+              <SimpleIcon
+                imgUrl={dkPad}
+                title="Send this tracker up into the sky."
+                storeKey="skyWorld"
+                prefix="ui"
+                updateItem={setUi}
+              />
+              <p>Ice Traps?</p>
+              <SimpleIcon
+                imgUrl={lolTouhouHijack}
+                title="Click this if you have ice traps in your seed."
+                storeKey="upsideDown"
+                prefix="ui"
+                updateItem={setUi}
+              />
             </>
           </section>
         </section>

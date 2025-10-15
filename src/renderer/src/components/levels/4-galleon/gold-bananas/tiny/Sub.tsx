@@ -4,7 +4,7 @@ import GalleonCheck from '../../check'
 const TinySub: React.FC = () => (
   <GalleonCheck
     id={4031}
-    name="Galleon Tiny Submarine Barrel"
+    name="Tiny's Foghorn/Sub Barrel"
     region="Shipyard Outskirts"
     canGetLogic={useTinySubGb()}
   />

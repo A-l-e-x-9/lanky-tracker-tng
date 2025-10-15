@@ -8,7 +8,7 @@ const ShipFairy: React.FC = () => (
     <VanillaFairy>
       <GalleonCheck
         id={4081}
-        name="Galleon Fairy (In Tiny's 5 Door Ship)"
+        name="Fairy in Tiny's 5 Door Ship"
         region="5 Door Ship"
         canGetLogic={useShipFairy()}
       />
