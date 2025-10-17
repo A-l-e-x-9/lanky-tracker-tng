@@ -658,10 +658,9 @@ export const useCheckBananaFairyIsle = (): boolean => {
 export const useCheckChunkyCage = (): boolean => usePineapple()
 
 export const useCheckChunkyMusicPad = (): boolean => {
-  const upper = useIslesUpper()
-  const boulderTech = useBoulderTech()
+  const upper = useAztecLobbyBoulders()
   const triangle = useTriangle()
-  return upper && boulderTech && triangle
+  return upper && triangle
 }
 
 export const useCheckChunkyPound = (): boolean => {
@@ -819,22 +818,14 @@ export const useGalleonKasplat = (): boolean => {
   return FtaChunkyBlueprint && playGalleon && anyKong
 }
 
-export const useAztecLobbyTrombonePad = (): boolean => {
-  const bananaport = useBananaport()
+export const useAztecLobbyBoulders = (): LogicBool => {
+  const canReachAztecLobby = useIslesUpper()
   const chunky = useChunky()
   const barrels = useBarrel()
-  const climbing = useClimbing()
-  const vines = useVine()
-  return (bananaport || climbing && vines) && chunky && barrels
-}
-
-export const useAztecLobbyTrianglePad = (): boolean => {
-  const bananaport = useBananaport()
-  const chunky = useChunky()
-  const barrels = useBarrel()
-  const climbing = useClimbing()
-  const vines = useVine()
-  return (bananaport || climbing && vines) && chunky && barrels
+  return {
+    in: useIslesUpper.in && chunky && barrels,
+    out: useIslesUpper.out && chunky && barrels
+  }
 }
 
 export const useCastleLobby = (): boolean => {

@@ -46,7 +46,7 @@ import {
   useBalloon,
   useBarrel
 } from '../kongs'
-import { useBananaportAll, useForestTime, useHardShooting } from '../settings'
+import { useBananaportAll, useForestTime, useHardShooting, useAutoBonus } from '../settings'
 import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
 
 /**
@@ -317,8 +317,9 @@ export const useDkBarnGb = (): LogicBool => {
   const barn = useForestBarn()
   const climbing = useClimbing()
   const vine = useVine()
+  const autoFinishBonuses = useAutoBonus()
   return {
-    in: barn.in && climbing && vine,
+    in: barn.in && (climbing && vine || autoFinishBonuses),
     out: logicBreak(barn)
   }
 }

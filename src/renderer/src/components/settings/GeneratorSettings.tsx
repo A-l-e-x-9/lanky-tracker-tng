@@ -318,12 +318,11 @@ const GeneratorSettings: React.FC = () => {
               <p>Using Beta Lanky Phase?</p>
               <SimpleIcon
                 imgUrl={grapeIcon}
-                title="If this is enabled, Lanky's K. Rool phase will now require Grapes instead of Trombone."
+                title="If this is enabled, Lanky's K. Rool phase will now require Grapes (to shoot a balloon) instead of Trombone."
                 storeKey="betaLankyPhase"
                 prefix="settings"
                 updateItem={setSetting}
               />
-
             </>
             <h3>Fast Barrier Settings</h3>
             <>
@@ -567,14 +566,6 @@ const GeneratorSettings: React.FC = () => {
                 prefix="glitchLogic"
                 updateItem={setGlitch}
               />
-              <p>Troff 'n' Scoff Bypass</p>
-              <SimpleIcon
-                imgUrl={keyIcon}
-                title="It's possible to bypass feeding Troff and Scoff and enter boss rooms without them, as well as enter boss rooms with illegal Kongs."
-                storeKey="bypassTNS"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
               <p>Phase Falling</p>
               <SimpleIcon
                 imgUrl={fairyIcon}
@@ -605,4 +596,12 @@ export default GeneratorSettings
                 storeKey="factoryArcade"
                 prefix="fastChecks"
                 updateItem={setFastCheck}
+              />
+              <p>Troff 'n' Scoff Bypass</p> (This check is cancelled unless/until I can find a way to implement the colored banana checks.)
+              <SimpleIcon
+                imgUrl={keyIcon}
+                title="It's possible to bypass feeding Troff and Scoff and enter boss rooms without them, as well as enter boss rooms with illegal Kongs."
+                storeKey="bypassTNS"
+                prefix="glitchLogic"
+                updateItem={setGlitch}
               />*/
