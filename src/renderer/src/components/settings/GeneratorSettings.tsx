@@ -313,6 +313,17 @@ const GeneratorSettings: React.FC = () => {
               />
               <p>Slam level required for Chunky phase of K. Rool:</p>
               <KRoolSlamSelector />
+              <p>Water is Lava?</p> //marks water checks orange?
+              <p>Reduced Fall Damage Threshold, increased damage, and/or Irondonk?</p> //marks red any check that requires hurting yourself to break logic
+              <p>Using Beta Lanky Phase?</p>
+              <SimpleIcon
+                imgUrl={grapeIcon}
+                title="If this is enabled, Lanky's K. Rool phase will now require Grapes instead of Trombone."
+                storeKey="betaLankyPhase"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+
             </>
             <h3>Fast Barrier Settings</h3>
             <>

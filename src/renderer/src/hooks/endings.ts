@@ -22,11 +22,12 @@ import {
   useTwirl,
   useTiny,
   useAnyKong,
-  useClimbing
+  useClimbing,
+  useGrape
 } from './kongs'
 import { useShallow } from 'zustand/react/shallow'
 import { LogicBool } from './world'
-import { useBalancedRoolPhase, useChunkySlamLevel } from './settings'
+import { useBalancedRoolPhase, useChunkySlamLevel, useBetaLankyPhase } from './settings'
 
 export const useSingleHelmCheck = (val: number): boolean => {
   const dk = useBongos()
@@ -79,8 +80,10 @@ export const useSingleRoolCheck = (val: number): LogicBool => {
   const climbing = useClimbing()
   const peanut = usePeanut()
   const diddy = useRocket() && peanut
+  const betaLankyCheck = useBetaLankyPhase()
   const barrel = useBarrel()
   const lanky = useTrombone() && barrel
+  const betaLanky = useGrape() && barrel
   const mini = useMini()
   const orange = useOrange()
   const feather = useFeather()
@@ -111,9 +114,16 @@ export const useSingleRoolCheck = (val: number): LogicBool => {
         out: diddy
       }
     case 3:
+      if (betaLankyCheck) {
+      return {
+        in: betaLanky,
+        out: betaLanky
+      }
+      } else {
       return {
         in: lanky,
         out: lanky
+      }
       }
     case 4:
       return {

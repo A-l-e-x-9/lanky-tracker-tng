@@ -253,3 +253,6 @@ export const usePoolKongs = (): boolean =>
 
 export const usePoolGoldBananas = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.poolGoldBananas))
+
+export const useBetaLankyPhase = (): boolean =>
+  useDonkStore(useShallow((state) => state.settings.betaLankyPhase))

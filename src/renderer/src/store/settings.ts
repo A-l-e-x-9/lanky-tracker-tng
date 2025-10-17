@@ -43,7 +43,8 @@ export const initialSettings: SettingState = {
     balancedRoolPhases: true,
     chunkySlamLevel: 0,
     poolWrinkly: true,
-    poolBoulders: true
+    poolBoulders: true,
+    betaLankyPhase: false
   }
 }
 

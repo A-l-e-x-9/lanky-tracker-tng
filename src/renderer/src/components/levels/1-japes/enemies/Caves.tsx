@@ -39,7 +39,7 @@ const CaveEnemies: React.FC = () => {
       />
       <JapesCheck
         id={1329}
-        name="Diddy's Mountain Start Area Start 4"
+        name="Diddy's Mountain Start Area Enemy 4"
         region="Japes Caves and Mines"
         canGetLogic={mine && isZinger.in}
         canGetBreak={mine && isZinger.out}

@@ -22,7 +22,7 @@ const StormyTunnelEnemies: React.FC = () => {
       />
       <JapesCheck
         id={1306}
-        name="Stormy Area 2"
+        name="Stormy Area Enemy 2"
         region="Stormy Area"
         canGetLogic={kongGates && anyKong}
       />
