@@ -10296,7 +10296,8 @@ const initialSettings = {
     balancedRoolPhases: true,
     chunkySlamLevel: 0,
     poolWrinkly: true,
-    poolBoulders: true
+    poolBoulders: true,
+    betaLankyPhase: false
   }
 };
 const settingSlice = (set) => {
@@ -10552,6 +10553,7 @@ const useChunkySlamLevel = () => useDonkStore(useShallow((state) => state.settin
 const useIslesBananaMedals = () => useDonkStore(useShallow((state) => state.settings.poolIslesMedals));
 const usePoolKongs = () => useDonkStore(useShallow((state) => state.settings.poolKongs));
 const usePoolGoldBananas = () => useDonkStore(useShallow((state) => state.settings.poolGoldBananas));
+const useBetaLankyPhase = () => useDonkStore(useShallow((state) => state.settings.betaLankyPhase));
 const GBPool = ({ children }) => usePoolGoldBananas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const BananaMedalPool = ({ children }) => usePoolBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const IslesMedalPool = ({ children }) => useIslesBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -12387,14 +12389,15 @@ const KremLiftEnemies = () => {
 const NearAztecEnemies = () => {
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
+  const canReachAztecLobby = useIslesUpper();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 307,
       name: "Enemy Near Aztec Lobby",
       region: "DK Island",
-      canGetLogic: anyKong && zinger.in,
-      canGetBreak: anyKong && zinger.out
+      canGetLogic: anyKong && canReachAztecLobby.in && zinger.in,
+      canGetBreak: anyKong && canReachAztecLobby.out && zinger.out
     }
   ) });
 };
@@ -14258,7 +14261,7 @@ const CaveEnemies = () => {
       JapesCheck,
       {
         id: 1329,
-        name: "Diddy's Mountain Start Area Start 4",
+        name: "Diddy's Mountain Start Area Enemy 4",
         region: "Japes Caves and Mines",
         canGetLogic: mine && isZinger.in,
         canGetBreak: mine && isZinger.out
@@ -14470,6 +14473,7 @@ const JapesMainEnemies = () => {
   const anyKong = useAnyKong();
   const inStage = usePlayJapes();
   const zinger = useDefeatZinger();
+  const canReachMtn = useJapesMine();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -14505,8 +14509,8 @@ const JapesMainEnemies = () => {
         id: 1317,
         name: "Enemy at Diddy's Mountain",
         region: "Japes Hillside",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage && canReachMtn && zinger.in,
+        canGetBreak: inStage && canReachMtn && zinger.out
       }
     )
   ] });
@@ -14603,7 +14607,7 @@ const StormyTunnelEnemies = () => {
       JapesCheck,
       {
         id: 1306,
-        name: "Stormy Area 2",
+        name: "Stormy Area Enemy 2",
         region: "Stormy Area",
         canGetLogic: kongGates && anyKong
       }
@@ -27317,8 +27321,10 @@ const useSingleRoolCheck = (val) => {
   const climbing = useClimbing();
   const peanut = usePeanut();
   const diddy = useRocket() && peanut;
+  const betaLankyCheck = useBetaLankyPhase();
   const barrel = useBarrel();
   const lanky = useTrombone() && barrel;
+  const betaLanky = useGrape() && barrel;
   const mini = useMini();
   const orange = useOrange();
   const feather = useFeather();
@@ -27347,10 +27353,17 @@ const useSingleRoolCheck = (val) => {
         out: diddy
       };
     case 3:
-      return {
-        in: lanky,
-        out: lanky
-      };
+      if (betaLankyCheck) {
+        return {
+          in: betaLanky,
+          out: betaLanky
+        };
+      } else {
+        return {
+          in: lanky,
+          out: lanky
+        };
+      }
     case 4:
       return {
         in: tiny,
@@ -29382,7 +29395,22 @@ const GeneratorSettings = () => {
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level required for Chunky phase of K. Rool:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(KRoolSlamSelector, {})
+              /* @__PURE__ */ jsxRuntimeExports.jsx(KRoolSlamSelector, {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Water is Lava?" }),
+              " //marks water checks orange?",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Reduced Fall Damage Threshold, increased damage, and/or Irondonk?" }),
+              " //marks red any check that requires hurting yourself to break logic",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Using Beta Lanky Phase?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: lankyGunIcon,
+                  title: "If this is enabled, Lanky's K. Rool phase will now require Grapes instead of Trombone.",
+                  storeKey: "betaLankyPhase",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fast Barrier Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
