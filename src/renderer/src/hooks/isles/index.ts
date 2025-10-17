@@ -823,8 +823,8 @@ export const useAztecLobbyBoulders = (): LogicBool => {
   const chunky = useChunky()
   const barrels = useBarrel()
   return {
-    in: useIslesUpper.in && chunky && barrels,
-    out: useIslesUpper.out && chunky && barrels
+    in: canReachAztecLobby.in && chunky && barrels,
+    out: canReachAztecLobby.out && chunky && barrels
   }
 }
 
