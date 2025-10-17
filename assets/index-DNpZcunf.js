@@ -11750,10 +11750,9 @@ const useCheckBananaFairyIsle = () => {
 };
 const useCheckChunkyCage = () => usePineapple();
 const useCheckChunkyMusicPad = () => {
-  const upper = useIslesUpper();
-  const boulderTech = useBoulderTech();
+  const upper = useAztecLobbyBoulders();
   const triangle = useTriangle();
-  return upper && boulderTech && triangle;
+  return upper && triangle;
 };
 const useCheckChunkyPound = () => {
   const tinySax = useCheckTinyMusicPad();
@@ -11885,21 +11884,14 @@ const useGalleonKasplat = () => {
   const FtaChunkyBlueprint = useFtaChunkyBlueprint();
   return FtaChunkyBlueprint && playGalleon && anyKong;
 };
-const useAztecLobbyTrombonePad = () => {
-  const bananaport = useBananaport();
+const useAztecLobbyBoulders = () => {
+  const canReachAztecLobby = useIslesUpper();
   const chunky = useChunky();
   const barrels = useBarrel();
-  const climbing = useClimbing();
-  const vines = useVine();
-  return (bananaport || climbing && vines) && chunky && barrels;
-};
-const useAztecLobbyTrianglePad = () => {
-  const bananaport = useBananaport();
-  const chunky = useChunky();
-  const barrels = useBarrel();
-  const climbing = useClimbing();
-  const vines = useVine();
-  return (bananaport || climbing && vines) && chunky && barrels;
+  return {
+    in: canReachAztecLobby.in && chunky && barrels,
+    out: canReachAztecLobby.out && chunky && barrels
+  };
 };
 const useCastleLobby = () => {
   const canEnterCastle = usePlayLobby("Creepy Castle");
@@ -13592,24 +13584,28 @@ const IslesMainChecks = () => {
   ] });
 };
 const AztecLobbyTrombonePad = () => {
+  const canLiftBoulders = useAztecLobbyBoulders();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 6,
       name: "Boulder on top of the Trombone Pad near Aztec Lobby",
       region: "DK Island",
-      canGetLogic: useAztecLobbyTrombonePad()
+      canGetLogic: canLiftBoulders.in,
+      canGetBreak: canLiftBoulders.out
     }
   ) });
 };
 const AztecLobbyTrianglePad = () => {
+  const canLiftBoulders = useAztecLobbyBoulders();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 5,
       name: "Boulder on top of the Triangle Pad near Aztec Lobby",
       region: "DK Island",
-      canGetLogic: useAztecLobbyTrianglePad()
+      canGetLogic: canLiftBoulders.in,
+      canGetBreak: canLiftBoulders.out
     }
   ) });
 };
@@ -21696,8 +21692,9 @@ const useDkBarnGb = () => {
   const barn = useForestBarn();
   const climbing = useClimbing();
   const vine = useVine();
+  const autoFinishBonuses = useAutoBonus();
   return {
-    in: barn.in && climbing && vine,
+    in: barn.in && (climbing && vine || autoFinishBonuses),
     out: logicBreak(barn)
   };
 };
@@ -22011,6 +22008,7 @@ const MillsEnemies = () => {
   const day = useForestDay();
   const punch = usePunch();
   const hasMiniMonkey = useMini();
+  const hasClimbing = useClimbing();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
@@ -22085,8 +22083,8 @@ const MillsEnemies = () => {
         id: 5311,
         name: "Enemy in the Winch Room",
         region: "Forest Area 1",
-        canGetLogic: inStage && diddy && canSlam && bat.in,
-        canGetBreak: inStage && diddy && canSlam && bat.out
+        canGetLogic: inStage && diddy && hasClimbing && canSlam && bat.in,
+        canGetBreak: inStage && diddy && hasClimbing && canSlam && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -29405,7 +29403,7 @@ const GeneratorSettings = () => {
                 SimpleIcon,
                 {
                   imgUrl: lankyGunIcon,
-                  title: "If this is enabled, Lanky's K. Rool phase will now require Grapes instead of Trombone.",
+                  title: "If this is enabled, Lanky's K. Rool phase will now require Grapes (to shoot a balloon) instead of Trombone.",
                   storeKey: "betaLankyPhase",
                   prefix: "settings",
                   updateItem: setSetting
@@ -29741,17 +29739,6 @@ const GeneratorSettings = () => {
                   imgUrl: unknownIcon$1,
                   title: "There are certain techniques that cause the game to still consider you outside a Tag Barrel while also in it. This glitch enables checks that can be done while in this state.",
                   storeKey: "tagBarrelStorage",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Troff 'n' Scoff Bypass" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: keyIcon,
-                  title: "It's possible to bypass feeding Troff and Scoff and enter boss rooms without them, as well as enter boss rooms with illegal Kongs.",
-                  storeKey: "bypassTNS",
                   prefix: "glitchLogic",
                   updateItem: setGlitch
                 }
