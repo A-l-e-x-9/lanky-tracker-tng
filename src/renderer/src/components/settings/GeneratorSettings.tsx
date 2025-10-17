@@ -597,7 +597,7 @@ export default GeneratorSettings
                 prefix="fastChecks"
                 updateItem={setFastCheck}
               />
-              <p>Troff 'n' Scoff Bypass</p> (This check is cancelled unless/until I can find a way to implement the colored banana checks.)
+              <p>Troff 'n' Scoff Bypass</p> (This check is cancelled unless/until I can find a way to implement colored bananas into the TnS checks.)
               <SimpleIcon
                 imgUrl={keyIcon}
                 title="It's possible to bypass feeding Troff and Scoff and enter boss rooms without them, as well as enter boss rooms with illegal Kongs."
