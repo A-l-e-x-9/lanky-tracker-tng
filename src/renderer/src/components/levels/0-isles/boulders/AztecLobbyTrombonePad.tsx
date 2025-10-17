@@ -11,8 +11,8 @@ const canLiftBoulders = useAztecLobbyBoulders()
           id={6}
           name="Boulder on top of the Trombone Pad near Aztec Lobby"
           region="DK Island"
-          canGetLogic={useAztecLobbyBoulders.in}
-          canGetBreak={useAztecLobbyBoulders.out}
+          canGetLogic={canLiftBoulders.in}
+          canGetBreak={canLiftBoulders.out}
         />
     </BoulderPool>
   )
