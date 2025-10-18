@@ -357,7 +357,9 @@ export const usePlayLevel = (level: Level): LogicBool => {
     }
   }
 
-  return false
+  return {
+    in: false
+  }
 }
 
 export const usePlayLobby = (level: Level): boolean => {
