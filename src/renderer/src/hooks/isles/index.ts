@@ -64,6 +64,7 @@ import {
   useIsSwitchsanity,
   useOpenLobbies,
   useProgressiveSlams,
+  useBLockerSkip
 } from '../settings'
 import { LogicBool, logicBreak, useSwitchsanityGun, useSwitchsanityMusicPad } from '../world'
 
@@ -245,9 +246,10 @@ export const useIslesHelmEntryWithoutBananaports = (): boolean => {
   }
 }
 
-export const usePlayLevel = (level: Level): boolean => {
+export const usePlayLevel = (level: Level): LogicBool => {
   const dive = useDive()
   const openLobbies = useOpenLobbies()
+  const hasBLockerSkip = useBLockerSkip()
   const [
     level1,
     level2,
@@ -307,28 +309,52 @@ export const usePlayLevel = (level: Level): boolean => {
   ) 
 
   if (level1 === level) {
-    return currentGB >= bLocker1
+    return {
+      in: currentGB >= bLocker1,
+      glitch: hasBLockerSkip
+    }
   }
   if (level2 === level) {
-    return (currentGB >= bLocker2) && islesUpper && (openLobbies || key1)
+    return {
+      in: (currentGB >= bLocker2) && islesUpper && (openLobbies || key1),
+      glitch: islesUpper && (openLobbies || key1) && hasBLockerSkip
+    }
   }
   if (level3 === level) {
-    return (currentGB >= bLocker3) && islesKremAscent && (openLobbies || key2)
+    return {
+      in: (currentGB >= bLocker3) && islesKremAscent && (openLobbies || key2),
+      glitch: islesKremAscent && (openLobbies || key2) && hasBLockerSkip
+    }
   }
   if (level4 === level) {
-    return (currentGB >= bLocker4) && (openLobbies || key2) && dive
+    return {
+      in: (currentGB >= bLocker4) && (openLobbies || key2) && dive,
+      glitch: (openLobbies || key2) && dive && hasBLockerSkip
+    }
   }
   if (level5 === level) {
-    return (currentGB >= bLocker5) && islesFungiIsland
+    return {
+      in: (currentGB >= bLocker5) && islesFungiIsland,
+      glitch: islesFungiIsland && hasBLockerSkip
+    }
   }
   if (level6 === level) {
-    return (currentGB >= bLocker6) && islesUpper && (openLobbies || key5)
+    return {
+      in: (currentGB >= bLocker6) && islesUpper && (openLobbies || key5),
+      glitch: islesUpper && (openLobbies || key5) && hasBLockerSkip
+    }
   }
   if (level7 === level) {
-    return (currentGB >= bLocker7) && (openLobbies || key5)
+    return {
+      in: (currentGB >= bLocker7) && (openLobbies || key5),
+      glitch: (openLobbies || key5) && hasBLockerSkip
+    }
   }
   if (level8 === level) {
-    return (currentGB >= bLocker8) && islesKremTop && (openLobbies || (key6 && key7))
+    return {
+      in: (currentGB >= bLocker8) && islesKremTop && (openLobbies || (key6 && key7)),
+      glitch: islesKremTop && (openLobbies || (key6 && key7)) && hasBLockerSkip
+    }
   }
 
   return false

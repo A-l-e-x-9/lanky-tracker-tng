@@ -8,26 +8,6 @@ const DiddyMedal: React.FC = () => {
   const outLogic = useDiddyMedalOutLogic()
   const cbCount = useCbCount()
   const halfMedal = Math.round(cbCount / 2)
-  if (cbCount >= 85) {
-  return (
-  <Miniboss>
-    <CavesCheck
-      id={6101}
-      name="Diddy's Medal"
-      region="Banana Medals"
-      canGetLogic={inLogic >= cbCount}
-      canGetBreak={outLogic >= cbCount}
-    />
-    <CavesCheck
-      id={6201}
-      name="Diddy's Half-Medal"
-      region="Banana Medals"
-      canGetLogic={inLogic >= halfMedal}
-      canGetBreak={outLogic >= halfMedal}
-    />
-  </Miniboss>
-  )
-  } else {
   return (
   <>
     <CavesCheck
@@ -46,7 +26,6 @@ const DiddyMedal: React.FC = () => {
     />
   </>
   )
-  }
 }
 
 export default DiddyMedal

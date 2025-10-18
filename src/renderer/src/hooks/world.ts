@@ -22,10 +22,11 @@ export type LogicBool = {
   /**
    * Is this check in logic?
    */
-  in: boolean
+  in: boolean,
   /**
    * Is this check out of logic?
    */
+  glitch?: boolean, //Alex addition: Can this check be gotten illegitimately in a Glitch Logic seed?
   out?: boolean
 }
 

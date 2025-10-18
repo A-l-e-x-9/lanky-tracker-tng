@@ -423,7 +423,7 @@ export const useCandy = (): boolean => {
   return shopkeep
 }
 
-/*Why is Snide here? If he's gone, Kasplat checks will be in red even though you can get the blueprint, because you still can't turn it in.*/
+/*Why is Snide here? I honestly have no clue anymore...*/
 export const useSnide = (): boolean => {
   const shopkeep = useDonkStore(useShallow((state) => state.moves.snide))
   return shopkeep
