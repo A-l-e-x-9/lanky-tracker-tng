@@ -26239,7 +26239,7 @@ const ChunkyBananas = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExp
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMuseum, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyCrypt, {})
 ] });
-const DiddyBallroom = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+const DiddyBallroom = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CastleCheck,
   {
     id: 7011,
@@ -26247,7 +26247,7 @@ const DiddyBallroom = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { ch
     region: "Various Castle Rooms",
     canGetLogic: useDiddyRoomGb()
   }
-) });
+);
 const DiddyCrypt = () => {
   const doCheck = useDiddyCryptGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
