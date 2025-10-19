@@ -9,20 +9,18 @@ The instructions on how to use this thing can be found in "instructions.html".
 As with the original, this tracker was written in JavaScript, primarily with an [electron-vite](https://electron-vite.org/) setup in addition to Facebook/the Meta Group's [React](https://reactjs.org/) and Microsoft's [TypeScript](https://www.typescriptlang.org/). Obviously, you need JavaScript in order to use it.
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
-- Actually implement glitch logic! D:
 - Right now, the B. Locker barriers available in the tracker can only accept bananas, so if you're playing a "Chaos B. Lockers" seed (where he often requires things other than bananas so that you can get into the level), you're out of luck. :(
 - Make it so that you can just type how many bananas, etc., you have in the "count" selectors (such as "Colored bananas needed for medal" in Settings) so you don't have to click so much.
 - Also implement the "shuffled DK Portals" function (and rarely-seen "Shuffle Start Location" function, too?) (a shuffled portal can make all the difference in what checks are accessible to you, after all!).
 - K. Rool's phase selector will only light up in yellow if you have all five phases set and one of them is Tiny Phase without Feathers or Mad Jack without Ponytail Twirl. Alex was unable to fix this while updating the K. Rool selector to account for the "use K. Rool phases as bosses" option in the Randomizer. Since all regulation "season" seeds that Alex has seen on YouTube (going back to Season 2) have only three phases, must fix this.
 - Make the left side of the tracker sticky...either Alex really sucks at using the "position: sticky;" CSS command, or something else about the tracker's design is stopping it from being sticky.
 - Find a way to get rid of "Turn in Blueprint for Shared" in the Snide checks
-- The Banana Medal checks may not have been properly updated to account for whether Climbing is required for them or not, and Alex probably poorly implemented the Isles Medals.
 - Change the progressive Slam settings to account for the fact that you can now customize how progressive they are as of the Version 5 Dev Randomizer.
 - Alex took out the "Region Hints" section of the original Tracker because he thought it was poorly done, as well as the "Location Shuffle Settings" section of the settings...should reimplement both somehow.
 - Need an easy way to reset the tracker if need be.
-- Put in a few "joke" options for fun. ^^
 
 ## Unlikely Features
+If you know the answer to any of these (or any of the above that Alex hasn't done yet), see the Development section below.
 - As with the original, if there is a way to enable autotracking with the underlying languages, it's not known at this time, so this car is only available with a manual transmission.
 - Alex also took out the "presets" dropdown underneath the Switchsanity settings, and will probably NOT re-implement this.
 - Alex tried to implement the Helm doors, but he was unable to get the "CountSelector" object working within a "HelmItemSelector" file. Furthermore, only three checks are ever blocked by the doors ("The End of Helm" and both Banana Fairies), so it was too much effort for too little gain.
@@ -31,6 +29,8 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 - Snide Rewards and the Max Snide Reward Limit, due to redundancy.
   - And on that note, progressive Wrinkly hints, something that's been a feature since at least Season 3 (and was used in official Season 3 seeds; retired in favor of bringing back the doors, but with the "Dos's Doors" shuffle)
 - The Plandomizer mentions enemy photo checks (listed under "All Kongs" for each level in the style of "Photo of (enemy eligible for Dropsanity)" (with a few enemies NOT eligible in there, too, such as the underwater Galleon enemies!). However, Alex has yet to actually GET one of these in any Version 5 seed he's played so far, so either 2dos and his friends made one big fakeout, are advertising an unimplemented feature, or Alex has to do a "Kremling Kapture" seed. Either way, Alex took out the photo checks and will not put them back in until he can confirm that taking pictures of enemies will yield rewards.
+- Alex attempted to implement glitch logic. The feature was intended to be in the settings, between "Fast Check Settings" and "UI Settings", and the intent was for you to click on buttons to set whatever glitches were in your seed if you made one with the "Glitch Logic" setting. Any checks affected by the buttons you clicked on would turn pink to indicate that they could be gotten by using the indicated glitch, until you could legitimately get them, at which point they would turn green. But not only is glitch logic VERY subjective, Alex doesn't really know how to do many of the glitches the Randomizer can make seeds with, and he doesn't have a very good understanding of what each glitch enables. Furthermore, when he attempted to put in what checks B. Locker skipping enabled, the tracker's code became somewhat aggressive and skipped over the yellow check code, and at one point, he completely wrecked the Aztec checks and made them all red even when they should have been green. So, no glitch logic checks.
+  - Taking this out also removed a reference to [the Touhou Project](https://en.wikipedia.org/wiki/Touhou_Project)...the icon for the Skew Glitch was famed flipper [Seija Kijin](https://en.touhouwiki.net/wiki/Seija_Kijin). :(
 
 # Development
 

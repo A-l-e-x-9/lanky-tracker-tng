@@ -256,6 +256,3 @@ export const usePoolGoldBananas = (): boolean =>
 
 export const useBetaLankyPhase = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.betaLankyPhase))
-
-export const useBLockerSkip = (): boolean =>
-  useDonkStore(useShallow((state) => state.glitchLogic.bLockerSkip))

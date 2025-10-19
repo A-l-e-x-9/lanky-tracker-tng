@@ -15,7 +15,6 @@ import levelSlice from './level'
 import moveSlice from './moves'
 import settingSlice from './settings'
 import switchSlice from './switchsanities'
-import glitchSlice from './glitch-logic'
 import uiSlice from './ui'
 
 const initializer: StateCreator<AllSlice, [['zustand/persist', unknown]], []> = (...d) => ({
@@ -32,7 +31,6 @@ const initializer: StateCreator<AllSlice, [['zustand/persist', unknown]], []> = 
   ...fastCheckSlice(...d),
   ...endingSlice(...d),
   ...roolSlice(...d),
-  ...glitchSlice(...d),
   ...uiSlice(...d)
 })
 

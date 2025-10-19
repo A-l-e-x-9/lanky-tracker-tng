@@ -371,7 +371,6 @@ export const useLankyRaceGb = (): LogicBool => {
     out: isDay.out && owl && trombone && sprint
   }
 }
-/*This check still has a glitch in it from the old tracker that requires you to have Key 5 before you can get the GB, that I've been unable to find and fix.*/
 
 export const useTinyMushGb = (): boolean => {
   const inStage = usePlayForest()

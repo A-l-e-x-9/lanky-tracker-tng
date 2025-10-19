@@ -8,7 +8,6 @@ export type LevelCheckProps = {
   name: string
   region?: SelectableRegionValues
   canGetLogic: boolean
-  canGetGlitch?: boolean
   canGetBreak?: boolean
 }
 
@@ -20,7 +19,6 @@ type ItemCheckProps = LevelCheckProps & {
 const ItemCheck: React.FC<ItemCheckProps> = (props) => {
   const { id, name, region, done, canGetLogic } = props
   let { canGetBreak } = props
-  let { canGetGlitch } = props
   const [setCheck, foolish, hoard] = useDonkStore(
     useShallow((state) => [state.setCheck, state.foolish, state.hoard])
   )
@@ -31,14 +29,9 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
   if (canGetBreak === undefined) {
     canGetBreak = canGetLogic
   }
-  if (canGetGlitch === undefined) {
-    canGetGlitch = canGetLogic
-  }
   let logicState = 'not-available'
   if (canGetLogic) {
     logicState = 'available'
-  } else if (canGetGlitch) {
-    logicState = 'glitch-logic'
   } else if (canGetBreak) {
     logicState = 'logic-break'
   }

@@ -313,8 +313,6 @@ const GeneratorSettings: React.FC = () => {
               />
               <p>Slam level required for Chunky phase of K. Rool:</p>
               <KRoolSlamSelector />
-              <p>Water is Lava?</p> //marks water checks orange?
-              <p>Reduced Fall Damage Threshold, increased damage, and/or Irondonk?</p> //marks red any check that requires hurting yourself to break logic
               <p>Using Beta Lanky Phase?</p>
               <SimpleIcon
                 imgUrl={grapeIcon}
@@ -475,106 +473,6 @@ const GeneratorSettings: React.FC = () => {
                 maxValue={5}
               />
             </>
-            <h3>Glitch Logic Settings</h3>
-            <p className="full-grid">If you made a "glitch logic" seed, specify which glitches you used here. The affected checks will have a <strong className="glitch-logic">purple light</strong> until you are able to get them legitimately, at which point they turn green. Does not cover stuff enabled by "Advanced Glitchless Logic"; those checks show up in yellow.</p>
-            <>
-              <p>B. Locker Skipping</p>
-              <SimpleIcon
-                imgUrl={lankyIcon}
-                title="A well-placed standing attack from DK or Lanky on B. Locker's left allows them to reach just far enough into a DK Portal that they can bypass him. Turn this on if required to do this to do a check."
-                storeKey="bLockerSkip"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
-              <p>General Skips</p>
-              <SimpleIcon
-                imgUrl={orangeIcon}
-                title="Various miscellaneous skips that don't fit into the other categories."
-                storeKey="generalSkip"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
-              <p>Ledge Clipping</p>
-              <SimpleIcon
-                imgUrl={chunkyIcon}
-                title="Set this if required to clip out of bounds through floors."
-                storeKey="ledgeClip"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
-              <p>The Moonkick</p>
-              <SimpleIcon
-                imgUrl={dkIcon}
-                title="Do a short-hopped air attack on a ledge with good timing, then do DK's running kick to have him go a long distance."
-                storeKey="moonKick"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
-              <p>Diddy's Moontail</p>
-              <SimpleIcon
-                imgUrl={diddyIcon}
-                title="With Diddy, if you can do his standing tail whip attack and jump at the same time, you can gain lots of height."
-                storeKey="moonTail"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
-              <p>Phase Swimming</p>
-              <SimpleIcon
-                imgUrl={diveIcon}
-                title="You can swim through many walls while underwater if you face them straight on, go into first person mode, then zoom out again."
-                storeKey="swimThruVertWalls"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
-              <p>Phase Walking</p>
-              <SimpleIcon
-                imgUrl={wrinkly}
-                title="You can use this to go through many walls in the game (an estimated 25%), but this is triple frame-perfect and not recommended unless you're playing tool-assisted!"
-                storeKey="phaseWalk"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
-              <p>The Skew Glitch</p>
-              <SimpleIcon
-                imgUrl={lolTouhouHijack}
-                title="Use this to flip your active Kong's neutral angle while standing still. You can go through many walls this way."
-                storeKey="skewYou"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
-              <p>Spawn Snagging</p>
-              <SimpleIcon
-                imgUrl={companyCoinIcon}
-                title="Some items are loaded into the game invisible but tangible, and can be collected earlier than intended if you can find where they are. Most notably used to skip DK Arcade. This item only accounts for known non-TAS snags."
-                storeKey="spawnSnag"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
-              <p>Swimming Through Shores</p>
-              <SimpleIcon
-                imgUrl={diveIcon}
-                title="Hold B while swimming completely downwards at a sloped shore line, and you can swim through it. Typically only doable on DK Island and the Banana Fairies' home."
-                storeKey="swimThruShores"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
-              <p>Tag Barrel Storage</p>
-              <SimpleIcon
-                imgUrl={questionMarkIcon}
-                title="There are certain techniques that cause the game to still consider you outside a Tag Barrel while also in it. This glitch enables checks that can be done while in this state."
-                storeKey="tagBarrelStorage"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
-              <p>Phase Falling</p>
-              <SimpleIcon
-                imgUrl={fairyIcon}
-                title="If you have Chunky and the Fairy Cam, you can go through certain walls that would otherwise require phase walking."
-                storeKey="phaseFall"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
-              />
-            </>
             <h3>UI Settings</h3>
             <>
               <p>Group by Regions?</p>
@@ -596,12 +494,4 @@ export default GeneratorSettings
                 storeKey="factoryArcade"
                 prefix="fastChecks"
                 updateItem={setFastCheck}
-              />
-              <p>Troff 'n' Scoff Bypass</p> (This check is cancelled unless/until I can find a way to implement colored bananas into the TnS checks.)
-              <SimpleIcon
-                imgUrl={keyIcon}
-                title="It's possible to bypass feeding Troff and Scoff and enter boss rooms without them, as well as enter boss rooms with illegal Kongs."
-                storeKey="bypassTNS"
-                prefix="glitchLogic"
-                updateItem={setGlitch}
               />*/

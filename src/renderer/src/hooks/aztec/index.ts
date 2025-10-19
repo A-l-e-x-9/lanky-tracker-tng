@@ -51,13 +51,7 @@ import {
  * Can we play in Angry Aztec?
  * @returns true if we can play in Angry Aztec.
  */
-export const usePlayAztec = (): LogicBool => {
-  const canPlay = usePlayLevel('Angry Aztec')
-  return {
-    in: canPlay.in,
-    glitch: canPlay.glitch
-  }
-}
+export const usePlayAztec = (): boolean => usePlayLevel('Angry Aztec')
 
 /**
  * Can we slam down switches in Angry Aztec?
@@ -86,9 +80,8 @@ export const useAztecFront = (): LogicBool => {
   const vine = useVine()
   const twirl = useTwirl()
   return {
-    in: aztecPlay.in && (vine || twirl),
-    glitch: aztecPlay.glitch && (vine || twirl),
-    out: aztecPlay.out
+    in: aztecPlay && (vine || twirl),
+    out: aztecPlay
   }
 }
 
@@ -101,7 +94,6 @@ export const useAztecFrontKasplat = (): LogicBool => {
   const kasplatSwitch = useAztecCoconutSwitch()
   return {
     in: aztecFront.in && kasplatSwitch,
-    glitch: aztecFront.glitch && kasplatSwitch,
     out: aztecFront.out
   }
 }
@@ -121,7 +113,6 @@ export const useAztecBack = (): LogicBool => {
   )
   return {
     in: aztecFront.in && (backGateOpen || warpAll || ((vine || rocket) && musicSwitch)),
-    glitch: aztecFront.glitch && (backGateOpen || warpAll || ((vine || rocket) && musicSwitch)),
     out: aztecFront.out && (backGateOpen || warpAll || (musicSwitch && (diddy || tiny)))
   }
 }
@@ -142,7 +133,6 @@ export const useAztecTinyTemple = (): LogicBool => {
   const properGun = peanut || grape || feather || pineapple
   return {
     in: aztecFront.in && properGun,
-    glitch: aztecFront.glitch && properGun,
     out: aztecFront.out && properGun
   }
 }
@@ -203,7 +193,6 @@ export const useAztecBackTunnel = (): LogicBool => {
   const warpAll = useBananaportAll()
   return {
     in: (front.in && warpAll) || (llama.in && slamSwitch && canSlam),
-    glitch: (front.glitch && warpAll) || (llama.glitch && slamSwitch && canSlam),
     out: (front.out && warpAll) || (llama.out && slamSwitch && canSlam)
   }
 }
@@ -232,7 +221,6 @@ export const useChunkyVaseGb = (): LogicBool => {
   const gun = usePineapple()
   return {
     in: front.in && boulder && gun,
-    glitch: front.glitch && boulder && gun,
     out: front.out && boulder && gun
   }
 }
@@ -244,7 +232,6 @@ export const useChunkyKlaptrapGb = (): LogicBool => {
   const tinyTemple = useAztecTinyTemple()
   return {
     in: front.in && gun && triangle,
-    glitch: front.glitch && gun && triangle,
     out: logicBreak(tinyTemple) && triangle
   }
 }
@@ -403,7 +390,6 @@ export const useLankyVultureGb = (): LogicBool => {
   const iceMelted = useTinyTempleIce()
   return {
     in: front.in && grape && iceMelted && dive && canSlam,
-    glitch: front.glitch && grape && iceMelted && dive && canSlam,
     out: logicBreak(tinyTemple) && iceMelted && dive && canSlam && lanky && anyGun
   }
 }
@@ -454,7 +440,6 @@ export const useTinyKlaptrapGb = (): LogicBool => {
   const iceMelted = useTinyTempleIce()
   return {
     in: front.in && feather && mini && iceMelted && dive,
-    glitch: front.glitch && feather && mini && iceMelted && dive,
     out: logicBreak(tinyTemple) && mini && iceMelted && dive
   }
 }
@@ -495,7 +480,6 @@ export const useGeneralThing = (): LogicBool => {
   const anyKong = useAnyKong()
   return {
     in: inStage.in && anyKong,
-    glitch: inStage.glitch && anyKong,
     out: inStage.out && anyKong
   }
 }
@@ -536,7 +520,6 @@ export const useGeneralFairy = (): LogicBool => {
   const camera = useCamera()
   return {
     in: camera && thing.in,
-    glitch: camera && thing.glitch,
     out: camera && thing.out
   }
 }
@@ -568,7 +551,6 @@ export const useCoconutKasplat = (): LogicBool => {
   const twirl = useTwirl()
   return {
     in: aztecFront.in && coconut && (strong || twirl),
-    glitch: aztecFront.glitch && coconut && (strong || twirl),
     out: aztecFront.out && coconut
   }
 }
@@ -579,7 +561,6 @@ export const useOasisKasplat = (): LogicBool => {
   const climbing = useClimbing()
   return {
     in: climbing && rocket && thing.in,
-    glitch: climbing && rocket && thing.glitch,
     out: climbing && rocket && thing.out
   }
 }
@@ -618,7 +599,6 @@ export const useVases = (): LogicBool => {
   const hasBarrels = useBarrel()
   return {
     in: hasAccess.in && hasBarrels && hasPineapples,
-    glitch: hasAccess.glitch && hasBarrels && hasPineapples,
     out: hasAccess.out && hasBarrels && hasPineapples
   }
 }
