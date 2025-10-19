@@ -42,11 +42,6 @@ import switchsanityIcon from '../../assets/images/settings/switch.png'
 import slamIcon from '../../assets/images/slam1.png'
 import featherIcon from '../../assets/images/tiny_gun.png'
 import wrinkly from '../../assets/images/wrinkly.png'
-import orangeIcon from '../../assets/images/orange.png'
-import diddyIcon from '../../assets/images/diddy.png'
-import diveIcon from '../../assets/images/diving.png'
-import lolTouhouHijack from '../../assets/images/seija-kijin.png'
-import questionMarkIcon from '../../assets/images/unknown-small.png'
 
 const customStyles: Modal.Styles = {
   content: {
@@ -57,8 +52,8 @@ const customStyles: Modal.Styles = {
 
 const GeneratorSettings: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
-  const [setSetting, setBarrier, setFastCheck, setGlitch, setUi] = useDonkStore(
-    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setGlitch, state.setUi])
+  const [setSetting, setBarrier, setFastCheck, setUi] = useDonkStore(
+    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi])
   )
 
   const openModal = (): void => setOpen(true)
