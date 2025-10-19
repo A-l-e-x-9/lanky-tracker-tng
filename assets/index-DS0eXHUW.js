@@ -10369,43 +10369,6 @@ const switchSlice = (set) => {
     }
   };
 };
-const initialGlitches = {
-  glitchLogic: {
-    bLockerSkip: false,
-    generalSkip: false,
-    ledgeClip: false,
-    moonKick: false,
-    moonTail: false,
-    swimThruVertWalls: false,
-    phaseWalk: false,
-    skewYou: false,
-    spawnSnag: false,
-    swimThruShores: false,
-    tagBarrelStorage: false,
-    bypassTNS: false,
-    phaseFall: false
-  }
-};
-const glitchSlice = (set) => {
-  donkResetFns.add(() => set(initialGlitches));
-  return {
-    ...initialGlitches,
-    setGlitch: (id2, val) => {
-      set((state) => {
-        const target = {};
-        target[id2] = val;
-        state = {
-          ...state,
-          glitchLogic: {
-            ...state.glitchLogic,
-            ...target
-          }
-        };
-        return state;
-      });
-    }
-  };
-};
 const initialUi = {
   ui: {
     groupByRegion: false
@@ -10443,7 +10406,6 @@ const initializer = (...d) => ({
   ...fastCheckSlice(...d),
   ...endingSlice(...d),
   ...roolSlice(...d),
-  ...glitchSlice(...d),
   ...uiSlice(...d)
 });
 const useDonkStore = create()(
@@ -15709,7 +15671,7 @@ const useAztecFrontKasplat = () => {
   const kasplatSwitch = useAztecCoconutSwitch();
   return {
     in: aztecFront.in && kasplatSwitch,
-    out: logicBreak(aztecFront)
+    out: aztecFront.out
   };
 };
 const useAztecBack = () => {
@@ -15723,7 +15685,7 @@ const useAztecBack = () => {
   );
   return {
     in: aztecFront.in && (backGateOpen || warpAll || (vine || rocket) && musicSwitch),
-    out: logicBreak(aztecFront) && (backGateOpen || warpAll || musicSwitch && (diddy || tiny))
+    out: aztecFront.out && (backGateOpen || warpAll || musicSwitch && (diddy || tiny))
   };
 };
 const useAztecTinyTemple = () => {
@@ -15735,7 +15697,7 @@ const useAztecTinyTemple = () => {
   const properGun = peanut || grape || feather || pineapple;
   return {
     in: aztecFront.in && properGun,
-    out: logicBreak(aztecFront) && properGun
+    out: aztecFront.out && properGun
   };
 };
 const useTinyTempleIce = () => {
@@ -15778,7 +15740,7 @@ const useAztecBackTunnel = () => {
   const warpAll = useBananaportAll();
   return {
     in: front.in && warpAll || llama.in && slamSwitch && canSlam,
-    out: logicBreak(front) && warpAll || logicBreak(llama) && slamSwitch && canSlam
+    out: front.out && warpAll || llama.out && slamSwitch && canSlam
   };
 };
 const useAztec5DoorTemple = () => {
@@ -24678,53 +24640,28 @@ const DiddyMedal$1 = () => {
   const outLogic = useDiddyMedalOutLogic$1();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
-  if (cbCount >= 85) {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(Miniboss, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CavesCheck,
-        {
-          id: 6101,
-          name: "Diddy's Medal",
-          region: "Banana Medals",
-          canGetLogic: inLogic >= cbCount,
-          canGetBreak: outLogic >= cbCount
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CavesCheck,
-        {
-          id: 6201,
-          name: "Diddy's Half-Medal",
-          region: "Banana Medals",
-          canGetLogic: inLogic >= halfMedal,
-          canGetBreak: outLogic >= halfMedal
-        }
-      )
-    ] });
-  } else {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CavesCheck,
-        {
-          id: 6101,
-          name: "Diddy's Medal",
-          region: "Banana Medals",
-          canGetLogic: inLogic >= cbCount,
-          canGetBreak: outLogic >= cbCount
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CavesCheck,
-        {
-          id: 6201,
-          name: "Diddy's Half-Medal",
-          region: "Banana Medals",
-          canGetLogic: inLogic >= halfMedal,
-          canGetBreak: outLogic >= halfMedal
-        }
-      )
-    ] });
-  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6101,
+        name: "Diddy's Medal",
+        region: "Banana Medals",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6201,
+        name: "Diddy's Half-Medal",
+        region: "Banana Medals",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useDkMedalCommonLogic$1 = () => {
   const igloo = useCavesIgloo();
@@ -29054,7 +28991,6 @@ const toughBananaIcon = "" + new URL("rabbit-D6O9SrZi.png", import.meta.url).hre
 const slamSwitchIcon = "" + new URL("slam_switch-DrcJ-6n7.png", import.meta.url).href;
 const switchsanityIcon = "" + new URL("switch-D6Og0W-L.png", import.meta.url).href;
 const wrinkly = "" + new URL("wrinkly-COxhSpd3.png", import.meta.url).href;
-const lolTouhouHijack = "" + new URL("seija-kijin-DnR-35zr.png", import.meta.url).href;
 const customStyles = {
   content: {
     backgroundColor: "#002040",
@@ -29063,8 +28999,8 @@ const customStyles = {
 };
 const GeneratorSettings = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
-  const [setSetting, setBarrier, setFastCheck, setGlitch, setUi] = useDonkStore(
-    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setGlitch, state.setUi])
+  const [setSetting, setBarrier, setFastCheck, setUi] = useDonkStore(
+    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi])
   );
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
@@ -29394,10 +29330,6 @@ const GeneratorSettings = () => {
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level required for Chunky phase of K. Rool:" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(KRoolSlamSelector, {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Water is Lava?" }),
-              " //marks water checks orange?",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Reduced Fall Damage Threshold, increased damage, and/or Irondonk?" }),
-              " //marks red any check that requires hurting yourself to break logic",
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Using Beta Lanky Phase?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
@@ -29612,146 +29544,6 @@ const GeneratorSettings = () => {
                   prefix: "fastChecks",
                   setCount: setFastCheck,
                   maxValue: 5
-                }
-              )
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Glitch Logic Settings" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "full-grid", children: [
-              'If you made a "glitch logic" seed, specify which glitches you used here. The affected checks will have a ',
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "glitch-logic", children: "purple light" }),
-              ' until you are able to get them legitimately, at which point they turn green. Does not cover stuff enabled by "Advanced Glitchless Logic"; those checks show up in yellow.'
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "B. Locker Skipping" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: lankyKongIcon,
-                  title: "A well-placed standing attack from DK or Lanky on B. Locker's left allows them to reach just far enough into a DK Portal that they can bypass him. Turn this on if required to do this to do a check.",
-                  storeKey: "bLockerSkip",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "General Skips" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: orangeIcon,
-                  title: "Various miscellaneous skips that don't fit into the other categories.",
-                  storeKey: "generalSkip",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Ledge Clipping" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: chunkyKongIcon,
-                  title: "Set this if required to clip out of bounds through floors.",
-                  storeKey: "ledgeClip",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "The Moonkick" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: dkKongIcon,
-                  title: "Do a short-hopped air attack on a ledge with good timing, then do DK's running kick to have him go a long distance.",
-                  storeKey: "moonKick",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Diddy's Moontail" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: diddyKongIcon,
-                  title: "With Diddy, if you can do his standing tail whip attack and jump at the same time, you can gain lots of height.",
-                  storeKey: "moonTail",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Phase Swimming" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: diveIcon,
-                  title: "You can swim through many walls while underwater if you face them straight on, go into first person mode, then zoom out again.",
-                  storeKey: "swimThruVertWalls",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Phase Walking" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: wrinkly,
-                  title: "You can use this to go through many walls in the game (an estimated 25%), but this is triple frame-perfect and not recommended unless you're playing tool-assisted!",
-                  storeKey: "phaseWalk",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "The Skew Glitch" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: lolTouhouHijack,
-                  title: "Use this to flip your active Kong's neutral angle while standing still. You can go through many walls this way.",
-                  storeKey: "skewYou",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Spawn Snagging" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: companyCoinIcon,
-                  title: "Some items are loaded into the game invisible but tangible, and can be collected earlier than intended if you can find where they are. Most notably used to skip DK Arcade. This item only accounts for known non-TAS snags.",
-                  storeKey: "spawnSnag",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Swimming Through Shores" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: diveIcon,
-                  title: "Hold B while swimming completely downwards at a sloped shore line, and you can swim through it. Typically only doable on DK Island and the Banana Fairies' home.",
-                  storeKey: "swimThruShores",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Tag Barrel Storage" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: unknownIcon$1,
-                  title: "There are certain techniques that cause the game to still consider you outside a Tag Barrel while also in it. This glitch enables checks that can be done while in this state.",
-                  storeKey: "tagBarrelStorage",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Phase Falling" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: fairyIcon,
-                  title: "If you have Chunky and the Fairy Cam, you can go through certain walls that would otherwise require phase walking.",
-                  storeKey: "phaseFall",
-                  prefix: "glitchLogic",
-                  updateItem: setGlitch
                 }
               )
             ] }),
