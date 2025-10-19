@@ -22769,7 +22769,7 @@ const AnthillBean = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { chil
     canGetLogic: useTinyAntGb()
   }
 ) }) });
-const BeanCheck = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+const BeanCheck = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5033,
@@ -22777,7 +22777,7 @@ const BeanCheck = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { childr
     region: "Forest Area 2",
     canGetLogic: useTinyBeanGb()
   }
-) });
+);
 const MushroomBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
