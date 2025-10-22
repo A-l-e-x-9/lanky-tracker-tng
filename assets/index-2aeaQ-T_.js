@@ -25904,7 +25904,7 @@ const UndergroundEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
-        id: 7320,
+        id: 7329,
         name: "Enemy at the Left Stairs to Crypt",
         region: "Castle Crypt and Dungeon",
         canGetLogic: inStage && anyKong && hasClimbing,
