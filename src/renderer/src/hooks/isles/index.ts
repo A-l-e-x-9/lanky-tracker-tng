@@ -657,10 +657,13 @@ export const useCheckBananaFairyIsle = (): boolean => {
 
 export const useCheckChunkyCage = (): boolean => usePineapple()
 
-export const useCheckChunkyMusicPad = (): boolean => {
+export const useCheckChunkyMusicPad = (): LogicBool => {
   const upper = useAztecLobbyBoulders()
   const triangle = useTriangle()
-  return upper && triangle
+  return {
+    in: upper.in && triangle,
+    out: upper.out && triangle
+  }
 }
 
 export const useCheckChunkyPound = (): boolean => {
