@@ -11714,7 +11714,10 @@ const useCheckChunkyCage = () => usePineapple();
 const useCheckChunkyMusicPad = () => {
   const upper = useAztecLobbyBoulders();
   const triangle = useTriangle();
-  return upper && triangle;
+  return {
+    in: upper.in && triangle,
+    out: upper.out && triangle
+  };
 };
 const useCheckChunkyPound = () => {
   const tinySax = useCheckTinyMusicPad();
@@ -12430,7 +12433,7 @@ const PoundX = () => {
 };
 const TrianglePad = () => {
   const music = useCheckChunkyMusicPad();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 41, name: "Chunky's Triangle Pad", region: "DK Island", canGetLogic: music });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(IslesCheck, { id: 41, name: "Chunky's Triangle Pad", region: "DK Island", canGetLogic: music.in, canGetBreak: music.out });
 };
 const ChunkyBananas$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(PineappleCage, {}),
