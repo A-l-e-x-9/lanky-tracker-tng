@@ -504,4 +504,5 @@ export const useMillBackKeg = (): LogicBool => {
   return {
     in: canEnterMills.in && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels,
     out: canEnterMills.out && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels
+  }
 }
