@@ -485,18 +485,23 @@ export const useMushExteriorKasplat = (): boolean => {
   return useFtaTinyBlueprint() && inStage
 }
 
-export const useMillFrontKegs = (): boolean => {
+export const useMillFrontKegs = (): LogicBool => {
   const canEnterMills = useForestDay()
   const hasChunky = useChunky()
   const hasBarrels = useBarrel()
-  return canEnterMills && hasChunky && hasBarrels
+  return {
+    in: canEnterMills.in && hasChunky && hasBarrels,
+    out: canEnterMills.out && hasChunky && hasBarrels
+  }
 }
 
-export const useMillBackKeg = (): boolean => {
+export const useMillBackKeg = (): LogicBool => {
   const canEnterMills = useForestDay()
   const hasPrimatePunch = usePunch()
   const hasMiniMonkey = useMini()
   const hasChunky = useChunky()
   const hasBarrels = useBarrel()
-  return canEnterMills && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels
+  return {
+    in: canEnterMills.in && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels,
+    out: canEnterMills.out && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels
 }
