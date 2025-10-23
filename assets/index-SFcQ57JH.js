@@ -21791,7 +21791,10 @@ const useMillFrontKegs = () => {
   const canEnterMills = useForestDay();
   const hasChunky = useChunky();
   const hasBarrels = useBarrel();
-  return canEnterMills && hasChunky && hasBarrels;
+  return {
+    in: canEnterMills.in && hasChunky && hasBarrels,
+    out: canEnterMills.out && hasChunky && hasBarrels
+  };
 };
 const useMillBackKeg = () => {
   const canEnterMills = useForestDay();
@@ -21799,7 +21802,10 @@ const useMillBackKeg = () => {
   const hasMiniMonkey = useMini();
   const hasChunky = useChunky();
   const hasBarrels = useBarrel();
-  return canEnterMills && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels;
+  return {
+    in: canEnterMills.in && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels,
+    out: canEnterMills.out && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels
+  };
 };
 const ForestCheck = (props) => {
   const checks = useDonkStore(useShallow((state) => state.checks));
@@ -23564,35 +23570,41 @@ const OwlChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports
   /* @__PURE__ */ jsxRuntimeExports.jsx(OwlEnemies, {})
 ] });
 const MillBackKeg = () => {
+  const logic = useMillBackKeg();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5008,
       name: "Back Mill Keg",
       region: "Forest Area 1",
-      canGetLogic: useMillBackKeg()
+      canGetLogic: logic.in,
+      canGetBreak: logic.out
     }
   ) });
 };
 const MillFrontKeg1 = () => {
+  const logic = useMillFrontKegs();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5006,
       name: "Front Mill Keg near Crusher",
       region: "Forest Area 1",
-      canGetLogic: useMillFrontKegs()
+      canGetLogic: logic.in,
+      canGetBreak: logic.out
     }
   ) });
 };
 const MillFrontKeg2 = () => {
+  const logic = useMillFrontKegs();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5007,
       name: "Front Mill Keg in Back of Room",
       region: "Forest Area 1",
-      canGetLogic: useMillFrontKegs()
+      canGetLogic: logic.in,
+      canGetBreak: logic.out
     }
   ) });
 };
