@@ -12597,7 +12597,7 @@ const LankyBananas$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
 ] });
 const AztecBarrel = () => {
   const checkTinyAztec = useCheckTinyAztecLobby();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 32,
@@ -12606,7 +12606,7 @@ const AztecBarrel = () => {
       canGetLogic: checkTinyAztec.in,
       canGetBreak: checkTinyAztec.out
     }
-  );
+  ) });
 };
 const FeatherCage = () => {
   const checkFeatherCage = useCheckTinyFeatherCage();
@@ -19116,7 +19116,7 @@ const FairyLocations$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(NumberFairy, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FunkyFairy, {})
 ] });
-const ArcadeBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const ArcadeBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3042,
@@ -19124,7 +19124,7 @@ const ArcadeBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Storage and Arcade Area",
     canGetLogic: useChunkyArcadeGb()
   }
-);
+) });
 const DarkRoom = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
@@ -22545,7 +22545,7 @@ const FairyLocations$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(RaftersFairy, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BarnFairy, {})
 ] });
-const ChunkyApple = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const ChunkyApple = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5043,
@@ -22553,7 +22553,7 @@ const ChunkyApple = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Forest Area 2",
     canGetLogic: useChunkyAppleGb()
   }
-);
+) });
 const ChunkyFace = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
@@ -22760,7 +22760,7 @@ const LankyBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(RabbitRace, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ZingerBounce, {})
 ] });
-const AnthillBanana = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+const AnthillBanana = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5031,
@@ -22768,7 +22768,7 @@ const AnthillBanana = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { ch
     region: "Forest Area 4",
     canGetLogic: useTinyAntGb()
   }
-) });
+) }) });
 const AnthillBean = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
