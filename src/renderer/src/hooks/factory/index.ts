@@ -262,11 +262,12 @@ export const useLankyPianoGb = (): boolean => {
   return testing && canSlam && trombone
 }
 
-const useFreeChunkySwitch = (): boolean => {
+const useFreeChunkySwitch = (): LogicBool => {
   const slam = useSlamFactory()
   const dk = useDk()
   const diddy = useDiddy()
   const lanky = useLanky()
+  const hasOStand = useStand()
   const tiny = useTiny()
   const chunky = useChunky()
   const freeChunky = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeChunky))
@@ -276,7 +277,10 @@ const useFreeChunkySwitch = (): boolean => {
     case 2:
       return diddy && slam
     case 3:
-      return lanky && slam
+      return {
+        in: hasOStand && slam
+        out: lanky && slam
+      }
     case 4:
       return tiny && slam
     case 5:
