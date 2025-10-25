@@ -298,7 +298,10 @@ const useFreeChunkySwitch = (): LogicBool => {
         out: chunky && slam
       }
     default:
-      return true
+      return {
+      in: true,
+      out: true
+      }
   }
 }
 
