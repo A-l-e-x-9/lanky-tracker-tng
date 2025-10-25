@@ -305,9 +305,13 @@ const useFreeChunkySwitch = (): LogicBool => {
   }
 }
 
-export const useLankyFreeChunkyGb = (): boolean => {
+export const useLankyFreeChunkyGb = (): LogicBool => {
   const inStage = usePlayFactory()
-  return useFreeChunkySwitch() && inStage
+  const canHitSwitch = useFreeChunkySwitch()
+  return {
+    in: canHitSwitch.in && inStage,
+    out: canHitSwitch.out && inStage
+  }
 }
 
 export const useLankyProductionGb = (): LogicBool => {
