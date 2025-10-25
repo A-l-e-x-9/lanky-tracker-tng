@@ -370,15 +370,10 @@ export const useTinyStumpGb = (): boolean => {
   return hive && mini
 }
 
-export const useTinyHiveGb = (): LogicBool => {
+export const useTinyHiveGb = (): boolean => {
   const hive = useTinyStumpGb()
   const canSlam = useSlamJapes()
-  const sax = useSax()
-  const orange = useOrange()
-  return {
-    in: hive && canSlam && (sax || orange),
-    out: hive && canSlam
-  }
+  return hive && canSlam
 }
 
 export const useGeneralThing = (): boolean => {
