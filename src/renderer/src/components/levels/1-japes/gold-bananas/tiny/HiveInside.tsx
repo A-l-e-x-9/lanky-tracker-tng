@@ -1,5 +1,5 @@
 import { useTinyHiveGb } from '@renderer/hooks/japes'
-import GBPool from '@renderer/components/pools'
+import GBPool from '@renderer/components/pools/GB'
 import JapesCheck from '../../check'
 
 const HiveInside: React.FC = () => {
