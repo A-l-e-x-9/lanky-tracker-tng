@@ -18672,27 +18672,50 @@ const useFreeChunkySwitch = () => {
   const dk2 = useDk();
   const diddy = useDiddy();
   const lanky = useLanky();
+  const hasOStand = useStand();
   const tiny = useTiny();
   const chunky = useChunky();
   const freeChunky2 = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeChunky));
   switch (freeChunky2) {
     case 1:
-      return dk2 && slam;
+      return {
+        in: dk2 && slam,
+        out: dk2 && slam
+      };
     case 2:
-      return diddy && slam;
+      return {
+        in: diddy && slam,
+        out: diddy && slam
+      };
     case 3:
-      return lanky && slam;
+      return {
+        in: hasOStand && slam,
+        out: lanky && slam
+      };
     case 4:
-      return tiny && slam;
+      return {
+        in: tiny && slam,
+        out: tiny && slam
+      };
     case 5:
-      return chunky && slam;
+      return {
+        in: chunky && slam,
+        out: chunky && slam
+      };
     default:
-      return true;
+      return {
+        in: true,
+        out: true
+      };
   }
 };
 const useLankyFreeChunkyGb = () => {
   const inStage = usePlayFactory();
-  return useFreeChunkySwitch() && inStage;
+  const canHitSwitch = useFreeChunkySwitch();
+  return {
+    in: canHitSwitch.in && inStage,
+    out: canHitSwitch.out && inStage
+  };
 };
 const useLankyProductionGb = () => {
   const production = useFactoryProductionEnabled();
@@ -19264,15 +19287,19 @@ const DkBananas$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExpor
   /* @__PURE__ */ jsxRuntimeExports.jsx(CrusherRoom, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(NintendoCoin, {})
 ] });
-const FreeChunky = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
-  FactoryCheck,
-  {
-    id: 3022,
-    name: "Freeing Chunky Kong",
-    region: "Storage and Arcade Area",
-    canGetLogic: useLankyFreeChunkyGb()
-  }
-);
+const FreeChunky = () => {
+  const logic = useLankyFreeChunkyGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    FactoryCheck,
+    {
+      id: 3022,
+      name: "Freeing Chunky Kong",
+      region: "Storage and Arcade Area",
+      canGetLogic: logic.in,
+      canGetBreak: logic.out
+    }
+  ) });
+};
 const PianoGame = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
@@ -19308,15 +19335,19 @@ const TestingBarrel = () => {
     }
   );
 };
-const ChunkyCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KongCheck, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  FactoryCheck,
-  {
-    id: 3025,
-    name: "Chunky's Cage",
-    region: "Storage and Arcade Area",
-    canGetLogic: useLankyFreeChunkyGb()
-  }
-) });
+const ChunkyCage = () => {
+  const logic = useLankyFreeChunkyGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(KongCheck, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    FactoryCheck,
+    {
+      id: 3025,
+      name: "Chunky's Cage",
+      region: "Storage and Arcade Area",
+      canGetLogic: logic.in,
+      canGetBreak: logic.out
+    }
+  ) });
+};
 const LankyBananas$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(TestingBarrel, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(PianoGame, {}),
