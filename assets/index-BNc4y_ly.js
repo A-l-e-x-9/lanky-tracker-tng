@@ -14026,12 +14026,7 @@ const useTinyStumpGb = () => {
 const useTinyHiveGb = () => {
   const hive = useTinyStumpGb();
   const canSlam = useSlamJapes();
-  const sax = useSax();
-  const orange = useOrange();
-  return {
-    in: hive && canSlam && (sax || orange),
-    out: hive && canSlam
-  };
+  return hive && canSlam;
 };
 const useGeneralThing$5 = () => {
   const anyKong = useAnyKong();
@@ -14842,16 +14837,15 @@ const FeatherGate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
 );
 const HiveInside = () => {
   const hiveGb = useTinyHiveGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     JapesCheck,
     {
       id: 1033,
       name: "Inside Tiny's Hive",
       region: "Hive Area",
-      canGetLogic: hiveGb.in,
-      canGetBreak: hiveGb.out
+      canGetLogic: hiveGb
     }
-  );
+  ) });
 };
 const HiveStump = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
