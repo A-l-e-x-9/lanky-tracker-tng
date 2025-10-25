@@ -278,7 +278,7 @@ const useFreeChunkySwitch = (): LogicBool => {
       return diddy && slam
     case 3:
       return {
-        in: hasOStand && slam
+        in: hasOStand && slam,
         out: lanky && slam
       }
     case 4:
