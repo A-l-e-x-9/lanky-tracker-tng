@@ -273,18 +273,30 @@ const useFreeChunkySwitch = (): LogicBool => {
   const freeChunky = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeChunky))
   switch (freeChunky) {
     case 1:
-      return dk && slam
+      return {
+        in: dk && slam,
+        out: dk && slam
+      }
     case 2:
-      return diddy && slam
+      return {
+        in: diddy && slam,
+        out: diddy && slam
+      }
     case 3:
       return {
         in: hasOStand && slam,
         out: lanky && slam
       }
     case 4:
-      return tiny && slam
+      return {
+        in: tiny && slam,
+        out: tiny && slam
+      }
     case 5:
-      return chunky && slam
+      return {
+        in: chunky && slam,
+        out: chunky && slam
+      }
     default:
       return true
   }
