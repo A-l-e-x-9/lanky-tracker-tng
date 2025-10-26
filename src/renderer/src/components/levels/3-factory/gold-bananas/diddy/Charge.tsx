@@ -1,8 +1,10 @@
+import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useDiddyEnemyGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const ChargeTest: React.FC = () => (
+<GBPool>
 <Miniboss>
   <FactoryCheck
     id={3011}
@@ -11,6 +13,7 @@ const ChargeTest: React.FC = () => (
     canGetLogic={useDiddyEnemyGb()}
   />
 </Miniboss>
+</GBPool>
 )
 
 export default ChargeTest

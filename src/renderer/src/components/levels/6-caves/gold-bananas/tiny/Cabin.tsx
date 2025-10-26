@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useTinyCabinGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
@@ -5,6 +6,7 @@ import CavesCheck from '../../check'
 const TinyCabin: React.FC = () => {
   const cabinCb = useTinyCabinGb()
   return (
+  <GBPool>
   <Miniboss>
     <CavesCheck
       id={6033}
@@ -13,6 +15,7 @@ const TinyCabin: React.FC = () => {
       canGetLogic={cabinCb}
     />
   </Miniboss>
+  </GBPool>
   )
 }
 

@@ -1,9 +1,11 @@
+import GBPool from '@renderer/components/pools/GB'
 import { useCheckDkCavesLobby } from '@renderer/hooks/isles'
 import IslesCheck from '../../check'
 
 const CavesLava: React.FC = () => {
   const cave = useCheckDkCavesLobby()
   return (
+  <GBPool>
     <IslesCheck
       id={4}
       name="DK's Caves Lobby Lava Room"
@@ -11,6 +13,7 @@ const CavesLava: React.FC = () => {
       canGetLogic={cave.in}
       canGetBreak={cave.out}
     />
+    </GBPool>
   )
 }
 

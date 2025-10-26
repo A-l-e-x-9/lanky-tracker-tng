@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useDiddyCandleGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
@@ -5,6 +6,7 @@ import CavesCheck from '../../check'
 const DiddyCandleCabin: React.FC = () => {
   const candleGb = useDiddyCandleGb()
   return (
+  <GBPool>
   <Miniboss>
     <CavesCheck
       id={6013}
@@ -13,6 +15,7 @@ const DiddyCandleCabin: React.FC = () => {
       canGetLogic={candleGb}
     />
   </Miniboss>
+  </GBPool>
   )
 }
 
