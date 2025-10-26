@@ -12501,7 +12501,7 @@ const DiddyBananas$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
 ] });
 const BongosPad = () => {
   const pad = useCheckDkMusicPad();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 3,
@@ -12510,7 +12510,7 @@ const BongosPad = () => {
       canGetLogic: pad.in,
       canGetBreak: pad.out
     }
-  );
+  ) });
 };
 const CavesLava = () => {
   const cave = useCheckDkCavesLobby();
@@ -14620,7 +14620,7 @@ const FairyLocations$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
 ] });
 const Boulder = () => {
   const chunkyBoulderGb = useChunkyBoulderGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     JapesCheck,
     {
       id: 1040,
@@ -14628,7 +14628,7 @@ const Boulder = () => {
       region: "Japes Lowlands",
       canGetLogic: chunkyBoulderGb
     }
-  );
+  ) });
 };
 const HiveBarrel = () => {
   const chunkyHiveGb = useChunkyHiveGb();
@@ -14723,7 +14723,7 @@ const DiddyBananas$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(PeanutTunnel, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(Minecart, {})
 ] });
-const BaboonBlast = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const BaboonBlast = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1004,
@@ -14731,7 +14731,7 @@ const BaboonBlast = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Japes Lowlands",
     canGetLogic: useDkBlastGb$4()
   }
-);
+) });
 const KongCheck = ({ children }) => usePoolKongs() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const DiddyCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KongCheck, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
@@ -17320,7 +17320,7 @@ const LankyBananas$5 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
 ] });
 const BeetleRace$1 = () => {
   const beetleGb = useTinyBeetleGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2032,
@@ -17329,7 +17329,7 @@ const BeetleRace$1 = () => {
       canGetLogic: beetleGb.in,
       canGetBreak: beetleGb.out
     }
-  ) });
+  ) }) });
 };
 const TinyDoorTemple = () => {
   const doorGb = useTiny5DoorGb();
@@ -19181,7 +19181,7 @@ const ChunkyBananas$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeE
 ] });
 const BlockTower = () => {
   const blockGb = useDiddyBlockGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     FactoryCheck,
     {
       id: 3010,
@@ -19190,7 +19190,7 @@ const BlockTower = () => {
       canGetLogic: blockGb.in,
       canGetBreak: blockGb.out
     }
-  );
+  ) });
 };
 const ChargeTest = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
@@ -19243,7 +19243,7 @@ const NintendoCoin = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CompanyPool, { 
   }
 ) });
 const FactoryBlast = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3003, name: "Barrel Blast course and/or DK Arcade Round 1", region: "Storage and Arcade Area", canGetLogic: useDkBlastGb$2() });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3003, name: "Barrel Blast course (and possibly DK Arcade Round 1)", region: "Storage and Arcade Area", canGetLogic: useDkBlastGb$2() }) });
 };
 const CrusherRoom = () => {
   const prodGb = useDkProdGb();
@@ -20408,7 +20408,7 @@ const DiddyBananas$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
 ] });
 const FreeSeal = () => {
   const blastGb = useDkBlastGb$5();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     GalleonCheck,
     {
       id: 4002,
@@ -20417,7 +20417,7 @@ const FreeSeal = () => {
       canGetLogic: blastGb.in,
       canGetBreak: blastGb.out
     }
-  );
+  ) });
 };
 const DkLighthouse = () => {
   const lighthouseGb = useDkLighthouseGb();
@@ -22676,7 +22676,7 @@ const DiddyBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
 ] });
 const DkBarn = () => {
   const barnGb = useDkBarnGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5004,
@@ -22685,11 +22685,11 @@ const DkBarn = () => {
       canGetLogic: barnGb.in,
       canGetBreak: barnGb.out
     }
-  );
+  ) });
 };
 const ForestBlast = () => (
   /*  <ToughGoldenBanana>*/
-  /* @__PURE__ */ jsxRuntimeExports.jsx(
+  /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5001,
@@ -22697,7 +22697,7 @@ const ForestBlast = () => (
       region: "Forest Area 3",
       canGetLogic: useDkBlastGb$1()
     }
-  )
+  ) })
 );
 const DkMill = () => {
   const millGb = useDkMillGb();
@@ -22803,7 +22803,7 @@ const AnthillBean = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { chil
     canGetLogic: useTinyAntGb()
   }
 ) }) });
-const BeanCheck = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const BeanCheck = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5033,
@@ -22811,7 +22811,7 @@ const BeanCheck = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Forest Area 2",
     canGetLogic: useTinyBeanGb()
   }
-);
+) });
 const MushroomBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
@@ -24299,7 +24299,7 @@ const DiddyBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
 ] });
 const CavesBlast = () => (
   //  <ToughGoldenBanana>
-  /* @__PURE__ */ jsxRuntimeExports.jsx(
+  /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6001,
@@ -24307,7 +24307,7 @@ const CavesBlast = () => (
       region: "Crystal Caves Main",
       canGetLogic: useDkBlastGb()
     }
-  )
+  ) })
 );
 const DkGauntletCabin = () => {
   const cabinGb = useDkCabinGb();
@@ -24352,7 +24352,7 @@ const DkBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExpor
 ] });
 const BeetleRace = () => {
   const raceGb = useLankyRaceGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6020,
@@ -24361,7 +24361,7 @@ const BeetleRace = () => {
       canGetLogic: raceGb.in,
       canGetBreak: raceGb.out
     }
-  ) });
+  ) }) });
 };
 const SprintCabin = () => {
   const cabinGb = useLankyCabinGb();
@@ -26279,7 +26279,7 @@ const ChunkyBananas = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExp
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMuseum, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyCrypt, {})
 ] });
-const DiddyBallroom = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const DiddyBallroom = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   CastleCheck,
   {
     id: 7011,
@@ -26287,7 +26287,7 @@ const DiddyBallroom = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Various Castle Rooms",
     canGetLogic: useDiddyRoomGb()
   }
-);
+) });
 const DiddyCrypt = () => {
   const doCheck = useDiddyCryptGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
