@@ -1,9 +1,11 @@
 import { useDkBarnGb } from '@renderer/hooks/forest'
+import GBPool from '@renderer/components/pools/GB'
 import ForestCheck from '../../check'
 
 const DkBarn: React.FC = () => {
   const barnGb = useDkBarnGb()
   return (
+  <GBPool>
     <ForestCheck
       id={5004}
       name="Thornvine Barn Barrel"
@@ -11,6 +13,7 @@ const DkBarn: React.FC = () => {
       canGetLogic={barnGb.in}
       canGetBreak={barnGb.out}
     />
+    </GBPool>
   )
 }
 

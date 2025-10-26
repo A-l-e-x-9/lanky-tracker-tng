@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
 import { useLankyRaceGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
@@ -5,6 +6,7 @@ import CavesCheck from '../../check'
 const BeetleRace: React.FC = () => {
   const raceGb = useLankyRaceGb()
   return (
+  <GBPool>
     <ToughGoldenBanana>
       <CavesCheck
         id={6020}
@@ -14,6 +16,7 @@ const BeetleRace: React.FC = () => {
         canGetBreak={raceGb.out}
       />
     </ToughGoldenBanana>
+    </GBPool>
   )
 }
 

@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
 import { useTinyBeetleGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../../check'
@@ -5,6 +6,7 @@ import AztecCheck from '../../check'
 const BeetleRace: React.FC = () => {
   const beetleGb = useTinyBeetleGb()
   return (
+  <GBPool>
     <ToughGoldenBanana>
       <AztecCheck
         id={2032}
@@ -14,6 +16,7 @@ const BeetleRace: React.FC = () => {
         canGetBreak={beetleGb.out}
       />
     </ToughGoldenBanana>
+   </GBPool>
   )
 }
 
