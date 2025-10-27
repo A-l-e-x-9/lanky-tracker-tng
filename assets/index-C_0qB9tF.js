@@ -22687,18 +22687,15 @@ const DkBarn = () => {
     }
   ) });
 };
-const ForestBlast = () => (
-  /*  <ToughGoldenBanana>*/
-  /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ForestCheck,
-    {
-      id: 5001,
-      name: "Baboon Blast Barrel",
-      region: "Forest Area 3",
-      canGetLogic: useDkBlastGb$1()
-    }
-  ) })
-);
+const ForestBlast = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  ForestCheck,
+  {
+    id: 5001,
+    name: "Baboon Blast Barrel",
+    region: "Forest Area 3",
+    canGetLogic: useDkBlastGb$1()
+  }
+) });
 const DkMill = () => {
   const millGb = useDkMillGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24297,18 +24294,15 @@ const DiddyBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyGauntletCabin, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyCandleCabin, {})
 ] });
-const CavesBlast = () => (
-  //  <ToughGoldenBanana>
-  /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CavesCheck,
-    {
-      id: 6001,
-      name: "Baboon Blast Barrel",
-      region: "Crystal Caves Main",
-      canGetLogic: useDkBlastGb()
-    }
-  ) })
-);
+const CavesBlast = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  CavesCheck,
+  {
+    id: 6001,
+    name: "Baboon Blast Barrel",
+    region: "Crystal Caves Main",
+    canGetLogic: useDkBlastGb()
+  }
+) });
 const DkGauntletCabin = () => {
   const cabinGb = useDkCabinGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
