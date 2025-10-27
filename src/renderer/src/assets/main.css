@@ -274,6 +274,8 @@ main .grid {
 
 .full-grid {grid-column: span 6;}
 
+.react-tabs__tab--selected {background-color: #800040;}
+
 @media (max-width: 720px) {
   .text {
     font-size: 20px;
