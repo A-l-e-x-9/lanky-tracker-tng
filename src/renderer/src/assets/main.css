@@ -235,7 +235,6 @@ main > article:last-child {
 main .grid {
   display: grid;
   grid-template-columns: 4fr 2.5fr 0.5fr;
-  height: calc(100vh - 3ex);
 }
 
 .grid > .checked:nth-of-type(3n + 1) > span:first-child,
