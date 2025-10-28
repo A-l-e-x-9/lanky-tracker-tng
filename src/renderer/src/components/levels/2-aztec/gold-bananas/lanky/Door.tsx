@@ -1,9 +1,11 @@
+import GBPool from '@renderer/components/pools/GB'
 import { useLanky5DoorGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../../check'
 
 const LankyDoorTemple: React.FC = () => {
   const doorGb = useLanky5DoorGb()
   return (
+  <GBPool>
     <AztecCheck
       id={2021}
       name="Lanky's 5 Door Temple"
@@ -11,6 +13,7 @@ const LankyDoorTemple: React.FC = () => {
       canGetLogic={doorGb.in}
       canGetBreak={doorGb.out}
     />
+    </GBPool>
   )
 }
 
