@@ -50,8 +50,6 @@ body {
   line-height: 1.6;
   font-family: Barlow, Tahoma, Verdana, sans-serif;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -94,7 +92,6 @@ code {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 80px;
 }
 
 .text {
