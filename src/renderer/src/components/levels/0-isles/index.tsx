@@ -7,6 +7,7 @@ import CrateLocations from './crates'
 import DirtLocations from './dirt'
 import EnemyLocations from './enemies'
 import FairyLocations from './fairies'
+import FairyReward from './fairies/FairyReward'
 import ChunkyBananas from './gold-bananas/chunky'
 import DiddyBananas from './gold-bananas/diddy'
 import DkBananas from './gold-bananas/dk'
@@ -26,13 +27,11 @@ import WrinklyDoors from './wrinkly'
 
 const ClassicChecks: React.FC = () => (
   <div className="grid">
-    <GBPool>
-      <DkBananas />
-      <DiddyBananas />
-      <LankyBananas />
-      <TinyBananas />
-      <ChunkyBananas />
-    </GBPool>
+    <DkBananas />
+    <DiddyBananas />
+    <LankyBananas />
+    <TinyBananas />
+    <ChunkyBananas />
     <KasplatLocations />
     <CrateLocations />
     <DirtLocations />
@@ -50,6 +49,7 @@ const ClassicChecks: React.FC = () => (
     <BoulderLocations />
     <WrinklyDoors />
     <ShopLocations />
+    <FairyReward />
     <JetpacCheck />
     <EnemyLocations />
   </div>
