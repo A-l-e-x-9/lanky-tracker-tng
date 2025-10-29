@@ -1,4 +1,3 @@
-import GBPool from '@renderer/components/pools/GB'
 import BananaMedalPool, { IslesMedalPool } from '@renderer/components/pools/BananaMedals'
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
