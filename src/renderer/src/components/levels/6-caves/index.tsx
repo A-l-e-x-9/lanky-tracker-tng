@@ -1,4 +1,3 @@
-import GBPool from '@renderer/components/pools/GB'
 import BananaMedalPool from '@renderer/components/pools/BananaMedals'
 import DropPool from '@renderer/components/pools/Drops'
 import useDonkStore from '@renderer/store'
@@ -26,13 +25,11 @@ import BoulderLocations from './boulders'
 
 const ClassicChecks: React.FC = () => (
   <div className="grid">
-  <GBPool>
     <DkBananas />
     <DiddyBananas />
     <LankyBananas />
     <TinyBananas />
     <ChunkyBananas />
-  </GBPool>
     <KasplatLocations />
     <CrateLocations />
     <KoshaDirt />
