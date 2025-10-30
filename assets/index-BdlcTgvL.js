@@ -12543,7 +12543,7 @@ const CoconutCage = () => {
 };
 const JapesRock = () => {
   const japesRock = useCheckDkJapesRock();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 1,
@@ -12551,7 +12551,7 @@ const JapesRock = () => {
       region: "DK Island",
       canGetLogic: japesRock
     }
-  );
+  ) });
 };
 const DkBananas$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(JapesRock, {}),
@@ -17071,7 +17071,7 @@ const ChunkyDoorTemple = () => {
 };
 const ChunkyKlaptrap = () => {
   const klaptrapGb = useChunkyKlaptrapGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2041,
@@ -17080,7 +17080,7 @@ const ChunkyKlaptrap = () => {
       canGetLogic: klaptrapGb.in,
       canGetBreak: klaptrapGb.out
     }
-  ) });
+  ) }) });
 };
 const TunnelBarrel = () => {
   const hunkyGb = useChunkyHunkyGb();
@@ -17344,7 +17344,7 @@ const TinyDoorTemple = () => {
 };
 const TinyKlaptrap = () => {
   const klaptrapGb = useTinyKlaptrapGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2030,
@@ -17353,7 +17353,7 @@ const TinyKlaptrap = () => {
       canGetLogic: klaptrapGb.in,
       canGetBreak: klaptrapGb.out
     }
-  ) });
+  ) }) });
 };
 const LavaPedestal = () => {
   const lavaGb = useTinyLavaGb();
@@ -19151,7 +19151,7 @@ const DarkRoom = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children:
 ) });
 const ToyMonster = () => {
   const inLogic = useChunkyKaijuGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     FactoryCheck,
     {
       id: 3040,
@@ -19160,7 +19160,7 @@ const ToyMonster = () => {
       canGetLogic: inLogic.in,
       canGetBreak: inLogic.out
     }
-  ) });
+  ) }) });
 };
 const ChunkyProduction = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
