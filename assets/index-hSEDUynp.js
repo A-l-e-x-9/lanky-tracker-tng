@@ -12421,9 +12421,10 @@ const FairyReward = () => {
     }
   ) });
 };
+const GBPool = ({ children }) => usePoolGoldBananas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const HelmBarrel = () => {
   const helm = useCheckChunkyHelm();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 43,
@@ -12432,7 +12433,7 @@ const HelmBarrel = () => {
       canGetLogic: helm.in,
       canGetBreak: helm.out
     }
-  );
+  ) });
 };
 const PineappleCage = () => {
   const cage = useCheckChunkyCage();
@@ -12452,7 +12453,6 @@ const ChunkyBananas$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeE
   /* @__PURE__ */ jsxRuntimeExports.jsx(PoundX, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(HelmBarrel, {})
 ] });
-const GBPool = ({ children }) => usePoolGoldBananas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const GuitarPad = () => {
   const cave = useCheckDiddyCaves();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14630,7 +14630,7 @@ const Boulder = () => {
 };
 const HiveBarrel = () => {
   const chunkyHiveGb = useChunkyHiveGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     JapesCheck,
     {
       id: 1042,
@@ -14639,7 +14639,7 @@ const HiveBarrel = () => {
       canGetLogic: chunkyHiveGb.in,
       canGetBreak: chunkyHiveGb.out
     }
-  );
+  ) });
 };
 const ChunkyTimedCage = () => {
   const cage = useChunkyCagedGb();
@@ -14845,7 +14845,7 @@ const HiveInside = () => {
     }
   ) });
 };
-const HiveStump = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const HiveStump = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
     id: 1032,
@@ -14853,7 +14853,7 @@ const HiveStump = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Hive Area",
     canGetLogic: useTinyStumpGb()
   }
-);
+) });
 const TinyTimedCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
@@ -19258,7 +19258,7 @@ const CrusherRoom = () => {
 };
 const PowerHut = () => {
   const hutGb = useDkHutGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     FactoryCheck,
     {
       id: 3002,
@@ -19267,7 +19267,7 @@ const PowerHut = () => {
       canGetLogic: hutGb.in,
       canGetBreak: hutGb.out
     }
-  );
+  ) });
 };
 const NumberGame = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
