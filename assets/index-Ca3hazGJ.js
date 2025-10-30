@@ -15617,13 +15617,11 @@ const JapesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {})
 ] });
 const ClassicChecks$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsxs(GBPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$6, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$6, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$6, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$6, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$6, {})
-  ] }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$6, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$6, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$6, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$6, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CrateLocations$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DirtLocations$2, {}),
@@ -18472,13 +18470,11 @@ const BoulderLocations$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(PlusVase, {})
 ] });
 const ClassicChecks$5 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsxs(GBPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$5, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$5, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$5, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$5, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$5, {})
-  ] }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$5, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$5, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$5, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$5, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CrateLocations$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DirtLocations$1, {}),
@@ -20094,13 +20090,11 @@ const FactoryRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", 
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$5, {})
 ] });
 const ClassicChecks$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsxs(GBPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$4, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$4, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$4, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$4, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$4, {})
-  ] }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$4, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$4, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$4, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$4, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CrateLocations$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DarkRoomDirt, {}),
@@ -21459,13 +21453,11 @@ const GalleonRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$4, {})
 ] }) });
 const ClassicChecks$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsxs(GBPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$3, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$3, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$3, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$3, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$3, {})
-  ] }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CactusCrate, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(LighthouseDirt, {}),
@@ -23671,13 +23663,11 @@ const BoulderLocations$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(MillBackKeg, {})
 ] });
 const ClassicChecks$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsxs(GBPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$2, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$2, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$2, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$2, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$2, {})
-  ] }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CrateLocations$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DirtLocations, {}),
@@ -25274,13 +25264,11 @@ const BoulderLocations = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(Okuu, {})
 ] });
 const ClassicChecks$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsxs(GBPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$1, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$1, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$1, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$1, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$1, {})
-  ] }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CrateLocations, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(KoshaDirt, {}),
@@ -27171,27 +27159,33 @@ const UndergroundChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntim
   /* @__PURE__ */ jsxRuntimeExports.jsx(MausoleumCrate, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(UndergroundEnemies, {})
 ] });
-const CastleRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal, {})
+const CastleRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "not-available", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "WARNING:" }),
+    " If you don't have Climbing and you attempt to do any check in the Crypt area, you won't be able to get back up without killing your Kong or pause-exiting, then re-entering. For that reason, all checks involving this area in some way will be yellow if you indicated that you didn't have Climbing in the moves table!"
   ] }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TreeChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(SurroundingsChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(MuseumChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(BallroomChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(RoomsChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(UndergroundChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$1, {})
+  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TreeChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(SurroundingsChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(MuseumChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(BallroomChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(RoomsChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(UndergroundChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$1, {})
+  ] })
 ] });
 const BoulderCheck = () => {
   const canDoMuseum = useChunkyRoomGb();
@@ -27211,13 +27205,11 @@ const ClassicChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { chil
     " If you don't have Climbing and you attempt to do any check in the Crypt area, you won't be able to get back up without killing your Kong or pause-exiting, then re-entering. For that reason, all checks involving this area in some way will be yellow if you indicated that you didn't have Climbing in the moves table!"
   ] }),
   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(GBPool, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas, {})
-    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(MausoleumCrate, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TopFloorDirt, {}),
