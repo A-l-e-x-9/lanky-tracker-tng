@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useLankyIglooGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
@@ -5,6 +6,7 @@ import CavesCheck from '../../check'
 const LankyIgloo: React.FC = () => {
   const iglooGb = useLankyIglooGb()
   return (
+  <GBPool>
   <Miniboss>
     <CavesCheck
       id={6022}
@@ -14,6 +16,7 @@ const LankyIgloo: React.FC = () => {
       canGetBreak={iglooGb.out}
     />
   </Miniboss>
+  </GBPool>
   )
 }
 
