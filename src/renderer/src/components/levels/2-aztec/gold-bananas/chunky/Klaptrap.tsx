@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useChunkyKlaptrapGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../../check'
@@ -5,6 +6,7 @@ import AztecCheck from '../../check'
 const ChunkyKlaptrap: React.FC = () => {
   const klaptrapGb = useChunkyKlaptrapGb()
   return (
+  <GBPool>
   <Miniboss>
     <AztecCheck
       id={2041}
@@ -14,6 +16,7 @@ const ChunkyKlaptrap: React.FC = () => {
       canGetBreak={klaptrapGb.out}
     />
   </Miniboss>
+  </GBPool>
   )
 }
 
