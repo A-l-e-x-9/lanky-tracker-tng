@@ -1,9 +1,11 @@
+import GBPool from '@renderer/components/pools/GB'
 import { useDiddyLighthouseGb } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
 
 const DiddyLighthouse: React.FC = () => {
   const shipGb = useDiddyLighthouseGb()
   return (
+  <GBPool>
     <GalleonCheck
       id={4010}
       name="Top of the Lighthouse"
@@ -11,6 +13,7 @@ const DiddyLighthouse: React.FC = () => {
       canGetLogic={shipGb.in}
       canGetBreak={shipGb.out}
     />
+    </GBPool>
   )
 }
 
