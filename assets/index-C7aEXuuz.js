@@ -24224,7 +24224,7 @@ const EarlyGone = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children
     canGetLogic: useChunkyGoneGb()
   }
 ) });
-const ChunkyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+const ChunkyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
   {
     id: 6042,
@@ -24232,7 +24232,7 @@ const ChunkyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { chil
     region: "Caves Igloo",
     canGetLogic: useChunkyIglooGb()
   }
-) });
+) }) });
 const ChunkyBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(EarlyGone, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(TransparentIgloo, {}),
@@ -24264,7 +24264,7 @@ const DiddyGauntletCabin = () => {
     }
   ) }) });
 };
-const DiddyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const DiddyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
   {
     id: 6011,
@@ -24272,7 +24272,7 @@ const DiddyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Caves Igloo",
     canGetLogic: useDiddyIglooGb()
   }
-);
+) });
 const WaterfallBarrel = () => {
   const waterfallGb = useDiddyWaterfallGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24316,7 +24316,7 @@ const DkGauntletCabin = () => {
 };
 const DkIgloo = () => {
   const iglooGb = useDkIglooGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6002,
@@ -24325,7 +24325,7 @@ const DkIgloo = () => {
       canGetLogic: iglooGb.in,
       canGetBreak: iglooGb.out
     }
-  );
+  ) });
 };
 const RotatingCabin = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
@@ -24379,7 +24379,7 @@ const CastleSlam = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { childre
 ) });
 const LankyIgloo = () => {
   const iglooGb = useLankyIglooGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6022,
@@ -24388,7 +24388,7 @@ const LankyIgloo = () => {
       canGetLogic: iglooGb.in,
       canGetBreak: iglooGb.out
     }
-  ) });
+  ) }) });
 };
 const LankyBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(BeetleRace, {}),
@@ -24408,7 +24408,7 @@ const TinyCabin = () => {
     }
   ) }) });
 };
-const TinyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const TinyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
   {
     id: 6032,
@@ -24416,7 +24416,7 @@ const TinyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Caves Igloo",
     canGetLogic: useTinyIglooGb()
   }
-);
+) });
 const MiniBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
   {
