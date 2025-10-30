@@ -17273,7 +17273,7 @@ const LankyDoorTemple = () => {
 };
 const LlamaBarrel = () => {
   const snakeGb = useLankySnakeGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2022,
@@ -17282,7 +17282,7 @@ const LlamaBarrel = () => {
       canGetLogic: snakeGb.in,
       canGetBreak: snakeGb.out
     }
-  );
+  ) });
 };
 const MatchGame = () => {
   const matchGb = useLankyMatchGb();
@@ -17357,7 +17357,7 @@ const TinyKlaptrap = () => {
 };
 const LavaPedestal = () => {
   const lavaGb = useTinyLavaGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2033,
@@ -17366,7 +17366,7 @@ const LavaPedestal = () => {
       canGetLogic: lavaGb.in,
       canGetBreak: lavaGb.out
     }
-  );
+  ) });
 };
 const TinyBananas$5 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKlaptrap, {}),
@@ -20365,7 +20365,7 @@ const DiddyGold = () => {
 };
 const DiddyLighthouse = () => {
   const shipGb = useDiddyLighthouseGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     GalleonCheck,
     {
       id: 4010,
@@ -20374,7 +20374,7 @@ const DiddyLighthouse = () => {
       canGetLogic: shipGb.in,
       canGetBreak: shipGb.out
     }
-  );
+  ) });
 };
 const Mechfish = () => {
   const mechGb = useDiddyMechGb();
@@ -20419,7 +20419,7 @@ const FreeSeal = () => {
 };
 const DkLighthouse = () => {
   const lighthouseGb = useDkLighthouseGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     GalleonCheck,
     {
       id: 4001,
@@ -20428,7 +20428,7 @@ const DkLighthouse = () => {
       canGetLogic: lighthouseGb.in,
       canGetBreak: lighthouseGb.out
     }
-  );
+  ) });
 };
 const SealRace = () => {
   const blastGb = useDkBlastGb$5();
@@ -26328,7 +26328,7 @@ const DkDungeon = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children
 ) });
 const DkLibrary = () => {
   const roomGb = useDkRoomGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CastleCheck,
     {
       id: 7002,
@@ -26337,7 +26337,7 @@ const DkLibrary = () => {
       canGetLogic: roomGb.in,
       canGetBreak: roomGb.out
     }
-  );
+  ) });
 };
 const DkMinecart = () => {
   const doCheck = useDkCryptGb();
