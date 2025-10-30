@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useDiddyGauntletGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
@@ -5,6 +6,7 @@ import CavesCheck from '../../check'
 const DiddyGauntletCabin: React.FC = () => {
   const cabinGauntlet = useDiddyGauntletGb()
   return (
+  <GBPool>
   <Miniboss>
     <CavesCheck
       id={6012}
@@ -14,6 +16,7 @@ const DiddyGauntletCabin: React.FC = () => {
       canGetBreak={cabinGauntlet.out}
     />
   </Miniboss>
+  </GBPool>
   )
 }
 
