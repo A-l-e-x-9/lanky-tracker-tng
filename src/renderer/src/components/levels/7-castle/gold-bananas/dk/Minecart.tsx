@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
 import { useDkCryptGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
@@ -5,6 +6,7 @@ import CastleCheck from '../../check'
 const DkMinecart: React.FC = () => {
 const doCheck = useDkCryptGb()
 return (
+<GBPool>
 <ToughGoldenBanana>
   <CastleCheck
     id={7003}
@@ -14,6 +16,7 @@ return (
     canGetBreak={doCheck.out}
   />
 </ToughGoldenBanana>
+</GBPool>
 )
 }
 

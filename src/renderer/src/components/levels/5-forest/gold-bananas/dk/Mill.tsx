@@ -1,9 +1,11 @@
+import GBPool from '@renderer/components/pools/GB'
 import { useDkMillGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const DkMill: React.FC = () => {
   const millGb = useDkMillGb()
   return (
+  <GBPool>
     <ForestCheck
       id={5003}
       name="DK's Mill Levers"
@@ -11,6 +13,7 @@ const DkMill: React.FC = () => {
       canGetLogic={millGb.in}
       canGetBreak={millGb.out}
     />
+    </GBPool>
   )
 }
 

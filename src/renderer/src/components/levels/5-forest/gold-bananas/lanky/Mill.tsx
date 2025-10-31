@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useLankyMillGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
@@ -5,6 +6,7 @@ import ForestCheck from '../../check'
 const LankyMill: React.FC = () => {
   const millGb = useLankyMillGb()
   return (
+  <GBPool>
   <Miniboss>
     <ForestCheck
       id={5020}
@@ -14,6 +16,7 @@ const LankyMill: React.FC = () => {
       canGetBreak={millGb.out}
     />
   </Miniboss>
+  </GBPool>
   )
 }
 
