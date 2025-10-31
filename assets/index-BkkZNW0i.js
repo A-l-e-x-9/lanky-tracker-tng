@@ -14677,7 +14677,7 @@ const ChunkyBananas$6 = () => {
 const ToughGoldenBanana = ({ children }) => usePoolToughBananas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const Minecart = () => {
   const mineGb = useDiddyMinecartGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     JapesCheck,
     {
       id: 1013,
@@ -14686,7 +14686,7 @@ const Minecart = () => {
       canGetLogic: mineGb.in,
       canGetBreak: mineGb.out
     }
-  ) });
+  ) }) });
 };
 const PeanutTunnel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
@@ -17284,7 +17284,7 @@ const LlamaBarrel = () => {
 };
 const MatchGame = () => {
   const matchGb = useLankyMatchGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2023,
@@ -17293,7 +17293,7 @@ const MatchGame = () => {
       canGetLogic: matchGb.in,
       canGetBreak: matchGb.out
     }
-  );
+  ) });
 };
 const VultureShoot = () => {
   const vultureGb = useLankyVultureGb();
@@ -20372,7 +20372,7 @@ const DiddyLighthouse = () => {
 };
 const Mechfish = () => {
   const mechGb = useDiddyMechGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     GalleonCheck,
     {
       id: 4012,
@@ -20381,7 +20381,7 @@ const Mechfish = () => {
       canGetLogic: mechGb.in,
       canGetBreak: mechGb.out
     }
-  );
+  ) });
 };
 const Diddy5Ship = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
@@ -20554,7 +20554,7 @@ const TreasureClams = () => {
     )
   ] });
 };
-const MermaidReward = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const MermaidReward = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
     id: 4030,
@@ -20562,7 +20562,7 @@ const MermaidReward = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Lighthouse Area",
     canGetLogic: useTinyMermaidGb()
   }
-);
+) });
 const Tiny5Ship = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   GalleonCheck,
   {
@@ -22580,7 +22580,7 @@ const ChunkyFace = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { childre
 ) });
 const ChunkyMill = () => {
   const millGb = useChunkyMillGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5042,
@@ -22589,9 +22589,9 @@ const ChunkyMill = () => {
       canGetLogic: millGb.in,
       canGetBreak: millGb.out
     }
-  );
+  ) });
 };
-const ChunkyMinecart = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+const ChunkyMinecart = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5040,
@@ -22599,7 +22599,7 @@ const ChunkyMinecart = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBa
     region: "Forest Central Area",
     canGetLogic: useChunkyMineGb()
   }
-) });
+) }) });
 const ChunkyBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMinecart, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyFace, {}),
@@ -22688,7 +22688,7 @@ const ForestBlast = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { childr
 ) });
 const DkMill = () => {
   const millGb = useDkMillGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5003,
@@ -22697,9 +22697,9 @@ const DkMill = () => {
       canGetLogic: millGb.in,
       canGetBreak: millGb.out
     }
-  );
+  ) });
 };
-const MushroomCannon = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const MushroomCannon = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5002,
@@ -22707,7 +22707,7 @@ const MushroomCannon = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Inside the Giant Mushroom",
     canGetLogic: useDkMushGb()
   }
-);
+) });
 const DkBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(ForestBlast, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(MushroomCannon, {}),
@@ -22716,7 +22716,7 @@ const DkBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExpor
 ] });
 const LankyMill = () => {
   const millGb = useLankyMillGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5020,
@@ -22725,7 +22725,7 @@ const LankyMill = () => {
       canGetLogic: millGb.in,
       canGetBreak: millGb.out
     }
-  ) });
+  ) }) });
 };
 const RabbitRace = () => {
   const raceGb = useLankyRaceGb$1();
@@ -22799,7 +22799,7 @@ const BeanCheck = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children
     canGetLogic: useTinyBeanGb()
   }
 ) });
-const MushroomBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const MushroomBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   ForestCheck,
   {
     id: 5030,
@@ -22807,7 +22807,7 @@ const MushroomBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Inside the Giant Mushroom",
     canGetLogic: useTinyMushGb()
   }
-);
+) });
 const SpiderBoss = () => {
   const spiderGb = useTinySpiderGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24407,7 +24407,7 @@ const TinyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children
     canGetLogic: useTinyIglooGb()
   }
 ) });
-const MiniBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const MiniBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   CavesCheck,
   {
     id: 6030,
@@ -24415,7 +24415,7 @@ const MiniBarrel = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Crystal Caves Main",
     canGetLogic: useTinyCaveGb()
   }
-);
+) });
 const MonkeyportIgloo = () => {
   const portGb = useTinyPortGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26218,7 +26218,7 @@ const ChunkyCrypt = () => {
     }
   ) });
 };
-const ChunkyMuseum = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const ChunkyMuseum = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   CastleCheck,
   {
     id: 7042,
@@ -26226,7 +26226,7 @@ const ChunkyMuseum = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Various Castle Rooms",
     canGetLogic: useChunkyRoomGb()
   }
-);
+) });
 const ChunkyShed = () => {
   const shedGb = useChunkyShedGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26329,7 +26329,7 @@ const DkLibrary = () => {
 };
 const DkMinecart = () => {
   const doCheck = useDkCryptGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CastleCheck,
     {
       id: 7003,
@@ -26338,7 +26338,7 @@ const DkMinecart = () => {
       canGetLogic: doCheck.in,
       canGetBreak: doCheck.out
     }
-  ) });
+  ) }) });
 };
 const DkTree = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
   CastleCheck,
@@ -26379,7 +26379,7 @@ const LankyGreenhouse = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { ch
 ) });
 const LankyMausoleum = () => {
   const mausoleumGb = useLankyMausoleumGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CastleCheck,
     {
       id: 7022,
@@ -26388,7 +26388,7 @@ const LankyMausoleum = () => {
       canGetLogic: mausoleumGb.in,
       canGetBreak: mausoleumGb.out
     }
-  );
+  ) });
 };
 const LankyTower = () => {
   const roomGb = useLankyRoomGb();
@@ -26420,7 +26420,7 @@ const TinyChasm = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children
 ) });
 const TinyMausoleum = () => {
   const mausoleumGb = useTinyMausoleumGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CastleCheck,
     {
       id: 7032,
@@ -26429,7 +26429,7 @@ const TinyMausoleum = () => {
       canGetLogic: mausoleumGb.in,
       canGetBreak: mausoleumGb.out
     }
-  );
+  ) });
 };
 const TinyRace = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   CastleCheck,
