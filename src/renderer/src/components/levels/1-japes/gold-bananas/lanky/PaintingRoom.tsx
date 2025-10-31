@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useLankyPaintingGb } from '@renderer/hooks/japes'
 import JapesCheck from '../../check'
@@ -5,6 +6,7 @@ import JapesCheck from '../../check'
 const PaintingRoom: React.FC = () => {
   const paintingGb = useLankyPaintingGb()
   return (
+  <GBPool>
   <Miniboss>
     <JapesCheck
       id={1023}
@@ -14,6 +16,7 @@ const PaintingRoom: React.FC = () => {
       canGetBreak={paintingGb.out}
     />
   </Miniboss>
+  </GBPool>
   )
 }
 
