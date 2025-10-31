@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
 import { useDiddyOwlGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
@@ -5,6 +6,7 @@ import ForestCheck from '../../check'
 const OwlRace: React.FC = () => {
   const owlGb = useDiddyOwlGb()
   return (
+  <GBPool>
     <ToughGoldenBanana>
       <ForestCheck
         id={5011}
@@ -14,6 +16,7 @@ const OwlRace: React.FC = () => {
         canGetBreak={owlGb.out}
       />
     </ToughGoldenBanana>
+    </GBPool>
   )
 }
 
