@@ -22608,7 +22608,7 @@ const ChunkyBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeE
 ] });
 const OwlRace = () => {
   const owlGb = useDiddyOwlGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5011,
@@ -22617,7 +22617,7 @@ const OwlRace = () => {
       canGetLogic: owlGb.in,
       canGetBreak: owlGb.out
     }
-  ) });
+  ) }) });
 };
 const DarkRafters = () => {
   const raftersGb = useDiddyRaftersGb();
