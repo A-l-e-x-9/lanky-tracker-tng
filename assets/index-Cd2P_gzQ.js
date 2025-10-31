@@ -19265,7 +19265,7 @@ const PowerHut = () => {
     }
   ) });
 };
-const NumberGame = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
+const NumberGame = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   FactoryCheck,
   {
     id: 3001,
@@ -19273,7 +19273,7 @@ const NumberGame = () => /* @__PURE__ */ jsxRuntimeExports.jsx(
     region: "Testing Room",
     canGetLogic: useDkNumberGb()
   }
-);
+) });
 const DkBananas$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(NumberGame, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(PowerHut, {}),
