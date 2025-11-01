@@ -1,9 +1,11 @@
+import GBPool from '@renderer/components/pools/GB'
 import { useDiddyRaftersGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const DarkRafters: React.FC = () => {
   const raftersGb = useDiddyRaftersGb()
   return (
+  <GBPool>
     <ForestCheck
       id={5013}
       name="Diddy's Dark Rafters"
@@ -11,6 +13,7 @@ const DarkRafters: React.FC = () => {
       canGetLogic={raftersGb.in}
       canGetBreak={raftersGb.out}
     />
+    </GBPool>
   )
 }
 

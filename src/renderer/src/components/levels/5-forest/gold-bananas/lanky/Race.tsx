@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
 import { useLankyRaceGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
@@ -5,6 +6,7 @@ import ForestCheck from '../../check'
 const RabbitRace: React.FC = () => {
   const raceGb = useLankyRaceGb()
   return (
+  <GBPool>
     <ToughGoldenBanana>
       <ForestCheck
         id={5022}
@@ -14,6 +16,7 @@ const RabbitRace: React.FC = () => {
         canGetBreak={raceGb.out}
       />
     </ToughGoldenBanana>
+    </GBPool>
   )
 }
 

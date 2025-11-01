@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
 import { useDkBlastGb } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
@@ -5,6 +6,7 @@ import GalleonCheck from '../../check'
 const SealRace: React.FC = () => {
   const blastGb = useDkBlastGb()
   return (
+  <GBPool>
     <ToughGoldenBanana>
       <GalleonCheck
         id={4003}
@@ -14,6 +16,7 @@ const SealRace: React.FC = () => {
         canGetBreak={blastGb.out}
       />
     </ToughGoldenBanana>
+    </GBPool>
   )
 }
 

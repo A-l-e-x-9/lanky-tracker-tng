@@ -1,8 +1,10 @@
+import GBPool from '@renderer/components/pools/GB'
 import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
 import { useTinyRaceGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const CarRace: React.FC = () => (
+<GBPool>
 <ToughGoldenBanana>
   <FactoryCheck
     id={3031}
@@ -11,6 +13,7 @@ const CarRace: React.FC = () => (
     canGetLogic={useTinyRaceGb()}
   />
 </ToughGoldenBanana>
+</GBPool>
 )
 
 export default CarRace
