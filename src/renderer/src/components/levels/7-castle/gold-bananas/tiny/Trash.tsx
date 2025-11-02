@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useTinyTrashGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
@@ -5,6 +6,7 @@ import CastleCheck from '../../check'
 const TinyTrash: React.FC = () => {
   const trashGb = useTinyTrashGb()
   return (
+  <GBPool>
   <Miniboss>
     <CastleCheck
       id={7031}
@@ -14,6 +16,7 @@ const TinyTrash: React.FC = () => {
       canGetBreak={trashGb.out}
     />
   </Miniboss>
+  </GBPool>
   )
 }
 

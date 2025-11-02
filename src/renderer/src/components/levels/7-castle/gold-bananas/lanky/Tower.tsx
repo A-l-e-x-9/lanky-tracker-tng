@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useLankyRoomGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
@@ -5,6 +6,7 @@ import CastleCheck from '../../check'
 const LankyTower: React.FC = () => {
   const roomGb = useLankyRoomGb()
   return (
+  <GBPool>
   <Miniboss>
     <CastleCheck
       id={7020}
@@ -14,6 +16,7 @@ const LankyTower: React.FC = () => {
       canGetBreak={roomGb.out}
     />
   </Miniboss>
+  </GBPool>
   )
 }
 

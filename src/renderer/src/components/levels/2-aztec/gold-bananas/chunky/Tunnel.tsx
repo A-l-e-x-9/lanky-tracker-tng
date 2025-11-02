@@ -1,9 +1,11 @@
+import GBPool from '@renderer/components/pools/GB'
 import { useChunkyHunkyGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../../check'
 
 const TunnelBarrel: React.FC = () => {
   const hunkyGb = useChunkyHunkyGb()
   return (
+  <GBPool>
     <AztecCheck
       id={2042}
       name="Hunky Chunky Caged Bonus Barrel"
@@ -11,6 +13,7 @@ const TunnelBarrel: React.FC = () => {
       canGetLogic={hunkyGb.in}
       canGetBreak={hunkyGb.out}
     />
+    </GBPool>
   )
 }
 

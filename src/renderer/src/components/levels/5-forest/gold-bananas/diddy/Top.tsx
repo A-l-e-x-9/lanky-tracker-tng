@@ -1,9 +1,11 @@
+import GBPool from '@renderer/components/pools/GB'
 import { useDiddyTopGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const MushroomTop: React.FC = () => {
   const topGb = useDiddyTopGb()
   return (
+  <GBPool>
     <ForestCheck
       id={5010}
       name="Bonus Barrel above the Mushroom"
@@ -11,6 +13,7 @@ const MushroomTop: React.FC = () => {
       canGetLogic={topGb.in}
       canGetBreak={topGb.out}
     />
+    </GBPool>
   )
 }
 
