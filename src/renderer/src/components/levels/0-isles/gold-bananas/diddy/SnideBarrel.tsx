@@ -1,9 +1,11 @@
+import GBPool '@renderer/components/pools/GB'
 import { useCheckDiddySnide } from '@renderer/hooks/isles'
 import IslesCheck from '../../check'
 
 const SnideBarrel: React.FC = () => {
   const snide = useCheckDiddySnide()
   return (
+  <GBPool>
     <IslesCheck
       id={10}
       name="Spring Barrel at Snide's"
@@ -11,6 +13,7 @@ const SnideBarrel: React.FC = () => {
       canGetLogic={snide.in}
       canGetBreak={snide.out}
     />
+    </GBPool>
   )
 }
 

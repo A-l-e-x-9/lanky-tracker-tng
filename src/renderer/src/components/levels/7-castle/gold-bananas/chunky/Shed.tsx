@@ -1,3 +1,4 @@
+import GBPool '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useChunkyShedGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
@@ -5,6 +6,7 @@ import CastleCheck from '../../check'
 const ChunkyShed: React.FC = () => {
   const shedGb = useChunkyShedGb()
   return (
+  <GBPool>
   <Miniboss>
     <CastleCheck
       id={7041}
@@ -14,6 +16,7 @@ const ChunkyShed: React.FC = () => {
       canGetBreak={shedGb.out}
     />
   </Miniboss>
+  </GBPool>
   )
 }
 

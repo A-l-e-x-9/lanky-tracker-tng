@@ -1,9 +1,11 @@
+import GBPool '@renderer/components/pools/GB'
 import { useLankyMushGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const MushroomSlam: React.FC = () => {
   const mushGb = useLankyMushGb()
   return (
+  <GBPool>
     <ForestCheck
       id={5021}
       name="Lanky's Colored Mushroom Slam"
@@ -11,6 +13,7 @@ const MushroomSlam: React.FC = () => {
       canGetLogic={mushGb.in}
       canGetBreak={mushGb.out}
     />
+    </GBPool>
   )
 }
 

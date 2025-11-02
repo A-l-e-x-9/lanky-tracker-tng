@@ -1,3 +1,4 @@
+import GBPool '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useTinySpiderGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
@@ -5,6 +6,7 @@ import ForestCheck from '../../check'
 const SpiderBoss: React.FC = () => {
   const spiderGb = useTinySpiderGb()
   return (
+  <GBPool>
   <Miniboss>
     <ForestCheck
       id={5032}
@@ -14,6 +16,7 @@ const SpiderBoss: React.FC = () => {
       canGetBreak={spiderGb.out}
     />
   </Miniboss>
+  </GBPool>
   )
 }
 
