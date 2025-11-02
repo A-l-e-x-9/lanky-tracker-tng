@@ -1,9 +1,11 @@
+import GBPool from '@renderer/components/pools/GB'
 import { useChunkyUndergroundGb } from '@renderer/hooks/japes'
 import JapesCheck from '../../check'
 
 const Underground: React.FC = () => {
   const chunkyUndergroundGb = useChunkyUndergroundGb()
   return (
+  <GBPool>
     <JapesCheck
       id={1043}
       name="Chunky's Cave"
@@ -11,6 +13,7 @@ const Underground: React.FC = () => {
       canGetLogic={chunkyUndergroundGb.in}
       canGetBreak={chunkyUndergroundGb.out}
     />
+    </GBPool>
   )
 }
 

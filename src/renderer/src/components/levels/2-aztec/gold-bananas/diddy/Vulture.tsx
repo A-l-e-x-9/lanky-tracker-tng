@@ -1,3 +1,4 @@
+import GBPool from '@renderer/components/pools/GB'
 import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
 import { useDiddyVultureGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../../check'
@@ -5,6 +6,7 @@ import AztecCheck from '../../check'
 const VultureRace: React.FC = () => {
   const vultureGb = useDiddyVultureGb()
   return (
+  <GBPool>
     <ToughGoldenBanana>
       <AztecCheck
         id={2012}
@@ -14,6 +16,7 @@ const VultureRace: React.FC = () => {
         canGetBreak={vultureGb.out}
       />
     </ToughGoldenBanana>
+    </GBPool>
   )
 }
 
