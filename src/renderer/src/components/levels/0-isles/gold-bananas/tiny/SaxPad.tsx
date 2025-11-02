@@ -1,4 +1,4 @@
-import GBPool '@renderer/components/pools/GB'
+import GBPool from '@renderer/components/pools/GB'
 import { useCheckTinyMusicPad } from '@renderer/hooks/isles'
 import IslesCheck from '../../check'
 
