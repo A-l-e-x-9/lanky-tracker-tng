@@ -1,4 +1,4 @@
-import GBPool '@renderer/components/pools/GB'
+import GBPool from '@renderer/components/pools/GB'
 import { useChunky5DoorShipGb } from '@renderer/hooks/galleon'
 import GalleonCheck from '../../check'
 
