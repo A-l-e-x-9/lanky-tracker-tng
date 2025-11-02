@@ -1,4 +1,4 @@
-import GBPool '@renderer/components/pools/GB'
+import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useTinySpiderGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
