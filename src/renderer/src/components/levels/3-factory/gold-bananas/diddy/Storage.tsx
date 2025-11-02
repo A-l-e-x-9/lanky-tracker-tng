@@ -1,4 +1,4 @@
-import GBPool '@renderer/components/pools/GB'
+import GBPool from '@renderer/components/pools/GB'
 import { useDiddyStorageGb } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
