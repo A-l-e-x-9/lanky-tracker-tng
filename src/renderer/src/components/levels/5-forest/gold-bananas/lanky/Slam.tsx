@@ -1,4 +1,4 @@
-import GBPool '@renderer/components/pools/GB'
+import GBPool from '@renderer/components/pools/GB'
 import { useLankyMushGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
