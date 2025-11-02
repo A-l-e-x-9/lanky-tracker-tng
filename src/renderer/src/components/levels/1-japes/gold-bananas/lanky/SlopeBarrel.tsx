@@ -1,4 +1,4 @@
-import GBPool '@renderer/components/pools/GB'
+import GBPool from '@renderer/components/pools/GB'
 import { useLankySlopeGb } from '@renderer/hooks/japes'
 import JapesCheck from '../../check'
 
