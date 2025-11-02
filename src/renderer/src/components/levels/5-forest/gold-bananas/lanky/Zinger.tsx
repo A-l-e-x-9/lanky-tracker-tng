@@ -1,9 +1,11 @@
+import GBPool from '@renderer/components/pools/GB'
 import { useLankyMushGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
 
 const ZingerBounce: React.FC = () => {
   const mushGb = useLankyMushGb()
   return (
+  <GBPool>
     <ForestCheck
       id={5023}
       name="Lanky's Zinger Bounce"
@@ -11,6 +13,7 @@ const ZingerBounce: React.FC = () => {
       canGetLogic={mushGb.in}
       canGetBreak={mushGb.out}
     />
+    </GBPool>
   )
 }
 
