@@ -1,19 +1,19 @@
 :root {
-  --ev-c-white: #ff00ff;
-  --ev-c-white-soft: #ff00c0;
+  --ev-c-white: #c0c0ff;
+  --ev-c-white-soft: #00c0ff;
   --ev-c-white-mute: #c000ff;
 
-  --ev-c-black: #400040;
-  --ev-c-black-soft: #400030;
-  --ev-c-black-mute: #300040;
+  --ev-c-black: #004040;
+  --ev-c-black-soft: #004030;
+  --ev-c-black-mute: #003040;
 
-  --ev-c-gray-1: #800080;
-  --ev-c-gray-2: #800060;
-  --ev-c-gray-3: #600080;
+  --ev-c-gray-1: #008080;
+  --ev-c-gray-2: #008060;
+  --ev-c-gray-3: #006080;
 
-  --ev-c-text-1: rgba(255, 245, 255, 0.86);
-  --ev-c-text-2: rgba(245, 235, 245, 0.6);
-  --ev-c-text-3: rgba(235, 245, 235, 0.38);
+  --ev-c-text-1: rgba(0, 10, 0, 0.86);
+  --ev-c-text-2: rgba(10, 20, 10, 0.6);
+  --ev-c-text-3: rgba(20, 10, 20, 0.38);
 
   --ev-button-alt-border: transparent;
   --ev-button-alt-text: var(--ev-c-text-1);
@@ -24,9 +24,9 @@
 }
 
 :root {
-  --color-background: var(--ev-c-black);
-  --color-background-soft: var(--ev-c-black-soft);
-  --color-background-mute: var(--ev-c-black-mute);
+  --color-background: var(--ev-c-white);
+  --color-background-soft: var(--ev-c-white-soft);
+  --color-background-mute: var(--ev-c-white-mute);
 
   --color-text: var(--ev-c-text-1);
 }
@@ -350,7 +350,7 @@ main .grid {
 
 .full-grid {grid-column: span 6;}
 
-.react-tabs__tab--selected {background-color: #800040;}
+.react-tabs__tab--selected {background-color: #ffffff;}
 
 @media (max-width: 720px) {
   .text {
