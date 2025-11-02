@@ -22656,7 +22656,7 @@ const MushroomTop = () => {
 };
 const MillWinch = () => {
   const canCheck = useDiddyCageGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5012,
@@ -22665,7 +22665,7 @@ const MillWinch = () => {
       canGetLogic: canCheck.in,
       canGetBreak: canCheck.out
     }
-  );
+  ) });
 };
 const DiddyBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(MushroomTop, {}),
@@ -22764,7 +22764,7 @@ const MushroomSlam = () => {
 };
 const ZingerBounce = () => {
   const mushGb = useLankyMushGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5023,
@@ -22773,7 +22773,7 @@ const ZingerBounce = () => {
       canGetLogic: mushGb.in,
       canGetBreak: mushGb.out
     }
-  );
+  ) });
 };
 const LankyBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMill, {}),
@@ -24274,7 +24274,7 @@ const DiddyIgloo = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { childre
 ) });
 const WaterfallBarrel = () => {
   const waterfallGb = useDiddyWaterfallGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6010,
@@ -24283,7 +24283,7 @@ const WaterfallBarrel = () => {
       canGetLogic: waterfallGb.in,
       canGetBreak: waterfallGb.out
     }
-  );
+  ) });
 };
 const DiddyBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(WaterfallBarrel, {}),
