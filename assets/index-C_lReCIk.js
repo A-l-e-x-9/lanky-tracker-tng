@@ -10054,7 +10054,7 @@ const roolSlice = (set) => {
 };
 const initialFastChecks = {
   fastChecks: {
-    //    factoryArcade: false,
+    factoryArcade: false,
     galleonMermaid: 5
   }
 };
@@ -10525,6 +10525,7 @@ const useCurrentPearlCount = () => useDonkStore(useShallow((state) => state.cons
 const useCurrentFairyCount = () => useDonkStore(useShallow((state) => state.consumables.fairies));
 const useBean = () => useDonkStore(useShallow((state) => state.consumables.bean));
 const useCurrentGBCount = () => useDonkStore(useShallow((state) => state.consumables.goldBananas));
+const useFastArcade = () => useDonkStore(useShallow((state) => state.fastChecks.factoryArcade));
 const useFastMermaid = () => useDonkStore(useShallow((state) => state.fastChecks.galleonMermaid));
 const useDk = () => {
   const kong = useDonkStore(useShallow((state) => state.moves.dk));
@@ -18633,10 +18634,11 @@ const useDkHutGb = () => {
 const useDkBlastGb$2 = () => {
   const inStage = usePlayFactory();
   const blast = useBlast();
+  const fastArcade = useFastArcade();
   const grab = useGrab();
   const hasClimbing = useClimbing();
   const hasBananaport = useBananaportAll();
-  return inStage && blast && (hasClimbing || hasBananaport) && grab;
+  return inStage && blast && (fastArcade || (hasClimbing || hasBananaport) && grab);
 };
 const useDkCoin = () => {
   const blast = useDkBlastGb$2();
