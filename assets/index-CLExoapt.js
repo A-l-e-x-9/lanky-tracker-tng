@@ -29378,7 +29378,7 @@ const GeneratorSettings = () => {
               )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Location Shuffle Settings" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "NOW UNDER CONSTRUCTION" }) }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "NOW UNDER (RE-)CONSTRUCTION" }) }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fast Barrier Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Japes Tunnel Gates?" }),
@@ -29571,6 +29571,17 @@ const GeneratorSettings = () => {
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fast Check Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Fast Factory Arcade?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: dkPadIcon,
+                  title: "If this is on, then you only have to play DK Arcade once. What would normally be the first reward instead replaces the star at the end of DK's Barrel Blast course in Factory.",
+                  storeKey: "factoryArcade",
+                  prefix: "fastChecks",
+                  updateItem: setFastCheck
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of pearls the Mermaid requires:" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 CountSelector,
