@@ -29375,6 +29375,8 @@ const GeneratorSettings = () => {
                 }
               )
             ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Location Shuffle Settings" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "NOW UNDER CONSTRUCTION" }) }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fast Barrier Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Japes Tunnel Gates?" }),
@@ -29580,6 +29582,8 @@ const GeneratorSettings = () => {
                 }
               )
             ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Glitch Logic Settings" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "NOW UNDER CONSTRUCTION. AGAIN." }) }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "UI Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Group by Regions?" }),
