@@ -3,7 +3,7 @@ import { AllSlice, FastCheckSlice, FastCheckState, donkResetFns } from './common
 
 export const initialFastChecks: FastCheckState = {
   fastChecks: {
-//    factoryArcade: false,
+    factoryArcade: false,
     galleonMermaid: 5
   }
 }
