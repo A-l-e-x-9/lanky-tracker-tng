@@ -317,6 +317,10 @@ const GeneratorSettings: React.FC = () => {
                 updateItem={setSetting}
               />
             </>
+            <h3>Location Shuffle Settings</h3>
+            <>
+            <p className="full-grid"><strong>NOW UNDER CONSTRUCTION</strong></p>
+            </>
             <h3>Fast Barrier Settings</h3>
             <>
               <p>Japes Tunnel Gates?</p>
@@ -468,6 +472,11 @@ const GeneratorSettings: React.FC = () => {
                 maxValue={5}
               />
             </>
+            <h3>Glitch Logic Settings</h3>
+            <>
+            <p className="full-grid"><strong>NOW UNDER CONSTRUCTION. AGAIN.</strong></p>
+            </>
+
             <h3>UI Settings</h3>
             <>
               <p>Group by Regions?</p>
