@@ -20,7 +20,7 @@ import guitarIcon from '../../assets/images/diddy_inst.png'
 import rocketIcon from '../../assets/images/diddybarrel.png'
 import coconutIcon from '../../assets/images/dk_gun.png'
 import grabIcon from '../../assets/images/dk_move.png'
-//import dkPadIcon from '../../assets/images/dkpad.png'
+import dkPadIcon from '../../assets/images/dkpad.png'
 import lankyIcon from '../../assets/images/lanky.png'
 import fairyIcon from '../../assets/images/fairy.png'
 import keyIcon from '../../assets/images/key.png'
@@ -319,7 +319,7 @@ const GeneratorSettings: React.FC = () => {
             </>
             <h3>Location Shuffle Settings</h3>
             <>
-            <p className="full-grid"><strong>NOW UNDER CONSTRUCTION</strong></p>
+            <p className="full-grid"><strong>NOW UNDER (RE-)CONSTRUCTION</strong></p>
             </>
             <h3>Fast Barrier Settings</h3>
             <>
@@ -462,6 +462,14 @@ const GeneratorSettings: React.FC = () => {
             </>
             <h3>Fast Check Settings</h3>
             <>
+              <p>Fast Factory Arcade?</p>
+              <SimpleIcon
+                imgUrl={dkPadIcon}
+                title="If this is on, then you only have to play DK Arcade once. What would normally be the first reward instead replaces the star at the end of DK's Barrel Blast course in Factory."
+                storeKey="factoryArcade"
+                prefix="fastChecks"
+                updateItem={setFastCheck}
+              />
               <p>Number of pearls the Mermaid requires:</p>
               <CountSelector
                 storeKey="galleonMermaid"
@@ -476,7 +484,6 @@ const GeneratorSettings: React.FC = () => {
             <>
             <p className="full-grid"><strong>NOW UNDER CONSTRUCTION. AGAIN.</strong></p>
             </>
-
             <h3>UI Settings</h3>
             <>
               <p>Group by Regions?</p>
@@ -490,12 +497,3 @@ const GeneratorSettings: React.FC = () => {
 }
 
 export default GeneratorSettings
-
-/*              <p>Fast Factory Arcade?</p>
-              <SimpleIcon
-                imgUrl={dkPadIcon}
-                title="If this is on, then you only have to play DK Arcade once. What would normally be the first reward instead replaces the star at the end of DK's Barrel Blast course in Factory."
-                storeKey="factoryArcade"
-                prefix="fastChecks"
-                updateItem={setFastCheck}
-              />*/
