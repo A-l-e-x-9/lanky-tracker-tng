@@ -1,10 +1,10 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import VanillaDirt from '@renderer/components/pools/VanillaDirt'
-import { useGeneralDirt } from '@renderer/hooks/isles'
+import { useUnderCaveDirt } from '@renderer/hooks/isles'
 import IslesCheck from '../check'
 
 const UnderCaves: React.FC = () => {
-  const dirt = useGeneralDirt()
+  const dirt = useUnderCaveDirt()
   return (
     <RainbowCoinPool>
       <VanillaDirt>
@@ -12,7 +12,8 @@ const UnderCaves: React.FC = () => {
           id={73}
           name="Dirt Under Caves Lobby"
           region="DK Island"
-          canGetLogic={dirt}
+          canGetLogic={dirt.in}
+          canGetBreak={dirt.out}
         />
       </VanillaDirt>
     </RainbowCoinPool>

@@ -181,7 +181,7 @@ export const useIslesKremTop = (): boolean => {
  * @returns true if we can activate the vines in the Helm Lobby.
  */
 export const useIslesHelmEntry = (): boolean => {
-  const hasBananaports = useBananaport() /*At some indeterminate point in Season 4's existence (I think when Season 4 began on the DK64 Speedrunning Twitch channel), the Bananaports in the Helm Lobby were changed to be pre-activated if you selected the appropriate setting in the Randomizer. Must now account for this.*/
+  const hasBananaports = useBananaport() /*Alex edit: At some indeterminate point in Season 4's existence (I think when Season 4 began on the DK64 Speedrunning Twitch channel), the Bananaports in the Helm Lobby were changed to be pre-activated if you selected the appropriate setting in the Randomizer. Must now account for this.*/
   const bongos = useBongos()
   const guitar = useGuitar()
   const trombone = useTrombone()
@@ -702,6 +702,16 @@ export const useGeneralDirt = (): boolean => {
   const anyKong = useAnyKong()
   const shockwave = useShockwave()
   return anyKong && shockwave
+}
+
+export const useUnderCaveDirt = (): LogicBool => {
+  const hasBananaports = useBananaport()
+  const hasClimbing = useClimbing()
+  const canReachFromFungiLobby = useIslesCrossFungi()
+  return {
+    in: hasClimbing || hasBananaports || canReachFromFungiLobby.in,
+    out: canReachFromFungiLobby.out
+  }
 }
 
 /**
