@@ -11752,6 +11752,15 @@ const useGeneralDirt$5 = () => {
   const shockwave = useShockwave();
   return anyKong && shockwave;
 };
+const useUnderCaveDirt = () => {
+  const hasBananaports = useBananaport();
+  const hasClimbing = useClimbing();
+  const canReachFromFungiLobby = useIslesCrossFungi();
+  return {
+    in: hasClimbing || hasBananaports != 0 || canReachFromFungiLobby.in,
+    out: canReachFromFungiLobby.out
+  };
+};
 const useHoardDirt = () => {
   const dirt = useGeneralDirt$5();
   const vine = useVine();
@@ -12095,14 +12104,15 @@ const TrainingRear = () => {
   ) }) });
 };
 const UnderCaves = () => {
-  const dirt = useGeneralDirt$5();
+  const dirt = useUnderCaveDirt();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 73,
       name: "Dirt Under Caves Lobby",
       region: "DK Island",
-      canGetLogic: dirt
+      canGetLogic: dirt.in,
+      canGetBreak: dirt.out
     }
   ) }) });
 };
