@@ -709,7 +709,7 @@ export const useUnderCaveDirt = (): LogicBool => {
   const hasClimbing = useClimbing()
   const canReachFromFungiLobby = useIslesCrossFungi()
   return {
-    in: hasClimbing || hasBananaports || canReachFromFungiLobby.in,
+    in: hasClimbing || hasBananaports != 0 || canReachFromFungiLobby.in,
     out: canReachFromFungiLobby.out
   }
 }
