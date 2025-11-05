@@ -15958,9 +15958,10 @@ const useLankySnakeGb = () => {
 const useLankyMatchGb = () => {
   const llama = useAztecLlamaTemple();
   const grape = useGrape();
+  const canSlam = useSlamAztec();
   return {
-    in: llama.in && grape,
-    out: llama.out && grape
+    in: llama.in && grape && canSlam,
+    out: llama.out && grape && canSlam
   };
 };
 const useTinyKlaptrapGb = () => {
