@@ -16000,8 +16000,8 @@ const useTinyLavaGb = () => {
   const ftaTiny = useFtaTinyBanana();
   const kuruKuru = useTwirl();
   return {
-    in: lava.in && tiny && (canSlam || kuruKuru),
-    out: ftaTiny && logicBreak(lava) && kuruKuru
+    in: lava.in && tiny && canSlam,
+    out: ftaTiny && lava.out && kuruKuru
   };
 };
 const useGeneralThing$4 = () => {
