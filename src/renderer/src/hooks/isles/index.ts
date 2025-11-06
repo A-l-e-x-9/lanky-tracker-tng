@@ -945,9 +945,12 @@ export const useForestLobbyGeneric = (): LogicBool => {
   }
 }
 
-export const useCavesLobbyGeneric = (): boolean => {
+export const useCavesLobbyGeneric = (): LogicBool => {
   const canEnterCaves = usePlayLobby('Crystal Caves')
-  return canEnterCaves
+  return {
+    in: canEnterCaves.in,
+    out: canEnterCaves.out
+  }
 }
 
 export const useCavesLobbyDiddy = (): LogicBool => {
