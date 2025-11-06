@@ -937,9 +937,12 @@ export const useGalleonLobbyGeneric = (): LogicBool => {
   }
 }
 
-export const useForestLobbyGeneric = (): boolean => {
+export const useForestLobbyGeneric = (): LogicBool => {
   const canEnterForest = usePlayLobby('Fungi Forest')
-  return canEnterForest
+  return {
+    in: canEnterForest.in,
+    out: canEnterForest.out
+  }
 }
 
 export const useCavesLobbyGeneric = (): boolean => {
