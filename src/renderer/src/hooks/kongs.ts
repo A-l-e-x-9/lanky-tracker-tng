@@ -1,6 +1,7 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import { useFreeTradeFull, useFreeTradeRestricted } from './settings'
+import { LogicBool } from './world'
 
 /**
  * Can we use Donkey?

@@ -668,6 +668,7 @@ interface SettingCollection {
   poolKongs: boolean
   poolIslesMedals: boolean
   betaLankyPhase: boolean
+  waterIsLava: boolean
 }
 
 export interface SettingState {
