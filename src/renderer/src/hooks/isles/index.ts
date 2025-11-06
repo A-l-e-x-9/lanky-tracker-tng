@@ -334,7 +334,7 @@ export const usePlayLevel = (level: Level): boolean => {
   return false
 }
 
-export const usePlayLobby = (level: Level): boolean => {
+export const usePlayLobby = (level: Level): LogicBool => {
   const dive = useDive()
   const openLobbies = useOpenLobbies()
   const [
@@ -374,31 +374,57 @@ export const usePlayLobby = (level: Level): boolean => {
   const islesFungiIsland = useIslesFungiIsland()
 
   if (level1 === level) {
-    return true
+    return {
+      in: true,
+      out: true
+    }
   }
   if (level2 === level) {
-    return islesUpper && (openLobbies || key1)
+    return {
+      in: islesUpper.in && (openLobbies || key1),
+      out: islesUpper.out && (openLobbies || key2)
+    }
   }
   if (level3 === level) {
-    return islesKremAscent && (openLobbies || key2)
+    return {
+      in: islesKremAscent && (openLobbies || key2),
+      out: islesKremAscent && (openLobbies || key2)
+    }
   }
   if (level4 === level) {
-    return (openLobbies || key2) && dive
+    return {
+      in: (openLobbies || key2) && dive,
+      out: (openLobbies || key2) && dive
+    }
   }
   if (level5 === level) {
-    return islesFungiIsland
+    return {
+      in: islesFungiIsland,
+      out: islesFungiIsland
+    }
   }
   if (level6 === level) {
-    return islesUpper && (openLobbies || key5)
+    return {
+      in: islesUpper && (openLobbies || key5),
+      out: islesUpper && (openLobbies || key5)
+    }
   }
   if (level7 === level) {
-    return openLobbies || key5
+    return {
+      in: openLobbies || key5,
+      out: openLobbies || key5
+    }
   }
   if (level8 === level) {
-    return islesKremTop && (openLobbies || (key6 && key7))
+    return {
+      in: islesKremTop && (openLobbies || (key6 && key7)),
+      out: islesKremTop && (openLobbies || (key6 && key7))
   }
 
-  return false
+  return {
+    in: false,
+    out: false
+  }
 }
 
 export const useSlamLevel = (level: Level): boolean => {
@@ -611,8 +637,8 @@ export const useCheckTinyAztecLobby = (): LogicBool => {
   const twirl = useTwirl()
   const charge = useCharge()
   return {
-    in: playAztec && ((autoBonus && tiny) || (charge && twirl)),
-    out: playAztec && charge
+    in: playAztec.in && ((autoBonus && tiny) || (charge && twirl)),
+    out: playAztec.out && charge
   }
 }
 
@@ -868,15 +894,21 @@ export const useJapesLobbyGeneric = (): boolean => {
   return canEnterJapes
 }
 
-export const useAztecLobbyGeneric = (): boolean => {
+export const useAztecLobbyGeneric = (): LogicBool => {
   const canEnterAztec = usePlayLobby('Angry Aztec')
-  return canEnterAztec
+  return {
+    in: canEnterAztec.in,
+    out: canEnterAztec.out
+  }
 }
 
-export const useAztecLobbyChunky = (): boolean => {
+export const useAztecLobbyChunky = (): LogicBool => {
   const canEnterAztec = usePlayLobby('Angry Aztec')
   const feathers = useSwitchsanityGun('islesAztec', 3)
-  return canEnterAztec && feathers
+  return {
+    in: canEnterAztec.in && feathers,
+    out: canEnterAztec.out && feathers
+  }
 }
 
 export const useFactoryLobbyLower = (): boolean => {
