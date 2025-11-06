@@ -960,7 +960,10 @@ export const useCavesLobbyDiddy = (): LogicBool => {
   }
 }
 
-export const useCastleLobbyGeneric = (): boolean => {
+export const useCastleLobbyGeneric = (): LogicBool => {
   const canEnterCastle = usePlayLobby('Creepy Castle')
-  return canEnterCastle
+  return {
+    in: canEnterCastle.in,
+    out: canEnterCastle.out
+  }
 }
