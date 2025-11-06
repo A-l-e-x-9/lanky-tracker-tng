@@ -912,9 +912,12 @@ export const useAztecLobbyChunky = (): LogicBool => {
   }
 }
 
-export const useFactoryLobbyLower = (): boolean => {
+export const useFactoryLobbyLower = (): LogicBool => {
   const canEnterFactory = usePlayLobby('Frantic Factory')
-  return canEnterFactory
+  return {
+    in: canEnterFactory.in,
+    out: canEnterFactory.out
+  }
 }
 
 export const useFactoryLobbyUpper = (): LogicBool => {
