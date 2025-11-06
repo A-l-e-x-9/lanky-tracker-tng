@@ -42,6 +42,7 @@ import switchsanityIcon from '../../assets/images/settings/switch.png'
 import slamIcon from '../../assets/images/slam1.png'
 import featherIcon from '../../assets/images/tiny_gun.png'
 import wrinkly from '../../assets/images/wrinkly.png'
+import diveIcon from '../../assets/images/diving.png'
 
 const customStyles: Modal.Styles = {
   content: {
@@ -313,6 +314,14 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={grapeIcon}
                 title="If this is enabled, Lanky's K. Rool phase will now require Grapes (to shoot a balloon) instead of Trombone."
                 storeKey="betaLankyPhase"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Water is Lava?</p>
+              <SimpleIcon
+                imgUrl={diveIcon}
+                title="If you made a seed with the &quot;Water is Lava&quot; difficulty setting on, enable this, and all checks involving Diving will turn yellow instead of the usual green."
+                storeKey="waterIsLava"
                 prefix="settings"
                 updateItem={setSetting}
               />

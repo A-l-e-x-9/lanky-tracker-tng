@@ -298,9 +298,13 @@ export const useClimbing = (): boolean => {
   return move
 }
 
-export const useDive = (): boolean => {
+export const useDive = (): LogicBool => {
   const move = useDonkStore((state) => state.moves.dive)
-  return move
+  const waterIsLava = useDonkStore((state) => state.settings.waterIsLava)
+  return {
+    in: move,
+    out: move && waterIsLava
+  }
 }
 
 export const useOrange = (): boolean => {
