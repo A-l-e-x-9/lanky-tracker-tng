@@ -890,9 +890,12 @@ export const useJapesLobby = (): boolean => {
   return canEnterJapes && chunky && barrels
 }
 
-export const useJapesLobbyGeneric = (): boolean => {
+export const useJapesLobbyGeneric = (): LogicBool => {
   const canEnterJapes = usePlayLobby('Jungle Japes')
-  return canEnterJapes
+  return {
+    in: canEnterJapes.in,
+    out: canEnterJapes.out
+  }
 }
 
 export const useAztecLobbyGeneric = (): LogicBool => {
