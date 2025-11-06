@@ -14,36 +14,36 @@ const TinySwimEnemies: React.FC = () => {
         id={2367}
         name="Tiny's Prison Guard 0"
         region="Tiny Temple"
-        canGetLogic={tiny.in && iceMelted && dive}
-        canGetBreak={logicBreak(tiny) && iceMelted && dive}
+        canGetLogic={tiny.in && iceMelted && dive.in}
+        canGetBreak={logicBreak(tiny) && iceMelted && dive.out}
       />
       <AztecCheck
         id={2368}
         name="Tiny's Prison Guard 1"
         region="Tiny Temple"
-        canGetLogic={tiny.in && iceMelted && dive}
-        canGetBreak={logicBreak(tiny) && iceMelted && dive}
+        canGetLogic={tiny.in && iceMelted && dive.in}
+        canGetBreak={logicBreak(tiny) && iceMelted && dive.out}
       />
       <AztecCheck
         id={2369}
         name="Tiny's Prison Guard 2"
         region="Tiny Temple"
-        canGetLogic={tiny.in && iceMelted && dive}
-        canGetBreak={logicBreak(tiny) && iceMelted && dive}
+        canGetLogic={tiny.in && iceMelted && dive.in}
+        canGetBreak={logicBreak(tiny) && iceMelted && dive.out}
       />
       <AztecCheck
         id={2370}
         name="Tiny's Prison Guard 3"
         region="Tiny Temple"
-        canGetLogic={tiny.in && iceMelted && dive}
-        canGetBreak={logicBreak(tiny) && iceMelted && dive}
+        canGetLogic={tiny.in && iceMelted && dive.in}
+        canGetBreak={logicBreak(tiny) && iceMelted && dive.out}
       />
       <AztecCheck
         id={2371}
         name="Tiny's Prison Guard 4"
         region="Tiny Temple"
-        canGetLogic={tiny.in && iceMelted && dive}
-        canGetBreak={logicBreak(tiny) && iceMelted && dive}
+        canGetLogic={tiny.in && iceMelted && dive.in}
+        canGetBreak={logicBreak(tiny) && iceMelted && dive.out}
       />
     </DropPool>
   )
