@@ -11495,30 +11495,57 @@ const usePlayLobby = (level) => {
   const islesKremAscent = useIslesKremAscent();
   const islesFungiIsland = useIslesFungiIsland();
   if (level1 === level) {
-    return true;
+    return {
+      in: true,
+      out: true
+    };
   }
   if (level2 === level) {
-    return islesUpper && (openLobbies || key1);
+    return {
+      in: islesUpper.in && (openLobbies || key1),
+      out: islesUpper.out && (openLobbies || key2)
+    };
   }
   if (level3 === level) {
-    return islesKremAscent && (openLobbies || key2);
+    return {
+      in: islesKremAscent && (openLobbies || key2),
+      out: islesKremAscent && (openLobbies || key2)
+    };
   }
   if (level4 === level) {
-    return (openLobbies || key2) && dive;
+    return {
+      in: (openLobbies || key2) && dive,
+      out: (openLobbies || key2) && dive
+    };
   }
   if (level5 === level) {
-    return islesFungiIsland;
+    return {
+      in: islesFungiIsland,
+      out: islesFungiIsland
+    };
   }
   if (level6 === level) {
-    return islesUpper && (openLobbies || key5);
+    return {
+      in: islesUpper && (openLobbies || key5),
+      out: islesUpper && (openLobbies || key5)
+    };
   }
   if (level7 === level) {
-    return openLobbies || key5;
+    return {
+      in: openLobbies || key5,
+      out: openLobbies || key5
+    };
   }
   if (level8 === level) {
-    return islesKremTop && (openLobbies || key6 && key7);
+    return {
+      in: islesKremTop && (openLobbies || key6 && key7),
+      out: islesKremTop && (openLobbies || key6 && key7)
+    };
   }
-  return false;
+  return {
+    in: false,
+    out: false
+  };
 };
 const useSlamLevel = (level) => {
   const canPlay = usePlayLevel(level);
@@ -11679,8 +11706,8 @@ const useCheckTinyAztecLobby = () => {
   const twirl = useTwirl();
   const charge = useCharge();
   return {
-    in: playAztec && (autoBonus && tiny || charge && twirl),
-    out: playAztec && charge
+    in: playAztec.in && (autoBonus && tiny || charge && twirl),
+    out: playAztec.out && charge
   };
 };
 const useGalleonLobbySlam = () => {
@@ -11888,20 +11915,32 @@ const useJapesLobby = () => {
 };
 const useJapesLobbyGeneric = () => {
   const canEnterJapes = usePlayLobby("Jungle Japes");
-  return canEnterJapes;
+  return {
+    in: canEnterJapes.in,
+    out: canEnterJapes.out
+  };
 };
 const useAztecLobbyGeneric = () => {
   const canEnterAztec = usePlayLobby("Angry Aztec");
-  return canEnterAztec;
+  return {
+    in: canEnterAztec.in,
+    out: canEnterAztec.out
+  };
 };
 const useAztecLobbyChunky = () => {
   const canEnterAztec = usePlayLobby("Angry Aztec");
   const feathers = useSwitchsanityGun("islesAztec", 3);
-  return canEnterAztec && feathers;
+  return {
+    in: canEnterAztec.in && feathers,
+    out: canEnterAztec.out && feathers
+  };
 };
 const useFactoryLobbyLower = () => {
   const canEnterFactory = usePlayLobby("Frantic Factory");
-  return canEnterFactory;
+  return {
+    in: canEnterFactory.in,
+    out: canEnterFactory.out
+  };
 };
 const useFactoryLobbyUpper = () => {
   const canEnterFactory = usePlayLobby("Frantic Factory");
@@ -11916,15 +11955,24 @@ const useFactoryLobbyUpper = () => {
 };
 const useGalleonLobbyGeneric = () => {
   const canEnterGalleon = usePlayLobby("Gloomy Galleon");
-  return canEnterGalleon;
+  return {
+    in: canEnterGalleon.in,
+    out: canEnterGalleon.out
+  };
 };
 const useForestLobbyGeneric = () => {
   const canEnterForest = usePlayLobby("Fungi Forest");
-  return canEnterForest;
+  return {
+    in: canEnterForest.in,
+    out: canEnterForest.out
+  };
 };
 const useCavesLobbyGeneric = () => {
   const canEnterCaves = usePlayLobby("Crystal Caves");
-  return canEnterCaves;
+  return {
+    in: canEnterCaves.in,
+    out: canEnterCaves.out
+  };
 };
 const useCavesLobbyDiddy = () => {
   const canEnterCaves = usePlayLobby("Crystal Caves");
@@ -11940,7 +11988,10 @@ const useCavesLobbyDiddy = () => {
 };
 const useCastleLobbyGeneric = () => {
   const canEnterCastle = usePlayLobby("Creepy Castle");
-  return canEnterCastle;
+  return {
+    in: canEnterCastle.in,
+    out: canEnterCastle.out
+  };
 };
 const ItemCheck = (props) => {
   const { id: id2, name, region, done, canGetLogic } = props;
@@ -12288,7 +12339,8 @@ const JapesLobbyEnemies = () => {
         id: 310,
         name: "Japes Lobby Enemy 0",
         region: "Japes-Forest Lobbies",
-        canGetLogic: anyKong && playJapes
+        canGetLogic: anyKong && playJapes.in,
+        canGetBreak: anyKong && playJapes.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12297,7 +12349,8 @@ const JapesLobbyEnemies = () => {
         id: 311,
         name: "Japes Lobby Enemy 1",
         region: "Japes-Forest Lobbies",
-        canGetLogic: anyKong && playJapes
+        canGetLogic: anyKong && playJapes.in,
+        canGetBreak: anyKong && playJapes.out
       }
     )
   ] });
@@ -13130,57 +13183,67 @@ const ShopLocations$7 = () => {
 };
 const WrinklyPool = ({ children }) => usePoolWrinkly() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const AztecLobbyDK = () => {
+  const canDo = useAztecLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 16,
       name: "Aztec Lobby DK",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useAztecLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const AztecLobbyDiddy = () => {
+  const canDo = useAztecLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 15,
       name: "Aztec Lobby Diddy",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useAztecLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const AztecLobbyLanky = () => {
+  const canDo = useAztecLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 17,
       name: "Aztec Lobby Lanky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useAztecLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const AztecLobbyTiny = () => {
+  const canDo = useAztecLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 18,
       name: "Aztec Lobby Tiny",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useAztecLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const AztecLobbyChunky = () => {
+  const canDo = useAztecLobbyChunky();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 14,
       name: "Aztec Lobby Chunky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useAztecLobbyChunky()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
@@ -13205,57 +13268,67 @@ const CastleLobby = () => {
   ) });
 };
 const CastleLobbyDK = () => {
+  const canDo = useCastleLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 25,
       name: "Castle Lobby DK",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useCastleLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const CastleLobbyDiddy = () => {
+  const canDo = useCastleLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 24,
       name: "Castle Lobby Diddy",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useCastleLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const CastleLobbyLanky = () => {
+  const canDo = useCastleLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 26,
       name: "Castle Lobby Lanky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useCastleLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const CastleLobbyTiny = () => {
+  const canDo = useCastleLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 27,
       name: "Castle Lobby Tiny",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useCastleLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const CastleLobbyChunky = () => {
+  const canDo = useCastleLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 19,
       name: "Castle Lobby Chunky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useCastleLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
@@ -13272,13 +13345,15 @@ const CastleLobbyChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntim
   /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyEnemies, {})
 ] });
 const CavesLobbyDK = () => {
+  const canDo = useCavesLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 34,
       name: "Caves Lobby DK",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useCavesLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
@@ -13296,35 +13371,41 @@ const CavesLobbyDiddy = () => {
   ) });
 };
 const CavesLobbyLanky = () => {
+  const canDo = useCavesLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 35,
       name: "Caves Lobby Lanky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useCavesLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const CavesLobbyTiny = () => {
+  const canDo = useCavesLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 36,
       name: "Caves Lobby Tiny",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useCavesLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const CavesLobbyChunky = () => {
+  const canDo = useCavesLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 28,
       name: "Caves Lobby Chunky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useCavesLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
@@ -13356,13 +13437,15 @@ const DiddyAirspaceChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunt
   /* @__PURE__ */ jsxRuntimeExports.jsx(AztecRoof, {})
 ] });
 const FactoryLobbyDK = () => {
+  const canDo = useFactoryLobbyLower();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 39,
       name: "Factory Lobby DK",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useFactoryLobbyLower()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
@@ -13406,13 +13489,15 @@ const FactoryLobbyTiny = () => {
   ) });
 };
 const FactoryLobbyChunky = () => {
+  const canDo = useFactoryLobbyLower();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 37,
       name: "Factory Lobby Chunky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useFactoryLobbyLower()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
@@ -13428,57 +13513,67 @@ const FactoryLobbyChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyEnemies, {})
 ] });
 const ForestLobbyDK = () => {
+  const canDo = useForestLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 55,
       name: "Forest Lobby DK",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useForestLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const ForestLobbyDiddy = () => {
+  const canDo = useForestLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 49,
       name: "Forest Lobby Diddy",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useForestLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const ForestLobbyLanky = () => {
+  const canDo = useForestLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 56,
       name: "Forest Lobby Lanky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useForestLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const ForestLobbyTiny = () => {
+  const canDo = useForestLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 57,
       name: "Forest Lobby Tiny",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useForestLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const ForestLobbyChunky = () => {
+  const canDo = useForestLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 46,
       name: "Forest Lobby Chunky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useForestLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
@@ -13492,57 +13587,67 @@ const ForestLobbyChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntim
   /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyChunky, {})
 ] });
 const GalleonLobbyDK = () => {
+  const canDo = useGalleonLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 60,
       name: "Galleon Lobby DK",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useGalleonLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const GalleonLobbyDiddy = () => {
+  const canDo = useGalleonLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 59,
       name: "Galleon Lobby Diddy",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useGalleonLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const GalleonLobbyLanky = () => {
+  const canDo = useGalleonLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 61,
       name: "Galleon Lobby Lanky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useGalleonLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const GalleonLobbyTiny = () => {
+  const canDo = useGalleonLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 62,
       name: "Galleon Lobby Tiny",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useGalleonLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const GalleonLobbyChunky = () => {
+  const canDo = useGalleonLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 58,
       name: "Galleon Lobby Chunky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useGalleonLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
@@ -13611,57 +13716,67 @@ const JapesLobby = () => {
   ) });
 };
 const JapesLobbyDK = () => {
+  const canDo = useJapesLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 65,
       name: "Japes Lobby DK",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useJapesLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const JapesLobbyDiddy = () => {
+  const canDo = useJapesLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 64,
       name: "Japes Lobby Diddy",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useJapesLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const JapesLobbyLanky = () => {
+  const canDo = useJapesLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 66,
       name: "Japes Lobby Lanky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useJapesLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const JapesLobbyTiny = () => {
+  const canDo = useJapesLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 67,
       name: "Japes Lobby Tiny",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useJapesLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
 const JapesLobbyChunky = () => {
+  const canDo = useJapesLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 63,
       name: "Japes Lobby Chunky",
       region: "Wrinkly Kong Doors",
-      canGetLogic: useJapesLobbyGeneric()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
