@@ -4,13 +4,15 @@ import IslesCheck from '../check'
 
 /*Since Version 4 of the DK64 Randomizer, you can have major rewards in Wrinkly Kong's hint doors (and hints on checks).*/
 const FactoryLobbyChunky: React.FC = () => {
+const canDo = useFactoryLobbyGeneric()
   return (
     <WrinklyPool>
         <IslesCheck
           id={37}
           name="Factory Lobby Chunky"
           region="Wrinkly Kong Doors"
-          canGetLogic={useFactoryLobbyLower()}
+          canGetLogic={canDo.in}
+          canGetBreak={canDo.out}
         />
     </WrinklyPool>
   )
