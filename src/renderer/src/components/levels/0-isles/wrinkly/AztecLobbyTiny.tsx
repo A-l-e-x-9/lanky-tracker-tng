@@ -4,13 +4,15 @@ import IslesCheck from '../check'
 
 /*Since Version 4 of the DK64 Randomizer, you can have major rewards in Wrinkly Kong's hint doors (and hints on checks).*/
 const AztecLobbyTiny: React.FC = () => {
+const canDo = useAztecLobbyGeneric()
   return (
     <WrinklyPool>
         <IslesCheck
           id={18}
           name="Aztec Lobby Tiny"
           region="Wrinkly Kong Doors"
-          canGetLogic={useAztecLobbyGeneric()}
+          canGetLogic={canDo.in}
+          canGetBreak={canDo.out}
         />
     </WrinklyPool>
   )
