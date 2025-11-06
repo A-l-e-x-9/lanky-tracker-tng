@@ -419,6 +419,7 @@ export const usePlayLobby = (level: Level): LogicBool => {
     return {
       in: islesKremTop && (openLobbies || (key6 && key7)),
       out: islesKremTop && (openLobbies || (key6 && key7))
+    }
   }
 
   return {
