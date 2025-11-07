@@ -15,5 +15,6 @@ return (
   />
   </GBPool>
 )
+}
 
 export default CastleTop
