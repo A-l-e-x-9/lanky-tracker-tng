@@ -1,10 +1,5 @@
 import BananaMedalPool from '@renderer/components/pools/BananaMedals'
-import ShuffledArenas from '../arenas/Shuffled'
 import BossCheck from '../boss'
-import ShuffledCrates from '../crates/Shuffled'
-import ShuffledDirtLocations from '../dirt/Shuffled'
-import ShuffledFairies from '../fairies/Shuffled'
-import ShuffledKasplats from '../kasplats/Shuffled'
 import ChunkyMedal from '../medals/ChunkyMedal'
 import DiddyMedal from '../medals/DiddyMedal'
 import DkMedal from '../medals/DkMedal'
@@ -31,11 +26,6 @@ const FactoryRegionChecks: React.FC = () => (
     <RNDChecks />
     <StorageChecks />
     <ProductionChecks />
-    <ShuffledKasplats />
-    <ShuffledCrates />
-    <ShuffledDirtLocations />
-    <ShuffledFairies />
-    <ShuffledArenas />
     <ShopLocations />
     <BossCheck />
   </div>
