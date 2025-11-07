@@ -2,15 +2,19 @@ import GBPool from '@renderer/components/pools/GB'
 import { useDkDungeonGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
 
-const DkDungeon: React.FC = () => (
+const DkDungeon: React.FC = () => {
+const canDo = useDkDungeonGb()
+return (
 <GBPool>
   <CastleCheck
     id={7004}
     name="DK's Face Puzzle"
     region="Castle Crypt and Dungeon"
-    canGetLogic={useDkDungeonGb()}
+    canGetLogic={canDo.in}
+    canGetLogic={canDo.out}
   />
   </GBPool>
 )
+}
 
 export default DkDungeon
