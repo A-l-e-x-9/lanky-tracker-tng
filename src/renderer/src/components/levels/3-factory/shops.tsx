@@ -42,7 +42,8 @@ const Vanilla: React.FC = () => {
         baseName="Turn in Factory Blueprint for"
         level="Frantic Factory"
         region="Shops"
-        inLogic={hasSnide && testing}
+        inLogic={hasSnide && testing.in}
+        outLogic={hasSnide && testing.out}
       />
     </>
   )
@@ -87,7 +88,8 @@ const Shuffled: React.FC = () => {
         baseName="Factory Snide Location"
         level="Frantic Factory"
         region="Shops"
-        inLogic={hasSnide && testing}
+        inLogic={hasSnide && testing.in}
+        outLOgic={hasSnide && testing.out}
       />
     </>
   )
