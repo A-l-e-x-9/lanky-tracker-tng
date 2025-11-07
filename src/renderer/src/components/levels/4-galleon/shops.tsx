@@ -46,7 +46,7 @@ const Vanilla: React.FC = () => {
         baseName="Turn in Galleon Blueprint for"
         level="Gloomy Galleon"
         region="Shops"
-        inLogic={hasSnide && lighthouseArea && highTide}
+        inLogic={hasSnide && lighthouseArea && highTide.in}
         outLogic={hasSnide && lighthouseArea}
       />
     </>
@@ -91,7 +91,7 @@ const Shuffled: React.FC = () => {
         baseName="Galleon Snide Location"
         level="Gloomy Galleon"
         region="Shops"
-        inLogic={hasSnide && lighthouseArea && highTide}
+        inLogic={hasSnide && lighthouseArea && highTide.in}
         outLogic={hasSnide && lighthouseArea}
       />
     </>

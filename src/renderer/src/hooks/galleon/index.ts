@@ -120,7 +120,7 @@ export const useGalleonLighthousePlatform = (): LogicBool => {
   )
 
   return {
-    in: (inStage && warpAll) || (lighthouseArea && (highTide || (galleonSeasick && twirl))),
+    in: (inStage && warpAll) || (lighthouseArea && (highTide.in || (galleonSeasick && twirl))),
     out: lighthouseArea && galleonSeasick
   }
 }
@@ -208,7 +208,7 @@ export const useGalleonTreasureRoom = (): LogicBool => {
   const preOpened = useDonkStore(useShallow((state) => state.removeBarriers.galleonTreasureRoom))
   const warpAll = useBananaportAll()
   return {
-    in: (inStage && warpAll) || (outskirts && (lanky && dive.in || preOpened) && highTide),
+    in: (inStage && warpAll) || (outskirts && (lanky && dive.in || preOpened) && highTide.in),
     out: outskirts && (lanky && dive.out || preOpened)
   }
 }
@@ -250,7 +250,7 @@ export const useChunkyCannonGb = (): LogicBool => {
   const boulder = useBoulderTech()
   const highTide = useGalleonHighTide()
   return {
-    in: cannon && boulder && highTide,
+    in: cannon && boulder && highTide.in,
     out: cannon && boulder
   }
 }
@@ -294,7 +294,7 @@ export const useDiddyMechGb = (): LogicBool => {
   const rocket = useRocket()
   const guitar = useGuitar()
   return {
-    in: lighthouse && outskirts && dive.in && rocket && guitar && highTide,
+    in: lighthouse && outskirts && dive.in && rocket && guitar && highTide.in,
     out: lighthouse && outskirts && dive.out && rocket && guitar
   }
 }
@@ -320,7 +320,7 @@ export const useDkBlastGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const highTide = useGalleonHighTide()
   return {
-    in: lighthouse && blast && outskirts && highTide,
+    in: lighthouse && blast && outskirts && highTide.in,
     out: lighthouse && blast && outskirts
   }
 }
@@ -496,7 +496,7 @@ export const useCannonKasplat = (): LogicBool => {
   const cannon = useGalleonCannon()
   const kong = useFtaLankyBlueprint()
   return {
-    in: kong && cannon && highTide,
+    in: kong && cannon && highTide.in,
     out: kong && cannon
   }
 }
