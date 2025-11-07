@@ -108,6 +108,7 @@ export const useCavesMiniFunky = (): LogicBool => {
   return {
     in: inStage.in && (warpAll || (twirl && mini)),
     out: inStage.out && mini
+  }
 }
 
 /**

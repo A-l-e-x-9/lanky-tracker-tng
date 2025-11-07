@@ -371,6 +371,7 @@ export const useTinyArcadeGb = (): LogicBool => {
   return {
     in: inStage.in && (climbing || hasBananaport) && mini,
     out: inStage.out && (climbing || hasBananaport) && mini
+  }
 }
 
 export const useTinyProductionGb = (): LogicBool => {
