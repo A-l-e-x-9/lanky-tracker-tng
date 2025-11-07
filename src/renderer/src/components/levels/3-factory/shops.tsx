@@ -18,21 +18,24 @@ const Vanilla: React.FC = () => {
         baseName="Factory Cranky"
         level="Frantic Factory"
         region="Shops"
-        inLogic={hasCranky && inStage}
+        inLogic={hasCranky && inStage.in}
+        outLogic={hasCranky && inStage.out}
       />
       <ShopGenerator
         baseId={3120}
         baseName="Factory Funky"
         level="Frantic Factory"
         region="Shops"
-        inLogic={hasFunky && testing}
+        inLogic={hasFunky && inStage.in}
+        outLogic={hasFunky && inStage.out}
       />
       <ShopGenerator
         baseId={3130}
         baseName="Factory Candy"
         level="Frantic Factory"
         region="Shops"
-        inLogic={hasCandy && inStage}
+        inLogic={hasCandy && inStage.in}
+        outLogic={hasCandy && inStage.out}
       />
       <ShopGenerator
         baseId={3140}
@@ -60,21 +63,24 @@ const Shuffled: React.FC = () => {
         baseName="Factory Cranky Location"
         level="Frantic Factory"
         region="Shops"
-        inLogic={hasCranky && inStage}
+        inLogic={hasCranky && inStage.in}
+        outLogic={hasCranky && inStage.out}
       />
       <ShopGenerator
         baseId={3150}
         baseName="Factory Funky Location"
         level="Frantic Factory"
         region="Shops"
-        inLogic={hasFunky && testing}
+        inLogic={hasFunky && inStage.in}
+        outLogic={hasFunky && inStage.out}
       />
       <ShopGenerator
         baseId={3160}
         baseName="Factory Candy Location"
         level="Frantic Factory"
         region="Shops"
-        inLogic={hasCandy && inStage}
+        inLogic={hasCandy && inStage.in}
+        outLogic={hasCandy && inStage.out}
       />
       <ShopGenerator
         baseId={3170}

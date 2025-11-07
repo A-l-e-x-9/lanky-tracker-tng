@@ -17,21 +17,24 @@ const Vanilla: React.FC = () => {
         baseName="Caves Cranky"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasCranky && inStage}
+        inLogic={hasCranky && inStage.in}
+        outLogic={hasCranky && inStage.out}
       />
       <ShopGenerator
         baseId={6120}
         baseName="Caves Funky"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasFunky && inStage}
+        inLogic={hasFunky && inStage.in}
+        outLogic={hasFunky && inStage.out}
       />
       <ShopGenerator
         baseId={6130}
         baseName="Caves Candy"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasCandy && inStage}
+        inLogic={hasCandy && inStage.in}
+        outLogic={hasCandy && inStage.out}
       />
       <ShopGenerator
         baseId={6140}
@@ -58,21 +61,24 @@ const Shuffled: React.FC = () => {
         baseName="Caves Cranky Location"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasCranky && inStage}
+        inLogic={hasCranky && inStage.in}
+        outLogic={hasCranky && inStage.out}
       />
       <ShopGenerator
         baseId={6150}
         baseName="Caves Funky Location"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasFunky && inStage}
+        inLogic={hasFunky && inStage.in}
+        outLogic={hasFunky && inStage.out}
       />
       <ShopGenerator
         baseId={6160}
         baseName="Caves Candy Location"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasCandy && inStage}
+        inLogic={hasCandy && inStage.in}
+        outLogic={hasCandy && inStage.out}
       />
       <ShopGenerator
         baseId={6170}
