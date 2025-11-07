@@ -89,7 +89,7 @@ const Shuffled: React.FC = () => {
         level="Frantic Factory"
         region="Shops"
         inLogic={hasSnide && testing.in}
-        outLOgic={hasSnide && testing.out}
+        outLogic={hasSnide && testing.out}
       />
     </>
   )
