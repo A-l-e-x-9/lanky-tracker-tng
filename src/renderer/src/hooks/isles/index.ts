@@ -420,8 +420,8 @@ export const usePlayLobby = (level: Level): LogicBool => {
   }
   if (level4 === level) {
     return {
-      in: (openLobbies || key2) && dive,
-      out: (openLobbies || key2) && dive
+      in: (openLobbies || key2) && dive.in,
+      out: (openLobbies || key2) && dive.out
     }
   }
   if (level5 === level) {
