@@ -762,9 +762,10 @@ export const useUnderCaveDirt = (): LogicBool => {
   const hasBananaports = useBananaport()
   const hasClimbing = useClimbing()
   const canReachFromFungiLobby = useIslesCrossFungi()
+  const hasShockwave = useShockwave()
   return {
-    in: hasClimbing || hasBananaports != 0 || canReachFromFungiLobby.in,
-    out: canReachFromFungiLobby.out
+    in: (hasClimbing || hasBananaports != 0 || canReachFromFungiLobby.in) && hasShockwave,
+    out: canReachFromFungiLobby.out && hasShockwave
   }
 }
 

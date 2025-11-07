@@ -18,29 +18,32 @@ const Vanilla: React.FC = () => {
         baseName="Castle Cranky"
         level="Creepy Castle"
         region="Shops"
-        inLogic={hasCranky && inStage}
+        inLogic={hasCranky && inStage.in}
+        outLogic={hasCranky && inStage.out}
       />
       <ShopGenerator
         baseId={7120}
         baseName="Castle Funky"
         level="Creepy Castle"
         region="Shops"
-        inLogic={hasFunky && inStage && hasClimbing}
-        outLogic={hasFunky && inStage}
+        inLogic={hasFunky && inStage.in && hasClimbing}
+        outLogic={hasFunky && inStage.out}
       />
       <ShopGenerator
         baseId={7130}
         baseName="Castle Candy"
         level="Creepy Castle"
         region="Shops"
-        inLogic={hasCandy && inStage}
+        inLogic={hasCandy && inStage.in}
+        outLogic={hasCandy && inStage.out}
       />
       <ShopGenerator
         baseId={7140}
         baseName="Turn in Castle Blueprint for"
         level="Creepy Castle"
         region="Shops"
-        inLogic={hasSnide && inStage}
+        inLogic={hasSnide && inStage.in}
+        outLogic={hasSnide && inStage.out}
       />
     </>
   )
@@ -56,28 +59,32 @@ const Shuffled: React.FC = () => {
         baseName="Castle Cranky Location"
         level="Creepy Castle"
         region="Shops"
-        inLogic={inStage}
+        inLogic={inStage.in}
+        outLogic={inStage.out}
       />
       <ShopGenerator
         baseId={7150}
         baseName="Castle Funky Location"
         level="Creepy Castle"
         region="Shops"
-        inLogic={inStage}
+        inLogic={inStage.in}
+        outLogic={inStage.out}
       />
       <ShopGenerator
         baseId={7160}
         baseName="Castle Candy Location"
         level="Creepy Castle"
         region="Shops"
-        inLogic={inStage}
+        inLogic={inStage.in}
+        outLogic={inStage.out}
       />
       <ShopGenerator
         baseId={7170}
         baseName="Castle Snide Location"
         level="Creepy Castle"
         region="Shops"
-        inLogic={inStage}
+        inLogic={inStage.in}
+        outLogic={inStage.out}
       />
     </>
   )
