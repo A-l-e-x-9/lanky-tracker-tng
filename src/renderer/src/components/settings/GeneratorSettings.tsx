@@ -325,6 +325,8 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
+              <p>Angry Caves?</p>
+              <p><strong>COMING SOON</strong></p>
             </>
             <h3>Location Shuffle Settings</h3>
             <>

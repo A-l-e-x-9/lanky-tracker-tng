@@ -143,9 +143,12 @@ export const useDiddyTopGb = (): LogicBool => {
   }
 }
 
-export const useDiddyRoomGb = (): boolean => {
+export const useDiddyRoomGb = (): LogicBool => {
   const topGb = useDiddyTopGb()
-  return useSlamCastle() && topGb
+  return {
+    in: useSlamCastle() && topGb.in,
+    out: useSlamCastle() && topGb.out
+  }
 }
 
 export const useDiddyCryptGb = (): LogicBool => {
@@ -236,8 +239,8 @@ export const useLankyGreenhouseGb = (): LogicBool => {
 }
 
 export const useArena = (): boolean => {
-  const didGreenhouseBanana = useLankyGreenhouseGb()
-  return didGreenhouseBanana
+  const didGreenhouseBanana = useDonkStore(useShallow((state) => state.checks))
+  return didGreenhouseBanana[7021]
 }
 
 export const useLankyMausoleumGb = (): LogicBool => {

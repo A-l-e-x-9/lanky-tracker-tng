@@ -69,12 +69,15 @@ export const useSlamCaves = (): boolean => useSlamLevel('Crystal Caves')
  * Can we enter the Igloo in Caves?
  * @returns true if we can enter the Igloo in Caves.
  */
-export const useCavesIgloo = (): boolean => {
+export const useCavesIgloo = (): LogicBool => {
   const inStage = usePlayCaves()
   const rocket = useRocket()
   const [barriers] = useDonkStore(useShallow((state) => [state.removeBarriers]))
   const iglooBarrier = barriers.cavesIgloo
-  return inStage && (iglooBarrier || rocket)
+  return {
+    in: inStage.in && (iglooBarrier || rocket),
+    out: inStage.out && (iglooBarrier || rocket)
+  }
 }
 
 /*Alex addition: Are the ice walls pre-punched, or do we still have to manually remove them with Primate Punch?*/
@@ -95,14 +98,16 @@ export const useCanAccessSnide = (): boolean => {
 /**
  * Can we access the mini cavern by Funky in Caves?
  * @returns true if we can access the mini cavern by Funky.
- Alex edit: The original "out logic" of inStage + mini, the "Twirl-less" trick, is a Crystal Coconut hog with way too much of a chance for something to go wrong and is highly not recommended by me. Changed to a boolean check.
+ Alex edit: The original "out logic" of inStage + mini, the "Twirl-less" trick, is a Crystal Coconut hog with way too much of a chance for something to go wrong and is highly not recommended by me. Was originally changed to a boolean check but changed back when I implemented the "Water is Lava?" option in the settings.
  */
-export const useCavesMiniFunky = (): boolean => {
+export const useCavesMiniFunky = (): LogicBool => {
   const inStage = usePlayCaves()
   const twirl = useTwirl()
   const mini = useMini()
   const warpAll = useBananaportAll()
-  return inStage && (warpAll || (twirl && mini))
+  return {
+    in: inStage.in && (warpAll || (twirl && mini)),
+    out: inStage.out && mini
 }
 
 /**
@@ -117,8 +122,8 @@ export const useCavesPillar = (): LogicBool => {
   const dk = useDk()
   const warpAll = useBananaportAll()
   return {
-    in: inStage && (warpAll || rocket),
-    out: inStage && (dk || twirl || balloon)
+    in: inStage.in && (warpAll || rocket),
+    out: inStage.out && (dk || twirl || balloon)
   }
 }
 
@@ -129,8 +134,8 @@ export const useCavesLankyCabin = (): LogicBool => {
   const diddy = useDiddy()
   const tiny = useTiny()
   return {
-    in: inStage && trombone && balloon,
-    out: inStage && trombone && (diddy || tiny)
+    in: inStage.in && trombone && balloon,
+    out: inStage.out && trombone && (diddy || tiny)
   }
 }
 
@@ -141,8 +146,8 @@ export const useDkCabinGb = (): LogicBool => {
   const hardShooting = useHardShooting()
   const anyGun = useAnyGun()
   return {
-    in: inStage && bongos && anyGun && (homing || hardShooting),
-    out: inStage && bongos && anyGun
+    in: inStage.in && bongos && anyGun && (homing || hardShooting),
+    out: inStage.out && bongos && anyGun
   }
 }
 
@@ -153,17 +158,20 @@ export const useDiddyGauntletGb = (): LogicBool => {
   const rocket = useRocket()
   const orange = useOrange()
   return {
-    in: inStage && guitar && rocket && orange,
-    out: inStage && guitar && orange
+    in: inStage.in && guitar && rocket && orange,
+    out: inStage.out && guitar && orange
   }
 }
 
-export const useChunkyGoneGb = (): boolean => {
+export const useChunkyGoneGb = (): LogicBool => {
   const inStage = usePlayCaves()
   const punch = usePunch()
   const wallsPrePunched = useIceWalls()
   const gone = useGone()
-  return inStage && (punch || wallsPrePunched) && gone
+  return {
+    in: inStage.in && (punch || wallsPrePunched) && gone,
+    out: inStage.out && (punch || wallsPrePunched) && gone
+  }
 }
 
 export const useChunkyClearGb = (): LogicBool => {
@@ -173,8 +181,8 @@ export const useChunkyClearGb = (): LogicBool => {
   const boulder = useBoulderTech()
   const hunky = useHunky()
   return {
-    in: inStage && (punch || wallsPrePunched) && boulder && hunky,
-    out: inStage && (punch || wallsPrePunched) && boulder
+    in: inStage.in && (punch || wallsPrePunched) && boulder && hunky,
+    out: inStage.out && (punch || wallsPrePunched) && boulder
   }
 }
 
@@ -183,11 +191,14 @@ export const useChunkyIglooGb = (): boolean => {
   return useTriangle() && igloo
 }
 
-export const useChunkyCabinGb = (): boolean => {
+export const useChunkyCabinGb = (): LogicBool => {
   const inStage = usePlayCaves()
   const triangle = useTriangle()
   const gone = useGone()
-  return useSlam() && inStage && triangle && gone
+  return {
+    in: useSlam() && inStage.in && triangle && gone,
+    out: useSlam() && inStage.out && triangle && gone
+  }
 }
 
 export const useDiddyWaterfallGb = (): LogicBool => {
@@ -196,8 +207,8 @@ export const useDiddyWaterfallGb = (): LogicBool => {
   const dk = useDk()
   const twirl = useTwirl()
   return {
-    in: inStage && rocket,
-    out: useFtaDiddyBanana() && inStage && (dk || twirl)
+    in: inStage.in && rocket,
+    out: useFtaDiddyBanana() && inStage.out && (dk || twirl)
   }
 }
 
@@ -208,34 +219,27 @@ export const useDiddyIglooGb = (): boolean => {
   return igloo && guitar && barrel
 }
 
-/*Alex edit: This was the old way of getting the Diddy Upper Cabin banana:
 export const useDiddyCandleGb = (): LogicBool => {
   const inStage = usePlayCaves()
   const guitar = useGuitar()
   const rocket = useRocket()
   const spring = useSpring()
   return {
-    in: inStage && guitar && rocket && spring,
-    out: inStage && guitar && rocket
+    in: inStage.in && guitar && rocket && spring,
+    out: inStage.out && guitar && rocket //If you're playing a seed with the "move Diddy Upper Cabin Barrel" option on under the "quality of life" settings, you may not be able to do this. Don't know if I should edit this check to account for that option...it's a lot of effort for just one check! -_-;
   }
-}
-But at some indeterminate point in Version 4's lifetime, 2Dos apparently issued some patch that changed the spawn point of either the Diddy Pad, the Jetbarrel, or both, so here's the new way:*/
-
-export const useDiddyCandleGb = (): boolean => {
-  const inStage = usePlayCaves()
-  const guitar = useGuitar()
-  const rocket = useRocket()
-  const spring = useSpring()
-  return inStage && guitar && rocket && spring
 }
 
 /**
  * Can we get the banana in the blast course within Caves?
  * @returns true if we can get the banana.
  */
-export const useDkBlastGb = (): boolean => {
+export const useDkBlastGb = (): LogicBool => {
   const inStage = usePlayCaves()
-  return useBlast() && inStage
+  return {
+    in: useBlast() && inStage.in,
+    out: useBlast() && inStage.out
+  }
 }
 
 export const useDkIglooGb = (): LogicBool => {
@@ -248,11 +252,14 @@ export const useDkIglooGb = (): LogicBool => {
   }
 }
 
-export const useDkRotateGb = (): boolean => {
+export const useDkRotateGb = (): LogicBool => {
   const inStage = usePlayCaves()
   const bongos = useBongos()
   const slam = useSlam()
-  return inStage && bongos && slam
+  return {
+    in: inStage.in && bongos && slam,
+    out: inStage.out && bongos && slam
+  }
 }
 
 /**
@@ -266,16 +273,19 @@ export const useLankyRaceGb = (): LogicBool => {
   const highGrab = useHighGrab()
   const sprint = useSprint()
   return {
-    in: inStage && canSlam && sprint && balloon,
-    out: inStage && canSlam && sprint && highGrab
+    in: inStage.in && canSlam && sprint && balloon,
+    out: inStage.out && canSlam && sprint && highGrab
   }
 }
 
-export const useLankyCastleGb = (): boolean => {
+export const useLankyCastleGb = (): LogicBool => {
   const inStage = usePlayCaves()
   const lanky = useLanky()
   const canSlam = useSlamCaves()
-  return inStage && lanky && canSlam
+  return {
+    in: inStage.in && lanky && canSlam,
+    out: inStage.out && lanky && canSlam
+  }
 }
 
 export const useLankyIglooGb = (): LogicBool => {
@@ -301,11 +311,14 @@ export const useLankyCabinGb = (): LogicBool => {
   }
 }
 
-export const useTinyCaveGb = (): boolean => {
+export const useTinyCaveGb = (): LogicBool => {
   const inStage = usePlayCaves()
   const mini = useMini()
   const warpAll = useBananaportAll()
-  return useFtaTinyBanana() && inStage && (mini || warpAll)
+  return {
+    in: useFtaTinyBanana() && inStage.in && (mini || warpAll),
+    out: useFtaTinyBanana() && inStage.out && (mini || warpAll)
+  }
 }
 
 export const useTinyPortGb = (): boolean => {
@@ -321,22 +334,31 @@ export const useTinyIglooGb = (): boolean => {
   return igloo && sax && slam
 }
 
-/*Alex edit: This check was originally a LogicBool with "out logic" of inStage + Sax + Shockwave + Feather, probably because the enemy randomizer works here so that not all of the enemies are purple Klaptraps. But in my experience, the game always gives me at least one purple Klaptrap for this check, making Oranges a very hard requirement, so I changed it to a boolean check.*/
-export const useTinyCabinGb = (): boolean => {
+/*Alex edit: This check was originally a LogicBool with "out logic" of inStage + Sax + Shockwave + Feather, probably because the enemy randomizer works here so that not all of the enemies are purple Klaptraps. But in my experience, the game always gives me at least one purple Klaptrap for this check, making Oranges a very hard requirement, so I originally changed it to a boolean check before adding a "Water is Lava?" option in the Generator Settings forced me to change it back.*/
+export const useTinyCabinGb = (): LogicBool => {
   const inStage = usePlayCaves()
   const sax = useSax()
   const orange = useOrange()
-  return inStage && sax && orange
+  return {
+    in: inStage.in && sax && orange,
+    out: inStage.out && sax && orange
+  }
 }
 
-export const useGeneralThing = (): boolean => {
+export const useGeneralThing = (): LogicBool => {
   const inStage = usePlayCaves()
-  return useAnyKong() && inStage
+  return {
+    in: useAnyKong() && inStage.in,
+    out: useAnyKong() && inStage.out
+  }
 }
 
-export const useGeneralDirt = (): boolean => {
+export const useGeneralDirt = (): LogicBool => {
   const inStage = usePlayCaves()
-  return useShockwave() && inStage
+  return {
+    in: useShockwave() && inStage.in,
+    out: useShockwave() && inStage.out
+  }
 }
 
 export const useKoshaDirt = (): LogicBool => {
@@ -349,9 +371,12 @@ export const useKoshaDirt = (): LogicBool => {
   }
 }
 
-export const useGenericFairy = (): boolean => {
+export const useGenericFairy = (): LogicBool => {
   const inStage = usePlayCaves()
-  return useCamera() && inStage
+  return {
+    in: useCamera() && inStage.in,
+    out: useCamera() && inStage.out
+  }
 }
 
 export const useIglooFairy = (): boolean => {
@@ -365,9 +390,12 @@ export const useCabinFairy = (): boolean => {
   return thing && camera
 }
 
-export const useIceCastleKasplat = (): boolean => {
+export const useIceCastleKasplat = (): LogicBool => {
   const inStage = usePlayCaves()
-  return useFtaDkBlueprint() && inStage
+  return {
+    in: useFtaDkBlueprint() && inStage.in,
+    out: useFtaDkBlueprint() && inStage.out
+  }
 }
 
 export const useFunkyKasplat = (): boolean => {
@@ -385,21 +413,30 @@ export const usePillarKasplat = (): LogicBool => {
   }
 }
 
-export const useCabinKasplat = (): boolean => {
+export const useCabinKasplat = (): LogicBool => {
   const inStage = usePlayCaves()
-  return useFtaTinyBlueprint() && inStage
+  return {
+    in: useFtaTinyBlueprint() && inStage.in,
+    out: useFtaTinyBlueprint() && inStage.out
+  }
 }
 
-export const useIglooKasplat = (): boolean => {
+export const useIglooKasplat = (): LogicBool => {
   const inStage = usePlayCaves()
-  return useFtaChunkyBlueprint() && inStage
+  return {
+    in: useFtaChunkyBlueprint() && inStage.in,
+    out: useFtaChunkyBlueprint() && inStage.out
+  }
 }
 
-export const useSatoriKomeiji = (): boolean => {
+export const useSatoriKomeiji = (): LogicBool => {
   const inStage = usePlayCaves()
   const hasChunky = useChunky()
   const hasBarrels = useBarrel()
-  return inStage && hasChunky && hasBarrels
+  return {
+    in: inStage.in && hasChunky && hasBarrels,
+    out: inStage.out && hasChunky && hasBarrels
+  }
 }
 
 export const useOrin = (): boolean => {
