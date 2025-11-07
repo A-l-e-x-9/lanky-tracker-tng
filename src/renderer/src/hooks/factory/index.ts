@@ -48,7 +48,13 @@ import { LogicBool, logicBreak } from '../world'
  * Can we play in Frantic Factory?
  * @returns true if we can play in Frantic Factory.
  */
-export const usePlayFactory = (): boolean => usePlayLevel('Frantic Factory')
+export const usePlayFactory = (): LogicBool => {
+  const canEnter = usePlayLevel('Frantic Factory')
+  return {
+    in: canEnter.in,
+    out: canEnter.out
+  }
+}
 
 /**
  * Can we slam down switches in Frantic Factory?

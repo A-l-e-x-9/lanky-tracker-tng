@@ -44,7 +44,13 @@ import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
  * Can we play in Gloomy Galleon?
  * @returns true if we can play in Gloomy Galleon.
  */
-export const usePlayGalleon = (): boolean => usePlayLevel('Gloomy Galleon')
+export const usePlayGalleon = (): LogicBool => {
+  const canEnter = usePlayLevel('Gloomy Galleon')
+  return {
+    in: canEnter.in,
+    out: canEnter.out
+  }
+}
 
 /**
  * Can we slam down switches in Gloomy Galleon?

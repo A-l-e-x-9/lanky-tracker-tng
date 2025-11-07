@@ -23,7 +23,13 @@ import { LogicBool, logicBreak } from '../world'
  * Can we play in Hideout Helm?
  * @returns true if we can play in Hideout Helm.
  */
-export const usePlayHelm = (): boolean => usePlayLevel('Hideout Helm')
+export const usePlayHelm = (): LogicBool => {
+  const canEnter = usePlayLevel('Hideout Helm')
+  return {
+    in: canEnter.in,
+    out: canEnter.out
+  }
+}
 
 /**
  * Can we slam down switches in Hideout Helm?

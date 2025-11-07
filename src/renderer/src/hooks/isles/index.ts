@@ -327,7 +327,7 @@ export const usePlayLevel = (level: Level): LogicBool => {
   if (level4 === level) {
     return {
       in: currentGB >= bLocker4 && (openLobbies || key2) && dive.in,
-      out: currentGB >= bLocker4 && (openLobbies || key3) && dive.out
+      out: currentGB >= bLocker4 && (openLobbies || key2) && dive.out
     }
   }
   if (level5 === level) {

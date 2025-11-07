@@ -53,7 +53,13 @@ import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
  * Can we play in Fungi Forest?
  * @returns true if we can play in Fungi Forest.
  */
-export const usePlayForest = (): boolean => usePlayLevel('Fungi Forest')
+export const usePlayForest = (): LogicBool => {
+  const canEnter = usePlayLevel('Fungi Forest')
+  return {
+    in: canEnter.in,
+    out: canEnter.out
+  }
+}
 
 /**
  * Can we slam down switches in Fungi Forest?

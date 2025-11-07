@@ -51,7 +51,13 @@ import {
  * Can we play in Angry Aztec?
  * @returns true if we can play in Angry Aztec.
  */
-export const usePlayAztec = (): boolean => usePlayLevel('Angry Aztec')
+export const usePlayAztec = (): LogicBool => {
+  const canEnter = usePlayLevel('Angry Aztec')
+  return {
+    in: canEnter.in,
+    out: canEnter.out
+  }
+}
 
 /**
  * Can we slam down switches in Angry Aztec?

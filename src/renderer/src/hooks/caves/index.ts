@@ -50,7 +50,13 @@ import { LogicBool, logicBreak } from '../world'
  * Can we play in Crystal Caves?
  * @returns true if we can play in Crystal Caves.
  */
-export const usePlayCaves = (): boolean => usePlayLevel('Crystal Caves')
+export const usePlayCaves = (): LogicBool => {
+  const canEnter = usePlayLevel('Crystal Caves')
+  return {
+    in: canEnter.in,
+    out: canEnter.out
+  }
+}
 
 /**
  * Can we slam down switches in Crystal Caves?
