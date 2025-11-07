@@ -283,8 +283,8 @@ export const useDiddyFreeTinyGb = (): LogicBool => {
   const dive = useDive()
   const free = useFreeTinySwitch()
   return {
-    in: temple.in && iceMelted && dive && free,
-    out: logicBreak(temple) && iceMelted && dive && free
+    in: temple.in && iceMelted && dive.in && free,
+    out: logicBreak(temple) && iceMelted && dive.out && free
   }
 }
 
@@ -374,8 +374,8 @@ export const useDkFreeLankyGb = (): LogicBool => {
   const dive = useDive()
   const llama = useAztecLlamaTemple()
   return {
-    in: llama.in && dive && lanky.in,
-    out: logicBreak(llama) && dive && logicBreak(lanky)
+    in: llama.in && dive.in && lanky.in,
+    out: logicBreak(llama) && dive.out && logicBreak(lanky)
   }
 }
 
@@ -389,8 +389,8 @@ export const useLankyVultureGb = (): LogicBool => {
   const anyGun = useAnyGun()
   const iceMelted = useTinyTempleIce()
   return {
-    in: front.in && grape && iceMelted && dive && canSlam,
-    out: logicBreak(tinyTemple) && iceMelted && dive && canSlam && lanky && anyGun
+    in: front.in && grape && iceMelted && dive.in && canSlam,
+    out: logicBreak(tinyTemple) && iceMelted && dive.out && canSlam && lanky && anyGun
   }
 }
 
@@ -440,8 +440,8 @@ export const useTinyKlaptrapGb = (): LogicBool => {
   const tinyTemple = useAztecTinyTemple()
   const iceMelted = useTinyTempleIce()
   return {
-    in: front.in && feather && mini && iceMelted && dive,
-    out: logicBreak(tinyTemple) && mini && iceMelted && dive
+    in: front.in && feather && mini && iceMelted && dive.in,
+    out: logicBreak(tinyTemple) && mini && iceMelted && dive.out
   }
 }
 

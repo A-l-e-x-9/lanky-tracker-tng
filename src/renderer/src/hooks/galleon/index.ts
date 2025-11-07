@@ -68,26 +68,38 @@ export const useGalleonLighthouseArea = (): boolean => {
  * Do we have access to High Tide in Galleon?
  * @returns true if we have access to High Tide in Galleon.
  */
-export const useGalleonHighTide = (): boolean => {
+export const useGalleonHighTide = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
   const dive = useDive()
   if (useGalleonTideStartHigh()) {
-    return true
+    return {
+      in: true,
+      out: true
+    }
   }
-  return lighthouse && dive
+  return {
+    in: lighthouse && dive.in,
+    out: lighthouse && dive.out
+  }
 }
 
 /**
  * Do we have access to Low Tide in Galleon?
  * @returns true if we have access to Low Tide in Galleon.
  */
-export const useGalleonLowTide = (): boolean => {
+export const useGalleonLowTide = (): LogicBool => {
   const dive = useDive()
   const inStage = usePlayGalleon()
   if (!useGalleonTideStartHigh()) {
-    return true
+    return {
+      in: true,
+      out: true
+    }
   }
-  return dive && inStage
+  return {
+    in: dive.in && inStage,
+    out: dive.out && inStage
+  }
 }
 
 /**
@@ -157,8 +169,8 @@ export const useGalleonCavernTop = (): LogicBool => {
   const vine = useVine()
   const warpAll = useBananaportAll()
   return {
-    in: inStage && (vine || (warpAll && (dive || rocket))),
-    out: inStage && logicBreak(seasick)
+    in: inStage && (vine || (warpAll && (dive.in || rocket))),
+    out: inStage && seasick.out
   }
 }
 
@@ -196,8 +208,8 @@ export const useGalleonTreasureRoom = (): LogicBool => {
   const preOpened = useDonkStore(useShallow((state) => state.removeBarriers.galleonTreasureRoom))
   const warpAll = useBananaportAll()
   return {
-    in: (inStage && warpAll) || (outskirts && (lanky && dive || preOpened) && highTide),
-    out: outskirts && (lanky && dive || preOpened)
+    in: (inStage && warpAll) || (outskirts && (lanky && dive.in || preOpened) && highTide),
+    out: outskirts && (lanky && dive.out || preOpened)
   }
 }
 
@@ -252,13 +264,16 @@ export const useChunkySeasickGb = (): boolean => {
   return lighthouse && ((isLighthouseOn.in || isLighthouseOn.out) || wasLighthouseOn) && punch && slam
 }
 
-export const useChunky5DoorShipGb = (): boolean => {
+export const useChunky5DoorShipGb = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
   const outskirts = useGalleonOutskirts()
   const dive = useDive()
   const triangle = useTriangle()
   const lowTide = useGalleonLowTide()
-  return lighthouse && outskirts && dive && lowTide && triangle
+  return {
+    in: lighthouse && outskirts && dive.in && lowTide && triangle,
+    out: lighthouse && outskirts && dive.out && lowTide && triangle
+  }
 }
 
 export const useDiddyGoldGb = (): LogicBool => {
@@ -279,17 +294,20 @@ export const useDiddyMechGb = (): LogicBool => {
   const rocket = useRocket()
   const guitar = useGuitar()
   return {
-    in: lighthouse && outskirts && dive && rocket && guitar && highTide,
-    out: lighthouse && outskirts && dive && rocket && guitar
+    in: lighthouse && outskirts && dive.in && rocket && guitar && highTide,
+    out: lighthouse && outskirts && dive.out && rocket && guitar
   }
 }
 
-export const useDiddy5DoorShipGb = (): boolean => {
+export const useDiddy5DoorShipGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const lowTide = useGalleonLowTide()
   const guitar = useGuitar()
   const dive = useDive()
-  return outskirts && lowTide && guitar && dive
+  return {
+    in: outskirts && lowTide && guitar && dive.in,
+    out: outskirts && lowTide && guitar && dive.out
+  }
 }
 
 /**
@@ -307,18 +325,24 @@ export const useDkBlastGb = (): LogicBool => {
   }
 }
 
-export const useDk5DoorShipGb = (): boolean => {
+export const useDk5DoorShipGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const bongos = useBongos()
   const dive = useDive()
-  return outskirts && bongos && dive
+  return {
+    in: outskirts && bongos && dive.in,
+    out: outskirts && bongos && dive.out
+  }
 }
 
-export const useLankyChestGb = (): boolean => {
+export const useLankyChestGb = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
   const lanky = useLanky()
   const dive = useDive()
-  return lighthouse && lanky && dive
+  return {
+    in: lighthouse && lanky && dive.in,
+    out: lighthouse && lanky && dive.out
+  }
 }
 
 export const useLankyGoldGb = (): LogicBool => {
@@ -331,51 +355,69 @@ export const useLankyGoldGb = (): LogicBool => {
   }
 }
 
-export const useLanky2DoorShipGb = (): boolean => {
+export const useLanky2DoorShipGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const canSlam = useSlamGalleon()
   const lanky = useLanky()
   const dive = useDive()
-  return outskirts && canSlam && lanky && dive
+  return {
+    in: outskirts && canSlam && lanky && dive.in,
+    out: outskirts && canSlam && lanky && dive.out
+  }
 }
 
-export const useLanky5DoorShipGb = (): boolean => {
+export const useLanky5DoorShipGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const trombone = useTrombone()
   const lowTide = useGalleonLowTide()
   const dive = useDive()
-  return outskirts && trombone && lowTide && dive
+  return {
+    in: outskirts && trombone && lowTide && dive.in,
+    out: outskirts && trombone && lowTide && dive.out
+  }
 }
 
-export const useTinyMermaidGb = (): boolean => {
+export const useTinyMermaidGb = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
   const mini = useMini()
   const dive = useDive()
   const mermaid = useFastMermaid()
   const pearls = useCurrentPearlCount()
-  return lighthouse && mini && dive && pearls >= mermaid
+  return {
+    in: lighthouse && mini && dive.in && pearls >= mermaid,
+    out: lighthouse && mini && dive.out && pearls >= mermaid
+  }
 }
 
-export const useTinySubGb = (): boolean => {
+export const useTinySubGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const mini = useMini()
   const dive = useDive()
-  return outskirts && mini && dive
+  return {
+    in: outskirts && mini && dive.in,
+    out: outskirts && mini && dive.out
+  }
 }
 
-export const useTiny2DoorShipGb = (): boolean => {
+export const useTiny2DoorShipGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const dive = useDive()
   const tiny = useTiny()
   const canSlam = useSlamGalleon()
-  return tiny && canSlam && outskirts && dive
+  return {
+    in: tiny && canSlam && outskirts && dive.in,
+    out: tiny && canSlam && outskirts && dive.out
+  }
 }
 
-export const useTiny5DoorShipGb = (): boolean => {
+export const useTiny5DoorShipGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const sax = useSax()
   const dive = useDive()
-  return outskirts && sax && dive
+  return {
+    in: outskirts && sax && dive.in,
+    out: outskirts && sax && dive.out
+  }
 }
 
 export const useTinyClams = (): LogicBool => {
