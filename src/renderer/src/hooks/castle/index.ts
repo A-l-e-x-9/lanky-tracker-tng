@@ -328,6 +328,7 @@ export const useGeneralThing = (): LogicBool => {
   return {
     in: useAnyKong() && inStage.in,
     out: useAnyKong() && inStage.out
+  }
 }
 
 export const useGeneralDirt = (): LogicBool => {
