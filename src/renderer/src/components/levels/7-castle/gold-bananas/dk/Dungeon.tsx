@@ -11,7 +11,7 @@ return (
     name="DK's Face Puzzle"
     region="Castle Crypt and Dungeon"
     canGetLogic={canDo.in}
-    canGetLogic={canDo.out}
+    canGetBreak={canDo.out}
   />
   </GBPool>
 )
