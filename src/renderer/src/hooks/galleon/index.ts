@@ -64,11 +64,14 @@ export const useSlamGalleon = (): boolean => useSlamLevel('Gloomy Galleon')
  * Can we enter the Lighthouse area in Galleon?
  * @returns true if we can enter the Lighthouse area.
  */
-export const useGalleonLighthouseArea = (): boolean => {
+export const useGalleonLighthouseArea = (): LogicBool => {
   const inStage = usePlayGalleon()
   const target = useSwitchsanityGun('galleonLighthouse', 0)
   const removeBarriers = useDonkStore(useShallow((state) => state.removeBarriers))
-  return inStage && (target || removeBarriers.galleonLighthouse)
+  return {
+    in: inStage.in && (target || removeBarriers.galleonLighthouse),
+    out: inStage.out && (target || removeBarriers.galleonLighthouse)
+  }
 }
 
 /**
@@ -104,8 +107,8 @@ export const useGalleonLowTide = (): LogicBool => {
     }
   }
   return {
-    in: dive.in && inStage,
-    out: dive.out && inStage
+    in: dive.in && inStage.in,
+    out: dive.out && inStage.out
   }
 }
 
@@ -127,7 +130,7 @@ export const useGalleonLighthousePlatform = (): LogicBool => {
   )
 
   return {
-    in: (inStage && warpAll) || (lighthouseArea && (highTide.in || (galleonSeasick && twirl))),
+    in: (inStage.in && warpAll) || (lighthouseArea && (highTide.in || (galleonSeasick && twirl))),
     out: lighthouseArea && galleonSeasick
   }
 }
@@ -176,8 +179,8 @@ export const useGalleonCavernTop = (): LogicBool => {
   const vine = useVine()
   const warpAll = useBananaportAll()
   return {
-    in: inStage && (vine || (warpAll && (dive.in || rocket))),
-    out: inStage && seasick.out
+    in: inStage.in && (vine || (warpAll && (dive.in || rocket))),
+    out: inStage.out && seasick.out
   }
 }
 
@@ -185,21 +188,27 @@ export const useGalleonCavernTop = (): LogicBool => {
  * Do we have access to the Cannon Game area in Galleon?
  * @returns true if we have access to the Cannon Game area in Galleon.
  */
-export const useGalleonCannon = (): boolean => {
+export const useGalleonCannon = (): LogicBool => {
   const canPlay = usePlayGalleon()
   const target = useSwitchsanityGun('galleonCannon', 4)
-  return canPlay && target
+  return {
+    in: canPlay.in && target,
+    out: canPlay.out && target
+  }
 }
 
 /**
  * Do we have access to the Shipyard Outskirts in Galleon?
  * @returns true if we can access the Shipyard Outskirts in Galleon.
  */
-export const useGalleonOutskirts = (): boolean => {
+export const useGalleonOutskirts = (): LogicBool => {
   const inStage = usePlayGalleon()
   const target = useSwitchsanityGun('galleonOutskirts', 1)
   const removeBarriers = useDonkStore(useShallow((state) => state.removeBarriers))
-  return inStage && (target || removeBarriers.galleonOutskirts)
+  return {
+    in: inStage.in && (target || removeBarriers.galleonOutskirts),
+    out: inStage.out && (target || removeBarriers.gallenOutskirts)
+  }
 }
 
 /**
@@ -215,7 +224,7 @@ export const useGalleonTreasureRoom = (): LogicBool => {
   const preOpened = useDonkStore(useShallow((state) => state.removeBarriers.galleonTreasureRoom))
   const warpAll = useBananaportAll()
   return {
-    in: (inStage && warpAll) || (outskirts && (lanky && dive.in || preOpened) && highTide.in),
+    in: (inStage.in && warpAll) || (outskirts && (lanky && dive.in || preOpened) && highTide.in),
     out: outskirts && (lanky && dive.out || preOpened)
   }
 }
@@ -245,10 +254,13 @@ export const useDiddyLighthouseGb = (): LogicBool => {
   }
 }
 
-export const useChunkyChestGb = (): boolean => {
+export const useChunkyChestGb = (): LogicBool => {
   const inStage = usePlayGalleon()
   const punch = usePunch()
-  return inStage && punch
+  return {
+    in: inStage.in && punch,
+    out: inStage.out && punch
+  }
 }
 
 export const useChunkyCannonGb = (): LogicBool => {
@@ -436,14 +448,20 @@ export const useTinyClams = (): LogicBool => {
   }
 }
 
-export const useGeneralThing = (): boolean => {
+export const useGeneralThing = (): LogicBool => {
   const inStage = usePlayGalleon()
-  return useAnyKong() && inStage
+  return {
+    in: useAnyKong() && inStage.in,
+    out: useAnyKong() && inStage.out
+  }
 }
 
-export const useArena = (): boolean => {
+export const useArena = (): LogicBool => {
   const inStage = usePlayGalleon()
-  return usePunch() && inStage
+  return {
+    in: usePunch() && inStage.in,
+    out: usePunch() && inStage.out
+  }
 }
 
 export const useGeneralOutskirts = (): boolean => {

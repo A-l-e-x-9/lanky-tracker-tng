@@ -137,8 +137,8 @@ export const useForestSpiderBoss = (): LogicBool => {
   const punch = usePunch()
 
   return {
-    in: dusk || (night.in && punch && mini),
-    out: dusk || (logicBreak(night) && punch && mini)
+    in: dusk.in || (night.in && punch && mini),
+    out: dusk.out || (night.out && punch && mini)
   }
 }
 
@@ -238,11 +238,14 @@ export const useChunkyFaceGb = (): LogicBool => {
   }
 }
 
-export const useChunkyAppleGb = (): boolean => {
+export const useChunkyAppleGb = (): LogicBool => {
   const beanstalk = useForestBean()
   const boulder = useBoulderTech()
   const hunky = useHunky()
-  return beanstalk && boulder && hunky
+  return {
+    in: beanstalk.in && boulder && hunky,
+    out: beanstalk.out && boulder && hunky
+  }
 }
 
 export const useChunkyMillGb = (): LogicBool => {
@@ -284,7 +287,6 @@ export const useDiddyOwlGb = (): LogicBool => {
 export const useDiddyCageGb = (): LogicBool => {
   const inStage = usePlayForest()
   const hasClimbing = useClimbing()
-  const hasBalloon = useBalloon()
   const hasSlam = useSlamForest()
   const charge = useCharge()
   const guitar = useGuitar()
@@ -439,12 +441,15 @@ export const useTinySpiderGb = (): LogicBool => {
   }
 }
 
-export const useTinyBeanGb = (): boolean => {
+export const useTinyBeanGb = (): LogicBool => {
   const beanstalk = useForestBean()
   const bean = useBean()
   const mini = useMini()
   const sax = useSax()
-  return beanstalk && bean && mini && sax
+  return {
+    in: beanstalk.in && bean && mini && sax,
+    out: beanstalk.out && bean && mini && sax
+  }
 }
 
 export const useGeneralThing = (): LogicBool => {
@@ -462,9 +467,12 @@ export const useArena = (): boolean => {
   return top && anyKong
 }
 
-export const useBeanDirt = (): boolean => {
+export const useBeanDirt = (): LogicBool => {
   const beanstalk = useForestBean()
-  return useShockwave() && beanstalk
+  return {
+    in: useShockwave() && beanstalk.in,
+    out: useShockwave() && beanstalk.out
+  }
 }
 
 export const useGeneralDirt = (): LogicBool => {
@@ -506,8 +514,8 @@ export const useBarnKasplat = (): LogicBool => {
   const dusk = useForestDusk()
   const kong = useFtaDkBlueprint()
   return {
-    in: kong && inStage.in && (night.in || dusk),
-    out: kong && inStage.out && (night.out || dusk)
+    in: kong && inStage.in && (night.in || dusk.in),
+    out: kong && inStage.out && (night.out || dusk.out)
   }
 }
 
