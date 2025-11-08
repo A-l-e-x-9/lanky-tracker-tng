@@ -18,5 +18,6 @@ return (
     </VanillaCrate>
   </CratePool>
 )
+}
 
 export default RaftersCrate
