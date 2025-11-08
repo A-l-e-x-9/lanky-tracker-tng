@@ -187,9 +187,12 @@ export const useChunkyClearGb = (): LogicBool => {
   }
 }
 
-export const useChunkyIglooGb = (): boolean => {
+export const useChunkyIglooGb = (): LogicBool => {
   const igloo = useCavesIgloo()
-  return useTriangle() && igloo
+  return {
+    in: useTriangle() && igloo.in,
+    out: useTriangle() && igloo.out
+  }
 }
 
 export const useChunkyCabinGb = (): LogicBool => {
@@ -213,11 +216,14 @@ export const useDiddyWaterfallGb = (): LogicBool => {
   }
 }
 
-export const useDiddyIglooGb = (): boolean => {
+export const useDiddyIglooGb = (): LogicBool => {
   const igloo = useCavesIgloo()
   const guitar = useGuitar()
   const barrel = useBarrel()
-  return igloo && guitar && barrel
+  return {
+    in: igloo.in && guitar && barrel,
+    out: igloo.out && guitar && barrel
+  }
 }
 
 export const useDiddyCandleGb = (): LogicBool => {
@@ -243,13 +249,15 @@ export const useDkBlastGb = (): LogicBool => {
   }
 }
 
+/*Fun fact: The DK Barrel seen in Randomizer seeds is strictly a creation of the Randomizer. In vanilla, you are required to do this check with just access to the Igloo and Bongoes.*/
 export const useDkIglooGb = (): LogicBool => {
   const igloo = useCavesIgloo()
   const bongos = useBongos()
   const strong = useStrong()
+  const hinaKagiyama = useTwirl()
   return {
-    in: igloo && bongos && strong,
-    out: igloo && bongos
+    in: igloo.in && bongos && strong,
+    out: igloo.out && (bongos || hinaKagiyama) //You are able to do this check out of logic if you have Tiny and Ponytail Twirl, although you need good timing to not get hit by the spiky ice wall.
   }
 }
 
@@ -295,8 +303,8 @@ export const useLankyIglooGb = (): LogicBool => {
   const balloon = useBalloon()
   const highGrab = useHighGrab()
   return {
-    in: igloo && trombone && balloon,
-    out: igloo && trombone && highGrab
+    in: igloo.in && trombone && balloon,
+    out: igloo.out && trombone && highGrab
   }
 }
 
@@ -322,17 +330,23 @@ export const useTinyCaveGb = (): LogicBool => {
   }
 }
 
-export const useTinyPortGb = (): boolean => {
+export const useTinyPortGb = (): LogicBool => {
   const funky = useCavesMiniFunky()
   const port = useMonkeyport()
-  return funky && port
+  return {
+    in: funky.in && port,
+    out: funky.out && port
+  }
 }
 
-export const useTinyIglooGb = (): boolean => {
+export const useTinyIglooGb = (): LogicBool => {
   const igloo = useCavesIgloo()
   const sax = useSax()
   const slam = useSlam()
-  return igloo && sax && slam
+  return {
+    in: igloo.in && sax && slam,
+    out: igloo.out && sax && slam //I would argue that having Super Duper Simian Slam is "out of logic", as this check is quite hard to do with it. But that was too complicated for me to replicate here ^^;
+  }
 }
 
 /*Alex edit: This check was originally a LogicBool with "out logic" of inStage + Sax + Shockwave + Feather, probably because the enemy randomizer works here so that not all of the enemies are purple Klaptraps. But in my experience, the game always gives me at least one purple Klaptrap for this check, making Oranges a very hard requirement, so I originally changed it to a boolean check before adding a "Water is Lava?" option in the Generator Settings forced me to change it back.*/
@@ -399,10 +413,13 @@ export const useIceCastleKasplat = (): LogicBool => {
   }
 }
 
-export const useFunkyKasplat = (): boolean => {
+export const useFunkyKasplat = (): LogicBool => {
   const miniFunky = useCavesMiniFunky()
   const kong = useFtaDiddyBlueprint()
-  return kong && miniFunky
+  return {
+    in: kong && miniFunky.in,
+    out: kong && miniFunky.out
+  }
 }
 
 export const usePillarKasplat = (): LogicBool => {
