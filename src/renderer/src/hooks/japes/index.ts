@@ -59,13 +59,16 @@ export const usePlayJapes = (): LogicBool => {
  */
 export const useSlamJapes = (): boolean => useSlamLevel('Jungle Japes')
 
-export const useJapesKongGates = (): boolean => {
+export const useJapesKongGates = (): LogicBool => {
   const inStage = usePlayJapes()
   const [barriers, checks] = useDonkStore(
     useShallow((state) => [state.removeBarriers, state.checks])
   )
 
-  return inStage && (checks[1002] || barriers.japesCoconutGates)
+  return {
+    in: inStage.in && (checks[1002] || barriers.japesCoconutGates),
+    out: inStage.out && (checks[1002] || barriers.japesCoconutGates)
+  }
 }
 
 /**
@@ -95,10 +98,13 @@ const useJapesPaintingSwitch = (): boolean => useSwitchsanityGun('japesPainting'
  * Can we access the side area at the start of Japes with one free item and two gated bonus stages?
  * @returns true if we can access the side area at the start of Japes.
  */
-export const useJapesSideArea = (): boolean => {
+export const useJapesSideArea = (): LogicBool => {
   const inStage = usePlayJapes()
   const canAccess = useJapesSideSwitch()
-  return inStage && canAccess
+  return {
+    in: inStage.in && canAccess,
+    out: inStage.out && canAccess
+  }
 }
 
 /**
@@ -117,26 +123,32 @@ export const useJapesRambi = (): boolean => {
  * There is no switchsanity here: all checks are Diddy exclusive.
  * @returns true if Diddy can access the mines.
  */
-export const useJapesMine = (): boolean => {
+export const useJapesMine = (): LogicBool => {
   const peanut = usePeanut()
   const canPlay = usePlayJapes()
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
-  return peanut && (hasClimbing || hasBananaports) && canPlay
+  return {
+    in: peanut && (hasClimbing || hasBananaports) && canPlay.in,
+    out: peanut && canPlay.out
+  }
 }
 
 /**
  * Can we access the hive area past the tunnel?
  * @returns true if we have access to the Hive area past the tunnel.
  */
-export const useJapesHive = (): boolean => {
+export const useJapesHive = (): LogicBool => {
   const hiveSwitch = useJapesHiveSwitch()
   const canPlay = usePlayJapes()
   const coconutGates = useJapesKongGates()
   const japesMine = useJapesMine()
   const warpAll = useBananaportAll()
-  const [hiveGateOpen] = useDonkStore(useShallow((state) => [state.removeBarriers.japesHiveGate]))
-  return canPlay && ((coconutGates && (hiveGateOpen || hiveSwitch)) || (warpAll && japesMine))
+  const [hiveGateOpen, checks] = useDonkStore(useShallow((state) => [state.removeBarriers.japesHiveGate, state.checks]))
+  return {
+    in: canPlay.in && ((coconutGates && (hiveGateOpen || hiveSwitch)) || (japesMine && (warpAll || checks[1011]))),
+    out: canPlay.out && ((coconutGates && (hiveGateOpen || hiveSwitch)) || (japesMine && (warpAll || checks[1011])))
+  }
 }
 
 /**
@@ -152,8 +164,8 @@ export const useJapesPaintingOutside = (): LogicBool => {
   const tiny = useTiny()
   const chunky = useChunky()
   return {
-    in: inStage && (stand || (climbing && twirl)),
-    out: inStage && climbing && (dk || tiny || chunky)
+    in: inStage.in && (stand || (climbing && twirl)),
+    out: inStage.out && climbing && (dk || tiny || chunky)
   }
 }
 
@@ -174,17 +186,23 @@ export const useJapesPainting = (): LogicBool => {
  * Can we access the underground via the power of Boulder Tech?
  * @returns true if we can access the underground.
  */
-export const useJapesUnderground = (): boolean => {
+export const useJapesUnderground = (): LogicBool => {
   const slam = useSlam()
   const boulderTech = useBoulderTech()
   const inStage = usePlayJapes()
-  return inStage && boulderTech && slam
+  return {
+    in: inStage.in && boulderTech && slam,
+    out: inStage.out && boulderTech && slam
+  }
 }
 
-export const useChunkyBoulderGb = (): boolean => {
+export const useChunkyBoulderGb = (): LogicBool => {
   const inStage = usePlayJapes()
   const boulderTech = useBoulderTech()
-  return inStage && boulderTech
+  return {
+    in: inStage.in && boulderTech
+    out: inStage.out && boulderTech
+  }
 }
 
 export const useChunkyCagedGb = (): boolean => {
@@ -263,12 +281,15 @@ export const useDiddyMinecartGb = (): LogicBool => {
  * This location is likely not restricted to FTA.
  * @returns true if this item can be attained.
  */
-export const useDkFreebieGb = (): boolean => {
+export const useDkFreebieGb = (): LogicBool => {
   const inStage = usePlayJapes()
   const anyKong = useAnyKong()
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
-  return inStage && anyKong && (hasClimbing || hasBananaports)
+  return {
+    in: inStage.in && anyKong && (hasClimbing || hasBananaports),
+    out: inStage.out && anyKong //The "shortcut" I'm thinking of is a small area next to the mine exit that Lanky can O-Stand up, but right now, I'm a little hesitant to actually put O-Stand here. ^^;
+  }
 }
 
 const useFreeDiddySwitch = (): boolean => {
@@ -294,11 +315,15 @@ const useFreeDiddySwitch = (): boolean => {
   }
 }
 
-export const useDkFreeDiddyGb = (): boolean => {
+export const useDkFreeDiddyGb = (): LogicBool => {
   const inStage = usePlayJapes()
-  const climbing = useClimbing()
-  const hasBananaports = useBananaportAll()
-  return useFreeDiddySwitch() && inStage && (climbing || hasBananaports)
+  const canReach = useDkFreebieGb()
+  const gotFreebieGb = useDonkStore(useShallow((state) => [state.checks]))
+  const canShoot = useFreeDiddySwitch()
+  return {
+    in: inStage.in && canReach.in && gotFreebieGb[1001] && canShoot,
+    out: inStage.out && canReach.out && gotFreebieGb[1001] && canShoot
+  }
 }
 
 export const useDkCagedGb = (): boolean => {
@@ -308,12 +333,15 @@ export const useDkCagedGb = (): boolean => {
   return rambi && dk && canSlam
 }
 
-export const useDkBlastGb = (): boolean => {
+export const useDkBlastGb = (): LogicBool => {
   const inStage = usePlayJapes()
   const blast = useBlast()
   const vine = useVine()
   const climbing = useClimbing()
-  return inStage && blast && vine && climbing
+  return {
+    in: inStage.in && blast && vine && climbing,
+    out: inStage.out && blast && vine && climbing
+  }
 }
 
 export const useLankyCagedGb = (): boolean => {
@@ -380,9 +408,13 @@ export const useTinyHiveGb = (): boolean => {
   return hive && canSlam
 }
 
-export const useGeneralThing = (): boolean => {
+export const useGeneralThing = (): LogicBool => {
   const anyKong = useAnyKong()
-  return usePlayJapes() && anyKong
+  const canPlay = usePlayJapes()
+  return {
+    in: canPlay.in && anyKong,
+    out: canPlay.out && anyKong
+  }
 }
 
 export const useRambiCrate = (): boolean => {
@@ -399,10 +431,13 @@ export const usePaintingDirt = (): LogicBool => {
   }
 }
 
-export const useGeneralDirt = (): boolean => {
+export const useGeneralDirt = (): LogicBool => {
   const shockwave = useShockwave()
   const inStage = usePlayJapes()
-  return inStage && shockwave
+  return {
+    in: inStage.in && shockwave,
+    out: inStage.out && shockwave
+  }
 }
 
 export const useRambiFairy = (): boolean => {
@@ -420,9 +455,13 @@ export const usePaintingFairy = (): LogicBool => {
   }
 }
 
-export const useGeneralFairy = (): boolean => {
+export const useGeneralFairy = (): LogicBool => {
   const camera = useCamera()
-  return usePlayJapes() && camera
+  const canPlay = usePlayJapes()
+  return {
+    in: canPlay.in && camera,
+    out: canPlay.out && camera
+  }
 }
 
 export const useGateKasplat = (): boolean => {
@@ -455,9 +494,12 @@ export const useTinyKasplat = (): boolean => {
   return ftaBP && gate
 }
 
-export const useMtnCrate = (): boolean => {
+export const useMtnCrate = (): LogicBool => {
   const canEnterLevel = usePlayJapes()
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
-  return canEnterLevel && (hasClimbing || hasBananaports)
+  return {
+    in: canEnterLevel.in && (hasClimbing || hasBananaports),
+    out: canEnterLevel.out
+  }
 }
