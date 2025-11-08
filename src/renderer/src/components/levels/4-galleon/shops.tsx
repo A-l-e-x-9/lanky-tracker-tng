@@ -33,22 +33,24 @@ const Vanilla: React.FC = () => {
         baseName="Galleon Funky"
         level="Gloomy Galleon"
         region="Shops"
-        inLogic={hasFunky && outskirts}
+        inLogic={hasFunky && outskirts.in}
+        outLogic={hasFunky && outskirts.out}
       />
       <ShopGenerator
         baseId={4130}
         baseName="Galleon Candy"
         level="Gloomy Galleon"
         region="Shops"
-        inLogic={hasCandy && outskirts}
+        inLogic={hasCandy && outskirts.in}
+        outLogic={hasCandy && outskirts.out}
       />
       <ShopGenerator
         baseId={4140}
         baseName="Turn in Galleon Blueprint for"
         level="Gloomy Galleon"
         region="Shops"
-        inLogic={hasSnide && lighthouseArea && highTide.in}
-        outLogic={hasSnide && lighthouseArea}
+        inLogic={hasSnide && lighthouseArea.in && highTide.in}
+        outLogic={hasSnide && lighthouseArea.out}
       />
     </>
   )
@@ -79,22 +81,24 @@ const Shuffled: React.FC = () => {
         baseName="Galleon Funky Location"
         level="Gloomy Galleon"
         region="Shops"
-        inLogic={hasFunky && outskirts}
+        inLogic={hasFunky && outskirts.in}
+        outLogic={hasFunky && outskirts.out}
       />
       <ShopGenerator
         baseId={4160}
         baseName="Galleon Candy Location"
         level="Gloomy Galleon"
         region="Shops"
-        inLogic={hasCandy && outskirts}
+        inLogic={hasCandy && outskirts.in}
+        outLogic={hasCandy && outskirts.out}
       />
       <ShopGenerator
         baseId={4170}
         baseName="Galleon Snide Location"
         level="Gloomy Galleon"
         region="Shops"
-        inLogic={hasSnide && lighthouseArea && highTide.in}
-        outLogic={hasSnide && lighthouseArea}
+        inLogic={hasSnide && lighthouseArea.in && highTide.in}
+        outLogic={hasSnide && lighthouseArea.out}
       />
     </>
   )
