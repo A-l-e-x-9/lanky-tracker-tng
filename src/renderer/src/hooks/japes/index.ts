@@ -49,6 +49,7 @@ export const usePlayJapes = (): LogicBool => {
   return {
     in: canEnter.in,
     out: canEnter.out
+  }
 }
 
 /**
