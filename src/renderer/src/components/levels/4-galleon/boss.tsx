@@ -18,7 +18,7 @@ const BossCheck: React.FC = () => {
         id={4105}
         name="Galleon Boss"
         region="Bosses"
-        canGetLogic={top.in || (dive && (lighthouseArea || outskirts))}
+        canGetLogic={top.in || (dive.in && (lighthouseArea.in || outskirts.in))}
         canGetBreak={top.out}
       />
     </BossPool>
