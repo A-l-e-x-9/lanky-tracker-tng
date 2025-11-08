@@ -394,9 +394,12 @@ export const useGenericFairy = (): LogicBool => {
   }
 }
 
-export const useIglooFairy = (): boolean => {
+export const useIglooFairy = (): LogicBool => {
   const thing = useTinyIglooGb()
-  return useCamera() && thing
+  return {
+    in: useCamera() && thing.in,
+    out: useCamera() && thing.out
+  }
 }
 
 export const useCabinFairy = (): boolean => {

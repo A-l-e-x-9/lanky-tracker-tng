@@ -10,7 +10,8 @@ const MonkeyportIgloo: React.FC = () => {
       id={6031}
       name="Tiny's Monkeyport Igloo"
       region="Caves Igloo"
-      canGetLogic={portGb}
+      canGetLogic={portGb.in}
+      canGetBreak={portGb.out}
     />
     </GBPool>
   )
