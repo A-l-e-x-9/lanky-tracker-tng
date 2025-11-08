@@ -44,7 +44,8 @@ export const initialSettings: SettingState = {
     chunkySlamLevel: 0,
     poolWrinkly: true,
     poolBoulders: true,
-    betaLankyPhase: false
+    betaLankyPhase: false,
+    waterIsLava: false
   }
 }
 
