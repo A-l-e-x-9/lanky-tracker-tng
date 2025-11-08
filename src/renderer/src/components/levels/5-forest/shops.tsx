@@ -26,7 +26,8 @@ const Vanilla: React.FC = () => {
         baseName="Forest Funky"
         level="Fungi Forest"
         region="Shops"
-        inLogic={hasFunky && beanstalk}
+        inLogic={hasFunky && beanstalk.in}
+        outLogic={hasFunky && beanstalk.out}
       />
       <ShopGenerator
         baseId={5140}
@@ -63,7 +64,8 @@ const Shuffled: React.FC = () => {
         baseName="Forest Funky Location"
         level="Fungi Forest"
         region="Shops"
-        inLogic={hasFunky && beanstalk}
+        inLogic={hasFunky && beanstalk.in}
+        outLogic={hasFunky && beanstalk.out}
       />
       <ShopGenerator
         baseId={5170}
