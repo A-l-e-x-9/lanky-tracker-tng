@@ -200,7 +200,7 @@ export const useChunkyBoulderGb = (): LogicBool => {
   const inStage = usePlayJapes()
   const boulderTech = useBoulderTech()
   return {
-    in: inStage.in && boulderTech
+    in: inStage.in && boulderTech,
     out: inStage.out && boulderTech
   }
 }
