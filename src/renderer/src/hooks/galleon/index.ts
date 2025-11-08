@@ -207,7 +207,7 @@ export const useGalleonOutskirts = (): LogicBool => {
   const removeBarriers = useDonkStore(useShallow((state) => state.removeBarriers))
   return {
     in: inStage.in && (target || removeBarriers.galleonOutskirts),
-    out: inStage.out && (target || removeBarriers.gallenOutskirts)
+    out: inStage.out && (target || removeBarriers.galleonOutskirts)
   }
 }
 

@@ -43,7 +43,6 @@ import {
   useTrombone,
   useVine,
   useClimbing,
-  useBalloon,
   useBarrel
 } from '../kongs'
 import { useBananaportAll, useForestTime, useHardShooting, useAutoBonus } from '../settings'
