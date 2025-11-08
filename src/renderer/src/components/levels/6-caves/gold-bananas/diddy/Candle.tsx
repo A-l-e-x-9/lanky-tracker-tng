@@ -12,7 +12,8 @@ const DiddyCandleCabin: React.FC = () => {
       id={6013}
       name="Diddy's Upper 5 Door Cabin"
       region="Caves Cabins"
-      canGetLogic={candleGb}
+      canGetLogic={candleGb.in}
+      canGetBreak={candleGb.out}
     />
   </Miniboss>
   </GBPool>

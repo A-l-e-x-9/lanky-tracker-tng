@@ -12,7 +12,8 @@ const TinyCabin: React.FC = () => {
       id={6033}
       name="Tiny's 5 Door Cabin"
       region="Caves Cabins"
-      canGetLogic={cabinCb}
+      canGetLogic={cabinCb.in}
+      canGetBreak={cabinCb.out}
     />
   </Miniboss>
   </GBPool>
