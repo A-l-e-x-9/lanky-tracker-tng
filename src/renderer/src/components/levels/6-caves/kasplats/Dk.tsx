@@ -4,7 +4,7 @@ import { useIceCastleKasplat } from '@renderer/hooks/caves'
 import CavesCheck from '../check'
 
 const DkKasplat: React.FC = () => {
-const useIceCastleKasplat()
+const canDo = useIceCastleKasplat()
 return (
   <KasplatPool>
     <VanillaKasplat>
