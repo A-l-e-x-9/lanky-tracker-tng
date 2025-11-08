@@ -44,7 +44,12 @@ import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
  * Can we play in Jungle Japes?
  * @returns true if we can play in Jungle Japes.
  */
-export const usePlayJapes = (): boolean => usePlayLevel('Jungle Japes')
+export const usePlayJapes = (): LogicBool => {
+  const canEnter = usePlayLevel('Jungle Japes')
+  return {
+    in: canEnter.in,
+    out: canEnter.out
+}
 
 /**
  * Can we slam down switches in Jungle Japes?
