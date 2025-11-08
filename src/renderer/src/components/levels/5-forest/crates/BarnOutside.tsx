@@ -13,8 +13,8 @@ const BarnOutsideCrate: React.FC = () => {
           id={5062}
           name="Melon Crate Outside Thornvine Barn"
           region="Forest Area 1"
-          canGetLogic={dusk || night.in}
-          canGetBreak={night.out}
+          canGetLogic={dusk.in || night.in}
+          canGetBreak={dusk.out || night.out}
         />
       </VanillaCrate>
     </CratePool>
