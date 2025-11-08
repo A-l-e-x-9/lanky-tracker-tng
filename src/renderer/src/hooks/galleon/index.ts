@@ -5,6 +5,7 @@ import { useFastMermaid } from '../fast-checks'
 import { usePlayLevel, useSlamLevel } from '../isles'
 import {
   useAnyKong,
+  useAnyGun,
   useBalloon,
   useBlast,
   useBongos,
@@ -299,9 +300,10 @@ export const useDiddyMechGb = (): LogicBool => {
   const dive = useDive()
   const rocket = useRocket()
   const guitar = useGuitar()
+  const gotAGun = useAnyGun()
   return {
-    in: lighthouse && outskirts && dive.in && rocket && guitar && highTide.in,
-    out: lighthouse && outskirts && dive.out && rocket && guitar
+    in: lighthouse && outskirts && dive.in && rocket && guitar && highTide.in && gotAGun,
+    out: lighthouse && outskirts && dive.out && rocket && guitar && gotAGun
   }
 }
 
