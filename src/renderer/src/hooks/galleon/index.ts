@@ -486,7 +486,10 @@ export const useLighthouseDirt = (): LogicBool => {
 
 export const useGeneralDirt = (): boolean => {
   const thing = useGeneralThing()
-  return useShockwave() && thing
+  return {
+    in: useShockwave() && thing.in,
+    out: useShockwave() && thing.out
+  }
 }
 
 export const useChestFairy = (): boolean => {
@@ -501,9 +504,12 @@ export const useShipFairy = (): boolean => {
   return ship && fairy
 }
 
-export const useGeneralFairy = (): boolean => {
+export const useGeneralFairy = (): LogicBool => {
   const thing = useGeneralThing()
-  return useCamera() && thing
+  return {
+    in: useCamera() && thing.in,
+    out: useCamera() && thing.out
+  }
 }
 
 export const useTreasureKasplat = (): LogicBool => {
@@ -522,7 +528,7 @@ export const useKevin = (): LogicBool => {
   return {
     in: useFtaDiddyBlueprint() && lighthouse.in,
     out: useFtaDiddyBlueprint() && lighthouse.out
-  }
+  
 }
 
 export const useCannonKasplat = (): LogicBool => {
