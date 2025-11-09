@@ -460,10 +460,13 @@ export const useGeneralThing = (): LogicBool => {
   }
 }
 
-export const useArena = (): boolean => {
+export const useArena = (): LogicBool => {
   const top = useForestMushroomTop()
   const anyKong = useAnyKong()
-  return top && anyKong
+  return {
+    in: top.in && anyKong,
+    out: top.out && anyKong
+  }
 }
 
 export const useBeanDirt = (): LogicBool => {
@@ -524,10 +527,13 @@ export const useOwlKasplat = (): boolean => {
   return useFtaLankyBlueprint() && inStage && anyKong
 }
 
-export const useNightKasplat = (): boolean => {
+export const useNightKasplat = (): LogicBool => {
   const inStage = useForestMushroomTop()
   const anyKong = useAnyKong()
-  return useFtaChunkyBlueprint() && inStage && anyKong
+  return {
+    in: useFtaChunkyBlueprint() && inStage.in && anyKong,
+    out: useFtaChunkyBlueprint() && inStage.out && anyKong
+  }
 }
 
 export const useMushInteriorKasplat = (): LogicBool => {
