@@ -29864,6 +29864,7 @@ const toughBananaIcon = "" + new URL("rabbit-D6O9SrZi.png", import.meta.url).hre
 const slamSwitchIcon = "" + new URL("slam_switch-DrcJ-6n7.png", import.meta.url).href;
 const switchsanityIcon = "" + new URL("switch-D6Og0W-L.png", import.meta.url).href;
 const wrinkly = "" + new URL("wrinkly-COxhSpd3.png", import.meta.url).href;
+const koshaHead = "" + new URL("kosha-DktGkC11.png", import.meta.url).href;
 const customStyles = {
   content: {
     backgroundColor: "#002040",
@@ -30226,7 +30227,16 @@ const GeneratorSettings = () => {
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Angry Caves?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "COMING SOON" }) })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: koshaHead,
+                  title: "Causes checks involving the main Crystal Caves area to turn yellow. Checks involving Balloon or Jetbarrel won't be affected, as the rockfall stops under those conditions in an Angry Caves seed. You should also use this if you're playing the vanilla game or a seed for which you didn't turn the Calm Caves option on under the Quality of Life section, but turn it off once you've killed the giant Kosha.",
+                  storeKey: "angyKosha",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Location Shuffle Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "NOW UNDER (RE-)CONSTRUCTION" }) }) }),
