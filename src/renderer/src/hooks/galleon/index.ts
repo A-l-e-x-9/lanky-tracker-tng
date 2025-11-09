@@ -88,8 +88,8 @@ export const useGalleonHighTide = (): LogicBool => {
     }
   }
   return {
-    in: lighthouse && dive.in,
-    out: lighthouse && dive.out
+    in: lighthouse.in && dive.in,
+    out: lighthouse.out && dive.out
   }
 }
 
@@ -130,8 +130,8 @@ export const useGalleonLighthousePlatform = (): LogicBool => {
   )
 
   return {
-    in: (inStage.in && warpAll) || (lighthouseArea && (highTide.in || (galleonSeasick && twirl))),
-    out: lighthouseArea && galleonSeasick
+    in: (inStage.in && warpAll) || (lighthouseArea.in && (highTide.in || (galleonSeasick && twirl))),
+    out: lighthouseArea.out && galleonSeasick
   }
 }
 
@@ -160,8 +160,8 @@ export const useGalleonSeasickShip = (): LogicBool => {
     useShallow((state) => [state.removeBarriers.galleonSeasick])
   )
   return {
-    in: (lighthouseArea && galleonSeasick) || (lighthousePlatform.in && canSlam && grab),
-    out: logicBreak(lighthousePlatform) && canSlam && grab
+    in: (lighthouseArea.in && galleonSeasick) || (lighthousePlatform.in && canSlam && grab),
+    out: lighthousePlatform.out && canSlam && grab
   }
 }
 
@@ -249,8 +249,8 @@ export const useDiddyLighthouseGb = (): LogicBool => {
   const grab = useGrab()
   const highTide = useGalleonHighTide()
   return {
-    in: lighthouseArea && (seasick || (highTide && canSlam && dk && grab)) && rocket,
-    out: lighthouseArea && (seasick || (canSlam && dk && grab)) && rocket
+    in: lighthouseArea.in && (seasick || (highTide && canSlam && dk && grab)) && rocket,
+    out: lighthouseArea.out && (seasick || (canSlam && dk && grab)) && rocket
   }
 }
 
@@ -273,13 +273,16 @@ export const useChunkyCannonGb = (): LogicBool => {
   }
 }
 
-export const useChunkySeasickGb = (): boolean => {
+export const useChunkySeasickGb = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
   const isLighthouseOn = useDkLighthouseGb()
   const wasLighthouseOn = useDonkStore(useShallow((state) => state.removeBarriers.galleonSeasick))
   const punch = usePunch()
   const slam = useSlam()
-  return lighthouse && ((isLighthouseOn.in || isLighthouseOn.out) || wasLighthouseOn) && punch && slam
+  return {
+    in: lighthouse.in && (isLighthouseOn.in || wasLighthouseOn) && punch && slam,
+    out: lighthouse.out && (isLighthouseOn.out || wasLighthouseOn) && punch && slam
+  }
 }
 
 export const useChunky5DoorShipGb = (): LogicBool => {
@@ -289,8 +292,8 @@ export const useChunky5DoorShipGb = (): LogicBool => {
   const triangle = useTriangle()
   const lowTide = useGalleonLowTide()
   return {
-    in: lighthouse && outskirts.in && dive.in && lowTide && triangle,
-    out: lighthouse && outskirts.out && dive.out && lowTide && triangle
+    in: lighthouse.in && outskirts.in && dive.in && lowTide && triangle,
+    out: lighthouse.out && outskirts.out && dive.out && lowTide && triangle
   }
 }
 
@@ -313,8 +316,8 @@ export const useDiddyMechGb = (): LogicBool => {
   const guitar = useGuitar()
   const gotAGun = useAnyGun()
   return {
-    in: lighthouse && outskirts.in && dive.in && rocket && guitar && highTide.in && gotAGun,
-    out: lighthouse && outskirts.out && dive.out && rocket && guitar && gotAGun
+    in: lighthouse.in && outskirts.in && dive.in && rocket && guitar && highTide.in && gotAGun,
+    out: lighthouse.out && outskirts.out && dive.out && rocket && guitar && gotAGun
   }
 }
 
@@ -339,8 +342,8 @@ export const useDkBlastGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const highTide = useGalleonHighTide()
   return {
-    in: lighthouse && blast && outskirts.in && highTide.in,
-    out: lighthouse && blast && outskirts.out
+    in: lighthouse.in && blast && outskirts.in && highTide.in,
+    out: lighthouse.out && blast && outskirts.out
   }
 }
 
@@ -359,8 +362,8 @@ export const useLankyChestGb = (): LogicBool => {
   const lanky = useLanky()
   const dive = useDive()
   return {
-    in: lighthouse && lanky && dive.in,
-    out: lighthouse && lanky && dive.out
+    in: lighthouse.in && lanky && dive.in,
+    out: lighthouse.out && lanky && dive.out
   }
 }
 
@@ -403,8 +406,8 @@ export const useTinyMermaidGb = (): LogicBool => {
   const mermaid = useFastMermaid()
   const pearls = useCurrentPearlCount()
   return {
-    in: lighthouse && mini && dive.in && pearls >= mermaid,
-    out: lighthouse && mini && dive.out && pearls >= mermaid
+    in: lighthouse.in && mini && dive.in && pearls >= mermaid,
+    out: lighthouse.out && mini && dive.out && pearls >= mermaid
   }
 }
 
@@ -514,9 +517,12 @@ export const useTreasureKasplat = (): LogicBool => {
   }
 }
 
-export const useKevin = (): boolean => {
+export const useKevin = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
-  return useFtaDiddyBlueprint() && lighthouse
+  return {
+    in: useFtaDiddyBlueprint() && lighthouse.in,
+    out: useFtaDiddyBlueprint() && lighthouse.out
+  }
 }
 
 export const useCannonKasplat = (): LogicBool => {
