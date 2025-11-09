@@ -485,28 +485,40 @@ export const useGateKasplat = (): LogicBool => {
   }
 }
 
-export const useDkKasplat = (): boolean => {
+export const useDkKasplat = (): LogicBool => {
   const gate = useGateKasplat()
   const ftaBP = useFtaDkBlueprint()
-  return ftaBP && gate
+  return {
+    in: ftaBP && gate.in,
+    out: ftaBP && gate.out
+  }
 }
 
-export const useDiddyKasplat = (): boolean => {
+export const useDiddyKasplat = (): LogicBool => {
   const gate = useGateKasplat()
   const ftaBP = useFtaDiddyBlueprint()
-  return ftaBP && gate
+  return {
+    in: ftaBP && gate.in,
+    out: ftaBP && gate.out
+  }
 }
 
-export const useLankyKasplat = (): boolean => {
+export const useLankyKasplat = (): LogicBool => {
   const gate = useGateKasplat()
   const ftaBP = useFtaLankyBlueprint()
-  return ftaBP && gate
+  return {
+    in: ftaBP && gate.in,
+    out: ftaBP && gate.out
+  }
 }
 
-export const useTinyKasplat = (): boolean => {
+export const useTinyKasplat = (): LogicBool => {
   const gate = useGateKasplat()
   const ftaBP = useFtaTinyBlueprint()
-  return ftaBP && gate
+  return {
+    in: ftaBP && gate.in,
+    out: ftaBP && gate.out
+  }
 }
 
 export const useMtnCrate = (): LogicBool => {
