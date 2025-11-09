@@ -224,8 +224,8 @@ export const useGalleonTreasureRoom = (): LogicBool => {
   const preOpened = useDonkStore(useShallow((state) => state.removeBarriers.galleonTreasureRoom))
   const warpAll = useBananaportAll()
   return {
-    in: (inStage.in && warpAll) || (outskirts && (lanky && dive.in || preOpened) && highTide.in),
-    out: outskirts && (lanky && dive.out || preOpened)
+    in: (inStage.in && warpAll) || (outskirts.in && (lanky && dive.in || preOpened) && highTide.in),
+    out: outskirts.out && (lanky && dive.out || preOpened)
   }
 }
 
@@ -289,8 +289,8 @@ export const useChunky5DoorShipGb = (): LogicBool => {
   const triangle = useTriangle()
   const lowTide = useGalleonLowTide()
   return {
-    in: lighthouse && outskirts && dive.in && lowTide && triangle,
-    out: lighthouse && outskirts && dive.out && lowTide && triangle
+    in: lighthouse && outskirts.in && dive.in && lowTide && triangle,
+    out: lighthouse && outskirts.out && dive.out && lowTide && triangle
   }
 }
 
@@ -313,8 +313,8 @@ export const useDiddyMechGb = (): LogicBool => {
   const guitar = useGuitar()
   const gotAGun = useAnyGun()
   return {
-    in: lighthouse && outskirts && dive.in && rocket && guitar && highTide.in && gotAGun,
-    out: lighthouse && outskirts && dive.out && rocket && guitar && gotAGun
+    in: lighthouse && outskirts.in && dive.in && rocket && guitar && highTide.in && gotAGun,
+    out: lighthouse && outskirts.out && dive.out && rocket && guitar && gotAGun
   }
 }
 
@@ -324,8 +324,8 @@ export const useDiddy5DoorShipGb = (): LogicBool => {
   const guitar = useGuitar()
   const dive = useDive()
   return {
-    in: outskirts && lowTide && guitar && dive.in,
-    out: outskirts && lowTide && guitar && dive.out
+    in: outskirts.in && lowTide && guitar && dive.in,
+    out: outskirts.out && lowTide && guitar && dive.out
   }
 }
 
@@ -339,8 +339,8 @@ export const useDkBlastGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const highTide = useGalleonHighTide()
   return {
-    in: lighthouse && blast && outskirts && highTide.in,
-    out: lighthouse && blast && outskirts
+    in: lighthouse && blast && outskirts.in && highTide.in,
+    out: lighthouse && blast && outskirts.out
   }
 }
 
@@ -349,8 +349,8 @@ export const useDk5DoorShipGb = (): LogicBool => {
   const bongos = useBongos()
   const dive = useDive()
   return {
-    in: outskirts && bongos && dive.in,
-    out: outskirts && bongos && dive.out
+    in: outskirts.in && bongos && dive.in,
+    out: outskirts.out && bongos && dive.out
   }
 }
 
@@ -380,8 +380,8 @@ export const useLanky2DoorShipGb = (): LogicBool => {
   const lanky = useLanky()
   const dive = useDive()
   return {
-    in: outskirts && canSlam && lanky && dive.in,
-    out: outskirts && canSlam && lanky && dive.out
+    in: outskirts.in && canSlam && lanky && dive.in,
+    out: outskirts.out && canSlam && lanky && dive.out
   }
 }
 
@@ -391,8 +391,8 @@ export const useLanky5DoorShipGb = (): LogicBool => {
   const lowTide = useGalleonLowTide()
   const dive = useDive()
   return {
-    in: outskirts && trombone && lowTide && dive.in,
-    out: outskirts && trombone && lowTide && dive.out
+    in: outskirts.in && trombone && lowTide && dive.in,
+    out: outskirts.out && trombone && lowTide && dive.out
   }
 }
 
@@ -413,8 +413,8 @@ export const useTinySubGb = (): LogicBool => {
   const mini = useMini()
   const dive = useDive()
   return {
-    in: outskirts && mini && dive.in,
-    out: outskirts && mini && dive.out
+    in: outskirts.in && mini && dive.in,
+    out: outskirts.out && mini && dive.out
   }
 }
 
@@ -424,8 +424,8 @@ export const useTiny2DoorShipGb = (): LogicBool => {
   const tiny = useTiny()
   const canSlam = useSlamGalleon()
   return {
-    in: tiny && canSlam && outskirts && dive.in,
-    out: tiny && canSlam && outskirts && dive.out
+    in: tiny && canSlam && outskirts.in && dive.in,
+    out: tiny && canSlam && outskirts.out && dive.out
   }
 }
 
@@ -434,8 +434,8 @@ export const useTiny5DoorShipGb = (): LogicBool => {
   const sax = useSax()
   const dive = useDive()
   return {
-    in: outskirts && sax && dive.in,
-    out: outskirts && sax && dive.out
+    in: outskirts.in && sax && dive.in,
+    out: outskirts.out && sax && dive.out
   }
 }
 
@@ -464,9 +464,12 @@ export const useArena = (): LogicBool => {
   }
 }
 
-export const useGeneralOutskirts = (): boolean => {
+export const useGeneralOutskirts = (): LogicBool => {
   const inStage = useGalleonOutskirts()
-  return useAnyKong() && inStage
+  return {
+    in: useAnyKong() && inStage.in,
+    out: useAnyKong() && inStage.out
+  }
 }
 
 export const useLighthouseDirt = (): LogicBool => {
@@ -535,7 +538,10 @@ export const useVineKasplat = (): LogicBool => {
   }
 }
 
-export const useCactusKasplat = (): boolean => {
+export const useCactusKasplat = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
-  return useFtaChunkyBlueprint() && outskirts
+  return {
+    in: useFtaChunkyBlueprint() && outskirts.in,
+    out: useFtaChunkyBlueprint() && outskirts.out
+  }
 }
