@@ -10744,7 +10744,7 @@ const useDive = () => {
   const move = useDonkStore((state) => state.moves.dive);
   const waterIsLava = useDonkStore((state) => state.settings.waterIsLava);
   return {
-    in: move,
+    in: move && !waterIsLava,
     out: move && waterIsLava
   };
 };
