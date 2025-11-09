@@ -22150,8 +22150,8 @@ const useDiddyOwlGb = () => {
   const guitar = useGuitar();
   const rocket = useRocket();
   return {
-    in: owlTree && night.in && guitar && rocket,
-    out: owlTree && night.out && guitar && rocket
+    in: owlTree.in && night.in && guitar && rocket,
+    out: owlTree.out && night.out && guitar && rocket
   };
 };
 const useDiddyCageGb = () => {
@@ -22252,8 +22252,8 @@ const useLankyRaceGb$1 = () => {
   const trombone = useTrombone();
   const sprint = useSprint();
   return {
-    in: isDay.in && owl && trombone && sprint,
-    out: isDay.out && owl && trombone && sprint
+    in: isDay.in && owl.in && trombone && sprint,
+    out: isDay.out && owl.out && trombone && sprint
   };
 };
 const useTinyMushGb = () => {
@@ -22270,7 +22270,10 @@ const useTinyAntGb = () => {
   const owl = useForestOwl();
   const mini = useMini();
   const sax = useSax();
-  return owl && mini && sax;
+  return {
+    in: owl.in && mini && sax,
+    out: owl.out && mini && sax
+  };
 };
 const useTinySpiderGb = () => {
   const spider = useForestSpiderBoss();
@@ -22302,7 +22305,10 @@ const useGeneralThing$1 = () => {
 const useArena$1 = () => {
   const top = useForestMushroomTop();
   const anyKong = useAnyKong();
-  return top && anyKong;
+  return {
+    in: top.in && anyKong,
+    out: top.out && anyKong
+  };
 };
 const useBeanDirt = () => {
   const beanstalk = useForestBean();
@@ -22348,12 +22354,18 @@ const useBarnKasplat = () => {
 const useOwlKasplat = () => {
   const inStage = useForestOwl();
   const anyKong = useAnyKong();
-  return useFtaLankyBlueprint() && inStage && anyKong;
+  return {
+    in: useFtaLankyBlueprint() && inStage.in && anyKong,
+    out: useFtaLankyBlueprint() && inStage.out && anyKong
+  };
 };
 const useNightKasplat = () => {
   const inStage = useForestMushroomTop();
   const anyKong = useAnyKong();
-  return useFtaChunkyBlueprint() && inStage && anyKong;
+  return {
+    in: useFtaChunkyBlueprint() && inStage.in && anyKong,
+    out: useFtaChunkyBlueprint() && inStage.out && anyKong
+  };
 };
 const useMushInteriorKasplat = () => {
   const inStage = usePlayForest();
@@ -22404,15 +22416,19 @@ const ForestCheck = (props) => {
     }
   ) });
 };
-const MushroomArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaArena, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  ForestCheck,
-  {
-    id: 5090,
-    name: "Battle Arena at Mushroom Top",
-    region: "Forest Area 3",
-    canGetLogic: useArena$1()
-  }
-) }) });
+const MushroomArena = () => {
+  const canDo = useArena$1();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaArena, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    ForestCheck,
+    {
+      id: 5090,
+      name: "Battle Arena at Mushroom Top",
+      region: "Forest Area 3",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const BossCheck$3 = () => {
   const inStage = usePlayForest();
   const anyKong = useAnyKong();
@@ -22422,7 +22438,8 @@ const BossCheck$3 = () => {
       id: 5105,
       name: "Forest Boss",
       region: "Bosses",
-      canGetLogic: inStage && anyKong
+      canGetLogic: inStage.in && anyKong,
+      canGetBreak: inStage.out && anyKong
     }
   ) });
 };
@@ -23375,24 +23392,32 @@ const LankyBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(RabbitRace, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ZingerBounce, {})
 ] });
-const AnthillBanana = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  ForestCheck,
-  {
-    id: 5031,
-    name: "Tree Stump Gauntlet",
-    region: "Forest Area 4",
-    canGetLogic: useTinyAntGb()
-  }
-) }) });
-const AnthillBean = () => /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  ForestCheck,
-  {
-    id: 5034,
-    name: "THE BEAN (Tree Stump Gauntlet's Second Reward)",
-    region: "Forest Area 4",
-    canGetLogic: useTinyAntGb()
-  }
-) }) });
+const AnthillBanana = () => {
+  const canDo = useTinyAntGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    ForestCheck,
+    {
+      id: 5031,
+      name: "Tree Stump Gauntlet",
+      region: "Forest Area 4",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
+const AnthillBean = () => {
+  const canDo = useTinyAntGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    ForestCheck,
+    {
+      id: 5034,
+      name: "THE BEAN (Tree Stump Gauntlet's Second Reward)",
+      region: "Forest Area 4",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const BeanCheck = () => {
   const canDo = useTinyBeanGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23439,15 +23464,19 @@ const TinyBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExp
   /* @__PURE__ */ jsxRuntimeExports.jsx(SpiderBoss, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BeanCheck, {})
 ] });
-const ChunkyKasplat$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  ForestCheck,
-  {
-    id: 5054,
-    name: "Kasplat Beyond the Giant Mushroom's Night Door",
-    region: "Forest Area 3",
-    canGetLogic: useNightKasplat()
-  }
-) }) });
+const ChunkyKasplat$2 = () => {
+  const canDo = useNightKasplat();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    ForestCheck,
+    {
+      id: 5054,
+      name: "Kasplat Beyond the Giant Mushroom's Night Door",
+      region: "Forest Area 3",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const DiddyKasplat$2 = () => {
   const canDo = useMushInteriorKasplat();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23474,15 +23503,19 @@ const DkKasplat$2 = () => {
     }
   ) }) });
 };
-const LankyKasplat$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  ForestCheck,
-  {
-    id: 5052,
-    name: "Kasplat in the big tree's tunnel",
-    region: "Forest Area 4",
-    canGetLogic: useOwlKasplat()
-  }
-) }) });
+const LankyKasplat$2 = () => {
+  const canDo = useOwlKasplat();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    ForestCheck,
+    {
+      id: 5052,
+      name: "Kasplat in the big tree's tunnel",
+      region: "Forest Area 4",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const TinyKasplat$2 = () => {
   const canDo = useMushExteriorKasplat();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
