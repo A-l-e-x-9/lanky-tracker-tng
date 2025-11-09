@@ -111,10 +111,13 @@ export const useJapesSideArea = (): LogicBool => {
  * Can we access the Rambi cage in Japes?
  * @returns true if we can access the Rambi cage in Japes.
  */
-export const useJapesRambi = (): boolean => {
+export const useJapesRambi = (): LogicBool => {
   const canPlay = useJapesKongGates()
   const rambiSwitch = useJapesRambiSwitch()
-  return rambiSwitch && canPlay
+  return {
+    in: rambiSwitch && canPlay.in,
+    out: rambiSwitch && canPlay.out
+  }
 }
 
 /**
@@ -146,8 +149,8 @@ export const useJapesHive = (): LogicBool => {
   const warpAll = useBananaportAll()
   const [hiveGateOpen, checks] = useDonkStore(useShallow((state) => [state.removeBarriers.japesHiveGate, state.checks]))
   return {
-    in: canPlay.in && ((coconutGates && (hiveGateOpen || hiveSwitch)) || (japesMine && (warpAll || checks[1011]))),
-    out: canPlay.out && ((coconutGates && (hiveGateOpen || hiveSwitch)) || (japesMine && (warpAll || checks[1011])))
+    in: canPlay.in && ((coconutGates.in && (hiveGateOpen || hiveSwitch)) || (japesMine && (warpAll || checks[1011]))),
+    out: canPlay.out && ((coconutGates.out && (hiveGateOpen || hiveSwitch)) || (japesMine && (warpAll || checks[1011])))
   }
 }
 
@@ -370,8 +373,8 @@ export const useLankySlopeGb = (): LogicBool => {
   const stand = useStand()
   const anyKong = useAnyKong()
   return {
-    in: tunnel && stand,
-    out: useFtaLankyBanana() && tunnel && anyKong
+    in: tunnel.in && stand,
+    out: useFtaLankyBanana() && tunnel.out && anyKong
   }
 }
 
@@ -473,10 +476,13 @@ export const useGeneralFairy = (): LogicBool => {
   }
 }
 
-export const useGateKasplat = (): boolean => {
+export const useGateKasplat = (): LogicBool => {
   const kongGates = useJapesKongGates()
   const anyKong = useAnyKong()
-  return kongGates && anyKong
+  return {
+    in: kongGates.in && anyKong,
+    out: kongGates.out && anyKong
+  }
 }
 
 export const useDkKasplat = (): boolean => {
