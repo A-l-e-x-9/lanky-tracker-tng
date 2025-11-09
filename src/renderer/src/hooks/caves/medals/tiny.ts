@@ -77,6 +77,8 @@ export const useTinyMedalInLogic = (): number => {
     }
   }
   return bananas
+} else {
+  return 0
 }
 }
 
@@ -107,5 +109,7 @@ export const useTinyMedalOutLogic = (): number => {
     }
   }
   return bananas
+} else {
+  return 0
 }
 }
