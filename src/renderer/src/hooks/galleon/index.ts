@@ -528,7 +528,7 @@ export const useKevin = (): LogicBool => {
   return {
     in: useFtaDiddyBlueprint() && lighthouse.in,
     out: useFtaDiddyBlueprint() && lighthouse.out
-  
+  }
 }
 
 export const useCannonKasplat = (): LogicBool => {
