@@ -20,21 +20,24 @@ const Vanilla: React.FC = () => {
         baseName="Japes Cranky"
         level="Jungle Japes"
         region="Shops"
-        inLogic={kongGates && hasCranky}
+        inLogic={kongGates.in && hasCranky}
+        outLogic={kongGates.out && hasCranky}
       />
       <ShopGenerator
         baseId={1120}
         baseName="Japes Funky"
         level="Jungle Japes"
         region="Shops"
-        inLogic={playJapes && (climbing || bananaport) && hasFunky}
+        inLogic={playJapes.in && (climbing || bananaport) && hasFunky}
+        outLogic={playJapes.out && hasFunky}
       />
       <ShopGenerator
         baseId={1140}
         baseName="Turn in Japes Blueprint for"
         level="Jungle Japes"
         region="Shops"
-        inLogic={playJapes && (climbing || bananaport) && hasSnide}
+        inLogic={playJapes.in && (climbing || bananaport) && hasSnide}
+        outLogic={playJapes.out && hasSnide}
       />
 
     </>
@@ -56,21 +59,24 @@ const Shuffled: React.FC = () => {
         baseName="Japes Cranky Location"
         level="Jungle Japes"
         region="Shops"
-        inLogic={hasCranky && (kongGates || (climbing || bananaport))}
+        inLogic={hasCranky && (kongGates.in || (climbing || bananaport))}
+        outLogic={hasCranky && kongGates.out}
       />
       <ShopGenerator
         baseId={1150}
         baseName="Japes Funky Location"
         level="Jungle Japes"
         region="Shops"
-        inLogic={hasFunky && (kongGates || (climbing || bananaport))}
+        inLogic={hasFunky && (kongGates.in || (climbing || bananaport))}
+        outLogic={hasFunky && kongGates.out}
       />
       <ShopGenerator
         baseId={1170}
         baseName="Japes Snide Location"
         level="Jungle Japes"
         region="Shops"
-        inLogic={hasSnide && (kongGates || (climbing || bananaport))}
+        inLogic={hasSnide && (kongGates.in || (climbing || bananaport))}
+        outLogic={hasSnide && kongGates.out}
       />
     </>
   )
