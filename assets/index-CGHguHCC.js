@@ -24639,11 +24639,12 @@ const useLankyCabinGb = () => {
 };
 const useTinyCaveGb = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const mini = useMini();
   const warpAll = useBananaportAll();
   return {
-    in: useFtaTinyBanana() && inStage.in && (mini || warpAll),
-    out: useFtaTinyBanana() && inStage.out && (mini || warpAll)
+    in: useFtaTinyBanana() && inStage.in && !angery && (mini || warpAll),
+    out: useFtaTinyBanana() && (inStage.out || angery) && (mini || warpAll)
   };
 };
 const useTinyPortGb = () => {
