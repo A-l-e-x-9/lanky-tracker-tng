@@ -10518,6 +10518,7 @@ const useIslesBananaMedals = () => useDonkStore(useShallow((state) => state.sett
 const usePoolKongs = () => useDonkStore(useShallow((state) => state.settings.poolKongs));
 const usePoolGoldBananas = () => useDonkStore(useShallow((state) => state.settings.poolGoldBananas));
 const useBetaLankyPhase = () => useDonkStore(useShallow((state) => state.settings.betaLankyPhase));
+const useAngryCaves = () => useDonkStore(useShallow((state) => state.settings.angyKosha));
 const BananaMedalPool = ({ children }) => usePoolBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const IslesMedalPool = ({ children }) => useIslesBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const ArenaPool = ({ children }) => usePoolCrowns() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -12176,8 +12177,8 @@ const ArenaLocations = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(SnideArena, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(GoneArena, {})
 ] });
-const Vanilla$9 = () => null;
-const CrateLocations$5 = () => useShuffleCrates() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$9, {});
+const Vanilla$8 = () => null;
+const CrateLocations$5 = () => useShuffleCrates() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$8, {});
 const RainbowCoinPool = ({ children }) => usePoolRainbowCoins() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const VanillaDirt = ({ children }) => useShuffleDirt() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
 const AztecRoof = () => {
@@ -13220,7 +13221,7 @@ const ShopGenerator = (props) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
 };
 const ShopPool = ({ children }) => usePoolShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const Vanilla$8 = () => {
+const Vanilla$7 = () => {
   const kremAscent = useIslesKremAscent();
   const cranky = useCranky();
   const snide = useSnide();
@@ -13247,7 +13248,7 @@ const Vanilla$8 = () => {
     )
   ] });
 };
-const Shuffled$c = () => {
+const Shuffled$b = () => {
   const kremAscent = useIslesKremAscent();
   const cranky = useCranky();
   const snide = useSnide();
@@ -13275,7 +13276,7 @@ const Shuffled$c = () => {
   ] });
 };
 const ShopLocations$7 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$c, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$8, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$b, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const WrinklyPool = ({ children }) => usePoolWrinkly() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -15854,7 +15855,7 @@ const TinyMedal$6 = () => {
     )
   ] });
 };
-const Vanilla$7 = () => {
+const Vanilla$6 = () => {
   const playJapes = usePlayJapes();
   const kongGates = useJapesKongGates();
   const climbing = useClimbing();
@@ -15898,7 +15899,7 @@ const Vanilla$7 = () => {
     )
   ] });
 };
-const Shuffled$b = () => {
+const Shuffled$a = () => {
   const kongGates = useJapesKongGates();
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
@@ -15942,7 +15943,7 @@ const Shuffled$b = () => {
   ] });
 };
 const ShopLocations$6 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$b, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$a, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$6, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const HiveInteriorChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -18485,12 +18486,12 @@ const TinyMedal$5 = () => {
     )
   ] });
 };
-const Shuffled$a = () => {
+const Shuffled$9 = () => {
   const thing = useGeneralThing$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecCheck, { id: 2190, name: "Aztec Arena", canGetLogic: thing.in, canGetBreak: thing.out }) });
 };
-const ShuffledArenas = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$a, {});
-const Shuffled$9 = () => {
+const ShuffledArenas = () => !useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$9, {});
+const Shuffled$8 = () => {
   const thing = useGeneralThing$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -18513,8 +18514,8 @@ const Shuffled$9 = () => {
     )
   ] });
 };
-const ShuffledCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$9, {}) : null;
-const Shuffled$8 = () => {
+const ShuffledCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$8, {}) : null;
+const Shuffled$7 = () => {
   const thing = useGeneralDirt$2();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -18537,8 +18538,8 @@ const Shuffled$8 = () => {
     )
   ] });
 };
-const ShuffledDirtLocations = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$8, {}) : null;
-const Shuffled$7 = () => {
+const ShuffledDirtLocations = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$7, {}) : null;
+const Shuffled$6 = () => {
   const fairyLogic = useGeneralFairy();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -18561,8 +18562,8 @@ const Shuffled$7 = () => {
     )
   ] });
 };
-const ShuffledFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$7, {}) : null;
-const Shuffled$6 = () => {
+const ShuffledFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$6, {}) : null;
+const Shuffled$5 = () => {
   const thing = useGeneralThing$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -18612,8 +18613,8 @@ const Shuffled$6 = () => {
     )
   ] });
 };
-const ShuffledKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$6, {}) : null;
-const Vanilla$6 = () => {
+const ShuffledKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$5, {}) : null;
+const Vanilla$5 = () => {
   const aztecFront = useAztecFront();
   const aztecBack = useAztecBack();
   const hasCranky = useCranky();
@@ -18667,7 +18668,7 @@ const Vanilla$6 = () => {
     )
   ] });
 };
-const Shuffled$5 = () => {
+const Shuffled$4 = () => {
   const aztecFront = useAztecFront();
   const aztecBack = useAztecBack();
   const hasCranky = useCranky();
@@ -18722,7 +18723,7 @@ const Shuffled$5 = () => {
   ] });
 };
 const ShopLocations$5 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$5, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$6, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$4, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$5, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const CircleVase = () => {
@@ -20445,7 +20446,7 @@ const TinyMedal$4 = () => {
     )
   ] });
 };
-const Vanilla$5 = () => {
+const Vanilla$4 = () => {
   const inStage = usePlayFactory();
   const testing = useFactoryTesting();
   const hasCranky = useCranky();
@@ -20499,7 +20500,7 @@ const Vanilla$5 = () => {
     )
   ] });
 };
-const Shuffled$4 = () => {
+const Shuffled$3 = () => {
   const inStage = usePlayFactory();
   const testing = useFactoryTesting();
   const hasCranky = useCranky();
@@ -20554,7 +20555,7 @@ const Shuffled$4 = () => {
   ] });
 };
 const ShopLocations$4 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$4, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$5, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$3, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$4, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const TestingChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -21832,7 +21833,7 @@ const TinyMedal$3 = () => {
     )
   ] });
 };
-const Vanilla$4 = () => {
+const Vanilla$3 = () => {
   const inStage = usePlayGalleon();
   const outskirts = useGalleonOutskirts();
   const lighthouseArea = useGalleonLighthouseArea();
@@ -21888,7 +21889,7 @@ const Vanilla$4 = () => {
     )
   ] });
 };
-const Shuffled$3 = () => {
+const Shuffled$2 = () => {
   const inStage = usePlayGalleon();
   const outskirts = useGalleonOutskirts();
   const lighthouseArea = useGalleonLighthouseArea();
@@ -21945,7 +21946,7 @@ const Shuffled$3 = () => {
   ] });
 };
 const ShopLocations$3 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$3, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$4, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$3, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const CavernsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -24165,7 +24166,7 @@ const BeanstalkChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeE
   /* @__PURE__ */ jsxRuntimeExports.jsx(BeanstalkDirt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BeanstalkEnemies, {})
 ] });
-const Vanilla$3 = () => {
+const Vanilla$2 = () => {
   const inStage = usePlayForest();
   const beanstalk = useForestBean();
   const day = useForestDay();
@@ -24208,7 +24209,7 @@ const Vanilla$3 = () => {
     )
   ] });
 };
-const Shuffled$2 = () => {
+const Shuffled$1 = () => {
   const inStage = usePlayForest();
   const beanstalk = useForestBean();
   const day = useForestDay();
@@ -24252,7 +24253,7 @@ const Shuffled$2 = () => {
   ] });
 };
 const ShopLocations$2 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$3, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$2, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const CenterChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -24403,12 +24404,13 @@ const usePlayCaves = () => {
 const useSlamCaves = () => useSlamLevel("Crystal Caves");
 const useCavesIgloo = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const rocket = useRocket();
   const [barriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
   const iglooBarrier = barriers.cavesIgloo;
   return {
-    in: inStage.in && (iglooBarrier || rocket),
-    out: inStage.out && (iglooBarrier || rocket)
+    in: inStage.in && !angery && (iglooBarrier || rocket),
+    out: (inStage.out || angery) && (iglooBarrier || rocket)
   };
 };
 const useIceWalls = () => {
@@ -24424,27 +24426,41 @@ const useCanAccessSnide = () => {
 };
 const useCavesMiniFunky = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const twirl = useTwirl();
   const mini = useMini();
   const warpAll = useBananaportAll();
   return {
-    in: inStage.in && (warpAll || twirl && mini),
-    out: inStage.out && mini
+    in: inStage.in && !angery && (warpAll || twirl && mini),
+    out: (inStage.out || angery) && mini
   };
 };
 const useCavesPillar = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const rocket = useRocket();
   const twirl = useTwirl();
   const balloon = useBalloon();
   const dk2 = useDk();
   const warpAll = useBananaportAll();
   return {
-    in: inStage.in && (warpAll || rocket),
-    out: inStage.out && (dk2 || twirl || balloon)
+    in: inStage.in && !angery && (warpAll || rocket),
+    out: (inStage.out || angery) && (dk2 || twirl || balloon)
   };
 };
 const useCavesLankyCabin = () => {
+  const inStage = usePlayCaves();
+  const angery = useAngryCaves();
+  const balloon = useBalloon();
+  const trombone = useTrombone();
+  const diddy = useDiddy();
+  const tiny = useTiny();
+  return {
+    in: inStage.in && !angery && trombone && balloon,
+    out: (inStage.out || angery) && trombone && (diddy || tiny)
+  };
+};
+const useCavesLankyCabinSpecial = () => {
   const inStage = usePlayCaves();
   const balloon = useBalloon();
   const trombone = useTrombone();
@@ -24457,23 +24473,25 @@ const useCavesLankyCabin = () => {
 };
 const useDkCabinGb = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const bongos = useBongos();
   const homing = useHoming();
   const hardShooting = useHardShooting();
   const anyGun = useAnyGun();
   return {
-    in: inStage.in && bongos && anyGun && (homing || hardShooting),
-    out: inStage.out && bongos && anyGun
+    in: inStage.in && !angery && bongos && anyGun && (homing || hardShooting),
+    out: (inStage.out || angery) && bongos && anyGun
   };
 };
 const useDiddyGauntletGb = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const guitar = useGuitar();
   const rocket = useRocket();
   const orange = useOrange();
   return {
-    in: inStage.in && guitar && rocket && orange,
-    out: inStage.out && guitar && orange
+    in: inStage.in && !angery && guitar && rocket && orange,
+    out: (inStage.out || angery) && guitar && orange
   };
 };
 const useChunkyGoneGb = () => {
@@ -24488,13 +24506,14 @@ const useChunkyGoneGb = () => {
 };
 const useChunkyClearGb = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const punch = usePunch();
   const wallsPrePunched = useIceWalls();
   const boulder = useBoulderTech();
   const hunky = useHunky();
   return {
-    in: inStage.in && (punch || wallsPrePunched) && boulder && hunky,
-    out: inStage.out && (punch || wallsPrePunched) && boulder
+    in: inStage.in && !angery && (punch || wallsPrePunched) && boulder && hunky,
+    out: (inStage.out || angery) && (punch || wallsPrePunched) && boulder
   };
 };
 const useChunkyIglooGb = () => {
@@ -24506,21 +24525,23 @@ const useChunkyIglooGb = () => {
 };
 const useChunkyCabinGb = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const triangle = useTriangle();
   const gone = useGone();
   return {
-    in: useSlam() && inStage.in && triangle && gone,
-    out: useSlam() && inStage.out && triangle && gone
+    in: useSlam() && inStage.in && !angery && triangle && gone,
+    out: useSlam() && (inStage.out || angery) && triangle && gone
   };
 };
 const useDiddyWaterfallGb = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const rocket = useRocket();
   const dk2 = useDk();
   const twirl = useTwirl();
   return {
-    in: inStage.in && rocket,
-    out: useFtaDiddyBanana() && inStage.out && (dk2 || twirl)
+    in: inStage.in && !angery && rocket,
+    out: useFtaDiddyBanana() && (inStage.out || angery) && (dk2 || twirl)
   };
 };
 const useDiddyIglooGb = () => {
@@ -24534,20 +24555,22 @@ const useDiddyIglooGb = () => {
 };
 const useDiddyCandleGb = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const guitar = useGuitar();
   const rocket = useRocket();
   const spring = useSpring();
   return {
-    in: inStage.in && guitar && rocket && spring,
-    out: inStage.out && guitar && rocket
+    in: inStage.in && !angery && guitar && rocket && spring,
+    out: (inStage.out || angery) && guitar && rocket
     //If you're playing a seed with the "move Diddy Upper Cabin Barrel" option on under the "quality of life" settings, you may not be able to do this. Don't know if I should edit this check to account for that option...it's a lot of effort for just one check! -_-;
   };
 };
 const useDkBlastGb = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   return {
-    in: useBlast() && inStage.in,
-    out: useBlast() && inStage.out
+    in: useBlast() && inStage.in && !angery,
+    out: useBlast() && (inStage.out || angery)
   };
 };
 const useDkIglooGb = () => {
@@ -24563,31 +24586,34 @@ const useDkIglooGb = () => {
 };
 const useDkRotateGb = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const bongos = useBongos();
   const slam = useSlam();
   return {
-    in: inStage.in && bongos && slam,
-    out: inStage.out && bongos && slam
+    in: inStage.in && !angery && bongos && slam,
+    out: (inStage.out || angery) && bongos && slam
   };
 };
 const useLankyRaceGb = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const canSlam = useSlamCaves();
   const balloon = useBalloon();
   const highGrab = useHighGrab();
   const sprint = useSprint();
   return {
-    in: inStage.in && canSlam && sprint && balloon,
-    out: inStage.out && canSlam && sprint && highGrab
+    in: inStage.in && !angery && canSlam && sprint && balloon,
+    out: (inStage.out || angery) && canSlam && sprint && highGrab
   };
 };
 const useLankyCastleGb = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const lanky = useLanky();
   const canSlam = useSlamCaves();
   return {
-    in: inStage.in && lanky && canSlam,
-    out: inStage.out && lanky && canSlam
+    in: inStage.in && !angery && lanky && canSlam,
+    out: (inStage.out || angery) && lanky && canSlam
   };
 };
 const useLankyIglooGb = () => {
@@ -24640,11 +24666,12 @@ const useTinyIglooGb = () => {
 };
 const useTinyCabinGb = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const sax = useSax();
   const orange = useOrange();
   return {
-    in: inStage.in && sax && orange,
-    out: inStage.out && sax && orange
+    in: inStage.in && !angery && sax && orange,
+    out: (inStage.out || angery) && sax && orange
   };
 };
 const useKoshaDirt = () => {
@@ -24670,9 +24697,10 @@ const useCabinFairy = () => {
 };
 const useIceCastleKasplat = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   return {
-    in: useFtaDkBlueprint() && inStage.in,
-    out: useFtaDkBlueprint() && inStage.out
+    in: useFtaDkBlueprint() && inStage.in && !angery,
+    out: useFtaDkBlueprint() && (inStage.out || angery)
   };
 };
 const useFunkyKasplat = () => {
@@ -24693,25 +24721,28 @@ const usePillarKasplat = () => {
 };
 const useCabinKasplat = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   return {
-    in: useFtaTinyBlueprint() && inStage.in,
-    out: useFtaTinyBlueprint() && inStage.out
+    in: useFtaTinyBlueprint() && inStage.in && !angery,
+    out: useFtaTinyBlueprint() && (inStage.out || angery)
   };
 };
 const useIglooKasplat = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   return {
-    in: useFtaChunkyBlueprint() && inStage.in,
-    out: useFtaChunkyBlueprint() && inStage.out
+    in: useFtaChunkyBlueprint() && inStage.in && !angery,
+    out: useFtaChunkyBlueprint() && (inStage.out || angery)
   };
 };
 const useSatoriKomeiji = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const hasChunky = useChunky();
   const hasBarrels = useBarrel();
   return {
-    in: inStage.in && hasChunky && hasBarrels,
-    out: inStage.out && hasChunky && hasBarrels
+    in: inStage.in && !angery && hasChunky && hasBarrels,
+    out: (inStage.out || angery) && hasChunky && hasBarrels
   };
 };
 const useOrin = () => {
@@ -24719,7 +24750,10 @@ const useOrin = () => {
   const canGetPastIceWalls = useIceWalls();
   const hasPunch = usePunch();
   const hasHunky = useHunky();
-  return otherStuff && (hasPunch || canGetPastIceWalls) && hasHunky;
+  return {
+    in: otherStuff.in && (hasPunch || canGetPastIceWalls) && hasHunky,
+    out: otherStuff.out && (hasPunch || canGetPastIceWalls) && hasHunky
+  };
 };
 const CavesCheck = (props) => {
   const checks = useDonkStore(useShallow((state) => state.checks));
@@ -24752,18 +24786,20 @@ const CabinArena = () => {
 const BossCheck$2 = () => {
   const inStage = usePlayCaves();
   const anyKong = useAnyKong();
+  const angery = useAngryCaves();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BossPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6105,
       name: "Caves Boss",
       region: "Bosses",
-      canGetLogic: inStage && anyKong
+      canGetLogic: inStage.in && !angery && anyKong,
+      canGetBreak: (inStage.out || angery) && anyKong
     }
   ) });
 };
-const Vanilla$2 = () => null;
-const CrateLocations = () => useShuffleCrates() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$2, {});
+const Vanilla$1 = () => null;
+const CrateLocations = () => useShuffleCrates() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$1, {});
 const KoshaDirt = () => {
   const dirt = useKoshaDirt();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24779,7 +24815,8 @@ const KoshaDirt = () => {
 };
 const CabinsEnemies = () => {
   const inStage = usePlayCaves();
-  const lankyCabin = useCavesLankyCabin();
+  const angery = useAngryCaves();
+  const lankyCabin = useCavesLankyCabinSpecial();
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
   const kosha = useDefeatKosha();
@@ -24790,8 +24827,8 @@ const CabinsEnemies = () => {
         id: 6302,
         name: "Enemy Outside 5 Door Cabin",
         region: "Caves Cabins",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && !angery && zinger.in,
+        canGetBreak: (inStage.out || angery) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24800,7 +24837,8 @@ const CabinsEnemies = () => {
         id: 6303,
         name: "Enemy Outside Lanky's Cabin",
         region: "Caves Cabins",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && !angery && anyKong && zinger.in,
+        canGetBreak: (inStage.out || angery) && anyKong && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24809,8 +24847,8 @@ const CabinsEnemies = () => {
         id: 6307,
         name: "Enemy at Headphones Below Lanky's Cabin",
         region: "Caves Cabins",
-        canGetLogic: inStage && anyKong && kosha.in,
-        canGetBreak: inStage && anyKong && kosha.out
+        canGetLogic: inStage.in && !angery && anyKong && kosha.in,
+        canGetBreak: (inStage.out || angery) && anyKong && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24865,6 +24903,7 @@ const IglooEnemies = () => {
 };
 const MainEnemies = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const anyKong = useAnyKong();
   const zinger = useDefeatZinger();
   const kosha = useDefeatKosha();
@@ -24875,7 +24914,8 @@ const MainEnemies = () => {
         id: 6300,
         name: "Enemy at the Start",
         region: "Crystal Caves Main",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24884,7 +24924,8 @@ const MainEnemies = () => {
         id: 6301,
         name: "Enemy Near the Ice Castle",
         region: "Crystal Caves Main",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && !angery && anyKong,
+        canGetBreak: (inStage.out || angery) && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24893,8 +24934,8 @@ const MainEnemies = () => {
         id: 6304,
         name: "Enemy Near Funky's",
         region: "Crystal Caves Main",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && !angery && zinger.in,
+        canGetBreak: (inStage.out || angery) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24903,8 +24944,8 @@ const MainEnemies = () => {
         id: 6306,
         name: "Enemy Near Tiny's Bonus Room",
         region: "Crystal Caves Main",
-        canGetLogic: inStage && kosha.in,
-        canGetBreak: inStage && kosha.out
+        canGetLogic: inStage.in && !angery && kosha.in,
+        canGetBreak: (inStage || angery) && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24913,8 +24954,8 @@ const MainEnemies = () => {
         id: 6305,
         name: "Enemy Near Snide's",
         region: "Crystal Caves Main",
-        canGetLogic: inStage && kosha.in,
-        canGetBreak: inStage && kosha.out
+        canGetLogic: inStage.in && !angery && kosha.in,
+        canGetBreak: (inStage.in || angery) && kosha.out
       }
     )
   ] });
@@ -25317,6 +25358,7 @@ const KasplatLocations$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
 ] });
 const useChunkyMedalInLogic$1 = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const igloo = useCavesIgloo();
   const boulderTech = useBoulderTech();
   const slam = useSlam();
@@ -25330,43 +25372,96 @@ const useChunkyMedalInLogic$1 = () => {
   const mini = useMini();
   const shuffleBananas = useShuffleColoredBananas();
   const prePunched = useIceWalls();
-  if (!inStage) {
-    return 0;
-  }
   if (!kong) {
     return 0;
   }
   if (shuffleBananas) {
     return 100;
   }
-  let bananas = 18;
-  if (boulderTech) {
-    bananas += 5;
-  }
-  if (move || prePunched) {
-    bananas += 11;
-    if (gun) {
-      bananas += 10;
-    }
+  if (inStage.in && !angery) {
+    let bananas = 18;
     if (boulderTech) {
-      bananas += 6;
-      if (crystal) {
+      bananas += 5;
+    }
+    if (move || prePunched) {
+      bananas += 11;
+      if (gun) {
         bananas += 10;
       }
+      if (boulderTech) {
+        bananas += 6;
+        if (crystal) {
+          bananas += 10;
+        }
+      }
     }
+    if (gun && (warpAll || mini)) {
+      bananas += 10;
+    }
+    if (gun && igloo.in && music) {
+      bananas += 10;
+    }
+    if (music && slam && pad) {
+      bananas += 20;
+    }
+    return bananas;
+  } else {
+    return 0;
   }
-  if (gun && (warpAll || mini)) {
-    bananas += 10;
-  }
-  if (gun && igloo && music) {
-    bananas += 10;
-  }
-  if (music && slam && pad) {
-    bananas += 20;
-  }
-  return bananas;
 };
-const useChunkyMedalOutLogic$1 = () => useChunkyMedalInLogic$1();
+const useChunkyMedalOutLogic$1 = () => {
+  const inStage = usePlayCaves();
+  const angery = useAngryCaves();
+  const igloo = useCavesIgloo();
+  const boulderTech = useBoulderTech();
+  const slam = useSlam();
+  const warpAll = useBananaportAll();
+  const kong = useChunky();
+  const gun = usePineapple();
+  const music = useTriangle();
+  const move = usePunch();
+  const crystal = useHunky();
+  const pad = useGone();
+  const mini = useMini();
+  const shuffleBananas = useShuffleColoredBananas();
+  const prePunched = useIceWalls();
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (inStage.out || angery) {
+    let bananas = 18;
+    if (boulderTech) {
+      bananas += 5;
+    }
+    if (move || prePunched) {
+      bananas += 11;
+      if (gun) {
+        bananas += 10;
+      }
+      if (boulderTech) {
+        bananas += 6;
+        if (crystal) {
+          bananas += 10;
+        }
+      }
+    }
+    if (gun && (warpAll || mini)) {
+      bananas += 10;
+    }
+    if (gun && igloo.out && music) {
+      bananas += 10;
+    }
+    if (music && slam && pad) {
+      bananas += 20;
+    }
+    return bananas;
+  } else {
+    return 0;
+  }
+};
 const ChunkyMedal$1 = () => {
   const inLogic = useChunkyMedalInLogic$1();
   const outLogic = useChunkyMedalOutLogic$1();
@@ -25414,6 +25509,7 @@ const useDiddyMedalCommonLogic$1 = () => {
 };
 const useDiddyMedalInLogic$1 = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const miniFunky = useCavesMiniFunky();
   const kong = useDiddy();
   const music = useGuitar();
@@ -25421,34 +25517,36 @@ const useDiddyMedalInLogic$1 = () => {
   const pad = useSpring();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDiddyMedalCommonLogic$1();
-  if (!inStage) {
-    return 0;
-  }
   if (!kong) {
     return 0;
   }
   if (shuffleBananas) {
     return 100;
   }
-  if (crystal) {
-    bananas += 10;
-  }
-  if (miniFunky && crystal) {
-    bananas += 10;
-  }
-  if (music) {
-    bananas += 5;
+  if (inStage.in && !angery) {
     if (crystal) {
+      bananas += 10;
+    }
+    if (miniFunky.in && crystal) {
+      bananas += 10;
+    }
+    if (music) {
       bananas += 5;
-      if (pad) {
-        bananas += 15;
+      if (crystal) {
+        bananas += 5;
+        if (pad) {
+          bananas += 15;
+        }
       }
     }
+    return bananas;
+  } else {
+    return 0;
   }
-  return bananas;
 };
 const useDiddyMedalOutLogic$1 = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const miniFunky = useCavesMiniFunky();
   const kong = useDiddy();
   const music = useGuitar();
@@ -25456,28 +25554,29 @@ const useDiddyMedalOutLogic$1 = () => {
   const shuffleBananas = useShuffleColoredBananas();
   const pad = useSpring();
   let bananas = useDiddyMedalCommonLogic$1() + 10;
-  if (!inStage) {
-    return 0;
-  }
   if (!kong) {
     return 0;
   }
   if (shuffleBananas) {
     return 100;
   }
-  if (crystal) {
-    bananas += 10;
-  }
-  if (miniFunky) {
-    bananas += 10;
-  }
-  if (music) {
-    bananas += 10;
-    if (crystal && pad) {
-      bananas += 15;
+  if (inStage.out || angery) {
+    if (crystal) {
+      bananas += 10;
     }
+    if (miniFunky) {
+      bananas += 10;
+    }
+    if (music) {
+      bananas += 10;
+      if (crystal && pad) {
+        bananas += 15;
+      }
+    }
+    return bananas;
+  } else {
+    return 0;
   }
-  return bananas;
 };
 const DiddyMedal$1 = () => {
   const inLogic = useDiddyMedalInLogic$1();
@@ -25534,46 +25633,50 @@ const useDkMedalCommonLogic$1 = () => {
 };
 const useDkMedalInLogic$1 = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const igloo = useCavesIgloo();
   const kong = useDk();
   const music = useBongos();
   const crystal = useStrong();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic$1();
-  if (!inStage) {
-    return 0;
-  }
   if (!kong) {
     return 0;
   }
   if (shuffleBananas) {
     return 100;
   }
-  if (music && igloo && crystal) {
-    bananas += 12;
+  if (inStage.in && !angery) {
+    if (music && igloo && crystal) {
+      bananas += 12;
+    }
+    return bananas;
+  } else {
+    return 0;
   }
-  return bananas;
 };
 const useDkMedalOutLogic$1 = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const igloo = useCavesIgloo();
   const kong = useDk();
   const music = useBongos();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic$1();
-  if (!inStage) {
-    return 0;
-  }
   if (!kong) {
     return 0;
   }
   if (shuffleBananas) {
     return 100;
   }
-  if (music && igloo) {
-    bananas += 12;
+  if (inStage.out || angery) {
+    if (music && igloo) {
+      bananas += 12;
+    }
+    return bananas;
+  } else {
+    return 0;
   }
-  return bananas;
 };
 const DkMedal$1 = () => {
   const inLogic = useDkMedalInLogic$1();
@@ -25628,6 +25731,7 @@ const useLankyMedalCommonLogic$1 = () => {
 };
 const useLankyMedalInLogic$1 = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const canSlam = useSlamCaves();
   const igloo = useCavesIgloo();
   const pillar = useCavesPillar();
@@ -25636,28 +25740,30 @@ const useLankyMedalInLogic$1 = () => {
   const pad = useBalloon();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic$1();
-  if (!inStage) {
-    return 0;
-  }
   if (!kong) {
     return 0;
   }
   if (shuffleBananas) {
     return 100;
   }
-  if (canSlam && pad) {
-    bananas += 15;
+  if (inStage.in && !angery) {
+    if (canSlam && pad) {
+      bananas += 15;
+    }
+    if (pillar.in) {
+      bananas += 20;
+    }
+    if (igloo && music && pad) {
+      bananas += 4;
+    }
+    return bananas;
+  } else {
+    return 0;
   }
-  if (pillar.in) {
-    bananas += 20;
-  }
-  if (igloo && music && pad) {
-    bananas += 4;
-  }
-  return bananas;
 };
 const useLankyMedalOutLogic$1 = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const canSlam = useSlamCaves();
   const igloo = useCavesIgloo();
   const pillar = useCavesPillar();
@@ -25666,25 +25772,26 @@ const useLankyMedalOutLogic$1 = () => {
   const music = useTrombone();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic$1();
-  if (!inStage) {
-    return 0;
-  }
   if (!kong) {
     return 0;
   }
   if (shuffleBananas) {
     return 100;
   }
-  if (canSlam) {
-    bananas += 15;
+  if (inStage.out || angery) {
+    if (canSlam) {
+      bananas += 15;
+    }
+    if (logicBreak(pillar)) {
+      bananas += 20;
+    }
+    if (igloo && music && highGrab) {
+      bananas += 4;
+    }
+    return bananas;
+  } else {
+    return 0;
   }
-  if (logicBreak(pillar)) {
-    bananas += 20;
-  }
-  if (igloo && music && highGrab) {
-    bananas += 4;
-  }
-  return bananas;
 };
 const LankyMedal$1 = () => {
   const inLogic = useLankyMedalInLogic$1();
@@ -25776,6 +25883,7 @@ const useTinyMedalCommonLogic$1 = () => {
 };
 const useTinyMedalInLogic$1 = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const warpAll = useBananaportAll();
   const kong = useTiny();
   const gun = useFeather();
@@ -25784,27 +25892,29 @@ const useTinyMedalInLogic$1 = () => {
   const pad = useMonkeyport();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useTinyMedalCommonLogic$1();
-  if (!inStage) {
-    return 0;
-  }
   if (!kong) {
     return 0;
   }
   if (shuffleBananas) {
     return 100;
   }
-  if ((warpAll || crystal) && move) {
-    if (gun) {
-      bananas += 10;
+  if (inStage.in && !angery) {
+    if ((warpAll || crystal) && move) {
+      if (gun) {
+        bananas += 10;
+      }
+      if (pad) {
+        bananas += 5;
+      }
     }
-    if (pad) {
-      bananas += 5;
-    }
+    return bananas;
+  } else {
+    return 0;
   }
-  return bananas;
 };
 const useTinyMedalOutLogic$1 = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const warpAll = useBananaportAll();
   const kong = useTiny();
   const gun = useFeather();
@@ -25812,24 +25922,25 @@ const useTinyMedalOutLogic$1 = () => {
   const pad = useMonkeyport();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useTinyMedalCommonLogic$1();
-  if (!inStage) {
-    return 0;
-  }
   if (!kong) {
     return 0;
   }
   if (shuffleBananas) {
     return 100;
   }
-  if (warpAll || crystal) {
-    if (gun) {
-      bananas += 10;
+  if (inStage.out || angery) {
+    if (warpAll || crystal) {
+      if (gun) {
+        bananas += 10;
+      }
+      if (pad) {
+        bananas += 5;
+      }
     }
-    if (pad) {
-      bananas += 5;
-    }
+    return bananas;
+  } else {
+    return 0;
   }
-  return bananas;
 };
 const TinyMedal$1 = () => {
   const inLogic = useTinyMedalInLogic$1();
@@ -25859,13 +25970,14 @@ const TinyMedal$1 = () => {
     )
   ] });
 };
-const Vanilla$1 = () => {
+const ShopLocations$1 = () => {
   const inStage = usePlayCaves();
+  const angery = useAngryCaves();
   const hasCranky = useCranky();
   const hasFunky = whatAFunky();
   const hasCandy = useCandy();
   const hasSnide = useCanAccessSnide();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ShopPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
       {
@@ -25873,8 +25985,8 @@ const Vanilla$1 = () => {
         baseName: "Caves Cranky",
         level: "Crystal Caves",
         region: "Shops",
-        inLogic: hasCranky && inStage.in,
-        outLogic: hasCranky && inStage.out
+        inLogic: hasCranky && inStage.in && !angery,
+        outLogic: hasCranky && (inStage.out || angery)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -25884,8 +25996,8 @@ const Vanilla$1 = () => {
         baseName: "Caves Funky",
         level: "Crystal Caves",
         region: "Shops",
-        inLogic: hasFunky && inStage.in,
-        outLogic: hasFunky && inStage.out
+        inLogic: hasFunky && inStage.in && !angery,
+        outLogic: hasFunky && (inStage.out || angery)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -25895,8 +26007,8 @@ const Vanilla$1 = () => {
         baseName: "Caves Candy",
         level: "Crystal Caves",
         region: "Shops",
-        inLogic: hasCandy && inStage.in,
-        outLogic: hasCandy && inStage.out
+        inLogic: hasCandy && inStage.in && !angery,
+        outLogic: hasCandy && (inStage.out || angery)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -25906,66 +26018,11 @@ const Vanilla$1 = () => {
         baseName: "Turn in Caves Blueprint for",
         level: "Crystal Caves",
         region: "Shops",
-        inLogic: hasSnide
+        inLogic: hasSnide && inStage.in,
+        outLogic: hasSnide && inStage.out
       }
     )
   ] });
-};
-const Shuffled$1 = () => {
-  const inStage = usePlayCaves();
-  const hasCranky = useCranky();
-  const hasFunky = whatAFunky();
-  const hasCandy = useCandy();
-  const hasSnide = useCanAccessSnide();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 6140,
-        baseName: "Caves Cranky Location",
-        level: "Crystal Caves",
-        region: "Shops",
-        inLogic: hasCranky && inStage.in,
-        outLogic: hasCranky && inStage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 6150,
-        baseName: "Caves Funky Location",
-        level: "Crystal Caves",
-        region: "Shops",
-        inLogic: hasFunky && inStage.in,
-        outLogic: hasFunky && inStage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 6160,
-        baseName: "Caves Candy Location",
-        level: "Crystal Caves",
-        region: "Shops",
-        inLogic: hasCandy && inStage.in,
-        outLogic: hasCandy && inStage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 6170,
-        baseName: "Caves Snide Location",
-        level: "Crystal Caves",
-        region: "Shops",
-        inLogic: hasSnide
-      }
-    )
-  ] });
-};
-const ShopLocations$1 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$1, {});
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const KooshyKomeiji = () => {
   const heartThrobbingAdventure = useSatoriKomeiji();
@@ -25981,13 +26038,15 @@ const KooshyKomeiji = () => {
   ) });
 };
 const Okuu = () => {
+  const canDo = useOrin();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 5009,
       name: "Big Boulder Near Cranky's",
       region: "Crystal Caves Main",
-      canGetLogic: useOrin()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
@@ -30232,7 +30291,7 @@ const GeneratorSettings = () => {
                 SimpleIcon,
                 {
                   imgUrl: koshaHead,
-                  title: "Causes checks involving the main Crystal Caves area to turn yellow. You should also use this if you're playing the vanilla game or a seed for which you didn't turn the Calm Caves option on under the Quality of Life section, but turn it off once you've killed the giant Kosha.",
+                  title: "Causes checks involving the main Crystal Caves area to turn yellow to indicate that you are under threat from rockfall. Checks that are still green are in the safe zones. You should also use this if you're playing the vanilla game or a seed for which you didn't turn the Calm Caves option on under the Quality of Life section, but turn it off once you've killed the giant Kosha.",
                   storeKey: "angyKosha",
                   prefix: "settings",
                   updateItem: setSetting
