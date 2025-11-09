@@ -208,13 +208,16 @@ export const useChunkyBoulderGb = (): LogicBool => {
   }
 }
 
-export const useChunkyCagedGb = (): boolean => {
+export const useChunkyCagedGb = (): LogicBool => {
   const boulderTech = useBoulderTech()
   const canSlam = useSlamJapes()
   const rambi = useJapesRambi()
   const climbing = useClimbing()
   const hasBananaports = useBananaportAll()
-  return rambi && boulderTech && canSlam && (climbing || hasBananaports)
+  return {
+    in: rambi.in && boulderTech && canSlam && (climbing || hasBananaports),
+    out: rambi.out && boulderTech && canSlam
+  }
 }
 
 export const useChunkyHiveGb = (): LogicBool => {
@@ -249,11 +252,14 @@ export const useChunkyKasplat = (): LogicBool => {
   }
 }
 
-export const useDiddyCagedGb = (): boolean => {
+export const useDiddyCagedGb = (): LogicBool => {
   const rambi = useJapesRambi()
   const diddy = useDiddy()
   const canSlam = useSlamJapes()
-  return rambi && diddy && canSlam
+  return {
+    in: rambi.in && diddy && canSlam,
+    out: rambi.out && diddy && canSlam
+  }
 }
 
 export const useDiddyMountainGb = (): boolean => {
@@ -332,11 +338,14 @@ export const useDkFreeDiddyGb = (): LogicBool => {
   }
 }
 
-export const useDkCagedGb = (): boolean => {
+export const useDkCagedGb = (): LogicBool => {
   const rambi = useJapesRambi()
   const dk = useDk()
   const canSlam = useSlamJapes()
-  return rambi && dk && canSlam
+  return {
+    in: rambi.in && dk && canSlam,
+    out: rambi.out && dk && canSlam
+  }
 }
 
 export const useDkBlastGb = (): LogicBool => {
@@ -350,13 +359,16 @@ export const useDkBlastGb = (): LogicBool => {
   }
 }
 
-export const useLankyCagedGb = (): boolean => {
+export const useLankyCagedGb = (): LogicBool => {
   const rambi = useJapesRambi()
   const lanky = useLanky()
   const canSlam = useSlamJapes()
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
-  return rambi && lanky && canSlam && (hasClimbing || hasBananaports)
+  return {
+    in: rambi.in && lanky && canSlam && (hasClimbing || hasBananaports),
+    out: rambi.out && lanky && canSlam
+  }
 }
 
 export const useLankyGateGb = (): LogicBool => {
@@ -392,11 +404,14 @@ export const useLankyPaintingGb = (): LogicBool => {
   }
 }
 
-export const useTinyCagedGb = (): boolean => {
+export const useTinyCagedGb = (): LogicBool => {
   const rambi = useJapesRambi()
   const tiny = useTiny()
   const canSlam = useSlamJapes()
-  return rambi && tiny && canSlam
+  return {
+    in: rambi.in && tiny && canSlam,
+    out: rambi.out && tiny && canSlam
+  }
 }
 
 export const useTinyGateGb = (): LogicBool => {
@@ -429,9 +444,13 @@ export const useGeneralThing = (): LogicBool => {
   }
 }
 
-export const useRambiCrate = (): boolean => {
+export const useRambiCrate = (): LogicBool => {
   const anyKong = useAnyKong()
-  return useJapesRambi() && anyKong
+  const hasRambi = useJapesRambi()
+  return {
+    in: hasRambi.in && anyKong,
+    out: hasRambi.out && anyKong
+  }
 }
 
 export const usePaintingDirt = (): LogicBool => {
@@ -452,10 +471,13 @@ export const useGeneralDirt = (): LogicBool => {
   }
 }
 
-export const useRambiFairy = (): boolean => {
+export const useRambiFairy = (): LogicBool => {
   const camera = useCamera()
   const japesRambi = useJapesRambi()
-  return japesRambi && camera
+  return {
+    in: japesRambi.in && camera,
+    out: japesRambi.out && camera
+  }
 }
 
 export const usePaintingFairy = (): LogicBool => {
