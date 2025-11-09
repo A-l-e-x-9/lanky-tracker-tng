@@ -278,8 +278,8 @@ export const useDiddyOwlGb = (): LogicBool => {
   const guitar = useGuitar()
   const rocket = useRocket()
   return {
-    in: owlTree && night.in && guitar && rocket,
-    out: owlTree && night.out && guitar && rocket
+    in: owlTree.in && night.in && guitar && rocket,
+    out: owlTree.out && night.out && guitar && rocket
   }
 }
 
@@ -407,8 +407,8 @@ export const useLankyRaceGb = (): LogicBool => {
   const trombone = useTrombone()
   const sprint = useSprint()
   return {
-    in: isDay.in && owl && trombone && sprint,
-    out: isDay.out && owl && trombone && sprint
+    in: isDay.in && owl.in && trombone && sprint,
+    out: isDay.out && owl.out && trombone && sprint
   }
 }
 
@@ -423,11 +423,14 @@ export const useTinyMushGb = (): LogicBool => {
   }
 }
 
-export const useTinyAntGb = (): boolean => {
+export const useTinyAntGb = (): LogicBool => {
   const owl = useForestOwl()
   const mini = useMini()
   const sax = useSax()
-  return owl && mini && sax
+  return {
+    in: owl.in && mini && sax,
+    out: owl.out && mini && sax
+  }
 }
 
 export const useTinySpiderGb = (): LogicBool => {
@@ -521,10 +524,13 @@ export const useBarnKasplat = (): LogicBool => {
   }
 }
 
-export const useOwlKasplat = (): boolean => {
+export const useOwlKasplat = (): LogicBool => {
   const inStage = useForestOwl()
   const anyKong = useAnyKong()
-  return useFtaLankyBlueprint() && inStage && anyKong
+  return {
+    in: useFtaLankyBlueprint() && inStage.in && anyKong,
+    out: useFtaLankyBlueprint() && inStage.out && anyKong
+  }
 }
 
 export const useNightKasplat = (): LogicBool => {
