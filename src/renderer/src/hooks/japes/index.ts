@@ -259,9 +259,12 @@ export const useDiddyMountainGb = (): boolean => {
   return useFtaDiddyBanana() && mine && canSlam
 }
 
-export const useDiddyTunnelGb = (): boolean => {
+export const useDiddyTunnelGb = (): LogicBool => {
   const side = useJapesSideArea()
-  return useFtaDiddyBanana() && side
+  return {
+    in: useFtaDiddyBanana() && side.in,
+    out: useFtaDiddyBanana() && side.out
+  }
 }
 
 export const useDiddyMinecartGb = (): LogicBool => {
@@ -353,10 +356,13 @@ export const useLankyCagedGb = (): boolean => {
   return rambi && lanky && canSlam && (hasClimbing || hasBananaports)
 }
 
-export const useLankyGateGb = (): boolean => {
+export const useLankyGateGb = (): LogicBool => {
   const side = useJapesSideArea()
   const grape = useGrape()
-  return side && grape
+  return {
+    in: side.in && grape,
+    out: side.out && grape
+  }
 }
 
 export const useLankySlopeGb = (): LogicBool => {
@@ -390,10 +396,13 @@ export const useTinyCagedGb = (): boolean => {
   return rambi && tiny && canSlam
 }
 
-export const useTinyGateGb = (): boolean => {
+export const useTinyGateGb = (): LogicBool => {
   const side = useJapesSideArea()
   const feather = useFeather()
-  return side && feather
+  return {
+    in: side.in && feather,
+    out: side.out && feather
+  }
 }
 
 export const useTinyStumpGb = (): boolean => {
