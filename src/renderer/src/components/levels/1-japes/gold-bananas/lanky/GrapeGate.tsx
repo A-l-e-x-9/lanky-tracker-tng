@@ -2,15 +2,19 @@ import GBPool from '@renderer/components/pools/GB'
 import { useLankyGateGb } from '@renderer/hooks/japes'
 import JapesCheck from '../../check'
 
-const GrapeGate: React.FC = () => (
+const GrapeGate: React.FC = () => {
+const canDo = useLankyGateGb()
+return (
 <GBPool>
   <JapesCheck
     id={1021}
     name="Lanky's Grape Gate Barrel"
     region="Japes Lowlands"
-    canGetLogic={useLankyGateGb()}
+    canGetLogic={canDo.in}
+    canGetBreak={canDo.out}
   />
   </GBPool>
 )
+}
 
 export default GrapeGate
