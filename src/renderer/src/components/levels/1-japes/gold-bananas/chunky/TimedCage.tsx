@@ -10,7 +10,8 @@ const ChunkyTimedCage: React.FC = () => {
       id={1041}
       name="Chunky's Timed Caged Banana"
       region="Japes Hillside"
-      canGetLogic={cage}
+      canGetLogic={cage.in}
+      canGetLogic={cage.out}
     />
     </GBPool>
   )
