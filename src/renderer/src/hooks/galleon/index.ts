@@ -484,7 +484,7 @@ export const useLighthouseDirt = (): LogicBool => {
   }
 }
 
-export const useGeneralDirt = (): boolean => {
+export const useGeneralDirt = (): LogicBool => {
   const thing = useGeneralThing()
   return {
     in: useShockwave() && thing.in,
