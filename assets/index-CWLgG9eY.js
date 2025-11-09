@@ -14124,7 +14124,10 @@ const useChunkyCagedGb = () => {
   const rambi = useJapesRambi();
   const climbing = useClimbing();
   const hasBananaports = useBananaportAll();
-  return rambi && boulderTech && canSlam && (climbing || hasBananaports);
+  return {
+    in: rambi.in && boulderTech && canSlam && (climbing || hasBananaports),
+    out: rambi.out && boulderTech && canSlam
+  };
 };
 const useChunkyHiveGb = () => {
   const hive = useJapesHive();
@@ -14159,7 +14162,10 @@ const useDiddyCagedGb = () => {
   const rambi = useJapesRambi();
   const diddy = useDiddy();
   const canSlam = useSlamJapes();
-  return rambi && diddy && canSlam;
+  return {
+    in: rambi.in && diddy && canSlam,
+    out: rambi.out && diddy && canSlam
+  };
 };
 const useDiddyMountainGb = () => {
   const mine = useJapesMine();
@@ -14230,7 +14236,10 @@ const useDkCagedGb = () => {
   const rambi = useJapesRambi();
   const dk2 = useDk();
   const canSlam = useSlamJapes();
-  return rambi && dk2 && canSlam;
+  return {
+    in: rambi.in && dk2 && canSlam,
+    out: rambi.out && dk2 && canSlam
+  };
 };
 const useDkBlastGb$4 = () => {
   const inStage = usePlayJapes();
@@ -14248,7 +14257,10 @@ const useLankyCagedGb = () => {
   const canSlam = useSlamJapes();
   const hasClimbing = useClimbing();
   const hasBananaports = useBananaportAll();
-  return rambi && lanky && canSlam && (hasClimbing || hasBananaports);
+  return {
+    in: rambi.in && lanky && canSlam && (hasClimbing || hasBananaports),
+    out: rambi.out && lanky && canSlam
+  };
 };
 const useLankyGateGb = () => {
   const side = useJapesSideArea();
@@ -14284,7 +14296,10 @@ const useTinyCagedGb = () => {
   const rambi = useJapesRambi();
   const tiny = useTiny();
   const canSlam = useSlamJapes();
-  return rambi && tiny && canSlam;
+  return {
+    in: rambi.in && tiny && canSlam,
+    out: rambi.out && tiny && canSlam
+  };
 };
 const useTinyGateGb = () => {
   const side = useJapesSideArea();
@@ -14314,7 +14329,11 @@ const useGeneralThing$4 = () => {
 };
 const useRambiCrate = () => {
   const anyKong = useAnyKong();
-  return useJapesRambi() && anyKong;
+  const hasRambi = useJapesRambi();
+  return {
+    in: hasRambi.in && anyKong,
+    out: hasRambi.out && anyKong
+  };
 };
 const usePaintingDirt = () => {
   const japesPaintingOutside = useJapesPaintingOutside();
@@ -14327,7 +14346,10 @@ const usePaintingDirt = () => {
 const useRambiFairy = () => {
   const camera = useCamera();
   const japesRambi = useJapesRambi();
-  return japesRambi && camera;
+  return {
+    in: japesRambi.in && camera,
+    out: japesRambi.out && camera
+  };
 };
 const usePaintingFairy = () => {
   const camera = useCamera();
@@ -14448,15 +14470,19 @@ const MountainCrate = () => {
     }
   ) }) });
 };
-const RambiCrate = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaCrate, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  JapesCheck,
-  {
-    id: 1061,
-    name: "Melon Crate in Rambi's Cave",
-    region: "Stormy Area",
-    canGetLogic: useRambiCrate()
-  }
-) }) });
+const RambiCrate = () => {
+  const canDo = useRambiCrate();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaCrate, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    JapesCheck,
+    {
+      id: 1061,
+      name: "Melon Crate in Rambi's Cave",
+      region: "Stormy Area",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const CrateLocations$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(MountainCrate, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(RambiCrate, {})
@@ -14917,15 +14943,19 @@ const PaintingFairy = () => {
     }
   ) }) }) });
 };
-const RambiFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  JapesCheck,
-  {
-    id: 1080,
-    name: "Fairy at Pool in Rambi's Area",
-    region: "Stormy Area",
-    canGetLogic: useRambiFairy()
-  }
-) }) });
+const RambiFairy = () => {
+  const canDo = useRambiFairy();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    JapesCheck,
+    {
+      id: 1080,
+      name: "Fairy at Pool in Rambi's Area",
+      region: "Stormy Area",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const FairyLocations$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(RambiFairy, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingFairy, {})
@@ -14964,7 +14994,8 @@ const ChunkyTimedCage = () => {
       id: 1041,
       name: "Chunky's Timed Caged Banana",
       region: "Japes Hillside",
-      canGetLogic: cage
+      canGetLogic: cage.in,
+      canGetBreak: cage.out
     }
   ) });
 };
@@ -15016,15 +15047,19 @@ const PeanutTunnel = () => {
     }
   ) });
 };
-const DiddyTimedCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  JapesCheck,
-  {
-    id: 1010,
-    name: "Diddy's Timed Caged Banana",
-    region: "Japes Hillside",
-    canGetLogic: useDiddyCagedGb()
-  }
-) });
+const DiddyTimedCage = () => {
+  const canDo = useDiddyCagedGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    JapesCheck,
+    {
+      id: 1010,
+      name: "Diddy's Timed Caged Banana",
+      region: "Japes Hillside",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) });
+};
 const TopMountain = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   JapesCheck,
   {
@@ -15067,15 +15102,19 @@ const DiddyCage = () => {
     }
   ) });
 };
-const FloorCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  JapesCheck,
-  {
-    id: 1003,
-    name: "DK's Floor Cage Banana",
-    region: "Japes Lowlands",
-    canGetLogic: useDkCagedGb()
-  }
-) });
+const FloorCage = () => {
+  const canDo = useDkCagedGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    JapesCheck,
+    {
+      id: 1003,
+      name: "DK's Floor Cage Banana",
+      region: "Japes Lowlands",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) });
+};
 const FreeDiddy = () => {
   const canDo = useDkFreeDiddyGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15148,15 +15187,19 @@ const SlopeBarrel = () => {
     }
   ) });
 };
-const LankyTimedCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  JapesCheck,
-  {
-    id: 1020,
-    name: "Lanky's Timed Cage Banana",
-    region: "Japes Hillside",
-    canGetLogic: useLankyCagedGb()
-  }
-) });
+const LankyTimedCage = () => {
+  const canDo = useLankyCagedGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    JapesCheck,
+    {
+      id: 1020,
+      name: "Lanky's Timed Cage Banana",
+      region: "Japes Hillside",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) });
+};
 const LankyBananas$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(LankyTimedCage, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(GrapeGate, {}),
@@ -15197,15 +15240,19 @@ const HiveStump = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children
     canGetLogic: useTinyStumpGb()
   }
 ) });
-const TinyTimedCage = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  JapesCheck,
-  {
-    id: 1030,
-    name: "Tiny's Timed Cage Banana",
-    region: "Japes Hillside",
-    canGetLogic: useTinyCagedGb()
-  }
-) });
+const TinyTimedCage = () => {
+  const canDo = useTinyCagedGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    JapesCheck,
+    {
+      id: 1030,
+      name: "Tiny's Timed Cage Banana",
+      region: "Japes Hillside",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) });
+};
 const TinyBananas$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyTimedCage, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FeatherGate, {}),
