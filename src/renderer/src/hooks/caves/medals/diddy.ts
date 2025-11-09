@@ -57,7 +57,9 @@ export const useDiddyMedalInLogic = (): number => {
     }
   }
   return bananas
-  }
+} else {
+  return 0
+}
 }
 
 export const useDiddyMedalOutLogic = (): number => {
@@ -92,5 +94,7 @@ export const useDiddyMedalOutLogic = (): number => {
     }
   }
   return bananas
+} else {
+  return 0
 }
 }

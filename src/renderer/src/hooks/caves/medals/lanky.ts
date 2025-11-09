@@ -58,6 +58,8 @@ export const useLankyMedalInLogic = (): number => {
   }
 
   return bananas
+} else {
+  return 0
 }
 }
 
@@ -91,5 +93,7 @@ export const useLankyMedalOutLogic = (): number => {
   }
 
   return bananas
+} else {
+  return 0
 }
 }

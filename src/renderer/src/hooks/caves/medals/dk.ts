@@ -50,6 +50,8 @@ export const useDkMedalInLogic = (): number => {
     bananas += 12
   }
   return bananas
+} else {
+  return 0
 }
 }
 
@@ -73,5 +75,7 @@ export const useDkMedalOutLogic = (): number => {
     bananas += 12
   }
   return bananas
+} else {
+  return 0
 }
 }

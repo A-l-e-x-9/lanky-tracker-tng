@@ -62,7 +62,9 @@ export const useChunkyMedalInLogic = (): number => {
     bananas += 20
   }
   return bananas
-  }
+} else {
+  return 0
+}
 }
 
 export const useChunkyMedalOutLogic = (): number => {
@@ -115,5 +117,7 @@ export const useChunkyMedalOutLogic = (): number => {
     bananas += 20
   }
   return bananas
-  }
+} else {
+  return 0
+}
 }
