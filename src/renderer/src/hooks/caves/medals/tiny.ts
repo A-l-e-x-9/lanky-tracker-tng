@@ -9,7 +9,7 @@ import {
   useTiny,
   useTwirl
 } from '@renderer/hooks/kongs'
-import { useBananaportAll, useShuffleColoredBananas } from '@renderer/hooks/settings'
+import { useBananaportAll, useShuffleColoredBananas, useAngryCaves } from '@renderer/hooks/settings'
 import { useCavesIgloo, usePlayCaves, useIceWalls } from '..'
 
 const useTinyMedalCommonLogic = (): number => {
@@ -51,6 +51,7 @@ const useTinyMedalCommonLogic = (): number => {
 
 export const useTinyMedalInLogic = (): number => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const warpAll = useBananaportAll()
   const kong = useTiny()
   const gun = useFeather()
@@ -60,16 +61,13 @@ export const useTinyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useTinyMedalCommonLogic()
 
-  if (!inStage) {
-    return 0
-  }
   if (!kong) {
     return 0
   }
   if (shuffleBananas) {
     return 100
   }
-
+  if (inStage.in && !angery) {
   if ((warpAll || crystal) && move) {
     if (gun) {
       bananas += 10
@@ -80,9 +78,11 @@ export const useTinyMedalInLogic = (): number => {
   }
   return bananas
 }
+}
 
 export const useTinyMedalOutLogic = (): number => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const warpAll = useBananaportAll()
   const kong = useTiny()
   const gun = useFeather()
@@ -91,15 +91,13 @@ export const useTinyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useTinyMedalCommonLogic()
 
-  if (!inStage) {
-    return 0
-  }
   if (!kong) {
     return 0
   }
   if (shuffleBananas) {
     return 100
   }
+  if (inStage.out || angery) {
   if (warpAll || crystal) {
     if (gun) {
       bananas += 10
@@ -109,4 +107,5 @@ export const useTinyMedalOutLogic = (): number => {
     }
   }
   return bananas
+}
 }

@@ -2,10 +2,11 @@ import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { usePlayCaves, useCanAccessSnide } from '@renderer/hooks/caves'
 import { useCranky, whatAFunky, useCandy } from '@renderer/hooks/kongs'
-import { useShuffledShops } from '@renderer/hooks/settings'
+import { useAngryCaves } from '@renderer/hooks/settings'
 
-const Vanilla: React.FC = () => {
+const ShopLocations: React.FC = () => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const hasCranky = useCranky()
   const hasFunky = whatAFunky()
   const hasCandy = useCandy()
@@ -17,83 +18,35 @@ const Vanilla: React.FC = () => {
         baseName="Caves Cranky"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasCranky && inStage.in}
-        outLogic={hasCranky && inStage.out}
+        inLogic={hasCranky && inStage.in && !angery}
+        outLogic={hasCranky && (inStage.out || angery)}
       />
       <ShopGenerator
         baseId={6120}
         baseName="Caves Funky"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasFunky && inStage.in}
-        outLogic={hasFunky && inStage.out}
+        inLogic={hasFunky && inStage.in && !angery}
+        outLogic={hasFunky && (inStage.out || angery)}
       />
       <ShopGenerator
         baseId={6130}
         baseName="Caves Candy"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasCandy && inStage.in}
-        outLogic={hasCandy && inStage.out}
+        inLogic={hasCandy && inStage.in && !angery}
+        outLogic={hasCandy && (inStage.out || angery)}
       />
       <ShopGenerator
         baseId={6140}
         baseName="Turn in Caves Blueprint for"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasSnide}
+        inLogic={hasSnide && inStage.in}
+        outLogic={hasSnide && inStage.out} //Snide is in a "safe zone", so no Angry Caves check
       />
     </>
   )
-}
-
-const Shuffled: React.FC = () => {
-  const inStage = usePlayCaves()
-  const hasCranky = useCranky()
-  const hasFunky = whatAFunky()
-  const hasCandy = useCandy()
-  const hasSnide = useCanAccessSnide()
-
-  return (
-    <>
-      <ShopGenerator
-        baseId={6140}
-        baseName="Caves Cranky Location"
-        level="Crystal Caves"
-        region="Shops"
-        inLogic={hasCranky && inStage.in}
-        outLogic={hasCranky && inStage.out}
-      />
-      <ShopGenerator
-        baseId={6150}
-        baseName="Caves Funky Location"
-        level="Crystal Caves"
-        region="Shops"
-        inLogic={hasFunky && inStage.in}
-        outLogic={hasFunky && inStage.out}
-      />
-      <ShopGenerator
-        baseId={6160}
-        baseName="Caves Candy Location"
-        level="Crystal Caves"
-        region="Shops"
-        inLogic={hasCandy && inStage.in}
-        outLogic={hasCandy && inStage.out}
-      />
-      <ShopGenerator
-        baseId={6170}
-        baseName="Caves Snide Location"
-        level="Crystal Caves"
-        region="Shops"
-        inLogic={hasSnide}
-      />
-    </>
-  )
-}
-
-const ShopLocations: React.FC = () => {
-  const locations = useShuffledShops() ? <Shuffled /> : <Vanilla />
-  return <ShopPool>{locations}</ShopPool>
 }
 
 export default ShopLocations

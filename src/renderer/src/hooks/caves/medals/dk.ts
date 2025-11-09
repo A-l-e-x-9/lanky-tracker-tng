@@ -1,5 +1,5 @@
 import { useBlast, useBongos, useCoconut, useDk, usePunch, useStrong } from '@renderer/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/hooks/settings'
+import { useShuffleColoredBananas, useAngryCaves } from '@renderer/hooks/settings'
 import { useCavesIgloo, usePlayCaves, useIceWalls } from '..'
 
 const useDkMedalCommonLogic = (): number => {
@@ -31,6 +31,7 @@ const useDkMedalCommonLogic = (): number => {
 
 export const useDkMedalInLogic = (): number => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const igloo = useCavesIgloo()
   const kong = useDk()
   const music = useBongos()
@@ -38,42 +39,39 @@ export const useDkMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()
 
-  if (!inStage) {
-    return 0
-  }
   if (!kong) {
     return 0
   }
   if (shuffleBananas) {
     return 100
   }
-
+  if (inStage.in && !angery) {
   if (music && igloo && crystal) {
     bananas += 12
   }
   return bananas
 }
+}
 
 export const useDkMedalOutLogic = (): number => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const igloo = useCavesIgloo()
   const kong = useDk()
   const music = useBongos()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()
 
-  if (!inStage) {
-    return 0
-  }
   if (!kong) {
     return 0
   }
   if (shuffleBananas) {
     return 100
   }
-
+  if (inStage.out || angery) {
   if (music && igloo) {
     bananas += 12
   }
   return bananas
+}
 }

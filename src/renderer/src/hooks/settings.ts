@@ -256,3 +256,6 @@ export const usePoolGoldBananas = (): boolean =>
 
 export const useBetaLankyPhase = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.betaLankyPhase))
+  
+export const useAngryCaves = (): boolean =>
+  useDonkStore(useShallow((state) => state.settings.angyKosha))

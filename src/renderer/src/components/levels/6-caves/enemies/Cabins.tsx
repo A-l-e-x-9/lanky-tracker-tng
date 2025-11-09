@@ -1,12 +1,14 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { useCavesLankyCabin, usePlayCaves } from '@renderer/hooks/caves'
+import { useCavesLankyCabinSpecial, usePlayCaves } from '@renderer/hooks/caves'
 import { useDefeatKosha, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useAnyKong } from '@renderer/hooks/kongs'
+import { useAngryCaves } from '@renderer/hooks/settings'
 import CavesCheck from '../check'
 
 const CabinsEnemies: React.FC = () => {
   const inStage = usePlayCaves()
-  const lankyCabin = useCavesLankyCabin()
+  const angery = useAngryCaves()
+  const lankyCabin = useCavesLankyCabinSpecial()
   const anyKong = useAnyKong()
   const zinger = useDefeatZinger()
   const kosha = useDefeatKosha()
@@ -16,21 +18,22 @@ const CabinsEnemies: React.FC = () => {
         id={6302}
         name="Enemy Outside 5 Door Cabin"
         region="Caves Cabins"
-        canGetLogic={inStage && zinger.in}
-        canGetBreak={inStage && zinger.out}
+        canGetLogic={inStage.in && !angery && zinger.in}
+        canGetBreak={(inStage.out || angery) && zinger.out}
       />
       <CavesCheck
         id={6303}
         name="Enemy Outside Lanky's Cabin"
         region="Caves Cabins"
-        canGetLogic={inStage && anyKong}
+        canGetLogic={inStage.in && !angery && anyKong && zinger.in}
+        canGetBreak={(inStage.out || angery) && anyKong && zinger.out}
       />
       <CavesCheck
         id={6307}
         name="Enemy at Headphones Below Lanky's Cabin"
         region="Caves Cabins"
-        canGetLogic={inStage && anyKong && kosha.in}
-        canGetBreak={inStage && anyKong && kosha.out}
+        canGetLogic={inStage.in && !angery && anyKong && kosha.in}
+        canGetBreak={(inStage.out || angery) && anyKong && kosha.out}
       />
       <CavesCheck
         id={6317}
@@ -50,6 +53,6 @@ export default CabinsEnemies
         id={6318}
         name="Caves Enemy: Lanky Cabin Inside Near Switch"
         region="Caves Cabins"
-        canGetLogic={lankyCabin.in && kosha}
-        canGetBreak={lankyCabin.out && kosha}
+        canGetLogic={lankyCabin.in && kosha.in}
+        canGetBreak={lankyCabin.out && kosha.out}
       />*/

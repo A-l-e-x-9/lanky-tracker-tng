@@ -1,5 +1,5 @@
 import { useDiddy, useGuitar, usePeanut, useRocket, useSpring } from '@renderer/hooks/kongs'
-import { useShuffleColoredBananas } from '@renderer/hooks/settings'
+import { useShuffleColoredBananas, useAngryCaves } from '@renderer/hooks/settings'
 import { useCavesIgloo, useCavesMiniFunky, usePlayCaves } from '..'
 
 const useDiddyMedalCommonLogic = (): number => {
@@ -24,6 +24,7 @@ const useDiddyMedalCommonLogic = (): number => {
 
 export const useDiddyMedalInLogic = (): number => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const miniFunky = useCavesMiniFunky()
   const kong = useDiddy()
   const music = useGuitar()
@@ -32,21 +33,18 @@ export const useDiddyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDiddyMedalCommonLogic()
 
-  if (!inStage) {
-    return 0
-  }
   if (!kong) {
     return 0
   }
   if (shuffleBananas) {
     return 100
   }
-
+  if (inStage.in && !angery) {
   if (crystal) {
     bananas += 10 // two bunches that rocket expects.
   }
 
-  if (miniFunky && crystal) {
+  if (miniFunky.in && crystal) {
     bananas += 10
   }
   if (music) {
@@ -59,10 +57,12 @@ export const useDiddyMedalInLogic = (): number => {
     }
   }
   return bananas
+  }
 }
 
 export const useDiddyMedalOutLogic = (): number => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const miniFunky = useCavesMiniFunky()
   const kong = useDiddy()
   const music = useGuitar()
@@ -71,16 +71,13 @@ export const useDiddyMedalOutLogic = (): number => {
   const pad = useSpring()
   let bananas = useDiddyMedalCommonLogic() + 10
 
-  if (!inStage) {
-    return 0
-  }
   if (!kong) {
     return 0
   }
   if (shuffleBananas) {
     return 100
   }
-
+  if (inStage.out || angery) {
   if (crystal) {
     bananas += 10 // two bunches that rocket expects.
   }
@@ -95,4 +92,5 @@ export const useDiddyMedalOutLogic = (): number => {
     }
   }
   return bananas
+}
 }

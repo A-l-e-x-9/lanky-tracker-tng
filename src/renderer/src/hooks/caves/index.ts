@@ -43,7 +43,7 @@ import {
   useSnide,
   useChunky
 } from '../kongs'
-import { useBananaportAll, useHardShooting } from '../settings'
+import { useBananaportAll, useHardShooting, useAngryCaves } from '../settings'
 import { LogicBool, logicBreak } from '../world'
 
 /**
@@ -71,12 +71,13 @@ export const useSlamCaves = (): boolean => useSlamLevel('Crystal Caves')
  */
 export const useCavesIgloo = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const rocket = useRocket()
   const [barriers] = useDonkStore(useShallow((state) => [state.removeBarriers]))
   const iglooBarrier = barriers.cavesIgloo
   return {
-    in: inStage.in && (iglooBarrier || rocket),
-    out: inStage.out && (iglooBarrier || rocket)
+    in: inStage.in && !angery && (iglooBarrier || rocket),
+    out: (inStage.out || angery) && (iglooBarrier || rocket)
   }
 }
 
@@ -102,12 +103,13 @@ export const useCanAccessSnide = (): boolean => {
  */
 export const useCavesMiniFunky = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const twirl = useTwirl()
   const mini = useMini()
   const warpAll = useBananaportAll()
   return {
-    in: inStage.in && (warpAll || (twirl && mini)),
-    out: inStage.out && mini
+    in: inStage.in && !angery && (warpAll || (twirl && mini)),
+    out: (inStage.out || angery) && mini
   }
 }
 
@@ -117,18 +119,33 @@ export const useCavesMiniFunky = (): LogicBool => {
  */
 export const useCavesPillar = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const rocket = useRocket()
   const twirl = useTwirl()
   const balloon = useBalloon()
   const dk = useDk()
   const warpAll = useBananaportAll()
   return {
-    in: inStage.in && (warpAll || rocket),
-    out: inStage.out && (dk || twirl || balloon)
+    in: inStage.in && !angery && (warpAll || rocket),
+    out: (inStage.out || angery) && (dk || twirl || balloon)
   }
 }
 
 export const useCavesLankyCabin = (): LogicBool => {
+  const inStage = usePlayCaves()
+  const angery = useAngryCaves()
+  const balloon = useBalloon()
+  const trombone = useTrombone()
+  const diddy = useDiddy()
+  const tiny = useTiny()
+  return {
+    in: inStage.in && !angery && trombone && balloon,
+    out: (inStage.out || angery) && trombone && (diddy || tiny)
+  }
+}
+
+//This is for the enemies that are actually inside Lanky's cabin.
+export const useCavesLankyCabinSpecial = (): LogicBool => {
   const inStage = usePlayCaves()
   const balloon = useBalloon()
   const trombone = useTrombone()
@@ -142,25 +159,27 @@ export const useCavesLankyCabin = (): LogicBool => {
 
 export const useDkCabinGb = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const bongos = useBongos()
   const homing = useHoming()
   const hardShooting = useHardShooting()
   const anyGun = useAnyGun()
   return {
-    in: inStage.in && bongos && anyGun && (homing || hardShooting),
-    out: inStage.out && bongos && anyGun
+    in: inStage.in && !angery && bongos && anyGun && (homing || hardShooting),
+    out: (inStage.out || angery) && bongos && anyGun
   }
 }
 
 /*Major Alex edit: Added Oranges to the "out logic" since in my personal experience, there's always at least one purple Klaptrap to take down here.*/
 export const useDiddyGauntletGb = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const guitar = useGuitar()
   const rocket = useRocket()
   const orange = useOrange()
   return {
-    in: inStage.in && guitar && rocket && orange,
-    out: inStage.out && guitar && orange
+    in: inStage.in && !angery && guitar && rocket && orange,
+    out: (inStage.out || angery) && guitar && orange
   }
 }
 
@@ -177,13 +196,14 @@ export const useChunkyGoneGb = (): LogicBool => {
 
 export const useChunkyClearGb = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const punch = usePunch()
   const wallsPrePunched = useIceWalls()
   const boulder = useBoulderTech()
   const hunky = useHunky()
   return {
-    in: inStage.in && (punch || wallsPrePunched) && boulder && hunky,
-    out: inStage.out && (punch || wallsPrePunched) && boulder
+    in: inStage.in && !angery && (punch || wallsPrePunched) && boulder && hunky,
+    out: (inStage.out || angery) && (punch || wallsPrePunched) && boulder
   }
 }
 
@@ -197,22 +217,24 @@ export const useChunkyIglooGb = (): LogicBool => {
 
 export const useChunkyCabinGb = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const triangle = useTriangle()
   const gone = useGone()
   return {
-    in: useSlam() && inStage.in && triangle && gone,
-    out: useSlam() && inStage.out && triangle && gone
+    in: useSlam() && inStage.in && !angery && triangle && gone,
+    out: useSlam() && (inStage.out || angery) && triangle && gone
   }
 }
 
 export const useDiddyWaterfallGb = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const rocket = useRocket()
   const dk = useDk()
   const twirl = useTwirl()
   return {
-    in: inStage.in && rocket,
-    out: useFtaDiddyBanana() && inStage.out && (dk || twirl)
+    in: inStage.in && !angery && rocket,
+    out: useFtaDiddyBanana() && (inStage.out || angery) && (dk || twirl)
   }
 }
 
@@ -228,12 +250,13 @@ export const useDiddyIglooGb = (): LogicBool => {
 
 export const useDiddyCandleGb = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const guitar = useGuitar()
   const rocket = useRocket()
   const spring = useSpring()
   return {
-    in: inStage.in && guitar && rocket && spring,
-    out: inStage.out && guitar && rocket //If you're playing a seed with the "move Diddy Upper Cabin Barrel" option on under the "quality of life" settings, you may not be able to do this. Don't know if I should edit this check to account for that option...it's a lot of effort for just one check! -_-;
+    in: inStage.in && !angery && guitar && rocket && spring,
+    out: (inStage.out || angery) && guitar && rocket //If you're playing a seed with the "move Diddy Upper Cabin Barrel" option on under the "quality of life" settings, you may not be able to do this. Don't know if I should edit this check to account for that option...it's a lot of effort for just one check! -_-;
   }
 }
 
@@ -243,9 +266,10 @@ export const useDiddyCandleGb = (): LogicBool => {
  */
 export const useDkBlastGb = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   return {
-    in: useBlast() && inStage.in,
-    out: useBlast() && inStage.out
+    in: useBlast() && inStage.in && !angery,
+    out: useBlast() && (inStage.out || angery)
   }
 }
 
@@ -263,11 +287,12 @@ export const useDkIglooGb = (): LogicBool => {
 
 export const useDkRotateGb = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const bongos = useBongos()
   const slam = useSlam()
   return {
-    in: inStage.in && bongos && slam,
-    out: inStage.out && bongos && slam
+    in: inStage.in && !angery && bongos && slam,
+    out: (inStage.out || angery) && bongos && slam
   }
 }
 
@@ -277,23 +302,25 @@ export const useDkRotateGb = (): LogicBool => {
  */
 export const useLankyRaceGb = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const canSlam = useSlamCaves()
   const balloon = useBalloon()
   const highGrab = useHighGrab()
   const sprint = useSprint()
   return {
-    in: inStage.in && canSlam && sprint && balloon,
-    out: inStage.out && canSlam && sprint && highGrab
+    in: inStage.in && !angery && canSlam && sprint && balloon,
+    out: (inStage.out || angery) && canSlam && sprint && highGrab
   }
 }
 
 export const useLankyCastleGb = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const lanky = useLanky()
   const canSlam = useSlamCaves()
   return {
-    in: inStage.in && lanky && canSlam,
-    out: inStage.out && lanky && canSlam
+    in: inStage.in && !angery && lanky && canSlam,
+    out: (inStage.out || angery) && lanky && canSlam
   }
 }
 
@@ -352,27 +379,30 @@ export const useTinyIglooGb = (): LogicBool => {
 /*Alex edit: This check was originally a LogicBool with "out logic" of inStage + Sax + Shockwave + Feather, probably because the enemy randomizer works here so that not all of the enemies are purple Klaptraps. But in my experience, the game always gives me at least one purple Klaptrap for this check, making Oranges a very hard requirement, so I originally changed it to a boolean check before adding a "Water is Lava?" option in the Generator Settings forced me to change it back.*/
 export const useTinyCabinGb = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const sax = useSax()
   const orange = useOrange()
   return {
-    in: inStage.in && sax && orange,
-    out: inStage.out && sax && orange
+    in: inStage.in && !angery && sax && orange,
+    out: (inStage.out || angery) && sax && orange
   }
 }
 
 export const useGeneralThing = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   return {
-    in: useAnyKong() && inStage.in,
-    out: useAnyKong() && inStage.out
+    in: useAnyKong() && inStage.in && !angery,
+    out: useAnyKong() && (inStage.out || angery)
   }
 }
 
 export const useGeneralDirt = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   return {
-    in: useShockwave() && inStage.in,
-    out: useShockwave() && inStage.out
+    in: useShockwave() && inStage.in && !angery,
+    out: useShockwave() && (inStage.out || angery)
   }
 }
 
@@ -388,9 +418,10 @@ export const useKoshaDirt = (): LogicBool => {
 
 export const useGenericFairy = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   return {
-    in: useCamera() && inStage.in,
-    out: useCamera() && inStage.out
+    in: useCamera() && inStage.in && !angery,
+    out: useCamera() && (inStage.out || angery)
   }
 }
 
@@ -410,9 +441,10 @@ export const useCabinFairy = (): boolean => {
 
 export const useIceCastleKasplat = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   return {
-    in: useFtaDkBlueprint() && inStage.in,
-    out: useFtaDkBlueprint() && inStage.out
+    in: useFtaDkBlueprint() && inStage.in && !angery,
+    out: useFtaDkBlueprint() && (inStage.out || angery)
   }
 }
 
@@ -436,34 +468,40 @@ export const usePillarKasplat = (): LogicBool => {
 
 export const useCabinKasplat = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   return {
-    in: useFtaTinyBlueprint() && inStage.in,
-    out: useFtaTinyBlueprint() && inStage.out
+    in: useFtaTinyBlueprint() && inStage.in && !angery,
+    out: useFtaTinyBlueprint() && (inStage.out || angery)
   }
 }
 
 export const useIglooKasplat = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   return {
-    in: useFtaChunkyBlueprint() && inStage.in,
-    out: useFtaChunkyBlueprint() && inStage.out
+    in: useFtaChunkyBlueprint() && inStage.in && !angery,
+    out: useFtaChunkyBlueprint() && (inStage.out || angery)
   }
 }
 
 export const useSatoriKomeiji = (): LogicBool => {
   const inStage = usePlayCaves()
+  const angery = useAngryCaves()
   const hasChunky = useChunky()
   const hasBarrels = useBarrel()
   return {
-    in: inStage.in && hasChunky && hasBarrels,
-    out: inStage.out && hasChunky && hasBarrels
+    in: inStage.in && !angery && hasChunky && hasBarrels,
+    out: (inStage.out || angery) && hasChunky && hasBarrels
   }
 }
 
-export const useOrin = (): boolean => {
+export const useOrin = (): LogicBool => {
   const otherStuff = useSatoriKomeiji()
   const canGetPastIceWalls = useIceWalls()
   const hasPunch = usePunch()
   const hasHunky = useHunky()
-  return otherStuff && (hasPunch || canGetPastIceWalls) && hasHunky
+  return {
+    in: otherStuff.in && (hasPunch || canGetPastIceWalls) && hasHunky,
+    out: otherStuff.out && (hasPunch || canGetPastIceWalls) && hasHunky
+  }
 }
