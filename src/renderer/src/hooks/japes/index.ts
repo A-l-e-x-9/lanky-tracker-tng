@@ -324,7 +324,7 @@ const useFreeDiddySwitch = (): boolean => {
 export const useDkFreeDiddyGb = (): LogicBool => {
   const inStage = usePlayJapes()
   const canReach = useDkFreebieGb()
-  const gotFreebieGb = useDonkStore(useShallow((state) => [state.checks]))
+  const [gotFreebieGb] = useDonkStore(useShallow((state) => [state.checks]))
   const canShoot = useFreeDiddySwitch()
   return {
     in: inStage.in && canReach.in && gotFreebieGb[1001] && canShoot,
