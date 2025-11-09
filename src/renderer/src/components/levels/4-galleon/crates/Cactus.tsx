@@ -13,7 +13,7 @@ return (
         name="Melon Crate in Front of Funky's"
         region="Shipyard Outskirts"
         canGetLogic={canDo.in}
-        canGEtBreak={canDo.out}
+        canGetBreak={canDo.out}
       />
     </VanillaCrate>
   </CratePool>

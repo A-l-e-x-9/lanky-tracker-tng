@@ -13,7 +13,7 @@ return (
         name="Kasplat on the 'Cactus' Near Funky's"
         region="Shipyard Outskirts"
         canGetLogic={canDo.in}
-        canGEtBreak={canDo.out}
+        canGetBreak={canDo.out}
       />
     </VanillaKasplat>
   </KasplatPool>
