@@ -12,7 +12,8 @@ return (
         id={1090}
         name="Japes Arena (Near Funky)"
         region="Japes Hillside"
-        canGetLogic={useGeneralThing()}
+        canGetLogic={canDo.in}
+        canGetBreak={canDo.out}
       />
     </VanillaArena>
   </ArenaPool>
