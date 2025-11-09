@@ -268,8 +268,8 @@ export const useChunkyCannonGb = (): LogicBool => {
   const boulder = useBoulderTech()
   const highTide = useGalleonHighTide()
   return {
-    in: cannon && boulder && highTide.in,
-    out: cannon && boulder
+    in: cannon.in && boulder && highTide.in,
+    out: cannon.out && boulder
   }
 }
 
@@ -524,8 +524,8 @@ export const useCannonKasplat = (): LogicBool => {
   const cannon = useGalleonCannon()
   const kong = useFtaLankyBlueprint()
   return {
-    in: kong && cannon && highTide.in,
-    out: kong && cannon
+    in: kong && cannon.in && highTide.in,
+    out: kong && cannon.out
   }
 }
 
