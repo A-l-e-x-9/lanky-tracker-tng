@@ -3,7 +3,9 @@ import VanillaArena from '@renderer/components/pools/VanillaArena'
 import { useGeneralThing } from '@renderer/hooks/japes'
 import JapesCheck from '../check'
 
-const FunkyArena: React.FC = () => (
+const FunkyArena: React.FC = () => {
+const canDo = useGeneralThing()
+return (
   <ArenaPool>
     <VanillaArena>
       <JapesCheck
@@ -15,5 +17,6 @@ const FunkyArena: React.FC = () => (
     </VanillaArena>
   </ArenaPool>
 )
+}
 
 export default FunkyArena

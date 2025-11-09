@@ -10,7 +10,8 @@ const Boulder: React.FC = () => {
       id={1040}
       name="Boulder Over Chunky's Cave"
       region="Japes Lowlands"
-      canGetLogic={chunkyBoulderGb}
+      canGetLogic={chunkyBoulderGb.in}
+      canGetBreak={chunkyBoulderGb.out}
     />
     </GBPool>
   )
