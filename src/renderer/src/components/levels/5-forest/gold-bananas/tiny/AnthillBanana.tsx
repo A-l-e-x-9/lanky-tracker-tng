@@ -13,7 +13,7 @@ return (
     name="Tree Stump Gauntlet"
     region="Forest Area 4"
     canGetLogic={canDo.in}
-    canGEtBreak={canDo.out}
+    canGetBreak={canDo.out}
   />
 </Miniboss>
 </GBPool>

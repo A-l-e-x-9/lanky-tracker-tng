@@ -13,7 +13,7 @@ return (
         name="Battle Arena at Mushroom Top"
         region="Forest Area 3"
         canGetLogic={canDo.in}
-        canGEtBreak={canDo.out}
+        canGetBreak={canDo.out}
       />
     </VanillaArena>
   </ArenaPool>
