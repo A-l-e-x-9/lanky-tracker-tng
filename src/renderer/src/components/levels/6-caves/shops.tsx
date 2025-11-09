@@ -12,7 +12,7 @@ const ShopLocations: React.FC = () => {
   const hasCandy = useCandy()
   const hasSnide = useCanAccessSnide()
   return (
-    <>
+    <ShopPool>
       <ShopGenerator
         baseId={6110}
         baseName="Caves Cranky"
@@ -45,7 +45,7 @@ const ShopLocations: React.FC = () => {
         inLogic={hasSnide && inStage.in}
         outLogic={hasSnide && inStage.out} //Snide is in a "safe zone", so no Angry Caves check
       />
-    </>
+    </ShopPool>
   )
 }
 
