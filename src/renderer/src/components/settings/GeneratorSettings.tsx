@@ -329,7 +329,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Angry Caves?</p>
               <SimpleIcon
                 imgUrl={koshaHead}
-                title="Causes checks involving the main Crystal Caves area to turn yellow. You should also use this if you're playing the vanilla game or a seed for which you didn't turn the Calm Caves option on under the Quality of Life section, but turn it off once you've killed the giant Kosha."
+                title="Causes checks involving the main Crystal Caves area to turn yellow. Checks involving Balloon or Jetbarrel won't be affected, as the rockfall stops under those conditions in an Angry Caves seed. You should also use this if you're playing the vanilla game or a seed for which you didn't turn the Calm Caves option on under the Quality of Life section, but turn it off once you've killed the giant Kosha."
                 storeKey="angyKosha"
                 prefix="settings"
                 updateItem={setSetting}
