@@ -43,6 +43,7 @@ import slamIcon from '../../assets/images/slam1.png'
 import featherIcon from '../../assets/images/tiny_gun.png'
 import wrinkly from '../../assets/images/wrinkly.png'
 import diveIcon from '../../assets/images/diving.png'
+import koshaHead from '../../assets/images/kosha.png'
 
 const customStyles: Modal.Styles = {
   content: {
@@ -326,8 +327,14 @@ const GeneratorSettings: React.FC = () => {
                 updateItem={setSetting}
               />
               <p>Angry Caves?</p>
-              <p><strong>COMING SOON</strong></p>
-            </>
+              <SimpleIcon
+                imgUrl={koshaHead}
+                title="Causes checks involving the main Crystal Caves area to turn yellow. You should also use this if you're playing the vanilla game or a seed for which you didn't turn the Calm Caves option on under the Quality of Life section, but turn it off once you've killed the giant Kosha."
+                storeKey="angyKosha"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              </>
             <h3>Location Shuffle Settings</h3>
             <>
             <p className="full-grid"><strong>NOW UNDER (RE-)CONSTRUCTION</strong></p>
