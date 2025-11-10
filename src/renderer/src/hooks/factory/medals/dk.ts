@@ -14,7 +14,7 @@ const useDkMedalCommonLogic = (): number => {
   if (coconut) {
     bananas += 10
   }
-  if (testing) {
+  if (testing.in || testing.out) {
     bananas += 5
     if (coconut) {
       bananas += 35
@@ -32,7 +32,7 @@ export const useDkMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -42,7 +42,7 @@ export const useDkMedalInLogic = (): number => {
     return 100
   }
 
-  if (production && strong) {
+  if (production.in && strong) {
     bananas += 15
   }
 
@@ -56,7 +56,7 @@ export const useDkMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -66,7 +66,7 @@ export const useDkMedalOutLogic = (): number => {
     return 100
   }
 
-  if (production) {
+  if (production.out) {
     bananas += 15
   }
 

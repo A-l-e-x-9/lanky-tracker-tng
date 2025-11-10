@@ -15,7 +15,7 @@ const useTinyMedalCommonLogic = (): number => {
   const crystal = useMini()
 
   let banana = 15
-  if (testing) {
+  if (testing.in || testing.out) {
     banana += 25
     if (crystal) {
       banana += 5
@@ -24,10 +24,10 @@ const useTinyMedalCommonLogic = (): number => {
       banana += 20
     }
   }
-  if (prodTop) {
+  if (prodTop.in || prodTop.out) {
     banana += 10
   }
-  if (production) {
+  if (production.in || production.out) {
     banana += 20
   }
 
@@ -42,7 +42,7 @@ export const useTinyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useTinyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -52,7 +52,7 @@ export const useTinyMedalInLogic = (): number => {
     return 100
   }
 
-  if (production && move) {
+  if (production.in && move) {
     bananas += 5
   }
 
@@ -67,7 +67,7 @@ export const useTinyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useTinyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -77,7 +77,7 @@ export const useTinyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (production && dk) {
+  if (production.out && dk) {
     bananas += 5
   }
 

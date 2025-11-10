@@ -259,12 +259,15 @@ export const useDkBlastGb = (): LogicBool => {
   }
 }
 
-export const useDkCoin = (): boolean => {
+export const useDkCoin = (): LogicBool => {
   const blast = useDkBlastGb()
   const grab = useGrab()
   const climbing = useClimbing()
   const warps = useBananaportAll()
-  return blast && (climbing || warps) && grab
+  return {
+    in: blast.in && (climbing || warps) && grab,
+    out: blast.out && (climbing || warps) && grab
+  }
 }
 
 export const useDkProdGb = (): LogicBool => {
