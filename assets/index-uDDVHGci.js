@@ -21537,13 +21537,13 @@ const useDkMedalCommonLogic$3 = () => {
   if (gun) {
     bananas += 10;
   }
-  if (outskirts) {
+  if (outskirts.in || outskirts.out) {
     bananas += 15;
     if (music) {
       bananas += 10;
     }
   }
-  if (lighthouseArea && dive && lanky) {
+  if ((lighthouseArea.in || lighthouseArea.out) && (dive.in || dive.out) && lanky) {
     bananas += 10;
   }
   return bananas;
@@ -21557,7 +21557,7 @@ const useDkMedalInLogic$3 = () => {
   const pad = useBlast();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic$3();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -21591,7 +21591,7 @@ const useDkMedalOutLogic$3 = () => {
   const pad = useBlast();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic$3();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -21600,7 +21600,7 @@ const useDkMedalOutLogic$3 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (logicBreak(lighthousePlatform)) {
+  if (lighthousePlatform.out) {
     if (gun) {
       bananas += 10;
     }
@@ -21765,19 +21765,19 @@ const useTinyMedalCommonLogic$3 = () => {
   const music = useSax();
   const dive = useDive();
   let bananas = 9;
-  if (lighthouseArea && highTide) {
+  if ((lighthouseArea.in || lighthouseArea.out) && (highTide.in || highTide.out)) {
     bananas += 5;
     if (gun) {
       bananas += 10;
     }
   }
-  if (lighthouseArea && lowTide && gun) {
+  if ((lighthouseArea.in || lighthouseArea.out) && (lowTide.in || lowTide.out) && gun) {
     bananas += 10;
   }
-  if (cannon && highTide) {
+  if ((cannon.in || cannon.out) && (highTide.in || highTide.out)) {
     bananas += 15;
   }
-  if (outskirts && dive) {
+  if ((outskirts.in || outskirts.out) && (dive.in || dive.out)) {
     if (music) {
       bananas += 18;
     }
@@ -21796,7 +21796,7 @@ const useTinyMedalInLogic$3 = () => {
   const crystal = useMini();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useTinyMedalCommonLogic$3();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -21827,7 +21827,7 @@ const useTinyMedalOutLogic$3 = () => {
   const crystal = useMini();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useTinyMedalCommonLogic$3();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -21836,10 +21836,10 @@ const useTinyMedalOutLogic$3 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (logicBreak(cavernTop)) {
+  if (cavernTop.out) {
     bananas += 8;
   }
-  if (logicBreak(treasureRoom)) {
+  if (treasureRoom.out) {
     if (gun) {
       bananas += 10;
     }
