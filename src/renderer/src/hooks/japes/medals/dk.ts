@@ -59,13 +59,6 @@ export const useDkMedalInLogic = (): number => {
 
 export const useDkMedalOutLogic = (): number => {
   const inStage = usePlayJapes()
-  const kong = useDk()
-  const vine = useVine()
-  const climbing = useClimbing()
-  const bananas = useDkMedalInLogic()
-  const shuffleBananas = useShuffleColoredBananas()
-
-  const inStage = usePlayJapes()
   const haveRambiCage = useJapesRambi()
   const kongGates = useJapesKongGates()
   const kong = useDk()
