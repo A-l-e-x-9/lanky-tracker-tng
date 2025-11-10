@@ -149,8 +149,8 @@ export const useJapesHive = (): LogicBool => {
   const warpAll = useBananaportAll()
   const [hiveGateOpen, checks] = useDonkStore(useShallow((state) => [state.removeBarriers.japesHiveGate, state.checks]))
   return {
-    in: canPlay.in && ((coconutGates.in && (hiveGateOpen || hiveSwitch)) || (japesMine && (warpAll || checks[1011]))),
-    out: canPlay.out && ((coconutGates.out && (hiveGateOpen || hiveSwitch)) || (japesMine && (warpAll || checks[1011])))
+    in: canPlay.in && ((coconutGates.in && (hiveGateOpen || hiveSwitch)) || (japesMine.in && (warpAll || checks[1011]))),
+    out: canPlay.out && ((coconutGates.out && (hiveGateOpen || hiveSwitch)) || (japesMine.out && (warpAll || checks[1011])))
   }
 }
 
@@ -262,10 +262,13 @@ export const useDiddyCagedGb = (): LogicBool => {
   }
 }
 
-export const useDiddyMountainGb = (): boolean => {
+export const useDiddyMountainGb = (): LogicBool => {
   const mine = useJapesMine()
   const canSlam = useSlamJapes()
-  return useFtaDiddyBanana() && mine && canSlam
+  return {
+    in: useFtaDiddyBanana() && mine.in && canSlam,
+    out: useFtaDiddyBanana() && mine.out && canSlam
+  }
 }
 
 export const useDiddyTunnelGb = (): LogicBool => {
@@ -282,8 +285,8 @@ export const useDiddyMinecartGb = (): LogicBool => {
   const charge = useCharge()
   const highGrab = useHighGrab()
   return {
-    in: mine && canSlam && charge,
-    out: mine && highGrab
+    in: mine.in && canSlam && charge,
+    out: mine.out && highGrab
   }
 }
 
