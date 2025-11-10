@@ -15576,7 +15576,7 @@ const useDkMedalInLogic$6 = () => {
   const climbing = useClimbing();
   const bananaports = useBananaportAll();
   const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -15601,12 +15601,12 @@ const useDkMedalInLogic$6 = () => {
   if (vine && climbing && pad) {
     bananas += 10;
   }
-  if (kongGates) {
+  if (kongGates.in) {
     bananas += 9;
     if (gun) {
       bananas += 10;
     }
-    if (haveRambiCage) {
+    if (haveRambiCage.in) {
       bananas += 10;
     }
   }
@@ -15614,12 +15614,16 @@ const useDkMedalInLogic$6 = () => {
 };
 const useDkMedalOutLogic$6 = () => {
   const inStage = usePlayJapes();
+  const haveRambiCage = useJapesRambi();
+  const kongGates = useJapesKongGates();
   const kong = useDk();
   const vine = useVine();
+  const pad = useBlast();
+  const gun = useCoconut();
   const climbing = useClimbing();
-  const bananas = useDkMedalInLogic$6();
+  const bananaports = useBananaportAll();
   const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -15628,7 +15632,32 @@ const useDkMedalOutLogic$6 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  return vine && climbing ? bananas : bananas + 5;
+  let bananas = 5;
+  if (climbing) {
+    bananas += 15;
+  }
+  if (climbing || bananaports) {
+    bananas += 16;
+  }
+  if (vine && climbing) {
+    bananas += 5;
+  }
+  if (gun) {
+    bananas += 20;
+  }
+  if (vine && climbing && pad) {
+    bananas += 10;
+  }
+  if (kongGates.out) {
+    bananas += 9;
+    if (gun) {
+      bananas += 10;
+    }
+    if (haveRambiCage.out) {
+      bananas += 10;
+    }
+  }
+  return bananas;
 };
 const DkMedal$6 = () => {
   const inLogic = useDkMedalInLogic$6();
