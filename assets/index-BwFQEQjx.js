@@ -14149,8 +14149,8 @@ const useChunkyUndergroundGb = () => {
   const tiny = useTiny();
   const diddy = useDiddy();
   return {
-    in: under && pineapple && vine,
-    out: useFtaChunkyBanana() && under && (dk2 || twirl || (tiny || diddy) && vine)
+    in: under.in && pineapple && vine,
+    out: useFtaChunkyBanana() && under.out && (dk2 || twirl || (tiny || diddy) && vine)
   };
 };
 const useChunkyKasplat$1 = () => {
@@ -15784,7 +15784,7 @@ const useTinyMedalInLogic$6 = () => {
   const mini = useMini();
   const climbing = useClimbing();
   const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
