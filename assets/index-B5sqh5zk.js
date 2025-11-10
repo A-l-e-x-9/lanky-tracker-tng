@@ -19125,7 +19125,10 @@ const useDkCoin = () => {
   const grab = useGrab();
   const climbing = useClimbing();
   const warps = useBananaportAll();
-  return blast && (climbing || warps) && grab;
+  return {
+    in: blast.in && (climbing || warps) && grab,
+    out: blast.out && (climbing || warps) && grab
+  };
 };
 const useDkProdGb = () => {
   const production = useFactoryProductionEnabled();
@@ -19370,7 +19373,8 @@ const BossCheck$5 = () => {
       id: 3105,
       name: "Factory Boss",
       region: "Bosses",
-      canGetLogic: inStage && anyKong
+      canGetLogic: inStage.in && anyKong,
+      canGetBreak: inStage.out && anyKong
     }
   ) });
 };
@@ -19783,15 +19787,19 @@ const DiddyBananas$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(StorageBarrel, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyProduction, {})
 ] });
-const NintendoCoin = () => /* @__PURE__ */ jsxRuntimeExports.jsx(CompanyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  FactoryCheck,
-  {
-    id: 3005,
-    name: "DK Arcade Round 2",
-    region: "Storage and Arcade Area",
-    canGetLogic: useDkCoin()
-  }
-) });
+const NintendoCoin = () => {
+  const howHigh = useDkCoin();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(CompanyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    FactoryCheck,
+    {
+      id: 3005,
+      name: "DK Arcade Round 2",
+      region: "Storage and Arcade Area",
+      canGetLogic: howHigh.in,
+      canGetBreak: howHigh.out
+    }
+  ) });
+};
 const FactoryBlast = () => {
   const canDo = useDkBlastGb$2();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20222,7 +20230,7 @@ const useDkMedalCommonLogic$4 = () => {
   if (coconut) {
     bananas += 10;
   }
-  if (testing) {
+  if (testing.in || testing.out) {
     bananas += 5;
     if (coconut) {
       bananas += 35;
@@ -20237,7 +20245,7 @@ const useDkMedalInLogic$4 = () => {
   const strong = useStrong();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic$4();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -20246,7 +20254,7 @@ const useDkMedalInLogic$4 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (production && strong) {
+  if (production.in && strong) {
     bananas += 15;
   }
   return bananas;
@@ -20257,7 +20265,7 @@ const useDkMedalOutLogic$4 = () => {
   const kong = useDk();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic$4();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -20266,7 +20274,7 @@ const useDkMedalOutLogic$4 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (production) {
+  if (production.out) {
     bananas += 15;
   }
   return bananas;
@@ -20395,7 +20403,7 @@ const useTinyMedalCommonLogic$4 = () => {
   const gun = useFeather();
   const crystal = useMini();
   let banana = 15;
-  if (testing) {
+  if (testing.in || testing.out) {
     banana += 25;
     if (crystal) {
       banana += 5;
@@ -20404,10 +20412,10 @@ const useTinyMedalCommonLogic$4 = () => {
       banana += 20;
     }
   }
-  if (prodTop) {
+  if (prodTop.in || prodTop.out) {
     banana += 10;
   }
-  if (production) {
+  if (production.in || production.out) {
     banana += 20;
   }
   return banana;
@@ -20419,7 +20427,7 @@ const useTinyMedalInLogic$4 = () => {
   const move = useTwirl();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useTinyMedalCommonLogic$4();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -20428,7 +20436,7 @@ const useTinyMedalInLogic$4 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (production && move) {
+  if (production.in && move) {
     bananas += 5;
   }
   return bananas;
@@ -20440,7 +20448,7 @@ const useTinyMedalOutLogic$4 = () => {
   const dk2 = useDk();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useTinyMedalCommonLogic$4();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -20449,7 +20457,7 @@ const useTinyMedalOutLogic$4 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (production && dk2) {
+  if (production.out && dk2) {
     bananas += 5;
   }
   return bananas;
