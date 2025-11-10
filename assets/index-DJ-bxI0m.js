@@ -14078,8 +14078,8 @@ const useJapesHive = () => {
   const warpAll = useBananaportAll();
   const [hiveGateOpen, checks] = useDonkStore(useShallow((state) => [state.removeBarriers.japesHiveGate, state.checks]));
   return {
-    in: canPlay.in && (coconutGates.in && (hiveGateOpen || hiveSwitch) || japesMine && (warpAll || checks[1011])),
-    out: canPlay.out && (coconutGates.out && (hiveGateOpen || hiveSwitch) || japesMine && (warpAll || checks[1011]))
+    in: canPlay.in && (coconutGates.in && (hiveGateOpen || hiveSwitch) || japesMine.in && (warpAll || checks[1011])),
+    out: canPlay.out && (coconutGates.out && (hiveGateOpen || hiveSwitch) || japesMine.out && (warpAll || checks[1011]))
   };
 };
 const useJapesPaintingOutside = () => {
@@ -14172,7 +14172,10 @@ const useDiddyCagedGb = () => {
 const useDiddyMountainGb = () => {
   const mine = useJapesMine();
   const canSlam = useSlamJapes();
-  return useFtaDiddyBanana() && mine && canSlam;
+  return {
+    in: useFtaDiddyBanana() && mine.in && canSlam,
+    out: useFtaDiddyBanana() && mine.out && canSlam
+  };
 };
 const useDiddyTunnelGb = () => {
   const side = useJapesSideArea();
@@ -14187,8 +14190,8 @@ const useDiddyMinecartGb = () => {
   const charge = useCharge();
   const highGrab = useHighGrab();
   return {
-    in: mine && canSlam && charge,
-    out: mine && highGrab
+    in: mine.in && canSlam && charge,
+    out: mine.out && highGrab
   };
 };
 const useDkFreebieGb = () => {
@@ -15062,15 +15065,19 @@ const DiddyTimedCage = () => {
     }
   ) });
 };
-const TopMountain = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  JapesCheck,
-  {
-    id: 1011,
-    name: "Top of Diddy's Mountain",
-    region: "Japes Hillside",
-    canGetLogic: useDiddyMountainGb()
-  }
-) });
+const TopMountain = () => {
+  const canDo = useDiddyMountainGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    JapesCheck,
+    {
+      id: 1011,
+      name: "Top of Diddy's Mountain",
+      region: "Japes Hillside",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) });
+};
 const DiddyBananas$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyTimedCage, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(TopMountain, {}),
