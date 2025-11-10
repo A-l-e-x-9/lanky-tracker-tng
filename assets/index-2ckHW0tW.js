@@ -28372,8 +28372,8 @@ const useHelmMachine = () => {
   const mini = useMini();
   const helmAccess = useHelmStartPosition();
   return {
-    in: inLevel && entry && (helmAccess != 0 || stand && pineapple && vine && mini),
-    out: inLevel && entry && pineapple && vine && mini
+    in: inLevel.in && entry && (helmAccess != 0 || stand && pineapple && vine && mini),
+    out: inLevel.out && entry && pineapple && vine && mini
   };
 };
 const useHelmDoors = () => {
@@ -28386,8 +28386,8 @@ const useHelmDoors = () => {
   const punch = usePunch();
   const helmAccess = useHelmStartPosition();
   return {
-    in: inLevel && entry && (helmAccess == 2 || anyMusic && (helmAccess == 1 || machine.in && grab && rocket && punch)),
-    out: inLevel && entry && logicBreak(machine) && grab && rocket && punch
+    in: inLevel.in && entry && (helmAccess == 2 || anyMusic && (helmAccess == 1 || machine.in && grab && rocket && punch)),
+    out: inLevel.out && entry && logicBreak(machine) && grab && rocket && punch
   };
 };
 const useCanDeactivateHelm = () => {
