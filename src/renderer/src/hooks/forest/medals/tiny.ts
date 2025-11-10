@@ -1,6 +1,5 @@
 import { useDive, useFeather, useMini, usePunch, useSax, useTiny, useClimbing } from '@renderer/hooks/kongs'
 import { useForestTime, useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { logicBreak } from '@renderer/hooks/world'
 import {
   useForestBean,
   useForestBeanHalf,
@@ -18,10 +17,10 @@ const useTinyMedalCommonLogic = (): number => {
   const dive = useDive()
   const hasClimbing = useClimbing()
   let bananas = 10 // two bunches at start
-  if (half) {
+  if (half.in || half.out) {
     bananas += 4 // first bean door
   }
-  if (bean) {
+  if (bean.in || bean.out) {
     bananas += 1 // full bean access
     if (hasClimbing) {
       bananas += 15 //the bananas on top of the mushrooms surrounding the Apple
@@ -30,10 +29,10 @@ const useTinyMedalCommonLogic = (): number => {
   if (gun) {
     bananas += 10 // balloon in lower mushroom
   }
-  if (owl) {
+  if (owl.in || owl.out) {
     bananas += 8 // around anthill
   }
-  if (dive) {
+  if (dive.in || dive.out) {
     bananas += 17 // mills water
   }
 
@@ -54,7 +53,7 @@ export const useTinyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useTinyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -71,7 +70,7 @@ export const useTinyMedalInLogic = (): number => {
     }
   }
 
-  if (owl && crystal && music) {
+  if (owl.in && crystal && music) {
     bananas += 5 // top of anthill
   }
   if (night.in && gun) {
@@ -96,7 +95,7 @@ export const useTinyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useTinyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -105,20 +104,20 @@ export const useTinyMedalOutLogic = (): number => {
   if (shuffleBananas) {
     return 100
   }
-  if (logicBreak(day) && crystal) {
+  if (day.out && crystal) {
     bananas += 10 // two bunches available from day mill
     if (punch) {
       bananas += 5 // box in chunky mill: night not needed due to tunnel in dk mill
     }
   }
 
-  if (owl) {
+  if (owl.out) {
     bananas += 5 // top of anthill
   }
-  if (logicBreak(night) && gun) {
+  if (night.out && gun) {
     bananas += 10 // DK barn balloon
   }
-  if (crystal && logicBreak(night) && punch) {
+  if (crystal && night.out && punch) {
     bananas += 5 // spider boss
   }
 

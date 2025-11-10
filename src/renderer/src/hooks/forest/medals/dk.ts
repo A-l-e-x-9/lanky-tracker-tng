@@ -7,7 +7,6 @@ import {
 } from '..'
 import { useAllGun, useBlast, useCoconut, useDk, useSlam, useStrong } from '../../kongs'
 import { useShuffleColoredBananas } from '../../settings'
-import { logicBreak } from '../../world'
 
 const useDkMedalCommonLogic = (): number => {
   const top = useForestMushroomTop()
@@ -25,7 +24,7 @@ const useDkMedalCommonLogic = (): number => {
   if (gun) {
     bananas += 10 // Balloon by Rafters
   }
-  if (top) {
+  if (top.in || top.out) {
     bananas += 5 // upper warp 5
   }
   return bananas
@@ -43,7 +42,7 @@ export const useDkMedalInLogic = (): number => {
   const shuffledBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -86,7 +85,7 @@ export const useDkMedalOutLogic = (): number => {
   const shuffledBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -96,7 +95,7 @@ export const useDkMedalOutLogic = (): number => {
     return 100
   }
 
-  if (logicBreak(day)) {
+  if (day.out) {
     if (slam) {
       bananas += 5 // bunch in box
     }
@@ -105,7 +104,7 @@ export const useDkMedalOutLogic = (): number => {
     }
   }
 
-  if (logicBreak(night)) {
+  if (night.out) {
     bananas += 10 // 5 leading to barn, 5 above slam switch.
     if (canSlam) {
       bananas += 5 // 5 in ? box in barn.
