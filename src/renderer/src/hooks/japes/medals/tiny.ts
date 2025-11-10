@@ -22,7 +22,7 @@ export const useTinyMedalInLogic = (): number => {
   const climbing = useClimbing()
   const shuffleBananas = useShuffleColoredBananas()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {

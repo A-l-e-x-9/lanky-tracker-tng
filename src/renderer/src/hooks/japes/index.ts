@@ -239,8 +239,8 @@ export const useChunkyUndergroundGb = (): LogicBool => {
   const tiny = useTiny()
   const diddy = useDiddy()
   return {
-    in: under && pineapple && vine,
-    out: useFtaChunkyBanana() && under && (dk || twirl || ((tiny || diddy) && vine))
+    in: under.in && pineapple && vine,
+    out: useFtaChunkyBanana() && under.out && (dk || twirl || ((tiny || diddy) && vine))
   }
 }
 
