@@ -688,8 +688,8 @@ export const useCheckTinyGalleonLobby = (): LogicBool => {
   const mini = useMini()
   const dive = useDive()
   return {
-    in: playGalleon && slam && chunky && dive && mini && twirl,
-    out: playGalleon && slam && chunky && dive && mini
+    in: playGalleon.in && slam && chunky && dive.in && mini && twirl,
+    out: playGalleon.out && slam && chunky && dive.out && mini
   }
 }
 /*Alex addition: Can we access the inital BFI check (that would get us Cam and Shockwave in vanilla)?*/
