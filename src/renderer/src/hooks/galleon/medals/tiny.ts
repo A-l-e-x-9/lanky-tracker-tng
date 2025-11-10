@@ -25,19 +25,19 @@ const useTinyMedalCommonLogic = (): number => {
   const dive = useDive()
 
   let bananas = 9
-  if (lighthouseArea && highTide) {
+  if ((lighthouseArea.in || lighthouseArea.out) && (highTide.in || highTide.out)) {
     bananas += 5
     if (gun) {
       bananas += 10
     }
   }
-  if (lighthouseArea && lowTide && gun) {
+  if ((lighthouseArea.in || lighthouseArea.out) && (lowTide.in || lowTide.out) && gun) {
     bananas += 10
   }
-  if (cannon && highTide) {
+  if ((cannon.in || cannon.out) && (highTide.in || highTide.out)) {
     bananas += 15
   }
-  if (outskirts && dive) {
+  if ((outskirts.in || outskirts.out) && (dive.in || dive.out)) {
     if (music) {
       bananas += 18
     }
@@ -59,7 +59,7 @@ export const useTinyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useTinyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -93,7 +93,7 @@ export const useTinyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useTinyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -103,10 +103,10 @@ export const useTinyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (logicBreak(cavernTop)) {
+  if (cavernTop.out) {
     bananas += 8
   }
-  if (logicBreak(treasureRoom)) {
+  if (treasureRoom.out) {
     if (gun) {
       bananas += 10
     }

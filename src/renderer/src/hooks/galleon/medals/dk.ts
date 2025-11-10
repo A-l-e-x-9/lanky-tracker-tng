@@ -21,13 +21,13 @@ const useDkMedalCommonLogic = (): number => {
   if (gun) {
     bananas += 10
   }
-  if (outskirts) {
+  if (outskirts.in || outskirts.out) {
     bananas += 15
     if (music) {
       bananas += 10
     }
   }
-  if (lighthouseArea && dive && lanky) {
+  if ((lighthouseArea.in || lighthouseArea.out) && (dive.in || dive.out) && lanky) {
     bananas += 10
   }
 
@@ -44,7 +44,7 @@ export const useDkMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -81,7 +81,7 @@ export const useDkMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -91,7 +91,7 @@ export const useDkMedalOutLogic = (): number => {
     return 100
   }
 
-  if (logicBreak(lighthousePlatform)) {
+  if (lighthousePlatform.out) {
     if (gun) {
       bananas += 10
     }
