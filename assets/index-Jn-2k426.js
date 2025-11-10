@@ -23862,7 +23862,7 @@ const useDkMedalCommonLogic$2 = () => {
   if (gun) {
     bananas += 10;
   }
-  if (top) {
+  if (top.in || top.out) {
     bananas += 5;
   }
   return bananas;
@@ -23878,7 +23878,7 @@ const useDkMedalInLogic$2 = () => {
   const crystal = useStrong();
   const shuffledBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic$2();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -23916,7 +23916,7 @@ const useDkMedalOutLogic$2 = () => {
   const gun = useCoconut();
   const shuffledBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic$2();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -23925,7 +23925,7 @@ const useDkMedalOutLogic$2 = () => {
   if (shuffledBananas) {
     return 100;
   }
-  if (logicBreak(day)) {
+  if (day.out) {
     if (slam) {
       bananas += 5;
     }
@@ -23933,7 +23933,7 @@ const useDkMedalOutLogic$2 = () => {
       bananas += 10;
     }
   }
-  if (logicBreak(night)) {
+  if (night.out) {
     bananas += 10;
     if (canSlam) {
       bananas += 5;
@@ -24080,10 +24080,10 @@ const useTinyMedalCommonLogic$2 = () => {
   const dive = useDive();
   const hasClimbing = useClimbing();
   let bananas = 10;
-  if (half) {
+  if (half.in || half.out) {
     bananas += 4;
   }
-  if (bean) {
+  if (bean.in || bean.out) {
     bananas += 1;
     if (hasClimbing) {
       bananas += 15;
@@ -24092,10 +24092,10 @@ const useTinyMedalCommonLogic$2 = () => {
   if (gun) {
     bananas += 10;
   }
-  if (owl) {
+  if (owl.in || owl.out) {
     bananas += 8;
   }
-  if (dive) {
+  if (dive.in || dive.out) {
     bananas += 17;
   }
   return bananas;
@@ -24113,7 +24113,7 @@ const useTinyMedalInLogic$2 = () => {
   const forestTime = useForestTime();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useTinyMedalCommonLogic$2();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -24128,7 +24128,7 @@ const useTinyMedalInLogic$2 = () => {
       bananas += 5;
     }
   }
-  if (owl && crystal && music) {
+  if (owl.in && crystal && music) {
     bananas += 5;
   }
   if (night.in && gun) {
@@ -24150,7 +24150,7 @@ const useTinyMedalOutLogic$2 = () => {
   const crystal = useMini();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useTinyMedalCommonLogic$2();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -24159,19 +24159,19 @@ const useTinyMedalOutLogic$2 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (logicBreak(day) && crystal) {
+  if (day.out && crystal) {
     bananas += 10;
     if (punch) {
       bananas += 5;
     }
   }
-  if (owl) {
+  if (owl.out) {
     bananas += 5;
   }
-  if (logicBreak(night) && gun) {
+  if (night.out && gun) {
     bananas += 10;
   }
-  if (crystal && logicBreak(night) && punch) {
+  if (crystal && night.out && punch) {
     bananas += 5;
   }
   return bananas;
