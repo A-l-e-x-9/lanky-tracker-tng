@@ -11820,8 +11820,8 @@ const useCheckTinyGalleonLobby = () => {
   const mini = useMini();
   const dive = useDive();
   return {
-    in: playGalleon && slam && chunky && dive && mini && twirl,
-    out: playGalleon && slam && chunky && dive && mini
+    in: playGalleon.in && slam && chunky && dive.in && mini && twirl,
+    out: playGalleon.out && slam && chunky && dive.out && mini
   };
 };
 const useCheckBFIInitial = () => {
