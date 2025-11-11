@@ -10,7 +10,8 @@ const HiveInside: React.FC = () => {
       id={1033}
       name="Inside Tiny's Hive"
       region="Hive Area"
-      canGetLogic={hiveGb}
+      canGetLogic={hiveGb.in}
+      canGetBreak={hiveGb.out}
     />
   </GBPool>
   )

@@ -225,8 +225,8 @@ export const useChunkyHiveGb = (): LogicBool => {
   const hunky = useHunky()
   const climbing = useClimbing()
   return {
-    in: hive && hunky && climbing,
-    out: hive && hunky
+    in: hive.in && hunky && climbing,
+    out: hive.out && hunky
   }
 }
 
@@ -426,16 +426,22 @@ export const useTinyGateGb = (): LogicBool => {
   }
 }
 
-export const useTinyStumpGb = (): boolean => {
+export const useTinyStumpGb = (): LogicBool => {
   const hive = useJapesHive()
   const mini = useMini()
-  return hive && mini
+  return {
+    in: hive.in && mini,
+    out: hive.out && mini
+  }
 }
 
-export const useTinyHiveGb = (): boolean => {
+export const useTinyHiveGb = (): LogicBool => {
   const hive = useTinyStumpGb()
   const canSlam = useSlamJapes()
-  return hive && canSlam
+  return {
+    in: hive.in && canSlam,
+    out: hive.out && canSlam
+  }
 }
 
 export const useGeneralThing = (): LogicBool => {
