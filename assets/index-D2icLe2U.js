@@ -26356,6 +26356,7 @@ const useArena = () => {
 };
 const useLankyMausoleumGb = () => {
   const inStage = usePlayCastle();
+  const feather = useFeather();
   const grape = useGrape();
   const preOpened = useOpenCrypt();
   const sprint = useSprint();
@@ -26365,8 +26366,8 @@ const useLankyMausoleumGb = () => {
   const diddy = useDiddy();
   const hasClimbing = useClimbing();
   return {
-    in: inStage.in && (grape || preOpened) && grape && sprint && vine && trombone && hasClimbing,
-    out: inStage.out && (grape || preOpened) && grape && (sprint || dk2 || diddy)
+    in: inStage.in && (feather || grape || preOpened) && grape && sprint && vine && trombone && hasClimbing,
+    out: inStage.out && (feather || grape || preOpened) && grape && (sprint || dk2 || diddy)
   };
 };
 const useLankyDungeonGb = () => {
