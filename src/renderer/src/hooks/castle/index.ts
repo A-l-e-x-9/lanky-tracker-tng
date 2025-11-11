@@ -254,11 +254,10 @@ export const useLankyMausoleumGb = (): LogicBool => {
   const diddy = useDiddy()
   const hasClimbing = useClimbing()
   return {
-    in: inStage.in && (grape || preOpened) && sprint && vine && trombone && hasClimbing,
-    out: inStage.out && (grape || preOpened) && (sprint || dk || diddy)
+    in: inStage.in && (grape || preOpened) && grape && sprint && vine && trombone && hasClimbing,
+    out: inStage.out && (grape || preOpened) && grape && (sprint || dk || diddy)
   }
 }
-/*Does the "pre-open Crypt" option affect the gate barring the way to Lanky's Banana, too? May have to change this...*/
 
 export const useLankyDungeonGb = (): LogicBool => {
   const inStage = usePlayCastle()
