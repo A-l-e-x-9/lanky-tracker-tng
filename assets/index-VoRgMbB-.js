@@ -14136,8 +14136,8 @@ const useChunkyHiveGb = () => {
   const hunky = useHunky();
   const climbing = useClimbing();
   return {
-    in: hive && hunky && climbing,
-    out: hive && hunky
+    in: hive.in && hunky && climbing,
+    out: hive.out && hunky
   };
 };
 const useChunkyUndergroundGb = () => {
@@ -14317,12 +14317,18 @@ const useTinyGateGb = () => {
 const useTinyStumpGb = () => {
   const hive = useJapesHive();
   const mini = useMini();
-  return hive && mini;
+  return {
+    in: hive.in && mini,
+    out: hive.out && mini
+  };
 };
 const useTinyHiveGb = () => {
   const hive = useTinyStumpGb();
   const canSlam = useSlamJapes();
-  return hive && canSlam;
+  return {
+    in: hive.in && canSlam,
+    out: hive.out && canSlam
+  };
 };
 const useGeneralThing$4 = () => {
   const anyKong = useAnyKong();
@@ -15236,19 +15242,24 @@ const HiveInside = () => {
       id: 1033,
       name: "Inside Tiny's Hive",
       region: "Hive Area",
-      canGetLogic: hiveGb
+      canGetLogic: hiveGb.in,
+      canGetBreak: hiveGb.out
     }
   ) });
 };
-const HiveStump = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  JapesCheck,
-  {
-    id: 1032,
-    name: "Tiny's Stump",
-    region: "Hive Area",
-    canGetLogic: useTinyStumpGb()
-  }
-) });
+const HiveStump = () => {
+  const canDo = useTinyStumpGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    JapesCheck,
+    {
+      id: 1032,
+      name: "Tiny's Stump",
+      region: "Hive Area",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) });
+};
 const TinyTimedCage = () => {
   const canDo = useTinyCagedGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
