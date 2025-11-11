@@ -245,6 +245,7 @@ export const useArena = (): boolean => {
 
 export const useLankyMausoleumGb = (): LogicBool => {
   const inStage = usePlayCastle()
+  const feather = useFeather()
   const grape = useGrape()
   const preOpened = useOpenCrypt()
   const sprint = useSprint()
@@ -254,8 +255,8 @@ export const useLankyMausoleumGb = (): LogicBool => {
   const diddy = useDiddy()
   const hasClimbing = useClimbing()
   return {
-    in: inStage.in && (grape || preOpened) && grape && sprint && vine && trombone && hasClimbing,
-    out: inStage.out && (grape || preOpened) && grape && (sprint || dk || diddy)
+    in: inStage.in && (feather || grape || preOpened) && grape && sprint && vine && trombone && hasClimbing,
+    out: inStage.out && (feather || grape || preOpened) && grape && (sprint || dk || diddy)
   }
 }
 
