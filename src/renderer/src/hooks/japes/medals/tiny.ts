@@ -33,10 +33,10 @@ export const useTinyMedalInLogic = (): number => {
   }
 
   let currLogic = 5 // first tunnel
-  if (sideArea && gun) {
+  if (sideArea.in && gun) {
     currLogic += 5 // below tiny's cage barrel
   }
-  if (hiveGate) {
+  if (hiveGate.in) {
     currLogic += 5 // in front of hive
     if (mini) {
       currLogic += 30 // stumps in outside hive area
@@ -49,7 +49,7 @@ export const useTinyMedalInLogic = (): number => {
     }
   }
 
-  if (kongGates) {
+  if (kongGates.in) {
     currLogic += 2 //before Rambi Wall (2)
     if (climbing) {
       currLogic += 5 //the bunch on a tree near Cranky's
@@ -57,7 +57,7 @@ export const useTinyMedalInLogic = (): number => {
     if (gun) {
       currLogic += 10 // balloon by hut
     }
-    if (haveRambiCage) {
+    if (haveRambiCage.in) {
       currLogic += 10 // 5 in hut, 5 beyond wall
       if (gun) {
         currLogic += 10 // beyond rambi wall
