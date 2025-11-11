@@ -15841,10 +15841,10 @@ const useTinyMedalInLogic$6 = () => {
     return 100;
   }
   let currLogic = 5;
-  if (sideArea && gun) {
+  if (sideArea.in && gun) {
     currLogic += 5;
   }
-  if (hiveGate) {
+  if (hiveGate.in) {
     currLogic += 5;
     if (mini) {
       currLogic += 30;
@@ -15856,7 +15856,7 @@ const useTinyMedalInLogic$6 = () => {
       }
     }
   }
-  if (kongGates) {
+  if (kongGates.in) {
     currLogic += 2;
     if (climbing) {
       currLogic += 5;
@@ -15864,7 +15864,7 @@ const useTinyMedalInLogic$6 = () => {
     if (gun) {
       currLogic += 10;
     }
-    if (haveRambiCage) {
+    if (haveRambiCage.in) {
       currLogic += 10;
       if (gun) {
         currLogic += 10;
