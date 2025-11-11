@@ -734,8 +734,8 @@ export const useCheckChunkyHelm = (): LogicBool => {
   const twirl = useTwirl()
   const orangeYourself = useOrange()
   return {
-    in: playHelm && helmEntry && vine,
-    out: playHelm && (twirl || orangeYourself)
+    in: playHelm.in && helmEntry && vine,
+    out: playHelm.out && (twirl || orangeYourself)
   }
 }
 
