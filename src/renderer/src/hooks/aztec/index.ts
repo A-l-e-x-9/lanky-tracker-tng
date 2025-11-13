@@ -389,14 +389,12 @@ export const useLankyVultureGb = (): LogicBool => {
   const front = useAztecFront()
   const dive = useDive()
   const canSlam = useSlamAztec()
-  const grape = useGrape()
   const tinyTemple = useAztecTinyTemple()
   const lanky = useLanky()
-  const anyGun = useAnyGun()
   const iceMelted = useTinyTempleIce()
   return {
-    in: front.in && grape && iceMelted && dive.in && canSlam,
-    out: logicBreak(tinyTemple) && iceMelted && dive.out && canSlam && lanky && anyGun
+    in: front.in && tinyTemple.in && iceMelted && dive.in && lanky && canSlam,
+    out: front.out && tinyTemple.out && iceMelted && dive.out && canSlam && lanky
   }
 }
 
