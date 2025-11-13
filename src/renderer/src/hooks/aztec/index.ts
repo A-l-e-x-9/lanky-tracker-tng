@@ -2,7 +2,6 @@ import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import { usePlayLevel, useSlamLevel } from '../isles'
 import {
-  useAnyGun,
   useAnyKong,
   useBarrel,
   useBlast,
