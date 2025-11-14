@@ -22215,12 +22215,15 @@ const useChunkyFaceGb = () => {
   };
 };
 const useChunkyAppleGb = () => {
-  const beanstalk = useForestBean();
+  const inStage = usePlayForest();
+  const door1 = useSwitchsanityGun("forestBean1", 3);
+  const door2 = useSwitchsanityGun("forestBean2", 4);
+  const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
   const boulder = useBoulderTech();
   const hunky = useHunky();
   return {
-    in: beanstalk.in && boulder && hunky,
-    out: beanstalk.out && boulder && hunky
+    in: inStage.in && (door1 && door2 || removeBarriers.forestBeanstalk) && boulder && hunky,
+    out: inStage.out && (door1 && door2 || removeBarriers.forestBeanstalk) && boulder && hunky
   };
 };
 const useChunkyMillGb = () => {
