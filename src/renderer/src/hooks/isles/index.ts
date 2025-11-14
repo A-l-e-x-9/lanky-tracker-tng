@@ -721,10 +721,10 @@ export const useCheckChunkyMusicPad = (): LogicBool => {
 }
 
 export const useCheckChunkyPound = (): boolean => {
-  const tinySax = useCheckTinyMusicPad()
+  const [tinySax] = useDonkStore(useShallow((state) => [state.checks]))
   const hunky = useHunky()
   const slam = useSlam()
-  return tinySax && hunky && slam
+  return tinySax[31] && hunky && slam
 }
 
 export const useCheckChunkyHelm = (): LogicBool => {
