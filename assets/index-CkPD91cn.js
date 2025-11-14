@@ -11844,10 +11844,10 @@ const useCheckChunkyMusicPad = () => {
   };
 };
 const useCheckChunkyPound = () => {
-  const tinySax = useCheckTinyMusicPad();
+  const [tinySax] = useDonkStore(useShallow((state) => [state.checks]));
   const hunky = useHunky();
   const slam = useSlam();
-  return tinySax && hunky && slam;
+  return tinySax[31] && hunky && slam;
 };
 const useCheckChunkyHelm = () => {
   const playHelm = usePlayLobby("Hideout Helm");
