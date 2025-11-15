@@ -28082,7 +28082,21 @@ const BallroomChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyRace, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(RoomFairy, {})
 ] });
+const BoulderCheck = () => {
+  const canDoMuseum = useChunkyRoomGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    CastleCheck,
+    {
+      id: 7205,
+      name: "Museum Boulder",
+      region: "Various Castle Rooms",
+      canGetLogic: canDoMuseum.in,
+      canGetBreak: canDoMuseum.out
+    }
+  ) });
+};
 const MuseumChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderCheck, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMuseum, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(MuseumEnemies, {})
 ] });
@@ -28147,19 +28161,6 @@ const CastleRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
     /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$1, {})
   ] })
 ] });
-const BoulderCheck = () => {
-  const canDoMuseum = useChunkyRoomGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CastleCheck,
-    {
-      id: 7205,
-      name: "Museum Boulder",
-      region: "Various Castle Rooms",
-      canGetLogic: canDoMuseum.in,
-      canGetBreak: canDoMuseum.out
-    }
-  ) });
-};
 const ClassicChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "not-available", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "WARNING:" }),
