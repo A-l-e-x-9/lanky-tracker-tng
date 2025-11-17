@@ -46,7 +46,13 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
     rowNames.push('woth')
   }
   const classNames = rowNames.join(' ')
+  
+  const [hideRedChecks, hideYellowChecks] = useDonkStore(
+    useShallow((state) => [state.ui.hideRed, state.ui.hideYellow])
+  )
 
+if (hideRedChecks && logicState==='not-available' || hideYellowChecks && logicState==='logic-break') {
+} else {
   return (
     <>
       <div className={classNames}>
@@ -67,6 +73,7 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
       </div>
     </>
   )
+  }
 }
 
 export default ItemCheck

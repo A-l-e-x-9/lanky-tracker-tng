@@ -506,6 +506,10 @@ const GeneratorSettings: React.FC = () => {
             <>
               <p>Group by Regions?</p>
               <CheckIcon storeKey="groupByRegion" prefix="ui" updateItem={setUi} />
+              <p>Hide unavailable checks?</p>
+              <CheckIcon storeKey="hideRed" prefix="ui" updateItem={setUi} />
+              <p>Hide logic-breaking checks?</p>
+              <CheckIcon storeKey="hideYellow" prefix="ui" updateItem={setUi} />
             </>
           </section>
         </section>
