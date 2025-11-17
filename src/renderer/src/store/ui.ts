@@ -3,7 +3,9 @@ import { AllSlice, UiSlice, UiState, donkResetFns } from './common'
 
 export const initialUi: UiState = {
   ui: {
-    groupByRegion: false
+    groupByRegion: false,
+    hideRed: false,
+    hideYellow: false
   }
 }
 
