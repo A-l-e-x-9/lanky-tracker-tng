@@ -10373,7 +10373,9 @@ const switchSlice = (set) => {
 };
 const initialUi = {
   ui: {
-    groupByRegion: false
+    groupByRegion: false,
+    hideRed: false,
+    hideYellow: false
   }
 };
 const uiSlice = (set) => {
@@ -12120,25 +12122,32 @@ const ItemCheck = (props) => {
     rowNames.push("woth");
   }
   const classNames = rowNames.join(" ");
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classNames, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: name }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: " " }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: logicState, children: "⬤" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: " " })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: classNames, children: region }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: classNames, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "input",
-      {
-        type: "checkbox",
-        name: "checkbox-" + id2,
-        checked: !!done,
-        onChange: (e2) => setCheck(id2, e2.target.checked)
-      },
-      "checkbox-" + id2
-    ) })
-  ] });
+  const [hideRedChecks, hideYellowChecks] = useDonkStore(
+    useShallow((state) => [state.ui.hideRed, state.ui.hideYellow])
+  );
+  if (hideRedChecks && logicState === "not-available" || hideYellowChecks && logicState === "logic-break") {
+    return false;
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classNames, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: name }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: " " }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: logicState, children: "⬤" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: " " })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: classNames, children: region }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: classNames, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "input",
+        {
+          type: "checkbox",
+          name: "checkbox-" + id2,
+          checked: !!done,
+          onChange: (e2) => setCheck(id2, e2.target.checked)
+        },
+        "checkbox-" + id2
+      ) })
+    ] });
+  }
 };
 const IslesCheck = (props) => {
   const checks = useDonkStore(useShallow((state) => state.checks));
@@ -30580,7 +30589,11 @@ const GeneratorSettings = () => {
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "UI Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Group by Regions?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "groupByRegion", prefix: "ui", updateItem: setUi })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "groupByRegion", prefix: "ui", updateItem: setUi }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Hide unavailable checks?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideRed", prefix: "ui", updateItem: setUi }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Hide logic-breaking checks?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideYellow", prefix: "ui", updateItem: setUi })
             ] })
           ] })
         ] })
