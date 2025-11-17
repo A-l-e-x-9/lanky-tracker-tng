@@ -52,6 +52,7 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
   )
 
 if (hideRedChecks && logicState==='not-available' || hideYellowChecks && logicState==='logic-break') {
+  return false
 } else {
   return (
     <>
