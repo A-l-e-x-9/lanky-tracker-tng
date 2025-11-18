@@ -26544,7 +26544,8 @@ const BossCheck$1 = () => {
       id: 7105,
       name: "Castle Boss",
       region: "Bosses",
-      canGetLogic: inStage && anyKong
+      canGetLogic: inStage.in && anyKong,
+      canGetBreak: inStage.out && anyKong
     }
   ) });
 };
