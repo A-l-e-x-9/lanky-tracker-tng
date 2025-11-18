@@ -604,8 +604,8 @@ export const useCheckDiddyCaves = (): LogicBool => {
   const boulderTech = useBoulderTech()
   const twirl = useTwirl()
   return {
-    in: playCaves && rocket && guitar,
-    out: playCaves && boulderTech && twirl && guitar
+    in: playCaves.in && rocket && guitar,
+    out: playCaves.out && boulderTech && twirl && guitar
   }
 }
 
@@ -632,9 +632,10 @@ export const useCheckLankyCastle = (): LogicBool => {
   const boulderTech = useBoulderTech()
   const balloon = useBalloon()
   const tiny = useTiny()
+  const diddy = useDiddy()
   return {
-    in: playCastle && boulderTech && balloon,
-    out: useFtaLankyBanana() && playCastle && tiny
+    in: playCastle.in && boulderTech && balloon,
+    out: useFtaLankyBanana() && playCastle.out && (tiny || diddy)
   }
 }
 
