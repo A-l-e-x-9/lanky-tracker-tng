@@ -11353,13 +11353,11 @@ const useIslesRocket = () => {
   return islesUpper && boulderTech && target;
 };
 const useIslesKremAscent = () => {
-  const canRocket = useIslesRocket();
-  const fungiIsland = useIslesFungiIsland();
-  const rocket = useRocket();
   const bananaport = useBananaport();
   const openLobbies = useOpenLobbies();
   const [key2] = useDonkStore(useShallow((state) => [state.key2]));
-  return openLobbies || key2 || bananaport != 0 || canRocket && fungiIsland && rocket;
+  const topDown = useIslesKremTop();
+  return openLobbies || key2 || bananaport != 0 || topDown;
 };
 const useIslesKremTop = () => {
   const port = useMonkeyport();
