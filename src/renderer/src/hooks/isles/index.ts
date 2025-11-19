@@ -140,13 +140,11 @@ export const useIslesRocket = (): boolean => {
  * @returns true if we can access the top portion of Krem Isle where the Frantic Factory lobby resides in vanilla.
  */
 export const useIslesKremAscent = (): boolean => {
-  const canRocket = useIslesRocket()
-  const fungiIsland = useIslesFungiIsland()
-  const rocket = useRocket()
   const bananaport = useBananaport()
   const openLobbies = useOpenLobbies()
   const [key2] = useDonkStore(useShallow((state) => [state.key2]))
-  return openLobbies || key2 || bananaport != 0 || (canRocket && fungiIsland && rocket)
+  const topDown = useIslesKremTop() //reach Factory by going to Helm Lobby and falling down a level D:
+  return openLobbies || key2 || bananaport != 0 || topDown
 }
 
 /**
