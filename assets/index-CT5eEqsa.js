@@ -11716,8 +11716,8 @@ const useCheckDkCavesLobby = () => {
   const twirl = useTwirl();
   const orange = useOrange();
   return {
-    in: playCaves && punch && strong,
-    out: useFtaDkBanana() && playCaves && punch && (twirl || orange)
+    in: playCaves.in && punch && strong,
+    out: useFtaDkBanana() && playCaves.out && punch && (twirl || orange)
   };
 };
 const useCheckDiddySnide = () => {
