@@ -11268,12 +11268,18 @@ const useLighthouseDirt = () => {
 const useChestFairy = () => {
   const thing = useChunkyChestGb();
   const fairy = useCamera();
-  return thing && fairy;
+  return {
+    in: thing.in && fairy,
+    out: thing.out && fairy
+  };
 };
 const useShipFairy = () => {
   const ship = useTiny5DoorShipGb();
   const fairy = useCamera();
-  return ship && fairy;
+  return {
+    in: ship.in && fairy,
+    out: ship.out && fairy
+  };
 };
 const useTreasureKasplat = () => {
   const treasure = useGalleonTreasureRoom();
@@ -20331,16 +20337,16 @@ const useLankyMedalCommonLogic$4 = () => {
   const gun = useGrape();
   const music = useTrombone();
   let bananas = 10;
-  if (testing) {
+  if (testing.in || testing.out) {
     bananas += 15;
     if (gun && music) {
       bananas += 10;
     }
   }
-  if (prodTop) {
+  if (prodTop.in || prodTop.out) {
     bananas += 15;
   }
-  if (production) {
+  if (production.in || production.out) {
     bananas += 20;
   }
   return bananas;
@@ -20352,7 +20358,7 @@ const useLankyMedalInLogic$4 = () => {
   const move = useStand();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic$4();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -20363,7 +20369,7 @@ const useLankyMedalInLogic$4 = () => {
   }
   if (move) {
     bananas += 5;
-    if (production) {
+    if (production.in) {
       bananas += 25;
     }
   }
@@ -20374,7 +20380,7 @@ const useLankyMedalOutLogic$4 = () => {
   const kong = useLanky();
   const shuffleBananas = useShuffleColoredBananas();
   const bananas = useLankyMedalCommonLogic$4();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -20875,24 +20881,32 @@ const EnemyLocations$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(CavernsEnemies, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(LighthouseEnemies, {})
 ] });
-const ChestFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  GalleonCheck,
-  {
-    id: 4080,
-    name: "Fairy in Chunky's Left Chest",
-    region: "Galleon Caves",
-    canGetLogic: useChestFairy()
-  }
-) }) });
-const ShipFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  GalleonCheck,
-  {
-    id: 4081,
-    name: "Fairy in Tiny's 5 Door Ship",
-    region: "5 Door Ship",
-    canGetLogic: useShipFairy()
-  }
-) }) });
+const ChestFairy = () => {
+  const canDo = useChestFairy();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    GalleonCheck,
+    {
+      id: 4080,
+      name: "Fairy in Chunky's Left Chest",
+      region: "Galleon Caves",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
+const ShipFairy = () => {
+  const canDo = useShipFairy();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    GalleonCheck,
+    {
+      id: 4081,
+      name: "Fairy in Tiny's 5 Door Ship",
+      region: "5 Door Ship",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const FairyLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChestFairy, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShipFairy, {})
@@ -21676,7 +21690,7 @@ const useLankyMedalCommonLogic$3 = () => {
   if (lighthouseArea && dive) {
     bananas += 25;
   }
-  if (outskirts) {
+  if (outskirts.in || outskirts.out) {
     bananas += 5;
     if (gun) {
       bananas += 10;
@@ -21701,7 +21715,7 @@ const useLankyMedalInLogic$3 = () => {
   const pad = useBalloon();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic$3();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -21729,7 +21743,7 @@ const useLankyMedalOutLogic$3 = () => {
   const twirl = useTwirl();
   const shuffleBananas = useShuffleColoredBananas();
   let currBreak = useLankyMedalCommonLogic$3() + 1;
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -21738,7 +21752,7 @@ const useLankyMedalOutLogic$3 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (logicBreak(treasureRoom) && (highGrab || diddy && spring && tiny && twirl)) {
+  if (treasureRoom.out && (highGrab || diddy && spring && tiny && twirl)) {
     currBreak += 4;
   }
   return currBreak;
@@ -23997,10 +24011,10 @@ const useLankyMedalCommonLogic$2 = () => {
   if (gun) {
     bananas += 10;
   }
-  if (top && gun) {
+  if ((top.in || top.out) && gun) {
     bananas += 10;
   }
-  if (owl) {
+  if (owl.in || owl.out) {
     bananas += 18;
   }
   return bananas;
@@ -24014,7 +24028,7 @@ const useLankyMedalInLogic$2 = () => {
   const move = useStand();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic$2();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -24023,7 +24037,7 @@ const useLankyMedalInLogic$2 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (top && move) {
+  if (top.in && move) {
     bananas += 5;
     if (canSlam) {
       bananas += 15;
@@ -24044,7 +24058,7 @@ const useLankyMedalOutLogic$2 = () => {
   const tiny = useTiny();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic$2();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -24053,13 +24067,13 @@ const useLankyMedalOutLogic$2 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (top && (tiny || rocket)) {
+  if (top.out && (tiny || rocket)) {
     bananas += 5;
     if (canSlam) {
       bananas += 15;
     }
   }
-  if (logicBreak(night)) {
+  if (night.out) {
     bananas += 10;
   }
   return bananas;
@@ -24758,7 +24772,10 @@ const useIglooFairy = () => {
 const useCabinFairy = () => {
   const thing = useDiddyCandleGb();
   const camera = useCamera();
-  return thing && camera;
+  return {
+    in: thing.in && camera,
+    out: thing.out && camera
+  };
 };
 const useIceCastleKasplat = () => {
   const inStage = usePlayCaves();
@@ -25038,7 +25055,8 @@ const CabinFairy = () => {
       id: 6081,
       name: "Diddy Upper Cabin Fairy",
       region: "Caves Cabins",
-      canGetLogic: cabin
+      canGetLogic: cabin.in,
+      canGetBreak: cabin.out
     }
   ) }) }) });
 };
@@ -27703,7 +27721,7 @@ const useDkMedalCommonLogic = () => {
   const tree = useCastleTree();
   const gun = useCoconut();
   let bananas = 50;
-  if (tree && gun) {
+  if ((tree.in || tree.out) && gun) {
     bananas += 15;
   }
   return bananas;
@@ -27716,7 +27734,7 @@ const useDkMedalInLogic = () => {
   const crystal = useStrong();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -27745,7 +27763,7 @@ const useDkMedalOutLogic = () => {
   const gun = useCoconut();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -27815,7 +27833,7 @@ const useLankyMedalInLogic = () => {
   const sniper = useSniper();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -27846,7 +27864,7 @@ const useLankyMedalOutLogic = () => {
   const sniper = useSniper();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -27921,7 +27939,7 @@ const useTinyMedalInLogic = () => {
   const gun = useFeather();
   const shuffleBananas = useShuffleColoredBananas();
   const bananas = useTinyMedalCommonLogic();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -27939,7 +27957,7 @@ const useTinyMedalOutLogic = () => {
   const grape = useGrape();
   const shuffleBananas = useShuffleColoredBananas();
   const bananas = useTinyMedalCommonLogic();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
