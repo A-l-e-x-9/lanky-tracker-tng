@@ -7,7 +7,7 @@ const useDkMedalCommonLogic = (): number => {
   const gun = useCoconut()
 
   let bananas = 50
-  if (tree && gun) {
+  if ((tree.in || tree.out) && gun) {
     bananas += 15
   }
   return bananas
@@ -22,7 +22,7 @@ export const useDkMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -55,7 +55,7 @@ export const useDkMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {

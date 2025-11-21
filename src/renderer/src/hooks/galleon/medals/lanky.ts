@@ -38,7 +38,7 @@ const useLankyMedalCommonLogic = (): number => {
   if (lighthouseArea && dive) {
     bananas += 25 // lighthouse underwater.
   }
-  if (outskirts) {
+  if (outskirts.in || outskirts.out) {
     bananas += 5 // bunch by cactus
     if (gun) {
       bananas += 10 // balloon above ship
@@ -65,7 +65,7 @@ export const useLankyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useLankyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -96,7 +96,7 @@ export const useLankyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let currBreak = useLankyMedalCommonLogic() + 1
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -106,7 +106,7 @@ export const useLankyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (logicBreak(treasureRoom) && (highGrab || (diddy && spring && tiny && twirl))) {
+  if (treasureRoom.out && (highGrab || (diddy && spring && tiny && twirl))) {
     currBreak += 4
   }
   return currBreak

@@ -18,11 +18,11 @@ const useLankyMedalCommonLogic = (): number => {
   if (gun) {
     bananas += 10 // COL balloon bottom
   }
-  if (top && gun) {
+  if ((top.in || top.out) && gun) {
     bananas += 10 // COL balloon top
   }
-  if (owl) {
-    bananas += 18 // path to owl tree (10), dang rabbit (8)
+  if (owl.in || owl.out) {
+    bananas += 18 // path to owl tree (10), that damn rabbit (8)
   }
 
   return bananas
@@ -38,7 +38,7 @@ export const useLankyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useLankyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -48,7 +48,7 @@ export const useLankyMedalInLogic = (): number => {
     return 100
   }
 
-  if (top && move) {
+  if (top.in && move) {
     bananas += 5 // top of mushroom
     if (canSlam) {
       bananas += 15 // zinger room (10), mushroom room (5)
@@ -71,7 +71,7 @@ export const useLankyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useLankyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -81,13 +81,13 @@ export const useLankyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (top && (tiny || rocket)) {
+  if (top.out && (tiny || rocket)) {
     bananas += 5 // top of mushroom
     if (canSlam) {
       bananas += 15 // zinger room (10), mushroom room (5)
     }
   }
-  if (logicBreak(night)) {
+  if (night.out) {
     bananas += 10 // mills attic
   }
   return bananas

@@ -42,7 +42,7 @@ export const useTinyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   const bananas = useTinyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -63,7 +63,7 @@ export const useTinyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   const bananas = useTinyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {

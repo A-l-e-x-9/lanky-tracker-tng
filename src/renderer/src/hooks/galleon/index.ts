@@ -492,16 +492,22 @@ export const useGeneralDirt = (): LogicBool => {
   }
 }
 
-export const useChestFairy = (): boolean => {
+export const useChestFairy = (): LogicBool => {
   const thing = useChunkyChestGb()
   const fairy = useCamera()
-  return thing && fairy
+  return {
+    in: thing.in && fairy,
+    out: thing.out && fairy
+  }
 }
 
-export const useShipFairy = (): boolean => {
+export const useShipFairy = (): LogicBool => {
   const ship = useTiny5DoorShipGb()
   const fairy = useCamera()
-  return ship && fairy
+  return {
+    in: ship.in && fairy,
+    out: ship.out && fairy
+  }
 }
 
 export const useGeneralFairy = (): LogicBool => {

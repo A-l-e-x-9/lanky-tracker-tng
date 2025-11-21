@@ -434,10 +434,13 @@ export const useIglooFairy = (): LogicBool => {
   }
 }
 
-export const useCabinFairy = (): boolean => {
+export const useCabinFairy = (): LogicBool => {
   const thing = useDiddyCandleGb()
   const camera = useCamera()
-  return thing && camera
+  return {
+    in: thing.in && camera,
+    out: thing.out && camera
+  }
 }
 
 export const useIceCastleKasplat = (): LogicBool => {

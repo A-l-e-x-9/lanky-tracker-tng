@@ -15,16 +15,16 @@ const useLankyMedalCommonLogic = (): number => {
   const music = useTrombone()
 
   let bananas = 10
-  if (testing) {
+  if (testing.in || testing.out) {
     bananas += 15
     if (gun && music) {
       bananas += 10
     }
   }
-  if (prodTop) {
+  if (prodTop.in || prodTop.out) {
     bananas += 15
   }
-  if (production) {
+  if (production.in || production.out) {
     bananas += 20
   }
 
@@ -39,7 +39,7 @@ export const useLankyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useLankyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -51,7 +51,7 @@ export const useLankyMedalInLogic = (): number => {
 
   if (move) {
     bananas += 5
-    if (production) {
+    if (production.in) {
       bananas += 25
     }
   }
@@ -65,7 +65,7 @@ export const useLankyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   const bananas = useLankyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
