@@ -29242,7 +29242,8 @@ const bossState = (boss) => {
   const oranges = useOrange();
   const peanuts = usePeanut();
   const punch = usePunch();
-  const slam = useSlam();
+  const [currentSlam] = useDonkStore(useShallow((state) => [state.moves.slam]));
+  const slam = useChunkySlamLevel();
   const trombone = useTrombone();
   const twirl = useTwirl();
   const tiny = useTiny();
@@ -29324,7 +29325,7 @@ const bossState = (boss) => {
         return "not-available";
       }
     case "Chunky Phase of K. Rool":
-      if (slam && gone && hunky && punch) {
+      if (currentSlam >= slam && gone && hunky && punch) {
         return "available";
       } else {
         return "not-available";
