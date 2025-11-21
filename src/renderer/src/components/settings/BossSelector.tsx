@@ -3,8 +3,8 @@ import { useShallow } from 'zustand/react/shallow'
 
 import useDonkStore from '@renderer/store'
 import { Boss } from '@renderer/store/common'
-import { useAnyKong, useBarrel, useBlast, useDk, useFeather, useGone, useHunky, useMini, useOrange, usePeanut, usePunch, useRocket, useSlam, useTiny, useTrombone, useTwirl, useClimbing } from '@renderer/hooks/kongs'
-import { useBalancedRoolPhase } from '@renderer/hooks/settings'
+import { useAnyKong, useBarrel, useBlast, useDk, useFeather, useGone, useHunky, useMini, useOrange, usePeanut, usePunch, useRocket, useTiny, useTrombone, useTwirl, useClimbing } from '@renderer/hooks/kongs'
+import { useBalancedRoolPhase, useChunkySlamLevel } from '@renderer/hooks/settings'
 
 import dogadon1Icon from '../../assets/images/dogadon-1.png'
 import kutoutIcon from '../../assets/images/kutout.png'
@@ -70,7 +70,8 @@ const bossState = (boss: Boss): string => {
   const oranges = useOrange()
   const peanuts = usePeanut()
   const punch = usePunch()
-  const slam = useSlam()
+  const [currentSlam] =  useDonkStore(useShallow((state) => [state.moves.slam]))
+  const slam = useChunkySlamLevel()
   const trombone = useTrombone()
   const twirl = useTwirl()
   const tiny = useTiny()
@@ -152,7 +153,7 @@ const bossState = (boss: Boss): string => {
         return 'not-available'
       }
     case 'Chunky Phase of K. Rool':
-      if (slam && gone && hunky && punch) { /*Right now, this just checks if you have a Simian Slam at all. I'll make it check the level of Slam later...*/
+      if ((currentSlam >= slam) && gone && hunky && punch) {
         return 'available'
       } else {
         return 'not-available'
