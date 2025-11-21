@@ -14,7 +14,8 @@ const CabinFairy: React.FC = () => {
           id={6081}
           name="Diddy Upper Cabin Fairy"
           region="Caves Cabins"
-          canGetLogic={cabin}
+          canGetLogic={cabin.in}
+          canGetBreak={cabin.out}
         />
       </VanillaFairy>
     </FairyPool>

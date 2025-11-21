@@ -3,17 +3,21 @@ import VanillaFairy from '@renderer/components/pools/VanillaFairy'
 import { useShipFairy } from '@renderer/hooks/galleon'
 import GalleonCheck from '../check'
 
-const ShipFairy: React.FC = () => (
+const ShipFairy: React.FC = () => {
+const canDo = useShipFairy()
+return (
   <FairyPool>
     <VanillaFairy>
       <GalleonCheck
         id={4081}
         name="Fairy in Tiny's 5 Door Ship"
         region="5 Door Ship"
-        canGetLogic={useShipFairy()}
+        canGetLogic={canDo.in}
+        canGetBreak={canDo.out}
       />
     </VanillaFairy>
   </FairyPool>
 )
+}
 
 export default ShipFairy

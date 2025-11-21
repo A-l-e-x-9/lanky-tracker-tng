@@ -3,17 +3,21 @@ import VanillaFairy from '@renderer/components/pools/VanillaFairy'
 import { useChestFairy } from '@renderer/hooks/galleon'
 import GalleonCheck from '../check'
 
-const ChestFairy: React.FC = () => (
+const ChestFairy: React.FC = () => {
+const canDo = useChestFairy()
+return (
   <FairyPool>
     <VanillaFairy>
       <GalleonCheck
         id={4080}
         name="Fairy in Chunky's Left Chest"
         region="Galleon Caves"
-        canGetLogic={useChestFairy()}
+        canGetLogic={canDo.in}
+        canGetBreak={canDo.out}
       />
     </VanillaFairy>
   </FairyPool>
 )
+}
 
 export default ChestFairy
