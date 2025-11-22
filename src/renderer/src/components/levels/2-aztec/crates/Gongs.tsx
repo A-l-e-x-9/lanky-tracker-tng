@@ -1,7 +1,6 @@
 import CratePool from '@renderer/components/pools/Crates'
 import VanillaCrate from '@renderer/components/pools/VanillaCrate'
 import { useAztecBack } from '@renderer/hooks/aztec'
-import { logicBreak } from '@renderer/hooks/world'
 import AztecCheck from '../check'
 
 const GongCrate: React.FC = () => {
@@ -14,7 +13,7 @@ const GongCrate: React.FC = () => {
           name="Crate Near the Gong Tower"
           region="Aztec Main Area"
           canGetLogic={aztecBack.in}
-          canGetBreak={logicBreak(aztecBack)}
+          canGetBreak={aztecBack.out}
         />
       </VanillaCrate>
     </CratePool>

@@ -32,7 +32,6 @@ import {
   useSlam,
   useStand,
   useTiny,
-  useTrombone,
   useTwirl,
   useVine,
   useClimbing

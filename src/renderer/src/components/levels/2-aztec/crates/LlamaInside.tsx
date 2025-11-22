@@ -1,7 +1,6 @@
 import CratePool from '@renderer/components/pools/Crates'
 import VanillaCrate from '@renderer/components/pools/VanillaCrate'
 import { useLlamaCrate } from '@renderer/hooks/aztec'
-import { logicBreak } from '@renderer/hooks/world'
 import AztecCheck from '../check'
 
 const LlamaInsideCrate: React.FC = () => {
@@ -14,7 +13,7 @@ const LlamaInsideCrate: React.FC = () => {
           name="Melon Crate in the Llama Temple"
           region="Llama Temple"
           canGetLogic={llama.in}
-          canGetBreak={logicBreak(llama)}
+          canGetBreak={llama.out}
         />
       </VanillaCrate>
     </CratePool>
