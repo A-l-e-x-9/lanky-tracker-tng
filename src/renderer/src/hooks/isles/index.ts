@@ -65,7 +65,7 @@ import {
   useOpenLobbies,
   useProgressiveSlams
 } from '../settings'
-import { LogicBool, logicBreak, useSwitchsanityGun, useSwitchsanityMusicPad } from '../world'
+import { LogicBool, useSwitchsanityGun, useSwitchsanityMusicPad } from '../world'
 
 /**
  * What is needed to turn on the rocket barrel in Isles?
@@ -577,7 +577,7 @@ export const useCheckDiddyCage = (): LogicBool => {
   const peanut = usePeanut()
   return {
     in: crossFungi.in && peanut,
-    out: logicBreak(crossFungi) && peanut
+    out: crossFungi.out && peanut
   }
 }
 
