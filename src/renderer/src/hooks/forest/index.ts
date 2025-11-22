@@ -46,7 +46,7 @@ import {
   useBarrel
 } from '../kongs'
 import { useBananaportAll, useForestTime, useHardShooting, useAutoBonus } from '../settings'
-import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
+import { LogicBool, useSwitchsanityGun } from '../world'
 
 /**
  * Can we play in Fungi Forest?
@@ -363,7 +363,7 @@ export const useDkBarnGb = (): LogicBool => {
   const autoFinishBonuses = useAutoBonus()
   return {
     in: barn.in && (climbing && vine || autoFinishBonuses),
-    out: logicBreak(barn)
+    out: barn.out
   }
 }
 
@@ -387,7 +387,7 @@ export const useLankyMushGb = (): LogicBool => {
   const canSlam = useSlamForest()
   return {
     in: roof.in && lanky && canSlam,
-    out: logicBreak(roof) && lanky && canSlam
+    out: roof.out && lanky && canSlam
   }
 }
 
@@ -442,7 +442,7 @@ export const useTinySpiderGb = (): LogicBool => {
   const kong = useFtaTinyBanana()
   return {
     in: kong && spider.in && anyGun,
-    out: kong && logicBreak(spider) && anyGun
+    out: kong && spider.out && anyGun
   }
 }
 

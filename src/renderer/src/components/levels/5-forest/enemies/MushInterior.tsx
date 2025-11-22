@@ -2,7 +2,6 @@ import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatKlump, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useForestMushroomRoof, usePlayForest, useSlamForest } from '@renderer/hooks/forest'
 import { useChunky, useLanky } from '@renderer/hooks/kongs'
-import { logicBreak } from '@renderer/hooks/world'
 import ForestCheck from '../check'
 
 const MushInteriorEnemies: React.FC = () => {
@@ -19,42 +18,43 @@ const MushInteriorEnemies: React.FC = () => {
         id={5336}
         name="Enemy Near the Mushroom Night Door"
         region="Inside the Giant Mushroom"
-        canGetLogic={inStage && klump}
+        canGetLogic={inStage.in && klump}
+        canGetBreak={inStage.out && klump}
       />
       <ForestCheck
         id={5337}
         name="Enemy Near Kasplat 0"
         region="Inside the Giant Mushroom"
-        canGetLogic={inStage && zinger.in}
-        canGetBreak={inStage && zinger.out}
+        canGetLogic={inStage.in && zinger.in}
+        canGetBreak={inStage.out && zinger.out}
       />
       <ForestCheck
         id={5338}
         name="Enemy Near Kasplat 1"
         region="Inside the Giant Mushroom"
-        canGetLogic={inStage && zinger.in}
-        canGetBreak={inStage && zinger.out}
+        canGetLogic={inStage.in && zinger.in}
+        canGetBreak={inStage.out && zinger.out}
       />
       <ForestCheck
         id={5339}
         name="Enemy 0 in Lanky's Mushroom Bounce Room"
         region="Inside the Giant Mushroom"
         canGetLogic={roof.in && lanky && canSlam && zinger.in}
-        canGetBreak={logicBreak(roof) && lanky && canSlam && zinger.out}
+        canGetBreak={roof.out && lanky && canSlam && zinger.out}
       />
       <ForestCheck
         id={5340}
         name="Enemy 1 in Lanky's Mushroom Bounce Room"
         region="Inside the Giant Mushroom"
         canGetLogic={roof.in && lanky && canSlam && zinger.in}
-        canGetBreak={logicBreak(roof) && lanky && canSlam && zinger.out}
+        canGetBreak={roof.out && lanky && canSlam && zinger.out}
       />
       <ForestCheck
         id={5341}
         name="Enemy in Chunky's Face Puzzle Room"
         region="Inside the Giant Mushroom"
-        canGetLogic={inStage && chunky && canSlam && zinger.in}
-        canGetBreak={inStage && chunky && canSlam && zinger.out}
+        canGetLogic={inStage.in && chunky && canSlam && zinger.in}
+        canGetBreak={inStage.out && chunky && canSlam && zinger.out}
       />
     </DropPool>
   )
