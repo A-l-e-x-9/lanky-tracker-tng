@@ -85,7 +85,7 @@ export const useHelmDoors = (): LogicBool => {
       inLevel.in && entry &&
       (helmAccess == 2 ||
         (anyMusic && (helmAccess == 1 || (machine.in && grab && rocket && punch)))),
-    out: inLevel.out && entry.out && machine.out && grab && rocket && punch
+    out: inLevel.out && entry && machine.out && grab && rocket && punch
   }
 }
 
