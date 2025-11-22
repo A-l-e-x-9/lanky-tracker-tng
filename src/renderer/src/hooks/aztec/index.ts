@@ -40,7 +40,6 @@ import {
 import { useBananaportAll } from '../settings'
 import {
   LogicBool,
-  logicBreak,
   useSwitchsanityGun,
   useSwitchsanityKong,
   useSwitchsanityMusicPad
@@ -168,7 +167,7 @@ export const useAztecLlamaTemple = (): LogicBool => {
   const properGun = llama1 || llama2 || llama3
   return {
     in: aztecBack.in && entry && properGun,
-    out: logicBreak(aztecBack) && entry && properGun
+    out: aztecBack.out && entry && properGun
   }
 }
 
@@ -182,7 +181,7 @@ export const useAztecLlamaLava = (): LogicBool => {
   const warpAll = useBananaportAll()
   return {
     in: llamaTemple.in && (warpAll || mini),
-    out: logicBreak(llamaTemple) && (warpAll || mini)
+    out: llamaTemple.out && (warpAll || mini)
   }
 }
 
@@ -216,7 +215,7 @@ export const useAztec5DoorTemple = (): LogicBool => {
 
   return {
     in: aztecBack.in && (fiveDoor || (rocket && canSlam && peanut)),
-    out: logicBreak(aztecBack) && (fiveDoor || (canSlam && peanut))
+    out: aztecBack.out && (fiveDoor || (canSlam && peanut))
   }
 }
 
@@ -237,7 +236,7 @@ export const useChunkyKlaptrapGb = (): LogicBool => {
   const tinyTemple = useAztecTinyTemple()
   return {
     in: front.in && gun && triangle,
-    out: logicBreak(tinyTemple) && triangle
+    out: tinyTemple.out && triangle
   }
 }
 
@@ -289,7 +288,7 @@ export const useDiddyFreeTinyGb = (): LogicBool => {
   const free = useFreeTinySwitch()
   return {
     in: temple.in && iceMelted && dive.in && free,
-    out: logicBreak(temple) && iceMelted && dive.out && free
+    out: temple.out && iceMelted && dive.out && free
   }
 }
 
@@ -299,7 +298,7 @@ export const useDiddyGongGb = (): LogicBool => {
   const rocket = useRocket()
   return {
     in: back.in && charge && rocket,
-    out: logicBreak(back) && charge
+    out: back.out && charge
   }
 }
 
@@ -335,7 +334,7 @@ export const useDkTunnelGb = (): LogicBool => {
   const strong = useStrong()
   return {
     in: tunnel.in && strong,
-    out: useFtaDkBanana() && logicBreak(tunnel)
+    out: useFtaDkBanana() && tunnel.out
   }
 }
 
@@ -380,7 +379,7 @@ export const useDkFreeLankyGb = (): LogicBool => {
   const llama = useAztecLlamaTemple()
   return {
     in: llama.in && dive.in && lanky.in,
-    out: logicBreak(llama) && dive.out && logicBreak(lanky)
+    out: llama.out && dive.out && lanky.out
   }
 }
 
@@ -421,7 +420,7 @@ export const useLankySnakeGb = (): LogicBool => {
   const twirl = useTwirl()
   return {
     in: llama.in && trombone && stand,
-    out: logicBreak(llama) && trombone && (stand || twirl)
+    out: llama.out && trombone && (stand || twirl)
   }
 }
 
@@ -444,7 +443,7 @@ export const useTinyKlaptrapGb = (): LogicBool => {
   const iceMelted = useTinyTempleIce()
   return {
     in: front.in && feather && mini && iceMelted && dive.in,
-    out: logicBreak(tinyTemple) && mini && iceMelted && dive.out
+    out: tinyTemple.out && mini && iceMelted && dive.out
   }
 }
 

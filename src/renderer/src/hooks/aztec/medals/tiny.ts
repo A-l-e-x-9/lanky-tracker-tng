@@ -1,6 +1,5 @@
 import { useClimbing, useDive, useFeather, useMini, useTiny, useTwirl } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { logicBreak } from '@renderer/hooks/world'
 import {
   useAztecBack,
   useAztecFront,
@@ -39,7 +38,7 @@ export const useTinyMedalInLogic = (): number => {
 
   let bananas = 0
   if (inStage.in) {
-    if (tinyTemple.in && iceMelted && dive) {
+    if (tinyTemple.in && iceMelted && dive.in) {
       if (gun) {
         bananas += 20
       }
@@ -84,7 +83,7 @@ export const useTinyMedalOutLogic = (): number => {
   const kuruKuru = useTwirl()
   const shuffleBananas = useShuffleColoredBananas()
 
-  if (!logicBreak(inStage)) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -95,8 +94,8 @@ export const useTinyMedalOutLogic = (): number => {
   }
 
   let bananas = 0
-  if (logicBreak(inStage)) {
-    if (logicBreak(tinyTemple) && iceMelted && dive) {
+  if (inStage.out) {
+    if (tinyTemple.out && iceMelted && dive.out) {
       if (gun) {
         bananas += 20
       }
@@ -104,18 +103,18 @@ export const useTinyMedalOutLogic = (): number => {
         bananas += 5
       }
     }
-    if (logicBreak(aztecBack)) {
+    if (aztecBack.out) {
       bananas += 40
       if (kuruKuru) {
         bananas += 10
       }
     }
-    if (logicBreak(llamaTemple)) {
+    if (llamaTemple.out) {
       bananas += 3
       if (gun) {
         bananas += 10
       }
-      if (logicBreak(lava)) {
+      if (lava.out) {
         bananas += 12
       }
     }

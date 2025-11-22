@@ -1,6 +1,5 @@
 import { useDiddy, useDive, usePeanut, useRocket } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { logicBreak } from '@renderer/hooks/world'
 import {
   useAztec5DoorTemple,
   useAztecBack,
@@ -83,7 +82,7 @@ export const useDiddyMedalOutLogic = (): number => {
   const dive = useDive()
   const shuffleBananas = useShuffleColoredBananas()
 
-  if (!logicBreak(inStage)) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -94,12 +93,12 @@ export const useDiddyMedalOutLogic = (): number => {
   }
 
   let bananas = 0
-  if (logicBreak(inStage)) {
+  if (inStage.out) {
     bananas += 5
     if (gun) {
       bananas += 10
     }
-    if (logicBreak(tinyTemple)) {
+    if (tinyTemple.out) {
       if (canSlam) {
         bananas += 8
         if (gun) {
@@ -110,15 +109,15 @@ export const useDiddyMedalOutLogic = (): number => {
         bananas += 7
       }
     }
-    if (logicBreak(aztecBack)) {
+    if (aztecBack.out) {
       bananas += 30
       if (crystal) {
         bananas += 10
       }
-      if (logicBreak(doorTemple) && gun) {
+      if (doorTemple.out && gun) {
         bananas += 10
       }
-      if (logicBreak(backTunnel) && gun) {
+      if (backTunnel.out && gun) {
         bananas += 10
       }
     }

@@ -1,6 +1,5 @@
 import { useChunky, useDive, usePineapple } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { logicBreak } from '@renderer/hooks/world'
 import { useAztec5DoorTemple, useAztecBack, useAztecFront, useAztecTinyTemple, useTinyTempleIce } from '..'
 
 export const useChunkyMedalInLogic = (): number => {
@@ -58,7 +57,7 @@ export const useChunkyMedalOutLogic = (): number => {
   const iceMelted = useTinyTempleIce()
   const shuffleBananas = useShuffleColoredBananas()
 
-  if (!logicBreak(inStage)) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -69,20 +68,20 @@ export const useChunkyMedalOutLogic = (): number => {
   }
 
   let bananas = 0
-  if (logicBreak(inStage)) {
+  if (inStage.out) {
     bananas += 5
     if (pineapple) {
       bananas += 20
     }
-    if (logicBreak(tinyTemple)) {
+    if (tinyTemple.out) {
       bananas += 29
       if (pineapple && iceMelted && dive) {
         bananas += 10
       }
     }
-    if (logicBreak(aztecBack)) {
+    if (aztecBack.out) {
       bananas += 16
-      if (logicBreak(doorTemple) && pineapple) {
+      if (doorTemple.out && pineapple) {
         bananas += 20
       }
     }
