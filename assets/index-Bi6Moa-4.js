@@ -10849,7 +10849,6 @@ const useSnide = () => {
   const shopkeep = useDonkStore(useShallow((state) => state.moves.snide));
   return shopkeep;
 };
-const logicBreak = (check) => check.in || check.out;
 const useSwitchsanityMusicPad = (id2, normal) => {
   const bongos = useBongos();
   const guitar = useGuitar();
@@ -11113,7 +11112,7 @@ const useDiddyGoldGb = () => {
   const highGrab = useHighGrab();
   return {
     in: treasure.in && spring,
-    out: useFtaDiddyBanana() && logicBreak(treasure) && (spring || highGrab)
+    out: useFtaDiddyBanana() && treasure.out && (spring || highGrab)
   };
 };
 const useDiddyMechGb = () => {
@@ -11173,7 +11172,7 @@ const useLankyGoldGb = () => {
   const highGrab = useHighGrab();
   return {
     in: treasure.in && balloon,
-    out: useFtaLankyBanana() && logicBreak(treasure) && (balloon || highGrab)
+    out: useFtaLankyBanana() && treasure.out && (balloon || highGrab)
   };
 };
 const useLanky2DoorShipGb = () => {
@@ -11288,7 +11287,7 @@ const useTreasureKasplat = () => {
   const dk2 = useFtaDkBlueprint();
   return {
     in: dk2 && treasure.in && spring,
-    out: dk2 && logicBreak(treasure) && (spring || highGrab)
+    out: dk2 && treasure.out && (spring || highGrab)
   };
 };
 const useKevin = () => {
@@ -11745,7 +11744,7 @@ const useCheckDiddyCage = () => {
   const peanut = usePeanut();
   return {
     in: crossFungi.in && peanut,
-    out: logicBreak(crossFungi) && peanut
+    out: crossFungi.out && peanut
   };
 };
 const useCheckDiddySummit = () => {
@@ -14121,7 +14120,7 @@ const useJapesPainting = () => {
   const paintingSwitch = useJapesPaintingSwitch();
   return {
     in: canPlay.in && paintingSwitch,
-    out: logicBreak(canPlay) && paintingSwitch
+    out: canPlay.out && paintingSwitch
   };
 };
 const useJapesUnderground = () => {
@@ -14307,15 +14306,13 @@ const useLankySlopeGb = () => {
 };
 const useLankyPaintingGb = () => {
   const painting = useJapesPainting();
-  const grape = useGrape();
-  const trombone = useTrombone();
   const lanky = useLanky();
   const slam = useSlam();
   const anyGun = useAnyGun();
   const anyMusic = useAnyMusic();
   return {
-    in: lanky && slam && painting.in && (grape || trombone),
-    out: lanky && slam && logicBreak(painting) && (anyGun || anyMusic)
+    in: lanky && slam && painting.in && (anyGun || anyMusic),
+    out: lanky && slam && painting.out && (anyGun || anyMusic)
   };
 };
 const useTinyCagedGb = () => {
@@ -16201,7 +16198,7 @@ const useAztecLlamaTemple = () => {
   const properGun = llama1 || llama2 || llama3;
   return {
     in: aztecBack.in && entry && properGun,
-    out: logicBreak(aztecBack) && entry && properGun
+    out: aztecBack.out && entry && properGun
   };
 };
 const useAztecLlamaLava = () => {
@@ -16210,7 +16207,7 @@ const useAztecLlamaLava = () => {
   const warpAll = useBananaportAll();
   return {
     in: llamaTemple.in && (warpAll || mini),
-    out: logicBreak(llamaTemple) && (warpAll || mini)
+    out: llamaTemple.out && (warpAll || mini)
   };
 };
 const useAztecBackTunnel = () => {
@@ -16232,7 +16229,7 @@ const useAztec5DoorTemple = () => {
   const fiveDoor = useDonkStore(useShallow((state) => state.removeBarriers.aztec5DoorTemple));
   return {
     in: aztecBack.in && (fiveDoor || rocket && canSlam && peanut),
-    out: logicBreak(aztecBack) && (fiveDoor || canSlam && peanut)
+    out: aztecBack.out && (fiveDoor || canSlam && peanut)
   };
 };
 const useChunkyVaseGb = () => {
@@ -16251,7 +16248,7 @@ const useChunkyKlaptrapGb = () => {
   const tinyTemple = useAztecTinyTemple();
   return {
     in: front.in && gun && triangle,
-    out: logicBreak(tinyTemple) && triangle
+    out: tinyTemple.out && triangle
   };
 };
 const useChunkyHunkyGb = () => {
@@ -16298,7 +16295,7 @@ const useDiddyFreeTinyGb = () => {
   const free = useFreeTinySwitch();
   return {
     in: temple.in && iceMelted && dive.in && free,
-    out: logicBreak(temple) && iceMelted && dive.out && free
+    out: temple.out && iceMelted && dive.out && free
   };
 };
 const useDiddyGongGb = () => {
@@ -16307,7 +16304,7 @@ const useDiddyGongGb = () => {
   const rocket = useRocket();
   return {
     in: back.in && charge && rocket,
-    out: logicBreak(back) && charge
+    out: back.out && charge
   };
 };
 const useDiddyVultureGb = () => {
@@ -16339,7 +16336,7 @@ const useDkTunnelGb = () => {
   const strong = useStrong();
   return {
     in: tunnel.in && strong,
-    out: useFtaDkBanana() && logicBreak(tunnel)
+    out: useFtaDkBanana() && tunnel.out
   };
 };
 const useDk5DoorGb = () => {
@@ -16381,7 +16378,7 @@ const useDkFreeLankyGb = () => {
   const llama = useAztecLlamaTemple();
   return {
     in: llama.in && dive.in && lanky.in,
-    out: logicBreak(llama) && dive.out && logicBreak(lanky)
+    out: llama.out && dive.out && lanky.out
   };
 };
 const useLankyVultureGb = () => {
@@ -16418,7 +16415,7 @@ const useLankySnakeGb = () => {
   const twirl = useTwirl();
   return {
     in: llama.in && trombone && stand,
-    out: logicBreak(llama) && trombone && (stand || twirl)
+    out: llama.out && trombone && (stand || twirl)
   };
 };
 const useLankyMatchGb = () => {
@@ -16439,7 +16436,7 @@ const useTinyKlaptrapGb = () => {
   const iceMelted = useTinyTempleIce();
   return {
     in: front.in && feather && mini && iceMelted && dive.in,
-    out: logicBreak(tinyTemple) && mini && iceMelted && dive.out
+    out: tinyTemple.out && mini && iceMelted && dive.out
   };
 };
 const useTiny5DoorGb = () => {
@@ -16635,7 +16632,7 @@ const GongCrate = () => {
       name: "Crate Near the Gong Tower",
       region: "Aztec Main Area",
       canGetLogic: aztecBack.in,
-      canGetBreak: logicBreak(aztecBack)
+      canGetBreak: aztecBack.out
     }
   ) }) });
 };
@@ -16648,7 +16645,7 @@ const LlamaInsideCrate = () => {
       name: "Melon Crate in the Llama Temple",
       region: "Llama Temple",
       canGetLogic: llama.in,
-      canGetBreak: logicBreak(llama)
+      canGetBreak: llama.out
     }
   ) }) });
 };
@@ -16713,7 +16710,7 @@ const BeforeOasisEnemies = () => {
         name: "Vase Room Enemy 0",
         region: "Aztec Caves",
         canGetLogic: inStage.in && pineapple && zinger.in,
-        canGetBreak: logicBreak(inStage) && pineapple && zinger.out
+        canGetBreak: inStage.out && pineapple && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16723,7 +16720,7 @@ const BeforeOasisEnemies = () => {
         name: "Vase Room Enemy 1",
         region: "Aztec Caves",
         canGetLogic: inStage.in && pineapple && zinger.in,
-        canGetBreak: logicBreak(inStage) && pineapple && zinger.out
+        canGetBreak: inStage.out && pineapple && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16733,7 +16730,7 @@ const BeforeOasisEnemies = () => {
         name: "Vase Room Enemy 2",
         region: "Aztec Caves",
         canGetLogic: inStage.in && pineapple && zinger.in,
-        canGetBreak: logicBreak(inStage) && pineapple && zinger.out
+        canGetBreak: inStage.out && pineapple && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16743,7 +16740,7 @@ const BeforeOasisEnemies = () => {
         name: "Starting Tunnel Area Enemy 0",
         region: "Aztec Caves",
         canGetLogic: inStage.in && anyKong,
-        canGetBreak: logicBreak(inStage) && anyKong
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16753,7 +16750,7 @@ const BeforeOasisEnemies = () => {
         name: "Starting Tunnel Area Enemy 1",
         region: "Aztec Caves",
         canGetLogic: inStage.in && anyKong,
-        canGetBreak: logicBreak(inStage) && anyKong
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16763,7 +16760,7 @@ const BeforeOasisEnemies = () => {
         name: "Starting Tunnel Area Enemy 2",
         region: "Aztec Caves",
         canGetLogic: inStage.in && zinger.in,
-        canGetBreak: logicBreak(inStage) && zinger.out
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16773,7 +16770,7 @@ const BeforeOasisEnemies = () => {
         name: "Starting Tunnel Area Enemy 3",
         region: "Aztec Caves",
         canGetLogic: inStage.in && zinger.in,
-        canGetBreak: logicBreak(inStage) && zinger.out
+        canGetBreak: inStage.out && zinger.out
       }
     )
   ] });
@@ -16790,7 +16787,7 @@ const ConnectorTunnelEnemies = () => {
         name: "Middle Tunnel Pad Enemy 0",
         region: "Aztec Caves",
         canGetLogic: inStage.in && zinger.in,
-        canGetBreak: logicBreak(inStage) && zinger.out
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16800,7 +16797,7 @@ const ConnectorTunnelEnemies = () => {
         name: "Middle Tunnel Pad Enemy 1",
         region: "Aztec Caves",
         canGetLogic: inStage.in && zinger.in,
-        canGetBreak: logicBreak(inStage) && zinger.out
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16810,7 +16807,7 @@ const ConnectorTunnelEnemies = () => {
         name: "Middle Tunnel Cage Enemy 0",
         region: "Aztec Caves",
         canGetLogic: inStage.in && anyKong,
-        canGetBreak: logicBreak(inStage) && anyKong
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16820,7 +16817,7 @@ const ConnectorTunnelEnemies = () => {
         name: "Middle Tunnel Cage Enemy 1",
         region: "Aztec Caves",
         canGetLogic: inStage.in && anyKong,
-        canGetBreak: logicBreak(inStage) && anyKong
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16830,7 +16827,7 @@ const ConnectorTunnelEnemies = () => {
         name: "Middle Tunnel Cage Enemy 2",
         region: "Aztec Caves",
         canGetLogic: inStage.in && anyKong,
-        canGetBreak: logicBreak(inStage) && anyKong
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16840,7 +16837,7 @@ const ConnectorTunnelEnemies = () => {
         name: "Middle Tunnel Cage Enemy 3",
         region: "Aztec Caves",
         canGetLogic: inStage.in && anyKong,
-        canGetBreak: logicBreak(inStage) && anyKong
+        canGetBreak: inStage.out && anyKong
       }
     )
   ] });
@@ -16858,7 +16855,7 @@ const Chunky5Enemies = () => {
         name: "Chunky 5DT Start Left Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && klobber,
-        canGetBreak: logicBreak(door) && pineapple && klobber
+        canGetBreak: door.out && pineapple && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16868,7 +16865,7 @@ const Chunky5Enemies = () => {
         name: "Chunky 5DT Start Right Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && klobber,
-        canGetBreak: logicBreak(door) && pineapple && klobber
+        canGetBreak: door.out && pineapple && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16878,7 +16875,7 @@ const Chunky5Enemies = () => {
         name: "Chunky 5DT Second Left Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && klobber,
-        canGetBreak: logicBreak(door) && pineapple && klobber
+        canGetBreak: door.out && pineapple && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16888,7 +16885,7 @@ const Chunky5Enemies = () => {
         name: "Chunky 5DT Second Right Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && klobber,
-        canGetBreak: logicBreak(door) && pineapple && klobber
+        canGetBreak: door.out && pineapple && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16898,7 +16895,7 @@ const Chunky5Enemies = () => {
         name: "Enemy at Chunky 5DT Reward",
         region: "5 Door Temple",
         canGetLogic: door.in && pineapple && zinger.in,
-        canGetBreak: logicBreak(door) && pineapple && zinger.out
+        canGetBreak: door.out && pineapple && zinger.out
       }
     )
   ] });
@@ -16916,7 +16913,7 @@ const Diddy5Enemies = () => {
         name: "Diddy 5DT Start Left Enemy 0",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut,
-        canGetBreak: logicBreak(door) && peanut
+        canGetBreak: door.out && peanut
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16926,7 +16923,7 @@ const Diddy5Enemies = () => {
         name: "Diddy 5DT Start Left Enemy 1",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut,
-        canGetBreak: logicBreak(door) && peanut
+        canGetBreak: door.out && peanut
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16936,7 +16933,7 @@ const Diddy5Enemies = () => {
         name: "Diddy 5DT Second Switch Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut,
-        canGetBreak: logicBreak(door) && peanut
+        canGetBreak: door.out && peanut
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16946,7 +16943,7 @@ const Diddy5Enemies = () => {
         name: "Diddy 5DT End Trap Enemy 0",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut && klobber,
-        canGetBreak: logicBreak(door) && peanut && klobber
+        canGetBreak: door.out && peanut && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16956,7 +16953,7 @@ const Diddy5Enemies = () => {
         name: "Diddy 5DT End Trap Enemy 1",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut && klobber,
-        canGetBreak: logicBreak(door) && peanut && klobber
+        canGetBreak: door.out && peanut && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16966,7 +16963,7 @@ const Diddy5Enemies = () => {
         name: "Diddy 5DT End Trap Enemy 2",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut && klobber,
-        canGetBreak: logicBreak(door) && peanut && klobber
+        canGetBreak: door.out && peanut && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16976,7 +16973,7 @@ const Diddy5Enemies = () => {
         name: "Enemy at Diddy 5DT Reward",
         region: "5 Door Temple",
         canGetLogic: door.in && peanut && klump,
-        canGetBreak: logicBreak(door) && peanut && klump
+        canGetBreak: door.out && peanut && klump
       }
     )
   ] });
@@ -16994,7 +16991,7 @@ const Dk5Enemies = () => {
         name: "DK 5DT Start Trap Enemy 0",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
-        canGetBreak: logicBreak(door) && coconut && kaboom.out
+        canGetBreak: door.out && coconut && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17004,7 +17001,7 @@ const Dk5Enemies = () => {
         name: "DK 5DT Start Trap Enemy 1",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
-        canGetBreak: logicBreak(door) && coconut && kaboom.out
+        canGetBreak: door.out && coconut && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17014,7 +17011,7 @@ const Dk5Enemies = () => {
         name: "DK 5DT Start Trap Enemy 2",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
-        canGetBreak: logicBreak(door) && coconut && kaboom.out
+        canGetBreak: door.out && coconut && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17024,7 +17021,7 @@ const Dk5Enemies = () => {
         name: "Enemy at DK 5DT Start Path",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && klaptrap,
-        canGetBreak: logicBreak(door) && coconut && klaptrap
+        canGetBreak: door.out && coconut && klaptrap
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17034,7 +17031,7 @@ const Dk5Enemies = () => {
         name: "DK 5DT End Path Enemy 0",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && klaptrap,
-        canGetBreak: logicBreak(door) && coconut && klaptrap
+        canGetBreak: door.out && coconut && klaptrap
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17044,7 +17041,7 @@ const Dk5Enemies = () => {
         name: "DK 5DT End Path Enemy 1",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && klaptrap,
-        canGetBreak: logicBreak(door) && coconut && klaptrap
+        canGetBreak: door.out && coconut && klaptrap
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17054,7 +17051,7 @@ const Dk5Enemies = () => {
         name: "DK 5DT End Trap Enemy 0",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
-        canGetBreak: logicBreak(door) && coconut && kaboom.out
+        canGetBreak: door.out && coconut && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17064,7 +17061,7 @@ const Dk5Enemies = () => {
         name: "DK 5DT End Trap Enemy 1",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
-        canGetBreak: logicBreak(door) && coconut && kaboom.out
+        canGetBreak: door.out && coconut && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17074,7 +17071,7 @@ const Dk5Enemies = () => {
         name: "DK 5DT End Trap Enemy 2",
         region: "5 Door Temple",
         canGetLogic: door.in && coconut && kaboom.in,
-        canGetBreak: logicBreak(door) && coconut && kaboom.out
+        canGetBreak: door.out && coconut && kaboom.out
       }
     )
   ] });
@@ -17091,7 +17088,7 @@ const Lanky5Enemies = () => {
         name: "Lanky 5DT Enemy at the Joining Paths",
         region: "5 Door Temple",
         canGetLogic: door.in && grape && klump,
-        canGetBreak: logicBreak(door) && grape && klump
+        canGetBreak: door.out && grape && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17101,7 +17098,7 @@ const Lanky5Enemies = () => {
         name: "Lanky 5DT End Trap Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && grape && klump,
-        canGetBreak: logicBreak(door) && grape && klump
+        canGetBreak: door.out && grape && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17111,7 +17108,7 @@ const Lanky5Enemies = () => {
         name: "Lanky 5DT Reward Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && grape && klump,
-        canGetBreak: logicBreak(door) && grape && klump
+        canGetBreak: door.out && grape && klump
       }
     )
   ] });
@@ -17128,7 +17125,7 @@ const Tiny5Enemies = () => {
         name: "Tiny 5DT Start Left Front Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: logicBreak(door) && feather && zinger.out
+        canGetBreak: door.out && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17138,7 +17135,7 @@ const Tiny5Enemies = () => {
         name: "Tiny 5DT Start Left Back Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: logicBreak(door) && feather && zinger.out
+        canGetBreak: door.out && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17148,7 +17145,7 @@ const Tiny5Enemies = () => {
         name: "Tiny 5DT Start Right Back Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: logicBreak(door) && feather && zinger.out
+        canGetBreak: door.out && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17158,7 +17155,7 @@ const Tiny5Enemies = () => {
         name: "Tiny 5DT Start Right Front Enemy",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: logicBreak(door) && feather && zinger.out
+        canGetBreak: door.out && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17168,7 +17165,7 @@ const Tiny5Enemies = () => {
         name: "Tiny 5DT Dead End Enemy 0",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: logicBreak(door) && feather && zinger.out
+        canGetBreak: door.out && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17178,7 +17175,7 @@ const Tiny5Enemies = () => {
         name: "Tiny 5DT Dead End Enemy 1",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: logicBreak(door) && feather && zinger.out
+        canGetBreak: door.out && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17188,7 +17185,7 @@ const Tiny5Enemies = () => {
         name: "Tiny 5DT Reward Enemy 0",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: logicBreak(door) && feather && zinger.out
+        canGetBreak: door.out && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17198,7 +17195,7 @@ const Tiny5Enemies = () => {
         name: "Tiny 5DT Reward Enemy 1",
         region: "5 Door Temple",
         canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: logicBreak(door) && feather && zinger.out
+        canGetBreak: door.out && feather && zinger.out
       }
     )
   ] });
@@ -17215,7 +17212,7 @@ const LlamaTempleEnemies = () => {
         name: "Enemy at Music Pad to Free Lanky",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
-        canGetBreak: logicBreak(llama) && klaptrap
+        canGetBreak: llama.out && klaptrap
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17225,7 +17222,7 @@ const LlamaTempleEnemies = () => {
         name: "Enemy at Music Pad to Raise Statues",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
-        canGetBreak: logicBreak(llama) && klaptrap
+        canGetBreak: llama.out && klaptrap
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17235,7 +17232,7 @@ const LlamaTempleEnemies = () => {
         name: "Enemy 0 in the Matching Room",
         region: "Llama Temple",
         canGetLogic: llama.in && hasGrapes,
-        canGetBreak: logicBreak(llama) && hasGrapes
+        canGetBreak: llama.out && hasGrapes
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17245,7 +17242,7 @@ const LlamaTempleEnemies = () => {
         name: "Enemy 1 in the Matching Room",
         region: "Llama Temple",
         canGetLogic: llama.in && hasGrapes,
-        canGetBreak: logicBreak(llama) && hasGrapes
+        canGetBreak: llama.out && hasGrapes
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17255,7 +17252,7 @@ const LlamaTempleEnemies = () => {
         name: "Enemy at Right of Pool",
         region: "Llama Temple",
         canGetLogic: llama.in,
-        canGetBreak: logicBreak(llama)
+        canGetBreak: llama.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17265,7 +17262,7 @@ const LlamaTempleEnemies = () => {
         name: "Enemy at Left of Pool",
         region: "Llama Temple",
         canGetLogic: llama.in,
-        canGetBreak: logicBreak(llama)
+        canGetBreak: llama.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17275,7 +17272,7 @@ const LlamaTempleEnemies = () => {
         name: "Enemy at Melon Crate",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
-        canGetBreak: logicBreak(llama) && klaptrap
+        canGetBreak: llama.out && klaptrap
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17285,7 +17282,7 @@ const LlamaTempleEnemies = () => {
         name: "Enemy at Quicksand Tunnel Opening Switch",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
-        canGetBreak: logicBreak(llama) && klaptrap
+        canGetBreak: llama.out && klaptrap
       }
     )
   ] });
@@ -17302,7 +17299,7 @@ const OasisEnemies = () => {
         name: "Enemy Near Candy's",
         region: "Aztec Main Area",
         canGetLogic: inStage.in && zinger.in,
-        canGetBreak: logicBreak(inStage) && zinger.out
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17312,7 +17309,7 @@ const OasisEnemies = () => {
         name: "Enemy Near Llama's Prison",
         region: "Aztec Main Area",
         canGetLogic: inStage.in && anyKong,
-        canGetBreak: logicBreak(inStage) && anyKong
+        canGetBreak: inStage.out && anyKong
       }
     )
   ] });
@@ -17328,7 +17325,7 @@ const TinyStartEnemies = () => {
         name: "Chunky Klaptrap Guard 0",
         region: "Tiny Temple",
         canGetLogic: tiny.in && klobber,
-        canGetBreak: logicBreak(tiny) && klobber
+        canGetBreak: tiny.out && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17338,7 +17335,7 @@ const TinyStartEnemies = () => {
         name: "Chunky Klaptrap Guard 1",
         region: "Tiny Temple",
         canGetLogic: tiny.in && klobber,
-        canGetBreak: logicBreak(tiny) && klobber
+        canGetBreak: tiny.out && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17348,7 +17345,7 @@ const TinyStartEnemies = () => {
         name: "Main Room Enemy 0",
         region: "Tiny Temple",
         canGetLogic: tiny.in,
-        canGetBreak: logicBreak(tiny)
+        canGetBreak: tiny.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17358,7 +17355,7 @@ const TinyStartEnemies = () => {
         name: "Main Room Enemy 1",
         region: "Tiny Temple",
         canGetLogic: tiny.in,
-        canGetBreak: logicBreak(tiny)
+        canGetBreak: tiny.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17368,7 +17365,7 @@ const TinyStartEnemies = () => {
         name: "Main Room Enemy 2",
         region: "Tiny Temple",
         canGetLogic: tiny.in,
-        canGetBreak: logicBreak(tiny)
+        canGetBreak: tiny.out
       }
     )
   ] });
@@ -17385,7 +17382,7 @@ const TinySwimEnemies = () => {
         name: "Tiny's Prison Guard 0",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive.in,
-        canGetBreak: logicBreak(tiny) && iceMelted && dive.out
+        canGetBreak: tiny.out && iceMelted && dive.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17395,7 +17392,7 @@ const TinySwimEnemies = () => {
         name: "Tiny's Prison Guard 1",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive.in,
-        canGetBreak: logicBreak(tiny) && iceMelted && dive.out
+        canGetBreak: tiny.out && iceMelted && dive.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17405,7 +17402,7 @@ const TinySwimEnemies = () => {
         name: "Tiny's Prison Guard 2",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive.in,
-        canGetBreak: logicBreak(tiny) && iceMelted && dive.out
+        canGetBreak: tiny.out && iceMelted && dive.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17415,7 +17412,7 @@ const TinySwimEnemies = () => {
         name: "Tiny's Prison Guard 3",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive.in,
-        canGetBreak: logicBreak(tiny) && iceMelted && dive.out
+        canGetBreak: tiny.out && iceMelted && dive.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17425,7 +17422,7 @@ const TinySwimEnemies = () => {
         name: "Tiny's Prison Guard 4",
         region: "Tiny Temple",
         canGetLogic: tiny.in && iceMelted && dive.in,
-        canGetBreak: logicBreak(tiny) && iceMelted && dive.out
+        canGetBreak: tiny.out && iceMelted && dive.out
       }
     )
   ] });
@@ -17442,7 +17439,7 @@ const TotemEnemies = () => {
         name: "Enemy Near the Llama Temple",
         region: "Aztec Main Area",
         canGetLogic: inStage.in && anyKong,
-        canGetBreak: logicBreak(inStage) && anyKong
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17452,7 +17449,7 @@ const TotemEnemies = () => {
         name: "Enemy Near the Gong Tower",
         region: "Aztec Main Area",
         canGetLogic: inStage.in && anyKong,
-        canGetBreak: logicBreak(inStage) && anyKong
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17462,7 +17459,7 @@ const TotemEnemies = () => {
         name: "Enemy in Front of Snide's",
         region: "Aztec Main Area",
         canGetLogic: inStage.in && anyKong,
-        canGetBreak: logicBreak(inStage) && anyKong
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17472,7 +17469,7 @@ const TotemEnemies = () => {
         name: "Enemy Near the Quicksand Tunnel",
         region: "Aztec Main Area",
         canGetLogic: inStage.in && anyKong,
-        canGetBreak: logicBreak(inStage) && anyKong
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17482,7 +17479,7 @@ const TotemEnemies = () => {
         name: "Enemy Near the 5DT",
         region: "Aztec Main Area",
         canGetLogic: inStage.in && zinger.in,
-        canGetBreak: logicBreak(inStage) && zinger.out
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17492,7 +17489,7 @@ const TotemEnemies = () => {
         name: "Enemy Near Funky's",
         region: "Aztec Main Area",
         canGetLogic: inStage.in && anyKong,
-        canGetBreak: logicBreak(inStage) && anyKong
+        canGetBreak: inStage.out && anyKong
       }
     )
   ] });
@@ -17981,7 +17978,7 @@ const useChunkyMedalOutLogic$5 = () => {
   const dive = useDive();
   const iceMelted = useTinyTempleIce();
   const shuffleBananas = useShuffleColoredBananas();
-  if (!logicBreak(inStage)) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -17991,20 +17988,20 @@ const useChunkyMedalOutLogic$5 = () => {
     return 100;
   }
   let bananas = 0;
-  if (logicBreak(inStage)) {
+  if (inStage.out) {
     bananas += 5;
     if (pineapple) {
       bananas += 20;
     }
-    if (logicBreak(tinyTemple)) {
+    if (tinyTemple.out) {
       bananas += 29;
       if (pineapple && iceMelted && dive) {
         bananas += 10;
       }
     }
-    if (logicBreak(aztecBack)) {
+    if (aztecBack.out) {
       bananas += 16;
-      if (logicBreak(doorTemple) && pineapple) {
+      if (doorTemple.out && pineapple) {
         bananas += 20;
       }
     }
@@ -18106,7 +18103,7 @@ const useDiddyMedalOutLogic$5 = () => {
   const crystal = useRocket();
   const dive = useDive();
   const shuffleBananas = useShuffleColoredBananas();
-  if (!logicBreak(inStage)) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -18116,12 +18113,12 @@ const useDiddyMedalOutLogic$5 = () => {
     return 100;
   }
   let bananas = 0;
-  if (logicBreak(inStage)) {
+  if (inStage.out) {
     bananas += 5;
     if (gun) {
       bananas += 10;
     }
-    if (logicBreak(tinyTemple)) {
+    if (tinyTemple.out) {
       if (canSlam) {
         bananas += 8;
         if (gun) {
@@ -18132,15 +18129,15 @@ const useDiddyMedalOutLogic$5 = () => {
         bananas += 7;
       }
     }
-    if (logicBreak(aztecBack)) {
+    if (aztecBack.out) {
       bananas += 30;
       if (crystal) {
         bananas += 10;
       }
-      if (logicBreak(doorTemple) && gun) {
+      if (doorTemple.out && gun) {
         bananas += 10;
       }
-      if (logicBreak(backTunnel) && gun) {
+      if (backTunnel.out && gun) {
         bananas += 10;
       }
     }
@@ -18229,7 +18226,7 @@ const useDkMedalOutLogic$5 = () => {
   const gun = useCoconut();
   const hasClimb = useClimbing();
   const shuffleBananas = useShuffleColoredBananas();
-  if (!logicBreak(inStage)) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -18239,22 +18236,22 @@ const useDkMedalOutLogic$5 = () => {
     return 100;
   }
   let bananas = 0;
-  if (logicBreak(inStage)) {
+  if (inStage.out) {
     bananas += 3;
     if (hasClimb) {
       bananas += 15;
     }
-    if (logicBreak(kasplat)) {
+    if (kasplat.out) {
       bananas += 10;
     }
-    if (logicBreak(aztecBack)) {
+    if (aztecBack.out) {
       bananas += 7;
       if (gun) {
         bananas += 30;
       }
-      if (logicBreak(llamaTemple)) {
+      if (llamaTemple.out) {
         bananas += 15;
-        if (logicBreak(backTunnel)) {
+        if (backTunnel.out) {
           bananas += 20;
         }
       }
@@ -18316,7 +18313,7 @@ const useLankyMedalInLogic$5 = () => {
   let bananas = 0;
   if (inStage.in) {
     bananas += 5;
-    if (tinyTemple.in && iceMelted && dive) {
+    if (tinyTemple.in && iceMelted && dive.in) {
       bananas += 14;
     }
     if (aztecBack.in) {
@@ -18332,7 +18329,7 @@ const useLankyMedalInLogic$5 = () => {
         if (gun && vine) {
           bananas += 5;
         }
-        if (anyMusic && dive && gun) {
+        if (anyMusic && dive.in && gun) {
           bananas += 20;
         }
       }
@@ -18355,7 +18352,7 @@ const useLankyMedalOutLogic$5 = () => {
   const hasClimb = useClimbing();
   const hasJetbarrel = useRocket();
   const shuffleBananas = useShuffleColoredBananas();
-  if (!logicBreak(inStage)) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -18365,25 +18362,25 @@ const useLankyMedalOutLogic$5 = () => {
     return 100;
   }
   let bananas = 0;
-  if (logicBreak(inStage)) {
+  if (inStage.out) {
     bananas += 5;
-    if (logicBreak(tinyTemple) && iceMelted && dive) {
+    if (tinyTemple.out && iceMelted && dive.out) {
       bananas += 14;
     }
-    if (logicBreak(aztecBack)) {
+    if (aztecBack.out) {
       bananas += 15;
       if (hasClimb || hasJetbarrel) {
         bananas += 20;
       }
-      if (logicBreak(doorTemple) && gun) {
+      if (doorTemple.out && gun) {
         bananas += 10;
       }
-      if (logicBreak(llamaTemple)) {
+      if (llamaTemple.out) {
         bananas += 11;
         if (gun && vine) {
           bananas += 5;
         }
-        if (anyMusic && dive && gun) {
+        if (anyMusic && dive.out && gun) {
           bananas += 20;
         }
       }
@@ -18445,7 +18442,7 @@ const useTinyMedalInLogic$5 = () => {
   }
   let bananas = 0;
   if (inStage.in) {
-    if (tinyTemple.in && iceMelted && dive) {
+    if (tinyTemple.in && iceMelted && dive.in) {
       if (gun) {
         bananas += 20;
       }
@@ -18487,7 +18484,7 @@ const useTinyMedalOutLogic$5 = () => {
   const dive = useDive();
   const kuruKuru = useTwirl();
   const shuffleBananas = useShuffleColoredBananas();
-  if (!logicBreak(inStage)) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -18497,8 +18494,8 @@ const useTinyMedalOutLogic$5 = () => {
     return 100;
   }
   let bananas = 0;
-  if (logicBreak(inStage)) {
-    if (logicBreak(tinyTemple) && iceMelted && dive) {
+  if (inStage.out) {
+    if (tinyTemple.out && iceMelted && dive.out) {
       if (gun) {
         bananas += 20;
       }
@@ -18506,18 +18503,18 @@ const useTinyMedalOutLogic$5 = () => {
         bananas += 5;
       }
     }
-    if (logicBreak(aztecBack)) {
+    if (aztecBack.out) {
       bananas += 40;
       if (kuruKuru) {
         bananas += 10;
       }
     }
-    if (logicBreak(llamaTemple)) {
+    if (llamaTemple.out) {
       bananas += 3;
       if (gun) {
         bananas += 10;
       }
-      if (logicBreak(lava)) {
+      if (lava.out) {
         bananas += 12;
       }
     }
@@ -19102,7 +19099,7 @@ const useDiddyStorageGb = () => {
   const twirl = useTwirl();
   return {
     in: hut.in && canSlam && diddy && (autoBonus || vine),
-    out: logicBreak(hut) && canSlam && diddy && (autoBonus || vine || dk2 || chunky || twirl)
+    out: hut.out && canSlam && diddy && (autoBonus || vine || dk2 || chunky || twirl)
   };
 };
 const useDiddyProductionGb = () => {
@@ -21344,17 +21341,17 @@ const useChunkyMedalCommonLogic$1 = () => {
   const gun = usePineapple();
   const dive = useDive();
   let bananas = 12;
-  if (lighthouseArea && dive) {
+  if (lighthouseArea.in && dive.in || lighthouseArea.out && dive.out) {
     bananas += 10;
   }
-  if (outskirts) {
+  if (outskirts.in || outskirts.out) {
     if (gun) {
       bananas += 20;
     }
-    if (dive) {
+    if (dive.in || dive.out) {
       bananas += 15;
     }
-    if (highTide) {
+    if (highTide.in || highTide.out) {
       bananas += 5;
     }
   }
@@ -21371,7 +21368,7 @@ const useChunkyMedalInLogic$3 = () => {
   const move = usePunch();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useChunkyMedalCommonLogic$1();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -21383,7 +21380,7 @@ const useChunkyMedalInLogic$3 = () => {
   if (cavernTop.in) {
     bananas += 3;
   }
-  if (cannon && highTide) {
+  if (cannon.in && highTide.in) {
     bananas += 10;
   }
   if (seasick.in && slam) {
@@ -21404,7 +21401,7 @@ const useChunkyMedalOutLogic$3 = () => {
   const move = usePunch();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useChunkyMedalCommonLogic$1();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -21413,13 +21410,13 @@ const useChunkyMedalOutLogic$3 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (logicBreak(cavernTop)) {
+  if (cavernTop.out) {
     bananas += 3;
   }
-  if (cannon) {
+  if (cannon.out) {
     bananas += 10;
   }
-  if (logicBreak(seasick) && slam) {
+  if (seasick.out && slam) {
     bananas += 20;
     if (move) {
       bananas += 5;
@@ -21461,11 +21458,11 @@ const useDiddyMedalCommonLogic$3 = () => {
   const music = useGuitar();
   const dive = useDive();
   let bananas = 10;
-  if (outskirts) {
+  if (outskirts.in || outskirts.out) {
     if (gun) {
       bananas += 10;
     }
-    if (dive) {
+    if (dive.in || dive.out) {
       bananas += 36;
       if (music) {
         bananas += 14;
@@ -21483,7 +21480,7 @@ const useDiddyMedalInLogic$3 = () => {
   const crystal = useRocket();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDiddyMedalCommonLogic$3();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -21514,7 +21511,7 @@ const useDiddyMedalOutLogic$3 = () => {
   const crystal = useRocket();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDiddyMedalCommonLogic$3();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -21523,10 +21520,10 @@ const useDiddyMedalOutLogic$3 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (logicBreak(treasureRoom) && gun) {
+  if (treasureRoom.out && gun) {
     bananas += 10;
   }
-  if (logicBreak(lighthousePlatform)) {
+  if (lighthousePlatform.out) {
     if (gun) {
       bananas += 10;
     }
@@ -22355,7 +22352,7 @@ const useDkBarnGb = () => {
   const autoFinishBonuses = useAutoBonus();
   return {
     in: barn.in && (climbing && vine || autoFinishBonuses),
-    out: logicBreak(barn)
+    out: barn.out
   };
 };
 const useLankyMillGb = () => {
@@ -22377,7 +22374,7 @@ const useLankyMushGb = () => {
   const canSlam = useSlamForest();
   return {
     in: roof.in && lanky && canSlam,
-    out: logicBreak(roof) && lanky && canSlam
+    out: roof.out && lanky && canSlam
   };
 };
 const useLankyRaceGb$1 = () => {
@@ -22415,7 +22412,7 @@ const useTinySpiderGb = () => {
   const kong = useFtaTinyBanana();
   return {
     in: kong && spider.in && anyGun,
-    out: kong && logicBreak(spider) && anyGun
+    out: kong && spider.out && anyGun
   };
 };
 const useTinyBeanGb = () => {
@@ -22784,7 +22781,7 @@ const MillsEnemies = () => {
         name: "Enemy in the Front Mill",
         region: "Forest Area 1",
         canGetLogic: day.in && zinger.in,
-        canGetBreak: logicBreak(day) && zinger.out
+        canGetBreak: day.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22794,7 +22791,7 @@ const MillsEnemies = () => {
         name: "Enemy in the Back Mill",
         region: "Forest Area 1",
         canGetLogic: day.in && (punch || hasMiniMonkey) && zinger.in,
-        canGetBreak: logicBreak(day) && (punch || hasMiniMonkey) && zinger.out
+        canGetBreak: day.out && (punch || hasMiniMonkey) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22851,7 +22848,7 @@ const MillsEnemies = () => {
         name: "Enemy Inside Thornvine Barn",
         region: "Forest Area 1",
         canGetLogic: night.in && strong && canSlam && kosha.in,
-        canGetBreak: logicBreak(night) && dk2 && canSlam && kosha.out
+        canGetBreak: night.out && dk2 && canSlam && kosha.out
       }
     )
   ] });
@@ -23067,7 +23064,8 @@ const MushInteriorEnemies = () => {
         id: 5336,
         name: "Enemy Near the Mushroom Night Door",
         region: "Inside the Giant Mushroom",
-        canGetLogic: inStage && klump
+        canGetLogic: inStage.in && klump,
+        canGetBreak: inStage.out && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23076,8 +23074,8 @@ const MushInteriorEnemies = () => {
         id: 5337,
         name: "Enemy Near Kasplat 0",
         region: "Inside the Giant Mushroom",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23086,8 +23084,8 @@ const MushInteriorEnemies = () => {
         id: 5338,
         name: "Enemy Near Kasplat 1",
         region: "Inside the Giant Mushroom",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23097,7 +23095,7 @@ const MushInteriorEnemies = () => {
         name: "Enemy 0 in Lanky's Mushroom Bounce Room",
         region: "Inside the Giant Mushroom",
         canGetLogic: roof.in && lanky && canSlam && zinger.in,
-        canGetBreak: logicBreak(roof) && lanky && canSlam && zinger.out
+        canGetBreak: roof.out && lanky && canSlam && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23107,7 +23105,7 @@ const MushInteriorEnemies = () => {
         name: "Enemy 1 in Lanky's Mushroom Bounce Room",
         region: "Inside the Giant Mushroom",
         canGetLogic: roof.in && lanky && canSlam && zinger.in,
-        canGetBreak: logicBreak(roof) && lanky && canSlam && zinger.out
+        canGetBreak: roof.out && lanky && canSlam && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23116,8 +23114,8 @@ const MushInteriorEnemies = () => {
         id: 5341,
         name: "Enemy in Chunky's Face Puzzle Room",
         region: "Inside the Giant Mushroom",
-        canGetLogic: inStage && chunky && canSlam && zinger.in,
-        canGetBreak: inStage && chunky && canSlam && zinger.out
+        canGetLogic: inStage.in && chunky && canSlam && zinger.in,
+        canGetBreak: inStage.out && chunky && canSlam && zinger.out
       }
     )
   ] });
@@ -23676,7 +23674,7 @@ const useChunkyMedalCommonLogic = () => {
   const top = useForestMushroomTop();
   const gun = usePineapple();
   let bananas = 40;
-  if (top) {
+  if (top.in || top.out) {
     bananas += 11;
     if (gun) {
       bananas += 10;
@@ -23688,7 +23686,7 @@ const useChunkyMedalCommonLogic = () => {
       }
     }
   }
-  if (bean) {
+  if (bean.in || bean.out) {
     bananas += 14;
   }
   return bananas;
@@ -23703,7 +23701,7 @@ const useChunkyMedalInLogic$2 = () => {
   const vine = useVine();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useChunkyMedalCommonLogic();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -23712,7 +23710,7 @@ const useChunkyMedalInLogic$2 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (night.in && top && vine) {
+  if (night.in && top.in && vine) {
     bananas += 5;
   }
   if (day.in && kong && move) {
@@ -23730,7 +23728,7 @@ const useChunkyMedalOutLogic$2 = () => {
   const vine = useVine();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useChunkyMedalCommonLogic();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -23739,10 +23737,10 @@ const useChunkyMedalOutLogic$2 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (logicBreak(night) && top && vine) {
+  if (night.out && top.out && vine) {
     bananas += 5;
   }
-  if (logicBreak(day) && kong && move) {
+  if (day.out && kong && move) {
     bananas += 5;
   }
   return bananas;
@@ -23780,10 +23778,10 @@ const useDiddyMedalCommonLogic$2 = () => {
   const owl = useForestOwl();
   const crystal = useRocket();
   let bananas = 35;
-  if (top) {
+  if (top.in || top.out) {
     bananas += 10;
   }
-  if (owl) {
+  if (owl.in || owl.out) {
     bananas += 15;
     if (crystal) {
       bananas += 5;
@@ -23802,7 +23800,7 @@ const useDiddyMedalInLogic$2 = () => {
   const pad = useSpring();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDiddyMedalCommonLogic$2();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -23838,7 +23836,7 @@ const useDiddyMedalOutLogic$2 = () => {
   const pad = useSpring();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDiddyMedalCommonLogic$2();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -23847,10 +23845,10 @@ const useDiddyMedalOutLogic$2 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (logicBreak(day) && gun) {
+  if (day.out && gun) {
     bananas += 10;
   }
-  if (logicBreak(night)) {
+  if (night.out) {
     if (pad || grab) {
       bananas += 15;
     }
@@ -24719,7 +24717,7 @@ const useLankyCabinGb = () => {
   const diddy = useDiddy();
   return {
     in: cabin.in && balloon && sprint,
-    out: logicBreak(cabin) && (balloon && sprint || dk2 || diddy)
+    out: cabin.out && (balloon && sprint || dk2 || diddy)
   };
 };
 const useTinyCaveGb = () => {
@@ -25843,7 +25841,7 @@ const useLankyMedalInLogic$1 = () => {
     if (pillar.in) {
       bananas += 20;
     }
-    if (igloo && music && pad) {
+    if (igloo.in && music && pad) {
       bananas += 4;
     }
     return bananas;
@@ -25872,10 +25870,10 @@ const useLankyMedalOutLogic$1 = () => {
     if (canSlam) {
       bananas += 15;
     }
-    if (logicBreak(pillar)) {
+    if (pillar.out) {
       bananas += 20;
     }
-    if (igloo && music && highGrab) {
+    if (igloo.out && music && highGrab) {
       bananas += 4;
     }
     return bananas;
@@ -28435,7 +28433,7 @@ const useHelmDoors = () => {
   const helmAccess = useHelmStartPosition();
   return {
     in: inLevel.in && entry && (helmAccess == 2 || anyMusic && (helmAccess == 1 || machine.in && grab && rocket && punch)),
-    out: inLevel.out && entry && logicBreak(machine) && grab && rocket && punch
+    out: inLevel.out && entry && machine.out && grab && rocket && punch
   };
 };
 const useCanDeactivateHelm = () => {
