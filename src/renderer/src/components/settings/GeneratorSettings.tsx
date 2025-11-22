@@ -44,7 +44,6 @@ import featherIcon from '../../assets/images/tiny_gun.png'
 import wrinkly from '../../assets/images/wrinkly.png'
 import diveIcon from '../../assets/images/diving.png'
 import koshaHead from '../../assets/images/kosha.png'
-import portalIcon from '../../assets/images/dk-portal.png'
 
 const customStyles: Modal.Styles = {
   content: {

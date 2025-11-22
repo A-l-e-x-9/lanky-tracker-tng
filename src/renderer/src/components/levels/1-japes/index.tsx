@@ -21,7 +21,6 @@ import LankyMedal from './medals/LankyMedal'
 import TinyMedal from './medals/TinyMedal'
 import JapesRegionChecks from './regions'
 import JapesShops from './shops'
-import PortalSelector from './portals'
 
 const ClassicChecks: React.FC = () => (
   <div className="grid">
