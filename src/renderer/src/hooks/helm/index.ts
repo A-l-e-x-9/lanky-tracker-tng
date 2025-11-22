@@ -17,7 +17,7 @@ import {
   useVine
 } from '../kongs'
 import { useHelmStartPosition } from '../settings'
-import { LogicBool, logicBreak } from '../world'
+import { LogicBool } from '../world'
 
 /**
  * Can we play in Hideout Helm?
@@ -85,7 +85,7 @@ export const useHelmDoors = (): LogicBool => {
       inLevel.in && entry &&
       (helmAccess == 2 ||
         (anyMusic && (helmAccess == 1 || (machine.in && grab && rocket && punch)))),
-    out: inLevel.out && entry && logicBreak(machine) && grab && rocket && punch
+    out: inLevel.out && entry.out && machine.out && grab && rocket && punch
   }
 }
 
