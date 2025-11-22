@@ -1,6 +1,5 @@
 import { useDiddy, useDive, useGuitar, usePeanut, useRocket } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { logicBreak } from '@renderer/hooks/world'
 import {
   useGalleonLighthousePlatform,
   useGalleonOutskirts,
@@ -16,12 +15,12 @@ const useDiddyMedalCommonLogic = (): number => {
 
   // Cranky Cannon
   let bananas = 10
-  if (outskirts) {
+  if (outskirts.in || outskirts.out) {
     if (gun) {
       // Balloon by Instrument Cactus
       bananas += 10
     }
-    if (dive) {
+    if (dive.in || dive.out) {
       // 20 by Mech Fish Grate, 10 on 2 Door Ship Floor, 6 to Treasure Room
       bananas += 36
       if (music) {
@@ -44,7 +43,7 @@ export const useDiddyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDiddyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -80,7 +79,7 @@ export const useDiddyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDiddyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -90,10 +89,10 @@ export const useDiddyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (logicBreak(treasureRoom) && gun) {
+  if (treasureRoom.out && gun) {
     bananas += 10
   }
-  if (logicBreak(lighthousePlatform)) {
+  if (lighthousePlatform.out) {
     if (gun) {
       bananas += 10
     }

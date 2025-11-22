@@ -29,13 +29,6 @@ export type LogicBool = {
   out?: boolean
 }
 
-/**
- * Is this current check available in any fashion, even if out of logic?
- * @param check The current logical check to analyze.
- * @returns true if this check can be completed with either in-logic or out-of-logic options.
- */
-export const logicBreak = (check: LogicBool): boolean => check.in || check.out!
-
 export const useSwitchsanityMusicPad = (
   id: keyof SwitchsanitySwitches,
   normal: number
