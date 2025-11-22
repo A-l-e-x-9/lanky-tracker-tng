@@ -7,7 +7,6 @@ import {
   useSpring
 } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { logicBreak } from '@renderer/hooks/world'
 import {
   useForestDay,
   useForestMushroomTop,
@@ -23,10 +22,10 @@ const useDiddyMedalCommonLogic = (): number => {
   const crystal = useRocket()
 
   let bananas = 35 // mushroom bounces (20), warp 4 intro (5), interior kasplat (7), rafters ground (3)
-  if (top) {
+  if (top.in || top.out) {
     bananas += 10 // mushroom top
   }
-  if (owl) {
+  if (owl.in || owl.out) {
     bananas += 15 // 10 singles around owl tree, bunch on warp 4
     if (crystal) {
       bananas += 5 // bunch on top of owl tree
@@ -47,7 +46,7 @@ export const useDiddyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDiddyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -87,7 +86,7 @@ export const useDiddyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDiddyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -97,10 +96,10 @@ export const useDiddyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (logicBreak(day) && gun) {
+  if (day.out && gun) {
     bananas += 10 // Snide's Balloon
   }
-  if (logicBreak(night)) {
+  if (night.out) {
     if (pad || grab) {
       bananas += 15 // outside and inside rafters.
     }

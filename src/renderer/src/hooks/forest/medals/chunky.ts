@@ -1,6 +1,5 @@
 import { useChunky, usePineapple, usePunch, useVine } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { logicBreak } from '@renderer/hooks/world'
 import {
   useForestBean,
   useForestDay,
@@ -17,7 +16,7 @@ const useChunkyMedalCommonLogic = (): number => {
   const gun = usePineapple()
 
   let bananas = 40 // warp 2 (5), mine (5), low mushroom (16), high mushroom until vine (14)
-  if (top) {
+  if (top.in || top.out) {
     bananas += 11 // high mushroom past vine
     if (gun) {
       bananas += 10 // balloon by night Kasplat
@@ -29,7 +28,7 @@ const useChunkyMedalCommonLogic = (): number => {
       }
     }
   }
-  if (bean) {
+  if (bean.in || bean.out) {
     bananas += 14 // bean area
   }
   return bananas
@@ -46,7 +45,7 @@ export const useChunkyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useChunkyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -56,7 +55,7 @@ export const useChunkyMedalInLogic = (): number => {
     return 100
   }
 
-  if (night.in && top && vine) {
+  if (night.in && top.in && vine) {
     bananas += 5 // bunch by night door in mushroom
   }
   if (day.in && kong && move) {
@@ -77,7 +76,7 @@ export const useChunkyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useChunkyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -87,10 +86,10 @@ export const useChunkyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (logicBreak(night) && top && vine) {
+  if (night.out && top.out && vine) {
     bananas += 5 // bunch by night door in mushroom
   }
-  if (logicBreak(day) && kong && move) {
+  if (day.out && kong && move) {
     bananas += 5 // mills back (needs punch)
   }
 

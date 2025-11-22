@@ -19,17 +19,17 @@ const useChunkyMedalCommonLogic = (): number => {
   const dive = useDive()
 
   let bananas = 12
-  if (lighthouseArea && dive) {
+  if ((lighthouseArea.in && dive.in) || (lighthouseArea.out && dive.out)) {
     bananas += 10
   }
-  if (outskirts) {
+  if (outskirts.in || outskirts.out) {
     if (gun) {
       bananas += 20
     }
-    if (dive) {
+    if (dive.in || dive.out) {
       bananas += 15
     }
-    if (highTide) {
+    if (highTide.in || highTide.out) {
       bananas += 5
     }
   }
@@ -48,7 +48,7 @@ export const useChunkyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useChunkyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -61,7 +61,7 @@ export const useChunkyMedalInLogic = (): number => {
   if (cavernTop.in) {
     bananas += 3
   }
-  if (cannon && highTide) {
+  if (cannon.in && highTide.in) {
     bananas += 10
   }
   if (seasick.in && slam) {
@@ -84,7 +84,7 @@ export const useChunkyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useChunkyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -94,13 +94,13 @@ export const useChunkyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (logicBreak(cavernTop)) {
+  if (cavernTop.out) {
     bananas += 3
   }
-  if (cannon) {
+  if (cannon.out) {
     bananas += 10
   }
-  if (logicBreak(seasick) && slam) {
+  if (seasick.out && slam) {
     bananas += 20
     if (move) {
       bananas += 5
