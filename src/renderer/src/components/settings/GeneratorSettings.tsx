@@ -44,6 +44,7 @@ import featherIcon from '../../assets/images/tiny_gun.png'
 import wrinkly from '../../assets/images/wrinkly.png'
 import diveIcon from '../../assets/images/diving.png'
 import koshaHead from '../../assets/images/kosha.png'
+import portalIcon from '../../assets/images/dk-portal.png'
 
 const customStyles: Modal.Styles = {
   content: {
@@ -337,7 +338,7 @@ const GeneratorSettings: React.FC = () => {
               </>
             <h3>Location Shuffle Settings</h3>
             <>
-            <p className="full-grid"><strong>NOW UNDER (RE-)CONSTRUCTION</strong></p>
+            <p className="full-grid"><strong>NOW UNDER (RE-)KONSTRUCTION.</strong></p>
             </>
             <h3>Fast Barrier Settings</h3>
             <>

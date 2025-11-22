@@ -46,7 +46,7 @@ export const initialSettings: SettingState = {
     poolBoulders: true,
     betaLankyPhase: false,
     waterIsLava: false,
-    angyKosha: false
+    angyKosha: false,
   }
 }
 

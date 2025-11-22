@@ -19,10 +19,10 @@ const useDiddyMedalCommonLogic = (): number => {
   if (climbing || bananaport) {
     bananas += 7 //around mine (7)
   }
-  if (dive) {
+  if (dive.in || dive.out) {
     bananas += 10 // bunches in water (10)
   }
-  if (sideArea && gun) {
+  if ((sideArea.in || sideArea.out) && gun) {
     bananas += 10 // initial side tunnel (normally peanut locked)
   }
   if (gun && (climbing || bananaport)) {
@@ -32,9 +32,9 @@ const useDiddyMedalCommonLogic = (): number => {
     }
   }
 
-  if (kongGates) {
+  if (kongGates.in || kongGates.out) {
     bananas += 3 // freebies by Kasplat
-    if (haveRambiCage) {
+    if (haveRambiCage.in || haveRambiCage.out) {
       bananas += 5 // in hut
     }
   }
@@ -53,7 +53,7 @@ export const useDiddyMedalInLogic = (): number => {
   const bananaport = useBananaportAll()
   let bananas = useDiddyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -80,7 +80,7 @@ export const useDiddyMedalOutLogic = (): number => {
   const bananaport = useBananaportAll()
   let bananas = useDiddyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {

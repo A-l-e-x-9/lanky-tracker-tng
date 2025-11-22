@@ -20,7 +20,7 @@ const useChunkyMedalCommonLogic = (): number => {
   const bananaport = useBananaportAll()
   const shuffleBananas = useShuffleColoredBananas()
 
-  if (!inStage) {
+  if (!inStage.in || !inStage.out) {
     return 0
   }
   if (!kong) {
@@ -34,16 +34,16 @@ const useChunkyMedalCommonLogic = (): number => {
   if (climbing || bananaport) {
     bananas += 10 //Funky's roof (10)
   }
-  if (underground) {
+  if (underground.in || underground.out) {
     bananas += 15 // visible in underground
   }
 
-  if (kongGates) {
+  if (kongGates.in || kongGates.out) {
     bananas += 10 //10 regular bananas on path to hive.
     if (climbing) {
       bananas += 5 //one bunch on top of Cranky's
     }
-    if (haveRambiCage) {
+    if (haveRambiCage.in || haveRambiCage.out) {
       if (gun) {
         bananas += 30 // balloons behind Rambi
       }
@@ -65,7 +65,7 @@ export const useChunkyMedalInLogic = (): number => {
   const climbing = useClimbing()
   let bananas = useChunkyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -75,7 +75,7 @@ export const useChunkyMedalInLogic = (): number => {
     return 100
   }
 
-  if (hiveGate && crystal && climbing) {
+  if (hiveGate.in && crystal && climbing) {
     bananas += 20 // big trees
   }
 
@@ -90,7 +90,7 @@ export const useChunkyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useChunkyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -100,7 +100,7 @@ export const useChunkyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (hiveGate && crystal) {
+  if (hiveGate.out && crystal) {
     bananas += 20 // big trees
   }
 
