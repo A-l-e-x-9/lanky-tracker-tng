@@ -25,16 +25,16 @@ const useLankyMedalCommonLogic = (): number => {
   if (dive) {
     bananas += 5 // water separating lowlands & hillside
   }
-  if (sideArea && gun) {
+  if ((sideArea.in || sideArea.out) && gun) {
     bananas += 5 // lanky's barrel cage
   }
 
-  if (kongGates) {
+  if (kongGates.in || kongGates.out) {
     bananas += 6 // low slopes in Stormy Tunnel
     if (gun) {
       bananas += 20 // balloons by Blue Kasplat & hut
     }
-    if (haveRambiCage) {
+    if (haveRambiCage.in || haveRambiCage.out) {
       bananas += 10 // hut & rambi wall
     }
   }
@@ -53,7 +53,7 @@ export const useLankyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useLankyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -73,7 +73,7 @@ export const useLankyMedalInLogic = (): number => {
     }
   }
 
-  if (kongGates && move) {
+  if (kongGates.in && move) {
     bananas += 11 // slopes with bonus barrel
   }
 
@@ -90,7 +90,7 @@ export const useLankyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useLankyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -100,16 +100,16 @@ export const useLankyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (logicBreak(japesPaintingOutside)) {
+  if (japesPaintingOutside.out) {
     bananas += 3
-    if (logicBreak(japesPaintingInside)) {
+    if (japesPaintingInside.out) {
       bananas += 20
       if (gun) {
         bananas += 10
       }
     }
   }
-  if (kongGates) {
+  if (kongGates.out) {
     bananas += 11 // slope barrel
   }
 
