@@ -42,7 +42,7 @@ import {
   useClimbing
 } from '../kongs'
 import { useAutoBonus, useBananaportAll } from '../settings'
-import { LogicBool, logicBreak } from '../world'
+import { LogicBool } from '../world'
 
 /**
  * Can we play in Frantic Factory?
@@ -200,7 +200,7 @@ export const useDiddyStorageGb = (): LogicBool => {
   const twirl = useTwirl()
   return {
     in: hut.in && canSlam && diddy && (autoBonus || vine),
-    out: logicBreak(hut) && canSlam && diddy && (autoBonus || vine || dk || chunky || twirl)
+    out: hut.out && canSlam && diddy && (autoBonus || vine || dk || chunky || twirl)
   }
 }
 
