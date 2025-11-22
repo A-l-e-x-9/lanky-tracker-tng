@@ -1,6 +1,5 @@
 import { useBalloon, useGrape, useHighGrab, useLanky, useTrombone } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas, useAngryCaves } from '@renderer/hooks/settings'
-import { logicBreak } from '@renderer/hooks/world'
 import { useCavesIgloo, useCavesPillar, usePlayCaves, useSlamCaves } from '..'
 
 const useLankyMedalCommonLogic = (): number => {
@@ -53,7 +52,7 @@ export const useLankyMedalInLogic = (): number => {
   if (pillar.in) {
     bananas += 20
   }
-  if (igloo && music && pad) {
+  if (igloo.in && music && pad) {
     bananas += 4
   }
 
@@ -85,10 +84,10 @@ export const useLankyMedalOutLogic = (): number => {
   if (canSlam) {
     bananas += 15
   }
-  if (logicBreak(pillar)) {
+  if (pillar.out) {
     bananas += 20
   }
-  if (igloo && music && highGrab) {
+  if (igloo.out && music && highGrab) {
     bananas += 4
   }
 

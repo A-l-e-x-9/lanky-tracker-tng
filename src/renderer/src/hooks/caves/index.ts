@@ -44,7 +44,7 @@ import {
   useChunky
 } from '../kongs'
 import { useBananaportAll, useHardShooting, useAngryCaves } from '../settings'
-import { LogicBool, logicBreak } from '../world'
+import { LogicBool } from '../world'
 
 /**
  * Can we play in Crystal Caves?
@@ -343,7 +343,7 @@ export const useLankyCabinGb = (): LogicBool => {
   const diddy = useDiddy()
   return {
     in: cabin.in && balloon && sprint,
-    out: logicBreak(cabin) && ((balloon && sprint) || dk || diddy)
+    out: cabin.out && ((balloon && sprint) || dk || diddy)
   }
 }
 
