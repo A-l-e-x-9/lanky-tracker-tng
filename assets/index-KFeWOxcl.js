@@ -15733,15 +15733,15 @@ const useLankyMedalCommonLogic$5 = () => {
   if (dive) {
     bananas += 5;
   }
-  if (sideArea && gun) {
+  if ((sideArea.in || sideArea.out) && gun) {
     bananas += 5;
   }
-  if (kongGates) {
+  if (kongGates.in || kongGates.out) {
     bananas += 6;
     if (gun) {
       bananas += 20;
     }
-    if (haveRambiCage) {
+    if (haveRambiCage.in || haveRambiCage.out) {
       bananas += 10;
     }
   }
@@ -15757,7 +15757,7 @@ const useLankyMedalInLogic$6 = () => {
   const move = useStand();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic$5();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -15775,7 +15775,7 @@ const useLankyMedalInLogic$6 = () => {
       }
     }
   }
-  if (kongGates && move) {
+  if (kongGates.in && move) {
     bananas += 11;
   }
   return bananas;
@@ -15789,7 +15789,7 @@ const useLankyMedalOutLogic$6 = () => {
   const gun = useGrape();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic$5();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -15798,16 +15798,16 @@ const useLankyMedalOutLogic$6 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (logicBreak(japesPaintingOutside)) {
+  if (japesPaintingOutside.out) {
     bananas += 3;
-    if (logicBreak(japesPaintingInside)) {
+    if (japesPaintingInside.out) {
       bananas += 20;
       if (gun) {
         bananas += 10;
       }
     }
   }
-  if (kongGates) {
+  if (kongGates.out) {
     bananas += 11;
   }
   return bananas;
