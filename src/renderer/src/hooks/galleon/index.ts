@@ -39,7 +39,7 @@ import {
   useClimbing
 } from '../kongs'
 import { useBananaportAll, useGalleonTideStartHigh } from '../settings'
-import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
+import { LogicBool, useSwitchsanityGun } from '../world'
 
 /**
  * Can we play in Gloomy Galleon?
@@ -303,7 +303,7 @@ export const useDiddyGoldGb = (): LogicBool => {
   const highGrab = useHighGrab()
   return {
     in: treasure.in && spring,
-    out: useFtaDiddyBanana() && logicBreak(treasure) && (spring || highGrab)
+    out: useFtaDiddyBanana() && treasure.out && (spring || highGrab)
   }
 }
 
@@ -373,7 +373,7 @@ export const useLankyGoldGb = (): LogicBool => {
   const highGrab = useHighGrab()
   return {
     in: treasure.in && balloon,
-    out: useFtaLankyBanana() && logicBreak(treasure) && (balloon || highGrab)
+    out: useFtaLankyBanana() && treasure.out && (balloon || highGrab)
   }
 }
 
@@ -525,7 +525,7 @@ export const useTreasureKasplat = (): LogicBool => {
   const dk = useFtaDkBlueprint()
   return {
     in: dk && treasure.in && spring,
-    out: dk && logicBreak(treasure) && (spring || highGrab)
+    out: dk && treasure.out && (spring || highGrab)
   }
 }
 
