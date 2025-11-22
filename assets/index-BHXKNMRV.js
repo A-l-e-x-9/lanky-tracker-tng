@@ -15383,7 +15383,7 @@ const useChunkyMedalCommonLogic$2 = () => {
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
   const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage) {
+  if (!inStage.in || !inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -15396,15 +15396,15 @@ const useChunkyMedalCommonLogic$2 = () => {
   if (climbing || bananaport) {
     bananas += 10;
   }
-  if (underground) {
+  if (underground.in || underground.out) {
     bananas += 15;
   }
-  if (kongGates) {
+  if (kongGates.in || kongGates.out) {
     bananas += 10;
     if (climbing) {
       bananas += 5;
     }
-    if (haveRambiCage) {
+    if (haveRambiCage.in || haveRambiCage.out) {
       if (gun) {
         bananas += 30;
       }
@@ -15423,7 +15423,7 @@ const useChunkyMedalInLogic$6 = () => {
   const shuffleBananas = useShuffleColoredBananas();
   const climbing = useClimbing();
   let bananas = useChunkyMedalCommonLogic$2();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -15432,7 +15432,7 @@ const useChunkyMedalInLogic$6 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (hiveGate && crystal && climbing) {
+  if (hiveGate.in && crystal && climbing) {
     bananas += 20;
   }
   return bananas;
@@ -15444,7 +15444,7 @@ const useChunkyMedalOutLogic$6 = () => {
   const crystal = useHunky();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useChunkyMedalCommonLogic$2();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -15453,7 +15453,7 @@ const useChunkyMedalOutLogic$6 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (hiveGate && crystal) {
+  if (hiveGate.out && crystal) {
     bananas += 20;
   }
   return bananas;
@@ -15502,10 +15502,10 @@ const useDiddyMedalCommonLogic$5 = () => {
   if (climbing || bananaport) {
     bananas += 7;
   }
-  if (dive) {
+  if (dive.in || dive.out) {
     bananas += 10;
   }
-  if (sideArea && gun) {
+  if ((sideArea.in || sideArea.out) && gun) {
     bananas += 10;
   }
   if (gun && (climbing || bananaport)) {
@@ -15514,9 +15514,9 @@ const useDiddyMedalCommonLogic$5 = () => {
       bananas += 15;
     }
   }
-  if (kongGates) {
+  if (kongGates.in || kongGates.out) {
     bananas += 3;
-    if (haveRambiCage) {
+    if (haveRambiCage.in || haveRambiCage.out) {
       bananas += 5;
     }
   }
@@ -15532,7 +15532,7 @@ const useDiddyMedalInLogic$6 = () => {
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
   let bananas = useDiddyMedalCommonLogic$5();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -15555,7 +15555,7 @@ const useDiddyMedalOutLogic$6 = () => {
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
   let bananas = useDiddyMedalCommonLogic$5();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -30393,7 +30393,7 @@ const GeneratorSettings = () => {
               )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Location Shuffle Settings" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "NOW UNDER (RE-)CONSTRUCTION" }) }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "NOW UNDER (RE-)KONSTRUCTION." }) }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fast Barrier Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Japes Tunnel Gates?" }),
