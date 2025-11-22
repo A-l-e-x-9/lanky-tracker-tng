@@ -536,8 +536,8 @@ export const useCheckDkMusicPad = (): LogicBool => {
   const diddy = useDiddy()
   const tiny = useTiny()
   return {
-    in: playFactory && bongos && grab,
-    out: playFactory && bongos && (diddy || tiny)
+    in: playFactory.in && bongos && grab,
+    out: playFactory.out && bongos && (diddy || tiny)
   }
 }
 
@@ -831,11 +831,14 @@ export const useFactoryFairy = (): boolean => {
   return factory && punch && camera
 }
 
-export const useForestFairy = (): boolean => {
+export const useForestFairy = (): LogicBool => {
   const forest = usePlayLobby('Fungi Forest')
   const camera = useCamera()
   const islesSwitch = useIslesFairySwitch()
-  return forest && camera && islesSwitch
+  return {
+    in: forest.in && camera && islesSwitch,
+    out: forest.out && camera && islesSwitch
+  }
 }
 
 export const useKremFairy = (): boolean => {
