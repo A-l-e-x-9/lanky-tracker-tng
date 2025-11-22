@@ -11711,8 +11711,8 @@ const useCheckDkMusicPad = () => {
   const diddy = useDiddy();
   const tiny = useTiny();
   return {
-    in: playFactory && bongos && grab,
-    out: playFactory && bongos && (diddy || tiny)
+    in: playFactory.in && bongos && grab,
+    out: playFactory.out && bongos && (diddy || tiny)
   };
 };
 const useCheckDkCavesLobby = () => {
@@ -11947,7 +11947,10 @@ const useForestFairy = () => {
   const forest = usePlayLobby("Fungi Forest");
   const camera = useCamera();
   const islesSwitch = useIslesFairySwitch();
-  return forest && camera && islesSwitch;
+  return {
+    in: forest.in && camera && islesSwitch,
+    out: forest.out && camera && islesSwitch
+  };
 };
 const useKremFairy = () => {
   const top = useIslesKremTop();
@@ -12552,15 +12555,19 @@ const FactoryLobbyFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool,
     canGetLogic: useFactoryFairy()
   }
 ) }) });
-const ForestLobbyFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  IslesCheck,
-  {
-    id: 82,
-    name: "The Dreaded Forest Lobby Fairy",
-    region: "Japes-Forest Lobbies",
-    canGetLogic: useForestFairy()
-  }
-) }) });
+const ForestLobbyFairy = () => {
+  const canDo = useForestFairy();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 82,
+      name: "The Dreaded Forest Lobby Fairy",
+      region: "Japes-Forest Lobbies",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const SmallIslandFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   IslesCheck,
   {
