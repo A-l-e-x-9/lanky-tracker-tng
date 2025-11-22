@@ -38,7 +38,7 @@ import {
   useClimbing
 } from '../kongs'
 import { useBananaportAll } from '../settings'
-import { LogicBool, logicBreak, useSwitchsanityGun } from '../world'
+import { LogicBool, useSwitchsanityGun } from '../world'
 
 /**
  * Can we play in Jungle Japes?
@@ -181,7 +181,7 @@ export const useJapesPainting = (): LogicBool => {
   const paintingSwitch = useJapesPaintingSwitch()
   return {
     in: canPlay.in && paintingSwitch,
-    out: logicBreak(canPlay) && paintingSwitch
+    out: canPlay.out && paintingSwitch
   }
 }
 
@@ -395,15 +395,13 @@ export const useLankySlopeGb = (): LogicBool => {
 
 export const useLankyPaintingGb = (): LogicBool => {
   const painting = useJapesPainting()
-  const grape = useGrape()
-  const trombone = useTrombone()
   const lanky = useLanky()
   const slam = useSlam()
   const anyGun = useAnyGun()
   const anyMusic = useAnyMusic()
   return {
-    in: lanky && slam && painting.in && (grape || trombone),
-    out: lanky && slam && logicBreak(painting) && (anyGun || anyMusic)
+    in: lanky && slam && painting.in && (anyGun || anyMusic),
+    out: lanky && slam && painting.out && (anyGun || anyMusic)
   }
 }
 
