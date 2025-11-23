@@ -905,12 +905,15 @@ export const useCastleLobby = (): boolean => {
   return canEnterCastle && chunky && barrels
 }
 
-export const useCavesLobby = (): boolean => {
+export const useCavesLobby = (): LogicBool => {
   const canEnterCaves = usePlayLobby('Crystal Caves')
   const chunky = useChunky()
   const barrels = useBarrel()
   const punch = usePunch()
-  return canEnterCaves && chunky && barrels && punch
+  return {
+    in: canEnterCaves.in && chunky && barrels && punch,
+    out: canEnterCaves.out && chunky && barrels && punch
+  }
 }
 
 export const useJapesLobby = (): boolean => {
