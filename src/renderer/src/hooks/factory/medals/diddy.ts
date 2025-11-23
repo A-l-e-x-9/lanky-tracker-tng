@@ -13,10 +13,10 @@ const useDiddyMedalCommonLogic = (): number => {
   if (climbing) {
     bananas += 10 //10 in arcade area
   }
-  if (production) {
+  if (production.in || production.out) {
     bananas += 15
   }
-  if (testing) {
+  if (testing.in || testing.out) {
     bananas += 13 // 8 by Funky, 5 via backflip at bottom of block tower
     if (music && gun) {
       bananas += 30 // enemy code room balloons
@@ -34,7 +34,7 @@ export const useDiddyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDiddyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -44,7 +44,7 @@ export const useDiddyMedalInLogic = (): number => {
     return 100
   }
 
-  if (testing && pad) {
+  if (testing.in && pad) {
     bananas += 20
   }
 
@@ -59,7 +59,7 @@ export const useDiddyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDiddyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {
@@ -69,7 +69,7 @@ export const useDiddyMedalOutLogic = (): number => {
     return 100
   }
 
-  if (testing && highGrab) {
+  if (testing.out && highGrab) {
     bananas += 20
   }
 

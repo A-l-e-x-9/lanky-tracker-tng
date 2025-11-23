@@ -374,11 +374,14 @@ export const useTinyRaceGb = (): LogicBool => {
   }
 }
 
-export const useTinyDartGb = (): boolean => {
-  const car = useTinyRaceGb()
+export const useTinyDartGb = (): LogicBool => {
+  const car = useFactoryTesting()
   const feather = useFeather()
   const canSlam = useSlamFactory()
-  return car && feather && canSlam
+  return {
+    in: car.in && feather && canSlam,
+    out: car.out && feather && canSlam
+  }
 }
 
 export const useTinyArcadeGb = (): LogicBool => {
