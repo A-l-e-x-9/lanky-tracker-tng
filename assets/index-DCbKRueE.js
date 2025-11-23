@@ -12012,7 +12012,10 @@ const useCavesLobby = () => {
   const chunky = useChunky();
   const barrels = useBarrel();
   const punch = usePunch();
-  return canEnterCaves && chunky && barrels && punch;
+  return {
+    in: canEnterCaves.in && chunky && barrels && punch,
+    out: canEnterCaves.out && chunky && barrels && punch
+  };
 };
 const useJapesLobby = () => {
   const canEnterJapes = usePlayLobby("Jungle Japes");
@@ -13528,13 +13531,15 @@ const CavesLobbyChunky = () => {
   ) });
 };
 const CavesLobby = () => {
+  const canDo = useCavesLobby();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 8,
       name: "Caves Lobby Boulder",
       region: "Caves-Helm Lobbies",
-      canGetLogic: useCavesLobby()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
