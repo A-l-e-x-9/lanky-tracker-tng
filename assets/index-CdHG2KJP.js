@@ -19261,10 +19261,13 @@ const useTinyRaceGb = () => {
   };
 };
 const useTinyDartGb = () => {
-  const car = useTinyRaceGb();
+  const car = useFactoryTesting();
   const feather = useFeather();
   const canSlam = useSlamFactory();
-  return car && feather && canSlam;
+  return {
+    in: car.in && feather && canSlam,
+    out: car.out && feather && canSlam
+  };
 };
 const useTinyArcadeGb = () => {
   const inStage = usePlayFactory();
@@ -19964,15 +19967,19 @@ const LankyBananas$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(FreeChunky, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(LankyProduction, {})
 ] });
-const TinyDartboard = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  FactoryCheck,
-  {
-    id: 3030,
-    name: "Tiny's Dartboard",
-    region: "Testing Room",
-    canGetLogic: useTinyDartGb()
-  }
-) });
+const TinyDartboard = () => {
+  const canDo = useTinyDartGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    FactoryCheck,
+    {
+      id: 3030,
+      name: "Tiny's Dartboard",
+      region: "Testing Room",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) });
+};
 const TinyProduction = () => {
   const prodGb = useTinyProductionGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20171,10 +20178,10 @@ const useDiddyMedalCommonLogic$4 = () => {
   if (climbing) {
     bananas += 10;
   }
-  if (production) {
+  if (production.in || production.out) {
     bananas += 15;
   }
-  if (testing) {
+  if (testing.in || testing.out) {
     bananas += 13;
     if (music && gun) {
       bananas += 30;
@@ -20189,7 +20196,7 @@ const useDiddyMedalInLogic$4 = () => {
   const pad = useSpring();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDiddyMedalCommonLogic$4();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -20198,7 +20205,7 @@ const useDiddyMedalInLogic$4 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (testing && pad) {
+  if (testing.in && pad) {
     bananas += 20;
   }
   return bananas;
@@ -20210,7 +20217,7 @@ const useDiddyMedalOutLogic$4 = () => {
   const highGrab = useHighGrab();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDiddyMedalCommonLogic$4();
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
@@ -20219,7 +20226,7 @@ const useDiddyMedalOutLogic$4 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (testing && highGrab) {
+  if (testing.out && highGrab) {
     bananas += 20;
   }
   return bananas;
