@@ -3,8 +3,8 @@ import { useShallow } from 'zustand/react/shallow'
 
 import useDonkStore from '@renderer/store'
 import { Boss } from '@renderer/store/common'
-import { useAnyKong, useBarrel, useBlast, useDk, useFeather, useGone, useHunky, useMini, useOrange, usePeanut, usePunch, useRocket, useTiny, useTrombone, useTwirl, useClimbing } from '@renderer/hooks/kongs'
-import { useBalancedRoolPhase, useChunkySlamLevel } from '@renderer/hooks/settings'
+import { useAnyKong, useBarrel, useBlast, useDk, useFeather, useGrape, useGone, useHunky, useMini, useOrange, usePeanut, usePunch, useRocket, useTiny, useTrombone, useTwirl, useClimbing } from '@renderer/hooks/kongs'
+import { useBalancedRoolPhase, useChunkySlamLevel, useBetaLankyPhase } from '@renderer/hooks/settings'
 
 import dogadon1Icon from '../../assets/images/dogadon-1.png'
 import kutoutIcon from '../../assets/images/kutout.png'
@@ -75,6 +75,8 @@ const bossState = (boss: Boss): string => {
   const trombone = useTrombone()
   const twirl = useTwirl()
   const tiny = useTiny()
+  const betaLanky = useBetaLankyPhase()
+  const grape = useGrape()
   switch (boss) {
     case 'Army Dillo 1':
       if (anyKong && barrel) {
@@ -139,7 +141,7 @@ const bossState = (boss: Boss): string => {
         return 'not-available'
       }
     case 'Lanky Phase of K. Rool':
-      if (trombone && barrel) {
+      if (barrel && (trombone || (betaLanky && grape))) {
         return 'available'
       } else {
         return 'not-available'
