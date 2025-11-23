@@ -397,11 +397,11 @@ export const usePlayLobby = (level: Level): LogicBool => {
   const islesKremTop = useIslesKremTop()
   const islesKremAscent = useIslesKremAscent()
   const islesFungiIsland = useIslesFungiIsland()
-
+  const isBreathing = useAnyKong()
   if (level1 === level) {
     return {
-      in: true,
-      out: true
+      in: isBreathing,
+      out: isBreathing
     }
   }
   if (level2 === level) {
