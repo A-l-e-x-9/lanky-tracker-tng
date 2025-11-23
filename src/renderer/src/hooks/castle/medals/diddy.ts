@@ -46,7 +46,7 @@ export const useDiddyMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDiddyMedalCommonLogic()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -78,7 +78,7 @@ export const useDiddyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDiddyMedalCommonLogic() + 5
 
-  if (!inStage) {
+  if (!inStage.out) {
     return 0
   }
   if (!kong) {

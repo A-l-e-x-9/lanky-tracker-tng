@@ -175,10 +175,14 @@ export const useDiddyDungeonGb = (): LogicBool => {
   }
 }
 
-export const useDkTreeGb = (): boolean => {
+export const useDkTreeGb = (): LogicBool => {
+  const canEnterTree = useCastleTree()
   const coconut = useCoconut()
   const sniper = useSniper()
-  return useCastleTree() && coconut && sniper
+  return {
+    in: canEnterTree.in && coconut && sniper,
+    out: canEnterTree.out && coconut //You're supposed to be able to do this check without Sniper. I've had no such luck, but I"ll keep it in here just in case. =_=;
+    }
 }
 
 export const useDkRoomGb = (): LogicBool => {
@@ -371,10 +375,13 @@ export const useRoomFairy = (): LogicBool => {
   }
 }
 
-export const useTreeKasplat = (): boolean => {
+export const useTreeKasplat = (): LogicBool => {
   const tree = useCastleTree()
   const coconut = useCoconut()
-  return tree && coconut
+  return {
+    in: tree.in && coconut,
+    out: tree.out && coconut
+  }
 }
 
 export const useMausoleumKasplat = (): LogicBool => {
