@@ -26339,9 +26339,14 @@ const useDiddyDungeonGb = () => {
   };
 };
 const useDkTreeGb = () => {
+  const canEnterTree = useCastleTree();
   const coconut = useCoconut();
   const sniper = useSniper();
-  return useCastleTree() && coconut && sniper;
+  return {
+    in: canEnterTree.in && coconut && sniper,
+    out: canEnterTree.out && coconut
+    //You're supposed to be able to do this check without Sniper. I've had no such luck, but I"ll keep it in here just in case. =_=;
+  };
 };
 const useDkRoomGb = () => {
   const inStage = usePlayCastle();
@@ -26506,7 +26511,10 @@ const useRoomFairy = () => {
 const useTreeKasplat = () => {
   const tree = useCastleTree();
   const coconut = useCoconut();
-  return tree && coconut;
+  return {
+    in: tree.in && coconut,
+    out: tree.out && coconut
+  };
 };
 const useMausoleumKasplat = () => {
   const inStage = usePlayCastle();
@@ -27362,15 +27370,19 @@ const DkMinecart = () => {
     }
   ) }) });
 };
-const DkTree = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  CastleCheck,
-  {
-    id: 7001,
-    name: "DK's Tree Sniping",
-    region: "Creepy Castle Main",
-    canGetLogic: useDkTreeGb()
-  }
-) });
+const DkTree = () => {
+  const canDo = useDkTreeGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    CastleCheck,
+    {
+      id: 7001,
+      name: "DK's Tree Sniping",
+      region: "Creepy Castle Main",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) });
+};
 const DkBananas = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(DkTree, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DkLibrary, {}),
@@ -27519,15 +27531,19 @@ const DiddyKasplat = () => {
     }
   ) }) });
 };
-const DkKasplat = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  CastleCheck,
-  {
-    id: 7050,
-    name: "Kasplat in the Tree",
-    region: "Creepy Castle Main",
-    canGetLogic: useTreeKasplat()
-  }
-) }) });
+const DkKasplat = () => {
+  const canDo = useTreeKasplat();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    CastleCheck,
+    {
+      id: 7050,
+      name: "Kasplat in the Tree",
+      region: "Creepy Castle Main",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const LankyKasplat = () => {
   const canDo = usePathKasplat();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27661,7 +27677,7 @@ const useDiddyMedalInLogic = () => {
   const crystal = useRocket();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDiddyMedalCommonLogic();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -27690,7 +27706,7 @@ const useDiddyMedalOutLogic = () => {
   const move = useCharge();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDiddyMedalCommonLogic() + 5;
-  if (!inStage) {
+  if (!inStage.out) {
     return 0;
   }
   if (!kong) {
