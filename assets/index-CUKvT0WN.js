@@ -29299,6 +29299,8 @@ const bossState = (boss) => {
   const trombone = useTrombone();
   const twirl = useTwirl();
   const tiny = useTiny();
+  const betaLanky = useBetaLankyPhase();
+  const grape = useGrape();
   switch (boss) {
     case "Army Dillo 1":
       if (anyKong && barrel) {
@@ -29363,7 +29365,7 @@ const bossState = (boss) => {
         return "not-available";
       }
     case "Lanky Phase of K. Rool":
-      if (trombone && barrel) {
+      if (barrel && (trombone || betaLanky && grape)) {
         return "available";
       } else {
         return "not-available";
