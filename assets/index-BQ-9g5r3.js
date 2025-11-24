@@ -11513,8 +11513,8 @@ const usePlayLevel = (level) => {
   }
   if (level2 === level) {
     return {
-      in: currentGB >= bLocker2 && islesUpper && (openLobbies || key1),
-      out: currentGB >= bLocker2 && islesUpper && (openLobbies || key1)
+      in: currentGB >= bLocker2 && islesUpper.in && (openLobbies || key1),
+      out: currentGB >= bLocker2 && islesUpper.out && (openLobbies || key1)
     };
   }
   if (level3 === level) {
@@ -11537,8 +11537,8 @@ const usePlayLevel = (level) => {
   }
   if (level6 === level) {
     return {
-      in: currentGB >= bLocker6 && islesUpper && (openLobbies || key5),
-      out: currentGB >= bLocker6 && islesUpper && (openLobbies || key5)
+      in: currentGB >= bLocker6 && islesUpper.in && (openLobbies || key5),
+      out: currentGB >= bLocker6 && islesUpper.out && (openLobbies || key5)
     };
   }
   if (level7 === level) {
