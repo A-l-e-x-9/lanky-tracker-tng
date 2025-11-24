@@ -11629,8 +11629,8 @@ const usePlayLobby = (level) => {
   }
   if (level6 === level) {
     return {
-      in: islesUpper && (openLobbies || key5),
-      out: islesUpper && (openLobbies || key5)
+      in: islesUpper.in && (openLobbies || key5),
+      out: islesUpper.out && (openLobbies || key5)
     };
   }
   if (level7 === level) {
@@ -19261,7 +19261,7 @@ const useTinyRaceGb = () => {
   };
 };
 const useTinyDartGb = () => {
-  const car = useFactoryTesting();
+  const car = useTinyRaceGb();
   const feather = useFeather();
   const canSlam = useSlamFactory();
   return {
