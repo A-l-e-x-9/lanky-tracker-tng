@@ -19470,7 +19470,8 @@ const ProductionEnemies = () => {
         id: 3309,
         name: "Enemy 0 Down the Hatch",
         region: "Prod Room",
-        canGetLogic: testing && anyKong
+        canGetLogic: testing.in && anyKong,
+        canGetBreak: testing.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -19479,7 +19480,8 @@ const ProductionEnemies = () => {
         id: 3310,
         name: "Enemy 1 Down the Hatch",
         region: "Prod Room",
-        canGetLogic: testing && robo
+        canGetLogic: testing.in && robo,
+        canGetBreak: testing.out && robo
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -19488,7 +19490,8 @@ const ProductionEnemies = () => {
         id: 3314,
         name: "Enemy at Low Warp 4",
         region: "Prod Room",
-        canGetLogic: inStage && robo
+        canGetLogic: inStage.in && robo,
+        canGetBreak: inStage.out && robo
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -19497,8 +19500,8 @@ const ProductionEnemies = () => {
         id: 3315,
         name: "Enemy at Diddy's Prod Room Switch",
         region: "Prod Room",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     )
   ] });
@@ -20812,7 +20815,8 @@ const CavernsEnemies = () => {
         id: 4300,
         name: "Chest Room Enemy 0",
         region: "Galleon Caves",
-        canGetLogic: inStage && klobber
+        canGetLogic: inStage.in && klobber,
+        canGetBreak: inStage.out && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20821,8 +20825,8 @@ const CavernsEnemies = () => {
         id: 4301,
         name: "Chest Room Enemy 1",
         region: "Galleon Caves",
-        canGetLogic: inStage && kaboom.in,
-        canGetBreak: inStage && kaboom.out
+        canGetLogic: inStage.in && kaboom.in,
+        canGetBreak: inStage.out && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20831,8 +20835,8 @@ const CavernsEnemies = () => {
         id: 4302,
         name: "Vine Cannon Enemy",
         region: "Galleon Caves",
-        canGetLogic: inStage && kaboom.in,
-        canGetBreak: inStage && kaboom.out
+        canGetLogic: inStage.in && kaboom.in,
+        canGetBreak: inStage.out && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20841,8 +20845,8 @@ const CavernsEnemies = () => {
         id: 4303,
         name: "Cranky Cannon Enemy",
         region: "Galleon Caves",
-        canGetLogic: inStage && kaboom.in,
-        canGetBreak: inStage && kaboom.out
+        canGetLogic: inStage.in && kaboom.in,
+        canGetBreak: inStage.out && kaboom.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20851,8 +20855,8 @@ const CavernsEnemies = () => {
         id: 4304,
         name: "Peanut Tunnel Enemy",
         region: "Galleon Caves",
-        canGetLogic: inStage && kosha.in,
-        canGetBreak: inStage && kosha.out
+        canGetLogic: inStage.in && kosha.in,
+        canGetBreak: inStage.out && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20861,7 +20865,8 @@ const CavernsEnemies = () => {
         id: 4306,
         name: "Coconut Tunnel Enemy",
         region: "Galleon Caves",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     )
   ] });
@@ -22877,7 +22882,8 @@ const BeanstalkEnemies = () => {
         id: 5317,
         name: "Enemy 0 at Beanstalk",
         region: "Forest Area 2",
-        canGetLogic: beanstalk && klump
+        canGetLogic: beanstalk.in && klump,
+        canGetBreak: beanstalk.out && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22886,7 +22892,8 @@ const BeanstalkEnemies = () => {
         id: 5318,
         name: "Enemy 1 at Beanstalk",
         region: "Forest Area 2",
-        canGetLogic: beanstalk && klump
+        canGetLogic: beanstalk.in && klump,
+        canGetBreak: beanstalk.out && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22895,7 +22902,8 @@ const BeanstalkEnemies = () => {
         id: 5319,
         name: "Giant Tomato 0",
         region: "Forest Area 2",
-        canGetLogic: beanstalk && hasHunky
+        canGetLogic: beanstalk.in && hasHunky,
+        canGetBreak: beanstalk.out && hasHunky
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22904,7 +22912,8 @@ const BeanstalkEnemies = () => {
         id: 5320,
         name: "Giant Tomato 1",
         region: "Forest Area 2",
-        canGetLogic: beanstalk && hasHunky
+        canGetLogic: beanstalk.in && hasHunky,
+        canGetBreak: beanstalk.out && hasHunky
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22913,7 +22922,8 @@ const BeanstalkEnemies = () => {
         id: 5321,
         name: "Giant Tomato 2",
         region: "Forest Area 2",
-        canGetLogic: beanstalk && hasHunky
+        canGetLogic: beanstalk.in && hasHunky,
+        canGetBreak: beanstalk.out && hasHunky
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22922,7 +22932,8 @@ const BeanstalkEnemies = () => {
         id: 5322,
         name: "Giant Tomato 3",
         region: "Forest Area 2",
-        canGetLogic: beanstalk && hasHunky
+        canGetLogic: beanstalk.in && hasHunky,
+        canGetBreak: beanstalk.out && hasHunky
       }
     )
   ] });
@@ -26629,8 +26640,8 @@ const BallroomEnemies = () => {
       id: 7313,
       name: "Ballroom Start Enemy",
       region: "Various Castle Rooms",
-      canGetLogic: inStage && diddy && canSlam && kosha.in,
-      canGetBreak: inStage && diddy && canSlam && kosha.out
+      canGetLogic: inStage.in && diddy && canSlam && kosha.in,
+      canGetBreak: inStage.out && diddy && canSlam && kosha.out
     }
   ) });
 };
