@@ -375,7 +375,7 @@ export const useTinyRaceGb = (): LogicBool => {
 }
 
 export const useTinyDartGb = (): LogicBool => {
-  const car = useFactoryTesting()
+  const car = useTinyRaceGb()
   const feather = useFeather()
   const canSlam = useSlamFactory()
   return {
