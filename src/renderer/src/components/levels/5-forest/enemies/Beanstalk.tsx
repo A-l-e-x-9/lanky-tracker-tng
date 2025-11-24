@@ -14,37 +14,43 @@ const BeanstalkEnemies: React.FC = () => {
         id={5317}
         name="Enemy 0 at Beanstalk"
         region="Forest Area 2"
-        canGetLogic={beanstalk && klump}
+        canGetLogic={beanstalk.in && klump}
+        canGetBreak={beanstalk.out && klump}
       />
       <ForestCheck
         id={5318}
         name="Enemy 1 at Beanstalk"
         region="Forest Area 2"
-        canGetLogic={beanstalk && klump}
+        canGetLogic={beanstalk.in && klump}
+        canGetBreak={beanstalk.out && klump}
       />
       <ForestCheck
         id={5319}
         name="Giant Tomato 0"
         region="Forest Area 2"
-        canGetLogic={beanstalk && hasHunky}
+        canGetLogic={beanstalk.in && hasHunky}
+        canGetBreak={beanstalk.out && hasHunky}
       />
       <ForestCheck
         id={5320}
         name="Giant Tomato 1"
         region="Forest Area 2"
-        canGetLogic={beanstalk && hasHunky}
+        canGetLogic={beanstalk.in && hasHunky}
+        canGetBreak={beanstalk.out && hasHunky}
       />
       <ForestCheck
         id={5321}
         name="Giant Tomato 2"
         region="Forest Area 2"
-        canGetLogic={beanstalk && hasHunky}
+        canGetLogic={beanstalk.in && hasHunky}
+        canGetBreak={beanstalk.out && hasHunky}
       />
       <ForestCheck
         id={5322}
         name="Giant Tomato 3"
         region="Forest Area 2"
-        canGetLogic={beanstalk && hasHunky}
+        canGetLogic={beanstalk.in && hasHunky}
+        canGetBreak={beanstalk.out && hasHunky}
       />
     </DropPool>
   )

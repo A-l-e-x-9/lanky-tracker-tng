@@ -16,26 +16,29 @@ const ProductionEnemies: React.FC = () => {
         id={3309}
         name="Enemy 0 Down the Hatch"
         region="Prod Room"
-        canGetLogic={testing && anyKong}
+        canGetLogic={testing.in && anyKong}
+        canGetBreak={testing.out && anyKong}
       />
       <FactoryCheck
         id={3310}
         name="Enemy 1 Down the Hatch"
         region="Prod Room"
-        canGetLogic={testing && robo}
+        canGetLogic={testing.in && robo}
+        canGetBreak={testing.out && robo}
       />
       <FactoryCheck
         id={3314}
         name="Enemy at Low Warp 4"
         region="Prod Room"
-        canGetLogic={inStage && robo}
+        canGetLogic={inStage.in && robo}
+        canGetBreak={inStage.out && robo}
       />
       <FactoryCheck
         id={3315}
         name="Enemy at Diddy's Prod Room Switch"
         region="Prod Room"
-        canGetLogic={inStage && zinger.in}
-        canGetBreak={inStage && zinger.out}
+        canGetLogic={inStage.in && zinger.in}
+        canGetBreak={inStage.out && zinger.out}
       />
     </DropPool>
   )
