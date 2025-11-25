@@ -11011,7 +11011,7 @@ const useGalleonCavernTop = () => {
   const warpAll = useBananaportAll();
   return {
     in: inStage.in && (vine || warpAll && (dive.in || rocket)),
-    out: inStage.out && seasick.out
+    out: (inStage.in || inStage.out) && seasick.out
   };
 };
 const useGalleonCannon = () => {
@@ -14093,7 +14093,7 @@ const useJapesMine = () => {
   const hasBananaports = useBananaportAll();
   return {
     in: peanut && (hasClimbing || hasBananaports) && canPlay.in,
-    out: peanut && canPlay.out
+    out: peanut && (canPlay.in || canPlay.out)
   };
 };
 const useJapesHive = () => {
@@ -14118,7 +14118,7 @@ const useJapesPaintingOutside = () => {
   const chunky = useChunky();
   return {
     in: inStage.in && (stand || climbing && twirl),
-    out: inStage.out && climbing && (dk2 || tiny || chunky)
+    out: (inStage.in || inStage.out) && climbing && (dk2 || tiny || chunky)
   };
 };
 const useJapesPainting = () => {
@@ -14227,7 +14227,7 @@ const useDkFreebieGb = () => {
   const hasBananaports = useBananaportAll();
   return {
     in: inStage.in && anyKong && (hasClimbing || hasBananaports),
-    out: inStage.out && anyKong
+    out: (inStage.in || inStage.out) && anyKong
     //The "shortcut" I'm thinking of is a small area next to the mine exit that Lanky can O-Stand up, but right now, I'm a little hesitant to actually put O-Stand here. ^^;
   };
 };
@@ -14440,7 +14440,7 @@ const useMtnCrate = () => {
   const hasBananaports = useBananaportAll();
   return {
     in: canEnterLevel.in && (hasClimbing || hasBananaports),
-    out: canEnterLevel.out
+    out: canEnterLevel.in || canEnterLevel.out
   };
 };
 const JapesCheck = (props) => {
@@ -16147,7 +16147,7 @@ const useAztecFront = () => {
   const twirl = useTwirl();
   return {
     in: aztecPlay.in && (vine || twirl),
-    out: aztecPlay.out
+    out: aztecPlay.in || aztecPlay.out
   };
 };
 const useAztecFrontKasplat = () => {
@@ -19012,7 +19012,7 @@ const useFactoryHut = () => {
   const tiny = useTiny();
   return {
     in: testing.in,
-    out: inStage.out && (diddy || tiny)
+    out: (inStage.in || inStage.out) && (diddy || tiny)
   };
 };
 const useFactoryProductionEnabled = () => {
@@ -22151,8 +22151,8 @@ const useForestDay = () => {
     };
   }
   return {
-    in: inStage && anyGun,
-    out: inStage && orange
+    in: inStage.in && anyGun,
+    out: (inStage.in || inStage.out) && orange
   };
 };
 const useForestNight = () => {
@@ -22169,7 +22169,7 @@ const useForestNight = () => {
   }
   return {
     in: anyGun && inStage.in,
-    out: anyKong && orange && inStage.out
+    out: anyKong && orange && (inStage.in || inStage.out)
   };
 };
 const useForestDusk = () => {
@@ -22207,7 +22207,7 @@ const useForestMushroomRoof = () => {
   const tiny = useTiny();
   return {
     in: inStage.in && stand,
-    out: inStage.out && (rocket || tiny)
+    out: (inStage.in || inStage.out) && (rocket || tiny)
   };
 };
 const useForestBeanHalf = () => {
@@ -22279,7 +22279,7 @@ const useChunkyMillGb = () => {
   const triangle = useTriangle();
   return {
     in: inStage.in && day.in && boulderTech && punch && triangle && grab,
-    out: inStage.out && day.out && boulderTech && punch && triangle
+    out: (inStage.in || inStage.out) && day.out && boulderTech && punch && triangle
   };
 };
 const useDiddyTopGb$1 = () => {
@@ -22290,7 +22290,7 @@ const useDiddyTopGb$1 = () => {
   const stand = useStand();
   return {
     in: inStage.in && rocket,
-    out: useFtaDiddyBanana() && inStage.out && (diddy || tiny) && (tiny || stand)
+    out: useFtaDiddyBanana() && (inStage.in || inStage.out) && (diddy || tiny) && (tiny || stand)
   };
 };
 const useDiddyOwlGb = () => {
@@ -22323,7 +22323,7 @@ const useDiddyRaftersGb = () => {
   const highGrab = useHighGrab();
   return {
     in: inStage.in && night.in && spring && guitar,
-    out: useFtaDiddyBanana() && inStage.out && night.out && (spring || highGrab)
+    out: useFtaDiddyBanana() && (inStage.in || inStage.out) && night.out && (spring || highGrab)
   };
 };
 const useDkBlastGb$1 = () => {
@@ -22360,7 +22360,7 @@ const useForestBarn = () => {
   const strong = useStrong();
   return {
     in: inStage.in && night.in && canSlam && strong,
-    out: inStage.out && night.out && dk2 && canSlam
+    out: (inStage.in || inStage.out) && night.out && dk2 && canSlam
   };
 };
 const useDkBarnGb = () => {
@@ -22383,7 +22383,7 @@ const useLankyMillGb = () => {
   const lanky = useLanky();
   return {
     in: inStage.in && night.in && lanky && canSlam && anyGun && (homing || hardShooting),
-    out: inStage.out && night.out && lanky && canSlam && anyGun
+    out: (inStage.in || inStage.out) && night.out && lanky && canSlam && anyGun
   };
 };
 const useLankyMushGb = () => {
@@ -22593,7 +22593,7 @@ const BossCheck$3 = () => {
   ) });
 };
 const BarnInsideCrate = () => {
-  const barn = useDkBarnGb();
+  const barn = useForestBarn();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaCrate, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
@@ -24539,7 +24539,7 @@ const useCavesMiniFunky = () => {
   const warpAll = useBananaportAll();
   return {
     in: inStage.in && !angery && (warpAll || twirl && mini),
-    out: (inStage.out || angery) && mini
+    out: (inStage.in && !angery || (inStage.out || angery)) && mini
   };
 };
 const useCavesPillar = () => {
@@ -24552,7 +24552,7 @@ const useCavesPillar = () => {
   const warpAll = useBananaportAll();
   return {
     in: inStage.in && !angery && (warpAll || rocket),
-    out: (inStage.out || angery) && (dk2 || twirl || balloon)
+    out: (inStage.in && !angery || (inStage.out || angery)) && (dk2 || twirl || balloon)
   };
 };
 const useCavesLankyCabin = () => {
@@ -24564,7 +24564,7 @@ const useCavesLankyCabin = () => {
   const tiny = useTiny();
   return {
     in: inStage.in && !angery && trombone && balloon,
-    out: (inStage.out || angery) && trombone && (diddy || tiny)
+    out: (inStage.in && !angery || (inStage.out || angery)) && trombone && (diddy || tiny)
   };
 };
 const useCavesLankyCabinSpecial = () => {
@@ -24575,7 +24575,7 @@ const useCavesLankyCabinSpecial = () => {
   const tiny = useTiny();
   return {
     in: inStage.in && trombone && balloon,
-    out: inStage.out && trombone && (diddy || tiny)
+    out: (inStage.in || inStage.out) && trombone && (diddy || tiny)
   };
 };
 const useDkCabinGb = () => {
@@ -24587,7 +24587,7 @@ const useDkCabinGb = () => {
   const anyGun = useAnyGun();
   return {
     in: inStage.in && !angery && bongos && anyGun && (homing || hardShooting),
-    out: (inStage.out || angery) && bongos && anyGun
+    out: (inStage.in && !angery || (inStage.out || angery)) && bongos && anyGun
   };
 };
 const useDiddyGauntletGb = () => {
@@ -24598,7 +24598,7 @@ const useDiddyGauntletGb = () => {
   const orange = useOrange();
   return {
     in: inStage.in && !angery && guitar && rocket && orange,
-    out: (inStage.out || angery) && guitar && orange
+    out: (inStage.in && !angery || (inStage.out || angery)) && guitar && orange
   };
 };
 const useChunkyGoneGb = () => {
@@ -24620,7 +24620,7 @@ const useChunkyClearGb = () => {
   const hunky = useHunky();
   return {
     in: inStage.in && !angery && (punch || wallsPrePunched) && boulder && hunky,
-    out: (inStage.out || angery) && (punch || wallsPrePunched) && boulder
+    out: (inStage.in && !angery || (inStage.out || angery)) && (punch || wallsPrePunched) && boulder
   };
 };
 const useChunkyIglooGb = () => {
@@ -24648,7 +24648,7 @@ const useDiddyWaterfallGb = () => {
   const twirl = useTwirl();
   return {
     in: inStage.in && !angery && rocket,
-    out: useFtaDiddyBanana() && (inStage.out || angery) && (dk2 || twirl)
+    out: useFtaDiddyBanana() && (inStage.in && !angery || (inStage.out || angery)) && (dk2 || twirl)
   };
 };
 const useDiddyIglooGb = () => {
@@ -24668,7 +24668,7 @@ const useDiddyCandleGb = () => {
   const spring = useSpring();
   return {
     in: inStage.in && !angery && guitar && rocket && spring,
-    out: (inStage.out || angery) && guitar && rocket
+    out: (inStage.in && !angery || (inStage.out || angery)) && guitar && rocket
     //If you're playing a seed with the "move Diddy Upper Cabin Barrel" option on under the "quality of life" settings, you may not be able to do this. Don't know if I should edit this check to account for that option...it's a lot of effort for just one check! -_-;
   };
 };
@@ -24710,7 +24710,7 @@ const useLankyRaceGb = () => {
   const sprint = useSprint();
   return {
     in: inStage.in && !angery && canSlam && sprint && balloon,
-    out: (inStage.out || angery) && canSlam && sprint && highGrab
+    out: (inStage.in && !angery || (inStage.out || angery)) && canSlam && sprint && highGrab
   };
 };
 const useLankyCastleGb = () => {
@@ -26277,7 +26277,7 @@ const useChunkyShedGb = () => {
   const hasAGun = useAnyGun();
   return {
     in: inStage.in && punch && (triangle || gone && pineapple),
-    out: inStage.out && punch && (anyMusic || hasAGun)
+    out: (inStage.in || inStage.out) && punch && (anyMusic || hasAGun)
   };
 };
 const useChunkyTreeGb = () => {
@@ -26309,7 +26309,7 @@ const useChunkyCryptGb = () => {
   const hasClimbing = useClimbing();
   return {
     in: inStage.in && (pineapple || preOpened) && punch && hasClimbing,
-    out: inStage.out && (pineapple || preOpened) && punch
+    out: (inStage.in || inStage.out) && (pineapple || preOpened) && punch
   };
 };
 const useDiddyTopGb = () => {
@@ -26335,7 +26335,7 @@ const useDiddyCryptGb = () => {
   const canEnter = usePlayCastle();
   return {
     in: canEnter.in && (peanut || cryptPreOpened) && charge && hasClimbing,
-    out: canEnter.out && (peanut || cryptPreOpened) && charge
+    out: (canEnter.in || canEnter.out) && (peanut || cryptPreOpened) && charge
   };
 };
 const useDiddyDungeonGb = () => {
@@ -26366,7 +26366,7 @@ const useDkRoomGb = () => {
   const strong = useStrong();
   return {
     in: inStage.in && slam && strong,
-    out: inStage.out && slam && dk2
+    out: (inStage.in || inStage.out) && slam && dk2
     //Why DK? Because, assuming this is indeed the library GB, getting hit by the books triggers the "getting up" animation, same as if you'd been hit by a Klobber, and DK has none. The other Kongs get absolutely combo'd and rekt by the books! xD
   };
 };
@@ -26378,7 +26378,7 @@ const useDkCryptGb = () => {
   const canEnter = usePlayCastle();
   return {
     in: canEnter.in && (coconut || cryptPreOpened) && grab && hasClimbing,
-    out: canEnter.out && (coconut || cryptPreOpened) && grab
+    out: (canEnter.in || canEnter.out) && (coconut || cryptPreOpened) && grab
   };
 };
 const useDkDungeonGb = () => {
@@ -26399,7 +26399,7 @@ const useLankyRoomGb = () => {
   const homing = useHoming();
   return {
     in: inStage.in && slam && grape && balloon && sniper,
-    out: inStage.out && slam && grape && balloon && homing
+    out: (inStage.in || inStage.out) && slam && grape && balloon && homing
   };
 };
 const useLankyGreenhouseGb = () => {
@@ -26428,7 +26428,7 @@ const useLankyMausoleumGb = () => {
   const hasClimbing = useClimbing();
   return {
     in: inStage.in && (feather || grape || preOpened) && grape && sprint && vine && trombone && hasClimbing,
-    out: inStage.out && (feather || grape || preOpened) && grape && (sprint || dk2 || diddy)
+    out: (inStage.in || inStage.out) && (feather || grape || preOpened) && grape && (sprint || dk2 || diddy)
   };
 };
 const useLankyDungeonGb = () => {
@@ -26439,7 +26439,7 @@ const useLankyDungeonGb = () => {
   const twirl = useTwirl();
   return {
     in: inStage.in && canSlam && trombone && balloon,
-    out: inStage.out && canSlam && trombone && twirl
+    out: (inStage.in || inStage.out) && canSlam && trombone && twirl
   };
 };
 const useTinyRoomGb = () => {
@@ -26462,7 +26462,7 @@ const useTinyTrashGb = () => {
   const anyGun = useAnyGun();
   return {
     in: inStage.in && mini && (sax || anyGun && (homing || hardShooting)),
-    out: inStage.out && mini && (sax || anyGun)
+    out: (inStage.in || inStage.out) && mini && (sax || anyGun)
   };
 };
 const useTinyMausoleumGb = () => {
@@ -26476,7 +26476,7 @@ const useTinyMausoleumGb = () => {
   const preOpened = useOpenCrypt();
   return {
     in: inStage.in && (feather || grape || preOpened) && canSlam && twirl && hasClimbing,
-    out: useFtaTinyBanana() && inStage.out && (feather || grape || preOpened) && canSlam && (dk2 || twirl)
+    out: useFtaTinyBanana() && (inStage.in || inStage.out) && (feather || grape || preOpened) && canSlam && (dk2 || twirl)
   };
 };
 const useTinyChasmGb = () => {
@@ -26516,7 +26516,7 @@ const useRoomFairy = () => {
   const chunky = useChunky();
   return {
     in: inStage.in && slam && camera && diddy && port,
-    out: inStage.out && slam && camera && chunky
+    out: (inStage.in || inStage.out) && slam && camera && chunky
   };
 };
 const useTreeKasplat = () => {
@@ -26532,7 +26532,7 @@ const useMausoleumKasplat = () => {
   const hasClimbing = useClimbing();
   return {
     in: useFtaDiddyBlueprint() && inStage.in && hasClimbing,
-    out: useFtaDiddyBlueprint() && inStage.out
+    out: useFtaDiddyBlueprint() && (inStage.in || inStage.out)
   };
 };
 const usePathKasplat = () => {
@@ -26547,7 +26547,7 @@ const useLonelyKasplat = () => {
   const hasClimbing = useClimbing();
   return {
     in: useFtaTinyBlueprint() && inStage.in && hasClimbing,
-    out: useFtaTinyBlueprint() && inStage.out
+    out: useFtaTinyBlueprint() && (inStage.in || inStage.out)
   };
 };
 const useDungeonKasplat = () => {
@@ -26562,7 +26562,7 @@ const useCrate = () => {
   const hasClimbing = useClimbing();
   return {
     in: useAnyKong() && inStage.in && hasClimbing,
-    out: useAnyKong() && inStage.out
+    out: useAnyKong() && (inStage.in || inStage.out)
   };
 };
 const CastleCheck = (props) => {
@@ -28459,7 +28459,7 @@ const useHelmMachine = () => {
   const helmAccess = useHelmStartPosition();
   return {
     in: inLevel.in && entry && (helmAccess != 0 || stand && pineapple && vine && mini),
-    out: inLevel.out && entry && pineapple && vine && mini
+    out: (inLevel.in || inLevel.out) && entry && pineapple && vine && mini
   };
 };
 const useHelmDoors = () => {
@@ -28473,7 +28473,7 @@ const useHelmDoors = () => {
   const helmAccess = useHelmStartPosition();
   return {
     in: inLevel.in && entry && (helmAccess == 2 || anyMusic && (helmAccess == 1 || machine.in && grab && rocket && punch)),
-    out: inLevel.out && entry && machine.out && grab && rocket && punch
+    out: (inLevel.in || inLevel.out) && entry && machine.out && grab && rocket && punch
   };
 };
 const useCanDeactivateHelm = () => {
