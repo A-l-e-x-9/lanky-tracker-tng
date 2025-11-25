@@ -12,15 +12,15 @@ const TreeEnemies: React.FC = () => {
         id={7370}
         name="Tree Enemy 0"
         region="Creepy Castle Main"
-        canGetLogic={tree && bat.in}
-        canGetBreak={tree && bat.out}
+        canGetLogic={tree.in && bat.in}
+        canGetBreak={tree.out && bat.out}
       />
       <CastleCheck
         id={7371}
         name="Tree Enemy 1"
         region="Creepy Castle Main"
-        canGetLogic={tree && bat.in}
-        canGetBreak={tree && bat.out}
+        canGetLogic={tree.in && bat.in}
+        canGetBreak={tree.out && bat.out}
       />
     </DropPool>
   )
