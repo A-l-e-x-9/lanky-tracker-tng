@@ -14795,8 +14795,8 @@ const HiveTunnelEnemies = () => {
       id: 1318,
       name: "Enemy in Feather Tunnel",
       region: "Hive Area",
-      canGetLogic: kongGates && zinger.in,
-      canGetBreak: kongGates && zinger.out
+      canGetLogic: kongGates.in && zinger.in,
+      canGetBreak: kongGates.out && zinger.out
     }
   ) });
 };
