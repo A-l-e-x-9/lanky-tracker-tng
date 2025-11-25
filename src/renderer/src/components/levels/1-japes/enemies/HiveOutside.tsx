@@ -14,34 +14,36 @@ const HiveOutsideEnemies: React.FC = () => {
         id={1307}
         name="Enemy 0 Outside the Hive"
         region="Hive Area"
-        canGetLogic={hiveOut && zinger.in}
-        canGetBreak={hiveOut && zinger.out}
+        canGetLogic={hiveOut.in && zinger.in}
+        canGetBreak={hiveOut.out && zinger.out}
       />
       <JapesCheck
         id={1308}
         name="Enemy 1 Outside the Hive"
         region="Hive Area"
-        canGetLogic={hiveOut && zinger.in}
-        canGetBreak={hiveOut && zinger.out}
+        canGetLogic={hiveOut.in && zinger.in}
+        canGetBreak={hiveOut.out && zinger.out}
       />
       <JapesCheck
         id={1309}
         name="Enemy 2 Outside the Hive"
         region="Hive Area"
-        canGetLogic={hiveOut && zinger.in}
-        canGetBreak={hiveOut && zinger.out}
+        canGetLogic={hiveOut.in && zinger.in}
+        canGetBreak={hiveOut.out && zinger.out}
       />
       <JapesCheck
         id={1310}
         name="Enemy 3 Outside the Hive"
         region="Hive Area"
-        canGetLogic={hiveOut && anyKong}
+        canGetLogic={hiveOut.in && anyKong}
+        canGetBreak={hiveOut.out && anyKong}
       />
       <JapesCheck
         id={1311}
         name="Enemy 4 Outside the Hive"
         region="Hive Area"
-        canGetLogic={hiveOut && anyKong}
+        canGetLogic={hiveOut.in && anyKong}
+        canGetBreak={hiveOut.out && anyKong}
       />
     </DropPool>
   )
