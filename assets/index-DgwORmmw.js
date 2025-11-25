@@ -22753,7 +22753,8 @@ const MillsEnemies = () => {
         id: 5304,
         name: "Enemy Near Snide's",
         region: "Forest Area 1",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22762,8 +22763,8 @@ const MillsEnemies = () => {
         id: 5305,
         name: "Enemy Near the Infamous Dirt Patch",
         region: "Forest Area 1",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22772,7 +22773,8 @@ const MillsEnemies = () => {
         id: 5306,
         name: "Enemy Near the Dark Attic",
         region: "Forest Area 1",
-        canGetLogic: inStage && klump
+        canGetLogic: inStage.in && klump,
+        canGetBreak: inStage.out && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22781,8 +22783,8 @@ const MillsEnemies = () => {
         id: 5307,
         name: "Enemy Near the Well Exit",
         region: "Forest Area 1",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22791,7 +22793,8 @@ const MillsEnemies = () => {
         id: 5308,
         name: "Enemy Near the Blue Tunnel",
         region: "Forest Area 1",
-        canGetLogic: inStage && klump
+        canGetLogic: inStage.in && klump,
+        canGetBreak: inStage.out && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22820,8 +22823,8 @@ const MillsEnemies = () => {
         id: 5311,
         name: "Enemy in the Winch Room",
         region: "Forest Area 1",
-        canGetLogic: inStage && diddy && hasClimbing && canSlam && bat.in,
-        canGetBreak: inStage && diddy && hasClimbing && canSlam && bat.out
+        canGetLogic: inStage.in && diddy && hasClimbing && canSlam && bat.in,
+        canGetBreak: inStage.out && diddy && hasClimbing && canSlam && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22830,7 +22833,8 @@ const MillsEnemies = () => {
         id: 5312,
         name: "Enemy at Thornvine Barn Area Entrance",
         region: "Forest Area 1",
-        canGetLogic: inStage && klump
+        canGetLogic: inStage.in && klump,
+        canGetBreak: inStage.out && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22839,7 +22843,8 @@ const MillsEnemies = () => {
         id: 5313,
         name: "Thornvine Outside Enemy 0",
         region: "Forest Area 1",
-        canGetLogic: inStage && klump
+        canGetLogic: inStage.in && klump,
+        canGetBreak: inStage.out && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22848,7 +22853,8 @@ const MillsEnemies = () => {
         id: 5314,
         name: "Thornvine Outside Enemy 1",
         region: "Forest Area 1",
-        canGetLogic: inStage && klump
+        canGetLogic: inStage.in && klump,
+        canGetBreak: inStage.out && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22857,8 +22863,8 @@ const MillsEnemies = () => {
         id: 5315,
         name: "Thornvine Outside Enemy 2",
         region: "Forest Area 1",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
