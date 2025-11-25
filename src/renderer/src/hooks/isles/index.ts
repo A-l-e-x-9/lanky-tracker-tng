@@ -312,44 +312,44 @@ export const usePlayLevel = (level: Level): LogicBool => {
   }
   if (level2 === level) {
     return {
-      in: currentGB >= bLocker2 && islesUpper.in && (openLobbies || key1),
-      out: currentGB >= bLocker2 && islesUpper.out && (openLobbies || key1)
+      in: (currentGB >= bLocker2) && islesUpper.in && (openLobbies || key1),
+      out: (currentGB >= bLocker2) && islesUpper.out && (openLobbies || key1)
     }
   }
   if (level3 === level) {
     return {
-      in: currentGB >= bLocker3 && islesKremAscent && (openLobbies || key2),
-      out: currentGB >= bLocker3 && islesKremAscent && (openLobbies || key2)
+      in: (currentGB >= bLocker3) && islesKremAscent && (openLobbies || key2),
+      out: (currentGB >= bLocker3) && islesKremAscent && (openLobbies || key2)
     }
   }
   if (level4 === level) {
     return {
-      in: currentGB >= bLocker4 && (openLobbies || key2) && dive.in,
-      out: currentGB >= bLocker4 && (openLobbies || key2) && dive.out
+      in: (currentGB >= bLocker4) && (openLobbies || key2) && dive.in,
+      out: (currentGB >= bLocker4) && (openLobbies || key2) && dive.out
     }
   }
   if (level5 === level) {
     return {
-      in: currentGB >= bLocker5 && islesFungiIsland,
-      out: currentGB >= bLocker5 && islesFungiIsland
+      in: (currentGB >= bLocker5) && islesFungiIsland,
+      out: (currentGB >= bLocker5) && islesFungiIsland
     }
   }
   if (level6 === level) {
     return {
-      in: currentGB >= bLocker6 && islesUpper.in && (openLobbies || key5),
-      out: currentGB >= bLocker6 && islesUpper.out && (openLobbies || key5)
+      in: (currentGB >= bLocker6) && islesUpper.in && (openLobbies || key5),
+      out: (currentGB >= bLocker6) && islesUpper.out && (openLobbies || key5)
     }
   }
   if (level7 === level) {
     return {
-      in: currentGB >= bLocker7 && (openLobbies || key5),
-      out: currentGB >= bLocker7 && (openLobbies || key5)
+      in: (currentGB >= bLocker7) && (openLobbies || key5),
+      out: (currentGB >= bLocker7) && (openLobbies || key5)
     }
   }
   if (level8 === level) {
     return {
-      in: currentGB >= bLocker8 && islesKremTop && (openLobbies || (key6 && key7)),
-      out: currentGB >= bLocker8 && islesKremTop && (openLobbies || (key6 && key7))
+      in: (currentGB >= bLocker8) && islesKremTop && (openLobbies || (key6 && key7)),
+      out: (currentGB >= bLocker8) && islesKremTop && (openLobbies || (key6 && key7))
     }
   }
 

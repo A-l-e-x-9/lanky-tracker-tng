@@ -132,7 +132,7 @@ export const useJapesMine = (): LogicBool => {
   const hasBananaports = useBananaportAll()
   return {
     in: peanut && (hasClimbing || hasBananaports) && canPlay.in,
-    out: peanut && canPlay.out
+    out: peanut && (canPlay.in || canPlay.out)
   }
 }
 
@@ -167,7 +167,7 @@ export const useJapesPaintingOutside = (): LogicBool => {
   const chunky = useChunky()
   return {
     in: inStage.in && (stand || (climbing && twirl)),
-    out: inStage.out && climbing && (dk || tiny || chunky)
+    out: (inStage.in || inStage.out) && climbing && (dk || tiny || chunky)
   }
 }
 
@@ -302,7 +302,7 @@ export const useDkFreebieGb = (): LogicBool => {
   const hasBananaports = useBananaportAll()
   return {
     in: inStage.in && anyKong && (hasClimbing || hasBananaports),
-    out: inStage.out && anyKong //The "shortcut" I'm thinking of is a small area next to the mine exit that Lanky can O-Stand up, but right now, I'm a little hesitant to actually put O-Stand here. ^^;
+    out: (inStage.in || inStage.out) && anyKong //The "shortcut" I'm thinking of is a small area next to the mine exit that Lanky can O-Stand up, but right now, I'm a little hesitant to actually put O-Stand here. ^^;
   }
 }
 
@@ -555,6 +555,6 @@ export const useMtnCrate = (): LogicBool => {
   const hasBananaports = useBananaportAll()
   return {
     in: canEnterLevel.in && (hasClimbing || hasBananaports),
-    out: canEnterLevel.out
+    out: (canEnterLevel.in || canEnterLevel.out)
   }
 }

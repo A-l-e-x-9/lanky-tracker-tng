@@ -85,7 +85,7 @@ export const useAztecFront = (): LogicBool => {
   const twirl = useTwirl()
   return {
     in: aztecPlay.in && (vine || twirl),
-    out: aztecPlay.out
+    out: aztecPlay.in || aztecPlay.out
   }
 }
 

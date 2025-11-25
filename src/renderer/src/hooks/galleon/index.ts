@@ -180,7 +180,7 @@ export const useGalleonCavernTop = (): LogicBool => {
   const warpAll = useBananaportAll()
   return {
     in: inStage.in && (vine || (warpAll && (dive.in || rocket))),
-    out: inStage.out && seasick.out
+    out: (inStage.in || inStage.out) && seasick.out
   }
 }
 

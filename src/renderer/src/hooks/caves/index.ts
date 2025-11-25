@@ -109,7 +109,7 @@ export const useCavesMiniFunky = (): LogicBool => {
   const warpAll = useBananaportAll()
   return {
     in: inStage.in && !angery && (warpAll || (twirl && mini)),
-    out: (inStage.out || angery) && mini
+    out: ((inStage.in && !angery) || (inStage.out || angery)) && mini
   }
 }
 
@@ -127,7 +127,7 @@ export const useCavesPillar = (): LogicBool => {
   const warpAll = useBananaportAll()
   return {
     in: inStage.in && !angery && (warpAll || rocket),
-    out: (inStage.out || angery) && (dk || twirl || balloon)
+    out: ((inStage.in && !angery) || (inStage.out || angery)) && (dk || twirl || balloon)
   }
 }
 
@@ -140,7 +140,7 @@ export const useCavesLankyCabin = (): LogicBool => {
   const tiny = useTiny()
   return {
     in: inStage.in && !angery && trombone && balloon,
-    out: (inStage.out || angery) && trombone && (diddy || tiny)
+    out: ((inStage.in && !angery) || (inStage.out || angery)) && trombone && (diddy || tiny)
   }
 }
 
@@ -153,7 +153,7 @@ export const useCavesLankyCabinSpecial = (): LogicBool => {
   const tiny = useTiny()
   return {
     in: inStage.in && trombone && balloon,
-    out: inStage.out && trombone && (diddy || tiny)
+    out: (inStage.in || inStage.out) && trombone && (diddy || tiny)
   }
 }
 
@@ -166,7 +166,7 @@ export const useDkCabinGb = (): LogicBool => {
   const anyGun = useAnyGun()
   return {
     in: inStage.in && !angery && bongos && anyGun && (homing || hardShooting),
-    out: (inStage.out || angery) && bongos && anyGun
+    out: ((inStage.in && !angery) || (inStage.out || angery)) && bongos && anyGun
   }
 }
 
@@ -179,7 +179,7 @@ export const useDiddyGauntletGb = (): LogicBool => {
   const orange = useOrange()
   return {
     in: inStage.in && !angery && guitar && rocket && orange,
-    out: (inStage.out || angery) && guitar && orange
+    out: ((inStage.in && !angery) || (inStage.out || angery)) && guitar && orange
   }
 }
 
@@ -203,7 +203,7 @@ export const useChunkyClearGb = (): LogicBool => {
   const hunky = useHunky()
   return {
     in: inStage.in && !angery && (punch || wallsPrePunched) && boulder && hunky,
-    out: (inStage.out || angery) && (punch || wallsPrePunched) && boulder
+    out: ((inStage.in && !angery) || (inStage.out || angery)) && (punch || wallsPrePunched) && boulder
   }
 }
 
@@ -234,7 +234,7 @@ export const useDiddyWaterfallGb = (): LogicBool => {
   const twirl = useTwirl()
   return {
     in: inStage.in && !angery && rocket,
-    out: useFtaDiddyBanana() && (inStage.out || angery) && (dk || twirl)
+    out: useFtaDiddyBanana() && ((inStage.in && !angery) || (inStage.out || angery)) && (dk || twirl)
   }
 }
 
@@ -256,7 +256,7 @@ export const useDiddyCandleGb = (): LogicBool => {
   const spring = useSpring()
   return {
     in: inStage.in && !angery && guitar && rocket && spring,
-    out: (inStage.out || angery) && guitar && rocket //If you're playing a seed with the "move Diddy Upper Cabin Barrel" option on under the "quality of life" settings, you may not be able to do this. Don't know if I should edit this check to account for that option...it's a lot of effort for just one check! -_-;
+    out: ((inStage.in && !angery) || (inStage.out || angery)) && guitar && rocket //If you're playing a seed with the "move Diddy Upper Cabin Barrel" option on under the "quality of life" settings, you may not be able to do this. Don't know if I should edit this check to account for that option...it's a lot of effort for just one check! -_-;
   }
 }
 
@@ -309,7 +309,7 @@ export const useLankyRaceGb = (): LogicBool => {
   const sprint = useSprint()
   return {
     in: inStage.in && !angery && canSlam && sprint && balloon,
-    out: (inStage.out || angery) && canSlam && sprint && highGrab
+    out: ((inStage.in && !angery) || (inStage.out || angery)) && canSlam && sprint && highGrab
   }
 }
 

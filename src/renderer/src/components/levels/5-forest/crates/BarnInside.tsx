@@ -1,10 +1,10 @@
 import CratePool from '@renderer/components/pools/Crates'
 import VanillaCrate from '@renderer/components/pools/VanillaCrate'
-import { useDkBarnGb } from '@renderer/hooks/forest'
+import { useForestBarn } from '@renderer/hooks/forest'
 import ForestCheck from '../check'
 
 const BarnInsideCrate: React.FC = () => {
-  const barn = useDkBarnGb()
+  const barn = useForestBarn()
   return (
     <CratePool>
       <VanillaCrate>

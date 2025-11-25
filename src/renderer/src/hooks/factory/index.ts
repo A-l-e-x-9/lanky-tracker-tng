@@ -90,7 +90,7 @@ export const useFactoryHut = (): LogicBool => {
   const tiny = useTiny()
   return {
     in: testing.in,
-    out: inStage.out && (diddy || tiny)
+    out: (inStage.in || inStage.out) && (diddy || tiny)
   }
 }
 

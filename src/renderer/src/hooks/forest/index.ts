@@ -83,8 +83,8 @@ export const useForestDay = (): LogicBool => {
     }
   }
   return {
-    in: inStage && anyGun,
-    out: inStage && orange
+    in: inStage.in && anyGun,
+    out: (inStage.in || inStage.out) && orange
   }
 }
 
@@ -106,7 +106,7 @@ export const useForestNight = (): LogicBool => {
   }
   return {
     in: anyGun && inStage.in,
-    out: anyKong && orange && inStage.out
+    out: anyKong && orange && (inStage.in || inStage.out)
   }
 }
 
@@ -172,7 +172,7 @@ export const useForestMushroomRoof = (): LogicBool => {
   const tiny = useTiny()
   return {
     in: inStage.in && stand,
-    out: inStage.out && (rocket || tiny)
+    out: (inStage.in || inStage.out) && (rocket || tiny)
   }
 }
 
@@ -259,7 +259,7 @@ export const useChunkyMillGb = (): LogicBool => {
   const triangle = useTriangle()
   return {
     in: inStage.in && day.in && boulderTech && punch && triangle && grab,
-    out: inStage.out && day.out && boulderTech && punch && triangle
+    out: (inStage.in || inStage.out) && day.out && boulderTech && punch && triangle
   }
 }
 
@@ -271,7 +271,7 @@ export const useDiddyTopGb = (): LogicBool => {
   const stand = useStand()
   return {
     in: inStage.in && rocket,
-    out: useFtaDiddyBanana() && inStage.out && (diddy || tiny) && (tiny || stand)
+    out: useFtaDiddyBanana() && (inStage.in || inStage.out) && (diddy || tiny) && (tiny || stand)
   }
 }
 
@@ -307,7 +307,7 @@ export const useDiddyRaftersGb = (): LogicBool => {
   const highGrab = useHighGrab()
   return {
     in: inStage.in && night.in && spring && guitar,
-    out: useFtaDiddyBanana() && inStage.out && night.out && (spring || highGrab)
+    out: useFtaDiddyBanana() && (inStage.in || inStage.out) && night.out && (spring || highGrab)
   }
 }
 
@@ -352,7 +352,7 @@ export const useForestBarn = (): LogicBool => {
   const strong = useStrong()
   return {
     in: inStage.in && night.in && canSlam && strong,
-    out: inStage.out && night.out && dk && canSlam
+    out: (inStage.in || inStage.out) && night.out && dk && canSlam
   }
 }
 
@@ -377,7 +377,7 @@ export const useLankyMillGb = (): LogicBool => {
   const lanky = useLanky()
   return {
     in: inStage.in && night.in && lanky && canSlam && anyGun && (homing || hardShooting),
-    out: inStage.out && night.out && lanky && canSlam && anyGun
+    out: (inStage.in || inStage.out) && night.out && lanky && canSlam && anyGun
   }
 }
 
