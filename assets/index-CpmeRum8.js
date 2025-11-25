@@ -12353,8 +12353,8 @@ const CastleLobbyEnemies = () => {
         id: 315,
         name: "Castle Lobby Left Enemy",
         region: "Caves-Helm Lobbies",
-        canGetLogic: anyKong && playCastle && kosha.in,
-        canGetBreak: anyKong && playCastle && kosha.out
+        canGetLogic: anyKong && playCastle.in && kosha.in,
+        canGetBreak: anyKong && playCastle.out && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12363,8 +12363,8 @@ const CastleLobbyEnemies = () => {
         id: 316,
         name: "Castle Lobby Near Right Enemy",
         region: "Caves-Helm Lobbies",
-        canGetLogic: anyKong && playCastle && kosha.in,
-        canGetBreak: anyKong && playCastle && kosha.out
+        canGetLogic: anyKong && playCastle.in && kosha.in,
+        canGetBreak: anyKong && playCastle.out && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12373,8 +12373,8 @@ const CastleLobbyEnemies = () => {
         id: 317,
         name: "Castle Lobby Far Right Enemy",
         region: "Caves-Helm Lobbies",
-        canGetLogic: anyKong && playCastle && kosha.in,
-        canGetBreak: anyKong && playCastle && kosha.out
+        canGetLogic: anyKong && playCastle.in && kosha.in,
+        canGetBreak: anyKong && playCastle.out && kosha.out
       }
     )
   ] });
