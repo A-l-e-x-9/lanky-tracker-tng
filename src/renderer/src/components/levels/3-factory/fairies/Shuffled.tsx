@@ -8,6 +8,8 @@ const Shuffled: React.FC = () => {
   const hasCam = useCamera()
   const hasClimbing = useClimbing()
   const hasGuitar = useGuitar()
+  const hasPrimatePunch = usePunch()
+  const hasTriangle = useTriangle()
   const hasBananaports = useBananaportAll()
   const isBreathing = useGeneralFairy()
   const vanillaFairy1 = useNumberFairy()
