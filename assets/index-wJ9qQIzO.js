@@ -14102,10 +14102,10 @@ const useJapesHive = () => {
   const coconutGates = useJapesKongGates();
   const japesMine = useJapesMine();
   const warpAll = useBananaportAll();
-  const [hiveGateOpen, checks] = useDonkStore(useShallow((state) => [state.removeBarriers.japesHiveGate, state.checks]));
+  const [hiveGateOpen] = useDonkStore(useShallow((state) => [state.removeBarriers.japesHiveGate]));
   return {
-    in: canPlay.in && (coconutGates.in && (hiveGateOpen || hiveSwitch) || japesMine.in && (warpAll || checks[1011])),
-    out: canPlay.out && (coconutGates.out && (hiveGateOpen || hiveSwitch) || japesMine.out && (warpAll || checks[1011]))
+    in: canPlay.in && (coconutGates.in && (hiveGateOpen || hiveSwitch) || japesMine.in && warpAll),
+    out: canPlay.out && (coconutGates.out && (hiveGateOpen || hiveSwitch) || japesMine.out && warpAll)
   };
 };
 const useJapesPaintingOutside = () => {
