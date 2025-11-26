@@ -337,7 +337,13 @@ const GeneratorSettings: React.FC = () => {
               </>
             <h3>Location Shuffle Settings</h3>
             <>
-            <p className="full-grid"><strong>NOW UNDER (RE-)KONSTRUCTION.</strong></p>
+              <p>Fairies?</p>
+              <SimpleIcon
+                imgUrl={fairyIcon}
+                storeKey="shuffleFairies"
+                prefix="settings"
+                updateItem={setSetting}
+              />
             </>
             <h3>Fast Barrier Settings</h3>
             <>

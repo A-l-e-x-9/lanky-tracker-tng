@@ -19,6 +19,7 @@ import PeanutGateChecks from './PeanutGate'
 import RambiGateChecks from './RambiGate'
 import UndergroundChecks from './Underground'
 import StormyTunnelChecks from './StormyTunnel'
+import ShuffledFairies from '../fairies/Shuffled'
 
 const JapesRegionChecks: React.FC = () => (
   <div className="grid">
@@ -44,6 +45,7 @@ const JapesRegionChecks: React.FC = () => (
     <UndergroundChecks />
     <ShopLocations />
     <BossCheck />
+    <ShuffledFairies />
   </div>
 )
 

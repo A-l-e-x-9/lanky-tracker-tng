@@ -553,8 +553,9 @@ export const useMtnCrate = (): LogicBool => {
   const canEnterLevel = usePlayJapes()
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
+  const hasOStand = useStand()
   return {
     in: canEnterLevel.in && (hasClimbing || hasBananaports),
-    out: (canEnterLevel.in || canEnterLevel.out)
+    out: (canEnterLevel.in || canEnterLevel.out) && hasOStand
   }
 }
