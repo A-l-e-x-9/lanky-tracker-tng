@@ -11932,7 +11932,7 @@ const useAztecDirt = () => {
     out: shockwave && (islesUpper && boulderTech && (diddy || tiny) || crossFungi && (dk2 || tiny && twirl))
   };
 };
-const useGeneralFairy$1 = () => {
+const useGeneralFairy$2 = () => {
   const anyKong = useAnyKong();
   const camera = useCamera();
   return anyKong && camera;
@@ -12577,7 +12577,7 @@ const SmallIslandFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, 
     id: 80,
     name: "Fairy on the Small Island near the Fairy Queen's House",
     region: "Outer Isles",
-    canGetLogic: useGeneralFairy$1()
+    canGetLogic: useGeneralFairy$2()
   }
 ) }) });
 const UpperKremFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -13272,7 +13272,7 @@ const Vanilla$7 = () => {
     )
   ] });
 };
-const Shuffled$b = () => {
+const Shuffled$c = () => {
   const kremAscent = useIslesKremAscent();
   const cranky = useCranky();
   const snide = useSnide();
@@ -13300,7 +13300,7 @@ const Shuffled$b = () => {
   ] });
 };
 const ShopLocations$7 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$b, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$c, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const WrinklyPool = ({ children }) => usePoolWrinkly() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -14394,6 +14394,14 @@ const usePaintingFairy = () => {
     out: camera && banana.out
   };
 };
+const useGeneralFairy$1 = () => {
+  const camera = useCamera();
+  const canPlay = usePlayJapes();
+  return {
+    in: canPlay.in && camera,
+    out: canPlay.out && camera
+  };
+};
 const useGateKasplat = () => {
   const kongGates = useJapesKongGates();
   const anyKong = useAnyKong();
@@ -14438,9 +14446,10 @@ const useMtnCrate = () => {
   const canEnterLevel = usePlayJapes();
   const hasClimbing = useClimbing();
   const hasBananaports = useBananaportAll();
+  const hasOStand = useStand();
   return {
     in: canEnterLevel.in && (hasClimbing || hasBananaports),
-    out: canEnterLevel.in || canEnterLevel.out
+    out: (canEnterLevel.in || canEnterLevel.out) && hasOStand
   };
 };
 const JapesCheck = (props) => {
@@ -15972,7 +15981,7 @@ const Vanilla$6 = () => {
     )
   ] });
 };
-const Shuffled$a = () => {
+const Shuffled$b = () => {
   const kongGates = useJapesKongGates();
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
@@ -16016,7 +16025,7 @@ const Shuffled$a = () => {
   ] });
 };
 const ShopLocations$6 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$a, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$6, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$b, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$6, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const HiveInteriorChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -16079,6 +16088,131 @@ const StormyTunnelChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(StormyTunnelEnemies, {})
 ] });
+const Shuffled$a = () => {
+  const hasCam = useCamera();
+  const isBreathing = useGeneralFairy$1();
+  const vanillaFairy1 = useRambiFairy();
+  const vanillaFairy2 = usePaintingFairy();
+  const canReachUpperArea = useMtnCrate();
+  const canGoPastGates = useJapesKongGates();
+  const canReachHiveArea = useJapesHive();
+  const canGoInMine = useJapesMine();
+  const canGoInHive = useTinyHiveGb();
+  const canGoUnder = useJapesUnderground();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Fairy: Vanilla Location #1 (pool after Rambi door)",
+        region: "Stormy Area",
+        canGetLogic: vanillaFairy1.in,
+        canGetBreak: vanillaFairy1.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11001,
+        name: "Shuffled Fairy: Vanilla Location #2 (Lanky's painting room)",
+        region: "Japes Caves and Mines",
+        canGetLogic: vanillaFairy2.in,
+        canGetBreak: vanillaFairy2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11002,
+        name: "Shuffled Fairy: In front of Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachUpperArea.in && hasCam,
+        canGetBreak: canReachUpperArea.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11003,
+        name: "Shuffled Fairy: Overlooking Diddy's mine",
+        region: "Japes Hillside",
+        canGetLogic: canReachUpperArea.in && hasCam,
+        canGetBreak: canReachUpperArea.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11004,
+        name: "Shuffled Fairy: Over Chunky's cave entrance",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11005,
+        name: "Shuffled Fairy: In the hive zone",
+        region: "Hive Area",
+        canGetLogic: canReachHiveArea.in && hasCam,
+        canGetBreak: canReachHiveArea.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11006,
+        name: "Shuffled Fairy: In the hive itself",
+        region: "Hive Area",
+        canGetLogic: canGoInHive.in && hasCam,
+        canGetBreak: canGoInHive.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11007,
+        name: "Shuffled Fairy: At Cranky's",
+        region: "Stormy Area",
+        canGetLogic: canGoPastGates.in && hasCam,
+        canGetBreak: canGoPastGates.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11008,
+        name: "Shuffled Fairy: Inside Diddy's mine",
+        region: "Japes Caves and Mines",
+        canGetLogic: canGoInMine.in && hasCam,
+        canGetBreak: canGoInMine.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11009,
+        name: "Shuffled Fairy: Along Chunky's underground pathway",
+        region: "Japes Caves and Mines",
+        canGetLogic: canGoUnder.in && hasCam,
+        canGetBreak: canGoUnder.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11010,
+        name: "Shuffled Fairy: At the end of the Chunky underground path",
+        region: "Japes Caves and Mines",
+        canGetLogic: canGoUnder.in && hasCam,
+        canGetBreak: canGoUnder.out && hasCam
+      }
+    )
+  ] });
+};
+const ShuffledFairies$1 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$a, {}) : null;
 const JapesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
   /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$6, {}),
@@ -16101,7 +16235,8 @@ const JapesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingRoomChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(UndergroundChecks$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {})
+  /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$1, {})
 ] });
 const ClassicChecks$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$6, {}),
@@ -16123,7 +16258,8 @@ const ClassicChecks$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   ] }),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$7, {}) })
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$7, {}) }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$1, {})
 ] });
 const JapesChecks = () => {
   const grp = useDonkStore(useShallow((state) => state.ui.groupByRegion));
@@ -30513,7 +30649,19 @@ const GeneratorSettings = () => {
               )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Location Shuffle Settings" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "NOW UNDER (RE-)KONSTRUCTION." }) }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Fairies?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: fairyIcon,
+                  title: "If your Banana Fairies are shuffled, click here.",
+                  storeKey: "shuffleFairies",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              )
+            ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fast Barrier Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Japes Tunnel Gates?" }),
