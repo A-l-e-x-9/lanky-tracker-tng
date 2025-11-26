@@ -488,10 +488,11 @@ export const useRambiFairy = (): LogicBool => {
 
 export const usePaintingFairy = (): LogicBool => {
   const camera = useCamera()
-  const banana = useLankyPaintingGb()
+  const [banana] = useDonkStore(useShallow((state) => [state.checks])
+  )
   return {
-    in: camera && banana.in,
-    out: camera && banana.out
+    in: camera && banana[1023].in,
+    out: camera && banana[1023].out
   }
 }
 
