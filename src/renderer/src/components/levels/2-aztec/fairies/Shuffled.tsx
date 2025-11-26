@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useChunkyVaseGb, useAztecBack, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useChunky5DoorGb, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce } from '@renderer/hooks/aztec'
+import { useGeneralFairy, useTinyFairy, useLlamaFairy, useChunkyVaseGb, useAztecBack, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useChunky5DoorGb, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce } from '@renderer/hooks/aztec'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useCamera, useGrape, useDive } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
