@@ -11,6 +11,7 @@ import TestingChecks from './Testing'
 import RNDChecks from './Research'
 import StorageChecks from './Storage'
 import ProductionChecks from './Production'
+import ShuffledFairies from '../fairies/Shuffled'
 
 const FactoryRegionChecks: React.FC = () => (
   <div className="grid">
@@ -28,6 +29,7 @@ const FactoryRegionChecks: React.FC = () => (
     <ProductionChecks />
     <ShopLocations />
     <BossCheck />
+    <ShuffledFairies />
   </div>
 )
 

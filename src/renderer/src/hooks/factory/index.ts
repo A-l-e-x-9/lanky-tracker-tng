@@ -449,10 +449,13 @@ export const useFactoryDirt = (): LogicBool => {
   }
 }
 
-export const useGeneralFairy = (): boolean => {
+export const useGeneralFairy = (): LogicBool => {
   const thing = useGeneralThing()
   const camera = useCamera()
-  return thing && camera
+  return {
+    in: thing.in && camera,
+    out: thing.out && camera
+  }
 }
 
 export const useNumberFairy = (): LogicBool => {
@@ -465,9 +468,9 @@ export const useNumberFairy = (): LogicBool => {
 }
 
 export const useDartFairy = (): boolean => {
-  const banana = useTinyDartGb()
+  const [banana] = useDonkStore(useShallow((state) => [state.checks]))
   const camera = useCamera()
-  return banana && camera
+  return banana[3030] && camera
 }
 
 export const useProductionTopKasplat = (): LogicBool => {
