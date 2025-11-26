@@ -14388,11 +14388,8 @@ const useRambiFairy = () => {
 };
 const usePaintingFairy = () => {
   const camera = useCamera();
-  const banana = useLankyPaintingGb();
-  return {
-    in: camera && banana.in,
-    out: camera && banana.out
-  };
+  const [banana] = useDonkStore(useShallow((state) => [state.checks]));
+  return camera && banana[1023];
 };
 const useGeneralFairy$1 = () => {
   const camera = useCamera();
@@ -14984,8 +14981,7 @@ const PaintingFairy = () => {
       id: 1081,
       name: "Fairy in the Painting Room",
       region: "Japes Caves and Mines",
-      canGetLogic: painting.in,
-      canGetBreak: painting.out
+      canGetLogic: painting
     }
   ) }) }) });
 };
@@ -16116,8 +16112,7 @@ const Shuffled$a = () => {
         id: 11001,
         name: "Shuffled Fairy: Vanilla Location #2 (Lanky's painting room)",
         region: "Japes Caves and Mines",
-        canGetLogic: vanillaFairy2.in,
-        canGetBreak: vanillaFairy2.out
+        canGetLogic: vanillaFairy2
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
