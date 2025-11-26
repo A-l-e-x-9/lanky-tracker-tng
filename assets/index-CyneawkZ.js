@@ -19243,13 +19243,13 @@ const AztecRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinySwimChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DoorTempleChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaTempleChecks, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$5, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$5, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$6, {})
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas, {})
 ] });
 const BoulderLocations$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(TunnelBoulder, {}),
