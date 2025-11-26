@@ -14647,7 +14647,7 @@ const CaveEnemies = () => {
 };
 const HiveInteriorEnemies = () => {
   const hiveOut = useJapesHive();
-  const hiveIn = useMini() && hiveOut;
+  const hiveIn = useMini() && hiveOut.in;
   const zinger = useDefeatZinger();
   const klaptrap = useDefeatPurpleKlaptrap();
   const canSlam = useSlamJapes();
