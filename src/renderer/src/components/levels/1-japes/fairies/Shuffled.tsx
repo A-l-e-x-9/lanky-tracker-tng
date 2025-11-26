@@ -28,8 +28,7 @@ const Shuffled: React.FC = () => {
         id={11001}
         name="Shuffled Fairy: Vanilla Location #2 (Lanky's painting room)"
         region="Japes Caves and Mines"
-        canGetLogic={vanillaFairy2.in}
-        canGetBreak={vanillaFairy2.out}
+        canGetLogic={vanillaFairy2}
       />
       <JapesCheck
         id={11002}

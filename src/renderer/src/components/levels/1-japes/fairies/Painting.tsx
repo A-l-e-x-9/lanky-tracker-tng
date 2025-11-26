@@ -14,8 +14,7 @@ const PaintingFairy: React.FC = () => {
           id={1081}
           name="Fairy in the Painting Room"
           region="Japes Caves and Mines"
-          canGetLogic={painting.in}
-          canGetBreak={painting.out}
+          canGetLogic={painting}
         />
       </VanillaFairy>
     </FairyPool>
