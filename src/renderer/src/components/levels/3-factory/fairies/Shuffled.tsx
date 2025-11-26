@@ -136,7 +136,7 @@ const Shuffled: React.FC = () => {
         name="Shuffled Fairy: In Chunky's Toy Monster Room"
         region="R&D Room"
         canGetLogic={canDoTesting.in && hasCam && (hasClimbing || hasBananaports) && hasPrimatePunch && hasTriangle}
-        canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports) highGrab && hasPrimatePunch && hasTriangle}
+        canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports) && highGrab && hasPrimatePunch && hasTriangle}
       />
       <FactoryCheck
         id={13017}
