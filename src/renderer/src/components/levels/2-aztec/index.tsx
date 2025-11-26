@@ -22,6 +22,7 @@ import TinyMedal from './medals/TinyMedal'
 import AztecRegionChecks from './regions'
 import AztecShops from './shops'
 import BoulderLocations from './boulders'
+import ShuffledFairies from './fairies/Shuffled'
 
 const ClassicChecks: React.FC = () => (
   <div className="grid">
@@ -48,6 +49,7 @@ const ClassicChecks: React.FC = () => (
     <DropPool>
       <EnemyLocations />
     </DropPool>
+    <ShuffledFairies />
   </div>
 )
 
