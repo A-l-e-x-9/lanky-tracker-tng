@@ -340,6 +340,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Fairies?</p>
               <SimpleIcon
                 imgUrl={fairyIcon}
+                title="If your Banana Fairies are shuffled, click here."
                 storeKey="shuffleFairies"
                 prefix="settings"
                 updateItem={setSetting}
