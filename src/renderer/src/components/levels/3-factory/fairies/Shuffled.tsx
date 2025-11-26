@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useNumberFairy, useDartFairy, useFactoryProductionEnabled, useFactoryProductionTop, useFactoryTesting, useDiddyBlockGb } from '@renderer/hooks/factory'
+import { useGeneralFairy, useNumberFairy, useDartFairy, useFactoryProductionEnabled, useFactoryProductionTop, useFactoryTesting, useDkProdGb, useDiddyBlockGb } from '@renderer/hooks/factory'
 import { useShuffleFairies, useBananaportAll } from '@renderer/hooks/settings'
 import { useCamera, useClimbing, useGuitar, usePunch, useTriangle, useHighGrab } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
@@ -14,6 +14,7 @@ const Shuffled: React.FC = () => {
   const vanillaFairy2 = useDartFairy()
   const prodRoomOn = useFactoryProductionEnabled()
   const prodRoomTop = useFactoryProductionTop()
+  const crusher = useDkProdGb()
   const canDoTesting = useFactoryTesting()
   const canDoBlockTower = useDiddyBlockGb()
   const highGrab = useHighGrab()
@@ -135,7 +136,28 @@ const Shuffled: React.FC = () => {
         name="Shuffled Fairy: In Chunky's Toy Monster Room"
         region="R&D Room"
         canGetLogic={canDoTesting.in && hasCam && (hasClimbing || hasBananaports) && hasPrimatePunch && hasTriangle}
-        canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports) highGrab && && hasPrimatePunch && hasTriangle}
+        canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports) highGrab && hasPrimatePunch && hasTriangle}
+      />
+      <AztecCheck
+        id={13017}
+        name="Shuffled Fairy: At the chute to the Storage Room"
+        region="R&D Room"
+        canGetLogic={canDoTesting.in && hasCam && (hasClimbing || hasBananaports)}
+        canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports)}
+      />
+      <AztecCheck
+        id={13018}
+        name="Shuffled Fairy: In Chunky's Dark Room"
+        region="Storage and Arcade Area"
+        canGetLogic={isBreathing.in && hasPrimatePunch}
+        canGetBreak={isBreathing.out && hasPrimatePunch}
+      />
+      <AztecCheck
+        id={13019}
+        name="Shuffled Fairy: In the Crusher"
+        region="Prod Room"
+        canGetLogic={crusher.in && hasCam}
+        canGetBreak={crusher.out && hasCam}
       />
     </FairyPool>
   )
