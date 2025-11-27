@@ -1,5 +1,4 @@
 import GBPool from '@renderer/components/pools/GB'
-import Miniboss from '@renderer/components/pools/Miniboss'
 import { useLankyRoomGb } from '@renderer/hooks/castle'
 import CastleCheck from '../../check'
 
