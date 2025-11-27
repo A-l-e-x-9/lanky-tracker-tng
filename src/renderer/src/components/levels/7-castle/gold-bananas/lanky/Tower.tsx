@@ -7,7 +7,6 @@ const LankyTower: React.FC = () => {
   const roomGb = useLankyRoomGb()
   return (
   <GBPool>
-  <Miniboss>
     <CastleCheck
       id={7020}
       name="Lanky's Wind Tunnel"
@@ -15,7 +14,6 @@ const LankyTower: React.FC = () => {
       canGetLogic={roomGb.in}
       canGetBreak={roomGb.out}
     />
-  </Miniboss>
   </GBPool>
   )
 }
