@@ -23,139 +23,139 @@ const Shuffled: React.FC = () => {
   return (
     <FairyPool>
       <FactoryCheck
-        id={13000}
+        id={43000}
         name="Shuffled Fairy: Vanilla Location #1 (tunnel to DK's number game)"
         region="Testing Room"
         canGetLogic={vanillaFairy1.in}
         canGetBreak={vanillaFairy1.out}
       />
       <FactoryCheck
-        id={13001}
+        id={43001}
         name="Shuffled Fairy: Vanilla Location #2 (Funky's after Tiny's dart game)"
         region="Testing Room"
         canGetLogic={vanillaFairy2}
       />
       <FactoryCheck
-        id={13002}
+        id={43002}
         name="Shuffled Fairy: At the vanilla entrance"
         region="Factory Start Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <FactoryCheck
-        id={13003}
+        id={43003}
         name="Shuffled Fairy: Down the pole to the Prod Room"
         region="Factory Start Area"
         canGetLogic={isBreathing.in && hasClimbing}
         canGetBreak={isBreathing.out}
       />
       <FactoryCheck
-        id={13004}
+        id={43004}
         name="Shuffled Fairy: Bottom of Prod Room"
         region="Prod Room"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <FactoryCheck
-        id={13005}
+        id={43005}
         name="Shuffled Fairy: Middle of Prod Room"
         region="Prod Room"
         canGetLogic={prodRoomOn.in && hasClimbing && hasCam}
         canGetBreak={prodRoomOn.out && hasCam}
       />
       <FactoryCheck
-        id={13006}
+        id={43006}
         name="Shuffled Fairy: Top of Prod Room"
         region="Prod Room"
         canGetLogic={prodRoomTop.in && hasCam}
         canGetBreak={prodRoomTop.out && hasCam}
       />
       <FactoryCheck
-        id={13007}
+        id={43007}
         name="Shuffled Fairy: In Storage"
         region="Storage and Arcade Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <FactoryCheck
-        id={13008}
+        id={43008}
         name="Shuffled Fairy: At Cranky's/Candy's"
         region="Storage and Arcade Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <FactoryCheck
-        id={13009}
+        id={43009}
         name="Shuffled Fairy: In the tunnel to the Arcade room"
         region="Storage and Arcade Area"
         canGetLogic={isBreathing.in && (hasClimbing || hasBananaports)}
         canGetBreak={isBreathing.out && (hasClimbing || hasBananaports)}
       />
       <FactoryCheck
-        id={13010}
+        id={43010}
         name="Shuffled Fairy: Suffering through DK Arcade"
         region="Storage and Arcade Area"
         canGetLogic={isBreathing.in && (hasClimbing || hasBananaports)}
         canGetBreak={isBreathing.out && (hasClimbing || hasBananaports)}
       />
       <FactoryCheck
-        id={13011}
+        id={43011}
         name="Shuffled Fairy: Top of Diddy's Block Tower"
         region="Testing Room"
         canGetLogic={canDoBlockTower.in && hasCam}
         canGetBreak={canDoBlockTower.out && hasCam}
       />
       <FactoryCheck
-        id={13012}
+        id={43012}
         name="Shuffled Fairy: Boxes to Tiny's Dartboard"
         region="Testing Room"
         canGetLogic={canDoTesting.in && hasCam}
         canGetBreak={canDoTesting.out && hasCam}
       />
       <FactoryCheck
-        id={13013}
+        id={43013}
         name="Shuffled Fairy: Pole to the R&D Room"
         region="Testing Room"
         canGetLogic={canDoTesting.in && hasCam && hasClimbing}
         canGetBreak={canDoTesting.out && hasCam}
       />
       <FactoryCheck
-        id={13014}
+        id={43014}
         name="Shuffled Fairy: In Diddy's Pincode Room"
         region="R&D Room"
         canGetLogic={canDoTesting.in && hasCam && (hasClimbing || hasBananaports) && hasGuitar}
         canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports) && hasGuitar}
       />
       <FactoryCheck
-        id={13015}
+        id={43015}
         name="Shuffled Fairy: Tunnel to Tiny's Car Race"
         region="R&D Room"
         canGetLogic={canDoTesting.in && hasCam && (hasClimbing || hasBananaports)}
         canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports)}
       />
       <FactoryCheck
-        id={13016}
+        id={43016}
         name="Shuffled Fairy: In Chunky's Toy Monster Room"
         region="R&D Room"
         canGetLogic={canDoTesting.in && hasCam && (hasClimbing || hasBananaports) && hasPrimatePunch && hasTriangle}
         canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports) && highGrab && hasPrimatePunch && hasTriangle}
       />
       <FactoryCheck
-        id={13017}
+        id={43017}
         name="Shuffled Fairy: At the chute to the Storage Room"
         region="R&D Room"
         canGetLogic={canDoTesting.in && hasCam && (hasClimbing || hasBananaports)}
         canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports)}
       />
       <FactoryCheck
-        id={13018}
+        id={43018}
         name="Shuffled Fairy: In Chunky's Dark Room"
         region="Storage and Arcade Area"
         canGetLogic={isBreathing.in && hasPrimatePunch}
         canGetBreak={isBreathing.out && hasPrimatePunch}
       />
       <FactoryCheck
-        id={13019}
+        id={43019}
         name="Shuffled Fairy: In the Crusher"
         region="Prod Room"
         canGetLogic={crusher.in && hasCam}

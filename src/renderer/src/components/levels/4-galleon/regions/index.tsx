@@ -11,6 +11,7 @@ import LighthouseChecks from './Lighthouse'
 import OutskirtsChecks from './Outskirts'
 import FiveShipChecks from './Ship'
 import TreasureChecks from './Treasure'
+import ShuffledFairies from './fairies/Shuffled'
 
 const GalleonRegionChecks: React.FC = () => (
   <>
@@ -29,6 +30,7 @@ const GalleonRegionChecks: React.FC = () => (
       <FiveShipChecks />
       <ShopLocations />
       <BossCheck />
+      <ShuffledFairies />
     </div>
   </>
 )

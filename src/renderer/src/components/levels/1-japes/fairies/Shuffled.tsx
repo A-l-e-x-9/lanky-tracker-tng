@@ -18,76 +18,76 @@ const Shuffled: React.FC = () => {
   return (
     <FairyPool>
       <JapesCheck
-        id={11000}
+        id={41000}
         name="Shuffled Fairy: Vanilla Location #1 (pool after Rambi door)"
         region="Stormy Area"
         canGetLogic={vanillaFairy1.in}
         canGetBreak={vanillaFairy1.out}
       />
       <JapesCheck
-        id={11001}
+        id={41001}
         name="Shuffled Fairy: Vanilla Location #2 (Lanky's painting room)"
         region="Japes Caves and Mines"
         canGetLogic={vanillaFairy2}
       />
       <JapesCheck
-        id={11002}
+        id={41002}
         name="Shuffled Fairy: In front of Diddy's cage"
         region="Japes Hillside"
         canGetLogic={canReachUpperArea.in && hasCam}
         canGetBreak={canReachUpperArea.out && hasCam}
       />
       <JapesCheck
-        id={11003}
+        id={41003}
         name="Shuffled Fairy: Overlooking Diddy's mine"
         region="Japes Hillside"
         canGetLogic={canReachUpperArea.in && hasCam}
         canGetBreak={canReachUpperArea.out && hasCam}
       />
       <JapesCheck
-        id={11004}
+        id={41004}
         name="Shuffled Fairy: Over Chunky's cave entrance"
         region="Japes Lowlands"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <JapesCheck
-        id={11005}
+        id={41005}
         name="Shuffled Fairy: In the hive zone"
         region="Hive Area"
         canGetLogic={canReachHiveArea.in && hasCam}
         canGetBreak={canReachHiveArea.out && hasCam}
       />
       <JapesCheck
-        id={11006}
+        id={41006}
         name="Shuffled Fairy: In the hive itself"
         region="Hive Area"
         canGetLogic={canGoInHive.in && hasCam}
         canGetBreak={canGoInHive.out && hasCam}
       />
       <JapesCheck
-        id={11007}
+        id={41007}
         name="Shuffled Fairy: At Cranky's"
         region="Stormy Area"
         canGetLogic={canGoPastGates.in && hasCam}
         canGetBreak={canGoPastGates.out && hasCam}
       />
       <JapesCheck
-        id={11008}
+        id={41008}
         name="Shuffled Fairy: Inside Diddy's mine"
         region="Japes Caves and Mines"
         canGetLogic={canGoInMine.in && hasCam}
         canGetBreak={canGoInMine.out && hasCam}
       />
       <JapesCheck
-        id={11009}
+        id={41009}
         name="Shuffled Fairy: Along Chunky's underground pathway"
         region="Japes Caves and Mines"
         canGetLogic={canGoUnder.in && hasCam}
         canGetBreak={canGoUnder.out && hasCam}
       />
       <JapesCheck
-        id={11010}
+        id={41010}
         name="Shuffled Fairy: At the end of the Chunky underground path"
         region="Japes Caves and Mines"
         canGetLogic={canGoUnder.in && hasCam}
