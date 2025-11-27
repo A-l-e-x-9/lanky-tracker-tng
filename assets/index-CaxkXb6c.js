@@ -28189,7 +28189,7 @@ const LankyMausoleum = () => {
 };
 const LankyTower = () => {
   const roomGb = useLankyRoomGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CastleCheck,
     {
       id: 7020,
@@ -28198,7 +28198,7 @@ const LankyTower = () => {
       canGetLogic: roomGb.in,
       canGetBreak: roomGb.out
     }
-  ) }) });
+  ) });
 };
 const LankyBananas = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(LankyTower, {}),
