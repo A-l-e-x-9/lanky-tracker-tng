@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, usePunchFairy, useShipFairy, useGalleonOutskirts, useGalleonLighthouseArea, useGalleonLighthouseInside, useGalleonSeasickShip, useLanky5DoorShipGb, useTiny2DoorShipGb, useTinySubGb, useTinyClams } from '@renderer/hooks/galleon'
+import { useGeneralFairy, useChestFairy, useShipFairy, useGalleonOutskirts, useGalleonLighthouseArea, useGalleonLighthouseInside, useGalleonSeasickShip, useLanky5DoorShipGb, useTiny2DoorShipGb, useTinySubGb, useTinyClams } from '@renderer/hooks/galleon'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useCamera, useDive, useClimbing, useMini } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
@@ -7,7 +7,7 @@ import GalleonCheck from '../check'
 const Shuffled: React.FC = () => {
   const hasCam = useCamera()
   const isBreathing = useGeneralFairy()
-  const vanillaFairy1 = usePunchFairy()
+  const vanillaFairy1 = useChestFairy()
   const vanillaFairy2 = useShipFairy()
   const canReachOutskirts = useGalleonOutskirts()
   const canReachLighthouse = useGalleonLighthouseArea()
