@@ -17361,7 +17361,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2351,
+        id: 2354,
         name: "Enemy at Music Pad to Free Lanky",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
@@ -17371,7 +17371,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2352,
+        id: 2355,
         name: "Enemy at Music Pad to Raise Statues",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
@@ -17381,7 +17381,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2353,
+        id: 2356,
         name: "Enemy 0 in the Matching Room",
         region: "Llama Temple",
         canGetLogic: llama.in && hasGrapes,
@@ -17391,7 +17391,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2354,
+        id: 2357,
         name: "Enemy 1 in the Matching Room",
         region: "Llama Temple",
         canGetLogic: llama.in && hasGrapes,
@@ -17401,7 +17401,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2355,
+        id: 2358,
         name: "Enemy at Right of Pool",
         region: "Llama Temple",
         canGetLogic: llama.in,
@@ -17411,7 +17411,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2356,
+        id: 2359,
         name: "Enemy at Left of Pool",
         region: "Llama Temple",
         canGetLogic: llama.in,
@@ -17421,7 +17421,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2357,
+        id: 2360,
         name: "Enemy at Melon Crate",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
@@ -17431,7 +17431,7 @@ const LlamaTempleEnemies = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
-        id: 2358,
+        id: 2361,
         name: "Enemy at Quicksand Tunnel Opening Switch",
         region: "Llama Temple",
         canGetLogic: llama.in && klaptrap,
