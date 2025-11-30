@@ -926,6 +926,7 @@ export const useJapesLobby = (): LogicBool => {
   return {
     in: canEnterJapes.in && chunky && barrels,
     out: canEnterJapes.out && chunky && barrels
+  }
 }
 
 export const useJapesLobbyGeneric = (): LogicBool => {
