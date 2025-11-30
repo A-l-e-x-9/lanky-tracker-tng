@@ -12020,7 +12020,10 @@ const useCastleLobby = () => {
   const canEnterCastle = usePlayLobby("Creepy Castle");
   const chunky = useChunky();
   const barrels = useBarrel();
-  return canEnterCastle && chunky && barrels;
+  return {
+    in: canEnterCastle.in && chunky && barrels,
+    out: canEnterCastle.out && chunky && barrels
+  };
 };
 const useCavesLobby = () => {
   const canEnterCaves = usePlayLobby("Crystal Caves");
@@ -12036,7 +12039,10 @@ const useJapesLobby = () => {
   const canEnterJapes = usePlayLobby("Jungle Japes");
   const chunky = useChunky();
   const barrels = useBarrel();
-  return canEnterJapes && chunky && barrels;
+  return {
+    in: canEnterJapes.in && chunky && barrels,
+    out: canEnterJapes.out && chunky && barrels
+  };
 };
 const useJapesLobbyGeneric = () => {
   const canEnterJapes = usePlayLobby("Jungle Japes");
@@ -13393,13 +13399,15 @@ const AztecLobbyChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
 ] });
 const BoulderPool = ({ children }) => usePoolBoulders() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const CastleLobby = () => {
+  const canDo = useCastleLobby();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 7,
       name: "Boulder on the Lanky Pad in Castle Lobby",
       region: "Caves-Helm Lobbies",
-      canGetLogic: useCastleLobby()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
@@ -13843,13 +13851,15 @@ const IslesMainUpperChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRun
   /* @__PURE__ */ jsxRuntimeExports.jsx(NearAztecEnemies, {})
 ] });
 const JapesLobby = () => {
+  const canDo = useJapesLobby();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 9,
       name: "Japes Lobby Boulder",
       region: "Japes-Forest Lobbies",
-      canGetLogic: useJapesLobby()
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
     }
   ) });
 };
