@@ -14877,7 +14877,8 @@ const JapesStartEnemies = () => {
         id: 1300,
         name: "Enemy at Start",
         region: "Japes Lowlands",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14886,7 +14887,8 @@ const JapesStartEnemies = () => {
         id: 1302,
         name: "Enemy 0 in Early Tunnel",
         region: "Japes Lowlands",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14895,7 +14897,8 @@ const JapesStartEnemies = () => {
         id: 1303,
         name: "Enemy 1 in Early Tunnel",
         region: "Japes Lowlands",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14904,7 +14907,8 @@ const JapesStartEnemies = () => {
         id: 1312,
         name: "Enemy Killed in the Title Screen's Demo",
         region: "Japes Lowlands",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14913,8 +14917,8 @@ const JapesStartEnemies = () => {
         id: 1313,
         name: "Zinger Near Enemy Killed in the Demo",
         region: "Japes Lowlands",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     )
   ] });
