@@ -898,11 +898,14 @@ export const useAztecLobbyBoulders = (): LogicBool => {
   }
 }
 
-export const useCastleLobby = (): boolean => {
+export const useCastleLobby = (): LogicBool => {
   const canEnterCastle = usePlayLobby('Creepy Castle')
   const chunky = useChunky()
   const barrels = useBarrel()
-  return canEnterCastle && chunky && barrels
+  return {
+    in: canEnterCastle.in && chunky && barrels,
+    out: canEnterCastle.out && chunky && barrels
+  }
 }
 
 export const useCavesLobby = (): LogicBool => {
@@ -916,11 +919,13 @@ export const useCavesLobby = (): LogicBool => {
   }
 }
 
-export const useJapesLobby = (): boolean => {
+export const useJapesLobby = (): LogicBool => {
   const canEnterJapes = usePlayLobby('Jungle Japes')
   const chunky = useChunky()
   const barrels = useBarrel()
-  return canEnterJapes && chunky && barrels
+  return {
+    in: canEnterJapes.in && chunky && barrels,
+    out: canEnterJapes.out && chunky && barrels
 }
 
 export const useJapesLobbyGeneric = (): LogicBool => {
