@@ -29221,7 +29221,7 @@ const useHelmMachine = () => {
   const helmAccess = useHelmStartPosition();
   return {
     in: inLevel.in && entry && (helmAccess != 0 || stand && pineapple && vine && mini),
-    out: (inLevel.in || inLevel.out) && entry && pineapple && vine && mini
+    out: (inLevel.in || inLevel.out) && entry && (helmAccess != 0 || pineapple && vine && mini)
   };
 };
 const useHelmDoors = () => {
