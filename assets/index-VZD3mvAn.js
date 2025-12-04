@@ -11890,7 +11890,10 @@ const useForestArena = () => {
   const playForest = usePlayLobby("Fungi Forest");
   const allGun2 = useAllGun();
   const gone = useGone();
-  return playForest && allGun2 && gone;
+  return {
+    in: playForest.in && allGun2 && gone,
+    out: playForest.out && allGun2 && gone
+  };
 };
 const useGeneralDirt$3 = () => {
   const anyKong = useAnyKong();
@@ -12195,15 +12198,19 @@ const IslesCheck = (props) => {
     }
   ) });
 };
-const GoneArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaArena, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  IslesCheck,
-  {
-    id: 91,
-    name: "Battle Arena 2 (Check of Legends 2 in Forest Lobby)",
-    region: "Japes-Forest Lobbies",
-    canGetLogic: useForestArena()
-  }
-) }) });
+const GoneArena = () => {
+  const canDo = useForestArena();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaArena, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 91,
+      name: "Battle Arena 2 (Check of Legends 2 in Forest Lobby)",
+      region: "Japes-Forest Lobbies",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const SnideArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaArena, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   IslesCheck,
   {
