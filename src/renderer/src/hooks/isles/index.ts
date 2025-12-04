@@ -969,8 +969,8 @@ export const useFactoryLobbyUpper = (): LogicBool => {
   const hasTiny = useTiny()
   const hasChunky = useChunky()
   return {
-    in: canEnterFactory && grab,
-    out: canEnterFactory && (hasDiddy || hasTiny || hasChunky)
+    in: canEnterFactory.in && grab,
+    out: canEnterFactory.out && (hasDiddy || hasTiny || hasChunky)
   }
 }
 
