@@ -744,11 +744,14 @@ export const useSnideArena = (): boolean => {
   return islesKremAscent && boulderTech
 }
 
-export const useForestArena = (): boolean => {
+export const useForestArena = (): LogicBool => {
   const playForest = usePlayLobby('Fungi Forest')
   const allGun = useAllGun()
   const gone = useGone()
-  return playForest && allGun && gone
+  return {
+    in: playForest.in && allGun && gone,
+    out: playForest.out && allGun && gone
+  }
 }
 
 export const useGeneralDirt = (): boolean => {
