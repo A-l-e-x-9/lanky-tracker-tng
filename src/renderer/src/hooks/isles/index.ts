@@ -618,11 +618,14 @@ export const useCheckLankyPrison = (): LogicBool => {
   }
 }
 
-export const useCheckLankyMusicPad = (): boolean => {
+export const useCheckLankyMusicPad = (): LogicBool => {
   const playJapes = usePlayLobby('Jungle Japes')
   const boulderTech = useBoulderTech()
   const trombone = useTrombone()
-  return playJapes && boulderTech && trombone
+  return {
+    in: playJapes.in && boulderTech && trombone,
+    out: playJapes.out && boulderTech && trombone
+  }
 }
 
 export const useCheckLankyCastle = (): LogicBool => {
