@@ -11798,7 +11798,10 @@ const useCheckLankyMusicPad = () => {
   const playJapes = usePlayLobby("Jungle Japes");
   const boulderTech = useBoulderTech();
   const trombone = useTrombone();
-  return playJapes && boulderTech && trombone;
+  return {
+    in: playJapes.in && boulderTech && trombone,
+    out: playJapes.out && boulderTech && trombone
+  };
 };
 const useCheckLankyCastle = () => {
   const playCastle = usePlayLobby("Creepy Castle");
@@ -12819,7 +12822,8 @@ const TrombonePad = () => {
       id: 22,
       name: "Trombone Pad in Japes Lobby",
       region: "Japes-Forest Lobbies",
-      canGetLogic: music
+      canGetLogic: music.in,
+      canGetBreak: music.out
     }
   ) });
 };
