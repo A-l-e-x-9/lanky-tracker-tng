@@ -10,7 +10,8 @@ const TrombonePad: React.FC = () => {
       id={22}
       name="Trombone Pad in Japes Lobby"
       region="Japes-Forest Lobbies"
-      canGetLogic={music}
+      canGetLogic={music.in}
+      canGetBreak={music.out}
     />
     </GBPool>
   )
