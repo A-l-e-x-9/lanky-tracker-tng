@@ -11737,7 +11737,7 @@ const useCheckDkCavesLobby = () => {
   const orange = useOrange();
   return {
     in: playCaves.in && punch && strong,
-    out: useFtaDkBanana() && playCaves.out && punch && (twirl || orange)
+    out: (playCaves.in || playCaves.out) && punch && (twirl || orange)
   };
 };
 const useCheckDiddySnide = () => {
@@ -11747,11 +11747,10 @@ const useCheckDiddySnide = () => {
   const boulderTech = useBoulderTech();
   const highGrab = useHighGrab();
   const twirl = useTwirl();
-  const diddy = useFtaDiddyBanana();
   const anyKong = useAnyKong();
   return {
-    in: kremAscent && anyKong && diddy && (spring || autoBonus),
-    out: kremAscent && anyKong && diddy && (boulderTech && highGrab || twirl)
+    in: kremAscent && anyKong && (spring || autoBonus),
+    out: kremAscent && anyKong && (boulderTech && highGrab || twirl)
   };
 };
 const useCheckDiddyCage = () => {
@@ -11771,7 +11770,7 @@ const useCheckDiddySummit = () => {
   const twirl = useTwirl();
   return {
     in: fungiIsland && islesUpper && boulderTech && target && rocket,
-    out: useFtaDiddyBanana() && fungiIsland && twirl
+    out: fungiIsland && twirl
   };
 };
 const useCheckDiddyCaves = () => {
@@ -11791,7 +11790,7 @@ const useCheckLankyPrison = () => {
   const dk2 = useDk();
   return {
     in: sprint,
-    out: useFtaLankyBanana() && dk2
+    out: dk2
   };
 };
 const useCheckLankyMusicPad = () => {
@@ -11811,7 +11810,7 @@ const useCheckLankyCastle = () => {
   const diddy = useDiddy();
   return {
     in: playCastle.in && boulderTech && balloon,
-    out: useFtaLankyBanana() && playCastle.out && (tiny || diddy)
+    out: (playCastle.in || playCastle.out) && (tiny || diddy)
   };
 };
 const useCheckTinyFeatherCage = () => useFeather();
@@ -11822,13 +11821,12 @@ const useCheckTinyMusicPad = () => {
 };
 const useCheckTinyAztecLobby = () => {
   const playAztec = usePlayLobby("Angry Aztec");
-  const tiny = useFtaTinyBanana();
   const autoBonus = useAutoBonus();
   const twirl = useTwirl();
   const charge = useCharge();
   return {
-    in: playAztec.in && (autoBonus && tiny || charge && twirl),
-    out: playAztec.out && charge
+    in: playAztec.in && (autoBonus || charge && twirl),
+    out: (playAztec.in || playAztec.out) && charge
   };
 };
 const useGalleonLobbySlam = () => {
@@ -11982,36 +11980,43 @@ const useHelmKasplat = () => {
   const sniper = useSniper();
   const coconut = useCoconut();
   const twirl = useTwirl();
-  const FtaDkBlueprint = useFtaDkBlueprint();
   const orangeYourself = useOrange();
   return {
-    in: playHelm && sniper && coconut,
-    out: FtaDkBlueprint && playHelm && (twirl || orangeYourself)
+    in: playHelm.in && sniper && coconut,
+    out: (playHelm.in || playHelm.out) && (twirl || orangeYourself)
   };
 };
 const useCastleKasplat = () => {
   const playCastle = usePlayLobby("Creepy Castle");
   const coconut = useCoconut();
-  const FtaDiddyBlueprint = useFtaDiddyBlueprint();
-  return FtaDiddyBlueprint && playCastle && coconut;
+  return {
+    in: playCastle.in && coconut,
+    out: playCastle.out && coconut
+  };
 };
 const useCavesKasplat = () => {
   const playCaves = usePlayLobby("Crystal Caves");
   const punch = usePunch();
-  const FtaLankyBlueprint = useFtaLankyBlueprint();
-  return FtaLankyBlueprint && playCaves && punch;
+  return {
+    in: playCaves.in && punch,
+    out: playCaves.out && punch
+  };
 };
 const useFactoryKasplat = () => {
   const playFactory = usePlayLobby("Frantic Factory");
   const punch = usePunch();
-  const FtaTinyBlueprint = useFtaTinyBlueprint();
-  return FtaTinyBlueprint && playFactory && punch;
+  return {
+    in: playFactory.in && punch,
+    out: playFactory.out && punch
+  };
 };
 const useGalleonKasplat = () => {
   const playGalleon = usePlayLobby("Gloomy Galleon");
   const anyKong = useAnyKong();
-  const FtaChunkyBlueprint = useFtaChunkyBlueprint();
-  return FtaChunkyBlueprint && playGalleon && anyKong;
+  return {
+    in: playGalleon.in && anyKong,
+    out: playGalleon.out && anyKong
+  };
 };
 const useAztecLobbyBoulders = () => {
   const canReachAztecLobby = useIslesUpper();
@@ -12915,24 +12920,32 @@ const JetpacCheck = () => {
 };
 const KasplatPool = ({ children }) => usePoolBlueprints() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const VanillaKasplat = ({ children }) => useShuffleKasplats() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
-const ChunkyKasplat$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  IslesCheck,
-  {
-    id: 54,
-    name: "Galleon Lobby Kasplat",
-    region: "Japes-Forest Lobbies",
-    canGetLogic: useGalleonKasplat()
-  }
-) }) });
-const DiddyKasplat$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  IslesCheck,
-  {
-    id: 51,
-    name: "Kasplat in the Castle Lobby",
-    region: "Caves-Helm Lobbies",
-    canGetLogic: useCastleKasplat()
-  }
-) }) });
+const ChunkyKasplat$7 = () => {
+  const canDo = useGalleonKasplat();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 54,
+      name: "Galleon Lobby Kasplat",
+      region: "Japes-Forest Lobbies",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
+const DiddyKasplat$7 = () => {
+  const canDo = useCastleKasplat();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 51,
+      name: "Kasplat in the Castle Lobby",
+      region: "Caves-Helm Lobbies",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const DkKasplat$7 = () => {
   const helmKasplat = useHelmKasplat();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -12946,24 +12959,32 @@ const DkKasplat$7 = () => {
     }
   ) }) });
 };
-const LankyKasplat$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  IslesCheck,
-  {
-    id: 52,
-    name: "Kasplat Behind Left Caves Lobby Wall",
-    region: "Caves-Helm Lobbies",
-    canGetLogic: useCavesKasplat()
-  }
-) }) });
-const TinyKasplat$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  IslesCheck,
-  {
-    id: 53,
-    name: "Kasplat in the Factory Lobby Box",
-    region: "Japes-Forest Lobbies",
-    canGetLogic: useFactoryKasplat()
-  }
-) }) });
+const LankyKasplat$7 = () => {
+  const canDo = useCavesKasplat();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 52,
+      name: "Kasplat Behind Left Caves Lobby Wall",
+      region: "Caves-Helm Lobbies",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
+const TinyKasplat$7 = () => {
+  const canDo = useFactoryKasplat();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 53,
+      name: "Kasplat in the Factory Lobby Box",
+      region: "Japes-Forest Lobbies",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const KasplatLocations$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$7, {}),
