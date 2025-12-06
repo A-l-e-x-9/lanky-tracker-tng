@@ -544,7 +544,7 @@ export const useCheckDkCavesLobby = (): LogicBool => {
   const orange = useOrange()
   return {
     in: playCaves.in && punch && strong,
-    out: useFtaDkBanana() && playCaves.out && punch && (twirl || orange)
+    out: (playCaves.in || playCaves.out) && punch && (twirl || orange)
   }
 }
 
@@ -555,11 +555,10 @@ export const useCheckDiddySnide = (): LogicBool => {
   const boulderTech = useBoulderTech()
   const highGrab = useHighGrab()
   const twirl = useTwirl()
-  const diddy = useFtaDiddyBanana()
   const anyKong = useAnyKong()
   return {
-    in: kremAscent && anyKong && diddy && (spring || autoBonus),
-    out: kremAscent && anyKong && diddy && ((boulderTech && highGrab) || twirl)
+    in: kremAscent && anyKong && (spring || autoBonus),
+    out: kremAscent && anyKong && ((boulderTech && highGrab) || twirl)
   }
 }
 
@@ -582,7 +581,7 @@ export const useCheckDiddySummit = (): LogicBool => {
   const twirl = useTwirl()
   return {
     in: fungiIsland && islesUpper && boulderTech && target && rocket,
-    out: useFtaDiddyBanana() && fungiIsland && twirl
+    out: fungiIsland && twirl
   }
 }
 
@@ -605,7 +604,7 @@ export const useCheckLankyPrison = (): LogicBool => {
   const dk = useDk()
   return {
     in: sprint,
-    out: useFtaLankyBanana() && dk
+    out: dk
   }
 }
 
@@ -627,7 +626,7 @@ export const useCheckLankyCastle = (): LogicBool => {
   const diddy = useDiddy()
   return {
     in: playCastle.in && boulderTech && balloon,
-    out: useFtaLankyBanana() && playCastle.out && (tiny || diddy)
+    out: (playCastle.in || playCastle.out) && (tiny || diddy)
   }
 }
 
@@ -653,13 +652,12 @@ export const useCheckTinyMusicPad = (): boolean => {
  */
 export const useCheckTinyAztecLobby = (): LogicBool => {
   const playAztec = usePlayLobby('Angry Aztec')
-  const tiny = useFtaTinyBanana()
   const autoBonus = useAutoBonus()
   const twirl = useTwirl()
   const charge = useCharge()
   return {
-    in: playAztec.in && ((autoBonus && tiny) || (charge && twirl)),
-    out: playAztec.out && charge
+    in: playAztec.in && (autoBonus || (charge && twirl)),
+    out: (playAztec.in || playAztec.out) && charge
   }
 }
 
@@ -849,11 +847,10 @@ export const useHelmKasplat = (): LogicBool => {
   const sniper = useSniper()
   const coconut = useCoconut()
   const twirl = useTwirl()
-  const FtaDkBlueprint = useFtaDkBlueprint()
   const orangeYourself = useOrange()
   return {
     in: playHelm.in && sniper && coconut,
-    out: FtaDkBlueprint && playHelm.out && (twirl || orangeYourself)
+    out: (playHelm.in || playHelm.out) && (twirl || orangeYourself)
   }
 }
 
