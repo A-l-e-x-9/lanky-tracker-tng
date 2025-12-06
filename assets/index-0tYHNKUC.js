@@ -11826,7 +11826,7 @@ const useCheckTinyAztecLobby = () => {
   const charge = useCharge();
   return {
     in: playAztec.in && (autoBonus || charge && twirl),
-    out: (playAztec.in || playAztec.out) && charge
+    out: (playAztec.in || playAztec.out) && (autoBonus || charge)
   };
 };
 const useGalleonLobbySlam = () => {
