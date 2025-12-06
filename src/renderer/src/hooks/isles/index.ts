@@ -861,37 +861,45 @@ export const useHelmKasplat = (): LogicBool => {
   const FtaDkBlueprint = useFtaDkBlueprint()
   const orangeYourself = useOrange()
   return {
-    in: playHelm && sniper && coconut,
-    out: FtaDkBlueprint && playHelm && (twirl || orangeYourself)
+    in: playHelm.in && sniper && coconut,
+    out: FtaDkBlueprint && playHelm.out && (twirl || orangeYourself)
   }
 }
 
-export const useCastleKasplat = (): boolean => {
+export const useCastleKasplat = (): LogicBool => {
   const playCastle = usePlayLobby('Creepy Castle')
   const coconut = useCoconut()
-  const FtaDiddyBlueprint = useFtaDiddyBlueprint()
-  return FtaDiddyBlueprint && playCastle && coconut
+  return {
+    in: playCastle.in && coconut,
+    out: playCastle.out && coconut
+  }
 }
 
-export const useCavesKasplat = (): boolean => {
+export const useCavesKasplat = (): LogicBool => {
   const playCaves = usePlayLobby('Crystal Caves')
   const punch = usePunch()
-  const FtaLankyBlueprint = useFtaLankyBlueprint()
-  return FtaLankyBlueprint && playCaves && punch
+  return {
+    in: playCaves.in && punch,
+    out: playCaves.out && punch
+  }
 }
 
-export const useFactoryKasplat = (): boolean => {
+export const useFactoryKasplat = (): LogicBool => {
   const playFactory = usePlayLobby('Frantic Factory')
   const punch = usePunch()
-  const FtaTinyBlueprint = useFtaTinyBlueprint()
-  return FtaTinyBlueprint && playFactory && punch
+  return {
+    in: playFactory.in && punch,
+    out: playFactory.out && punch
+  }
 }
 
-export const useGalleonKasplat = (): boolean => {
+export const useGalleonKasplat = (): LogicBool => {
   const playGalleon = usePlayLobby('Gloomy Galleon')
   const anyKong = useAnyKong()
-  const FtaChunkyBlueprint = useFtaChunkyBlueprint()
-  return FtaChunkyBlueprint && playGalleon && anyKong
+  return {
+    in: playGalleon.in && anyKong,
+    out: playGalleon.out && anyKong
+  }
 }
 
 export const useAztecLobbyBoulders = (): LogicBool => {
