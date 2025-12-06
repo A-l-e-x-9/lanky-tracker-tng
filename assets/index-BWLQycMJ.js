@@ -22946,8 +22946,8 @@ const useForestSpiderBoss = () => {
   const mini = useMini();
   const punch = usePunch();
   return {
-    in: dusk.in || night.in && punch && mini,
-    out: dusk.out || night.out && punch && mini
+    in: punch && (dusk.in || night.in && mini),
+    out: punch && (dusk.out || night.out && mini)
   };
 };
 const useForestMushroomTop = () => {
