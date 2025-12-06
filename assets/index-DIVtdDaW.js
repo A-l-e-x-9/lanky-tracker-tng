@@ -19737,8 +19737,8 @@ const useBlockKasplat = () => {
   const inStage = usePlayFactory();
   const canReachTesting = useFactoryTesting();
   return {
-    in: useFtaChunkyBlueprint() && inStage.in && canReachTesting.in,
-    out: useFtaChunkyBlueprint() && inStage.out && canReachTesting.out
+    in: inStage.in && canReachTesting.in,
+    out: inStage.out && canReachTesting.out
   };
 };
 const FactoryCheck = (props) => {
