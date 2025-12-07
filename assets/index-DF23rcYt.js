@@ -28447,7 +28447,7 @@ const useChunkyMedalInLogic = () => {
   const gun = usePineapple();
   const move = usePunch();
   const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage) {
+  if (!inStage.in) {
     return 0;
   }
   if (!kong) {
@@ -28457,7 +28457,7 @@ const useChunkyMedalInLogic = () => {
     return 100;
   }
   let bananas = 30;
-  if (tree) {
+  if (tree.in) {
     bananas += 5;
     if (move && gun) {
       bananas += 10;
@@ -28476,7 +28476,44 @@ const useChunkyMedalInLogic = () => {
   }
   return bananas;
 };
-const useChunkyMedalOutLogic = () => useChunkyMedalInLogic();
+const useChunkyMedalOutLogic = () => {
+  const inStage = usePlayCastle();
+  const canSlam = useSlamCastle();
+  const tree = useCastleTree();
+  const boulderTech = useBoulderTech();
+  const kong = useChunky();
+  const gun = usePineapple();
+  const move = usePunch();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 30;
+  if (tree.out) {
+    bananas += 5;
+    if (move && gun) {
+      bananas += 10;
+    }
+  }
+  if (gun && move) {
+    bananas += 40;
+  }
+  if (canSlam) {
+    if (gun) {
+      bananas += 10;
+    }
+    if (move && boulderTech) {
+      bananas += 5;
+    }
+  }
+  return bananas;
+};
 const ChunkyMedal = () => {
   const inLogic = useChunkyMedalInLogic();
   const outLogic = useChunkyMedalOutLogic();
