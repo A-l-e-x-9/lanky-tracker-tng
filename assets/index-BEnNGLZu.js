@@ -11959,7 +11959,10 @@ const useFactoryFairy = () => {
   const camera = useCamera();
   const punch = usePunch();
   const factory = usePlayLobby("Frantic Factory");
-  return factory && punch && camera;
+  return {
+    in: factory.in && punch && camera,
+    out: factory.out && punch && camera
+  };
 };
 const useForestFairy = () => {
   const forest = usePlayLobby("Fungi Forest");
@@ -12584,15 +12587,19 @@ const EnemyLocations$8 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
 ] });
 const FairyPool = ({ children }) => usePoolFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const VanillaFairy = ({ children }) => useShuffleFairies() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
-const FactoryLobbyFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  IslesCheck,
-  {
-    id: 81,
-    name: "Factory Lobby Fairy",
-    region: "Japes-Forest Lobbies",
-    canGetLogic: useFactoryFairy()
-  }
-) }) });
+const FactoryLobbyFairy = () => {
+  const canDo = useFactoryFairy();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    IslesCheck,
+    {
+      id: 81,
+      name: "Factory Lobby Fairy",
+      region: "Japes-Forest Lobbies",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const ForestLobbyFairy = () => {
   const canDo = useForestFairy();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
