@@ -12,7 +12,7 @@ export const useChunkyMedalInLogic = (): number => {
   const move = usePunch()
   const shuffleBananas = useShuffleColoredBananas()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -23,7 +23,7 @@ export const useChunkyMedalInLogic = (): number => {
   }
 
   let bananas = 30
-  if (tree) {
+  if (tree.in) {
     bananas += 5
     if (move && gun) {
       bananas += 10
@@ -43,4 +43,43 @@ export const useChunkyMedalInLogic = (): number => {
   return bananas
 }
 
-export const useChunkyMedalOutLogic = (): number => useChunkyMedalInLogic()
+export const useChunkyMedalOutLogic = (): number => {
+  const inStage = usePlayCastle()
+  const canSlam = useSlamCastle()
+  const tree = useCastleTree()
+  const boulderTech = useBoulderTech()
+  const kong = useChunky()
+  const gun = usePineapple()
+  const move = usePunch()
+  const shuffleBananas = useShuffleColoredBananas()
+
+  if (!inStage.out) {
+    return 0
+  }
+  if (!kong) {
+    return 0
+  }
+  if (shuffleBananas) {
+    return 100
+  }
+
+  let bananas = 30
+  if (tree.out) {
+    bananas += 5
+    if (move && gun) {
+      bananas += 10
+    }
+  }
+  if (gun && move) {
+    bananas += 40
+  }
+  if (canSlam) {
+    if (gun) {
+      bananas += 10
+    }
+    if (move && boulderTech) {
+      bananas += 5
+    }
+  }
+  return bananas
+}
