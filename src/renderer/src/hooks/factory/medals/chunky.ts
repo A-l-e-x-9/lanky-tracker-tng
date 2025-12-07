@@ -48,7 +48,7 @@ export const useChunkyMedalInLogic = (): number => {
   return bananas
 }
 
-export const useChunkyMedalInLogic = (): number => {
+export const useChunkyMedalOutLogic = (): number => {
   const inStage = usePlayFactory()
   const testing = useFactoryTesting()
   const prodTop = useFactoryProductionTop()
