@@ -819,11 +819,14 @@ export const useGeneralFairy = (): boolean => {
   return anyKong && camera
 }
 
-export const useFactoryFairy = (): boolean => {
+export const useFactoryFairy = (): LogicBool => {
   const camera = useCamera()
   const punch = usePunch()
   const factory = usePlayLobby('Frantic Factory')
-  return factory && punch && camera
+  return {
+    in: factory.in && punch && camera,
+    out: factory.out && punch && camera
+  }
 }
 
 export const useForestFairy = (): LogicBool => {
