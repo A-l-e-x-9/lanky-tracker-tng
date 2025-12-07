@@ -12,7 +12,7 @@ export const useChunkyMedalInLogic = (): number => {
   const move = usePunch()
   const shuffleBananas = useShuffleColoredBananas()
 
-  if (!inStage) {
+  if (!inStage.in) {
     return 0
   }
   if (!kong) {
@@ -29,7 +29,7 @@ export const useChunkyMedalInLogic = (): number => {
   if (move) {
     bananas += 15
   }
-  if (testing) {
+  if (testing.in) {
     bananas += 5
     if (gun) {
       bananas += 10
@@ -41,11 +41,55 @@ export const useChunkyMedalInLogic = (): number => {
       }
     }
   }
-  if (prodTop) {
+  if (prodTop.in) {
     bananas += 20
   }
 
   return bananas
 }
 
-export const useChunkyMedalOutLogic = (): number => useChunkyMedalInLogic()
+export const useChunkyMedalInLogic = (): number => {
+  const inStage = usePlayFactory()
+  const testing = useFactoryTesting()
+  const prodTop = useFactoryProductionTop()
+  const kong = useChunky()
+  const gun = usePineapple()
+  const music = useTriangle()
+  const move = usePunch()
+  const shuffleBananas = useShuffleColoredBananas()
+
+  if (!inStage.out) {
+    return 0
+  }
+  if (!kong) {
+    return 0
+  }
+  if (shuffleBananas) {
+    return 100
+  }
+
+  let bananas = 20
+  if (gun) {
+    bananas += 10
+  }
+  if (move) {
+    bananas += 15
+  }
+  if (testing.out) {
+    bananas += 5
+    if (gun) {
+      bananas += 10
+    }
+    if (music && move) {
+      bananas += 10
+      if (gun) {
+        bananas += 10
+      }
+    }
+  }
+  if (prodTop.out) {
+    bananas += 20
+  }
+
+  return bananas
+}
