@@ -3,17 +3,21 @@ import VanillaFairy from '@renderer/components/pools/VanillaFairy'
 import { useTreeFairy } from '@renderer/hooks/castle'
 import CastleCheck from '../check'
 
-const TreeFairy: React.FC = () => (
+const TreeFairy: React.FC = () => {
+const canDo = useTreeFairy()
+return (
   <FairyPool>
     <VanillaFairy>
       <CastleCheck
         id={7080}
         name="Fairy in the Tree"
         region="Creepy Castle Main"
-        canGetLogic={useTreeFairy()}
+        canGetLogic={canDo.in}
+        canGetBreak={canDo.out}
       />
     </VanillaFairy>
   </FairyPool>
 )
+}
 
 export default TreeFairy

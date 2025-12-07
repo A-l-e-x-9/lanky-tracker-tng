@@ -356,11 +356,14 @@ export const useGeneralFairy = (): LogicBool => {
   }
 }
 
-export const useTreeFairy = (): boolean => {
+export const useTreeFairy = (): LogicBool => {
   const tree = useTreeKasplat()
   const camera = useCamera()
-  return tree && camera
-}
+  return {
+    in: tree.in && camera,
+    out: tree.out && camera
+  }
+} //TO DO?: Despite technically not requiring Diving unless you've filled the water to max, this check is affected by Water is Lava...
 
 export const useRoomFairy = (): LogicBool => {
   const slam = useSlamCastle()
