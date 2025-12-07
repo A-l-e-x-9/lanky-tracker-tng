@@ -27341,7 +27341,10 @@ const useGeneralDirt = () => {
 const useTreeFairy = () => {
   const tree = useTreeKasplat();
   const camera = useCamera();
-  return tree && camera;
+  return {
+    in: tree.in && camera,
+    out: tree.out && camera
+  };
 };
 const useRoomFairy = () => {
   const slam = useSlamCastle();
@@ -28056,15 +28059,19 @@ const RoomFairy = () => {
     }
   ) }) });
 };
-const TreeFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-  CastleCheck,
-  {
-    id: 7080,
-    name: "Fairy in the Tree",
-    region: "Creepy Castle Main",
-    canGetLogic: useTreeFairy()
-  }
-) }) });
+const TreeFairy = () => {
+  const canDo = useTreeFairy();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    CastleCheck,
+    {
+      id: 7080,
+      name: "Fairy in the Tree",
+      region: "Creepy Castle Main",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) }) });
+};
 const FairyLocations = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(TreeFairy, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(RoomFairy, {})
