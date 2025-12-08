@@ -1011,8 +1011,8 @@ export const useCavesLobbyDiddy = (): LogicBool => {
   const hasTwirl = useTwirl()
   const highGrab = useHighGrab()
   return {
-    in: canEnterCaves && hasJetbarrel,
-    out: canEnterCaves && boulderTech && hasTiny && hasTwirl && highGrab
+    in: canEnterCaves.in && hasJetbarrel,
+    out: (canEnterCaves.in || canEnterCaves.out) && boulderTech && hasTiny && hasTwirl && highGrab
   }
 }
 
