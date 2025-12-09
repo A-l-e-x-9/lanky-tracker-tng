@@ -15,11 +15,6 @@ import {
   useDiddy,
   useDk,
   useFeather,
-  useFtaChunkyBlueprint,
-  useFtaDiddyBlueprint,
-  useFtaLankyBlueprint,
-  useFtaTinyBanana,
-  useFtaTinyBlueprint,
   useGone,
   useGrab,
   useGrape,
@@ -317,7 +312,7 @@ export const useTinyMausoleumGb = (): LogicBool => {
   const preOpened = useOpenCrypt()
   return {
     in: inStage.in && (feather || grape || preOpened) && canSlam && twirl && hasClimbing,
-    out: useFtaTinyBanana() && (inStage.in || inStage.out) && (feather || grape || preOpened) && canSlam && (dk || twirl)
+    out: (inStage.in || inStage.out) && (feather || grape || preOpened) && canSlam && (dk || twirl)
   }
 }
 
@@ -391,16 +386,16 @@ export const useMausoleumKasplat = (): LogicBool => {
   const inStage = usePlayCastle()
   const hasClimbing = useClimbing()
   return {
-    in: useFtaDiddyBlueprint() && inStage.in && hasClimbing,
-    out: useFtaDiddyBlueprint() && (inStage.in || inStage.out)
+    in: inStage.in && hasClimbing,
+    out: (inStage.in || inStage.out)
   }
 }
 
 export const usePathKasplat = (): LogicBool => {
   const inStage = usePlayCastle()
   return {
-    in: useFtaLankyBlueprint() && inStage.in,
-    out: useFtaLankyBlueprint() && inStage.out
+    in: inStage.in,
+    out: inStage.out
   }
 }
 
@@ -408,16 +403,16 @@ export const useLonelyKasplat = (): LogicBool => {
   const inStage = usePlayCastle()
   const hasClimbing = useClimbing()
   return {
-    in: useFtaTinyBlueprint() && inStage.in && hasClimbing,
-    out: useFtaTinyBlueprint() && (inStage.in || inStage.out)
+    in: inStage.in && hasClimbing,
+    out: (inStage.in || inStage.out)
   }
 }
 
 export const useDungeonKasplat = (): LogicBool => {
   const inStage = usePlayCastle()
   return {
-    in: useFtaChunkyBlueprint() && inStage.in,
-    out: useFtaChunkyBlueprint() && inStage.out
+    in: inStage.in,
+    out: inStage.out
   }
 }
 
