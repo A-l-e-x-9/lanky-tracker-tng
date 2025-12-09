@@ -13,13 +13,6 @@ import {
   useCamera,
   useDive,
   useDk,
-  useFtaChunkyBlueprint,
-  useFtaDiddyBanana,
-  useFtaDiddyBlueprint,
-  useFtaDkBlueprint,
-  useFtaLankyBanana,
-  useFtaLankyBlueprint,
-  useFtaTinyBlueprint,
   useGrab,
   useGuitar,
   useHighGrab,
@@ -303,7 +296,7 @@ export const useDiddyGoldGb = (): LogicBool => {
   const highGrab = useHighGrab()
   return {
     in: treasure.in && spring,
-    out: useFtaDiddyBanana() && treasure.out && (spring || highGrab)
+    out: (treasure.in || treasure.out) && highGrab
   }
 }
 
@@ -373,7 +366,7 @@ export const useLankyGoldGb = (): LogicBool => {
   const highGrab = useHighGrab()
   return {
     in: treasure.in && balloon,
-    out: useFtaLankyBanana() && treasure.out && (balloon || highGrab)
+    out: (treasure.in || treasure.out) && highGrab
   }
 }
 
@@ -518,48 +511,37 @@ export const useGeneralFairy = (): LogicBool => {
   }
 }
 
-export const useTreasureKasplat = (): LogicBool => {
-  const treasure = useGalleonTreasureRoom()
-  const spring = useSpring()
-  const highGrab = useHighGrab()
-  const dk = useFtaDkBlueprint()
-  return {
-    in: dk && treasure.in && spring,
-    out: dk && treasure.out && (spring || highGrab)
-  }
-}
+export const useTreasureKasplat = (): LogicBool => useDiddyGoldGb()
 
 export const useKevin = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
   return {
-    in: useFtaDiddyBlueprint() && lighthouse.in,
-    out: useFtaDiddyBlueprint() && lighthouse.out
+    in: lighthouse.in,
+    out: lighthouse.out
   }
 }
 
 export const useCannonKasplat = (): LogicBool => {
   const highTide = useGalleonHighTide()
   const cannon = useGalleonCannon()
-  const kong = useFtaLankyBlueprint()
   return {
-    in: kong && cannon.in && highTide.in,
-    out: kong && cannon.out
+    in: cannon.in && highTide.in,
+    out: (cannon.in || cannon.out)
   }
 }
 
 export const useVineKasplat = (): LogicBool => {
   const kasplat = useGalleonCavernTop()
-  const kong = useFtaTinyBlueprint()
   return {
-    in: kong && kasplat.in,
-    out: kong && kasplat.out
+    in: kasplat.in,
+    out: kasplat.out
   }
 }
 
 export const useCactusKasplat = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   return {
-    in: useFtaChunkyBlueprint() && outskirts.in,
-    out: useFtaChunkyBlueprint() && outskirts.out
+    in: outskirts.in,
+    out: outskirts.out
   }
 }
