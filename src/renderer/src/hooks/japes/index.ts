@@ -511,32 +511,9 @@ export const useDkKasplat = (): LogicBool => {
   }
 }
 
-export const useDiddyKasplat = (): LogicBool => {
-  const gate = useGateKasplat()
-  const ftaBP = useFtaDiddyBlueprint()
-  return {
-    in: ftaBP && gate.in,
-    out: ftaBP && gate.out
-  }
-}
-
-export const useLankyKasplat = (): LogicBool => {
-  const gate = useGateKasplat()
-  const ftaBP = useFtaLankyBlueprint()
-  return {
-    in: ftaBP && gate.in,
-    out: ftaBP && gate.out
-  }
-}
-
-export const useTinyKasplat = (): LogicBool => {
-  const gate = useGateKasplat()
-  const ftaBP = useFtaTinyBlueprint()
-  return {
-    in: ftaBP && gate.in,
-    out: ftaBP && gate.out
-  }
-}
+export const useDiddyKasplat = (): LogicBool => useDkKasplat()
+export const useLankyKasplat = (): LogicBool => useDkKasplat()
+export const useTinyKasplat = (): LogicBool => useDkKasplat()
 
 export const useMtnCrate = (): LogicBool => {
   const canEnterLevel = usePlayJapes()
