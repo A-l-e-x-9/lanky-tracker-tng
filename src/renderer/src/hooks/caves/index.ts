@@ -12,13 +12,6 @@ import {
   useCamera,
   useDiddy,
   useDk,
-  useFtaChunkyBlueprint,
-  useFtaDiddyBanana,
-  useFtaDiddyBlueprint,
-  useFtaDkBlueprint,
-  useFtaLankyBlueprint,
-  useFtaTinyBanana,
-  useFtaTinyBlueprint,
   useGone,
   useGuitar,
   useHighGrab,
@@ -234,7 +227,7 @@ export const useDiddyWaterfallGb = (): LogicBool => {
   const twirl = useTwirl()
   return {
     in: inStage.in && !angery && rocket,
-    out: useFtaDiddyBanana() && ((inStage.in && !angery) || (inStage.out || angery)) && (dk || twirl)
+    out: ((inStage.in && !angery) || (inStage.out || angery)) && (dk || twirl)
   }
 }
 
@@ -353,8 +346,8 @@ export const useTinyCaveGb = (): LogicBool => {
   const mini = useMini()
   const warpAll = useBananaportAll()
   return {
-    in: useFtaTinyBanana() && inStage.in && !angery && (mini || warpAll),
-    out: useFtaTinyBanana() && (inStage.out || angery) && (mini || warpAll)
+    in: inStage.in && !angery && (mini || warpAll),
+    out: (inStage.out || angery) && (mini || warpAll)
   }
 }
 
@@ -447,26 +440,24 @@ export const useIceCastleKasplat = (): LogicBool => {
   const inStage = usePlayCaves()
   const angery = useAngryCaves()
   return {
-    in: useFtaDkBlueprint() && inStage.in && !angery,
-    out: useFtaDkBlueprint() && (inStage.out || angery)
+    in: inStage.in && !angery,
+    out: (inStage.out || angery)
   }
 }
 
 export const useFunkyKasplat = (): LogicBool => {
   const miniFunky = useCavesMiniFunky()
-  const kong = useFtaDiddyBlueprint()
   return {
-    in: kong && miniFunky.in,
-    out: kong && miniFunky.out
+    in: miniFunky.in,
+    out: miniFunky.out
   }
 }
 
 export const usePillarKasplat = (): LogicBool => {
   const pillar = useCavesPillar()
-  const kong = useFtaLankyBlueprint()
   return {
-    in: kong && pillar.in,
-    out: kong && pillar.out
+    in: pillar.in,
+    out: pillar.out
   }
 }
 
@@ -474,8 +465,8 @@ export const useCabinKasplat = (): LogicBool => {
   const inStage = usePlayCaves()
   const angery = useAngryCaves()
   return {
-    in: useFtaTinyBlueprint() && inStage.in && !angery,
-    out: useFtaTinyBlueprint() && (inStage.out || angery)
+    in: inStage.in && !angery,
+    out: (inStage.out || angery)
   }
 }
 
@@ -483,8 +474,8 @@ export const useIglooKasplat = (): LogicBool => {
   const inStage = usePlayCaves()
   const angery = useAngryCaves()
   return {
-    in: useFtaChunkyBlueprint() && inStage.in && !angery,
-    out: useFtaChunkyBlueprint() && (inStage.out || angery)
+    in: inStage.in && !angery,
+    out: (inStage.out || angery)
   }
 }
 
