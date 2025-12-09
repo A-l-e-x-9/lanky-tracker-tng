@@ -1,6 +1,5 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import { useFreeTradeFull, useFreeTradeRestricted } from './settings'
 import { LogicBool } from './world'
 
 /**
@@ -350,66 +349,6 @@ export const useShockwave = (): boolean => {
   const anyKong = useAnyKong()
   const move = useDonkStore((state) => state.moves.shockwave)
   return anyKong && move
-}
-
-export const useFtaDkBanana = (): boolean => {
-  const kong = useDk()
-  const free = useFreeTradeRestricted()
-  return kong || free
-}
-
-export const useFtaDiddyBanana = (): boolean => {
-  const kong = useDiddy()
-  const free = useFreeTradeRestricted()
-  return kong || free
-}
-
-export const useFtaLankyBanana = (): boolean => {
-  const kong = useLanky()
-  const free = useFreeTradeRestricted()
-  return kong || free
-}
-
-export const useFtaTinyBanana = (): boolean => {
-  const kong = useTiny()
-  const free = useFreeTradeRestricted()
-  return kong || free
-}
-
-export const useFtaChunkyBanana = (): boolean => {
-  const kong = useChunky()
-  const free = useFreeTradeRestricted()
-  return kong || free
-}
-
-export const useFtaDkBlueprint = (): boolean => {
-  const kong = useDk()
-  const free = useFreeTradeFull()
-  return kong || free
-}
-
-export const useFtaDiddyBlueprint = (): boolean => {
-  const kong = useDiddy()
-  const free = useFreeTradeFull()
-  return kong || free
-}
-
-export const useFtaLankyBlueprint = (): boolean => {
-  const kong = useLanky()
-  const free = useFreeTradeFull()
-  return kong || free
-}
-
-export const useFtaTinyBlueprint = (): boolean => {
-  const kong = useTiny()
-  const free = useFreeTradeFull()
-  return kong || free
-}
-
-export const useFtaChunkyBlueprint = (): boolean => {
-  const kong = useChunky()
-  const free = useFreeTradeFull()
-  return kong || free
 }
 
 /*Since V4, the Randomizer allows you to shuffle shopkeeps. When so shuffled, they won't be in their shops initially, and you'll have to find them on some check in order to use their shops. This section is for the shopkeep logic.*/

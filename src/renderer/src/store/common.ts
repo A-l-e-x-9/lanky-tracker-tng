@@ -653,12 +653,6 @@ interface SettingCollection {
    */
   openLobbies: boolean
   /**
-   * What is the status of the Free Trade Agreement?
-   *
-   * 0: No Free Trade. 1: Free Trade, No Blueprints 2: Free Trade, No Restrictions
-   */
-  freeTrade: BananaportRange
-  /**
    * Does the DK Phase of the K. Rool fight require Barrel Blast? (Known as "Balanced K. Rool Phases" in Season 3, but in Season 4, the Blast requirement became a separate thing and it became possible to require any of all three Slams for Chunky's phase.)
    */
   balancedRoolPhases: boolean
