@@ -655,9 +655,10 @@ export const useCheckTinyAztecLobby = (): LogicBool => {
   const autoBonus = useAutoBonus()
   const twirl = useTwirl()
   const charge = useCharge()
+  const anyKong = useAnyKong()
   return {
-    in: playAztec.in && (autoBonus || (charge && twirl)),
-    out: (playAztec.in || playAztec.out) && (autoBonus || charge)
+    in: playAztec.in && ((anyKong && autoBonus) || (charge && twirl)),
+    out: (playAztec.in || playAztec.out) && ((anyKong && autoBonus) || charge)
   }
 }
 

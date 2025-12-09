@@ -236,12 +236,6 @@ export const useShuffledArenas = (): boolean =>
 export const useShuffledShops = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.shuffleShops))
 
-export const useFreeTradeRestricted = (): boolean =>
-  useDonkStore(useShallow((state) => state.settings.freeTrade)) != 0
-
-export const useFreeTradeFull = (): boolean =>
-  useDonkStore(useShallow((state) => state.settings.freeTrade)) == 2
-  
 export const useChunkySlamLevel = (): SlamRange =>
   useDonkStore(useShallow((state) => state.settings.chunkySlamLevel))
   
