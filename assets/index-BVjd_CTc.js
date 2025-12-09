@@ -10292,7 +10292,6 @@ const initialSettings = {
     shuffleEnemies: true,
     hardShooting: false,
     openLobbies: false,
-    freeTrade: 2,
     balancedRoolPhases: true,
     chunkySlamLevel: 0,
     poolWrinkly: true,
@@ -10513,8 +10512,6 @@ const usePoolWrinkly = () => useDonkStore(useShallow((state) => state.settings.p
 const useShuffleKasplats = () => useDonkStore(useShallow((state) => state.settings.shuffleKasplats));
 const useShuffledArenas = () => useDonkStore(useShallow((state) => state.settings.shuffleArenas));
 const useShuffledShops = () => useDonkStore(useShallow((state) => state.settings.shuffleShops));
-const useFreeTradeRestricted = () => useDonkStore(useShallow((state) => state.settings.freeTrade)) != 0;
-const useFreeTradeFull = () => useDonkStore(useShallow((state) => state.settings.freeTrade)) == 2;
 const useChunkySlamLevel = () => useDonkStore(useShallow((state) => state.settings.chunkySlamLevel));
 const useIslesBananaMedals = () => useDonkStore(useShallow((state) => state.settings.poolIslesMedals));
 const usePoolKongs = () => useDonkStore(useShallow((state) => state.settings.poolKongs));
@@ -10782,56 +10779,6 @@ const useShockwave = () => {
   const anyKong = useAnyKong();
   const move = useDonkStore((state) => state.moves.shockwave);
   return anyKong && move;
-};
-const useFtaDkBanana = () => {
-  const kong = useDk();
-  const free = useFreeTradeRestricted();
-  return kong || free;
-};
-const useFtaDiddyBanana = () => {
-  const kong = useDiddy();
-  const free = useFreeTradeRestricted();
-  return kong || free;
-};
-const useFtaLankyBanana = () => {
-  const kong = useLanky();
-  const free = useFreeTradeRestricted();
-  return kong || free;
-};
-const useFtaTinyBanana = () => {
-  const kong = useTiny();
-  const free = useFreeTradeRestricted();
-  return kong || free;
-};
-const useFtaChunkyBanana = () => {
-  const kong = useChunky();
-  const free = useFreeTradeRestricted();
-  return kong || free;
-};
-const useFtaDkBlueprint = () => {
-  const kong = useDk();
-  const free = useFreeTradeFull();
-  return kong || free;
-};
-const useFtaDiddyBlueprint = () => {
-  const kong = useDiddy();
-  const free = useFreeTradeFull();
-  return kong || free;
-};
-const useFtaLankyBlueprint = () => {
-  const kong = useLanky();
-  const free = useFreeTradeFull();
-  return kong || free;
-};
-const useFtaTinyBlueprint = () => {
-  const kong = useTiny();
-  const free = useFreeTradeFull();
-  return kong || free;
-};
-const useFtaChunkyBlueprint = () => {
-  const kong = useChunky();
-  const free = useFreeTradeFull();
-  return kong || free;
 };
 const useCranky = () => {
   const shopkeep = useDonkStore(useShallow((state) => state.moves.cranky));
@@ -11112,7 +11059,7 @@ const useDiddyGoldGb = () => {
   const highGrab = useHighGrab();
   return {
     in: treasure.in && spring,
-    out: useFtaDiddyBanana() && treasure.out && (spring || highGrab)
+    out: (treasure.in || treasure.out) && highGrab
   };
 };
 const useDiddyMechGb = () => {
@@ -11172,7 +11119,7 @@ const useLankyGoldGb = () => {
   const highGrab = useHighGrab();
   return {
     in: treasure.in && balloon,
-    out: useFtaLankyBanana() && treasure.out && (balloon || highGrab)
+    out: (treasure.in || treasure.out) && highGrab
   };
 };
 const useLanky2DoorShipGb = () => {
@@ -11294,45 +11241,34 @@ const useGeneralFairy$4 = () => {
     out: useCamera() && thing.out
   };
 };
-const useTreasureKasplat = () => {
-  const treasure = useGalleonTreasureRoom();
-  const spring = useSpring();
-  const highGrab = useHighGrab();
-  const dk2 = useFtaDkBlueprint();
-  return {
-    in: dk2 && treasure.in && spring,
-    out: dk2 && treasure.out && (spring || highGrab)
-  };
-};
+const useTreasureKasplat = () => useDiddyGoldGb();
 const useKevin = () => {
   const lighthouse = useGalleonLighthouseArea();
   return {
-    in: useFtaDiddyBlueprint() && lighthouse.in,
-    out: useFtaDiddyBlueprint() && lighthouse.out
+    in: lighthouse.in,
+    out: lighthouse.out
   };
 };
 const useCannonKasplat = () => {
   const highTide = useGalleonHighTide();
   const cannon = useGalleonCannon();
-  const kong = useFtaLankyBlueprint();
   return {
-    in: kong && cannon.in && highTide.in,
-    out: kong && cannon.out
+    in: cannon.in && highTide.in,
+    out: cannon.in || cannon.out
   };
 };
 const useVineKasplat = () => {
   const kasplat = useGalleonCavernTop();
-  const kong = useFtaTinyBlueprint();
   return {
-    in: kong && kasplat.in,
-    out: kong && kasplat.out
+    in: kasplat.in,
+    out: kasplat.out
   };
 };
 const useCactusKasplat = () => {
   const outskirts = useGalleonOutskirts();
   return {
-    in: useFtaChunkyBlueprint() && outskirts.in,
-    out: useFtaChunkyBlueprint() && outskirts.out
+    in: outskirts.in,
+    out: outskirts.out
   };
 };
 const useIslesRocketSwitch = () => useSwitchsanityMusicPad("islesTrombone", 2);
@@ -11824,9 +11760,10 @@ const useCheckTinyAztecLobby = () => {
   const autoBonus = useAutoBonus();
   const twirl = useTwirl();
   const charge = useCharge();
+  const anyKong = useAnyKong();
   return {
-    in: playAztec.in && (autoBonus || charge && twirl),
-    out: (playAztec.in || playAztec.out) && (autoBonus || charge)
+    in: playAztec.in && (anyKong && autoBonus || charge && twirl),
+    out: (playAztec.in || playAztec.out) && (anyKong && autoBonus || charge)
   };
 };
 const useGalleonLobbySlam = () => {
@@ -14239,7 +14176,7 @@ const useChunkyUndergroundGb = () => {
   const diddy = useDiddy();
   return {
     in: under.in && pineapple && vine,
-    out: useFtaChunkyBanana() && under.out && (dk2 || twirl || (tiny || diddy) && vine)
+    out: (under.in || under.out) && (dk2 || twirl || (tiny || diddy) && vine)
   };
 };
 const useChunkyKasplat$1 = () => {
@@ -14262,15 +14199,15 @@ const useDiddyMountainGb = () => {
   const mine = useJapesMine();
   const canSlam = useSlamJapes();
   return {
-    in: useFtaDiddyBanana() && mine.in && canSlam,
-    out: useFtaDiddyBanana() && mine.out && canSlam
+    in: mine.in && canSlam,
+    out: mine.out && canSlam
   };
 };
 const useDiddyTunnelGb = () => {
   const side = useJapesSideArea();
   return {
-    in: useFtaDiddyBanana() && side.in,
-    out: useFtaDiddyBanana() && side.out
+    in: side.in,
+    out: side.out
   };
 };
 const useDiddyMinecartGb = () => {
@@ -14370,7 +14307,7 @@ const useLankySlopeGb = () => {
   const anyKong = useAnyKong();
   return {
     in: tunnel.in && stand,
-    out: useFtaLankyBanana() && tunnel.out && anyKong
+    out: (tunnel.in || tunnel.out) && anyKong
   };
 };
 const useLankyPaintingGb = () => {
@@ -14472,36 +14409,14 @@ const useGateKasplat = () => {
 };
 const useDkKasplat = () => {
   const gate = useGateKasplat();
-  const ftaBP = useFtaDkBlueprint();
   return {
-    in: ftaBP && gate.in,
-    out: ftaBP && gate.out
+    in: gate.in,
+    out: gate.out
   };
 };
-const useDiddyKasplat = () => {
-  const gate = useGateKasplat();
-  const ftaBP = useFtaDiddyBlueprint();
-  return {
-    in: ftaBP && gate.in,
-    out: ftaBP && gate.out
-  };
-};
-const useLankyKasplat = () => {
-  const gate = useGateKasplat();
-  const ftaBP = useFtaLankyBlueprint();
-  return {
-    in: ftaBP && gate.in,
-    out: ftaBP && gate.out
-  };
-};
-const useTinyKasplat = () => {
-  const gate = useGateKasplat();
-  const ftaBP = useFtaTinyBlueprint();
-  return {
-    in: ftaBP && gate.in,
-    out: ftaBP && gate.out
-  };
-};
+const useDiddyKasplat = () => useDkKasplat();
+const useLankyKasplat = () => useDkKasplat();
+const useTinyKasplat = () => useDkKasplat();
 const useMtnCrate = () => {
   const canEnterLevel = usePlayJapes();
   const hasClimbing = useClimbing();
@@ -16543,7 +16458,7 @@ const useDkTunnelGb = () => {
   const strong = useStrong();
   return {
     in: tunnel.in && strong,
-    out: useFtaDkBanana() && tunnel.out
+    out: tunnel.in || tunnel.out
   };
 };
 const useDk5DoorGb = () => {
@@ -16667,11 +16582,10 @@ const useTinyLavaGb = () => {
   const lava = useAztecLlamaLava();
   const canSlam = useSlamAztec();
   const tiny = useTiny();
-  const ftaTiny = useFtaTinyBanana();
   const kuruKuru = useTwirl();
   return {
     in: lava.in && tiny && canSlam,
-    out: ftaTiny && lava.out && kuruKuru
+    out: (lava.in || lava.out) && kuruKuru
   };
 };
 const useGeneralThing$3 = () => {
@@ -16756,18 +16670,16 @@ const useOasisKasplat = () => {
 };
 const useLlamaLavaKasplat = () => {
   const lava = useAztecLlamaLava();
-  const kong = useFtaLankyBlueprint();
   return {
-    in: kong && lava.in,
-    out: kong && lava.out
+    in: lava.in,
+    out: lava.out
   };
 };
 const useTunnelKasplat = () => {
   const back = useAztecBack();
-  const kong = useFtaTinyBlueprint();
   return {
-    in: kong && back.in,
-    out: kong && back.out
+    in: back.in,
+    out: back.out
   };
 };
 const useTunnelBoulder = () => {
@@ -19450,7 +19362,7 @@ const useDiddyBlockGb = () => {
   const highGrab = useHighGrab();
   return {
     in: testing.in && spring,
-    out: useFtaDiddyBanana() && testing.out && highGrab
+    out: (testing.in || testing.out) && highGrab
   };
 };
 const useDiddyEnemyGb = () => {
@@ -19538,16 +19450,16 @@ const useDkProdGb = () => {
   const diddy = useDiddy();
   return {
     in: production.in && strong,
-    out: useFtaDkBanana() && production.out && (dk2 || diddy)
+    out: (production.in || production.out) && (dk2 || diddy)
   };
 };
 const useLankyTestingGb = () => {
   const testing = useFactoryTesting();
   const balloon = useBalloon();
-  const anyKong = useAnyKong();
+  const twirl = useTwirl();
   return {
     in: testing.in && balloon,
-    out: useFtaLankyBanana() && testing.out && anyKong
+    out: (testing.in || testing.out) && twirl
   };
 };
 const useLankyPianoGb = () => {
@@ -19617,7 +19529,7 @@ const useLankyProductionGb = () => {
   const tiny = useTiny();
   return {
     in: production.in && canSlam && hasLanky && stand,
-    out: useFtaLankyBanana() && production.out && canSlam && hasLanky && (stand || tiny)
+    out: (production.in || production.out) && canSlam && hasLanky && tiny
   };
 };
 const useTinyRaceGb = () => {
@@ -19654,7 +19566,7 @@ const useTinyProductionGb = () => {
   const dk2 = useDk();
   return {
     in: production.in && canSlam && twirl,
-    out: useFtaTinyBanana() && production.out && canSlam && (twirl || dk2)
+    out: (production.in || production.out) && canSlam && (twirl || dk2)
   };
 };
 const useGeneralThing$2 = () => {
@@ -19714,30 +19626,30 @@ const useDartFairy = () => {
 const useProductionTopKasplat = () => {
   const production = useFactoryProductionEnabled();
   return {
-    in: useFtaDkBlueprint() && production.in,
-    out: useFtaDkBlueprint() && production.out
+    in: production.in,
+    out: production.out
   };
 };
 const useProductionBaseKasplat = () => {
   const inStage = usePlayFactory();
   return {
-    in: useFtaDiddyBlueprint() && inStage.in,
-    out: useFtaDiddyBlueprint() && inStage.out
+    in: inStage.in,
+    out: inStage.out
   };
 };
 const useResearchKasplat = () => {
   const inStage = usePlayFactory();
   const canReachTesting = useFactoryTesting();
   return {
-    in: useFtaLankyBlueprint() && inStage.in && canReachTesting.in,
-    out: useFtaLankyBlueprint() && inStage.out && canReachTesting.out
+    in: inStage.in && canReachTesting.in,
+    out: inStage.out && canReachTesting.out
   };
 };
 const useStorageKasplat = () => {
   const inStage = usePlayFactory();
   return {
-    in: useFtaTinyBlueprint() && inStage.in,
-    out: useFtaTinyBlueprint() && inStage.out
+    in: inStage.in,
+    out: inStage.out
   };
 };
 const useBlockKasplat = () => {
@@ -23120,7 +23032,7 @@ const useDiddyTopGb$1 = () => {
   const stand = useStand();
   return {
     in: inStage.in && rocket,
-    out: useFtaDiddyBanana() && (inStage.in || inStage.out) && (diddy || tiny) && (tiny || stand)
+    out: (inStage.in || inStage.out) && (diddy || tiny) && (tiny || stand)
   };
 };
 const useDiddyOwlGb = () => {
@@ -23153,7 +23065,7 @@ const useDiddyRaftersGb = () => {
   const highGrab = useHighGrab();
   return {
     in: inStage.in && night.in && spring && guitar,
-    out: useFtaDiddyBanana() && (inStage.in || inStage.out) && night.out && (spring || highGrab)
+    out: (inStage.in || inStage.out) && night.out && (spring || highGrab)
   };
 };
 const useDkBlastGb$1 = () => {
@@ -23257,10 +23169,9 @@ const useTinyAntGb = () => {
 const useTinySpiderGb = () => {
   const spider = useForestSpiderBoss();
   const anyGun = useAnyGun();
-  const kong = useFtaTinyBanana();
   return {
-    in: kong && spider.in && anyGun,
-    out: kong && spider.out && anyGun
+    in: spider.in && anyGun,
+    out: spider.out && anyGun
   };
 };
 const useTinyBeanGb = () => {
@@ -23324,40 +23235,39 @@ const useBarnKasplat = () => {
   const inStage = usePlayForest();
   const night = useForestNight();
   const dusk = useForestDusk();
-  const kong = useFtaDkBlueprint();
   return {
-    in: kong && inStage.in && (night.in || dusk.in),
-    out: kong && inStage.out && (night.out || dusk.out)
+    in: inStage.in && (night.in || dusk.in),
+    out: inStage.out && (night.out || dusk.out)
   };
 };
 const useOwlKasplat = () => {
   const inStage = useForestOwl();
   const anyKong = useAnyKong();
   return {
-    in: useFtaLankyBlueprint() && inStage.in && anyKong,
-    out: useFtaLankyBlueprint() && inStage.out && anyKong
+    in: inStage.in && anyKong,
+    out: inStage.out && anyKong
   };
 };
 const useNightKasplat = () => {
   const inStage = useForestMushroomTop();
   const anyKong = useAnyKong();
   return {
-    in: useFtaChunkyBlueprint() && inStage.in && anyKong,
-    out: useFtaChunkyBlueprint() && inStage.out && anyKong
+    in: inStage.in && anyKong,
+    out: inStage.out && anyKong
   };
 };
 const useMushInteriorKasplat = () => {
   const inStage = usePlayForest();
   return {
-    in: useFtaDiddyBlueprint() && inStage.in,
-    out: useFtaDiddyBlueprint() && inStage.out
+    in: inStage.in,
+    out: inStage.out
   };
 };
 const useMushExteriorKasplat = () => {
   const inStage = usePlayForest();
   return {
-    in: useFtaTinyBlueprint() && inStage.in,
-    out: useFtaTinyBlueprint() && inStage.out
+    in: inStage.in,
+    out: inStage.out
   };
 };
 const useMillFrontKegs = () => {
@@ -25484,7 +25394,7 @@ const useDiddyWaterfallGb = () => {
   const twirl = useTwirl();
   return {
     in: inStage.in && !angery && rocket,
-    out: useFtaDiddyBanana() && (inStage.in && !angery || (inStage.out || angery)) && (dk2 || twirl)
+    out: (inStage.in && !angery || (inStage.out || angery)) && (dk2 || twirl)
   };
 };
 const useDiddyIglooGb = () => {
@@ -25586,8 +25496,8 @@ const useTinyCaveGb = () => {
   const mini = useMini();
   const warpAll = useBananaportAll();
   return {
-    in: useFtaTinyBanana() && inStage.in && !angery && (mini || warpAll),
-    out: useFtaTinyBanana() && (inStage.out || angery) && (mini || warpAll)
+    in: inStage.in && !angery && (mini || warpAll),
+    out: (inStage.out || angery) && (mini || warpAll)
   };
 };
 const useTinyPortGb = () => {
@@ -25646,40 +25556,38 @@ const useIceCastleKasplat = () => {
   const inStage = usePlayCaves();
   const angery = useAngryCaves();
   return {
-    in: useFtaDkBlueprint() && inStage.in && !angery,
-    out: useFtaDkBlueprint() && (inStage.out || angery)
+    in: inStage.in && !angery,
+    out: inStage.out || angery
   };
 };
 const useFunkyKasplat = () => {
   const miniFunky = useCavesMiniFunky();
-  const kong = useFtaDiddyBlueprint();
   return {
-    in: kong && miniFunky.in,
-    out: kong && miniFunky.out
+    in: miniFunky.in,
+    out: miniFunky.out
   };
 };
 const usePillarKasplat = () => {
   const pillar = useCavesPillar();
-  const kong = useFtaLankyBlueprint();
   return {
-    in: kong && pillar.in,
-    out: kong && pillar.out
+    in: pillar.in,
+    out: pillar.out
   };
 };
 const useCabinKasplat = () => {
   const inStage = usePlayCaves();
   const angery = useAngryCaves();
   return {
-    in: useFtaTinyBlueprint() && inStage.in && !angery,
-    out: useFtaTinyBlueprint() && (inStage.out || angery)
+    in: inStage.in && !angery,
+    out: inStage.out || angery
   };
 };
 const useIglooKasplat = () => {
   const inStage = usePlayCaves();
   const angery = useAngryCaves();
   return {
-    in: useFtaChunkyBlueprint() && inStage.in && !angery,
-    out: useFtaChunkyBlueprint() && (inStage.out || angery)
+    in: inStage.in && !angery,
+    out: inStage.out || angery
   };
 };
 const useSatoriKomeiji = () => {
@@ -27312,7 +27220,7 @@ const useTinyMausoleumGb = () => {
   const preOpened = useOpenCrypt();
   return {
     in: inStage.in && (feather || grape || preOpened) && canSlam && twirl && hasClimbing,
-    out: useFtaTinyBanana() && (inStage.in || inStage.out) && (feather || grape || preOpened) && canSlam && (dk2 || twirl)
+    out: (inStage.in || inStage.out) && (feather || grape || preOpened) && canSlam && (dk2 || twirl)
   };
 };
 const useTinyChasmGb = () => {
@@ -27370,30 +27278,30 @@ const useMausoleumKasplat = () => {
   const inStage = usePlayCastle();
   const hasClimbing = useClimbing();
   return {
-    in: useFtaDiddyBlueprint() && inStage.in && hasClimbing,
-    out: useFtaDiddyBlueprint() && (inStage.in || inStage.out)
+    in: inStage.in && hasClimbing,
+    out: inStage.in || inStage.out
   };
 };
 const usePathKasplat = () => {
   const inStage = usePlayCastle();
   return {
-    in: useFtaLankyBlueprint() && inStage.in,
-    out: useFtaLankyBlueprint() && inStage.out
+    in: inStage.in,
+    out: inStage.out
   };
 };
 const useLonelyKasplat = () => {
   const inStage = usePlayCastle();
   const hasClimbing = useClimbing();
   return {
-    in: useFtaTinyBlueprint() && inStage.in && hasClimbing,
-    out: useFtaTinyBlueprint() && (inStage.in || inStage.out)
+    in: inStage.in && hasClimbing,
+    out: inStage.in || inStage.out
   };
 };
 const useDungeonKasplat = () => {
   const inStage = usePlayCastle();
   return {
-    in: useFtaChunkyBlueprint() && inStage.in,
-    out: useFtaChunkyBlueprint() && inStage.out
+    in: inStage.in,
+    out: inStage.out
   };
 };
 const useCrate = () => {
