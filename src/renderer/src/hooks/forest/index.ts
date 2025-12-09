@@ -13,13 +13,6 @@ import {
   useChunky,
   useDiddy,
   useDk,
-  useFtaChunkyBlueprint,
-  useFtaDiddyBanana,
-  useFtaDiddyBlueprint,
-  useFtaDkBlueprint,
-  useFtaLankyBlueprint,
-  useFtaTinyBanana,
-  useFtaTinyBlueprint,
   useGrab,
   useGuitar,
   useHighGrab,
@@ -271,7 +264,7 @@ export const useDiddyTopGb = (): LogicBool => {
   const stand = useStand()
   return {
     in: inStage.in && rocket,
-    out: useFtaDiddyBanana() && (inStage.in || inStage.out) && (diddy || tiny) && (tiny || stand)
+    out: (inStage.in || inStage.out) && (diddy || tiny) && (tiny || stand)
   }
 }
 
@@ -307,7 +300,7 @@ export const useDiddyRaftersGb = (): LogicBool => {
   const highGrab = useHighGrab()
   return {
     in: inStage.in && night.in && spring && guitar,
-    out: useFtaDiddyBanana() && (inStage.in || inStage.out) && night.out && (spring || highGrab)
+    out: (inStage.in || inStage.out) && night.out && (spring || highGrab)
   }
 }
 
@@ -439,10 +432,9 @@ export const useTinyAntGb = (): LogicBool => {
 export const useTinySpiderGb = (): LogicBool => {
   const spider = useForestSpiderBoss()
   const anyGun = useAnyGun()
-  const kong = useFtaTinyBanana()
   return {
-    in: kong && spider.in && anyGun,
-    out: kong && spider.out && anyGun
+    in: spider.in && anyGun,
+    out: spider.out && anyGun
   }
 }
 
@@ -520,10 +512,9 @@ export const useBarnKasplat = (): LogicBool => {
   const inStage = usePlayForest()
   const night = useForestNight()
   const dusk = useForestDusk()
-  const kong = useFtaDkBlueprint()
   return {
-    in: kong && inStage.in && (night.in || dusk.in),
-    out: kong && inStage.out && (night.out || dusk.out)
+    in: inStage.in && (night.in || dusk.in),
+    out: inStage.out && (night.out || dusk.out)
   }
 }
 
@@ -531,8 +522,8 @@ export const useOwlKasplat = (): LogicBool => {
   const inStage = useForestOwl()
   const anyKong = useAnyKong()
   return {
-    in: useFtaLankyBlueprint() && inStage.in && anyKong,
-    out: useFtaLankyBlueprint() && inStage.out && anyKong
+    in: inStage.in && anyKong,
+    out: inStage.out && anyKong
   }
 }
 
@@ -540,24 +531,24 @@ export const useNightKasplat = (): LogicBool => {
   const inStage = useForestMushroomTop()
   const anyKong = useAnyKong()
   return {
-    in: useFtaChunkyBlueprint() && inStage.in && anyKong,
-    out: useFtaChunkyBlueprint() && inStage.out && anyKong
+    in: inStage.in && anyKong,
+    out: inStage.out && anyKong
   }
 }
 
 export const useMushInteriorKasplat = (): LogicBool => {
   const inStage = usePlayForest()
   return {
-    in: useFtaDiddyBlueprint() && inStage.in,
-    out: useFtaDiddyBlueprint() && inStage.out
+    in: inStage.in,
+    out: inStage.out
   }
 }
 
 export const useMushExteriorKasplat = (): LogicBool => {
   const inStage = usePlayForest()
   return {
-    in: useFtaTinyBlueprint() && inStage.in,
-    out: useFtaTinyBlueprint() && inStage.out
+    in: inStage.in,
+    out: inStage.out
   }
 }
 
