@@ -13,14 +13,6 @@ import {
   useDiddy,
   useDk,
   useFeather,
-  useFtaDiddyBanana,
-  useFtaDiddyBlueprint,
-  useFtaDkBanana,
-  useFtaDkBlueprint,
-  useFtaLankyBanana,
-  useFtaLankyBlueprint,
-  useFtaTinyBanana,
-  useFtaTinyBlueprint,
   useGrab,
   useGuitar,
   useHighGrab,
@@ -174,7 +166,7 @@ export const useDiddyBlockGb = (): LogicBool => {
   const highGrab = useHighGrab()
   return {
     in: testing.in && spring,
-    out: useFtaDiddyBanana() && testing.out && highGrab
+    out: (testing.in || testing.out) && highGrab
   }
 }
 
@@ -276,17 +268,17 @@ export const useDkProdGb = (): LogicBool => {
   const diddy = useDiddy()
   return {
     in: production.in && strong,
-    out: useFtaDkBanana() && production.out && (dk || diddy)
+    out: (production.in || production.out) && (dk || diddy)
   }
 }
 
 export const useLankyTestingGb = (): LogicBool => {
   const testing = useFactoryTesting()
   const balloon = useBalloon()
-  const anyKong = useAnyKong()
+  const twirl = useTwirl()
   return {
     in: testing.in && balloon,
-    out: useFtaLankyBanana() && testing.out && anyKong
+    out: (testing.in || testing.out) && twirl
   }
 }
 
@@ -360,7 +352,7 @@ export const useLankyProductionGb = (): LogicBool => {
   const tiny = useTiny()
   return {
     in: production.in && canSlam && hasLanky && stand,
-    out: useFtaLankyBanana() && production.out && canSlam && hasLanky && (stand || tiny)
+    out: (production.in || production.out) && canSlam && hasLanky && tiny
   }
 }
 
@@ -401,7 +393,7 @@ export const useTinyProductionGb = (): LogicBool => {
   const dk = useDk()
   return {
     in: production.in && canSlam && twirl,
-    out: useFtaTinyBanana() && production.out && canSlam && (twirl || dk)
+    out: (production.in || production.out) && canSlam && (twirl || dk)
   }
 }
 
@@ -475,16 +467,16 @@ export const useDartFairy = (): boolean => {
 export const useProductionTopKasplat = (): LogicBool => {
   const production = useFactoryProductionEnabled()
   return {
-    in: useFtaDkBlueprint() && production.in,
-    out: useFtaDkBlueprint() && production.out
+    in: production.in,
+    out: production.out
   }
 }
 
 export const useProductionBaseKasplat = (): LogicBool => {
   const inStage = usePlayFactory()
   return {
-    in: useFtaDiddyBlueprint() && inStage.in,
-    out: useFtaDiddyBlueprint() && inStage.out
+    in: inStage.in,
+    out: inStage.out
   }
 }
 
@@ -492,16 +484,16 @@ export const useResearchKasplat = (): LogicBool => {
   const inStage = usePlayFactory()
   const canReachTesting = useFactoryTesting()
   return {
-    in: useFtaLankyBlueprint() && inStage.in && canReachTesting.in,
-    out: useFtaLankyBlueprint() && inStage.out && canReachTesting.out
+    in: inStage.in && canReachTesting.in,
+    out: inStage.out && canReachTesting.out
   }
 }
 
 export const useStorageKasplat = (): LogicBool => {
   const inStage = usePlayFactory()
   return {
-    in: useFtaTinyBlueprint() && inStage.in,
-    out: useFtaTinyBlueprint() && inStage.out
+    in: inStage.in,
+    out: inStage.out
   }
 }
 
