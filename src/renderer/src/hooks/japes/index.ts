@@ -14,13 +14,6 @@ import {
   useDiddy,
   useDk,
   useFeather,
-  useFtaChunkyBanana,
-  useFtaDiddyBanana,
-  useFtaDiddyBlueprint,
-  useFtaDkBlueprint,
-  useFtaLankyBanana,
-  useFtaLankyBlueprint,
-  useFtaTinyBlueprint,
   useGrape,
   useHighGrab,
   useHunky,
@@ -239,7 +232,7 @@ export const useChunkyUndergroundGb = (): LogicBool => {
   const diddy = useDiddy()
   return {
     in: under.in && pineapple && vine,
-    out: useFtaChunkyBanana() && under.out && (dk || twirl || ((tiny || diddy) && vine))
+    out: (under.in || under.out) && (dk || twirl || ((tiny || diddy) && vine))
   }
 }
 
@@ -265,16 +258,16 @@ export const useDiddyMountainGb = (): LogicBool => {
   const mine = useJapesMine()
   const canSlam = useSlamJapes()
   return {
-    in: useFtaDiddyBanana() && mine.in && canSlam,
-    out: useFtaDiddyBanana() && mine.out && canSlam
+    in: mine.in && canSlam,
+    out: mine.out && canSlam
   }
 }
 
 export const useDiddyTunnelGb = (): LogicBool => {
   const side = useJapesSideArea()
   return {
-    in: useFtaDiddyBanana() && side.in,
-    out: useFtaDiddyBanana() && side.out
+    in: side.in,
+    out: side.out
   }
 }
 
@@ -388,7 +381,7 @@ export const useLankySlopeGb = (): LogicBool => {
   const anyKong = useAnyKong()
   return {
     in: tunnel.in && stand,
-    out: useFtaLankyBanana() && tunnel.out && anyKong
+    out: (tunnel.in || tunnel.out) && anyKong
   }
 }
 
@@ -512,10 +505,9 @@ export const useGateKasplat = (): LogicBool => {
 
 export const useDkKasplat = (): LogicBool => {
   const gate = useGateKasplat()
-  const ftaBP = useFtaDkBlueprint()
   return {
-    in: ftaBP && gate.in,
-    out: ftaBP && gate.out
+    in: gate.in,
+    out: gate.out
   }
 }
 
