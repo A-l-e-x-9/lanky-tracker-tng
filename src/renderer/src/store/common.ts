@@ -812,7 +812,8 @@ export const SelectableRegions = [
   'Caves Igloo',
   'Caves Cabins',
   'Creepy Castle Main',
-  'Castle Crypt and Dungeon',
+  'Castle Crypt',
+  'Castle Dungeon',
   'Various Castle Rooms',
   'Hideout Helm',
   'Bosses'
