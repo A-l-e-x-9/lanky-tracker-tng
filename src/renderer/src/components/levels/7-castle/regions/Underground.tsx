@@ -11,6 +11,7 @@ import TinyChasm from '../gold-bananas/tiny/Chasm'
 import TinyMausoleum from '../gold-bananas/tiny/Mausoleum'
 import ChunkyKasplat from '../kasplats/Chunky'
 import DiddyKasplat from '../kasplats/Diddy'
+import UpperCaveEnemies from '../enemies/UpperCave'
 
 const UndergroundChecks: React.FC = () => (
   <>
@@ -21,12 +22,13 @@ const UndergroundChecks: React.FC = () => (
     <MausoleumCrate />
     <LankyMausoleum />
     <TinyMausoleum />
+    <UndergroundEnemies />
     <TinyChasm />
     <DkDungeon />
     <DiddyDungeon />
     <LankyDungeon />
     <ChunkyKasplat />
-    <UndergroundEnemies />
+    <UpperCaveEnemies />
   </>
 )
 
