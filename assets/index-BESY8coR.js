@@ -27357,7 +27357,7 @@ const MausoleumCrate = () => {
     {
       id: 7060,
       name: "Melon Crate Behind Mausoleum",
-      region: "Castle Crypt and Dungeon",
+      region: "Castle Crypt",
       canGetLogic: canDoCheck.in,
       canGetBreak: canDoCheck.out
     }
@@ -27660,10 +27660,7 @@ const TreeEnemies = () => {
 };
 const UndergroundEnemies = () => {
   const inStage = usePlayCastle();
-  const canSlam = useSlamCastle();
   const anyKong = useAnyKong();
-  const diddy = useDiddy();
-  const dk2 = useDk();
   const kosha = useDefeatKosha();
   const bat = useDefeatBat();
   const peanut = usePeanut();
@@ -27681,9 +27678,9 @@ const UndergroundEnemies = () => {
       {
         id: 7327,
         name: "Enemy in front of Crypt",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && anyKong && kosha.in && hasClimbing,
-        canGetBreak: inStage && anyKong && kosha.out
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && anyKong && kosha.in && hasClimbing,
+        canGetBreak: inStage.out && anyKong && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27691,9 +27688,9 @@ const UndergroundEnemies = () => {
       {
         id: 7328,
         name: "Enemy at the Right Stairs to Crypt",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && anyKong && kosha.in && hasClimbing,
-        canGetBreak: inStage && anyKong && kosha.out
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && anyKong && kosha.in && hasClimbing,
+        canGetBreak: inStage.out && anyKong && kosha.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27701,9 +27698,9 @@ const UndergroundEnemies = () => {
       {
         id: 7329,
         name: "Enemy at the Left Stairs to Crypt",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && anyKong && hasClimbing,
-        canGetBreak: inStage && anyKong
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && anyKong && hasClimbing,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27711,9 +27708,9 @@ const UndergroundEnemies = () => {
       {
         id: 7330,
         name: "Enemy Guarding the Mausoleum",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && anyKong && bat.in && hasClimbing,
-        canGetBreak: inStage && anyKong && bat.out
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && anyKong && bat.in && hasClimbing,
+        canGetBreak: inStage.out && anyKong && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27721,9 +27718,9 @@ const UndergroundEnemies = () => {
       {
         id: 7331,
         name: "Enemy Guarding Funky's",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && anyKong && bat.in && hasClimbing,
-        canGetBreak: inStage && anyKong && bat.out
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && anyKong && bat.in && hasClimbing,
+        canGetBreak: inStage.out && anyKong && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27731,9 +27728,9 @@ const UndergroundEnemies = () => {
       {
         id: 7332,
         name: "Enemy Between Funky's and Nearby Tag Barrel",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && anyKong && bat.in && hasClimbing,
-        canGetBreak: inStage && anyKong && bat.out
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && anyKong && bat.in && hasClimbing,
+        canGetBreak: inStage.out && anyKong && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27741,9 +27738,9 @@ const UndergroundEnemies = () => {
       {
         id: 7333,
         name: "Enemy 0 inside Diddy's Coffins",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (peanut || preOpenedCrypt) && charge && hasClimbing,
-        canGetBreak: inStage && (peanut || preOpenedCrypt) && charge
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (peanut || preOpenedCrypt) && charge && hasClimbing,
+        canGetBreak: inStage.out && (peanut || preOpenedCrypt) && charge
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27751,9 +27748,9 @@ const UndergroundEnemies = () => {
       {
         id: 7334,
         name: "Enemy 1 inside Diddy's Coffins",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (peanut || preOpenedCrypt) && charge && hasClimbing,
-        canGetBreak: inStage && (peanut || preOpenedCrypt) && charge
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (peanut || preOpenedCrypt) && charge && hasClimbing,
+        canGetBreak: inStage.out && (peanut || preOpenedCrypt) && charge
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27761,9 +27758,9 @@ const UndergroundEnemies = () => {
       {
         id: 7335,
         name: "Enemy 2 inside Diddy's Coffins",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (peanut || preOpenedCrypt) && charge && hasClimbing,
-        canGetBreak: inStage && (peanut || preOpenedCrypt) && charge
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (peanut || preOpenedCrypt) && charge && hasClimbing,
+        canGetBreak: inStage.out && (peanut || preOpenedCrypt) && charge
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27771,9 +27768,9 @@ const UndergroundEnemies = () => {
       {
         id: 7336,
         name: "Enemy 3 inside Diddy's Coffins",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (peanut || preOpenedCrypt) && charge && hasClimbing,
-        canGetBreak: inStage && (peanut || preOpenedCrypt) && charge
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (peanut || preOpenedCrypt) && charge && hasClimbing,
+        canGetBreak: inStage.out && (peanut || preOpenedCrypt) && charge
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27781,9 +27778,9 @@ const UndergroundEnemies = () => {
       {
         id: 7337,
         name: "Enemy 0 inside Chunky's Coffin",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (pineapple || preOpenedCrypt) && slam && hasClimbing,
-        canGetBreak: inStage && (pineapple || preOpenedCrypt) && slam
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && slam && hasClimbing,
+        canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && slam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27791,9 +27788,9 @@ const UndergroundEnemies = () => {
       {
         id: 7338,
         name: "Enemy 1 inside Chunky's Coffin",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (pineapple || preOpenedCrypt) && slam && hasClimbing,
-        canGetBreak: inStage && (pineapple || preOpenedCrypt) && slam
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && slam && hasClimbing,
+        canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && slam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27801,9 +27798,9 @@ const UndergroundEnemies = () => {
       {
         id: 7339,
         name: "Enemy 2 inside Chunky's Coffin",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (pineapple || preOpenedCrypt) && slam && hasClimbing,
-        canGetBreak: inStage && (pineapple || preOpenedCrypt) && slam
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && slam && hasClimbing,
+        canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && slam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27811,9 +27808,9 @@ const UndergroundEnemies = () => {
       {
         id: 7340,
         name: "Enemy 3 inside Chunky's Coffin",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (pineapple || preOpenedCrypt) && slam && hasClimbing,
-        canGetBreak: inStage && (pineapple || preOpenedCrypt) && slam
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && slam && hasClimbing,
+        canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && slam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27821,9 +27818,9 @@ const UndergroundEnemies = () => {
       {
         id: 7341,
         name: "Enemy at DK's Minecart Entry",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (coconut || preOpenedCrypt) && hasClimbing,
-        canGetBreak: inStage && (coconut || preOpenedCrypt)
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (coconut || preOpenedCrypt) && hasClimbing,
+        canGetBreak: inStage.out && (coconut || preOpenedCrypt)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27831,9 +27828,9 @@ const UndergroundEnemies = () => {
       {
         id: 7342,
         name: "Enemy at Fork to DK and Diddy's Crypts",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing,
-        canGetBreak: inStage && (coconut || peanut || pineapple || preOpenedCrypt)
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing,
+        canGetBreak: inStage.out && (coconut || peanut || pineapple || preOpenedCrypt)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27841,9 +27838,9 @@ const UndergroundEnemies = () => {
       {
         id: 7343,
         name: "Enemy Outside Diddy's Crypt",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing,
-        canGetBreak: inStage && (coconut || peanut || pineapple || preOpenedCrypt)
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing,
+        canGetBreak: inStage.out && (coconut || peanut || pineapple || preOpenedCrypt)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27851,9 +27848,9 @@ const UndergroundEnemies = () => {
       {
         id: 7344,
         name: "Enemy Outside Chunky's Crypt",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing,
-        canGetBreak: inStage && (coconut || peanut || pineapple || preOpenedCrypt)
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing,
+        canGetBreak: inStage.out && (coconut || peanut || pineapple || preOpenedCrypt)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27861,9 +27858,9 @@ const UndergroundEnemies = () => {
       {
         id: 7345,
         name: "Enemy Outside Tiny's Mausoleum Room",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (feather || grape || preOpenedCrypt) && hasClimbing,
-        canGetBreak: inStage && (feather || grape || preOpenedCrypt)
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (feather || grape || preOpenedCrypt) && hasClimbing,
+        canGetBreak: inStage.out && (feather || grape || preOpenedCrypt)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27871,9 +27868,9 @@ const UndergroundEnemies = () => {
       {
         id: 7346,
         name: "Enemy on Lanky's Mausolem Path, at Switch",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (feather || grape || preOpenedCrypt) && hasClimbing,
-        canGetBreak: inStage && (feather || grape || preOpenedCrypt)
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (feather || grape || preOpenedCrypt) && hasClimbing,
+        canGetBreak: inStage.out && (feather || grape || preOpenedCrypt)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27881,67 +27878,9 @@ const UndergroundEnemies = () => {
       {
         id: 7347,
         name: "Enemy near Lanky's Mausoleum Gate",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && (feather || grape || preOpenedCrypt) && hasClimbing,
-        canGetBreak: inStage && (feather || grape || preOpenedCrypt)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7348,
-        name: "Enemy at Upper Cave Dungeon Entrance",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && anyKong && bat.in,
-        canGetBreak: inStage && anyKong && bat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7350,
-        name: "Enemy at Upper Cave Lower Warp 1 Entrance",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && anyKong && bat.in,
-        canGetBreak: inStage && anyKong && bat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7351,
-        name: "Enemy at Upper Cave Central Warp Area Entrance",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7319,
-        name: "Enemy in DK's Face Dungeon",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && dk2 && canSlam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7320,
-        name: "Enemy in Diddy's Chair Dungeon",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && diddy && canSlam && kosha.in,
-        canGetBreak: inStage && diddy && canSlam && kosha.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 7321,
-        name: "Enemy Outside Lanky's Acid Dungeon",
-        region: "Castle Crypt and Dungeon",
-        canGetLogic: inStage && anyKong && kosha.in,
-        canGetBreak: inStage && anyKong && kosha.out
+        region: "Castle Crypt",
+        canGetLogic: inStage.in && (feather || grape || preOpenedCrypt) && hasClimbing,
+        canGetBreak: inStage.out && (feather || grape || preOpenedCrypt)
       }
     )
   ] });
@@ -27991,7 +27930,7 @@ const ChunkyCrypt = () => {
     {
       id: 7043,
       name: "Chunky's Crypt Bonus Barrel",
-      region: "Castle Crypt and Dungeon",
+      region: "Castle Crypt",
       canGetLogic: canDoCheck.in,
       canGetBreak: canDoCheck.out
     }
@@ -28062,7 +28001,7 @@ const DiddyCrypt = () => {
     {
       id: 7012,
       name: "Diddy's Crypt",
-      region: "Castle Crypt and Dungeon",
+      region: "Castle Crypt",
       canGetLogic: doCheck.in,
       canGetBreak: doCheck.out
     }
@@ -28075,7 +28014,7 @@ const DiddyDungeon = () => {
     {
       id: 7013,
       name: "Diddy's Dungeon Sniper Challenge",
-      region: "Castle Crypt and Dungeon",
+      region: "Castle Dungeon",
       canGetLogic: canDo.in,
       canGetBreak: canDo.out
     }
@@ -28107,7 +28046,7 @@ const DkDungeon = () => {
     {
       id: 7004,
       name: "DK's Face Puzzle",
-      region: "Castle Crypt and Dungeon",
+      region: "Castle Dungeon",
       canGetLogic: canDo.in,
       canGetBreak: canDo.out
     }
@@ -28133,7 +28072,7 @@ const DkMinecart = () => {
     {
       id: 7003,
       name: "DK's Minecart",
-      region: "Castle Crypt and Dungeon",
+      region: "Castle Crypt",
       canGetLogic: doCheck.in,
       canGetBreak: doCheck.out
     }
@@ -28165,7 +28104,7 @@ const LankyDungeon = () => {
     {
       id: 7023,
       name: "Lanky's Dungeon Acid Barrel",
-      region: "Castle Crypt and Dungeon",
+      region: "Castle Dungeon",
       canGetLogic: dungeonGb.in,
       canGetBreak: dungeonGb.out
     }
@@ -28191,7 +28130,7 @@ const LankyMausoleum = () => {
     {
       id: 7022,
       name: "Lanky's Mausoleum Room",
-      region: "Castle Crypt and Dungeon",
+      region: "Castle Crypt",
       canGetLogic: mausoleumGb.in,
       canGetBreak: mausoleumGb.out
     }
@@ -28223,7 +28162,7 @@ const TinyChasm = () => {
     {
       id: 7033,
       name: "Tiny's Bonus Barrel Over the Chasm",
-      region: "Castle Crypt and Dungeon",
+      region: "Castle Dungeon",
       canGetLogic: hinacopter.in,
       canGetBreak: hinacopter.out
     }
@@ -28236,7 +28175,7 @@ const TinyMausoleum = () => {
     {
       id: 7032,
       name: "Tiny's Mausoleum Hand Walk",
-      region: "Castle Crypt and Dungeon",
+      region: "Castle Crypt",
       canGetLogic: mausoleumGb.in,
       canGetBreak: mausoleumGb.out
     }
@@ -28281,7 +28220,7 @@ const ChunkyKasplat = () => {
     {
       id: 7054,
       name: "Kasplat in Front of Candy's",
-      region: "Castle Crypt and Dungeon",
+      region: "Castle Dungeon",
       canGetLogic: canDo.in,
       canGetBreak: canDo.out
     }
@@ -28294,7 +28233,7 @@ const DiddyKasplat = () => {
     {
       id: 7051,
       name: "Kasplat at Crypt Center",
-      region: "Castle Crypt and Dungeon",
+      region: "Castle Crypt",
       canGetLogic: canDoCheck.in,
       canGetBreak: canDoCheck.out
     }
@@ -28990,20 +28929,90 @@ const TreeChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExport
   /* @__PURE__ */ jsxRuntimeExports.jsx(DkTree, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(TreeFairy, {})
 ] });
+const UpperCaveEnemies = () => {
+  const inStage = usePlayCastle();
+  const canSlam = useSlamCastle();
+  const anyKong = useAnyKong();
+  const diddy = useDiddy();
+  const dk2 = useDk();
+  const kosha = useDefeatKosha();
+  const bat = useDefeatBat();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7348,
+        name: "Enemy at Upper Cave Dungeon Entrance",
+        region: "Castle Dungeon",
+        canGetLogic: inStage.in && anyKong && bat.in,
+        canGetBreak: inStage.out && anyKong && bat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7350,
+        name: "Enemy at Upper Cave Lower Warp 1 Entrance",
+        region: "Castle Dungeon",
+        canGetLogic: inStage.in && anyKong && bat.in,
+        canGetBreak: inStage.out && anyKong && bat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7351,
+        name: "Enemy at Upper Cave Central Warp Area Entrance",
+        region: "Castle Dungeon",
+        canGetLogic: inStage.in && anyKong
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7319,
+        name: "Enemy in DK's Face Dungeon",
+        region: "Castle Dungeon",
+        canGetLogic: inStage.in && dk2 && canSlam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7320,
+        name: "Enemy in Diddy's Chair Dungeon",
+        region: "Castle Dungeon",
+        canGetLogic: inStage.in && diddy && canSlam && kosha.in,
+        canGetBreak: inStage.out && diddy && canSlam && kosha.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 7321,
+        name: "Enemy Outside Lanky's Acid Dungeon",
+        region: "Castle Dungeon",
+        canGetLogic: inStage.in && anyKong && kosha.in,
+        canGetBreak: inStage.out && anyKong && kosha.out
+      }
+    )
+  ] });
+};
 const UndergroundChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DkMinecart, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DkDungeon, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyCrypt, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyDungeon, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMausoleum, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyDungeon, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMausoleum, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyChasm, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyCrypt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DkMinecart, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyCrypt, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyCrypt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(MausoleumCrate, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(UndergroundEnemies, {})
+  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMausoleum, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMausoleum, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(UndergroundEnemies, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyChasm, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DkDungeon, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyDungeon, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyDungeon, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(UpperCaveEnemies, {})
 ] });
 const CastleRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "not-available", children: [
