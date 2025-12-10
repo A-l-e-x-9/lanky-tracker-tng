@@ -9,7 +9,7 @@ return (
   <CastleCheck
     id={7013}
     name="Diddy's Dungeon Sniper Challenge"
-    region="Castle Crypt and Dungeon"
+    region="Castle Dungeon"
     canGetLogic={canDo.in}
     canGetBreak={canDo.out}
   />

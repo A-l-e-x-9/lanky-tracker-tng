@@ -9,7 +9,7 @@ return (
   <CastleCheck
     id={7004}
     name="DK's Face Puzzle"
-    region="Castle Crypt and Dungeon"
+    region="Castle Dungeon"
     canGetLogic={canDo.in}
     canGetBreak={canDo.out}
   />

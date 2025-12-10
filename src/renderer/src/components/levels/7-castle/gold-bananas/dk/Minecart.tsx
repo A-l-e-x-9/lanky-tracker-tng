@@ -11,7 +11,7 @@ return (
   <CastleCheck
     id={7003}
     name="DK's Minecart"
-    region="Castle Crypt and Dungeon"
+    region="Castle Crypt"
     canGetLogic={doCheck.in}
     canGetBreak={doCheck.out}
   />

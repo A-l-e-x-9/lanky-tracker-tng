@@ -11,7 +11,7 @@ return (
       <CastleCheck
         id={7054}
         name="Kasplat in Front of Candy's"
-        region="Castle Crypt and Dungeon"
+        region="Castle Dungeon"
         canGetLogic={canDo.in}
         canGetBreak={canDo.out}
       />

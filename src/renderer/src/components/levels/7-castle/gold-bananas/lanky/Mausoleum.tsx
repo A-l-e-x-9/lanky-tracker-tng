@@ -9,7 +9,7 @@ const LankyMausoleum: React.FC = () => {
     <CastleCheck
       id={7022}
       name="Lanky's Mausoleum Room"
-      region="Castle Crypt and Dungeon"
+      region="Castle Crypt"
       canGetLogic={mausoleumGb.in}
       canGetBreak={mausoleumGb.out}
     />

@@ -9,7 +9,7 @@ const TinyMausoleum: React.FC = () => {
     <CastleCheck
       id={7032}
       name="Tiny's Mausoleum Hand Walk"
-      region="Castle Crypt and Dungeon"
+      region="Castle Crypt"
       canGetLogic={mausoleumGb.in}
       canGetBreak={mausoleumGb.out}
     />
