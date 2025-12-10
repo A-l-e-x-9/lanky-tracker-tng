@@ -1,18 +1,10 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { usePlayCastle, useSlamCastle, useOpenCrypt } from '@renderer/hooks/castle'
+import { usePlayCastle, useSlamCastle } from '@renderer/hooks/castle'
 import { useDefeatBat, useDefeatKosha } from '@renderer/hooks/enemies'
 import {
   useAnyKong,
-  useCharge,
-  useCoconut,
   useDiddy,
-  useDk,
-  useFeather,
-  useGrape,
-  usePeanut,
-  usePineapple,
-  useSlam,
-  useClimbing
+  useDk
 } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
@@ -24,15 +16,6 @@ const UpperCaveEnemies: React.FC = () => {
   const dk = useDk()
   const kosha = useDefeatKosha()
   const bat = useDefeatBat()
-  const peanut = usePeanut()
-  const charge = useCharge()
-  const pineapple = usePineapple()
-  const coconut = useCoconut()
-  const slam = useSlam()
-  const grape = useGrape()
-  const feather = useFeather()
-  const hasClimbing = useClimbing()
-  const preOpenedCrypt = useOpenCrypt()
   return (
     <DropPool>
       <CastleCheck
