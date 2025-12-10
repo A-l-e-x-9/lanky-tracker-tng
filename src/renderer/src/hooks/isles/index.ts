@@ -415,8 +415,8 @@ export const usePlayLobby = (level: Level): LogicBool => {
   }
   if (level5 === level) {
     return {
-      in: islesFungiIsland,
-      out: islesFungiIsland
+      in: isBreathing && islesFungiIsland,
+      out: isBreathing && islesFungiIsland
     }
   }
   if (level6 === level) {
