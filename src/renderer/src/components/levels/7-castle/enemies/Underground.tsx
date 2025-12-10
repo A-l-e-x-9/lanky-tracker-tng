@@ -1,12 +1,10 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { usePlayCastle, useSlamCastle, useOpenCrypt } from '@renderer/hooks/castle'
+import { usePlayCastle, useOpenCrypt } from '@renderer/hooks/castle'
 import { useDefeatBat, useDefeatKosha } from '@renderer/hooks/enemies'
 import {
   useAnyKong,
   useCharge,
   useCoconut,
-  useDiddy,
-  useDk,
   useFeather,
   useGrape,
   usePeanut,
@@ -18,10 +16,7 @@ import CastleCheck from '../check'
 
 const UndergroundEnemies: React.FC = () => {
   const inStage = usePlayCastle()
-  const canSlam = useSlamCastle()
   const anyKong = useAnyKong()
-  const diddy = useDiddy()
-  const dk = useDk()
   const kosha = useDefeatKosha()
   const bat = useDefeatBat()
   const peanut = usePeanut()
