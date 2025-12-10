@@ -14,18 +14,18 @@ import DiddyKasplat from '../kasplats/Diddy'
 
 const UndergroundChecks: React.FC = () => (
   <>
+    <DiddyKasplat />
     <DkMinecart />
-    <DkDungeon />
     <DiddyCrypt />
-    <DiddyDungeon />
+    <ChunkyCrypt />
+    <MausoleumCrate />
     <LankyMausoleum />
-    <LankyDungeon />
     <TinyMausoleum />
     <TinyChasm />
-    <ChunkyCrypt />
-    <DiddyKasplat />
+    <DkDungeon />
+    <DiddyDungeon />
+    <LankyDungeon />
     <ChunkyKasplat />
-    <MausoleumCrate />
     <UndergroundEnemies />
   </>
 )

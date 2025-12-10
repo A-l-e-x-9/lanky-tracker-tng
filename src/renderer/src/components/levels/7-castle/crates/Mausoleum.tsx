@@ -11,7 +11,7 @@ return (
       <CastleCheck
         id={7060}
         name="Melon Crate Behind Mausoleum"
-        region="Castle Crypt and Dungeon"
+        region="Castle Crypt"
         canGetLogic={canDoCheck.in}
         canGetBreak={canDoCheck.out}
       />
