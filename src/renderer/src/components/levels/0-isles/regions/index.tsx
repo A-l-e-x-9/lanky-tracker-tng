@@ -25,6 +25,7 @@ import PrisonChecks from './Prison'
 import SnideRoomChecks from './SnideRoom'
 import TrainingGroundsChecks from './TrainingGrounds'
 import FairyReward from '../fairies/FairyReward'
+import ShuffledFairies from '../fairies/Shuffled'
 
 const IslesRegionChecks: React.FC = () => (
   <div className="grid">
@@ -58,6 +59,7 @@ const IslesRegionChecks: React.FC = () => (
     <ShopLocations />
     <FairyReward />
     <JetpacCheck />
+    <ShuffledFairies />
   </div>
 )
 

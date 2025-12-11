@@ -23,6 +23,7 @@ import LankyMedal from './medals/LankyMedal'
 import TinyMedal from './medals/TinyMedal'
 import BoulderLocations from './boulders'
 import WrinklyDoors from './wrinkly'
+import ShuffledFairies from './fairies/Shuffled'
 
 const ClassicChecks: React.FC = () => (
   <div className="grid">
@@ -51,6 +52,7 @@ const ClassicChecks: React.FC = () => (
     <FairyReward />
     <JetpacCheck />
     <EnemyLocations />
+    <ShuffledFairies />
   </div>
 )
 
