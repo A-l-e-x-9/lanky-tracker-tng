@@ -19,13 +19,13 @@ const StorageChecks: React.FC = () => (
     <ChunkyCage />
     <FreeChunky />
     <FactoryBlast />
-    <TinyKasplat />
-    <TinyVent />
-    <ArcadeBarrel />
-    <NintendoCoin />
+    <CandyCrate />
     <DarkRoomDirt />
     <DarkRoom />
-    <CandyCrate />
+    <TinyKasplat />
+    <ArcadeBarrel />
+    <TinyVent />
+    <NintendoCoin />
     <StorageEnemies />
   </>
 )
