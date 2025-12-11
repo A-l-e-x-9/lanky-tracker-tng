@@ -21000,13 +21000,13 @@ const StorageChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExp
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyCage, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FreeChunky, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryBlast, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyVent, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ArcadeBarrel, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(NintendoCoin, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CandyCrate, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DarkRoomDirt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DarkRoom, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CandyCrate, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$4, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ArcadeBarrel, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyVent, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(NintendoCoin, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(StorageEnemies, {})
 ] });
 const ProductionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
