@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useKremFairy, useFactoryFairy, useForestLobby, useIslesUpper, useIslesFungiIsland, useIslesRocket, useIslesKremAscent, useCheckBFIInitial, useAztecLobbyChunky, useCheckLankyCastle, useCastleLobbyGeneric, useCavesKasplat } from '@renderer/hooks/isles'
+import { useGeneralFairy, useKremFairy, useFactoryFairy, useForestFairy, useIslesUpper, useIslesFungiIsland, useIslesRocket, useIslesKremAscent, useCheckBFIInitial, useAztecLobbyChunky, useCheckLankyCastle, useCastleLobbyGeneric, useCavesKasplat } from '@renderer/hooks/isles'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useCamera, useRocket, useClimbing } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
