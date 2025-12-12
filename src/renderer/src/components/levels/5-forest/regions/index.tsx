@@ -12,6 +12,7 @@ import MushExteriorChecks from './MushExterior'
 import MushInteriorChecks from './MushInterior'
 import OwlChecks from './Owl'
 import MillsChecks from './Mills'
+import ShuffledFairies from '../fairies/Shuffled'
 
 const ForestRegionChecks: React.FC = () => (
   <div className="grid">
@@ -30,6 +31,7 @@ const ForestRegionChecks: React.FC = () => (
     <OwlChecks />
     <ShopLocations />
     <BossCheck />
+    <ShuffledFairies />
   </div>
 )
 
