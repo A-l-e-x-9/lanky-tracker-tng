@@ -502,7 +502,7 @@ export const useRaftersFairy = (): LogicBool => {
   const camera = useCamera()
   return {
     in: rafters.in && didRaftersGB[5013] && camera,
-    out: rafters.out && didRaftersGB[] && camera
+    out: rafters.out && didRaftersGB[5013] && camera
   }
 }
 
