@@ -11234,7 +11234,7 @@ const useShipFairy = () => {
     out: ship.out && fairy
   };
 };
-const useGeneralFairy$4 = () => {
+const useGeneralFairy$5 = () => {
   const thing = useGeneralThing$5();
   return {
     in: useCamera() && thing.in,
@@ -11887,7 +11887,7 @@ const useAztecDirt = () => {
     out: shockwave && (islesUpper && boulderTech && (diddy || tiny) || crossFungi && (dk2 || tiny && twirl))
   };
 };
-const useGeneralFairy$3 = () => {
+const useGeneralFairy$4 = () => {
   const anyKong = useAnyKong();
   const camera = useCamera();
   return anyKong && camera;
@@ -12556,7 +12556,7 @@ const SmallIslandFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, 
     id: 80,
     name: "Fairy on the Small Island near the Fairy Queen's House",
     region: "Outer Isles",
-    canGetLogic: useGeneralFairy$3()
+    canGetLogic: useGeneralFairy$4()
   }
 ) }) });
 const UpperKremFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -13947,7 +13947,7 @@ const TrainingGroundsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(Rainb
 ] });
 const Shuffled$f = () => {
   const hasCam = useCamera();
-  const isBreathing = useGeneralFairy$3();
+  const isBreathing = useGeneralFairy$4();
   const vanillaFairy2 = useKremFairy();
   const vanillaFairy3 = useFactoryFairy();
   const vanillaFairy4 = useForestFairy();
@@ -14584,7 +14584,7 @@ const usePaintingFairy = () => {
   const [banana] = useDonkStore(useShallow((state) => [state.checks]));
   return camera && banana[1023];
 };
-const useGeneralFairy$2 = () => {
+const useGeneralFairy$3 = () => {
   const camera = useCamera();
   const canPlay = usePlayJapes();
   return {
@@ -16262,7 +16262,7 @@ const StormyTunnelChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
 ] });
 const Shuffled$d = () => {
   const hasCam = useCamera();
-  const isBreathing = useGeneralFairy$2();
+  const isBreathing = useGeneralFairy$3();
   const vanillaFairy1 = useRambiFairy();
   const vanillaFairy2 = usePaintingFairy();
   const canReachUpperArea = useMtnCrate();
@@ -16816,7 +16816,7 @@ const useTempleDirt = () => {
     out: shockwave && thing.out
   };
 };
-const useGeneralFairy$1 = () => {
+const useGeneralFairy$2 = () => {
   const thing = useAztecFront();
   const camera = useCamera();
   return {
@@ -18918,7 +18918,7 @@ const Shuffled$9 = () => {
   const hasCam = useCamera();
   const hasDiving = useDive();
   const hasGrapes = useGrape();
-  const isBreathing = useGeneralFairy$1();
+  const isBreathing = useGeneralFairy$2();
   const vanillaFairy1 = useTinyFairy();
   const vanillaFairy2 = useLlamaFairy();
   const canReachVases = useChunkyVaseGb();
@@ -19795,7 +19795,7 @@ const useFactoryDirt = () => {
     out: inStage.out && punch && shockwave
   };
 };
-const useGeneralFairy = () => {
+const useGeneralFairy$1 = () => {
   const thing = useGeneralThing$2();
   const camera = useCamera();
   return {
@@ -21219,7 +21219,7 @@ const Shuffled$5 = () => {
   const hasPrimatePunch = usePunch();
   const hasTriangle = useTriangle();
   const hasBananaports = useBananaportAll();
-  const isBreathing = useGeneralFairy();
+  const isBreathing = useGeneralFairy$1();
   const vanillaFairy1 = useNumberFairy();
   const vanillaFairy2 = useDartFairy();
   const prodRoomOn = useFactoryProductionEnabled();
@@ -22834,7 +22834,7 @@ const TreasureChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
 ] });
 const Shuffled$3 = () => {
   const hasCam = useCamera();
-  const isBreathing = useGeneralFairy$4();
+  const isBreathing = useGeneralFairy$5();
   const vanillaFairy1 = useChestFairy();
   const vanillaFairy2 = useShipFairy();
   const canReachOutskirts = useGalleonOutskirts();
@@ -23120,9 +23120,10 @@ const useForestSpiderBoss = () => {
   const dusk = useForestDusk();
   const mini = useMini();
   const punch = usePunch();
+  const day = useForestDay();
   return {
-    in: punch && (dusk.in || night.in && mini),
-    out: punch && (dusk.out || night.out && mini)
+    in: day.in && punch && night.in && mini || dusk.in && punch,
+    out: day.out && punch && night.out && mini || dusk.out && punch
   };
 };
 const useForestMushroomTop = () => {
@@ -23388,9 +23389,13 @@ const useGeneralThing$1 = () => {
 const useArena$1 = () => {
   const top = useForestMushroomTop();
   const anyKong = useAnyKong();
+  const night = useForestNight();
+  const dusk = useForestDusk();
+  const hasClimbing = useClimbing();
   return {
-    in: top.in && anyKong,
+    in: top.in && (night.in || dusk.in) && hasClimbing && anyKong,
     out: top.out && anyKong
+    //In logic: climbing the ladder down. Out of logic: jumping off the top and curling back.
   };
 };
 const useBeanDirt = () => {
@@ -23422,6 +23427,14 @@ const useRaftersFairy = () => {
   return {
     in: rafters.in && camera,
     out: rafters.out && camera
+  };
+};
+const useGeneralFairy = () => {
+  const thing = useGeneralThing$1();
+  const camera = useCamera();
+  return {
+    in: thing.in && camera,
+    out: thing.out && camera
   };
 };
 const useBarnKasplat = () => {
@@ -24257,27 +24270,31 @@ const FairyLocations$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
 ] });
 const Shuffled$2 = () => {
   const hasCam = useCamera();
-  const isBreathing = useGeneralFairy$4();
-  const vanillaFairy1 = useChestFairy();
-  const vanillaFairy2 = useShipFairy();
-  const canReachOutskirts = useGalleonOutskirts();
-  const canReachLighthouse = useGalleonLighthouseArea();
-  const hasDiving = useDive();
-  const canReachChunkyShip = useGalleonSeasickShip();
-  const canGoInLighthouse = useGalleonLighthouseInside();
+  const isBreathing = useGeneralFairy();
+  const vanillaFairy1 = useBarnFairy();
+  const vanillaFairy2 = useRaftersFairy();
+  const isInStage = usePlayForest();
+  const hasJetbarrel = useRocket();
+  const hasBalloon = useBalloon();
   const hasClimbing = useClimbing();
-  const hasMiniMonkey = useMini();
-  const canReachLanky5DS = useLanky5DoorShipGb();
-  const canReachTiny2DS = useTiny2DoorShipGb();
-  const canReachSub = useTinySubGb();
-  const canReachHypeChest = useTinyClams();
+  const hasVines = useVine();
+  const isDay = useForestDay();
+  const isNight = useForestNight();
+  const isDusk = useForestDusk();
+  const hasSlam = useSlamForest();
+  const canReachSpiderBoss = useForestSpiderBoss();
+  const canReachArena = useArena$1();
+  const canReachShroomRoof = useForestMushroomRoof();
+  const canReachShroomTop = useForestMushroomTop();
+  const canReachArea4 = useForestOwl();
+  const canReachTreeStump = useTinyAntGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 44e3,
-        name: "Shuffled Fairy: Vanilla Location #1 (in Chunky's Punch chest)",
-        region: "Galleon Caves",
+        id: 45e3,
+        name: "Shuffled Fairy: Vanilla Location #1 (Thornvine Barn)",
+        region: "Forest Area 1",
         canGetLogic: vanillaFairy1.in,
         canGetBreak: vanillaFairy1.out
       }
@@ -24285,9 +24302,9 @@ const Shuffled$2 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 44001,
-        name: "Shuffled Fairy: Vanilla Location #2 (Tiny's 5DS room)",
-        region: "5 Door Ship",
+        id: 45001,
+        name: "Shuffled Fairy: Vanilla Location #2 (Diddy's dark room)",
+        region: "Forest Area 1",
         canGetLogic: vanillaFairy2.in,
         canGetBreak: vanillaFairy2.out
       }
@@ -24295,9 +24312,9 @@ const Shuffled$2 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 44002,
-        name: "Shuffled Fairy: At the button that opens Tiny's 2DS room",
-        region: "Galleon Caves",
+        id: 45002,
+        name: "Shuffled Fairy: Above Area 1's tunnel, clock-side",
+        region: "Forest Central Area",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
       }
@@ -24305,9 +24322,9 @@ const Shuffled$2 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 44003,
-        name: "Shuffled Fairy: 4-way intersection of tunnels",
-        region: "Galleon Caves",
+        id: 45003,
+        name: "Shuffled Fairy: At the clock",
+        region: "Forest Central Area",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
       }
@@ -24315,9 +24332,129 @@ const Shuffled$2 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 44004,
-        name: "Shuffled Fairy: Under platforms near Cranky's",
-        region: "Galleon Caves",
+        id: 45004,
+        name: "Shuffled Fairy: Top of Chunky's minecart entrance",
+        region: "Forest Central Area",
+        canGetLogic: isInStage.in && (hasJetbarrel || hasClimbing && hasVines) && hasCam,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45005,
+        name: "Shuffled Fairy: Above the main mill",
+        region: "Forest Area 1",
+        canGetLogic: isInStage.in && (hasBalloon || hasClimbing) && hasCam,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45006,
+        name: "Shuffled Fairy: Troff 'n' Scoff portal behind Thornvine",
+        region: "Forest Area 1",
+        canGetLogic: (isNight.in || isDusk.in) && isBreathing.in,
+        canGetBreak: (isNight.out || isDusk.out) && isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45007,
+        name: "Shuffled Fairy: Above Thornvine path",
+        region: "Forest Area 1",
+        canGetLogic: (isNight.in || isDusk.in) && isBreathing.in,
+        canGetBreak: (isNight.out || isDusk.out) && isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45008,
+        name: "Shuffled Fairy: In the winch room",
+        region: "Forest Area 1",
+        canGetLogic: isInStage.in && (isNight.in || isDusk.in) && hasClimbing && hasSlam && hasCam,
+        canGetBreak: isInStage.out && (isNight.out || isDusk.out) && hasClimbing && hasSlam && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45009,
+        name: "Shuffled Fairy: In the front mill room",
+        region: "Forest Area 1",
+        canGetLogic: (isDay.in || isDusk.in) && isBreathing.in,
+        canGetBreak: (isDay.out || isDusk.out) && isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45010,
+        name: "Shuffled Fairy: In Lanky's attic",
+        region: "Forest Area 1",
+        canGetLogic: isInStage.in && (hasBalloon || hasClimbing) && (isNight.in || isDusk.in) && hasCam,
+        canGetBreak: isInStage.out && (hasBalloon || hasClimbing) && (isNight.out || isDusk.out) && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45011,
+        name: "Shuffled Fairy: In the back mill room",
+        region: "Forest Area 1",
+        canGetLogic: canReachSpiderBoss.in && hasCam,
+        canGetBreak: canReachSpiderBoss.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45012,
+        name: "Shuffled Fairy: Not afraid of spiders",
+        region: "Forest Area 1",
+        canGetLogic: canReachSpiderBoss.in && hasCam,
+        canGetBreak: canReachSpiderBoss.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45013,
+        name: "Shuffled Fairy: Over DK's Blast pad",
+        region: "Forest Area 3",
+        canGetLogic: (hasClimbing || hasJetbarrel) && isBreathing.in,
+        canGetBreak: (hasClimbing || hasJetbarrel) && isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45014,
+        name: "Shuffled Fairy: At the Battle Arena",
+        region: "Forest Area 3",
+        canGetLogic: canReachArena.in && hasCam,
+        canGetBreak: canReachArena.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45015,
+        name: "Shuffled Fairy: At the top of the mushroom",
+        region: "Forest Area 3",
+        canGetLogic: canReachShroomRoof.in && hasCam,
+        canGetBreak: canReachShroomRoof.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45016,
+        name: "Shuffled Fairy: Lower area",
+        region: "Inside the Giant Mushroom",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
       }
@@ -24325,121 +24462,51 @@ const Shuffled$2 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 44005,
-        name: "Shuffled Fairy: Path to Chunky's chests",
-        region: "Galleon Caves",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        id: 45017,
+        name: "Shuffled Fairy: Upper area",
+        region: "Inside the Giant Mushroom",
+        canGetLogic: canReachShroomTop.in && hasCam,
+        canGetBreak: canReachShroomTop.out && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 44006,
-        name: "Shuffled Fairy: Underwater between 5DS and 2DS",
-        region: "Shipyard Outskirts",
-        canGetLogic: canReachOutskirts.in && hasDiving.in && hasCam,
-        canGetBreak: canReachOutskirts.out && hasDiving.out && hasCam
+        id: 45018,
+        name: "Shuffled Fairy: In the big tree's tunnel",
+        region: "Forest Area 4",
+        canGetLogic: canReachArea4.in && hasCam,
+        canGetBreak: canReachArea4.out && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 44007,
-        name: "Shuffled Fairy: Underwater between 5DS and Candy's",
-        region: "Shipyard Outskirts",
-        canGetLogic: canReachOutskirts.in && hasDiving.in && hasCam,
-        canGetBreak: canReachOutskirts.out && hasDiving.out && hasCam
+        id: 45019,
+        name: "Shuffled Fairy: Twying to KILL THE WABBIT",
+        region: "Forest Area 4",
+        canGetLogic: canReachArea4.in && hasCam,
+        canGetBreak: canReachArea4.out && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 44008,
-        name: 'Shuffled Fairy: At the "cactus"',
-        region: "Shipyard Outskirts",
-        canGetLogic: canReachOutskirts.in && hasCam,
-        canGetBreak: canReachOutskirts.out && hasCam
+        id: 45020,
+        name: "Shuffled Fairy: At Area 4's Troff 'n' Scoff portal",
+        region: "Forest Area 4",
+        canGetLogic: canReachArea4.in && hasCam,
+        canGetBreak: canReachArea4.out && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 44009,
-        name: "Shuffled Fairy: At the Lighthouse",
-        region: "Lighthouse Area",
-        canGetLogic: canReachLighthouse.in && hasCam,
-        canGetBreak: canReachLighthouse.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 44010,
-        name: "Shuffled Fairy: Puking in Chunky's ship",
-        region: "Lighthouse Area",
-        canGetLogic: canReachChunkyShip.in && hasCam,
-        canGetBreak: canReachChunkyShip.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 44011,
-        name: "Shuffled Fairy: Top of the inside of DK's lighthouse",
-        region: "Lighthouse Area",
-        canGetLogic: canGoInLighthouse.in && hasClimbing && hasCam,
-        canGetBreak: canGoInLighthouse.out && hasClimbing && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 44012,
-        name: "Shuffled Fairy: Inside the Mermaid's house",
-        region: "Lighthouse Area",
-        canGetLogic: canReachLighthouse.in && hasDiving.in && hasMiniMonkey && hasCam,
-        canGetBreak: canReachLighthouse.out && hasDiving.out && hasMiniMonkey && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 44013,
-        name: "Shuffled Fairy: In Lanky's 5DS room",
-        region: "5 Door Ship",
-        canGetLogic: canReachLanky5DS.in && hasCam,
-        canGetBreak: canReachLanky5DS.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 44014,
-        name: "Shuffled Fairy: In Tiny's 2DS room",
-        region: "Shipyard Outskirts",
-        canGetLogic: canReachTiny2DS.in && hasCam,
-        canGetBreak: canReachTiny2DS.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 44015,
-        name: "Shuffled Fairy: In the Foghorn",
-        region: "Shipyard Outskirts",
-        canGetLogic: canReachSub.in && hasCam,
-        canGetBreak: canReachSub.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 44016,
-        name: "Shuffled Fairy: In the Hype Chest",
-        region: "Treasure Room",
-        canGetLogic: canReachHypeChest.in && hasCam,
-        canGetBreak: canReachHypeChest.out && hasCam
+        id: 45021,
+        name: "Shuffled Fairy: Looking for The Bean™",
+        region: "Forest Area 4",
+        canGetLogic: canReachTreeStump.in && hasCam,
+        canGetBreak: canReachTreeStump.out && hasCam
       }
     )
   ] });
