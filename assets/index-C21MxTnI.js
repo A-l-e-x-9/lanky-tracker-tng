@@ -23149,7 +23149,7 @@ const useForestMushroomRoof = () => {
 const useForestBeanHalf = () => {
   const inStage = usePlayForest();
   const door1 = useSwitchsanityGun("forestBean1", 3);
-  const removeBarriers = useDonkStore(useShallow((state) => state.removeBarriers));
+  const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
   return {
     in: inStage.in && (door1 || removeBarriers.forestBeanstalk),
     out: inStage.out && (door1 || removeBarriers.forestBeanstalk)
@@ -23423,10 +23423,11 @@ const useBarnFairy = () => {
 };
 const useRaftersFairy = () => {
   const rafters = useDiddyRaftersGb();
+  const [didRaftersGB] = useDonkStore(useShallow((state) => [state.checks]));
   const camera = useCamera();
   return {
-    in: rafters.in && camera,
-    out: rafters.out && camera
+    in: rafters.in && didRaftersGB[5013] && camera,
+    out: rafters.out && didRaftersGB[5013] && camera
   };
 };
 const useGeneralFairy = () => {
