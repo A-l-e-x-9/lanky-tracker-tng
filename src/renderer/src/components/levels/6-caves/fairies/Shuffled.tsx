@@ -163,7 +163,7 @@ const Shuffled: React.FC = () => {
       />
       <CavesCheck
         id={46020}
-        name="Shuffled Fairy: AVoiding the spotlight in Chunky's 5DC"
+        name="Shuffled Fairy: Avoiding the spotlight in Chunky's 5DC"
         region="Caves Cabins"
         canGetLogic={isBreathing.in && hasTriangle}
         canGetBreak={isBreathing.out && hasTriangle}
