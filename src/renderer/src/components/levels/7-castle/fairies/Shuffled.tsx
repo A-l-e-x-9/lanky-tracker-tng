@@ -56,7 +56,7 @@ const Shuffled: React.FC = () => {
       />
       <CastleCheck
         id={47005}
-        name="Shuffled Fairy: Locked out of the library <del>by Patchy and Koakuma</del>"
+        name="Shuffled Fairy: Locked out of DK's library"
         region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}

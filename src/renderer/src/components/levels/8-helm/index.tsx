@@ -4,6 +4,7 @@ import BossCheck from './boss'
 import EnemyLocations from './enemies'
 import EndOfHelmFairies from './fairies/End'
 import MedalLocations from './medals'
+import ShuffledFairies from './fairies/Shuffled'
 
 const HelmChecks: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const HelmChecks: React.FC = () => {
       <DropPool>
         <EnemyLocations />
       </DropPool>
+      <ShuffledFairies />
     </div>
   )
 }
