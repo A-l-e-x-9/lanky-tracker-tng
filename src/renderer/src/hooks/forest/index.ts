@@ -172,7 +172,7 @@ export const useForestMushroomRoof = (): LogicBool => {
 export const useForestBeanHalf = (): LogicBool => {
   const inStage = usePlayForest()
   const door1 = useSwitchsanityGun('forestBean1', 3)
-  const removeBarriers = useDonkStore(useShallow((state) => state.removeBarriers))
+  const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]))
   return {
     in: inStage.in && (door1 || removeBarriers.forestBeanstalk),
     out: inStage.out && (door1 || removeBarriers.forestBeanstalk)
@@ -498,10 +498,11 @@ export const useBarnFairy = (): LogicBool => {
 
 export const useRaftersFairy = (): LogicBool => {
   const rafters = useDiddyRaftersGb()
+  const [didRaftersGB] = useDonkStore(useShallow((state) => [state.checks]))
   const camera = useCamera()
   return {
-    in: rafters.in && camera,
-    out: rafters.out && camera
+    in: rafters.in && didRaftersGB[5013] && camera,
+    out: rafters.out && didRaftersGB[] && camera
   }
 }
 
