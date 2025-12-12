@@ -87,7 +87,7 @@ const Shuffled: React.FC = () => {
         name="Shuffled Fairy: In the winch room"
         region="Forest Area 1"
         canGetLogic={isInStage.in && (isNight.in || isDusk.in) && hasClimbing && hasSlam && hasCam}
-        canGetLogic={isInStage.out && (isNight.out || isDusk.out) && hasClimbing && hasSlam && hasCam}
+        canGetBreak={isInStage.out && (isNight.out || isDusk.out) && hasClimbing && hasSlam && hasCam}
       />
       <ForestCheck
         id={45009}
@@ -101,7 +101,7 @@ const Shuffled: React.FC = () => {
         name="Shuffled Fairy: In Lanky's attic"
         region="Forest Area 1"
         canGetLogic={isInStage.in && (hasBalloon || hasClimbing) && (isNight.in || isDusk.in) && hasCam}
-        canGetLogic={isInStage.out && (hasBalloon || hasClimbing) && (isNight.out || isDusk.out) && hasCam}
+        canGetBreak={isInStage.out && (hasBalloon || hasClimbing) && (isNight.out || isDusk.out) && hasCam}
       />
       <ForestCheck
         id={45011}
