@@ -1,145 +1,183 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useChestFairy, useShipFairy, useGalleonOutskirts, useGalleonLighthouseArea, useGalleonLighthouseInside, useGalleonSeasickShip, useLanky5DoorShipGb, useTiny2DoorShipGb, useTinySubGb, useTinyClams } from '@renderer/hooks/galleon'
+import { useGeneralFairy, useBarnFairy, useRaftersFairy, usePlayForest, useForestDay, useForestNight, useForestDusk, useSlamForest, useForestSpiderBoss, useArena, useForestMushroomRoof, useForestMushroomTop, useForestOwl, useTinyAntGb } from '@renderer/hooks/forest'
 import { useShuffleFairies } from '@renderer/hooks/settings'
-import { useCamera, useDive, useClimbing, useMini } from '@renderer/hooks/kongs'
-import GalleonCheck from '../check'
+import { useCamera, useRocket, useClimbing, useVine } from '@renderer/hooks/kongs'
+import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
   const hasCam = useCamera()
   const isBreathing = useGeneralFairy()
-  const vanillaFairy1 = useChestFairy()
-  const vanillaFairy2 = useShipFairy()
-  const canReachOutskirts = useGalleonOutskirts()
-  const canReachLighthouse = useGalleonLighthouseArea()
-  const hasDiving = useDive()
-  const canReachChunkyShip = useGalleonSeasickShip()
-  const canGoInLighthouse = useGalleonLighthouseInside()
+  const vanillaFairy1 = useBarnFairy()
+  const vanillaFairy2 = useRaftersFairy()
+  const isInStage = usePlayForest()
+  const hasJetbarrel = useRocket()
   const hasClimbing = useClimbing()
-  const hasMiniMonkey = useMini()
-  const canReachLanky5DS = useLanky5DoorShipGb()
-  const canReachTiny2DS = useTiny2DoorShipGb()
-  const canReachSub = useTinySubGb()
-  const canReachHypeChest = useTinyClams()
+  const hasVines = useVine()
+  const isDay = useForestDay()
+  const isNight = useForestNight()
+  const isDusk = useForestDusk()
+  const hasSlam = useSlamForest()
+  const canReachSpiderBoss = useForestSpiderBoss()
+  const canReachArena = useArena()
+  const canReachShroomRoof = useForestMushroomRoof()
+  const canReachShroomTop = useForestMushroomTop()
+  const canReachArea4 = useForestOwl()
+  const canReachTreeStump = useTinyAntGb()
   return (
     <FairyPool>
-      <GalleonCheck
-        id={44000}
-        name="Shuffled Fairy: Vanilla Location #1 (in Chunky's Punch chest)"
-        region="Galleon Caves"
+      <ForestCheck
+        id={45000}
+        name="Shuffled Fairy: Vanilla Location #1 (Thornvine Barn)"
+        region="Forest Area 1"
         canGetLogic={vanillaFairy1.in}
         canGetBreak={vanillaFairy1.out}
       />
-      <GalleonCheck
-        id={44001}
-        name="Shuffled Fairy: Vanilla Location #2 (Tiny's 5DS room)"
-        region="5 Door Ship"
+      <ForestCheck
+        id={45001}
+        name="Shuffled Fairy: Vanilla Location #2 (Diddy's dark room)"
+        region="Forest Area 1"
         canGetLogic={vanillaFairy2.in}
         canGetBreak={vanillaFairy2.out}
       />
-      <GalleonCheck
-        id={44002}
-        name="Shuffled Fairy: At the button that opens Tiny's 2DS room"
-        region="Galleon Caves"
+      <ForestCheck
+        id={45002}
+        name="Shuffled Fairy: Above Area 1's tunnel, clock-side"
+        region="Forest Central Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <GalleonCheck
-        id={44003}
-        name="Shuffled Fairy: 4-way intersection of tunnels"
-        region="Galleon Caves"
+      <ForestCheck
+        id={45003}
+        name="Shuffled Fairy: At the clock"
+        region="Forest Central Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <GalleonCheck
-        id={44004}
-        name="Shuffled Fairy: Under platforms near Cranky's"
-        region="Galleon Caves"
+      <ForestCheck
+        id={45004}
+        name="Shuffled Fairy: Top of Chunky's minecart entrance"
+        region="Forest Central Area"
+        canGetLogic={isInStage.in && (hasJetbarrel || (hasClimbing && hasVines)) && hasCam}
+        canGetBreak={isBreathing.out}
+      />
+      <ForestCheck
+        id={45005}
+        name="Shuffled Fairy: Above the main mill"
+        region="Forest Area 1"
+        canGetLogic={isInStage.in && (hasBalloon || hasClimbing) && hasCam}
+        canGetBreak={isBreathing.out}
+      />
+      <ForestCheck
+        id={45006}
+        name="Shuffled Fairy: Troff 'n' Scoff portal behind Thornvine"
+        region="Forest Area 1"
+        canGetLogic={(isNight.in || isDusk.in) && isBreathing.in}
+        canGetBreak={(isNight.out || isDusk.out) && isBreathing.out}
+      />
+      <ForestCheck
+        id={45007}
+        name="Shuffled Fairy: Above Thornvine path"
+        region="Forest Area 1"
+        canGetLogic={(isNight.in || isDusk.in) && isBreathing.in}
+        canGetBreak={(isNight.out || isDusk.out) && isBreathing.out}
+      />
+      <ForestCheck
+        id={45008}
+        name="Shuffled Fairy: In the winch room"
+        region="Forest Area 1"
+        canGetLogic={isInStage.in && (isNight.in || isDusk.in) && hasClimbing && hasSlam && hasCam}
+        canGetLogic={isInStage.out && (isNight.out || isDusk.out) && hasClimbing && hasSlam && hasCam}
+      />
+      <ForestCheck
+        id={45009}
+        name="Shuffled Fairy: In the front mill room"
+        region="Forest Area 1"
+        canGetLogic={(isDay.in || isDusk.in) && isBreathing.in}
+        canGetBreak={(isDay.out || isDusk.out) && isBreathing.out}
+      />
+      <ForestCheck
+        id={45010}
+        name="Shuffled Fairy: In Lanky's attic"
+        region="Forest Area 1"
+        canGetLogic={isInStage.in && (hasBalloon || hasClimbing) && (isNight.in || isDusk.in) && hasCam}
+        canGetLogic={isInStage.out && (hasBalloon || hasClimbing) && (isNight.out || isDusk.out) && hasCam}
+      />
+      <ForestCheck
+        id={45011}
+        name="Shuffled Fairy: In the back mill room"
+        region="Forest Area 1"
+        canGetLogic={canReachSpiderBoss.in && hasCam}
+        canGetBreak={canReachSpiderBoss.out && hasCam}
+      />
+      <ForestCheck
+        id={45012}
+        name="Shuffled Fairy: Not afraid of spiders"
+        region="Forest Area 1"
+        canGetLogic={canReachSpiderBoss.in && hasCam}
+        canGetBreak={canReachSpiderBoss.out && hasCam}
+      />
+      <ForestCheck
+        id={45013}
+        name="Shuffled Fairy: Over DK's Blast pad"
+        region="Forest Area 3"
+        canGetLogic={(hasClimbing || hasJetbarrel) && isBreathing.in}
+        canGetBreak={(hasClimbing || hasJetbarrel) && isBreathing.out}
+      />
+      <ForestCheck
+        id={45014}
+        name="Shuffled Fairy: At the Battle Arena"
+        region="Forest Area 3"
+        canGetLogic={canReachArena.in && hasCam}
+        canGetBreak={canReachArena.out && hasCam}
+      />
+      <ForestCheck
+        id={45015}
+        name="Shuffled Fairy: At the top of the mushroom"
+        region="Forest Area 3"
+        canGetLogic={canReachShroomRoof.in && hasCam}
+        canGetBreak={canReachShroomRoof.out && hasCam}
+      />
+      <ForestCheck
+        id={45016}
+        name="Shuffled Fairy: Lower area"
+        region="Inside the Giant Mushroom"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <GalleonCheck
-        id={44005}
-        name="Shuffled Fairy: Path to Chunky's chests"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+      <ForestCheck
+        id={45017}
+        name="Shuffled Fairy: Upper area"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canReachShroomTop.in && hasCam}
+        canGetBreak={canReachShroomTop.out && hasCam}
       />
-      <GalleonCheck
-        id={44006}
-        name="Shuffled Fairy: Underwater between 5DS and 2DS"
-        region="Shipyard Outskirts"
-        canGetLogic={canReachOutskirts.in && hasDiving.in && hasCam}
-        canGetBreak={canReachOutskirts.out && hasDiving.out && hasCam}
+      <ForestCheck
+        id={45018}
+        name="Shuffled Fairy: In the big tree's tunnel"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in && hasCam}
+        canGetBreak={canReachArea4.out && hasCam}
       />
-      <GalleonCheck
-        id={44007}
-        name="Shuffled Fairy: Underwater between 5DS and Candy's"
-        region="Shipyard Outskirts"
-        canGetLogic={canReachOutskirts.in && hasDiving.in && hasCam}
-        canGetBreak={canReachOutskirts.out && hasDiving.out && hasCam}
+      <ForestCheck
+        id={45019}
+        name="Shuffled Fairy: Twying to KILL THE WABBIT"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in && hasCam}
+        canGetBreak={canReachArea4.out && hasCam}
       />
-      <GalleonCheck
-        id={44008}
-        name="Shuffled Fairy: At the &quot;cactus&quot;"
-        region="Shipyard Outskirts"
-        canGetLogic={canReachOutskirts.in && hasCam}
-        canGetBreak={canReachOutskirts.out && hasCam}
+      <ForestCheck
+        id={45020}
+        name="Shuffled Fairy: At Area 4's Troff 'n' Scoff portal"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in && hasCam}
+        canGetBreak={canReachArea4.out && hasCam}
       />
-      <GalleonCheck
-        id={44009}
-        name="Shuffled Fairy: At the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in && hasCam}
-        canGetBreak={canReachLighthouse.out && hasCam}
-      />
-      <GalleonCheck
-        id={44010}
-        name="Shuffled Fairy: Puking in Chunky's ship"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasCam}
-        canGetBreak={canReachChunkyShip.out && hasCam}
-      />
-      <GalleonCheck
-        id={44011}
-        name="Shuffled Fairy: Top of the inside of DK's lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canGoInLighthouse.in && hasClimbing && hasCam}
-        canGetBreak={canGoInLighthouse.out && hasClimbing && hasCam}
-      />
-      <GalleonCheck
-        id={44012}
-        name="Shuffled Fairy: Inside the Mermaid's house"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in && hasDiving.in && hasMiniMonkey && hasCam}
-        canGetBreak={canReachLighthouse.out && hasDiving.out && hasMiniMonkey && hasCam}
-      />
-      <GalleonCheck
-        id={44013}
-        name="Shuffled Fairy: In Lanky's 5DS room"
-        region="5 Door Ship"
-        canGetLogic={canReachLanky5DS.in && hasCam}
-        canGetBreak={canReachLanky5DS.out && hasCam}
-      />
-      <GalleonCheck
-        id={44014}
-        name="Shuffled Fairy: In Tiny's 2DS room"
-        region="Shipyard Outskirts"
-        canGetLogic={canReachTiny2DS.in && hasCam}
-        canGetBreak={canReachTiny2DS.out && hasCam}
-      />
-      <GalleonCheck
-        id={44015}
-        name="Shuffled Fairy: In the Foghorn"
-        region="Shipyard Outskirts"
-        canGetLogic={canReachSub.in && hasCam}
-        canGetBreak={canReachSub.out && hasCam}
-      />
-      <GalleonCheck
-        id={44016}
-        name="Shuffled Fairy: In the Hype Chest"
-        region="Treasure Room"
-        canGetLogic={canReachHypeChest.in && hasCam}
-        canGetBreak={canReachHypeChest.out && hasCam}
+      <ForestCheck
+        id={45021}
+        name="Shuffled Fairy: Looking for The Bean™"
+        region="Forest Area 4"
+        canGetLogic={canReachTreeStump.in && hasCam}
+        canGetBreak={canReachTreeStump.out && hasCam}
       />
     </FairyPool>
   )

@@ -127,10 +127,10 @@ export const useForestSpiderBoss = (): LogicBool => {
   const dusk = useForestDusk()
   const mini = useMini()
   const punch = usePunch()
-
+  const day = useForestDay()
   return {
-    in: punch && (dusk.in || (night.in && mini)),
-    out: punch && (dusk.out || (night.out && mini))
+    in: (day.in && punch && night.in && mini) || (dusk.in && punch),
+    out: (day.out && punch && night.out && mini) || (dusk.out && punch)
   }
 }
 
@@ -461,9 +461,12 @@ export const useGeneralThing = (): LogicBool => {
 export const useArena = (): LogicBool => {
   const top = useForestMushroomTop()
   const anyKong = useAnyKong()
+  const night = useForestNight()
+  const dusk = useForestDusk()
+  const hasClimbing = useClimbing()
   return {
-    in: top.in && anyKong,
-    out: top.out && anyKong
+    in: top.in && (night.in || dusk.in) && hasClimbing && anyKong,
+    out: top.out && anyKong //In logic: climbing the ladder down. Out of logic: jumping off the top and curling back.
   }
 }
 
@@ -502,10 +505,13 @@ export const useRaftersFairy = (): LogicBool => {
   }
 }
 
-export const useGeneralFairy = (): boolean => {
+export const useGeneralFairy = (): LogicBool => {
   const thing = useGeneralThing()
   const camera = useCamera()
-  return thing && camera
+  return {
+    in: thing.in && camera,
+    out: thing.out && camera
+  }
 }
 
 export const useBarnKasplat = (): LogicBool => {
