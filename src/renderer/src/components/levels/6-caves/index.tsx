@@ -8,6 +8,7 @@ import CrateLocations from './crates'
 import KoshaDirt from './dirt/Kosha'
 import EnemyLocations from './enemies'
 import FairyLocations from './fairies'
+import ShuffledFairies from './fairies/Shuffled'
 import ChunkyBananas from './gold-bananas/chunky'
 import DiddyBananas from './gold-bananas/diddy'
 import DkBananas from './gold-bananas/dk'
@@ -48,6 +49,7 @@ const ClassicChecks: React.FC = () => (
     <DropPool>
       <EnemyLocations />
     </DropPool>
+    <ShuffledFairies />
   </div>
 )
 

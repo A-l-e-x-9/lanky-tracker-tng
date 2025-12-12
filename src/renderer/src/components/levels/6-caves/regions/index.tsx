@@ -9,6 +9,7 @@ import ShopLocations from '../shops'
 import MainChecks from './Main'
 import IglooChecks from './Igloo'
 import CabinsChecks from './Cabins'
+import ShuffledFairies from '../fairies/Shuffled'
 
 const CavesRegionChecks: React.FC = () => (
   <div className="grid">
@@ -24,6 +25,7 @@ const CavesRegionChecks: React.FC = () => (
     <CabinsChecks />
     <ShopLocations />
     <BossCheck />
+    <ShuffledFairies />
   </div>
 )
 

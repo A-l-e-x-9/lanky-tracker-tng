@@ -410,7 +410,7 @@ export const useKoshaDirt = (): LogicBool => {
   }
 }
 
-export const useGenericFairy = (): LogicBool => {
+export const useGeneralFairy = (): LogicBool => {
   const inStage = usePlayCaves()
   const angery = useAngryCaves()
   return {
@@ -421,18 +421,20 @@ export const useGenericFairy = (): LogicBool => {
 
 export const useIglooFairy = (): LogicBool => {
   const thing = useTinyIglooGb()
+  const [didThing] = useDonkStore(useShallow((state) => [state.checks]))
   return {
-    in: useCamera() && thing.in,
-    out: useCamera() && thing.out
+    in: useCamera() && thing.in && didThing[6032],
+    out: useCamera() && thing.out && didThing[6032]
   }
 }
 
 export const useCabinFairy = (): LogicBool => {
   const thing = useDiddyCandleGb()
+  const [didThing] = useDonkStore(useShallow((state) => [state.checks]))
   const camera = useCamera()
   return {
-    in: thing.in && camera,
-    out: thing.out && camera
+    in: thing.in && didThing[6013] && camera,
+    out: thing.out && didThing[6013] && camera
   }
 }
 
