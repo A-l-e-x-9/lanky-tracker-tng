@@ -32256,6 +32256,39 @@ const GeneratorSettings = () => {
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Location Shuffle Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Battle Arenas?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: crownIcon,
+                  title: "Turn this on if Battle Arenas are shuffled.",
+                  storeKey: "shuffleArenas",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Melon Crates?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: melonIcon,
+                  title: "Turn this on if Melon Crates are shuffled.",
+                  storeKey: "shuffleCrates",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Dirt Patches?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: rainbowCoinIcon,
+                  title: "If Dirt Patches are shuffled, click here.",
+                  storeKey: "shuffleDirt",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Fairies?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
