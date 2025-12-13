@@ -337,6 +337,30 @@ const GeneratorSettings: React.FC = () => {
               </>
             <h3>Location Shuffle Settings</h3>
             <>
+              <p>Battle Arenas?</p>
+              <SimpleIcon
+                imgUrl={crownIcon}
+                title="Turn this on if Battle Arenas are shuffled."
+                storeKey="shuffleArenas"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Melon Crates?</p>
+              <SimpleIcon
+                imgUrl={melonIcon}
+                title="Turn this on if Melon Crates are shuffled."
+                storeKey="shuffleCrates"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Dirt Patches?</p>
+              <SimpleIcon
+                imgUrl={rainbowCoinIcon}
+                title="If Dirt Patches are shuffled, click here."
+                storeKey="shuffleDirt"
+                prefix="settings"
+                updateItem={setSetting}
+              />
               <p>Fairies?</p>
               <SimpleIcon
                 imgUrl={fairyIcon}
