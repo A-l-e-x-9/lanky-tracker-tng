@@ -108,33 +108,33 @@ const Shuffled: React.FC = () => {
         canGetBreak={canReachCastleLobby.out && hasCam}
       />
       <IslesCheck
-        id={40012}
+        id={40013}
         name="Shuffled Fairy: At DK's lava Banana"
         region="Caves-Helm Lobbies"
         canGetLogic={iceWallBreakdown.in && hasCam}
         canGetBreak={iceWallBreakdown.out && hasCam}
       />
       <IslesCheck
-        id={40013}
+        id={40014}
         name="Shuffled Fairy: In Snide's room"
         region="K. Rool's Island"
         canGetLogic={canReachFactoryLobby && hasCam}
       />
       <IslesCheck
-        id={40014}
+        id={40015}
         name="Shuffled Fairy: At the exit to DK's Treehouse area"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={40015}
+        id={40016}
         name="Shuffled Fairy: 'Hidden mountain' in between Training Grounds and Cranky's"
         region="DK Island"
         canGetLogic={hasClimbing && hasCam}
         canGetBreak={isBreathing}
       />
       <IslesCheck
-        id={40016}
+        id={40017}
         name="Shuffled Fairy: Looking out the windows in DK's Treehouse"
         region="DK Island"
         canGetLogic={hasClimbing && hasCam}
