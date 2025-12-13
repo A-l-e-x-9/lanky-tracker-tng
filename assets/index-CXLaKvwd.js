@@ -15104,7 +15104,8 @@ const StormyTunnelEnemies = () => {
         id: 1304,
         name: "Stormy Area Enemy 0",
         region: "Stormy Area",
-        canGetLogic: kongGates && anyKong
+        canGetLogic: kongGates.in && anyKong,
+        canGetBreak: kongGates.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15113,7 +15114,8 @@ const StormyTunnelEnemies = () => {
         id: 1305,
         name: "Stormy Area Enemy 1",
         region: "Stormy Area",
-        canGetLogic: kongGates && anyKong
+        canGetLogic: kongGates.in && anyKong,
+        canGetBreak: kongGates.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15122,7 +15124,8 @@ const StormyTunnelEnemies = () => {
         id: 1306,
         name: "Stormy Area Enemy 2",
         region: "Stormy Area",
-        canGetLogic: kongGates && anyKong
+        canGetLogic: kongGates.in && anyKong,
+        canGetBreak: kongGates.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15131,7 +15134,8 @@ const StormyTunnelEnemies = () => {
         id: 1319,
         name: "Middle Tunnel Enemy",
         region: "Stormy Area",
-        canGetLogic: kongGates && anyKong
+        canGetLogic: kongGates.in && anyKong,
+        canGetBreak: kongGates.out && anyKong
       }
     )
   ] });
