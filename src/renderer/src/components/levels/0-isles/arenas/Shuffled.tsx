@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, useIslesKremTop, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket } from '@renderer/hooks/isles'
+import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, useIslesKremTop, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffledArenas, useBananaport } from '@renderer/hooks/settings'
 import { useAnyKong, useDiddy, useTiny, useBoulderTech, useClimbing, useTwirl, useDk, useVine, useRocket, useBalloon } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -42,6 +42,11 @@ const canReachBFI = useCheckBFIInitial()
 const canGetRareBanana = useCheckBananaFairyIsle()
 const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]))
 const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8
+const canGetInAztecBack = useAztecLobbyChunky()
+const canGetInFactoryUpper = useFactoryLobbyUpper()
+const canGetInCavesKasplat = useCavesKasplat()
+const canGetInHelmChunky = useCheckChunkyHelm()
+const canGetInHelmDK = useHelmKasplat()
   return (
     <ArenaPool>
       <IslesCheck
@@ -342,15 +347,15 @@ const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && 
         id={10047}
         name="Shuffled Battle Arena: Right side of the Aztec Lobby back room"
         region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecLobby.in}
-        canGetBreak={canGetInAztecLobby.out}
+        canGetLogic={canGetInAztecBack.in}
+        canGetBreak={canGetInAztecBack.out}
       />
       <IslesCheck
         id={10048}
         name="Shuffled Battle Arena: Left side of the Aztec Lobby back room"
         region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecLobby.in}
-        canGetBreak={canGetInAztecLobby.out}
+        canGetLogic={canGetInAztecBack.in}
+        canGetBreak={canGetInAztecBack.out}
       />
       <IslesCheck
         id={10049}
@@ -363,15 +368,15 @@ const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && 
         id={10050}
         name="Shuffled Battle Arena: On a Factory Lobby high platform"
         region="Japes-Forest Lobbies"
-        canGetLogic={canGetInFactoryLobby.in}
-        canGetBreak={canGetInFactoryLobby.out}
+        canGetLogic={canGetInFactoryUpper.in}
+        canGetBreak={canGetInFactoryUpper.out}
       />
       <IslesCheck
         id={10051}
         name="Shuffled Battle Arena: Over the Factory DK Portal"
         region="Japes-Forest Lobbies"
-        canGetLogic={canGetInFactoryLobby.in}
-        canGetBreak={canGetInFactoryLobby.out}
+        canGetLogic={canGetInFactoryUpper.in}
+        canGetBreak={canGetInFactoryUpper.out}
       />
       <IslesCheck
         id={10052}
@@ -405,15 +410,15 @@ const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && 
         id={10058}
         name="Shuffled Battle Arena: Diddy's ledge in Caves Lobby"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCavesLobby.in}
-        canGetBreak={canGetInCavesLobby.out}
+        canGetLogic={canGetInCavesLobby.in && hasJetbarrel}
+        canGetBreak={canGetInCavesDiddy.out && hasBoulderTech && isHinaKagiyama}
       />
       <IslesCheck
         id={10059}
         name="Shuffled Battle Arena: Caves Lobby boulder room"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCavesLobby.in}
-        canGetBreak={canGetInCavesLobby.out}
+        canGetLogic={canGetInCavesKasplat.in}
+        canGetBreak={canGetInCavesKasplat.out}
       />
       <IslesCheck
         id={10060}
@@ -447,15 +452,15 @@ const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && 
         id={10064}
         name="Shuffled Battle Arena: Under Chunky's Bonus Barrel in Helm Lobby"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInHelmLobby.in}
-        canGetBreak={canGetInHelmLobby.out}
+        canGetLogic={canGetInHelmChunky.in}
+        canGetBreak={canGetInHelmChunky.out}
       />
       <IslesCheck
         id={10065}
         name="Shuffled Battle Arena: On the island with DK's Kasplat in Helm Lobby"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInHelmLobby.in}
-        canGetBreak={canGetInHelmLobby.out}
+        canGetLogic={canGetInHelmDK.in}
+        canGetBreak={canGetInHelmDK.out}
       />
       <IslesCheck
         id={10066}

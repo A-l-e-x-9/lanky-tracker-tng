@@ -971,12 +971,10 @@ export const useFactoryLobbyLower = (): LogicBool => {
 export const useFactoryLobbyUpper = (): LogicBool => {
   const canEnterFactory = usePlayLobby('Frantic Factory')
   const grab = useGrab()
-  const hasDiddy = useDiddy()
-  const hasTiny = useTiny()
-  const hasChunky = useChunky()
+  const highGrab = useHighGrab()
   return {
     in: canEnterFactory.in && grab,
-    out: canEnterFactory.out && (hasDiddy || hasTiny || hasChunky)
+    out: canEnterFactory.out && highGrab
   }
 }
 
