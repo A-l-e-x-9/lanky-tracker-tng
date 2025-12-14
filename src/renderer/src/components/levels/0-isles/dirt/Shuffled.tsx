@@ -2,7 +2,7 @@ import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useGeneralDirt, useIslandDirt, useAztecDirt, useUnderCaveDirt, useCastleDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesKremTop } from '@renderer/hooks/isles'
 import { useShuffleDirt } from '@renderer/hooks/settings'
-import { useShockwave, useClimbing, useTwirl, useDk, useVine } from '@renderer/hooks/kongs'
+import { useShockwave, useClimbing, useTwirl, useDk, useVine, useBoulderTech } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
@@ -14,7 +14,8 @@ const hasVines = useVine()
 const canReachFactoryLobby = useIslesKremAscent()
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena1 = canReachFactoryLobby && hasShockwave
-const canDoIslesArena2 = canGetInForestLobby && hasShockwave
+const canDoIslesArena2In = canGetInForestLobby.in && hasShockwave
+const canDoIslesArena2Out = canGetInForestLobby.out && hasShockwave
 const canDoIslesDirt1 = useIslandDirt()
 const canDoIslesDirt2 = useAztecDirt()
 const canDoIslesDirt3 = useUnderCaveDirt()
@@ -38,6 +39,13 @@ const canGetRareBanana = useCheckBananaFairyIsle()
 const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]))
 const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8
 const hasBoulderTech = useBoulderTech()
+const canGetInAztecBack = useAztecLobbyChunky()
+const canGetInFactoryUpper = useFactoryLobbyUpper()
+const canGetInGalleonTiny = useCheckTinyGalleonLobby()
+const canGetInCavesKasplat = useCavesKasplat()
+const canGetInHelmChunky = useCheckChunkyHelm()
+const canGetInHelmDK = useHelmKasplat()
+const hasStrongKong = useStrong()
   return (
     <RainbowCoinPool>
       <IslesCheck
@@ -50,8 +58,8 @@ const hasBoulderTech = useBoulderTech()
         id={30001}
         name="Shuffled Dirt Patch: Check of Legends 2"
         region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesArena2.in}
-        canGetBreak={canDoIslesArena2.out}
+        canGetLogic={canDoIslesArena2In}
+        canGetBreak={canDoIslesArena2Out}
       />
       <IslesCheck
         id={30002}
@@ -237,7 +245,7 @@ const hasBoulderTech = useBoulderTech()
       <IslesCheck
         id={30031}
         name="Shuffled Dirt Patch: On BFI"
-        region="OUter Isles"
+        region="Outer Isles"
         canGetLogic={isBreathing}
       />
       <IslesCheck
@@ -310,7 +318,7 @@ const hasBoulderTech = useBoulderTech()
       <IslesCheck
         id={30043}
         name="Shuffled Dirt Patch: Vanilla Warp 5 at BFI"
-        region="OUter Isles"
+        region="Outer Isles"
         canGetLogic={isBreathing}
       />
       <IslesCheck
