@@ -1,8 +1,9 @@
 import Pool from '@renderer/components/pools/'
-import { useGeneral, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby } from '@renderer/hooks/isles'
+import { useGeneral, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
 import { useShuffle } from '@renderer/hooks/settings'
-import {  } from '@renderer/hooks/kongs'
+import { useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
+import useDonkStore from '@renderer/store'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneral()
@@ -26,6 +27,17 @@ const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
+const hasClimbing = useClimbing()
+const isHinaKagiyama = useTwirl()
+const hasDK = useDk()
+const hasVines = useVine()
+const hasAGun = useAnyGun()
+const hasOranges = useOrange()
+const hasDiving = useDive()
+const canReachBFI = useCheckBFIInitial()
+const canReachRareBanana = useCheckBananaFairyIsle()
+const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]))
+const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8
   return (
     <Pool>
       <IslesCheck
@@ -441,126 +453,131 @@ const canGetInHelmLobby = usePlayLobby('Hideout Helm')
         canGetLogic={canGetInHelmLobby.in}
         canGetBreak={canGetInHelmLobby.out}
       />
-/*      <IslesCheck
-        id={00000}
+      <IslesCheck
+        id={00064}
         name="Under Chunky's Bonus Barrel in Helm Lobby"
         region="Caves-Helm Lobbies"
-        canGetLogic={canDoIslesArena1}
+        canGetLogic={canGetInHelmLobby.in}
+        canGetBreak={canGetInHelmLobby.out}
       />
       <IslesCheck
-        id={00001}
+        id={00065}
         name="On the island with DK's Kasplat in Helm Lobby"
         region="Caves-Helm Lobbies"
-        canGetLogic={canDoIslesArena2}
+        canGetLogic={canGetInHelmLobby.in}
+        canGetBreak={canGetInHelmLobby.out}
       />
       <IslesCheck
-        id={00002}
+        id={00066}
         name="On the mountain next to Cranky's"
         region="DK Island"
-        canGetLogic={canDoIslesDirt1}
+        canGetLogic={hasClimbing}
       />
       <IslesCheck
-        id={00003}
+        id={00067}
         name="On the Treehouse Area's rear hill"
         region="DK Island"
-        canGetLogic={canDoIslesDirt2}
+        canGetLogic={hasClimbing}
       />
       <IslesCheck
-        id={00004}
+        id={00068}
         name="On the Treehouse Area's entrance hill"
         region="DK Island"
-        canGetLogic={canDoIslesDirt3}
+        canGetLogic={hasClimbing && isHinaKagiyama}
+        canGetBreak={hasClimbing && hasDK}
       />
       <IslesCheck
-        id={00005}
+        id={00069}
         name="On the mountain over the Treehouse Area exit"
         region="DK Island"
-        canGetLogic={canDoIslesDirt4}
+        canGetLogic={hasClimbing && isHinaKagiyama}
+        canGetBreak={hasClimbing && hasDK}
       />
       <IslesCheck
-        id={00006}
+        id={00070}
         name="In the cave next to Cranky's, behind the vanilla dirt location"
         region="DK Island"
-        canGetLogic={canDoIslesDirt5}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00007}
+        id={00071}
         name="In the back of the Banana Hoard"
         region="DK Island"
-        canGetLogic={canDoIslesDirt6}
+        canGetLogic={hasClimbing && hasVines}
       />
       <IslesCheck
-        id={00008}
+        id={00072}
         name="In the pool next to the Treehouse"
         region="DK Island"
-        canGetLogic={canDoIslesDirt7}
+        canGetLogic={hasAGun && hasDiving.in}
+        canGetBreak={hasOranges && hasDiving.out}
       />
       <IslesCheck
-        id={00009}
+        id={00073}
         name="In front of the Treehouse's pool"
         region="DK Island"
-        canGetLogic={canReachFungiLobby}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00010}
+        id={00074}
         name="Inside the Treehouse itself"
         region="DK Island"
-        canGetLogic={canReachFungiLobby}
+        canGetLogic={hasClimbing}
       />
       <IslesCheck
-        id={00011}
+        id={00075}
         name="To the right of the Banana Fairy Queen"
         region="Outer Isles"
-        canGetLogic={canReachWaterfall}
+        canGetLogic={canReachBFI}
       />
       <IslesCheck
-        id={00012}
+        id={00076}
         name="Behind the Banana Fairy Queen"
         region="Outer Isles"
-        canGetLogic={isBreathing}
+        canGetLogic={canReachBFI}
       />
       <IslesCheck
-        id={00013}
+        id={00077}
         name="Behind the Banana Fairy Queen's chair"
         region="Outer Isles"
-        canGetLogic={isBreathing}
+        canGetLogic={canReachBFI}
       />
       <IslesCheck
-        id={00014}
+        id={00078}
         name="Inside the Rareware GB room"
         region="Outer Isles"
-        canGetLogic={isBreathing}
+        canGetLogic={canGetRareBanana}
       />
       <IslesCheck
-        id={00015}
+        id={00079}
         name="In the right side of the Rareware GB room"
         region="Outer Isles"
-        canGetLogic={hasKey4}
-      />
-/*      <IslesCheck
-        id={00012}
-        name="Next to Snide's"
-        region="K. Rool's Island"
-        canGetLogic={isBreathing}
+        canGetLogic={canGetRareBanana}
       />
       <IslesCheck
-        id={00013}
+        id={00080}
+        name="Next to Snide's"
+        region="K. Rool's Island"
+        canGetLogic={canReachFactoryLobby}
+      />
+      <IslesCheck
+        id={00081}
         name="Back right of K. Lumsy's prison"
         region="K. Rool's Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00014}
+        id={00082}
         name="Front left of K. Lumsy's prison"
         region="K. Rool's Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00015}
+        id={00083}
         name="Under K. Lumsy himself"
         region="K. Rool's Island"
-        canGetLogic={hasKey4}
-      />*/
+        canGetLogic={hasAllEightKeys}
+      />
     </Pool>
   )
 }
