@@ -46,7 +46,7 @@ const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow
 const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8
 const hasBoulderTech = useBoulderTech()
   return (
-    <DirtPool>
+    <RainbowCoinPool>
       <IslesCheck
         id={30000}
         name="Shuffled Dirt Patch: Under the rock in Snide's room"
@@ -578,7 +578,7 @@ const hasBoulderTech = useBoulderTech()
         region="K. Rool's Island"
         canGetLogic={hasAllEightKeys}
       />
-    </DirtPool>
+    </RainbowCoinPool>
   )
 }
 
