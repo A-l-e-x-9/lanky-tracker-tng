@@ -1,6 +1,6 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket } from '@renderer/hooks/isles'
-import { useShuffleArenas } from '@renderer/hooks/settings'
+import { useShuffledArenas } from '@renderer/hooks/settings'
 import { useAnyKong, useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
