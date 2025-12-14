@@ -10,11 +10,12 @@ const isBreathing = useAnyKong()
 const canDoIslesArena1 = useSnideArena()
 const canDoIslesArena2 = useForestArena()
 const canDoIslesDirt1 = canReachFungiLobby
-const canDoIslesDirt2.in = useIslesRocket() && canReachFungiLobby && useRocket()
-const canDoIslesDirt2.out = ((canReachAztecLobby.out && hasBoulderTech && (useDiddy() || useTiny())) || (canReachWaterfall && (hasDK || isHinaKagiyama)))
-const canDoIslesDirt3.in = hasClimbing || useBananaport() != 0 || canReachWaterfall.in
-const canDoIslesDirt3.out = canReachWaterfall.out
-const canDoIslesDirt4.in = canGetInCastleLobby.in && hasBoulderTech && useBalloon()
+const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && useRocket()
+const canDoIslesDirt2OutLogic = ((canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny)) || (canReachWaterfall && (hasDK || isHinaKagiyama)))
+const canDoIslesDirt3InLogic = hasClimbing || useBananaport() != 0 || canReachWaterfall.in
+const canDoIslesDirt3OutLogic = canReachWaterfall.out
+const canDoIslesDirt4InLogic = canGetInCastleLobby.in && hasBoulderTech && useBalloon()
+const canDoIslesDirt4OutLogic = canGetInCastleLobby.out && (hasDiddy || hasTiny)
 const canDoIslesDirt5 = hasVines && hasClimbing
 const canReachFungiLobby = useIslesFungiIsland()
 const canReachWaterfall = useIslesCrossFungi()
@@ -32,6 +33,8 @@ const canGetInHelmLobby = usePlayLobby('Hideout Helm')
 const hasClimbing = useClimbing()
 const isHinaKagiyama = useTwirl()
 const hasDK = useDk()
+const hasDiddy = useDiddy()
+const hasTiny = useTiny()
 const hasVines = useVine()
 const hasAGun = useAnyGun()
 const hasOranges = useOrange()
@@ -66,22 +69,22 @@ const hasBoulderTech = useBoulderTech()
         id={10003}
         name="On the Aztec Lobby roof"
         region="DK Island"
-        canGetLogic={canDoIslesDirt2.in}
-        canGetBreak={canDoIslesDirt2.out}
+        canGetLogic={canDoIslesDirt2InLogic}
+        canGetBreak={canDoIslesDirt2OutLogic}
       />
       <IslesCheck
         id={10004}
         name="Under the Caves Lobby entrance"
         region="DK Island"
-        canGetLogic={canDoIslesDirt3.in}
-        canGetBreak={canDoIslesDirt3.out}
+        canGetLogic={canDoIslesDirt3InLogic}
+        canGetBreak={canDoIslesDirt3OutLogic}
       />
       <IslesCheck
         id={10005}
         name="Under Lanky's Castle Lobby barrel"
         region="Caves-Helm Lobbies"
-        canGetLogic={canDoIslesDirt4.in}
-        canGetBreak={canDoIslesDirt4.out}
+        canGetLogic={canDoIslesDirt4InLogic}
+        canGetBreak={canDoIslesDirt4OutLogic}
       />
       <IslesCheck
         id={10006}

@@ -790,7 +790,7 @@ export const useCastleDirt = (): LogicBool => {
   const playCastle = usePlayLobby('Creepy Castle')
   return {
     in: playCastle.in && boulderTech && balloon && shockwave,
-    out: playCastle.out && tiny && shockwave
+    out: playCastle.out && (diddy || tiny) && shockwave
   }
 }
 
