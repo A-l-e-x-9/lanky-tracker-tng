@@ -31202,7 +31202,9 @@ const bossState = (boss) => {
         return "not-available";
       }
     case "Lanky Phase of K. Rool":
-      if (barrel && (trombone || betaLanky && grape)) {
+      if (barrel && trombone) {
+        return "available";
+      } else if (barrel && betaLanky && grape) {
         return "available";
       } else {
         return "not-available";
