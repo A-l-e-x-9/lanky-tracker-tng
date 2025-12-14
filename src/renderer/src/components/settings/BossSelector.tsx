@@ -141,7 +141,7 @@ const bossState = (boss: Boss): string => {
         return 'not-available'
       }
     case 'Lanky Phase of K. Rool':
-      if (barrel && trombone) {
+      if (barrel && !betaLanky && trombone) {
         return 'available'
       } else if (barrel && betaLanky && grape) {
         return 'available'
