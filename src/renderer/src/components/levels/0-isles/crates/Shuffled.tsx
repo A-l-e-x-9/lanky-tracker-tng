@@ -1,19 +1,22 @@
-import Pool from '@renderer/components/pools/'
-import { useGeneral, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
+import CratePool from '@renderer/components/pools/Crates'
+import { useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
 import { useShuffle } from '@renderer/hooks/settings'
-import { useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
+import { useAnyKong, useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
-const Shuffled: React.FC = () => {
-const isBreathing = useGeneral()
+const ShuffledCrates: React.FC = () => {
+const isBreathing = useAnyKong()
 const canDoIslesArena1 = useSnideArena()
 const canDoIslesArena2 = useForestArena()
-const canDoIslesDirt1 = useIslandDirt()
-const canDoIslesDirt2 = useAztecDirt()
-const canDoIslesDirt3 = useUnderCaveDirt()
-const canDoIslesDirt4 = useCastleDirt()
-const canDoIslesDirt5 = useHoardDirt()
+const canDoIslesDirt1 = canReachFungiLobby
+const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && useRocket()
+const canDoIslesDirt2OutLogic = ((canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny)) || (canReachWaterfall && (hasDK || isHinaKagiyama)))
+const canDoIslesDirt3InLogic = hasClimbing || useBananaport() != 0 || canReachWaterfall.in
+const canDoIslesDirt3OutLogic = canReachWaterfall.out
+const canDoIslesDirt4InLogic = canGetInCastleLobby.in && hasBoulderTech && useBalloon()
+const canDoIslesDirt4OutLogic = canGetInCastleLobby.out && (hasDiddy || hasTiny)
+const canDoIslesDirt5 = hasVines && hasClimbing
 const canReachFungiLobby = useIslesFungiIsland()
 const canReachWaterfall = useIslesCrossFungi()
 const canReachAztecLobby = useIslesUpper()
@@ -30,6 +33,8 @@ const canGetInHelmLobby = usePlayLobby('Hideout Helm')
 const hasClimbing = useClimbing()
 const isHinaKagiyama = useTwirl()
 const hasDK = useDk()
+const hasDiddy = useDiddy()
+const hasTiny = useTiny()
 const hasVines = useVine()
 const hasAGun = useAnyGun()
 const hasOranges = useOrange()
@@ -38,549 +43,543 @@ const canReachBFI = useCheckBFIInitial()
 const canReachRareBanana = useCheckBananaFairyIsle()
 const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]))
 const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8
+const hasBoulderTech = useBoulderTech()
   return (
-    <Pool>
+    <CratePool>
       <IslesCheck
-        id={00000}
-        name="Under the rock in Snide's room"
+        id={20000}
+        name="Shuffled Melon Crate: Under the rock in Snide's room"
         region="K. Rool's Island"
         canGetLogic={canDoIslesArena1}
       />
       <IslesCheck
-        id={00001}
-        name="Check of Legends 2"
+        id={20001}
+        name="Shuffled Melon Crate: Check of Legends 2"
         region="Japes-Forest Lobbies"
         canGetLogic={canDoIslesArena2.in}
         canGetBreak={canDoIslesArena2.out}
       />
       <IslesCheck
-        id={00002}
-        name="In front of the Fungi Lobby entrance"
+        id={20002}
+        name="Shuffled Melon Crate: In front of the Fungi Lobby entrance"
         region="Outer Isles"
         canGetLogic={canDoIslesDirt1}
       />
       <IslesCheck
-        id={00003}
-        name="On the Aztec Lobby roof"
+        id={20003}
+        name="Shuffled Melon Crate: On the Aztec Lobby roof"
         region="DK Island"
         canGetLogic={canDoIslesDirt2.in}
         canGetBreak={canDoIslesDirt2.out}
       />
       <IslesCheck
-        id={00004}
-        name="Under the Caves Lobby entrance"
+        id={20004}
+        name="Shuffled Melon Crate: Under the Caves Lobby entrance"
         region="DK Island"
         canGetLogic={canDoIslesDirt3.in}
         canGetBreak={canDoIslesDirt3.out}
       />
       <IslesCheck
-        id={00005}
-        name="Under Lanky's Castle Lobby barrel"
+        id={20005}
+        name="Shuffled Melon Crate: Under Lanky's Castle Lobby barrel"
         region="Caves-Helm Lobbies"
         canGetLogic={canDoIslesDirt4.in}
         canGetBreak={canDoIslesDirt4.out}
       />
       <IslesCheck
-        id={00006}
-        name="At the Banana Hoard"
+        id={20006}
+        name="Shuffled Melon Crate: At the Banana Hoard"
         region="DK Island"
         canGetLogic={canDoIslesDirt5}
       />
       <IslesCheck
-        id={00007}
-        name="Tunnel next to Cranky"
+        id={20007}
+        name="Shuffled Melon Crate: Tunnel next to Cranky"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00008}
-        name="Back of K. Lumsy's prison"
+        id={20008}
+        name="Shuffled Melon Crate: Back of K. Lumsy's prison"
         region="K. Rool's Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00009}
-        name="Behind Forest Lobby building"
+        id={20009}
+        name="Shuffled Melon Crate: Behind Forest Lobby building"
         region="Outer Isles"
         canGetLogic={canReachFungiLobby}
       />
       <IslesCheck
-        id={00010}
-        name="Somewhere on the Fungi Lobby island"
+        id={20010}
+        name="Shuffled Melon Crate: Somewhere on the Fungi Lobby island"
         region="Outer Isles"
         canGetLogic={canReachFungiLobby}
       />
       <IslesCheck
-        id={00011}
-        name="Top of the waterfall"
+        id={20011}
+        name="Shuffled Melon Crate: Top of the waterfall"
         region="DK Island"
         canGetLogic={canReachWaterfall.in}
         canGetBreak={canReachWaterfall.out}
       />
       <IslesCheck
-        id={00012}
-        name="Under tree on path to Aztec Lobby"
+        id={20012}
+        name="Shuffled Melon Crate: Under tree on path to Aztec Lobby"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00013}
-        name="Back of DK Island"
+        id={20013}
+        name="Shuffled Melon Crate: Back of DK Island"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00014}
-        name="Near the Fungi cannon"
+        id={20014}
+        name="Shuffled Melon Crate: Near the Fungi cannon"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00015}
-        name="On the Fungi cannon's island"
+        id={20015}
+        name="Shuffled Melon Crate: On the Fungi cannon's island"
         region="DK Island"
         canGetLogic={canReachFungiLobby}
       />
       <IslesCheck
-        id={00016}
-        name="Next to the Aztec Lobby Tree"
+        id={20016}
+        name="Shuffled Melon Crate: Next to the Aztec Lobby Tree"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00017}
-        name="At the boulders near Caves Lobby"
-        region="DK Island"
-        canGetLogic={canReachAztecLobby.in}
-        canGetBreak={canReachAztecLobby.out}
-      />
-      <IslesCheck
-        id={00018}
-        name="In front of the Aztec Lobby entrance"
+        id={20017}
+        name="Shuffled Melon Crate: At the boulders near Caves Lobby"
         region="DK Island"
         canGetLogic={canReachAztecLobby.in}
         canGetBreak={canReachAztecLobby.out}
       />
       <IslesCheck
-        id={00019}
-        name="Behind the Aztec Lobby entrance"
+        id={20018}
+        name="Shuffled Melon Crate: In front of the Aztec Lobby entrance"
         region="DK Island"
         canGetLogic={canReachAztecLobby.in}
         canGetBreak={canReachAztecLobby.out}
       />
       <IslesCheck
-        id={00020}
-        name="Outer rim of K. Lumsy's island"
+        id={20019}
+        name="Shuffled Melon Crate: Behind the Aztec Lobby entrance"
+        region="DK Island"
+        canGetLogic={canReachAztecLobby.in}
+        canGetBreak={canReachAztecLobby.out}
+      />
+      <IslesCheck
+        id={20020}
+        name="Shuffled Melon Crate: Outer rim of K. Lumsy's island"
         region="K. Rool's Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00021}
-        name="Near the bottom Monkeyport pad"
+        id={20021}
+        name="Shuffled Melon Crate: Near the bottom Monkeyport pad"
         region="K. Rool's Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00022}
-        name="Back middle of K. Rool's Island"
+        id={20022}
+        name="Shuffled Melon Crate: Back middle of K. Rool's Island"
         region="K. Rool's Island"
         canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
-        id={00023}
-        name="Under DK's caged Banana"
+        id={20023}
+        name="Shuffled Melon Crate: Under DK's caged Banana"
         region="K. Rool's Island"
         canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
-        id={00024}
-        name="At the rotors"
+        id={20024}
+        name="Shuffled Melon Crate: At the rotors"
         region="K. Rool's Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00025}
-        name="Behind Factory Lobby entrance"
+        id={20025}
+        name="Shuffled Melon Crate: Behind Factory Lobby entrance"
         region="K. Rool's Island"
         canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
-        id={00026}
-        name="To the right of the Factory Lobby entrance"
+        id={20026}
+        name="Shuffled Melon Crate: To the right of the Factory Lobby entrance"
         region="K. Rool's Island"
         canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
-        id={00027}
-        name="Behind Helm Lobby entrance"
+        id={20027}
+        name="Shuffled Melon Crate: Behind Helm Lobby entrance"
         region="K. Rool's Island"
         canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
-        id={00028}
-        name="Krem Isle's left arm, side"
+        id={20028}
+        name="Shuffled Melon Crate: Krem Isle's left arm, side"
         region="K. Rool's Island"
         canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
-        id={00029}
-        name="Krem Isle's left arm, front"
+        id={20029}
+        name="Shuffled Melon Crate: Krem Isle's left arm, front"
         region="K. Rool's Island"
         canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
-        id={00030}
-        name="Krem Isle's right arm, front"
+        id={20030}
+        name="Shuffled Melon Crate: Krem Isle's right arm, front"
         region="K. Rool's Island"
         canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
-        id={00031}
-        name="On BFI"
+        id={20031}
+        name="Shuffled Melon Crate: On BFI"
         region="OUter Isles"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00032}
-        name="Back of BFI"
+        id={20032}
+        name="Shuffled Melon Crate: Back of BFI"
         region="Outer Isles"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00033}
-        name="The small island"
+        id={20033}
+        name="Shuffled Melon Crate: The small island"
         region="Outer Isles"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00034}
-        name="Vanilla Warp 1 at DK Isle start"
+        id={20034}
+        name="Shuffled Melon Crate: Vanilla Warp 1 at DK Isle start"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00035}
-        name="Vanilla Warp 1 at K. Lumsy"
+        id={20035}
+        name="Shuffled Melon Crate: Vanilla Warp 1 at K. Lumsy"
         region="K. Rool's Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00036}
-        name="Vanilla Warp 2 at DK Isle start"
+        id={20036}
+        name="Shuffled Melon Crate: Vanilla Warp 2 at DK Isle start"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00037}
-        name="Vanilla Warp 2 at Aztec Lobby"
+        id={20037}
+        name="Shuffled Melon Crate: Vanilla Warp 2 at Aztec Lobby"
         region="DK Island"
         canGetLogic={canReachAztecLobby.in}
         canGetBreak={canReachAztecLobby.out}
       />
       <IslesCheck
-        id={00038}
-        name="Vanilla Warp 3 at DK Isle start"
+        id={20038}
+        name="Shuffled Melon Crate: Vanilla Warp 3 at DK Isle start"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00039}
-        name="Vanilla Warp 3 at back of DK Isle"
+        id={20039}
+        name="Shuffled Melon Crate: Vanilla Warp 3 at back of DK Isle"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00040}
-        name="Vanilla Warp 4 at DK Isle start"
+        id={20040}
+        name="Shuffled Melon Crate: Vanilla Warp 4 at DK Isle start"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00041}
-        name="Vanilla Warp 4 at Factory Lobby entrance"
+        id={20041}
+        name="Shuffled Melon Crate: Vanilla Warp 4 at Factory Lobby entrance"
         region="K. Rool's Island"
         canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
-        id={00042}
-        name="Vanilla Warp 5 at DK Isle start"
+        id={20042}
+        name="Shuffled Melon Crate: Vanilla Warp 5 at DK Isle start"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00043}
-        name="Vanilla Warp 5 at BFI"
+        id={20043}
+        name="Shuffled Melon Crate: Vanilla Warp 5 at BFI"
         region="OUter Isles"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00044}
-        name="At Japes Lobby Tag Barrel"
+        id={20044}
+        name="Shuffled Melon Crate: At Japes Lobby Tag Barrel"
         region="Japes-Forest Lobbies"
         canGetLogic={canGetInJapesLobby.in}
         canGetBreak={canGetInJapesLobby.out}
       />
       <IslesCheck
-        id={00045}
-        name="At Japes Lobby DK Portal"
+        id={20045}
+        name="Shuffled Melon Crate: At Japes Lobby DK Portal"
         region="Japes-Forest Lobbies"
         canGetLogic={canGetInJapesLobby.in}
         canGetBreak={canGetInJapesLobby.out}
       />
       <IslesCheck
-        id={00046}
-        name="In front of DK's Wrinkly Door in Aztec Lobby"
+        id={20046}
+        name="Shuffled Melon Crate: In front of DK's Wrinkly Door in Aztec Lobby"
         region="Japes-Forest Lobbies"
         canGetLogic={canGetInAztecLobby.in}
         canGetBreak={canGetInAztecLobby.out}
       />
       <IslesCheck
-        id={00047}
-        name="Right side of the Aztec Lobby back room"
+        id={20047}
+        name="Shuffled Melon Crate: Right side of the Aztec Lobby back room"
         region="Japes-Forest Lobbies"
         canGetLogic={canGetInAztecLobby.in}
         canGetBreak={canGetInAztecLobby.out}
       />
       <IslesCheck
-        id={00048}
-        name="Left side of the Aztec Lobby back room"
+        id={20048}
+        name="Shuffled Melon Crate: Left side of the Aztec Lobby back room"
         region="Japes-Forest Lobbies"
         canGetLogic={canGetInAztecLobby.in}
         canGetBreak={canGetInAztecLobby.out}
       />
       <IslesCheck
-        id={00049}
-        name="Near the Grab lever in Factory Lobby"
+        id={20049}
+        name="Shuffled Melon Crate: Near the Grab lever in Factory Lobby"
         region="Japes-Forest Lobbies"
         canGetLogic={canGetInFactoryLobby.in}
         canGetBreak={canGetInFactoryLobby.out}
       />
       <IslesCheck
-        id={00050}
-        name="On a Factory Lobby high platform"
+        id={20050}
+        name="Shuffled Melon Crate: On a Factory Lobby high platform"
         region="Japes-Forest Lobbies"
         canGetLogic={canGetInFactoryLobby.in}
         canGetBreak={canGetInFactoryLobby.out}
       />
       <IslesCheck
-        id={00051}
-        name="Over the Factory DK Portal"
+        id={20051}
+        name="Shuffled Melon Crate: Over the Factory DK Portal"
         region="Japes-Forest Lobbies"
         canGetLogic={canGetInFactoryLobby.in}
         canGetBreak={canGetInFactoryLobby.out}
       />
       <IslesCheck
-        id={00052}
-        name="To the right of the Galleon DK Portal"
+        id={20052}
+        name="Shuffled Melon Crate: To the right of the Galleon DK Portal"
         region="Japes-Forest Lobbies"
         canGetLogic={canGetInGalleonLobby.in}
         canGetBreak={canGetInGalleonLobby.out}
       />
       <IslesCheck
-        id={00053}
-        name="To the left of the Galleon DK Portal"
+        id={20053}
+        name="Shuffled Melon Crate: To the left of the Galleon DK Portal"
         region="Japes-Forest Lobbies"
         canGetLogic={canGetInGalleonLobby.in}
         canGetBreak={canGetInGalleonLobby.out}
       />
       <IslesCheck
-        id={00054}
-        name="Galleon Lobby Mini Monkey room"
+        id={20054}
+        name="Shuffled Melon Crate: Galleon Lobby Mini Monkey room"
         region="Japes-Forest Lobbies"
         canGetLogic={canGetInGalleonLobby.in}
         canGetBreak={canGetInGalleonLobby.out}
       />
       <IslesCheck
-        id={00055}
-        name="On the Tag Barrel crate in Forest Lobby"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInForestLobby.in}
-        canGetBreak={canGetInForestLobby.out}
-      />
-      <IslesCheck
-        id={00056}
-        name="Somehow not frying in the Caves Lobby lava room"
+        id={20056}
+        name="Shuffled Melon Crate: Somehow not frying in the Caves Lobby lava room"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCavesLobby.in}
         canGetBreak={canGetInCavesLobby.out}
       />
       <IslesCheck
-        id={00057}
-        name="To the right of the Caves DK Portal"
+        id={20057}
+        name="Shuffled Melon Crate: To the right of the Caves DK Portal"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCavesLobby.in}
         canGetBreak={canGetInCavesLobby.out}
       />
       <IslesCheck
-        id={00058}
-        name="Diddy's ledge in Caves Lobby"
+        id={20058}
+        name="Shuffled Melon Crate: Diddy's ledge in Caves Lobby"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCavesLobby.in}
         canGetBreak={canGetInCavesLobby.out}
       />
       <IslesCheck
-        id={00059}
-        name="Caves Lobby boulder room"
+        id={20059}
+        name="Shuffled Melon Crate: Caves Lobby boulder room"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCavesLobby.in}
         canGetBreak={canGetInCavesLobby.out}
       />
       <IslesCheck
-        id={00060}
-        name="Behind Castle Lobby entrance"
+        id={20060}
+        name="Shuffled Melon Crate: Behind Castle Lobby entrance"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCastleLobby.in}
         canGetBreak={canGetInCastleLobby.out}
       />
       <IslesCheck
-        id={00061}
-        name="To the right of the Castle Lobby entrance"
+        id={20061}
+        name="Shuffled Melon Crate: To the right of the Castle Lobby entrance"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCastleLobby.in}
         canGetBreak={canGetInCastleLobby.out}
       />
       <IslesCheck
-        id={00062}
-        name="To the left of the Castle DK Portal"
+        id={20062}
+        name="Shuffled Melon Crate: To the left of the Castle DK Portal"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCastleLobby.in}
         canGetBreak={canGetInCastleLobby.out}
       />
       <IslesCheck
-        id={00063}
-        name="Next to the Helm Lobby Tag Barrel"
+        id={20063}
+        name="Shuffled Melon Crate: Next to the Helm Lobby Tag Barrel"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInHelmLobby.in}
         canGetBreak={canGetInHelmLobby.out}
       />
       <IslesCheck
-        id={00064}
-        name="Under Chunky's Bonus Barrel in Helm Lobby"
+        id={20064}
+        name="Shuffled Melon Crate: Under Chunky's Bonus Barrel in Helm Lobby"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInHelmLobby.in}
         canGetBreak={canGetInHelmLobby.out}
       />
       <IslesCheck
-        id={00065}
-        name="On the island with DK's Kasplat in Helm Lobby"
+        id={20065}
+        name="Shuffled Melon Crate: On the island with DK's Kasplat in Helm Lobby"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInHelmLobby.in}
         canGetBreak={canGetInHelmLobby.out}
       />
       <IslesCheck
-        id={00066}
-        name="On the mountain next to Cranky's"
+        id={20066}
+        name="Shuffled Melon Crate: On the mountain next to Cranky's"
         region="DK Island"
         canGetLogic={hasClimbing}
       />
       <IslesCheck
-        id={00067}
-        name="On the Treehouse Area's rear hill"
+        id={20067}
+        name="Shuffled Melon Crate: On the Treehouse Area's rear hill"
         region="DK Island"
         canGetLogic={hasClimbing}
       />
       <IslesCheck
-        id={00068}
-        name="On the Treehouse Area's entrance hill"
+        id={20068}
+        name="Shuffled Melon Crate: On the Treehouse Area's entrance hill"
         region="DK Island"
         canGetLogic={hasClimbing && isHinaKagiyama}
         canGetBreak={hasClimbing && hasDK}
       />
       <IslesCheck
-        id={00069}
-        name="On the mountain over the Treehouse Area exit"
+        id={20069}
+        name="Shuffled Melon Crate: On the mountain over the Treehouse Area exit"
         region="DK Island"
         canGetLogic={hasClimbing && isHinaKagiyama}
         canGetBreak={hasClimbing && hasDK}
       />
       <IslesCheck
-        id={00070}
-        name="In the cave next to Cranky's, behind the vanilla dirt location"
+        id={20070}
+        name="Shuffled Melon Crate: In the cave next to Cranky's, behind the vanilla dirt location"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00071}
-        name="In the back of the Banana Hoard"
+        id={20071}
+        name="Shuffled Melon Crate: In the back of the Banana Hoard"
         region="DK Island"
         canGetLogic={hasClimbing && hasVines}
       />
       <IslesCheck
-        id={00072}
-        name="In the pool next to the Treehouse"
+        id={20072}
+        name="Shuffled Melon Crate: In the pool next to the Treehouse"
         region="DK Island"
         canGetLogic={hasAGun && hasDiving.in}
         canGetBreak={hasOranges && hasDiving.out}
       />
       <IslesCheck
-        id={00073}
-        name="In front of the Treehouse's pool"
+        id={20073}
+        name="Shuffled Melon Crate: In front of the Treehouse's pool"
         region="DK Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00074}
-        name="Inside the Treehouse itself"
+        id={20074}
+        name="Shuffled Melon Crate: Inside the Treehouse itself"
         region="DK Island"
         canGetLogic={hasClimbing}
       />
       <IslesCheck
-        id={00075}
-        name="To the right of the Banana Fairy Queen"
+        id={20075}
+        name="Shuffled Melon Crate: To the right of the Banana Fairy Queen"
         region="Outer Isles"
         canGetLogic={canReachBFI}
       />
       <IslesCheck
-        id={00076}
-        name="Behind the Banana Fairy Queen"
+        id={20076}
+        name="Shuffled Melon Crate: Behind the Banana Fairy Queen"
         region="Outer Isles"
         canGetLogic={canReachBFI}
       />
       <IslesCheck
-        id={00077}
-        name="Behind the Banana Fairy Queen's chair"
+        id={20077}
+        name="Shuffled Melon Crate: Behind the Banana Fairy Queen's chair"
         region="Outer Isles"
         canGetLogic={canReachBFI}
       />
       <IslesCheck
-        id={00078}
-        name="Inside the Rareware GB room"
+        id={20078}
+        name="Shuffled Melon Crate: Inside the Rareware GB room"
         region="Outer Isles"
         canGetLogic={canGetRareBanana}
       />
       <IslesCheck
-        id={00079}
-        name="In the right side of the Rareware GB room"
+        id={20079}
+        name="Shuffled Melon Crate: In the right side of the Rareware GB room"
         region="Outer Isles"
         canGetLogic={canGetRareBanana}
       />
       <IslesCheck
-        id={00080}
-        name="Next to Snide's"
+        id={20080}
+        name="Shuffled Melon Crate: Next to Snide's"
         region="K. Rool's Island"
         canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
-        id={00081}
-        name="Back right of K. Lumsy's prison"
+        id={20081}
+        name="Shuffled Melon Crate: Back right of K. Lumsy's prison"
         region="K. Rool's Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00082}
-        name="Front left of K. Lumsy's prison"
+        id={20082}
+        name="Shuffled Melon Crate: Front left of K. Lumsy's prison"
         region="K. Rool's Island"
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00083}
-        name="Under K. Lumsy himself"
+        id={20083}
+        name="Shuffled Melon Crate: Under K. Lumsy himself"
         region="K. Rool's Island"
         canGetLogic={hasAllEightKeys}
       />
-    </Pool>
+    </CratePool>
   )
 }
 
-const Shuffled: React.FC = () => (useShuffle() ? <Shuffled /> : null)
-export default Shuffled
+const ShuffledCrates: React.FC = () => (useShuffle() ? <Shuffled /> : null)
+export default ShuffledCrates
