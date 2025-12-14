@@ -1,5 +1,5 @@
 import Pool from '@renderer/components/pools/'
-import { useGeneral, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent } from '@renderer/hooks/isles'
+import { useGeneral, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby } from '@renderer/hooks/isles'
 import { useShuffle } from '@renderer/hooks/settings'
 import {  } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -18,6 +18,8 @@ const canReachWaterfall = useIslesCrossFungi()
 const canReachAztecLobby = useIslesUpper()
 const canReachFactoryLobby = useIslesKremAscent()
 const canReachHelmLobby = useIslesKremTop()
+const canGetInJapesLobby = usePlayLobby('Jungle Japes')
+const canGetInAztecLobby = usePlayLobby('Angry Aztec')
   return (
     <Pool>
       <IslesCheck
@@ -197,124 +199,129 @@ const canReachHelmLobby = useIslesKremTop()
         canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
-        id={00012}
+        id={00028}
         name="Krem Isle's left arm, side"
         region="K. Rool's Island"
         canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
-        id={00013}
+        id={00029}
         name="Krem Isle's left arm, front"
         region="K. Rool's Island"
         canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
-        id={00014}
+        id={00030}
         name="Krem Isle's right arm, front"
         region="K. Rool's Island"
         canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
-        id={00015}
+        id={00031}
         name="On BFI"
         region="OUter Isles"
         canGetLogic={isBreathing}
       />
-/*      <IslesCheck
-        id={00000}
+      <IslesCheck
+        id={00032}
         name="Back of BFI"
         region="Outer Isles"
-        canGetLogic={canDoIslesArena1}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00001}
+        id={00033}
         name="The small island"
         region="Outer Isles"
-        canGetLogic={canDoIslesArena2}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00002}
+        id={00034}
         name="Vanilla Warp 1 at DK Isle start"
         region="DK Island"
-        canGetLogic={canDoIslesDirt1}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00003}
+        id={00035}
         name="Vanilla Warp 1 at K. Lumsy"
         region="K. Rool's Island"
-        canGetLogic={canDoIslesDirt2}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00004}
+        id={00036}
         name="Vanilla Warp 2 at DK Isle start"
         region="DK Island"
-        canGetLogic={canDoIslesDirt3}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00005}
+        id={00037}
         name="Vanilla Warp 2 at Aztec Lobby"
         region="DK Island"
-        canGetLogic={canDoIslesDirt4}
+        canGetLogic={canReachAztecLobby.in}
+        canGetBreak={canReachAztecLobby.out}
       />
       <IslesCheck
-        id={00006}
+        id={00038}
         name="Vanilla Warp 3 at DK Isle start"
         region="DK Island"
-        canGetLogic={canDoIslesDirt5}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00007}
+        id={00039}
         name="Vanilla Warp 3 at back of DK Isle"
         region="DK Island"
-        canGetLogic={canDoIslesDirt6}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00008}
+        id={00040}
         name="Vanilla Warp 4 at DK Isle start"
         region="DK Island"
-        canGetLogic={canDoIslesDirt7}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00009}
+        id={00041}
         name="Vanilla Warp 4 at Factory Lobby entrance"
         region="K. Rool's Island"
-        canGetLogic={canReachFungiLobby}
+        canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
-        id={00010}
+        id={00042}
         name="Vanilla Warp 5 at DK Isle start"
         region="DK Island"
-        canGetLogic={canReachFungiLobby}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00011}
+        id={00043}
         name="Vanilla Warp 5 at BFI"
         region="OUter Isles"
-        canGetLogic={canReachWaterfall}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00012}
+        id={00044}
         name="At Japes Lobby Tag Barrel"
         region="Japes-Forest Lobbies"
-        canGetLogic={isBreathing}
+        canGetLogic={canGetInJapesLobby.in}
+        canGetBreak={canGetInJapesLobby.out}
       />
       <IslesCheck
-        id={00013}
+        id={00045}
         name="At Japes Lobby DK Portal"
         region="Japes-Forest Lobbies"
-        canGetLogic={isBreathing}
+        canGetLogic={canGetInJapesLobby.in}
+        canGetBreak={canGetInJapesLobby.out}
       />
       <IslesCheck
-        id={00014}
+        id={00046}
         name="In front of DK's Wrinkly Door in Aztec Lobby"
         region="Japes-Forest Lobbies"
-        canGetLogic={isBreathing}
+        canGetLogic={canGetInAztecLobby.in}
+        canGetBreak={canGetInAztecLobby.out}
       />
       <IslesCheck
-        id={00015}
+        id={00047}
         name="Right side of the Aztec Lobby back room"
         region="Japes-Forest Lobbies"
-        canGetLogic={hasKey4}
+        canGetLogic={canGetInAztecLobby.in}
+        canGetBreak={canGetInAztecLobby.out}
       />
 /*      <IslesCheck
         id={00000}
