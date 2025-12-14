@@ -39,9 +39,6 @@ const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const hasAGun = useAnyGun()
-const hasOranges = useOrange()
-const hasDiving = useDive()
 const canReachBFI = useCheckBFIInitial()
 const canGetRareBanana = useCheckBananaFairyIsle()
 const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]))
@@ -415,7 +412,7 @@ const canGetInHelmDK = useHelmKasplat()
         name="Shuffled Battle Arena: Diddy's ledge in Caves Lobby"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCavesLobby.in && hasJetbarrel}
-        canGetBreak={canGetInCavesLobby.out && hasBoulderTech && isHinaKagiyama}
+        canGetBreak={canGetInCavesDiddy.out && hasBoulderTech && isHinaKagiyama}
       />
       <IslesCheck
         id={10059}

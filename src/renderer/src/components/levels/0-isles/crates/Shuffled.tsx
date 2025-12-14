@@ -1,8 +1,8 @@
 import { useShallow } from 'zustand/react/shallow'
 import CratePool from '@renderer/components/pools/Crates'
-import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
-import { useShuffleCrates } from '@renderer/hooks/settings'
-import { useAnyKong, useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
+import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, useIslesKremTop, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useShuffleCrates, useBananaport } from '@renderer/hooks/settings'
+import { useAnyKong, useDiddy, useTiny, useBoulderTech, useClimbing, useTwirl, useDk, useVine, useRocket, useBalloon } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
@@ -16,12 +16,12 @@ const isHinaKagiyama = useTwirl()
 const hasJetbarrel = useRocket()
 const hasVines = useVine()
 const hasClimbing = useClimbing()
+const canDoIslesArena1 = useSnideArena()
+const canDoIslesArena2 = useForestArena()
 const canReachAztecLobby = useIslesUpper()
 const canReachFungiLobby = useIslesFungiIsland()
 const canReachWaterfall = useIslesCrossFungi()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
-const canDoIslesArena1 = useSnideArena()
-const canDoIslesArena2 = useForestArena()
 const canDoIslesDirt1 = canReachFungiLobby
 const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && useRocket()
 const canDoIslesDirt2OutLogic = ((canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny)) || (canReachWaterfall && (hasDK || isHinaKagiyama)))
