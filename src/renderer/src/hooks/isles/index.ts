@@ -789,8 +789,8 @@ export const useCastleDirt = (): LogicBool => {
   const balloon = useBalloon()
   const playCastle = usePlayLobby('Creepy Castle')
   return {
-    in: playCastle && boulderTech && balloon && shockwave,
-    out: playCastle && tiny && shockwave
+    in: playCastle.in && boulderTech && balloon && shockwave,
+    out: playCastle.out && tiny && shockwave
   }
 }
 
@@ -810,7 +810,7 @@ export const useAztecDirt = (): LogicBool => {
     in: islesRocket && islesFungi && diddy && rocket && shockwave,
     out:
       shockwave &&
-      ((islesUpper && boulderTech && (diddy || tiny)) || (crossFungi && (dk || (tiny && twirl))))
+      ((islesUpper.out && boulderTech && (diddy || tiny)) || (crossFungi && (dk || (tiny && twirl))))
   }
 }
 
