@@ -1,8 +1,8 @@
 import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useCastleDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
+import { useGeneralDirt, useIslandDirt, useAztecDirt, useUnderCaveDirt, useCastleDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesKremTop } from '@renderer/hooks/isles'
 import { useShuffleDirt } from '@renderer/hooks/settings'
-import { useShockwave, useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
+import { useShockwave, useClimbing, useTwirl, useDk, useVine } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
@@ -33,11 +33,6 @@ const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
 const isHinaKagiyama = useTwirl()
 const hasDK = useDk()
-const hasDiddy = useDiddy()
-const hasTiny = useTiny()
-const hasAGun = useAnyGun()
-const hasOranges = useOrange()
-const hasDiving = useDive()
 const canReachBFI = useCheckBFIInitial()
 const canReachRareBanana = useCheckBananaFairyIsle()
 const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]))
