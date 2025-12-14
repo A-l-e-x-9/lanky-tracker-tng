@@ -2,41 +2,39 @@ import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useGeneralDirt, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
 import { useShuffleDirt } from '@renderer/hooks/settings'
-import { useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
+import { useShockwave, useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
-const canDoIslesArena1 = useSnideArena()
-const canDoIslesArena2 = useForestArena()
-const canDoIslesDirt1 = canReachFungiLobby
-const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && useRocket()
-const canDoIslesDirt2OutLogic = ((canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny)) || (canReachWaterfall && (hasDK || isHinaKagiyama)))
-const canDoIslesDirt3InLogic = hasClimbing || useBananaport() != 0 || canReachWaterfall.in
-const canDoIslesDirt3OutLogic = canReachWaterfall.out
-const canDoIslesDirt4InLogic = canGetInCastleLobby.in && hasBoulderTech && useBalloon()
-const canDoIslesDirt4OutLogic = canGetInCastleLobby.out && (hasDiddy || hasTiny)
+const hasShockwave = useShockwave()
+const hasClimbing = useClimbing()
+const hasVines = useVine()
+const canReachFactoryLobby = useIslesKremAscent()
+const canGetInForestLobby = usePlayLobby('Fungi Forest')
+const canDoIslesArena1 = canReachFactoryLobby && hasShockwave
+const canDoIslesArena2 = canGetInForestLobby && hasShockwave
+const canDoIslesDirt1 = useIslandDirt()
+const canDoIslesDirt2 = useAztecDirt()
+const canDoIslesDirt3 = useUnderCaveDirt()
+const canDoIslesDirt4 = useCastleDirt()
 const canDoIslesDirt5 = hasVines && hasClimbing
 const canReachFungiLobby = useIslesFungiIsland()
 const canReachWaterfall = useIslesCrossFungi()
 const canReachAztecLobby = useIslesUpper()
-const canReachFactoryLobby = useIslesKremAscent()
 const canReachHelmLobby = useIslesKremTop()
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
 const canGetInAztecLobby = usePlayLobby('Angry Aztec')
 const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
-const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const hasClimbing = useClimbing()
 const isHinaKagiyama = useTwirl()
 const hasDK = useDk()
 const hasDiddy = useDiddy()
 const hasTiny = useTiny()
-const hasVines = useVine()
 const hasAGun = useAnyGun()
 const hasOranges = useOrange()
 const hasDiving = useDive()
