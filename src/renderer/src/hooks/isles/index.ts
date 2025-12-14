@@ -785,6 +785,7 @@ export const useIslandDirt = (): boolean => {
 export const useCastleDirt = (): LogicBool => {
   const shockwave = useShockwave()
   const boulderTech = useBoulderTech()
+  const diddy = useDiddy()
   const tiny = useTiny()
   const balloon = useBalloon()
   const playCastle = usePlayLobby('Creepy Castle')
