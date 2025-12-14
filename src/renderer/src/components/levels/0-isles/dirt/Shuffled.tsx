@@ -1,5 +1,5 @@
 import Pool from '@renderer/components/pools/'
-import { useGeneral, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi } from '@renderer/hooks/isles'
+import { useGeneral, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent } from '@renderer/hooks/isles'
 import { useShuffle } from '@renderer/hooks/settings'
 import {  } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -15,6 +15,9 @@ const canDoIslesDirt4 = useCastleDirt()
 const canDoIslesDirt5 = useHoardDirt()
 const canReachFungiLobby = useIslesFungiIsland()
 const canReachWaterfall = useIslesCrossFungi()
+const canReachAztecLobby = useIslesUpper()
+const canReachFactoryLobby = useIslesKremAscent()
+const canReachHelmLobby = useIslesKremTop()
   return (
     <Pool>
       <IslesCheck
@@ -118,103 +121,106 @@ const canReachWaterfall = useIslesCrossFungi()
         region="DK Island"
         canGetLogic={canReachFungiLobby}
       />
-/*      <IslesCheck
-        id={00000}
+      <IslesCheck
+        id={00016}
         name="Next to the Aztec Lobby Tree"
         region="DK Island"
-        canGetLogic={canDoIslesArena1}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00001}
+        id={00017}
         name="At the boulders near Caves Lobby"
         region="DK Island"
-        canGetLogic={canDoIslesArena2}
+        canGetLogic={canReachAztecLobby.in}
+        canGetBreak={canReachAztecLobby.out}
       />
       <IslesCheck
-        id={00002}
+        id={00018}
         name="In front of the Aztec Lobby entrance"
         region="DK Island"
-        canGetLogic={canDoIslesDirt1}
+        canGetLogic={canReachAztecLobby.in}
+        canGetBreak={canReachAztecLobby.out}
       />
       <IslesCheck
-        id={00003}
+        id={00019}
         name="Behind the Aztec Lobby entrance"
         region="DK Island"
-        canGetLogic={canDoIslesDirt2}
+        canGetLogic={canReachAztecLobby.in}
+        canGetBreak={canReachAztecLobby.out}
       />
       <IslesCheck
-        id={00004}
+        id={00020}
         name="Outer rim of K. Lumsy's island"
         region="K. Rool's Island"
-        canGetLogic={canDoIslesDirt3}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00005}
+        id={00021}
         name="Near the bottom Monkeyport pad"
         region="K. Rool's Island"
-        canGetLogic={canDoIslesDirt4}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00006}
+        id={00022}
         name="Back middle of K. Rool's Island"
         region="K. Rool's Island"
-        canGetLogic={canDoIslesDirt5}
+        canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
-        id={00007}
+        id={00023}
         name="Under DK's caged Banana"
         region="K. Rool's Island"
-        canGetLogic={canDoIslesDirt6}
+        canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
-        id={00008}
+        id={00024}
         name="At the rotors"
         region="K. Rool's Island"
-        canGetLogic={canDoIslesDirt7}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={00009}
+        id={00025}
         name="Behind Factory Lobby entrance"
         region="K. Rool's Island"
-        canGetLogic={canReachFungiLobby}
+        canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
-        id={00010}
+        id={00026}
         name="To the right of the Factory Lobby entrance"
         region="K. Rool's Island"
-        canGetLogic={canReachFungiLobby}
+        canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
-        id={00011}
+        id={00027}
         name="Behind Helm Lobby entrance"
         region="K. Rool's Island"
-        canGetLogic={canReachWaterfall}
+        canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
         id={00012}
         name="Krem Isle's left arm, side"
         region="K. Rool's Island"
-        canGetLogic={isBreathing}
+        canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
         id={00013}
         name="Krem Isle's left arm, front"
         region="K. Rool's Island"
-        canGetLogic={isBreathing}
+        canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
         id={00014}
         name="Krem Isle's right arm, front"
         region="K. Rool's Island"
-        canGetLogic={isBreathing}
+        canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
         id={00015}
         name="On BFI"
         region="OUter Isles"
-        canGetLogic={hasKey4}
+        canGetLogic={isBreathing}
       />
-      <IslesCheck
+/*      <IslesCheck
         id={00000}
         name="Back of BFI"
         region="Outer Isles"
@@ -310,7 +316,7 @@ const canReachWaterfall = useIslesCrossFungi()
         region="Japes-Forest Lobbies"
         canGetLogic={hasKey4}
       />
-      <IslesCheck
+/*      <IslesCheck
         id={00000}
         name="Left side of the Aztec Lobby back room"
         region="Japes-Forest Lobbies"
@@ -406,7 +412,7 @@ const canReachWaterfall = useIslesCrossFungi()
         region="Caves-Helm Lobbies"
         canGetLogic={hasKey4}
       />
-      <IslesCheck
+/*      <IslesCheck
         id={00000}
         name="Under Chunky's Bonus Barrel in Helm Lobby"
         region="Caves-Helm Lobbies"
@@ -502,7 +508,7 @@ const canReachWaterfall = useIslesCrossFungi()
         region="Outer Isles"
         canGetLogic={hasKey4}
       />
-      <IslesCheck
+/*      <IslesCheck
         id={00012}
         name="Next to Snide's"
         region="K. Rool's Island"
