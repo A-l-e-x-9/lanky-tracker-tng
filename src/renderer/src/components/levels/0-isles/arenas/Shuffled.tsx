@@ -1,14 +1,15 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
-import { useShuffle } from '@renderer/hooks/settings'
+import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket } from '@renderer/hooks/isles'
+import { useShuffleArenas } from '@renderer/hooks/settings'
 import { useAnyKong, useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
-const ShuffledArenas: React.FC = () => {
+const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()
 const canDoIslesArena1 = useSnideArena()
 const canDoIslesArena2 = useForestArena()
+const canReachFungiLobby = useIslesFungiIsland()
 const canDoIslesDirt1 = canReachFungiLobby
 const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && useRocket()
 const canDoIslesDirt2OutLogic = ((canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny)) || (canReachWaterfall && (hasDK || isHinaKagiyama)))
@@ -17,7 +18,6 @@ const canDoIslesDirt3OutLogic = canReachWaterfall.out
 const canDoIslesDirt4InLogic = canGetInCastleLobby.in && hasBoulderTech && useBalloon()
 const canDoIslesDirt4OutLogic = canGetInCastleLobby.out && (hasDiddy || hasTiny)
 const canDoIslesDirt5 = hasVines && hasClimbing
-const canReachFungiLobby = useIslesFungiIsland()
 const canReachWaterfall = useIslesCrossFungi()
 const canReachAztecLobby = useIslesUpper()
 const canReachFactoryLobby = useIslesKremAscent()
