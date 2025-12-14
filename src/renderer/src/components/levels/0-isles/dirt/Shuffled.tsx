@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
+import { useGeneralDirt, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useCastleDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import { useShockwave, useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
