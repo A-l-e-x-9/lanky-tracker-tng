@@ -13,6 +13,7 @@ const hasDiddy = useDiddy()
 const hasTiny = useTiny()
 const hasBoulderTech = useBoulderTech()
 const isHinaKagiyama = useTwirl()
+const hasJetbarrel = useRocket()
 const hasVines = useVine()
 const hasClimbing = useClimbing()
 const canDoIslesArena1 = useSnideArena()
@@ -22,7 +23,7 @@ const canReachFungiLobby = useIslesFungiIsland()
 const canReachWaterfall = useIslesCrossFungi()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canDoIslesDirt1 = canReachFungiLobby
-const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && useRocket()
+const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && hasJetbarrel
 const canDoIslesDirt2OutLogic = ((canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny)) || (canReachWaterfall && (hasDK || isHinaKagiyama)))
 const canDoIslesDirt3InLogic = hasClimbing || useBananaport() != 0 || canReachWaterfall.in
 const canDoIslesDirt3OutLogic = canReachWaterfall.out
@@ -411,7 +412,7 @@ const canGetInHelmDK = useHelmKasplat()
         name="Shuffled Battle Arena: Diddy's ledge in Caves Lobby"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCavesLobby.in && hasJetbarrel}
-        canGetBreak={canGetInCavesDiddy.out && hasBoulderTech && isHinaKagiyama}
+        canGetBreak={canGetInCavesLobby.out && hasBoulderTech && isHinaKagiyama}
       />
       <IslesCheck
         id={10059}
