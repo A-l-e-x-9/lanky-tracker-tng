@@ -6,7 +6,7 @@ import { useAnyKong, useDiddy, useTiny, useBoulderTech, useClimbing, useTwirl, u
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
-const Shuffle: React.FC = () => {
+const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()
 const hasDK = useDk()
 const hasDiddy = useDiddy()
