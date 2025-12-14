@@ -412,7 +412,7 @@ const canGetInHelmDK = useHelmKasplat()
         name="Shuffled Battle Arena: Diddy's ledge in Caves Lobby"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCavesLobby.in && hasJetbarrel}
-        canGetBreak={canGetInCavesDiddy.out && hasBoulderTech && isHinaKagiyama}
+        canGetBreak={canGetInCavesLobby.out && hasBoulderTech && isHinaKagiyama}
       />
       <IslesCheck
         id={10059}

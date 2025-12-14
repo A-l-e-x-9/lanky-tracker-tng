@@ -1,8 +1,8 @@
 import { useShallow } from 'zustand/react/shallow'
 import CratePool from '@renderer/components/pools/Crates'
-import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, useIslesKremTop, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, useIslesKremTop, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
 import { useShuffleCrates, useBananaport } from '@renderer/hooks/settings'
-import { useAnyKong, useDiddy, useTiny, useBoulderTech, useClimbing, useTwirl, useDk, useVine, useRocket, useBalloon } from '@renderer/hooks/kongs'
+import { useAnyKong, useDiddy, useTiny, useBoulderTech, useClimbing, useTwirl, useDk, useVine, useRocket, useBalloon, useStrong, useAnyGun } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
@@ -16,8 +16,9 @@ const isHinaKagiyama = useTwirl()
 const hasJetbarrel = useRocket()
 const hasVines = useVine()
 const hasClimbing = useClimbing()
+const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena1 = useSnideArena()
-const canDoIslesArena2 = useForestArena()
+const canDoIslesArena2 = canGetInForestLobby
 const canReachAztecLobby = useIslesUpper()
 const canReachFungiLobby = useIslesFungiIsland()
 const canReachWaterfall = useIslesCrossFungi()
@@ -36,7 +37,6 @@ const canGetInJapesLobby = usePlayLobby('Jungle Japes')
 const canGetInAztecLobby = usePlayLobby('Angry Aztec')
 const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
-const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
 const hasAGun = useAnyGun()
@@ -48,9 +48,11 @@ const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow
 const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8
 const canGetInAztecBack = useAztecLobbyChunky()
 const canGetInFactoryUpper = useFactoryLobbyUpper()
+const canGetInGalleonTiny = useCheckTinyGalleonLobby()
 const canGetInCavesKasplat = useCavesKasplat()
 const canGetInHelmChunky = useCheckChunkyHelm()
 const canGetInHelmDK = useHelmKasplat()
+const hasStrongKong = useStrong()
   return (
     <CratePool>
       <IslesCheck
@@ -61,10 +63,9 @@ const canGetInHelmDK = useHelmKasplat()
       />
       <IslesCheck
         id={20001}
-        name="Shuffled Melon Crate: Check of Legends 2"
+        name="Shuffled Melon Crate: Where the Check of Legends 2 Battle Arena would spawn in vanilla"
         region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesArena2.in}
-        canGetBreak={canDoIslesArena2.out}
+        canGetLogic={canDoIslesArena2}
       />
       <IslesCheck
         id={20002}
@@ -76,22 +77,22 @@ const canGetInHelmDK = useHelmKasplat()
         id={20003}
         name="Shuffled Melon Crate: On the Aztec Lobby roof"
         region="DK Island"
-        canGetLogic={canDoIslesDirt2.in}
-        canGetBreak={canDoIslesDirt2.out}
+        canGetLogic={canDoIslesDirt2InLogic}
+        canGetBreak={canDoIslesDirt2OutLogic}
       />
       <IslesCheck
         id={20004}
         name="Shuffled Melon Crate: Under the Caves Lobby entrance"
         region="DK Island"
-        canGetLogic={canDoIslesDirt3.in}
-        canGetBreak={canDoIslesDirt3.out}
+        canGetLogic={canDoIslesDirt3InLogic}
+        canGetBreak={canDoIslesDirt3OutLogic}
       />
       <IslesCheck
         id={20005}
         name="Shuffled Melon Crate: Under Lanky's Castle Lobby barrel"
         region="Caves-Helm Lobbies"
-        canGetLogic={canDoIslesDirt4.in}
-        canGetBreak={canDoIslesDirt4.out}
+        canGetLogic={canDoIslesDirt4InLogic}
+        canGetBreak={canDoIslesDirt4OUtLogic}
       />
       <IslesCheck
         id={20006}
@@ -351,15 +352,15 @@ const canGetInHelmDK = useHelmKasplat()
         id={20047}
         name="Shuffled Melon Crate: Right side of the Aztec Lobby back room"
         region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecLobby.in}
-        canGetBreak={canGetInAztecLobby.out}
+        canGetLogic={canGetInAztecBack.in}
+        canGetBreak={canGetInAztecBack.out}
       />
       <IslesCheck
         id={20048}
         name="Shuffled Melon Crate: Left side of the Aztec Lobby back room"
         region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecLobby.in}
-        canGetBreak={canGetInAztecLobby.out}
+        canGetLogic={canGetInAztecBack.in}
+        canGetBreak={canGetInAztecBack.out}
       />
       <IslesCheck
         id={20049}
@@ -372,15 +373,15 @@ const canGetInHelmDK = useHelmKasplat()
         id={20050}
         name="Shuffled Melon Crate: On a Factory Lobby high platform"
         region="Japes-Forest Lobbies"
-        canGetLogic={canGetInFactoryLobby.in}
-        canGetBreak={canGetInFactoryLobby.out}
+        canGetLogic={canGetInFactoryUpper.in}
+        canGetBreak={canGetInFactoryUpper.out}
       />
       <IslesCheck
         id={20051}
         name="Shuffled Melon Crate: Over the Factory DK Portal"
         region="Japes-Forest Lobbies"
-        canGetLogic={canGetInFactoryLobby.in}
-        canGetBreak={canGetInFactoryLobby.out}
+        canGetLogic={canGetInFactoryUpper.in}
+        canGetBreak={canGetInFactoryUpper.out}
       />
       <IslesCheck
         id={20052}
@@ -400,15 +401,15 @@ const canGetInHelmDK = useHelmKasplat()
         id={20054}
         name="Shuffled Melon Crate: Galleon Lobby Mini Monkey room"
         region="Japes-Forest Lobbies"
-        canGetLogic={canGetInGalleonLobby.in}
-        canGetBreak={canGetInGalleonLobby.out}
+        canGetLogic={canGetInGalleonTiny.in}
+        canGetBreak={canGetInGalleonTiny.out}
       />
       <IslesCheck
         id={20056}
         name="Shuffled Melon Crate: Somehow not frying in the Caves Lobby lava room"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCavesLobby.in}
-        canGetBreak={canGetInCavesLobby.out}
+        canGetLogic={canGetInCavesKasplat.in && hasStrongKong}
+        canGetBreak={canGetInCavesKasplat.out && hasStrongKong}
       />
       <IslesCheck
         id={20057}
@@ -421,15 +422,15 @@ const canGetInHelmDK = useHelmKasplat()
         id={20058}
         name="Shuffled Melon Crate: Diddy's ledge in Caves Lobby"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCavesLobby.in}
-        canGetBreak={canGetInCavesLobby.out}
+        canGetLogic={canGetInCavesLobby.in && hasJetbarrel}
+        canGetBreak={canGetInCavesLobby.out && hasJetbarrel}
       />
       <IslesCheck
         id={20059}
         name="Shuffled Melon Crate: Caves Lobby boulder room"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCavesLobby.in}
-        canGetBreak={canGetInCavesLobby.out}
+        canGetLogic={canGetInCavesKasplat.in}
+        canGetBreak={canGetInCavesKasplat.out}
       />
       <IslesCheck
         id={20060}
@@ -463,15 +464,15 @@ const canGetInHelmDK = useHelmKasplat()
         id={20064}
         name="Shuffled Melon Crate: Under Chunky's Bonus Barrel in Helm Lobby"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInHelmLobby.in}
-        canGetBreak={canGetInHelmLobby.out}
+        canGetLogic={canGetInHelmChunky.in}
+        canGetBreak={canGetInHelmChunky.out}
       />
       <IslesCheck
         id={20065}
         name="Shuffled Melon Crate: On the island with DK's Kasplat in Helm Lobby"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInHelmLobby.in}
-        canGetBreak={canGetInHelmLobby.out}
+        canGetLogic={canGetInHelmDK.in}
+        canGetBreak={canGetInHelmDK.out}
       />
       <IslesCheck
         id={20066}
