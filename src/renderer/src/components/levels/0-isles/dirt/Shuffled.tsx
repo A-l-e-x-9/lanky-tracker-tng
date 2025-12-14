@@ -1,10 +1,20 @@
 import Pool from '@renderer/components/pools/'
-import {  } from '@renderer/hooks/isles'
+import { useGeneral, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi } from '@renderer/hooks/isles'
 import { useShuffle } from '@renderer/hooks/settings'
 import {  } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 
 const Shuffled: React.FC = () => {
+const isBreathing = useGeneral()
+const canDoIslesArena1 = useSnideArena()
+const canDoIslesArena2 = useForestArena()
+const canDoIslesDirt1 = useIslandDirt()
+const canDoIslesDirt2 = useAztecDirt()
+const canDoIslesDirt3 = useUnderCaveDirt()
+const canDoIslesDirt4 = useCastleDirt()
+const canDoIslesDirt5 = useHoardDirt()
+const canReachFungiLobby = useIslesFungiIsland()
+const canReachWaterfall = useIslesCrossFungi()
   return (
     <Pool>
       <IslesCheck
@@ -17,7 +27,8 @@ const Shuffled: React.FC = () => {
         id={00001}
         name="Check of Legends 2"
         region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesArena2}
+        canGetLogic={canDoIslesArena2.in}
+        canGetBreak={canDoIslesArena2.out}
       />
       <IslesCheck
         id={00002}
@@ -29,19 +40,22 @@ const Shuffled: React.FC = () => {
         id={00003}
         name="On the Aztec Lobby roof"
         region="DK Island"
-        canGetLogic={canDoIslesDirt2}
+        canGetLogic={canDoIslesDirt2.in}
+        canGetBreak={canDoIslesDirt2.out}
       />
       <IslesCheck
         id={00004}
         name="Under the Caves Lobby entrance"
         region="DK Island"
-        canGetLogic={canDoIslesDirt3}
+        canGetLogic={canDoIslesDirt3.in}
+        canGetBreak={canDoIslesDirt3.out}
       />
       <IslesCheck
         id={00005}
         name="Under Lanky's Castle Lobby barrel"
         region="Caves-Helm Lobbies"
-        canGetLogic={canDoIslesDirt4}
+        canGetLogic={canDoIslesDirt4.in}
+        canGetBreak={canDoIslesDirt4.out}
       />
       <IslesCheck
         id={00006}
@@ -53,13 +67,13 @@ const Shuffled: React.FC = () => {
         id={00007}
         name="Tunnel next to Cranky"
         region="DK Island"
-        canGetLogic={canDoIslesDirt6}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
         id={00008}
         name="Back of K. Lumsy's prison"
         region="K. Rool's Island"
-        canGetLogic={canDoIslesDirt7}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
         id={00009}
@@ -77,7 +91,8 @@ const Shuffled: React.FC = () => {
         id={00011}
         name="Top of the waterfall"
         region="DK Island"
-        canGetLogic={canReachWaterfall}
+        canGetLogic={canReachWaterfall.in}
+        canGetBreak={canReachWaterfall.out}
       />
       <IslesCheck
         id={00012}
@@ -101,9 +116,9 @@ const Shuffled: React.FC = () => {
         id={00015}
         name="On the Fungi cannon's island"
         region="DK Island"
-        canGetLogic={hasKey4}
+        canGetLogic={canReachFungiLobby}
       />
-      <IslesCheck
+/*      <IslesCheck
         id={00000}
         name="Next to the Aztec Lobby Tree"
         region="DK Island"
@@ -510,7 +525,7 @@ const Shuffled: React.FC = () => {
         name="Under K. Lumsy himself"
         region="K. Rool's Island"
         canGetLogic={hasKey4}
-      />
+      />*/
     </Pool>
   )
 }
