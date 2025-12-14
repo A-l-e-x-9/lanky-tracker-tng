@@ -62,6 +62,9 @@ const IslesRegionChecks: React.FC = () => (
     <ShopLocations />
     <FairyReward />
     <JetpacCheck />
+    <ShuffledArenas />
+    <ShuffledCrates />
+    <ShuffledDirt />
     <ShuffledFairies />
   </div>
 )

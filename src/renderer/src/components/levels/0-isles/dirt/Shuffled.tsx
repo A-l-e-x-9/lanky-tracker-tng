@@ -1,8 +1,8 @@
 import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useIslandDirt, useAztecDirt, useUnderCaveDirt, useCastleDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesKremTop } from '@renderer/hooks/isles'
+import { useGeneralDirt, useIslandDirt, useAztecDirt, useUnderCaveDirt, useCastleDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesKremTop, useAztecLobbyChunky, useFactoryLobbyUpper, useCheckTinyGalleonLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffleDirt } from '@renderer/hooks/settings'
-import { useShockwave, useClimbing, useTwirl, useDk, useVine, useBoulderTech } from '@renderer/hooks/kongs'
+import { useShockwave, useClimbing, useTwirl, useDk, useVine, useBoulderTech, useStrong, useRocket } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
@@ -46,6 +46,7 @@ const canGetInCavesKasplat = useCavesKasplat()
 const canGetInHelmChunky = useCheckChunkyHelm()
 const canGetInHelmDK = useHelmKasplat()
 const hasStrongKong = useStrong()
+const hasJetbarrel = useRocket()
   return (
     <RainbowCoinPool>
       <IslesCheck
