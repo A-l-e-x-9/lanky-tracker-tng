@@ -424,7 +424,7 @@ const hasStrongKong = useStrong()
         name="Shuffled Melon Crate: Diddy's ledge in Caves Lobby"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCavesLobby.in && hasJetbarrel}
-        canGetBreak={canGetInCavesLobby.out && hasJetbarrel}
+        canGetBreak={canGetInCavesLobby.out && hasBoulderTech && isHinaKagiyama}
       />
       <IslesCheck
         id={20059}
