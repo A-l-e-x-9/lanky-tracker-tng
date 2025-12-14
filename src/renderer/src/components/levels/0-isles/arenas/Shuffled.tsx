@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket } from '@renderer/hooks/isles'
-import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useAnyKong, useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive, useRocket } from '@renderer/hooks/kongs'
+import { useShuffledArenas, useBananaport } from '@renderer/hooks/settings'
+import { useAnyKong, useDiddy, useTiny, useBoulderTech, useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive, useRocket } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
@@ -11,11 +11,14 @@ const hasDK = useDk()
 const hasDiddy = useDiddy()
 const hasTiny = useTiny()
 const hasBoulderTech = useBoulderTech()
+const isHinaKagiyama = useTwirl()
+const hasClimbing = useClimbing()
 const canDoIslesArena1 = useSnideArena()
 const canDoIslesArena2 = useForestArena()
 const canReachAztecLobby = useIslesUpper()
 const canReachFungiLobby = useIslesFungiIsland()
 const canReachWaterfall = useIslesCrossFungi()
+const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canDoIslesDirt1 = canReachFungiLobby
 const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && useRocket()
 const canDoIslesDirt2OutLogic = ((canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny)) || (canReachWaterfall && (hasDK || isHinaKagiyama)))
@@ -32,10 +35,7 @@ const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
-const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const hasClimbing = useClimbing()
-const isHinaKagiyama = useTwirl()
 const hasVines = useVine()
 const hasAGun = useAnyGun()
 const hasOranges = useOrange()
