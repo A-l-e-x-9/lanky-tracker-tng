@@ -1,12 +1,25 @@
+import { useShallow } from 'zustand/react/shallow'
 import CratePool from '@renderer/components/pools/Crates'
-import { useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
-import { useShuffle } from '@renderer/hooks/settings'
+import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
+import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useAnyKong, useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
-const ShuffledCrates: React.FC = () => {
+const Shuffle: React.FC = () => {
 const isBreathing = useAnyKong()
+const hasDK = useDk()
+const hasDiddy = useDiddy()
+const hasTiny = useTiny()
+const hasBoulderTech = useBoulderTech()
+const isHinaKagiyama = useTwirl()
+const hasJetbarrel = useRocket()
+const hasVines = useVine()
+const hasClimbing = useClimbing()
+const canReachAztecLobby = useIslesUpper()
+const canReachFungiLobby = useIslesFungiIsland()
+const canReachWaterfall = useIslesCrossFungi()
+const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canDoIslesArena1 = useSnideArena()
 const canDoIslesArena2 = useForestArena()
 const canDoIslesDirt1 = canReachFungiLobby
@@ -17,9 +30,6 @@ const canDoIslesDirt3OutLogic = canReachWaterfall.out
 const canDoIslesDirt4InLogic = canGetInCastleLobby.in && hasBoulderTech && useBalloon()
 const canDoIslesDirt4OutLogic = canGetInCastleLobby.out && (hasDiddy || hasTiny)
 const canDoIslesDirt5 = hasVines && hasClimbing
-const canReachFungiLobby = useIslesFungiIsland()
-const canReachWaterfall = useIslesCrossFungi()
-const canReachAztecLobby = useIslesUpper()
 const canReachFactoryLobby = useIslesKremAscent()
 const canReachHelmLobby = useIslesKremTop()
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
@@ -28,22 +38,19 @@ const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
-const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const hasClimbing = useClimbing()
-const isHinaKagiyama = useTwirl()
-const hasDK = useDk()
-const hasDiddy = useDiddy()
-const hasTiny = useTiny()
-const hasVines = useVine()
 const hasAGun = useAnyGun()
 const hasOranges = useOrange()
 const hasDiving = useDive()
 const canReachBFI = useCheckBFIInitial()
-const canReachRareBanana = useCheckBananaFairyIsle()
+const canGetRareBanana = useCheckBananaFairyIsle()
 const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]))
 const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8
-const hasBoulderTech = useBoulderTech()
+const canGetInAztecBack = useAztecLobbyChunky()
+const canGetInFactoryUpper = useFactoryLobbyUpper()
+const canGetInCavesKasplat = useCavesKasplat()
+const canGetInHelmChunky = useCheckChunkyHelm()
+const canGetInHelmDK = useHelmKasplat()
   return (
     <CratePool>
       <IslesCheck
@@ -581,5 +588,5 @@ const hasBoulderTech = useBoulderTech()
   )
 }
 
-const ShuffledCrates: React.FC = () => (useShuffle() ? <Shuffled /> : null)
+const ShuffledCrates: React.FC = () => (useShuffleCrates() ? <Shuffled /> : null)
 export default ShuffledCrates
