@@ -1,8 +1,8 @@
 import { useShallow } from 'zustand/react/shallow'
 import CratePool from '@renderer/components/pools/Crates'
-import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, useIslesKremTop, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
+import { useSnideArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, useIslesKremTop, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
 import { useShuffleCrates, useBananaport } from '@renderer/hooks/settings'
-import { useAnyKong, useDiddy, useTiny, useBoulderTech, useClimbing, useTwirl, useDk, useVine, useRocket, useBalloon, useStrong, useAnyGun } from '@renderer/hooks/kongs'
+import { useAnyKong, useDiddy, useTiny, useBoulderTech, useClimbing, useTwirl, useDk, useVine, useRocket, useBalloon, useStrong, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
@@ -65,7 +65,8 @@ const hasStrongKong = useStrong()
         id={20001}
         name="Shuffled Melon Crate: Where the Check of Legends 2 Battle Arena would spawn in vanilla"
         region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesArena2}
+        canGetLogic={canDoIslesArena2.in}
+        canGetBreak={canDoIslesArena2.out}
       />
       <IslesCheck
         id={20002}
@@ -92,7 +93,7 @@ const hasStrongKong = useStrong()
         name="Shuffled Melon Crate: Under Lanky's Castle Lobby barrel"
         region="Caves-Helm Lobbies"
         canGetLogic={canDoIslesDirt4InLogic}
-        canGetBreak={canDoIslesDirt4OUtLogic}
+        canGetBreak={canDoIslesDirt4OutLogic}
       />
       <IslesCheck
         id={20006}
@@ -251,7 +252,7 @@ const hasStrongKong = useStrong()
       <IslesCheck
         id={20031}
         name="Shuffled Melon Crate: On BFI"
-        region="OUter Isles"
+        region="Outer Isles"
         canGetLogic={isBreathing}
       />
       <IslesCheck
@@ -324,7 +325,7 @@ const hasStrongKong = useStrong()
       <IslesCheck
         id={20043}
         name="Shuffled Melon Crate: Vanilla Warp 5 at BFI"
-        region="OUter Isles"
+        region="Outer Isles"
         canGetLogic={isBreathing}
       />
       <IslesCheck
