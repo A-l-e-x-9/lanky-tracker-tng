@@ -1,15 +1,21 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket } from '@renderer/hooks/isles'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useAnyKong, useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
+import { useAnyKong, useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive, useRocket } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()
+const hasDK = useDk()
+const hasDiddy = useDiddy()
+const hasTiny = useTiny()
+const hasBoulderTech = useBoulderTech()
 const canDoIslesArena1 = useSnideArena()
 const canDoIslesArena2 = useForestArena()
+const canReachAztecLobby = useIslesUpper()
 const canReachFungiLobby = useIslesFungiIsland()
+const canReachWaterfall = useIslesCrossFungi()
 const canDoIslesDirt1 = canReachFungiLobby
 const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && useRocket()
 const canDoIslesDirt2OutLogic = ((canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny)) || (canReachWaterfall && (hasDK || isHinaKagiyama)))
@@ -18,8 +24,6 @@ const canDoIslesDirt3OutLogic = canReachWaterfall.out
 const canDoIslesDirt4InLogic = canGetInCastleLobby.in && hasBoulderTech && useBalloon()
 const canDoIslesDirt4OutLogic = canGetInCastleLobby.out && (hasDiddy || hasTiny)
 const canDoIslesDirt5 = hasVines && hasClimbing
-const canReachWaterfall = useIslesCrossFungi()
-const canReachAztecLobby = useIslesUpper()
 const canReachFactoryLobby = useIslesKremAscent()
 const canReachHelmLobby = useIslesKremTop()
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
@@ -32,9 +36,6 @@ const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
 const hasClimbing = useClimbing()
 const isHinaKagiyama = useTwirl()
-const hasDK = useDk()
-const hasDiddy = useDiddy()
-const hasTiny = useTiny()
 const hasVines = useVine()
 const hasAGun = useAnyGun()
 const hasOranges = useOrange()
@@ -43,7 +44,6 @@ const canReachBFI = useCheckBFIInitial()
 const canReachRareBanana = useCheckBananaFairyIsle()
 const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]))
 const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8
-const hasBoulderTech = useBoulderTech()
   return (
     <ArenaPool>
       <IslesCheck
