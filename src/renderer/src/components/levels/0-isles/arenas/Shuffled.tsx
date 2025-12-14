@@ -567,5 +567,5 @@ const hasBoulderTech = useBoulderTech()
   )
 }
 
-const ShuffledArenas: React.FC = () => (useShuffle() ? <Shuffled /> : null)
+const ShuffledArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
 export default ShuffledArenas
