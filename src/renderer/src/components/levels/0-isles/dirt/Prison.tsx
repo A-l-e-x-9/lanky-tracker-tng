@@ -14,7 +14,7 @@ const PrisonDirt: React.FC = () => {
           region="K. Rool's Island"
           canGetLogic={dirt}
         />
-      </VanillaDirt>{' '}
+      </VanillaDirt>
     </RainbowCoinPool>
   )
 }

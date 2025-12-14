@@ -25,6 +25,9 @@ import PrisonChecks from './Prison'
 import SnideRoomChecks from './SnideRoom'
 import TrainingGroundsChecks from './TrainingGrounds'
 import FairyReward from '../fairies/FairyReward'
+import ShuffledArenas from '../arenas/Shuffled'
+import ShuffledCrates from '../crates/Shuffled'
+import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 
 const IslesRegionChecks: React.FC = () => (
