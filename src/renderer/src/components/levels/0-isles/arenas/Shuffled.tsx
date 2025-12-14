@@ -20,6 +20,12 @@ const canReachFactoryLobby = useIslesKremAscent()
 const canReachHelmLobby = useIslesKremTop()
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
 const canGetInAztecLobby = usePlayLobby('Angry Aztec')
+const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
+const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
+const canGetInForestLobby = usePlayLobby('Fungi Forest')
+const canGetInCavesLobby = usePlayLobby('Crystal Caves')
+const canGetInCastleLobby = usePlayLobby('Creepy Castle')
+const canGetInHelmLobby = usePlayLobby('Hideout Helm')
   return (
     <Pool>
       <IslesCheck
@@ -323,101 +329,117 @@ const canGetInAztecLobby = usePlayLobby('Angry Aztec')
         canGetLogic={canGetInAztecLobby.in}
         canGetBreak={canGetInAztecLobby.out}
       />
-/*      <IslesCheck
-        id={00000}
+      <IslesCheck
+        id={00048}
         name="Left side of the Aztec Lobby back room"
         region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesArena1}
+        canGetLogic={canGetInAztecLobby.in}
+        canGetBreak={canGetInAztecLobby.out}
       />
       <IslesCheck
-        id={00001}
+        id={00049}
         name="Near the Grab lever in Factory Lobby"
         region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesArena2}
+        canGetLogic={canGetInFactoryLobby.in}
+        canGetBreak={canGetInFactoryLobby.out}
       />
       <IslesCheck
-        id={00002}
+        id={00050}
         name="On a Factory Lobby high platform"
         region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesDirt1}
+        canGetLogic={canGetInFactoryLobby.in}
+        canGetBreak={canGetInFactoryLobby.out}
       />
       <IslesCheck
-        id={00003}
+        id={00051}
         name="Over the Factory DK Portal"
         region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesDirt2}
+        canGetLogic={canGetInFactoryLobby.in}
+        canGetBreak={canGetInFactoryLobby.out}
       />
       <IslesCheck
-        id={00004}
+        id={00052}
         name="To the right of the Galleon DK Portal"
         region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesDirt3}
+        canGetLogic={canGetInGalleonLobby.in}
+        canGetBreak={canGetInGalleonLobby.out}
       />
       <IslesCheck
-        id={00005}
+        id={00053}
         name="To the left of the Galleon DK Portal"
         region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesDirt4}
+        canGetLogic={canGetInGalleonLobby.in}
+        canGetBreak={canGetInGalleonLobby.out}
       />
       <IslesCheck
-        id={00006}
+        id={00054}
         name="Galleon Lobby Mini Monkey room"
         region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesDirt5}
+        canGetLogic={canGetInGalleonLobby.in}
+        canGetBreak={canGetInGalleonLobby.out}
       />
       <IslesCheck
-        id={00007}
+        id={00055}
         name="On the Tag Barrel crate in Forest Lobby"
         region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesDirt6}
+        canGetLogic={canGetInForestLobby.in}
+        canGetBreak={canGetInForestLobby.out}
       />
       <IslesCheck
-        id={00008}
+        id={00056}
         name="Somehow not frying in the Caves Lobby lava room"
         region="Caves-Helm Lobbies"
-        canGetLogic={canDoIslesDirt7}
+        canGetLogic={canGetInCavesLobby.in}
+        canGetBreak={canGetInCavesLobby.out}
       />
       <IslesCheck
-        id={00009}
+        id={00057}
         name="To the right of the Caves DK Portal"
         region="Caves-Helm Lobbies"
-        canGetLogic={canReachFungiLobby}
+        canGetLogic={canGetInCavesLobby.in}
+        canGetBreak={canGetInCavesLobby.out}
       />
       <IslesCheck
-        id={00010}
+        id={00058}
         name="Diddy's ledge in Caves Lobby"
         region="Caves-Helm Lobbies"
-        canGetLogic={canReachFungiLobby}
+        canGetLogic={canGetInCavesLobby.in}
+        canGetBreak={canGetInCavesLobby.out}
       />
       <IslesCheck
-        id={00011}
+        id={00059}
         name="Caves Lobby boulder room"
         region="Caves-Helm Lobbies"
-        canGetLogic={canReachWaterfall}
+        canGetLogic={canGetInCavesLobby.in}
+        canGetBreak={canGetInCavesLobby.out}
       />
       <IslesCheck
-        id={00012}
+        id={00060}
         name="Behind Castle Lobby entrance"
         region="Caves-Helm Lobbies"
-        canGetLogic={isBreathing}
+        canGetLogic={canGetInCastleLobby.in}
+        canGetBreak={canGetInCastleLobby.out}
       />
       <IslesCheck
-        id={00013}
+        id={00061}
         name="To the right of the Castle Lobby entrance"
         region="Caves-Helm Lobbies"
-        canGetLogic={isBreathing}
+        canGetLogic={canGetInCastleLobby.in}
+        canGetBreak={canGetInCastleLobby.out}
       />
       <IslesCheck
-        id={00014}
+        id={00062}
         name="To the left of the Castle DK Portal"
         region="Caves-Helm Lobbies"
-        canGetLogic={isBreathing}
+        canGetLogic={canGetInCastleLobby.in}
+        canGetBreak={canGetInCastleLobby.out}
       />
       <IslesCheck
-        id={00015}
+        id={00063}
         name="Next to the Helm Lobby Tag Barrel"
         region="Caves-Helm Lobbies"
-        canGetLogic={hasKey4}
+        canGetLogic={canGetInHelmLobby.in}
+        canGetBreak={canGetInHelmLobby.out}
       />
 /*      <IslesCheck
         id={00000}
