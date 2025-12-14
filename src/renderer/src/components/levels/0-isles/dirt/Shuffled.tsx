@@ -1,11 +1,12 @@
-import DirtPool from '@renderer/components/pools/Dirt'
+import { useShallow } from 'zustand/react/shallow'
+import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useGeneralDirt, useSnideArena, useForestArena, useIslandDirt, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
-import { useShuffle } from '@renderer/hooks/settings'
+import { useShuffleDirt } from '@renderer/hooks/settings'
 import { useClimbing, useTwirl, useDk, useVine, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 
-const ShuffledDirt: React.FC = () => {
+const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const canDoIslesArena1 = useSnideArena()
 const canDoIslesArena2 = useForestArena()
@@ -581,5 +582,5 @@ const hasBoulderTech = useBoulderTech()
   )
 }
 
-const ShuffledDirt: React.FC = () => (useShuffle() ? <Shuffled /> : null)
+const ShuffledDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
 export default ShuffledDirt
