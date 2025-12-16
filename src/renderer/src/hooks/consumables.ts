@@ -35,7 +35,7 @@ export const useCurrentBlueprintCount = (): number =>
   useDonkStore(useShallow((state) => (state.consumables.dkBp + state.consumables.diddyBp + state.consumables.lankyBp + state.consumables.tinyBp + state.consumables.chunkyBp)))
   
 export const useCurrentCoCoinCount = (): number =>
-  useDonkStore(useShallow((state) => (state.consumables.nintendoCoin + state.consumables.rareCoin)))
+  useDonkStore(useShallow((state) => (Number(state.consumables.nintendoCoin) + Number(state.consumables.rareCoin))))
 
 export const useCurrentKeyCount = (): number =>
   useDonkStore(useShallow((state) => (state.setKey.key1 + state.setKey.key2 + state.setKey.key3 + state.setKey.key4 + state.setKey.key5 + state.setKey.key6 + state.setKey.key7 + state.setKey.key8)))
