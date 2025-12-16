@@ -38,7 +38,7 @@ export const useCurrentCoCoinCount = (): number =>
   useDonkStore(useShallow((state) => (Number(state.consumables.nintendoCoin) + Number(state.consumables.rareCoin))))
 
 export const useCurrentKeyCount = (): number =>
-  useDonkStore(useShallow((state) => (state.setKey.key1 + state.setKey.key2 + state.setKey.key3 + state.setKey.key4 + state.setKey.key5 + state.setKey.key6 + state.setKey.key7 + state.setKey.key8)))
+  useDonkStore(useShallow((state) => (Number(state.key1) + Number(state.key2) + Number(state.key3) + Number(state.key4) + Number(state.key5) + Number(state.key6) + Number(state.key7) + Number(state.key8))))
 
 export const useCurrentCrownCount = (): number =>
   useDonkStore(useShallow((state) => state.consumables.crowns))
