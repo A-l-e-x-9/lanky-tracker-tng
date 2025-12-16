@@ -10298,7 +10298,11 @@ const initialSettings = {
     poolBoulders: true,
     betaLankyPhase: false,
     waterIsLava: false,
-    angyKosha: false
+    angyKosha: false,
+    helmItem1: 6,
+    helmItemNum1: 4,
+    helmItem2: 3,
+    helmItemNum2: 2
   }
 };
 const settingSlice = (set) => {
@@ -10518,6 +10522,10 @@ const usePoolKongs = () => useDonkStore(useShallow((state) => state.settings.poo
 const usePoolGoldBananas = () => useDonkStore(useShallow((state) => state.settings.poolGoldBananas));
 const useBetaLankyPhase = () => useDonkStore(useShallow((state) => state.settings.betaLankyPhase));
 const useAngryCaves = () => useDonkStore(useShallow((state) => state.settings.angyKosha));
+const useHelmItem1 = () => useDonkStore(useShallow((state) => state.settings.helmItem1));
+const useHelmItem2 = () => useDonkStore(useShallow((state) => state.settings.helmItem2));
+const useHelmItemNum1 = () => useDonkStore(useShallow((state) => state.settings.helmItemNum1));
+const useHelmItemNum2 = () => useDonkStore(useShallow((state) => state.settings.helmItemNum2));
 const BananaMedalPool = ({ children }) => usePoolBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const IslesMedalPool = ({ children }) => useIslesBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const ArenaPool = ({ children }) => usePoolCrowns() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -10527,6 +10535,11 @@ const useCurrentPearlCount = () => useDonkStore(useShallow((state) => state.cons
 const useCurrentFairyCount = () => useDonkStore(useShallow((state) => state.consumables.fairies));
 const useBean = () => useDonkStore(useShallow((state) => state.consumables.bean));
 const useCurrentGBCount = () => useDonkStore(useShallow((state) => state.consumables.goldBananas));
+const useCurrentBlueprintCount = () => useDonkStore(useShallow((state) => state.consumables.dkBp + state.consumables.diddyBp + state.consumables.lankyBp + state.consumables.tinyBp + state.consumables.chunkyBp));
+const useCurrentCoCoinCount = () => useDonkStore(useShallow((state) => Number(state.consumables.nintendoCoin) + Number(state.consumables.rareCoin)));
+const useCurrentKeyCount = () => useDonkStore(useShallow((state) => Number(state.key1) + Number(state.key2) + Number(state.key3) + Number(state.key4) + Number(state.key5) + Number(state.key6) + Number(state.key7) + Number(state.key8)));
+const useCurrentCrownCount = () => useDonkStore(useShallow((state) => state.consumables.crowns));
+const useCurrentRainbowCoinCount = () => useDonkStore(useShallow((state) => state.consumables.rainbowCoins));
 const useFastArcade = () => useDonkStore(useShallow((state) => state.fastChecks.factoryArcade));
 const useFastMermaid = () => useDonkStore(useShallow((state) => state.fastChecks.galleonMermaid));
 const useDk = () => {
@@ -29055,7 +29068,7 @@ const ChunkyIgloo = () => {
     CavesCheck,
     {
       id: 6042,
-      name: `Chunky's Damn 5 Door Igloo Room (target of the "Kill the Wabbit" win condition)`,
+      name: "Chunky's 5-Door Igloo Room (with that damn rabbit)",
       region: "Caves Igloo",
       canGetLogic: thatFuckingRabbit.in,
       canGetBreak: thatFuckingRabbit.out
@@ -32629,6 +32642,150 @@ const useHelmDoors = () => {
     out: (inLevel.in || inLevel.out) && entry && machine.out && grab && rocket && punch
   };
 };
+const useEOHDoor1 = () => {
+  const canReachNavRoom = useHelmDoors();
+  const itemNeeded = useHelmItem1();
+  const targetItemCount = useHelmItemNum1();
+  const currentGBCount = useCurrentGBCount();
+  const currentBlueprintCount = useCurrentBlueprintCount();
+  const currentCoCoinCount = useCurrentCoCoinCount();
+  const currentKeyCount = useCurrentKeyCount();
+  const currentBananaMedalCount = useCurrentBananaMedalCount();
+  const currentCrownCount = useCurrentCrownCount();
+  const currentFairyCount = useCurrentFairyCount();
+  const currentRainbowCoinCount = useCurrentRainbowCoinCount();
+  const currentBeanCount = useBean();
+  const currentPearlCount = useCurrentPearlCount();
+  switch (itemNeeded) {
+    case 1:
+      return {
+        in: canReachNavRoom.in && currentGBCount >= targetItemCount,
+        out: canReachNavRoom.out && currentGBCount >= targetItemCount
+      };
+    case 2:
+      return {
+        in: canReachNavRoom.in && currentBlueprintCount >= targetItemCount,
+        out: canReachNavRoom.out && currentBlueprintCount >= targetItemCount
+      };
+    case 3:
+      return {
+        in: canReachNavRoom.in && currentCoCoinCount >= targetItemCount,
+        out: canReachNavRoom.out && currentCoCoinCount >= targetItemCount
+      };
+    case 4:
+      return {
+        in: canReachNavRoom.in && currentKeyCount >= targetItemCount,
+        out: canReachNavRoom.out && currentKeyCount >= targetItemCount
+      };
+    case 5:
+      return {
+        in: canReachNavRoom.in && currentBananaMedalCount >= targetItemCount,
+        out: canReachNavRoom.out && currentBananaMedalCount >= targetItemCount
+      };
+    case 6:
+      return {
+        in: canReachNavRoom.in && currentCrownCount >= targetItemCount,
+        out: canReachNavRoom.out && currentCrownCount >= targetItemCount
+      };
+    case 7:
+      return {
+        in: canReachNavRoom.in && currentFairyCount >= targetItemCount,
+        out: canReachNavRoom.out && currentFairyCount >= targetItemCount
+      };
+    case 8:
+      return {
+        in: canReachNavRoom.in && currentRainbowCoinCount >= targetItemCount,
+        out: canReachNavRoom.out && currentRainbowCoinCount >= targetItemCount
+      };
+    case 9:
+      return {
+        in: canReachNavRoom.in && Number(currentBeanCount) >= targetItemCount,
+        out: canReachNavRoom.out && Number(currentBeanCount) >= targetItemCount
+      };
+    case 10:
+      return {
+        in: canReachNavRoom.in && currentPearlCount >= targetItemCount,
+        out: canReachNavRoom.out && currentPearlCount >= targetItemCount
+      };
+    default:
+      return {
+        in: canReachNavRoom.in,
+        out: canReachNavRoom.out
+      };
+  }
+};
+const useEOHDoor2 = () => {
+  const canReachNavRoom = useHelmDoors();
+  const itemNeeded = useHelmItem2();
+  const targetItemCount = useHelmItemNum2();
+  const currentGBCount = useCurrentGBCount();
+  const currentBlueprintCount = useCurrentBlueprintCount();
+  const currentCoCoinCount = useCurrentCoCoinCount();
+  const currentKeyCount = useCurrentKeyCount();
+  const currentBananaMedalCount = useCurrentBananaMedalCount();
+  const currentCrownCount = useCurrentCrownCount();
+  const currentFairyCount = useCurrentFairyCount();
+  const currentRainbowCoinCount = useCurrentRainbowCoinCount();
+  const currentBeanCount = useBean();
+  const currentPearlCount = useCurrentPearlCount();
+  switch (itemNeeded) {
+    case 1:
+      return {
+        in: canReachNavRoom.in && currentGBCount >= targetItemCount,
+        out: canReachNavRoom.out && currentGBCount >= targetItemCount
+      };
+    case 2:
+      return {
+        in: canReachNavRoom.in && currentBlueprintCount >= targetItemCount,
+        out: canReachNavRoom.out && currentBlueprintCount >= targetItemCount
+      };
+    case 3:
+      return {
+        in: canReachNavRoom.in && currentCoCoinCount >= targetItemCount,
+        out: canReachNavRoom.out && currentCoCoinCount >= targetItemCount
+      };
+    case 4:
+      return {
+        in: canReachNavRoom.in && currentKeyCount >= targetItemCount,
+        out: canReachNavRoom.out && currentKeyCount >= targetItemCount
+      };
+    case 5:
+      return {
+        in: canReachNavRoom.in && currentBananaMedalCount >= targetItemCount,
+        out: canReachNavRoom.out && currentBananaMedalCount >= targetItemCount
+      };
+    case 6:
+      return {
+        in: canReachNavRoom.in && currentCrownCount >= targetItemCount,
+        out: canReachNavRoom.out && currentCrownCount >= targetItemCount
+      };
+    case 7:
+      return {
+        in: canReachNavRoom.in && currentFairyCount >= targetItemCount,
+        out: canReachNavRoom.out && currentFairyCount >= targetItemCount
+      };
+    case 8:
+      return {
+        in: canReachNavRoom.in && currentRainbowCoinCount >= targetItemCount,
+        out: canReachNavRoom.out && currentRainbowCoinCount >= targetItemCount
+      };
+    case 9:
+      return {
+        in: canReachNavRoom.in && Number(currentBeanCount) >= targetItemCount,
+        out: canReachNavRoom.out && Number(currentBeanCount) >= targetItemCount
+      };
+    case 10:
+      return {
+        in: canReachNavRoom.in && currentPearlCount >= targetItemCount,
+        out: canReachNavRoom.out && currentPearlCount >= targetItemCount
+      };
+    default:
+      return {
+        in: canReachNavRoom.in,
+        out: canReachNavRoom.out
+      };
+  }
+};
 const useCanDeactivateHelm = () => {
   const allMusic2 = useAllMusic();
   const rocket = useRocket();
@@ -32663,7 +32820,8 @@ const useCanFightRool = () => {
   const check5 = useSingleRoolCheck(5);
   if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
     return {
-      in: false
+      in: false,
+      out: false
     };
   }
   return {
@@ -32701,13 +32859,15 @@ const BlastArena = () => {
 };
 const BossCheck = () => {
   const helmDoors = useHelmDoors();
+  const canGetPastDoor1 = useEOHDoor1();
+  const canGetPastDoor2 = useEOHDoor2();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BossPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     HelmCheck,
     {
       id: 8105,
       name: "The End of Helm",
-      canGetLogic: helmDoors.in,
-      canGetBreak: helmDoors.out
+      canGetLogic: helmDoors.in && canGetPastDoor1.in && canGetPastDoor2.in,
+      canGetBreak: helmDoors.out && canGetPastDoor2.out && canGetPastDoor2.out
     }
   ) });
 };
@@ -32916,6 +33076,8 @@ const EnemyLocations = () => {
 };
 const EndOfHelmFairies = () => {
   const helmDoors = useHelmDoors();
+  const canGetPastDoor1 = useEOHDoor1();
+  const canGetPastDoor2 = useEOHDoor2();
   const camera = useCamera();
   const anyKong = useAnyKong();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
@@ -32924,8 +33086,8 @@ const EndOfHelmFairies = () => {
       {
         id: 8110,
         name: "Fairy 1 in Key 8's room",
-        canGetLogic: helmDoors.in && camera && anyKong,
-        canGetBreak: helmDoors.out && camera && anyKong
+        canGetLogic: helmDoors.in && canGetPastDoor1.in && canGetPastDoor2.in && camera && anyKong,
+        canGetBreak: helmDoors.out && canGetPastDoor1.out && camera && anyKong
       }
     ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -32933,8 +33095,8 @@ const EndOfHelmFairies = () => {
       {
         id: 8111,
         name: "Fairy 2 in Key 8's room",
-        canGetLogic: helmDoors.in && camera && anyKong,
-        canGetBreak: helmDoors.out && camera && anyKong
+        canGetLogic: helmDoors.in && canGetPastDoor1.in && canGetPastDoor2.in && camera && anyKong,
+        canGetBreak: helmDoors.out && canGetPastDoor1.out && camera && anyKong
       }
     ) })
   ] });
@@ -32968,6 +33130,8 @@ const Shuffled = () => {
   const hasOStand = useStand();
   const canEnterHelm = usePlayHelm();
   const canReachEndOfHelm = useHelmDoors();
+  const canGetPastDoor1 = useEOHDoor1();
+  const canGetPastDoor2 = useEOHDoor2();
   const canReachBlastOMatic = useHelmMachine();
   const hasJetbarrel = useRocket();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
@@ -32977,8 +33141,8 @@ const Shuffled = () => {
         id: 48e3,
         name: "Shuffled Fairy: Vanilla Location #1 (Key 8 room)",
         region: "Hideout Helm",
-        canGetLogic: canReachEndOfHelm.in && hasCam,
-        canGetBreak: canReachEndOfHelm.out && hasCam
+        canGetLogic: canReachEndOfHelm.in && canGetPastDoor1.in && canGetPastDoor2.in && hasCam,
+        canGetBreak: canReachEndOfHelm.out && canGetPastDoor1.out && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -32987,8 +33151,8 @@ const Shuffled = () => {
         id: 48001,
         name: "Shuffled Fairy: Vanilla Location #2 (also Key 8 room)",
         region: "Hideout Helm",
-        canGetLogic: canReachEndOfHelm.in && hasCam,
-        canGetBreak: canReachEndOfHelm.out && hasCam
+        canGetLogic: canReachEndOfHelm.in && canGetPastDoor1.in && canGetPastDoor2.in && hasCam,
+        canGetBreak: canReachEndOfHelm.out && canGetPastDoor1.out && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -33176,9 +33340,9 @@ const slamName = (num) => {
       return "Simian Slam";
   }
 };
-const clamp$2 = (num) => Math.min(Math.max(num, 0), 3);
-const nextSlam = (num) => clamp$2(num + 1);
-const prevSlam = (num) => clamp$2(num - 1);
+const clamp$3 = (num) => Math.min(Math.max(num, 0), 3);
+const nextSlam = (num) => clamp$3(num + 1);
+const prevSlam = (num) => clamp$3(num - 1);
 const SlamSelector = () => {
   const [slam, setSlam] = useDonkStore(useShallow((state) => [state.moves.slam, state.setSlam]));
   const handleNextLevel = () => {
@@ -33242,7 +33406,7 @@ const KRoolSlamSelector = () => {
   ) });
 };
 const gbIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAsCAMAAADcpCGDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAv1QTFRFSDYA//8AWEQAdlgA////ZEoAaVIAmXYAMyUA/94A/+8A//cBjGsApXsA/84A//6J/9YAhGMA//4k//8UqoQA//6ZlWsA/8YAs4wA//53//9X//81//65zpQA/+cAvYwAtYQA//7ZzpwA///rxpQArXsA//+q2JwB//8I3LcA77UAu5QA970AemMA//9KxowA///K//9jxZwA7MoAjWMA1qUA/70Ap5cA3q0A560A770Ay6UA//9C//9r3qUA98YA570ApXMA/84L57UA/to1/us1/tol///31a0A/+1X9NYA/scV3JkU15QG/dgWtngA984A+9l0/sok/70Mv4QAc0oA/9tI760ApI0E55wP97UAxr4Ag2sA/+0TumxL49wA56Ymi3UA//dM/dtW/upp/t4KhloEyYUO0IwF97UN/usl56UA2Zgq3MoE6qUTpqUB/+p3//c7wq8FQywa/9YIglge9+8A/+xI+K0Eakg8+49z9d4B9+cA/ecOmYgA/uyKvXsN/+8I+6+N//cV884O/7cW//dtEFwS56UI/8YI8KUJ7KhA+9ST/syy8K0tk2gf/++59K0V/vdhlm02Y0ce/M428GxZ87hRmmVT0owXXTYv6ckVF5Ezpd5l8rZtlqWNESZW+rgk0JBU77Y3/7UA/cxG9tYK770K/7UId59ZChCCA70K760J/OyY470LlD419/cAmXMN0sqrkExBr4mJ7LUR9MYL6ecCRyZS7cpC/eqr3LcSYWdpQGYuQqG484xQCxTVrXMA/9rIFpxU970+1KGG560ODU+fxpQQe0od3qUI76UAzrIx1qpg57UIuN6qh1CU68YlxHslqokhwohzYKcO7NYV78Y5FV5U3q0LqKI0zrVPVm8I0rUd8//eUjnO77kl8rioQnOcedmB970IyZwLWjalUmfSqXcY26UVnZBTStJCxq3OvYQM1qUIjGsQqWsA9+/G1sM0/8xd/+/n5+f3e18279Yp1rW1/+fWtYwQjNbWhGMIxpQIAAAANnrqQwAAAP90Uk5T//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AZvyKWQAAAiBJREFUeNpi+EcIMKBytU0JqLDOttLGq4JdS8eCDa8KK3stbby2GG1rscLr0jr5i27n8KqwTp+QxItPRZn/PJa17HhUcDu8/cKihseMeK+DZ1lYZJbhVFFUo39wE1CFGU4VclamOYosLGszzXGo0BaQk3ORUVQMrBDBocJZh5u7kF9NJjDPC7sKZiUlAU5pQ37RlA4+7CrYFVRNLYT0bCU98zixqxBj51VQECqUMvT0ETfHqqKUnZ1XVVjIRkovhw+7is2laSZAFdJ6Un3icthVzJjcz8sNMuR6BydWFTM2x/WLVQMNkSr3wbAGrKJy/YxSk2gNYSE9qcUrOLGpmFU5pZStCKTCNnkiuiGQMGVgYw1lBqqwseU/0smJVQUzM3OokIawtK0af5AANzYVrEAlPEBDpNQU+Vs5ubHEPhMbG7OghrCwDb+yu6g3ihKoCg6oEiFDGRYWNTcB7miMVAhUwpxmDjTE1oCFRTHMiYsRIyUzgJTkA70jCVSizB/EyRWNnhtAFumeAQYsSAmLYoEf1DVIOQqohJVtMlCJrZoyUI1Bip8cF1q+5WBiYmJlcxWW1pOUAamR8fQWQMv7QCUMTLpFoHRgKypjoKgm6emHXgYxsDIxhSZqNgsLZbna6CUlSYWxM6AnByZWVlYebc0SIEhNTS3Z9o8BSyZjZYuRMPLw8LCw8tD+h00FyD2suokiIonMWMpCwqXlgKkACDAAt/Uws1o1F4UAAAAASUVORK5CYII=";
-const bananaMedalIcon$1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHUUExURaOQMe/IFuvHOb2jPei6OPvSbcqZAee6FHhlADEbAE85AJh1FNaxREYxALyLFtm3IMiKEphoAVhDAEYlALiIAcyXFHY5AJhWAN57E71rENVzCtZzGMp3ENZ7CqloFJdGAKpWAMtmAuh7EeqEE95zCtuGIog1AOd7CJJSCqlHAdNrCN57CPCMDOaECL1aC7toAMh1APiLGd5zAIhGAPCECGMxANZrAJp1AWs5ANZzALlWAaqGAKlnAIdYAad2AfzrWVUnAP/8jP/va7dKAclYAeq6Af/9V///2v3IFpc2AGtSAP/+JP/+vfvaPsiJAe+MAK80Af//C//9dv/gTOmrAVoxAFIxAPqJAOeEAHklAGdGALh4AP/9Q/etAFo5AO+EAP/nDP/tFf3MJvfGAKeXAXhEAN57AP/eAPC1BammAXhWAOd7AIplAdyoAf7OC//GCPKtCP/nAPfOAP+9Cv/3APO9CPLWAPfnAP/vAP/WALqWAP/OAP/eD9qXAP/3CuzKAPfvAP/WCNF7ANu6APyZAOTcAF9SCNmHAP+lAJiGBOeMAP+tAP+1AO97AP+9AOplAGQoAMmnAf/GANpIAe9zAN5rANxVAPp4AP//AOfnANXIAQAAABNOIP4AAACcdFJOU///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AL9nXxsAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAW0SURBVGhD7Zj7VxJbFIDrVpNYljxCwgzGSCMjCAniZRZSWSlaFIQ9TApUJMPIeFQWYlaalqX31vyzd+9hgzws6/7AsPR+a7k4s/dhPtae8xp3cFVge0t27PjDb9WkZOfOv/7atWvX7t179lDkN6hBCcPs3VtXJxKJ6uv37du/n6Kbsj0lDQ0Mc+AAXdTXHzxIzU2pQUljo1hMFxJJYyM1N6XmJFKpTFYkOXSImptSWxK5XN7U1NioUBw+rFQqm5uPHGlpOXqUkptQKxKVSq1m2dbW1mPHFAqNRpHnWI7jxzd11YakrU2jaW8HBaLRKJUKBd8kRZ4TJ6j/RmwPiVarPQloNB1Ae3s7PpHmZl6C9z0F8IIcCgV9rRKBJXI5y7I6XUcH1ignAjSa06f1ej3LGgwoOXPmDH4gvIm+W4agEpXKaNQhOQkPy1Iyj0jU2dnZ0oIi/DOZTBvXTEDJ2bNmM1Und3+1mjKIxWKhFiISnTun0xXGQGsrxYsQTKJSsazVajRarVaz+eRJm43ieex2e2FbQeD0IlIqTSYoLlTM5HBQvMAWlkilUlzZzWY0gKLkaeRoaGiw251OukLyGh6djqIFhJHANgszHSSosTY1UbgYkHR1nT9PVzlQQ+UymcqXZCEk3d1qLFZOAmsUhUuRSCQy2YULFy/SdQ7UiDo6UFReMCEkcrnL5erpyUkoVgFI3O5Lly5fvnKFIohUShJckptK6lx9iUjU2wsSmw0lKhVFK7h69SrDXLt2/XpfX39/PwVx7Eul3d2nTnk820QilQ4MkKRigyoCJDLZ4OCNGzdver1eCsIvvHXr1u3bHo/P5/H4/X4KI9WX3Lmj1ZLk58WSSAKBwNDQ4ODdu3199+7dW1+QIX7/vsHg8Tx4ILSkt7cgocgGSCRQrqGh4eGHD0dGgsHgo0eU4B4/fhwIOBwPgFAoREFEGAmAGopsQCAAkv7+cHhkZHQ0HA6PjVGCczqd4+N6PZTKH4lEKIhUX8IrtNqBgZ8/do6bmBCLxdHokyeTk0+fxmKxEonTqdeDIPKLclVF4nINDIDE5ZLLKVKBxdLVBWvJ1NTk5LNnXm88HqcElBHWEqeTZUEQKp3MW1Ris8EsQdraKFKGxRIMTk253e5w+Plzr9ftnp6ephQ8EZCIxXq90RgKwSZOYaT6EpwgPHRdht3+4kUikUwmEolgMBplGLebMgiMObHY4cDzrdFIMaL6EputpwcULLvB2TSVSsXjsVg6nUi8fPkyGn31imG6uijJcVgph8NhMGCxSiYJIIQEt0TY361WiuSZnobBGg4nk69fz8xEo9HRUZlsYoKSOHzF4qYmkFitoVAkUr6IV1+iVmMn6OX3d3ZSjOPq6t68SSTS6fTbt8PDbjfDwLhlmPFxSiMweEGRyWRw3fL7S44qwBaVcFwkAnsnnmoKm47FEg4Hg/zcnp1lmNnZqSmZTCaRUBqBZwHo9fT7yseWMBK/3+fzZXloiKRSOLcZBobUzMzcXCr17h0fLzA/n8no9QYAZjpqiipNCCHJZHjBe8DngymDMYvFbof5nkp9+FAu4PjeHz/Oz4dCuGSBZKO3MyEkHLeQYxH49OnTr85GQ0PZLN8XRR4Pjl44QFCyBGEksIEvrbO83NPz+TOlivjyZWXl/Xu+rouL2MhmfT4Y/ZX/V0G2sATwemGhyrO8/PXr8vK3b6urqyyLh4zVVbhzLBYOLy1BAyULC/iZzcJUoTuUIZiE45JJOK7nGR1dW/sbyWZzRqjN4mIslkyuIEtLqFlYWH8PrkBACcfNzMDBB4FtF0inceIs+nxra2YzLG8rK/g7kkmoZ05TdKaoRFAJx83N/VNBPE7qRAIfPS9Jp9ff5X+CwBIeunkxufqBDTVw9qaev6IWJBw3Nvb9O92+hETixw/qsinbSFLED571V+rfpuYk/5n/JX9EFSQc9y/Ls1G0Pmf+zwAAAABJRU5ErkJggg==";
+const medalIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHUUExURaOQMe/IFuvHOb2jPei6OPvSbcqZAee6FHhlADEbAE85AJh1FNaxREYxALyLFtm3IMiKEphoAVhDAEYlALiIAcyXFHY5AJhWAN57E71rENVzCtZzGMp3ENZ7CqloFJdGAKpWAMtmAuh7EeqEE95zCtuGIog1AOd7CJJSCqlHAdNrCN57CPCMDOaECL1aC7toAMh1APiLGd5zAIhGAPCECGMxANZrAJp1AWs5ANZzALlWAaqGAKlnAIdYAad2AfzrWVUnAP/8jP/va7dKAclYAeq6Af/9V///2v3IFpc2AGtSAP/+JP/+vfvaPsiJAe+MAK80Af//C//9dv/gTOmrAVoxAFIxAPqJAOeEAHklAGdGALh4AP/9Q/etAFo5AO+EAP/nDP/tFf3MJvfGAKeXAXhEAN57AP/eAPC1BammAXhWAOd7AIplAdyoAf7OC//GCPKtCP/nAPfOAP+9Cv/3APO9CPLWAPfnAP/vAP/WALqWAP/OAP/eD9qXAP/3CuzKAPfvAP/WCNF7ANu6APyZAOTcAF9SCNmHAP+lAJiGBOeMAP+tAP+1AO97AP+9AOplAGQoAMmnAf/GANpIAe9zAN5rANxVAPp4AP//AOfnANXIAQAAABNOIP4AAACcdFJOU///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AL9nXxsAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAW0SURBVGhD7Zj7VxJbFIDrVpNYljxCwgzGSCMjCAniZRZSWSlaFIQ9TApUJMPIeFQWYlaalqX31vyzd+9hgzws6/7AsPR+a7k4s/dhPtae8xp3cFVge0t27PjDb9WkZOfOv/7atWvX7t179lDkN6hBCcPs3VtXJxKJ6uv37du/n6Kbsj0lDQ0Mc+AAXdTXHzxIzU2pQUljo1hMFxJJYyM1N6XmJFKpTFYkOXSImptSWxK5XN7U1NioUBw+rFQqm5uPHGlpOXqUkptQKxKVSq1m2dbW1mPHFAqNRpHnWI7jxzd11YakrU2jaW8HBaLRKJUKBd8kRZ4TJ6j/RmwPiVarPQloNB1Ae3s7PpHmZl6C9z0F8IIcCgV9rRKBJXI5y7I6XUcH1ignAjSa06f1ej3LGgwoOXPmDH4gvIm+W4agEpXKaNQhOQkPy1Iyj0jU2dnZ0oIi/DOZTBvXTEDJ2bNmM1Und3+1mjKIxWKhFiISnTun0xXGQGsrxYsQTKJSsazVajRarVaz+eRJm43ieex2e2FbQeD0IlIqTSYoLlTM5HBQvMAWlkilUlzZzWY0gKLkaeRoaGiw251OukLyGh6djqIFhJHANgszHSSosTY1UbgYkHR1nT9PVzlQQ+UymcqXZCEk3d1qLFZOAmsUhUuRSCQy2YULFy/SdQ7UiDo6UFReMCEkcrnL5erpyUkoVgFI3O5Lly5fvnKFIohUShJckptK6lx9iUjU2wsSmw0lKhVFK7h69SrDXLt2/XpfX39/PwVx7Eul3d2nTnk820QilQ4MkKRigyoCJDLZ4OCNGzdver1eCsIvvHXr1u3bHo/P5/H4/X4KI9WX3Lmj1ZLk58WSSAKBwNDQ4ODdu3199+7dW1+QIX7/vsHg8Tx4ILSkt7cgocgGSCRQrqGh4eGHD0dGgsHgo0eU4B4/fhwIOBwPgFAoREFEGAmAGopsQCAAkv7+cHhkZHQ0HA6PjVGCczqd4+N6PZTKH4lEKIhUX8IrtNqBgZ8/do6bmBCLxdHokyeTk0+fxmKxEonTqdeDIPKLclVF4nINDIDE5ZLLKVKBxdLVBWvJ1NTk5LNnXm88HqcElBHWEqeTZUEQKp3MW1Ris8EsQdraKFKGxRIMTk253e5w+Plzr9ftnp6ephQ8EZCIxXq90RgKwSZOYaT6EpwgPHRdht3+4kUikUwmEolgMBplGLebMgiMObHY4cDzrdFIMaL6EputpwcULLvB2TSVSsXjsVg6nUi8fPkyGn31imG6uijJcVgph8NhMGCxSiYJIIQEt0TY361WiuSZnobBGg4nk69fz8xEo9HRUZlsYoKSOHzF4qYmkFitoVAkUr6IV1+iVmMn6OX3d3ZSjOPq6t68SSTS6fTbt8PDbjfDwLhlmPFxSiMweEGRyWRw3fL7S44qwBaVcFwkAnsnnmoKm47FEg4Hg/zcnp1lmNnZqSmZTCaRUBqBZwHo9fT7yseWMBK/3+fzZXloiKRSOLcZBobUzMzcXCr17h0fLzA/n8no9QYAZjpqiipNCCHJZHjBe8DngymDMYvFbof5nkp9+FAu4PjeHz/Oz4dCuGSBZKO3MyEkHLeQYxH49OnTr85GQ0PZLN8XRR4Pjl44QFCyBGEksIEvrbO83NPz+TOlivjyZWXl/Xu+rouL2MhmfT4Y/ZX/V0G2sATwemGhyrO8/PXr8vK3b6urqyyLh4zVVbhzLBYOLy1BAyULC/iZzcJUoTuUIZiE45JJOK7nGR1dW/sbyWZzRqjN4mIslkyuIEtLqFlYWH8PrkBACcfNzMDBB4FtF0inceIs+nxra2YzLG8rK/g7kkmoZ05TdKaoRFAJx83N/VNBPE7qRAIfPS9Jp9ff5X+CwBIeunkxufqBDTVw9qaev6IWJBw3Nvb9O92+hETixw/qsinbSFLED571V+rfpuYk/5n/JX9EFSQc9y/Ls1G0Pmf+zwAAAABJRU5ErkJggg==";
 const barrelIcon = "" + new URL("barrel2-CIOHUXl8.png", import.meta.url).href;
 const beanIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqZQTFRFQSAxORgpzWqLnEpqg0FaxWKDtFp7pFJzlEpie0Fii0FiczlSYjFKajFK1WqLrFJzezlaSiA53nOUWilBOSAxvWKDvVp7ORgxezlS/5y07oOcUilB5nOU1XOL/5SslEpqUik5/7TFrFpz3mqU/6y9/4usQSA5xWqD7nucvWJ7zWKL5nuc/4Ok/73N/83V/8XVajlS3nuU9oukpFJq//+ki0FaYjFBnFJqlEFi/8XNpEpqxVqD/6S99nuki0pi7nOcg0Fi9oOkMRgp1XOUzWKD//aL/4uk5nuU/5y9/+6Di5xBg8VBnL1K/6S0/5S0//aUasU5/+6cvb1a1WKL1c1qtFpztFJzSik5i71B/6zFe0Faczla7oOkrFp7/5ys/+aU3mqLpLRS///N/+acWjFK3py95oOcpHOLYkFK5qS9vVqDOUEpxWqLnFp7//akrKRai1pz5nOcvYuk9nuczZRqg2pKWlI5Mc0pQe4pzZSsOYsge2JKlGqDSiAxEEoIMUEg3qRzIFIQ1ZS0lGpS1ax7WuYx5r2Di6xKQVIpvc1irHOUczlKYvZB/96UatUxxYuki2pSSqQx/5SkxZSs//+9akFSg2JSENUQUkE5pGJqg1pzSkoxIHMQvZRi///Vc3NB5rSDg0pqrJRa/+as/7TNKeYYc2pBYnNKUkExc2JBtIOc9tWLpEpzc1JK7qyD7qSDe1pKUko5g7RB1axqi3NSzc1iSnspIEEYrKxaxbRi/8WDe9U5gzlaSt4p//+0xZRilFJzzWqDvYOcYkpBUlox/73F/96LKUoYi0pqc6w5pGJ7Ymo5nKxSMVoYrFJ7Yu4xnEpic0paEEoQCLQIc1pBKbQgIJQQ9tV77rSUGEoQYko5zYusrMVSSr05xYtz7t5zEEEQAAAAVrtq4gAAAOJ0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AHAeuh8AAASySURBVHja7Jb1d9tmFIYFFtmWZMmyTDLKjh1DHCexk4ZpSZYtTRpek5Rx5XZMHTMzMzMzMzNz/pPdT7bTNE3Xbvttx+85PsfS8fvc917rfFfY7H8UVgaUAWXA/xBgbudWMdy/BXAB8lHy81UU82H7gl9wy82kOK6CRI6b5W76/fw7OW4hoJ1tHG/qPpYSBEpk9kvBcbYcOa5SCUEQEk3icS9ftnLZ9mXvn8vNB9hcDaLaLei6rGmC0NSk77Nva321gRRVSpC1tjZNTzyxcnvdtbe/Xjc4OMjNAaYsuVq6W9gVb2mJt8kjlKaX8Dt3rw80NIo0lZCTHaloqmWX8OOytWvvWbOmDsSVAHYXK6oJOd4T9ada2nRd0y9++83NHHfXxmuuYL+sFWloTfNE3c3N/pQmPH7mG7c980jdEaAiQMrbSNFBaB1+d7M7mmrTNP3mh9dvPvuXk3dvIxsZkVYpQuitcYfSS5qjcf2tc769/sq7fzgSVATgVhsLALnDHQkd0xdN7dH0psBXO0/b+DEjimO0qjooQk72DKSrMhF/XBsZe+ydJ5996Y/R0dESIO9iGZqQPSugxr3NS6MdcU0XRrop1ZDDAf+A7KkBfMjdE5cFNcf9fPyO54aHh4uAzqDFTNIOIemPLKnKpCN9S2FacVkXEgnKEEEIcrLG73b7O5KyQKmN7TeeuuOi1av7SwCJt0EECiIAoSoNfQBiT1yTBYJIJAiQT+7d4KnxeLI+gqJoseHBh178tb+/BMAxq8UUEFUiO70iBIRMJhTpg2nGk7IsCMhPCF1yNpuVfQTqS2xsOOH+T48GzQHsvM1MhmGOHncknQEEpBjwR6eTcpePKMjng28UVUnTIkPmnrrjgsnJybnnwCnlLfC8hyuB4B+ASWYy6fcibn+NBxUliK2xrTEQ5ahU6THws6ZbPnn6KBBXAmBBaIKFDDEfGhaMOxQyAHKXQMQoyoEExemwyNSSZINry7sfvTI0NLQPIHl5l4mtD1dSRNcGz9UwcLe/BwL4kN+wGm7DzrImy3UXPn/5F69dVQLMKphk51EGhnbEiK5sr8cz7Un2Qv4YqjwzEw4zSGAPsGzOxc/u/eyU8y496b4bHigAnBjmhUGazCQTpiGFMTPoHqobsRmmnkQCN2vOmS6Zmt30wVm3fv/dbyd+UzwPMKzCizKYAyQ8+3SlgzIaN2ZumJEVzKCcyWVFlk0v/PT1GX9uKQIURLDyluXtLCCYcNjoeabgDrCt5oJMSC7efuCRBj3AIO1WC7TRCgwSNVxbX3KbCrLZbC4X+KcWORMRoUKyQwibyWQ2G4EDhdJzTpcFxPN5adFDVUEZJrwIgRiIYjaVzGCsrq7mQda8/fTgogCnYmQIetchBEAKMsoiqxWUz9vtQQw7yLGuIAIgYBQQg+erkdNStFrtIK83KElO/KCLBTcIWAUwpKB9nbUow+kNTsBdDHPi+N9sJsxZQBg5oBlvEEmakDAJ3VQUHF/EP3+14fgcohhm3oUTquPYoZYrvpBRkKIgdyfGHcZ2RjFxp1NBM1XACV5kxjvxCu4w1zt+gDrhU81x/+T9YD+/Amau/I5UBpQBZcCh9ZcAAwAGseCjc7PZBQAAAABJRU5ErkJggg==";
 const chunkyKongIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA9CAMAAAA+ngESAAADAFBMVEUAAAD4sHD4oGj4uHD4qGj4wHg4IBj4kGBYMCBgMCD4yHj40ID4mGD4iFj42ID4gFj4qHD4uHgoGBBIKBj4+JD46IhQKCBAIBjoeFAwGBAgEBAYEAj4mGjYcEioKCBgIAC4YED48IiISDBYIASwWECgUDhoOChoIAaQSDBgIAj44IjQaEjIaEjAODD4+Pj4cFCoWDh4QCiwKCBwKAYAAAD40HjgcE/AYEBwOCdIGAAYCAD44ID4QDDAQDC4MCggEAjwgFDweFBYJx8QCAQgCAE4EAD4+Ij4wHD4iGD4eFKAQDCgKCBYGAb4sGj4oGCYUDj4QDj4QCCgICBQJhZQGAAQAAD4kFjwiFjgeFDQcEiAPib4OB4bGBh4KAhQGAgIAgIoCAD4+PD48OL46Njy4NLYyLrOwLLIuKjuqmh2cGj4cFjAYEj4VkT4TEC4OCpgOCg0LijwOBjYMBg4GBCIMAYwEAJAGAD4+Ojb1si2sKuwoJWjmJClk4X4yICLgHjww3BrY13wgFiQaFj4aFDIcEi7a0joWEhbTUWoWEDWTUCgWDi+UDj4SDjLRTXwQDX4ODCIQC3INS2wMChoOCCYICDoOB1IIBg4GBioKBCjMA2AKAhIGAhIEAgoEAP48PDo6Ojk3NTo2Mjg0MC4uLjIuLDQuKy4qKCooJC8fGTwmGDkkFzwkFiYcFjkiFTogFRcWFTggFDYgFDYaEi4WECkYDjcSDjASDiYSjWYSDCASDDgPCzAOCgsKCjQMCCwMCAgICC4KByAOBh4OBjcNBjIMBiIIBiUIBQoEBCsPAykOAiYOAhwIAgYCAhAEADQyLjYwLjYsJjomIC4kICYiIDw0Hj4oHj4mHiAeHDouGjYqGjwoGjwoGDgmGDwiGCIcGDYmFjoiFjweFjAcFh4YFjocFDoaEjgaEjIYEjwWEiwaEDQYEDIYEDgWEDQWECAUEDoSEBIQEC4QDCwQDDQODCYSCjAKCA4KCBwOBjAMBigKBC4QAiAMAhoKAhoGAhgGAiQMAA67x8DAAAAAXRSTlMAQObYZgAABilJREFUSMeV1QVUU1EYB3Df2+byMdyThTo312Oo4DacmAwQQUJFBFQEu7u7u7u7u7u7u7u7u+O7d5tPRDf9nwNnHPbj/917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";
@@ -33387,7 +33551,7 @@ const MoveTable = () => {
         {
           storeKey: "bananaMedals",
           title: "Banana Medals",
-          imgUrl: bananaMedalIcon$1,
+          imgUrl: medalIcon,
           prefix: "consumables",
           setCount: setConsumable,
           maxValue: 45
@@ -34262,9 +34426,9 @@ const portHalfIcon = "" + new URL("bananaport_isles-ChjMenC1.png", import.meta.u
 const portToIcon$1 = (num) => {
   return num == 1 ? portHalfIcon : portFullIcon;
 };
-const clamp$1 = (num) => Math.min(Math.max(num, 0), 2);
-const nextPort$1 = (num) => clamp$1(num + 1);
-const prevPort$1 = (num) => clamp$1(num - 1);
+const clamp$2 = (num) => Math.min(Math.max(num, 0), 2);
+const nextPort$1 = (num) => clamp$2(num + 1);
+const prevPort$1 = (num) => clamp$2(num - 1);
 const BananaportSelector = () => {
   const bananaport = useBananaport();
   const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]));
@@ -34306,9 +34470,9 @@ const helmHalfIcon = "" + new URL("krem_isle_half-BlC1bdso.png", import.meta.url
 const portToIcon = (num) => {
   return num == 1 ? helmHalfIcon : helmFullIcon;
 };
-const clamp = (num) => Math.min(Math.max(num, 0), 2);
-const nextPort = (num) => clamp(num + 1);
-const prevPort = (num) => clamp(num - 1);
+const clamp$1 = (num) => Math.min(Math.max(num, 0), 2);
+const nextPort = (num) => clamp$1(num + 1);
+const prevPort = (num) => clamp$1(num - 1);
 const HelmSelector = () => {
   const helmAccess = useHelmStartPosition();
   const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]));
@@ -34339,6 +34503,100 @@ const HelmSelector = () => {
       style: { filter: `grayscale(${helmAccess != 0 ? "0" : "1"})` }
     }
   ) });
+};
+const itemToIcon = (num) => {
+  return num == 1 ? gbIcon : num == 2 ? blueprintIcon : num == 3 ? companyCoinIcon : num == 4 ? keyIcon : num == 5 ? medalIcon : num == 6 ? crownIcon : num == 7 ? fairyIcon : num == 8 ? rainbowCoinIcon : num == 9 ? beanIcon : num == 10 ? pearlIcon : unknownIcon$1;
+};
+const clamp = (num) => Math.min(Math.max(num, 0), 10);
+const nextItem = (num) => clamp(num + 1);
+const prevItem = (num) => clamp(num - 1);
+const HelmDoorSelector1 = () => {
+  const helmItem1 = useHelmItem1();
+  const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]));
+  const handleNextItem = () => {
+    setSetting("helmItem1", nextItem(helmItem1));
+  };
+  const handlePrevItem = (e2) => {
+    e2.preventDefault();
+    setSetting("helmItem1", prevItem(helmItem1));
+  };
+  const handleWheel = (e2) => {
+    if (e2.deltaY >= 0) {
+      setSetting("helmItem1", nextItem(helmItem1));
+    } else {
+      setSetting("helmItem1", prevItem(helmItem1));
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "img",
+      {
+        className: "simple-icon",
+        height: 24,
+        title: helmItem1 == 1 ? "Golden Bananas" : helmItem1 == 2 ? "Blueprints" : helmItem1 == 3 ? "Company Coins" : helmItem1 == 4 ? "Keys" : helmItem1 == 5 ? "Banana Medals" : helmItem1 == 6 ? "Battle Arena Crowns" : helmItem1 == 7 ? "Banana Fairies" : helmItem1 == 8 ? "Rainbow Coins" : helmItem1 == 9 ? "THE BEAN" : helmItem1 == 10 ? "Pearls" : "Door already opened",
+        src: itemToIcon(helmItem1),
+        onClick: handleNextItem,
+        onContextMenu: handlePrevItem,
+        onWheel: handleWheel,
+        style: { filter: `grayscale(${helmItem1 != 0 ? "0" : "1"})` }
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CountSelector,
+      {
+        imgUrl: itemToIcon(helmItem1),
+        title: "Number of the indicated item you need to open the first door at the end of Helm and go into K. Rool's throne room.",
+        storeKey: "helmItemNum1",
+        prefix: "settings",
+        setCount: setSetting,
+        maxValue: 201
+      }
+    )
+  ] });
+};
+const HelmDoorSelector2 = () => {
+  const helmItem2 = useHelmItem2();
+  const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]));
+  const handleNextItem = () => {
+    setSetting("helmItem2", nextItem(helmItem2));
+  };
+  const handlePrevItem = (e2) => {
+    e2.preventDefault();
+    setSetting("helmItem2", prevItem(helmItem2));
+  };
+  const handleWheel = (e2) => {
+    if (e2.deltaY >= 0) {
+      setSetting("helmItem2", nextItem(helmItem2));
+    } else {
+      setSetting("helmItem2", prevItem(helmItem2));
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "img",
+      {
+        className: "simple-icon",
+        height: 24,
+        title: helmItem2 == 1 ? "Golden Bananas" : helmItem2 == 2 ? "Blueprints" : helmItem2 == 3 ? "Company Coins" : helmItem2 == 4 ? "Keys" : helmItem2 == 5 ? "Banana Medals" : helmItem2 == 6 ? "Battle Arena Crowns" : helmItem2 == 7 ? "Banana Fairies" : helmItem2 == 8 ? "Rainbow Coins" : helmItem2 == 9 ? "THE BEAN" : helmItem2 == 10 ? "Pearls" : "Door already opened",
+        src: itemToIcon(helmItem2),
+        onClick: handleNextItem,
+        onContextMenu: handlePrevItem,
+        onWheel: handleWheel,
+        style: { filter: `grayscale(${helmItem2 != 0 ? "0" : "1"})` }
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CountSelector,
+      {
+        imgUrl: itemToIcon(helmItem2),
+        title: "Number of the indicated item you need to open the second door at the end of Helm and get Key 8.",
+        storeKey: "helmItemNum2",
+        prefix: "settings",
+        setCount: setSetting,
+        maxValue: 201
+      }
+    )
+  ] });
 };
 const bananaMedalIcon = "" + new URL("bananamedal-bkq8SUQj.gif", import.meta.url).href;
 const dropIcon = "" + new URL("beaver-hQ5QlB0C.png", import.meta.url).href;
@@ -34614,7 +34872,11 @@ const GeneratorSettings = () => {
                   setCount: setSetting,
                   maxValue: 20
                 }
-              )
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "What locks Helm Door #1?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(HelmDoorSelector1, {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "What locks Helm Door #2?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(HelmDoorSelector2, {})
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "World Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
