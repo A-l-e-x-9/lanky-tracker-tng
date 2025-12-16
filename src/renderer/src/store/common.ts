@@ -7,7 +7,7 @@ type IntRange<F extends number, T extends number> = Exclude<Enumerate<T>, Enumer
 
 export type PearlRange = IntRange<0, 6>
 type BlueprintRange = IntRange<0, 9>
-type CrownRange = IntRange<0, 11>
+export type CrownRange = IntRange<0, 11>
 type FairyRange = IntRange<0, 21>
 export type ColoredBananaRange = IntRange<0, 101>
 export type GoldBananaRange = IntRange<0, 202>
