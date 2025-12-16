@@ -1,6 +1,7 @@
 import { MouseEvent, WheelEvent } from 'react'
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
+import { CrownRange } from '@renderer/store/common'
 import CountSelector from './CountSelector'
 import { useHelmItem1, useHelmItem2 } from '@renderer/hooks/settings'
 import alreadyOpenedIcon from '../../assets/images/unknown-small.png'
@@ -15,7 +16,7 @@ import rainbowCoinIcon from '../../assets/images/rainbowcoin.png'
 import beanIcon from '../../assets/images/bean.png'
 import pearlIcon from '../../assets/images/pearl.png'
 
-const itemToIcon = (num: IntRange<0, 11>): string => {
+const itemToIcon = (num: CrownRange): string => {
   return num == 1 ? gbIcon : num == 2 ? blueprintIcon : num == 3 ? coCoinIcon : num == 4 ? keyIcon : num == 5 ? medalIcon : num == 6 ? crownIcon : num == 7 ? fairyIcon : num == 8 ? rainbowCoinIcon : num == 9 ? beanIcon : num == 10 ? pearlIcon : alreadyOpenedIcon
 }
 
