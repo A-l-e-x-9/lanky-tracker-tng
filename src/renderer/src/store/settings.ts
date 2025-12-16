@@ -46,6 +46,10 @@ export const initialSettings: SettingState = {
     betaLankyPhase: false,
     waterIsLava: false,
     angyKosha: false,
+    helmItem1: 6,
+    helmItemNum1: 4,
+    helmItem2: 3,
+    helmItemNum2: 2
   }
 }
 

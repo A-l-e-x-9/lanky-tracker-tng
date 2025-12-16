@@ -253,3 +253,15 @@ export const useBetaLankyPhase = (): boolean =>
   
 export const useAngryCaves = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.angyKosha))
+  
+export const useHelmItem1 = (): number =>
+  useDonkStore(useShallow((state) => state.settings.helmItem1))
+
+export const useHelmItem2 = (): number =>
+  useDonkStore(useShallow((state) => state.settings.helmItem2))
+  
+export const useHelmItemNum1 = (): number =>
+  useDonkStore(useShallow((state) => state.settings.helmItemNum1))
+
+export const useHelmItemNum2 = (): number =>
+  useDonkStore(useShallow((state) => state.settings.helmItemNum2))

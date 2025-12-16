@@ -7,6 +7,7 @@ import BananaportSelector from './BananaportSelector'
 import CheckIcon from './CheckIcon'
 import CountSelector from './CountSelector'
 import HelmSelector from './HelmSelector'
+import { HelmDoorSelector1, HelmDoorSelector2 } from './HelmDoorSelector'
 import SimpleIcon from './SimpleIcon'
 import { KRoolSlamSelector } from '../moves/SlamSelector'
 
@@ -242,9 +243,7 @@ const GeneratorSettings: React.FC = () => {
                 setCount={setSetting}
                 maxValue={100}
               />
-              <p>
-                Fairies needed for the Fairy's reward?
-              </p>
+              <p>Fairies needed for the Fairy's reward?</p>
               <CountSelector
                 imgUrl={fairyIcon}
                 title="Number of Fairies you need for the Rareware Banana."
@@ -253,6 +252,10 @@ const GeneratorSettings: React.FC = () => {
                 setCount={setSetting}
                 maxValue={20}
               />
+              <p>What locks Helm Door #1?</p>
+              <HelmDoorSelector1 />
+              <p>What locks Helm Door #2?</p>
+              <HelmDoorSelector2 />
             </>
             <h3>World Settings</h3>
             <>

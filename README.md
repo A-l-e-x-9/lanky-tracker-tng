@@ -12,6 +12,7 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 - The "Water is Lava" setting currently doesn't turn every check yellow that should be affected by it. For example, did you know that the little kiddy pools surrounding the Dungeon's entrance in Castle also hurt you when you make a "Water is Lava" seed? Will eventually fix this.
 - Checks affected by the "Angry Caves" setting don't turn red when it's on and you don't have enough Bananas to enter Crystal Caves.
 - Right now, the B. Locker barriers available in the tracker can only accept bananas, so if you're playing a "Chaos B. Lockers" seed (where he often requires things other than bananas so that you can get into the level), you're out of luck. :(
+- Limits aren't enforced on the Helm Door settings, so you can currently input something impossible like 201 Beans for each door.
 - Make it so that you can just type how many bananas, etc., you have in the "count" selectors (such as "Colored bananas needed for medal" in Settings) so you don't have to click so much.
 - Also implement the "shuffled DK Portals" function (and rarely-seen "Shuffle Start Location" function, too?) (a shuffled portal can make all the difference in what checks are accessible to you, after all!).
 - K. Rool's phase selector will only light up in yellow if you have all five phases set and one of them is Tiny Phase without Feathers or Mad Jack without Ponytail Twirl. Alex was unable to fix this while updating the K. Rool selector to account for the "use K. Rool phases as bosses" option in the Randomizer. Since all regulation "season" seeds that Alex has seen on YouTube (going back to Season 2) have only three phases, must fix this.
@@ -25,7 +26,6 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 If you know the answer to any of these (or any of the above that Alex hasn't done yet), see the Development section below.
 - As with the original, if there is a way to enable autotracking with the underlying languages, it's not known at this time, so this car is only available with a manual transmission.
 - Alex also took out the "presets" dropdown underneath the Switchsanity settings, and will probably NOT re-implement this.
-- Alex tried to implement the Helm doors, but he was unable to get the "CountSelector" object working within a "HelmItemSelector" file. Furthermore, only three checks are ever blocked by the doors ("The End of Helm" and both Banana Fairies), so it was too much effort for too little gain.
 - Any way to take the Loading Zone Randomizer into account...you're completely on your own there. At worst, this tracker was made for Complex Level Order seeds with the possibility of Hideout Helm being shuffled.
 - Could possibly add in the new "Item Count Modifier" feature, but I don't think it'll have much effect.
 - Snide Rewards and the Max Snide Reward Limit, due to redundancy.

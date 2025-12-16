@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useHelmDoors, usePlayHelm, useHelmMachine } from '@renderer/hooks/helm'
+import { useHelmDoors, usePlayHelm, useHelmMachine, useEOHDoor1, useEOHDoor2 } from '@renderer/hooks/helm'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useCamera, useStand, useRocket } from '@renderer/hooks/kongs'
 import HelmCheck from '../check'
@@ -9,6 +9,8 @@ const Shuffled: React.FC = () => {
   const hasOStand = useStand()
   const canEnterHelm = usePlayHelm()
   const canReachEndOfHelm = useHelmDoors()
+  const canGetPastDoor1 = useEOHDoor1()
+  const canGetPastDoor2 = useEOHDoor2()
   const canReachBlastOMatic = useHelmMachine()
   const hasJetbarrel = useRocket()
   return (
@@ -17,15 +19,15 @@ const Shuffled: React.FC = () => {
         id={48000}
         name="Shuffled Fairy: Vanilla Location #1 (Key 8 room)"
         region="Hideout Helm"
-        canGetLogic={canReachEndOfHelm.in && hasCam}
-        canGetBreak={canReachEndOfHelm.out && hasCam}
+        canGetLogic={canReachEndOfHelm.in && canGetPastDoor1.in && canGetPastDoor2.in && hasCam}
+        canGetBreak={canReachEndOfHelm.out && canGetPastDoor1.out && hasCam}
       />
       <HelmCheck
         id={48001}
         name="Shuffled Fairy: Vanilla Location #2 (also Key 8 room)"
         region="Hideout Helm"
-        canGetLogic={canReachEndOfHelm.in && hasCam}
-        canGetBreak={canReachEndOfHelm.out && hasCam}
+        canGetLogic={canReachEndOfHelm.in && canGetPastDoor1.in && canGetPastDoor2.in && hasCam}
+        canGetBreak={canReachEndOfHelm.out && canGetPastDoor1.out && hasCam}
       />
       <HelmCheck
         id={48002}

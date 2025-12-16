@@ -11,7 +11,7 @@ return (
 <Miniboss>
   <CavesCheck
     id={6042}
-    name="Chunky's Damn 5 Door Igloo Room (target of the &quot;Kill the Wabbit&quot; win condition)"
+    name="Chunky's 5-Door Igloo Room (with that damn rabbit)"
     region="Caves Igloo"
     canGetLogic={thatFuckingRabbit.in}
     canGetBreak={thatFuckingRabbit.out}

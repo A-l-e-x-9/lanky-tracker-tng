@@ -16,8 +16,9 @@ import {
   useStand,
   useVine
 } from '../kongs'
-import { useHelmStartPosition } from '../settings'
+import { useHelmStartPosition, useHelmItem1, useHelmItemNum1, useHelmItem2, useHelmItemNum2 } from '../settings'
 import { LogicBool } from '../world'
+import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentCoCoinCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useBean, useCurrentPearlCount } from '../consumables'
 
 /**
  * Can we play in Hideout Helm?
@@ -89,6 +90,156 @@ export const useHelmDoors = (): LogicBool => {
   }
 }
 
+//Can we get past Door #1 and enter K. Rool's throne room?
+export const useEOHDoor1 = (): LogicBool => {
+  const canReachNavRoom = useHelmDoors()
+  const itemNeeded = useHelmItem1()
+  const targetItemCount = useHelmItemNum1()
+  const currentGBCount = useCurrentGBCount()
+  const currentBlueprintCount = useCurrentBlueprintCount()
+  const currentCoCoinCount = useCurrentCoCoinCount()
+  const currentKeyCount = useCurrentKeyCount()
+  const currentBananaMedalCount = useCurrentBananaMedalCount()
+  const currentCrownCount = useCurrentCrownCount()
+  const currentFairyCount = useCurrentFairyCount()
+  const currentRainbowCoinCount = useCurrentRainbowCoinCount()
+  const currentBeanCount = useBean()
+  const currentPearlCount = useCurrentPearlCount()
+  
+  switch (itemNeeded) {
+    case 1:
+      return {
+        in: canReachNavRoom.in && (currentGBCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentGBCount >= targetItemCount)
+      }
+    case 2:
+      return {
+        in: canReachNavRoom.in && (currentBlueprintCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentBlueprintCount >= targetItemCount)
+      }
+    case 3:
+      return {
+        in: canReachNavRoom.in && (currentCoCoinCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentCoCoinCount >= targetItemCount)
+      }
+    case 4:
+      return {
+        in: canReachNavRoom.in && (currentKeyCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentKeyCount >= targetItemCount)
+      }
+    case 5:
+      return {
+        in: canReachNavRoom.in && (currentBananaMedalCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentBananaMedalCount >= targetItemCount)
+      }
+    case 6:
+      return {
+        in: canReachNavRoom.in && (currentCrownCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentCrownCount >= targetItemCount)
+      }
+    case 7:
+      return {
+        in: canReachNavRoom.in && (currentFairyCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentFairyCount >= targetItemCount)
+      }
+    case 8:
+      return {
+        in: canReachNavRoom.in && (currentRainbowCoinCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentRainbowCoinCount >= targetItemCount)
+      }
+    case 9:
+      return {
+        in: canReachNavRoom.in && (currentBeanCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentBeanCount >= targetItemCount)
+      }
+    case 10:
+      return {
+        in: canReachNavRoom.in && (currentPearlCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentPearlCount >= targetItemCount)
+      }
+    default:
+      return {
+        in: canReachNavRoom.in,
+        out: canReachNavRoom.out
+      }
+  }
+}
+
+//Can we get past Door #2 and, in vanilla, get Key #8?
+export const useEOHDoor2 = (): LogicBool => {
+  const canReachNavRoom = useHelmDoors()
+  const itemNeeded = useHelmItem2()
+  const targetItemCount = useHelmItemNum2()
+  const currentGBCount = useCurrentGBCount()
+  const currentBlueprintCount = useCurrentBlueprintCount()
+  const currentCoCoinCount = useCurrentCoCoinCount()
+  const currentKeyCount = useCurrentKeyCount()
+  const currentBananaMedalCount = useCurrentBananaMedalCount()
+  const currentCrownCount = useCurrentCrownCount()
+  const currentFairyCount = useCurrentFairyCount()
+  const currentRainbowCoinCount = useCurrentRainbowCoinCount()
+  const currentBeanCount = useBean()
+  const currentPearlCount = useCurrentPearlCount()
+  
+  switch (itemNeeded) {
+    case 1:
+      return {
+        in: canReachNavRoom.in && (currentGBCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentGBCount >= targetItemCount)
+      }
+    case 2:
+      return {
+        in: canReachNavRoom.in && (currentBlueprintCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentBlueprintCount >= targetItemCount)
+      }
+    case 3:
+      return {
+        in: canReachNavRoom.in && (currentCoCoinCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentCoCoinCount >= targetItemCount)
+      }
+    case 4:
+      return {
+        in: canReachNavRoom.in && (currentKeyCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentKeyCount >= targetItemCount)
+      }
+    case 5:
+      return {
+        in: canReachNavRoom.in && (currentBananaMedalCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentBananaMedalCount >= targetItemCount)
+      }
+    case 6:
+      return {
+        in: canReachNavRoom.in && (currentCrownCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentCrownCount >= targetItemCount)
+      }
+    case 7:
+      return {
+        in: canReachNavRoom.in && (currentFairyCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentFairyCount >= targetItemCount)
+      }
+    case 8:
+      return {
+        in: canReachNavRoom.in && (currentRainbowCoinCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentRainbowCoinCount >= targetItemCount)
+      }
+    case 9:
+      return {
+        in: canReachNavRoom.in && (currentBeanCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentBeanCount >= targetItemCount)
+      }
+    case 10:
+      return {
+        in: canReachNavRoom.in && (currentPearlCount >= targetItemCount),
+        out: canReachNavRoom.out && (currentPearlCount >= targetItemCount)
+      }
+    default:
+      return {
+        in: canReachNavRoom.in,
+        out: canReachNavRoom.out
+      }
+  }
+}
+
 export const useCanDeactivateHelm = (): boolean => {
   const allMusic = useAllMusic()
   const rocket = useRocket()
@@ -128,7 +279,8 @@ export const useCanFightRool = (): LogicBool => {
 
   if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
     return {
-      in: false
+      in: false,
+      out: false
     }
   }
 
