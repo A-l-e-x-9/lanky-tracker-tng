@@ -149,8 +149,8 @@ export const useEOHDoor1 = (): LogicBool => {
       }
     case 9:
       return {
-        in: canReachNavRoom.in && (currentBeanCount >= targetItemCount),
-        out: canReachNavRoom.out && (currentBeanCount >= targetItemCount)
+        in: canReachNavRoom.in && (Number(currentBeanCount) >= targetItemCount),
+        out: canReachNavRoom.out && (Number(currentBeanCount) >= targetItemCount)
       }
     case 10:
       return {
@@ -224,8 +224,8 @@ export const useEOHDoor2 = (): LogicBool => {
       }
     case 9:
       return {
-        in: canReachNavRoom.in && (currentBeanCount >= targetItemCount),
-        out: canReachNavRoom.out && (currentBeanCount >= targetItemCount)
+        in: canReachNavRoom.in && (Number(currentBeanCount) >= targetItemCount),
+        out: canReachNavRoom.out && (Number(currentBeanCount) >= targetItemCount)
       }
     case 10:
       return {
