@@ -13971,7 +13971,6 @@ const Shuffled$o = () => {
   const canReachWaterfall = useIslesCrossFungi();
   const canGetInCastleLobby = usePlayLobby("Creepy Castle");
   const canDoIslesDirt1 = canReachFungiLobby;
-  const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && hasJetbarrel;
   const canReachFactoryLobby = useIslesKremAscent();
   const canReachHelmLobby = useIslesKremTop();
   const canGetInJapesLobby = usePlayLobby("Jungle Japes");
@@ -13992,6 +13991,7 @@ const Shuffled$o = () => {
   const canGetInHelmDK = useHelmKasplat();
   const hasBalloon = useBalloon();
   const bananaportSettings = useBananaport();
+  const jetbarrelExists = useIslesRocket();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14027,7 +14027,7 @@ const Shuffled$o = () => {
         id: 10003,
         name: "Shuffled Battle Arena: On the Aztec Lobby roof",
         region: "DK Island",
-        canGetLogic: canDoIslesDirt2InLogic,
+        canGetLogic: jetbarrelExists && canReachFungiLobby && hasJetbarrel,
         canGetBreak: canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny) || canReachWaterfall && (hasDK || isHinaKagiyama)
       }
     ),
@@ -14775,7 +14775,6 @@ const Shuffled$n = () => {
   const canReachWaterfall = useIslesCrossFungi();
   const canGetInCastleLobby = usePlayLobby("Creepy Castle");
   const canDoIslesDirt1 = canReachFungiLobby;
-  const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && useRocket();
   const canReachFactoryLobby = useIslesKremAscent();
   const canReachHelmLobby = useIslesKremTop();
   const canGetInJapesLobby = usePlayLobby("Jungle Japes");
@@ -14800,6 +14799,7 @@ const Shuffled$n = () => {
   const hasStrongKong = useStrong();
   const hasBalloon = useBalloon();
   const bananaportState = useBananaport();
+  const jetbarrelExists = useIslesRocket();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14835,7 +14835,7 @@ const Shuffled$n = () => {
         id: 20003,
         name: "Shuffled Melon Crate: On the Aztec Lobby roof",
         region: "DK Island",
-        canGetLogic: canDoIslesDirt2InLogic,
+        canGetLogic: jetbarrelExists && canReachFungiLobby && hasJetbarrel,
         canGetBreak: canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny) || canReachWaterfall && (hasDK || isHinaKagiyama)
       }
     ),
