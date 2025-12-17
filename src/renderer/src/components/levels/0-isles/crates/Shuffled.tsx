@@ -24,7 +24,6 @@ const canReachFungiLobby = useIslesFungiIsland()
 const canReachWaterfall = useIslesCrossFungi()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canDoIslesDirt1 = canReachFungiLobby
-const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && useRocket()
 const canReachFactoryLobby = useIslesKremAscent()
 const canReachHelmLobby = useIslesKremTop()
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
@@ -49,7 +48,8 @@ const canGetInHelmDK = useHelmKasplat()
 const hasStrongKong = useStrong()
 const hasBalloon = useBalloon()
 const bananaportState = useBananaport()
-  return (
+const jetbarrelExists = useIslesRocket()
+return (
     <CratePool>
       <IslesCheck
         id={20000}
@@ -74,7 +74,7 @@ const bananaportState = useBananaport()
         id={20003}
         name="Shuffled Melon Crate: On the Aztec Lobby roof"
         region="DK Island"
-        canGetLogic={canDoIslesDirt2InLogic}
+        canGetLogic={jetbarrelExists && canReachFungiLobby && hasJetbarrel}
         canGetBreak={((canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny)) || (canReachWaterfall && (hasDK || isHinaKagiyama)))}
       />
       <IslesCheck
