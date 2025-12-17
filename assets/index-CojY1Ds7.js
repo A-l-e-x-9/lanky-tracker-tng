@@ -13973,11 +13973,6 @@ const Shuffled$o = () => {
   const canDoIslesDirt1 = canReachFungiLobby;
   const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && hasJetbarrel;
   const canDoIslesDirt2OutLogic = canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny) || canReachWaterfall && (hasDK || isHinaKagiyama);
-  const canDoIslesDirt3InLogic = hasClimbing || useBananaport() != 0 || canReachWaterfall.in;
-  const canDoIslesDirt3OutLogic = canReachWaterfall.out;
-  const canDoIslesDirt4InLogic = canGetInCastleLobby.in && hasBoulderTech && useBalloon();
-  const canDoIslesDirt4OutLogic = canGetInCastleLobby.out && (hasDiddy || hasTiny);
-  const canDoIslesDirt5 = hasVines && hasClimbing;
   const canReachFactoryLobby = useIslesKremAscent();
   const canReachHelmLobby = useIslesKremTop();
   const canGetInJapesLobby = usePlayLobby("Jungle Japes");
@@ -13996,6 +13991,8 @@ const Shuffled$o = () => {
   const canGetInCavesKasplat = useCavesKasplat();
   const canGetInHelmChunky = useCheckChunkyHelm();
   const canGetInHelmDK = useHelmKasplat();
+  const hasBalloon = useBalloon();
+  const bananaportSettings = useBananaport();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14041,8 +14038,8 @@ const Shuffled$o = () => {
         id: 10004,
         name: "Shuffled Battle Arena: Under the Caves Lobby entrance",
         region: "DK Island",
-        canGetLogic: canDoIslesDirt3InLogic,
-        canGetBreak: canDoIslesDirt3OutLogic
+        canGetLogic: hasClimbing || bananaportSettings != 0 || canReachWaterfall.in,
+        canGetBreak: canReachWaterfall.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14051,8 +14048,8 @@ const Shuffled$o = () => {
         id: 10005,
         name: "Shuffled Battle Arena: Under Lanky's Castle Lobby barrel",
         region: "Caves-Helm Lobbies",
-        canGetLogic: canDoIslesDirt4InLogic,
-        canGetBreak: canDoIslesDirt4OutLogic
+        canGetLogic: canGetInCastleLobby.in && hasBoulderTech && hasBalloon,
+        canGetBreak: canGetInCastleLobby.out && (hasDiddy || hasTiny)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14061,7 +14058,7 @@ const Shuffled$o = () => {
         id: 10006,
         name: "Shuffled Battle Arena: At the Banana Hoard",
         region: "DK Island",
-        canGetLogic: canDoIslesDirt5
+        canGetLogic: hasVines && hasClimbing
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14781,11 +14778,6 @@ const Shuffled$n = () => {
   const canDoIslesDirt1 = canReachFungiLobby;
   const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && useRocket();
   const canDoIslesDirt2OutLogic = canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny) || canReachWaterfall && (hasDK || isHinaKagiyama);
-  const canDoIslesDirt3InLogic = hasClimbing || useBananaport() != 0 || canReachWaterfall.in;
-  const canDoIslesDirt3OutLogic = canReachWaterfall.out;
-  const canDoIslesDirt4InLogic = canGetInCastleLobby.in && hasBoulderTech && useBalloon();
-  const canDoIslesDirt4OutLogic = canGetInCastleLobby.out && (hasDiddy || hasTiny);
-  const canDoIslesDirt5 = hasVines && hasClimbing;
   const canReachFactoryLobby = useIslesKremAscent();
   const canReachHelmLobby = useIslesKremTop();
   const canGetInJapesLobby = usePlayLobby("Jungle Japes");
@@ -14808,6 +14800,8 @@ const Shuffled$n = () => {
   const canGetInHelmChunky = useCheckChunkyHelm();
   const canGetInHelmDK = useHelmKasplat();
   const hasStrongKong = useStrong();
+  const hasBalloon = useBalloon();
+  const bananaportState = useBananaport();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14853,8 +14847,8 @@ const Shuffled$n = () => {
         id: 20004,
         name: "Shuffled Melon Crate: Under the Caves Lobby entrance",
         region: "DK Island",
-        canGetLogic: canDoIslesDirt3InLogic,
-        canGetBreak: canDoIslesDirt3OutLogic
+        canGetLogic: hasClimbing || bananaportState != 0 || canReachWaterfall.in,
+        canGetBreak: canReachWaterfall.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14863,8 +14857,8 @@ const Shuffled$n = () => {
         id: 20005,
         name: "Shuffled Melon Crate: Under Lanky's Castle Lobby barrel",
         region: "Caves-Helm Lobbies",
-        canGetLogic: canDoIslesDirt4InLogic,
-        canGetBreak: canDoIslesDirt4OutLogic
+        canGetLogic: canGetInCastleLobby.in && hasBoulderTech && hasBalloon,
+        canGetBreak: canGetInCastleLobby.out && (hasDiddy || hasTiny)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14873,7 +14867,7 @@ const Shuffled$n = () => {
         id: 20006,
         name: "Shuffled Melon Crate: At the Banana Hoard",
         region: "DK Island",
-        canGetLogic: canDoIslesDirt5
+        canGetLogic: hasVines && hasClimbing
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
