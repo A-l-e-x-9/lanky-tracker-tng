@@ -14776,7 +14776,6 @@ const Shuffled$n = () => {
   const canGetInCastleLobby = usePlayLobby("Creepy Castle");
   const canDoIslesDirt1 = canReachFungiLobby;
   const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && useRocket();
-  const canDoIslesDirt2OutLogic = canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny) || canReachWaterfall && (hasDK || isHinaKagiyama);
   const canReachFactoryLobby = useIslesKremAscent();
   const canReachHelmLobby = useIslesKremTop();
   const canGetInJapesLobby = usePlayLobby("Jungle Japes");
@@ -14837,7 +14836,7 @@ const Shuffled$n = () => {
         name: "Shuffled Melon Crate: On the Aztec Lobby roof",
         region: "DK Island",
         canGetLogic: canDoIslesDirt2InLogic,
-        canGetBreak: canDoIslesDirt2OutLogic
+        canGetBreak: canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny) || canReachWaterfall && (hasDK || isHinaKagiyama)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
