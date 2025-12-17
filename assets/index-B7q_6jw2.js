@@ -11209,7 +11209,7 @@ const useGeneralThing$5 = () => {
     out: useAnyKong() && inStage.out
   };
 };
-const useArena$4 = () => {
+const useArena$5 = () => {
   const inStage = usePlayGalleon();
   return {
     in: usePunch() && inStage.in,
@@ -11846,7 +11846,7 @@ const useForestArena = () => {
     out: playForest.out && allGun2 && gone
   };
 };
-const useGeneralDirt$3 = () => {
+const useGeneralDirt$4 = () => {
   const anyKong = useAnyKong();
   const shockwave = useShockwave();
   return anyKong && shockwave;
@@ -11862,13 +11862,13 @@ const useUnderCaveDirt = () => {
   };
 };
 const useHoardDirt = () => {
-  const dirt = useGeneralDirt$3();
+  const dirt = useGeneralDirt$4();
   const vine = useVine();
   const climbing = useClimbing();
   return dirt && vine && climbing;
 };
 const useIslandDirt = () => {
-  const dirt = useGeneralDirt$3();
+  const dirt = useGeneralDirt$4();
   const fungi = useIslesFungiIsland();
   return dirt && fungi;
 };
@@ -12233,7 +12233,7 @@ const Hoard = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { chi
   }
 ) }) });
 const PrisonDirt = () => {
-  const dirt = useGeneralDirt$3();
+  const dirt = useGeneralDirt$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
@@ -12245,7 +12245,7 @@ const PrisonDirt = () => {
   ) }) });
 };
 const TrainingRear = () => {
-  const dirt = useGeneralDirt$3();
+  const dirt = useGeneralDirt$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
@@ -13277,7 +13277,7 @@ const Vanilla$7 = () => {
     )
   ] });
 };
-const Shuffled$m = () => {
+const Shuffled$p = () => {
   const kremAscent = useIslesKremAscent();
   const cranky = useCranky();
   const snide = useSnide();
@@ -13305,7 +13305,7 @@ const Shuffled$m = () => {
   ] });
 };
 const ShopLocations$7 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$m, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const WrinklyPool = ({ children }) => usePoolWrinkly() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -13954,7 +13954,7 @@ const TrainingGroundsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(Rainb
   /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingRear, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(Hoard, {})
 ] });
-const Shuffled$l = () => {
+const Shuffled$o = () => {
   const isBreathing = useAnyKong();
   const hasDK = useDk();
   const hasDiddy = useDiddy();
@@ -14759,9 +14759,9 @@ const Shuffled$l = () => {
     )
   ] });
 };
-const ShuffledArenas$1 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
+const ShuffledArenas$2 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$o, {}) : null;
 const CratePool = ({ children }) => usePoolCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const Shuffled$k = () => {
+const Shuffled$n = () => {
   const isBreathing = useAnyKong();
   const hasDK = useDk();
   const hasDiddy = useDiddy();
@@ -15591,9 +15591,9 @@ const Shuffled$k = () => {
     )
   ] });
 };
-const ShuffledCrates$1 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$k, {}) : null;
-const Shuffled$j = () => {
-  const isBreathing = useGeneralDirt$3();
+const ShuffledCrates$2 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {}) : null;
+const Shuffled$m = () => {
+  const isBreathing = useGeneralDirt$4();
   const hasShockwave = useShockwave();
   const hasClimbing = useClimbing();
   const hasVines = useVine();
@@ -16416,8 +16416,8 @@ const Shuffled$j = () => {
     )
   ] });
 };
-const ShuffledDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$j, {}) : null;
-const Shuffled$i = () => {
+const ShuffledDirt$1 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$m, {}) : null;
+const Shuffled$l = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$6();
   const vanillaFairy2 = useKremFairy();
@@ -16607,7 +16607,7 @@ const Shuffled$i = () => {
     )
   ] });
 };
-const ShuffledFairies$8 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$i, {}) : null;
+const ShuffledFairies$8 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
 const IslesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
@@ -16637,9 +16637,9 @@ const IslesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FairyReward, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$1, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$1, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {})
 ] });
 const BoulderLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -16710,9 +16710,9 @@ const ClassicChecks$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   /* @__PURE__ */ jsxRuntimeExports.jsx(FairyReward, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$8, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$1, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$1, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {})
 ] });
 const IsleChecks = () => {
@@ -17033,6 +17033,16 @@ const useGeneralThing$4 = () => {
     out: canPlay.out && anyKong
   };
 };
+const useArena$4 = () => {
+  const isBreathing = useGeneralThing$4();
+  const hasClimbing = useClimbing();
+  const hasBananaports = useBananaportAll();
+  const hasOStand = useStand();
+  return {
+    in: isBreathing.in && (hasClimbing || hasBananaports),
+    out: isBreathing.out && hasOStand
+  };
+};
 const useRambiCrate = () => {
   const anyKong = useAnyKong();
   const hasRambi = useJapesRambi();
@@ -17047,6 +17057,14 @@ const usePaintingDirt = () => {
   return {
     in: shockwave && japesPaintingOutside.in,
     out: shockwave && japesPaintingOutside.out
+  };
+};
+const useGeneralDirt$3 = () => {
+  const shockwave = useShockwave();
+  const inStage = usePlayJapes();
+  return {
+    in: inStage.in && shockwave,
+    out: inStage.out && shockwave
   };
 };
 const useRambiFairy = () => {
@@ -17114,7 +17132,7 @@ const JapesCheck = (props) => {
   ) });
 };
 const FunkyArena = () => {
-  const canDo = useGeneralThing$4();
+  const canDo = useArena$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaArena, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     JapesCheck,
     {
@@ -18634,7 +18652,7 @@ const Vanilla$6 = () => {
     )
   ] });
 };
-const Shuffled$h = () => {
+const Shuffled$k = () => {
   const kongGates = useJapesKongGates();
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
@@ -18678,7 +18696,7 @@ const Shuffled$h = () => {
   ] });
 };
 const ShopLocations$6 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$h, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$6, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$k, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$6, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const HiveInteriorChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -18741,6 +18759,1626 @@ const StormyTunnelChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(StormyTunnelEnemies, {})
 ] });
+const Shuffled$j = () => {
+  const isBreathing = useGeneralThing$4();
+  const canReachFunky = useArena$4();
+  const canReachPaintingRoom = useJapesPaintingOutside();
+  const hasClimbing = useClimbing();
+  const canReachDiddyTunnel = useJapesSideArea();
+  const canReachHiveZone = useJapesHive();
+  const canReachStormyZone = useJapesKongGates();
+  const hasOStand = useStand();
+  const hasRambi = useJapesRambi();
+  const canDoVanillaCrate1 = useMtnCrate();
+  const canReachDiddyCage = useDkFreebieGb();
+  const canReachMtn = useJapesMine();
+  const hasVines = useVine();
+  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
+  const hasAllBananaports = useBananaportAll();
+  const canReachChunkyCave = useJapesUnderground();
+  const canGetInHive = useTinyStumpGb();
+  const canGetInHivePastRoom1 = useTinyHiveGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: Vanilla Arena (what a Funky's!)",
+        region: "Japes Hillside",
+        canGetLogic: canReachFunky.in,
+        canGetBreak: canReachFunky.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11001,
+        name: "Shuffled Battle Arena: In front of door to Lanky's painting room",
+        region: "Japes Hillside",
+        canGetLogic: canReachPaintingRoom.in,
+        canGetBreak: canReachPaintingRoom.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11002,
+        name: "Shuffled Battle Arena: Near vanilla level entrance",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11003,
+        name: "Shuffled Battle Arena: On a tree in the starting area",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in && hasClimbing,
+        canGetBreak: isBreathing.out && hasClimbing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11004,
+        name: "Shuffled Battle Arena: Next to first tunnel entrance",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11005,
+        name: "Shuffled Battle Arena: In the first tunnel",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11006,
+        name: "Shuffled Battle Arena: In Diddy's sub-tunnel",
+        region: "Japes Lowlands",
+        canGetLogic: canReachDiddyTunnel.in,
+        canGetBreak: canReachDiddyTunnel.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11007,
+        name: "Shuffled Battle Arena: In the first tunnel, main area-side",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11008,
+        name: "Shuffled Battle Arena: In front of the Painting Hill",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11009,
+        name: "Shuffled Battle Arena: Under Chunky's barrel in the hive zone",
+        region: "Hive Area",
+        canGetLogic: canReachHiveZone.in,
+        canGetBreak: canReachHiveZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11010,
+        name: "Shuffled Battle Arena: Near Tiny's stump",
+        region: "Hive Area",
+        canGetLogic: canReachHiveZone.in,
+        canGetBreak: canReachHiveZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11011,
+        name: "Shuffled Battle Arena: Near one of Tiny's logs",
+        region: "Hive Area",
+        canGetLogic: canReachHiveZone.in,
+        canGetBreak: canReachHiveZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11012,
+        name: "Shuffled Battle Arena: Near the vine pit",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11013,
+        name: "Shuffled Battle Arena: In the vine pit",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11014,
+        name: `Shuffled Battle Arena: On Lanky's "useless" slope`,
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasOStand,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11015,
+        name: `Shuffled Battle Arena: On the left of Lanky's "useless" slope`,
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasOStand,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11016,
+        name: "Shuffled Battle Arena: The Stormy Tunnel's 4-way intersection",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11018,
+        name: "Shuffled Battle Arena: The Banana Fairy's pool",
+        region: "Stormy Area",
+        canGetLogic: hasRambi.in,
+        canGetBreak: hasRambi.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11019,
+        name: "Shuffled Battle Arena: Behind Lanky's Hut",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11020,
+        name: "Shuffled Battle Arena: Behind DK's hut",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11021,
+        name: "Shuffled Battle Arena: Near Rambi's cage",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11022,
+        name: "Shuffled Battle Arena: Behind Cranky's",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11023,
+        name: "Shuffled Battle Arena: At the minecart exit",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11024,
+        name: "Shuffled Battle Arena: Near Snide's",
+        region: "Japes Hillside",
+        canGetLogic: canReachFunky.in,
+        canGetBreak: canReachFunky.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11025,
+        name: "Shuffled Battle Arena: Behind Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: canDoVanillaCrate1.in,
+        canGetBreak: canDoVanillaCrate1.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11026,
+        name: "Shuffled Battle Arena: In front of Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11027,
+        name: "Shuffled Battle Arena: Near the Barrel Cannon to Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11028,
+        name: "Shuffled Battle Arena: Behind Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11029,
+        name: "Shuffled Battle Arena: Near the cannon platform",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11030,
+        name: "Shuffled Battle Arena: In the Troff 'n' Scoff alcove",
+        region: "Japes Hillside",
+        canGetLogic: hasClimbing && hasVines,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11031,
+        name: "Shuffled Battle Arena: In front of the river",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11032,
+        name: "Shuffled Battle Arena: Vanilla Warp 1, level start",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11033,
+        name: "Shuffled Battle Arena: Vanilla Warp 1, after the early cave",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11034,
+        name: "Shuffled Battle Arena: Vanilla Warp 2, main area",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11035,
+        name: "Shuffled Battle Arena: Vanilla Warp 2, in front of Diddy's mountain",
+        region: "Japes Hillside",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11036,
+        name: "Shuffled Battle Arena: Vanilla Warp 3, at the hive tunnel",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11037,
+        name: "Shuffled Battle Arena: Vanilla Warp 3, at the painting room",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11038,
+        name: "Shuffled Battle Arena: Vanilla Warp 4, Stormy Tunnel entrance",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11039,
+        name: "Shuffled Battle Arena: Vanilla Warp 4, in front of Cranky's",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11040,
+        name: "Shuffled Battle Arena: Vanilla Warp 5, on top of Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: didGB[1011] || hasAllBananaports
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11041,
+        name: "Shuffled Battle Arena: Vanilla Warp 5, hive area",
+        region: "Hive Area",
+        canGetLogic: canReachHiveZone.in,
+        canGetBreak: canReachHiveZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11042,
+        name: "Shuffled Battle Arena: Behind the boulder leading to Chunky's underground",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11043,
+        name: "Shuffled Battle Arena: Chunky's underground, behind exit cannon",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachChunkyCave.in,
+        canGetBreak: canReachChunkyCave.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11044,
+        name: "Shuffled Battle Arena: Chunky's underground, at vines",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachChunkyCave.in,
+        canGetBreak: canReachChunkyCave.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11046,
+        name: "Shuffled Battle Arena: Near entrance to Diddy's mountain",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11047,
+        name: "Shuffled Battle Arena: On platform opposide Diddy's mountain switch",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11048,
+        name: "Shuffled Battle Arena: On the barrel with Diddy's mountain switch",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11049,
+        name: "Shuffled Battle Arena: Near the hi-lo machine",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11051,
+        name: "Shuffled Battle Arena: In the main room of Tiny's hive",
+        region: "Hive Area",
+        canGetLogic: canGetInHive.in,
+        canGetBreak: canGetInHive.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11052,
+        name: "Shuffled Battle Arena: In the first room of Tiny's hive",
+        region: "Hive Area",
+        canGetLogic: canGetInHive.in,
+        canGetBreak: canGetInHive.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11053,
+        name: "Shuffled Battle Arena: In the final room of Tiny's hive",
+        region: "Hive Area",
+        canGetLogic: canGetInHivePastRoom1.in,
+        canGetBreak: canGetInHivePastRoom1.out
+      }
+    )
+  ] });
+};
+const ShuffledArenas$1 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$j, {}) : null;
+const Shuffled$i = () => {
+  const isBreathing = useGeneralThing$4();
+  const canReachFunky = useArena$4();
+  const canReachPaintingRoom = useJapesPaintingOutside();
+  const hasClimbing = useClimbing();
+  const canReachDiddyTunnel = useJapesSideArea();
+  const canReachHiveZone = useJapesHive();
+  const canReachStormyZone = useJapesKongGates();
+  const hasOStand = useStand();
+  const hasRambi = useJapesRambi();
+  const canDoVanillaCrate1 = useMtnCrate();
+  const canDoVanillaCrate2 = useRambiCrate();
+  const canReachDiddyCage = useDkFreebieGb();
+  const canReachMtn = useJapesMine();
+  const hasVines = useVine();
+  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
+  const hasAllBananaports = useBananaportAll();
+  const canReachChunkyCave = useJapesUnderground();
+  const canGetInHive = useTinyStumpGb();
+  const canGetInHivePastRoom1 = useTinyHiveGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21e3,
+        name: "Shuffled Melon Crate: In front of Funky's",
+        region: "Japes Hillside",
+        canGetLogic: canReachFunky.in,
+        canGetBreak: canReachFunky.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21001,
+        name: "Shuffled Melon Crate: In front of door to Lanky's painting room",
+        region: "Japes Hillside",
+        canGetLogic: canReachPaintingRoom.in,
+        canGetBreak: canReachPaintingRoom.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21002,
+        name: "Shuffled Melon Crate: Near vanilla level entrance",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21003,
+        name: "Shuffled Melon Crate: On a tree in the starting area",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in && hasClimbing,
+        canGetBreak: isBreathing.out && hasClimbing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21004,
+        name: "Shuffled Melon Crate: Next to first tunnel entrance",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21005,
+        name: "Shuffled Melon Crate: In the first tunnel",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21006,
+        name: "Shuffled Melon Crate: In Diddy's sub-tunnel",
+        region: "Japes Lowlands",
+        canGetLogic: canReachDiddyTunnel.in,
+        canGetBreak: canReachDiddyTunnel.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21007,
+        name: "Shuffled Melon Crate: In the first tunnel, main area-side",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21009,
+        name: "Shuffled Melon Crate: Under Chunky's barrel in the hive zone",
+        region: "Hive Area",
+        canGetLogic: canReachHiveZone.in,
+        canGetBreak: canReachHiveZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21010,
+        name: "Shuffled Melon Crate: Near Tiny's stump",
+        region: "Hive Area",
+        canGetLogic: canReachHiveZone.in,
+        canGetBreak: canReachHiveZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21011,
+        name: "Shuffled Melon Crate: Near one of Tiny's logs",
+        region: "Hive Area",
+        canGetLogic: canReachHiveZone.in,
+        canGetBreak: canReachHiveZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21012,
+        name: "Shuffled Melon Crate: Near the vine pit",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21013,
+        name: "Shuffled Melon Crate: In the vine pit",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21014,
+        name: `Shuffled Melon Crate: On Lanky's "useless" slope`,
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasOStand,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21016,
+        name: "Shuffled Melon Crate: The Stormy Tunnel's 4-way intersection",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21017,
+        name: "Shuffled Melon Crate: Vanilla Location 1 (behind Chunky's hut switch)",
+        region: "Stormy Area",
+        canGetLogic: canDoVanillaCrate2.in,
+        canGetBreak: canDoVanillaCrate2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21018,
+        name: "Shuffled Melon Crate: The Banana Fairy's pool",
+        region: "Stormy Area",
+        canGetLogic: hasRambi.in,
+        canGetBreak: hasRambi.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21019,
+        name: "Shuffled Melon Crate: Behind Lanky's Hut",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21020,
+        name: "Shuffled Melon Crate: Behind DK's hut",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21021,
+        name: "Shuffled Melon Crate: Near Rambi's cage",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21022,
+        name: "Shuffled Melon Crate: Behind Cranky's",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21023,
+        name: "Shuffled Melon Crate: At the minecart exit",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21024,
+        name: "Shuffled Melon Crate: Near Snide's",
+        region: "Japes Hillside",
+        canGetLogic: canReachFunky.in,
+        canGetBreak: canReachFunky.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21025,
+        name: "Shuffled Melon Crate: Behind Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: canDoVanillaCrate1.in,
+        canGetBreak: canDoVanillaCrate1.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21026,
+        name: "Shuffled Melon Crate: In front of Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21027,
+        name: "Shuffled Melon Crate: Near the Barrel Cannon to Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21028,
+        name: "Shuffled Melon Crate: Vanilla Location 2 (behind Diddy's Mountain)",
+        region: "Japes Hillside",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21029,
+        name: "Shuffled Melon Crate: Near the cannon platform",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21030,
+        name: "Shuffled Melon Crate: In the Troff 'n' Scoff alcove",
+        region: "Japes Hillside",
+        canGetLogic: hasClimbing && hasVines,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21031,
+        name: "Shuffled Melon Crate: In front of the river",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21032,
+        name: "Shuffled Melon Crate: Vanilla Warp 1, level start",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21033,
+        name: "Shuffled Melon Crate: Vanilla Warp 1, after the early cave",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21034,
+        name: "Shuffled Melon Crate: Vanilla Warp 2, main area",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21035,
+        name: "Shuffled Melon Crate: Vanilla Warp 2, in front of Diddy's mountain",
+        region: "Japes Hillside",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21036,
+        name: "Shuffled Melon Crate: Vanilla Warp 3, at the hive tunnel",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21037,
+        name: "Shuffled Melon Crate: Vanilla Warp 3, at the painting room",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21038,
+        name: "Shuffled Melon Crate: Vanilla Warp 4, Stormy Tunnel entrance",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21039,
+        name: "Shuffled Melon Crate: Vanilla Warp 4, in front of Cranky's",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in,
+        canGetBreak: canReachStormyZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21040,
+        name: "Shuffled Melon Crate: Vanilla Warp 5, on top of Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: didGB[1011] || hasAllBananaports
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21041,
+        name: "Shuffled Melon Crate: Vanilla Warp 5, hive area",
+        region: "Hive Area",
+        canGetLogic: canReachHiveZone.in,
+        canGetBreak: canReachHiveZone.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21042,
+        name: "Shuffled Melon Crate: Behind the boulder leading to Chunky's underground",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21043,
+        name: "Shuffled Melon Crate: Chunky's underground, behind exit cannon",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachChunkyCave.in,
+        canGetBreak: canReachChunkyCave.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21044,
+        name: "Shuffled Melon Crate: Chunky's underground, at vines",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachChunkyCave.in,
+        canGetBreak: canReachChunkyCave.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21045,
+        name: "Shuffled Melon Crate: In between the pegs in Lanky's painting room",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachPaintingRoom.in,
+        canGetBreak: canReachPaintingRoom.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21046,
+        name: "Shuffled Melon Crate: Near entrance to Diddy's mountain",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21047,
+        name: "Shuffled Melon Crate: On platform opposide Diddy's mountain switch",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21048,
+        name: "Shuffled Melon Crate: On the barrel with Diddy's mountain switch",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21049,
+        name: "Shuffled Melon Crate: Near the hi-lo machine",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21051,
+        name: "Shuffled Melon Crate: In the main room of Tiny's hive",
+        region: "Hive Area",
+        canGetLogic: canGetInHive.in,
+        canGetBreak: canGetInHive.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21052,
+        name: "Shuffled Melon Crate: In the first room of Tiny's hive",
+        region: "Hive Area",
+        canGetLogic: canGetInHive.in,
+        canGetBreak: canGetInHive.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21053,
+        name: "Shuffled Melon Crate: In the final room of Tiny's hive",
+        region: "Hive Area",
+        canGetLogic: canGetInHivePastRoom1.in,
+        canGetBreak: canGetInHivePastRoom1.out
+      }
+    )
+  ] });
+};
+const ShuffledCrates$1 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$i, {}) : null;
+const Shuffled$h = () => {
+  const isBreathing = useGeneralDirt$3();
+  const hasShockwave = useShockwave();
+  const canReachFunky = useArena$4();
+  const canReachPaintingRoom = useJapesPaintingOutside();
+  const hasClimbing = useClimbing();
+  const canReachDiddyTunnel = useJapesSideArea();
+  const canReachHiveZone = useJapesHive();
+  const canReachStormyZone = useJapesKongGates();
+  const hasOStand = useStand();
+  const hasRambi = useJapesRambi();
+  const canDoVanillaCrate1 = useMtnCrate();
+  const canDoVanillaCrate2 = useRambiCrate();
+  const canReachDiddyCage = useDkFreebieGb();
+  const canReachMtn = useJapesMine();
+  const hasVines = useVine();
+  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
+  const hasAllBananaports = useBananaportAll();
+  const canReachChunkyCave = useJapesUnderground();
+  const canGetInHive = useTinyStumpGb();
+  const canGetInHivePastRoom1 = useTinyHiveGb();
+  const canDoVanillaDirt = usePaintingDirt();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31e3,
+        name: "Shuffled Dirt Patch: In front of Funky's",
+        region: "Japes Hillside",
+        canGetLogic: canReachFunky.in && hasShockwave,
+        canGetBreak: canReachFunky.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31001,
+        name: "Shuffled Dirt Patch: Vanilla Location (in front of door to Lanky's painting room)",
+        region: "Japes Hillside",
+        canGetLogic: canDoVanillaDirt.in,
+        canGetBreak: canDoVanillaDirt.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31002,
+        name: "Shuffled Dirt Patch: Near vanilla level entrance",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31003,
+        name: "Shuffled Dirt Patch: On a tree in the starting area",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in && hasClimbing,
+        canGetBreak: isBreathing.out && hasClimbing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31004,
+        name: "Shuffled Dirt Patch: Next to first tunnel entrance",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in && hasShockwave,
+        canGetBreak: isBreathing.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31005,
+        name: "Shuffled Dirt Patch: In the first tunnel",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31006,
+        name: "Shuffled Dirt Patch: In Diddy's sub-tunnel",
+        region: "Japes Lowlands",
+        canGetLogic: canReachDiddyTunnel.in && hasShockwave,
+        canGetBreak: canReachDiddyTunnel.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31007,
+        name: "Shuffled Dirt Patch: In the first tunnel, main area-side",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31008,
+        name: "Shuffled Dirt Patch: In front of the Painting Hill",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31009,
+        name: "Shuffled Dirt Patch: Under Chunky's barrel in the hive zone",
+        region: "Hive Area",
+        canGetLogic: canReachHiveZone.in && hasShockwave,
+        canGetBreak: canReachHiveZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31010,
+        name: "Shuffled Dirt Patch: Near Tiny's stump",
+        region: "Hive Area",
+        canGetLogic: canReachHiveZone.in && hasShockwave,
+        canGetBreak: canReachHiveZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31011,
+        name: "Shuffled Dirt Patch: Near one of Tiny's logs",
+        region: "Hive Area",
+        canGetLogic: canReachHiveZone.in && hasShockwave,
+        canGetBreak: canReachHiveZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31012,
+        name: "Shuffled Dirt Patch: Near the vine pit",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasShockwave,
+        canGetBreak: canReachStormyZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31013,
+        name: "Shuffled Dirt Patch: In the vine pit",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasShockwave,
+        canGetBreak: canReachStormyZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31014,
+        name: `Shuffled Dirt Patch: On Lanky's "useless" slope`,
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasOStand && hasShockwave,
+        canGetBreak: canReachStormyZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31015,
+        name: `Shuffled Dirt Patch: On the left of Lanky's "useless" slope`,
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasOStand && hasShockwave,
+        canGetBreak: canReachStormyZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31016,
+        name: "Shuffled Dirt Patch: The Stormy Tunnel's 4-way intersection",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasShockwave,
+        canGetBreak: canReachStormyZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31017,
+        name: "Shuffled Dirt Patch: Behind Chunky's hut switch",
+        region: "Stormy Area",
+        canGetLogic: canDoVanillaCrate2.in && hasShockwave,
+        canGetBreak: canDoVanillaCrate2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31018,
+        name: "Shuffled Dirt Patch: The Banana Fairy's pool",
+        region: "Stormy Area",
+        canGetLogic: hasRambi.in && hasShockwave,
+        canGetBreak: hasRambi.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31019,
+        name: "Shuffled Dirt Patch: Behind Lanky's Hut",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasShockwave,
+        canGetBreak: canReachStormyZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31020,
+        name: "Shuffled Dirt Patch: Behind DK's hut",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasShockwave,
+        canGetBreak: canReachStormyZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31021,
+        name: "Shuffled Dirt Patch: Near Rambi's cage",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasShockwave,
+        canGetBreak: canReachStormyZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31022,
+        name: "Shuffled Dirt Patch: Behind Cranky's",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasShockwave,
+        canGetBreak: canReachStormyZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31023,
+        name: "Shuffled Dirt Patch: At the minecart exit",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31024,
+        name: "Shuffled Dirt Patch: Near Snide's",
+        region: "Japes Hillside",
+        canGetLogic: canReachFunky.in && hasShockwave,
+        canGetBreak: canReachFunky.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31025,
+        name: "Shuffled Dirt Patch: Behind Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: canDoVanillaCrate1.in && hasShockwave,
+        canGetBreak: canDoVanillaCrate1.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31026,
+        name: "Shuffled Dirt Patch: In front of Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in && hasShockwave,
+        canGetBreak: canReachDiddyCage.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31027,
+        name: "Shuffled Dirt Patch: Near the Barrel Cannon to Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in && hasShockwave,
+        canGetBreak: canReachDiddyCage.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31028,
+        name: "Shuffled Dirt Patch: Vanilla Location 2 (behind Diddy's Mountain)",
+        region: "Japes Hillside",
+        canGetLogic: canReachMtn.in && hasShockwave,
+        canGetBreak: canReachMtn.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31029,
+        name: "Shuffled Dirt Patch: Near the cannon platform",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in && hasShockwave,
+        canGetBreak: canReachDiddyCage.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31030,
+        name: "Shuffled Dirt Patch: In the Troff 'n' Scoff alcove",
+        region: "Japes Hillside",
+        canGetLogic: hasClimbing && hasVines && hasShockwave,
+        canGetBreak: canReachDiddyCage.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31031,
+        name: "Shuffled Dirt Patch: In front of the river",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31032,
+        name: "Shuffled Dirt Patch: Vanilla Warp 1, level start",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31033,
+        name: "Shuffled Dirt Patch: Vanilla Warp 1, after the early cave",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31034,
+        name: "Shuffled Dirt Patch: Vanilla Warp 2, main area",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31035,
+        name: "Shuffled Dirt Patch: Vanilla Warp 2, in front of Diddy's mountain",
+        region: "Japes Hillside",
+        canGetLogic: canReachMtn.in && hasShockwave,
+        canGetBreak: canReachMtn.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31036,
+        name: "Shuffled Dirt Patch: Vanilla Warp 3, at the hive tunnel",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31037,
+        name: "Shuffled Dirt Patch: Vanilla Warp 3, at the painting room",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31038,
+        name: "Shuffled Dirt Patch: Vanilla Warp 4, Stormy Tunnel entrance",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasShockwave,
+        canGetBreak: canReachStormyZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31039,
+        name: "Shuffled Dirt Patch: Vanilla Warp 4, in front of Cranky's",
+        region: "Stormy Area",
+        canGetLogic: canReachStormyZone.in && hasShockwave,
+        canGetBreak: canReachStormyZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31040,
+        name: "Shuffled Dirt Patch: Vanilla Warp 5, on top of Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: (didGB[1011] || hasAllBananaports) && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31041,
+        name: "Shuffled Dirt Patch: Vanilla Warp 5, hive area",
+        region: "Hive Area",
+        canGetLogic: canReachHiveZone.in && hasShockwave,
+        canGetBreak: canReachHiveZone.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31042,
+        name: "Shuffled Dirt Patch: Behind the boulder leading to Chunky's underground",
+        region: "Japes Lowlands",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31043,
+        name: "Shuffled Dirt Patch: Chunky's underground, behind exit cannon",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachChunkyCave.in && hasShockwave,
+        canGetBreak: canReachChunkyCave.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31044,
+        name: "Shuffled Dirt Patch: Chunky's underground, at vines",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachChunkyCave.in && hasShockwave,
+        canGetBreak: canReachChunkyCave.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31045,
+        name: "Shuffled Dirt Patch: In between the pegs in Lanky's painting room",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachPaintingRoom.in && hasShockwave,
+        canGetBreak: canReachPaintingRoom.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31046,
+        name: "Shuffled Dirt Patch: Near entrance to Diddy's mountain",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachMtn.in && hasShockwave,
+        canGetBreak: canReachMtn.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31047,
+        name: "Shuffled Dirt Patch: On platform opposide Diddy's mountain switch",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachMtn.in && hasShockwave,
+        canGetBreak: canReachMtn.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31048,
+        name: "Shuffled Dirt Patch: On the barrel with Diddy's mountain switch",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachMtn.in && hasShockwave,
+        canGetBreak: canReachMtn.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31049,
+        name: "Shuffled Dirt Patch: Near the hi-lo machine",
+        region: "Japes Caves and Mines",
+        canGetLogic: canReachMtn.in && hasShockwave,
+        canGetBreak: canReachMtn.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31051,
+        name: "Shuffled Dirt Patch: In the main room of Tiny's hive",
+        region: "Hive Area",
+        canGetLogic: canGetInHive.in && hasShockwave,
+        canGetBreak: canGetInHive.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31052,
+        name: "Shuffled Dirt Patch: In the first room of Tiny's hive",
+        region: "Hive Area",
+        canGetLogic: canGetInHive.in && hasShockwave,
+        canGetBreak: canGetInHive.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31053,
+        name: "Shuffled Dirt Patch: In the final room of Tiny's hive",
+        region: "Hive Area",
+        canGetLogic: canGetInHivePastRoom1.in && hasShockwave,
+        canGetBreak: canGetInHivePastRoom1.out && hasShockwave
+      }
+    )
+  ] });
+};
+const ShuffledDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$h, {}) : null;
 const Shuffled$g = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$5();
@@ -18888,6 +20526,9 @@ const JapesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(UndergroundChecks$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {})
 ] });
 const ClassicChecks$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -18911,6 +20552,9 @@ const ClassicChecks$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$7, {}) }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {})
 ] });
 const JapesChecks = () => {
@@ -23972,7 +25616,7 @@ const GalleonCheck = (props) => {
   ) });
 };
 const CavernArena = () => {
-  const canDo = useArena$4();
+  const canDo = useArena$5();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaArena, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     GalleonCheck,
     {
@@ -32715,7 +34359,7 @@ const useEOHDoor1 = () => {
   }
 };
 const useEOHDoor2 = () => {
-  const canReachNavRoom = useHelmDoors();
+  const canReachThrone = useEOHDoor1();
   const itemNeeded = useHelmItem2();
   const targetItemCount = useHelmItemNum2();
   const currentGBCount = useCurrentGBCount();
@@ -32731,58 +34375,58 @@ const useEOHDoor2 = () => {
   switch (itemNeeded) {
     case 1:
       return {
-        in: canReachNavRoom.in && currentGBCount >= targetItemCount,
-        out: canReachNavRoom.out && currentGBCount >= targetItemCount
+        in: canReachThrone.in && currentGBCount >= targetItemCount,
+        out: canReachThrone.out && currentGBCount >= targetItemCount
       };
     case 2:
       return {
-        in: canReachNavRoom.in && currentBlueprintCount >= targetItemCount,
-        out: canReachNavRoom.out && currentBlueprintCount >= targetItemCount
+        in: canReachThrone.in && currentBlueprintCount >= targetItemCount,
+        out: canReachThrone.out && currentBlueprintCount >= targetItemCount
       };
     case 3:
       return {
-        in: canReachNavRoom.in && currentCoCoinCount >= targetItemCount,
-        out: canReachNavRoom.out && currentCoCoinCount >= targetItemCount
+        in: canReachThrone.in && currentCoCoinCount >= targetItemCount,
+        out: canReachThrone.out && currentCoCoinCount >= targetItemCount
       };
     case 4:
       return {
-        in: canReachNavRoom.in && currentKeyCount >= targetItemCount,
-        out: canReachNavRoom.out && currentKeyCount >= targetItemCount
+        in: canReachThrone.in && currentKeyCount >= targetItemCount,
+        out: canReachThrone.out && currentKeyCount >= targetItemCount
       };
     case 5:
       return {
-        in: canReachNavRoom.in && currentBananaMedalCount >= targetItemCount,
-        out: canReachNavRoom.out && currentBananaMedalCount >= targetItemCount
+        in: canReachThrone.in && currentBananaMedalCount >= targetItemCount,
+        out: canReachThrone.out && currentBananaMedalCount >= targetItemCount
       };
     case 6:
       return {
-        in: canReachNavRoom.in && currentCrownCount >= targetItemCount,
-        out: canReachNavRoom.out && currentCrownCount >= targetItemCount
+        in: canReachThrone.in && currentCrownCount >= targetItemCount,
+        out: canReachThrone.out && currentCrownCount >= targetItemCount
       };
     case 7:
       return {
-        in: canReachNavRoom.in && currentFairyCount >= targetItemCount,
-        out: canReachNavRoom.out && currentFairyCount >= targetItemCount
+        in: canReachThrone.in && currentFairyCount >= targetItemCount,
+        out: canReachThrone.out && currentFairyCount >= targetItemCount
       };
     case 8:
       return {
-        in: canReachNavRoom.in && currentRainbowCoinCount >= targetItemCount,
-        out: canReachNavRoom.out && currentRainbowCoinCount >= targetItemCount
+        in: canReachThrone.in && currentRainbowCoinCount >= targetItemCount,
+        out: canReachThrone.out && currentRainbowCoinCount >= targetItemCount
       };
     case 9:
       return {
-        in: canReachNavRoom.in && Number(currentBeanCount) >= targetItemCount,
-        out: canReachNavRoom.out && Number(currentBeanCount) >= targetItemCount
+        in: canReachThrone.in && Number(currentBeanCount) >= targetItemCount,
+        out: canReachThrone.out && Number(currentBeanCount) >= targetItemCount
       };
     case 10:
       return {
-        in: canReachNavRoom.in && currentPearlCount >= targetItemCount,
-        out: canReachNavRoom.out && currentPearlCount >= targetItemCount
+        in: canReachThrone.in && currentPearlCount >= targetItemCount,
+        out: canReachThrone.out && currentPearlCount >= targetItemCount
       };
     default:
       return {
-        in: canReachNavRoom.in,
-        out: canReachNavRoom.out
+        in: canReachThrone.in,
+        out: canReachThrone.out
       };
   }
 };
