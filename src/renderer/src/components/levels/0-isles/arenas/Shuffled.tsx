@@ -24,7 +24,6 @@ const canReachWaterfall = useIslesCrossFungi()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canDoIslesDirt1 = canReachFungiLobby
 const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && hasJetbarrel
-const canDoIslesDirt2OutLogic = ((canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny)) || (canReachWaterfall && (hasDK || isHinaKagiyama)))
 const canReachFactoryLobby = useIslesKremAscent()
 const canReachHelmLobby = useIslesKremTop()
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
@@ -71,7 +70,7 @@ const bananaportSettings = useBananaport()
         name="Shuffled Battle Arena: On the Aztec Lobby roof"
         region="DK Island"
         canGetLogic={canDoIslesDirt2InLogic}
-        canGetBreak={canDoIslesDirt2OutLogic}
+        canGetBreak={((canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny)) || (canReachWaterfall && (hasDK || isHinaKagiyama)))}
       />
       <IslesCheck
         id={10004}
