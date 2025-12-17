@@ -25,11 +25,6 @@ const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canDoIslesDirt1 = canReachFungiLobby
 const canDoIslesDirt2InLogic = useIslesRocket() && canReachFungiLobby && hasJetbarrel
 const canDoIslesDirt2OutLogic = ((canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny)) || (canReachWaterfall && (hasDK || isHinaKagiyama)))
-const canDoIslesDirt3InLogic = hasClimbing || useBananaport() != 0 || canReachWaterfall.in
-const canDoIslesDirt3OutLogic = canReachWaterfall.out
-const canDoIslesDirt4InLogic = canGetInCastleLobby.in && hasBoulderTech && useBalloon()
-const canDoIslesDirt4OutLogic = canGetInCastleLobby.out && (hasDiddy || hasTiny)
-const canDoIslesDirt5 = hasVines && hasClimbing
 const canReachFactoryLobby = useIslesKremAscent()
 const canReachHelmLobby = useIslesKremTop()
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
@@ -48,6 +43,8 @@ const canGetInFactoryUpper = useFactoryLobbyUpper()
 const canGetInCavesKasplat = useCavesKasplat()
 const canGetInHelmChunky = useCheckChunkyHelm()
 const canGetInHelmDK = useHelmKasplat()
+const hasBalloon = useBalloon()
+const bananaportSettings = useBananaport()
   return (
     <ArenaPool>
       <IslesCheck
@@ -80,21 +77,21 @@ const canGetInHelmDK = useHelmKasplat()
         id={10004}
         name="Shuffled Battle Arena: Under the Caves Lobby entrance"
         region="DK Island"
-        canGetLogic={canDoIslesDirt3InLogic}
-        canGetBreak={canDoIslesDirt3OutLogic}
+        canGetLogic={hasClimbing || bananaportSettings != 0 || canReachWaterfall.in}
+        canGetBreak={canReachWaterfall.out}
       />
       <IslesCheck
         id={10005}
         name="Shuffled Battle Arena: Under Lanky's Castle Lobby barrel"
         region="Caves-Helm Lobbies"
-        canGetLogic={canDoIslesDirt4InLogic}
-        canGetBreak={canDoIslesDirt4OutLogic}
+        canGetLogic={canGetInCastleLobby.in && hasBoulderTech && hasBalloon}
+        canGetBreak={canGetInCastleLobby.out && (hasDiddy || hasTiny)}
       />
       <IslesCheck
         id={10006}
         name="Shuffled Battle Arena: At the Banana Hoard"
         region="DK Island"
-        canGetLogic={canDoIslesDirt5}
+        canGetLogic={hasVines && hasClimbing}
       />
       <IslesCheck
         id={10007}
