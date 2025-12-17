@@ -19,6 +19,9 @@ import PeanutGateChecks from './PeanutGate'
 import RambiGateChecks from './RambiGate'
 import UndergroundChecks from './Underground'
 import StormyTunnelChecks from './StormyTunnel'
+import ShuffledArenas from '../arenas/Shuffled'
+import ShuffledCrates from '../crates/Shuffled'
+import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 
 const JapesRegionChecks: React.FC = () => (
@@ -45,6 +48,9 @@ const JapesRegionChecks: React.FC = () => (
     <UndergroundChecks />
     <ShopLocations />
     <BossCheck />
+    <ShuffledArenas />
+    <ShuffledCrates />
+    <ShuffledDirt />
     <ShuffledFairies />
   </div>
 )

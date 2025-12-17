@@ -1,10 +1,10 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import VanillaArena from '@renderer/components/pools/VanillaArena'
-import { useGeneralThing } from '@renderer/hooks/japes'
+import { useArena } from '@renderer/hooks/japes'
 import JapesCheck from '../check'
 
 const FunkyArena: React.FC = () => {
-const canDo = useGeneralThing()
+const canDo = useArena()
 return (
   <ArenaPool>
     <VanillaArena>

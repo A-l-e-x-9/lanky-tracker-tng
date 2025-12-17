@@ -167,7 +167,7 @@ export const useEOHDoor1 = (): LogicBool => {
 
 //Can we get past Door #2 and, in vanilla, get Key #8?
 export const useEOHDoor2 = (): LogicBool => {
-  const canReachNavRoom = useHelmDoors()
+  const canReachThrone = useEOHDoor1()
   const itemNeeded = useHelmItem2()
   const targetItemCount = useHelmItemNum2()
   const currentGBCount = useCurrentGBCount()
@@ -184,58 +184,58 @@ export const useEOHDoor2 = (): LogicBool => {
   switch (itemNeeded) {
     case 1:
       return {
-        in: canReachNavRoom.in && (currentGBCount >= targetItemCount),
-        out: canReachNavRoom.out && (currentGBCount >= targetItemCount)
+        in: canReachThrone.in && (currentGBCount >= targetItemCount),
+        out: canReachThrone.out && (currentGBCount >= targetItemCount)
       }
     case 2:
       return {
-        in: canReachNavRoom.in && (currentBlueprintCount >= targetItemCount),
-        out: canReachNavRoom.out && (currentBlueprintCount >= targetItemCount)
+        in: canReachThrone.in && (currentBlueprintCount >= targetItemCount),
+        out: canReachThrone.out && (currentBlueprintCount >= targetItemCount)
       }
     case 3:
       return {
-        in: canReachNavRoom.in && (currentCoCoinCount >= targetItemCount),
-        out: canReachNavRoom.out && (currentCoCoinCount >= targetItemCount)
+        in: canReachThrone.in && (currentCoCoinCount >= targetItemCount),
+        out: canReachThrone.out && (currentCoCoinCount >= targetItemCount)
       }
     case 4:
       return {
-        in: canReachNavRoom.in && (currentKeyCount >= targetItemCount),
-        out: canReachNavRoom.out && (currentKeyCount >= targetItemCount)
+        in: canReachThrone.in && (currentKeyCount >= targetItemCount),
+        out: canReachThrone.out && (currentKeyCount >= targetItemCount)
       }
     case 5:
       return {
-        in: canReachNavRoom.in && (currentBananaMedalCount >= targetItemCount),
-        out: canReachNavRoom.out && (currentBananaMedalCount >= targetItemCount)
+        in: canReachThrone.in && (currentBananaMedalCount >= targetItemCount),
+        out: canReachThrone.out && (currentBananaMedalCount >= targetItemCount)
       }
     case 6:
       return {
-        in: canReachNavRoom.in && (currentCrownCount >= targetItemCount),
-        out: canReachNavRoom.out && (currentCrownCount >= targetItemCount)
+        in: canReachThrone.in && (currentCrownCount >= targetItemCount),
+        out: canReachThrone.out && (currentCrownCount >= targetItemCount)
       }
     case 7:
       return {
-        in: canReachNavRoom.in && (currentFairyCount >= targetItemCount),
-        out: canReachNavRoom.out && (currentFairyCount >= targetItemCount)
+        in: canReachThrone.in && (currentFairyCount >= targetItemCount),
+        out: canReachThrone.out && (currentFairyCount >= targetItemCount)
       }
     case 8:
       return {
-        in: canReachNavRoom.in && (currentRainbowCoinCount >= targetItemCount),
-        out: canReachNavRoom.out && (currentRainbowCoinCount >= targetItemCount)
+        in: canReachThrone.in && (currentRainbowCoinCount >= targetItemCount),
+        out: canReachThrone.out && (currentRainbowCoinCount >= targetItemCount)
       }
     case 9:
       return {
-        in: canReachNavRoom.in && (Number(currentBeanCount) >= targetItemCount),
-        out: canReachNavRoom.out && (Number(currentBeanCount) >= targetItemCount)
+        in: canReachThrone.in && (Number(currentBeanCount) >= targetItemCount),
+        out: canReachThrone.out && (Number(currentBeanCount) >= targetItemCount)
       }
     case 10:
       return {
-        in: canReachNavRoom.in && (currentPearlCount >= targetItemCount),
-        out: canReachNavRoom.out && (currentPearlCount >= targetItemCount)
+        in: canReachThrone.in && (currentPearlCount >= targetItemCount),
+        out: canReachThrone.out && (currentPearlCount >= targetItemCount)
       }
     default:
       return {
-        in: canReachNavRoom.in,
-        out: canReachNavRoom.out
+        in: canReachThrone.in,
+        out: canReachThrone.out
       }
   }
 }

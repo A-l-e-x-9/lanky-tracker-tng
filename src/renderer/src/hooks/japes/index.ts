@@ -443,6 +443,17 @@ export const useGeneralThing = (): LogicBool => {
   }
 }
 
+export const useArena = (): LogicBool => {
+  const isBreathing = useGeneralThing()
+  const hasClimbing = useClimbing()
+  const hasBananaports = useBananaportAll()
+  const hasOStand = useStand()
+  return {
+    in: isBreathing.in && (hasClimbing || hasBananaports),
+    out: isBreathing.out && hasOStand
+  }
+}
+
 export const useRambiCrate = (): LogicBool => {
   const anyKong = useAnyKong()
   const hasRambi = useJapesRambi()
