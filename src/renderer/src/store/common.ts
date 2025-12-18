@@ -484,6 +484,8 @@ interface RemoveBarriers {
   cavesWalls: boolean
   /*Have the doors to the Crypt and Mausoleum in Castle, as well as the doors to each Kong's crypt in the former, been pre-opened, eliminating the need for the Kongs to have their guns to access those two areas?*/
   castleCrypt: boolean
+  helmDKStarGates: boolean
+  helmPunchGates: boolean
 }
 
 export interface BarrierState {
@@ -668,8 +670,6 @@ interface SettingCollection {
   helmItemNum1: GoldBananaRange
   helmItem2: CrownRange
   helmItemNum2: GoldBananaRange
-  helmDKStarGates: boolean
-  helmPunchGates: boolean
 }
 
 export interface SettingState {
