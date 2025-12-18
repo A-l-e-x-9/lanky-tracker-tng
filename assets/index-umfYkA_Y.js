@@ -24134,7 +24134,6 @@ const RNDEnemies = () => {
 };
 const StartEnemies = () => {
   const inStage = usePlayFactory();
-  const testing = useFactoryTesting();
   const robo = useDefeatRoboKremling();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24143,7 +24142,8 @@ const StartEnemies = () => {
         id: 3302,
         name: "Enemy at Lobby Left",
         region: "Factory Start Area",
-        canGetLogic: inStage && robo
+        canGetLogic: inStage.in && robo,
+        canGetBreak: inStage.out && robo
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24152,7 +24152,8 @@ const StartEnemies = () => {
         id: 3303,
         name: "Enemy at Lobby Right",
         region: "Factory Start Area",
-        canGetLogic: inStage && robo
+        canGetLogic: inStage.in && robo,
+        canGetBreak: inStage.out && robo
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -24161,7 +24162,8 @@ const StartEnemies = () => {
         id: 3308,
         name: "Enemy in the Tunnel to Hatch",
         region: "Factory Start Area",
-        canGetLogic: testing && robo
+        canGetLogic: inStage.in && robo,
+        canGetBreak: inStage.out && robo
       }
     )
   ] });
@@ -28023,7 +28025,8 @@ const MushExteriorEnemies = () => {
         id: 5323,
         name: "Enemy 0 in the Yellow Tunnel",
         region: "Forest Area 3",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28032,7 +28035,8 @@ const MushExteriorEnemies = () => {
         id: 5324,
         name: "Enemy at Low Warp 5",
         region: "Forest Area 3",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28041,7 +28045,8 @@ const MushExteriorEnemies = () => {
         id: 5325,
         name: "Enemy Between Bounce Tag and Cranky's",
         region: "Forest Area 3",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28050,7 +28055,8 @@ const MushExteriorEnemies = () => {
         id: 5326,
         name: "Enemy at Giant Shroom's Rocketbarrel",
         region: "Forest Area 3",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28059,8 +28065,8 @@ const MushExteriorEnemies = () => {
         id: 5327,
         name: "Enemy between Rocketbarrel and Yellow Tunnel",
         region: "Forest Area 3",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28069,8 +28075,8 @@ const MushExteriorEnemies = () => {
         id: 5328,
         name: "Enemy Near Cranky's",
         region: "Forest Area 3",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28079,8 +28085,8 @@ const MushExteriorEnemies = () => {
         id: 5329,
         name: "Enemy at Pink Tunnel Bouncy Tag Barrel",
         region: "Forest Area 3",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28089,8 +28095,8 @@ const MushExteriorEnemies = () => {
         id: 5330,
         name: "Enemy at Rear Tag",
         region: "Forest Area 3",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28099,8 +28105,8 @@ const MushExteriorEnemies = () => {
         id: 5331,
         name: "Enemy Near DK Pad",
         region: "Forest Area 3",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28109,8 +28115,8 @@ const MushExteriorEnemies = () => {
         id: 5332,
         name: "Enemy Near Face Puzzle Entrance",
         region: "Forest Area 3",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28119,8 +28125,8 @@ const MushExteriorEnemies = () => {
         id: 5333,
         name: "Enemy Near Battle Arena",
         region: "Forest Area 3",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28129,8 +28135,8 @@ const MushExteriorEnemies = () => {
         id: 5334,
         name: "Enemy Near High Warp 5",
         region: "Forest Area 3",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28139,8 +28145,8 @@ const MushExteriorEnemies = () => {
         id: 5335,
         name: "Enemy at Top Of Mushroom",
         region: "Forest Area 3",
-        canGetLogic: inStage && roof.in && klump,
-        canGetBreak: inStage && roof.out && klump
+        canGetLogic: inStage.in && roof.in && klump,
+        canGetBreak: inStage.out && roof.out && klump
       }
     )
   ] });
