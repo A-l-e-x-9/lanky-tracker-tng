@@ -49,7 +49,9 @@ export const initialSettings: SettingState = {
     helmItem1: 6,
     helmItemNum1: 4,
     helmItem2: 3,
-    helmItemNum2: 2
+    helmItemNum2: 2,
+    helmDKStarGates: false,
+    helmPunchGates: false
   }
 }
 

@@ -668,6 +668,8 @@ interface SettingCollection {
   helmItemNum1: GoldBananaRange
   helmItem2: CrownRange
   helmItemNum2: GoldBananaRange
+  helmDKStarGates: boolean
+  helmPunchGates: boolean
 }
 
 export interface SettingState {

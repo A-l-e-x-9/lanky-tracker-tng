@@ -80,12 +80,11 @@ export const useHelmDoors = (): LogicBool => {
   const rocket = useRocket()
   const punch = usePunch()
   const helmAccess = useHelmStartPosition()
-
+  const [barriers] = useDonkStore(useShallow((state) => [state.removeBarriers]))
+  const romanNumGatesAlreadyDown = barriers.helmDKStarGates
+  const punchGatesAlreadyDown = barriers.helmPunchGates
   return {
-    in:
-      inLevel.in && entry &&
-      (helmAccess == 2 ||
-        (anyMusic && (helmAccess == 1 || (machine.in && grab && rocket && punch)))),
+    in: inLevel.in && entry && (helmAccess == 2 || (anyMusic && (helmAccess == 1 || (machine.in && ((grab && rocket) || romanNumGatesAlreadyDown) && (punch || punchGatesAlreadyDown))))),
     out: (inLevel.in || inLevel.out) && entry && machine.out && grab && rocket && punch
   }
 }
