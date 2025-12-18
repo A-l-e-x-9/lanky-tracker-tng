@@ -13,19 +13,22 @@ const StartEnemies: React.FC = () => {
         id={3302}
         name="Enemy at Lobby Left"
         region="Factory Start Area"
-        canGetLogic={inStage && robo}
+        canGetLogic={inStage.in && robo}
+        canGetBreak={inStage.out && robo}
       />
       <FactoryCheck
         id={3303}
         name="Enemy at Lobby Right"
         region="Factory Start Area"
-        canGetLogic={inStage && robo}
+        canGetLogic={inStage.in && robo}
+        canGetBreak={inStage.out && robo}
       />
       <FactoryCheck
         id={3308}
         name="Enemy in the Tunnel to Hatch"
         region="Factory Start Area"
-        canGetLogic={testing && robo}
+        canGetLogic={inStage.in && robo}
+        canGetBreak={inStage.out && robo}
       />
     </DropPool>
   )
