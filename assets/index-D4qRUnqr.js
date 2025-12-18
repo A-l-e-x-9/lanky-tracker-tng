@@ -9852,7 +9852,9 @@ const initialBarriers = {
     forestOwlTree: false,
     cavesIgloo: false,
     cavesWalls: false,
-    castleCrypt: false
+    castleCrypt: false,
+    helmDKStarGates: false,
+    helmPunchGates: false
   }
 };
 const barrierSlice = (set) => {
@@ -34273,8 +34275,11 @@ const useHelmDoors = () => {
   const rocket = useRocket();
   const punch = usePunch();
   const helmAccess = useHelmStartPosition();
+  const [barriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
+  const romanNumGatesAlreadyDown = barriers.helmDKStarGates;
+  const punchGatesAlreadyDown = barriers.helmPunchGates;
   return {
-    in: inLevel.in && entry && (helmAccess == 2 || anyMusic && (helmAccess == 1 || machine.in && grab && rocket && punch)),
+    in: inLevel.in && entry && (helmAccess == 2 || anyMusic && (helmAccess == 1 || machine.in && (grab && rocket || romanNumGatesAlreadyDown) && (punch || punchGatesAlreadyDown))),
     out: (inLevel.in || inLevel.out) && entry && machine.out && grab && rocket && punch
   };
 };
@@ -36854,6 +36859,28 @@ const GeneratorSettings = () => {
                   imgUrl: hardShootIcon,
                   title: "Turn this on if the gun-activated gates in Creepy Castle's crypt area have been removed in your seed. Else, you'll need all five guns to do crypt/mausoleum checks.",
                   storeKey: "castleCrypt",
+                  prefix: "removeBarriers",
+                  updateItem: setBarrier
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Roman numeral gates opened in Helm?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: rocketIcon,
+                  title: "Turn this on if your Helm start is set to Vanilla and the Roman numeral gates are already open. Else, you'll need Gorilla Grab and Jetbarrel to get through Helm. (Not necessary on any other Helm start type.)",
+                  storeKey: "helmDKStarGates",
+                  prefix: "removeBarriers",
+                  updateItem: setBarrier
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Primate Punch gates opened in Helm?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: chunkyKongIcon,
+                  title: "Turn this on if your Helm start is set to Vanilla and the Primate Punch gates are already down. Else, you'll need Primate Punch to get through Helm. (Not necessary on any other Helm start type.)",
+                  storeKey: "helmPunchGates",
                   prefix: "removeBarriers",
                   updateItem: setBarrier
                 }
