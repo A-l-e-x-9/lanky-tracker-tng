@@ -82,7 +82,7 @@ export const useHelmDoors = (): LogicBool => {
   const rocket = useRocket()
   const punch = usePunch()
   const helmAccess = useHelmStartPosition()
-  const [barriers] = useDonkStore(useShallow((state) => [state.removeBarriers]))
+  const [barriers] = useDonkStore(useShallow((state) => [state.settings.removeBarriers]))
   const romanNumGatesAlreadyDown = barriers.helmDKStarGates
   const punchGatesAlreadyDown = barriers.helmPunchGates
   return {
