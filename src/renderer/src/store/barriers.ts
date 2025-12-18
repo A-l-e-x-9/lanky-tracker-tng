@@ -19,7 +19,9 @@ export const initialBarriers: BarrierState = {
     forestOwlTree: false,
     cavesIgloo: false,
     cavesWalls: false,
-    castleCrypt: false
+    castleCrypt: false,
+    helmDKStarGates: false,
+    helmPunchGates: false
   }
 }
 
