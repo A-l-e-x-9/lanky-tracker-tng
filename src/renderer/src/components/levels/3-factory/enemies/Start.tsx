@@ -1,11 +1,10 @@
 import { useDefeatRoboKremling } from '@renderer/hooks/enemies'
-import { usePlayFactory, useFactoryTesting } from '@renderer/hooks/factory'
+import { usePlayFactory } from '@renderer/hooks/factory'
 import FactoryCheck from '../check'
 import DropPool from '@renderer/components/pools/Drops'
 
 const StartEnemies: React.FC = () => {
   const inStage = usePlayFactory()
-  const testing = useFactoryTesting()
   const robo = useDefeatRoboKremling()
   return (
     <DropPool>
