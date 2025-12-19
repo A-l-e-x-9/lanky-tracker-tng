@@ -290,3 +290,5 @@ export const useCanFightRool = (): LogicBool => {
     out: check1.out && check2.out && check3.out && check4.out && check5.out
   }
 }
+
+export const useNotFightingKRool = (): boolean => useDonkStore(useShallow((state) => state.ui.hideKRool))

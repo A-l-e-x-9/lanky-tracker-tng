@@ -1,10 +1,12 @@
-import { useCanDeactivateHelm, useCanFightRool } from '@renderer/hooks/helm'
+import { useCanDeactivateHelm, useCanFightRool, useNotFightingKRool } from '@renderer/hooks/helm'
 import { EndingSelector, RoolSelector } from './EndingSelector'
 
 const Ending: React.FC = () => {
   const helmLogic = useCanDeactivateHelm()
   const roolLogic = useCanFightRool()
-
+  const noKRoolFight = useNotFightingKRool()
+  
+if (noKRoolFight) {
   return (
     <section className="ending">
       <div>
@@ -35,6 +37,23 @@ const Ending: React.FC = () => {
       </section>
     </section>
   )
+} else {
+  return (
+    <section className="ending">
+      <div>
+        <span>Helm</span>
+        <span className={helmLogic ? 'available' : 'not-available'}>⬤</span>
+      </div>
+      <section>
+        <EndingSelector rootKey="helm1" />
+        <EndingSelector rootKey="helm2" />
+        <EndingSelector rootKey="helm3" />
+        <EndingSelector rootKey="helm4" />
+        <EndingSelector rootKey="helm5" />
+      </section>
+    </section>
+  )
+}
 }
 
 export default Ending

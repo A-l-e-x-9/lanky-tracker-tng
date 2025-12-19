@@ -560,6 +560,8 @@ const GeneratorSettings: React.FC = () => {
               <CheckIcon storeKey="hideRed" prefix="ui" updateItem={setUi} />
               <p>Hide logic-breaking checks?</p>
               <CheckIcon storeKey="hideYellow" prefix="ui" updateItem={setUi} />
+              <p>Do you even have to fight K. Rool this seed?</p>
+              <CheckIcon storeKey="hideKRool" prefix="ui" updateItem={setUi} />
             </>
           </section>
         </section>

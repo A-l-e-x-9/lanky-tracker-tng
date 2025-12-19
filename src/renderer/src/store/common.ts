@@ -736,7 +736,8 @@ export type RoolSlice = endingPhase & RoolActions
 export interface UiCollection {
   groupByRegion: boolean,
   hideRed: boolean,
-  hideYellow: boolean
+  hideYellow: boolean,
+  hideKRool: boolean
 }
 
 export interface UiState {
