@@ -138,14 +138,17 @@ export const useAztecTinyTemple = (): LogicBool => {
 }
 
 /*A new check created by Alex to account for the "Tiny Temple Ice" barrier added in V4 of the Randomizer*/
-export const useTinyTempleIce = (): boolean => {
+export const useTinyTempleIce = (): LogicBool => {
   const canEnterTT = useAztecTinyTemple()
   const hasDiddy = useDiddy()
   const canSlam = useSlamAztec()
   const hasPeanuts = usePeanut()
   const hasGuitar = useGuitar()
   const preMelted = useDonkStore(useShallow((state) => state.removeBarriers.aztecIce))
-  return canEnterTT && ((hasDiddy && canSlam && hasPeanuts && hasGuitar) || preMelted)
+  return {
+    in: canEnterTT.in && ((hasDiddy && canSlam && hasPeanuts && hasGuitar) || preMelted),
+    out: canEnterTT.out && ((hasDiddy && canSlam && hasPeanuts && hasGuitar) || preMelted)
+  }
 }
 
 /**
@@ -283,8 +286,8 @@ export const useDiddyFreeTinyGb = (): LogicBool => {
   const dive = useDive()
   const free = useFreeTinySwitch()
   return {
-    in: temple.in && iceMelted && dive.in && free,
-    out: temple.out && iceMelted && dive.out && free
+    in: temple.in && iceMelted.in && dive.in && free,
+    out: temple.out && iceMelted.out && dive.out && free
   }
 }
 
@@ -392,12 +395,9 @@ export const useLankyVultureGb = (): LogicBool => {
   }
 }
 
-export const useArena = (): LogicBool => {
-  const didVultureGb = useLankyVultureGb()
-  return {
-    in: didVultureGb.in,
-    out: didVultureGb.out
-  }
+export const useArena = (): boolean => {
+  const [didVultureGb] = useDonkStore(useShallow((state) => [state.checks]))
+  return didVultureGb[2020]
 }
 
 export const useLanky5DoorGb = (): LogicBool => {
@@ -543,13 +543,12 @@ export const useTinyFairy = (): LogicBool => {
 }
 
 export const useCoconutKasplat = (): LogicBool => {
-  const aztecFront = useAztecFront()
-  const coconut = useCoconut()
+  const aztecFront = useAztecFrontKasplat()
   const strong = useStrong()
   const twirl = useTwirl()
   return {
-    in: aztecFront.in && coconut && (strong || twirl),
-    out: aztecFront.out && coconut
+    in: aztecFront.in && (strong || twirl),
+    out: aztecFront.out
   }
 }
 
