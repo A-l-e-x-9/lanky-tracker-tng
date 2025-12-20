@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useCoconutKasplat, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDkTunnelGb, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava } from '@renderer/hooks/aztec'
+import { useGeneralThing, useArena, useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useCoconutKasplat, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDkTunnelGb, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useOasisKasplat } from '@renderer/hooks/aztec'
 import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
@@ -228,7 +228,7 @@ const canReachLavaRoom = useAztecLlamaLava()
         name="Shuffled Battle Arena: On top of the 5DT"
         region="Aztec Main Area"
         canGetLogic={canReachArea2.in && hasJetbarrel}
-        canGetBreak={canReachArea2.out && hasJetBarrel}
+        canGetBreak={canReachArea2.out && hasJetbarrel}
       />
       <AztecCheck
         id={12028}
