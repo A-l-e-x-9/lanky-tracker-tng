@@ -25,10 +25,10 @@ const canDoVanillaCrate2 = useLlamaOutsideCrate()
 const hasJetbarrel = useRocket()
 const canReachQSTunnel = useDkTunnelGb()
 const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
-const canGetDK5DT = useDk5DoorGb
-const canGetDiddy5DT = useDiddy5DoorGb
-const canGetLanky5DT = useLanky5DoorGb
-const canGetTiny5DT = useTiny5DoorGb
+const canGetDK5DT = useDk5DoorGb()
+const canGetDiddy5DT = useDiddy5DoorGb()
+const canGetLanky5DT = useLanky5DoorGb()
+const canGetTiny5DT = useTiny5DoorGb()
 const canReachLT = useAztecLlamaTemple()
 const hasGrapes = useGrape()
 const hasMiniMonkey = useMini()
