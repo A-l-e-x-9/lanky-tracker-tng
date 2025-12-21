@@ -1,10 +1,8 @@
-import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb } from '@renderer/hooks/factory'
+import { useGeneralThing, useArena, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb, useFactoryHut } from '@renderer/hooks/factory'
 import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, useVine, usePunch, useTwirl } from '@renderer/hooks/kongs'
+import { useClimbing, usePunch, useTwirl, useCoconut } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
-import useDonkStore from '@renderer/store'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -18,6 +16,9 @@ const canDoTinyProd = useTinyProductionGb()
 const isHinaKagiyama = useTwirl()
 const canReachTesting = useFactoryTesting()
 const canReachCar = useTinyRaceGb()
+const canDoCrusher = useDkProdGb()
+const canReachHut = useFactoryHut()
+const hasCoconuts = useCoconut()
   return (
     <ArenaPool>
       <FactoryCheck
@@ -323,108 +324,24 @@ const canReachCar = useTinyRaceGb()
       />
       <FactoryCheck
         id={13050}
-        name="Shuffled Battle Arena: The sole dead end in Tiny's room"
-        region="5 Door Temple"
-        canGetLogic={canGetTiny5DT.in}
-        canGetBreak={canGetTiny5DT.out}
+        name="Shuffled Battle Arena: Vanilla Warp 5, at Funky's"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13051}
-        name="Shuffled Battle Arena: Right side of Chunky's room"
-        region="5 Door Temple"
-        canGetLogic={canReachVanillaDirt2.in}
-        canGetBreak={canReachVanillaDirt2.out}
+        name="Shuffled Battle Arena: At the bend in the crusher's path"
+        region="Prod Room"
+        canGetLogic={canDoCrusher.in}
+        canGetBreak={canDoCrusher.out}
       />
       <FactoryCheck
         id={13052}
-        name="Shuffled Battle Arena: Left side of Chunky's room"
-        region="5 Door Temple"
-        canGetLogic={canReachVanillaDirt2.in}
-        canGetBreak={canReachVanillaDirt2.out}
-      />
-      <FactoryCheck
-        id={13053}
-        name="Shuffled Battle Arena: Right of the Llama, lower"
-        region="Llama Temple"
-        canGetLogic={canReachLT.in}
-        canGetBreak={canReachLT.out}
-      />
-      <FactoryCheck
-        id={13053}
-        name="Shuffled Battle Arena: Llama Temple entrance"
-        region="Llama Temple"
-        canGetLogic={canReachLT.in}
-        canGetBreak={canReachLT.out}
-      />
-      <FactoryCheck
-        id={13054}
-        name="Shuffled Battle Arena: Right of the Llama, upper"
-        region="Llama Temple"
-        canGetLogic={canReachLT.in}
-        canGetBreak={canReachLT.out}
-      />
-      <FactoryCheck
-        id={13055}
-        name="Shuffled Battle Arena: Left of the Llama, upper"
-        region="Llama Temple"
-        canGetLogic={canReachLT.in}
-        canGetBreak={canReachLT.out}
-      />
-      <FactoryCheck
-        id={13056}
-        name="Shuffled Battle Arena: Left of the Llama, lower"
-        region="Llama Temple"
-        canGetLogic={canReachLT.in}
-        canGetBreak={canReachLT.out}
-      />
-      <FactoryCheck
-        id={13057}
-        name="Shuffled Battle Arena: Fraternizing with Gene Rayburn"
-        region="Llama Temple"
-        canGetLogic={canReachLT.in && hasGrapes}
-        canGetBreak={canReachLT.out && hasGrapes}
-      />
-      <FactoryCheck
-        id={13058}
-        name="Shuffled Battle Arena: LT Vanilla Warp 1, entrance left"
-        region="Llama Temple"
-        canGetLogic={canReachLT.in}
-        canGetBreak={canReachLT.out}
-      />
-      <FactoryCheck
-        id={13059}
-        name="Shuffled Battle Arena: LT Vanilla Warp 1, near the Match Game studio"
-        region="Llama Temple"
-        canGetLogic={canReachLT.in}
-        canGetBreak={canReachLT.out}
-      />
-      <FactoryCheck
-        id={13060}
-        name="Shuffled Battle Arena: LT Vanilla Warp 2, entrance right"
-        region="Llama Temple"
-        canGetLogic={canReachLT.in}
-        canGetBreak={canReachLT.out}
-      />
-      <FactoryCheck
-        id={13061}
-        name="Shuffled Battle Arena: LT Vanilla Warp 2, in Tiny's lava room"
-        region="Llama Temple"
-        canGetLogic={canReachLT.in && hasMiniMonkey}
-        canGetBreak={canReachLT.out && hasMiniMonkey}
-      />
-      <FactoryCheck
-        id={13063}
-        name="Shuffled Battle Arena: DK's quicksand tunnel switch"
-        region="Llama Temple"
-        canGetLogic={canReachLT.in}
-        canGetBreak={canReachLT.out}
-      />
-      <FactoryCheck
-        id={13064}
-        name="Shuffled Battle Arena: Tiny's lava room"
-        region="Llama Temple"
-        canGetLogic={canReachLavaRoom.in}
-        canGetBreak={canReachLavaRoom.out}
+        name="Shuffled Battle Arena: Inside DK's power hut"
+        region="Storage and Arcade Area"
+        canGetLogic={canReachHut.in && hasCoconuts}
+        canGetBreak={canReachHut.out && hasCoconuts}
       />
     </ArenaPool>
   )
