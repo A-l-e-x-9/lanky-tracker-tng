@@ -11849,7 +11849,7 @@ const useForestArena = () => {
     out: playForest.out && allGun2 && gone
   };
 };
-const useGeneralDirt$4 = () => {
+const useGeneralDirt$5 = () => {
   const anyKong = useAnyKong();
   const shockwave = useShockwave();
   return anyKong && shockwave;
@@ -11865,13 +11865,13 @@ const useUnderCaveDirt = () => {
   };
 };
 const useHoardDirt = () => {
-  const dirt = useGeneralDirt$4();
+  const dirt = useGeneralDirt$5();
   const vine = useVine();
   const climbing = useClimbing();
   return dirt && vine && climbing;
 };
 const useIslandDirt = () => {
-  const dirt = useGeneralDirt$4();
+  const dirt = useGeneralDirt$5();
   const fungi = useIslesFungiIsland();
   return dirt && fungi;
 };
@@ -12236,7 +12236,7 @@ const Hoard = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { chi
   }
 ) }) });
 const PrisonDirt = () => {
-  const dirt = useGeneralDirt$4();
+  const dirt = useGeneralDirt$5();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
@@ -12248,7 +12248,7 @@ const PrisonDirt = () => {
   ) }) });
 };
 const TrainingRear = () => {
-  const dirt = useGeneralDirt$4();
+  const dirt = useGeneralDirt$5();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
@@ -13280,7 +13280,7 @@ const Vanilla$7 = () => {
     )
   ] });
 };
-const Shuffled$p = () => {
+const Shuffled$s = () => {
   const kremAscent = useIslesKremAscent();
   const cranky = useCranky();
   const snide = useSnide();
@@ -13308,7 +13308,7 @@ const Shuffled$p = () => {
   ] });
 };
 const ShopLocations$7 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const WrinklyPool = ({ children }) => usePoolWrinkly() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -13957,7 +13957,7 @@ const TrainingGroundsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(Rainb
   /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingRear, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(Hoard, {})
 ] });
-const Shuffled$o = () => {
+const Shuffled$r = () => {
   const isBreathing = useAnyKong();
   const hasDK = useDk();
   const hasDiddy = useDiddy();
@@ -14758,9 +14758,9 @@ const Shuffled$o = () => {
     )
   ] });
 };
-const ShuffledArenas$2 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$o, {}) : null;
+const ShuffledArenas$3 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$r, {}) : null;
 const CratePool = ({ children }) => usePoolCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const Shuffled$n = () => {
+const Shuffled$q = () => {
   const isBreathing = useAnyKong();
   const hasDK = useDk();
   const hasDiddy = useDiddy();
@@ -15586,9 +15586,9 @@ const Shuffled$n = () => {
     )
   ] });
 };
-const ShuffledCrates$2 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {}) : null;
-const Shuffled$m = () => {
-  const isBreathing = useGeneralDirt$4();
+const ShuffledCrates$3 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$q, {}) : null;
+const Shuffled$p = () => {
+  const isBreathing = useGeneralDirt$5();
   const hasShockwave = useShockwave();
   const hasClimbing = useClimbing();
   const hasVines = useVine();
@@ -16411,8 +16411,8 @@ const Shuffled$m = () => {
     )
   ] });
 };
-const ShuffledDirt$2 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$m, {}) : null;
-const Shuffled$l = () => {
+const ShuffledDirt$2 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : null;
+const Shuffled$o = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$6();
   const vanillaFairy2 = useKremFairy();
@@ -16602,7 +16602,7 @@ const Shuffled$l = () => {
     )
   ] });
 };
-const ShuffledFairies$8 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
+const ShuffledFairies$8 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$o, {}) : null;
 const IslesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
@@ -16632,8 +16632,8 @@ const IslesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FairyReward, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$2, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {})
 ] });
@@ -16705,8 +16705,8 @@ const ClassicChecks$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   /* @__PURE__ */ jsxRuntimeExports.jsx(FairyReward, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$8, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$2, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {})
 ] });
@@ -17054,7 +17054,7 @@ const usePaintingDirt = () => {
     out: shockwave && japesPaintingOutside.out
   };
 };
-const useGeneralDirt$3 = () => {
+const useGeneralDirt$4 = () => {
   const shockwave = useShockwave();
   const inStage = usePlayJapes();
   return {
@@ -18647,7 +18647,7 @@ const Vanilla$6 = () => {
     )
   ] });
 };
-const Shuffled$k = () => {
+const Shuffled$n = () => {
   const kongGates = useJapesKongGates();
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
@@ -18691,7 +18691,7 @@ const Shuffled$k = () => {
   ] });
 };
 const ShopLocations$6 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$k, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$6, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$6, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const HiveInteriorChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -18754,7 +18754,7 @@ const StormyTunnelChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(StormyTunnelEnemies, {})
 ] });
-const Shuffled$j = () => {
+const Shuffled$m = () => {
   const isBreathing = useGeneralThing$4();
   const canReachFunky = useArena$4();
   const canReachPaintingRoom = useJapesPaintingOutside();
@@ -19285,8 +19285,8 @@ const Shuffled$j = () => {
     )
   ] });
 };
-const ShuffledArenas$1 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$j, {}) : null;
-const Shuffled$i = () => {
+const ShuffledArenas$2 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$m, {}) : null;
+const Shuffled$l = () => {
   const isBreathing = useGeneralThing$4();
   const canReachFunky = useArena$4();
   const canReachPaintingRoom = useJapesPaintingOutside();
@@ -19818,9 +19818,9 @@ const Shuffled$i = () => {
     )
   ] });
 };
-const ShuffledCrates$1 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$i, {}) : null;
-const Shuffled$h = () => {
-  const isBreathing = useGeneralDirt$3();
+const ShuffledCrates$2 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
+const Shuffled$k = () => {
+  const isBreathing = useGeneralDirt$4();
   const hasShockwave = useShockwave();
   const canReachFunky = useArena$4();
   const canReachPaintingRoom = useJapesPaintingOutside();
@@ -20373,8 +20373,8 @@ const Shuffled$h = () => {
     )
   ] });
 };
-const ShuffledDirt$1 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$h, {}) : null;
-const Shuffled$g = () => {
+const ShuffledDirt$1 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$k, {}) : null;
+const Shuffled$j = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$5();
   const vanillaFairy1 = useRambiFairy();
@@ -20497,7 +20497,7 @@ const Shuffled$g = () => {
     )
   ] });
 };
-const ShuffledFairies$7 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$g, {}) : null;
+const ShuffledFairies$7 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$j, {}) : null;
 const JapesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
   /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$6, {}),
@@ -20521,8 +20521,8 @@ const JapesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(UndergroundChecks$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$1, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {})
 ] });
@@ -20547,8 +20547,8 @@ const ClassicChecks$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$7, {}) }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$1, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {})
 ] });
@@ -20920,7 +20920,7 @@ const useLlamaOutsideCrate = () => {
     out: hasTiny && kuruKuru && back.out
   };
 };
-const useGeneralDirt$2 = () => {
+const useGeneralDirt$3 = () => {
   const thing = useGeneralThing$3();
   const shockwave = useShockwave();
   return {
@@ -21098,7 +21098,7 @@ const CrateLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(GongCrate, {})
 ] });
 const OasisDirt = () => {
-  const thing = useGeneralDirt$2();
+  const thing = useGeneralDirt$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
@@ -22979,7 +22979,7 @@ const TinyMedal$5 = () => {
     )
   ] });
 };
-const Shuffled$f = () => {
+const Shuffled$i = () => {
   const isBreathing = useGeneralThing$3();
   const canReachVanillaArena = useArena$3();
   const hasClimbing = useClimbing();
@@ -23657,8 +23657,8 @@ const Shuffled$f = () => {
     )
   ] });
 };
-const ShuffledArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$f, {}) : null;
-const Shuffled$e = () => {
+const ShuffledArenas$1 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$i, {}) : null;
+const Shuffled$h = () => {
   const isBreathing = useGeneralThing$3();
   const hasClimbing = useClimbing();
   const hasVines = useVine();
@@ -24349,9 +24349,9 @@ const Shuffled$e = () => {
     )
   ] });
 };
-const ShuffledCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$e, {}) : null;
-const Shuffled$d = () => {
-  const isBreathing = useGeneralDirt$2();
+const ShuffledCrates$1 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$h, {}) : null;
+const Shuffled$g = () => {
+  const isBreathing = useGeneralDirt$3();
   const hasShockwave = useShockwave();
   const canReachVanillaArena = useArena$3();
   const hasClimbing = useClimbing();
@@ -25029,8 +25029,8 @@ const Shuffled$d = () => {
     )
   ] });
 };
-const ShuffledDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$d, {}) : null;
-const Shuffled$c = () => {
+const ShuffledDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$g, {}) : null;
+const Shuffled$f = () => {
   const hasCam = useCamera();
   const hasDiving = useDive();
   const hasGrapes = useGrape();
@@ -25219,8 +25219,8 @@ const Shuffled$c = () => {
     )
   ] });
 };
-const ShuffledFairies$6 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$c, {}) : null;
-const Shuffled$b = () => {
+const ShuffledFairies$6 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$f, {}) : null;
+const Shuffled$e = () => {
   const thing = useGeneralThing$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -25270,7 +25270,7 @@ const Shuffled$b = () => {
     )
   ] });
 };
-const ShuffledKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$b, {}) : null;
+const ShuffledKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$e, {}) : null;
 const Vanilla$5 = () => {
   const aztecFront = useAztecFront();
   const aztecBack = useAztecBack();
@@ -25325,7 +25325,7 @@ const Vanilla$5 = () => {
     )
   ] });
 };
-const Shuffled$a = () => {
+const Shuffled$d = () => {
   const aztecFront = useAztecFront();
   const aztecBack = useAztecBack();
   const hasCranky = useCranky();
@@ -25380,7 +25380,7 @@ const Shuffled$a = () => {
   ] });
 };
 const ShopLocations$5 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$a, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$5, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$d, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$5, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const CircleVase = () => {
@@ -25534,8 +25534,8 @@ const AztecRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaTempleChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats, {})
@@ -25569,8 +25569,8 @@ const ClassicChecks$5 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$6, {}) }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$6, {})
 ] });
@@ -25872,7 +25872,7 @@ const useTinyArcadeGb = () => {
   };
 };
 const useTinyProductionGb = () => {
-  const production = useFactoryProductionEnabled();
+  const production = useFactoryProductionTop();
   const canSlam = useSlamFactory();
   const twirl = useTwirl();
   const dk2 = useDk();
@@ -25904,6 +25904,11 @@ const useGeneralTest = () => {
     in: inStage.in && anyKong,
     out: inStage.out && anyKong
   };
+};
+const useGeneralDirt$2 = () => {
+  const thing = useGeneralThing$2();
+  const dirt = useShockwave();
+  return thing && dirt;
 };
 const useFactoryDirt = () => {
   const inStage = usePlayFactory();
@@ -27230,7 +27235,7 @@ const Vanilla$4 = () => {
     )
   ] });
 };
-const Shuffled$9 = () => {
+const Shuffled$c = () => {
   const inStage = usePlayFactory();
   const testing = useFactoryTesting();
   const hasCranky = useCranky();
@@ -27285,7 +27290,7 @@ const Shuffled$9 = () => {
   ] });
 };
 const ShopLocations$4 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$9, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$4, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$c, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$4, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const TestingChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -27333,6 +27338,1005 @@ const ProductionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyProduction, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ProductionEnemies, {})
 ] });
+const Shuffled$b = () => {
+  const isBreathing = useGeneralThing$2();
+  const canReachVanillaArena = useArena$2();
+  const hasClimbing = useClimbing();
+  const hasPrimatePunch = usePunch();
+  const prodRoomOn = useFactoryProductionEnabled();
+  const hasAllBananaports = useBananaportAll();
+  const upperProd = useFactoryProductionTop();
+  const canDoTinyProd = useTinyProductionGb();
+  const isHinaKagiyama = useTwirl();
+  const canReachTesting = useFactoryTesting();
+  const canReachCar = useTinyRaceGb();
+  const canDoCrusher = useDkProdGb();
+  const canReachHut = useFactoryHut();
+  const hasCoconuts = useCoconut();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13e3,
+        name: "Shuffled Battle Arena: Vanilla Arena (in the R&D Room)",
+        region: "R&D Room",
+        canGetLogic: canReachVanillaArena.in,
+        canGetBreak: canReachVanillaArena.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13001,
+        name: "Shuffled Battle Arena: In Chunky's dark room",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in && hasPrimatePunch,
+        canGetBreak: isBreathing.out && hasPrimatePunch
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13002,
+        name: "Shuffled Battle Arena: On carpet at vanilla level start",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13003,
+        name: "Shuffled Battle Arena: Near carpet at vanilla level start",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13004,
+        name: "Shuffled Battle Arena: Clock-in room, left side",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13005,
+        name: "Shuffled Battle Arena: Clock-in room, right side",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13006,
+        name: "Shuffled Battle Arena: Top of the hatch",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13007,
+        name: "Shuffled Battle Arena: Center of the hatch",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in && hasClimbing,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13008,
+        name: "Shuffled Battle Arena: Bottom of the hatch",
+        region: "Prod Room",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13009,
+        name: "Shuffled Battle Arena: In the tunnel to the Prod Room",
+        region: "Prod Room",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13010,
+        name: "Shuffled Battle Arena: Prod Room lower area",
+        region: "Prod Room",
+        canGetLogic: prodRoomOn.in || hasAllBananaports,
+        canGetBreak: prodRoomOn.out || hasAllBananaports
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13011,
+        name: "Shuffled Battle Arena: Under conveyors to Tiny's Prod Room GB",
+        region: "Prod Room",
+        canGetLogic: upperProd.in,
+        canGetBreak: upperProd.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13012,
+        name: "Shuffled Battle Arena: The platform past Tiny's Prod Room GB",
+        region: "Prod Room",
+        canGetLogic: canDoTinyProd.in,
+        canGetBreak: canDoTinyProd.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13013,
+        name: "Shuffled Battle Arena: On a vent platform near the elevators",
+        region: "Prod Room",
+        canGetLogic: upperProd.in && isHinaKagiyama,
+        canGetBreak: upperProd.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13014,
+        name: "Shuffled Battle Arena: Corner of the Storage Room",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13015,
+        name: "Shuffled Battle Arena: In front of Cranky's",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13016,
+        name: "Shuffled Battle Arena: In front of Candy's",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13017,
+        name: "Shuffled Battle Arena: Corner of Chunky's dark room",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in && hasPrimatePunch,
+        canGetBreak: isBreathing.out && hasPrimatePunch
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13018,
+        name: "Shuffled Battle Arena: Bench in the arcade room",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in && (hasClimbing || hasAllBananaports),
+        canGetBreak: isBreathing.out && (hasClimbing || hasAllBananaports)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13019,
+        name: "Shuffled Battle Arena: Next to the arcade game",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in && (hasClimbing || hasAllBananaports),
+        canGetBreak: isBreathing.out && (hasClimbing || hasAllBananaports)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13020,
+        name: "Shuffled Battle Arena: Near Snide's",
+        region: "Factory Start Area",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13021,
+        name: "Shuffled Battle Arena: Near Snide's, hidden",
+        region: "Factory Start Area",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13022,
+        name: "Shuffled Battle Arena: Right hallway",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13023,
+        name: "Shuffled Battle Arena: At DK's number game",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13024,
+        name: "Shuffled Battle Arena: Under the stairs to Tiny's dartboard",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13026,
+        name: "Shuffled Battle Arena: Under Lanky's Testing Bonus Barrel",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13027,
+        name: "Shuffled Battle Arena: Left of the entrance to Funky's",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13028,
+        name: "Shuffled Battle Arena: Left of Funky's",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13029,
+        name: "Shuffled Battle Arena: Right of Funky's",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13030,
+        name: "Shuffled Battle Arena: Right of the entrance to Funky's",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13037,
+        name: "Shuffled Battle Arena: In Tiny's car race room",
+        region: "R&D Room",
+        canGetLogic: canReachCar.in,
+        canGetBreak: canReachCar.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13038,
+        name: "Shuffled Battle Arena: Also in Tiny's car race room",
+        region: "R&D Room",
+        canGetLogic: canReachCar.in,
+        canGetBreak: canReachCar.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13039,
+        name: "Shuffled Battle Arena: In front of DK's R&D level",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13040,
+        name: "Shuffled Battle Arena: Under the grate that doesn't have the vanilla Arena",
+        region: "Aztec Caves",
+        canGetLogic: canReachVanillaArena.in,
+        canGetBreak: canReachVanillaArena.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13041,
+        name: "Shuffled Battle Arena: Vanilla Warp 1, level start",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13042,
+        name: "Shuffled Battle Arena: Vanilla Warp 1, in storage",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13043,
+        name: "Shuffled Battle Arena: Vanilla Warp 2, level start",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13044,
+        name: "Shuffled Battle Arena: Vanilla Warp 2, R&D-side",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasClimbing,
+        canGetBreak: canReachTesting.out && hasClimbing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13045,
+        name: "Shuffled Battle Arena: Vanilla Warp 3, in front of Snide's",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13046,
+        name: "Shuffled Battle Arena: Vanilla Warp 3, at Snide's",
+        region: "Factory Start Area",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13047,
+        name: "Shuffled Battle Arena: Vanilla Warp 4, bottom of the Prod Room",
+        region: "Prod Room",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13048,
+        name: "Shuffled Battle Arena: Vanilla Warp 4, top of the Prod Room",
+        region: "Prod Room",
+        canGetLogic: upperProd.in,
+        canGetBreak: upperProd.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13049,
+        name: "Shuffled Battle Arena: Vanilla Warp 5, in the arcade",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in && (hasClimbing || hasAllBananaports),
+        canGetBreak: isBreathing.out && (hasClimbing || hasAllBananaports)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13050,
+        name: "Shuffled Battle Arena: Vanilla Warp 5, at Funky's",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13051,
+        name: "Shuffled Battle Arena: At the bend in the crusher's path",
+        region: "Prod Room",
+        canGetLogic: canDoCrusher.in,
+        canGetBreak: canDoCrusher.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 13052,
+        name: "Shuffled Battle Arena: Inside DK's power hut",
+        region: "Storage and Arcade Area",
+        canGetLogic: canReachHut.in && hasCoconuts,
+        canGetBreak: canReachHut.out && hasCoconuts
+      }
+    )
+  ] });
+};
+const ShuffledArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$b, {}) : null;
+const Shuffled$a = () => {
+  const isBreathing = useGeneralThing$2();
+  const hasClimbing = useClimbing();
+  const hasPrimatePunch = usePunch();
+  const prodRoomOn = useFactoryProductionEnabled();
+  const hasAllBananaports = useBananaportAll();
+  const upperProd = useFactoryProductionTop();
+  const canDoTinyProd = useTinyProductionGb();
+  const isHinaKagiyama = useTwirl();
+  const canReachTesting = useFactoryTesting();
+  const canReachCar = useTinyRaceGb();
+  const canDoCrusher = useDkProdGb();
+  const canReachHut = useFactoryHut();
+  const hasCoconuts = useCoconut();
+  const canDoBlockTower = useDiddyBlockGb();
+  const hasGuitar = useGuitar();
+  const hasTrombone = useTrombone();
+  const hasTriangle = useTriangle();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23001,
+        name: "Shuffled Melon Crate: In Chunky's dark room",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in && hasPrimatePunch,
+        canGetBreak: isBreathing.out && hasPrimatePunch
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23002,
+        name: "Shuffled Melon Crate: On carpet at vanilla level start",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23003,
+        name: "Shuffled Melon Crate: Near carpet at vanilla level start",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23004,
+        name: "Shuffled Melon Crate: Clock-in room, left side",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23005,
+        name: "Shuffled Melon Crate: Clock-in room, right side",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23006,
+        name: "Shuffled Melon Crate: Top of the hatch",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23007,
+        name: "Shuffled Melon Crate: Center of the hatch",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in && hasClimbing,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23008,
+        name: "Shuffled Melon Crate: Bottom of the hatch",
+        region: "Prod Room",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23009,
+        name: "Shuffled Melon Crate: In the tunnel to the Prod Room",
+        region: "Prod Room",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23010,
+        name: "Shuffled Melon Crate: Prod Room lower area",
+        region: "Prod Room",
+        canGetLogic: prodRoomOn.in || hasAllBananaports,
+        canGetBreak: prodRoomOn.out || hasAllBananaports
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23011,
+        name: "Shuffled Melon Crate: Under conveyors to Tiny's Prod Room GB",
+        region: "Prod Room",
+        canGetLogic: upperProd.in,
+        canGetBreak: upperProd.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23012,
+        name: "Shuffled Melon Crate: The platform past Tiny's Prod Room GB",
+        region: "Prod Room",
+        canGetLogic: canDoTinyProd.in,
+        canGetBreak: canDoTinyProd.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23013,
+        name: "Shuffled Melon Crate: On a vent platform near the elevators",
+        region: "Prod Room",
+        canGetLogic: upperProd.in && isHinaKagiyama,
+        canGetBreak: upperProd.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23014,
+        name: "Shuffled Melon Crate: Corner of the Storage Room",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23016,
+        name: "Shuffled Melon Crate: Vanilla Crate (in front of Candy's)",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23017,
+        name: "Shuffled Melon Crate: Corner of Chunky's dark room",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in && hasPrimatePunch,
+        canGetBreak: isBreathing.out && hasPrimatePunch
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23018,
+        name: "Shuffled Melon Crate: Bench in the arcade room",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in && (hasClimbing || hasAllBananaports),
+        canGetBreak: isBreathing.out && (hasClimbing || hasAllBananaports)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23019,
+        name: "Shuffled Melon Crate: Next to the arcade game",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in && (hasClimbing || hasAllBananaports),
+        canGetBreak: isBreathing.out && (hasClimbing || hasAllBananaports)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23020,
+        name: "Shuffled Melon Crate: Near Snide's",
+        region: "Factory Start Area",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23021,
+        name: "Shuffled Melon Crate: Near Snide's, hidden",
+        region: "Factory Start Area",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23022,
+        name: "Shuffled Melon Crate: Right hallway",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23023,
+        name: "Shuffled Melon Crate: At DK's number game",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23024,
+        name: "Shuffled Melon Crate: Under the stairs to Tiny's dartboard",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23025,
+        name: "Shuffled Melon Crate: On the Block Tower",
+        region: "Testing Room",
+        canGetLogic: canDoBlockTower.in,
+        canGetBreak: canDoBlockTower.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23026,
+        name: "Shuffled Melon Crate: Under Lanky's Testing Bonus Barrel",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23028,
+        name: "Shuffled Melon Crate: Left of Funky's",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23029,
+        name: "Shuffled Melon Crate: Right of Funky's",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23030,
+        name: "Shuffled Melon Crate: Right of the entrance to Funky's",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23031,
+        name: "Shuffled Melon Crate: Left corner of Lanky's piano room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasTrombone,
+        canGetBreak: canReachTesting.out && hasTrombone
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23032,
+        name: "Shuffled Melon Crate: Right corner of Lanky's piano room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasTrombone,
+        canGetBreak: canReachTesting.out && hasTrombone
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23033,
+        name: "Shuffled Melon Crate: Corner of Diddy's pincode room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasGuitar,
+        canGetBreak: canReachTesting.out && hasGuitar
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23034,
+        name: "Shuffled Melon Crate: In Diddy's pincode room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasGuitar,
+        canGetBreak: canReachTesting.out && hasGuitar
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23035,
+        name: "Shuffled Melon Crate: In Chunky's toy monster room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasClimbing && hasPrimatePunch && hasTriangle,
+        canGetBreak: canReachTesting.out && hasClimbing && hasPrimatePunch && hasTriangle
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23036,
+        name: "Shuffled Melon Crate: Just outside of Chunky's toy monster room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasClimbing && hasPrimatePunch && hasTriangle,
+        canGetBreak: canReachTesting.out && hasClimbing && hasPrimatePunch && hasTriangle
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23037,
+        name: "Shuffled Melon Crate: In Tiny's car race room",
+        region: "R&D Room",
+        canGetLogic: canReachCar.in,
+        canGetBreak: canReachCar.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23038,
+        name: "Shuffled Melon Crate: Also in Tiny's car race room",
+        region: "R&D Room",
+        canGetLogic: canReachCar.in,
+        canGetBreak: canReachCar.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23039,
+        name: "Shuffled Melon Crate: In front of DK's R&D level",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23041,
+        name: "Shuffled Melon Crate: Vanilla Warp 1, level start",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23042,
+        name: "Shuffled Melon Crate: Vanilla Warp 1, in storage",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23043,
+        name: "Shuffled Melon Crate: Vanilla Warp 2, level start",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23044,
+        name: "Shuffled Melon Crate: Vanilla Warp 2, R&D-side",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasClimbing,
+        canGetBreak: canReachTesting.out && hasClimbing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23045,
+        name: "Shuffled Melon Crate: Vanilla Warp 3, in front of Snide's",
+        region: "Factory Start Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23046,
+        name: "Shuffled Melon Crate: Vanilla Warp 3, at Snide's",
+        region: "Factory Start Area",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23047,
+        name: "Shuffled Melon Crate: Vanilla Warp 4, bottom of the Prod Room",
+        region: "Prod Room",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23048,
+        name: "Shuffled Melon Crate: Vanilla Warp 4, top of the Prod Room",
+        region: "Prod Room",
+        canGetLogic: upperProd.in,
+        canGetBreak: upperProd.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23049,
+        name: "Shuffled Melon Crate: Vanilla Warp 5, in the arcade",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in && (hasClimbing || hasAllBananaports),
+        canGetBreak: isBreathing.out && (hasClimbing || hasAllBananaports)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23050,
+        name: "Shuffled Melon Crate: Vanilla Warp 5, at Funky's",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in,
+        canGetBreak: canReachTesting.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23051,
+        name: "Shuffled Melon Crate: At the bend in the crusher's path",
+        region: "Prod Room",
+        canGetLogic: canDoCrusher.in,
+        canGetBreak: canDoCrusher.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 23052,
+        name: "Shuffled Melon Crate: Inside DK's power hut",
+        region: "Storage and Arcade Area",
+        canGetLogic: canReachHut.in && hasCoconuts,
+        canGetBreak: canReachHut.out && hasCoconuts
+      }
+    )
+  ] });
+};
+const ShuffledCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$a, {}) : null;
+const Shuffled$9 = () => {
+  const dirt = useGeneralDirt$2();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3270, name: "Factory Dirt Location #1", canGetLogic: dirt }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryCheck, { id: 3271, name: "Factory Dirt Location #2", canGetLogic: dirt })
+  ] });
+};
+const ShuffledDirtLocations = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$9, {}) : null;
 const Shuffled$8 = () => {
   const hasCam = useCamera();
   const hasClimbing = useClimbing();
@@ -27567,6 +28571,9 @@ const FactoryRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", 
   /* @__PURE__ */ jsxRuntimeExports.jsx(ProductionChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$5, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$5, {})
 ] });
 const ClassicChecks$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -27590,6 +28597,9 @@ const ClassicChecks$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$5, {}) }),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirtLocations, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$5, {})
 ] });
 const FactoryChecks = () => {
