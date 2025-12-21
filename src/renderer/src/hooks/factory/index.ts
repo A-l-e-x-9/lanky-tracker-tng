@@ -387,7 +387,7 @@ export const useTinyArcadeGb = (): LogicBool => {
 }
 
 export const useTinyProductionGb = (): LogicBool => {
-  const production = useFactoryProductionEnabled()
+  const production = useFactoryProductionTop()
   const canSlam = useSlamFactory()
   const twirl = useTwirl()
   const dk = useDk()
