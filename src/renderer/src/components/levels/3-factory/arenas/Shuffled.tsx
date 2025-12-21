@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting } from '@renderer/hooks/factory'
+import { useGeneralThing, useArena, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb } from '@renderer/hooks/factory'
 import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useVine, usePunch, useTwirl } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
@@ -17,6 +17,7 @@ const upperProd = useFactoryProductionTop()
 const canDoTinyProd = useTinyProductionGb()
 const isHinaKagiyama = useTwirl()
 const canReachTesting = useFactoryTesting()
+const canReachCar = useTinyRaceGb()
   return (
     <ArenaPool>
       <FactoryCheck
@@ -224,73 +225,31 @@ const canReachTesting = useFactoryTesting()
       />
       <FactoryCheck
         id={13030}
-        name="Shuffled Battle Arena: Under the Diddy Vulture's cage"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <FactoryCheck
-        id={13031}
-        name="Shuffled Battle Arena: Next to Snide's"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <FactoryCheck
-        id={13032}
-        name="Shuffled Battle Arena: Behind the gong tower"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <FactoryCheck
-        id={13033}
-        name="Shuffled Battle Arena: To the left of the gong tower"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <FactoryCheck
-        id={13034}
-        name="Shuffled Battle Arena: Near the gong tower"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <FactoryCheck
-        id={13035}
-        name="Shuffled Battle Arena: Inside DK's quicksand tunnel"
-        region="Aztec Caves"
-        canGetLogic={canReachQSTunnel.in}
-        canGetBreak={canReachQSTunnel.out}
-      />
-      <FactoryCheck
-        id={13036}
-        name="Shuffled Battle Arena: Vanilla Warp 1, level start"
-        region="Aztec Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: Right of the entrance to Funky's"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13037}
-        name="Shuffled Battle Arena: Vanilla Warp 1, at the oasis"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: In Tiny's car race room"
+        region="R&D Room"
+        canGetLogic={canReachCar.in}
+        canGetBreak={canReachCar.out}
       />
       <FactoryCheck
         id={13038}
-        name="Shuffled Battle Arena: Vanilla Warp 2, in front of Tiny Temple"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: Also in Tiny's car race room"
+        region="R&D Room"
+        canGetLogic={canReachCar.in}
+        canGetBreak={canReachCar.out}
       />
       <FactoryCheck
         id={13039}
-        name="Shuffled Battle Arena: Vanilla Warp 2, end of the middle tunnel"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
+        name="Shuffled Battle Arena: In front of DK's R&D level"
+        region="R&D Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13040}
