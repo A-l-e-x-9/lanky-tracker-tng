@@ -1,4 +1,4 @@
-import CratePool from '@renderer/components/pools/Arenas'
+import CratePool from '@renderer/components/pools/Crates'
 import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb, useFactoryHut, useDiddyBlockGb } from '@renderer/hooks/factory'
 import { useShuffleCrates, useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, usePunch, useTwirl, useCoconut, useTrombone, useGuitar, useTriangle } from '@renderer/hooks/kongs'

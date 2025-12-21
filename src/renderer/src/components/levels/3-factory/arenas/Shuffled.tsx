@@ -255,7 +255,7 @@ const hasCoconuts = useCoconut()
       <FactoryCheck
         id={13040}
         name="Shuffled Battle Arena: Under the grate that doesn't have the vanilla Arena"
-        region="Aztec Caves"
+        region="R&D Room"
         canGetLogic={canReachVanillaArena.in}
         canGetBreak={canReachVanillaArena.out}
       />
