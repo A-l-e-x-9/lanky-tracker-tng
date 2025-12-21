@@ -253,72 +253,73 @@ const canReachCar = useTinyRaceGb()
       />
       <FactoryCheck
         id={13040}
-        name="Shuffled Battle Arena: Vanilla Warp 3, at Cranky's"
+        name="Shuffled Battle Arena: Under the grate that doesn't have the vanilla Arena"
         region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
+        canGetLogic={canReachVanillaArena.in}
+        canGetBreak={canReachVanillaArena.out}
       />
       <FactoryCheck
         id={13041}
-        name="Shuffled Battle Arena: Vanilla Warp 3, end of the middle tunnel"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
+        name="Shuffled Battle Arena: Vanilla Warp 1, level start"
+        region="Factory Start Area"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <FactoryCheck
         id={13042}
-        name="Shuffled Battle Arena: Vanilla Warp 4, end of the middle tunnel"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
+        name="Shuffled Battle Arena: Vanilla Warp 1, in storage"
+        region="Storage and Arcade Area"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <FactoryCheck
         id={13043}
-        name="Shuffled Battle Arena: Vanilla Warp 4, at Funky's"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
+        name="Shuffled Battle Arena: Vanilla Warp 2, level start"
+        region="Factory Start Area"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <FactoryCheck
         id={13044}
-        name="Shuffled Battle Arena: Vanilla Warp 5, near Snide's"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
+        name="Shuffled Battle Arena: Vanilla Warp 2, R&D-side"
+        region="R&D Room"
+        canGetLogic={canReachTesting.in && hasClimbing}
+        canGetBreak={canReachTesting.out && hasClimbing}
       />
       <FactoryCheck
         id={13045}
-        name="Shuffled Battle Arena: Vanilla Warp 5, at DK's quicksand tunnel"
-        region="Aztec Caves"
-        canGetLogic={didGB[2002] || hasAllBananaports}
+        name="Shuffled Battle Arena: Vanilla Warp 3, in front of Snide's"
+        region="Factory Start Area"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <FactoryCheck
         id={13046}
-        name="Shuffled Battle Arena: A dead end in DK's room"
-        region="5 Door Temple"
-        canGetLogic={canGetDK5DT.in}
-        canGetBreak={canGetDK5DT.out}
+        name="Shuffled Battle Arena: Vanilla Warp 3, at Snide's"
+        region="Factory Start Area"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13047}
-        name="Shuffled Battle Arena: A dead end in Diddy's room"
-        region="5 Door Temple"
-        canGetLogic={canGetDiddy5DT.in}
-        canGetBreak={canGetDiddy5DT.out}
+        name="Shuffled Battle Arena: Vanilla Warp 4, bottom of the Prod Room"
+        region="Prod Room"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <FactoryCheck
         id={13048}
-        name="Shuffled Battle Arena: The sole dead end in Lanky's room"
-        region="5 Door Temple"
-        canGetLogic={canGetLanky5DT.in}
-        canGetBreak={canGetLanky5DT.out}
+        name="Shuffled Battle Arena: Vanilla Warp 4, top of the Prod Room"
+        region="Prod Room"
+        canGetLogic={upperProd.in}
+        canGetBreak={upperProd.out}
       />
       <FactoryCheck
         id={13049}
-        name="Shuffled Battle Arena: The right side of Lanky's room"
-        region="5 Door Temple"
-        canGetLogic={canGetLanky5DT.in}
-        canGetBreak={canGetLanky5DT.out}
+        name="Shuffled Battle Arena: Vanilla Warp 5, in the arcade"
+        region="Storage and Arcade Area"
+        canGetLogic={isBreathing.in && (hasClimbing || hasAllBananaports)}
+        canGetBreak={isBreathing.out && (hasClimbing || hasAllBananaports)}
       />
       <FactoryCheck
         id={13050}
