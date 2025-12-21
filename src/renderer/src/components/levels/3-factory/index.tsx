@@ -21,6 +21,9 @@ import LankyMedal from './medals/LankyMedal'
 import TinyMedal from './medals/TinyMedal'
 import FactoryRegionChecks from './regions'
 import FactoryShops from './shops'
+import ShuffledArenas from './arenas/Shuffled'
+import ShuffledCrates from './crates/Shuffled'
+import ShuffledDirt from './dirt/Shuffled'
 import ShuffledFairies from './fairies/Shuffled'
 
 const ClassicChecks: React.FC = () => (
@@ -47,6 +50,9 @@ const ClassicChecks: React.FC = () => (
     <DropPool>
       <EnemyLocations />
     </DropPool>
+    <ShuffledArenas />
+    <ShuffledCrates />
+    <ShuffledDirt />
     <ShuffledFairies />
   </div>
 )

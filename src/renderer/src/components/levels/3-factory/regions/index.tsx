@@ -11,6 +11,9 @@ import TestingChecks from './Testing'
 import RNDChecks from './Research'
 import StorageChecks from './Storage'
 import ProductionChecks from './Production'
+import ShuffledArenas from '../arenas/Shuffled'
+import ShuffledCrates from '../crates/Shuffled'
+import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 
 const FactoryRegionChecks: React.FC = () => (
@@ -29,6 +32,9 @@ const FactoryRegionChecks: React.FC = () => (
     <ProductionChecks />
     <ShopLocations />
     <BossCheck />
+    <ShuffledArenas />
+    <ShuffledCrates />
+    <ShuffledDirt />
     <ShuffledFairies />
   </div>
 )
