@@ -12,8 +12,7 @@ const VultureArena: React.FC = () => {
           id={2090}
           name="The Vulture's Battle Arena"
           region="Tiny Temple"
-          canGetLogic={vulture.in}
-          canGetBreak={vulture.out}
+          canGetLogic={vulture}
         />
       </VanillaArena>
     </ArenaPool>
