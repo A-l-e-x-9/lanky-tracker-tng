@@ -19,6 +19,7 @@ const canDoCrusher = useDkProdGb()
 const canReachHut = useFactoryHut()
 const hasCoconuts = useCoconut()
 const canDoBlockTower = useDiddyBlockGb()
+const hasGuitar = useGuitar()
 const hasTrombone = useTrombone()
 const hasTriangle = useTriangle()
   return (
