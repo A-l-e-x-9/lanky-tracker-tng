@@ -424,10 +424,13 @@ export const useGeneralTest = (): LogicBool => {
   }
 }
 
-export const useGeneralDirt = (): boolean => {
+export const useGeneralDirt = (): LogicBool => {
   const thing = useGeneralThing()
   const dirt = useShockwave()
-  return thing && dirt
+  return {
+    in: thing.in && dirt,
+    out: thing.out && dirt
+  }
 }
 
 export const useFactoryDirt = (): LogicBool => {

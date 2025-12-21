@@ -1,5 +1,5 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb, useFactoryHut, useDiddyBlockGb } from '@renderer/hooks/factory'
+import { useGeneralDirt, useArena, useFactoryDirt, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb, useFactoryHut, useDiddyBlockGb } from '@renderer/hooks/factory'
 import { useShuffleDirt, useBananaportAll } from '@renderer/hooks/settings'
 import { useShockwave, useClimbing, usePunch, useTwirl, useCoconut, useTrombone, useGuitar, useTriangle } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
@@ -7,6 +7,8 @@ import FactoryCheck from '../check'
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const hasShockwave = useShockwave()
+const canReachVanillaArena = useArena()
+const canDoVanillaDirt = useFactoryDirt()
 const hasClimbing = useClimbing()
 const hasPrimatePunch = usePunch()
 const prodRoomOn = useFactoryProductionEnabled()
