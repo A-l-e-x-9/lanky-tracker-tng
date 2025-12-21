@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import CratePool from '@renderer/components/pools/Crates'
-import { useGeneralThing, useArena, useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useCoconutKasplat, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDkTunnelGb, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useOasisKasplat } from '@renderer/hooks/aztec'
+import { useGeneralThing, useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useCoconutKasplat, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDkTunnelGb, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useOasisKasplat, useFreeLankySwitch } from '@renderer/hooks/aztec'
 import { useShuffleCrates, useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini, useAnyGun, useOrange } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
@@ -8,7 +8,6 @@ import useDonkStore from '@renderer/store'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
-const canReachVanillaArena = useArena()
 const hasClimbing = useClimbing()
 const hasVines = useVine()
 const hasAllBananaports = useBananaportAll()

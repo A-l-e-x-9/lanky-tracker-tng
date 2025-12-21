@@ -41,11 +41,11 @@ const AztecRegionChecks: React.FC = () => (
     <LlamaTempleChecks />
     <ShopLocations />
     <BossCheck />
-    <ShuffledKasplats />
+    <ShuffledArenas />
     <ShuffledCrates />
     <ShuffledDirtLocations />
     <ShuffledFairies />
-    <ShuffledArenas />
+    <ShuffledKasplats />
   </div>
 )
 

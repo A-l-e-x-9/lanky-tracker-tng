@@ -346,7 +346,7 @@ export const useDk5DoorGb = (): LogicBool => {
   }
 }
 
-const useFreeLankySwitch = (): boolean => {
+const useFreeLankySwitch = (): LogicBool => {
   const coconut = useCoconut()
   const bongos = useBongos()
   const peanut = usePeanut()
