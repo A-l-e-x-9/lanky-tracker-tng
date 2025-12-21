@@ -1,7 +1,7 @@
 import CratePool from '@renderer/components/pools/Arenas'
 import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb, useFactoryHut, useDiddyBlockGb } from '@renderer/hooks/factory'
 import { useShuffleCrates, useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, usePunch, useTwirl, useCoconut, useTrombone, useGuitar } from '@renderer/hooks/kongs'
+import { useClimbing, usePunch, useTwirl, useCoconut, useTrombone, useGuitar, useTriangle } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -20,7 +20,7 @@ const canReachHut = useFactoryHut()
 const hasCoconuts = useCoconut()
 const canDoBlockTower = useDiddyBlockGb()
 const hasTrombone = useTrombone()
-const hasGuitar = useGuitar()
+const hasTriangle = useTriangle()
   return (
     <CratePool>
       <FactoryCheck
@@ -251,15 +251,15 @@ const hasGuitar = useGuitar()
         id={23035}
         name="Shuffled Melon Crate: In Chunky's toy monster room"
         region="R&D Room"
-        canGetLogic={canDoKaiju.in}
-        canGetBreak={canDoKaiju.out}
+        canGetLogic={canReachTesting.in && hasClimbing && hasPrimatePunch && hasTriangle}
+        canGetBreak={canReachTesting.out && hasClimbing && hasPrimatePunch && hasTriangle}
       />
       <FactoryCheck
         id={23036}
         name="Shuffled Melon Crate: Just outside of Chunky's toy monster room"
         region="R&D Room"
-        canGetLogic={canDoKaiju.in}
-        canGetBreak={canDOKaiju.out}
+        canGetLogic={canReachTesting.in && hasClimbing && hasPrimatePunch && hasTriangle}
+        canGetBreak={canReachTesting.out && hasClimbing && hasPrimatePunch && hasTriangle}
       />
       <FactoryCheck
         id={23037}
