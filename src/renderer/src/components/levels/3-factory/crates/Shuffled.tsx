@@ -1,12 +1,11 @@
 import CratePool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb, useFactoryHut } from '@renderer/hooks/factory'
+import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb, useFactoryHut, useDiddyBlockGb } from '@renderer/hooks/factory'
 import { useShuffleCrates, useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, usePunch, useTwirl, useCoconut } from '@renderer/hooks/kongs'
+import { useClimbing, usePunch, useTwirl, useCoconut, useTrombone, useGuitar } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
-const canReachVanillaArena = useArena()
 const hasClimbing = useClimbing()
 const hasPrimatePunch = usePunch()
 const prodRoomOn = useFactoryProductionEnabled()
@@ -19,6 +18,9 @@ const canReachCar = useTinyRaceGb()
 const canDoCrusher = useDkProdGb()
 const canReachHut = useFactoryHut()
 const hasCoconuts = useCoconut()
+const canDoBlockTower = useDiddyBlockGb()
+const hasTrombone = useTrombone()
+const hasGuitar = useGuitar()
   return (
     <CratePool>
       <FactoryCheck
@@ -368,5 +370,5 @@ const hasCoconuts = useCoconut()
   )
 }
 
-const ShuffledArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
-export default ShuffledArenas
+const ShuffledCrates: React.FC = () => (useShuffleCrates() ? <Shuffled /> : null)
+export default ShuffledCrates
