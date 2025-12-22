@@ -1,7 +1,7 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform, useKevin, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb, useGalleonSeasickShip } from '@renderer/hooks/galleon'
-import { useShuffledArenas } from '@renderer/hooks/settings'
-import { usePunch, useClimbing } from '@renderer/hooks/kongs'
+import CratePool from '@renderer/components/pools/Crates'
+import { useGeneralThing, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform, useKevin, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb, useGalleonSeasickShip, useLighthouseDirt, useLanky2DoorShipGb, useGalleonTreasureRoom } from '@renderer/hooks/galleon'
+import { useShuffleCrate } from '@renderer/hooks/settings'
+import { usePunch, useClimbing, useDive, useLanky, useAnyGun, useOrange } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -18,298 +18,374 @@ const canReachDiddyGold = useDiddyGoldGb()
 const canReachChunkyShip = useGalleonSeasickShip()
 const hasPrimatePunch = usePunch()
 const hasClimbing = useClimbing()
+const canReachLankys2DS = useLanky2DoorShipGb()
+const canReachTreasureRoom = useGalleonTreasureRoom()
+const hasDiving = useDive()
+const hasLanky = useLanky()
+const hasAnyGun = useAnyGun()
+const hasOranges = useOrange()
   return (
-    <ArenaPool>
+    <CratePool>
       <GalleonCheck
-        id={14000}
-        name="Shuffled Battle Arena: Vanilla Arena (under Cranky)"
+        id={24000}
+        name="Shuffled Melon Crate: Under Cranky's"
         region="Galleon Caves"
         canGetLogic={canReachVanillaArena.in}
         canGetBreak={canReachVanillaArena.out}
       />
       <GalleonCheck
-        id={14001}
-        name="Shuffled Battle Arena: Bottom of the Lighthouse"
+        id={24001}
+        name="Shuffled Melon Crate: Bottom of the Lighthouse"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouse.in}
         canGetBreak={canReachLighthouse.out}
       />
       <GalleonCheck
-        id={14003}
-        name="Shuffled Battle Arena: In front of the cannonball"
+        id={24002}
+        name="Shuffled Melon Crate: Vanilla Crate (near Funky's)"
+        region="Shipyard Outskirts"
+        canGetLogic={canReachShipyard.in}
+        canGetBreak={canReachShipyard.out}
+      />
+      <GalleonCheck
+        id={24003}
+        name="Shuffled Melon Crate: In front of the cannonball"
         region="Galleon Caves"
         canGetLogic={canReachCannonGame.in}
         canGetBreak={canReachCannonGame.out}
       />
       <GalleonCheck
-        id={14004}
-        name="Shuffled Battle Arena: Behind the cannonball"
+        id={24004}
+        name="Shuffled Melon Crate: Behind the cannonball"
         region="Galleon Caves"
         canGetLogic={canReachCannonGame.in}
         canGetBreak={canReachCannonGame.out}
       />
       <GalleonCheck
-        id={14005}
-        name="Shuffled Battle Arena: Next to the cannon"
+        id={24005}
+        name="Shuffled Melon Crate: Next to the cannon"
         region="Galleon Caves"
         canGetLogic={canReachCannonGame.in}
         canGetBreak={canReachCannonGame.out}
       />
       <GalleonCheck
-        id={14006}
-        name="Shuffled Battle Arena: 4-way tunnel intersection"
+        id={24006}
+        name="Shuffled Melon Crate: 4-way tunnel intersection"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14007}
-        name="Shuffled Battle Arena: Tunnel to Chunky's chests, far"
+        id={24007}
+        name="Shuffled Melon Crate: Tunnel to Chunky's chests, far"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14008}
-        name="Shuffled Battle Arena: Tunnel to Chunky's chests, close"
+        id={24008}
+        name="Shuffled Melon Crate: Tunnel to Chunky's chests, close"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14009}
-        name="Shuffled Battle Arena: Tunnel to Chunky's chests, alcove"
+        id={24009}
+        name="Shuffled Melon Crate: Tunnel to Chunky's chests, alcove"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14010}
-        name="Shuffled Battle Arena: At Chunky's chests"
+        id={24010}
+        name="Shuffled Melon Crate: At Chunky's chests"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14011}
-        name="Shuffled Battle Arena: Behind Chunky's GB chest"
+        id={24011}
+        name="Shuffled Melon Crate: Behind Chunky's GB chest"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14012}
-        name="Shuffled Battle Arena: Behind the cannon wreck"
+        id={24012}
+        name="Shuffled Melon Crate: Behind the cannon wreck"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14014}
-        name="Shuffled Battle Arena: Left of Cranky's"
+        id={24013}
+        name="Shuffled Melon Crate: In a chest in Lanky's 2DS"
+        region="Shipyard Outskirts"
+        canGetLogic={canReachLankys2DS.in}
+        canGetBreak={canReachLankys2DS.out}
+      />
+      <GalleonCheck
+        id={24014}
+        name="Shuffled Melon Crate: Left of Cranky's"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14015}
-        name="Shuffled Battle Arena: In front of Cranky's"
+        id={24015}
+        name="Shuffled Melon Crate: In front of Cranky's"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14016}
-        name="Shuffled Battle Arena: Near vanilla Warp 3 in the cave"
+        id={24016}
+        name="Shuffled Melon Crate: Near vanilla Warp 3 in the cave"
         region="Galleon Caves"
         canGetLogic={canReachTinysKasplat.in}
         canGetBreak={canReachTinysKasplat.out}
       />
       <GalleonCheck
-        id={14017}
-        name="Shuffled Battle Arena: Near Diddy's barrel on the Lighthouse"
+        id={24017}
+        name="Shuffled Melon Crate: Near Diddy's barrel on the Lighthouse"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouseOuter.in}
         canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
-        id={14018}
-        name="Shuffled Battle Arena: Near DK's pad on the Lighthouse"
+        id={24018}
+        name="Shuffled Melon Crate: Near DK's pad on the Lighthouse"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouseOuter.in}
         canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
-        id={14019}
-        name="Shuffled Battle Arena: Next to the ladder on the Lighthouse"
+        id={24019}
+        name="Shuffled Melon Crate: Next to the ladder on the Lighthouse"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouseOuter.in}
         canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
-        id={14023}
-        name="Shuffled Battle Arena: Underneath Diddy's barrel on the Lighthouse"
+        id={24020}
+        name="Shuffled Melon Crate: Under the Enguarde box"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouseOuter.in && hasLanky && hasDiving.in}
+        canGetBreak={canReachLighthouseOuter.out && hasLanky && hasDiving.out}
+      />
+      <GalleonCheck
+        id={24021}
+        name="Shuffled Melon Crate: In the alcove locked by an Enguarde icon"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouseOuter.in && hasLanky && hasDiving.in}
+        canGetBreak={canReachLighthouseOuter.out && hasLanky && hasDiving.out}
+      />
+      <GalleonCheck
+        id={24022}
+        name="Shuffled Melon Crate: In front of the Mermaid's house"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouseOuter.in && hasLanky && hasDiving.in}
+        canGetBreak={canReachLighthouseOuter.out && hasLanky && hasDiving.out}
+      />
+      <GalleonCheck
+        id={24023}
+        name="Shuffled Melon Crate: Underneath Diddy's barrel on the Lighthouse"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouseOuter.in}
         canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
-        id={14024}
-        name="Shuffled Battle Arena: Kevin's platform"
+        id={24025}
+        name="Shuffled Melon Crate: Behind Snide's"
         region="Lighthouse Area"
-        canGetLogic={canReachKevin.in}
-        canGetBreak={canReachKevin.out}
+        canGetLogic={canReachLighthouseOuter.in}
+        canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
-        id={14030}
-        name="Shuffled Battle Arena: Top of Lanky's gold tower"
+        id={24026}
+        name="Shuffled Melon Crate: On top of Tiny's foghorn"
+        region="Shipyard Outskirts"
+        canGetLogic={canReachShipyard.in && hasLanky && hasDiving.in}
+        canGetBreak={canReachShipyard.out && hasLanky && hasDiving.out}
+      />
+      <GalleonCheck
+        id={24027}
+        name="Shuffled Melon Crate: On the bottom, around the 5DS, in a shipwreck that has no vanilla bananas"
+        region="Shipyard Outskirts"
+        canGetLogic={canReachShipyard.in && hasLanky && hasDiving.in}
+        canGetBreak={canReachShipyard.out && hasLanky && hasDiving.out}
+      />
+      <GalleonCheck
+        id={24028}
+        name="Shuffled Melon Crate: Bottom of the &quot;cactus&quot;"
+        region="Shipyard Outskirts"
+        canGetLogic={canReachShipyard.in && hasLanky && hasDiving.in}
+        canGetBreak={canReachShipyard.out && hasLanky && hasDiving.out}
+      />
+      <GalleonCheck
+        id={24029}
+        name="Shuffled Melon Crate: At the grate the Mechfish comes out of"
+        region="Shipyard Outskirts"
+        canGetLogic={canReachShipyard.in && hasLanky && hasDiving.in}
+        canGetBreak={canReachShipyard.out && hasLanky && hasDiving.out}
+      />
+      <GalleonCheck
+        id={24030}
+        name="Shuffled Melon Crate: Top of Lanky's gold tower"
         region="Treasure Room"
         canGetLogic={canReachLankyGold.in}
         canGetBreak={canReachLankyGold.out}
       />
       <GalleonCheck
-        id={14032}
-        name="Shuffled Battle Arena: Vanilla Warp 1, in the cave"
+        id={24031}
+        name="Shuffled Melon Crate: Underwater in the gold room"
+        region="Treasure Room"
+        canGetLogic={canReachTreasureRoom.in && hasDiving.in && hasLanky}
+        canGetBreak={canReachTreasureRoom.out && hasDiving.out && (hasAnyGun || hasOranges)}
+      />
+      <GalleonCheck
+        id={24032}
+        name="Shuffled Melon Crate: Vanilla Warp 1, in the cave"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14033}
-        name="Shuffled Battle Arena: Vanilla Warp 1, on the Lighthouse"
+        id={24033}
+        name="Shuffled Melon Crate: Vanilla Warp 1, on the Lighthouse"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouseOuter.in}
         canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
-        id={14034}
-        name="Shuffled Battle Arena: Vanilla Warp 2, in the cave"
+        id={24034}
+        name="Shuffled Melon Crate: Vanilla Warp 2, in the cave"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14035}
-        name="Shuffled Battle Arena: Vanilla Warp 2, near the 2DS"
+        id={24035}
+        name="Shuffled Melon Crate: Vanilla Warp 2, near the 2DS"
         region="Shipyard Outskirts"
         canGetLogic={canReachShipyard.in}
         canGetBreak={canReachShipyard.out}
       />
       <GalleonCheck
-        id={14036}
-        name="Shuffled Battle Arena: Vanilla Warp 3, in the cave"
+        id={24036}
+        name="Shuffled Melon Crate: Vanilla Warp 3, in the cave"
         region="Galleon Caves"
         canGetLogic={canReachTinysKasplat.in}
         canGetBreak={canReachTinysKasplat.out}
       />
       <GalleonCheck
-        id={14037}
-        name="Shuffled Battle Arena: Vanilla Warp 3, at Snide's"
+        id={24037}
+        name="Shuffled Melon Crate: Vanilla Warp 3, at Snide's"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouseOuter.in}
         canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
-        id={14038}
-        name="Shuffled Battle Arena: Vanilla Warp 4, in the shipyard"
+        id={24038}
+        name="Shuffled Melon Crate: Vanilla Warp 4, in the shipyard"
         region="Shipyard Outskirts"
         canGetLogic={canReachShipyard.in}
         canGetBreak={canReachShipyard.out}
       />
       <GalleonCheck
-        id={14039}
-        name="Shuffled Battle Arena: Vanilla Warp 4, on Diddy's gold tower"
+        id={24039}
+        name="Shuffled Melon Crate: Vanilla Warp 4, on Diddy's gold tower"
         region="Treasure Room"
         canGetLogic={canReachDiddyGold.in}
         canGetBreak={canReachDiddyGold.out}
       />
       <GalleonCheck
-        id={14040}
-        name="Shuffled Battle Arena: Vanilla Warp 5, on the Lighthouse"
+        id={24040}
+        name="Shuffled Melon Crate: Vanilla Warp 5, on the Lighthouse"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouseOuter.in}
         canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
-        id={14041}
-        name="Shuffled Battle Arena: Vanilla Warp 5, in the shipyard"
+        id={24041}
+        name="Shuffled Melon Crate: Vanilla Warp 5, in the shipyard"
         region="Shipyard Outskirts"
         canGetLogic={canReachShipyard.in}
         canGetBreak={canReachShipyard.out}
       />
       <GalleonCheck
-        id={14042}
-        name="Shuffled Battle Arena: Left of Chunky's ship exit"
+        id={24042}
+        name="Shuffled Melon Crate: Left of Chunky's ship exit"
         region="Lighthouse Area"
         canGetLogic={canReachChunkyShip.in}
         canGetBreak={canReachChunkyShip.out}
       />
       <GalleonCheck
-        id={14043}
-        name="Shuffled Battle Arena: In front of Chunky's ship exit"
+        id={24043}
+        name="Shuffled Melon Crate: In front of Chunky's ship exit"
         region="Lighthouse Area"
         canGetLogic={canReachChunkyShip.in}
         canGetBreak={canReachChunkyShip.out}
       />
       <GalleonCheck
-        id={14044}
-        name="Shuffled Battle Arena: Right of Chunky's ship exit"
+        id={24044}
+        name="Shuffled Melon Crate: Right of Chunky's ship exit"
         region="Lighthouse Area"
         canGetLogic={canReachChunkyShip.in}
         canGetBreak={canReachChunkyShip.out}
       />
       <GalleonCheck
-        id={14045}
-        name="Shuffled Battle Arena: In the corner of Chunky's ship"
+        id={24045}
+        name="Shuffled Melon Crate: In the corner of Chunky's ship"
         region="Lighthouse Area"
         canGetLogic={canReachChunkyShip.in}
         canGetBreak={canReachChunkyShip.out}
       />
       <GalleonCheck
-        id={14046}
-        name="Shuffled Battle Arena: Behind the pyramid of non-spinning barrels"
+        id={24046}
+        name="Shuffled Melon Crate: Behind the pyramid of non-spinning barrels"
         region="Lighthouse Area"
         canGetLogic={canReachChunkyShip.in && hasPrimatePunch}
         canGetBreak={canReachChunkyShip.out && hasPrimatePunch}
       />
       <GalleonCheck
-        id={14047}
-        name="Shuffled Battle Arena: Behind the spinning barrels"
+        id={24047}
+        name="Shuffled Melon Crate: Behind the spinning barrels"
         region="Lighthouse Area"
         canGetLogic={canReachChunkyShip.in && hasPrimatePunch}
         canGetBreak={canReachChunkyShip.out && hasPrimatePunch}
       />
       <GalleonCheck
-        id={14048}
-        name="Shuffled Battle Arena: Bottom left of the lighthouse"
+        id={24048}
+        name="Shuffled Melon Crate: Bottom left of the lighthouse"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouse.in}
         canGetBreak={canReachLighthouse.out}
       />
       <GalleonCheck
-        id={14049}
-        name="Shuffled Battle Arena: Back right of the lighthouse"
+        id={24049}
+        name="Shuffled Melon Crate: Back right of the lighthouse"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouse.in}
         canGetBreak={canReachLighthouse.out}
       />
       <GalleonCheck
-        id={14050}
-        name="Shuffled Battle Arena: Bottom back of the Whomp's Fortress ripoff area"
+        id={24050}
+        name="Shuffled Melon Crate: Bottom back of the Whomp's Fortress ripoff area"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouse.in && hasClimbing}
         canGetBreak={canReachLighthouse.out && hasClimbing}
       />
       <GalleonCheck
-        id={14051}
-        name="Shuffled Battle Arena: Top of the Whomp's Fortress ripoff area"
+        id={24051}
+        name="Shuffled Melon Crate: Top of the Whomp's Fortress ripoff area"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouse.in && hasClimbing}
         canGetBreak={canReachLighthouse.out && hasClimbing}
       />
-    </ArenaPool>
+    </CratePool>
   )
 }
 
-const ShuffledArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
-export default ShuffledArenas
+const ShuffledCrates: React.FC = () => (useShuffleCrate() ? <Shuffled /> : null)
+export default ShuffledCrates
