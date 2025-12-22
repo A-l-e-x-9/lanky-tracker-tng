@@ -11234,6 +11234,13 @@ const useLighthouseDirt = () => {
     out: inside.out && dirt
   };
 };
+const useGeneralDirt$6 = () => {
+  const thing = useGeneralThing$5();
+  return {
+    in: useShockwave() && thing.in,
+    out: useShockwave() && thing.out
+  };
+};
 const useChestFairy = () => {
   const thing = useChunkyChestGb();
   const fairy = useCamera();
@@ -14759,7 +14766,7 @@ const Shuffled$u = () => {
     )
   ] });
 };
-const ShuffledArenas$6 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : null;
+const ShuffledArenas$5 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : null;
 const CratePool = ({ children }) => usePoolCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const Shuffled$t = () => {
   const isBreathing = useAnyKong();
@@ -16412,7 +16419,7 @@ const Shuffled$s = () => {
     )
   ] });
 };
-const ShuffledDirt$3 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : null;
+const ShuffledDirt$4 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : null;
 const Shuffled$r = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$6();
@@ -16633,9 +16640,9 @@ const IslesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FairyReward, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$6, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$3, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {})
 ] });
 const BoulderLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -16706,9 +16713,9 @@ const ClassicChecks$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   /* @__PURE__ */ jsxRuntimeExports.jsx(FairyReward, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$8, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$6, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$3, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {})
 ] });
 const IsleChecks = () => {
@@ -19286,7 +19293,7 @@ const Shuffled$p = () => {
     )
   ] });
 };
-const ShuffledArenas$5 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : null;
+const ShuffledArenas$4 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : null;
 const Shuffled$o = () => {
   const isBreathing = useGeneralThing$4();
   const canReachFunky = useArena$4();
@@ -20374,7 +20381,7 @@ const Shuffled$n = () => {
     )
   ] });
 };
-const ShuffledDirt$2 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {}) : null;
+const ShuffledDirt$3 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {}) : null;
 const Shuffled$m = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$5();
@@ -20522,9 +20529,9 @@ const JapesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(UndergroundChecks$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$5, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$2, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {})
 ] });
 const ClassicChecks$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -20548,9 +20555,9 @@ const ClassicChecks$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$7, {}) }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$5, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$2, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$2, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {})
 ] });
 const JapesChecks = () => {
@@ -23658,7 +23665,7 @@ const Shuffled$l = () => {
     )
   ] });
 };
-const ShuffledArenas$4 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
+const ShuffledArenas$3 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
 const Shuffled$k = () => {
   const isBreathing = useGeneralThing$3();
   const hasClimbing = useClimbing();
@@ -25030,7 +25037,7 @@ const Shuffled$j = () => {
     )
   ] });
 };
-const ShuffledDirt$1 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$j, {}) : null;
+const ShuffledDirt$2 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$j, {}) : null;
 const Shuffled$i = () => {
   const hasCam = useCamera();
   const hasDiving = useDive();
@@ -25535,9 +25542,9 @@ const AztecRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { 
   /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaTempleChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$1, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats, {})
 ] });
@@ -25570,9 +25577,9 @@ const ClassicChecks$5 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$6, {}) }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$1, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$1, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$6, {})
 ] });
 const AztecChecks = () => {
@@ -27820,7 +27827,7 @@ const Shuffled$e = () => {
     )
   ] });
 };
-const ShuffledArenas$3 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$e, {}) : null;
+const ShuffledArenas$2 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$e, {}) : null;
 const Shuffled$d = () => {
   const isBreathing = useGeneralThing$2();
   const hasClimbing = useClimbing();
@@ -28887,7 +28894,7 @@ const Shuffled$c = () => {
     )
   ] });
 };
-const ShuffledDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$c, {}) : null;
+const ShuffledDirt$1 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$c, {}) : null;
 const Shuffled$b = () => {
   const hasCam = useCamera();
   const hasClimbing = useClimbing();
@@ -29122,9 +29129,9 @@ const FactoryRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", 
   /* @__PURE__ */ jsxRuntimeExports.jsx(ProductionChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$5, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$5, {})
 ] });
 const ClassicChecks$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -29148,9 +29155,9 @@ const ClassicChecks$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$5, {}) }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$3, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$5, {})
 ] });
 const FactoryChecks = () => {
@@ -30834,7 +30841,7 @@ const Shuffled$9 = () => {
       {
         id: 14041,
         name: "Shuffled Battle Arena: Vanilla Warp 5, in the shipyard",
-        region: "Factory Start Area",
+        region: "Shipyard Outskirts",
         canGetLogic: canReachShipyard.in,
         canGetBreak: canReachShipyard.out
       }
@@ -30941,7 +30948,7 @@ const Shuffled$9 = () => {
     )
   ] });
 };
-const ShuffledArenas$2 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$9, {}) : null;
+const ShuffledArenas$1 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$9, {}) : null;
 const Shuffled$8 = () => {
   const isBreathing = useGeneralThing$5();
   const canReachVanillaArena = useArena$5();
@@ -31262,7 +31269,7 @@ const Shuffled$8 = () => {
       {
         id: 14041,
         name: "Shuffled Battle Arena: Vanilla Warp 5, in the shipyard",
-        region: "Factory Start Area",
+        region: "Shipyard Outskirts",
         canGetLogic: canReachShipyard.in,
         canGetBreak: canReachShipyard.out
       }
@@ -31369,9 +31376,11 @@ const Shuffled$8 = () => {
     )
   ] });
 };
-const ShuffledArenas$1 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$8, {}) : null;
+const ShuffledArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$8, {}) : null;
 const Shuffled$7 = () => {
-  const isBreathing = useGeneralThing$5();
+  const isBreathing = useGeneralDirt$6();
+  const hasShockwave = useShockwave();
+  const canDoVanillaDirt = useLighthouseDirt();
   const canReachVanillaArena = useArena$5();
   const canReachLighthouse = useGalleonLighthouseInside();
   const canReachCannonGame = useGalleonCannon();
@@ -31384,72 +31393,62 @@ const Shuffled$7 = () => {
   const canReachChunkyShip = useGalleonSeasickShip();
   const hasPrimatePunch = usePunch();
   const hasClimbing = useClimbing();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14e3,
-        name: "Shuffled Battle Arena: Vanilla Arena (under Cranky)",
+        id: 34e3,
+        name: "Shuffled Dirt Patch: Under Cranky's",
         region: "Galleon Caves",
-        canGetLogic: canReachVanillaArena.in,
-        canGetBreak: canReachVanillaArena.out
+        canGetLogic: canReachVanillaArena.in && hasShockwave,
+        canGetBreak: canReachVanillaArena.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14001,
-        name: "Shuffled Battle Arena: Bottom of the Lighthouse",
+        id: 34001,
+        name: "Shuffled Dirt Patch: Vanilla Dirt (bottom of the Lighthouse)",
         region: "Lighthouse Area",
-        canGetLogic: canReachLighthouse.in,
-        canGetBreak: canReachLighthouse.out
+        canGetLogic: canDoVanillaDirt.in,
+        canGetBreak: canDoVanillaDirt.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14003,
-        name: "Shuffled Battle Arena: In front of the cannonball",
+        id: 34003,
+        name: "Shuffled Dirt Patch: In front of the cannonball",
         region: "Galleon Caves",
-        canGetLogic: canReachCannonGame.in,
-        canGetBreak: canReachCannonGame.out
+        canGetLogic: canReachCannonGame.in && hasShockwave,
+        canGetBreak: canReachCannonGame.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14004,
-        name: "Shuffled Battle Arena: Behind the cannonball",
+        id: 34004,
+        name: "Shuffled Dirt Patch: Behind the cannonball",
         region: "Galleon Caves",
-        canGetLogic: canReachCannonGame.in,
-        canGetBreak: canReachCannonGame.out
+        canGetLogic: canReachCannonGame.in && hasShockwave,
+        canGetBreak: canReachCannonGame.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14005,
-        name: "Shuffled Battle Arena: Next to the cannon",
+        id: 34005,
+        name: "Shuffled Dirt Patch: Next to the cannon",
         region: "Galleon Caves",
-        canGetLogic: canReachCannonGame.in,
-        canGetBreak: canReachCannonGame.out
+        canGetLogic: canReachCannonGame.in && hasShockwave,
+        canGetBreak: canReachCannonGame.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14006,
-        name: "Shuffled Battle Arena: 4-way tunnel intersection",
-        region: "Galleon Caves",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 14007,
-        name: "Shuffled Battle Arena: Tunnel to Chunky's chests, far",
+        id: 34006,
+        name: "Shuffled Dirt Patch: 4-way tunnel intersection",
         region: "Galleon Caves",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
@@ -31458,8 +31457,8 @@ const Shuffled$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14008,
-        name: "Shuffled Battle Arena: Tunnel to Chunky's chests, close",
+        id: 34007,
+        name: "Shuffled Dirt Patch: Tunnel to Chunky's chests, far",
         region: "Galleon Caves",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
@@ -31468,8 +31467,8 @@ const Shuffled$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14009,
-        name: "Shuffled Battle Arena: Tunnel to Chunky's chests, alcove",
+        id: 34008,
+        name: "Shuffled Dirt Patch: Tunnel to Chunky's chests, close",
         region: "Galleon Caves",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
@@ -31478,8 +31477,8 @@ const Shuffled$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14010,
-        name: "Shuffled Battle Arena: At Chunky's chests",
+        id: 34009,
+        name: "Shuffled Dirt Patch: Tunnel to Chunky's chests, alcove",
         region: "Galleon Caves",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
@@ -31488,8 +31487,8 @@ const Shuffled$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14011,
-        name: "Shuffled Battle Arena: Behind Chunky's GB chest",
+        id: 34010,
+        name: "Shuffled Dirt Patch: At Chunky's chests",
         region: "Galleon Caves",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
@@ -31498,8 +31497,8 @@ const Shuffled$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14012,
-        name: "Shuffled Battle Arena: Behind the cannon wreck",
+        id: 34011,
+        name: "Shuffled Dirt Patch: Behind Chunky's GB chest",
         region: "Galleon Caves",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
@@ -31508,8 +31507,8 @@ const Shuffled$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14014,
-        name: "Shuffled Battle Arena: Left of Cranky's",
+        id: 34012,
+        name: "Shuffled Dirt Patch: Behind the cannon wreck",
         region: "Galleon Caves",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
@@ -31518,8 +31517,8 @@ const Shuffled$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14015,
-        name: "Shuffled Battle Arena: In front of Cranky's",
+        id: 34014,
+        name: "Shuffled Dirt Patch: Left of Cranky's",
         region: "Galleon Caves",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
@@ -31528,78 +31527,98 @@ const Shuffled$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14016,
-        name: "Shuffled Battle Arena: Near vanilla Warp 3 in the cave",
+        id: 34015,
+        name: "Shuffled Dirt Patch: In front of Cranky's",
         region: "Galleon Caves",
-        canGetLogic: canReachTinysKasplat.in,
-        canGetBreak: canReachTinysKasplat.out
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14017,
-        name: "Shuffled Battle Arena: Near Diddy's barrel on the Lighthouse",
+        id: 34016,
+        name: "Shuffled Dirt Patch: Near vanilla Warp 3 in the cave",
+        region: "Galleon Caves",
+        canGetLogic: canReachTinysKasplat.in && hasShockwave,
+        canGetBreak: canReachTinysKasplat.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 34017,
+        name: "Shuffled Dirt Patch: Near Diddy's barrel on the Lighthouse",
         region: "Lighthouse Area",
-        canGetLogic: canReachLighthouseOuter.in,
-        canGetBreak: canReachLighthouseOuter.out
+        canGetLogic: canReachLighthouseOuter.in && hasShockwave,
+        canGetBreak: canReachLighthouseOuter.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14018,
-        name: "Shuffled Battle Arena: Near DK's pad on the Lighthouse",
+        id: 34018,
+        name: "Shuffled Dirt Patch: Near DK's pad on the Lighthouse",
         region: "Lighthouse Area",
-        canGetLogic: canReachLighthouseOuter.in,
-        canGetBreak: canReachLighthouseOuter.out
+        canGetLogic: canReachLighthouseOuter.in && hasShockwave,
+        canGetBreak: canReachLighthouseOuter.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14019,
-        name: "Shuffled Battle Arena: Next to the ladder on the Lighthouse",
+        id: 34019,
+        name: "Shuffled Dirt Patch: Next to the ladder on the Lighthouse",
         region: "Lighthouse Area",
-        canGetLogic: canReachLighthouseOuter.in,
-        canGetBreak: canReachLighthouseOuter.out
+        canGetLogic: canReachLighthouseOuter.in && hasShockwave,
+        canGetBreak: canReachLighthouseOuter.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14023,
-        name: "Shuffled Battle Arena: Underneath Diddy's barrel on the Lighthouse",
+        id: 34023,
+        name: "Shuffled Dirt Patch: Underneath Diddy's barrel on the Lighthouse",
         region: "Lighthouse Area",
-        canGetLogic: canReachLighthouseOuter.in,
-        canGetBreak: canReachLighthouseOuter.out
+        canGetLogic: canReachLighthouseOuter.in && hasShockwave,
+        canGetBreak: canReachLighthouseOuter.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14024,
-        name: "Shuffled Battle Arena: Kevin's platform",
+        id: 34024,
+        name: "Shuffled Dirt Patch: Kevin's platform",
         region: "Lighthouse Area",
-        canGetLogic: canReachKevin.in,
-        canGetBreak: canReachKevin.out
+        canGetLogic: canReachKevin.in && hasShockwave,
+        canGetBreak: canReachKevin.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14030,
-        name: "Shuffled Battle Arena: Top of Lanky's gold tower",
+        id: 34025,
+        name: "Shuffled Dirt Patch: Behind Snide's",
+        region: "Lighthouse Area",
+        canGetLogic: canReachLighthouseOuter.in && hasShockwave,
+        canGetBreak: canReachLighthouseOuter.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 34030,
+        name: "Shuffled Dirt Patch: Top of Lanky's gold tower",
         region: "Treasure Room",
-        canGetLogic: canReachLankyGold.in,
-        canGetBreak: canReachLankyGold.out
+        canGetLogic: canReachLankyGold.in && hasShockwave,
+        canGetBreak: canReachLankyGold.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14032,
-        name: "Shuffled Battle Arena: Vanilla Warp 1, in the cave",
+        id: 34032,
+        name: "Shuffled Dirt Patch: Vanilla Warp 1, in the cave",
         region: "Galleon Caves",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
@@ -31608,18 +31627,18 @@ const Shuffled$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14033,
-        name: "Shuffled Battle Arena: Vanilla Warp 1, on the Lighthouse",
+        id: 34033,
+        name: "Shuffled Dirt Patch: Vanilla Warp 1, on the Lighthouse",
         region: "Lighthouse Area",
-        canGetLogic: canReachLighthouseOuter.in,
-        canGetBreak: canReachLighthouseOuter.out
+        canGetLogic: canReachLighthouseOuter.in && hasShockwave,
+        canGetBreak: canReachLighthouseOuter.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14034,
-        name: "Shuffled Battle Arena: Vanilla Warp 2, in the cave",
+        id: 34034,
+        name: "Shuffled Dirt Patch: Vanilla Warp 2, in the cave",
         region: "Galleon Caves",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
@@ -31628,176 +31647,176 @@ const Shuffled$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14035,
-        name: "Shuffled Battle Arena: Vanilla Warp 2, near the 2DS",
+        id: 34035,
+        name: "Shuffled Dirt Patch: Vanilla Warp 2, near the 2DS",
         region: "Shipyard Outskirts",
-        canGetLogic: canReachShipyard.in,
-        canGetBreak: canReachShipyard.out
+        canGetLogic: canReachShipyard.in && hasShockwave,
+        canGetBreak: canReachShipyard.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14036,
-        name: "Shuffled Battle Arena: Vanilla Warp 3, in the cave",
+        id: 34036,
+        name: "Shuffled Dirt Patch: Vanilla Warp 3, in the cave",
         region: "Galleon Caves",
-        canGetLogic: canReachTinysKasplat.in,
-        canGetBreak: canReachTinysKasplat.out
+        canGetLogic: canReachTinysKasplat.in && hasShockwave,
+        canGetBreak: canReachTinysKasplat.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14037,
-        name: "Shuffled Battle Arena: Vanilla Warp 3, at Snide's",
+        id: 34037,
+        name: "Shuffled Dirt Patch: Vanilla Warp 3, at Snide's",
         region: "Lighthouse Area",
-        canGetLogic: canReachLighthouseOuter.in,
-        canGetBreak: canReachLighthouseOuter.out
+        canGetLogic: canReachLighthouseOuter.in && hasShockwave,
+        canGetBreak: canReachLighthouseOuter.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14038,
-        name: "Shuffled Battle Arena: Vanilla Warp 4, in the shipyard",
+        id: 34038,
+        name: "Shuffled Dirt Patch: Vanilla Warp 4, in the shipyard",
         region: "Shipyard Outskirts",
-        canGetLogic: canReachShipyard.in,
-        canGetBreak: canReachShipyard.out
+        canGetLogic: canReachShipyard.in && hasShockwave,
+        canGetBreak: canReachShipyard.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14039,
-        name: "Shuffled Battle Arena: Vanilla Warp 4, on Diddy's gold tower",
+        id: 34039,
+        name: "Shuffled Dirt Patch: Vanilla Warp 4, on Diddy's gold tower",
         region: "Treasure Room",
-        canGetLogic: canReachDiddyGold.in,
-        canGetBreak: canReachDiddyGold.out
+        canGetLogic: canReachDiddyGold.in && hasShockwave,
+        canGetBreak: canReachDiddyGold.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14040,
-        name: "Shuffled Battle Arena: Vanilla Warp 5, on the Lighthouse",
+        id: 34040,
+        name: "Shuffled Dirt Patch: Vanilla Warp 5, on the Lighthouse",
         region: "Lighthouse Area",
-        canGetLogic: canReachLighthouseOuter.in,
-        canGetBreak: canReachLighthouseOuter.out
+        canGetLogic: canReachLighthouseOuter.in && hasShockwave,
+        canGetBreak: canReachLighthouseOuter.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14041,
-        name: "Shuffled Battle Arena: Vanilla Warp 5, in the shipyard",
-        region: "Factory Start Area",
-        canGetLogic: canReachShipyard.in,
-        canGetBreak: canReachShipyard.out
+        id: 34041,
+        name: "Shuffled Dirt Patch: Vanilla Warp 5, in the shipyard",
+        region: "Shipyard Outskirts",
+        canGetLogic: canReachShipyard.in && hasShockwave,
+        canGetBreak: canReachShipyard.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14042,
-        name: "Shuffled Battle Arena: Left of Chunky's ship exit",
+        id: 34042,
+        name: "Shuffled Dirt Patch: Left of Chunky's ship exit",
         region: "Lighthouse Area",
-        canGetLogic: canReachChunkyShip.in,
-        canGetBreak: canReachChunkyShip.out
+        canGetLogic: canReachChunkyShip.in && hasShockwave,
+        canGetBreak: canReachChunkyShip.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14043,
-        name: "Shuffled Battle Arena: In front of Chunky's ship exit",
+        id: 34043,
+        name: "Shuffled Dirt Patch: In front of Chunky's ship exit",
         region: "Lighthouse Area",
-        canGetLogic: canReachChunkyShip.in,
-        canGetBreak: canReachChunkyShip.out
+        canGetLogic: canReachChunkyShip.in && hasShockwave,
+        canGetBreak: canReachChunkyShip.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14044,
-        name: "Shuffled Battle Arena: Right of Chunky's ship exit",
+        id: 34044,
+        name: "Shuffled Dirt Patch: Right of Chunky's ship exit",
         region: "Lighthouse Area",
-        canGetLogic: canReachChunkyShip.in,
-        canGetBreak: canReachChunkyShip.out
+        canGetLogic: canReachChunkyShip.in && hasShockwave,
+        canGetBreak: canReachChunkyShip.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14045,
-        name: "Shuffled Battle Arena: In the corner of Chunky's ship",
+        id: 34045,
+        name: "Shuffled Dirt Patch: In the corner of Chunky's ship",
         region: "Lighthouse Area",
-        canGetLogic: canReachChunkyShip.in,
-        canGetBreak: canReachChunkyShip.out
+        canGetLogic: canReachChunkyShip.in && hasShockwave,
+        canGetBreak: canReachChunkyShip.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14046,
-        name: "Shuffled Battle Arena: Behind the pyramid of non-spinning barrels",
+        id: 34046,
+        name: "Shuffled Dirt Patch: Behind the pyramid of non-spinning barrels",
         region: "Lighthouse Area",
-        canGetLogic: canReachChunkyShip.in && hasPrimatePunch,
-        canGetBreak: canReachChunkyShip.out && hasPrimatePunch
+        canGetLogic: canReachChunkyShip.in && hasPrimatePunch && hasShockwave,
+        canGetBreak: canReachChunkyShip.out && hasPrimatePunch && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14047,
-        name: "Shuffled Battle Arena: Behind the spinning barrels",
+        id: 34047,
+        name: "Shuffled Dirt Patch: Behind the spinning barrels",
         region: "Lighthouse Area",
-        canGetLogic: canReachChunkyShip.in && hasPrimatePunch,
-        canGetBreak: canReachChunkyShip.out && hasPrimatePunch
+        canGetLogic: canReachChunkyShip.in && hasPrimatePunch && hasShockwave,
+        canGetBreak: canReachChunkyShip.out && hasPrimatePunch && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14048,
-        name: "Shuffled Battle Arena: Bottom left of the lighthouse",
+        id: 34048,
+        name: "Shuffled Dirt Patch: Bottom left of the lighthouse",
         region: "Lighthouse Area",
-        canGetLogic: canReachLighthouse.in,
-        canGetBreak: canReachLighthouse.out
+        canGetLogic: canReachLighthouse.in && hasShockwave,
+        canGetBreak: canReachLighthouse.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14049,
-        name: "Shuffled Battle Arena: Back right of the lighthouse",
+        id: 34049,
+        name: "Shuffled Dirt Patch: Back right of the lighthouse",
         region: "Lighthouse Area",
-        canGetLogic: canReachLighthouse.in,
-        canGetBreak: canReachLighthouse.out
+        canGetLogic: canReachLighthouse.in && hasShockwave,
+        canGetBreak: canReachLighthouse.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14050,
-        name: "Shuffled Battle Arena: Bottom back of the Whomp's Fortress ripoff area",
+        id: 34050,
+        name: "Shuffled Dirt Patch: Bottom back of the Whomp's Fortress ripoff area",
         region: "Lighthouse Area",
-        canGetLogic: canReachLighthouse.in && hasClimbing,
-        canGetBreak: canReachLighthouse.out && hasClimbing
+        canGetLogic: canReachLighthouse.in && hasClimbing && hasShockwave,
+        canGetBreak: canReachLighthouse.out && hasClimbing && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 14051,
-        name: "Shuffled Battle Arena: Top of the Whomp's Fortress ripoff area",
+        id: 34051,
+        name: "Shuffled Dirt Patch: Top of the Whomp's Fortress ripoff area",
         region: "Lighthouse Area",
-        canGetLogic: canReachLighthouse.in && hasClimbing,
-        canGetBreak: canReachLighthouse.out && hasClimbing
+        canGetLogic: canReachLighthouse.in && hasClimbing && hasShockwave,
+        canGetBreak: canReachLighthouse.out && hasClimbing && hasShockwave
       }
     )
   ] });
 };
-const ShuffledArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$7, {}) : null;
+const ShuffledDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$7, {}) : null;
 const Shuffled$6 = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$7();
@@ -32003,9 +32022,9 @@ const GalleonRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(FiveShipChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$4, {})
 ] }) });
 const ClassicChecks$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -32029,9 +32048,9 @@ const ClassicChecks$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { cl
   /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$4, {}) }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$2, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$4, {})
 ] });
 const GalleonChecks = () => {
