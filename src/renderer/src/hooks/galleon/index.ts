@@ -285,8 +285,8 @@ export const useChunky5DoorShipGb = (): LogicBool => {
   const triangle = useTriangle()
   const lowTide = useGalleonLowTide()
   return {
-    in: lighthouse.in && outskirts.in && dive.in && lowTide && triangle,
-    out: lighthouse.out && outskirts.out && dive.out && lowTide && triangle
+    in: lighthouse.in && outskirts.in && dive.in && lowTide.in && triangle,
+    out: lighthouse.out && outskirts.out && dive.out && lowTide.out && triangle
   }
 }
 
@@ -515,8 +515,9 @@ export const useTreasureKasplat = (): LogicBool => useDiddyGoldGb()
 
 export const useKevin = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
+  const lowWater = useGalleonLowTide()
   return {
-    in: lighthouse.in,
+    in: lighthouse.in && lowWater.in,
     out: lighthouse.out
   }
 }

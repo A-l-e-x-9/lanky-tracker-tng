@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform } from '@renderer/hooks/galleon'
+import { useGeneralThing, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform, useKevin } from '@renderer/hooks/galleon'
 import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
 import {  } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
@@ -11,6 +11,7 @@ const canReachLighthouse = useGalleonLighthouseInside()
 const canReachCannonGame = useGalleonCannon()
 const canReachTinysKasplat = useGalleonCavernTop()
 const canReachLighthouseOuter = useGalleonLighthousePlatform()
+const canReachKevin = useKevin()
   return (
     <ArenaPool>
       <GalleonCheck
@@ -140,67 +141,18 @@ const canReachLighthouseOuter = useGalleonLighthousePlatform()
         canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
-        id={14020}
-        name="Shuffled Battle Arena: Near Snide's"
-        region="Factory Start Area"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <GalleonCheck
-        id={14021}
-        name="Shuffled Battle Arena: Near Snide's, hidden"
-        region="Factory Start Area"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <GalleonCheck
-        id={14022}
-        name="Shuffled Battle Arena: Right hallway"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <GalleonCheck
         id={14023}
-        name="Shuffled Battle Arena: At DK's number game"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
+        name="Shuffled Battle Arena: Underneath Diddy's barrel on the Lighthouse"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouseOuter.in}
+        canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
         id={14024}
-        name="Shuffled Battle Arena: Under the stairs to Tiny's dartboard"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <GalleonCheck
-        id={14026}
-        name="Shuffled Battle Arena: Under Lanky's Testing Bonus Barrel"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <GalleonCheck
-        id={14027}
-        name="Shuffled Battle Arena: Left of the entrance to Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <GalleonCheck
-        id={14028}
-        name="Shuffled Battle Arena: Left of Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <GalleonCheck
-        id={14029}
-        name="Shuffled Battle Arena: Right of Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
+        name="Shuffled Battle Arena: Kevin's platform"
+        region="Lighthouse Area"
+        canGetLogic={canReachKevin.in}
+        canGetBreak={canReachKevin.out}
       />
       <GalleonCheck
         id={14030}
