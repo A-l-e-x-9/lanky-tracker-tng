@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useGalleonLighthouseInside } from '@renderer/hooks/galleon'
+import { useGeneralThing, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform } from '@renderer/hooks/galleon'
 import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
 import {  } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
@@ -9,6 +9,8 @@ const isBreathing = useGeneralThing()
 const canReachVanillaArena = useArena()
 const canReachLighthouse = useGalleonLighthouseInside()
 const canReachCannonGame = useGalleonCannon()
+const canReachTinysKasplat = useGalleonCavernTop()
+const canReachLighthouseOuter = useGalleonLighthousePlatform()
   return (
     <ArenaPool>
       <GalleonCheck
@@ -76,73 +78,66 @@ const canReachCannonGame = useGalleonCannon()
       />
       <GalleonCheck
         id={14010}
-        name="Shuffled Battle Arena: Prod Room lower area"
-        region="Prod Room"
-        canGetLogic={prodRoomOn.in || hasAllBananaports}
-        canGetBreak={prodRoomOn.out || hasAllBananaports}
+        name="Shuffled Battle Arena: At Chunky's chests"
+        region="Galleon Caves"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <GalleonCheck
         id={14011}
-        name="Shuffled Battle Arena: Under conveyors to Tiny's Prod Room GB"
-        region="Prod Room"
-        canGetLogic={upperProd.in}
-        canGetBreak={upperProd.out}
+        name="Shuffled Battle Arena: Behind Chunky's GB chest"
+        region="Galleon Caves"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <GalleonCheck
         id={14012}
-        name="Shuffled Battle Arena: The platform past Tiny's Prod Room GB"
-        region="Prod Room"
-        canGetLogic={canDoTinyProd.in}
-        canGetBreak={canDoTinyProd.out}
-      />
-      <GalleonCheck
-        id={14013}
-        name="Shuffled Battle Arena: On a vent platform near the elevators"
-        region="Prod Room"
-        canGetLogic={upperProd.in && isHinaKagiyama}
-        canGetBreak={upperProd.out}
+        name="Shuffled Battle Arena: Behind the cannon wreck"
+        region="Galleon Caves"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <GalleonCheck
         id={14014}
-        name="Shuffled Battle Arena: Corner of the Storage Room"
-        region="Storage and Arcade Area"
+        name="Shuffled Battle Arena: Left of Cranky's"
+        region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
         id={14015}
         name="Shuffled Battle Arena: In front of Cranky's"
-        region="Storage and Arcade Area"
+        region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
         id={14016}
-        name="Shuffled Battle Arena: In front of Candy's"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: Near vanilla Warp 3 in the cave"
+        region="Galleon Caves"
+        canGetLogic={canReachTinysKasplat.in}
+        canGetBreak={canReachTinysKasplat.out}
       />
       <GalleonCheck
         id={14017}
-        name="Shuffled Battle Arena: Corner of Chunky's dark room"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && hasPrimatePunch}
-        canGetBreak={isBreathing.out && hasPrimatePunch}
+        name="Shuffled Battle Arena: Near Diddy's barrel on the Lighthouse"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouseOuter.in}
+        canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
         id={14018}
-        name="Shuffled Battle Arena: Bench in the arcade room"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && (hasClimbing || hasAllBananaports)}
-        canGetBreak={isBreathing.out && (hasClimbing || hasAllBananaports)}
+        name="Shuffled Battle Arena: Near DK's pad on the Lighthouse"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouseOuter.in}
+        canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
         id={14019}
-        name="Shuffled Battle Arena: Next to the arcade game"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && (hasClimbing || hasAllBananaports)}
-        canGetBreak={isBreathing.out && (hasClimbing || hasAllBananaports)}
+        name="Shuffled Battle Arena: Next to the ladder on the Lighthouse"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouseOuter.in}
+        canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
         id={14020}
