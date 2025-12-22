@@ -1,11 +1,13 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform, useKevin, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb, useGalleonSeasickShip } from '@renderer/hooks/galleon'
-import { useShuffledArenas } from '@renderer/hooks/settings'
-import { usePunch, useClimbing } from '@renderer/hooks/kongs'
+import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
+import { useGeneralDirt, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform, useKevin, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb, useGalleonSeasickShip, useLighthouseDirt } from '@renderer/hooks/galleon'
+import { useShuffleDirt } from '@renderer/hooks/settings'
+import { useShockwave, usePunch, useClimbing } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
-const isBreathing = useGeneralThing()
+const isBreathing = useGeneralDirt()
+const hasShockwave = useShockwave()
+const canDoVanillaDirt = useLighthouseDirt()
 const canReachVanillaArena = useArena()
 const canReachLighthouse = useGalleonLighthouseInside()
 const canReachCannonGame = useGalleonCannon()
@@ -19,297 +21,304 @@ const canReachChunkyShip = useGalleonSeasickShip()
 const hasPrimatePunch = usePunch()
 const hasClimbing = useClimbing()
   return (
-    <ArenaPool>
+    <RainbowCoinPool>
       <GalleonCheck
-        id={14000}
-        name="Shuffled Battle Arena: Vanilla Arena (under Cranky)"
+        id={34000}
+        name="Shuffled Dirt Patch: Under Cranky's"
         region="Galleon Caves"
-        canGetLogic={canReachVanillaArena.in}
-        canGetBreak={canReachVanillaArena.out}
+        canGetLogic={canReachVanillaArena.in && hasShockwave}
+        canGetBreak={canReachVanillaArena.out && hasShockwave}
       />
       <GalleonCheck
-        id={14001}
-        name="Shuffled Battle Arena: Bottom of the Lighthouse"
+        id={34001}
+        name="Shuffled Dirt Patch: Vanilla Dirt (bottom of the Lighthouse)"
         region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in}
-        canGetBreak={canReachLighthouse.out}
+        canGetLogic={canDoVanillaDirt.in}
+        canGetBreak={canDoVanillaDirt.out}
       />
       <GalleonCheck
-        id={14003}
-        name="Shuffled Battle Arena: In front of the cannonball"
+        id={34003}
+        name="Shuffled Dirt Patch: In front of the cannonball"
         region="Galleon Caves"
-        canGetLogic={canReachCannonGame.in}
-        canGetBreak={canReachCannonGame.out}
+        canGetLogic={canReachCannonGame.in && hasShockwave}
+        canGetBreak={canReachCannonGame.out && hasShockwave}
       />
       <GalleonCheck
-        id={14004}
-        name="Shuffled Battle Arena: Behind the cannonball"
+        id={34004}
+        name="Shuffled Dirt Patch: Behind the cannonball"
         region="Galleon Caves"
-        canGetLogic={canReachCannonGame.in}
-        canGetBreak={canReachCannonGame.out}
+        canGetLogic={canReachCannonGame.in && hasShockwave}
+        canGetBreak={canReachCannonGame.out && hasShockwave}
       />
       <GalleonCheck
-        id={14005}
-        name="Shuffled Battle Arena: Next to the cannon"
+        id={34005}
+        name="Shuffled Dirt Patch: Next to the cannon"
         region="Galleon Caves"
-        canGetLogic={canReachCannonGame.in}
-        canGetBreak={canReachCannonGame.out}
+        canGetLogic={canReachCannonGame.in && hasShockwave}
+        canGetBreak={canReachCannonGame.out && hasShockwave}
       />
       <GalleonCheck
-        id={14006}
-        name="Shuffled Battle Arena: 4-way tunnel intersection"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={14007}
-        name="Shuffled Battle Arena: Tunnel to Chunky's chests, far"
+        id={34006}
+        name="Shuffled Dirt Patch: 4-way tunnel intersection"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14008}
-        name="Shuffled Battle Arena: Tunnel to Chunky's chests, close"
+        id={34007}
+        name="Shuffled Dirt Patch: Tunnel to Chunky's chests, far"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14009}
-        name="Shuffled Battle Arena: Tunnel to Chunky's chests, alcove"
+        id={34008}
+        name="Shuffled Dirt Patch: Tunnel to Chunky's chests, close"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14010}
-        name="Shuffled Battle Arena: At Chunky's chests"
+        id={34009}
+        name="Shuffled Dirt Patch: Tunnel to Chunky's chests, alcove"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14011}
-        name="Shuffled Battle Arena: Behind Chunky's GB chest"
+        id={34010}
+        name="Shuffled Dirt Patch: At Chunky's chests"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14012}
-        name="Shuffled Battle Arena: Behind the cannon wreck"
+        id={34011}
+        name="Shuffled Dirt Patch: Behind Chunky's GB chest"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14014}
-        name="Shuffled Battle Arena: Left of Cranky's"
+        id={34012}
+        name="Shuffled Dirt Patch: Behind the cannon wreck"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14015}
-        name="Shuffled Battle Arena: In front of Cranky's"
+        id={34014}
+        name="Shuffled Dirt Patch: Left of Cranky's"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14016}
-        name="Shuffled Battle Arena: Near vanilla Warp 3 in the cave"
+        id={34015}
+        name="Shuffled Dirt Patch: In front of Cranky's"
         region="Galleon Caves"
-        canGetLogic={canReachTinysKasplat.in}
-        canGetBreak={canReachTinysKasplat.out}
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14017}
-        name="Shuffled Battle Arena: Near Diddy's barrel on the Lighthouse"
+        id={34016}
+        name="Shuffled Dirt Patch: Near vanilla Warp 3 in the cave"
+        region="Galleon Caves"
+        canGetLogic={canReachTinysKasplat.in && hasShockwave}
+        canGetBreak={canReachTinysKasplat.out && hasShockwave}
+      />
+      <GalleonCheck
+        id={34017}
+        name="Shuffled Dirt Patch: Near Diddy's barrel on the Lighthouse"
         region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
+        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
       />
       <GalleonCheck
-        id={14018}
-        name="Shuffled Battle Arena: Near DK's pad on the Lighthouse"
+        id={34018}
+        name="Shuffled Dirt Patch: Near DK's pad on the Lighthouse"
         region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
+        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
       />
       <GalleonCheck
-        id={14019}
-        name="Shuffled Battle Arena: Next to the ladder on the Lighthouse"
+        id={34019}
+        name="Shuffled Dirt Patch: Next to the ladder on the Lighthouse"
         region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
+        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
       />
       <GalleonCheck
-        id={14023}
-        name="Shuffled Battle Arena: Underneath Diddy's barrel on the Lighthouse"
+        id={34023}
+        name="Shuffled Dirt Patch: Underneath Diddy's barrel on the Lighthouse"
         region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
+        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
       />
       <GalleonCheck
-        id={14024}
-        name="Shuffled Battle Arena: Kevin's platform"
+        id={34024}
+        name="Shuffled Dirt Patch: Kevin's platform"
         region="Lighthouse Area"
-        canGetLogic={canReachKevin.in}
-        canGetBreak={canReachKevin.out}
+        canGetLogic={canReachKevin.in && hasShockwave}
+        canGetBreak={canReachKevin.out && hasShockwave}
       />
       <GalleonCheck
-        id={14030}
-        name="Shuffled Battle Arena: Top of Lanky's gold tower"
+        id={34025}
+        name="Shuffled Dirt Patch: Behind Snide's"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
+        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
+      />
+      <GalleonCheck
+        id={34030}
+        name="Shuffled Dirt Patch: Top of Lanky's gold tower"
         region="Treasure Room"
-        canGetLogic={canReachLankyGold.in}
-        canGetBreak={canReachLankyGold.out}
+        canGetLogic={canReachLankyGold.in && hasShockwave}
+        canGetBreak={canReachLankyGold.out && hasShockwave}
       />
       <GalleonCheck
-        id={14032}
-        name="Shuffled Battle Arena: Vanilla Warp 1, in the cave"
+        id={34032}
+        name="Shuffled Dirt Patch: Vanilla Warp 1, in the cave"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14033}
-        name="Shuffled Battle Arena: Vanilla Warp 1, on the Lighthouse"
+        id={34033}
+        name="Shuffled Dirt Patch: Vanilla Warp 1, on the Lighthouse"
         region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
+        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
       />
       <GalleonCheck
-        id={14034}
-        name="Shuffled Battle Arena: Vanilla Warp 2, in the cave"
+        id={34034}
+        name="Shuffled Dirt Patch: Vanilla Warp 2, in the cave"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={14035}
-        name="Shuffled Battle Arena: Vanilla Warp 2, near the 2DS"
+        id={34035}
+        name="Shuffled Dirt Patch: Vanilla Warp 2, near the 2DS"
         region="Shipyard Outskirts"
-        canGetLogic={canReachShipyard.in}
-        canGetBreak={canReachShipyard.out}
+        canGetLogic={canReachShipyard.in && hasShockwave}
+        canGetBreak={canReachShipyard.out && hasShockwave}
       />
       <GalleonCheck
-        id={14036}
-        name="Shuffled Battle Arena: Vanilla Warp 3, in the cave"
+        id={34036}
+        name="Shuffled Dirt Patch: Vanilla Warp 3, in the cave"
         region="Galleon Caves"
-        canGetLogic={canReachTinysKasplat.in}
-        canGetBreak={canReachTinysKasplat.out}
+        canGetLogic={canReachTinysKasplat.in && hasShockwave}
+        canGetBreak={canReachTinysKasplat.out && hasShockwave}
       />
       <GalleonCheck
-        id={14037}
-        name="Shuffled Battle Arena: Vanilla Warp 3, at Snide's"
+        id={34037}
+        name="Shuffled Dirt Patch: Vanilla Warp 3, at Snide's"
         region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
+        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
       />
       <GalleonCheck
-        id={14038}
-        name="Shuffled Battle Arena: Vanilla Warp 4, in the shipyard"
+        id={34038}
+        name="Shuffled Dirt Patch: Vanilla Warp 4, in the shipyard"
         region="Shipyard Outskirts"
-        canGetLogic={canReachShipyard.in}
-        canGetBreak={canReachShipyard.out}
+        canGetLogic={canReachShipyard.in && hasShockwave}
+        canGetBreak={canReachShipyard.out && hasShockwave}
       />
       <GalleonCheck
-        id={14039}
-        name="Shuffled Battle Arena: Vanilla Warp 4, on Diddy's gold tower"
+        id={34039}
+        name="Shuffled Dirt Patch: Vanilla Warp 4, on Diddy's gold tower"
         region="Treasure Room"
-        canGetLogic={canReachDiddyGold.in}
-        canGetBreak={canReachDiddyGold.out}
+        canGetLogic={canReachDiddyGold.in && hasShockwave}
+        canGetBreak={canReachDiddyGold.out && hasShockwave}
       />
       <GalleonCheck
-        id={14040}
-        name="Shuffled Battle Arena: Vanilla Warp 5, on the Lighthouse"
+        id={34040}
+        name="Shuffled Dirt Patch: Vanilla Warp 5, on the Lighthouse"
         region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
+        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
       />
       <GalleonCheck
-        id={14041}
-        name="Shuffled Battle Arena: Vanilla Warp 5, in the shipyard"
-        region="Factory Start Area"
-        canGetLogic={canReachShipyard.in}
-        canGetBreak={canReachShipyard.out}
+        id={34041}
+        name="Shuffled Dirt Patch: Vanilla Warp 5, in the shipyard"
+        region="Shipyard Outskirts"
+        canGetLogic={canReachShipyard.in && hasShockwave}
+        canGetBreak={canReachShipyard.out && hasShockwave}
       />
       <GalleonCheck
-        id={14042}
-        name="Shuffled Battle Arena: Left of Chunky's ship exit"
+        id={34042}
+        name="Shuffled Dirt Patch: Left of Chunky's ship exit"
         region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in}
-        canGetBreak={canReachChunkyShip.out}
+        canGetLogic={canReachChunkyShip.in && hasShockwave}
+        canGetBreak={canReachChunkyShip.out && hasShockwave}
       />
       <GalleonCheck
-        id={14043}
-        name="Shuffled Battle Arena: In front of Chunky's ship exit"
+        id={34043}
+        name="Shuffled Dirt Patch: In front of Chunky's ship exit"
         region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in}
-        canGetBreak={canReachChunkyShip.out}
+        canGetLogic={canReachChunkyShip.in && hasShockwave}
+        canGetBreak={canReachChunkyShip.out && hasShockwave}
       />
       <GalleonCheck
-        id={14044}
-        name="Shuffled Battle Arena: Right of Chunky's ship exit"
+        id={34044}
+        name="Shuffled Dirt Patch: Right of Chunky's ship exit"
         region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in}
-        canGetBreak={canReachChunkyShip.out}
+        canGetLogic={canReachChunkyShip.in && hasShockwave}
+        canGetBreak={canReachChunkyShip.out && hasShockwave}
       />
       <GalleonCheck
-        id={14045}
-        name="Shuffled Battle Arena: In the corner of Chunky's ship"
+        id={34045}
+        name="Shuffled Dirt Patch: In the corner of Chunky's ship"
         region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in}
-        canGetBreak={canReachChunkyShip.out}
+        canGetLogic={canReachChunkyShip.in && hasShockwave}
+        canGetBreak={canReachChunkyShip.out && hasShockwave}
       />
       <GalleonCheck
-        id={14046}
-        name="Shuffled Battle Arena: Behind the pyramid of non-spinning barrels"
+        id={34046}
+        name="Shuffled Dirt Patch: Behind the pyramid of non-spinning barrels"
         region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasPrimatePunch}
-        canGetBreak={canReachChunkyShip.out && hasPrimatePunch}
+        canGetLogic={canReachChunkyShip.in && hasPrimatePunch && hasShockwave}
+        canGetBreak={canReachChunkyShip.out && hasPrimatePunch && hasShockwave}
       />
       <GalleonCheck
-        id={14047}
-        name="Shuffled Battle Arena: Behind the spinning barrels"
+        id={34047}
+        name="Shuffled Dirt Patch: Behind the spinning barrels"
         region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasPrimatePunch}
-        canGetBreak={canReachChunkyShip.out && hasPrimatePunch}
+        canGetLogic={canReachChunkyShip.in && hasPrimatePunch && hasShockwave}
+        canGetBreak={canReachChunkyShip.out && hasPrimatePunch && hasShockwave}
       />
       <GalleonCheck
-        id={14048}
-        name="Shuffled Battle Arena: Bottom left of the lighthouse"
+        id={34048}
+        name="Shuffled Dirt Patch: Bottom left of the lighthouse"
         region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in}
-        canGetBreak={canReachLighthouse.out}
+        canGetLogic={canReachLighthouse.in && hasShockwave}
+        canGetBreak={canReachLighthouse.out && hasShockwave}
       />
       <GalleonCheck
-        id={14049}
-        name="Shuffled Battle Arena: Back right of the lighthouse"
+        id={34049}
+        name="Shuffled Dirt Patch: Back right of the lighthouse"
         region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in}
-        canGetBreak={canReachLighthouse.out}
+        canGetLogic={canReachLighthouse.in && hasShockwave}
+        canGetBreak={canReachLighthouse.out && hasShockwave}
       />
       <GalleonCheck
-        id={14050}
-        name="Shuffled Battle Arena: Bottom back of the Whomp's Fortress ripoff area"
+        id={34050}
+        name="Shuffled Dirt Patch: Bottom back of the Whomp's Fortress ripoff area"
         region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in && hasClimbing}
-        canGetBreak={canReachLighthouse.out && hasClimbing}
+        canGetLogic={canReachLighthouse.in && hasClimbing && hasShockwave}
+        canGetBreak={canReachLighthouse.out && hasClimbing && hasShockwave}
       />
       <GalleonCheck
-        id={14051}
-        name="Shuffled Battle Arena: Top of the Whomp's Fortress ripoff area"
+        id={34051}
+        name="Shuffled Dirt Patch: Top of the Whomp's Fortress ripoff area"
         region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in && hasClimbing}
-        canGetBreak={canReachLighthouse.out && hasClimbing}
+        canGetLogic={canReachLighthouse.in && hasClimbing && hasShockwave}
+        canGetBreak={canReachLighthouse.out && hasClimbing && hasShockwave}
       />
-    </ArenaPool>
+    </RainbowCoinPool>
   )
 }
 
-const ShuffledArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
-export default ShuffledArenas
+const ShuffledDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
+export default ShuffledDirt

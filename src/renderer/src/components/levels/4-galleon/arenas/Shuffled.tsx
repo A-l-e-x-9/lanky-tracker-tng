@@ -233,7 +233,7 @@ const hasClimbing = useClimbing()
       <GalleonCheck
         id={14041}
         name="Shuffled Battle Arena: Vanilla Warp 5, in the shipyard"
-        region="Factory Start Area"
+        region="Shipyard Outskirts"
         canGetLogic={canReachShipyard.in}
         canGetBreak={canReachShipyard.out}
       />
