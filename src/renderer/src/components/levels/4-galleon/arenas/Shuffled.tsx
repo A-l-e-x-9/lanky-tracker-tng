@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform, useKevin } from '@renderer/hooks/galleon'
+import { useGeneralThing, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform, useKevin, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb } from '@renderer/hooks/galleon'
 import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
 import {  } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
@@ -12,6 +12,9 @@ const canReachCannonGame = useGalleonCannon()
 const canReachTinysKasplat = useGalleonCavernTop()
 const canReachLighthouseOuter = useGalleonLighthousePlatform()
 const canReachKevin = useKevin()
+const canReachLankyGold = useLankyGoldGb()
+const canReachShipyard = useGalleonOutskirts()
+const canReachDiddyGold = useDiddyGoldGb()
   return (
     <ArenaPool>
       <GalleonCheck
@@ -156,31 +159,66 @@ const canReachKevin = useKevin()
       />
       <GalleonCheck
         id={14030}
-        name="Shuffled Battle Arena: Right of the entrance to Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
+        name="Shuffled Battle Arena: Top of Lanky's gold tower"
+        region="Treasure Room"
+        canGetLogic={canReachLankyGold.in}
+        canGetBreak={canReachLankyGold.out}
+      />
+      <GalleonCheck
+        id={14032}
+        name="Shuffled Battle Arena: Vanilla Warp 1, in the cave"
+        region="Galleon Caverns"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <GalleonCheck
+        id={14033}
+        name="Shuffled Battle Arena: Vanilla Warp 1, on the Lighthouse"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouseOuter.in}
+        canGetBreak={canReachLighthouseOuter.out}
+      />
+      <GalleonCheck
+        id={14034}
+        name="Shuffled Battle Arena: Vanilla Warp 2, in the cave"
+        region="Galleon Caverns"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <GalleonCheck
+        id={14035}
+        name="Shuffled Battle Arena: Vanilla Warp 2, near the 2DS"
+        region="Shipyard Outskirts"
+        canGetLogic={canReachShipyard.in}
+        canGetBreak={canReachShipyard.out}
+      />
+      <GalleonCheck
+        id={14036}
+        name="Shuffled Battle Arena: Vanilla Warp 3, in the cave"
+        region="Galleon Caverns"
+        canGetLogic={canReachTinysKasplat.in}
+        canGetBreak={canReachTinysKasplat.out}
       />
       <GalleonCheck
         id={14037}
-        name="Shuffled Battle Arena: In Tiny's car race room"
-        region="R&D Room"
-        canGetLogic={canReachCar.in}
-        canGetBreak={canReachCar.out}
+        name="Shuffled Battle Arena: Vanilla Warp 3, at Snide's"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouseOuter.in}
+        canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
         id={14038}
-        name="Shuffled Battle Arena: Also in Tiny's car race room"
-        region="R&D Room"
-        canGetLogic={canReachCar.in}
-        canGetBreak={canReachCar.out}
+        name="Shuffled Battle Arena: Vanilla Warp 4, in the shipyard"
+        region="Shipyard Outskirts"
+        canGetLogic={canReachShipyard.in}
+        canGetBreak={canReachShipyard.out}
       />
       <GalleonCheck
         id={14039}
-        name="Shuffled Battle Arena: In front of DK's R&D level"
-        region="R&D Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
+        name="Shuffled Battle Arena: Vanilla Warp 4, on Diddy's gold tower"
+        region="Treasure Room"
+        canGetLogic={canReachDiddyGold.in}
+        canGetBreak={canReachDiddyGold.out}
       />
       <GalleonCheck
         id={14040}
