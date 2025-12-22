@@ -1,6 +1,6 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useGeneralThing, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform, useKevin, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb, useGalleonSeasickShip, useLighthouseDirt, useLanky2DoorShipGb, useGalleonTreasureRoom } from '@renderer/hooks/galleon'
-import { useShuffleCrate } from '@renderer/hooks/settings'
+import { useGeneralThing, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb, useGalleonSeasickShip, useLanky2DoorShipGb, useGalleonTreasureRoom } from '@renderer/hooks/galleon'
+import { useShuffleCrates } from '@renderer/hooks/settings'
 import { usePunch, useClimbing, useDive, useLanky, useAnyGun, useOrange } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
@@ -11,7 +11,6 @@ const canReachLighthouse = useGalleonLighthouseInside()
 const canReachCannonGame = useGalleonCannon()
 const canReachTinysKasplat = useGalleonCavernTop()
 const canReachLighthouseOuter = useGalleonLighthousePlatform()
-const canReachKevin = useKevin()
 const canReachLankyGold = useLankyGoldGb()
 const canReachShipyard = useGalleonOutskirts()
 const canReachDiddyGold = useDiddyGoldGb()
@@ -387,5 +386,5 @@ const hasOranges = useOrange()
   )
 }
 
-const ShuffledCrates: React.FC = () => (useShuffleCrate() ? <Shuffled /> : null)
+const ShuffledCrates: React.FC = () => (useShuffleCrates() ? <Shuffled /> : null)
 export default ShuffledCrates
