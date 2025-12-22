@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useGeneralThing, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform, useKevin, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb, useGalleonSeasickShip } from '@renderer/hooks/galleon'
-import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
-import { usePunch } from '@renderer/hooks/kongs'
+import { useShuffledArenas } from '@renderer/hooks/settings'
+import { usePunch, useClimbing } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -17,6 +17,7 @@ const canReachShipyard = useGalleonOutskirts()
 const canReachDiddyGold = useDiddyGoldGb()
 const canReachChunkyShip = useGalleonSeasickShip()
 const hasPrimatePunch = usePunch()
+const hasClimbing = useClimbing()
   return (
     <ArenaPool>
       <GalleonCheck
@@ -294,24 +295,17 @@ const hasPrimatePunch = usePunch()
       />
       <GalleonCheck
         id={14050}
-        name="Shuffled Battle Arena: Vanilla Warp 5, at Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
+        name="Shuffled Battle Arena: Bottom back of the Whomp's Fortress ripoff area"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouse.in && hasClimbing}
+        canGetBreak={canReachLighthouse.out && hasClimbing}
       />
       <GalleonCheck
         id={14051}
-        name="Shuffled Battle Arena: At the bend in the crusher's path"
-        region="Prod Room"
-        canGetLogic={canDoCrusher.in}
-        canGetBreak={canDoCrusher.out}
-      />
-      <GalleonCheck
-        id={14052}
-        name="Shuffled Battle Arena: Inside DK's power hut"
-        region="Storage and Arcade Area"
-        canGetLogic={canReachHut.in && hasCoconuts}
-        canGetBreak={canReachHut.out && hasCoconuts}
+        name="Shuffled Battle Arena: Top of the Whomp's Fortress ripoff area"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouse.in && hasClimbing}
+        canGetBreak={canReachLighthouse.out && hasClimbing}
       />
     </ArenaPool>
   )
