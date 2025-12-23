@@ -12,6 +12,9 @@ import MushExteriorChecks from './MushExterior'
 import MushInteriorChecks from './MushInterior'
 import OwlChecks from './Owl'
 import MillsChecks from './Mills'
+import ShuffledArenas from '../arenas/Shuffled'
+import ShuffledCrates from '../crates/Shuffled'
+import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 
 const ForestRegionChecks: React.FC = () => (
@@ -31,6 +34,9 @@ const ForestRegionChecks: React.FC = () => (
     <OwlChecks />
     <ShopLocations />
     <BossCheck />
+    <ShuffledArenas />
+    <ShuffledCrates />
+    <ShuffledDirt />
     <ShuffledFairies />
   </div>
 )
