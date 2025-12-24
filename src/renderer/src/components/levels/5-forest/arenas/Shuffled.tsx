@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight, useForestMushroomRoof, useForestOwl } from '@renderer/hooks/forest'
+import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight, useForestMushroomRoof, useForestOwl, useForestMushroomTop, useTinyAntGb, useSlamForest, useForestBarn } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useTwirl, useClimbing, useRocket, useChunky, useBalloon } from '@renderer/hooks/kongs'
+import { useTwirl, useClimbing, useRocket, useChunky, useBalloon, useDiddy } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -17,6 +17,11 @@ const hasChunky = useChunky()
 const canReachTopOfShroom = useForestMushroomRoof()
 const canReachArea4 = useForestOwl()
 const hasBalloon = useBalloon()
+const canGetNearTopOfShroom = useForestMushroomTop()
+const canReachStump = useTinyAntGb()
+const hasDiddy = useDiddy()
+const hasSlam = useSlamForest()
+const canGetInThornvine = useForestBarn()
   return (
     <ArenaPool>
       <ForestCheck
@@ -371,17 +376,73 @@ const hasBalloon = useBalloon()
       />
       <ForestCheck
         id={15050}
-        name="Shuffled Battle Arena: Bottom back of the Whomp's Fortress ripoff area"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in && hasClimbing}
-        canGetBreak={canReachLighthouse.out && hasClimbing}
+        name="Shuffled Battle Arena: Vanilla Warp 4, central area"
+        region="Forest Central Area"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15051}
-        name="Shuffled Battle Arena: Top of the Whomp's Fortress ripoff area"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in && hasClimbing}
-        canGetBreak={canReachLighthouse.out && hasClimbing}
+        name="Shuffled Battle Arena: Vanilla Warp 4, at the big tree"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in}
+        canGetBreak={canReachArea4.out}
+      />
+      <ForestCheck
+        id={15052}
+        name="Shuffled Battle Arena: Vanilla Warp 5, bottom of the Giant Mushroom"
+        region="Forest Area 3"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <ForestCheck
+        id={15053}
+        name="Shuffled Battle Arena: Vanilla Warp 5, top of the Giant Mushroom"
+        region="Forest Area 3"
+        canGetLogic={canGetNearTopOfShroom.in}
+        canGetBreak={canGetNearTopOfShroom.out}
+      />
+      <ForestCheck
+        id={15054}
+        name="Shuffled Battle Arena: Inside the tree stump"
+        region="Forest Area 4"
+        canGetLogic={canReachStump.in}
+        canGetBreak={canReachStump.out}
+      />
+      <ForestCheck
+        id={15055}
+        name="Shuffled Battle Arena: Back of the winch room"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && hasClimbing && hasDiddy && hasSlam && isNight.in}
+        canGetBreak={isBreathing.out && hasClimbing && hasDiddy && hasSlam && isNight.out}
+      />
+      <ForestCheck
+        id={15056}
+        name="Shuffled Battle Arena: Near Thornvine"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isNight.in}
+        canGetBreak={isBreathing.out && isNight.out}
+      />
+      <ForestCheck
+        id={15057}
+        name="Shuffled Battle Arena: Inside Thornvine, entrance"
+        region="Forest Area 1"
+        canGetLogic={canGetInThornvine.in}
+        canGetBreak={canGetInThornvine.out}
+      />
+      <ForestCheck
+        id={15058}
+        name="Shuffled Battle Arena: Inside Thornvine, near ladder"
+        region="Forest Area 1"
+        canGetLogic={canGetInThornvine.in}
+        canGetBreak={canGetInThornvine.out}
+      />
+      <ForestCheck
+        id={15059}
+        name="Shuffled Battle Arena: Inside Thornvine, next to ladder"
+        region="Forest Area 1"
+        canGetLogic={canGetInThornvine.in}
+        canGetBreak={canGetInThornvine.out}
       />
     </ArenaPool>
   )
