@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight, useForestMushroomRoof, useForestOwl, useForestMushroomTop, useTinyAntGb, useSlamForest, useForestBarn, useForestSpiderBoss } from '@renderer/hooks/forest'
+import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight, useForestMushroomRoof, useForestOwl, useForestMushroomTop, useTinyAntGb, useSlamForest, useForestBarn, useForestSpiderBoss, useLankyMushGb } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import { useTwirl, useClimbing, useRocket, useChunky, useBalloon, useDiddy, usePunch, useDk } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
@@ -25,6 +25,7 @@ const canGetInThornvine = useForestBarn()
 const canReachSpiderBoss = useForestSpiderBoss()
 const hasPrimatePunch = usePunch()
 const hasDK = useDk()
+const canReachLankysShroomTopGBs = useLankyMushGb()
   return (
     <ArenaPool>
       <ForestCheck
@@ -485,37 +486,93 @@ const hasDK = useDk()
       <ForestCheck
         id={15065}
         name="Shuffled Battle Arena: At switch to Tiny's Bonus Barrel"
-        region="Giant Mushroom Insides"
+        region="Inside the Giant Mushroom"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15066}
         name="Shuffled Battle Arena: At the gun switches for the Check of Legends"
-        region="Giant Mushroom Insides"
+        region="Inside the Giant Mushroom"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15067}
         name="Shuffled Battle Arena: At the bottom-most Check of Legends Barrel Cannon"
-        region="Giant Mushroom Insides"
+        region="Inside the Giant Mushroom"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15068}
         name="Shuffled Battle Arena: Near the vines to the Night Door"
-        region="Giant Mushroom Insides"
+        region="Inside the Giant Mushroom"
         canGetLogic={canGetNearTopOfShroom.in}
         canGetBreak={canGetNearTopOfShroom.out}
       />
       <ForestCheck
         id={15069}
         name="Shuffled Battle Arena: At the second Check of Legends Barrel Cannon"
-        region="Giant Mushroom Insides"
+        region="Inside the Giant Mushroom"
         canGetLogic={canGetNearTopOfShroom.in && isHinaKagiyama}
         canGetBreak={canGetNearTopOfShroom.out && hasDK}
+      />
+      <ForestCheck
+        id={15070}
+        name="Shuffled Battle Arena: At the third Check of Legends Barrel Cannon"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canGetNearTopOfShroom.in}
+        canGetBreak={canGetNearTopOfShroom.out}
+      />
+      <ForestCheck
+        id={15071}
+        name="Shuffled Battle Arena: At top viney platform"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canGetNearTopOfShroom.in}
+        canGetBreak={canGetNearTopOfShroom.out}
+      />
+      <ForestCheck
+        id={15072}
+        name="Shuffled Battle Arena: Near a box in Lanky's attic"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && (hasClimbing || hasBalloon) && isNight.in}
+        canGetBreak={isBreathing.out && (hasClimbing || hasBalloon) && isNight.out}
+      />
+      <ForestCheck
+        id={15073}
+        name="Shuffled Battle Arena: Back of Lanky's Zinger room"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canReachLankysShroomTopGBs.in}
+        canGetBreak={canReachLankysShroomTopGBs.out}
+      />
+      <ForestCheck
+        id={15074}
+        name="Shuffled Battle Arena: Back of Lanky's mushroom slam room"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canReachLankysShroomTopGBs.in}
+        canGetBreak={canReachLankysShroomTopGBs.out}
+      />
+      <ForestCheck
+        id={15075}
+        name="Shuffled Battle Arena: At Chunky's face puzzle"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canGetNearTopOfShroom.in && hasChunky && hasSlam}
+        canGetBreak={canGetNearTopOfShroom.out && hasChunky && hasSlam}
+      />
+      <ForestCheck
+        id={15076}
+        name="Shuffled Battle Arena: Near thatching in the mill back"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isDay.in && hasPrimatePunch}
+        canGetBreak={canReachSpiderBoss.out}
+      />
+      <ForestCheck
+        id={15077}
+        name="Shuffled Battle Arena: Back of the Spider's room"
+        region="Forest Area 1"
+        canGetLogic={canReachSpiderBoss.in}
+        canGetBreak={canReachSpiderBoss.out}
       />
     </ArenaPool>
   )
