@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight } from '@renderer/hooks/forest'
+import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight, useForestMushroomRoof, useForestOwl } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useTwirl } from '@renderer/hooks/kongs'
+import { useTwirl, useClimbing, useRocket, useChunky } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -11,6 +11,11 @@ const canPlantBean = useForestBean()
 const isDay = useForestDay()
 const isNight = useForestNight()
 const isHinaKagiyama = useTwirl()
+const hasClimbing = useClimbing()
+const hasJetbarrel = useRocket()
+const hasChunky = useChunky()
+const canReachTopOfShroom = useForestMushroomRoof()
+const canReachArea4 = useForestOwl()
   return (
     <ArenaPool>
       <ForestCheck
@@ -225,66 +230,73 @@ const isHinaKagiyama = useTwirl()
       />
       <ForestCheck
         id={15030}
-        name="Shuffled Battle Arena: Top of Lanky's gold tower"
-        region="Treasure Room"
-        canGetLogic={canReachLankyGold.in}
-        canGetBreak={canReachLankyGold.out}
+        name="Shuffled Battle Arena: Near the yellow tunnel"
+        region="Forest Area 3"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <ForestCheck
+        id={15031}
+        name="Shuffled Battle Arena: At the ladder to DK's Baboon Blast pad"
+        region="Forest Area 3"
+        canGetLogic={isBreathing.in && (hasClimbing || hasJetbarrel)}
+        canGetBreak={isBreathing.out && (hasChunky || isHinaKagiyama)}
       />
       <ForestCheck
         id={15032}
-        name="Shuffled Battle Arena: Vanilla Warp 1, in the cave"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: Near DK's Baboon Blast pad"
+        region="Forest Area 3"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out && hasJetbarrel}
       />
       <ForestCheck
         id={15033}
-        name="Shuffled Battle Arena: Vanilla Warp 1, on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        name="Shuffled Battle Arena: Above ladder past DK's Baboon Blast pad"
+        region="Forest Area 3"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out && hasJetbarrel}
       />
       <ForestCheck
         id={15034}
-        name="Shuffled Battle Arena: Vanilla Warp 2, in the cave"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: Top of the Giant Mushroom"
+        region="Forest Area 3"
+        canGetLogic={canReachTopOfShroom.in}
+        canGetBreak={canReachTopOfShroom.out}
       />
       <ForestCheck
         id={15035}
-        name="Shuffled Battle Arena: Vanilla Warp 2, near the 2DS"
-        region="Shipyard Outskirts"
-        canGetLogic={canReachShipyard.in}
-        canGetBreak={canReachShipyard.out}
+        name="Shuffled Battle Arena: Behind the Rabbit"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in}
+        canGetBreak={canReachArea4.out}
       />
       <ForestCheck
         id={15036}
-        name="Shuffled Battle Arena: Vanilla Warp 3, in the cave"
-        region="Galleon Caves"
-        canGetLogic={canReachTinysKasplat.in}
-        canGetBreak={canReachTinysKasplat.out}
+        name="Shuffled Battle Arena: Next to the Rabbit's house"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in}
+        canGetBreak={canReachArea4.out}
       />
       <ForestCheck
         id={15037}
-        name="Shuffled Battle Arena: Vanilla Warp 3, at Snide's"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        name="Shuffled Battle Arena: Under the big tree"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in}
+        canGetBreak={canReachArea4.out}
       />
       <ForestCheck
         id={15038}
-        name="Shuffled Battle Arena: Vanilla Warp 4, in the shipyard"
-        region="Shipyard Outskirts"
-        canGetLogic={canReachShipyard.in}
-        canGetBreak={canReachShipyard.out}
+        name="Shuffled Battle Arena: Also under the big tree"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in}
+        canGetBreak={canReachArea4.out}
       />
       <ForestCheck
         id={15039}
-        name="Shuffled Battle Arena: Vanilla Warp 4, on Diddy's gold tower"
-        region="Treasure Room"
-        canGetLogic={canReachDiddyGold.in}
-        canGetBreak={canReachDiddyGold.out}
+        name="Shuffled Battle Arena: Near the big tree"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in}
+        canGetBreak={canReachArea4.out}
       />
       <ForestCheck
         id={15040}
