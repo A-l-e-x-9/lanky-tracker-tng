@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight, useForestMushroomRoof, useForestOwl } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useTwirl, useClimbing, useRocket, useChunky } from '@renderer/hooks/kongs'
+import { useTwirl, useClimbing, useRocket, useChunky, useBalloon } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -16,6 +16,7 @@ const hasJetbarrel = useRocket()
 const hasChunky = useChunky()
 const canReachTopOfShroom = useForestMushroomRoof()
 const canReachArea4 = useForestOwl()
+const hasBalloon = useBalloon()
   return (
     <ArenaPool>
       <ForestCheck
@@ -300,73 +301,73 @@ const canReachArea4 = useForestOwl()
       />
       <ForestCheck
         id={15040}
-        name="Shuffled Battle Arena: Vanilla Warp 5, on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        name="Shuffled Battle Arena: Near the big tree's Jetbarrel"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in}
+        canGetBreak={canReachArea4.out}
       />
       <ForestCheck
         id={15041}
-        name="Shuffled Battle Arena: Vanilla Warp 5, in the shipyard"
-        region="Shipyard Outskirts"
-        canGetLogic={canReachShipyard.in}
-        canGetBreak={canReachShipyard.out}
+        name="Shuffled Battle Arena: Grass near the big tree's Jetbarrel"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in}
+        canGetBreak={canReachArea4.out}
       />
       <ForestCheck
         id={15042}
-        name="Shuffled Battle Arena: Left of Chunky's ship exit"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in}
-        canGetBreak={canReachChunkyShip.out}
+        name="Shuffled Battle Arena: Top of the big tree"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in && hasJetbarrel}
+        canGetBreak={canReachArea4.out && hasJetbarrel}
       />
       <ForestCheck
         id={15043}
-        name="Shuffled Battle Arena: In front of Chunky's ship exit"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in}
-        canGetBreak={canReachChunkyShip.out}
+        name="Shuffled Battle Arena: Top of the mill"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && (hasBalloon || hasClimbing)}
+        canGetBreak={isBreathing.out && (hasBalloon || hasClimbing)}
       />
       <ForestCheck
         id={15044}
-        name="Shuffled Battle Arena: Right of Chunky's ship exit"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in}
-        canGetBreak={canReachChunkyShip.out}
+        name="Shuffled Battle Arena: Vanilla Warp 1, central area"
+        region="Forest Central Area"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15045}
-        name="Shuffled Battle Arena: In the corner of Chunky's ship"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in}
-        canGetBreak={canReachChunkyShip.out}
+        name="Shuffled Battle Arena: Vanilla Warp 1, at the mill"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15046}
-        name="Shuffled Battle Arena: Behind the pyramid of non-spinning barrels"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasPrimatePunch}
-        canGetBreak={canReachChunkyShip.out && hasPrimatePunch}
+        name="Shuffled Battle Arena: Vanilla Warp 2, central area"
+        region="Forest Central Area"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15047}
-        name="Shuffled Battle Arena: Behind the spinning barrels"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasPrimatePunch}
-        canGetBreak={canReachChunkyShip.out && hasPrimatePunch}
+        name="Shuffled Battle Arena: Vanilla Warp 2, at Funky's"
+        region="Forest Area 2"
+        canGetLogic={canPlantBean.in}
+        canGetBreak={canPlantBean.out}
       />
       <ForestCheck
         id={15048}
-        name="Shuffled Battle Arena: Bottom left of the lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in}
-        canGetBreak={canReachLighthouse.out}
+        name="Shuffled Battle Arena: Vanilla Warp 3, central area"
+        region="Forest Central Area"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15049}
-        name="Shuffled Battle Arena: Back right of the lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in}
-        canGetBreak={canReachLighthouse.out}
+        name="Shuffled Battle Arena: Vanilla Warp 3, bottom of the Giant Mushroom"
+        region="Forest Area 3"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15050}
