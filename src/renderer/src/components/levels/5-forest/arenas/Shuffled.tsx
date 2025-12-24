@@ -154,18 +154,74 @@ const isHinaKagiyama = useTwirl()
         canGetBreak={isBreathing.out && isNight.out}
       />
       <ForestCheck
+        id={15020}
+        name="Shuffled Battle Arena: Behind Thornvine"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isNight.in}
+        canGetBreak={isBreathing.out && isNight.out}
+      />
+      <ForestCheck
+        id={15021}
+        name="Shuffled Battle Arena: Far left of Thornvine"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isNight.in}
+        canGetBreak={isBreathing.out && isNight.out}
+      />
+      <ForestCheck
+        id={15022}
+        name="Shuffled Battle Arena: Near Thornvine"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isNight.in}
+        canGetBreak={isBreathing.out && isNight.out}
+      />
+      <ForestCheck
         id={15023}
-        name="Shuffled Battle Arena: Underneath Diddy's barrel on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        name="Shuffled Battle Arena: Area 2's Troff 'n' Scoff"
+        region="Forest Area 2"
+        canGetLogic={canPlantBean.in && isNight.in}
+        canGetBreak={canPlantBean.out && isNight.out}
       />
       <ForestCheck
         id={15024}
-        name="Shuffled Battle Arena: Kevin's platform"
-        region="Lighthouse Area"
-        canGetLogic={canReachKevin.in}
-        canGetBreak={canReachKevin.out}
+        name="Shuffled Battle Arena: On the field where the Apple and Tomatoes are"
+        region="Forest Area 2"
+        canGetLogic={canPlantBean.in}
+        canGetBreak={canPlantBean.out}
+      />
+      <ForestCheck
+        id={15025}
+        name="Shuffled Battle Arena: Near Funky's"
+        region="Forest Area 2"
+        canGetLogic={canPlantBean.in}
+        canGetBreak={canPlantBean.out}
+      />
+      <ForestCheck
+        id={15026}
+        name="Shuffled Battle Arena: Near entrance to Area 2"
+        region="Forest Area 2"
+        canGetLogic={canPlantBean.in}
+        canGetBreak={canPlantBean.out}
+      />
+      <ForestCheck
+        id={15027}
+        name="Shuffled Battle Arena: Near the Beanstalk's field"
+        region="Forest Area 2"
+        canGetLogic={canPlantBean.in}
+        canGetBreak={canPlantBean.out}
+      />
+      <ForestCheck
+        id={15028}
+        name="Shuffled Battle Arena: Area 2's Tiny Kong barrel"
+        region="Forest Area 2"
+        canGetLogic={canPlantBean.in}
+        canGetBreak={canPlantBean.out}
+      />
+      <ForestCheck
+        id={15029}
+        name="Shuffled Battle Arena: Near the Giant Mushroom"
+        region="Forest Area 3"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15030}
