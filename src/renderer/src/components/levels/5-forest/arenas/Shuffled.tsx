@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useForestBean, useForestDay } from '@renderer/hooks/forest'
+import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import { useTwirl } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
@@ -9,6 +9,7 @@ const isBreathing = useGeneralThing()
 const canReachVanillaArena = useArena()
 const canPlantBean = useForestBean()
 const isDay = useForestDay()
+const isNight = useForestNight()
 const isHinaKagiyama = useTwirl()
   return (
     <ArenaPool>
@@ -84,66 +85,73 @@ const isHinaKagiyama = useTwirl()
       />
       <ForestCheck
         id={15010}
-        name="Shuffled Battle Arena: At Chunky's chests"
-        region="Galleon Caves"
+        name="Shuffled Battle Arena: Next to the pad to get into Diddy's barn"
+        region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15011}
-        name="Shuffled Battle Arena: Behind Chunky's GB chest"
-        region="Galleon Caves"
+        name="Shuffled Battle Arena: Behind Lanky's attic"
+        region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15012}
-        name="Shuffled Battle Arena: Behind the cannon wreck"
-        region="Galleon Caves"
+        name="Shuffled Battle Arena: Near Area 1's Tag Barrel"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <ForestCheck
+        id={15013}
+        name="Shuffled Battle Arena: Near Chunky's well exit"
+        region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15014}
-        name="Shuffled Battle Arena: Left of Cranky's"
-        region="Galleon Caves"
+        name="Shuffled Battle Arena: Near Diddy's winch"
+        region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15015}
-        name="Shuffled Battle Arena: In front of Cranky's"
-        region="Galleon Caves"
+        name="Shuffled Battle Arena: Near the door to the back of the main mill"
+        region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15016}
-        name="Shuffled Battle Arena: Near vanilla Warp 3 in the cave"
-        region="Galleon Caves"
-        canGetLogic={canReachTinysKasplat.in}
-        canGetBreak={canReachTinysKasplat.out}
+        name="Shuffled Battle Arena: Next to the output area for DK's conveyor GB"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={15017}
-        name="Shuffled Battle Arena: Near Diddy's barrel on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        name="Shuffled Battle Arena: En route to Thornvine"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isNight.in}
+        canGetBreak={isBreathing.out && isNight.out}
       />
       <ForestCheck
         id={15018}
-        name="Shuffled Battle Arena: Near DK's pad on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        name="Shuffled Battle Arena: Right of Thornvine"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isNight.in}
+        canGetBreak={isBreathing.out && isNight.out}
       />
       <ForestCheck
         id={15019}
-        name="Shuffled Battle Arena: Next to the ladder on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
+        name="Shuffled Battle Arena: Far right of Thornvine"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isNight.in}
+        canGetBreak={isBreathing.out && isNight.out}
       />
       <ForestCheck
         id={15023}
