@@ -1,11 +1,12 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight, useForestMushroomRoof, useForestOwl, useForestMushroomTop, useTinyAntGb, useSlamForest, useForestBarn, useForestSpiderBoss, useLankyMushGb } from '@renderer/hooks/forest'
-import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useTwirl, useClimbing, useRocket, useChunky, useBalloon, useDiddy, usePunch, useDk } from '@renderer/hooks/kongs'
+import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
+import { useGeneralDirt, useArena, useForestBean, useForestDay, useForestNight, useForestMushroomRoof, useForestOwl, useForestMushroomTop, useTinyAntGb, useSlamForest, useForestBarn, useForestSpiderBoss, useLankyMushGb, useBeanDirt } from '@renderer/hooks/forest'
+import { useShuffleDirt } from '@renderer/hooks/settings'
+import { useShockwave, useTwirl, useClimbing, useRocket, useChunky, useBalloon, useDiddy, usePunch, useDk } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
-const isBreathing = useGeneralThing()
+const isBreathing = useGeneralDirt()
+const hasShockwave = useShockwave()
 const canReachVanillaArena = useArena()
 const canPlantBean = useForestBean()
 const isDay = useForestDay()
@@ -26,557 +27,537 @@ const canReachSpiderBoss = useForestSpiderBoss()
 const hasPrimatePunch = usePunch()
 const hasDK = useDk()
 const canReachLankysShroomTopGBs = useLankyMushGb()
+const canDoVanillaDirt1 = useBeanDirt()
   return (
-    <ArenaPool>
+    <RainbowCoinPool>
       <ForestCheck
-        id={15000}
-        name="Shuffled Battle Arena: Vanilla Arena (at the top of the Giant Mushroom)"
+        id={35000}
+        name="Shuffled Dirt Patch: Just under the top of the Giant Mushroom"
         region="Forest Area 3"
-        canGetLogic={canReachVanillaArena.in}
-        canGetBreak={canReachVanillaArena.out}
+        canGetLogic={canReachVanillaArena.in && hasShockwave}
+        canGetBreak={canReachVanillaArena.out && hasShockwave}
       />
       <ForestCheck
-        id={15001}
-        name="Shuffled Battle Arena: In front of where The Bean™ is planted"
+        id={35001}
+        name="Shuffled Dirt Patch: Vanilla Dirt 1 (in front of where The Bean™ is planted)"
         region="Forest Area 2"
-        canGetLogic={canPlantBean.in}
-        canGetBreak={canPlantBean.out}
+        canGetLogic={canDoVanillaDirt1.in}
+        canGetBreak={canDoVanillaDirt1.out}
       />
       <ForestCheck
-        id={15002}
-        name="Shuffled Battle Arena: Where the infamous Dirt Patch is"
+        id={35002}
+        name="Shuffled Dirt Patch: Vanilla Dirt 2 (the infamous one that took 17 years to find...)"
         region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15003}
-        name="Shuffled Battle Arena: Near the well entrance"
+        id={35004}
+        name="Shuffled Dirt Patch: Behind the clock"
         region="Forest Central Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15004}
-        name="Shuffled Battle Arena: Behind the clock"
+        id={35005}
+        name="Shuffled Dirt Patch: In front of the clock"
         region="Forest Central Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15005}
-        name="Shuffled Battle Arena: In front of the clock"
+        id={35006}
+        name="Shuffled Dirt Patch: Near the blue tunnel to Area 1"
         region="Forest Central Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15006}
-        name="Shuffled Battle Arena: Near the blue tunnel to Area 1"
-        region="Forest Central Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <ForestCheck
-        id={15007}
-        name="Shuffled Battle Arena: Near Snide's"
+        id={35007}
+        name="Shuffled Dirt Patch: Near Snide's"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isDay.in}
         canGetBreak={isBreathing.out && isHinaKagiyama}
       />
       <ForestCheck
-        id={15008}
-        name="Shuffled Battle Arena: Behind Diddy's barn"
+        id={35008}
+        name="Shuffled Dirt Patch: Behind Diddy's barn"
         region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15009}
-        name="Shuffled Battle Arena: To the left of Diddy's barn"
+        id={35009}
+        name="Shuffled Dirt Patch: To the left of Diddy's barn"
         region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15010}
-        name="Shuffled Battle Arena: Next to the pad to get into Diddy's barn"
+        id={35010}
+        name="Shuffled Dirt Patch: Next to the pad to get into Diddy's barn"
         region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15011}
-        name="Shuffled Battle Arena: Behind Lanky's attic"
+        id={35011}
+        name="Shuffled Dirt Patch: Behind Lanky's attic"
         region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15012}
-        name="Shuffled Battle Arena: Near Area 1's Tag Barrel"
+        id={35012}
+        name="Shuffled Dirt Patch: Near Area 1's Tag Barrel"
         region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15013}
-        name="Shuffled Battle Arena: Near Chunky's well exit"
+        id={35013}
+        name="Shuffled Dirt Patch: Near Chunky's well exit"
         region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15014}
-        name="Shuffled Battle Arena: Near Diddy's winch"
+        id={35014}
+        name="Shuffled Dirt Patch: Near Diddy's winch"
         region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15015}
-        name="Shuffled Battle Arena: Near the door to the back of the main mill"
+        id={35015}
+        name="Shuffled Dirt Patch: Near the door to the back of the main mill"
         region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15016}
-        name="Shuffled Battle Arena: Next to the output area for DK's conveyor GB"
+        id={35016}
+        name="Shuffled Dirt Patch: Next to the output area for DK's conveyor GB"
         region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15017}
-        name="Shuffled Battle Arena: En route to Thornvine"
+        id={35017}
+        name="Shuffled Dirt Patch: En route to Thornvine"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isNight.in}
         canGetBreak={isBreathing.out && isNight.out}
       />
       <ForestCheck
-        id={15018}
-        name="Shuffled Battle Arena: Right of Thornvine"
+        id={35018}
+        name="Shuffled Dirt Patch: Right of Thornvine"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isNight.in}
         canGetBreak={isBreathing.out && isNight.out}
       />
       <ForestCheck
-        id={15019}
-        name="Shuffled Battle Arena: Far right of Thornvine"
+        id={35019}
+        name="Shuffled Dirt Patch: Far right of Thornvine"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isNight.in}
         canGetBreak={isBreathing.out && isNight.out}
       />
       <ForestCheck
-        id={15020}
-        name="Shuffled Battle Arena: Behind Thornvine"
+        id={35020}
+        name="Shuffled Dirt Patch: Behind Thornvine"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isNight.in}
         canGetBreak={isBreathing.out && isNight.out}
       />
       <ForestCheck
-        id={15021}
-        name="Shuffled Battle Arena: Far left of Thornvine"
+        id={35021}
+        name="Shuffled Dirt Patch: Far left of Thornvine"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isNight.in}
         canGetBreak={isBreathing.out && isNight.out}
       />
       <ForestCheck
-        id={15022}
-        name="Shuffled Battle Arena: Near Thornvine"
+        id={35022}
+        name="Shuffled Dirt Patch: Near Thornvine"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isNight.in}
         canGetBreak={isBreathing.out && isNight.out}
       />
       <ForestCheck
-        id={15023}
-        name="Shuffled Battle Arena: Area 2's Troff 'n' Scoff"
+        id={35023}
+        name="Shuffled Dirt Patch: Area 2's Troff 'n' Scoff"
         region="Forest Area 2"
-        canGetLogic={canPlantBean.in && isNight.in}
-        canGetBreak={canPlantBean.out && isNight.out}
+        canGetLogic={canPlantBean.in && isNight.in && hasShockwave}
+        canGetBreak={canPlantBean.out && isNight.out && hasShockwave}
       />
       <ForestCheck
-        id={15024}
-        name="Shuffled Battle Arena: On the field where the Apple and Tomatoes are"
+        id={35024}
+        name="Shuffled Dirt Patch: On the field where the Apple and Tomatoes are"
         region="Forest Area 2"
-        canGetLogic={canPlantBean.in}
-        canGetBreak={canPlantBean.out}
+        canGetLogic={canPlantBean.in && hasShockwave}
+        canGetBreak={canPlantBean.out && hasShockwave}
       />
       <ForestCheck
-        id={15025}
-        name="Shuffled Battle Arena: Near Funky's"
+        id={35025}
+        name="Shuffled Dirt Patch: Near Funky's"
         region="Forest Area 2"
-        canGetLogic={canPlantBean.in}
-        canGetBreak={canPlantBean.out}
+        canGetLogic={canPlantBean.in && hasShockwave}
+        canGetBreak={canPlantBean.out && hasShockwave}
       />
       <ForestCheck
-        id={15026}
-        name="Shuffled Battle Arena: Near entrance to Area 2"
+        id={35026}
+        name="Shuffled Dirt Patch: Near entrance to Area 2"
         region="Forest Area 2"
-        canGetLogic={canPlantBean.in}
-        canGetBreak={canPlantBean.out}
+        canGetLogic={canPlantBean.in && hasShockwave}
+        canGetBreak={canPlantBean.out && hasShockwave}
       />
       <ForestCheck
-        id={15027}
-        name="Shuffled Battle Arena: Near the Beanstalk's field"
+        id={35027}
+        name="Shuffled Dirt Patch: Near the Beanstalk's field"
         region="Forest Area 2"
-        canGetLogic={canPlantBean.in}
-        canGetBreak={canPlantBean.out}
+        canGetLogic={canPlantBean.in && hasShockwave}
+        canGetBreak={canPlantBean.out && hasShockwave}
       />
       <ForestCheck
-        id={15028}
-        name="Shuffled Battle Arena: Area 2's Tiny Kong barrel"
+        id={35028}
+        name="Shuffled Dirt Patch: Area 2's Tiny Kong barrel"
         region="Forest Area 2"
-        canGetLogic={canPlantBean.in}
-        canGetBreak={canPlantBean.out}
+        canGetLogic={canPlantBean.in && hasShockwave}
+        canGetBreak={canPlantBean.out && hasShockwave}
       />
       <ForestCheck
-        id={15029}
-        name="Shuffled Battle Arena: Near the Giant Mushroom"
+        id={35029}
+        name="Shuffled Dirt Patch: Near the Giant Mushroom"
         region="Forest Area 3"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15030}
-        name="Shuffled Battle Arena: Near the yellow tunnel"
-        region="Forest Area 3"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <ForestCheck
-        id={15031}
-        name="Shuffled Battle Arena: At the ladder to DK's Baboon Blast pad"
+        id={35031}
+        name="Shuffled Dirt Patch: At the ladder to DK's Baboon Blast pad"
         region="Forest Area 3"
         canGetLogic={isBreathing.in && (hasClimbing || hasJetbarrel)}
         canGetBreak={isBreathing.out && (hasChunky || isHinaKagiyama)}
       />
       <ForestCheck
-        id={15032}
-        name="Shuffled Battle Arena: Near DK's Baboon Blast pad"
+        id={35032}
+        name="Shuffled Dirt Patch: Near DK's Baboon Blast pad"
         region="Forest Area 3"
         canGetLogic={isBreathing.in && hasClimbing}
         canGetBreak={isBreathing.out && hasJetbarrel}
       />
       <ForestCheck
-        id={15033}
-        name="Shuffled Battle Arena: Above ladder past DK's Baboon Blast pad"
+        id={35033}
+        name="Shuffled Dirt Patch: Above ladder past DK's Baboon Blast pad"
         region="Forest Area 3"
         canGetLogic={isBreathing.in && hasClimbing}
         canGetBreak={isBreathing.out && hasJetbarrel}
       />
       <ForestCheck
-        id={15034}
-        name="Shuffled Battle Arena: Top of the Giant Mushroom"
+        id={35034}
+        name="Shuffled Dirt Patch: Top of the Giant Mushroom"
         region="Forest Area 3"
-        canGetLogic={canReachTopOfShroom.in}
-        canGetBreak={canReachTopOfShroom.out}
+        canGetLogic={canReachTopOfShroom.in && hasShockwave}
+        canGetBreak={canReachTopOfShroom.out && hasShockwave}
       />
       <ForestCheck
-        id={15035}
-        name="Shuffled Battle Arena: Behind the Rabbit"
+        id={35035}
+        name="Shuffled Dirt Patch: Behind the Rabbit"
         region="Forest Area 4"
-        canGetLogic={canReachArea4.in}
-        canGetBreak={canReachArea4.out}
+        canGetLogic={canReachArea4.in && hasShockwave}
+        canGetBreak={canReachArea4.out && hasShockwave}
       />
       <ForestCheck
-        id={15036}
-        name="Shuffled Battle Arena: Next to the Rabbit's house"
+        id={35036}
+        name="Shuffled Dirt Patch: Next to the Rabbit's house"
         region="Forest Area 4"
-        canGetLogic={canReachArea4.in}
-        canGetBreak={canReachArea4.out}
+        canGetLogic={canReachArea4.in && hasShockwave}
+        canGetBreak={canReachArea4.out && hasShockwave}
       />
       <ForestCheck
-        id={15037}
-        name="Shuffled Battle Arena: Under the big tree"
+        id={35037}
+        name="Shuffled Dirt Patch: Under the big tree"
         region="Forest Area 4"
-        canGetLogic={canReachArea4.in}
-        canGetBreak={canReachArea4.out}
+        canGetLogic={canReachArea4.in && hasShockwave}
+        canGetBreak={canReachArea4.out && hasShockwave}
       />
       <ForestCheck
-        id={15038}
-        name="Shuffled Battle Arena: Also under the big tree"
+        id={35038}
+        name="Shuffled Dirt Patch: Also under the big tree"
         region="Forest Area 4"
-        canGetLogic={canReachArea4.in}
-        canGetBreak={canReachArea4.out}
+        canGetLogic={canReachArea4.in && hasShockwave}
+        canGetBreak={canReachArea4.out && hasShockwave}
       />
       <ForestCheck
-        id={15039}
-        name="Shuffled Battle Arena: Near the big tree"
+        id={35039}
+        name="Shuffled Dirt Patch: Near the big tree"
         region="Forest Area 4"
-        canGetLogic={canReachArea4.in}
-        canGetBreak={canReachArea4.out}
+        canGetLogic={canReachArea4.in && hasShockwave}
+        canGetBreak={canReachArea4.out && hasShockwave}
       />
       <ForestCheck
-        id={15040}
-        name="Shuffled Battle Arena: Near the big tree's Jetbarrel"
+        id={35040}
+        name="Shuffled Dirt Patch: Near the big tree's Jetbarrel"
         region="Forest Area 4"
-        canGetLogic={canReachArea4.in}
-        canGetBreak={canReachArea4.out}
+        canGetLogic={canReachArea4.in && hasShockwave}
+        canGetBreak={canReachArea4.out && hasShockwave}
       />
       <ForestCheck
-        id={15041}
-        name="Shuffled Battle Arena: Grass near the big tree's Jetbarrel"
+        id={35042}
+        name="Shuffled Dirt Patch: Top of the big tree"
         region="Forest Area 4"
-        canGetLogic={canReachArea4.in}
-        canGetBreak={canReachArea4.out}
+        canGetLogic={canReachArea4.in && hasJetbarrel && hasShockwave}
+        canGetBreak={canReachArea4.out && hasJetbarrel && hasShockwave}
       />
       <ForestCheck
-        id={15042}
-        name="Shuffled Battle Arena: Top of the big tree"
-        region="Forest Area 4"
-        canGetLogic={canReachArea4.in && hasJetbarrel}
-        canGetBreak={canReachArea4.out && hasJetbarrel}
-      />
-      <ForestCheck
-        id={15043}
-        name="Shuffled Battle Arena: Top of the mill"
+        id={35043}
+        name="Shuffled Dirt Patch: Top of the mill"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && (hasBalloon || hasClimbing)}
         canGetBreak={isBreathing.out && (hasBalloon || hasClimbing)}
       />
       <ForestCheck
-        id={15044}
-        name="Shuffled Battle Arena: Vanilla Warp 1, central area"
+        id={35044}
+        name="Shuffled Dirt Patch: Vanilla Warp 1, central area"
         region="Forest Central Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15045}
-        name="Shuffled Battle Arena: Vanilla Warp 1, at the mill"
+        id={35045}
+        name="Shuffled Dirt Patch: Vanilla Warp 1, at the mill"
         region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15046}
-        name="Shuffled Battle Arena: Vanilla Warp 2, central area"
+        id={35046}
+        name="Shuffled Dirt Patch: Vanilla Warp 2, central area"
         region="Forest Central Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15047}
-        name="Shuffled Battle Arena: Vanilla Warp 2, at Funky's"
+        id={35047}
+        name="Shuffled Dirt Patch: Vanilla Warp 2, at Funky's"
         region="Forest Area 2"
-        canGetLogic={canPlantBean.in}
-        canGetBreak={canPlantBean.out}
+        canGetLogic={canPlantBean.in && hasShockwave}
+        canGetBreak={canPlantBean.out && hasShockwave}
       />
       <ForestCheck
-        id={15048}
-        name="Shuffled Battle Arena: Vanilla Warp 3, central area"
+        id={35048}
+        name="Shuffled Dirt Patch: Vanilla Warp 3, central area"
         region="Forest Central Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15049}
-        name="Shuffled Battle Arena: Vanilla Warp 3, bottom of the Giant Mushroom"
+        id={35049}
+        name="Shuffled Dirt Patch: Vanilla Warp 3, bottom of the Giant Mushroom"
         region="Forest Area 3"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15050}
-        name="Shuffled Battle Arena: Vanilla Warp 4, central area"
+        id={35050}
+        name="Shuffled Dirt Patch: Vanilla Warp 4, central area"
         region="Forest Central Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15051}
-        name="Shuffled Battle Arena: Vanilla Warp 4, at the big tree"
+        id={35051}
+        name="Shuffled Dirt Patch: Vanilla Warp 4, at the big tree"
         region="Forest Area 4"
-        canGetLogic={canReachArea4.in}
-        canGetBreak={canReachArea4.out}
+        canGetLogic={canReachArea4.in && hasShockwave}
+        canGetBreak={canReachArea4.out && hasShockwave}
       />
       <ForestCheck
-        id={15052}
-        name="Shuffled Battle Arena: Vanilla Warp 5, bottom of the Giant Mushroom"
+        id={35052}
+        name="Shuffled Dirt Patch: Vanilla Warp 5, bottom of the Giant Mushroom"
         region="Forest Area 3"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15053}
-        name="Shuffled Battle Arena: Vanilla Warp 5, top of the Giant Mushroom"
+        id={35053}
+        name="Shuffled Dirt Patch: Vanilla Warp 5, top of the Giant Mushroom"
         region="Forest Area 3"
-        canGetLogic={canGetNearTopOfShroom.in}
-        canGetBreak={canGetNearTopOfShroom.out}
+        canGetLogic={canGetNearTopOfShroom.in && hasShockwave}
+        canGetBreak={canGetNearTopOfShroom.out && hasShockwave}
       />
       <ForestCheck
-        id={15054}
-        name="Shuffled Battle Arena: Inside the tree stump"
+        id={35054}
+        name="Shuffled Dirt Patch: Inside the tree stump"
         region="Forest Area 4"
-        canGetLogic={canReachStump.in}
-        canGetBreak={canReachStump.out}
+        canGetLogic={canReachStump.in && hasShockwave}
+        canGetBreak={canReachStump.out && hasShockwave}
       />
       <ForestCheck
-        id={15055}
-        name="Shuffled Battle Arena: Back of the winch room"
+        id={35055}
+        name="Shuffled Dirt Patch: Back of the winch room"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && hasClimbing && hasDiddy && hasSlam && isNight.in}
         canGetBreak={isBreathing.out && hasClimbing && hasDiddy && hasSlam && isNight.out}
       />
       <ForestCheck
-        id={15056}
-        name="Shuffled Battle Arena: Near Thornvine"
+        id={35056}
+        name="Shuffled Dirt Patch: Near Thornvine"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isNight.in}
         canGetBreak={isBreathing.out && isNight.out}
       />
       <ForestCheck
-        id={15057}
-        name="Shuffled Battle Arena: Inside Thornvine, entrance"
+        id={35057}
+        name="Shuffled Dirt Patch: Inside Thornvine, entrance"
         region="Forest Area 1"
-        canGetLogic={canGetInThornvine.in}
-        canGetBreak={canGetInThornvine.out}
+        canGetLogic={canGetInThornvine.in && hasShockwave}
+        canGetBreak={canGetInThornvine.out && hasShockwave}
       />
       <ForestCheck
-        id={15058}
-        name="Shuffled Battle Arena: Inside Thornvine, near ladder"
+        id={35058}
+        name="Shuffled Dirt Patch: Inside Thornvine, near ladder"
         region="Forest Area 1"
-        canGetLogic={canGetInThornvine.in}
-        canGetBreak={canGetInThornvine.out}
+        canGetLogic={canGetInThornvine.in && hasShockwave}
+        canGetBreak={canGetInThornvine.out && hasShockwave}
       />
       <ForestCheck
-        id={15059}
-        name="Shuffled Battle Arena: Inside Thornvine, next to ladder"
+        id={35059}
+        name="Shuffled Dirt Patch: Inside Thornvine, next to ladder"
         region="Forest Area 1"
-        canGetLogic={canGetInThornvine.in}
-        canGetBreak={canGetInThornvine.out}
+        canGetLogic={canGetInThornvine.in && hasShockwave}
+        canGetBreak={canGetInThornvine.out && hasShockwave}
       />
       <ForestCheck
-        id={15060}
-        name="Shuffled Battle Arena: Inside Thornvine, back left"
+        id={35060}
+        name="Shuffled Dirt Patch: Inside Thornvine, back left"
         region="Forest Area 1"
-        canGetLogic={canGetInThornvine.in}
-        canGetBreak={canGetInThornvine.out}
+        canGetLogic={canGetInThornvine.in && hasShockwave}
+        canGetBreak={canGetInThornvine.out && hasShockwave}
       />
       <ForestCheck
-        id={15061}
-        name="Shuffled Battle Arena: Inside front mill, at the conveyors"
-        region="Forest Area 1"
-        canGetLogic={isBreathing.in && isDay.in}
-        canGetBreak={isBreathing.out && canReachSpiderBoss.out}
-      />
-      <ForestCheck
-        id={15062}
-        name="Shuffled Battle Arena: Inside front mill, at Tiny's barrel"
+        id={35061}
+        name="Shuffled Dirt Patch: Inside front mill, at the conveyors"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isDay.in}
         canGetBreak={isBreathing.out && canReachSpiderBoss.out}
       />
       <ForestCheck
-        id={15063}
-        name="Shuffled Battle Arena: Inside front mill, near the lever cage"
+        id={35062}
+        name="Shuffled Dirt Patch: Inside front mill, at Tiny's barrel"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isDay.in}
         canGetBreak={isBreathing.out && canReachSpiderBoss.out}
       />
       <ForestCheck
-        id={15064}
-        name="Shuffled Battle Arena: Inside back mill, where Chunky's coins are in vanilla"
+        id={35063}
+        name="Shuffled Dirt Patch: Inside front mill, near the lever cage"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isDay.in}
+        canGetBreak={isBreathing.out && canReachSpiderBoss.out}
+      />
+      <ForestCheck
+        id={35064}
+        name="Shuffled Dirt Patch: Inside back mill, where Chunky's coins are in vanilla"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isDay.in && hasPrimatePunch}
         canGetBreak={isBreathing.out && canReachSpiderBoss.out}
       />
       <ForestCheck
-        id={15065}
-        name="Shuffled Battle Arena: At switch to Tiny's Bonus Barrel"
+        id={35065}
+        name="Shuffled Dirt Patch: At switch to Tiny's Bonus Barrel"
         region="Inside the Giant Mushroom"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15066}
-        name="Shuffled Battle Arena: At the gun switches for the Check of Legends"
+        id={35066}
+        name="Shuffled Dirt Patch: At the gun switches for the Check of Legends"
         region="Inside the Giant Mushroom"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15067}
-        name="Shuffled Battle Arena: At the bottom-most Check of Legends Barrel Cannon"
+        id={35067}
+        name="Shuffled Dirt Patch: At the bottom-most Check of Legends Barrel Cannon"
         region="Inside the Giant Mushroom"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={15068}
-        name="Shuffled Battle Arena: Near the vines to the Night Door"
+        id={35068}
+        name="Shuffled Dirt Patch: Near the vines to the Night Door"
         region="Inside the Giant Mushroom"
-        canGetLogic={canGetNearTopOfShroom.in}
-        canGetBreak={canGetNearTopOfShroom.out}
+        canGetLogic={canGetNearTopOfShroom.in && hasShockwave}
+        canGetBreak={canGetNearTopOfShroom.out && hasShockwave}
       />
       <ForestCheck
-        id={15069}
-        name="Shuffled Battle Arena: At the second Check of Legends Barrel Cannon"
+        id={35069}
+        name="Shuffled Dirt Patch: At the second Check of Legends Barrel Cannon"
         region="Inside the Giant Mushroom"
-        canGetLogic={canGetNearTopOfShroom.in && isHinaKagiyama}
-        canGetBreak={canGetNearTopOfShroom.out && hasDK}
+        canGetLogic={canGetNearTopOfShroom.in && isHinaKagiyama && hasShockwave}
+        canGetBreak={canGetNearTopOfShroom.out && hasDK && hasShockwave}
       />
       <ForestCheck
-        id={15070}
-        name="Shuffled Battle Arena: At the third Check of Legends Barrel Cannon"
+        id={35070}
+        name="Shuffled Dirt Patch: At the third Check of Legends Barrel Cannon"
         region="Inside the Giant Mushroom"
-        canGetLogic={canGetNearTopOfShroom.in}
-        canGetBreak={canGetNearTopOfShroom.out}
+        canGetLogic={canGetNearTopOfShroom.in && hasShockwave}
+        canGetBreak={canGetNearTopOfShroom.out && hasShockwave}
       />
       <ForestCheck
-        id={15071}
-        name="Shuffled Battle Arena: At top viney platform"
+        id={35071}
+        name="Shuffled Dirt Patch: At top viney platform"
         region="Inside the Giant Mushroom"
-        canGetLogic={canGetNearTopOfShroom.in}
-        canGetBreak={canGetNearTopOfShroom.out}
+        canGetLogic={canGetNearTopOfShroom.in && hasShockwave}
+        canGetBreak={canGetNearTopOfShroom.out && hasShockwave}
       />
       <ForestCheck
-        id={15072}
-        name="Shuffled Battle Arena: Near a box in Lanky's attic"
+        id={35072}
+        name="Shuffled Dirt Patch: Near a box in Lanky's attic"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && (hasClimbing || hasBalloon) && isNight.in}
         canGetBreak={isBreathing.out && (hasClimbing || hasBalloon) && isNight.out}
       />
       <ForestCheck
-        id={15073}
-        name="Shuffled Battle Arena: Back of Lanky's Zinger room"
+        id={35073}
+        name="Shuffled Dirt Patch: Back of Lanky's Zinger room"
         region="Inside the Giant Mushroom"
-        canGetLogic={canReachLankysShroomTopGBs.in}
-        canGetBreak={canReachLankysShroomTopGBs.out}
+        canGetLogic={canReachLankysShroomTopGBs.in && hasShockwave}
+        canGetBreak={canReachLankysShroomTopGBs.out && hasShockwave}
       />
       <ForestCheck
-        id={15074}
-        name="Shuffled Battle Arena: Back of Lanky's mushroom slam room"
+        id={35074}
+        name="Shuffled Dirt Patch: Back of Lanky's mushroom slam room"
         region="Inside the Giant Mushroom"
-        canGetLogic={canReachLankysShroomTopGBs.in}
-        canGetBreak={canReachLankysShroomTopGBs.out}
+        canGetLogic={canReachLankysShroomTopGBs.in && hasShockwave}
+        canGetBreak={canReachLankysShroomTopGBs.out && hasShockwave}
       />
       <ForestCheck
-        id={15075}
-        name="Shuffled Battle Arena: At Chunky's face puzzle"
+        id={35075}
+        name="Shuffled Dirt Patch: At Chunky's face puzzle"
         region="Inside the Giant Mushroom"
-        canGetLogic={canGetNearTopOfShroom.in && hasChunky && hasSlam}
-        canGetBreak={canGetNearTopOfShroom.out && hasChunky && hasSlam}
+        canGetLogic={canGetNearTopOfShroom.in && hasChunky && hasSlam && hasShockwave}
+        canGetBreak={canGetNearTopOfShroom.out && hasChunky && hasSlam && hasShockwave}
       />
       <ForestCheck
-        id={15076}
-        name="Shuffled Battle Arena: Near thatching in the mill back"
+        id={35076}
+        name="Shuffled Dirt Patch: Near thatching in the mill back"
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isDay.in && hasPrimatePunch}
-        canGetBreak={canReachSpiderBoss.out}
+        canGetBreak={canReachSpiderBoss.out && hasShockwave}
       />
       <ForestCheck
-        id={15077}
-        name="Shuffled Battle Arena: Back of the Spider's room"
+        id={35077}
+        name="Shuffled Dirt Patch: Back of the Spider's room"
         region="Forest Area 1"
-        canGetLogic={canReachSpiderBoss.in}
-        canGetBreak={canReachSpiderBoss.out}
+        canGetLogic={canReachSpiderBoss.in && hasShockwave}
+        canGetBreak={canReachSpiderBoss.out && hasShockwave}
       />
-    </ArenaPool>
+    </RainbowCoinPool>
   )
 }
 
-const ShuffledArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
-export default ShuffledArenas
+const ShuffledDirt: React.FC = () => (useShuffleDirt) ? <Shuffled /> : null)
+export default ShuffledDirt
