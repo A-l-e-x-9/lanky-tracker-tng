@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight, useForestMushroomRoof, useForestOwl, useForestMushroomTop, useTinyAntGb, useSlamForest, useForestBarn } from '@renderer/hooks/forest'
+import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight, useForestMushroomRoof, useForestOwl, useForestMushroomTop, useTinyAntGb, useSlamForest, useForestBarn, useForestSpiderBoss } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useTwirl, useClimbing, useRocket, useChunky, useBalloon, useDiddy } from '@renderer/hooks/kongs'
+import { useTwirl, useClimbing, useRocket, useChunky, useBalloon, useDiddy, usePunch, useDk } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -22,6 +22,9 @@ const canReachStump = useTinyAntGb()
 const hasDiddy = useDiddy()
 const hasSlam = useSlamForest()
 const canGetInThornvine = useForestBarn()
+const canReachSpiderBoss = useForestSpiderBoss()
+const hasPrimatePunch = usePunch()
+const hasDK = useDk()
   return (
     <ArenaPool>
       <ForestCheck
@@ -443,6 +446,76 @@ const canGetInThornvine = useForestBarn()
         region="Forest Area 1"
         canGetLogic={canGetInThornvine.in}
         canGetBreak={canGetInThornvine.out}
+      />
+      <ForestCheck
+        id={15060}
+        name="Shuffled Battle Arena: Inside Thornvine, back left"
+        region="Forest Area 1"
+        canGetLogic={canGetInThornvine.in}
+        canGetBreak={canGetInThornvine.out}
+      />
+      <ForestCheck
+        id={15061}
+        name="Shuffled Battle Arena: Inside front mill, at the conveyors"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isDay.in}
+        canGetBreak={isBreathing.out && canReachSpiderBoss.out}
+      />
+      <ForestCheck
+        id={15062}
+        name="Shuffled Battle Arena: Inside front mill, at Tiny's barrel"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isDay.in}
+        canGetBreak={isBreathing.out && canReachSpiderBoss.out}
+      />
+      <ForestCheck
+        id={15063}
+        name="Shuffled Battle Arena: Inside front mill, near the lever cage"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isDay.in}
+        canGetBreak={isBreathing.out && canReachSpiderBoss.out}
+      />
+      <ForestCheck
+        id={15064}
+        name="Shuffled Battle Arena: Inside back mill, where Chunky's coins are in vanilla"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isDay.in && hasPrimatePunch}
+        canGetBreak={isBreathing.out && canReachSpiderBoss.out}
+      />
+      <ForestCheck
+        id={15065}
+        name="Shuffled Battle Arena: At switch to Tiny's Bonus Barrel"
+        region="Giant Mushroom Insides"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <ForestCheck
+        id={15066}
+        name="Shuffled Battle Arena: At the gun switches for the Check of Legends"
+        region="Giant Mushroom Insides"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <ForestCheck
+        id={15067}
+        name="Shuffled Battle Arena: At the bottom-most Check of Legends Barrel Cannon"
+        region="Giant Mushroom Insides"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <ForestCheck
+        id={15068}
+        name="Shuffled Battle Arena: Near the vines to the Night Door"
+        region="Giant Mushroom Insides"
+        canGetLogic={canGetNearTopOfShroom.in}
+        canGetBreak={canGetNearTopOfShroom.out}
+      />
+      <ForestCheck
+        id={15069}
+        name="Shuffled Battle Arena: At the second Check of Legends Barrel Cannon"
+        region="Giant Mushroom Insides"
+        canGetLogic={canGetNearTopOfShroom.in && isHinaKagiyama}
+        canGetBreak={canGetNearTopOfShroom.out && hasDK}
       />
     </ArenaPool>
   )
