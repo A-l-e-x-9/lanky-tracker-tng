@@ -559,5 +559,5 @@ const canDoVanillaDirt1 = useBeanDirt()
   )
 }
 
-const ShuffledDirt: React.FC = () => (useShuffleDirt()) ? <Shuffled /> : null)
+const ShuffledDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
 export default ShuffledDirt
