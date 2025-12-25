@@ -47,7 +47,7 @@ export const useDiddyMedalInLogic = (): number => {
           bananas += 15
         }
       }
-      if (iceMelted && dive) {
+      if (iceMelted.in && dive.in) {
         bananas += 7
       }
     }
@@ -105,7 +105,7 @@ export const useDiddyMedalOutLogic = (): number => {
           bananas += 10
         }
       }
-      if (iceMelted && dive) {
+      if (iceMelted.out && dive.out) {
         bananas += 7
       }
     }

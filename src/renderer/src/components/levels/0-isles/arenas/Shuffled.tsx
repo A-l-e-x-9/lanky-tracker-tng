@@ -190,13 +190,13 @@ const jetbarrelExists = useIslesRocket()
         id={10022}
         name="Shuffled Battle Arena: Back middle of K. Rool's Island"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={isBreathing && canReachFactoryLobby}
       />
       <IslesCheck
         id={10023}
         name="Shuffled Battle Arena: Under DK's caged Banana"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={isBreathing && canReachFactoryLobby}
       />
       <IslesCheck
         id={10024}
@@ -208,13 +208,13 @@ const jetbarrelExists = useIslesRocket()
         id={10025}
         name="Shuffled Battle Arena: Behind Factory Lobby entrance"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={isBreathing && canReachFactoryLobby}
       />
       <IslesCheck
         id={10026}
         name="Shuffled Battle Arena: To the right of the Factory Lobby entrance"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={isBreathing && canReachFactoryLobby}
       />
       <IslesCheck
         id={10027}
@@ -305,7 +305,7 @@ const jetbarrelExists = useIslesRocket()
         id={10041}
         name="Shuffled Battle Arena: Vanilla Warp 4 at Factory Lobby entrance"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={isBreathing && canReachFactoryLobby}
       />
       <IslesCheck
         id={10042}
@@ -379,15 +379,15 @@ const jetbarrelExists = useIslesRocket()
         id={10052}
         name="Shuffled Battle Arena: To the right of the Galleon DK Portal"
         region="Japes-Forest Lobbies"
-        canGetLogic={canGetInGalleonLobby.in}
-        canGetBreak={canGetInGalleonLobby.out}
+        canGetLogic={isBreathing && canGetInGalleonLobby.in}
+        canGetBreak={isBreathing && canGetInGalleonLobby.out}
       />
       <IslesCheck
         id={10053}
         name="Shuffled Battle Arena: To the left of the Galleon DK Portal"
         region="Japes-Forest Lobbies"
-        canGetLogic={canGetInGalleonLobby.in}
-        canGetBreak={canGetInGalleonLobby.out}
+        canGetLogic={isBreathing && canGetInGalleonLobby.in}
+        canGetBreak={isBreathing && canGetInGalleonLobby.out}
       />
       <IslesCheck
         id={10055}
@@ -421,22 +421,22 @@ const jetbarrelExists = useIslesRocket()
         id={10060}
         name="Shuffled Battle Arena: Behind Castle Lobby entrance"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCastleLobby.in}
-        canGetBreak={canGetInCastleLobby.out}
+        canGetLogic={isBreathing && canGetInCastleLobby.in}
+        canGetBreak={isBreathing && canGetInCastleLobby.out}
       />
       <IslesCheck
         id={10061}
         name="Shuffled Battle Arena: To the right of the Castle Lobby entrance"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCastleLobby.in}
-        canGetBreak={canGetInCastleLobby.out}
+        canGetLogic={isBreathing && canGetInCastleLobby.in}
+        canGetBreak={isBreathing && canGetInCastleLobby.out}
       />
       <IslesCheck
         id={10062}
         name="Shuffled Battle Arena: To the left of the Castle DK Portal"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCastleLobby.in}
-        canGetBreak={canGetInCastleLobby.out}
+        canGetLogic={isBreathing && canGetInCastleLobby.in}
+        canGetBreak={isBreathing && canGetInCastleLobby.out}
       />
       <IslesCheck
         id={10063}
@@ -543,7 +543,7 @@ const jetbarrelExists = useIslesRocket()
         id={10080}
         name="Shuffled Battle Arena: Next to Snide's"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={isBreathing && canReachFactoryLobby}
       />
       <IslesCheck
         id={10081}

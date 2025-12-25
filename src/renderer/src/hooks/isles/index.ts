@@ -107,10 +107,11 @@ export const useIslesCrossFungi = (): LogicBool => {
  */
 export const useIslesUpper = (): LogicBool => {
   const vine = useVine()
+  const climbing = useClimbing()
   const bananawarp = useBananaport()
   const crossFungi = useIslesCrossFungi()
   return {
-    in: crossFungi.in || vine || bananawarp != 0,
+    in: crossFungi.in || (vine && climbing) || bananawarp != 0,
     out: crossFungi.out
   }
 }

@@ -38,7 +38,7 @@ export const useTinyMedalInLogic = (): number => {
 
   let bananas = 0
   if (inStage.in) {
-    if (tinyTemple.in && iceMelted && dive.in) {
+    if (tinyTemple.in && iceMelted.in && dive.in) {
       if (gun) {
         bananas += 20
       }
@@ -95,7 +95,7 @@ export const useTinyMedalOutLogic = (): number => {
 
   let bananas = 0
   if (inStage.out) {
-    if (tinyTemple.out && iceMelted && dive.out) {
+    if (tinyTemple.out && iceMelted.out && dive.out) {
       if (gun) {
         bananas += 20
       }

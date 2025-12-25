@@ -105,6 +105,7 @@ export const useAztecFrontKasplat = (): LogicBool => {
 export const useAztecBack = (): LogicBool => {
   const aztecFront = useAztecFront()
   const musicSwitch = useAztecGuitarSwitch()
+  const hasClimbing = useClimbing()
   const vine = useVine()
   const rocket = useRocket()
   const warpAll = useBananaportAll()
@@ -112,7 +113,7 @@ export const useAztecBack = (): LogicBool => {
     useShallow((state) => [state.moves.diddy, state.moves.tiny, state.removeBarriers.aztecBack])
   )
   return {
-    in: aztecFront.in && (backGateOpen || warpAll || ((vine || rocket) && musicSwitch)),
+    in: aztecFront.in && (backGateOpen || warpAll || (hasClimbing && (vine || rocket) && musicSwitch)),
     out: aztecFront.out && (backGateOpen || warpAll || (musicSwitch && (diddy || tiny)))
   }
 }

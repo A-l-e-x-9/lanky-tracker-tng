@@ -222,11 +222,12 @@ export const useChunkyMineGb = (): LogicBool => {
 
 export const useChunkyFaceGb = (): LogicBool => {
   const inStage = usePlayForest()
+  const canReachShroomTop = useForestMushroomTop()
   const canSlam = useSlamForest()
   const pineapple = usePineapple()
   return {
-    in: inStage.in && canSlam && pineapple,
-    out: inStage.out && canSlam && pineapple
+    in: inStage.in && canReachShroomTop.in && canSlam && pineapple,
+    out: inStage.out && canReachShroomTop.out && canSlam && pineapple
   }
 }
 
@@ -545,17 +546,29 @@ export const useNightKasplat = (): LogicBool => {
 
 export const useMushInteriorKasplat = (): LogicBool => {
   const inStage = usePlayForest()
+  const hasClimbing = useClimbing()
+  const hasJetbarrel = useRocket()
+  const hasAllBananaports = useBananaportAll()
+  const isHinaKagiyama = useTwirl()
+  const hasChunky = useChunky()
+  const hasTiny = useTiny()
+  const hasDiddy = useDiddy()
   return {
-    in: inStage.in,
-    out: inStage.out
+    in: inStage.in && hasClimbing,
+    out: inStage.out && ((hasJetbarrel || hasAllBananaports) || ((isHinaKagiyama || hasChunky) && (hasTiny || hasDiddy)))
   }
 }
 
 export const useMushExteriorKasplat = (): LogicBool => {
   const inStage = usePlayForest()
+  const hasClimbing = useClimbing()
+  const hasJetbarrel = useRocket()
+  const hasAllBananaports = useBananaportAll()
+  const isHinaKagiyama = useTwirl()
+  const hasChunky = useChunky()
   return {
-    in: inStage.in,
-    out: inStage.out
+    in: inStage.in && hasClimbing,
+    out: inStage.out && ((hasJetbarrel || hasAllBananaports) || (isHinaKagiyama || hasChunky))
   }
 }
 

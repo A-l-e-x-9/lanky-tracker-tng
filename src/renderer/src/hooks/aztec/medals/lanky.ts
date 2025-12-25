@@ -37,7 +37,7 @@ export const useLankyMedalInLogic = (): number => {
   let bananas = 0
   if (inStage.in) {
     bananas += 5
-    if (tinyTemple.in && iceMelted && dive.in) {
+    if (tinyTemple.in && iceMelted.in && dive.in) {
       bananas += 14
     }
     if (aztecBack.in) {
@@ -92,7 +92,7 @@ export const useLankyMedalOutLogic = (): number => {
   let bananas = 0
   if (inStage.out) {
     bananas += 5
-    if (tinyTemple.out && iceMelted && dive.out) {
+    if (tinyTemple.out && iceMelted.out && dive.out) {
       bananas += 14
     }
     if (aztecBack.out) {
