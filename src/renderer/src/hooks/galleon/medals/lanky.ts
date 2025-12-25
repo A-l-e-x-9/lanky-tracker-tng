@@ -34,7 +34,7 @@ const useLankyMedalCommonLogic = (): number => {
   if (chunkyPunch && gun) {
     bananas += 20 // balloons by arena
   }
-  if (lighthouseArea && (dive.in || dive.out)) {
+  if ((lighthouseArea.in || lighthouseArea.out) && (dive.in || dive.out)) {
     bananas += 25 // lighthouse underwater.
   }
   if (outskirts.in || outskirts.out) {
