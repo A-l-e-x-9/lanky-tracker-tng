@@ -30180,7 +30180,7 @@ const useLankyMedalInLogic$3 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (treasureRoom.in && highTide) {
+  if (treasureRoom.in && highTide.in) {
     bananas += 1;
     if (pad) {
       bananas += 4;
