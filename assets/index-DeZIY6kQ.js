@@ -11318,10 +11318,11 @@ const useIslesCrossFungi = () => {
 };
 const useIslesUpper = () => {
   const vine = useVine();
+  const climbing = useClimbing();
   const bananawarp = useBananaport();
   const crossFungi = useIslesCrossFungi();
   return {
-    in: crossFungi.in || vine || bananawarp != 0,
+    in: crossFungi.in || vine && climbing || bananawarp != 0,
     out: crossFungi.out
   };
 };
@@ -14216,7 +14217,7 @@ const Shuffled$x = () => {
         id: 10022,
         name: "Shuffled Battle Arena: Back middle of K. Rool's Island",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: isBreathing && canReachFactoryLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14225,7 +14226,7 @@ const Shuffled$x = () => {
         id: 10023,
         name: "Shuffled Battle Arena: Under DK's caged Banana",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: isBreathing && canReachFactoryLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14243,7 +14244,7 @@ const Shuffled$x = () => {
         id: 10025,
         name: "Shuffled Battle Arena: Behind Factory Lobby entrance",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: isBreathing && canReachFactoryLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14252,7 +14253,7 @@ const Shuffled$x = () => {
         id: 10026,
         name: "Shuffled Battle Arena: To the right of the Factory Lobby entrance",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: isBreathing && canReachFactoryLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14388,7 +14389,7 @@ const Shuffled$x = () => {
         id: 10041,
         name: "Shuffled Battle Arena: Vanilla Warp 4 at Factory Lobby entrance",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: isBreathing && canReachFactoryLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14495,8 +14496,8 @@ const Shuffled$x = () => {
         id: 10052,
         name: "Shuffled Battle Arena: To the right of the Galleon DK Portal",
         region: "Japes-Forest Lobbies",
-        canGetLogic: canGetInGalleonLobby.in,
-        canGetBreak: canGetInGalleonLobby.out
+        canGetLogic: isBreathing && canGetInGalleonLobby.in,
+        canGetBreak: isBreathing && canGetInGalleonLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14505,8 +14506,8 @@ const Shuffled$x = () => {
         id: 10053,
         name: "Shuffled Battle Arena: To the left of the Galleon DK Portal",
         region: "Japes-Forest Lobbies",
-        canGetLogic: canGetInGalleonLobby.in,
-        canGetBreak: canGetInGalleonLobby.out
+        canGetLogic: isBreathing && canGetInGalleonLobby.in,
+        canGetBreak: isBreathing && canGetInGalleonLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14555,8 +14556,8 @@ const Shuffled$x = () => {
         id: 10060,
         name: "Shuffled Battle Arena: Behind Castle Lobby entrance",
         region: "Caves-Helm Lobbies",
-        canGetLogic: canGetInCastleLobby.in,
-        canGetBreak: canGetInCastleLobby.out
+        canGetLogic: isBreathing && canGetInCastleLobby.in,
+        canGetBreak: isBreathing && canGetInCastleLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14565,8 +14566,8 @@ const Shuffled$x = () => {
         id: 10061,
         name: "Shuffled Battle Arena: To the right of the Castle Lobby entrance",
         region: "Caves-Helm Lobbies",
-        canGetLogic: canGetInCastleLobby.in,
-        canGetBreak: canGetInCastleLobby.out
+        canGetLogic: isBreathing && canGetInCastleLobby.in,
+        canGetBreak: isBreathing && canGetInCastleLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14575,8 +14576,8 @@ const Shuffled$x = () => {
         id: 10062,
         name: "Shuffled Battle Arena: To the left of the Castle DK Portal",
         region: "Caves-Helm Lobbies",
-        canGetLogic: canGetInCastleLobby.in,
-        canGetBreak: canGetInCastleLobby.out
+        canGetLogic: isBreathing && canGetInCastleLobby.in,
+        canGetBreak: isBreathing && canGetInCastleLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14734,7 +14735,7 @@ const Shuffled$x = () => {
         id: 10080,
         name: "Shuffled Battle Arena: Next to Snide's",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: isBreathing && canReachFactoryLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20598,6 +20599,7 @@ const useAztecFrontKasplat = () => {
 const useAztecBack = () => {
   const aztecFront = useAztecFront();
   const musicSwitch = useAztecGuitarSwitch();
+  const hasClimbing = useClimbing();
   const vine = useVine();
   const rocket = useRocket();
   const warpAll = useBananaportAll();
@@ -20605,7 +20607,7 @@ const useAztecBack = () => {
     useShallow((state) => [state.moves.diddy, state.moves.tiny, state.removeBarriers.aztecBack])
   );
   return {
-    in: aztecFront.in && (backGateOpen || warpAll || (vine || rocket) && musicSwitch),
+    in: aztecFront.in && (backGateOpen || warpAll || hasClimbing && (vine || rocket) && musicSwitch),
     out: aztecFront.out && (backGateOpen || warpAll || musicSwitch && (diddy || tiny))
   };
 };
@@ -22509,7 +22511,7 @@ const useDiddyMedalInLogic$5 = () => {
           bananas += 15;
         }
       }
-      if (iceMelted && dive) {
+      if (iceMelted.in && dive.in) {
         bananas += 7;
       }
     }
@@ -22563,7 +22565,7 @@ const useDiddyMedalOutLogic$5 = () => {
           bananas += 10;
         }
       }
-      if (iceMelted && dive) {
+      if (iceMelted.out && dive.out) {
         bananas += 7;
       }
     }
@@ -22751,7 +22753,7 @@ const useLankyMedalInLogic$5 = () => {
   let bananas = 0;
   if (inStage.in) {
     bananas += 5;
-    if (tinyTemple.in && iceMelted && dive.in) {
+    if (tinyTemple.in && iceMelted.in && dive.in) {
       bananas += 14;
     }
     if (aztecBack.in) {
@@ -22802,7 +22804,7 @@ const useLankyMedalOutLogic$5 = () => {
   let bananas = 0;
   if (inStage.out) {
     bananas += 5;
-    if (tinyTemple.out && iceMelted && dive.out) {
+    if (tinyTemple.out && iceMelted.out && dive.out) {
       bananas += 14;
     }
     if (aztecBack.out) {
@@ -22880,7 +22882,7 @@ const useTinyMedalInLogic$5 = () => {
   }
   let bananas = 0;
   if (inStage.in) {
-    if (tinyTemple.in && iceMelted && dive.in) {
+    if (tinyTemple.in && iceMelted.in && dive.in) {
       if (gun) {
         bananas += 20;
       }
@@ -22933,7 +22935,7 @@ const useTinyMedalOutLogic$5 = () => {
   }
   let bananas = 0;
   if (inStage.out) {
-    if (tinyTemple.out && iceMelted && dive.out) {
+    if (tinyTemple.out && iceMelted.out && dive.out) {
       if (gun) {
         bananas += 20;
       }
@@ -30141,7 +30143,7 @@ const useLankyMedalCommonLogic$3 = () => {
   if (chunkyPunch && gun) {
     bananas += 20;
   }
-  if (lighthouseArea && dive) {
+  if (lighthouseArea && (dive.in || dive.out)) {
     bananas += 25;
   }
   if (outskirts.in || outskirts.out) {
@@ -30149,7 +30151,7 @@ const useLankyMedalCommonLogic$3 = () => {
     if (gun) {
       bananas += 10;
     }
-    if (dive) {
+    if (dive.in || dive.out) {
       bananas += 5;
       if (canSlam) {
         bananas += 10;
@@ -32283,11 +32285,12 @@ const useChunkyMineGb = () => {
 };
 const useChunkyFaceGb = () => {
   const inStage = usePlayForest();
+  const canReachShroomTop = useForestMushroomTop();
   const canSlam = useSlamForest();
   const pineapple = usePineapple();
   return {
-    in: inStage.in && canSlam && pineapple,
-    out: inStage.out && canSlam && pineapple
+    in: inStage.in && canReachShroomTop.in && canSlam && pineapple,
+    out: inStage.out && canReachShroomTop.out && canSlam && pineapple
   };
 };
 const useChunkyAppleGb = () => {
@@ -32561,16 +32564,28 @@ const useNightKasplat = () => {
 };
 const useMushInteriorKasplat = () => {
   const inStage = usePlayForest();
+  const hasClimbing = useClimbing();
+  const hasJetbarrel = useRocket();
+  const hasAllBananaports = useBananaportAll();
+  const isHinaKagiyama = useTwirl();
+  const hasChunky = useChunky();
+  const hasTiny = useTiny();
+  const hasDiddy = useDiddy();
   return {
-    in: inStage.in,
-    out: inStage.out
+    in: inStage.in && hasClimbing,
+    out: inStage.out && (hasJetbarrel || hasAllBananaports || (isHinaKagiyama || hasChunky) && (hasTiny || hasDiddy))
   };
 };
 const useMushExteriorKasplat = () => {
   const inStage = usePlayForest();
+  const hasClimbing = useClimbing();
+  const hasJetbarrel = useRocket();
+  const hasAllBananaports = useBananaportAll();
+  const isHinaKagiyama = useTwirl();
+  const hasChunky = useChunky();
   return {
-    in: inStage.in,
-    out: inStage.out
+    in: inStage.in && hasClimbing,
+    out: inStage.out && (hasJetbarrel || hasAllBananaports || (isHinaKagiyama || hasChunky))
   };
 };
 const useMillFrontKegs = () => {
