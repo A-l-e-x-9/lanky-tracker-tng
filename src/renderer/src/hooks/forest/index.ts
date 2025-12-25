@@ -36,7 +36,8 @@ import {
   useTrombone,
   useVine,
   useClimbing,
-  useBarrel
+  useBarrel,
+  useTwirl
 } from '../kongs'
 import { useBananaportAll, useForestTime, useHardShooting, useAutoBonus } from '../settings'
 import { LogicBool, useSwitchsanityGun } from '../world'
