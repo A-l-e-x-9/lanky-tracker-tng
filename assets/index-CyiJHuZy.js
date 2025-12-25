@@ -30143,7 +30143,7 @@ const useLankyMedalCommonLogic$3 = () => {
   if (chunkyPunch && gun) {
     bananas += 20;
   }
-  if (lighthouseArea && (dive.in || dive.out)) {
+  if ((lighthouseArea.in || lighthouseArea.out) && (dive.in || dive.out)) {
     bananas += 25;
   }
   if (outskirts.in || outskirts.out) {
