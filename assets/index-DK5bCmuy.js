@@ -26201,7 +26201,8 @@ const StorageEnemies = () => {
         id: 3300,
         name: "Enemy 0 in front of Cranky/Candy",
         region: "Storage and Arcade Area",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26210,7 +26211,8 @@ const StorageEnemies = () => {
         id: 3301,
         name: "Enemy 1 in front of Cranky/Candy",
         region: "Storage and Arcade Area",
-        canGetLogic: inStage && anyKong
+        canGetLogic: inStage.in && anyKong,
+        canGetBreak: inStage.out && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26219,8 +26221,8 @@ const StorageEnemies = () => {
         id: 3304,
         name: "Enemy patrolling Chunky's Cage",
         region: "Storage and Arcade Area",
-        canGetLogic: inStage && zinger.in,
-        canGetBreak: inStage && zinger.out
+        canGetLogic: inStage.in && zinger.in,
+        canGetBreak: inStage.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26229,8 +26231,8 @@ const StorageEnemies = () => {
         id: 3317,
         name: "Dark Room Enemy 0",
         region: "Storage and Arcade Area",
-        canGetLogic: inStage && punch && zinger.in,
-        canGetBreak: inStage && punch && zinger.out
+        canGetLogic: inStage.in && punch && zinger.in,
+        canGetBreak: inStage.out && punch && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26239,8 +26241,8 @@ const StorageEnemies = () => {
         id: 3318,
         name: "Dark Room Enemy 1",
         region: "Storage and Arcade Area",
-        canGetLogic: inStage && punch && zinger.in,
-        canGetBreak: inStage && punch && zinger.out
+        canGetLogic: inStage.in && punch && zinger.in,
+        canGetBreak: inStage.out && punch && zinger.out
       }
     )
   ] });
