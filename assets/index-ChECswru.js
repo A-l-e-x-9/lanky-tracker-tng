@@ -26137,7 +26137,8 @@ const RNDEnemies = () => {
         id: 3312,
         name: "Tunnel to Race Enemy 0",
         region: "R&D Room",
-        canGetLogic: testing && robo
+        canGetLogic: testing.in && robo,
+        canGetBreak: testing.out && robo
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26146,8 +26147,8 @@ const RNDEnemies = () => {
         id: 3313,
         name: "Tunnel to Race Enemy 1",
         region: "R&D Room",
-        canGetLogic: testing && zinger.in,
-        canGetBreak: testing && zinger.out
+        canGetLogic: testing.in && zinger.in,
+        canGetBreak: testing.out && zinger.out
       }
     )
   ] });
