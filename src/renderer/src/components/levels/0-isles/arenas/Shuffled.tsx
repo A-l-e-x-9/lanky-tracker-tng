@@ -76,8 +76,8 @@ const jetbarrelExists = useIslesRocket()
         id={10004}
         name="Shuffled Battle Arena: Under the Caves Lobby entrance"
         region="DK Island"
-        canGetLogic={hasClimbing || bananaportSettings != 0 || canReachWaterfall.in}
-        canGetBreak={canReachWaterfall.out}
+        canGetLogic={isBreathing && (hasClimbing || bananaportSettings != 0 || canReachWaterfall.in)}
+        canGetBreak={isBreathing && canReachWaterfall.out}
       />
       <IslesCheck
         id={10005}
@@ -157,22 +157,22 @@ const jetbarrelExists = useIslesRocket()
         id={10017}
         name="Shuffled Battle Arena: At the boulders near Caves Lobby"
         region="DK Island"
-        canGetLogic={canReachAztecLobby.in}
-        canGetBreak={canReachAztecLobby.out}
+        canGetLogic={isBreathing && canReachAztecLobby.in}
+        canGetBreak={isBreathing && canReachAztecLobby.out}
       />
       <IslesCheck
         id={10018}
         name="Shuffled Battle Arena: In front of the Aztec Lobby entrance"
         region="DK Island"
-        canGetLogic={canReachAztecLobby.in}
-        canGetBreak={canReachAztecLobby.out}
+        canGetLogic={isBreathing && canReachAztecLobby.in}
+        canGetBreak={isBreathing && canReachAztecLobby.out}
       />
       <IslesCheck
         id={10019}
         name="Shuffled Battle Arena: Behind the Aztec Lobby entrance"
         region="DK Island"
-        canGetLogic={canReachAztecLobby.in}
-        canGetBreak={canReachAztecLobby.out}
+        canGetLogic={isBreathing && canReachAztecLobby.in}
+        canGetBreak={isBreathing && canReachAztecLobby.out}
       />
       <IslesCheck
         id={10020}
@@ -280,8 +280,8 @@ const jetbarrelExists = useIslesRocket()
         id={10037}
         name="Shuffled Battle Arena: Vanilla Warp 2 at Aztec Lobby"
         region="DK Island"
-        canGetLogic={canReachAztecLobby.in}
-        canGetBreak={canReachAztecLobby.out}
+        canGetLogic={isBreathing && canReachAztecLobby.in}
+        canGetBreak={isBreathing && canReachAztecLobby.out}
       />
       <IslesCheck
         id={10038}
