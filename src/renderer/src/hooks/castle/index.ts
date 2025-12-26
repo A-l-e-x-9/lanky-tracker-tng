@@ -101,8 +101,8 @@ export const useChunkyTreeGb = (): LogicBool => {
   const sniper = useSniper()
   const hardShooting = useHardShooting()
   return {
-    in: tree && punch && pineapple && (sniper || hardShooting),
-    out: tree && punch && pineapple
+    in: tree.in && punch && pineapple && (sniper || hardShooting),
+    out: tree.out && punch && pineapple
   }
 }
 
