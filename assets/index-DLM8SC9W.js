@@ -20259,7 +20259,8 @@ const Shuffled$q = () => {
         id: 31040,
         name: "Shuffled Dirt Patch: Vanilla Warp 5, on top of Diddy's Mountain",
         region: "Japes Hillside",
-        canGetLogic: (didGB[1011] || hasAllBananaports) && hasShockwave
+        canGetLogic: isBreathing.in && (didGB[1011] || hasAllBananaports),
+        canGetBreak: isBreathing.out && (didGB[1011] || hasAllBananaports)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
