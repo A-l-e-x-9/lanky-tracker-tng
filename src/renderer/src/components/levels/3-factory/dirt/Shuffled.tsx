@@ -101,8 +101,8 @@ const hasTriangle = useTriangle()
         id={33010}
         name="Shuffled Dirt Patch: Prod Room lower area"
         region="Prod Room"
-        canGetLogic={(prodRoomOn.in || hasAllBananaports) && hasShockwave}
-        canGetBreak={(prodRoomOn.out || hasAllBananaports) && hasShockwave}
+        canGetLogic={isBreathing.in && (prodRoomOn.in || hasAllBananaports)}
+        canGetBreak={isBreathing.out && (prodRoomOn.out || hasAllBananaports)}
       />
       <FactoryCheck
         id={33011}
