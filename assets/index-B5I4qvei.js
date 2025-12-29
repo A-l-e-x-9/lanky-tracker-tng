@@ -19604,7 +19604,7 @@ const Shuffled$r = () => {
         id: 21030,
         name: "Shuffled Melon Crate: In the Troff 'n' Scoff alcove",
         region: "Japes Hillside",
-        canGetLogic: hasClimbing && hasVines,
+        canGetLogic: isBreathing.in && hasClimbing && hasVines,
         canGetBreak: canReachDiddyCage.out
       }
     ),
