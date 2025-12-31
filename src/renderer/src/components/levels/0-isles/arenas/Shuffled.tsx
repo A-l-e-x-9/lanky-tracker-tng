@@ -63,7 +63,7 @@ const jetbarrelExists = useIslesRocket()
         id={10002}
         name="Shuffled Battle Arena: In front of the Fungi Lobby entrance"
         region="Outer Isles"
-        canGetLogic={canDoIslesDirt1}
+        canGetLogic={isBreathing && canDoIslesDirt1}
       />
       <IslesCheck
         id={10003}

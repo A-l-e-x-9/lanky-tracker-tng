@@ -519,11 +519,12 @@ export const useGeneralFairy = (): LogicBool => {
 
 export const useBarnKasplat = (): LogicBool => {
   const inStage = usePlayForest()
+  const isBreathing = useAnyKong()
   const night = useForestNight()
   const dusk = useForestDusk()
   return {
-    in: inStage.in && (night.in || dusk.in),
-    out: inStage.out && (night.out || dusk.out)
+    in: inStage.in && anyKong && (night.in || dusk.in),
+    out: inStage.out && anyKong && (night.out || dusk.out)
   }
 }
 
