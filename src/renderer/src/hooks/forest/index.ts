@@ -523,8 +523,8 @@ export const useBarnKasplat = (): LogicBool => {
   const night = useForestNight()
   const dusk = useForestDusk()
   return {
-    in: inStage.in && anyKong && (night.in || dusk.in),
-    out: inStage.out && anyKong && (night.out || dusk.out)
+    in: inStage.in && isBreathing && (night.in || dusk.in),
+    out: inStage.out && isBreathing && (night.out || dusk.out)
   }
 }
 
