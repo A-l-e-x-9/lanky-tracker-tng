@@ -234,8 +234,8 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
         id={11030}
         name="Shuffled Battle Arena: In the Troff 'n' Scoff alcove"
         region="Japes Hillside"
-        canGetLogic={hasClimbing && hasVines}
-        canGetBreak={canReachDiddyCage.out}
+        canGetLogic={isBreathing.in && hasClimbing && hasVines}
+        canGetBreak={isBreathing.out && canReachDiddyCage.out}
       />
       <JapesCheck
         id={11031}

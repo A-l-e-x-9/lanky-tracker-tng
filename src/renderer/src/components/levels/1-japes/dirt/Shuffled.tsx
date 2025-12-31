@@ -244,8 +244,8 @@ const canDoVanillaDirt = usePaintingDirt()
         id={31030}
         name="Shuffled Dirt Patch: In the Troff 'n' Scoff alcove"
         region="Japes Hillside"
-        canGetLogic={hasClimbing && hasVines && hasShockwave}
-        canGetBreak={canReachDiddyCage.out && hasShockwave}
+        canGetLogic={isBreathing.in && hasClimbing && hasVines}
+        canGetBreak={isBreathing.out && canReachDiddyCage.out}
       />
       <JapesCheck
         id={31031}
