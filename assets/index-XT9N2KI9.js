@@ -19081,8 +19081,8 @@ const Shuffled$s = () => {
         id: 11030,
         name: "Shuffled Battle Arena: In the Troff 'n' Scoff alcove",
         region: "Japes Hillside",
-        canGetLogic: hasClimbing && hasVines,
-        canGetBreak: canReachDiddyCage.out
+        canGetLogic: isBreathing.in && hasClimbing && hasVines,
+        canGetBreak: isBreathing.out && canReachDiddyCage.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20159,8 +20159,8 @@ const Shuffled$q = () => {
         id: 31030,
         name: "Shuffled Dirt Patch: In the Troff 'n' Scoff alcove",
         region: "Japes Hillside",
-        canGetLogic: hasClimbing && hasVines && hasShockwave,
-        canGetBreak: canReachDiddyCage.out && hasShockwave
+        canGetLogic: isBreathing.in && hasClimbing && hasVines,
+        canGetBreak: isBreathing.out && canReachDiddyCage.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
