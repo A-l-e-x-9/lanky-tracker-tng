@@ -14030,7 +14030,7 @@ const Shuffled$x = () => {
         id: 10002,
         name: "Shuffled Battle Arena: In front of the Fungi Lobby entrance",
         region: "Outer Isles",
-        canGetLogic: canDoIslesDirt1
+        canGetLogic: isBreathing && canDoIslesDirt1
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -32549,11 +32549,12 @@ const useGeneralFairy$2 = () => {
 };
 const useBarnKasplat = () => {
   const inStage = usePlayForest();
+  const isBreathing = useAnyKong();
   const night = useForestNight();
   const dusk = useForestDusk();
   return {
-    in: inStage.in && (night.in || dusk.in),
-    out: inStage.out && (night.out || dusk.out)
+    in: inStage.in && isBreathing && (night.in || dusk.in),
+    out: inStage.out && isBreathing && (night.out || dusk.out)
   };
 };
 const useOwlKasplat = () => {
