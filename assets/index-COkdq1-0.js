@@ -18421,7 +18421,7 @@ const useLankyMedalCommonLogic$5 = () => {
   if (climbing) {
     bananas += 5;
   }
-  if (dive) {
+  if (dive.in || dive.out) {
     bananas += 5;
   }
   if ((sideArea.in || sideArea.out) && gun) {
