@@ -21,7 +21,7 @@ const useLankyMedalCommonLogic = (): number => {
   if (climbing) {
     bananas += 5 //Bunch on a tree near Snide's
   }
-  if (dive) {
+  if (dive.in || dive.out) {
     bananas += 5 // water separating lowlands & hillside
   }
   if ((sideArea.in || sideArea.out) && gun) {
