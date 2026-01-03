@@ -14586,8 +14586,8 @@ const Shuffled$x = () => {
         id: 10063,
         name: "Shuffled Battle Arena: Next to the Helm Lobby Tag Barrel",
         region: "Caves-Helm Lobbies",
-        canGetLogic: canGetInHelmLobby.in,
-        canGetBreak: canGetInHelmLobby.out
+        canGetLogic: isBreathing && canGetInHelmLobby.in,
+        canGetBreak: isBreathing && canGetInHelmLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15404,8 +15404,8 @@ const Shuffled$w = () => {
         id: 20063,
         name: "Shuffled Melon Crate: Next to the Helm Lobby Tag Barrel",
         region: "Caves-Helm Lobbies",
-        canGetLogic: canGetInHelmLobby.in,
-        canGetBreak: canGetInHelmLobby.out
+        canGetLogic: isBreathing && canGetInHelmLobby.in,
+        canGetBreak: isBreathing && canGetInHelmLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
