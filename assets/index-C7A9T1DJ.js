@@ -10332,7 +10332,6 @@ const initialSwitches = {
     freeDiddy: 0,
     freeLanky: 0,
     freeTiny: 0,
-    freeChunky: 0,
     islesAztec: 3,
     islesForest: 3,
     islesHelm: 0,
@@ -10818,6 +10817,7 @@ const useSwitchsanityMusicPad = (id2, normal) => {
   const trombone = useTrombone();
   const sax = useSax();
   const triangle = useTriangle();
+  const anyInstrument = useAnyMusic();
   const isSwitchsanity = useIsSwitchsanity();
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]));
   const target = isSwitchsanity ? switches[id2] : normal;
@@ -10830,8 +10830,10 @@ const useSwitchsanityMusicPad = (id2, normal) => {
       return trombone;
     case 3:
       return sax;
-    default:
+    case 4:
       return triangle;
+    default:
+      return anyInstrument;
   }
 };
 const useSwitchsanityGun = (id2, normal) => {
@@ -10840,6 +10842,7 @@ const useSwitchsanityGun = (id2, normal) => {
   const grape = useGrape();
   const feather = useFeather();
   const pineapple = usePineapple();
+  const anyGun = useAnyGun();
   const isSwitchsanity = useIsSwitchsanity();
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]));
   const target = isSwitchsanity ? switches[id2] : normal;
@@ -10852,8 +10855,10 @@ const useSwitchsanityGun = (id2, normal) => {
       return grape;
     case 3:
       return feather;
-    default:
+    case 4:
       return pineapple;
+    default:
+      return anyGun;
   }
 };
 const useSwitchsanityKong = (id2, normal) => {
@@ -16900,10 +16905,10 @@ const useDkFreebieGb = () => {
   const anyKong = useAnyKong();
   const hasClimbing = useClimbing();
   const hasBananaports = useBananaportAll();
+  const hasOStand = useStand();
   return {
     in: inStage.in && anyKong && (hasClimbing || hasBananaports),
-    out: (inStage.in || inStage.out) && anyKong
-    //The "shortcut" I'm thinking of is a small area next to the mine exit that Lanky can O-Stand up, but right now, I'm a little hesitant to actually put O-Stand here. ^^;
+    out: (inStage.in || inStage.out) && hasOStand
   };
 };
 const useFreeDiddySwitch = () => {
@@ -16912,6 +16917,7 @@ const useFreeDiddySwitch = () => {
   const lanky = useGrape();
   const tiny = useFeather();
   const chunky = usePineapple();
+  const anyGun = useAnyGun();
   const freeDiddy2 = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeDiddy));
   switch (freeDiddy2) {
     case 1:
@@ -16924,6 +16930,8 @@ const useFreeDiddySwitch = () => {
       return tiny;
     case 5:
       return chunky;
+    case 6:
+      return anyGun;
     default:
       return true;
   }
@@ -20809,6 +20817,8 @@ const useFreeLankySwitch = () => {
   const sax = useSax();
   const pineapple = usePineapple();
   const triangle = useTriangle();
+  const anyGun = useAnyGun();
+  const anyInstrument = useAnyMusic();
   const freeLanky = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeLanky));
   switch (freeLanky) {
     case 1:
@@ -20819,6 +20829,11 @@ const useFreeLankySwitch = () => {
       return { in: feather && sax, out: sax };
     case 4:
       return { in: pineapple && triangle, out: triangle };
+    case 5:
+      return {
+        in: anyGun && anyInstrument,
+        out: anyInstrument
+      };
     default:
       return { in: coconut && bongos, out: bongos };
   }
@@ -25796,54 +25811,14 @@ const useLankyPianoGb = () => {
     out: testing.out && canSlam && trombone
   };
 };
-const useFreeChunkySwitch = () => {
-  const slam = useSlamFactory();
-  const dk2 = useDk();
-  const diddy = useDiddy();
-  const lanky = useLanky();
-  const hasOStand = useStand();
-  const tiny = useTiny();
-  const chunky = useChunky();
-  const freeChunky2 = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeChunky));
-  switch (freeChunky2) {
-    case 1:
-      return {
-        in: dk2 && slam,
-        out: dk2 && slam
-      };
-    case 2:
-      return {
-        in: diddy && slam,
-        out: diddy && slam
-      };
-    case 3:
-      return {
-        in: hasOStand && slam,
-        out: lanky && slam
-      };
-    case 4:
-      return {
-        in: tiny && slam,
-        out: tiny && slam
-      };
-    case 5:
-      return {
-        in: chunky && slam,
-        out: chunky && slam
-      };
-    default:
-      return {
-        in: true,
-        out: true
-      };
-  }
-};
 const useLankyFreeChunkyGb = () => {
+  const hasSlam = useSlamFactory();
+  const isLanky = useLanky();
+  const hasOStand = useStand();
   const inStage = usePlayFactory();
-  const canHitSwitch = useFreeChunkySwitch();
   return {
-    in: canHitSwitch.in && inStage.in,
-    out: canHitSwitch.out && inStage.out
+    in: inStage.in && isLanky && hasOStand && hasSlam,
+    out: inStage.out && isLanky && hasSlam
   };
 };
 const useLankyProductionGb = () => {
@@ -42476,7 +42451,7 @@ const tinyBpIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAA
 const chunkyBpIcon = "data:image/png;base64,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";
 const crankyIcon = "data:image/png;base64,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";
 const shopIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAA7CAMAAADsMjIyAAAC91BMVEUAAADw8PAYMDDwmIjwoIjokIAYODgQKCgYMDjo6OgQGBjwqIjIgHAoSEgoQEAoQEjYiHg4GAD4+Pjg4ODIyMjgiHjIiHgvWGBoMACwcGBYKADwsJDQiHjwuJjwkIAwWFgoSFjgiIC4eGiocGCgaFgQMDDAwMCwsLDosJDAeGioaGAQKDB4OABgKAD4wKDQmIjgkIDAgHCIWEhwMADY2Nj4uJjIiHAYOEC4uLigoKDwqJCYYFgwSFjQ0ND4yKAYKDAQGCjomIgwYGAYQEEoOEDIGBiIQBDgqIjYoIjoiIDYiIA4aHAoODgwEADwwJjoqIhIKADwkIjIkIDQiHA4aGg4YGiQYEgYKCiIOABAGACoqKjwwKCYmJi4gGjIeGiwcGgwYGjoSEgAGBhgMAD4sJDAiHCYaFjwWFiIWEDAGBiIGBCQQAD4wJjooIjgoIjgmIbQkIDAiHhAeHi4gHC4cGDQRlyASECwGBaoGBS4FhSYFhSwWBCQSBCAEhBIFgUwGAAoEADwuJDYmIjQmIA6cHWueGWoaFiQYFgoWFjeQliYXUgwSEiISEDQMj1wPTiIGBigFRKQFRJdEhKgWBCQQBDIGBDAGBCgSACIQACAOAD4yKjwsJj4qJCQkJDQoIiIiIhIgIh0bITYkIDQiIDIiICQgICkfHyMeHxAcHiwgHCQcGy4cGigcGCgaGDISFy0QFjQSEjYQEjIPEDYOjqULCzMKCyoWBCgSBCYSBCEPBCAOBB4OBBoMBBwFBCIEBBoEBAAEBB4EAlwOAB4MABoKACQsNiQoMi4sLCQkLDwyKCooKCgkJhwgJj4uJDgsJDgqJDYqIiIcIjYmIDImIA4eICIYIDQkHi4iHBgWHDIgGiwaGioWGjgYGCIYGBwWGDASGCIYFjYWFjAWFjgSEjASEiwSEgYSEh4SECIQEDgOECAQDh4QDiYODiIODDQMDC4MDBYMChoKCjIKBhoKBhwGBi4YBBgMBDQGBCwEBCYSACQSABYGABAAAD00AdiAAAAAXRSTlMAQObYZgAABshJREFUSMeM0jGK7DAMBuDlLyRhkFS6tJtUOYCbQEKSblJmSDvMWaZY2Eu8co/xDvHO8M7x9KZcMssabLDhQ7+M3s7XbX98XvZc1E397Qfrz2O+3a5Zm9dScikdmRoxf4suc/VlIVuW5s0BrGspAwmnb9B71epac877tRrA1OL2YUB6zeb5155zHVzLtThGBrnmMtiK46X6my8XtcWIxMwIE8M8uosXSS+L1aWqURP0ANE2Mm9W3ovrErVeqfiItgSSHhOw4ZhAqk7NldDjns5V9kYE9OgDCRj0oS4i6mtHwr9P1a0apEMfG9QFgqmKdNSqERGnU1ZUMAqiI2wAjyy0PtEQKVzG087Un6GMVnqixAzuOpGyP+bBtimdMSMww9YNUZLHabrz1Edcy58xMUpH4hMF6Y50MMbAHB99T3fu0ZHugYaF+Ctytf/BCII4IsrIgdLE6KRdY7j+yYYXGPgI9QsSeM29i4o62FSBscRmw8+m7cIPMhUIgQ4EhiebjXioPCiRCfpK6UpIQEO7mx+oSZyNnYMJaK6WsoqylrKNDRM7CDjYa3PwiYd6i4sDtQkKCkZKSUkYIzuRnUMVFLmGxanFqYaFhoZKSpKrJeMlJUs0Gxoa6hvqfQV9gboipY7ozMQID/0gMNTXb9ZfImYmxsMTZ8ZT7wvRAtIUILVHZwa6Jg0NDXeN8xpAIKuh4e9/SaxEhkcGoiVMk1UOqClZQieiBk1X9Cw7OzC28/Nz10+VzOiTFJAB2WKtJMDKrBgg9U3ikI5bNrplHu7u59zdPfL0LxeuTMvwFeyzFlAU7N9fZq0pyiwnIJV8xFhnZ8SUn6iaADqxpUtMTCy1583bV6ueA/3RX1XVf3DSn4AerThWZhazPSCbZrhlT0bRdHRL+f0XWtZGEzIrJ36YNOnL3v11knGsdQF1RlpioiwsYhKHddwi3H5tn16NrOvj+s70R6s+Z336nv741vFkXYkAFSWZACkpKSMlMwMWbkMdoE1TsidPrkbRdbV0Y/qGZcvKE9MT0x8utbA0ltLiUdSVkiqzLhEz4GYGaooAaEr29unbqr8i67q4rjOxdPnpisTNLxPvLLeI0dHVFEjW1dU1stY0c2TJNd410y2ipmbH9G0o/loI1LXp3sKJm99t3bhhqcV842QeVl0JXYmMtZoyRty6xsY6QG1u2TtQg/DY7dLS9TfO7H2/tXfT01OWuoclFCUkJIyNwrQMrVVUgP403q2zEyOSRZlZgVBUjrW398ldi/mAwuqnNW0wjgN4QvIcJB7CbGQ2JuAfmla2GLURjSjkEKo56KzgwWq9OFnFVktH/4GDtrSFMkZ3aC9re2h3GevewAaFHXcY7LSx2+57A4Nd9otPS9do2688eHk+PN88+DOjsdjDWCxVbgZDOwGP/6/1i489+mhDSGEYRlOKiBKLqCiKqIhQDoUCobrH74/MOkcfA/tkQ6JecwtLNYqiRKoIS6QQQmIOIMexbMnr9b6AQSFsob+Xha1gh6Kpy4iIQ4CKCL45xVROR58QA4hhwnk3zwDCEDb7OJ8PCFTVdb2zQAwiTc3OnMi8RtMUDauPWI4F9rkn0jQ8cmEAMZrK57OyqtKXQchnlliW45LHLURRDPNmQxhQDVXNApIbGn1EMzStI9b0ekumVKm2LqAyw/OyHLchTVXHs3Jb/tpgjhhAimKapVJpTJKSyQtRpEEJQmbaplRVnsq0oWCjoQHSddMcgYwlKpXqOowWFBTkTNimXCRJPnhAQhwOF2RyMp0GNJaQkvsIFxRmvrhvIofDAYrECnLFEgmpsg+I5q2CwuJNBXsBYUVeMauhVFld6RfkN+SZccKmIJjh9Fm6/1xrUBAQ385nCFswAnbtQMFzSXNrVkENCsqDCsD/C6tk9dCYE0VAGqC8HVkMbvB6kXB5UrJ6bBwY+AY1foMYTNoFV4CXC66hj5JVwzAOKH1eLxQKU+ND1IjLQeLPNTo0DqzZUpTO5kL2GzFMTZI4l5cgzRkI+Xysj2W9p93w1skwZPxJOzByWehQzOU4C3id8bgbMk0My9rq61av12utr67AITCIXJ944f3ldMafuheHKoRH0ZrhnA//SzghExB/rfbjHTE8iiAIbV6bhxHBxYBEJvzP/Z56YHubuC1mPs/zhfkOIHwKvJc9Ac9OKHh+TtyeLrxcCwubZ2dx50/nhHVGIBgKBveaTeKuuMPZ8Ga3G4/POt/DOTtAyqnybvQXcWfeuqfh445ErHKhD6nmbjkafRYl7slSLVKLRCLbHigXTKUssrxM3BvYHqgH6iFAe7vRl79f3brzHyS5ouZaaSfUAAAAAElFTkSuQmCC";
-const candyIcon = "" + new URL("candy-tHELuTmd.png", import.meta.url).href;
+const anyInstIcon = "" + new URL("candy-tHELuTmd.png", import.meta.url).href;
 const snideIcon = "data:image/png;base64,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";
 const MoveTable = () => {
   const [setMove, setConsumable] = useDonkStore(
@@ -42707,7 +42682,7 @@ const MoveTable = () => {
       " ",
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "funky", title: "New Funky Mode!", imgUrl: shopIcon, prefix: "moves", updateItem: setMove }),
       " ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "candy", title: "Candy Kong", imgUrl: candyIcon, prefix: "moves", updateItem: setMove }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "candy", title: "Candy Kong", imgUrl: anyInstIcon, prefix: "moves", updateItem: setMove }),
       " ",
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "snide", title: "Snide", imgUrl: snideIcon, prefix: "moves", updateItem: setMove })
     ] })
@@ -43631,7 +43606,7 @@ const bananaMedalIcon = "" + new URL("bananamedal-bkq8SUQj.gif", import.meta.url
 const dropIcon = "" + new URL("beaver-hQ5QlB0C.png", import.meta.url).href;
 const bonusIcon = "" + new URL("bonus-Bf3zX_ol.png", import.meta.url).href;
 const bananaIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAgCAYAAAAFQMh/AAAIYElEQVRYCbWVeXBUVRaHT7bu9JZekjSLbFNAOahVjqOAisOgAoVARAhEHQVKUAEJayKrJaiIIAImLKkREAFREyRMDCaGIVFCWITEAEGFLMBAFhKSTtJ7d7r7m0orUqUjYKrm/XPve++e+93fOeeeI9LBp293mX5vr0gevEvBwH5aWwe3uS2zkOurZs7QvThssDBuhCqQunIog+6V9Ov//i9jQYFpStO1Ce9u3qgmeZ4EykpHkp87kJ9hvxysI/Cg8StTpU9OtlTZWnqWuh2dSlsssaWVP5qL87LFuX2rkH9Axbkzvam7fF9gw1q5Du4I74bNqW/UuJr/6nc5euF2xeBxROG0mCj4l5C5Q2i19MDR0ovCLKHyWy1NNabuN6w7MMtYLorm00prwNIdr70brVYtbrcOryMKV4OeskOCq6YHXocZr91EfZkSa6UJ7OZOHcD9ZLJtuXStytOctZ1VY6s14HaacXl0uJxR+G2dKT8uXCkWAg1mAo5YfA4jzlo1NHcje5+81mHwkT2a4eVfCVR3wnpVi9MVhcujweU0QOudfP2ZUHNS8NVG4bOZ8LuMOOsjwN45UFDQwRhvXS6m7M3C+XyBhk547QacbjUurxKftwul+eEc2ytUHRLsVVr8djN4YgnYDPjtMVytUXYsuVbMlJ77N0XQUByLu9qAz6nH6VEEwW5HV5bNEo6mayk/EIbtRx2ea0YCzmhwxeCzGYJu75Crpw0X9r2vD1QeNGKr+CmZvF4NHp+Wi+WRLHlJKNwVS1WuhtZSDZ5qLdiNBNwxuFp12K+pOX1MBv5heOKTwtbXFRzeJTSd0eJ3GHG7Nbg9Rs6XqUl+Qdi/MYbK/SZaTxpwV2nwN+iCatvDUn9JAvUX1NfdfftFZPqTwubFkRR+GIr1h9hgDNuzuT2+R78W5j8vbF+mpeQTI9cOGbCXqXFUheNvNuB3RdN4RXBajP6cLHnvD6l+fqjwfrKSYzs1NJaYgtfH7TLS5u7K+dLYIHj9XCWHtui5nGfEekKDrSwMd7UWX6sev0MXjLOrtXPuHwKPfVhIfVXP0Q+jqDuiB2tX3C49PreZU0fVzJskLJ0kHPxnNOey9DQfi8J5SkXL9yF4alXg1OFqVQWLSt2lbmtE5PbcPWqAsHaeLvB1mpGKr1S466Pxu/S0uY00XOoejPHcCcKe1WpKPzVSl2/AelyDtTQCZ0UEfosmCMdhClSWhZKVIX1uS3n832XGa1ND2LdGzfHdoXhrzODU43NpaLP1Y8ObwpwJQsp8oegjM1XZMTQU6LAf02ArCcdeGQZWPVii8DRE09Z8Z8HP4Jsr/8coMc5/Ttj2WgQH0oTakkiwx+BzqPG7+lKU04vEBGH5FGHvGgPFH5u4vF+PJV+PrUhJS4lArQ5fnZrmi2E4agycyJWqW8LjhkjMtHhh7WwF6auEszkh0NgleK187t58X9yHV54V5j0tbJgbSf4mA6d3qanO0mI7pMVaFIqrLBQsRjxX1VSfEiw/aDmRKadu6vKh94v+2eFSt2yqgp0r1BS2t75zZrB3CXapNuuDbF0nJI4TFsQLny7TUJim4/ROJXVfqGj6KpzmQsFZroKWznDNTP2ZUGzl0efOFcXobgqPHywjXx4tpC5QsW99GD8e0BFo7ErAGoPX1ofvDplJmigkxgnvTBU+X6HjSJqW7z9WcnmvksY8FS1HlbRVGsDaCZxmfE3RWKr0pzMyRPu78DtjRDd5hOQufSGc1CRhX8pPqgNN5mCbbL7cl23vhjFnvDBvrLB+RiiZK1Qc2aTh7E41VzK1NOSqaDmiwvsfPb4mI9hjg6OrVnfxpvEe1V+2vzhaWPickJIklHyuwHfhDnwNnWm6YOZkfheWThOSnhGS44WNsyPIXKGhMEXDd1sUXNitpC5LQUNBKIEqEzS2qzYSuGag7UqU5/dUB1M/YUhY5YyxYaxODGfPSqGuqBu+Kz3wN/YC60AyPhAWThLmjhOWPN0OV/LZ6woK1mso3qykYqeKukwVdbkh2E5rsFdocJ6LxH/RiOu8mcOfqfb+zwP8rZ+snzRcyfzxYYF104WcFDV1J7rhre1BW1M3nFf7sX21sOA5Yd5TwqLxwprpwo6lCrJXKihar+DsFgUXd0cE1bcWaLEcFKzHFFhLdNQdNVH8Zee0X8ODqkfcL7MnPx7C4oSIQMrsEPa8J9Qc74TnShdo7I2t/D4+Xi0kJwjzxwqvThDenipsS1LwxQoN37yr4tRGFeVbIqnZraI1Rw/Hu2A7rMF7xhzwnr2DnFTZ8Wt48D3uIZk6eXgISQnCupkSdPulgzFwoTdU98VZcQ+5H0SR1J5sY4TkccKbz4eyaZaK9EUa8t7ScWytmlOpkZRvUVP9qRb7v2PgZHc4acaSF3G9jf6WP6K/vDVpWChzxgirpggfJAvfZRiwlHTHU34XtrL+fJGiY3GCsGCckDRGWDJeWD05lLRpEWQs1JD3RhRFq/QUvRPB6c2RnN+u5nK6iYaszr8LDrp98N2yI+ERKX35CSEpXnh9orBjSQhlGT2xHL+HQPkgyrP7suoFYdFYIWm0kBwnLBkXysqJKjZM07EjUUt6ko70hZF8NEtIe1kuzX1USn8r9caXX4r8EwNCMp8ZEs70UWEseKpdlfDJG8K3u6KpLxxIZfYAvnzvz6yYqGFeXASzRkYy9bFQJg0SZg0V3n7WkLooXrPuxSGSNrin/OkG4taz8McfCB82+j6pmPKYMGukMCdOAu0l9P1XlHy+sjeHPxzC1sW9A4lxEUx8NJwJg8IfeaCbjIz7izx16+1vsWJQjOgmPCSm+P5yd3x/4aVhocwcLsweISQ+ITwzQBjTXx5uX3OLreS/RXWF19n+QKMAAAAOZVhJZk1NACoAAAAIAAAAAAAAANJTkwAAAABJRU5ErkJggg==";
-const hardShootIcon = "" + new URL("hard_shoot-B_JOAn4q.png", import.meta.url).href;
+const anyGunIcon = "" + new URL("hard_shoot-B_JOAn4q.png", import.meta.url).href;
 const melonIcon = "data:image/png;base64,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";
 const toughBananaIcon = "" + new URL("rabbit-D6O9SrZi.png", import.meta.url).href;
 const slamSwitchIcon = "" + new URL("slam_switch-DrcJ-6n7.png", import.meta.url).href;
@@ -43691,7 +43666,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: hardShootIcon,
+                  imgUrl: anyGunIcon,
                   title: "Puts enemy gauntlet and miniboss bananas in the pool.",
                   storeKey: "poolMiniboss",
                   prefix: "settings",
@@ -43950,7 +43925,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: hardShootIcon,
+                  imgUrl: anyGunIcon,
                   title: "If on, certain checks that logically require Homing Ammo or Sniper Scope will instead expect you to do those checks without.",
                   storeKey: "hardShooting",
                   prefix: "settings",
@@ -44244,7 +44219,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: hardShootIcon,
+                  imgUrl: anyGunIcon,
                   title: "Turn this on if the gun-activated gates in Creepy Castle's crypt area have been removed in your seed. Else, you'll need all five guns to do crypt/mausoleum checks.",
                   storeKey: "castleCrypt",
                   prefix: "removeBarriers",
@@ -44423,11 +44398,10 @@ const SwitchsanitySwitch = (props) => {
   ) });
 };
 const allKong = [dkKongIcon, diddyKongIcon, lankyKongIcon, tinyKongIcon, chunkyKongIcon];
-const allGun = [dkGunIcon, diddyGunIcon, lankyGunIcon, tinyGunIcon, chunkyGunIcon];
-const allMusic = [dkMusicIcon, diddyMusicIcon, lankyMusicIcon, tinyMusicIcon, chunkyMusicIcon];
+const allGun = [dkGunIcon, diddyGunIcon, lankyGunIcon, tinyGunIcon, chunkyGunIcon, anyGunIcon];
+const allMusic = [dkMusicIcon, diddyMusicIcon, lankyMusicIcon, tinyMusicIcon, chunkyMusicIcon, anyInstIcon];
 const freeDiddy = [unknownIcon$1].concat(allGun);
 const freeTiny = [unknownIcon$1, diddyMoveIcon, chunkyMoveIcon];
-const freeChunky = [unknownIcon$1].concat(allKong);
 const FreeKongSelector = () => {
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -44436,16 +44410,7 @@ const FreeKongSelector = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Lanky:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeLanky, storeKey: "freeLanky", images: allMusic }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Tiny:" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeTiny, storeKey: "freeTiny", images: freeTiny }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Chunky:" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      SwitchsanitySwitch,
-      {
-        currValue: switches.freeChunky,
-        storeKey: "freeChunky",
-        images: freeChunky
-      }
-    )
+    /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeTiny, storeKey: "freeTiny", images: freeTiny })
   ] });
 };
 const StandardSwitchsanitySelector = () => {
@@ -44498,11 +44463,11 @@ const StandardSwitchsanitySelector = () => {
         ]
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To enter Japes Hive Area:" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the Japes Hive Area:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.japesHive, storeKey: "japesHive", images: allGun }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To get Japes Rambi Cage:" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the Japes Rambi Cage:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.japesRambi, storeKey: "japesRambi", images: allGun }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To enter Japes Painting Room:" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the Japes Painting Room:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       SwitchsanitySwitch,
       {
@@ -44511,7 +44476,7 @@ const StandardSwitchsanitySelector = () => {
         images: allGun
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open Japes Early Tunnel:" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open Diddy's early tunnel in Japes:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.japesSide, storeKey: "japesSide", images: allGun }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To get Aztec Early Kasplat:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
