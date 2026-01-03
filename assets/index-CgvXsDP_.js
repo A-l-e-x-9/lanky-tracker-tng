@@ -25673,7 +25673,7 @@ const useChunkyDarkGb = () => {
   };
 };
 const useChunkyProductionGb = () => {
-  const production = useFactoryProductionEnabled();
+  const production = useFactoryProductionTop();
   const chunky = useChunky();
   const canSlam = useSlamFactory();
   return {
@@ -25714,7 +25714,7 @@ const useDiddyStorageGb = () => {
   };
 };
 const useDiddyProductionGb = () => {
-  const production = useFactoryProductionEnabled();
+  const production = useFactoryProductionTop();
   const canSlam = useSlamFactory();
   const diddy = useDiddy();
   const spring = useSpring();
@@ -25847,7 +25847,7 @@ const useLankyFreeChunkyGb = () => {
   };
 };
 const useLankyProductionGb = () => {
-  const production = useFactoryProductionEnabled();
+  const production = useFactoryProductionTop();
   const canSlam = useSlamFactory();
   const hasLanky = useLanky();
   const stand = useStand();
@@ -25957,7 +25957,7 @@ const useDartFairy = () => {
   return banana[3030] && camera;
 };
 const useProductionTopKasplat = () => {
-  const production = useFactoryProductionEnabled();
+  const production = useFactoryProductionTop();
   return {
     in: production.in,
     out: production.out
