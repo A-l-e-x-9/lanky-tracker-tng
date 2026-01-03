@@ -151,7 +151,7 @@ export const useChunkyDarkGb = (): LogicBool => {
 }
 
 export const useChunkyProductionGb = (): LogicBool => {
-  const production = useFactoryProductionEnabled()
+  const production = useFactoryProductionTop()
   const chunky = useChunky()
   const canSlam = useSlamFactory()
   return {
@@ -196,7 +196,7 @@ export const useDiddyStorageGb = (): LogicBool => {
 }
 
 export const useDiddyProductionGb = (): LogicBool => {
-  const production = useFactoryProductionEnabled()
+  const production = useFactoryProductionTop()
   const canSlam = useSlamFactory()
   const diddy = useDiddy()
   const spring = useSpring()
@@ -345,7 +345,7 @@ export const useLankyFreeChunkyGb = (): LogicBool => {
 }
 
 export const useLankyProductionGb = (): LogicBool => {
-  const production = useFactoryProductionEnabled()
+  const production = useFactoryProductionTop()
   const canSlam = useSlamFactory()
   const hasLanky = useLanky()
   const stand = useStand()
@@ -468,7 +468,7 @@ export const useDartFairy = (): boolean => {
 }
 
 export const useProductionTopKasplat = (): LogicBool => {
-  const production = useFactoryProductionEnabled()
+  const production = useFactoryProductionTop()
   return {
     in: production.in,
     out: production.out
