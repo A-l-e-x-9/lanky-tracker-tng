@@ -27,14 +27,15 @@ import tinyGunIcon from '../../assets/images/tiny_gun.png'
 import tinyMusicIcon from '../../assets/images/tiny_inst.png'
 import tinyPadIcon from '../../assets/images/tinypad.png'
 import unknownIcon from '../../assets/images/unknown-small.png'
+import anyGunIcon from '../../assets/images/settings/hard_shoot.png'
+import anyInstIcon from '../../assets/images/candy.png'
 
 const allKong = [dkKongIcon, diddyKongIcon, lankyKongIcon, tinyKongIcon, chunkyKongIcon]
-const allGun = [dkGunIcon, diddyGunIcon, lankyGunIcon, tinyGunIcon, chunkyGunIcon]
-const allMusic = [dkMusicIcon, diddyMusicIcon, lankyMusicIcon, tinyMusicIcon, chunkyMusicIcon]
+const allGun = [dkGunIcon, diddyGunIcon, lankyGunIcon, tinyGunIcon, chunkyGunIcon, anyGunIcon]
+const allMusic = [dkMusicIcon, diddyMusicIcon, lankyMusicIcon, tinyMusicIcon, chunkyMusicIcon, anyInstIcon]
 
 const freeDiddy = [unknownIcon].concat(allGun)
 const freeTiny = [unknownIcon, diddyMoveIcon, chunkyMoveIcon]
-const freeChunky = [unknownIcon].concat(allKong)
 
 const FreeKongSelector: React.FC = () => {
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]))
@@ -46,12 +47,6 @@ const FreeKongSelector: React.FC = () => {
       <SwitchsanitySwitch currValue={switches.freeLanky} storeKey="freeLanky" images={allMusic} />
       <p>To free Tiny:</p>
       <SwitchsanitySwitch currValue={switches.freeTiny} storeKey="freeTiny" images={freeTiny} />
-      <p>To free Chunky:</p>
-      <SwitchsanitySwitch
-        currValue={switches.freeChunky}
-        storeKey="freeChunky"
-        images={freeChunky}
-      />
     </>
   )
 }
@@ -95,17 +90,17 @@ const StandardSwitchsanitySelector: React.FC = () => {
           chunkyMusicIcon
         ]}
       />
-      <p>To enter Japes Hive Area:</p>
+      <p>To open the Japes Hive Area:</p>
       <SwitchsanitySwitch currValue={switches.japesHive} storeKey="japesHive" images={allGun} />
-      <p>To get Japes Rambi Cage:</p>
+      <p>To open the Japes Rambi Cage:</p>
       <SwitchsanitySwitch currValue={switches.japesRambi} storeKey="japesRambi" images={allGun} />
-      <p>To enter Japes Painting Room:</p>
+      <p>To open the Japes Painting Room:</p>
       <SwitchsanitySwitch
         currValue={switches.japesPainting}
         storeKey="japesPainting"
         images={allGun}
       />
-      <p>To open Japes Early Tunnel:</p>
+      <p>To open Diddy's early tunnel in Japes:</p>
       <SwitchsanitySwitch currValue={switches.japesSide} storeKey="japesSide" images={allGun} />
       <p>To get Aztec Early Kasplat:</p>
       <SwitchsanitySwitch

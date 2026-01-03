@@ -292,55 +292,14 @@ export const useLankyPianoGb = (): LogicBool => {
   }
 }
 
-const useFreeChunkySwitch = (): LogicBool => {
-  const slam = useSlamFactory()
-  const dk = useDk()
-  const diddy = useDiddy()
-  const lanky = useLanky()
-  const hasOStand = useStand()
-  const tiny = useTiny()
-  const chunky = useChunky()
-  const freeChunky = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeChunky))
-  switch (freeChunky) {
-    case 1:
-      return {
-        in: dk && slam,
-        out: dk && slam
-      }
-    case 2:
-      return {
-        in: diddy && slam,
-        out: diddy && slam
-      }
-    case 3:
-      return {
-        in: hasOStand && slam,
-        out: lanky && slam
-      }
-    case 4:
-      return {
-        in: tiny && slam,
-        out: tiny && slam
-      }
-    case 5:
-      return {
-        in: chunky && slam,
-        out: chunky && slam
-      }
-    default:
-      return {
-      in: true,
-      out: true
-      }
-  }
-}
-
 export const useLankyFreeChunkyGb = (): LogicBool => {
+  const hasSlam = useSlamFactory()
+  const isLanky = useLanky()
+  const hasOStand = useStand()
   const inStage = usePlayFactory()
-  const canHitSwitch = useFreeChunkySwitch()
   return {
-    in: canHitSwitch.in && inStage.in,
-    out: canHitSwitch.out && inStage.out
+    in: inStage.in && isLanky && hasOStand && hasSlam,
+    out: inStage.out && isLanky && hasSlam
   }
 }
 

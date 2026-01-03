@@ -6,7 +6,6 @@ export const initialSwitches: SwitchState = {
     freeDiddy: 0,
     freeLanky: 0,
     freeTiny: 0,
-    freeChunky: 0,
     islesAztec: 3,
     islesForest: 3,
     islesHelm: 0,

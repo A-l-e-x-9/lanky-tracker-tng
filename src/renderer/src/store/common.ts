@@ -279,24 +279,23 @@ export type CheckSlice = CheckState & CheckActions
 
 //#region Switchsanity
 export interface SwitchsanitySwitches {
-  freeDiddy: PearlRange
-  freeLanky: KongRange // always need music instrument to start.
+  freeDiddy: IntRange<0, 7>
+  freeLanky: PearlRange // always need music instrument to start.
   freeTiny: BananaportRange
-  freeChunky: PearlRange
   /**
    * What instrument is needed to reveal the Rocket barrel in Isles?
    */
-  islesTrombone: KongRange
+  islesTrombone: PearlRange
   /**
    * What instrument is needed to open the hint room in the Aztec Lobby?
    *
    * This is only relevant in kasplat or hint shuffle I think.
    */
-  islesAztec: KongRange
+  islesAztec: PearlRange
   /**
    * What gun is needed to reveal the banana fairy in the Forest lobby?
    */
-  islesForest: KongRange
+  islesForest: PearlRange
   /**
    * What pad move is needed to get to the very top of Krem Isle?
    * 0: Monkeyport
@@ -313,35 +312,35 @@ export interface SwitchsanitySwitches {
    *
    * If all bananaports are pre-activated, this check is superfluous.
    */
-  japesHive: KongRange
+  japesHive: PearlRange
   /**
    * What gun is needed to access the Rambi cage?
    */
-  japesRambi: KongRange
+  japesRambi: PearlRange
   /**
    * What gun is needed to access the Painting Room?
    */
-  japesPainting: KongRange
+  japesPainting: PearlRange
   /**
    * What gun is needed to access the side room in the Tunnel?
    */
-  japesSide: KongRange
+  japesSide: PearlRange
   /**
    * What gun is needed to access the early Kasplat?
    */
-  aztecBlueprint: KongRange
+  aztecBlueprint: PearlRange
   /**
    * What is the 1st possible gun to access the Llama Temple?
    */
-  aztecLlama1: KongRange
+  aztecLlama1: PearlRange
   /**
    * What is the 2nd possible gun to access the Llama Temple?
    */
-  aztecLlama2: KongRange
+  aztecLlama2: PearlRange
   /**
    * What is the 3rd possible gun to access the Llama Temple?
    */
-  aztecLlama3: KongRange
+  aztecLlama3: PearlRange
   /**
    * Which Kong is necessary to access the Dead End tunnel in the back of Aztec?
    */
@@ -349,35 +348,35 @@ export interface SwitchsanitySwitches {
   /**
    * Which instrument is needed to access the back half of Aztec?
    */
-  aztecBack: KongRange
+  aztecBack: PearlRange
   /**
    * Which gun is needed to access the lighthouse area in Galleon?
    */
-  galleonLighthouse: KongRange
+  galleonLighthouse: PearlRange
   /**
    * Which gun is needed to access the outskirts area in Galleon?
    */
-  galleonOutskirts: KongRange
+  galleonOutskirts: PearlRange
   /**
    * Which gun is needed to access the cannon game in Galleon?
    */
-  galleonCannon: KongRange
+  galleonCannon: PearlRange
   /**
    * Which gun is needed to access the Owl Tree area in Forest?
    */
-  forestOwlTree: KongRange
+  forestOwlTree: PearlRange
   /**
    * What is the first gun needed to access the Beanstalk area in Forest?
    *
    * If all bananawarps are pre-activated, this check is pointless.
    */
-  forestBean1: KongRange
+  forestBean1: PearlRange
   /**
    * What is the second gun needed to access the Beanstalk area in Forest?
    *
    * If all bananawarps are pre-activated, this check is pointless.
    */
-  forestBean2: KongRange
+  forestBean2: PearlRange
 }
 
 export interface SwitchState {

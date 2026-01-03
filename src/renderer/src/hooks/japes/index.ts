@@ -293,9 +293,10 @@ export const useDkFreebieGb = (): LogicBool => {
   const anyKong = useAnyKong()
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
+  const hasOStand = useStand()
   return {
     in: inStage.in && anyKong && (hasClimbing || hasBananaports),
-    out: (inStage.in || inStage.out) && anyKong //The "shortcut" I'm thinking of is a small area next to the mine exit that Lanky can O-Stand up, but right now, I'm a little hesitant to actually put O-Stand here. ^^;
+    out: (inStage.in || inStage.out) && hasOStand
   }
 }
 
@@ -305,6 +306,7 @@ const useFreeDiddySwitch = (): boolean => {
   const lanky = useGrape()
   const tiny = useFeather()
   const chunky = usePineapple()
+  const anyGun = useAnyGun()
   const freeDiddy = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeDiddy))
   switch (freeDiddy) {
     case 1:
@@ -317,6 +319,8 @@ const useFreeDiddySwitch = (): boolean => {
       return tiny
     case 5:
       return chunky
+    case 6:
+      return anyGun
     default:
       return true
   }

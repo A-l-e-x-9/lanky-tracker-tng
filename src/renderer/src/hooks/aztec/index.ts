@@ -31,7 +31,9 @@ import {
   useTrombone,
   useTwirl,
   useVine,
-  useDiddy
+  useDiddy,
+  useAnyGun,
+  useAnyMusic
 } from '../kongs'
 import { useBananaportAll } from '../settings'
 import {
@@ -358,6 +360,8 @@ export const useFreeLankySwitch = (): LogicBool => {
   const sax = useSax()
   const pineapple = usePineapple()
   const triangle = useTriangle()
+  const anyGun = useAnyGun()
+  const anyInstrument = useAnyMusic()
   const freeLanky = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeLanky))
   switch (freeLanky) {
     case 1:
@@ -368,6 +372,11 @@ export const useFreeLankySwitch = (): LogicBool => {
       return { in: feather && sax, out: sax }
     case 4:
       return { in: pineapple && triangle, out: triangle }
+    case 5:
+      return {
+        in: anyGun && anyInstrument,
+        out: anyInstrument
+      }
     default:
       return { in: coconut && bongos, out: bongos }
   }

@@ -11,7 +11,8 @@ import {
   usePineapple,
   useSax,
   useTriangle,
-  useTrombone
+  useTrombone,
+  useAnyMusic
 } from './kongs'
 import { useIsSwitchsanity } from './settings'
 
@@ -38,6 +39,7 @@ export const useSwitchsanityMusicPad = (
   const trombone = useTrombone()
   const sax = useSax()
   const triangle = useTriangle()
+  const anyInstrument = useAnyMusic()
   const isSwitchsanity = useIsSwitchsanity()
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]))
   const target: number = isSwitchsanity ? switches[id] : normal
@@ -50,8 +52,10 @@ export const useSwitchsanityMusicPad = (
       return trombone
     case 3:
       return sax
-    default:
+    case 4:
       return triangle
+    default:
+      return anyInstrument
   }
 }
 
@@ -61,6 +65,7 @@ export const useSwitchsanityGun = (id: string, normal: number): boolean => {
   const grape = useGrape()
   const feather = useFeather()
   const pineapple = usePineapple()
+  const anyGun = useAnyGun()
   const isSwitchsanity = useIsSwitchsanity()
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]))
   const target: KongRange = isSwitchsanity ? switches[id] : normal
@@ -73,8 +78,10 @@ export const useSwitchsanityGun = (id: string, normal: number): boolean => {
       return grape
     case 3:
       return feather
-    default:
+    case 4:
       return pineapple
+    default:
+      return anyGun
   }
 }
 
