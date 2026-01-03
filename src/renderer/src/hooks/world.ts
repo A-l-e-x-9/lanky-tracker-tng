@@ -12,6 +12,7 @@ import {
   useSax,
   useTriangle,
   useTrombone,
+  useAnyGun,
   useAnyMusic
 } from './kongs'
 import { useIsSwitchsanity } from './settings'
