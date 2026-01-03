@@ -20840,8 +20840,8 @@ const useLankyVultureGb = () => {
   const lanky = useLanky();
   const iceMelted = useTinyTempleIce();
   return {
-    in: front.in && tinyTemple.in && iceMelted && dive.in && lanky && canSlam,
-    out: front.out && tinyTemple.out && iceMelted && dive.out && canSlam && lanky
+    in: front.in && tinyTemple.in && iceMelted.in && dive.in && lanky && canSlam,
+    out: front.out && tinyTemple.out && iceMelted.out && dive.out && canSlam && lanky
   };
 };
 const useArena$3 = () => {
