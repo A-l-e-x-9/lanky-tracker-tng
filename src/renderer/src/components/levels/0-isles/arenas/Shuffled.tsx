@@ -442,8 +442,8 @@ const jetbarrelExists = useIslesRocket()
         id={10063}
         name="Shuffled Battle Arena: Next to the Helm Lobby Tag Barrel"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInHelmLobby.in}
-        canGetBreak={canGetInHelmLobby.out}
+        canGetLogic={isBreathing && canGetInHelmLobby.in}
+        canGetBreak={isBreathing && canGetInHelmLobby.out}
       />
       <IslesCheck
         id={10064}
