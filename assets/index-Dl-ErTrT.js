@@ -346,6 +346,26 @@ reactJsxRuntime_production_min.jsxs = q$2;
   jsxRuntime.exports = reactJsxRuntime_production_min;
 }
 var jsxRuntimeExports = jsxRuntime.exports;
+const currentDate = /* @__PURE__ */ new Date();
+const currentMonth = currentDate.getMonth();
+const getBody = document.getElementById("lanky-tracker");
+switch (currentMonth) {
+  case 0:
+    getBody.style.backgroundColor = "#ffffff";
+    break;
+  case 1:
+    getBody.style.backgroundColor = "#ff80ff";
+    break;
+  case 2:
+    getBody.style.backgroundColor = "#00c000";
+    break;
+  case 10:
+    getBody.style.backgroundColor = "#c00000";
+    break;
+  case 11:
+    getBody.style.backgroundImage = "linear-gradient(135deg, #00c000, #ffffff, #c00000)";
+    break;
+}
 var client = {};
 var reactDom = { exports: {} };
 var reactDom_production_min = {};
@@ -41360,7 +41380,7 @@ const UndergroundChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntim
 const CastleRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "not-available", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "WARNING:" }),
-    " If you don't have Climbing and you attempt to do any check in the Crypt area, you won't be able to get back up without killing your Kong or pause-exiting, then re-entering. For that reason, all checks involving this area in some way will be yellow if you indicated that you didn't have Climbing in the moves table!"
+    " If you don't have Climbing and you attempt to do any check in the Crypt area, you won't be able to get back up without killing your Kong, pause-exiting/re-entering, or abusing high-grabs on the gravestones with Tiny and Chunky."
   ] }),
   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
@@ -41384,7 +41404,7 @@ const CastleRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", {
 const ClassicChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "not-available", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "WARNING:" }),
-    " If you don't have Climbing and you attempt to do any check in the Crypt area, you won't be able to get back up without killing your Kong or pause-exiting, then re-entering. For that reason, all checks involving this area in some way will be yellow if you indicated that you didn't have Climbing in the moves table!"
+    " If you don't have Climbing and you attempt to do any check in the Crypt area, you won't be able to get back up without killing your Kong, pause-exiting/re-entering, or abusing high-grabs on the gravestones with Tiny and Chunky."
   ] }),
   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas, {}),
