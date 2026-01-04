@@ -1,7 +1,7 @@
 const currentDate = new Date()
 const currentMonth = currentDate.getMonth()
 const getBody = document.getElementById('lanky-tracker')
-let isDST = false
+let isDST = 0
 switch (currentMonth) {
   case 0: //January
     getBody!.style.backgroundColor = '#ffffff' //Makes the background white, because January is the dead of winter!
@@ -9,10 +9,10 @@ switch (currentMonth) {
   case 1: //February
     getBody!.style.backgroundColor = '#ff80ff' //Pink background, for Valentine's Day
     break
-  case 2 && Number(isDST) === 0: //March, outside of DST
+  case 2 && isDST === 0: //March, outside of DST
     getBody!.style.backgroundColor = '#00c000' //Green background, for the coming of spring.
     break
-  case 2 && Number(isDST) === 1: //March, in DST
+  case 2 && isDST === 1: //March, in DST
     getBody!.style.backgroundColor = '#004000' //Green background for St. Patrick's Day and the coming of spring
     break
   case 3: //April
@@ -38,10 +38,10 @@ switch (currentMonth) {
     getBody!.style.backgroundImage = 'linear-gradient(135deg, #000000, #400000, #000000)'
     getBody!.style.color = '#ff8000' //Halloween theme
     break
-  case 10 && Number(isDST) === 1: //November, in DST
+  case 10 && isDST === 1: //November, in DST
     getBody!.style.backgroundColor = '#400000' //Red background for late fall
     break
-  case 10 && Number(isDST) === 0: //November, outside of DST
+  case 10 && isDST === 0: //November, outside of DST
     getBody!.style.backgroundColor = '#c00000' //Red background for late fall
     break
   case 11: //December
