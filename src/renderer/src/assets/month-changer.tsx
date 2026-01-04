@@ -1,7 +1,7 @@
 const currentDate = new Date()
 const currentMonth = currentDate.getMonth()
 const getBody = document.getElementById('lanky-tracker')
-let isDST = 0
+let isDST = false //DST changer. It pisses me off that I have to do this manually, but implementing the damn API's needed to do it automatically would've been even harder!
 switch (currentMonth) {
   case 0: //January
     getBody!.style.backgroundColor = '#ffffff' //Makes the background white, because January is the dead of winter!
@@ -9,11 +9,12 @@ switch (currentMonth) {
   case 1: //February
     getBody!.style.backgroundColor = '#ff80ff' //Pink background, for Valentine's Day
     break
-  case 2 && isDST === 0: //March, outside of DST
-    getBody!.style.backgroundColor = '#00c000' //Green background, for the coming of spring.
-    break
-  case 2 && isDST === 1: //March, in DST
-    getBody!.style.backgroundColor = '#004000' //Green background for St. Patrick's Day and the coming of spring
+  case 2: //March, outside of DST
+    if (!isDST) {
+      getBody!.style.backgroundColor = '#00c000' //Green background, for the coming of spring.
+    } else {
+      getBody!.style.backgroundColor = '#004000' //Green background for St. Patrick's Day and the coming of spring
+    }
     break
   case 3: //April
     getBody!.style.backgroundImage = 'linear-gradient(135deg, #004040, #404000, #400020)' //Easter egg background.
@@ -38,11 +39,12 @@ switch (currentMonth) {
     getBody!.style.backgroundImage = 'linear-gradient(135deg, #000000, #400000, #000000)'
     getBody!.style.color = '#ff8000' //Halloween theme
     break
-  case 10 && isDST === 1: //November, in DST
-    getBody!.style.backgroundColor = '#400000' //Red background for late fall
-    break
-  case 10 && isDST === 0: //November, outside of DST
-    getBody!.style.backgroundColor = '#c00000' //Red background for late fall
+  case 10: //November, in DST
+    if (isDST) {
+      getBody!.style.backgroundColor = '#400000' //Red background for late fall
+    } else {
+      getBody!.style.backgroundColor = '#c00000' //Red background for late fall
+    }
     break
   case 11: //December
     getBody!.style.backgroundImage = 'linear-gradient(135deg, #00c000, #ffffff, #c00000)' //Christmas background! :D
