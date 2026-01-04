@@ -357,14 +357,45 @@ switch (currentMonth) {
     getBody.style.backgroundColor = "#ff80ff";
     break;
   case 2:
-    getBody.style.backgroundColor = "#00c000";
+    {
+      getBody.style.backgroundColor = "#00c000";
+    }
+    break;
+  case 3:
+    getBody.style.backgroundImage = "linear-gradient(135deg, #004040, #404000, #400020)";
+    break;
+  case 4:
+    getBody.style.backgroundColor = "#404040";
+    break;
+  case 5:
+    getBody.style.backgroundColor = "#002040";
+    break;
+  case 6:
+    getBody.style.backgroundColor = "#404000";
+    break;
+  case 7:
+    getBody.style.background = "#000028 url(./smas-smb3-doomship-bg.png) repeat-x bottom fixed";
+    getBody.style.color = "#ffff00";
+    break;
+  case 8:
+    getBody.style.backgroundColor = "#402000";
+    break;
+  case 9:
+    getBody.style.backgroundImage = "linear-gradient(135deg, #000000, #400000, #000000)";
+    getBody.style.color = "#ff8000";
     break;
   case 10:
-    getBody.style.backgroundColor = "#c00000";
+    {
+      getBody.style.backgroundColor = "#c00000";
+    }
     break;
   case 11:
     getBody.style.backgroundImage = "linear-gradient(135deg, #00c000, #ffffff, #c00000)";
     break;
+}
+const currentDay = currentDate.getDate();
+if (currentMonth === 3 && currentDay === 1) {
+  getBody.style.transform = "rotate(180deg)";
 }
 var client = {};
 var reactDom = { exports: {} };
