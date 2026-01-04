@@ -1,5 +1,5 @@
 import './assets/main.css'
-import './assets/month-changer'
+import './assets/month-changer.tsx'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
