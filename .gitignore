@@ -137,5 +137,3 @@ dist
 
 # Starting December 12, 2025, I began to re-implement shuffled Battle Arenas, Melon Crates, and Dirt Patches. This was extremely complex due to the DK64 Randomizer's own documentation lumping all three and Bananaports in one wiki article, at https://dev.dk64randomizer.com/wiki/index.html?title=CustomLocationsMiscellaneous, and required me to create "templates" that would be copy-pasta'd into their respective spots and edited to account for anything in the "Banned Types" column. This list item excludes those templates.
 shuffle-template.tsx
-
-*(DST).tsx

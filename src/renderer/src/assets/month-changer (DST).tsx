@@ -1,4 +1,4 @@
-const currentDate = new Date()
+/*const currentDate = new Date()
 const currentMonth = currentDate.getMonth()
 const getBody = document.getElementById('lanky-tracker')
 switch (currentMonth) {
@@ -31,4 +31,4 @@ switch (currentMonth) {
   case 10: //November, in DST
     getBody.style.backgroundColor = '#400000' //Red background for late fall
     break
-} //See the non-DST version of this file for the other months.
+} //See the non-DST version of this file for the other months.*/
