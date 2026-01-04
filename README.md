@@ -9,6 +9,7 @@ The instructions on how to use this thing can be found in "instructions.html".
 As with the original, this tracker was written in JavaScript, primarily with an [electron-vite](https://electron-vite.org/) setup in addition to Facebook/the Meta Group's [React](https://reactjs.org/) and Microsoft's [TypeScript](https://www.typescriptlang.org/). Obviously, you need JavaScript in order to use it.
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
+- Recolor the pad and barrel icons to match the "color-coded Kong Pads/Barrels" option in the Randomizer.
 - The "Water is Lava" setting currently doesn't turn every check yellow that should be affected by it. For example, did you know that the little kiddy pools surrounding the Dungeon's entrance in Castle also hurt you when you make a "Water is Lava" seed? Will eventually fix this.
 - Checks affected by the "Angry Caves" setting don't turn red when it's on and you don't have enough Bananas to enter Crystal Caves.
 - Right now, the B. Locker barriers available in the tracker can only accept bananas, so if you're playing a "Chaos B. Lockers" seed (where he often requires things other than bananas so that you can get into the level), you're out of luck. :(
