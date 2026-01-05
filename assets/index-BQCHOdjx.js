@@ -349,6 +349,7 @@ var jsxRuntimeExports = jsxRuntime.exports;
 const currentDate = /* @__PURE__ */ new Date();
 const currentMonth = currentDate.getMonth();
 const getBody = document.getElementById("lanky-tracker");
+const header = document.getElementById("header");
 switch (currentMonth) {
   case 0:
     getBody.style.backgroundColor = "#ffffff";
@@ -374,7 +375,7 @@ switch (currentMonth) {
     getBody.style.backgroundColor = "#404000";
     break;
   case 7:
-    getBody.style.background = "#000028 url(./smas-smb3-doomship-bg.png) repeat-x bottom fixed";
+    getBody.style.background = "#000028 url(./src/assets/images/smas-smb3-doomship-bg.png) repeat-x bottom fixed";
     getBody.style.color = "#ffff00";
     break;
   case 8:
@@ -383,6 +384,10 @@ switch (currentMonth) {
   case 9:
     getBody.style.backgroundImage = "linear-gradient(135deg, #000000, #400000, #000000)";
     getBody.style.color = "#ff8000";
+    getBody.style.fontFamily = "Croobie";
+    header.style.backgroundColor = "#ff0000";
+    header.querySelector("h1").style.fontFamily = "Ransom";
+    header.querySelector("h2").style.fontFamily = "Ransom";
     break;
   case 10:
     {
