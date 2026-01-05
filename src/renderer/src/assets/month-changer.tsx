@@ -41,8 +41,8 @@ switch (currentMonth) {
     getBody!.style.color = '#ff8000'
     getBody!.style.fontFamily = 'Croobie'
     header!.style.backgroundColor = '#ff0000'
-    header!.querySelector("h1").style.fontFamily = 'Ransom'
-    header!.querySelector("h2").style.fontFamily = 'Ransom' //A Halloween theme. Get the fonts yourself. (I might make this use @font-face some other time.)
+    header!.querySelector("h1")!.style.fontFamily = 'Ransom'
+    header!.querySelector("h2")!.style.fontFamily = 'Ransom' //A Halloween theme. Get the fonts yourself. (I might make this use @font-face some other time.)
     //I wanted to change the font of text such as "Moves, Kongs, and Major Collectibles", too, but something about this script and/or how JavaScript and CSS interact with each other was being a motherfucking goddamn idiot and not letting me do it. If you know the solution, help me!
     break
   case 10: //November
