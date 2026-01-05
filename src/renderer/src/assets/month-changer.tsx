@@ -1,5 +1,5 @@
 const currentDate = new Date()
-const currentMonth = currentDate.getMonth()
+export const currentMonth = currentDate.getMonth()
 const getBody = document.getElementById('lanky-tracker')
 const header = document.getElementById('header')
 let isDST = false //DST changer. It pisses me off that I have to do this manually, but implementing the damn API's needed to do it automatically would've been even harder!

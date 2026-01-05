@@ -5,12 +5,14 @@ import Ending from './components/settings/Ending'
 import LevelTable from './components/settings/LevelTable'
 import RuntimeSettings from './components/settings/RuntimeSettings'
 import SwitchsanitySelector from './components/settings/Switchsanity'
+import { currentMonth } from './assets/month-changer'
 
 const App = (): JSX.Element => {
+const isItOctober = currentMonth === 9 ? 'font-changer' : ''
   return (
     <>
       <main>
-        <article>
+        <article className={isItOctober}>
           <MoveTable />
           <LevelTable />
           <Bosses />
