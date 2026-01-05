@@ -1,6 +1,7 @@
 const currentDate = new Date()
 const currentMonth = currentDate.getMonth()
 const getBody = document.getElementById('lanky-tracker')
+const header = document.getElementById('header')
 let isDST = false //DST changer. It pisses me off that I have to do this manually, but implementing the damn API's needed to do it automatically would've been even harder!
 switch (currentMonth) {
   case 0: //January
@@ -29,7 +30,7 @@ switch (currentMonth) {
     getBody!.style.backgroundColor = '#404000' //Yellow background for summer
     break
   case 7: //August
-    getBody!.style.background = '#000028 url(./smas-smb3-doomship-bg.png) repeat-x bottom fixed'
+    getBody!.style.background = '#000028 url(./src/assets/images/smas-smb3-doomship-bg.png) repeat-x bottom fixed'
     getBody!.style.color = '#ffff00' //Stormy theme, also for summer
     break
   case 8: //September
@@ -37,9 +38,14 @@ switch (currentMonth) {
     break
   case 9: //October
     getBody!.style.backgroundImage = 'linear-gradient(135deg, #000000, #400000, #000000)'
-    getBody!.style.color = '#ff8000' //Halloween theme
+    getBody!.style.color = '#ff8000'
+    getBody!.style.fontFamily = 'Croobie'
+    header!.style.backgroundColor = '#ff0000'
+    header!.querySelector("h1").style.fontFamily = 'Ransom'
+    header!.querySelector("h2").style.fontFamily = 'Ransom' //A Halloween theme. Get the fonts yourself. (I might make this use @font-face some other time.)
+    //I wanted to change the font of text such as "Moves, Kongs, and Major Collectibles", too, but something about this script and/or how JavaScript and CSS interact with each other was being a motherfucking goddamn idiot and not letting me do it. If you know the solution, help me!
     break
-  case 10: //November, in DST
+  case 10: //November
     if (isDST) {
       getBody!.style.backgroundColor = '#400000' //Red background for late fall
     } else {
