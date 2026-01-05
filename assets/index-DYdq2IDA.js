@@ -44613,8 +44613,9 @@ const SwitchsanitySelector = () => {
   ] });
 };
 const App = () => {
+  const isItOctober = currentMonth === 9 ? "font-changer" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("article", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("article", { className: isItOctober, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(MoveTable, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LevelTable, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Bosses, {}),
