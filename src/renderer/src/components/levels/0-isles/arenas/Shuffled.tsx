@@ -463,13 +463,13 @@ const jetbarrelExists = useIslesRocket()
         id={10066}
         name="Shuffled Battle Arena: On the mountain next to Cranky's"
         region="DK Island"
-        canGetLogic={hasClimbing}
+        canGetLogic={isBreathing && hasClimbing}
       />
       <IslesCheck
         id={10067}
         name="Shuffled Battle Arena: On the Treehouse Area's rear hill"
         region="DK Island"
-        canGetLogic={hasClimbing}
+        canGetLogic={isBreathing && hasClimbing}
       />
       <IslesCheck
         id={10068}
@@ -507,7 +507,7 @@ const jetbarrelExists = useIslesRocket()
         id={10074}
         name="Shuffled Battle Arena: Inside the Treehouse itself"
         region="DK Island"
-        canGetLogic={hasClimbing}
+        canGetLogic={isBreathing && hasClimbing}
       />
       <IslesCheck
         id={10075}
