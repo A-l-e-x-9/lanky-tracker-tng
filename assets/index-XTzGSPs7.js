@@ -39680,8 +39680,8 @@ const LibraryEnemies = () => {
         id: 7357,
         name: "Library Entrance Enemy Left 0",
         region: "Various Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && bat.in,
-        canGetBreak: inStage && dk2 && canSlam && bat.out
+        canGetLogic: inStage.in && dk2 && canSlam && bat.in,
+        canGetBreak: inStage.out && dk2 && canSlam && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -39690,8 +39690,8 @@ const LibraryEnemies = () => {
         id: 7358,
         name: "Library Entrance Enemy Left 1",
         region: "Various Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && bat.in,
-        canGetBreak: inStage && dk2 && canSlam && bat.out
+        canGetLogic: inStage.in && dk2 && canSlam && bat.in,
+        canGetBreak: inStage.out && dk2 && canSlam && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -39700,8 +39700,8 @@ const LibraryEnemies = () => {
         id: 7359,
         name: "Library Entrance Enemy Center",
         region: "Various Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && bat.in,
-        canGetBreak: inStage && dk2 && canSlam && bat.out
+        canGetLogic: inStage.in && dk2 && canSlam && bat.in,
+        canGetBreak: inStage.out && dk2 && canSlam && bat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -39710,8 +39710,8 @@ const LibraryEnemies = () => {
         id: 7360,
         name: "Library Entrance Enemy Right",
         region: "Various Castle Rooms",
-        canGetLogic: inStage && dk2 && canSlam && bat.in,
-        canGetBreak: inStage && dk2 && canSlam && bat.out
+        canGetLogic: inStage.in && dk2 && canSlam && bat.in,
+        canGetBreak: inStage.out && dk2 && canSlam && bat.out
       }
     )
   ] });
