@@ -15,29 +15,29 @@ const LibraryEnemies: React.FC = () => {
         id={7357}
         name="Library Entrance Enemy Left 0"
         region="Various Castle Rooms"
-        canGetLogic={inStage && dk && canSlam && bat.in}
-        canGetBreak={inStage && dk && canSlam && bat.out}
+        canGetLogic={inStage.in && dk && canSlam && bat.in}
+        canGetBreak={inStage.out && dk && canSlam && bat.out}
       />
       <CastleCheck
         id={7358}
         name="Library Entrance Enemy Left 1"
         region="Various Castle Rooms"
-        canGetLogic={inStage && dk && canSlam && bat.in}
-        canGetBreak={inStage && dk && canSlam && bat.out}
+        canGetLogic={inStage.in && dk && canSlam && bat.in}
+        canGetBreak={inStage.out && dk && canSlam && bat.out}
       />
       <CastleCheck
         id={7359}
         name="Library Entrance Enemy Center"
         region="Various Castle Rooms"
-        canGetLogic={inStage && dk && canSlam && bat.in}
-        canGetBreak={inStage && dk && canSlam && bat.out}
+        canGetLogic={inStage.in && dk && canSlam && bat.in}
+        canGetBreak={inStage.out && dk && canSlam && bat.out}
       />
       <CastleCheck
         id={7360}
         name="Library Entrance Enemy Right"
         region="Various Castle Rooms"
-        canGetLogic={inStage && dk && canSlam && bat.in}
-        canGetBreak={inStage && dk && canSlam && bat.out}
+        canGetLogic={inStage.in && dk && canSlam && bat.in}
+        canGetBreak={inStage.out && dk && canSlam && bat.out}
       />
     </DropPool>
   )

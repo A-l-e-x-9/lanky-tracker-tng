@@ -10,7 +10,7 @@ switch (currentMonth) {
   case 1: //February
     getBody!.style.backgroundColor = '#ff80ff' //Pink background, for Valentine's Day
     break
-  case 2: //March, outside of DST
+  case 2: //March
     if (!isDST) {
       getBody!.style.backgroundColor = '#00c000' //Green background, for the coming of spring.
     } else {
@@ -43,7 +43,6 @@ switch (currentMonth) {
     header!.style.backgroundColor = '#ff0000'
     header!.querySelector("h1")!.style.fontFamily = 'Ransom'
     header!.querySelector("h2")!.style.fontFamily = 'Ransom' //A Halloween theme. Get the fonts yourself. (I might make this use @font-face some other time.)
-    //I wanted to change the font of text such as "Moves, Kongs, and Major Collectibles", too, but something about this script and/or how JavaScript and CSS interact with each other was being a motherfucking goddamn idiot and not letting me do it. If you know the solution, help me!
     break
   case 10: //November
     if (isDST) {
