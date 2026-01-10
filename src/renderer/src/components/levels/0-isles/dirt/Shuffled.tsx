@@ -93,7 +93,7 @@ const hasJetbarrel = useRocket()
         id={30006}
         name="Shuffled Dirt Patch: Vanilla Location 5 (at the Banana Hoard)"
         region="DK Island"
-        canGetLogic={canDoIslesDirt5}
+        canGetLogic={isBreathing && canDoIslesDirt5}
       />
       <IslesCheck
         id={30007}
