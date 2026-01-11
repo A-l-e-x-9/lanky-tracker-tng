@@ -10360,10 +10360,7 @@ const initialSettings = {
     helmItem1: 6,
     helmItemNum1: 4,
     helmItem2: 3,
-    helmItemNum2: 2,
-    allBosses: false,
-    allBonuses: false,
-    killTheWabbit: false
+    helmItemNum2: 2
   }
 };
 const settingSlice = (set) => {
@@ -10460,6 +10457,49 @@ const uiSlice = (set) => {
     })
   };
 };
+const initialWinCon = {
+  winCondition: {
+    keys: true,
+    key8: false,
+    key3And8: false,
+    kremlingKapture: false,
+    takeItToTheFridge: false,
+    kRoolChallenge: false,
+    killTheWabbit: false,
+    goldBananas: false,
+    blueprints: false,
+    companyCoins: false,
+    bananaMedals: false,
+    crowns: false,
+    fairies: false,
+    rainbowCoins: false,
+    theBean: false,
+    pearls: false,
+    bosses: false,
+    bonuses: false,
+    winConItemCount: 0
+  }
+};
+const winConSlice = (set) => {
+  donkResetFns.add(() => set(initialWinCon));
+  return {
+    ...initialWinCon,
+    setWinCondition: (id2, val) => {
+      set((state) => {
+        const target = {};
+        target[id2] = val;
+        state = {
+          ...state,
+          winCondition: {
+            ...state.winCondition,
+            ...target
+          }
+        };
+        return state;
+      });
+    }
+  };
+};
 const initializer = (...d) => ({
   ...coreSlice(...d),
   ...settingSlice(...d),
@@ -10474,7 +10514,8 @@ const initializer = (...d) => ({
   ...fastCheckSlice(...d),
   ...endingSlice(...d),
   ...roolSlice(...d),
-  ...uiSlice(...d)
+  ...uiSlice(...d),
+  ...winConSlice(...d)
 });
 const useDonkStore = create()(
   persist(initializer, {
@@ -12173,8 +12214,8 @@ const ItemCheck = (props) => {
   const hoardValues = Object.values(hoard);
   const isFoolish = foolishValues.some((f2) => f2 === region);
   const isHoard = hoardValues.some((f2) => f2 === region);
-  const isBossCheck = useDonkStore(useShallow((state) => state.settings.allBosses));
-  const isKillTheWabbit = useDonkStore(useShallow((state) => state.settings.killTheWabbit));
+  const isBossCheck = useDonkStore(useShallow((state) => state.winCondition.bosses));
+  const isKillTheWabbit = useDonkStore(useShallow((state) => state.winCondition.killTheWabbit));
   if (canGetBreak === void 0) {
     canGetBreak = canGetLogic;
   }
@@ -17577,8 +17618,8 @@ const JapesMainEnemies = () => {
         id: 1316,
         name: "Enemy Near Painting 2",
         region: "Japes Hillside",
-        canGetLogic: inStage.in && anyKong,
-        canGetBreak: inStage.out && anyKong
+        canGetLogic: inStage.in && anyKong && zinger.in,
+        canGetBreak: inStage.out && anyKong && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -42480,7 +42521,7 @@ const dkBarrelIcon = "" + new URL("dkbarrel-DsT_eVjN.png", import.meta.url).href
 const dkPadIcon = "" + new URL("dkpad-BclD2lWG.png", import.meta.url).href;
 const fairyIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEjUExURf//if/6iPWnJf7DD9uviP7ME9uxi+SteO20VP/UG//1iOeXJuCiFdGFMuqoVpNsKpRzDfr2SeaJOOmxaWteU4d9cfS6dObk2ui2OP/2d7CRcMarnP/XmP//08WdZtaQFP/2arubidx5M//Ed//ylP/pbP/LON+QT9mYWu2paf3cff/yiMibeN6qOvDLN+KTPPq7GfrmD//8D/ajD//rEM6dQ/3Sfo1jRaRWG8ltGe6REP2xF8OJJsOIRv3Vctu2duq1GtOWKdeJZPDKgP/yD9h8F/+3SdyHW+OZYs16UeijGP2qZ++PXv3VhMy2EXFFK+y/dNmoZfLMD/HqD4VQMv/6Gv/kYeeEHvzGLv7zJP2lWP7fEPebJ//lGMqLGP7CJAAAAEwJit0AAABhdFJOU////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wCugG8xAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACwklEQVRoQ+2Ye3sZQRSHQ4oKQkTdmgtBGoqiVEUu7kFKNJG4lez3/xT9xZy4VdfStEkz+/7hcebMnvfZZ2Z2D2vCP0CWLMX/J1kbQsEEsmQGVh5QPI0sYaCqQqFg5RmUmEaWMFD1ySRKpXJ9fZ2CISg9hur/xgD+WIJbIcULlbwZQgEkKpWKgiFkGPH3JaOboeQvPKtErVZDotFo3gKtVos1wSfLbWxsUPkRIgawumRsYnfCcnN5VgnQ6XR6vd4ANjc3jUajyWTa2tpCOao9A101j9UlswtDV83jWSVms3l7e9tisbwDVqvVZrMhsNvtDocDa8KWZcxqa/KCJCPTahKALex0Ot+DnZ2d3d3dvb29/f19l8vFJA+QQnRBABcS4Ha7D4DH4/F6vVgZn893eHhIBiDFAHiRgA/g6OjI7/cHAoGPj5AE0DRRZMkImibKQgnW3h0MBkOhUDgcxjNlSkJzFsGR5BOIRCLRaDQWi+GcwEAZ6XAk+QzQD8XjcXgSicSXIZSUCC+SZDL5FaRSqePj43Q6fXJycnp6enZ2RnmJcCE5Pz/HY5ECJslkMtlsFr3Schv5lUtyuVw+nx8bAFrvQqGAQ18sFkulEt4tlJDCK5dcXFyUy2UKQKVSqVarMADs4svLSzRJlJPCK5dM8g3UajXsXDwg6/X61dUVmpdGo/Ed0JxFyJInlGAHQFDDNzyLr6+vb25uIGk2m/jFzWZIgiPJ1Bv99vb27u5uuUMCeJEAbNZGq9Vqt9ss7nQ6k1pJcCTBmz09+VcqlgVHvdvtUiwFjiRagHdVr9ejAUEwGAxms/kHoIFFcCRBL6SHpN/v04AgoCsaDAboJjM0sAjOJOgd7+/vaWAIBDDHsL1pQBSOJGgdq5FIhKJHSDK5sUWQJU8rmQ/MD5LJ0yMC9xKdTof+O0rRIriXLIcsWQJB+An1CY4/u0zrPQAAAABJRU5ErkJggg==";
 const filmWaveBoth = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwBQTFRFdqV88RMQ1unZNi4IhbSLc1cUw93GeWkXZJNqkbyX1I8gWEsR+DEk9rQlVoRcRDkNfayC+Phn+vq2WothNTIi+Ph3zBAKsaMukFEW+PaEi7eRqZFI+PdZhK2IVVE0+Olr9uh6dGQp18on9+lI2cBR9rYyoZcY9uc10TESl8GdtK4e9sQ3lI1xQ2pIUnxX+I5I5/Dpy3kn9ncmw7+o+EQnhpiI+CUbpcmqyeDMNlc6+HJM+PYp+Ntjc5x5THZR2oIgPmNDlIgXtsu4u7R06aIk+Kgltg0InMSh95YoYoxn9+NTa5lxu9W+5to5vLiL+Pk7+/qXgnRF10sYv9rDhWIUpWMZ7EYa9Nw7+fkyxLUj+fpO9tRC9shG6ZUe+FdPvCsQ9lIm99lUqcutZlEuSFZKhGwvsdG1ttO6V2ZYpZog58kr9spZz+TSRnBMl2QV3JZO6Zwj1blXx9S7q82w92km9rdA95oyGiYasUoUo7uj92o3x6hwl4E1+Dgjn8al6cg0sG4hw60w0Z4R+Jlj961F8+ImfWtS9qkz6bMh9NQx17cl+Cog+PhD5Yoh+EU6x3Ud7OMoAgICyZ0quHkb7OdE9sxj/PQygXkVb6N2xapHoYk3rdCx6uU59sEpp3sY7+hWJz8ppJyC6LYzqpE2+ogpGxsL58xj3sJZ+KZZsZk897ZW3pwivIA+4tgv///d+PRGdol4MU00+LRljqFaYHJj9t9v94c0Ex4U79Ro0oY2vaNBo8eoLEgvQz0qHzIhtoYfRkMQ7DIaWWo+kqmV7GsjocmnxaxU9fJEsMSynxgJKCEHvJhfCg8K2blO9y4dsWgan7Oh8S4V+SkW9h0XO14/8R8S910wDxgQt9e8+PAW7+9/0pcx1F8dUHJQlo5cnKZm46wkYV4TfYw7nm8W3dBG5tFY35Aw2s91093L8VsfjqGR6uma9dghzMi/0s7IbYJPx4gbX4JjbV0+9n0wnl0cfkER+Pg39+427+RpybNA76BGybwp0asx+O9O+P1HAAAAav3pXAAAAQB0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AFP3ByUAAAlSSURBVHja3NdrQBNXFgDgAYYwYyAZGkAYCeIDccRMC0IeakLoChiDrRoUFagYIQFNrBogvhK1RalSH/FRooiNuvHtKl0Ra2KkrXQ1RFCJhrXiY+260seuCmhri+ydRKm6u4Xaf3vzA37M/eace889MwN1/c4B/f8DfgP6/Q5g6cn9u/d/OfjktlcEtu0/uXX+nj175m89/ypA+e6t58/v3VMdGRlZfWLw4N8IMH2T9m/de2J05NWwsAkTJoRFVu/d31vAl2kOstPLd5/ceyKSmv0aNSaEVQ9eynSZewHQ6T7moCC637aT86up2X+ixmvffvuPLyeesmuDgnoEaoO04LIg5qwHq64v+cNbI0Z8/8/vR+wcfn3ig4hTYNDpPQE+QUGn3D/wNyLiwapVw3cOXxUB/o148CAvL6/cr0eASaffGvBs5C3tV79kSX2/bf3q96/4+ccVBeXlPQK19Ft+SUlDCgr69u274sfBf/8h8uoP48aPP5yRMfCngQMLknoCmLW3bpUXDANj2k8Dv/5688fBwWGB049sj374cPvhDRuGDekFUJ40xDP/8Pjtmz8ODLsaOP0vmx89nDp16qiVw5J6ToECQAjTBm7YHv3Rh+GBVAQfvv02AEaNWlnQG8AvqaCACmB7dPSjI+HhHuDhQzD/r98VdPUugmHT1vx0eGV0dPSR6YHBwd3AqO96rkT3GhSsWLNmNhiro6kUAgHw0J3BRyt39BwB85bf7dOnN66ZvWz27GWeCMKpNQBrOPVRTK+A9NDQhddi75Tu2hWT0RnuTuHJkyfAiC6Nm8zsFXAuJSRk6JTCtuKsce5d6Bw0LqPzyJOi+Ib2WlcvgA4wP8TL6/LF+MVF/UEhVZccjzuedaSz+FJ8e63Z3EM/YN7y7UhJoQAv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";
-const filmWaveLeft = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwBQTFRFR0dG1NTUhXhIVkwU0I8i+DEk97QljIyM+PhnfX19+vq2lJSU+Ph3zBAKrqIsa2trk1IX+PaEgoKCqZFN2tra+Phbc3NzZGRjODg4lohpd2Qt9hsW+Opq9uh62Msn9+hHW1tb2L9Q9bYx4+PjnZMbRToM9uc10TITw7+jtK4e9sQ3VU0v+I5IgWxS9ncmy3go+UUmKCcm+CUboZeC+HJMurq6+PYp+NtjUFBQtra22YIhlIkV66IkdmUXwcHBtJJz+KgltgwI95Yo9eJScU0l5to5+Pk8+/qX1EQWoaGhqampxsbGvb28ra2th2QVpGMZzs7O7EYa9dw6+fkyxLUj+ftQnp6esmwl9tNC9sdG65Ue+FdPvikP91Im99lUFhYWmJiYwq5up5wf58kr9spZpKSkmGIW6pwj1bhYsbGx92kmzaF0AgIC1pZT9rdA95oysUoU92o3ycnJl4Qq+Dgj6cg008i8wawx0Z4R+JljPDYm961F8+Im9qkz6bMh9NQx1Lki+Cog+PhD44wf+EU6yXUe7OMoyZ0quXkc7OdE9sxj/PQyiHwYeVoVxapHn4c56uU59sEpp3wa8OtZOjMI57kzNyYGfHAYKycIqZI1GxoL+4soRj4q5xMPXlcT58xj3sJY+KZZsZk8YEUJmV8r97ZW350j4tgv///Y+PRG7xgQ+LRlOTIb9t9v94c079RowYE+0czGvaNBjm41kZCPtoYfe00T7DIaZ1tBJh4H8gsO7GsjxaxU9fJEoRgJ2blOdXoL9y4ddF0KsGgaW087///luLi3MysPY14V9BIQ8S4V+SkX+CMZICAf8CAS910wR0QP+P1Hh4eG2tXQeXl43dBG1V0c5tFY35Aw2s91MC8u8Vsf934v6umat66h5awgx4gb9dghjUAS7+RpDg4N+Pg47+9/9+42ybNAm24V76BGX2cNoJqTm5uby74p0asx4a8v+O9O+PhNqXcN+CcT0pcxbz4QtLSzzMi/7g8Opqam+PAWb0kMvLiEaGoOAAAA8NbF1wAAAQB0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AFP3ByUAAAllSURBVHja3NdrWBNXGgDgmUacTAMOhDATRWAEwYoFCTo4ARm8orlh1BqRgolocINRNI1rq9Ka4oVaUWkRlKV4v1FQq7ErtuqiNIominHqupFubRtrtcZr13RZ+9AzAa3a3ULtvz2/eMh873zn9p0zUNsfbND/P1CRGvwHgNf2b9kQ/Gmf/WueE1izZf/qYxs3buyz+tjzAKs2rD52bNPGurCwsLq9m/r8TiD6eMqG1Zv21tUFBQWNGTMmKKxu05auAiXRDkn51ooN+zftDeOiX+TamKC6Pq8trKzsAsDjnax31fJS1+z/Ux0Xveuzz3btevGLL/7x6YEqh0RS2ynQ7HI4JK7aqgG94oKn/fTTS8yPH/340qCePV84RENVC6t41Z0B5bUL21utq6qx8VBcXM9BPeMawZ+Nh3r1OtCroqIzoCyaV32q16N2YE3wrGnT0oLXBG/ZsuD2dwtyV3UONPOqU1P69u2b26NHjwXf9fn7N2Fh34wcPXr0hAnht8LDc1M6B6q/X5XbH7RXbt36/PN33ucHBfHPH1kb8+7VtTuXL+/ft3Pg+7+l9PXFh+8cvRYA337Ln3TknWtXJ06cmLS4f0rXAJDCK+FrwWt3h/D9g/j33k6/CoCkpMW5q7rQhQoOAAksj4m5diQk5DGQlPSfr3LbOgdOVaTk9r+95NbOxTExMbvv8f39HwNJX7V1BViVkrtgyZLw6dOnvxWzexLfnw+A9h68u/i9zoHoUxXXiw+uuDN9/vTp832Af8i99PR0MIYTr8V2DpRHV2cEBs69OPBSYeS6+RPuhnDApPPnz7+dnh5TGD8uunPgVGrg0eEB2f3GX24pmDLSNwt3I0ZOuHvv/JyEhrnN2i4AXw8PCAj4oObsmYR5c3r7+wfVLdoTvydz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";
+const fairyCamIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwBQTFRFR0dG1NTUhXhIVkwU0I8i+DEk97QljIyM+PhnfX19+vq2lJSU+Ph3zBAKrqIsa2trk1IX+PaEgoKCqZFN2tra+Phbc3NzZGRjODg4lohpd2Qt9hsW+Opq9uh62Msn9+hHW1tb2L9Q9bYx4+PjnZMbRToM9uc10TITw7+jtK4e9sQ3VU0v+I5IgWxS9ncmy3go+UUmKCcm+CUboZeC+HJMurq6+PYp+NtjUFBQtra22YIhlIkV66IkdmUXwcHBtJJz+KgltgwI95Yo9eJScU0l5to5+Pk8+/qX1EQWoaGhqampxsbGvb28ra2th2QVpGMZzs7O7EYa9dw6+fkyxLUj+ftQnp6esmwl9tNC9sdG65Ue+FdPvikP91Im99lUFhYWmJiYwq5up5wf58kr9spZpKSkmGIW6pwj1bhYsbGx92kmzaF0AgIC1pZT9rdA95oysUoU92o3ycnJl4Qq+Dgj6cg008i8wawx0Z4R+JljPDYm961F8+Im9qkz6bMh9NQx1Lki+Cog+PhD44wf+EU6yXUe7OMoyZ0quXkc7OdE9sxj/PQyiHwYeVoVxapHn4c56uU59sEpp3wa8OtZOjMI57kzNyYGfHAYKycIqZI1GxoL+4soRj4q5xMPXlcT58xj3sJY+KZZsZk8YEUJmV8r97ZW350j4tgv///Y+PRG7xgQ+LRlOTIb9t9v94c079RowYE+0czGvaNBjm41kZCPtoYfe00T7DIaZ1tBJh4H8gsO7GsjxaxU9fJEoRgJ2blOdXoL9y4ddF0KsGgaW087///luLi3MysPY14V9BIQ8S4V+SkX+CMZICAf8CAS910wR0QP+P1Hh4eG2tXQeXl43dBG1V0c5tFY35Aw2s91MC8u8Vsf934v6umat66h5awgx4gb9dghjUAS7+RpDg4N+Pg47+9/9+42ybNAm24V76BGX2cNoJqTm5uby74p0asx4a8v+O9O+PhNqXcN+CcT0pcxbz4QtLSzzMi/7g8Opqam+PAWb0kMvLiEaGoOAAAA8NbF1wAAAQB0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AFP3ByUAAAllSURBVHja3NdrWBNXGgDgmUacTAMOhDATRWAEwYoFCTo4ARm8orlh1BqRgolocINRNI1rq9Ka4oVaUWkRlKV4v1FQq7ErtuqiNIominHqupFubRtrtcZr13RZ+9AzAa3a3ULtvz2/eMh873zn9p0zUNsfbND/P1CRGvwHgNf2b9kQ/Gmf/WueE1izZf/qYxs3buyz+tjzAKs2rD52bNPGurCwsLq9m/r8TiD6eMqG1Zv21tUFBQWNGTMmKKxu05auAiXRDkn51ooN+zftDeOiX+TamKC6Pq8trKzsAsDjnax31fJS1+z/Ux0Xveuzz3btevGLL/7x6YEqh0RS2ynQ7HI4JK7aqgG94oKn/fTTS8yPH/340qCePV84RENVC6t41Z0B5bUL21utq6qx8VBcXM9BPeMawZ+Nh3r1OtCroqIzoCyaV32q16N2YE3wrGnT0oLXBG/ZsuD2dwtyV3UONPOqU1P69u2b26NHjwXf9fn7N2Fh34wcPXr0hAnht8LDc1M6B6q/X5XbH7RXbt36/PN33ucHBfHPH1kb8+7VtTuXL+/ft3Pg+7+l9PXFh+8cvRYA337Ln3TknWtXJ06cmLS4f0rXAJDCK+FrwWt3h/D9g/j33k6/CoCkpMW5q7rQhQoOAAksj4m5diQk5DGQlPSfr3LbOgdOVaTk9r+95NbOxTExMbvv8f39HwNJX7V1BViVkrtgyZLw6dOnvxWzexLfnw+A9h68u/i9zoHoUxXXiw+uuDN9/vTp832Af8i99PR0MIYTr8V2DpRHV2cEBs69OPBSYeS6+RPuhnDApPPnz7+dnh5TGD8uunPgVGrg0eEB2f3GX24pmDLSNwt3I0ZOuHvv/JyEhrnN2i4AXw8PCAj4oObsmYR5c3r7+wfVLdoTvydz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";
 const filmWaveRight = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwBQTFRFIzsmsbGxeXl5k76Zqsuu0tLSy+HOXIpioaGhhYWFGhsa0ePUgICAstG2fX19tNO4zeTQYWFhnZ2dMTExmZmZdHR0Tk5OPmJCrM2wcXFxaGlopcipRXFLGCcaPT09NjY2jbSSpLyniYmJlZWVwcHBbJxyOTk5bm5uNUc3QUFBU31Yubm5VYNbSEhIQlBEh5eJRUVFTHVRudW9ocemY41pkbyWAQIBRG1J3t7eVlZWiLWOWlpaXl5ekZGRhK2KPltBTHtTdIZ3wdnElsGcmMGdaqRyvdvBFRUVr9Gzyt7MKEIsKSkpUVFRLS0tq6uryMjIJCQk2uncICAgXZRkjIyMZmZmzc3Nv9TCrKyseaV/xt3JhraMvLy8gayHwd7Ff6+FsM+0frCFpqambZdz8/Pzcp14OFs9aZNuZZhrWmdc0ejUrq6ucJp2dqZ9WoRftLS0NFU4qampxcXFkqeVxMTEY3Rlg7CJ2ODZX4tl4+PjibeQdap8o8aoNlc6vr6+TYBUtra2o6OjUXpWfaaDLEkwHjEgncWiEh0UYJBmQmhHj4+Pn8akVGNWP2VEj5+RcpN2mLudocinWIVeb6F1YG9iUltTj7iVYpJoR2pMncKig5KFqsauU3dYn7SiZZFrZpRsZ5BsCg4KcKZ3Voxdx+LLh7GNtMq3UmxWeZJ8osmneq6Auc28dKN6WopgjLiSdKZ7eap/PGxCg7KJw9zHj7yU7+/vutG9famDYZdpf7OGV3xcgImBa2tre6mBh52Kh7eOssO0O2BAZZZrgpmFQExChbSMaJhvJC4lS0tLYIdlQkZCc6B5MTwyTVhODxcQp8qrt9i7V29amsKfmsSgfayEa4hvkJmR6fHqq9CwkLSUXoBigrOJe5x/RGNISWNNUIRXi5qNWV9akMCWXGteW3Zf2O3bLTgvjaOQV2RYJy8ovdO/p8ysp8+sME40wNPDOVI95e/nwNrDTG9Rv9zDhbiMgKmFd6F8hqiLi7uRjL6Tk7eYVJJct9O7mrCdu9e/AAAAJnG2WwAAAQB0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AFP3ByUAAAmcSURBVHja3Jd7XFPnGceTkEJOCIGTGyQh57QJJB4gNuESGhMUhRnISUIMiQ0aRWOBFsQAImUICEgqF1mtrKhtRaPYVQt1E623WBurGDoFpa6zrZu71c22brOul3UO+p4gVt3W0Pa/PX+ez/t839/7vM/lPaSJH2ik/3+AQU75AQCYSZFxrRKm4HsCvHwmlEFz0iRQxvcBqGVQRgbH6Up0OJoqOZLvCDAjwJ9lIidW5S186KGFC+PIHO50AQhON9ONBi+DVdZIeD9G2EN5TRLY6NFNA4CgFjpuZPsFDIlr4dOP/fjQE08cOvTYwmq7GJZazGY8KMCImy04G2djBg1FwgIhqFpY7epgUrxqOYaiqFQaDEBsHzCjUarw82Ab08r0KhC5XO43qNUGHi8YwGJEEYw3ZRoBxcqRMLgyLoXLZDCYXnVQgBkA/Fob7OVzuVwiD1yORlcli8NhsTqgDsirCQpgIwq1AHhTGJBYwmoui8vLi0u002iVlTQOR8KFgwMwIJzPpVAYVgmLVklurI5zuOxOpwmYkyObjgKexuYFADGHRnOWJTZW5Tlc5DK7qbLSSeN41cFjgPg1NhmFwrSyCECTozqvcRIA/DMEE9M4gkEj4DJB/DgsWjMBqAYK7CYAaKZlBM9Es1Fh0HopTAbUYe3g0MhNgRhMnsDp5GiCAiw4xjNobHyGOMMqzmCVTQEAwWRqtgYH0HEE5CzC08qYkLiDZW9qrKp2NLlcZHJZmZOh9ePTASB0ugXEQm2jSCoT46ryGsmmymY7mWz1o5hRFxSAKVC6jk4HlYcq4A5XdVWeyyqDZRyynYJiflynC9IPcARj0wkJZkKFVuLIy3PCiNRvNbFgtppn1unuQ9wFqERT1yAFAJ0FKDAb2Sjmbc6roqlRVC62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";
 const homeScopeBoth = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwBQTFRFW7qOsTEAS1hm1UcBW7aNliUB9nF0UV1r1BcAoiIAWWx19qQIWGZzWGRx+FQK0crHUaV+xBYC+MwIphMEWWNyRTgw4gwA0ycAg3FndF1pZ2ZlxSUCVEhBp1FFdnBnNSgiVmJwWpyESDAUUaJ9U6aAlBgATltppm9vJQYBpJyWtqCUU5x9U2BtVoR52FQUYlBIZVdRIhYVtCIAcFxUW6yKdCIDJygmjUgz0zICZ0hAgwUAWHF2WXt5NBUUWbKKhSUA4zEAWYJ8lA0CODAngDAgcgcANiIZaTwyWpOBVa2FSDUpYyAASldl0GxshXhwcFFDxwUBWWZzxyUWBwcGVZR81gcAWVdYVKiDTFlnEggHVo17V3t4WaKGWHZ2FBAJWrWMWYl+Q1dlV395Wmd0WLSJVaqEWWRzgmBqRVhmOAcASAYASBAAUAYAYAgAQAgAWAgA+CgAMAYAEBAQUBABcBAA+CAAaAcAaBAAKCAb+DgA8CAA+DAAQBAAW7eOYBAC6BgAeBAAGBgYgBAA8CgAHyAg+BgAWAAA4BgB+EAA8BgAYBgB6CAAWFBJWBABUBgAWBkAOBEBiBgAGRgQ+EgA+EgK3yEFSEA/iBAAZRkR8BAB+FASNjg4t7CqPUA+XLeOcBgDaBgAgBoAwriw+GAOeGNYQC4qoDUEtgwE6BAA+BACQBAOrqigwDsASBgA6CgCgGZZSEhF8DADeBgAyD0ALTAt2N7gWCoiUzoyxDQg+PMQKhAKpZCIoAgAsJOLi2VdQAAA4FAAi4WDZ19gyDAA+F0dmIiA9Pj4tBgUSBwWoDgY5EQElCcfcFw48DgARAgIeGhgqCQY+DgIiJCQwDAAdCgYYAAAoKiohGBQTEQsxMC8eEwJiT5AkU5AqUApyxcTW6aITlZdVU9YeU9BtKigWGVy6OjQWHh4cHAAsEgY6NhIsGAomGJsWnV46GhIWK+ImHBYWY6A+Pio0IBweGBAW7OLqKg4xTMIwDgIZ01UgBAIcUlQWEg00MCAUqeA0NAYAAAA0qeKjAAAAQB0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AFP3ByUAAAh8SURBVHjajJYHXBNpFsBDIBIQEDYhsAsKmCWLGtSARI3LqXBBKSpjBRvqaNzMZDIDaaTTexWQYu8Ne+8rurvuur3vXtm9u5zXvb07726veO6bSQD9MSH3yC8f3+997z/ve23Cefqc8Kb6D28iT9x86lM4z+328jvqOsLC+jobw8x9fVN3Tu47ENbRd4/q7Lx3b+r/AWgwdlCUua6zo87ZZ6Wosyd+9aewA3V1YQbK2tHZOdUnILeGOFVNUda6zroV5jCzwTIweZH5QJjBbBFZgTfLFyCXIIgyfkylxWo2i6oNINMm/7W6zkwdOyo6Vl3dy/cBaCUdDo0Gu41hGEmShJEgdIemLVB0t1coFEqFQrHPRwwaSNJBajAd2GMaEB3WJpMdxwZF0+ojCw0EAY9Xg2hB1OripKRitdq9V4PGVxobPqMBWre1Vu2RYhAg3MZ81kHuZ0ZSo8Fx3KbW4jatTY1rbbDTauHToNH4LKRcEwH2Op0OU2ux97W31cy1cRyDO2nVviuRNOo99mCVLj+UroX1WmncfciHJl0e6QMA5QMOaD13LpVHbt+e5VnTcU3phcgzsaMDCKPJRGJgnASBl5VmRjYNxKYz60tN97fBOm1C06gAk97kwLRaW1thYVLbttK4nOk7ozO3lWblTNv5xiEZve5/I2c0wB4HXTeapPXr1xcmbcuKi5w2bvIhAEXG7h8XKaP3+78aJQyczMweiKBGCYCS8pJy2vUTkyJlMnnm9juTtseVyjNj75xgAO/+jR1wv6xMaTQpjTVKpb5Unnr69Onx4wUZGUeWLr0ieDDh4JG3+F0Rtc763n/NPniQDRBn1JfpLzUbHSYjnbOm1OgrtaL8I7Uig9kqemvxrV5o8BVHKUN1Lx69mDUGSmLP7EyC6Pkz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";
 const homeScopeLeft = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwBQTFRFqBQE2FQUYlBIV1dXcXFxioqKIhYVm5eT5DEAtCIAcFxUbGxsdCIDJygmZ0hAgwUAhiYAU0hA0ycAhHhwxgUBkwwCODAnfX19cgcANSMaeXl5NBUUZFhQSDUpYyAA1QYAYmJiXFxcaDszhoaGBwcGYGBggICAaWlpWlpaEggHg4ODdnZ2fn5+FBAJdHR0Xl5ehISEampqZmZmWFhYiIiIZWVlOAcASAYASBAAUAYAYAgAQAgAiYmJZ2dnWAgA+CgAMAYAEBAQ+CAAKAUAUBABcBAAaAcA+DgAaBAA+DAAKCAb6BgAe3t78BgA+BgAeBAA8CAAQBAAYBACWVlZenp6GBgYZGRk4A0AgBAA8CgAHyAgWAAASDgw4BgBIAYA+EAA8BABYBgBsDAA6CAAiBgAWFBJWBABWBkAOBEBUBgA4CEESEA/+EgKQDgw2EkBOSgg6BAAGRgQ+EgAyD0AyCQAiBAA+FASmCAA6AgAZRkR0BwA2BEBSDAUeGNYwDsAoCMAPUA+mBgA+BACNjg4cBgD0kAAgGZZkCYCmCkCt7Cq+FgMwBgAgHJo0DAASBgAyDAA+GAOwriw6CgCrqig2DQEnjYEQC4q+FAItgwEQBAOaBgAgBoAuDAAxDQgqC4AkBkAwCYEtqCU8DAD0EgA4FAAi0o1UzoydXBrMCgoo52aWCoi+DgIKhAK+F0dpZCIi4WDoAgA2N7gLTAti2VdmBAAQAAAaGBdsJOLeBgAbWtlSEhFtjgAzsjGoBIDiHBl+PMQMCggIAoIoKiotBgUlCgciJCQ9Pj48DgAxCQUSBgQdCgYeEwJYGBkRAgIwDAAmIiAyBgJcFBAWEg0eGhgcFw4TEQsoDgYqCQYYAAAubm5hGBQqCAA9JwI+KwIzBAApFRIxMC8KAgIeHBgSCAc5EQE6NhImHBY+PiocHAA6OjQ0NAY0IBwtKig+NgIoHhwgDAgsEgYwDgIeGBAsGAo0MCAsFhIgBAIpKSkqKg46GhI0HBg+MAIoEhAU1NT2NDIAAAA2YT9qgAAAQB0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AFP3ByUAAAhSSURBVHjajJYFWBvZFoBTICyWplAgaaiEUqCBym5sJpNkBkI8hAiBoAGKU4o7dXd3d3dvt/rW3V3f7j53177uuZOksN9OyDtfvm/m5sz57zn3yAzr8Q9kxaiWoUXZlhuPgwrrB6vdAx0VHTt29DRXrzb09Ixadahn4+qOnnNUc/O5c6P+D0CVvoOiDBXNHRWWHhNFHd7y23+t3lhRsVpDmTqam0cFBUwsJTbnUZSporlikmGHQWO/fujfZzbu0BjsfSbgbQ0GmEgQhG2gq9huMhj68jQgIYd+k1dhoBa3uRfn5VV+GQRQTzqdCgV2DcMwkiQJPUFot4dM5nbXFHG5fC6XuyfIGVSRpJNUYFqwxxQgWqwhPHwX5hdFfZAsVBEEbC8HUYLI5VmenCy53LuWgyZYGqs+RgCl11op90kWCBCuYUHrYOLHelKhwHHcIVfiDqVDjisdsFIq4VelUAQtpIlGAuy1Wi0mV2JvKK/J6bBxHIOYlPLglUjqdT57sEribE9SwvWs+cErkA9FEmdOEACUDzig9MVsPjln9uxxvmsSrjBfnnM7dmQAoTcaSQyMc3JyssLNiWW112OT6Out2lfa4RpyonZEgFFndGJKpaNBJMppaDe3Thi/am1iu3nchJBVb20PR9dNb00YCbDUiepG8dPp06eLHraPay0L+d+h7QAqi910pyz8Aaw3fV02AiAxsR9OUMEHQHZBdoE5cU7tllNzCsI5ibMvPDX7gZmTGHthC32O7/+ZGfCtzcbXG/n6Uj5fZ+ZELV++/L9fsRISdr788j7W89/M2/ncYNPb5RZr5d9Hz5vHBGjV62y603V6p1GPclYbdW9fuTt+Z7lbYzC5nxt7pRIafFIbpcmrxNeOZTwDPrF0dCJB9P8cihkzj//mD8XV9i/LDZTdUEF99N6nmmKrqZwyoYGAr2UE2IjR15MwRcg9BdTRrthXIzYc6O1etKB30YKVK06Pf+dmjLG/ijQu7V2w8yJzFvj9qya/gWnPn4bywxS7Bgc8OR4R1ITHA2nxwE3Ow+kikUdR5K5kBug/in13dNToD6DxlDjJdZeP2bZy28rdWR6PRyR6eBYRUFMSRe7FzABbAr4rqWwc3T0OBddSffRI5/yut1dMf/02Z8nXd1adOn8sJnLDOhvfnRcAcJGsqq/TYlrUyBjXWn2kZf7+NdZtJUtucRZeuHTp0osvbvrw4Lre7nJNAACLhGao06Jp4CASqPIjnZEHD3b8cSHn9SUnZ0fNu3Lv/I0re5Z2cwMBdCySIJz1OC3ERaoppqlp9cYv/nKCs3BJeH9/6/YJx39/4xgrocgSCECQEAMYr29cj5MsqlqOsz7/z/2/vsC5zMkuKOGcLCmRvLCWu6jIGgiwhqwD80a8cf16vJRlt0YYG+b++he/+kkJpyQ7u6Age0o2RzJ2zd1ua4BD1HVV1Wsb0RHgDRhx1Wp5ad3nv/zg1B0AFEyhAVMKbv8tIoFvDwC4GVenpU+gQV5HkiyLJeK7L+7/8/0lteElAAABwMJ9Edwie6AQBnbX49pGPCtL6cRKP7Pb4xaf+d39n0lEOe3tU2jJLrh8bMNnNZoAAOPAbm1jY0NOjlzuqCMii6uv3u2Kee21yUkOR5YPULLww5YDNRTFDHDGObWNDlzuQW8iY2Tx5po9NWu2Hjwejpz3AV492tJZFAhAdNXJ5eglguYyeHB4zIreyEpWa7YfIArf1nJ0/rIaUzEjYC4RqevGcKUXQB6wH17QW3M3YSntgAjJ2f3LWr5bNr/IsJkZ8K3OZtPznd53IrmIKl5UpEvYczMmZgzIipUrY7IaxnQua5lvM0QwA1qNMNN0eqIIvZyxA/biZ5+dtX/W3lm07IX7DTV6W2fnsqtnmt5lPIO5c2N0fL2OIEphppU+X128YO+be9+M7IqLW9PUFGextLX1xbdZKisX9+2bJwkN9HqPIQi9vrQUI99pGhh0t02Kj3dbNZZJfW19lfCxM8mq0eTlWZaPlYRODfiFMtFJEqWKpNhP4wfLLfHxFgtlMNndeVYQahCGqmHrV2tvSSSS/JG+0pxJ5vFRyzdX2wctBhNleGld/LqtYCMJzX/qk0+kjyReGelDc9yD2qgT7/3Jt0pNnioJRSb5j8L+cUpN38IfU5OFAQGPHx/3XgplYplYLCsUJvu2FaZ67SXJQtCBFAYAeEXsE7ValppP2z0K9ZmL1X6lOCBACEqZDHmA9nriBLIvVPs1Mh+BxWgvE6eHuabxMp+BO7Uw32ceOrUQqaIzeTxBmBohmAHoobAMFZvNVqVkqoGQ6ndACPurXVKkkqZFe6NgMcY/I4WtkkrRkzwgyJLpAwhNBrR6GhupVCq2NAyFwgyITkPmUhqRCWuvC/lCgGWm+FXsp9NRED8CwIZqQZrUL+yUdJn3FEKT4flo3hOAlC0QMwHgz3RXhmqIEOaPASIQZw4HZIALMiZA9DAPvPvQmUxFgNwhgEr6DPjEBAhz8aRD+/AgKU8AgmHOqdjRAQDpLtfTQ4BMeIoOgfZgGFuVks4MkKlzBU9CVbHDCoedwYxcwRMX2GlqpjNAWcjMFaT5COwMtT8LqA7TXYLcDBWtUqlmMGaBdkEAPmSkqEBSUMHNDPUVIpQoTwBwKVKhGmMCFNJ5yBW4eNPS0qahciuc6m2FZOTdjFyXgMdLS0tz0fZMvYAqVD1DkJub64Ju8ifRnwfoJdDkCsLQwChkbmfUzer0aBDU+0O9RHcT/IE06f6JwAo0T+iuh6fFMFF8gxRuUtE88U8KceCJ5NWDuUyYnD9siobmzxTK1EEnEj1V4LlCYWrqj94DyTNThXQf++R7AQYAu5jt3XWRom0AAAAASUVORK5CYII=";
@@ -42546,7 +42587,7 @@ const MoveTable = () => {
           storeRight: "shockwave",
           title: "Fairy Cam and Shockwave",
           imgBoth: filmWaveBoth,
-          imgLeft: filmWaveLeft,
+          imgLeft: fairyCamIcon,
           imgRight: filmWaveRight,
           prefix: "moves",
           setItem: setMove
@@ -43005,7 +43046,7 @@ const l5 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAA
 const l6 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAVCAMAAABBhy+7AAAAq1BMVEUAAAD//wAgICD/pADeAADmAACoAACDAAD/9gCcAgD2AADFAAC9AAC0AAB7AAD/KQD2JgCLAAD/KSkxEBBBCAj/3gD/1QD/zQD2ewD/AADVAADNAABuAABeAABOAAA5KSkxKSlBEBA5EBApEBD/7gD/5gD/vQD/rAD2rAD/nAD/iwDegwD/ewDmewDFagDmWgD/UgDNMQDeKQD/GAD2GACsGACkGADuAACUAAB/9CeQAAAAAXRSTlMAQObYZgAAAKxJREFUGNNFzdcagjAMQOGkdLAFAUEZ7r237/9kEipyLpL+F/kKv2wbuvrv+0N0Egdzy/8UO0QMRKsb1q0cLR6QpB9qOqTcC6eNRmdib2hzTdSlPZsur9h2EfWlQS/DpBlwcDb1Nj2XbOTgDmi7MqvX2gWvIecGLQ+so/6HZvYBJZfYJgsYKyvVWMiQAYuVtU8Qk5P0ZwDAosK3Xk+l/AkD8jyuyrKKGIlMaXwBUrwJqIUfWicAAAAASUVORK5CYII=";
 const l7 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAAAAhFBMVEUAAAD//wAgICD/AACsAAB7AAD/7gDVAAC9AACUAABNAAB7ICD/3gD/zQD/vQDeAABqAAD/ewD2ewCfAACGAABmKSkpEBD/pAD2AADFAADeKSkpGBj/9gD/1QD/xQD/lAD/gwD2cwD2YgD/UgDmUgDFOQD/GADFGAC0GADNAAC0AABaAAB2wDSSAAAAAXRSTlMAQObYZgAAAIlJREFUGNNNilkWwiAQBIfICEFCghBN3Pf1/veT4TFqfXW9LlDDbcIMoP1GCLG11jo3gj4IZidB7792rOF1mRJkGiFiRIxjkkbOYG2MeT99snkNUCU6RaFEyOhzCTNqWUKibTnk6xfmi0Plc9j9Xa6Eq3uT7FTCHsPVWQ6rhcHwCD0UJaeLPZHHB1doBv/XpFOuAAAAAElFTkSuQmCC";
 const Bosses = () => {
-  const allBosses = useDonkStore(useShallow((state) => state.settings.allBosses)) ? "all-bosses" : "";
+  const allBosses = useDonkStore(useShallow((state) => state.winCondition.bosses)) ? "all-bosses" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss-section", id: allBosses, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Bosses" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss-list", children: [
@@ -43615,7 +43656,7 @@ const HelmDoorSelector1 = () => {
         storeKey: "helmItemNum1",
         prefix: "settings",
         setCount: setSetting,
-        maxValue: 201
+        maxValue: helmItem1 == 1 ? 201 : helmItem1 == 2 ? 40 : helmItem1 == 3 ? 2 : helmItem1 == 4 ? 8 : helmItem1 == 5 ? 40 : helmItem1 == 6 ? 10 : helmItem1 == 7 ? 20 : helmItem1 == 8 ? 16 : helmItem1 == 9 ? 1 : helmItem1 == 10 ? 5 : 0
       }
     )
   ] });
@@ -43659,9 +43700,27 @@ const HelmDoorSelector2 = () => {
         storeKey: "helmItemNum2",
         prefix: "settings",
         setCount: setSetting,
-        maxValue: 201
+        maxValue: helmItem2 == 1 ? 201 : helmItem2 == 2 ? 40 : helmItem2 == 3 ? 2 : helmItem2 == 4 ? 8 : helmItem2 == 5 ? 40 : helmItem2 == 6 ? 10 : helmItem2 == 7 ? 20 : helmItem2 == 8 ? 16 : helmItem2 == 9 ? 1 : helmItem2 == 10 ? 5 : 0
       }
     )
+  ] });
+};
+const SimpleRadioIcon = (props) => {
+  const value = useDonkStore((state) => state[props.prefix][props.storeKey]);
+  const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? "have" : "have-not"} ${props.className}`;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classes, onClick: () => props.updateItem(props.storeKey, !value), children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "img",
+      {
+        alt: props.title,
+        title: props.title,
+        width: 24,
+        height: 24,
+        src: props.imgUrl,
+        style: { filter: `grayscale(${value ? "0" : "1"})` }
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: value ? "✓" : "✗" })
   ] });
 };
 const bananaMedalIcon = "" + new URL("bananamedal-bkq8SUQj.gif", import.meta.url).href;
@@ -43683,11 +43742,12 @@ const customStyles = {
 };
 const GeneratorSettings = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
-  const [setSetting, setBarrier, setFastCheck, setUi] = useDonkStore(
-    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi])
+  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition] = useDonkStore(
+    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi, state.setWinCondition])
   );
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
+  const num = Number(setWinCondition);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { onClick: openModal, title: "Generator Settings", children: "⚙️" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -43944,6 +44004,225 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "What locks Helm Door #2?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(HelmDoorSelector2, {})
             ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Win Condition" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: `If "K. Rool's Challenge" is selected, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off in "UI Settings" below. On the other hand, if "Kill the Wabbit" is selected, K. Rool is forced OFF.` }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Keys" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: keyIcon,
+                  title: "Highlights the keys next to the level icons in a red background.",
+                  storeKey: "keys",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Get Key 8 only" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: keyIcon,
+                  title: "Highlights Key 8's icon in a red background.",
+                  storeKey: "key8",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Get Keys 3 and 8" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: keyIcon,
+                  title: "Highlights Key 3's and 8's icons in a red background. (This was the vanilla requirement to unlock K. Rool.)",
+                  storeKey: "key3And8",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Kremling Kapture" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: fairyCamIcon,
+                  title: "Highlights all enemy checks with red text and the Camera's icon in a red background.",
+                  storeKey: "kremlingKapture",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Complete the DK Rap" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Highlights everything referenced in the DK Rap in a red background.",
+                  storeKey: "takeItToTheFridge",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "K. Rool's Challenge" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyGunIcon,
+                  title: "Highlights all Keys, as well as all 'turn in Blueprint to Snide' checks, Snide himself, boss checks, and Bonus Barrel checks.",
+                  storeKey: "kRoolChallenge",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Kill the Wabbit" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: toughBananaIcon,
+                  title: "Highlights Chunky's 5-Door Igloo Banana check in Crystal Caves in red text.",
+                  storeKey: "killTheWabbit",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Bananas" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: gbIcon,
+                  title: "Highlights Bananas in a red background.",
+                  storeKey: "goldBananas",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Blueprints" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: blueprintIcon,
+                  title: "Highlights the Blueprints and Snide in a red background and 'turn in Blueprint to Snide' checks in red text.",
+                  storeKey: "blueprints",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Company Coins" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: companyCoinIcon,
+                  title: "Highlights the Company Coins in a red background.",
+                  storeKey: "companyCoins",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Banana Medals" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: bananaMedalIcon,
+                  title: "Highlights Banana Medals in a red background.",
+                  storeKey: "bananaMedals",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Crowns" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crownIcon,
+                  title: "Highlights Crowns in a red background.",
+                  storeKey: "crowns",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Fairies" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: fairyIcon,
+                  title: "Highlights Banana Fairies in a red background.",
+                  storeKey: "fairies",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Rainbow Coins" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: rainbowCoinIcon,
+                  title: "Highlights Rainbow Coins in a red background.",
+                  storeKey: "rainbowCoins",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "The Bean™" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: beanIcon,
+                  title: "Highlights The Bean™ in a red background.",
+                  storeKey: "theBean",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Pearls" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: pearlIcon,
+                  title: "Highlights Pearls in a red background.",
+                  storeKey: "pearls",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Bosses" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: keyIcon,
+                  title: "Highlights the boss checks in red text.",
+                  storeKey: "bosses",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Bonus Barrels" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: bonusIcon,
+                  title: "Highlights all Bonus Barrel checks in red text.",
+                  storeKey: "bonuses",
+                  prefix: "winCondition",
+                  updateItem: setWinCondition
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: " " }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the indicated item needed:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                CountSelector,
+                {
+                  imgUrl: num == 1 ? keyIcon : num == 2 ? keyIcon : num == 3 ? keyIcon : num == 4 ? fairyCamIcon : num == 5 ? crankyIcon : num == 6 ? anyGunIcon : num == 7 ? toughBananaIcon : num == 8 ? gbIcon : num == 9 ? blueprintIcon : num == 10 ? companyCoinIcon : num == 11 ? bananaMedalIcon : num == 12 ? crownIcon : num == 13 ? fairyIcon : num == 14 ? rainbowCoinIcon : num == 15 ? beanIcon : num == 16 ? pearlIcon : num == 17 ? keyIcon : num == 18 ? bonusIcon : unknownIcon$1,
+                  title: "Number of the indicated item needed.",
+                  storeKey: "winConItemCount",
+                  prefix: "winCondition",
+                  setCount: setWinCondition,
+                  maxValue: num == 1 ? 8 : num == 8 ? 201 : num == 9 ? 40 : num == 10 ? 2 : num == 11 ? 40 : num == 12 ? 10 : num == 13 ? 20 : num == 14 ? 16 : num == 15 ? 1 : num == 16 ? 5 : num == 17 ? 7 : num == 18 ? 53 : 0
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Do you also have to fight K. Rool this seed?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideKRool", prefix: "ui", updateItem: setUi })
+            ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "World Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Bananaports Active?" }),
@@ -44047,41 +44326,6 @@ const GeneratorSettings = () => {
                   imgUrl: koshaHead,
                   title: "Causes checks involving the main Crystal Caves area to turn yellow to indicate that you are under threat from rockfall. Checks that are still green are in the safe zones. You should also use this if you're playing the vanilla game or a seed for which you didn't turn the Calm Caves option on under the Quality of Life section, but turn it off once you've killed the giant Kosha.",
                   storeKey: "angyKosha",
-                  prefix: "settings",
-                  updateItem: setSetting
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Special Win Conditions" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: `If both of the first two options are checked, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off in "UI Settings" below, as the tracker will assume you're doing a "K. Rool's Challenge" seed, where the win condition is all bosses, all bonuses, all 40 Blueprints, all eight Keys, and beating K. Rool himself.` }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Do you need to get all bosses to clear the seed?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: keyIcon,
-                  title: "Highlights the boss checks in red text.",
-                  storeKey: "allBosses",
-                  prefix: "settings",
-                  updateItem: setSetting
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Do you need to get all Bonus Barrels?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: bonusIcon,
-                  title: "Highlights all Bonus Barrel checks in red text.",
-                  storeKey: "allBonuses",
-                  prefix: "settings",
-                  updateItem: setSetting
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Is this a Kill the Wabbit seed?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleIcon,
-                {
-                  imgUrl: toughBananaIcon,
-                  title: "Highlights Chunky's 5-Door Igloo Banana check in Crystal Caves in red text and forces the K. Rool section to be hidden regardless of what you set on the UI settings below.",
-                  storeKey: "killTheWabbit",
                   prefix: "settings",
                   updateItem: setSetting
                 }
@@ -44381,9 +44625,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Hide unavailable checks?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideRed", prefix: "ui", updateItem: setUi }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Hide logic-breaking checks?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideYellow", prefix: "ui", updateItem: setUi }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Do you even have to fight K. Rool this seed?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideKRool", prefix: "ui", updateItem: setUi })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideYellow", prefix: "ui", updateItem: setUi })
             ] })
           ] })
         ] })
