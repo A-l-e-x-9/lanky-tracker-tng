@@ -9,6 +9,7 @@ import CountSelector from './CountSelector'
 import HelmSelector from './HelmSelector'
 import { HelmDoorSelector1, HelmDoorSelector2 } from './HelmDoorSelector'
 import SimpleIcon from './SimpleIcon'
+import SimpleRadioIcon from './SimpleRadioIcon'
 import { KRoolSlamSelector } from '../moves/SlamSelector'
 
 import gbIcon from '../../assets/images/GB.png'
@@ -45,6 +46,9 @@ import featherIcon from '../../assets/images/tiny_gun.png'
 import wrinkly from '../../assets/images/wrinkly.png'
 import diveIcon from '../../assets/images/diving.png'
 import koshaHead from '../../assets/images/kosha.png'
+import fairyCamIcon from '../../assets/images/filmwave1.png'
+import crankyIcon from '../../assets/images/cranky.png'
+import unknownIcon from '../../assets/images/unknown-small.png'
 
 const customStyles: Modal.Styles = {
   content: {
@@ -55,12 +59,13 @@ const customStyles: Modal.Styles = {
 
 const GeneratorSettings: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
-  const [setSetting, setBarrier, setFastCheck, setUi] = useDonkStore(
-    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi])
+  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition] = useDonkStore(
+    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi, state.setWinCondition])
   )
 
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
+  const num = Number(setWinCondition)
 
   return (
     <span>
@@ -257,6 +262,168 @@ const GeneratorSettings: React.FC = () => {
               <p>What locks Helm Door #2?</p>
               <HelmDoorSelector2 />
             </>
+            <h3>Win Condition</h3>
+            <p className="full-grid">If "K. Rool's Challenge" is selected, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off in "UI Settings" below. On the other hand, if "Kill the Wabbit" is selected, K. Rool is forced OFF.</p>
+            <>
+              <p>Keys</p>
+              <SimpleRadioIcon
+                imgUrl={keyIcon}
+                title="Highlights the keys next to the level icons in a red background."
+                storeKey="keys"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Get Key 8 only</p>
+              <SimpleRadioIcon
+                imgUrl={keyIcon}
+                title="Highlights Key 8's icon in a red background."
+                storeKey="key8"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Get Keys 3 and 8</p>
+              <SimpleRadioIcon
+                imgUrl={keyIcon}
+                title="Highlights Key 3's and 8's icons in a red background. (This was the vanilla requirement to unlock K. Rool.)"
+                storeKey="key3And8"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Kremling Kapture</p>
+              <SimpleRadioIcon
+                imgUrl={fairyCamIcon}
+                title="Highlights all enemy checks with red text and the Camera's icon in a red background."
+                storeKey="kremlingKapture"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Complete the DK Rap</p>
+              <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Highlights everything referenced in the DK Rap in a red background."
+                storeKey="takeItToTheFridge"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>K. Rool's Challenge</p>
+              <SimpleRadioIcon
+                imgUrl={hardShootIcon}
+                title="Highlights all Keys, as well as all 'turn in Blueprint to Snide' checks, Snide himself, boss checks, and Bonus Barrel checks."
+                storeKey="kRoolChallenge"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Kill the Wabbit</p>
+              <SimpleRadioIcon
+                imgUrl={toughBananaIcon}
+                title="Highlights Chunky's 5-Door Igloo Banana check in Crystal Caves in red text."
+                storeKey="killTheWabbit"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Bananas</p>
+              <SimpleRadioIcon
+                imgUrl={gbIcon}
+                title="Highlights Bananas in a red background."
+                storeKey="goldBananas"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Blueprints</p>
+              <SimpleRadioIcon
+                imgUrl={blueprintIcon}
+                title="Highlights the Blueprints and Snide in a red background and 'turn in Blueprint to Snide' checks in red text."
+                storeKey="blueprints"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Company Coins</p>
+              <SimpleRadioIcon
+                imgUrl={companyCoinIcon}
+                title="Highlights the Company Coins in a red background."
+                storeKey="companyCoins"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Banana Medals</p>
+              <SimpleRadioIcon
+                imgUrl={bananaMedalIcon}
+                title="Highlights Banana Medals in a red background."
+                storeKey="bananaMedals"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Crowns</p>
+              <SimpleRadioIcon
+                imgUrl={crownIcon}
+                title="Highlights Crowns in a red background."
+                storeKey="crowns"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Fairies</p>
+              <SimpleRadioIcon
+                imgUrl={fairyIcon}
+                title="Highlights Banana Fairies in a red background."
+                storeKey="fairies"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Rainbow Coins</p>
+              <SimpleRadioIcon
+                imgUrl={rainbowCoinIcon}
+                title="Highlights Rainbow Coins in a red background."
+                storeKey="rainbowCoins"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>The Bean™</p>
+              <SimpleRadioIcon
+                imgUrl={beanIcon}
+                title="Highlights The Bean™ in a red background."
+                storeKey="theBean"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Pearls</p>
+              <SimpleRadioIcon
+                imgUrl={pearlIcon}
+                title="Highlights Pearls in a red background."
+                storeKey="pearls"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Bosses</p>
+              <SimpleRadioIcon
+                imgUrl={keyIcon}
+                title="Highlights the boss checks in red text."
+                storeKey="bosses"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+              <p>Bonus Barrels</p>
+              <SimpleRadioIcon
+                imgUrl={bonusIcon}
+                title="Highlights all Bonus Barrel checks in red text."
+                storeKey="bonuses"
+                prefix="winCondition"
+                updateItem={setWinCondition}
+              />
+            <p className="full-grid">&nbsp;</p>
+            <p>Number of the indicated item needed:</p>
+              <CountSelector
+                imgUrl={(num == 1 ? keyIcon : num == 2 ? keyIcon : num == 3 ? keyIcon : num == 4 ? fairyCamIcon : num == 5 ? crankyIcon : num == 6 ? hardShootIcon : num == 7 ? toughBananaIcon : num == 8 ? gbIcon : num == 9 ? blueprintIcon : num == 10 ? companyCoinIcon : num == 11 ? bananaMedalIcon : num == 12 ? crownIcon : num == 13 ? fairyIcon : num == 14 ? rainbowCoinIcon : num == 15 ? beanIcon : num == 16 ? pearlIcon : num == 17 ? keyIcon : num == 18 ? bonusIcon : unknownIcon)}
+                title="Number of the indicated item needed."
+                storeKey="winConItemCount"
+                prefix="winCondition"
+                setCount={setWinCondition}
+                maxValue={(num == 1 ? 8 : num == 8 ? 201 : num == 9 ? 40 : num == 10 ? 2 : num == 11 ? 40 : num == 12 ? 10 : num == 13 ? 20 : num == 14 ? 16 : num == 15 ? 1 : num == 16 ? 5 : num == 17 ? 7 : num == 18 ? 53 : 0)}
+              />
+            <p></p>
+            <p></p>
+            <p>Do you also have to fight K. Rool this seed?</p>
+            <CheckIcon storeKey="hideKRool" prefix="ui" updateItem={setUi} />
+            </>
             <h3>World Settings</h3>
             <>
               <p>Bananaports Active?</p>
@@ -334,32 +501,6 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={koshaHead}
                 title="Causes checks involving the main Crystal Caves area to turn yellow to indicate that you are under threat from rockfall. Checks that are still green are in the safe zones. You should also use this if you're playing the vanilla game or a seed for which you didn't turn the Calm Caves option on under the Quality of Life section, but turn it off once you've killed the giant Kosha."
                 storeKey="angyKosha"
-                prefix="settings"
-                updateItem={setSetting}
-              />
-            <h4>Special Win Conditions</h4>
-            <p className="full-grid">If both of the first two options are checked, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off in "UI Settings" below, as the tracker will assume you're doing a "K. Rool's Challenge" seed, where the win condition is all bosses, all bonuses, all 40 Blueprints, all eight Keys, and beating K. Rool himself.</p>
-              <p>Do you need to get all bosses to clear the seed?</p>
-              <SimpleIcon
-                imgUrl={keyIcon}
-                title="Highlights the boss checks in red text."
-                storeKey="allBosses"
-                prefix="settings"
-                updateItem={setSetting}
-              />
-              <p>Do you need to get all Bonus Barrels?</p>
-              <SimpleIcon
-                imgUrl={bonusIcon}
-                title="Highlights all Bonus Barrel checks in red text."
-                storeKey="allBonuses"
-                prefix="settings"
-                updateItem={setSetting}
-              />
-              <p>Is this a Kill the Wabbit seed?</p>
-              <SimpleIcon
-                imgUrl={toughBananaIcon}
-                title="Highlights Chunky's 5-Door Igloo Banana check in Crystal Caves in red text and forces the K. Rool section to be hidden regardless of what you set on the UI settings below."
-                storeKey="killTheWabbit"
                 prefix="settings"
                 updateItem={setSetting}
               />
@@ -586,8 +727,6 @@ const GeneratorSettings: React.FC = () => {
               <CheckIcon storeKey="hideRed" prefix="ui" updateItem={setUi} />
               <p>Hide logic-breaking checks?</p>
               <CheckIcon storeKey="hideYellow" prefix="ui" updateItem={setUi} />
-              <p>Do you even have to fight K. Rool this seed?</p>
-              <CheckIcon storeKey="hideKRool" prefix="ui" updateItem={setUi} />
             </>
           </section>
         </section>

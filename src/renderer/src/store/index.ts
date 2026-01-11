@@ -16,6 +16,7 @@ import moveSlice from './moves'
 import settingSlice from './settings'
 import switchSlice from './switchsanities'
 import uiSlice from './ui'
+import winConSlice from './win-conditions'
 
 const initializer: StateCreator<AllSlice, [['zustand/persist', unknown]], []> = (...d) => ({
   ...coreSlice(...d),
@@ -31,7 +32,8 @@ const initializer: StateCreator<AllSlice, [['zustand/persist', unknown]], []> = 
   ...fastCheckSlice(...d),
   ...endingSlice(...d),
   ...roolSlice(...d),
-  ...uiSlice(...d)
+  ...uiSlice(...d),
+  ...winConSlice(...d)
 })
 
 /**

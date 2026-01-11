@@ -29,8 +29,8 @@ const JapesMainEnemies: React.FC = () => {
         id={1316}
         name="Enemy Near Painting 2"
         region="Japes Hillside"
-        canGetLogic={inStage.in && anyKong}
-        canGetBreak={inStage.out && anyKong}
+        canGetLogic={inStage.in && anyKong && zinger.in}
+        canGetBreak={inStage.out && anyKong && zinger.out}
       />
       <JapesCheck
         id={1317}

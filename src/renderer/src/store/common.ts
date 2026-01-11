@@ -669,9 +669,6 @@ interface SettingCollection {
   helmItemNum1: GoldBananaRange
   helmItem2: CrownRange
   helmItemNum2: GoldBananaRange
-  allBosses: boolean
-  allBonuses: boolean
-  killTheWabbit: boolean
 }
 
 export interface SettingState {
@@ -903,6 +900,40 @@ interface bLockerActions {
 export type bLockerSlice = bLockerState & bLockerActions
 //#endregion
 
+//Begin win conditions region
+interface WinConCollection {
+  keys: boolean
+  key8: boolean
+  key3And8: boolean
+  kremlingKapture: boolean
+  takeItToTheFridge: boolean
+  kRoolChallenge: boolean
+  killTheWabbit: boolean
+  goldBananas: boolean
+  blueprints: boolean
+  companyCoins: boolean
+  bananaMedals: boolean
+  crowns: boolean
+  fairies: boolean
+  rainbowCoins: boolean
+  theBean: boolean
+  pearls: boolean
+  bosses: boolean
+  bonuses: boolean
+  winConItemCount: GoldBananaRange
+}
+
+export interface WinConState {
+  winCondition: WinConCollection
+}
+
+interface WinConActions {
+  setWinCondition: (id: string, val: boolean | number) => void
+}
+
+export type WinConSlice = WinConState & WinConActions
+//#endregion
+
 export type AllSlice = CheckSlice &
   MoveSlice &
   ConsumablesSlice &
@@ -916,7 +947,8 @@ export type AllSlice = CheckSlice &
   FastCheckSlice &
   EndingSlice &
   RoolSlice &
-  UiSlice
+  UiSlice &
+  WinConSlice
 
 export const donkResetFns = new Set<() => void>()
 

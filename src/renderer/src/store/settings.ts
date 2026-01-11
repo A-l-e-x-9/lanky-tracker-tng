@@ -49,10 +49,7 @@ export const initialSettings: SettingState = {
     helmItem1: 6,
     helmItemNum1: 4,
     helmItem2: 3,
-    helmItemNum2: 2,
-    allBosses: false,
-    allBonuses: false,
-    killTheWabbit: false
+    helmItemNum2: 2
   }
 }
 
