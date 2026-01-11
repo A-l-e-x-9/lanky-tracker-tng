@@ -12174,6 +12174,7 @@ const ItemCheck = (props) => {
   const isFoolish = foolishValues.some((f2) => f2 === region);
   const isHoard = hoardValues.some((f2) => f2 === region);
   const isBossCheck = useDonkStore(useShallow((state) => state.settings.allBosses));
+  const isKillTheWabbit = useDonkStore(useShallow((state) => state.settings.killTheWabbit));
   if (canGetBreak === void 0) {
     canGetBreak = canGetLogic;
   }
@@ -12187,7 +12188,7 @@ const ItemCheck = (props) => {
   if (done) {
     rowNames.push("checked");
   }
-  if (isFoolish || isBossCheck && props.region === "Bosses") {
+  if (isFoolish || isBossCheck && props.region === "Bosses" || isKillTheWabbit && props.id === 6042) {
     rowNames.push("foolish");
   } else if (isHoard) {
     rowNames.push("woth");
