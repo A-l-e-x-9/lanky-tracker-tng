@@ -669,6 +669,9 @@ interface SettingCollection {
   helmItemNum1: GoldBananaRange
   helmItem2: CrownRange
   helmItemNum2: GoldBananaRange
+  allBosses: boolean
+  allBonuses: boolean
+  killTheWabbit: boolean
 }
 
 export interface SettingState {

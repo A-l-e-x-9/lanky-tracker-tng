@@ -337,7 +337,32 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
-              </>
+            <h4>Special Win Conditions</h4>
+              <p>Do you need to get all bosses to clear the seed?</p>
+              <SimpleIcon
+                imgUrl={keyIcon}
+                title="Highlights the boss checks in red text."
+                storeKey="allBosses"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Do you need to get all Bonus Barrels?</p>
+              <SimpleIcon
+                imgUrl={bonusIcon}
+                title="Highlights all Bonus Barrel checks in red text."
+                storeKey="allBonuses"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Is this a Kill the Wabbit seed?</p>
+              <SimpleIcon
+                imgUrl={toughBananaIcon}
+                title="Highlights Chunky's 5-Door Igloo Banana check in Crystal Caves in red text and forces the K. Rool section to be hidden regardless of what you set on the UI settings below."
+                storeKey="killTheWabbit"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+            </>
             <h3>Location Shuffle Settings</h3>
             <>
               <p>Battle Arenas?</p>
