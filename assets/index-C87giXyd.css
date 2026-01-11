@@ -342,6 +342,7 @@ main .grid {
 
 .grid > :not(.checked).foolish {
   color: red;
+  font-weight: bold;
 }
 
 .grid > :not(.checked).woth {
@@ -351,6 +352,8 @@ main .grid {
 .full-grid {grid-column: span 6;}
 
 .react-tabs__tab--selected {background-color: #ffffff;}
+
+#all-bosses {background-color: #800000;}
 
 @media (max-width: 720px) {
   .text {

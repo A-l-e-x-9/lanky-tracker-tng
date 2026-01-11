@@ -12173,6 +12173,7 @@ const ItemCheck = (props) => {
   const hoardValues = Object.values(hoard);
   const isFoolish = foolishValues.some((f2) => f2 === region);
   const isHoard = hoardValues.some((f2) => f2 === region);
+  const isBossCheck = useDonkStore(useShallow((state) => state.settings.allBosses));
   if (canGetBreak === void 0) {
     canGetBreak = canGetLogic;
   }
@@ -12186,7 +12187,7 @@ const ItemCheck = (props) => {
   if (done) {
     rowNames.push("checked");
   }
-  if (isFoolish) {
+  if (isFoolish || isBossCheck && props.region === "Bosses") {
     rowNames.push("foolish");
   } else if (isHoard) {
     rowNames.push("woth");
@@ -43003,7 +43004,8 @@ const l5 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAA
 const l6 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAVCAMAAABBhy+7AAAAq1BMVEUAAAD//wAgICD/pADeAADmAACoAACDAAD/9gCcAgD2AADFAAC9AAC0AAB7AAD/KQD2JgCLAAD/KSkxEBBBCAj/3gD/1QD/zQD2ewD/AADVAADNAABuAABeAABOAAA5KSkxKSlBEBA5EBApEBD/7gD/5gD/vQD/rAD2rAD/nAD/iwDegwD/ewDmewDFagDmWgD/UgDNMQDeKQD/GAD2GACsGACkGADuAACUAAB/9CeQAAAAAXRSTlMAQObYZgAAAKxJREFUGNNFzdcagjAMQOGkdLAFAUEZ7r237/9kEipyLpL+F/kKv2wbuvrv+0N0Egdzy/8UO0QMRKsb1q0cLR6QpB9qOqTcC6eNRmdib2hzTdSlPZsur9h2EfWlQS/DpBlwcDb1Nj2XbOTgDmi7MqvX2gWvIecGLQ+so/6HZvYBJZfYJgsYKyvVWMiQAYuVtU8Qk5P0ZwDAosK3Xk+l/AkD8jyuyrKKGIlMaXwBUrwJqIUfWicAAAAASUVORK5CYII=";
 const l7 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAAAAhFBMVEUAAAD//wAgICD/AACsAAB7AAD/7gDVAAC9AACUAABNAAB7ICD/3gD/zQD/vQDeAABqAAD/ewD2ewCfAACGAABmKSkpEBD/pAD2AADFAADeKSkpGBj/9gD/1QD/xQD/lAD/gwD2cwD2YgD/UgDmUgDFOQD/GADFGAC0GADNAAC0AABaAAB2wDSSAAAAAXRSTlMAQObYZgAAAIlJREFUGNNNilkWwiAQBIfICEFCghBN3Pf1/veT4TFqfXW9LlDDbcIMoP1GCLG11jo3gj4IZidB7792rOF1mRJkGiFiRIxjkkbOYG2MeT99snkNUCU6RaFEyOhzCTNqWUKibTnk6xfmi0Plc9j9Xa6Eq3uT7FTCHsPVWQ6rhcHwCD0UJaeLPZHHB1doBv/XpFOuAAAAAElFTkSuQmCC";
 const Bosses = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss-section", children: [
+  const allBosses = useDonkStore(useShallow((state) => state.settings.allBosses)) ? "all-bosses" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss-section", id: allBosses, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Bosses" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss-list", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss1", children: [
@@ -44049,6 +44051,7 @@ const GeneratorSettings = () => {
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Special Win Conditions" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: `If both of the first two options are checked, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off in "UI Settings" below, as the tracker will assume you're doing a "K. Rool's Challenge" seed, where the win condition is all bosses, all bonuses, all 40 Blueprints, all eight Keys, and beating K. Rool himself.` }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Do you need to get all bosses to clear the seed?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
