@@ -338,6 +338,7 @@ const GeneratorSettings: React.FC = () => {
                 updateItem={setSetting}
               />
             <h4>Special Win Conditions</h4>
+            <p className="full-grid">If both of the first two options are checked, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off in "UI Settings" below, as the tracker will assume you're doing a "K. Rool's Challenge" seed, where the win condition is all bosses, all bonuses, all 40 Blueprints, all eight Keys, and beating K. Rool himself.</p>
               <p>Do you need to get all bosses to clear the seed?</p>
               <SimpleIcon
                 imgUrl={keyIcon}

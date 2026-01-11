@@ -1,4 +1,6 @@
 import BossSelector from './BossSelector'
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 
 import l1 from '../../assets/images/1.png'
 import l2 from '../../assets/images/2.png'
@@ -9,8 +11,9 @@ import l6 from '../../assets/images/6.png'
 import l7 from '../../assets/images/7.png'
 
 const Bosses = (): JSX.Element => {
+const allBosses = useDonkStore(useShallow((state) => state.settings.allBosses)) ? 'all-bosses' : ''
   return (
-    <section className="boss-section">
+    <section className="boss-section" id={allBosses}>
     <h3>Bosses</h3>
       <section className="boss-list">
         <section className="boss1">

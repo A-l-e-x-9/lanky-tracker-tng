@@ -26,6 +26,7 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
   const hoardValues = Object.values(hoard)
   const isFoolish = foolishValues.some((f) => f === region)
   const isHoard = hoardValues.some((f) => f === region)
+  const isBossCheck = useDonkStore(useShallow((state) => state.settings.allBosses))
   if (canGetBreak === undefined) {
     canGetBreak = canGetLogic
   }
@@ -40,7 +41,7 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
   if (done) {
     rowNames.push('checked')
   }
-  if (isFoolish) {
+  if (isFoolish || (isBossCheck && props.region === 'Bosses')) {
     rowNames.push('foolish')
   } else if (isHoard) {
     rowNames.push('woth')
