@@ -26,8 +26,8 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
   const hoardValues = Object.values(hoard)
   const isFoolish = foolishValues.some((f) => f === region)
   const isHoard = hoardValues.some((f) => f === region)
-  const isBossCheck = useDonkStore(useShallow((state) => state.settings.allBosses))
-  const isKillTheWabbit = useDonkStore(useShallow((state) => state.settings.killTheWabbit))
+  const isBossCheck = useDonkStore(useShallow((state) => state.winCondition.bosses))
+  const isKillTheWabbit = useDonkStore(useShallow((state) => state.winCondition.killTheWabbit))
   if (canGetBreak === undefined) {
     canGetBreak = canGetLogic
   }
