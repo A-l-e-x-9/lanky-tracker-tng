@@ -10360,7 +10360,10 @@ const initialSettings = {
     helmItem1: 6,
     helmItemNum1: 4,
     helmItem2: 3,
-    helmItemNum2: 2
+    helmItemNum2: 2,
+    allBosses: false,
+    allBonuses: false,
+    killTheWabbit: false
   }
 };
 const settingSlice = (set) => {
@@ -44041,6 +44044,40 @@ const GeneratorSettings = () => {
                   imgUrl: koshaHead,
                   title: "Causes checks involving the main Crystal Caves area to turn yellow to indicate that you are under threat from rockfall. Checks that are still green are in the safe zones. You should also use this if you're playing the vanilla game or a seed for which you didn't turn the Calm Caves option on under the Quality of Life section, but turn it off once you've killed the giant Kosha.",
                   storeKey: "angyKosha",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Special Win Conditions" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Do you need to get all bosses to clear the seed?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: keyIcon,
+                  title: "Highlights the boss checks in red text.",
+                  storeKey: "allBosses",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Do you need to get all Bonus Barrels?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: bonusIcon,
+                  title: "Highlights all Bonus Barrel checks in red text.",
+                  storeKey: "allBonuses",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Is this a Kill the Wabbit seed?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: toughBananaIcon,
+                  title: "Highlights Chunky's 5-Door Igloo Banana check in Crystal Caves in red text and forces the K. Rool section to be hidden regardless of what you set on the UI settings below.",
+                  storeKey: "killTheWabbit",
                   prefix: "settings",
                   updateItem: setSetting
                 }
