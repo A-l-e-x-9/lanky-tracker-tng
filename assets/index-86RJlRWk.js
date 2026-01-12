@@ -10459,7 +10459,7 @@ const uiSlice = (set) => {
 };
 const initialWinCon = {
   winCondition: {
-    keys: true,
+    bossKeys: true,
     key8: false,
     key3And8: false,
     kremlingKapture: false,
@@ -43295,12 +43295,13 @@ const keyIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAArCAMAAABVR
 const SimpleKey = (props) => {
   const value = useDonkStore((state) => state["key" + props.keyNum]);
   const setKey = useDonkStore((state) => state.setKey);
+  const keysRequired = useDonkStore((state) => state.winCondition.bossKeys);
   return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     "img",
     {
       height: 24,
       src: keyIcon,
-      style: { filter: `grayscale(${value ? "0" : "1"})` },
+      style: { filter: `grayscale(${value ? "0" : "1"})`, background: `${keysRequired ? "#800000" : "none"}` },
       onClick: () => setKey(props.keyNum, !value)
     }
   ) });
@@ -44035,7 +44036,7 @@ const GeneratorSettings = () => {
                 {
                   imgUrl: keyIcon,
                   title: "Highlights the keys next to the level icons in a red background.",
-                  storeKey: "keys",
+                  storeKey: "bossKeys",
                   prefix: "winCondition",
                   updateItem: setWinCondition
                 }
