@@ -10486,16 +10486,38 @@ const winConSlice = (set) => {
     ...initialWinCon,
     setWinCondition: (id2, val) => {
       set((state) => {
-        const target = {};
-        target[id2] = val;
-        state = {
+        if (typeof val === "number") {
+          return {
+            ...state,
+            winCondition: {
+              ...state.winCondition,
+              [id2]: val
+            }
+          };
+        }
+        if (val) {
+          const reset = {};
+          for (const k2 of Object.keys(state.winCondition)) {
+            if (k2 === "winConItemCount")
+              continue;
+            reset[k2] = false;
+          }
+          reset[id2] = true;
+          return {
+            ...state,
+            winCondition: {
+              ...state.winCondition,
+              ...reset
+            }
+          };
+        }
+        return {
           ...state,
           winCondition: {
             ...state.winCondition,
-            ...target
+            [id2]: false
           }
         };
-        return state;
       });
     }
   };
@@ -43708,7 +43730,7 @@ const HelmDoorSelector2 = () => {
 const SimpleRadioIcon = (props) => {
   const value = useDonkStore((state) => state[props.prefix][props.storeKey]);
   const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? "have" : "have-not"} ${props.className}`;
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classes, onClick: () => props.updateItem(props.storeKey, !value), children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classes, onClick: () => props.updateItem(props.storeKey, true), children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
       {
@@ -43720,7 +43742,7 @@ const SimpleRadioIcon = (props) => {
         style: { filter: `grayscale(${value ? "0" : "1"})` }
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: value ? "✓" : "✗" })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: value ? "◉" : "○" })
   ] });
 };
 const bananaMedalIcon = "" + new URL("bananamedal-bkq8SUQj.gif", import.meta.url).href;
