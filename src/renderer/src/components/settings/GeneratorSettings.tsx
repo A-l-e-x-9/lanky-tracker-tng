@@ -65,7 +65,6 @@ const GeneratorSettings: React.FC = () => {
 
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
-  const selectedRadio = document.querySelector('div[class*="winCondition"].have');
 
   return (
     <span>
