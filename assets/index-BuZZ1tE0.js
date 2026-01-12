@@ -43415,9 +43415,9 @@ const LevelSelector = ({ storeKey }) => {
 };
 const l8 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAVCAMAAABBhy+7AAAApVBMVEUAAAD//wAgICCkAQD/zQDNAQD/pAD/AACDAAD/ewD2AADeAAC9AAC0AACcAACUAACLAAB5AAD/KSlBCgr/9gD/vQDuewD/KwDuAADVAABnAAD/7gD/3gD/1QD/mADmKQD/GADmAADFAACsAAAYICApEBBKCAj/rADmlADegwD2ewDeewD/YgDeYgD/WgDeWgDuUgDNSgD/OQDNKQDmIAD2GABaAACHb7TVAAAAAXRSTlMAQObYZgAAALxJREFUGNM9jVcSwjAMRBU7xiakd0JP6L3f/2hoMx7eh1ZPY0vUk6Zap2Tx9PJ5rWpPQ+rxeZo7zGzpsY52jmXyWdHoje4hZ1znivwhpytlyZF3JI+cg3F7xzSgOMDjSrtcy5CyEE2PGzUkfGU9Xygc4l2Wig8pNJK/YCO1Q2QXvzDluwOokguoT8EB6dX9hoCMdMAU5SRpG10mdvE+MiS+cVjOi6K4RXEiiETWGJMkiWkyNnaxWQsAA+JvPw9bCvmDA2SDAAAAAElFTkSuQmCC";
 const LevelTable = () => {
-  const [setBLocker] = useDonkStore(
-    useShallow((state) => [state.setBLocker])
-  );
+  const [setBLocker] = useDonkStore(useShallow((state) => [state.setBLocker]));
+  const key3And8Seed = useDonkStore(useShallow((state) => state.winCondition.key3And8)) ? "all-bosses" : "";
+  const key8Seed = useDonkStore(useShallow((state) => state.winCondition.key8)) ? "all-bosses" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level-section", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Level Order, Keys, and B. Locker Requirements" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level-list", children: [
@@ -43453,7 +43453,7 @@ const LevelTable = () => {
           }
         )
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level3", id: key3And8Seed, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l3, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level3" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 3 }),
@@ -43533,7 +43533,7 @@ const LevelTable = () => {
           }
         )
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level8", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level8", id: key3And8Seed || key8Seed, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l8, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level8" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 8 }),
