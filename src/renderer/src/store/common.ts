@@ -902,7 +902,7 @@ export type bLockerSlice = bLockerState & bLockerActions
 
 //Begin win conditions region
 interface WinConCollection {
-  keys: boolean
+  bossKeys: boolean
   key8: boolean
   key3And8: boolean
   kremlingKapture: boolean

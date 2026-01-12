@@ -268,7 +268,7 @@ const GeneratorSettings: React.FC = () => {
               <SimpleRadioIcon
                 imgUrl={keyIcon}
                 title="Highlights the keys next to the level icons in a red background."
-                storeKey="keys"
+                storeKey="bossKeys"
                 prefix="winCondition"
                 updateItem={setWinCondition}
               />

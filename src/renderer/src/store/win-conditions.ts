@@ -3,7 +3,7 @@ import { AllSlice, WinConSlice, WinConState, donkResetFns } from './common'
 
 export const initialWinCon: WinConState = {
   winCondition: {
-    keys: true,
+    bossKeys: true,
     key8: false,
     key3And8: false,
     kremlingKapture: false,
