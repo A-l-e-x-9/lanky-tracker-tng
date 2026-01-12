@@ -43770,7 +43770,6 @@ const GeneratorSettings = () => {
   );
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
-  const num = Number(setWinCondition);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { onClick: openModal, title: "Generator Settings", children: "⚙️" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -44233,12 +44232,12 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 CountSelector,
                 {
-                  imgUrl: num == 1 ? keyIcon : num == 2 ? keyIcon : num == 3 ? keyIcon : num == 4 ? fairyCamIcon : num == 5 ? crankyIcon : num == 6 ? anyGunIcon : num == 7 ? toughBananaIcon : num == 8 ? gbIcon : num == 9 ? blueprintIcon : num == 10 ? companyCoinIcon : num == 11 ? bananaMedalIcon : num == 12 ? crownIcon : num == 13 ? fairyIcon : num == 14 ? rainbowCoinIcon : num == 15 ? beanIcon : num == 16 ? pearlIcon : num == 17 ? keyIcon : num == 18 ? bonusIcon : unknownIcon$1,
+                  imgUrl: unknownIcon$1,
                   title: "Number of the indicated item needed.",
                   storeKey: "winConItemCount",
                   prefix: "winCondition",
                   setCount: setWinCondition,
-                  maxValue: num == 1 ? 8 : num == 8 ? 201 : num == 9 ? 40 : num == 10 ? 2 : num == 11 ? 40 : num == 12 ? 10 : num == 13 ? 20 : num == 14 ? 16 : num == 15 ? 1 : num == 16 ? 5 : num == 17 ? 7 : num == 18 ? 53 : 0
+                  maxValue: 201
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
