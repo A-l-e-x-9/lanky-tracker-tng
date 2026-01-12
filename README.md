@@ -13,7 +13,6 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 - The "Water is Lava" setting currently doesn't turn every check yellow that should be affected by it. For example, did you know that the little kiddy pools surrounding the Dungeon's entrance in Castle also hurt you when you make a "Water is Lava" seed? Will eventually fix this.
 - Checks affected by the "Angry Caves" setting don't turn red when it's on and you don't have enough Bananas to enter Crystal Caves.
 - Right now, the B. Locker barriers available in the tracker can only accept bananas, so if you're playing a "Chaos B. Lockers" seed (where he often requires things other than bananas so that you can get into the level), you're out of luck. :(
-- Limits aren't enforced on the Helm Door settings, so you can currently input something impossible like 201 Beans for each door.
 - Make it so that you can just type how many bananas, etc., you have in the "count" selectors (such as "Colored bananas needed for medal" in Settings) so you don't have to click so much.
 - Similarly, make it so that for the shuffled Arenas, Crates, Dirts, Fairies, and eventually Kasplats and Colored Bananas, there's only one or two checks each, and you can use a drop-down list or something to choose where they are.
 - Also implement the "shuffled DK Portals" function (and rarely-seen "Shuffle Start Location" function, too?) (a shuffled portal can make all the difference in what checks are accessible to you, after all!).

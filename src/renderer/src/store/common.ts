@@ -928,7 +928,8 @@ export interface WinConState {
 }
 
 interface WinConActions {
-  setWinCondition: (id: string, val: boolean | number) => void
+  // Narrowed id type to keys of WinConCollection for better type safety.
+  setWinCondition: (id: keyof WinConCollection, val: boolean | number) => void
 }
 
 export type WinConSlice = WinConState & WinConActions
