@@ -320,8 +320,8 @@ export const useDiddy5DoorShipGb = (): LogicBool => {
   const guitar = useGuitar()
   const dive = useDive()
   return {
-    in: outskirts.in && lowTide && guitar && dive.in,
-    out: outskirts.out && lowTide && guitar && dive.out
+    in: outskirts.in && lowTide.in && guitar && dive.in,
+    out: outskirts.out && lowTide.out && guitar && dive.out
   }
 }
 
