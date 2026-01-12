@@ -16,8 +16,9 @@ import l8 from '../../assets/images/8.png'
 import bLocker from '../../assets/images/GB.png'
 
 const LevelTable = (): JSX.Element => {
-  const [setBLocker] = useDonkStore(useShallow((state) => [state.setBLocker])
-  )
+  const [setBLocker] = useDonkStore(useShallow((state) => [state.setBLocker]))
+  const key3And8Seed = useDonkStore(useShallow((state) => state.winCondition.key3And8)) ? 'all-bosses' : ''
+  const key8Seed = useDonkStore(useShallow((state) => state.winCondition.key8)) ? 'all-bosses' : ''
   return (
     <section className="level-section">
     <h3>Level Order, Keys, and B. Locker Requirements</h3>
@@ -48,7 +49,7 @@ const LevelTable = (): JSX.Element => {
             maxValue={201}
           />
         </section>
-        <section className="level3">
+        <section className="level3" id={key3And8Seed}>
           <img src={l3} height={24} />
           <LevelSelector storeKey="level3" />
           <SimpleKey keyNum={3} />
@@ -113,7 +114,7 @@ const LevelTable = (): JSX.Element => {
             maxValue={201}
           />
         </section>
-        <section className="level8">
+        <section className="level8" id={key3And8Seed || key8Seed}>
           <img src={l8} height={24} />
           <LevelSelector storeKey="level8" />
           <SimpleKey keyNum={8} />
