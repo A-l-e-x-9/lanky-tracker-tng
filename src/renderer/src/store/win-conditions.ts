@@ -45,7 +45,7 @@ const winConSlice: StateCreator<AllSlice, [], [], WinConSlice> = (set) => {
         // If we're setting a boolean to true, enforce radio semantics:
         // clear other boolean winCondition flags and set this one to true.
         if (val) {
-          const reset: Record<string, boolean | number> = {}
+          const reset: Record<string | number | symbol, boolean | number> = {}
           for (const k of Object.keys(state.winCondition)) {
             if (k === 'winConItemCount') continue
             reset[k] = false
