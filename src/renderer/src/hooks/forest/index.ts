@@ -161,12 +161,13 @@ export const useForestMushroomTop = (): LogicBool => {
  */
 export const useForestMushroomRoof = (): LogicBool => {
   const inStage = usePlayForest()
+  const canGetToTop = useForestMushroomTop()
   const stand = useStand()
   const rocket = useRocket()
   const tiny = useTiny()
   return {
-    in: inStage.in && stand,
-    out: (inStage.in || inStage.out) && (rocket || tiny)
+    in: inStage.in && canGetToTop.in && stand,
+    out: inStage.out && canGetToTop.out && (rocket || tiny)
   }
 }
 
