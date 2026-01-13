@@ -19,7 +19,16 @@ import {
   useStand,
   useVine,
   useSnide,
-  useCoconut
+  useCoconut,
+  usePeanut,
+  useGrape,
+  useGuitar,
+  useTwirl,
+  useSprint,
+  useHunky,
+  useSpring,
+  useBalloon,
+  useOrange
 } from '../kongs'
 import { useHelmStartPosition, useHelmItem1, useHelmItemNum1, useHelmItem2, useHelmItemNum2, useKRoolItem, useKRoolItemNum } from '../settings'
 import { LogicBool } from '../world'
@@ -304,7 +313,7 @@ export const useWinCondition = (): boolean => {
     case 7: //Kill the Wabbit
       return false //you can't even fight K. Rool at all under that condition. Accordingly, the section of the tracker this shit serves is disabled.
     case 8: //Nanners
-      return currentGbCount >= targetItemCount
+      return currentGBCount >= targetItemCount
     case 9: //Blueprints
       return currentBlueprintCount >= targetItemCount
     case 10: //The Company Coins
