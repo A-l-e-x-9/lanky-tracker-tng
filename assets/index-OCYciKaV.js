@@ -11094,6 +11094,7 @@ const useGalleonHighTide = () => {
 const useGalleonLowTide = () => {
   const dive = useDive();
   const inStage = usePlayGalleon();
+  const canReachLighthouse = useGalleonLighthouseArea();
   if (!useGalleonTideStartHigh()) {
     return {
       in: true,
@@ -11101,8 +11102,8 @@ const useGalleonLowTide = () => {
     };
   }
   return {
-    in: dive.in && inStage.in,
-    out: dive.out && inStage.out
+    in: dive.in && inStage.in && canReachLighthouse.in,
+    out: dive.out && inStage.out && canReachLighthouse.out
   };
 };
 const useGalleonLighthousePlatform = () => {
