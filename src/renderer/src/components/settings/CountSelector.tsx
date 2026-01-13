@@ -16,7 +16,7 @@ const CountSelector: React.FC<CountSelectorProps> = (props) => {
   const { storeKey, imgUrl, maxValue } = props
   const [num] = useDonkStore(useShallow((state) => [state[props.prefix][storeKey]]))
   const bananaSeed = props.storeKey === 'goldBananas' && useDonkStore(useShallow((state) => state.winCondition.goldBananas)) ? 'all-bosses' : ''
-  const bpSeed = props.storeKey === 'dkBp' && props.storeKey === 'diddyBp' && props.storeKey === 'lankyBp' && props.storeKey === 'tinyBp' && props.storeKey === 'chunkyBp' && (useDonkStore(useShallow((state) => state.winCondition.goldBananas)) || useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))) ? 'all-bosses' : ''
+  const bpSeed = (props.storeKey === 'dkBp' && props.storeKey === 'diddyBp' && props.storeKey === 'lankyBp' && props.storeKey === 'tinyBp' && props.storeKey === 'chunkyBp') && (useDonkStore(useShallow((state) => state.winCondition.goldBananas)) || useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))) ? 'all-bosses' : ''
   const medalSeed = props.storeKey === 'bananaMedals' && useDonkStore(useShallow((state) => state.winCondition.bananaMedals)) ? 'all-bosses' : ''
   const crownSeed = props.storeKey === 'crowns' && useDonkStore(useShallow((state) => state.winCondition.crowns)) ? 'all-bosses' : ''
   const fairySeed = props.storeKey === 'fairies' && useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'all-bosses' : ''
