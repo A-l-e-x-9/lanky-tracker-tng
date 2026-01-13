@@ -264,7 +264,7 @@ main .grid {
   color: #00ff00;
 }
 
-.grid > .foolish {
+.grid > .foolish, div.grid.foolish {
   color: red;
   font-weight: bold;
 }
@@ -276,7 +276,7 @@ main .grid {
 
 .react-tabs__tab--selected {background-color: #ffffff;}
 
-#all-bosses {background-color: #800000;}
+.all-bosses {background-color: #800000;}
 
 @media (max-width: 720px) {
   .text {

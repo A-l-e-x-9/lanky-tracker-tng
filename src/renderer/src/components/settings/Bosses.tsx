@@ -13,7 +13,7 @@ import l7 from '../../assets/images/7.png'
 const Bosses = (): JSX.Element => {
 const allBosses = useDonkStore(useShallow((state) => state.winCondition.bosses)) ? 'all-bosses' : ''
   return (
-    <section className="boss-section" id={allBosses}>
+    <section className={`boss-section ${allBosses}`}>
     <h3>Bosses</h3>
       <section className="boss-list">
         <section className="boss1">

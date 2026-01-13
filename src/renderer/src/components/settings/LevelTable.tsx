@@ -49,7 +49,7 @@ const LevelTable = (): JSX.Element => {
             maxValue={201}
           />
         </section>
-        <section className="level3" id={key3And8Seed}>
+        <section className={`level3 ${key3And8Seed}`}>
           <img src={l3} height={24} />
           <LevelSelector storeKey="level3" />
           <SimpleKey keyNum={3} />
@@ -114,7 +114,7 @@ const LevelTable = (): JSX.Element => {
             maxValue={201}
           />
         </section>
-        <section className="level8" id={key3And8Seed || key8Seed}>
+        <section className={`level8 ${key3And8Seed || key8Seed}`}>
           <img src={l8} height={24} />
           <LevelSelector storeKey="level8" />
           <SimpleKey keyNum={8} />

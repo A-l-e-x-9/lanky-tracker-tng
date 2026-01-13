@@ -31,6 +31,7 @@ import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 
 const IslesRegionChecks: React.FC = () => (
+<>
   <div className="grid">
     <BananaMedalPool>
       <IslesMedalPool>
@@ -42,23 +43,33 @@ const IslesRegionChecks: React.FC = () => (
       </IslesMedalPool>
     </BananaMedalPool>
     <TrainingGroundsChecks />
+  </div>
     <IslesMainChecks />
     <IslesMainUpperChecks />
+  <div className="grid">
     <DiddyAirspaceChecks />
     <OuterIslesChecks />
     <PrisonChecks />
+  </div>
     <KremBaseChecks />
     <KremLiftChecks />
+  <div className="grid">
     <SnideRoomChecks />
     <KremTopChecks />
+  </div>
     <JapesLobbyChecks />
+  <div className="grid">
     <AztecLobbyChecks />
+  </div>
     <FactoryLobbyChecks />
     <GalleonLobbyChecks />
+  <div className="grid">
     <ForestLobbyChecks />
+  </div>
     <CavesLobbyChecks />
     <CastleLobbyChecks />
     <HelmLobbyChecks />
+  <div className="grid">
     <ShopLocations />
     <FairyReward />
     <JetpacCheck />
@@ -67,6 +78,7 @@ const IslesRegionChecks: React.FC = () => (
     <ShuffledDirt />
     <ShuffledFairies />
   </div>
+  </>
 )
 
 export default IslesRegionChecks
