@@ -42441,8 +42441,9 @@ const CountSelector = (props) => {
 };
 const SimpleIcon = (props) => {
   const isDKRapSeed = (props.storeKey === "dk" || props.storeKey === "coconut" || props.storeKey === "diddy" || props.storeKey === "peanut" || props.storeKey === "guitar" || props.storeKey === "rocket" || props.storeKey === "spring" || props.storeKey === "lanky" || props.storeKey === "grape" || props.storeKey === "stand" || props.storeKey === "sprint" || props.storeKey === "balloon" || props.storeKey === "tiny" || props.storeKey === "twirl" || props.storeKey === "mini" || props.storeKey === "chunky" || props.storeKey === "pineapple" || props.storeKey === "hunky" || props.storeKey === "orange" || props.storeKey === "barrel" || props.storeKey === "cranky") && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? "all-bosses" : "";
+  const isKRoolChallengeSeed = props.storeKey === "snide" && useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "all-bosses" : "";
   const value = useDonkStore((state) => state[props.prefix][props.storeKey]);
-  const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? "have" : "have-not"} ${props.className} ${isDKRapSeed}`;
+  const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? "have" : "have-not"} ${props.className} ${isDKRapSeed} ${isKRoolChallengeSeed}`;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classes, onClick: () => props.updateItem(props.storeKey, !value), children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
@@ -43133,7 +43134,7 @@ const l5 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAA
 const l6 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAVCAMAAABBhy+7AAAAq1BMVEUAAAD//wAgICD/pADeAADmAACoAACDAAD/9gCcAgD2AADFAAC9AAC0AAB7AAD/KQD2JgCLAAD/KSkxEBBBCAj/3gD/1QD/zQD2ewD/AADVAADNAABuAABeAABOAAA5KSkxKSlBEBA5EBApEBD/7gD/5gD/vQD/rAD2rAD/nAD/iwDegwD/ewDmewDFagDmWgD/UgDNMQDeKQD/GAD2GACsGACkGADuAACUAAB/9CeQAAAAAXRSTlMAQObYZgAAAKxJREFUGNNFzdcagjAMQOGkdLAFAUEZ7r237/9kEipyLpL+F/kKv2wbuvrv+0N0Egdzy/8UO0QMRKsb1q0cLR6QpB9qOqTcC6eNRmdib2hzTdSlPZsur9h2EfWlQS/DpBlwcDb1Nj2XbOTgDmi7MqvX2gWvIecGLQ+so/6HZvYBJZfYJgsYKyvVWMiQAYuVtU8Qk5P0ZwDAosK3Xk+l/AkD8jyuyrKKGIlMaXwBUrwJqIUfWicAAAAASUVORK5CYII=";
 const l7 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAAAAhFBMVEUAAAD//wAgICD/AACsAAB7AAD/7gDVAAC9AACUAABNAAB7ICD/3gD/zQD/vQDeAABqAAD/ewD2ewCfAACGAABmKSkpEBD/pAD2AADFAADeKSkpGBj/9gD/1QD/xQD/lAD/gwD2cwD2YgD/UgDmUgDFOQD/GADFGAC0GADNAAC0AABaAAB2wDSSAAAAAXRSTlMAQObYZgAAAIlJREFUGNNNilkWwiAQBIfICEFCghBN3Pf1/veT4TFqfXW9LlDDbcIMoP1GCLG11jo3gj4IZidB7792rOF1mRJkGiFiRIxjkkbOYG2MeT99snkNUCU6RaFEyOhzCTNqWUKibTnk6xfmi0Plc9j9Xa6Eq3uT7FTCHsPVWQ6rhcHwCD0UJaeLPZHHB1doBv/XpFOuAAAAAElFTkSuQmCC";
 const Bosses = () => {
-  const allBosses = useDonkStore(useShallow((state) => state.winCondition.bosses)) ? "all-bosses" : "";
+  const allBosses = useDonkStore(useShallow((state) => state.winCondition.bosses || state.winCondition.kRoolChallenge)) ? "all-bosses" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `boss-section ${allBosses}`, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Bosses" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss-list", children: [
@@ -43308,7 +43309,9 @@ const Ending = () => {
   const helmLogic = useCanDeactivateHelm();
   const roolLogic = useCanFightRool();
   const noKRoolFight = useNotFightingKRool();
-  if (noKRoolFight) {
+  const isKRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
+  const isKillTheWabbit = useDonkStore(useShallow((state) => state.winCondition.killTheWabbit));
+  if (noKRoolFight && !isKillTheWabbit || isKRoolsChallenge) {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "ending", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Helm" }),
@@ -43321,7 +43324,7 @@ const Ending = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "helm4" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "helm5" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: noKRoolFight ? "all-bosses" : "", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "K. Rool" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "span",
@@ -43331,7 +43334,7 @@ const Ending = () => {
           }
         )
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: noKRoolFight ? "all-bosses" : "", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool1" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool2" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool3" }),
@@ -43360,12 +43363,13 @@ const SimpleKey = (props) => {
   const value = useDonkStore((state) => state["key" + props.keyNum]);
   const setKey = useDonkStore((state) => state.setKey);
   const keysRequired = useDonkStore((state) => state.winCondition.bossKeys);
+  const kRoolsChallenge = useDonkStore((state) => state.winCondition.kRoolChallenge);
   return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     "img",
     {
       height: 24,
       src: keyIcon,
-      style: { filter: `grayscale(${value ? "0" : "1"})`, background: `${keysRequired ? "#800000" : "none"}` },
+      style: { filter: `grayscale(${value ? "0" : "1"})`, background: `${keysRequired ? "#800000" : kRoolsChallenge ? "#800000" : "none"}` },
       onClick: () => setKey(props.keyNum, !value)
     }
   ) });
