@@ -43956,6 +43956,7 @@ const GeneratorSettings = () => {
   );
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
+  const [isKeySeed, isKey8Seed, isKey38Seed, isKremKaptureSeed, isRapSeed, isChallengeSeed, isWabbitSeed, isGBSeed, isBPSeed, isCoCoinSeed, isMedalSeed, isCrownSeed, isFairySeed, isRainbowSeed, isBeanSeed, isPearlSeed, isBossSeed, isBonusSeed] = useDonkStore(useShallow((state) => [state.winCondition.bossKeys, state.winCondition.key8, state.winCondition.key3And8, state.winCondition.kremlingKapture, state.winCondition.takeItToTheFridge, state.winCondition.kRoolChallenge, state.winCondition.killTheWabbit, state.winCondition.goldBananas, state.winCondition.blueprints, state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.crowns, state.winCondition.fairies, state.winCondition.rainbowCoins, state.winCondition.theBean, state.winCondition.pearls, state.winCondition.bosses, state.winCondition.bonuses]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { onClick: openModal, title: "Generator Settings", children: "⚙️" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -44213,7 +44214,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(HelmDoorSelector2, {})
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Win Condition" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: `If "K. Rool's Challenge" is selected, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off in "UI Settings" below. On the other hand, if "Kill the Wabbit" is selected, K. Rool is forced OFF.` }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: `If "K. Rool's Challenge" is selected, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off. On the other hand, if "Kill the Wabbit" is selected, K. Rool is forced OFF.` }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Keys" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -44418,12 +44419,12 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 CountSelector,
                 {
-                  imgUrl: unknownIcon$1,
+                  imgUrl: isKeySeed || isKey8Seed || isKey38Seed || isBossSeed ? keyIcon : isKremKaptureSeed ? fairyCamIcon : isRapSeed ? crankyIcon : isChallengeSeed ? anyGunIcon : isWabbitSeed ? toughBananaIcon : isGBSeed ? gbIcon : isBPSeed ? blueprintIcon : isCoCoinSeed ? companyCoinIcon : isMedalSeed ? bananaMedalIcon : isCrownSeed ? crownIcon : isFairySeed ? fairyIcon : isRainbowSeed ? rainbowCoinIcon : isBeanSeed ? beanIcon : isPearlSeed ? pearlIcon : isBonusSeed ? bonusIcon : unknownIcon$1,
                   title: "Number of the indicated item needed.",
                   storeKey: "winConItemCount",
                   prefix: "winCondition",
                   setCount: setWinCondition,
-                  maxValue: 201
+                  maxValue: isKeySeed ? 8 : isGBSeed ? 201 : isBPSeed || isMedalSeed ? 40 : isCoCoinSeed ? 2 : isCrownSeed ? 10 : isFairySeed ? 20 : isRainbowSeed ? 16 : isBeanSeed ? 1 : isPearlSeed ? 5 : isBonusSeed ? 53 : 0
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
