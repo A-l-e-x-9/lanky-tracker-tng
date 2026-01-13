@@ -65,6 +65,7 @@ const GeneratorSettings: React.FC = () => {
 
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
+  const [isKeySeed, isKey8Seed, isKey38Seed, isKremKaptureSeed, isRapSeed, isChallengeSeed, isWabbitSeed, isGBSeed, isBPSeed, isCoCoinSeed, isMedalSeed, isCrownSeed, isFairySeed, isRainbowSeed, isBeanSeed, isPearlSeed, isBossSeed, isBonusSeed] = useDonkStore(useShallow((state) => [state.winCondition.bossKeys, state.winCondition.key8, state.winCondition.key3And8, state.winCondition.kremlingKapture, state.winCondition.takeItToTheFridge, state.winCondition.kRoolChallenge, state.winCondition.killTheWabbit, state.winCondition.goldBananas, state.winCondition.blueprints, state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.crowns, state.winCondition.fairies, state.winCondition.rainbowCoins, state.winCondition.theBean, state.winCondition.pearls, state.winCondition.bosses, state.winCondition.bonuses]))
 
   return (
     <span>
@@ -262,7 +263,7 @@ const GeneratorSettings: React.FC = () => {
               <HelmDoorSelector2 />
             </>
             <h3>Win Condition</h3>
-            <p className="full-grid">If "K. Rool's Challenge" is selected, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off in "UI Settings" below. On the other hand, if "Kill the Wabbit" is selected, K. Rool is forced OFF.</p>
+            <p className="full-grid">If "K. Rool's Challenge" is selected, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off. On the other hand, if "Kill the Wabbit" is selected, K. Rool is forced OFF.</p>
             <>
               <p>Keys</p>
               <SimpleRadioIcon
@@ -411,12 +412,12 @@ const GeneratorSettings: React.FC = () => {
             <p className="full-grid">&nbsp;</p>
             <p>Number of the indicated item needed:</p>
               <CountSelector
-                imgUrl={unknownIcon}
+                imgUrl={(isKeySeed || isKey8Seed || isKey38Seed || isBossSeed) ? keyIcon : isKremKaptureSeed ? fairyCamIcon : isRapSeed ? crankyIcon : isChallengeSeed ? hardShootIcon : isWabbitSeed ? toughBananaIcon : isGBSeed ? gbIcon : isBPSeed ? blueprintIcon : isCoCoinSeed ? companyCoinIcon : isMedalSeed ? bananaMedalIcon : isCrownSeed ? crownIcon : isFairySeed ? fairyIcon : isRainbowSeed ? rainbowCoinIcon : isBeanSeed ? beanIcon : isPearlSeed ? pearlIcon : isBonusSeed ? bonusIcon : alreadyOpenedIcon}
                 title="Number of the indicated item needed."
                 storeKey="winConItemCount"
                 prefix="winCondition"
                 setCount={setWinCondition}
-                maxValue={201}
+                maxValue={isKeySeed ? 8 : isGBSeed ? 201 : (isBPSeed || isMedalSeed) ? 40 : isCoCoinSeed ? 2 : isCrownSeed ? 10 : isFairySeed ? 20 : isRainbowSeed ? 16 : isBeanSeed ? 1 : isPearlSeed ? 5 : isBonusSeed ? 53 : 0}
               />
             <p></p>
             <p></p>
