@@ -24,7 +24,7 @@ if ((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) {
         <EndingSelector rootKey="helm4" />
         <EndingSelector rootKey="helm5" />
       </section>
-      <div className={noKRoolFight ? 'all-bosses' : ''}>
+      <div className={isKRoolsChallenge ? 'all-bosses' : ''}>
         <span>K. Rool</span>
         <span
           className={roolLogic.in ? 'available' : roolLogic.out ? 'logic-break' : 'not-available'}
