@@ -42440,8 +42440,9 @@ const CountSelector = (props) => {
   );
 };
 const SimpleIcon = (props) => {
+  const isDKRapSeed = (props.storeKey === "dk" || props.storeKey === "coconut" || props.storeKey === "diddy" || props.storeKey === "peanut" || props.storeKey === "guitar" || props.storeKey === "rocket" || props.storeKey === "spring" || props.storeKey === "lanky" || props.storeKey === "grape" || props.storeKey === "stand" || props.storeKey === "sprint" || props.storeKey === "balloon" || props.storeKey === "tiny" || props.storeKey === "twirl" || props.storeKey === "mini" || props.storeKey === "chunky" || props.storeKey === "pineapple" || props.storeKey === "hunky" || props.storeKey === "orange" || props.storeKey === "barrel" || props.storeKey === "cranky") && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? "all-bosses" : "";
   const value = useDonkStore((state) => state[props.prefix][props.storeKey]);
-  const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? "have" : "have-not"} ${props.className}`;
+  const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? "have" : "have-not"} ${props.className} ${isDKRapSeed}`;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classes, onClick: () => props.updateItem(props.storeKey, !value), children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
@@ -42459,6 +42460,7 @@ const SimpleIcon = (props) => {
 };
 const DoubleIcon = (props) => {
   const isKremKaptureSeed = props.title === "Fairy Cam and Shockwave" && useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "all-bosses" : "";
+  const isDKRapSeed = props.storeRight === "climbing" && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? "all-bosses" : "";
   const [left, right] = useDonkStore(
     useShallow((state) => [
       state[props.prefix][props.storeLeft],
@@ -42471,7 +42473,7 @@ const DoubleIcon = (props) => {
   } else if (!left && right) {
     url = props.imgRight;
   }
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `double-icon ${props.prefix}-${props.storeLeft} ${isKremKaptureSeed}`, children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `double-icon ${props.prefix}-${props.storeLeft} ${isKremKaptureSeed} ${isDKRapSeed}`, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
       {
