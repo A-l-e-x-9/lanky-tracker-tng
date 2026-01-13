@@ -259,9 +259,53 @@ export const useHelmItem1 = (): number =>
 
 export const useHelmItem2 = (): number =>
   useDonkStore(useShallow((state) => state.settings.helmItem2))
+
+export const useKRoolItem = (): number => {
+const currentWinCon = useDonkStore(useShallow((state) => state.winCondition))
+if (currentWinCon.bossKeys) {
+  return 1
+} else if (currentWinCon.key8) {
+  return 2
+} else if (currentWinCon.key3And8) {
+  return 3
+} else if (currentWinCon.kremlingKapture) {
+  return 4
+} else if (currentWinCon.takeItToTheFridge) {
+  return 5
+} else if (currentWinCon.kRoolChallenge) {
+  return 6
+} else if (currentWinCon.killTheWabbit) {
+  return 7
+} else if (currentWinCon.goldBananas) {
+  return 8
+} else if (currentWinCon.blueprintws) {
+  return 9
+} else if (currentWinCon.companyCoins) {
+  return 10
+} else if (currentWinCon.bananaMedals) {
+  return 11
+} else if (currentWinCon.crowns) {
+  return 12
+} else if (currentWinCon.fairies) {
+  return 13
+} else if (currentWinCon.rainbowCoins) {
+  return 14
+} else if (currentWinCon.theBean) {
+  return 15
+} else if (currentWinCon.pearls) {
+  return 16
+} else if (currentWinCon.bosses) {
+  return 17
+} else if (currentWinCon.bonuses) {
+  return 18
+}
+}
   
 export const useHelmItemNum1 = (): number =>
   useDonkStore(useShallow((state) => state.settings.helmItemNum1))
 
 export const useHelmItemNum2 = (): number =>
   useDonkStore(useShallow((state) => state.settings.helmItemNum2))
+
+export const useKRoolItemNum = (): number =>
+  useDonkStore(useShallow((state) => state.winCondition.winConItemCount))

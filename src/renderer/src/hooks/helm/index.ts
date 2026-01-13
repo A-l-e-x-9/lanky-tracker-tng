@@ -8,6 +8,7 @@ import {
 } from '../endings'
 import { useIslesHelmEntry, usePlayLevel, useSlamLevel } from '../isles'
 import {
+  useAllKongs,
   useAllMusic,
   useAnyMusic,
   useGrab,
@@ -16,9 +17,11 @@ import {
   usePunch,
   useRocket,
   useStand,
-  useVine
+  useVine,
+  useSnide,
+  useCoconut
 } from '../kongs'
-import { useHelmStartPosition, useHelmItem1, useHelmItemNum1, useHelmItem2, useHelmItemNum2 } from '../settings'
+import { useHelmStartPosition, useHelmItem1, useHelmItemNum1, useHelmItem2, useHelmItemNum2, useKRoolItem, useKRoolItemNum } from '../settings'
 import { LogicBool } from '../world'
 import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentCoCoinCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useBean, useCurrentPearlCount } from '../consumables'
 
@@ -266,6 +269,65 @@ export const useCanDeactivateHelm = (): boolean => {
   return check1 && check2 && check3 && check4 && check5
 }
 
+//Have we satisfied the conditions needed just for K. Rool to appear?
+export const useWinCondition = (): boolean => {
+  const itemNeeded = useKRoolItem()
+  const hasKey3 = useDonkStore(useShallow((state) => state.key3))
+  const hasKey8 = useDonkStore(useShallow((state) => state.key8))
+  const hasSnide = useSnide()
+  const targetItemCount = useKRoolItemNum()
+  const currentGBCount = useCurrentGBCount()
+  const currentBlueprintCount = useCurrentBlueprintCount()
+  const currentCoCoinCount = useCurrentCoCoinCount()
+  const currentKeyCount = useCurrentKeyCount()
+  const currentBananaMedalCount = useCurrentBananaMedalCount()
+  const currentCrownCount = useCurrentCrownCount()
+  const currentFairyCount = useCurrentFairyCount()
+  const currentRainbowCoinCount = useCurrentRainbowCoinCount()
+  const currentBeanCount = useBean()
+  const currentPearlCount = useCurrentPearlCount()
+  const tookItToTheFridge = useAllKongs() && useCoconut() && usePeanut() && useGrape() && usePineapple() && useGuitar() && useStand() && useTwirl() && useRocket() && useSprint() && useMini() && useHunky() && useSpring() && useBalloon() && useOrange() && useClimbing() && useBarrel() && useCranky()
+  
+  switch (itemNeeded) {
+    case 1: //keys
+      return currentKeyCount >= targetItemCount
+    case 2: //Key 8 only
+      return hasKey8
+    case 3: //Keys 3 and 8
+      return hasKey3 && hasKey8
+    case 4: //Kremling Kapture
+      return true //stuff needed to satisfy this win con TBD...
+    case 5: //Complete the DK Rap
+      return tookItToTheFridge
+    case 6: //K. Rool's Challenge
+      return (currentKeyCount >= 8) && hasSnide && (currentBlueprintCount >= 40) //Currently doesn't account for Bonus Barrels or bosses
+    case 7: //Kill the Wabbit
+      return false //you can't even fight K. Rool at all under that condition. Accordingly, the section of the tracker this shit serves is disabled.
+    case 8: //Nanners
+      return currentGbCount >= targetItemCount
+    case 9: //Blueprints
+      return currentBlueprintCount >= targetItemCount
+    case 10: //The Company Coins
+      return currentCoCoinCount >= targetItemCount
+    case 11: //Banana Medals
+      return currentBananaMedalCount >= targetItemCount
+    case 12: //Crowns
+      return currentCrownCount >= targetItemCount
+    case 13: //Fairies
+      return currentFairyCount >= targetItemCount
+    case 14: //Rainbow Coins
+      return currentRainbowCoinCount >= targetItemCount
+    case 15: //THE BEAN!!!
+      return Number(currentBeanCount) >= targetItemCount
+    case 16: //Pearls
+      return currentPearlCount >= targetItemCount
+    case 17: //Bosses
+    case 18: //Bonuses (how I'm gonna handle these two is still currently TBD)
+    default:
+      return true
+  }
+}
+
 export const useCanFightRool = (): LogicBool => {
   const num1 = useSingleRoolNum(1)
   const num2 = useSingleRoolNum(2)
@@ -277,6 +339,7 @@ export const useCanFightRool = (): LogicBool => {
   const check3 = useSingleRoolCheck(3)
   const check4 = useSingleRoolCheck(4)
   const check5 = useSingleRoolCheck(5)
+  const winConditionSatisfied = useWinCondition()
 
   if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
     return {
@@ -286,8 +349,8 @@ export const useCanFightRool = (): LogicBool => {
   }
 
   return {
-    in: check1.in && check2.in && check3.in && check4.in && check5.in,
-    out: check1.out && check2.out && check3.out && check4.out && check5.out
+    in: winConditionSatisfied && check1.in && check2.in && check3.in && check4.in && check5.in,
+    out: winConditionSatisfied && check1.out && check2.out && check3.out && check4.out && check5.out
   }
 }
 

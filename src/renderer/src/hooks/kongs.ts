@@ -60,6 +60,15 @@ export const useAnyKong = (): boolean => {
   return dk || diddy || lanky || tiny || chunky
 }
 
+export const useAllKongs = (): boolean => {
+  const dk = useDk()
+  const diddy = useDiddy()
+  const lanky = useLanky()
+  const tiny = useTiny()
+  const chunky = useChunky()
+  return dk && diddy && lanky && tiny && chunky
+}
+
 /**
  * Can you grab higher ledges than the game expects via using Tag Anywhere?
  *
