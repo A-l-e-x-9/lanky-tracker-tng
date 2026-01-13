@@ -16,6 +16,7 @@ type DoubleIconProps = {
 const DoubleIcon: React.FC<DoubleIconProps> = (props) => {
   const isKremKaptureSeed = props.title === 'Fairy Cam and Shockwave' && useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'all-bosses' : ''
   const isDKRapSeed = props.storeRight === 'climbing' && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? 'all-bosses' : ''
+  const coCoinSeed = props.storeRight === 'climbing' && useDonkStore(useShallow((state) => state.winCondition.companyCoins)) ? 'all-bosses' : ''
   const [left, right] = useDonkStore(
     useShallow((state) => [
       state[props.prefix][props.storeLeft],
