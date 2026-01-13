@@ -28,7 +28,10 @@ import {
   useHunky,
   useSpring,
   useBalloon,
-  useOrange
+  useOrange,
+  useClimbing,
+  useBarrel,
+  useCranky
 } from '../kongs'
 import { useHelmStartPosition, useHelmItem1, useHelmItemNum1, useHelmItem2, useHelmItemNum2, useKRoolItem, useKRoolItemNum } from '../settings'
 import { LogicBool } from '../world'

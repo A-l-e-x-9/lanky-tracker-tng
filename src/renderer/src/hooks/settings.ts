@@ -278,7 +278,7 @@ if (currentWinCon.bossKeys) {
   return 7
 } else if (currentWinCon.goldBananas) {
   return 8
-} else if (currentWinCon.blueprintws) {
+} else if (currentWinCon.blueprints) {
   return 9
 } else if (currentWinCon.companyCoins) {
   return 10
@@ -298,7 +298,8 @@ if (currentWinCon.bossKeys) {
   return 17
 } else if (currentWinCon.bonuses) {
   return 18
-}
+} else {
+  return 0
 }
   
 export const useHelmItemNum1 = (): number =>
