@@ -15,6 +15,7 @@ type DoubleIconProps = {
 
 const DoubleIcon: React.FC<DoubleIconProps> = (props) => {
   const isKremKaptureSeed = props.title === 'Fairy Cam and Shockwave' && useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'all-bosses' : ''
+  const isDKRapSeed = props.storeRight === 'climbing' && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? 'all-bosses' : ''
   const [left, right] = useDonkStore(
     useShallow((state) => [
       state[props.prefix][props.storeLeft],
@@ -28,7 +29,7 @@ const DoubleIcon: React.FC<DoubleIconProps> = (props) => {
     url = props.imgRight
   }
   return (
-    <div className={`double-icon ${props.prefix}-${props.storeLeft} ${isKremKaptureSeed}`}>
+    <div className={`double-icon ${props.prefix}-${props.storeLeft} ${isKremKaptureSeed} ${isDKRapSeed}`}>
       <img
         width={24}
         height={24}
