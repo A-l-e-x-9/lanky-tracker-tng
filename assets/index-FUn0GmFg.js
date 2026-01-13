@@ -42408,6 +42408,13 @@ const Checklist = () => {
 const CountSelector = (props) => {
   const { storeKey, imgUrl, maxValue } = props;
   const [num] = useDonkStore(useShallow((state) => [state[props.prefix][storeKey]]));
+  const bananaSeed = props.storeKey === "goldBananas" && useDonkStore(useShallow((state) => state.winCondition.goldBananas)) ? "all-bosses" : "";
+  const bpSeed = (props.storeKey === "dkBp" || props.storeKey === "diddyBp" || props.storeKey === "lankyBp" || props.storeKey === "tinyBp" || props.storeKey === "chunkyBp") && (useDonkStore(useShallow((state) => state.winCondition.goldBananas)) || useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))) ? "all-bosses" : "";
+  const medalSeed = props.storeKey === "bananaMedals" && useDonkStore(useShallow((state) => state.winCondition.bananaMedals)) ? "all-bosses" : "";
+  const crownSeed = props.storeKey === "crowns" && useDonkStore(useShallow((state) => state.winCondition.crowns)) ? "all-bosses" : "";
+  const fairySeed = props.storeKey === "fairies" && useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "all-bosses" : "";
+  const rainbowCoinSeed = props.storeKey === "rainbowCoins" && useDonkStore(useShallow((state) => state.winCondition.rainbowCoins)) ? "all-bosses" : "";
+  const pearlSeed = props.storeKey === "pearls" && useDonkStore(useShallow((state) => state.winCondition.pearls)) ? "all-bosses" : "";
   const clamp2 = (num2) => Math.min(Math.max(num2, 0), maxValue);
   const nextCount = (num2) => clamp2(num2 + 1);
   const prevCount = (num2) => clamp2(num2 - 1);
@@ -42428,7 +42435,7 @@ const CountSelector = (props) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
     {
-      className: `count-icon ${props.prefix}-${props.storeKey}`,
+      className: `count-icon ${props.prefix}-${props.storeKey} ${bananaSeed} ${bpSeed} ${medalSeed} ${crownSeed} ${fairySeed} ${rainbowCoinSeed} ${pearlSeed}`,
       onClick: handleNextLevel,
       onContextMenu: handlePrevLevel,
       onWheel: handleWheel,
@@ -42442,8 +42449,9 @@ const CountSelector = (props) => {
 const SimpleIcon = (props) => {
   const isDKRapSeed = (props.storeKey === "dk" || props.storeKey === "coconut" || props.storeKey === "diddy" || props.storeKey === "peanut" || props.storeKey === "guitar" || props.storeKey === "rocket" || props.storeKey === "spring" || props.storeKey === "lanky" || props.storeKey === "grape" || props.storeKey === "stand" || props.storeKey === "sprint" || props.storeKey === "balloon" || props.storeKey === "tiny" || props.storeKey === "twirl" || props.storeKey === "mini" || props.storeKey === "chunky" || props.storeKey === "pineapple" || props.storeKey === "hunky" || props.storeKey === "orange" || props.storeKey === "barrel" || props.storeKey === "cranky") && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? "all-bosses" : "";
   const isKRoolChallengeSeed = props.storeKey === "snide" && useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "all-bosses" : "";
+  const beanSeed = props.storeKey === "bean" && useDonkStore(useShallow((state) => state.winCondition.theBean)) ? "all-bosses" : "";
   const value = useDonkStore((state) => state[props.prefix][props.storeKey]);
-  const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? "have" : "have-not"} ${props.className} ${isDKRapSeed} ${isKRoolChallengeSeed}`;
+  const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? "have" : "have-not"} ${props.className} ${isDKRapSeed} ${isKRoolChallengeSeed} ${beanSeed}`;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classes, onClick: () => props.updateItem(props.storeKey, !value), children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
@@ -42462,6 +42470,7 @@ const SimpleIcon = (props) => {
 const DoubleIcon = (props) => {
   const isKremKaptureSeed = props.title === "Fairy Cam and Shockwave" && useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "all-bosses" : "";
   const isDKRapSeed = props.storeRight === "climbing" && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? "all-bosses" : "";
+  const coCoinSeed = props.storeRight === "climbing" && useDonkStore(useShallow((state) => state.winCondition.companyCoins)) ? "all-bosses" : "";
   const [left, right] = useDonkStore(
     useShallow((state) => [
       state[props.prefix][props.storeLeft],
@@ -42474,7 +42483,7 @@ const DoubleIcon = (props) => {
   } else if (!left && right) {
     url = props.imgRight;
   }
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `double-icon ${props.prefix}-${props.storeLeft} ${isKremKaptureSeed} ${isDKRapSeed}`, children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `double-icon ${props.prefix}-${props.storeLeft} ${isKremKaptureSeed} ${isDKRapSeed} ${coCoinSeed}`, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
       {
