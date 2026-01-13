@@ -43333,7 +43333,7 @@ const Ending = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "helm4" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "helm5" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: noKRoolFight ? "all-bosses" : "", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: isKRoolsChallenge ? "all-bosses" : "", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "K. Rool" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "span",
