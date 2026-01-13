@@ -41,7 +41,7 @@ const CountSelector: React.FC<CountSelectorProps> = (props) => {
 
   return (
     <div
-      className={`count-icon ${props.prefix}-${props.storeKey}`}
+      className={`count-icon ${props.prefix}-${props.storeKey} ${bananaSeed} ${bpSeed} ${medalSeed} ${crownSeed} ${fairySeed} ${rainbowCoinSeed} ${pearlSeed}`}
       onClick={handleNextLevel}
       onContextMenu={handlePrevLevel}
       onWheel={handleWheel}

@@ -29,7 +29,7 @@ const DoubleIcon: React.FC<DoubleIconProps> = (props) => {
     url = props.imgRight
   }
   return (
-    <div className={`double-icon ${props.prefix}-${props.storeLeft} ${isKremKaptureSeed} ${isDKRapSeed}`}>
+    <div className={`double-icon ${props.prefix}-${props.storeLeft} ${isKremKaptureSeed} ${isDKRapSeed} ${coCoinSeed}`}>
       <img
         width={24}
         height={24}
