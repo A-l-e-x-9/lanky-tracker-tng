@@ -301,6 +301,7 @@ if (currentWinCon.bossKeys) {
 } else {
   return 0
 }
+}
   
 export const useHelmItemNum1 = (): number =>
   useDonkStore(useShallow((state) => state.settings.helmItemNum1))
