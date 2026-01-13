@@ -10648,8 +10648,51 @@ const useBetaLankyPhase = () => useDonkStore(useShallow((state) => state.setting
 const useAngryCaves = () => useDonkStore(useShallow((state) => state.settings.angyKosha));
 const useHelmItem1 = () => useDonkStore(useShallow((state) => state.settings.helmItem1));
 const useHelmItem2 = () => useDonkStore(useShallow((state) => state.settings.helmItem2));
+const useKRoolItem = () => {
+  const currentWinCon = useDonkStore(useShallow((state) => state.winCondition));
+  if (currentWinCon.bossKeys) {
+    return 1;
+  } else if (currentWinCon.key8) {
+    return 2;
+  } else if (currentWinCon.key3And8) {
+    return 3;
+  } else if (currentWinCon.kremlingKapture) {
+    return 4;
+  } else if (currentWinCon.takeItToTheFridge) {
+    return 5;
+  } else if (currentWinCon.kRoolChallenge) {
+    return 6;
+  } else if (currentWinCon.killTheWabbit) {
+    return 7;
+  } else if (currentWinCon.goldBananas) {
+    return 8;
+  } else if (currentWinCon.blueprints) {
+    return 9;
+  } else if (currentWinCon.companyCoins) {
+    return 10;
+  } else if (currentWinCon.bananaMedals) {
+    return 11;
+  } else if (currentWinCon.crowns) {
+    return 12;
+  } else if (currentWinCon.fairies) {
+    return 13;
+  } else if (currentWinCon.rainbowCoins) {
+    return 14;
+  } else if (currentWinCon.theBean) {
+    return 15;
+  } else if (currentWinCon.pearls) {
+    return 16;
+  } else if (currentWinCon.bosses) {
+    return 17;
+  } else if (currentWinCon.bonuses) {
+    return 18;
+  } else {
+    return 0;
+  }
+};
 const useHelmItemNum1 = () => useDonkStore(useShallow((state) => state.settings.helmItemNum1));
 const useHelmItemNum2 = () => useDonkStore(useShallow((state) => state.settings.helmItemNum2));
+const useKRoolItemNum = () => useDonkStore(useShallow((state) => state.winCondition.winConItemCount));
 const BananaMedalPool = ({ children }) => usePoolBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const IslesMedalPool = ({ children }) => useIslesBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const ArenaPool = ({ children }) => usePoolCrowns() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -10693,6 +10736,14 @@ const useAnyKong = () => {
   const tiny = useTiny();
   const chunky = useChunky();
   return dk2 || diddy || lanky || tiny || chunky;
+};
+const useAllKongs = () => {
+  const dk2 = useDk();
+  const diddy = useDiddy();
+  const lanky = useLanky();
+  const tiny = useTiny();
+  const chunky = useChunky();
+  return dk2 && diddy && lanky && tiny && chunky;
 };
 const useHighGrab = () => {
   const diddy = useDiddy();
@@ -41979,6 +42030,62 @@ const useCanDeactivateHelm = () => {
   }
   return check1 && check2 && check3 && check4 && check5;
 };
+const useWinCondition = () => {
+  const itemNeeded = useKRoolItem();
+  const hasKey3 = useDonkStore(useShallow((state) => state.key3));
+  const hasKey8 = useDonkStore(useShallow((state) => state.key8));
+  const hasSnide = useSnide();
+  const targetItemCount = useKRoolItemNum();
+  const currentGBCount = useCurrentGBCount();
+  const currentBlueprintCount = useCurrentBlueprintCount();
+  const currentCoCoinCount = useCurrentCoCoinCount();
+  const currentKeyCount = useCurrentKeyCount();
+  const currentBananaMedalCount = useCurrentBananaMedalCount();
+  const currentCrownCount = useCurrentCrownCount();
+  const currentFairyCount = useCurrentFairyCount();
+  const currentRainbowCoinCount = useCurrentRainbowCoinCount();
+  const currentBeanCount = useBean();
+  const currentPearlCount = useCurrentPearlCount();
+  const tookItToTheFridge = useAllKongs() && useCoconut() && usePeanut() && useGrape() && usePineapple() && useGuitar() && useStand() && useTwirl() && useRocket() && useSprint() && useMini() && useHunky() && useSpring() && useBalloon() && useOrange() && useClimbing() && useBarrel() && useCranky();
+  switch (itemNeeded) {
+    case 1:
+      return currentKeyCount >= targetItemCount;
+    case 2:
+      return hasKey8;
+    case 3:
+      return hasKey3 && hasKey8;
+    case 4:
+      return true;
+    case 5:
+      return tookItToTheFridge;
+    case 6:
+      return currentKeyCount >= 8 && hasSnide && currentBlueprintCount >= 40;
+    case 7:
+      return false;
+    case 8:
+      return currentGBCount >= targetItemCount;
+    case 9:
+      return currentBlueprintCount >= targetItemCount;
+    case 10:
+      return currentCoCoinCount >= targetItemCount;
+    case 11:
+      return currentBananaMedalCount >= targetItemCount;
+    case 12:
+      return currentCrownCount >= targetItemCount;
+    case 13:
+      return currentFairyCount >= targetItemCount;
+    case 14:
+      return currentRainbowCoinCount >= targetItemCount;
+    case 15:
+      return Number(currentBeanCount) >= targetItemCount;
+    case 16:
+      return currentPearlCount >= targetItemCount;
+    case 17:
+    case 18:
+    default:
+      return true;
+  }
+};
 const useCanFightRool = () => {
   const num1 = useSingleRoolNum(1);
   const num2 = useSingleRoolNum(2);
@@ -41990,6 +42097,7 @@ const useCanFightRool = () => {
   const check3 = useSingleRoolCheck(3);
   const check4 = useSingleRoolCheck(4);
   const check5 = useSingleRoolCheck(5);
+  const winConditionSatisfied = useWinCondition();
   if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
     return {
       in: false,
@@ -41997,8 +42105,8 @@ const useCanFightRool = () => {
     };
   }
   return {
-    in: check1.in && check2.in && check3.in && check4.in && check5.in,
-    out: check1.out && check2.out && check3.out && check4.out && check5.out
+    in: winConditionSatisfied && check1.in && check2.in && check3.in && check4.in && check5.in,
+    out: winConditionSatisfied && check1.out && check2.out && check3.out && check4.out && check5.out
   };
 };
 const useNotFightingKRool = () => useDonkStore(useShallow((state) => state.ui.hideKRool));
