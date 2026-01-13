@@ -32,7 +32,7 @@ if ((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) {
           ⬤
         </span>
       </div>
-      <section className={noKRoolFight ? 'all-bosses' : ''}>
+      <section className={isKRoolsChallenge ? 'all-bosses' : ''}>
         <RoolSelector roolRootKey="rool1" />
         <RoolSelector roolRootKey="rool2" />
         <RoolSelector roolRootKey="rool3" />
