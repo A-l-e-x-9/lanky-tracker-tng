@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import { useCanDeactivateHelm, useCanFightRool, useNotFightingKRool } from '@renderer/hooks/helm'
 import { EndingSelector, RoolSelector } from './EndingSelector'
 
@@ -5,8 +7,10 @@ const Ending: React.FC = () => {
   const helmLogic = useCanDeactivateHelm()
   const roolLogic = useCanFightRool()
   const noKRoolFight = useNotFightingKRool()
+  const isKRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))
+  const isKillTheWabbit = useDonkStore(useShallow((state) => state.winCondition.killTheWabbit))
   
-if (noKRoolFight) {
+if ((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) {
   return (
     <section className="ending">
       <div>
@@ -20,7 +24,7 @@ if (noKRoolFight) {
         <EndingSelector rootKey="helm4" />
         <EndingSelector rootKey="helm5" />
       </section>
-      <div>
+      <div className={noKRoolFight ? 'all-bosses' : ''}>
         <span>K. Rool</span>
         <span
           className={roolLogic.in ? 'available' : roolLogic.out ? 'logic-break' : 'not-available'}
@@ -28,7 +32,7 @@ if (noKRoolFight) {
           ⬤
         </span>
       </div>
-      <section>
+      <section className={noKRoolFight ? 'all-bosses' : ''}>
         <RoolSelector roolRootKey="rool1" />
         <RoolSelector roolRootKey="rool2" />
         <RoolSelector roolRootKey="rool3" />
