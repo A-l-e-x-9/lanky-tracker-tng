@@ -42031,6 +42031,27 @@ const useCanDeactivateHelm = () => {
   }
   return check1 && check2 && check3 && check4 && check5;
 };
+const useTheFridge = () => {
+  const hasAllKongs = useAllKongs();
+  const hasCoconut = useCoconut();
+  const hasPeanut = usePeanut();
+  const hasGrapes = useGrape();
+  const hasPineapple = usePineapple();
+  const hasGuitar = useGuitar();
+  const hasOStand = useStand();
+  const hinaKagiyama = useTwirl();
+  const hasJetbarrel = useRocket();
+  const hasSprint = useSprint();
+  const hasMiniMonkey = useMini();
+  const hasHunkyChunky = useHunky();
+  const springHasSprung = useSpring();
+  const inflation = useBalloon();
+  const hasOranges = useOrange();
+  const hasClimbing = useClimbing();
+  const hasBarrels = useBarrel();
+  const hasCranky = useCranky();
+  return hasAllKongs && hasCoconut && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasSprint && hasMiniMonkey && hasHunkyChunky && springHasSprung && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky;
+};
 const useWinCondition = () => {
   const itemNeeded = useKRoolItem();
   const hasKey3 = useDonkStore(useShallow((state) => state.key3));
@@ -42047,7 +42068,7 @@ const useWinCondition = () => {
   const currentRainbowCoinCount = useCurrentRainbowCoinCount();
   const currentBeanCount = useBean();
   const currentPearlCount = useCurrentPearlCount();
-  const tookItToTheFridge = useAllKongs() && useCoconut() && usePeanut() && useGrape() && usePineapple() && useGuitar() && useStand() && useTwirl() && useRocket() && useSprint() && useMini() && useHunky() && useSpring() && useBalloon() && useOrange() && useClimbing() && useBarrel() && useCranky();
+  const tookItToTheFridge = useTheFridge();
   switch (itemNeeded) {
     case 1:
       return currentKeyCount >= targetItemCount;
