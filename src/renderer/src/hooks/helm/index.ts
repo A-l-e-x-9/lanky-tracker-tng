@@ -281,6 +281,27 @@ export const useCanDeactivateHelm = (): boolean => {
   return check1 && check2 && check3 && check4 && check5
 }
 
+export const useTheFridge = (): boolean => {
+  const hasAllKongs = useAllKongs()
+  const hasCoconut = useCoconut()
+  const hasPeanut = usePeanut()
+  const hasGrapes = useGrape()
+  const hasPineapple = usePineapple()
+  const hasGuitar = useGuitar()
+  const hasOStand = useStand()
+  const hinaKagiyama = useTwirl()
+  const hasJetbarrel = useRocket()
+  const hasSprint = useSprint()
+  const hasMiniMonkey = useMini()
+  const hasHunkyChunky = useHunky()
+  const springHasSprung = useSpring()
+  const inflation = useBalloon()
+  const hasOranges = useOrange()
+  const hasClimbing = useClimbing()
+  const hasBarrels = useBarrel()
+  const hasCranky = useCranky()
+  return hasAllKongs && hasCoconut && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasSpring && hasMiniMonkey && hasHunkyChunky && springHasSprung && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky
+}
 //Have we satisfied the conditions needed just for K. Rool to appear?
 export const useWinCondition = (): boolean => {
   const itemNeeded = useKRoolItem()
@@ -298,7 +319,7 @@ export const useWinCondition = (): boolean => {
   const currentRainbowCoinCount = useCurrentRainbowCoinCount()
   const currentBeanCount = useBean()
   const currentPearlCount = useCurrentPearlCount()
-  const tookItToTheFridge = useAllKongs() && useCoconut() && usePeanut() && useGrape() && usePineapple() && useGuitar() && useStand() && useTwirl() && useRocket() && useSprint() && useMini() && useHunky() && useSpring() && useBalloon() && useOrange() && useClimbing() && useBarrel() && useCranky()
+  const tookItToTheFridge = useTheFridge()
   
   switch (itemNeeded) {
     case 1: //keys
