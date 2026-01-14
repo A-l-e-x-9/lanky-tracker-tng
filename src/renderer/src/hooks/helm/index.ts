@@ -300,7 +300,7 @@ export const useTheFridge = (): boolean => {
   const hasClimbing = useClimbing()
   const hasBarrels = useBarrel()
   const hasCranky = useCranky()
-  return hasAllKongs && hasCoconut && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasSpring && hasMiniMonkey && hasHunkyChunky && springHasSprung && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky
+  return hasAllKongs && hasCoconut && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasSprint && hasMiniMonkey && hasHunkyChunky && springHasSprung && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky
 }
 //Have we satisfied the conditions needed just for K. Rool to appear?
 export const useWinCondition = (): boolean => {
