@@ -42034,6 +42034,7 @@ const useCanDeactivateHelm = () => {
 const useTheFridge = () => {
   const hasAllKongs = useAllKongs();
   const hasCoconut = useCoconut();
+  const hasStrongKong = useStrong();
   const hasPeanut = usePeanut();
   const hasGrapes = useGrape();
   const hasPineapple = usePineapple();
@@ -42041,16 +42042,14 @@ const useTheFridge = () => {
   const hasOStand = useStand();
   const hinaKagiyama = useTwirl();
   const hasJetbarrel = useRocket();
-  const hasSprint = useSprint();
+  const hasTrombone = useTrombone();
   const hasMiniMonkey = useMini();
-  const hasHunkyChunky = useHunky();
-  const springHasSprung = useSpring();
   const inflation = useBalloon();
   const hasOranges = useOrange();
   const hasClimbing = useClimbing();
   const hasBarrels = useBarrel();
   const hasCranky = useCranky();
-  return hasAllKongs && hasCoconut && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasSprint && hasMiniMonkey && hasHunkyChunky && springHasSprung && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky;
+  return hasAllKongs && hasCoconut && hasStrongKong && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasTrombone && hasMiniMonkey && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky;
 };
 const useWinCondition = () => {
   const itemNeeded = useKRoolItem();
@@ -42577,7 +42576,7 @@ const CountSelector = (props) => {
   );
 };
 const SimpleIcon = (props) => {
-  const isDKRapSeed = (props.storeKey === "dk" || props.storeKey === "coconut" || props.storeKey === "diddy" || props.storeKey === "peanut" || props.storeKey === "guitar" || props.storeKey === "rocket" || props.storeKey === "spring" || props.storeKey === "lanky" || props.storeKey === "grape" || props.storeKey === "stand" || props.storeKey === "sprint" || props.storeKey === "balloon" || props.storeKey === "tiny" || props.storeKey === "twirl" || props.storeKey === "mini" || props.storeKey === "chunky" || props.storeKey === "pineapple" || props.storeKey === "hunky" || props.storeKey === "orange" || props.storeKey === "barrel" || props.storeKey === "cranky") && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? "all-bosses" : "";
+  const isDKRapSeed = (props.storeKey === "dk" || props.storeKey === "coconut" || props.storeKey === "strong" || props.storeKey === "diddy" || props.storeKey === "peanut" || props.storeKey === "guitar" || props.storeKey === "rocket" || props.storeKey === "lanky" || props.storeKey === "grape" || props.storeKey === "stand" || props.storeKey === "trombone" || props.storeKey === "balloon" || props.storeKey === "tiny" || props.storeKey === "twirl" || props.storeKey === "mini" || props.storeKey === "chunky" || props.storeKey === "pineapple" || props.storeKey === "orange" || props.storeKey === "barrel" || props.storeKey === "climbing" || props.storeKey === "cranky") && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? "all-bosses" : "";
   const isKRoolChallengeSeed = props.storeKey === "snide" && useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "all-bosses" : "";
   const beanSeed = props.storeKey === "bean" && useDonkStore(useShallow((state) => state.winCondition.theBean)) ? "all-bosses" : "";
   const value = useDonkStore((state) => state[props.prefix][props.storeKey]);
