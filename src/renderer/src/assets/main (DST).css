@@ -5,11 +5,10 @@ body {
   align-items: center;
   justify-content: center;
   background-image: url('./wavy-lines.svg');
-  background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {text-align: center; font-family: Optima LT Pro, Verdana, Tahoma, sans-serif; font-weight: bold;}
-header {background-color: #0080ff; color: #000000; width: 100%; position: absolute; top: 0; left: 0; text-transform: lowercase; padding: 0px 100px;}
+header {background: #0080ff url('./tracker-bg.png') no-repeat top center; color: #000000; width: 100%; position: absolute; top: 0; left: 0; text-transform: lowercase; padding: 0px 100px;}
 header h1 {font-size: 5em; text-align: left;}
 header h2 {text-align: right;}
 /*footer {position: fixed; bottom: 0; left: 0; max-width: 350px; border: 3px solid;}*/
