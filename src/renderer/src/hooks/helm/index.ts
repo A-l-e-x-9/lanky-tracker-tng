@@ -24,14 +24,13 @@ import {
   useGrape,
   useGuitar,
   useTwirl,
-  useSprint,
-  useHunky,
-  useSpring,
   useBalloon,
   useOrange,
   useClimbing,
   useBarrel,
-  useCranky
+  useCranky,
+  useStrong,
+  useTrombone
 } from '../kongs'
 import { useHelmStartPosition, useHelmItem1, useHelmItemNum1, useHelmItem2, useHelmItemNum2, useKRoolItem, useKRoolItemNum } from '../settings'
 import { LogicBool } from '../world'
@@ -299,7 +298,7 @@ export const useTheFridge = (): boolean => {
   const hasClimbing = useClimbing()
   const hasBarrels = useBarrel()
   const hasCranky = useCranky()
-  return hasAllKongs && hasCoconut && hasStrong && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasTrombone && hasMiniMonkey && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky
+  return hasAllKongs && hasCoconut && hasStrongKong && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasTrombone && hasMiniMonkey && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky
 }
 //Have we satisfied the conditions needed just for K. Rool to appear?
 export const useWinCondition = (): boolean => {
