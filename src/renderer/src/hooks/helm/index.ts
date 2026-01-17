@@ -284,6 +284,7 @@ export const useCanDeactivateHelm = (): boolean => {
 export const useTheFridge = (): boolean => {
   const hasAllKongs = useAllKongs()
   const hasCoconut = useCoconut()
+  const hasStrongKong = useStrong()
   const hasPeanut = usePeanut()
   const hasGrapes = useGrape()
   const hasPineapple = usePineapple()
@@ -291,16 +292,14 @@ export const useTheFridge = (): boolean => {
   const hasOStand = useStand()
   const hinaKagiyama = useTwirl()
   const hasJetbarrel = useRocket()
-  const hasSprint = useSprint()
+  const hasTrombone = useTrombone()
   const hasMiniMonkey = useMini()
-  const hasHunkyChunky = useHunky()
-  const springHasSprung = useSpring()
   const inflation = useBalloon()
   const hasOranges = useOrange()
   const hasClimbing = useClimbing()
   const hasBarrels = useBarrel()
   const hasCranky = useCranky()
-  return hasAllKongs && hasCoconut && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasSprint && hasMiniMonkey && hasHunkyChunky && springHasSprung && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky
+  return hasAllKongs && hasCoconut && hasStrong && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasTrombone && hasMiniMonkey && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky
 }
 //Have we satisfied the conditions needed just for K. Rool to appear?
 export const useWinCondition = (): boolean => {
