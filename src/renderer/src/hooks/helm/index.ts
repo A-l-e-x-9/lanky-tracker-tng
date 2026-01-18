@@ -79,7 +79,7 @@ export const useHelmMachine = (): LogicBool => {
   const helmAccess = useHelmStartPosition()
   return {
     in: inLevel.in && entry && (helmAccess != 0 || (stand && pineapple && vine && mini)),
-    out: (inLevel.in || inLevel.out) && entry && (helmAccess != 0 || (pineapple && vine && mini))
+    out: inLevel.out && entry && (helmAccess != 0 || (pineapple && vine && mini))
   }
 }
 
@@ -101,7 +101,7 @@ export const useHelmDoors = (): LogicBool => {
   const punchGatesAlreadyDown = barriers.helmPunchGates
   return {
     in: inLevel.in && entry && (helmAccess == 2 || (anyMusic && (helmAccess == 1 || (machine.in && ((grab && rocket) || romanNumGatesAlreadyDown) && (punch || punchGatesAlreadyDown))))),
-    out: (inLevel.in || inLevel.out) && entry && machine.out && grab && rocket && punch
+    out: inLevel.out && entry && machine.out && grab && rocket && punch
   }
 }
 
@@ -256,8 +256,7 @@ export const useEOHDoor2 = (): LogicBool => {
 }
 
 export const useCanDeactivateHelm = (): boolean => {
-  const allMusic = useAllMusic()
-  const rocket = useRocket()
+  const canReachDoors = useHelmDoors()
   const num1 = useSingleHelmNum(1)
   const num2 = useSingleHelmNum(2)
   const num3 = useSingleHelmNum(3)
@@ -269,15 +268,11 @@ export const useCanDeactivateHelm = (): boolean => {
   const check4 = useSingleHelmCheck(4)
   const check5 = useSingleHelmCheck(5)
 
-  if (allMusic && rocket) {
-    return true
-  }
-
   if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
     return false
   }
 
-  return check1 && check2 && check3 && check4 && check5
+  return canReachDoors && check1 && check2 && check3 && check4 && check5
 }
 
 export const useTheFridge = (): boolean => {
