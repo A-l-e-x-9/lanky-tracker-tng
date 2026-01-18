@@ -5,6 +5,7 @@ body {
   align-items: center;
   justify-content: center;
   background-image: url('./wavy-lines.svg');
+  background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {text-align: center; font-family: Optima LT Pro, Verdana, Tahoma, sans-serif; font-weight: bold;}
