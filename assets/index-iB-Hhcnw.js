@@ -42187,7 +42187,9 @@ const HelmDoorsEnemies = () => {
 };
 const HelmEntryEnemies = () => {
   const helmEntry = usePlayHelm();
-  const canReachTinyRoom = useHelmEnter();
+  const hasOStand = useStand();
+  const hasPineapples = usePineapple();
+  const hasVines = useVine();
   const anyKong = useAnyKong();
   const klump = useDefeatKlump();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -42236,10 +42238,42 @@ const HelmEntryEnemies = () => {
         canGetBreak: helmEntry.out && anyKong
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8305, name: "Enemy 0 at Mini Room", canGetLogic: canReachTinyRoom && anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8306, name: "Enemy 1 at Mini Room", canGetLogic: canReachTinyRoom && anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8307, name: "Enemy 2 at Mini Room", canGetLogic: canReachTinyRoom && anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8308, name: "Enemy 3 at Mini Room", canGetLogic: canReachTinyRoom && anyKong })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8305,
+        name: "Enemy 0 at Mini Room",
+        canGetLogic: helmEntry.in && hasOStand && hasPineapples && hasVines,
+        canGetBreak: helmEntry.out && hasOStand && hasPineapples && hasVines
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8306,
+        name: "Enemy 1 at Mini Room",
+        canGetLogic: helmEntry.in && hasOStand && hasPineapples && hasVines,
+        canGetBreak: helmEntry.out && hasOStand && hasPineapples && hasVines
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8307,
+        name: "Enemy 2 at Mini Room",
+        canGetLogic: helmEntry.in && hasOStand && hasPineapples && hasVines,
+        canGetBreak: helmEntry.out && hasOStand && hasPineapples && hasVines
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8308,
+        name: "Enemy 3 at Mini Room",
+        canGetLogic: helmEntry.in && hasOStand && hasPineapples && hasVines,
+        canGetBreak: helmEntry.out && hasOStand && hasPineapples && hasVines
+      }
+    )
   ] });
 };
 const HelmMachineEnemies = () => {
