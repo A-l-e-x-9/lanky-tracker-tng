@@ -1,10 +1,11 @@
 import { useDefeatKlump } from '@renderer/hooks/enemies'
-import { usePlayHelm } from '@renderer/hooks/helm'
+import { usePlayHelm, useHelmEnter } from '@renderer/hooks/helm'
 import { useAnyKong } from '@renderer/hooks/kongs'
 import HelmCheck from '../check'
 
 const HelmEntryEnemies: React.FC = () => {
   const helmEntry = usePlayHelm()
+  const canReachTinyRoom = useHelmEnter()
   const anyKong = useAnyKong()
   const klump = useDefeatKlump()
   return (
@@ -27,17 +28,17 @@ const HelmEntryEnemies: React.FC = () => {
       <HelmCheck id={8304} name="Enemy 1 Near Pineapple Switch" canGetLogic={helmEntry.in && anyKong}
         canGetBreak={helmEntry.out && anyKong}
       />
-      <HelmCheck id={8305} name="Enemy 0 at Mini Room" canGetLogic={helmEntry.in && anyKong}
-        canGetBreak={helmEntry.out && anyKong}
+      <HelmCheck id={8305} name="Enemy 0 at Mini Room" canGetLogic={canReachTinyRoom.in && anyKong}
+        canGetBreak={canReachTinyRoom.out && anyKong}
       />
-      <HelmCheck id={8306} name="Enemy 1 at Mini Room" canGetLogic={helmEntry.in && anyKong}
-        canGetBreak={helmEntry.out && anyKong}
+      <HelmCheck id={8306} name="Enemy 1 at Mini Room" canGetLogic={canReachTinyRoom.in && anyKong}
+        canGetBreak={canReachTinyRoom.out && anyKong}
       />
-      <HelmCheck id={8307} name="Enemy 2 at Mini Room" canGetLogic={helmEntry.in && anyKong}
-        canGetBreak={helmEntry.out && anyKong}
+      <HelmCheck id={8307} name="Enemy 2 at Mini Room" canGetLogic={canReachTinyRoom.in && anyKong}
+        canGetBreak={canReachTinyRoom.out && anyKong}
       />
-      <HelmCheck id={8308} name="Enemy 3 at Mini Room" canGetLogic={helmEntry.in && anyKong}
-        canGetBreak={helmEntry.out && anyKong}
+      <HelmCheck id={8308} name="Enemy 3 at Mini Room" canGetLogic={canReachTinyRoom.in && anyKong}
+        canGetBreak={canReachTinyRoom.out && anyKong}
       />
     </>
   )
