@@ -43450,7 +43450,7 @@ const Ending = () => {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "ending", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Helm" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: helmLogic ? "available" : "not-available", children: "⬤" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: helmLogic.in ? "available" : helmLogic.in ? "logic-break" : "not-available", children: "⬤" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "helm1" }),
