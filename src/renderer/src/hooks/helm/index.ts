@@ -254,7 +254,7 @@ export const useEOHDoor2 = (): LogicBool => {
   }
 }
 
-export const useCanDeactivateHelm = (): boolean => {
+export const useCanDeactivateHelm = (): LogicBool => {
   const canReachDoors = useHelmDoors()
   const num1 = useSingleHelmNum(1)
   const num2 = useSingleHelmNum(2)
@@ -268,10 +268,16 @@ export const useCanDeactivateHelm = (): boolean => {
   const check5 = useSingleHelmCheck(5)
 
   if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
-    return false
+    return {
+      in: false,
+      out: false
+    }
   }
 
-  return canReachDoors && check1 && check2 && check3 && check4 && check5
+  return {
+    in: canReachDoors.in && check1 && check2 && check3 && check4 && check5,
+    out: canReachDoors.out && check1 && check2 && check3 && check4 && check5
+  }
 }
 
 export const useTheFridge = (): boolean => {
