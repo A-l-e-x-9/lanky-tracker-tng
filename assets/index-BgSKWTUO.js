@@ -15076,8 +15076,8 @@ const Shuffled$w = () => {
         id: 20004,
         name: "Shuffled Melon Crate: Under the Caves Lobby entrance",
         region: "DK Island",
-        canGetLogic: hasClimbing || bananaportState != 0 || canReachWaterfall.in,
-        canGetBreak: canReachWaterfall.out
+        canGetLogic: isBreathing && (hasClimbing || bananaportState != 0 || canReachWaterfall.in),
+        canGetBreak: isBreathing && canReachWaterfall.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15196,8 +15196,8 @@ const Shuffled$w = () => {
         id: 20017,
         name: "Shuffled Melon Crate: At the boulders near Caves Lobby",
         region: "DK Island",
-        canGetLogic: canReachAztecLobby.in,
-        canGetBreak: canReachAztecLobby.out
+        canGetLogic: isBreathing && canReachAztecLobby.in,
+        canGetBreak: isBreathing && canReachAztecLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15206,8 +15206,8 @@ const Shuffled$w = () => {
         id: 20018,
         name: "Shuffled Melon Crate: In front of the Aztec Lobby entrance",
         region: "DK Island",
-        canGetLogic: canReachAztecLobby.in,
-        canGetBreak: canReachAztecLobby.out
+        canGetLogic: isBreathing && canReachAztecLobby.in,
+        canGetBreak: isBreathing && canReachAztecLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15216,8 +15216,8 @@ const Shuffled$w = () => {
         id: 20019,
         name: "Shuffled Melon Crate: Behind the Aztec Lobby entrance",
         region: "DK Island",
-        canGetLogic: canReachAztecLobby.in,
-        canGetBreak: canReachAztecLobby.out
+        canGetLogic: isBreathing && canReachAztecLobby.in,
+        canGetBreak: isBreathing && canReachAztecLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15244,7 +15244,7 @@ const Shuffled$w = () => {
         id: 20022,
         name: "Shuffled Melon Crate: Back middle of K. Rool's Island",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: isBreathing && canReachFactoryLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15253,7 +15253,7 @@ const Shuffled$w = () => {
         id: 20023,
         name: "Shuffled Melon Crate: Under DK's caged Banana",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: isBreathing
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15271,7 +15271,7 @@ const Shuffled$w = () => {
         id: 20025,
         name: "Shuffled Melon Crate: Behind Factory Lobby entrance",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: isBreathing && canReachFactoryLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15280,7 +15280,7 @@ const Shuffled$w = () => {
         id: 20026,
         name: "Shuffled Melon Crate: To the right of the Factory Lobby entrance",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: isBreathing && canReachFactoryLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15379,8 +15379,8 @@ const Shuffled$w = () => {
         id: 20037,
         name: "Shuffled Melon Crate: Vanilla Warp 2 at Aztec Lobby",
         region: "DK Island",
-        canGetLogic: canReachAztecLobby.in,
-        canGetBreak: canReachAztecLobby.out
+        canGetLogic: isBreathing && canReachAztecLobby.in,
+        canGetBreak: isBreathing && canReachAztecLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15416,7 +15416,7 @@ const Shuffled$w = () => {
         id: 20041,
         name: "Shuffled Melon Crate: Vanilla Warp 4 at Factory Lobby entrance",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: isBreathing && canReachFactoryLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15493,8 +15493,8 @@ const Shuffled$w = () => {
         id: 20049,
         name: "Shuffled Melon Crate: Near the Grab lever in Factory Lobby",
         region: "Japes-Forest Lobbies",
-        canGetLogic: canGetInFactoryLobby.in,
-        canGetBreak: canGetInFactoryLobby.out
+        canGetLogic: isBreathing && canGetInFactoryLobby.in,
+        canGetBreak: isBreathing && canGetInFactoryLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15782,7 +15782,7 @@ const Shuffled$w = () => {
         id: 20080,
         name: "Shuffled Melon Crate: Next to Snide's",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: isBreathing && canReachFactoryLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28159,8 +28159,8 @@ const Shuffled$g = () => {
         id: 23010,
         name: "Shuffled Melon Crate: Prod Room lower area",
         region: "Prod Room",
-        canGetLogic: prodRoomOn.in || hasAllBananaports,
-        canGetBreak: prodRoomOn.out || hasAllBananaports
+        canGetLogic: isBreathing.in && (prodRoomOn.in || hasAllBananaports),
+        canGetBreak: isBreathing.out && (prodRoomOn.out || hasAllBananaports)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
