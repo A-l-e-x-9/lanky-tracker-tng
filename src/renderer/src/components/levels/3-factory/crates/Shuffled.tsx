@@ -91,8 +91,8 @@ const hasTriangle = useTriangle()
         id={23010}
         name="Shuffled Melon Crate: Prod Room lower area"
         region="Prod Room"
-        canGetLogic={prodRoomOn.in || hasAllBananaports}
-        canGetBreak={prodRoomOn.out || hasAllBananaports}
+        canGetLogic={isBreathing.in && (prodRoomOn.in || hasAllBananaports)}
+        canGetBreak={isBreathing.out && (prodRoomOn.out || hasAllBananaports)}
       />
       <FactoryCheck
         id={23011}

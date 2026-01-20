@@ -81,8 +81,8 @@ return (
         id={20004}
         name="Shuffled Melon Crate: Under the Caves Lobby entrance"
         region="DK Island"
-        canGetLogic={hasClimbing || bananaportState != 0 || canReachWaterfall.in}
-        canGetBreak={canReachWaterfall.out}
+        canGetLogic={isBreathing && (hasClimbing || bananaportState != 0 || canReachWaterfall.in)}
+        canGetBreak={isBreathing && canReachWaterfall.out}
       />
       <IslesCheck
         id={20005}
@@ -162,22 +162,22 @@ return (
         id={20017}
         name="Shuffled Melon Crate: At the boulders near Caves Lobby"
         region="DK Island"
-        canGetLogic={canReachAztecLobby.in}
-        canGetBreak={canReachAztecLobby.out}
+        canGetLogic={isBreathing && canReachAztecLobby.in}
+        canGetBreak={isBreathing && canReachAztecLobby.out}
       />
       <IslesCheck
         id={20018}
         name="Shuffled Melon Crate: In front of the Aztec Lobby entrance"
         region="DK Island"
-        canGetLogic={canReachAztecLobby.in}
-        canGetBreak={canReachAztecLobby.out}
+        canGetLogic={isBreathing && canReachAztecLobby.in}
+        canGetBreak={isBreathing && canReachAztecLobby.out}
       />
       <IslesCheck
         id={20019}
         name="Shuffled Melon Crate: Behind the Aztec Lobby entrance"
         region="DK Island"
-        canGetLogic={canReachAztecLobby.in}
-        canGetBreak={canReachAztecLobby.out}
+        canGetLogic={isBreathing && canReachAztecLobby.in}
+        canGetBreak={isBreathing && canReachAztecLobby.out}
       />
       <IslesCheck
         id={20020}
@@ -195,13 +195,13 @@ return (
         id={20022}
         name="Shuffled Melon Crate: Back middle of K. Rool's Island"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={isBreathing && canReachFactoryLobby}
       />
       <IslesCheck
         id={20023}
         name="Shuffled Melon Crate: Under DK's caged Banana"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={isBreathing}
       />
       <IslesCheck
         id={20024}
@@ -213,13 +213,13 @@ return (
         id={20025}
         name="Shuffled Melon Crate: Behind Factory Lobby entrance"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={isBreathing && canReachFactoryLobby}
       />
       <IslesCheck
         id={20026}
         name="Shuffled Melon Crate: To the right of the Factory Lobby entrance"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={isBreathing && canReachFactoryLobby}
       />
       <IslesCheck
         id={20027}
@@ -285,8 +285,8 @@ return (
         id={20037}
         name="Shuffled Melon Crate: Vanilla Warp 2 at Aztec Lobby"
         region="DK Island"
-        canGetLogic={canReachAztecLobby.in}
-        canGetBreak={canReachAztecLobby.out}
+        canGetLogic={isBreathing && canReachAztecLobby.in}
+        canGetBreak={isBreathing && canReachAztecLobby.out}
       />
       <IslesCheck
         id={20038}
@@ -310,7 +310,7 @@ return (
         id={20041}
         name="Shuffled Melon Crate: Vanilla Warp 4 at Factory Lobby entrance"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={isBreathing && canReachFactoryLobby}
       />
       <IslesCheck
         id={20042}
@@ -363,8 +363,8 @@ return (
         id={20049}
         name="Shuffled Melon Crate: Near the Grab lever in Factory Lobby"
         region="Japes-Forest Lobbies"
-        canGetLogic={canGetInFactoryLobby.in}
-        canGetBreak={canGetInFactoryLobby.out}
+        canGetLogic={isBreathing && canGetInFactoryLobby.in}
+        canGetBreak={isBreathing && canGetInFactoryLobby.out}
       />
       <IslesCheck
         id={20050}
@@ -562,7 +562,7 @@ return (
         id={20080}
         name="Shuffled Melon Crate: Next to Snide's"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={isBreathing && canReachFactoryLobby}
       />
       <IslesCheck
         id={20081}
