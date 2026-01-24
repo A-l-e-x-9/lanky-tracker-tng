@@ -10826,6 +10826,14 @@ const useAnyMusic = () => {
   const chunky = useTriangle();
   return dk2 || diddy || lanky || tiny || chunky;
 };
+const useAllMusic = () => {
+  const dk2 = useBongos();
+  const diddy = useGuitar();
+  const lanky = useTrombone();
+  const tiny = useSax();
+  const chunky = useTriangle();
+  return dk2 && diddy && lanky && tiny && chunky;
+};
 const useGrab = () => {
   const kong = useDk();
   const move = useDonkStore((state) => state.moves.grab);
@@ -42003,6 +42011,8 @@ const useEOHDoor2 = () => {
   }
 };
 const useCanDeactivateHelm = () => {
+  const allMusic2 = useAllMusic();
+  const rocket = useRocket();
   const canReachDoors = useHelmDoors();
   const num1 = useSingleHelmNum(1);
   const num2 = useSingleHelmNum(2);
@@ -42014,16 +42024,22 @@ const useCanDeactivateHelm = () => {
   const check3 = useSingleHelmCheck(3);
   const check4 = useSingleHelmCheck(4);
   const check5 = useSingleHelmCheck(5);
-  if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
+  if (allMusic2 && rocket) {
+    return {
+      in: true,
+      out: true
+    };
+  } else if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
     return {
       in: false,
       out: false
     };
+  } else {
+    return {
+      in: canReachDoors.in && check1 && check2 && check3 && check4 && check5,
+      out: canReachDoors.out && check1 && check2 && check3 && check4 && check5
+    };
   }
-  return {
-    in: canReachDoors.in && check1 && check2 && check3 && check4 && check5,
-    out: canReachDoors.out && check1 && check2 && check3 && check4 && check5
-  };
 };
 const useTheFridge = () => {
   const hasAllKongs = useAllKongs();
