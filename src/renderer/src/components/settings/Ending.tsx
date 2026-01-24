@@ -46,7 +46,7 @@ if ((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) {
     <section className="ending">
       <div>
         <span>Helm</span>
-        <span className={helmLogic ? 'available' : 'not-available'}>⬤</span>
+        <span className={helmLogic.in ? 'available' : helmLogic.in ? 'logic-break' : 'not-available'}>⬤</span>
       </div>
       <section>
         <EndingSelector rootKey="helm1" />
