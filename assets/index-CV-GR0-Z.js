@@ -14685,8 +14685,8 @@ const Shuffled$x = () => {
         id: 10049,
         name: "Shuffled Battle Arena: Near the Grab lever in Factory Lobby",
         region: "Japes-Forest Lobbies",
-        canGetLogic: canGetInFactoryLobby.in,
-        canGetBreak: canGetInFactoryLobby.out
+        canGetLogic: isBreathing && canGetInFactoryLobby.in,
+        canGetBreak: isBreathing && canGetInFactoryLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
