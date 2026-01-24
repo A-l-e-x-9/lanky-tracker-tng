@@ -10,6 +10,7 @@ import { useIslesHelmEntry, usePlayLevel, useSlamLevel } from '../isles'
 import {
   useAllKongs,
   useAnyMusic,
+  useAllMusic,
   useGrab,
   useMini,
   usePineapple,
@@ -255,6 +256,8 @@ export const useEOHDoor2 = (): LogicBool => {
 }
 
 export const useCanDeactivateHelm = (): LogicBool => {
+  const allMusic = useAllMusic()
+  const rocket = useRocket()
   const canReachDoors = useHelmDoors()
   const num1 = useSingleHelmNum(1)
   const num2 = useSingleHelmNum(2)
