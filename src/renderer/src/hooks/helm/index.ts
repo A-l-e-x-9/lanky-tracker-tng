@@ -267,16 +267,21 @@ export const useCanDeactivateHelm = (): LogicBool => {
   const check4 = useSingleHelmCheck(4)
   const check5 = useSingleHelmCheck(5)
 
-  if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
+  if (allMusic && rocket) {
+    return {
+      in: true,
+      out: true
+    }
+  } else if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
     return {
       in: false,
       out: false
     }
-  }
-
+  } else {
   return {
     in: canReachDoors.in && check1 && check2 && check3 && check4 && check5,
     out: canReachDoors.out && check1 && check2 && check3 && check4 && check5
+  }
   }
 }
 
