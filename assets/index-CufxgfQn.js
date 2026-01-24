@@ -10826,14 +10826,6 @@ const useAnyMusic = () => {
   const chunky = useTriangle();
   return dk2 || diddy || lanky || tiny || chunky;
 };
-const useAllMusic = () => {
-  const dk2 = useBongos();
-  const diddy = useGuitar();
-  const lanky = useTrombone();
-  const tiny = useSax();
-  const chunky = useTriangle();
-  return dk2 && diddy && lanky && tiny && chunky;
-};
 const useGrab = () => {
   const kong = useDk();
   const move = useDonkStore((state) => state.moves.grab);
@@ -42011,8 +42003,6 @@ const useEOHDoor2 = () => {
   }
 };
 const useCanDeactivateHelm = () => {
-  const allMusic2 = useAllMusic();
-  const rocket = useRocket();
   const canReachDoors = useHelmDoors();
   const num1 = useSingleHelmNum(1);
   const num2 = useSingleHelmNum(2);
@@ -42024,12 +42014,7 @@ const useCanDeactivateHelm = () => {
   const check3 = useSingleHelmCheck(3);
   const check4 = useSingleHelmCheck(4);
   const check5 = useSingleHelmCheck(5);
-  if (allMusic2 && rocket) {
-    return {
-      in: true,
-      out: true
-    };
-  } else if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
+  if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
     return {
       in: false,
       out: false
@@ -43497,7 +43482,7 @@ const Ending = () => {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "ending", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Helm" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: helmLogic ? "available" : "not-available", children: "⬤" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: helmLogic.in ? "available" : helmLogic.in ? "logic-break" : "not-available", children: "⬤" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "helm1" }),
