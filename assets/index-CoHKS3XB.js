@@ -14315,7 +14315,7 @@ const Shuffled$x = () => {
         id: 10009,
         name: "Shuffled Battle Arena: Behind Forest Lobby building",
         region: "Outer Isles",
-        canGetLogic: canReachFungiLobby
+        canGetLogic: isBreathing && canReachFungiLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14324,7 +14324,7 @@ const Shuffled$x = () => {
         id: 10010,
         name: "Shuffled Battle Arena: Somewhere on the Fungi Lobby island",
         region: "Outer Isles",
-        canGetLogic: canReachFungiLobby
+        canGetLogic: isBreathing && canReachFungiLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14370,7 +14370,7 @@ const Shuffled$x = () => {
         id: 10015,
         name: "Shuffled Battle Arena: On the Fungi cannon's island",
         region: "DK Island",
-        canGetLogic: canReachFungiLobby
+        canGetLogic: isBreathing && canReachFungiLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
