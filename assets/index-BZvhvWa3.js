@@ -22068,8 +22068,8 @@ const TinySwimEnemies = () => {
         id: 2367,
         name: "Tiny's Prison Guard 0",
         region: "Tiny Temple",
-        canGetLogic: tiny.in && iceMelted && dive.in,
-        canGetBreak: tiny.out && iceMelted && dive.out
+        canGetLogic: tiny.in && iceMelted.in && dive.in,
+        canGetBreak: tiny.out && iceMelted.out && dive.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22078,8 +22078,8 @@ const TinySwimEnemies = () => {
         id: 2368,
         name: "Tiny's Prison Guard 1",
         region: "Tiny Temple",
-        canGetLogic: tiny.in && iceMelted && dive.in,
-        canGetBreak: tiny.out && iceMelted && dive.out
+        canGetLogic: tiny.in && iceMelted.in && dive.in,
+        canGetBreak: tiny.out && iceMelted.out && dive.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22088,8 +22088,8 @@ const TinySwimEnemies = () => {
         id: 2369,
         name: "Tiny's Prison Guard 2",
         region: "Tiny Temple",
-        canGetLogic: tiny.in && iceMelted && dive.in,
-        canGetBreak: tiny.out && iceMelted && dive.out
+        canGetLogic: tiny.in && iceMelted.in && dive.in,
+        canGetBreak: tiny.out && iceMelted.out && dive.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22098,8 +22098,8 @@ const TinySwimEnemies = () => {
         id: 2370,
         name: "Tiny's Prison Guard 3",
         region: "Tiny Temple",
-        canGetLogic: tiny.in && iceMelted && dive.in,
-        canGetBreak: tiny.out && iceMelted && dive.out
+        canGetLogic: tiny.in && iceMelted.in && dive.in,
+        canGetBreak: tiny.out && iceMelted.out && dive.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22108,8 +22108,8 @@ const TinySwimEnemies = () => {
         id: 2371,
         name: "Tiny's Prison Guard 4",
         region: "Tiny Temple",
-        canGetLogic: tiny.in && iceMelted && dive.in,
-        canGetBreak: tiny.out && iceMelted && dive.out
+        canGetLogic: tiny.in && iceMelted.in && dive.in,
+        canGetBreak: tiny.out && iceMelted.out && dive.out
       }
     )
   ] });
