@@ -388,8 +388,8 @@ export const useLanky5DoorShipGb = (): LogicBool => {
   const lowTide = useGalleonLowTide()
   const dive = useDive()
   return {
-    in: outskirts.in && trombone && lowTide && dive.in,
-    out: outskirts.out && trombone && lowTide && dive.out
+    in: outskirts.in && trombone && lowTide.in && dive.in,
+    out: outskirts.out && trombone && lowTide.out && dive.out
   }
 }
 
