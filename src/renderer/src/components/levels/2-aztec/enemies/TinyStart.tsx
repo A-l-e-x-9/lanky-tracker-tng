@@ -1,11 +1,11 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useAztecTinyTemple } from '@renderer/hooks/aztec'
 import AztecCheck from '../check'
-import { useDefeatKlobber } from '@renderer/hooks/enemies'
+import { useDefeatToughEnemy } from '@renderer/hooks/enemies'
 
 const TinyStartEnemies: React.FC = () => {
   const tiny = useAztecTinyTemple()
-  const klobber = useDefeatKlobber()
+  const klobber = useDefeatToughEnemy()
   return (
     <DropPool>
       <AztecCheck

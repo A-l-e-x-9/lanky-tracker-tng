@@ -1,6 +1,6 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useAztec5DoorTemple } from '@renderer/hooks/aztec'
-import { useDefeatKlobber, useDefeatZinger } from '@renderer/hooks/enemies'
+import { useDefeatToughEnemy, useDefeatZinger } from '@renderer/hooks/enemies'
 import { usePineapple } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 
@@ -8,7 +8,7 @@ const Chunky5Enemies: React.FC = () => {
   const door = useAztec5DoorTemple()
   const pineapple = usePineapple()
   const zinger = useDefeatZinger()
-  const klobber = useDefeatKlobber()
+  const klobber = useDefeatToughEnemy()
   return (
     <DropPool>
       <AztecCheck

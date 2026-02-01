@@ -22,6 +22,7 @@ import TinySwimChecks from './TinySwim'
 import TotemChecks from './Totem'
 
 const AztecRegionChecks: React.FC = () => (
+<>
   <div className="grid">
     <BananaMedalPool>
       <DkMedal />
@@ -30,23 +31,30 @@ const AztecRegionChecks: React.FC = () => (
       <TinyMedal />
       <ChunkyMedal />
     </BananaMedalPool>
+  </div>
     <BeforeOasisChecks />
     <ConnectorTunnelChecks />
+  <div className="grid">
     <QuicksandTunnel />
+  </div>
     <OasisChecks />
     <TotemChecks />
     <TinyStartChecks />
     <TinySwimChecks />
     <DoorTempleChecks />
     <LlamaTempleChecks />
+  <div className="grid">
     <ShopLocations />
     <BossCheck />
     <ShuffledArenas />
     <ShuffledCrates />
     <ShuffledDirtLocations />
     <ShuffledFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <ShuffledKasplats />
   </div>
+</>
 )
 
 export default AztecRegionChecks

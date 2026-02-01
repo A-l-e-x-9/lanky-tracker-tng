@@ -1,13 +1,13 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useAztec5DoorTemple } from '@renderer/hooks/aztec'
-import { useDefeatKlump } from '@renderer/hooks/enemies'
+import { useDefeatToughEnemy } from '@renderer/hooks/enemies'
 import { useGrape } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 
 const Lanky5Enemies: React.FC = () => {
   const door = useAztec5DoorTemple()
   const grape = useGrape()
-  const klump = useDefeatKlump()
+  const klump = useDefeatToughEnemy()
   return (
     <DropPool>
       <AztecCheck

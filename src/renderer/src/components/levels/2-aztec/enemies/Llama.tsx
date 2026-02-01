@@ -1,12 +1,12 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useAztecLlamaTemple } from '@renderer/hooks/aztec'
-import { useDefeatPurpleKlaptrap } from '@renderer/hooks/enemies'
+import { useDefeatToughEnemy } from '@renderer/hooks/enemies'
 import { useGrape } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 
 const LlamaTempleEnemies: React.FC = () => {
   const llama = useAztecLlamaTemple()
-  const klaptrap = useDefeatPurpleKlaptrap()
+  const klaptrap = useDefeatToughEnemy()
   const hasGrapes = useGrape()
   return (
     <DropPool>

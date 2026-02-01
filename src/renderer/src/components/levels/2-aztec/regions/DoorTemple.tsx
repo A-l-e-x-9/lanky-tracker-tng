@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import TempleDirt from '../dirt/Temple'
 import Chunky5Enemies from '../enemies/DoorChunky'
 import Diddy5Enemies from '../enemies/DoorDiddy'
@@ -12,22 +14,29 @@ import LankyDoorTemple from '../gold-bananas/lanky/Door'
 import TinyDoorTemple from '../gold-bananas/tiny/Door'
 import ChunkyKasplat from '../kasplats/Chunky'
 
-const DoorTempleChecks: React.FC = () => (
+const DoorTempleChecks: React.FC = () => {
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+return (
   <>
+  <div className="grid">
     <DonkeyDoorTemple />
-    <Dk5Enemies />
     <DiddyDoorTemple />
-    <Diddy5Enemies />
     <LankyDoorTemple />
-    <Lanky5Enemies />
     <TinyDoorTemple />
     <DoorFairy />
-    <Tiny5Enemies />
     <ChunkyDoorTemple />
-    <ChunkyKasplat />
     <TempleDirt />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
+    <Dk5Enemies />
+    <Diddy5Enemies />
+    <Lanky5Enemies />
+    <Tiny5Enemies />
+    <ChunkyKasplat />
     <Chunky5Enemies />
+  </div>
   </>
 )
+}
 
 export default DoorTempleChecks
