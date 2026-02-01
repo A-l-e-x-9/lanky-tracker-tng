@@ -15,45 +15,11 @@ export const useDefeatZinger = (): LogicBool => {
   }
 }
 
-export const useDefeatBat = (): LogicBool => useDefeatZinger()
-
-export const useDefeatKosha = (): LogicBool => {
+//Can you defeat a Klump, Robo-Kritter, Klobber, Kaboom, Kosha, or red/purple Klaptrap?
+export const useDefeatToughEnemy = (): boolean => {
   const anyMusic = useAnyMusic()
   const shockwave = useShockwave()
   const hasOranges = useOrange()
-  return {
-    in: anyMusic || shockwave,
-    out: hasOranges /*To kill a Kosha with Oranges, it must use its overhead club attack on you. You must then orange it while it's picking up its club.*/
-  }
-}
-
-export const useDefeatKlump = (): boolean => {
-  const orange = useOrange()
-  const shockwave = useShockwave()
-  const anyMusic = useAnyMusic()
-  return orange || shockwave || anyMusic
-}
-
-export const useDefeatKlobber = (): boolean => useDefeatKlump()
-
-export const useDefeatKaboom = (): LogicBool => {
-  const hasOranges = useOrange()
-  const hasGun = useAnyGun()
-  const isBreathing = useAnyKong()
-  return {
-    in: hasOranges || hasGun,
-    out: isBreathing /*You can kill a Kaboom just by running into it, although this will damage you.*/
-  }
-}
-
-export const useDefeatPurpleKlaptrap = (): boolean => {
-  const orange = useOrange()
-  const anyMusic = useAnyMusic()
-  return orange || anyMusic
-}
-
-export const useDefeatRoboKremling = (): boolean => {
-  const klaptrap = useDefeatKlump()
-  const punch = usePunch()
-  return klaptrap || punch
+  const hasAnyGun = useAnyGun()
+  return orange || shockwave || anyMusic || hasAnyGun
 }
