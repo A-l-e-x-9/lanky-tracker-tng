@@ -1,5 +1,5 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { useDefeatPurpleKlaptrap, useDefeatZinger } from '@renderer/hooks/enemies'
+import { useDefeatToughEnemy, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useJapesHive, useSlamJapes } from '@renderer/hooks/japes'
 import { useMini } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
@@ -8,7 +8,7 @@ const HiveInteriorEnemies: React.FC = () => {
   const hiveOut = useJapesHive()
   const hiveIn = useMini() && hiveOut.in
   const zinger = useDefeatZinger()
-  const klaptrap = useDefeatPurpleKlaptrap()
+  const klaptrap = useDefeatToughEnemy()
   const canSlam = useSlamJapes()
   return (
     <DropPool>
