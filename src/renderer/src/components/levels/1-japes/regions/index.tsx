@@ -25,6 +25,7 @@ import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 
 const JapesRegionChecks: React.FC = () => (
+<>
   <div className="grid">
     <BananaMedalPool>
       <DkMedal />
@@ -33,19 +34,27 @@ const JapesRegionChecks: React.FC = () => (
       <TinyMedal />
       <ChunkyMedal />
     </BananaMedalPool>
+  </div>
     <JapesStartChecks />
     <PeanutGateChecks />
+  <div className="grid">
     <BaboonBlast />
+  </div>
     <JapesMainChecks />
+  <div className="grid">
     <TopMountain />
+  </div>
     <HiveTunnelChecks />
     <HiveOutsideChecks />
     <HiveInteriorChecks />
     <StormyTunnelChecks />
+  <div className="grid">
     <RambiGateChecks />
+  </div>
     <MineChecks />
     <PaintingRoomChecks />
     <UndergroundChecks />
+  <div className="grid">
     <ShopLocations />
     <BossCheck />
     <ShuffledArenas />
@@ -53,6 +62,7 @@ const JapesRegionChecks: React.FC = () => (
     <ShuffledDirt />
     <ShuffledFairies />
   </div>
+</>
 )
 
 export default JapesRegionChecks
