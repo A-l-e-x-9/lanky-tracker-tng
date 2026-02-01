@@ -12,10 +12,9 @@ type SimpleIconProps = {
 
 const SimpleIcon: React.FC<SimpleIconProps> = (props) => {
   const isDKRapSeed = (props.storeKey === 'dk' || props.storeKey === 'coconut' || props.storeKey === 'strong' || props.storeKey === 'diddy' || props.storeKey === 'peanut' || props.storeKey === 'guitar' || props.storeKey === 'rocket' || props.storeKey === 'lanky' || props.storeKey === 'grape' || props.storeKey === 'stand' || props.storeKey === 'trombone' || props.storeKey === 'balloon' || props.storeKey === 'tiny' || props.storeKey === 'twirl' || props.storeKey === 'mini' || props.storeKey === 'chunky' || props.storeKey === 'pineapple' || props.storeKey === 'orange' || props.storeKey === 'barrel' || props.storeKey === 'climbing' || props.storeKey === 'cranky') && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? 'all-bosses' : ''
-  const isKRoolChallengeSeed = props.storeKey === 'snide' && useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'all-bosses' : ''
   const beanSeed = props.storeKey === 'bean' && useDonkStore(useShallow((state) => state.winCondition.theBean)) ? 'all-bosses' : ''
   const value: boolean = useDonkStore((state) => state[props.prefix][props.storeKey])
-  const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? 'have' : 'have-not'} ${props.className} ${isDKRapSeed} ${isKRoolChallengeSeed} ${beanSeed}`
+  const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? 'have' : 'have-not'} ${props.className} ${isDKRapSeed} ${beanSeed}`
   return (
     <div className={classes} onClick={() => props.updateItem(props.storeKey, !value)}>
       <img
