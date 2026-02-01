@@ -1,6 +1,6 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import Oimport TinyStartEnemies from '../enemies/TinyStart'
+import TinyStartEnemies from '../enemies/TinyStart'
 import ChunkyKlaptrap from '../gold-bananas/chunky/Klaptrap'
 
 const TinyStartChecks: React.FC = () => {
