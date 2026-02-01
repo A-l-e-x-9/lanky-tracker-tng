@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import BananaMedalPool from '@renderer/components/pools/BananaMedals'
 import ShuffledArenas from '../arenas/Shuffled'
 import BossCheck from '../boss'
