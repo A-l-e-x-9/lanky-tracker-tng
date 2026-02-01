@@ -21,7 +21,9 @@ import TinyStartChecks from './TinyStart'
 import TinySwimChecks from './TinySwim'
 import TotemChecks from './Totem'
 
-const AztecRegionChecks: React.FC = () => (
+const AztecRegionChecks: React.FC = () => {
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+return (
 <>
   <div className="grid">
     <BananaMedalPool>
@@ -56,5 +58,6 @@ const AztecRegionChecks: React.FC = () => (
   </div>
 </>
 )
+}
 
 export default AztecRegionChecks
