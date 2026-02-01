@@ -18941,66 +18941,106 @@ const ShopLocations$6 = () => {
   const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$6, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
-const HiveInteriorChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(HiveInside, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(HiveInteriorEnemies, {})
-] });
-const HiveOutsideChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(HiveStump, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(HiveBarrel, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(HiveOutsideEnemies, {})
-] });
-const HiveTunnelChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(HiveTunnelEnemies, {})
-] });
-const JapesMainChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FrontCage, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyTimedCage, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyTimedCage, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyTimedCage, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyTimedCage, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyCage, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FreeDiddy, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FunkyArena, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingHillDirt, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(MountainCrate, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesMainEnemies, {})
-] });
-const JapesStartChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FloorCage, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(Boulder, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesStartEnemies, {})
-] });
-const MineChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(Minecart, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CaveEnemies, {})
-] });
-const PaintingRoomChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingRoom, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingFairy, {})
-] });
-const PeanutGateChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(PeanutTunnel, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(GrapeGate, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FeatherGate, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(PeanutGateEnemies, {})
-] });
+const HiveInteriorChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(HiveInside, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(HiveInteriorEnemies, {}) })
+  ] });
+};
+const HiveOutsideChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(HiveStump, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(HiveBarrel, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(HiveOutsideEnemies, {}) })
+  ] });
+};
+const HiveTunnelChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$6, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$6, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HiveTunnelEnemies, {})
+  ] });
+};
+const JapesMainChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FrontCage, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyTimedCage, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyTimedCage, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyTimedCage, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyTimedCage, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyCage, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FreeDiddy, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FunkyArena, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingHillDirt, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(MountainCrate, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(JapesMainEnemies, {}) })
+  ] });
+};
+const JapesStartChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FloorCage, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Boulder, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(JapesStartEnemies, {}) })
+  ] });
+};
+const MineChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Minecart, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(CaveEnemies, {}) })
+  ] });
+};
+const PaintingRoomChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingRoom, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingFairy, {}) })
+  ] });
+};
+const PeanutGateChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(PeanutTunnel, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(GrapeGate, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FeatherGate, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(PeanutGateEnemies, {}) })
+  ] });
+};
 const RambiGateChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(RambiCrate, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(RambiFairy, {})
 ] });
-const UndergroundChecks$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(Underground, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$6, {})
-] });
-const StormyTunnelChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(SlopeBarrel, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(StormyTunnelEnemies, {})
-] });
+const UndergroundChecks$1 = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Underground, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$6, {}) })
+  ] });
+};
+const StormyTunnelChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SlopeBarrel, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$6, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$6, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(StormyTunnelEnemies, {})
+    ] })
+  ] });
+};
 const Shuffled$s = () => {
   const isBreathing = useGeneralThing$4();
   const canReachFunky = useArena$4();
@@ -20746,60 +20786,71 @@ const Shuffled$p = () => {
   ] });
 };
 const ShuffledFairies$7 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : null;
-const JapesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
+const JapesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$6, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$6, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$6, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$6, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$6, {})
-  ] }),
+  ] }) }),
   /* @__PURE__ */ jsxRuntimeExports.jsx(JapesStartChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(PeanutGateChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(BaboonBlast, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(BaboonBlast, {}) }),
   /* @__PURE__ */ jsxRuntimeExports.jsx(JapesMainChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TopMountain, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(TopMountain, {}) }),
   /* @__PURE__ */ jsxRuntimeExports.jsx(HiveTunnelChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(HiveOutsideChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(HiveInteriorChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(StormyTunnelChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(RambiGateChecks, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(RambiGateChecks, {}) }),
   /* @__PURE__ */ jsxRuntimeExports.jsx(MineChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingRoomChecks, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(UndergroundChecks$1, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {})
+  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$4, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$4, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {})
+  ] })
 ] });
-const ClassicChecks$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CrateLocations$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DirtLocations$2, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FunkyArena, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$6, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$6, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$6, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$6, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$6, {})
-  ] }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$7, {}) }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$4, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {})
-] });
+const ClassicChecks$6 = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$6, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$6, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$6, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$6, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$6, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$6, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CrateLocations$4, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DirtLocations$2, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations$6, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FunkyArena, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$6, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$6, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$6, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$6, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$6, {})
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$7, {}) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$4, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$4, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {})
+    ] })
+  ] });
+};
 const JapesChecks = () => {
   const grp = useDonkStore(useShallow((state) => state.ui.groupByRegion));
   return grp ? /* @__PURE__ */ jsxRuntimeExports.jsx(JapesRegionChecks, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(ClassicChecks$6, {});
