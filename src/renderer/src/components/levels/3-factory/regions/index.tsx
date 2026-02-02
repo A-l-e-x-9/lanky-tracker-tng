@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import BananaMedalPool from '@renderer/components/pools/BananaMedals'
 import BossCheck from '../boss'
 import ChunkyMedal from '../medals/ChunkyMedal'
@@ -16,7 +18,10 @@ import ShuffledCrates from '../crates/Shuffled'
 import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 
-const FactoryRegionChecks: React.FC = () => (
+const FactoryRegionChecks: React.FC = () => {
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+return (
+<>
   <div className="grid">
     <BananaMedalPool>
       <DkMedal />
@@ -25,11 +30,15 @@ const FactoryRegionChecks: React.FC = () => (
       <TinyMedal />
       <ChunkyMedal />
     </BananaMedalPool>
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <StartEnemies />
+  </div>
     <TestingChecks />
     <RNDChecks />
     <StorageChecks />
     <ProductionChecks />
+  <div className="grid">
     <ShopLocations />
     <BossCheck />
     <ShuffledArenas />
@@ -37,6 +46,8 @@ const FactoryRegionChecks: React.FC = () => (
     <ShuffledDirt />
     <ShuffledFairies />
   </div>
+</>
 )
+}
 
 export default FactoryRegionChecks

@@ -1,11 +1,11 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { useDefeatRoboKremling, useDefeatZinger } from '@renderer/hooks/enemies'
+import { useDefeatToughEnemy, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useFactoryTesting } from '@renderer/hooks/factory'
 import FactoryCheck from '../check'
 
 const RNDEnemies: React.FC = () => {
   const testing = useFactoryTesting()
-  const robo = useDefeatRoboKremling()
+  const robo = useDefeatToughEnemy()
   const zinger = useDefeatZinger()
   return (
     <DropPool>

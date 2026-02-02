@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import FunkyCrate from '../crates/Funky'
 import TestingEnemies from '../enemies/Testing'
 import FunkyFairy from '../fairies/Funky'
@@ -8,9 +10,11 @@ import TestingBarrel from '../gold-bananas/lanky/Testing'
 import TinyDartboard from '../gold-bananas/tiny/Dart'
 import ChunkyKasplat from '../kasplats/Chunky'
 
-const TestingChecks: React.FC = () => (
+const TestingChecks: React.FC = () => {
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+return (
   <>
-    <ChunkyKasplat />
+  <div className="grid">
     <FunkyCrate />
     <FunkyFairy />
     <BlockTower />
@@ -18,8 +22,13 @@ const TestingChecks: React.FC = () => (
     <TestingBarrel />
     <NumberFairy />
     <NumberGame />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
+    <ChunkyKasplat />
     <TestingEnemies />
+  </div>
   </>
 )
+}
 
 export default TestingChecks

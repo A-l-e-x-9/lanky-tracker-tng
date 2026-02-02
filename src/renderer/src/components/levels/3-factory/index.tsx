@@ -26,14 +26,21 @@ import ShuffledCrates from './crates/Shuffled'
 import ShuffledDirt from './dirt/Shuffled'
 import ShuffledFairies from './fairies/Shuffled'
 
-const ClassicChecks: React.FC = () => (
+const ClassicChecks: React.FC = () => {
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+return (
+<>
   <div className="grid">
     <DkBananas />
     <DiddyBananas />
     <LankyBananas />
     <TinyBananas />
     <ChunkyBananas />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <KasplatLocations />
+  </div>
+  <div className="grid">
     <CrateLocations />
     <DarkRoomDirt />
     <FairyLocations />
@@ -47,15 +54,20 @@ const ClassicChecks: React.FC = () => (
     </BananaMedalPool>
     <BossCheck />
     <FactoryShops />
+  <div className={`grid ${isKremKaptureSeed}`}>
     <DropPool>
       <EnemyLocations />
     </DropPool>
+  </div>
+  <div className="grid">
     <ShuffledArenas />
     <ShuffledCrates />
     <ShuffledDirt />
     <ShuffledFairies />
   </div>
+</>
 )
+}
 
 const FactoryChecks: React.FC = () => {
   const grp = useDonkStore(useShallow((state) => state.ui.groupByRegion))

@@ -45,3 +45,8 @@ export const useCurrentCrownCount = (): number =>
 
 export const useCurrentRainbowCoinCount = (): number =>
   useDonkStore(useShallow((state) => state.consumables.rainbowCoins))
+
+export const useCurrentBossCount = (): number => {
+const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
+return Number(didCheck[1105]) + Number(didCheck[2105]) + Number(didCheck[3105]) + Number(didCheck[4105]) + Number(didCheck[5105]) + Number(didCheck[6105]) + Number(didCheck[7105])
+}

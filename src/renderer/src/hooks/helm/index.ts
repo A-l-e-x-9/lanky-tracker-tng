@@ -33,7 +33,7 @@ import {
 } from '../kongs'
 import { useHelmStartPosition, useHelmItem1, useHelmItemNum1, useHelmItem2, useHelmItemNum2, useKRoolItem, useKRoolItemNum } from '../settings'
 import { LogicBool } from '../world'
-import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentCoCoinCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useBean, useCurrentPearlCount } from '../consumables'
+import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentCoCoinCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useBean, useCurrentPearlCount, useCurrentBossCount } from '../consumables'
 
 /**
  * Can we play in Hideout Helm?
@@ -331,7 +331,7 @@ export const useWinCondition = (): boolean => {
     case 5: //Complete the DK Rap
       return tookItToTheFridge
     case 6: //K. Rool's Challenge
-      return (currentKeyCount >= 8) && hasSnide && (currentBlueprintCount >= 40) //Currently doesn't account for Bonus Barrels or bosses
+      return (currentKeyCount >= 8) && (currentBlueprintCount >= 40) && (currentBossCount >= 7) //Currently doesn't account for Bonus Barrels
     case 7: //Kill the Wabbit
       return false //you can't even fight K. Rool at all under that condition. Accordingly, the section of the tracker this shit serves is disabled.
     case 8: //Nanners
@@ -352,8 +352,9 @@ export const useWinCondition = (): boolean => {
       return Number(currentBeanCount) >= targetItemCount
     case 16: //Pearls
       return currentPearlCount >= targetItemCount
-    case 17: //Bosses
-    case 18: //Bonuses (how I'm gonna handle these two is still currently TBD)
+    case 17:
+      return currentBossCount >= targetItemCount
+    case 18: //Bonuses (how I'm gonna handle this one is still currently TBD)
     default:
       return true
   }
