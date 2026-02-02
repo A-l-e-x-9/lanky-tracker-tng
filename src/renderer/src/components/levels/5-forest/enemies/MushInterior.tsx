@@ -1,12 +1,12 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { useDefeatKlump, useDefeatZinger } from '@renderer/hooks/enemies'
+import { useDefeatToughEnemy, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useForestMushroomRoof, usePlayForest, useSlamForest } from '@renderer/hooks/forest'
 import { useChunky, useLanky } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const MushInteriorEnemies: React.FC = () => {
   const inStage = usePlayForest()
-  const klump = useDefeatKlump()
+  const klump = useDefeatToughEnemy()
   const zinger = useDefeatZinger()
   const lanky = useLanky()
   const chunky = useChunky()

@@ -1,44 +1,46 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { useDefeatKlump, useDefeatZinger } from '@renderer/hooks/enemies'
-import { useForestMushroomRoof, usePlayForest } from '@renderer/hooks/forest'
+import { useDefeatToughEnemy, useDefeatZinger } from '@renderer/hooks/enemies'
+import { useForestMushroomRoof, usePlayForest, useForestDay, useForestNight } from '@renderer/hooks/forest'
 import { useAnyKong } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const MushExteriorEnemies: React.FC = () => {
   const inStage = usePlayForest()
   const roof = useForestMushroomRoof()
-  const klump = useDefeatKlump()
+  const klump = useDefeatToughEnemy()
   const zinger = useDefeatZinger()
   const anyKong = useAnyKong()
+  const isDay = useForestDay()
+  const isNight = useForestNight()
   return (
     <DropPool>
       <ForestCheck
         id={5323}
         name="Enemy 0 in the Yellow Tunnel"
         region="Forest Area 3"
-        canGetLogic={inStage.in && anyKong}
-        canGetBreak={inStage.out && anyKong}
+        canGetLogic={inStage.in && (isDay.in || (isNight.in && klump))}
+        canGetBreak={inStage.out && (isDay.out || (isNight.out && klump))}
       />
       <ForestCheck
         id={5324}
         name="Enemy at Low Warp 5"
         region="Forest Area 3"
-        canGetLogic={inStage.in && anyKong}
-        canGetBreak={inStage.out && anyKong}
+        canGetLogic={inStage.in && (isDay.in || (isNight.in && klump))}
+        canGetBreak={inStage.out && (isDay.out || (isNight.out && klump))}
       />
       <ForestCheck
         id={5325}
         name="Enemy Between Bounce Tag and Cranky's"
         region="Forest Area 3"
-        canGetLogic={inStage.in && anyKong}
-        canGetBreak={inStage.out && anyKong}
+        canGetLogic={inStage.in && (isDay.in || (isNight.in && klump))}
+        canGetBreak={inStage.out && (isDay.out || (isNight.out && klump))}
       />
       <ForestCheck
         id={5326}
         name="Enemy at Giant Shroom's Rocketbarrel"
         region="Forest Area 3"
-        canGetLogic={inStage.in && anyKong}
-        canGetBreak={inStage.out && anyKong}
+        canGetLogic={inStage.in && (isDay.in || (isNight.in && klump))}
+        canGetBreak={inStage.out && (isDay.out || (isNight.out && klump))}
       />
       <ForestCheck
         id={5327}
@@ -100,8 +102,8 @@ const MushExteriorEnemies: React.FC = () => {
         id={5335}
         name="Enemy at Top Of Mushroom"
         region="Forest Area 3"
-        canGetLogic={inStage.in && roof.in && klump}
-        canGetBreak={inStage.out && roof.out && klump}
+        canGetLogic={inStage.in && roof.in && ((isDay.in && klump) || isNight.in)}
+        canGetBreak={inStage.out && roof.out && ((isDay.out && klump) || isNight.out)}
       />
     </DropPool>
   )

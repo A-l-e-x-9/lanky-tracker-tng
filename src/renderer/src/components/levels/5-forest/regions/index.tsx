@@ -18,6 +18,7 @@ import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 
 const ForestRegionChecks: React.FC = () => (
+<>
   <div className="grid">
     <BananaMedalPool>
       <DkMedal />
@@ -26,12 +27,14 @@ const ForestRegionChecks: React.FC = () => (
       <TinyMedal />
       <ChunkyMedal />
     </BananaMedalPool>
+  </div>
     <CenterChecks />
     <MillsChecks />
     <BeanstalkChecks />
     <MushExteriorChecks />
     <MushInteriorChecks />
     <OwlChecks />
+  <div className="grid">
     <ShopLocations />
     <BossCheck />
     <ShuffledArenas />
@@ -39,6 +42,7 @@ const ForestRegionChecks: React.FC = () => (
     <ShuffledDirt />
     <ShuffledFairies />
   </div>
+</>
 )
 
 export default ForestRegionChecks

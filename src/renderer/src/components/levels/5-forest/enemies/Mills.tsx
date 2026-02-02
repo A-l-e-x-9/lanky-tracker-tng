@@ -1,8 +1,6 @@
 import DropPool from '@renderer/components/pools/Drops'
 import {
-  useDefeatBat,
-  useDefeatKlump,
-  useDefeatKosha,
+  useDefeatToughEnemy,
   useDefeatZinger
 } from '@renderer/hooks/enemies'
 import { useForestDay, useForestNight, usePlayForest, useSlamForest } from '@renderer/hooks/forest'
@@ -12,10 +10,8 @@ import ForestCheck from '../check'
 const MillsEnemies: React.FC = () => {
   const inStage = usePlayForest()
   const canSlam = useSlamForest()
-  const klump = useDefeatKlump()
+  const klump = useDefeatToughEnemy()
   const zinger = useDefeatZinger()
-  const bat = useDefeatBat()
-  const kosha = useDefeatKosha()
   const anyKong = useAnyKong()
   const diddy = useDiddy()
   const dk = useDk()
@@ -31,8 +27,8 @@ const MillsEnemies: React.FC = () => {
         id={5304}
         name="Enemy Near Snide's"
         region="Forest Area 1"
-        canGetLogic={inStage.in && anyKong}
-        canGetBreak={inStage.out && anyKong}
+        canGetLogic={inStage.in && (day.in || (night.in && klump))}
+        canGetBreak={inStage.out && (day.out || (night.out && klump))}
       />
       <ForestCheck
         id={5305}
@@ -45,8 +41,8 @@ const MillsEnemies: React.FC = () => {
         id={5306}
         name="Enemy Near the Dark Attic"
         region="Forest Area 1"
-        canGetLogic={inStage.in && klump}
-        canGetBreak={inStage.out && klump}
+        canGetLogic={inStage.in && ((day.in && klump) || night.in)}
+        canGetBreak={inStage.out && ((day.in && klump) || night.in)}
       />
       <ForestCheck
         id={5307}
@@ -59,8 +55,8 @@ const MillsEnemies: React.FC = () => {
         id={5308}
         name="Enemy Near the Blue Tunnel"
         region="Forest Area 1"
-        canGetLogic={inStage.in && klump}
-        canGetBreak={inStage.out && klump}
+        canGetLogic={inStage.in && ((day.in && klump) || night.in)}
+        canGetBreak={inStage.out && ((day.in && klump) || night.in)}
       />
       <ForestCheck
         id={5309}
@@ -80,29 +76,29 @@ const MillsEnemies: React.FC = () => {
         id={5311}
         name="Enemy in the Winch Room"
         region="Forest Area 1"
-        canGetLogic={inStage.in && diddy && hasClimbing && canSlam && bat.in}
-        canGetBreak={inStage.out && diddy && hasClimbing && canSlam && bat.out}
+        canGetLogic={inStage.in && diddy && hasClimbing && canSlam && zinger.in}
+        canGetBreak={inStage.out && diddy && hasClimbing && canSlam && zinger.out}
       />
       <ForestCheck
         id={5312}
         name="Enemy at Thornvine Barn Area Entrance"
         region="Forest Area 1"
-        canGetLogic={inStage.in && klump}
-        canGetBreak={inStage.out && klump}
+        canGetLogic={inStage.in && ((day.in && klump) || night.in)}
+        canGetBreak={inStage.out && ((day.in && klump) || night.in)}
       />
       <ForestCheck
         id={5313}
         name="Thornvine Outside Enemy 0"
         region="Forest Area 1"
-        canGetLogic={inStage.in && klump}
-        canGetBreak={inStage.out && klump}
+        canGetLogic={inStage.in && ((day.in && klump) || night.in)}
+        canGetBreak={inStage.out && ((day.in && klump) || night.in)}
       />
       <ForestCheck
         id={5314}
         name="Thornvine Outside Enemy 1"
         region="Forest Area 1"
-        canGetLogic={inStage.in && klump}
-        canGetBreak={inStage.out && klump}
+        canGetLogic={inStage.in && ((day.in && klump) || night.in)}
+        canGetBreak={inStage.out && ((day.in && klump) || night.in)}
       />
       <ForestCheck
         id={5315}
@@ -115,8 +111,8 @@ const MillsEnemies: React.FC = () => {
         id={5316}
         name="Enemy Inside Thornvine Barn"
         region="Forest Area 1"
-        canGetLogic={night.in && strong && canSlam && kosha.in}
-        canGetBreak={night.out && dk && canSlam && kosha.out}
+        canGetLogic={night.in && strong && canSlam && klump}
+        canGetBreak={night.out && dk && canSlam && klump}
       />
     </DropPool>
   )

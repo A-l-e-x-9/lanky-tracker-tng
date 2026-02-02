@@ -1,15 +1,17 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { useDefeatKlump, useDefeatZinger } from '@renderer/hooks/enemies'
-import { useForestOwl } from '@renderer/hooks/forest'
+import { useDefeatToughEnemy, useDefeatZinger } from '@renderer/hooks/enemies'
+import { useForestOwl, useForestDay } from '@renderer/hooks/forest'
 import { useMini, useSax } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const OwlEnemies: React.FC = () => {
   const owlTree = useForestOwl()
-  const klump = useDefeatKlump()
+  const klump = useDefeatToughEnemy()
   const zinger = useDefeatZinger()
   const mini = useMini()
   const sax = useSax()
+  const isDay = useForestDay()
+  const isNight = useForestNight()
   return (
     <DropPool>
       <ForestCheck
@@ -30,22 +32,22 @@ const OwlEnemies: React.FC = () => {
         id={5344}
         name="Enemy 3 in the Yellow Tunnel"
         region="Forest Area 4"
-        canGetLogic={owlTree.in && klump}
-        canGetBreak={owlTree.out && klump}
+        canGetLogic={owlTree.in && ((isDay.in && klump) || isNight.in)}
+        canGetBreak={owlTree.out && ((isDay.out && klump) || isNight.out)}
       />
       <ForestCheck
         id={5345}
         name="Enemy 0 surrounding the big tree"
         region="Forest Area 4"
-        canGetLogic={owlTree.in && klump}
-        canGetBreak={owlTree.out && klump}
+        canGetLogic={owlTree.in && ((isDay.in && klump) || isNight.in)}
+        canGetBreak={owlTree.out && ((isDay.out && klump) || isNight.out)}
       />
       <ForestCheck
         id={5346}
         name="Enemy 1 surrounding the big tree"
         region="Forest Area 4"
-        canGetLogic={owlTree.in && klump}
-        canGetBreak={owlTree.out && klump}
+        canGetLogic={owlTree.in && ((isDay.in && klump) || isNight.in)}
+        canGetBreak={owlTree.out && ((isDay.out && klump) || isNight.out)}
       />
       <ForestCheck
         id={5347}

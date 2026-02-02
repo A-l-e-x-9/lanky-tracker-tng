@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import BarnInsideCrate from '../crates/BarnInside'
 import BarnOutsideCrate from '../crates/BarnOutside'
 import RaftersCrate from '../crates/Rafters'
@@ -17,27 +19,34 @@ import MillBackKeg from '../boulders/MillBackKeg'
 import MillFrontKeg1 from '../boulders/MillFrontKeg1'
 import MillFrontKeg2 from '../boulders/MillFrontKeg2'
 
-const MillsChecks: React.FC = () => (
+const MillsChecks: React.FC = () => {
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+return (
   <>
+  <div className="grid">
     <MillsGrassDirt />
     <RaftersCrate />
     <DarkRafters />
     <RaftersFairy />
     <MillWinch />
     <DkMill />
-    <LankyMill />
-    <SpiderBoss />
     <ChunkyMill />
     <MillBackKeg />
     <MillFrontKeg1 />
     <MillFrontKeg2 />
     <BarnOutsideCrate />
-    <DkKasplat />
     <DkBarn />
     <BarnInsideCrate />
     <BarnFairy />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
+    <LankyMill />
+    <SpiderBoss />
+    <DkKasplat />
     <MillsEnemies />
+  </div>
   </>
 )
+}
 
 export default MillsChecks

@@ -1,28 +1,30 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { useDefeatKlump } from '@renderer/hooks/enemies'
-import { useForestBean } from '@renderer/hooks/forest'
+import { useDefeatToughEnemy } from '@renderer/hooks/enemies'
+import { useForestBean, useForestDay, useForestNight } from '@renderer/hooks/forest'
 import ForestCheck from '../check'
 import { useHunky } from '@renderer/hooks/kongs'
 
 const BeanstalkEnemies: React.FC = () => {
-  const klump = useDefeatKlump()
+  const klump = useDefeatToughEnemy()
   const beanstalk = useForestBean()
   const hasHunky = useHunky()
+  const isDay = useForestDay()
+  const isNight = useForestNight()
   return (
     <DropPool>
       <ForestCheck
         id={5317}
         name="Enemy 0 at Beanstalk"
         region="Forest Area 2"
-        canGetLogic={beanstalk.in && klump}
-        canGetBreak={beanstalk.out && klump}
+        canGetLogic={beanstalk.in && ((isDay.in && klump) || isNight.in)}
+        canGetBreak={beanstalk.out && ((isDay.out && klump) || isNight.out)}
       />
       <ForestCheck
         id={5318}
         name="Enemy 1 at Beanstalk"
         region="Forest Area 2"
-        canGetLogic={beanstalk.in && klump}
-        canGetBreak={beanstalk.out && klump}
+        canGetLogic={beanstalk.in && ((isDay.in && klump) || isNight.in)}
+        canGetBreak={beanstalk.out && ((isDay.out && klump) || isNight.out)}
       />
       <ForestCheck
         id={5319}
