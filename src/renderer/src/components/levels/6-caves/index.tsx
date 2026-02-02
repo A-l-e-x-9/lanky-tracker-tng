@@ -23,15 +23,25 @@ import TinyMedal from './medals/TinyMedal'
 import CavesRegionChecks from './regions'
 import CavesShops from './shops'
 import BoulderLocations from './boulders'
+import ShuffledArenas from './arenas/Shuffled'
+import ShuffledCrates from './crates/Shuffled'
+import ShuffledDirt from './dirt/Shuffled'
 
-const ClassicChecks: React.FC = () => (
+const ClassicChecks: React.FC = () => {
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+return (
+<>
   <div className="grid">
     <DkBananas />
     <DiddyBananas />
     <LankyBananas />
     <TinyBananas />
     <ChunkyBananas />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <KasplatLocations />
+  </div>
+  <div className="grid">
     <CrateLocations />
     <KoshaDirt />
     <FairyLocations />
@@ -46,12 +56,21 @@ const ClassicChecks: React.FC = () => (
     <BoulderLocations />
     <BossCheck />
     <CavesShops />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <DropPool>
       <EnemyLocations />
     </DropPool>
+  </div>
+  <div className="grid">
+    <ShuffledArenas />
+    <ShuffledCrates />
+    <ShuffledDirt />
     <ShuffledFairies />
   </div>
+</>
 )
+}
 
 const CavesChecks: React.FC = () => {
   const grp = useDonkStore(useShallow((state) => state.ui.groupByRegion))
