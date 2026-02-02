@@ -2,8 +2,8 @@ import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import CratePool from '@renderer/components/pools/Crates'
 import { useGeneralThing, useDkRotateGb, useChunkyClearGb, useTinyPortGb, useTinyCaveGb, useIceWalls, useCavesMiniFunky, useCavesPillar, useCavesIgloo, useLankyIglooGb, useLankyCastleGb, useChunkyCabinGb } from '@renderer/hooks/caves'
-import { useShuffledCrates } from '@renderer/hooks/settings'
-import { useMonkeyport, useRocket, useTwirl, usePunch, useBalloon, useHighGrab, useChunky, useBarrel, useDk, useBongos, useSax, useGuitar, useTrombone } from '@renderer/hooks/kongs'
+import { useShuffleCrates } from '@renderer/hooks/settings'
+import { useMonkeyport, useRocket, useTwirl, usePunch, useBalloon, useHighGrab, useChunky, useBarrel, useDk, useBongos, useSax, useGuitar, useTrombone, useTriangle } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -417,5 +417,5 @@ const hasTriangle = useTriangle()
   )
 }
 
-const ShuffledCrates: React.FC = () => (useShuffledCrates() ? <Shuffled /> : null)
+const ShuffledCrates: React.FC = () => (useShuffleCrates() ? <Shuffled /> : null)
 export default ShuffledCrates
