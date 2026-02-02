@@ -26,10 +26,12 @@ const GalleonRegionChecks: React.FC = () => (
         <TinyMedal />
         <ChunkyMedal />
       </BananaMedalPool>
+    </div>
       <CavernsChecks />
       <LighthouseChecks />
       <OutskirtsChecks />
       <TreasureChecks />
+    <div className="grid">
       <FiveShipChecks />
       <ShopLocations />
       <BossCheck />
