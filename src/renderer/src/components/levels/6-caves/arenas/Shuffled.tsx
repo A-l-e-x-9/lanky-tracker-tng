@@ -3,14 +3,14 @@ import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useGeneralThing, useDkRotateGb, useChunkyClearGb, useTinyPortGb, useTinyCaveGb, useIceWalls, useCavesMiniFunky, useCavesPillar, useCavesIgloo, useLankyIglooGb, useLankyCastleGb } from '@renderer/hooks/caves'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useMonkeyport, useRocket, useTwirl, usePunch, useBalloon, useHighGrab, useChunky, useBarrel, useDk, useBongo, useSax, useGuitar } from '@renderer/hooks/kongs'
+import { useMonkeyport, useRocket, useTwirl, usePunch, useBalloon, useHighGrab, useChunky, useBarrel, useDk, useBongos, useSax, useGuitar, useTrombone } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
 const canReachVanillaArena = useDkRotateGb()
 const canDoKoshaGB = useChunkyClearGb()
-const hasMonkeyport = useMonkeyPort()
+const hasMonkeyport = useMonkeyport()
 const canDoTinyIglooGB = useTinyPortGb()
 const hasJetbarrel = useRocket()
 const isHinaKagiyama = useTwirl()
@@ -26,11 +26,12 @@ const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
 const hasDK = useDk()
 const canDoLankyKasplat = useCavesPillar()
 const canReachIgloo = useCavesIgloo()
-const hasBongoes = useBongo()
+const hasBongoes = useBongos()
 const canDoLanky5DI = useLankyIglooGb()
 const hasSax = useSax()
 const hasGuitar = useGuitar()
 const canDoIceCastle = useLankyCastleGb()
+const hasTrombone = useTrombone()
   return (
     <ArenaPool>
       <CavesCheck
