@@ -1,7 +1,6 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatToughEnemy, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useForestMushroomRoof, usePlayForest, useForestDay, useForestNight } from '@renderer/hooks/forest'
-import { useAnyKong } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const MushExteriorEnemies: React.FC = () => {
@@ -9,7 +8,6 @@ const MushExteriorEnemies: React.FC = () => {
   const roof = useForestMushroomRoof()
   const klump = useDefeatToughEnemy()
   const zinger = useDefeatZinger()
-  const anyKong = useAnyKong()
   const isDay = useForestDay()
   const isNight = useForestNight()
   return (

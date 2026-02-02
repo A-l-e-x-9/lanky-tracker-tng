@@ -4,7 +4,7 @@ import {
   useDefeatZinger
 } from '@renderer/hooks/enemies'
 import { useForestDay, useForestNight, usePlayForest, useSlamForest } from '@renderer/hooks/forest'
-import { useAnyKong, useDiddy, useDk, usePunch, useStrong, useMini, useClimbing } from '@renderer/hooks/kongs'
+import { useDiddy, useDk, usePunch, useStrong, useMini, useClimbing } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const MillsEnemies: React.FC = () => {
@@ -12,7 +12,6 @@ const MillsEnemies: React.FC = () => {
   const canSlam = useSlamForest()
   const klump = useDefeatToughEnemy()
   const zinger = useDefeatZinger()
-  const anyKong = useAnyKong()
   const diddy = useDiddy()
   const dk = useDk()
   const strong = useStrong()

@@ -1,6 +1,6 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatToughEnemy, useDefeatZinger } from '@renderer/hooks/enemies'
-import { useForestOwl, useForestDay } from '@renderer/hooks/forest'
+import { useForestOwl, useForestDay, useForestNight } from '@renderer/hooks/forest'
 import { useMini, useSax } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
