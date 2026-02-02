@@ -54,6 +54,7 @@ return (
     </BananaMedalPool>
     <BossCheck />
     <FactoryShops />
+  </div>
   <div className={`grid ${isKremKaptureSeed}`}>
     <DropPool>
       <EnemyLocations />
