@@ -92,7 +92,7 @@ export const useCanAccessSnide = (): boolean => {
 /**
  * Can we access the mini cavern by Funky in Caves?
  * @returns true if we can access the mini cavern by Funky.
- Alex edit: The original "out logic" of inStage + mini, the "Twirl-less" trick, is a Crystal Coconut hog with way too much of a chance for something to go wrong and is highly not recommended by me. Was originally changed to a boolean check but changed back when I implemented the "Water is Lava?" option in the settings.
+ Alex edit: The original "out logic" of inStage + mini, the "Twirl-less" trick, is a Crystal Coconut hog with way too much of a chance for something to go wrong and is highly not recommended by me. Was originally changed to a boolean check but changed back when I implemented the "Angry Caves" option in the settings.
  */
 export const useCavesMiniFunky = (): LogicBool => {
   const inStage = usePlayCaves()
@@ -102,7 +102,7 @@ export const useCavesMiniFunky = (): LogicBool => {
   const warpAll = useBananaportAll()
   return {
     in: inStage.in && !angery && (warpAll || (twirl && mini)),
-    out: ((inStage.in && !angery) || (inStage.out || angery)) && mini
+    out: (inStage.out || angery) && mini
   }
 }
 
@@ -120,7 +120,7 @@ export const useCavesPillar = (): LogicBool => {
   const warpAll = useBananaportAll()
   return {
     in: inStage.in && !angery && (warpAll || rocket),
-    out: ((inStage.in && !angery) || (inStage.out || angery)) && (dk || twirl || balloon)
+    out: (inStage.out || angery) && (dk || twirl || balloon)
   }
 }
 
@@ -196,7 +196,7 @@ export const useChunkyClearGb = (): LogicBool => {
   const hunky = useHunky()
   return {
     in: inStage.in && !angery && (punch || wallsPrePunched) && boulder && hunky,
-    out: ((inStage.in && !angery) || (inStage.out || angery)) && (punch || wallsPrePunched) && boulder
+    out: (inStage.out || angery) && (punch || wallsPrePunched) && boulder
   }
 }
 
@@ -249,7 +249,7 @@ export const useDiddyCandleGb = (): LogicBool => {
   const spring = useSpring()
   return {
     in: inStage.in && !angery && guitar && rocket && spring,
-    out: ((inStage.in && !angery) || (inStage.out || angery)) && guitar && rocket //If you're playing a seed with the "move Diddy Upper Cabin Barrel" option on under the "quality of life" settings, you may not be able to do this. Don't know if I should edit this check to account for that option...it's a lot of effort for just one check! -_-;
+    out: (inStage.out || angery) && guitar && rocket //If you're playing a seed with the "move Diddy Upper Cabin Barrel" option on under the "quality of life" settings, you may not be able to do this. Don't know if I should edit this check to account for that option...it's a lot of effort for just one check! -_-;
   }
 }
 
@@ -370,7 +370,7 @@ export const useTinyIglooGb = (): LogicBool => {
   }
 }
 
-/*Alex edit: This check was originally a LogicBool with "out logic" of inStage + Sax + Shockwave + Feather, probably because the enemy randomizer works here so that not all of the enemies are purple Klaptraps. But in my experience, the game always gives me at least one purple Klaptrap for this check, making Oranges a very hard requirement, so I originally changed it to a boolean check before adding a "Water is Lava?" option in the Generator Settings forced me to change it back.*/
+/*Alex edit: This check was originally a LogicBool with "out logic" of inStage + Sax + Shockwave + Feather, probably because the enemy randomizer works here so that not all of the enemies are purple Klaptraps. But in my experience, the game always gives me at least one purple Klaptrap for this check, making Oranges a very hard requirement, so I originally changed it to a boolean check before adding an "Angry Caves?" option in the Generator Settings forced me to change it back.*/
 export const useTinyCabinGb = (): LogicBool => {
   const inStage = usePlayCaves()
   const angery = useAngryCaves()
