@@ -1,14 +1,10 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useHelmMachine, useHelmDoors, usePlayHelm, useEOHDoor1 } from '@renderer/hooks/helm'
+import { useHelmMachine, useHelmDoors, useEOHDoor1 } from '@renderer/hooks/helm'
 import { useShuffleCrates } from '@renderer/hooks/settings'
-import { useStand, usePineapple, useVine, useRocket } from '@renderer/hooks/kongs'
+import { useRocket } from '@renderer/hooks/kongs'
 import HelmCheck from '../check'
 
 const Shuffled: React.FC = () => {
-const isBreathing = usePlayHelm()
-const hasOStand = useStand()
-const hasPineapples = usePineapple()
-const hasVines = useVine()
 const canReachBOM = useHelmMachine()
 const hasJetbarrel = useRocket()
 const canReachNav = useHelmDoors()
