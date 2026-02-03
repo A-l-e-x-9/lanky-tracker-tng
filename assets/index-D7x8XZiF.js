@@ -39267,53 +39267,28 @@ const LankyMedal$1 = () => {
   const outLogic = useLankyMedalOutLogic$1();
   const cbCount = useCbCount();
   const halfMedal = Math.round(cbCount / 2);
-  if (cbCount >= 90) {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(Miniboss, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CavesCheck,
-        {
-          id: 6102,
-          name: "Lanky's Medal",
-          region: "Banana Medals",
-          canGetLogic: inLogic >= cbCount,
-          canGetBreak: outLogic >= cbCount
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CavesCheck,
-        {
-          id: 6202,
-          name: "Lanky's Half-Medal",
-          region: "Banana Medals",
-          canGetLogic: inLogic >= halfMedal,
-          canGetBreak: outLogic >= halfMedal
-        }
-      )
-    ] });
-  } else {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CavesCheck,
-        {
-          id: 6102,
-          name: "Lanky's Medal",
-          region: "Banana Medals",
-          canGetLogic: inLogic >= cbCount,
-          canGetBreak: outLogic >= cbCount
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        CavesCheck,
-        {
-          id: 6202,
-          name: "Lanky's Half-Medal",
-          region: "Banana Medals",
-          canGetLogic: inLogic >= halfMedal,
-          canGetBreak: outLogic >= halfMedal
-        }
-      )
-    ] });
-  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6102,
+        name: "Lanky's Medal",
+        region: "Banana Medals",
+        canGetLogic: inLogic >= cbCount,
+        canGetBreak: outLogic >= cbCount
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6202,
+        name: "Lanky's Half-Medal",
+        region: "Banana Medals",
+        canGetLogic: inLogic >= halfMedal,
+        canGetBreak: outLogic >= halfMedal
+      }
+    )
+  ] });
 };
 const useTinyMedalCommonLogic$1 = () => {
   const igloo = useCavesIgloo();
