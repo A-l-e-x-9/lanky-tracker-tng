@@ -3,7 +3,7 @@ import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useGeneralDirt, useKoshaDirt, useDkRotateGb, useChunkyClearGb, useTinyPortGb, useTinyCaveGb, useIceWalls, useCavesMiniFunky, useCavesPillar, useCavesIgloo, useLankyIglooGb, useLankyCastleGb, useChunkyCabinGb } from '@renderer/hooks/caves'
 import { useShuffleDirt } from '@renderer/hooks/settings'
-import { useShockwave, useMonkeyport, useRocket, useTwirl, usePunch, useBalloon, useHighGrab, useChunky, useBarrel, useDk, useBongos, useSax, useGuitar, useTrombone, useTriangle } from '@renderer/hooks/kongs'
+import { useShockwave, useRocket, useTwirl, usePunch, useBalloon, useHighGrab, useChunky, useBarrel, useDk, useBongos, useSax, useGuitar, useTrombone, useTriangle } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -12,7 +12,6 @@ const hasShockwave = useShockwave()
 const canReachVanillaArena = useDkRotateGb()
 const vanillaDirt = useKoshaDirt()
 const canDoKoshaGB = useChunkyClearGb()
-const hasMonkeyport = useMonkeyport()
 const canDoTinyIglooGB = useTinyPortGb()
 const hasJetbarrel = useRocket()
 const isHinaKagiyama = useTwirl()
