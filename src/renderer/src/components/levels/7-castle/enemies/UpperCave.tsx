@@ -1,6 +1,6 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { usePlayCastle, useSlamCastle } from '@renderer/hooks/castle'
-import { useDefeatBat, useDefeatKosha } from '@renderer/hooks/enemies'
+import { useDefeatZinger, useDefeatToughEnemy } from '@renderer/hooks/enemies'
 import {
   useAnyKong,
   useDiddy,
@@ -14,8 +14,8 @@ const UpperCaveEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const diddy = useDiddy()
   const dk = useDk()
-  const kosha = useDefeatKosha()
-  const bat = useDefeatBat()
+  const kosha = useDefeatToughEnemy()
+  const bat = useDefeatZinger()
   return (
     <DropPool>
       <CastleCheck
@@ -48,15 +48,15 @@ const UpperCaveEnemies: React.FC = () => {
         id={7320}
         name="Enemy in Diddy's Chair Dungeon"
         region="Castle Dungeon"
-        canGetLogic={inStage.in && diddy && canSlam && kosha.in}
-        canGetBreak={inStage.out && diddy && canSlam && kosha.out}
+        canGetLogic={inStage.in && diddy && canSlam && kosha}
+        canGetBreak={inStage.out && diddy && canSlam && kosha}
       />
       <CastleCheck
         id={7321}
         name="Enemy Outside Lanky's Acid Dungeon"
         region="Castle Dungeon"
-        canGetLogic={inStage.in && anyKong && kosha.in}
-        canGetBreak={inStage.out && anyKong && kosha.out}
+        canGetLogic={inStage.in && anyKong && kosha}
+        canGetBreak={inStage.out && anyKong && kosha}
       />
     </DropPool>
   )

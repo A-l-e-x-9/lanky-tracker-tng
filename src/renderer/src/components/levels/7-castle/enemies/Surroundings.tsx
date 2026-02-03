@@ -1,13 +1,13 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { usePlayCastle } from '@renderer/hooks/castle'
-import { useDefeatKosha } from '@renderer/hooks/enemies'
+import { useDefeatToughEnemy } from '@renderer/hooks/enemies'
 import { useAnyKong, useClimbing } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const SurroundingsEnemies: React.FC = () => {
   const inStage = usePlayCastle()
   const anyKong = useAnyKong()
-  const kosha = useDefeatKosha()
+  const kosha = useDefeatToughEnemy()
   const hasClimbing = useClimbing()
   return (
     <DropPool>
@@ -29,15 +29,15 @@ const SurroundingsEnemies: React.FC = () => {
         id={7302}
         name="Enemy on Bottom Wooden Extrusion"
         region="Creepy Castle Main"
-        canGetLogic={inStage.in && anyKong && kosha.in}
-        canGetBreak={inStage.out && anyKong && kosha.out}
+        canGetLogic={inStage.in && anyKong && kosha}
+        canGetBreak={inStage.out && anyKong && kosha}
       />
       <CastleCheck
         id={7303}
         name="Enemy on Wooden Extrusion Near Cranky's"
         region="Creepy Castle Main"
-        canGetLogic={inStage.in && anyKong && kosha.in}
-        canGetBreak={inStage.out && anyKong && kosha.out}
+        canGetLogic={inStage.in && anyKong && kosha}
+        canGetBreak={inStage.out && anyKong && kosha}
       />
       <CastleCheck
         id={7304}
@@ -57,8 +57,8 @@ const SurroundingsEnemies: React.FC = () => {
         id={7306}
         name="Enemy Near Snide's"
         region="Creepy Castle Main"
-        canGetLogic={inStage.in && anyKong && kosha.in}
-        canGetBreak={inStage.out && anyKong && kosha.out}
+        canGetLogic={inStage.in && anyKong && kosha}
+        canGetBreak={inStage.out && anyKong && kosha}
       />
       <CastleCheck
         id={7307}

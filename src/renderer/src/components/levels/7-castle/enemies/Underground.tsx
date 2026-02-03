@@ -1,6 +1,6 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { usePlayCastle, useOpenCrypt } from '@renderer/hooks/castle'
-import { useDefeatBat, useDefeatKosha } from '@renderer/hooks/enemies'
+import { useDefeatZinger, useDefeatToughEnemy } from '@renderer/hooks/enemies'
 import {
   useAnyKong,
   useCharge,
@@ -17,8 +17,8 @@ import CastleCheck from '../check'
 const UndergroundEnemies: React.FC = () => {
   const inStage = usePlayCastle()
   const anyKong = useAnyKong()
-  const kosha = useDefeatKosha()
-  const bat = useDefeatBat()
+  const kosha = useDefeatToughEnemy()
+  const bat = useDefeatZinger()
   const peanut = usePeanut()
   const charge = useCharge()
   const pineapple = usePineapple()
@@ -34,15 +34,15 @@ const UndergroundEnemies: React.FC = () => {
         id={7327}
         name="Enemy in front of Crypt"
         region="Castle Crypt"
-        canGetLogic={inStage.in && anyKong && kosha.in && hasClimbing}
-        canGetBreak={inStage.out && anyKong && kosha.out}
+        canGetLogic={inStage.in && anyKong && kosha && hasClimbing}
+        canGetBreak={inStage.out && anyKong && kosha}
       />
       <CastleCheck
         id={7328}
         name="Enemy at the Right Stairs to Crypt"
         region="Castle Crypt"
-        canGetLogic={inStage.in && anyKong && kosha.in && hasClimbing}
-        canGetBreak={inStage.out && anyKong && kosha.out}
+        canGetLogic={inStage.in && anyKong && kosha && hasClimbing}
+        canGetBreak={inStage.out && anyKong && kosha}
       />
       <CastleCheck
         id={7329}

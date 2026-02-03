@@ -1,6 +1,6 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { usePlayCastle, useSlamCastle } from '@renderer/hooks/castle'
-import { useDefeatBat } from '@renderer/hooks/enemies'
+import { useDefeatZinger } from '@renderer/hooks/enemies'
 import { useDk } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
@@ -8,7 +8,7 @@ const LibraryEnemies: React.FC = () => {
   const inStage = usePlayCastle()
   const canSlam = useSlamCastle()
   const dk = useDk()
-  const bat = useDefeatBat()
+  const bat = useDefeatZinger()
   return (
     <DropPool>
       <CastleCheck
