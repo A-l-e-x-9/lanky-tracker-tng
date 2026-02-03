@@ -1,4 +1,4 @@
-import { useAnyKong, useAnyGun, useAnyMusic, useOrange, usePunch, useShockwave } from './kongs'
+import { useAnyGun, useAnyMusic, useOrange, useShockwave } from './kongs'
 import { LogicBool } from './world'
 
 /**
@@ -15,11 +15,11 @@ export const useDefeatZinger = (): LogicBool => {
   }
 }
 
-//Can you defeat a Klump, Robo-Kritter, Klobber, Kaboom, Kosha, or red/purple Klaptrap?
+//Can you defeat a Klump, Robo-Kritter, Klobber, Kaboom, Kosha, Kop, or red/purple Klaptrap? (This attempt to consolidate various enemy-specific checks into one is shit and will likely need a redo. =_=;)
 export const useDefeatToughEnemy = (): boolean => {
   const anyMusic = useAnyMusic()
   const shockwave = useShockwave()
   const hasOranges = useOrange()
   const hasAnyGun = useAnyGun()
-  return orange || shockwave || anyMusic || hasAnyGun
+  return hasOranges || shockwave || anyMusic || hasAnyGun
 }

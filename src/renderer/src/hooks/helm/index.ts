@@ -17,7 +17,6 @@ import {
   useRocket,
   useStand,
   useVine,
-  useSnide,
   useCoconut,
   usePeanut,
   useGrape,
@@ -305,7 +304,6 @@ export const useWinCondition = (): boolean => {
   const itemNeeded = useKRoolItem()
   const hasKey3 = useDonkStore(useShallow((state) => state.key3))
   const hasKey8 = useDonkStore(useShallow((state) => state.key8))
-  const hasSnide = useSnide()
   const targetItemCount = useKRoolItemNum()
   const currentGBCount = useCurrentGBCount()
   const currentBlueprintCount = useCurrentBlueprintCount()
@@ -320,7 +318,6 @@ export const useWinCondition = (): boolean => {
   const currentBossCount = useCurrentBossCount()
   const currentBonusCount = useCurrentBonusCount()
   const tookItToTheFridge = useTheFridge()
-  const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
   
   switch (itemNeeded) {
     case 1: //keys
