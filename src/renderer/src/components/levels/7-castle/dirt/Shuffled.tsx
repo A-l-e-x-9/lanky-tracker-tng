@@ -1,5 +1,5 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useLankyGreenhouseGb, useSlamCastle, useOpenCrypt } from '@renderer/hooks/castle'
+import { useGeneralDirt, useSlamCastle, useOpenCrypt } from '@renderer/hooks/castle'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import { useShockwave, useClimbing, useRocket, useDiddy, useDk, usePunch, useCoconut, usePeanut, usePineapple, useGrape, useFeather, useSprint, useStrong, useMonkeyport, useChunky, useMini, useBlast } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
@@ -7,7 +7,6 @@ import CastleCheck from '../check'
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const hasShockwave = useShockwave()
-const canDoGreenhouse = useLankyGreenhouseGb()
 const hasClimbing = useClimbing()
 const hasJetbarrel = useRocket()
 const hasDiddy = useDiddy()
