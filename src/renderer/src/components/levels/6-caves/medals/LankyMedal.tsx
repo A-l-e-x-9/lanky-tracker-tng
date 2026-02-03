@@ -1,4 +1,3 @@
-import Miniboss from '@renderer/components/pools/Miniboss'
 import { useLankyMedalInLogic, useLankyMedalOutLogic } from '@renderer/hooks/caves/medals/lanky'
 import { useCbCount } from '@renderer/hooks/settings'
 import CavesCheck from '../check'
