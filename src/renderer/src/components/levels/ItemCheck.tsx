@@ -42,7 +42,7 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
     rowNames.push('checked')
   }
   if (isFoolish
-  || (isBossCheck && props.region === 'Bosses')
+  || ((isBossCheck || isKRoolsChallenge) && props.region === 'Bosses')
   || (isKillTheWabbit && props.id === 6042)
   || ((isBonusSeed || isKRoolsChallenge) && (props.id === 10
     || props.id === 12
