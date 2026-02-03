@@ -31,6 +31,9 @@ const CavesRegionChecks: React.FC = () => (
   <div className="grid">
     <ShopLocations />
     <BossCheck />
+    <ShuffledArenas />
+    <ShuffledCrates />
+    <ShuffledDirt />
     <ShuffledFairies />
   </div>
 </>
