@@ -1,4 +1,4 @@
-import { useDefeatKlump } from '@renderer/hooks/enemies'
+import { useDefeatToughEnemy } from '@renderer/hooks/enemies'
 import { useHelmMachine } from '@renderer/hooks/helm'
 import {
   useBongos,
@@ -18,7 +18,7 @@ const HelmMachineEnemies: React.FC = () => {
   const trombone = useTrombone()
   const sax = useSax()
   const triangle = useTriangle()
-  const klump = useDefeatKlump()
+  const klump = useDefeatToughEnemy()
   return (
     <>
       <HelmCheck

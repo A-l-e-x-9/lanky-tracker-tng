@@ -1,4 +1,4 @@
-import { useDefeatKlump } from '@renderer/hooks/enemies'
+import { useDefeatToughEnemy } from '@renderer/hooks/enemies'
 import { usePlayHelm } from '@renderer/hooks/helm'
 import { useAnyKong, useVine, useStand, usePineapple } from '@renderer/hooks/kongs'
 import HelmCheck from '../check'
@@ -9,7 +9,7 @@ const HelmEntryEnemies: React.FC = () => {
   const hasPineapples = usePineapple()
   const hasVines = useVine()
   const anyKong = useAnyKong()
-  const klump = useDefeatKlump()
+  const klump = useDefeatToughEnemy()
   return (
     <>
       <HelmCheck id={8300} name="Enemy 0 at Start" canGetLogic={helmEntry.in && anyKong}
