@@ -18,7 +18,7 @@ const useLankyMedalCommonLogic = (): number => {
       bananas += 10
     }
   }
-  if (igloo) {
+  if (igloo.in || igloo.out) {
     bananas += 1
     if (gun) {
       bananas += 10
