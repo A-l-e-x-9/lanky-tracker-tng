@@ -125,7 +125,7 @@ export const useChunkyCryptGb = (): LogicBool => {
   const hasClimbing = useClimbing()
   return {
     in: inStage.in && (pineapple || preOpened) && punch && hasClimbing,
-    out: (inStage.in || inStage.out) && (pineapple || preOpened) && punch
+    out: inStage.out && (pineapple || preOpened) && punch
   }
 }
 

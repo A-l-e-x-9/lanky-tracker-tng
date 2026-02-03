@@ -1,427 +1,501 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useDkRotateGb, useChunkyClearGb, useTinyPortGb, useTinyCaveGb, useIceWalls, useCavesMiniFunky, useCavesPillar, useCavesIgloo, useLankyIglooGb, useLankyCastleGb } from '@renderer/hooks/caves'
+import { useGeneralThing, useLankyGreenhouseGb, useArena, useSlamCastle, useOpenCrypt } from '@renderer/hooks/castle'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useMonkeyport, useRocket, useTwirl, usePunch, useBalloon, useHighGrab, useChunky, useBarrel, useDk, useBongos, useSax, useGuitar, useTrombone } from '@renderer/hooks/kongs'
-import CavesCheck from '../check'
+import { useClimbing, useRocket, useDiddy, useDk, usePunch, useCoconut, usePeanut, usePineapple, useGrape, useFeather, useSprint, useStrong, useMonkeyport, useChunky, useMini, useBlast } from '@renderer/hooks/kongs'
+import CastleCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
-const canReachVanillaArena = useDkRotateGb()
-const canDoKoshaGB = useChunkyClearGb()
-const hasMonkeyport = useMonkeyport()
-const canDoTinyIglooGB = useTinyPortGb()
+const canReachVanillaArena = useArena()
+const canDoGreenhouse = useLankyGreenhouseGb()
+const hasClimbing = useClimbing()
 const hasJetbarrel = useRocket()
-const isHinaKagiyama = useTwirl()
-const canDoShrinkGB = useTinyCaveGb()
-const hasPunch = usePunch()
-const canGetPastIceWalls = useIceWalls()
-const hasBalloon = useBalloon()
-const canHighGrab = useHighGrab()
-const hasChunky = useChunky()
-const hasBarrels = useBarrel()
-const canReachWarp4 = useCavesMiniFunky()
-const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
+const hasDiddy = useDiddy()
+const hasSlam = useSlamCastle()
 const hasDK = useDk()
-const canDoLankyKasplat = useCavesPillar()
-const canReachIgloo = useCavesIgloo()
-const hasBongoes = useBongos()
-const canDoLanky5DI = useLankyIglooGb()
-const hasSax = useSax()
-const hasGuitar = useGuitar()
-const canDoIceCastle = useLankyCastleGb()
-const hasTrombone = useTrombone()
+const hasPunch = usePunch()
+const hasCoconuts = useCoconut()
+const hasPeanuts = usePeanut()
+const hasPineapples = usePineapple()
+const cryptPreOpened = useOpenCrypt()
+const hasGrapes = useGrape()
+const hasFeathers = useFeather()
+const hasSprint = useSprint()
+const hasStrongKong = useStrong()
+const hasMonkeyport = useMonkeyport()
+const hasChunky = useChunky()
+const hasMini = useMini()
+const hasBlast = useBlast()
   return (
     <ArenaPool>
-      <CavesCheck
-        id={16000}
-        name="Shuffled Battle Arena: Vanilla Arena (in DK's rotating cabin)"
-        region="Caves Cabins"
-        canGetLogic={canReachVanillaArena.in}
-        canGetBreak={canReachVanillaArena.out}
+      <CastleCheck
+        id={17000}
+        name="Shuffled Battle Arena: Vanilla Arena (in Lanky's greenhouse)"
+        region="Creepy Castle Main"
+        canGetLogic={canReachVanillaArena}
       />
-      <CavesCheck
-        id={16001}
-        name="Shuffled Battle Arena: In the Giant Kosha's area"
-        region="Caves Igloo"
-        canGetLogic={canDoKoshaGB.in && hasMonkeyport}
-        canGetBreak={canDoKoshaGB.out && hasMonkeyport}
-      />
-      <CavesCheck
-        id={16002}
-        name="Shuffled Battle Arena: In Tiny's Monkeyport igloo"
-        region="Caves Igloo"
-        canGetLogic={canDoTinyIglooGB.in}
-        canGetBreak={canDoTinyIglooGB.out}
-      />
-      <CavesCheck
-        id={16003}
-        name="Shuffled Battle Arena: In the Giant Kosha igloo"
-        region="Caves Igloo"
-        canGetLogic={canDoKoshaGB.in}
-        canGetBreak={canDoKoshaGB.out}
-      />
-      <CavesCheck
-        id={16004}
-        name="Shuffled Battle Arena: On a pillar near the Monkeyport igloo"
-        region="Caves Igloo"
-        canGetLogic={hasJetbarrel || isHinaKagiyama}
-      />
-      <CavesCheck
-        id={16006}
-        name="Shuffled Battle Arena: Under igloo area's Tag Barrel"
-        region="Caves Igloo"
+      <CastleCheck
+        id={17001}
+        name="Shuffled Battle Arena: Behind Snide's"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16008}
-        name="Shuffled Battle Arena: In Tiny's Mini Monkey cave near Cranky's"
-        region="Crystal Caves Main"
-        canGetLogic={canDoShrinkGB.in}
-        canGetBreak={canDoShrinkGB.out}
+      <CastleCheck
+        id={17002}
+        name="Shuffled Battle Arena: Where the Banana spawns in the Greenhouse"
+        region="Creepy Castle Main"
+        canGetLogic={canDoGreenhouse.in}
+        canGetBreak={canDoGreenhouse.out}
       />
-      <CavesCheck
-        id={16009}
-        name="Shuffled Battle Arena: Near ice wall to big boulder"
-        region="Crystal Caves Main"
+      <CastleCheck
+        id={17003}
+        name="Shuffled Battle Arena: Near the big tree"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16010}
-        name="Shuffled Battle Arena: In giant boulder room"
-        region="Crystal Caves Main"
-        canGetLogic={hasPunch || canGetPastIceWalls}
+      <CastleCheck
+        id={17004}
+        name="Shuffled Battle Arena: Next to lowest Troff 'n' Scoff"
+        region="Creepy Castle Main"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16011}
-        name="Shuffled Battle Arena: In front of Cranky's"
-        region="Crystal Caves Main"
+      <CastleCheck
+        id={17005}
+        name="Shuffled Battle Arena: Right of crypt area entrance"
+        region="Creepy Castle Main"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={17006}
+        name="Shuffled Battle Arena: Lowest ledge near a ladder"
+        region="Creepy Castle Main"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={17007}
+        name="Shuffled Battle Arena: Graveyard, behind &quot;useless&quot; stone"
+        region="Creepy Castle Main"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={17008}
+        name="Shuffled Battle Arena: Near Tiny's Kasplat"
+        region="Creepy Castle Main"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={17009}
+        name="Shuffled Battle Arena: Near crypt entrance"
+        region="Creepy Castle Main"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={17010}
+        name="Shuffled Battle Arena: On the &quot;useless&quot; stone"
+        region="Creepy Castle Main"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={17011}
+        name="Shuffled Battle Arena: Near steps to lower dungeon entrance"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16012}
-        name="Shuffled Battle Arena: A yellow rock below the Ice Castle"
-        region="Crystal Caves Main"
+      <CastleCheck
+        id={17012}
+        name="Shuffled Battle Arena: Near the lower dungeon entrance"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16013}
-        name="Shuffled Battle Arena: A blue rock below the Ice Castle"
-        region="Crystal Caves Main"
+      <CastleCheck
+        id={17013}
+        name="Shuffled Battle Arena: On a square stone"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16014}
-        name="Shuffled Battle Arena: Tag Barrel at the Ice Castle"
-        region="Forest Area 1"
+      <CastleCheck
+        id={17014}
+        name="Shuffled Battle Arena: Near the lower Jetbarrel"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16015}
-        name="Shuffled Battle Arena: Near the Ice Castle"
-        region="Crystal Caves Main"
+      <CastleCheck
+        id={17015}
+        name="Shuffled Battle Arena: Near the central area's Tag Barrel"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16016}
-        name="Shuffled Battle Arena: On top of the Ice Castle"
-        region="Crystal Caves Main"
-        canGetLogic={hasBalloon}
-        canGetBreak={canHighGrab}
-      />
-      <CavesCheck
-        id={16017}
-        name="Shuffled Battle Arena: Near the small boulder"
-        region="Crystal Caves Main"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <CavesCheck
-        id={16018}
-        name="Shuffled Battle Arena: Near ice wall to Snide's"
-        region="Crystal Caves Main"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <CavesCheck
-        id={16019}
-        name="Shuffled Battle Arena: Near Snide's"
-        region="Crystal Caves Main"
-        canGetLogic={hasPunch || canGetPastIceWalls}
-      />
-      <CavesCheck
-        id={16020}
-        name="Shuffled Battle Arena: Under the small boulder"
-        region="Crystal Caves Main"
-        canGetLogic={hasChunky && hasBarrels}
-      />
-      <CavesCheck
-        id={16021}
-        name="Shuffled Battle Arena: Near vanilla level entrance"
-        region="Crystal Caves Main"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <CavesCheck
-        id={16022}
-        name="Shuffled Battle Arena: Near starting Gorilla Gone room"
-        region="Crystal Caves Main"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <CavesCheck
-        id={16023}
-        name="Shuffled Battle Arena: In starting Gorilla Gone room"
-        region="Crystal Caves Main"
-        canGetLogic={hasChunky && hasBarrels}
-      />
-      <CavesCheck
-        id={16024}
-        name="Shuffled Battle Arena: Near Lanky's Kasplat"
-        region="Crystal Caves Main"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <CavesCheck
-        id={16025}
-        name="Shuffled Battle Arena: Near Funky's"
-        region="Crystal Caves Main"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <CavesCheck
-        id={16026}
-        name="Shuffled Battle Arena: Near Funky's, under Jetbarrel"
-        region="Crystal Caves Main"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <CavesCheck
-        id={16027}
-        name="Shuffled Battle Arena: In the Warp 4/Monkeyport cave"
-        region="Crystal Caves Main"
-        canGetLogic={canReachWarp4.in}
-        canGetBreak={canReachWarp4.out}
-      />
-      <CavesCheck
-        id={16028}
+      <CastleCheck
+        id={17016}
         name="Shuffled Battle Arena: Near the headphones"
-        region="Caves Cabins"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16029}
-        name="Shuffled Battle Arena: Ledge near headphones"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17017}
+        name="Shuffled Battle Arena: Near the drawbridge"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16030}
-        name="Shuffled Battle Arena: Near Lanky's cabin"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17018}
+        name="Shuffled Battle Arena: Near Cranky's"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16031}
-        name="Shuffled Battle Arena: Left of the rotating cabin"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17019}
+        name="Shuffled Battle Arena: Near Chunky's shed"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16032}
-        name="Shuffled Battle Arena: Next to the rotating cabin"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17020}
+        name="Shuffled Battle Arena: Next to Lanky's greenhouse"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16033}
-        name="Shuffled Battle Arena: Right of the rotating cabin"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17021}
+        name="Shuffled Battle Arena: Next to Lanky's wind tunnel"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16034}
-        name="Shuffled Battle Arena: Cabin Kasplat pillar"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17022}
+        name="Shuffled Battle Arena: Near fence at the top of the Castle"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16035}
-        name="Shuffled Battle Arena: Near cabin area Jetbarrel"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17023}
+        name="Shuffled Battle Arena: Near Snide's"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16036}
-        name="Shuffled Battle Arena: Near Tiny's 5DC room"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17024}
+        name="Shuffled Battle Arena: On top of Lanky's wind tunnel"
+        region="Creepy Castle Main"
+        canGetLogic={isBreathing.in && hasJetbarrel}
+        canGetBreak={isBreathing.out && hasJetbarrel}
+      />
+      <CastleCheck
+        id={17025}
+        name="Shuffled Battle Arena: Vanilla Warp 1, central area"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16037}
-        name="Shuffled Battle Arena: Near 5DC Tag Barrel"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17026}
+        name="Shuffled Battle Arena: Vanilla Warp 1, dungeon lower entrance"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16038}
-        name="Shuffled Battle Arena: Near Diddy's upper 5DC room"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17027}
+        name="Shuffled Battle Arena: Vanilla Warp 2, central area"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16039}
-        name="Shuffled Battle Arena: Also near Diddy's upper 5DC room, closer to door"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17028}
+        name="Shuffled Battle Arena: Vanilla Warp 2 at halfway point"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16040}
-        name="Shuffled Battle Arena: Vanilla Warp 1 at level start"
-        region="Crystal Caves Main"
+      <CastleCheck
+        id={17029}
+        name="Shuffled Battle Arena: Vanilla Warp 3, central area"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16041}
-        name="Shuffled Battle Arena: Vanilla Warp 1 at igloos"
-        region="Caves Igloo"
+      <CastleCheck
+        id={17030}
+        name="Shuffled Battle Arena: Vanilla Warp 3, in front of Cranky's"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16042}
-        name="Shuffled Battle Arena: Vanilla Warp 2 at level start"
-        region="Crystal Caves Main"
+      <CastleCheck
+        id={17031}
+        name="Shuffled Battle Arena: Vanilla Warp 4, central area"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16043}
-        name="Shuffled Battle Arena: Vanilla Warp 2 at DK's rotating cabin"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17032}
+        name="Shuffled Battle Arena: Vanilla Warp 4, in front of the greenhouse and shed"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16044}
-        name="Shuffled Battle Arena: Vanilla Warp 3 at igloos"
-        region="Caves Igloo"
+      <CastleCheck
+        id={17033}
+        name="Shuffled Battle Arena: Vanilla Warp 5, central area"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16045}
-        name="Shuffled Battle Arena: Vanilla Warp 3 from Tiny's Mini room"
-        region="Crystal Caves Main"
-        canGetLogic={didCheck[6030]}
-      />
-      <CavesCheck
-        id={16046}
-        name="Shuffled Battle Arena: Vanilla Warp 4 on spire near Cranky's"
-        region="Crystal Caves Main"
-        canGetLogic={hasDK || hasJetbarrel || isHinaKagiyama}
-      />
-      <CavesCheck
-        id={16047}
-        name="Shuffled Battle Arena: Vanilla Warp 4, near Funky's"
-        region="Crystal Caves Main"
-        canGetLogic={canReachWarp4.in}
-        canGetBreak={canReachWarp4.out}
-      />
-      <CavesCheck
-        id={16048}
-        name="Shuffled Battle Arena: Vanilla Warp 5 at 5DC"
-        region="Caves Cabins"
+      <CastleCheck
+        id={17034}
+        name="Shuffled Battle Arena: Vanilla Warp 5, top of the Castle"
+        region="Creepy Castle Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16049}
-        name="Shuffled Battle Arena: Vanilla Warp 5, near Funky's"
-        region="Crystal Caves Main"
-        canGetLogic={canDoLankyKasplat.in}
-        canGetBreak={canDoLankyKasplat.out}
+      <CastleCheck
+        id={17035}
+        name="Shuffled Battle Arena: Near left ballroom candle"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam}
       />
-      <CavesCheck
-        id={16050}
-        name="Shuffled Battle Arena: Behind DK's 5DI maze"
-        region="Caves Igloo"
-        canGetLogic={canReachIgloo.in && hasBongoes}
-        canGetBreak={canReachIgloo.out && hasBongoes}
+      <CastleCheck
+        id={17036}
+        name="Shuffled Battle Arena: Near right ballroom candle"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam}
       />
-      <CavesCheck
-        id={16052}
-        name="Shuffled Battle Arena: A high platform in Lanky's 5DI room"
-        region="Caves Igloo"
-        canGetLogic={canDoLanky5DI.in}
-        canGetBreak={canDoLanky5DI.out}
+      <CastleCheck
+        id={17037}
+        name="Shuffled Battle Arena: Ballroom back left"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam}
       />
-      <CavesCheck
-        id={16053}
-        name="Shuffled Battle Arena: Opposite Tiny's 5DI room entrance"
-        region="Caves Igloo"
-        canGetLogic={canReachIgloo.in && hasSax}
-        canGetBreak={canReachIgloo.out && hasSax}
+      <CastleCheck
+        id={17038}
+        name="Shuffled Battle Arena: Ballroom back right"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam}
       />
-      <CavesCheck
-        id={16054}
-        name="Shuffled Battle Arena: Opposite DK's 5DC room entrance"
-        region="Caves Cabins"
-        canGetLogic={hasBongoes}
+      <CastleCheck
+        id={17039}
+        name="Shuffled Battle Arena: In DK's face puzzle room"
+        region="Castle Dungeon"
+        canGetLogic={hasDK && hasSlam}
       />
-      <CavesCheck
-        id={16056}
-        name="Shuffled Battle Arena: Inside Tiny's 5DC room"
-        region="Caves Cabins"
-        canGetLogic={hasSax}
+      <CastleCheck
+        id={17040}
+        name="Shuffled Battle Arena: Near the Diddy switch in the dungeon"
+        region="Castle Dungeon"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16057}
-        name="Shuffled Battle Arena: Inside Diddy's upper 5DC room"
-        region="Caves Cabins"
-        canGetLogic={hasGuitar}
+      <CastleCheck
+        id={17041}
+        name="Shuffled Battle Arena: In a dungeon Primate Punch gate"
+        region="Castle Dungeon"
+        canGetLogic={hasPunch}
       />
-      <CavesCheck
-        id={16058}
-        name="Shuffled Battle Arena: Called to the carpet of Lanky's cabin"
-        region="Caves Cabins"
-        canGetLogic={hasBalloon && hasTrombone}
-        canGetBreak={hasJetbarrel && hasTrombone}
+      <CastleCheck
+        id={17042}
+        name="Shuffled Battle Arena: In the shed"
+        region="Creepy Castle Main"
+        canGetLogic={hasPunch}
       />
-      <CavesCheck
-        id={16059}
-        name="Shuffled Battle Arena: Ice Castle, left"
-        region="Crystal Caves Main"
-        canGetLogic={canDoIceCastle.in}
-        canGetBreak={canDoIceCastle.out}
+      <CastleCheck
+        id={17043}
+        name="Shuffled Battle Arena: Lower portion of crypt entrance"
+        region="Castle Crypt"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out}
       />
-      <CavesCheck
-        id={16060}
-        name="Shuffled Battle Arena: Ice Castle, right"
-        region="Crystal Caves Main"
-        canGetLogic={canDoIceCastle.in}
-        canGetBreak={canDoIceCastle.out}
+      <CastleCheck
+        id={17044}
+        name="Shuffled Battle Arena: Behind mausoleum entrance"
+        region="Castle Crypt"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={17045}
+        name="Shuffled Battle Arena: Also behind mausoleum entrance"
+        region="Castle Crypt"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={17046}
+        name="Shuffled Battle Arena: Near Funky's"
+        region="Castle Crypt"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={17047}
+        name="Shuffled Battle Arena: At crypt entrance"
+        region="Castle Crypt"
+        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+      />
+      <CastleCheck
+        id={17048}
+        name="Shuffled Battle Arena: Near Diddy's coffin"
+        region="Castle Crypt"
+        canGetLogic={(hasPeanuts || cryptPreOpened) && hasClimbing}
+        canGetBreak={hasPeanuts || cryptPreOpened}
+      />
+      <CastleCheck
+        id={17049}
+        name="Shuffled Battle Arena: Near Chunky's coffin"
+        region="Castle Crypt"
+        canGetLogic={(hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={hasPineapples || cryptPreOpened}
+      />
+      <CastleCheck
+        id={17050}
+        name="Shuffled Battle Arena: Crypt Vanilla Warp 1, central area"
+        region="Castle Crypt"
+        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+      />
+      <CastleCheck
+        id={17051}
+        name="Shuffled Battle Arena: Crypt Vanilla Warp 1, outside Diddy's room"
+        region="Castle Crypt"
+        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+      />
+      <CastleCheck
+        id={17052}
+        name="Shuffled Battle Arena: Crypt Vanilla Warp 2, central area"
+        region="Castle Crypt"
+        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+      />
+      <CastleCheck
+        id={17053}
+        name="Shuffled Battle Arena: Crypt Vanilla Warp 2, outside DK's room"
+        region="Castle Crypt"
+        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+      />
+      <CastleCheck
+        id={17054}
+        name="Shuffled Battle Arena: Crypt Vanilla Warp 3, central area"
+        region="Castle Crypt"
+        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+      />
+      <CastleCheck
+        id={17055}
+        name="Shuffled Battle Arena: Crypt Vanilla Warp 3, outside Chunky's room"
+        region="Castle Crypt"
+        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+      />
+      <CastleCheck
+        id={17056}
+        name="Shuffled Battle Arena: Mausoleum entrance"
+        region="Castle Crypt"
+        canGetLogic={(hasGrapes || hasFeathers || cryptPreOpened) && hasClimbing}
+        canGetBreak={hasGrapes || hasFeathers || cryptPreOpened}
+      />
+      <CastleCheck
+        id={17057}
+        name="Shuffled Battle Arena: In Lanky's mausoleum tunnel"
+        region="Castle Crypt"
+        canGetLogic={(hasGrapes || cryptPreOpened) && hasSprint && hasClimbing}
+        canGetBreak={(hasGrapes || cryptPreOpened) && hasDK}
+      />
+      <CastleCheck
+        id={17058}
+        name="Shuffled Battle Arena: Near the upper cave's pit"
+        region="Castle Dungeon"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={17059}
+        name="Shuffled Battle Arena: Near Candy's"
+        region="Castle Dungeon"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={17061}
+        name="Shuffled Battle Arena: In the flying book area of DK's library"
+        region="Various Castle Rooms"
+        canGetLogic={hasDK && hasSlam && hasStrongKong}
+        canGetBreak={hasDK && hasSlam}
+      />
+      <CastleCheck
+        id={17062}
+        name="Shuffled Battle Arena: Near Tiny's race entrance"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam && hasMonkeyport}
+      />
+      <CastleCheck
+        id={17063}
+        name="Shuffled Battle Arena: In front of the infamous museum pillar"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam && hasMonkeyport}
+      />
+      <CastleCheck
+        id={17064}
+        name="Shuffled Battle Arena: Back right of the infamous museum pillar"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam && hasMonkeyport}
+      />
+      <CastleCheck
+        id={17065}
+        name="Shuffled Battle Arena: Behind the infamous museum pillar"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam && hasMonkeyport}
+      />
+      <CastleCheck
+        id={17066}
+        name="Shuffled Battle Arena: Back left of the infamous museum pillar"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam && hasMonkeyport}
+      />
+      <CastleCheck
+        id={17067}
+        name="Shuffled Battle Arena: Main museum room"
+        region="Various Castle Rooms"
+        canGetLogic={hasChunky && hasSlam}
+      />
+      <CastleCheck
+        id={17068}
+        name="Shuffled Battle Arena: Inside the trash can"
+        region="Creepy Castle Main"
+        canGetLogic={hasMini}
+      />
+      <CastleCheck
+        id={17069}
+        name="Shuffled Battle Arena: Starting tree room"
+        region="Creepy Castle Main"
+        canGetLogic={hasBlast}
       />
     </ArenaPool>
   )
