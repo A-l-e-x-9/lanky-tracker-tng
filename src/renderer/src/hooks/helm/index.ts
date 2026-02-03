@@ -33,7 +33,7 @@ import {
 } from '../kongs'
 import { useHelmStartPosition, useHelmItem1, useHelmItemNum1, useHelmItem2, useHelmItemNum2, useKRoolItem, useKRoolItemNum } from '../settings'
 import { LogicBool } from '../world'
-import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentCoCoinCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useBean, useCurrentPearlCount, useCurrentBossCount } from '../consumables'
+import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentCoCoinCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useBean, useCurrentPearlCount, useCurrentBossCount, useCurrentBonusCount } from '../consumables'
 
 /**
  * Can we play in Hideout Helm?
@@ -317,7 +317,10 @@ export const useWinCondition = (): boolean => {
   const currentRainbowCoinCount = useCurrentRainbowCoinCount()
   const currentBeanCount = useBean()
   const currentPearlCount = useCurrentPearlCount()
+  const currentBossCount = useCurrentBossCount()
+  const currentBonusCount = useCurrentBonusCount()
   const tookItToTheFridge = useTheFridge()
+  const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
   
   switch (itemNeeded) {
     case 1: //keys
@@ -331,7 +334,7 @@ export const useWinCondition = (): boolean => {
     case 5: //Complete the DK Rap
       return tookItToTheFridge
     case 6: //K. Rool's Challenge
-      return (currentKeyCount >= 8) && (currentBlueprintCount >= 40) && (currentBossCount >= 7) //Currently doesn't account for Bonus Barrels
+      return (currentKeyCount >= 8) && (currentBlueprintCount >= 40) && (currentBossCount >= 7) && (currentBonusCount >= 43) //Can't currently account for the Helm Bonuses
     case 7: //Kill the Wabbit
       return false //you can't even fight K. Rool at all under that condition. Accordingly, the section of the tracker this shit serves is disabled.
     case 8: //Nanners
@@ -352,9 +355,10 @@ export const useWinCondition = (): boolean => {
       return Number(currentBeanCount) >= targetItemCount
     case 16: //Pearls
       return currentPearlCount >= targetItemCount
-    case 17:
+    case 17: //Bosses
       return currentBossCount >= targetItemCount
-    case 18: //Bonuses (how I'm gonna handle this one is still currently TBD)
+    case 18: //Bonus Levels
+      return currentBonusCount >= targetItemCount //again, how I will handle Helm bonuses for seeds with a win con of >43/K. Rool's Challenge TBD.
     default:
       return true
   }

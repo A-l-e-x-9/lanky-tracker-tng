@@ -417,7 +417,7 @@ const GeneratorSettings: React.FC = () => {
                 storeKey="winConItemCount"
                 prefix="winCondition"
                 setCount={setWinCondition}
-                maxValue={isKeySeed ? 8 : isGBSeed ? 201 : (isBPSeed || isMedalSeed) ? 40 : isCoCoinSeed ? 2 : isCrownSeed ? 10 : isFairySeed ? 20 : isRainbowSeed ? 16 : isBeanSeed ? 1 : isPearlSeed ? 5 : isBonusSeed ? 53 : 0}
+                maxValue={isKeySeed ? 8 : isGBSeed ? 201 : (isBPSeed || isMedalSeed) ? 40 : isCoCoinSeed ? 2 : isCrownSeed ? 10 : isFairySeed ? 20 : isRainbowSeed ? 16 : isBeanSeed ? 1 : isPearlSeed ? 5 : isBonusSeed ? 43 : 0} //I know no good way of implementing Hideout Helm bonuses at this time, so the "Bonuses" win con caps out at 43 even though it can go to 53.
               />
             <p></p>
             <p></p>
