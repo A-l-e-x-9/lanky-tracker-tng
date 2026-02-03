@@ -18,7 +18,7 @@ import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 
 const CastleRegionChecks: React.FC = () => (
-<div>
+<>
   <p className="not-available"><strong>WARNING:</strong> If you don't have Climbing and you attempt to do any check in the Crypt area, you won't be able to get back up without killing your Kong, pause-exiting/re-entering, or abusing high-grabs on the gravestones with Tiny and Chunky.</p>
   <div className="grid">
     <BananaMedalPool>
@@ -28,12 +28,14 @@ const CastleRegionChecks: React.FC = () => (
       <TinyMedal />
       <ChunkyMedal />
     </BananaMedalPool>
+  </div>
     <TreeChecks />
     <SurroundingsChecks />
     <MuseumChecks />
     <BallroomChecks />
     <RoomsChecks />
     <UndergroundChecks />
+  <div className="grid">
     <ShopLocations />
     <BossCheck />
     <ShuffledArenas />
@@ -41,7 +43,7 @@ const CastleRegionChecks: React.FC = () => (
     <ShuffledDirt />
     <ShuffledFairies />
   </div>
-  </div>
+</>
 )
 
 export default CastleRegionChecks

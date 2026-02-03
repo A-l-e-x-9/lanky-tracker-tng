@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import MausoleumCrate from '../crates/Mausoleum'
 import UndergroundEnemies from '../enemies/Underground'
 import ChunkyCrypt from '../gold-bananas/chunky/Crypt'
@@ -13,23 +15,36 @@ import ChunkyKasplat from '../kasplats/Chunky'
 import DiddyKasplat from '../kasplats/Diddy'
 import UpperCaveEnemies from '../enemies/UpperCave'
 
-const UndergroundChecks: React.FC = () => (
+const UndergroundChecks: React.FC = () => {
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+return (
   <>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <DiddyKasplat />
+  </div>
+  <div className="grid">
     <DkMinecart />
     <DiddyCrypt />
     <ChunkyCrypt />
     <MausoleumCrate />
     <LankyMausoleum />
     <TinyMausoleum />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <UndergroundEnemies />
+  </div>
+  <div className="grid">
     <TinyChasm />
     <DkDungeon />
     <DiddyDungeon />
     <LankyDungeon />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <ChunkyKasplat />
     <UpperCaveEnemies />
+  </div>
   </>
 )
+}
 
 export default UndergroundChecks
