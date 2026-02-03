@@ -12,6 +12,9 @@ import RoomsChecks from './Rooms'
 import SurroundingsChecks from './Surroundings'
 import TreeChecks from './Tree'
 import UndergroundChecks from './Underground'
+import ShuffledArenas from '../arenas/Shuffled'
+import ShuffledCrates from '../crates/Shuffled'
+import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 
 const CastleRegionChecks: React.FC = () => (
@@ -33,6 +36,9 @@ const CastleRegionChecks: React.FC = () => (
     <UndergroundChecks />
     <ShopLocations />
     <BossCheck />
+    <ShuffledArenas />
+    <ShuffledCrates />
+    <ShuffledDirt />
     <ShuffledFairies />
   </div>
   </div>

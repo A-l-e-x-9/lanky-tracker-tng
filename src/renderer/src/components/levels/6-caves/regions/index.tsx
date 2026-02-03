@@ -9,6 +9,9 @@ import ShopLocations from '../shops'
 import MainChecks from './Main'
 import IglooChecks from './Igloo'
 import CabinsChecks from './Cabins'
+import ShuffledArenas from '../arenas/Shuffled'
+import ShuffledCrates from '../crates/Shuffled'
+import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 
 const CavesRegionChecks: React.FC = () => (
