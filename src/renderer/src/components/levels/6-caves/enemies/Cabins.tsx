@@ -1,6 +1,6 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useCavesLankyCabinSpecial, usePlayCaves } from '@renderer/hooks/caves'
-import { useDefeatKosha, useDefeatZinger } from '@renderer/hooks/enemies'
+import { useDefeatToughEnemy, useDefeatZinger } from '@renderer/hooks/enemies'
 import { useAnyKong } from '@renderer/hooks/kongs'
 import { useAngryCaves } from '@renderer/hooks/settings'
 import CavesCheck from '../check'
@@ -11,7 +11,7 @@ const CabinsEnemies: React.FC = () => {
   const lankyCabin = useCavesLankyCabinSpecial()
   const anyKong = useAnyKong()
   const zinger = useDefeatZinger()
-  const kosha = useDefeatKosha()
+  const kosha = useDefeatToughEnemy()
   return (
     <DropPool>
       <CavesCheck
@@ -32,15 +32,15 @@ const CabinsEnemies: React.FC = () => {
         id={6307}
         name="Enemy at Headphones Below Lanky's Cabin"
         region="Caves Cabins"
-        canGetLogic={inStage.in && !angery && anyKong && kosha.in}
-        canGetBreak={(inStage.out || angery) && anyKong && kosha.out}
+        canGetLogic={inStage.in && !angery && anyKong && kosha}
+        canGetBreak={(inStage.out || angery) && anyKong && kosha}
       />
       <CavesCheck
         id={6317}
         name="Enemy Inside Lanky Cabin, Near the Pad and Barrel"
         region="Caves Cabins"
-        canGetLogic={lankyCabin.in && kosha.in}
-        canGetBreak={lankyCabin.out && kosha.out}
+        canGetLogic={lankyCabin.in && kosha}
+        canGetBreak={lankyCabin.out && kosha}
       />
     </DropPool>
   )
@@ -53,6 +53,6 @@ export default CabinsEnemies
         id={6318}
         name="Caves Enemy: Lanky Cabin Inside Near Switch"
         region="Caves Cabins"
-        canGetLogic={lankyCabin.in && kosha.in}
-        canGetBreak={lankyCabin.out && kosha.out}
+        canGetLogic={lankyCabin.in && kosha}
+        canGetBreak={lankyCabin.out && kosha}
       />*/

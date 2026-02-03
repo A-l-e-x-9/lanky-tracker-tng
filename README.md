@@ -10,17 +10,17 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
 - Recolor the pad and barrel icons to match the "color-coded Kong Pads/Barrels" option in the Randomizer.
+- Currently, the "Bonuses" and "K. Rool's Challenge" win conditions don't account for the Oil Drums in Hideout Helm, so if your current seed's win con is >43 Bonus Barrels, you're outta luck.
 - The "Water is Lava" setting currently doesn't turn every check yellow that should be affected by it. For example, did you know that the little kiddy pools surrounding the Dungeon's entrance in Castle also hurt you when you make a "Water is Lava" seed? Will eventually fix this.
 - Checks affected by the "Angry Caves" setting don't turn red when it's on and you don't have enough Bananas to enter Crystal Caves.
 - Right now, the B. Locker barriers available in the tracker can only accept bananas, so if you're playing a "Chaos B. Lockers" seed (where he often requires things other than bananas so that you can get into the level), you're out of luck. :(
 - Make it so that you can just type how many bananas, etc., you have in the "count" selectors (such as "Colored bananas needed for medal" in Settings) so you don't have to click so much.
 - Similarly, make it so that for the shuffled Arenas, Crates, Dirts, Fairies, and eventually Kasplats and Colored Bananas, there's only one or two checks each, and you can use a drop-down list or something to choose where they are.
 - Also implement the "shuffled DK Portals" function (and rarely-seen "Shuffle Start Location" function, too?) (a shuffled portal can make all the difference in what checks are accessible to you, after all!).
-- K. Rool's phase selector will only light up in yellow if you have all five phases set and one of them is Tiny Phase without Feathers or Mad Jack without Ponytail Twirl. Alex was unable to fix this while updating the K. Rool selector to account for the "use K. Rool phases as bosses" option in the Randomizer. Since all regulation "season" seeds that Alex has seen on YouTube (going back to Season 2) have only three phases, must fix this.
 - Make the left side of the tracker sticky...either Alex really sucks at using the "position: sticky;" CSS command, or something else about the tracker's design is stopping it from being sticky.
 - Find a way to get rid of "Turn in Blueprint for Shared" in the Snide checks
 - Change the progressive Slam settings to account for the fact that you can now customize how progressive they are as of the Version 5 Dev Randomizer.
-- Alex took out the "Region Hints" section of the original Tracker because he thought it was poorly done, as well as the "Location Shuffle Settings" section of the settings...should reimplement both somehow.
+- Alex took out the "Region Hints" section of the original Tracker because he thought it was poorly done. Reimplement it?
 - Need an easy way to reset the tracker if need be. (Currently, in Firefox, you have to do it by right-clicking, go to "Inspect", click the "Storage" tab, then on "Local Storage", then on the website's name, and deleting the "donk-storage" entry.)
 
 ## Unlikely Features
