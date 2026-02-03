@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useHelmEnter, useHelmMachine, useHelmDoors } from '@renderer/hooks/helm'
+import { useHelmMachine, useHelmDoors, usePlayHelm, useEOHDoor1 } from '@renderer/hooks/helm'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import { useStand, usePineapple, useVine, useRocket } from '@renderer/hooks/kongs'
 import HelmCheck from '../check'
