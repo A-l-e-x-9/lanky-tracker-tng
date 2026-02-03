@@ -8,26 +8,6 @@ const LankyMedal: React.FC = () => {
   const outLogic = useLankyMedalOutLogic()
   const cbCount = useCbCount()
   const halfMedal = Math.round(cbCount / 2)
-  if (cbCount >= 90) {
-  return (
-  <Miniboss>
-    <CavesCheck
-      id={6102}
-      name="Lanky's Medal"
-      region="Banana Medals"
-      canGetLogic={inLogic >= cbCount}
-      canGetBreak={outLogic >= cbCount}
-    />
-    <CavesCheck
-      id={6202}
-      name="Lanky's Half-Medal"
-      region="Banana Medals"
-      canGetLogic={inLogic >= halfMedal}
-      canGetBreak={outLogic >= halfMedal}
-    />
-  </Miniboss>
-  )
-  } else {
   return (
   <>
     <CavesCheck
@@ -46,7 +26,6 @@ const LankyMedal: React.FC = () => {
     />
   </>
     )
-  }
 }
 
 export default LankyMedal
