@@ -12,6 +12,7 @@ import CabinsChecks from './Cabins'
 import ShuffledFairies from '../fairies/Shuffled'
 
 const CavesRegionChecks: React.FC = () => (
+<>
   <div className="grid">
     <BananaMedalPool>
       <DkMedal />
@@ -20,13 +21,16 @@ const CavesRegionChecks: React.FC = () => (
       <TinyMedal />
       <ChunkyMedal />
     </BananaMedalPool>
+  </div>
     <MainChecks />
     <IglooChecks />
     <CabinsChecks />
+  <div className="grid">
     <ShopLocations />
     <BossCheck />
     <ShuffledFairies />
   </div>
+</>
 )
 
 export default CavesRegionChecks

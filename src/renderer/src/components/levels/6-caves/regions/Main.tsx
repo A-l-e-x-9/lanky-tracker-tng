@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import MainEnemies from '../enemies/Main'
 import EarlyGone from '../gold-bananas/chunky/Gone'
 import WaterfallBarrel from '../gold-bananas/diddy/Waterfall'
@@ -11,8 +13,11 @@ import LankyKasplat from '../kasplats/Lanky'
 import KooshyKomeiji from '../boulders/SmallRock'
 import Okuu from '../boulders/BeegRock'
 
-const MainChecks: React.FC = () => (
+const MainChecks: React.FC = () => {
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+return (
   <>
+  <div className="grid">
     <CavesBlast />
     <WaterfallBarrel />
     <CastleSlam />
@@ -21,11 +26,15 @@ const MainChecks: React.FC = () => (
     <EarlyGone />
     <KooshyKomeiji />
     <Okuu />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <DkKasplat />
     <DiddyKasplat />
     <LankyKasplat />
     <MainEnemies />
+  </div>
   </>
 )
+}
 
 export default MainChecks

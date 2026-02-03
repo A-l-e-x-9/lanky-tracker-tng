@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import CabinArena from '../arenas/Cabin'
 import CabinsEnemies from '../enemies/Cabins'
 import CabinFairy from '../fairies/Cabin'
@@ -10,20 +12,33 @@ import SprintCabin from '../gold-bananas/lanky/Cabin'
 import TinyCabin from '../gold-bananas/tiny/Cabin'
 import TinyKasplat from '../kasplats/Tiny'
 
-const CabinsChecks: React.FC = () => (
+const CabinsChecks: React.FC = () => {
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+return (
   <>
-    <RotatingCabin />
+  <div className={`grid ${isKremKaptureSeed}`}>
     <DkGauntletCabin />
-    <DiddyGauntletCabin />
-    <DiddyCandleCabin />
-    <SprintCabin />
-    <TinyCabin />
+  </div>
+  <div className="grid">
     <ChunkyCabin />
-    <TinyKasplat />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
+    <DiddyGauntletCabin />
+    <TinyCabin />
+    <DiddyCandleCabin />
+  </div>
+  <div className="grid">
     <CabinFairy />
+    <RotatingCabin />
     <CabinArena />
+    <SprintCabin />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
+    <TinyKasplat />
     <CabinsEnemies />
+  </div>
   </>
 )
+}
 
 export default CabinsChecks
