@@ -7,7 +7,6 @@ const DiddyCandleCabin: React.FC = () => {
   const candleGb = useDiddyCandleGb()
   return (
   <GBPool>
-  <Miniboss>
     <CavesCheck
       id={6013}
       name="Diddy's Upper 5 Door Cabin"
@@ -15,7 +14,6 @@ const DiddyCandleCabin: React.FC = () => {
       canGetLogic={candleGb.in}
       canGetBreak={candleGb.out}
     />
-  </Miniboss>
   </GBPool>
   )
 }
