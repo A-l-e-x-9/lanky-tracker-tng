@@ -48543,6 +48543,7 @@ const slamSwitchIcon = "" + new URL("slam_switch-DrcJ-6n7.png", import.meta.url)
 const switchsanityIcon = "" + new URL("switch-D6Og0W-L.png", import.meta.url).href;
 const wrinkly = "" + new URL("wrinkly-COxhSpd3.png", import.meta.url).href;
 const koshaHead = "" + new URL("kosha-DktGkC11.png", import.meta.url).href;
+const kasplatIcon = "" + new URL("kasplat-C3MHLT8N.png", import.meta.url).href;
 const customStyles = {
   content: {
     backgroundColor: "#002040",
@@ -49182,6 +49183,17 @@ const GeneratorSettings = () => {
                   imgUrl: fairyIcon,
                   title: "If your Banana Fairies are shuffled, click here.",
                   storeKey: "shuffleFairies",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Kasplats?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: kasplatIcon,
+                  title: 'If Kasplats are set to "Location Shuffle" click here. Do NOT click here if you chose "Vanilla Locations" instead, as that merely only changes the colors of Kasplats, not their locations.',
+                  storeKey: "shuffleKasplats",
                   prefix: "settings",
                   updateItem: setSetting
                 }
