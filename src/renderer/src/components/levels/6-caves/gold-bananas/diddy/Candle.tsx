@@ -1,5 +1,4 @@
 import GBPool from '@renderer/components/pools/GB'
-import Miniboss from '@renderer/components/pools/Miniboss'
 import { useDiddyCandleGb } from '@renderer/hooks/caves'
 import CavesCheck from '../../check'
 
