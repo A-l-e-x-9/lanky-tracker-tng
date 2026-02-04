@@ -1,7 +1,7 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent, useCheckChunkyPound, useIslesFungiIsland, useCheckDiddyCaves } from '@renderer/hooks/isles'
+import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent, useCheckChunkyPound, useIslesFungiIsland, useCheckDiddyCaves, useCheckLankyPrison } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useAnyKong, useGrab, useHighGrab, useDive } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -21,6 +21,7 @@ const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
 const hasDiving = useDive()
 const canReachForestLobby = useIslesFungiIsland()
 const canDoGuitarGB = useCheckDiddyCaves()
+const canDoSprintGB = useCheckLankyPrison()
   return (
     <KasplatPool>
       <IslesCheck
@@ -140,7 +141,7 @@ const canDoGuitarGB = useCheckDiddyCaves()
         name="Shuffled Kasplat: In the waterfall's pool"
         region="DK Island"
         canGetLogic={hasDiving.in && (hasAGun || hasOranges || hasAnInstrument)}
-        canGetLogic={hasDiving.out && (hasAGun || hasOranges || hasAnInstrument)}
+        canGetBreak={hasDiving.out && (hasAGun || hasOranges || hasAnInstrument)}
       />
     </KasplatPool>
   )
