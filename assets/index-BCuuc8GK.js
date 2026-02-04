@@ -17286,9 +17286,12 @@ const useDiddyCagedGb = () => {
   const rambi = useJapesRambi();
   const diddy = useDiddy();
   const canSlam = useSlamJapes();
+  const climbing = useClimbing();
+  const hasAllWarps = useBananaportAll();
+  const canReachMine = useJapesMine();
   return {
-    in: rambi.in && diddy && canSlam,
-    out: rambi.out && diddy && canSlam
+    in: rambi.in && diddy && canSlam && (climbing || hasAllWarps || canReachMine.in),
+    out: rambi.out && diddy && canSlam && canReachMine.out
   };
 };
 const useDiddyMountainGb = () => {
