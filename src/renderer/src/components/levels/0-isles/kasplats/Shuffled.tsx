@@ -3,7 +3,7 @@ import useDonkStore from '@renderer/store'
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent, useCheckChunkyPound } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useAnyKong, useGrab, useHighGrab } from '@renderer/hooks/kongs'
+import { useAnyKong, useGrab, useHighGrab, useDive } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -18,6 +18,7 @@ const hasGrab = useGrab()
 const highGrab = useHighGrab()
 const canPoundTheX = useCheckChunkyPound()
 const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
+const hasDiving = useDive()
   return (
     <KasplatPool>
       <IslesCheck
