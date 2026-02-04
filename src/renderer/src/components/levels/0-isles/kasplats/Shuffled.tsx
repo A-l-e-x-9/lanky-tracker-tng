@@ -1,9 +1,9 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent, useCheckChunkyPound, useIslesFungiIsland, useCheckDiddyCaves, useCheckLankyPrison } from '@renderer/hooks/isles'
+import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent, useCheckChunkyPound, useIslesFungiIsland, useCavesLobbyGeneric, useCheckLankyPrison, useJapesLobbyGeneric } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useAnyKong, useGrab, useHighGrab, useDive } from '@renderer/hooks/kongs'
+import { useAnyKong, useGrab, useHighGrab, useDive, useRocket, useBoulderTech, useTwirl } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -20,8 +20,12 @@ const canPoundTheX = useCheckChunkyPound()
 const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
 const hasDiving = useDive()
 const canReachForestLobby = useIslesFungiIsland()
-const canDoGuitarGB = useCheckDiddyCaves()
+const canDoGuitarGB = useCavesLobbyGeneric()
+const hasJetbarrel = useRocket()
+const boulderTech = useBoulderTech()
+const hinaKagiyama = useTwirl()
 const canDoSprintGB = useCheckLankyPrison()
+const canReachJapesLobby = useJapesLobbyGeneric()
   return (
     <KasplatPool>
       <IslesCheck
@@ -101,8 +105,8 @@ const canDoSprintGB = useCheckLankyPrison()
         id={50011}
         name="Shuffled Kasplat: On Diddy's platform in Caves Lobby"
         region="Caves-Helm Lobbies"
-        canGetLogic={canDoGuitarGB.in}
-        canGetBreak={canDoGuitarGB.out}
+        canGetLogic={canDoGuitarGB.in && hasJetbarrel}
+        canGetBreak={canDoGuitarGB.out && boulderTech && hinaKagiyama}
       />
       <IslesCheck
         id={50012}
