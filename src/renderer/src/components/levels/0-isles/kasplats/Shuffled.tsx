@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent } from '@renderer/hooks/isles'
+import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent, useCheckChunkyPound } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useAnyKong, useGrab, useHighGrab } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -14,6 +14,7 @@ const isBreathing = useAnyKong()
 const canReachFactoryLobby = useIslesKremAscent()
 const hasGrab = useGrab()
 const highGrab = useHighGrab()
+const canPoundTheX = useCheckChunkyPound()
   return (
     <KasplatPool>
       <IslesCheck
