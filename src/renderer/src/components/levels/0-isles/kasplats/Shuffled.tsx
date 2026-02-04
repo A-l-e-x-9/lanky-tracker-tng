@@ -1,127 +1,136 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import {  } from '@renderer/hooks/isles'
+import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import {  } from '@renderer/hooks/kongs'
+import { useAnyKong } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 
 const Shuffled: React.FC = () => {
+const DKKasplat = useHelmKasplat()
+const diddyKasplat = useCastleKasplat()
+const lankyKasplat = useCavesKasplat()
+const tinyKasplat = useFactoryKasplat()
+const chunkyKasplat = useGalleonKasplat()
+const isBreathing = useAnyKong()
   return (
     <KasplatPool>
       <IslesCheck
         id={50000}
-        name="Shuffled Kasplat: Vanilla Location #1 (behind BFI)"
-        region="Outer Isles"
-        canGetLogic={isBreathing}
+        name="Shuffled Kasplat: DK's Vanilla Location (Helm Lobby)"
+        region="Caves-Helm Lobbies"
+        canGetLogic={DKKasplat.in}
+        canGetBreak={DKKasplat.out}
       />
       <IslesCheck
         id={50001}
-        name="Shuffled Kasplat: Vanilla Location #2 (top of K. Rool's Island)"
-        region="K. Rool's Island"
-        canGetLogic={vanillaFairy2}
+        name="Shuffled Kasplat: Diddy's Vanilla Location (a cage in Castle Lobby)"
+        region="Caves-Helm Lobbies"
+        canGetLogic={diddyKasplat.in}
+        canGetBreak={diddyKasplat.out}
       />
       <IslesCheck
         id={50002}
-        name="Shuffled Kasplat: Vanilla Location #3 (crate inside Factory Lobby)"
-        region="Japes-Forest Lobbies"
-        canGetLogic={vanillaFairy3.in}
-        canGetBreak={vanillaFairy3.out}
+        name="Shuffled Kasplat: Lanky's Vanilla Location (a wall in Caves Lobby)"
+        region="Caves-Helm Lobbies"
+        canGetLogic={lankyKasplat.in}
+        canGetBreak={lankyKasplat.out}
       />
       <IslesCheck
         id={50003}
-        name="Shuffled Kasplat: Vanilla Location #4 (my condolences...)"
+        name="Shuffled Kasplat: Tiny's Vanilla Location (a box in Factory Lobby)"
         region="Japes-Forest Lobbies"
-        canGetLogic={vanillaFairy4.in}
-        canGetBreak={vanillaFairy4.out}
+        canGetLogic={tinyKasplat.in}
+        canGetBreak={tinyKasplat.out}
       />
       <IslesCheck
         id={50004}
-        name="Shuffled Kasplat: Aztec Roof"
-        region="DK Island"
-        canGetLogic={canReachAztecLobby.in && hasCam}
-        canGetBreak={canReachAztecLobby.out && hasCam}
+        name="Shuffled Kasplat: Chunky's Vanilla Location (Galleon Lobby)"
+        region="Japes-Forest Lobbies"
+        canGetLogic={chunkyKasplat.in}
+        canGetBreak={chunkyKasplat.out}
       />
       <IslesCheck
         id={50005}
-        name="Shuffled Kasplat: Behind Forest Lobby building"
-        region="Outer Isles"
-        canGetLogic={canReachForestLobby && hasCam}
+        name="Shuffled Kasplat: The &quot;beaver beach&quot; in front of Japes Lobby"
+        region="DK Island"
+        canGetLogic={isBreathing}
       />
       <IslesCheck
         id={50006}
-        name="Shuffled Kasplat: On top of BFI itself"
-        region="Outer Isles"
-        canGetLogic={canReachForestLobby && canUseJetbarrel && hasJetbarrel && hasCam} //...Yeah, this one's pretty complex. FUN FACT: I didn't even know the top of BFI was reachable this way until I started doing this Randomizer stuff! D:
+        name="Shuffled Kasplat: Factory Lobby, above the DK Portal"
+        region="Japes-Forest Lobbies"
+        canGetLogic={canReachFactoryLobby && hasGrab}
+        canGetBreak={highGrab}
       />
       <IslesCheck
         id={50007}
-        name="Shuffled Kasplat: Near Factory Lobby entrance"
-        region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby && hasCam}
+        name="Shuffled Kasplat: Inside the big rock opened by pounding the X"
+        region="Outer Isles"
+        canGetLogic={canPoundTheX}
       />
       <IslesCheck
         id={50008}
-        name="Shuffled Kasplat: Over K. Lumsy's Island"
+        name="Shuffled Kasplat: Behind Factory Lobby"
         region="K. Rool's Island"
-        canGetLogic={canReachForestLobby && canUseJetbarrel && hasJetbarrel && hasCam}
-        canGetBreak={isBreathing}
+        canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
         id={50009}
-        name="Shuffled Kasplat: Bottom of K. Rool's Island"
-        region="K. Rool's Island"
-        canGetLogic={isBreathing}
+        name="Shuffled Kasplat: On the X"
+        region="Outer Isles"
+        canGetLogic={isBreathing && !didCheck[42]}
+        canGetBreak={isBreathing && didCheck[42] && hasDiving.out}
       />
       <IslesCheck
         id={50010}
-        name="Shuffled Kasplat: Flying above the Fairy Queen herself (LOL WUT)"
+        name="Shuffled Kasplat: Behind the Forest Lobby"
         region="Outer Isles"
-        canGetLogic={canGoInBFI && hasCam}
+        canGetLogic={canReachForestLobby}
       />
       <IslesCheck
         id={50011}
-        name="Shuffled Kasplat: Inside Chunky's room in Aztec Lobby"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canReachAztecLobbyChunky.in && hasCam}
-        canGetBreak={canReachAztecLobbyChunky.out && hasCam}
+        name="Shuffled Kasplat: On Diddy's platform in Caves Lobby"
+        region="Caves-Helm Lobbies"
+        canGetLogic={canDoGuitarGB.in}
+        canGetBreak={canDoGuitarGB.out}
       />
       <IslesCheck
         id={50012}
-        name="Shuffled Kasplat: At Lanky's Castle Lobby checks"
-        region="Caves-Helm Lobbies"
-        canGetLogic={canReachCastleLobbyLanky.in && hasCam}
-        canGetBreak={canReachCastleLobby.out && hasCam}
+        name="Shuffled Kasplat: Inside the &quot;sprint cage&quot; in K. Lumsy's prison"
+        region="K. Rool's Island"
+        canGetLogic={canDoSprintGB.in}
+        canGetBreak={canDoSprintGB.out}
       />
       <IslesCheck
         id={50013}
-        name="Shuffled Kasplat: At DK's lava Banana"
-        region="Caves-Helm Lobbies"
-        canGetLogic={iceWallBreakdown.in && hasCam}
-        canGetBreak={iceWallBreakdown.out && hasCam}
+        name="Shuffled Kasplat: Japes Lobby"
+        region="Japes-Forest Lobbies"
+        canGetLogic={canReachJapesLobby}
       />
       <IslesCheck
         id={50014}
-        name="Shuffled Kasplat: In Snide's room"
+        name="Shuffled Kasplat: Behind Helm Lobby"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby && hasCam}
+        canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
         id={50015}
-        name="Shuffled Kasplat: At the exit to DK's Treehouse area"
-        region="DK Island"
-        canGetLogic={isBreathing}
+        name="Shuffled Kasplat: In Snide's room"
+        region="K. Rool's Island"
+        canGetLogic={canReachFactoryLobby}
       />
       <IslesCheck
         id={50016}
-        name="Shuffled Kasplat: 'Hidden mountain' in between Training Grounds and Cranky's"
+        name="Shuffled Kasplat: Roof of Aztec Lobby"
         region="DK Island"
-        canGetLogic={hasClimbing && hasCam}
-        canGetBreak={isBreathing}
+        canGetLogic={canDoRoofDirt.in}
+        canGetBreak={canDoRoofDirt.out}
       />
       <IslesCheck
         id={50017}
-        name="Shuffled Kasplat: Looking out the windows in DK's Treehouse"
+        name="Shuffled Kasplat: In the waterfall's pool"
         region="DK Island"
-        canGetLogic={hasClimbing && hasCam}
+        canGetLogic={hasDiving.in && (hasAGun || hasOranges || hasAnInstrument)}
+        canGetLogic={hasDiving.out && (hasAGun || hasOranges || hasAnInstrument)}
       />
     </KasplatPool>
   )
