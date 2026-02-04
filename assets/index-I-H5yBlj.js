@@ -13438,7 +13438,7 @@ const Vanilla$7 = () => {
     )
   ] });
 };
-const Shuffled$H = () => {
+const Shuffled$I = () => {
   const kremAscent = useIslesKremAscent();
   const cranky = useCranky();
   const snide = useSnide();
@@ -13466,7 +13466,7 @@ const Shuffled$H = () => {
   ] });
 };
 const ShopLocations$7 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$H, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
+  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$I, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
 };
 const WrinklyPool = ({ children }) => usePoolWrinkly() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -14161,7 +14161,7 @@ const TrainingGroundsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(Rainb
   /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingRear, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(Hoard, {})
 ] });
-const Shuffled$G = () => {
+const Shuffled$H = () => {
   const isBreathing = useAnyKong();
   const hasDK = useDk();
   const hasDiddy = useDiddy();
@@ -14962,9 +14962,9 @@ const Shuffled$G = () => {
     )
   ] });
 };
-const ShuffledArenas$8 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$G, {}) : null;
+const ShuffledArenas$8 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$H, {}) : null;
 const CratePool = ({ children }) => usePoolCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const Shuffled$F = () => {
+const Shuffled$G = () => {
   const isBreathing = useAnyKong();
   const hasDK = useDk();
   const hasDiddy = useDiddy();
@@ -15790,8 +15790,8 @@ const Shuffled$F = () => {
     )
   ] });
 };
-const ShuffledCrates$8 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$F, {}) : null;
-const Shuffled$E = () => {
+const ShuffledCrates$8 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$G, {}) : null;
+const Shuffled$F = () => {
   const isBreathing = useGeneralDirt$6();
   const hasShockwave = useShockwave();
   const hasClimbing = useClimbing();
@@ -16615,8 +16615,8 @@ const Shuffled$E = () => {
     )
   ] });
 };
-const ShuffledDirt$8 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$E, {}) : null;
-const Shuffled$D = () => {
+const ShuffledDirt$8 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$F, {}) : null;
+const Shuffled$E = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$6();
   const vanillaFairy2 = useKremFairy();
@@ -16806,49 +16806,257 @@ const Shuffled$D = () => {
     )
   ] });
 };
-const ShuffledFairies$8 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
-const IslesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$7, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$7, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$7, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$7, {})
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingGroundsChecks, {})
-  ] }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainUpperChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyAirspaceChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(OuterIslesChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(PrisonChecks, {})
-  ] }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(KremBaseChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(KremLiftChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(SnideRoomChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(KremTopChecks, {})
-  ] }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyChecks, {}) }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyChecks, {}) }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(HelmLobbyChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(FairyReward, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$8, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$8, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$8, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {})
-  ] })
-] });
+const ShuffledFairies$8 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$E, {}) : null;
+const Shuffled$D = () => {
+  const DKKasplat = useHelmKasplat();
+  const diddyKasplat = useCastleKasplat();
+  const lankyKasplat = useCavesKasplat();
+  const tinyKasplat = useFactoryKasplat();
+  const chunkyKasplat = useGalleonKasplat();
+  const isBreathing = useAnyKong();
+  const canReachFactoryLobby = useIslesKremAscent();
+  const hasGrab = useGrab();
+  const highGrab = useHighGrab();
+  const canPoundTheX = useCheckChunkyPound();
+  const [didCheck] = useDonkStore(useShallow((state) => [state.checks]));
+  const hasDiving = useDive();
+  const canReachForestLobby = useIslesFungiIsland();
+  const canDoGuitarGB = useCavesLobbyGeneric();
+  const hasJetbarrel = useRocket();
+  const boulderTech = useBoulderTech();
+  const hinaKagiyama = useTwirl();
+  const canDoSprintGB = useCheckLankyPrison();
+  const canReachJapesLobby = useJapesLobbyGeneric();
+  const canReachHelmLobby = usePlayLobby("Hideout Helm");
+  const canDoRoofDirt = useIslesCrossFungi();
+  const hasAGun = useAnyGun();
+  const hasOranges = useOrange();
+  const hasAnInstrument = useAnyMusic();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 5e4,
+        name: "Shuffled Kasplat: DK's Vanilla Location (Helm Lobby)",
+        region: "Caves-Helm Lobbies",
+        canGetLogic: DKKasplat.in,
+        canGetBreak: DKKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50001,
+        name: "Shuffled Kasplat: Diddy's Vanilla Location (a cage in Castle Lobby)",
+        region: "Caves-Helm Lobbies",
+        canGetLogic: diddyKasplat.in,
+        canGetBreak: diddyKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50002,
+        name: "Shuffled Kasplat: Lanky's Vanilla Location (a wall in Caves Lobby)",
+        region: "Caves-Helm Lobbies",
+        canGetLogic: lankyKasplat.in,
+        canGetBreak: lankyKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50003,
+        name: "Shuffled Kasplat: Tiny's Vanilla Location (a box in Factory Lobby)",
+        region: "Japes-Forest Lobbies",
+        canGetLogic: tinyKasplat.in,
+        canGetBreak: tinyKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50004,
+        name: "Shuffled Kasplat: Chunky's Vanilla Location (Galleon Lobby)",
+        region: "Japes-Forest Lobbies",
+        canGetLogic: chunkyKasplat.in,
+        canGetBreak: chunkyKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50005,
+        name: 'Shuffled Kasplat: The "beaver beach" in front of Japes Lobby',
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50006,
+        name: "Shuffled Kasplat: Factory Lobby, above the DK Portal",
+        region: "Japes-Forest Lobbies",
+        canGetLogic: canReachFactoryLobby && hasGrab,
+        canGetBreak: highGrab
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50007,
+        name: "Shuffled Kasplat: Inside the big rock opened by pounding the X",
+        region: "Outer Isles",
+        canGetLogic: canPoundTheX
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50008,
+        name: "Shuffled Kasplat: Behind Factory Lobby",
+        region: "K. Rool's Island",
+        canGetLogic: canReachFactoryLobby
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50009,
+        name: "Shuffled Kasplat: On the X",
+        region: "Outer Isles",
+        canGetLogic: isBreathing && !didCheck[42],
+        canGetBreak: isBreathing && didCheck[42] && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50010,
+        name: "Shuffled Kasplat: Behind the Forest Lobby",
+        region: "Outer Isles",
+        canGetLogic: canReachForestLobby
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50011,
+        name: "Shuffled Kasplat: On Diddy's platform in Caves Lobby",
+        region: "Caves-Helm Lobbies",
+        canGetLogic: canDoGuitarGB.in && hasJetbarrel,
+        canGetBreak: canDoGuitarGB.out && boulderTech && hinaKagiyama
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50012,
+        name: `Shuffled Kasplat: Inside the "sprint cage" in K. Lumsy's prison`,
+        region: "K. Rool's Island",
+        canGetLogic: canDoSprintGB.in,
+        canGetBreak: canDoSprintGB.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50013,
+        name: "Shuffled Kasplat: Japes Lobby",
+        region: "Japes-Forest Lobbies",
+        canGetLogic: canReachJapesLobby.in,
+        canGetBreak: canReachJapesLobby.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50014,
+        name: "Shuffled Kasplat: Behind Helm Lobby",
+        region: "K. Rool's Island",
+        canGetLogic: canReachHelmLobby.in,
+        canGetBreak: canReachHelmLobby.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50015,
+        name: "Shuffled Kasplat: In Snide's room",
+        region: "K. Rool's Island",
+        canGetLogic: canReachFactoryLobby
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50016,
+        name: "Shuffled Kasplat: Roof of Aztec Lobby",
+        region: "DK Island",
+        canGetLogic: canDoRoofDirt.in,
+        canGetBreak: canDoRoofDirt.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50017,
+        name: "Shuffled Kasplat: In the waterfall's pool",
+        region: "DK Island",
+        canGetLogic: hasDiving.in && (hasAGun || hasOranges || hasAnInstrument),
+        canGetBreak: hasDiving.out && (hasAGun || hasOranges || hasAnInstrument)
+      }
+    )
+  ] });
+};
+const ShuffledKasplats$1 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
+const IslesRegionChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$7, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$7, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$7, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$7, {})
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingGroundsChecks, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainUpperChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyAirspaceChecks, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(OuterIslesChecks, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(PrisonChecks, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(KremBaseChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(KremLiftChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SnideRoomChecks, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(KremTopChecks, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyChecks, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyChecks, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FairyReward, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$8, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$8, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$8, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$1, {}) })
+  ] });
+};
 const BoulderLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyTrombonePad, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyTrianglePad, {}),
@@ -16926,7 +17134,10 @@ const ClassicChecks$7 = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$8, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$8, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$1, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$8, {})
+    ] })
   ] });
 };
 const IsleChecks = () => {
