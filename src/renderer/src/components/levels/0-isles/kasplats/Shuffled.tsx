@@ -1,7 +1,7 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent, useCheckChunkyPound, useIslesFungiIsland } from '@renderer/hooks/isles'
+import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent, useCheckChunkyPound, useIslesFungiIsland, useCheckDiddyCaves } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useAnyKong, useGrab, useHighGrab, useDive } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -20,6 +20,7 @@ const canPoundTheX = useCheckChunkyPound()
 const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
 const hasDiving = useDive()
 const canReachForestLobby = useIslesFungiIsland()
+const canDoGuitarGB = useCheckDiddyCaves()
   return (
     <KasplatPool>
       <IslesCheck
