@@ -38523,7 +38523,7 @@ const ChunkyBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeE
 ] });
 const DiddyCandleCabin = () => {
   const candleGb = useDiddyCandleGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6013,
@@ -38532,7 +38532,7 @@ const DiddyCandleCabin = () => {
       canGetLogic: candleGb.in,
       canGetBreak: candleGb.out
     }
-  ) }) });
+  ) });
 };
 const DiddyGauntletCabin = () => {
   const cabinGauntlet = useDiddyGauntletGb();
