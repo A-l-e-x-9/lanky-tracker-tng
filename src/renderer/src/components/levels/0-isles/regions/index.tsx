@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import BananaMedalPool, { IslesMedalPool } from '@renderer/components/pools/BananaMedals'
 import ChunkyMedal from '../medals/ChunkyMedal'
 import DiddyMedal from '../medals/DiddyMedal'
@@ -29,8 +31,11 @@ import ShuffledArenas from '../arenas/Shuffled'
 import ShuffledCrates from '../crates/Shuffled'
 import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
+import ShuffledKasplats from '../kasplats/Shuffled'
 
-const IslesRegionChecks: React.FC = () => (
+const IslesRegionChecks: React.FC = () => {
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+return (
 <>
   <div className="grid">
     <BananaMedalPool>
@@ -78,7 +83,11 @@ const IslesRegionChecks: React.FC = () => (
     <ShuffledDirt />
     <ShuffledFairies />
   </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
+    <ShuffledKasplats />
+  </div>
   </>
 )
+}
 
 export default IslesRegionChecks
