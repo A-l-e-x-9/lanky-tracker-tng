@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat } from '@renderer/hooks/isles'
+import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useAnyKong } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -11,6 +11,7 @@ const lankyKasplat = useCavesKasplat()
 const tinyKasplat = useFactoryKasplat()
 const chunkyKasplat = useGalleonKasplat()
 const isBreathing = useAnyKong()
+const canReachFactoryLobby = useIslesKremAscent()
   return (
     <KasplatPool>
       <IslesCheck
