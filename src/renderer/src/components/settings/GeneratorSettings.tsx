@@ -418,7 +418,7 @@ const GeneratorSettings: React.FC = () => {
                 storeKey="winConItemCount"
                 prefix="winCondition"
                 setCount={setWinCondition}
-                maxValue={isKeySeed ? 8 : isGBSeed ? 201 : (isBPSeed || isMedalSeed) ? 40 : isCoCoinSeed ? 2 : isCrownSeed ? 10 : isFairySeed ? 20 : isRainbowSeed ? 16 : isBeanSeed ? 1 : isPearlSeed ? 5 : isBonusSeed ? 43 : 0} //I know no good way of implementing Hideout Helm bonuses at this time, so the "Bonuses" win con caps out at 43 even though it can go to 53.
+                maxValue={isKeySeed ? 8 : isGBSeed ? 201 : (isBPSeed || isMedalSeed) ? 40 : isCoCoinSeed ? 2 : isCrownSeed ? 10 : isFairySeed ? 20 : isRainbowSeed ? 16 : isBeanSeed ? 1 : isPearlSeed ? 5 : isBossSeed ? 7 : isBonusSeed ? 43 : 0} //I know no good way of implementing Hideout Helm bonuses at this time, so the "Bonuses" win con caps out at 43 even though it can go to 53.
               />
             <p></p>
             <p></p>
@@ -554,7 +554,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Japes Tunnel Gates?</p>
               <SimpleIcon
                 imgUrl={coconutIcon}
-                title="Pre-opens the gates that open after rescuing Diddy Kong in the original game."
+                title="Turn this on if the three gates that open after rescuing Diddy are pre-opened. Else, you'll need to do the &quot;freeing Diddy Kong&quot; GB to access Cranky/one shop and the Hive area, with all the nonsense that entails."
                 storeKey="japesCoconutGates"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -562,7 +562,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Japes Hive Gate?</p>
               <SimpleIcon
                 imgUrl={featherIcon}
-                title="Pre-opens the gate to the hive area."
+                title="Turn this on if the Hive Area is open. Else, you'll need Tiny and Feathers (by default, subject to Switchsanity) or pre-activated Bananaports to go there."
                 storeKey="japesHiveGate"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -578,7 +578,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Aztec Back Access?</p>
               <SimpleIcon
                 imgUrl={guitarIcon}
-                title="Turn this on if the big door to the second half of Aztec is pre-opened."
+                title="Turn this on if the big door to the second half of Aztec is pre-opened. Else, you'll need Diddy and Guitar (by default) as well as Vines and Climbing, or pre-activated Bananaports."
                 storeKey="aztecBack"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
