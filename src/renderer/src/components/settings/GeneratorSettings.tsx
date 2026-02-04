@@ -49,6 +49,7 @@ import koshaHead from '../../assets/images/kosha.png'
 import fairyCamIcon from '../../assets/images/filmwave1.png'
 import crankyIcon from '../../assets/images/cranky.png'
 import unknownIcon from '../../assets/images/unknown-small.png'
+import kasplatIcon from '../../assets/images/settings/kasplat.png'
 
 const customStyles: Modal.Styles = {
   content: {
@@ -536,6 +537,14 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={fairyIcon}
                 title="If your Banana Fairies are shuffled, click here."
                 storeKey="shuffleFairies"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Kasplats?</p>
+              <SimpleIcon
+                imgUrl={kasplatIcon}
+                title="If Kasplats are set to &quot;Location Shuffle&quot; click here. Do NOT click here if you chose &quot;Vanilla Locations&quot; instead, as that merely only changes the colors of Kasplats, not their locations."
+                storeKey="shuffleKasplats"
                 prefix="settings"
                 updateItem={setSetting}
               />
