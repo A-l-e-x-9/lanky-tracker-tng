@@ -1,9 +1,9 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent, useCheckChunkyPound, useIslesFungiIsland, useCavesLobbyGeneric, useCheckLankyPrison, useJapesLobbyGeneric, usePlayLobby } from '@renderer/hooks/isles'
+import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent, useCheckChunkyPound, useIslesFungiIsland, useCavesLobbyGeneric, useCheckLankyPrison, useJapesLobbyGeneric, usePlayLobby, useIslesCrossFungi } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useAnyKong, useGrab, useHighGrab, useDive, useRocket, useBoulderTech, useTwirl } from '@renderer/hooks/kongs'
+import { useAnyKong, useGrab, useHighGrab, useDive, useRocket, useBoulderTech, useTwirl, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -27,6 +27,10 @@ const hinaKagiyama = useTwirl()
 const canDoSprintGB = useCheckLankyPrison()
 const canReachJapesLobby = useJapesLobbyGeneric()
 const canReachHelmLobby = usePlayLobby('Hideout Helm')
+const canDoRoofDirt = useIslesCrossFungi()
+const hasAGun = useAnyGun()
+const hasOranges = useOrange()
+const hasAnInstrument = useAnyMusic()
   return (
     <KasplatPool>
       <IslesCheck
@@ -127,7 +131,8 @@ const canReachHelmLobby = usePlayLobby('Hideout Helm')
         id={50014}
         name="Shuffled Kasplat: Behind Helm Lobby"
         region="K. Rool's Island"
-        canGetLogic={canReachHelmLobby}
+        canGetLogic={canReachHelmLobby.in}
+        canGetBreak={canReachHelmLobby.out}
       />
       <IslesCheck
         id={50015}
