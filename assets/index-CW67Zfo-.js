@@ -49025,7 +49025,7 @@ const GeneratorSettings = () => {
                   storeKey: "winConItemCount",
                   prefix: "winCondition",
                   setCount: setWinCondition,
-                  maxValue: isKeySeed ? 8 : isGBSeed ? 201 : isBPSeed || isMedalSeed ? 40 : isCoCoinSeed ? 2 : isCrownSeed ? 10 : isFairySeed ? 20 : isRainbowSeed ? 16 : isBeanSeed ? 1 : isPearlSeed ? 5 : isBonusSeed ? 43 : 0
+                  maxValue: isKeySeed ? 8 : isGBSeed ? 201 : isBPSeed || isMedalSeed ? 40 : isCoCoinSeed ? 2 : isCrownSeed ? 10 : isFairySeed ? 20 : isRainbowSeed ? 16 : isBeanSeed ? 1 : isPearlSeed ? 5 : isBossSeed ? 7 : isBonusSeed ? 43 : 0
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
@@ -49206,7 +49206,7 @@ const GeneratorSettings = () => {
                 SimpleIcon,
                 {
                   imgUrl: dkGunIcon,
-                  title: "Pre-opens the gates that open after rescuing Diddy Kong in the original game.",
+                  title: `Turn this on if the three gates that open after rescuing Diddy are pre-opened. Else, you'll need to do the "freeing Diddy Kong" GB to access Cranky/one shop and the Hive area, with all the nonsense that entails.`,
                   storeKey: "japesCoconutGates",
                   prefix: "removeBarriers",
                   updateItem: setBarrier
@@ -49217,7 +49217,7 @@ const GeneratorSettings = () => {
                 SimpleIcon,
                 {
                   imgUrl: tinyGunIcon,
-                  title: "Pre-opens the gate to the hive area.",
+                  title: "Turn this on if the Hive Area is open. Else, you'll need Tiny and Feathers (by default, subject to Switchsanity) or pre-activated Bananaports to go there.",
                   storeKey: "japesHiveGate",
                   prefix: "removeBarriers",
                   updateItem: setBarrier
@@ -49239,7 +49239,7 @@ const GeneratorSettings = () => {
                 SimpleIcon,
                 {
                   imgUrl: diddyMusicIcon,
-                  title: "Turn this on if the big door to the second half of Aztec is pre-opened.",
+                  title: "Turn this on if the big door to the second half of Aztec is pre-opened. Else, you'll need Diddy and Guitar (by default) as well as Vines and Climbing, or pre-activated Bananaports.",
                   storeKey: "aztecBack",
                   prefix: "removeBarriers",
                   updateItem: setBarrier
