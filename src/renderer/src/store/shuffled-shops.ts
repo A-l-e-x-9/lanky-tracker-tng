@@ -112,7 +112,7 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
     setShop: (id, val): void => {
       set((state) => {
         // If setting "Are Cranky and Snide switched in Isles?", which is a checkbox, just set it:
-        if (Object.keys(state.shuffledShops) === 'islesSwitchUp') {
+        if (state.shuffledShops.islesSwitchUp) {
           const target: Record<string, number | boolean> = {}
           target[id] = val
           state = {
