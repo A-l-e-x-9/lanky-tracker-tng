@@ -559,7 +559,7 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={unknownIcon}
                 title="Well, are they?"
                 storeKey="islesSwitchUp"
-                prefix="shuffledShops"
+                prefix="shuffledIslesShops"
                 updateItem={setShop}
               />
             <p></p>

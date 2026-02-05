@@ -1039,11 +1039,11 @@ interface ShopCollection {
 }
 
 export interface ShopState {
-  shuffledShops: ShopCollection
+  shuffledIslesShops: ShopCollection.islesSwitchUp
 }
 
 interface ShopActions {
-  setShop: (id: string, val: boolean | number) => void
+  setShop: (id: string, val: boolean) => void
 }
 
 export type ShopSlice = ShopState & ShopActions

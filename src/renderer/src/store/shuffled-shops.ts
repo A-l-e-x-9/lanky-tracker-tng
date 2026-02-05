@@ -2,8 +2,10 @@ import { StateCreator } from 'zustand'
 import { AllSlice, ShopSlice, ShopState, donkResetFns } from './common'
 
 export const initialShop: ShopState = {
+  shuffledIslesShops: {
+    islesSwitchUp: false
+  },
   shuffledShops: {
-    islesSwitchUp: false,
     japesCrankyNoSwitch: true,
     japesCrankyFunky: false,
     japesCrankySnide: false,
@@ -112,13 +114,13 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
     setShop: (id, val): void => {
       set((state) => {
         // If setting "Are Cranky and Snide switched in Isles?", which is a checkbox, just set it:
-        if (state.shuffledShops.islesSwitchUp) {
-          const target: Record<string, number | boolean> = {}
+        if (Object.keys(state.shuffledIslesShops)) {
+          const target: Record<string, boolean> = {}
           target[id] = val
           state = {
             ...state,
-            shuffledShops: {
-              ...state.shuffledShops,
+            shuffledIslesShops: {
+              ...state.shuffledIslesShops,
               ...target
             }
           }
@@ -128,9 +130,8 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
         // Else, enforce radio button semantics:
         // clear other boolean winCondition flags and set this one to true.
         if (val) {
-          const reset: Record<string, number | boolean> = {}
+          const reset: Record<string, boolean> = {}
           for (const k of Object.keys(state.shuffledShops)) {
-            if (k === 'islesSwitchUp') continue
             reset[k] = false
           }
           reset[id] = true

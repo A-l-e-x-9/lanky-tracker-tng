@@ -6,7 +6,7 @@ type SimpleIconProps = {
   imgUrl: string
   prefix: string
   className?: string
-  updateItem: (id: string, val: boolean | number) => void
+  updateItem: (id: string, val: boolean) => void
 }
 
 const SimpleRadioIcon: React.FC<SimpleIconProps> = (props) => {
