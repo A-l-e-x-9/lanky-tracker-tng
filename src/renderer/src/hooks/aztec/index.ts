@@ -441,8 +441,6 @@ export const useLankyMatchGb = (): LogicBool => {
 }
 
 export const useTinyKlaptrapGb = (): LogicBool => {
-  const front = useAztecFront()
-  const feather = useFeather()
   const mini = useMini()
   const dive = useDive()
   const tinyTemple = useAztecTinyTemple()

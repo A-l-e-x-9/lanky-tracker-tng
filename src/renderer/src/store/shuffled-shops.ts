@@ -113,7 +113,7 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
       set((state) => {
         // If setting "Are Cranky and Snide switched in Isles?", which is a checkbox, just set it:
         if (Object.keys(state.shuffledShops) === 'islesSwitchUp') {
-          const target: Record<string, boolean> = {}
+          const target: Record<string, number | boolean> = {}
           target[id] = val
           state = {
             ...state,
@@ -128,7 +128,7 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
         // Else, enforce radio button semantics:
         // clear other boolean winCondition flags and set this one to true.
         if (val) {
-          const reset: Record<string, boolean> = {}
+          const reset: Record<string, number | boolean> = {}
           for (const k of Object.keys(state.shuffledShops)) {
             if (k === 'islesSwitchUp') continue
             reset[k] = false
