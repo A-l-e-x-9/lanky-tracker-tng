@@ -17,6 +17,7 @@ import settingSlice from './settings'
 import switchSlice from './switchsanities'
 import uiSlice from './ui'
 import winConSlice from './win-conditions'
+import shopSlice from './shuffled-shops'
 
 const initializer: StateCreator<AllSlice, [['zustand/persist', unknown]], []> = (...d) => ({
   ...coreSlice(...d),
@@ -33,7 +34,8 @@ const initializer: StateCreator<AllSlice, [['zustand/persist', unknown]], []> = 
   ...endingSlice(...d),
   ...roolSlice(...d),
   ...uiSlice(...d),
-  ...winConSlice(...d)
+  ...winConSlice(...d),
+  ...shopSlice(...d)
 })
 
 /**

@@ -935,6 +935,120 @@ interface WinConActions {
 export type WinConSlice = WinConState & WinConActions
 //#endregion
 
+//Begin shuffled shop region
+interface ShopCollection {
+  islesSwitchUp: boolean
+  japesCrankyNoSwitch: boolean
+  japesCrankyFunky: boolean
+  japesCrankySnide: boolean
+  japesFunkyCranky: boolean
+  japesFunkyNoSwitch: boolean
+  japesFunkySnide: boolean
+  japesSnideCranky: boolean
+  japesSnideFunky: boolean
+  japesSnideNoSwitch: boolean
+  aztecCrankyNoSwitch: boolean
+  aztecCrankyFunky: boolean
+  aztecCrankyCandy: boolean
+  aztecCrankySnide: boolean
+  aztecFunkyCranky: boolean
+  aztecFunkyNoSwitch: boolean
+  aztecFunkyCandy: boolean
+  aztecFunkySnide: boolean
+  aztecCandyCranky: boolean
+  aztecCandyFunky: boolean
+  aztecCandyNoSwitch: boolean
+  aztecCandySnide: boolean
+  aztecSnideCranky: boolean
+  aztecSnideFunky: boolean
+  aztecSnideCandy: boolean
+  aztecSnideNoSwitch: boolean
+  factoryCrankyNoSwitch: boolean
+  factoryCrankyFunky: boolean
+  factoryCrankyCandy: boolean
+  factoryCrankySnide: boolean
+  factoryFunkyCranky: boolean
+  factoryFunkyNoSwitch: boolean
+  factoryFunkyCandy: boolean
+  factoryFunkySnide: boolean
+  factoryCandyCranky: boolean
+  factoryCandyFunky: boolean
+  factoryCandyNoSwitch: boolean
+  factoryCandySnide: boolean
+  factorySnideCranky: boolean
+  factorySnideFunky: boolean
+  factorySnideCandy: boolean
+  factorySnideNoSwitch: boolean
+  galleonCrankyNoSwitch: boolean
+  galleonCrankyFunky: boolean
+  galleonCrankyCandy: boolean
+  galleonCrankySnide: boolean
+  galleonFunkyCranky: boolean
+  galleonFunkyNoSwitch: boolean
+  galleonFunkyCandy: boolean
+  galleonFunkySnide: boolean
+  galleonCandyCranky: boolean
+  galleonCandyFunky: boolean
+  galleonCandyNoSwitch: boolean
+  galleonCandySnide: boolean
+  galleonSnideCranky: boolean
+  galleonSnideFunky: boolean
+  galleonSnideCandy: boolean
+  galleonSnideNoSwitch: boolean
+  forestCrankyNoSwitch: boolean
+  forestCrankyFunky: boolean
+  forestCrankySnide: boolean
+  forestFunkyCranky: boolean
+  forestFunkyNoSwitch: boolean
+  forestFunkySnide: boolean
+  forestSnideCranky: boolean
+  forestSnideFunky: boolean
+  forestSnideNoSwitch: boolean
+  cavesCrankyNoSwitch: boolean
+  cavesCrankyFunky: boolean
+  cavesCrankyCandy: boolean
+  cavesCrankySnide: boolean
+  cavesFunkyCranky: boolean
+  cavesFunkyNoSwitch: boolean
+  cavesFunkyCandy: boolean
+  cavesFunkySnide: boolean
+  cavesCandyCranky: boolean
+  cavesCandyFunky: boolean
+  cavesCandyNoSwitch: boolean
+  cavesCandySnide: boolean
+  cavesSnideCranky: boolean
+  cavesSnideFunky: boolean
+  cavesSnideCandy: boolean
+  cavesSnideNoSwitch: boolean
+  castleCrankyNoSwitch: boolean
+  castleCrankyFunky: boolean
+  castleCrankyCandy: boolean
+  castleCrankySnide: boolean
+  castleFunkyCranky: boolean
+  castleFunkyNoSwitch: boolean
+  castleFunkyCandy: boolean
+  castleFunkySnide: boolean
+  castleCandyCranky: boolean
+  castleCandyFunky: boolean
+  castleCandyNoSwitch: boolean
+  castleCandySnide: boolean
+  castleSnideCranky: boolean
+  castleSnideFunky: boolean
+  castleSnideCandy: boolean
+  castleSnideNoSwitch: boolean
+}
+
+export interface ShopState {
+  shuffledShops: ShopCollection
+}
+
+interface ShopActions {
+  setShop: (id: string, val: boolean) => void
+}
+
+export type ShopSlice = ShopState & ShopActions
+//#endregion
+
 export type AllSlice = CheckSlice &
   MoveSlice &
   ConsumablesSlice &
@@ -949,7 +1063,8 @@ export type AllSlice = CheckSlice &
   EndingSlice &
   RoolSlice &
   UiSlice &
-  WinConSlice
+  WinConSlice &
+  ShopSlice
 
 export const donkResetFns = new Set<() => void>()
 

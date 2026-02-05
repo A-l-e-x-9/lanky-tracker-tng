@@ -50,6 +50,9 @@ import fairyCamIcon from '../../assets/images/filmwave1.png'
 import crankyIcon from '../../assets/images/cranky.png'
 import unknownIcon from '../../assets/images/unknown-small.png'
 import kasplatIcon from '../../assets/images/settings/kasplat.png'
+import funkyIcon from '../../assets/images/settings/funky.png'
+import snideIcon from '../../assets/images/snide.png'
+import candyIcon from '../../assets/images/candy.png'
 
 const customStyles: Modal.Styles = {
   content: {
@@ -60,8 +63,8 @@ const customStyles: Modal.Styles = {
 
 const GeneratorSettings: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
-  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition] = useDonkStore(
-    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi, state.setWinCondition])
+  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition, setShop] = useDonkStore(
+    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi, state.setWinCondition, state.setShop])
   )
 
   const openModal = (): void => setOpen(true)
@@ -548,6 +551,764 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
+            <h4>Shop Shuffler</h4>
+            <p></p>
+            <p></p>
+            <p>Are Cranky and Snide switched in Isles?</p>
+            <CheckIcon storeKey="islesSwitchUp" prefix="shuffledShops" updateItem={setShop} />
+            <p></p>
+            <p></p>
+            <p className="full-grid">Jungle Japes:</p>
+            <p>Cranky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="himself (no switch)"
+                storeKey="japesCrankyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="japesCrankyFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="japesCrankySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p></p>
+            <p>Funky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="japesFunkyCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="himself (no switch)"
+                storeKey="japesFunkyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="japesFunkySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p></p>
+            <p>Snide swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="japesSnideCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="japesSnideFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="himself (no switch)"
+                storeKey="japesSnideNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p></p>
+            <p className="full-grid">Angry Aztec:</p>
+            <p>Cranky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="himself (no switch)"
+                storeKey="aztecCrankyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="aztecCrankyFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="aztecCrankyCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="aztecCrankySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Funky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="aztecFunkyCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="himself (no switch)"
+                storeKey="aztecFunkyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="aztecFunkyCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="aztecFunkySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Candy swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="aztecCandyCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="aztecCandyFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="herself (no switch)"
+                storeKey="aztecCandyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="aztecCandySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Snide swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="aztecSnideCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="aztecSnideFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="aztecSnideCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="himself (no switch)"
+                storeKey="aztecSnideNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p className="full-grid">Frantic Factory:</p>
+            <p>Cranky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="himself (no switch)"
+                storeKey="factoryCrankyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="factoryCrankyFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="factoryCrankyCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="factoryCrankySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Funky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="factoryFunkyCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="himself (no switch)"
+                storeKey="factoryFunkyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="factoryFunkyCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="factoryFunkySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Candy swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="factoryCandyCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="factoryCandyFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="herself (no switch)"
+                storeKey="factoryCandyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="factoryCandySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Snide swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="factorySnideCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="factorySnideFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="factorySnideCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="himself (no switch)"
+                storeKey="factorySnideNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p className="full-grid">Gloomy Galleon:</p>
+            <p>Cranky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="himself (no switch)"
+                storeKey="galleonCrankyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="galleonCrankyFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="galleonCrankyCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="galleonCrankySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Funky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="galleonFunkyCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="himself (no switch)"
+                storeKey="galleonFunkyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="galleonFunkyCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="galleonFunkySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Candy swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="galleonCandyCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="galleonCandyFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="herself (no switch)"
+                storeKey="galleonCandyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="galleonCandySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Snide swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="galleonSnideCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="galleonSnideFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="galleonSnideCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="himself (no switch)"
+                storeKey="galleonSnideNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p className="full-grid">Fungi Forest:</p>
+            <p>Cranky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="himself (no switch)"
+                storeKey="forestCrankyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="forestCrankyFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="forestCrankySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p></p>
+            <p>Funky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="forestFunkyCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="himself (no switch)"
+                storeKey="forestFunkyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="forestFunkySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p></p>
+            <p>Snide swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="forestSnideCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="forestSnideFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="himself (no switch)"
+                storeKey="forestSnideNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p></p>
+            <p className="full-grid">Crystal Caves:</p>
+            <p>Cranky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="himself (no switch)"
+                storeKey="cavesCrankyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="cavesCrankyFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="cavesCrankyCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="cavesCrankySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Funky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="cavesFunkyCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="himself (no switch)"
+                storeKey="cavesFunkyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="cavesFunkyCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="cavesFunkySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Candy swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="cavesCandyCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="cavesCandyFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="herself (no switch)"
+                storeKey="cavesCandyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="cavesCandySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Snide swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="cavesSnideCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="cavesSnideFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="cavesSnideCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="himself (no switch)"
+                storeKey="cavesSnideNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p className="full-grid">Creepy Castle:</p>
+            <p>Cranky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="himself (no switch)"
+                storeKey="castleCrankyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="castleCrankyFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="castleCrankyCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="castleCrankySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Funky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="castleFunkyCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="himself (no switch)"
+                storeKey="castleFunkyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="castleFunkyCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="castleFunkySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Candy swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="castleCandyCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="castleCandyFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="herself (no switch)"
+                storeKey="castleCandyNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="castleCandySnide"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
+            <p>Snide swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="castleSnideCranky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="castleSnideFunky"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={candyIcon}
+                title="Candy"
+                storeKey="castleSnideCandy"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="himself (no switch)"
+                storeKey="castleSnideNoSwitch"
+                prefix="shuffledShops"
+                updateItem={setShop}
+            />
+            <p></p>
             </>
             <h3>Fast Barrier Settings</h3>
             <>

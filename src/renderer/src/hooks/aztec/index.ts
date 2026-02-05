@@ -448,8 +448,8 @@ export const useTinyKlaptrapGb = (): LogicBool => {
   const tinyTemple = useAztecTinyTemple()
   const iceMelted = useTinyTempleIce()
   return {
-    in: front.in && feather && mini && iceMelted && dive.in,
-    out: tinyTemple.out && mini && iceMelted && dive.out
+    in: tinyTemple.in && mini && iceMelted.in && dive.in,
+    out: tinyTemple.out && mini && iceMelted.out && dive.out
   }
 }
 
