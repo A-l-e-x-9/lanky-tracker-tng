@@ -1039,7 +1039,7 @@ interface ShopCollection {
 }
 
 export interface ShopState {
-  shuffledIslesShops: ShopCollection.islesSwitchUp
+  shuffledIslesShops: ShopCollection["islesSwitchUp"]
 }
 
 interface ShopActions {
