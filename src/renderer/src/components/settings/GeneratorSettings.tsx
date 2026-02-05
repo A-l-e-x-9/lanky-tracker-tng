@@ -570,21 +570,21 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="himself (no switch)"
                 storeKey="japesCrankyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledJapesCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="japesCrankyFunky"
-                prefix="shuffledShops"
+                prefix="shuffledJapesCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="japesCrankySnide"
-                prefix="shuffledShops"
+                prefix="shuffledJapesCranky"
                 updateItem={setShop}
             />
             <p></p>
@@ -594,21 +594,21 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="japesFunkyCranky"
-                prefix="shuffledShops"
+                prefix="shuffledJapesFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="himself (no switch)"
                 storeKey="japesFunkyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledJapesFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="japesFunkySnide"
-                prefix="shuffledShops"
+                prefix="shuffledJapesFunky"
                 updateItem={setShop}
             />
             <p></p>
@@ -618,21 +618,21 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="japesSnideCranky"
-                prefix="shuffledShops"
+                prefix="shuffledJapesSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="japesSnideFunky"
-                prefix="shuffledShops"
+                prefix="shuffledJapesSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="himself (no switch)"
                 storeKey="japesSnideNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledJapesSnide"
                 updateItem={setShop}
             />
             <p></p>
@@ -643,28 +643,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="himself (no switch)"
                 storeKey="aztecCrankyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledAztecCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="aztecCrankyFunky"
-                prefix="shuffledShops"
+                prefix="shuffledAztecCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="aztecCrankyCandy"
-                prefix="shuffledShops"
+                prefix="shuffledAztecCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="aztecCrankySnide"
-                prefix="shuffledShops"
+                prefix="shuffledAztecCranky"
                 updateItem={setShop}
             />
             <p></p>
@@ -673,28 +673,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="aztecFunkyCranky"
-                prefix="shuffledShops"
+                prefix="shuffledAztecFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="himself (no switch)"
                 storeKey="aztecFunkyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledAztecFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="aztecFunkyCandy"
-                prefix="shuffledShops"
+                prefix="shuffledAztecFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="aztecFunkySnide"
-                prefix="shuffledShops"
+                prefix="shuffledAztecFunky"
                 updateItem={setShop}
             />
             <p></p>
@@ -703,28 +703,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="aztecCandyCranky"
-                prefix="shuffledShops"
+                prefix="shuffledAztecCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="aztecCandyFunky"
-                prefix="shuffledShops"
+                prefix="shuffledAztecCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="herself (no switch)"
                 storeKey="aztecCandyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledAztecCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="aztecCandySnide"
-                prefix="shuffledShops"
+                prefix="shuffledAztecCandy"
                 updateItem={setShop}
             />
             <p></p>
@@ -733,28 +733,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="aztecSnideCranky"
-                prefix="shuffledShops"
+                prefix="shuffledAztecSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="aztecSnideFunky"
-                prefix="shuffledShops"
+                prefix="shuffledAztecSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="aztecSnideCandy"
-                prefix="shuffledShops"
+                prefix="shuffledAztecSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="himself (no switch)"
                 storeKey="aztecSnideNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledAztecSnide"
                 updateItem={setShop}
             />
             <p></p>
@@ -764,28 +764,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="himself (no switch)"
                 storeKey="factoryCrankyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledFactoryCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="factoryCrankyFunky"
-                prefix="shuffledShops"
+                prefix="shuffledFactoryCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="factoryCrankyCandy"
-                prefix="shuffledShops"
+                prefix="shuffledFactoryCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="factoryCrankySnide"
-                prefix="shuffledShops"
+                prefix="shuffledFactoryCranky"
                 updateItem={setShop}
             />
             <p></p>
@@ -794,28 +794,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="factoryFunkyCranky"
-                prefix="shuffledShops"
+                prefix="shuffledFactoryFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="himself (no switch)"
                 storeKey="factoryFunkyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledFactoryFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="factoryFunkyCandy"
-                prefix="shuffledShops"
+                prefix="shuffledFactoryFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="factoryFunkySnide"
-                prefix="shuffledShops"
+                prefix="shuffledFactoryFunky"
                 updateItem={setShop}
             />
             <p></p>
@@ -824,28 +824,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="factoryCandyCranky"
-                prefix="shuffledShops"
+                prefix="shuffledFactoryCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="factoryCandyFunky"
-                prefix="shuffledShops"
+                prefix="shuffledFactoryCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="herself (no switch)"
                 storeKey="factoryCandyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledFactoryCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="factoryCandySnide"
-                prefix="shuffledShops"
+                prefix="shuffledFactoryCandy"
                 updateItem={setShop}
             />
             <p></p>
@@ -854,28 +854,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="factorySnideCranky"
-                prefix="shuffledShops"
+                prefix="shuffledFactorySnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="factorySnideFunky"
-                prefix="shuffledShops"
+                prefix="shuffledFactorySnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="factorySnideCandy"
-                prefix="shuffledShops"
+                prefix="shuffledFactorySnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="himself (no switch)"
                 storeKey="factorySnideNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledFactorySnide"
                 updateItem={setShop}
             />
             <p></p>
@@ -885,28 +885,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="himself (no switch)"
                 storeKey="galleonCrankyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="galleonCrankyFunky"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="galleonCrankyCandy"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="galleonCrankySnide"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonCranky"
                 updateItem={setShop}
             />
             <p></p>
@@ -915,28 +915,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="galleonFunkyCranky"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="himself (no switch)"
                 storeKey="galleonFunkyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="galleonFunkyCandy"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="galleonFunkySnide"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonFunky"
                 updateItem={setShop}
             />
             <p></p>
@@ -945,28 +945,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="galleonCandyCranky"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="galleonCandyFunky"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="herself (no switch)"
                 storeKey="galleonCandyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="galleonCandySnide"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonCandy"
                 updateItem={setShop}
             />
             <p></p>
@@ -975,28 +975,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="galleonSnideCranky"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="galleonSnideFunky"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="galleonSnideCandy"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="himself (no switch)"
                 storeKey="galleonSnideNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledGalleonSnide"
                 updateItem={setShop}
             />
             <p></p>
@@ -1006,21 +1006,21 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="himself (no switch)"
                 storeKey="forestCrankyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledForestCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="forestCrankyFunky"
-                prefix="shuffledShops"
+                prefix="shuffledForestCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="forestCrankySnide"
-                prefix="shuffledShops"
+                prefix="shuffledForestCranky"
                 updateItem={setShop}
             />
             <p></p>
@@ -1030,21 +1030,21 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="forestFunkyCranky"
-                prefix="shuffledShops"
+                prefix="shuffledForestFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="himself (no switch)"
                 storeKey="forestFunkyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledForestFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="forestFunkySnide"
-                prefix="shuffledShops"
+                prefix="shuffledForestFunky"
                 updateItem={setShop}
             />
             <p></p>
@@ -1054,21 +1054,21 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="forestSnideCranky"
-                prefix="shuffledShops"
+                prefix="shuffledForestSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="forestSnideFunky"
-                prefix="shuffledShops"
+                prefix="shuffledForestSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="himself (no switch)"
                 storeKey="forestSnideNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledForestSnide"
                 updateItem={setShop}
             />
             <p></p>
@@ -1079,28 +1079,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="himself (no switch)"
                 storeKey="cavesCrankyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledCavesCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="cavesCrankyFunky"
-                prefix="shuffledShops"
+                prefix="shuffledCavesCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="cavesCrankyCandy"
-                prefix="shuffledShops"
+                prefix="shuffledCavesCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="cavesCrankySnide"
-                prefix="shuffledShops"
+                prefix="shuffledCavesCranky"
                 updateItem={setShop}
             />
             <p></p>
@@ -1109,28 +1109,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="cavesFunkyCranky"
-                prefix="shuffledShops"
+                prefix="shuffledCavesFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="himself (no switch)"
                 storeKey="cavesFunkyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledCavesFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="cavesFunkyCandy"
-                prefix="shuffledShops"
+                prefix="shuffledCavesFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="cavesFunkySnide"
-                prefix="shuffledShops"
+                prefix="shuffledCavesFunky"
                 updateItem={setShop}
             />
             <p></p>
@@ -1139,28 +1139,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="cavesCandyCranky"
-                prefix="shuffledShops"
+                prefix="shuffledCavesCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="cavesCandyFunky"
-                prefix="shuffledShops"
+                prefix="shuffledCavesCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="herself (no switch)"
                 storeKey="cavesCandyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledCavesCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="cavesCandySnide"
-                prefix="shuffledShops"
+                prefix="shuffledCavesCandy"
                 updateItem={setShop}
             />
             <p></p>
@@ -1169,28 +1169,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="cavesSnideCranky"
-                prefix="shuffledShops"
+                prefix="shuffledCavesSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="cavesSnideFunky"
-                prefix="shuffledShops"
+                prefix="shuffledCavesSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="cavesSnideCandy"
-                prefix="shuffledShops"
+                prefix="shuffledCavesSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="himself (no switch)"
                 storeKey="cavesSnideNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledCavesSnide"
                 updateItem={setShop}
             />
             <p></p>
@@ -1200,28 +1200,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="himself (no switch)"
                 storeKey="castleCrankyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledCastleCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="castleCrankyFunky"
-                prefix="shuffledShops"
+                prefix="shuffledCastleCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="castleCrankyCandy"
-                prefix="shuffledShops"
+                prefix="shuffledCastleCranky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="castleCrankySnide"
-                prefix="shuffledShops"
+                prefix="shuffledCastleCranky"
                 updateItem={setShop}
             />
             <p></p>
@@ -1230,28 +1230,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="castleFunkyCranky"
-                prefix="shuffledShops"
+                prefix="shuffledCastleFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="himself (no switch)"
                 storeKey="castleFunkyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledCastleFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="castleFunkyCandy"
-                prefix="shuffledShops"
+                prefix="shuffledCastleFunky"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="castleFunkySnide"
-                prefix="shuffledShops"
+                prefix="shuffledCastleFunky"
                 updateItem={setShop}
             />
             <p></p>
@@ -1260,28 +1260,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="castleCandyCranky"
-                prefix="shuffledShops"
+                prefix="shuffledCastleCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="castleCandyFunky"
-                prefix="shuffledShops"
+                prefix="shuffledCastleCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="herself (no switch)"
                 storeKey="castleCandyNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledCastleCandy"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="Snide"
                 storeKey="castleCandySnide"
-                prefix="shuffledShops"
+                prefix="shuffledCastleCandy"
                 updateItem={setShop}
             />
             <p></p>
@@ -1290,28 +1290,28 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={crankyIcon}
                 title="Cranky"
                 storeKey="castleSnideCranky"
-                prefix="shuffledShops"
+                prefix="shuffledCastleSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={funkyIcon}
                 title="Funky"
                 storeKey="castleSnideFunky"
-                prefix="shuffledShops"
+                prefix="shuffledCastleSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={candyIcon}
                 title="Candy"
                 storeKey="castleSnideCandy"
-                prefix="shuffledShops"
+                prefix="shuffledCastleSnide"
                 updateItem={setShop}
             />
             <SimpleRadioIcon
                 imgUrl={snideIcon}
                 title="himself (no switch)"
                 storeKey="castleSnideNoSwitch"
-                prefix="shuffledShops"
+                prefix="shuffledCastleSnide"
                 updateItem={setShop}
             />
             <p></p>

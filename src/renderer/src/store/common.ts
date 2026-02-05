@@ -1039,7 +1039,33 @@ interface ShopCollection {
 }
 
 export interface ShopState {
-  shuffledIslesShops: ShopCollection["islesSwitchUp"]
+  shuffledIslesShops: ShopCollection["islesSwitchUp"],
+  shuffledJapesCranky: ShopCollection["japesCrankyNoSwitch,japesCrankyFunky,japesCrankySnide"],
+  shuffledJapesFunky: ShopCollection["japesFunkyCranky,japesFunkyNoSwitch,japesFunkySnide"],
+  shuffledJapesSnide: ShopCollection["japesSnideCranky,japesSnideFunky,japesSnideNoSwitch"],
+  shuffledAztecCranky: ShopCollection["aztecCrankyNoSwitch,aztecCrankyFunky,aztecCrankyCandy,aztecCrankySnide"],
+  shuffledAztecFunky: ShopCollection["aztecFunkyCranky,aztecFunkyNoSwitch,aztecFunkyCandy,aztecFunkySnide"],
+  shuffledAztecCandy: ShopCollection["aztecCandyCranky,aztecCandyFunky,aztecCandyNoSwitch,aztecCandySnide"],
+  shuffledAztecSnide: ShopCollection["aztecSnideCranky,aztecSnideFunky,aztecSnideCandy,aztecSnideNoSwitch"],
+  shuffledFactoryCranky: ShopCollection["factoryCrankyNoSwitch,factoryCrankyFunky,factoryCrankyCandy,factoryCrankySnide"],
+  shuffledFactoryFunky: ShopCollection["factoryFunkyCranky,factoryFunkyNoSwitch,factoryFunkyCandy,factoryFunkySnide"],
+  shuffledFactoryCandy: ShopCollection["factoryCandyCranky,factoryCandyFunky,factoryCandyNoSwitch,factoryCandySnide"],
+  shuffledFactorySnide: ShopCollection["factorySnideCranky,factorySnideFunky,factorySnideCandy,factorySnideNoSwitch"],
+  shuffledGalleonCranky: ShopCollection["galleonCrankyNoSwitch,galleonCrankyFunky,galleonCrankyCandy,galleonCrankySnide"],
+  shuffledGalleonFunky: ShopCollection["galleonFunkyCranky,galleonFunkyNoSwitch,galleonFunkyCandy,galleonFunkySnide"],
+  shuffledGalleonCandy: ShopCollection["galleonCandyCranky,galleonCandyFunky,galleonCandyNoSwitch,galleonCandySnide"],
+  shuffledGalleonSnide: ShopCollection["galleonSnideCranky,galleonSnideFunky,galleonSnideCandy,galleonSnideNoSwitch"],
+  shuffledForestCranky: ShopCollection["forestCrankyNoSwitch,forestCrankyFunky,forestCrankySnide"],
+  shuffledForestFunky: ShopCollection["forestFunkyCranky,forestFunkyNoSwitch,forestFunkySnide"],
+  shuffledForestSnide: ShopCollection["forestSnideCranky,forestSnideFunky,forestSnideNoSwitch"],
+  shuffledCavesCranky: ShopCollection["cavesCrankyNoSwitch,cavesCrankyFunky,cavesCrankyCandy,cavesCrankySnide"],
+  shuffledCavesFunky: ShopCollection["cavesFunkyCranky,cavesFunkyNoSwitch,cavesFunkyCandy,cavesFunkySnide"],
+  shuffledCavesCandy: ShopCollection["cavesCandyCranky,cavesCandyFunky,cavesCandyNoSwitch,cavesCandySnide"],
+  shuffledCavesSnide: ShopCollection["cavesSnideCranky,cavesSnideFunky,cavesSnideCandy,cavesSnideNoSwitch"],
+  shuffledCastleCranky: ShopCollection["castleCrankyNoSwitch,castleCrankyFunky,castleCrankyCandy,castleCrankySnide"],
+  shuffledCastleFunky: ShopCollection["castleFunkyCranky,castleFunkyNoSwitch,castleFunkyCandy,castleFunkySnide"],
+  shuffledCastleCandy: ShopCollection["castleCandyCranky,castleCandyFunky,castleCandyNoSwitch,castleCandySnide"],
+  shuffledCastleSnide: ShopCollection["castleSnideCranky,castleSnideFunky,castleSnideCandy,castleSnideNoSwitch"]
 }
 
 interface ShopActions {
