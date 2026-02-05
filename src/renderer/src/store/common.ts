@@ -1043,7 +1043,7 @@ export interface ShopState {
 }
 
 interface ShopActions {
-  setShop: (id: string, val: boolean) => void
+  setShop: (id: string, val: boolean | number) => void
 }
 
 export type ShopSlice = ShopState & ShopActions
