@@ -555,7 +555,13 @@ const GeneratorSettings: React.FC = () => {
             <p></p>
             <p></p>
             <p>Are Cranky and Snide switched in Isles?</p>
-            <CheckIcon storeKey="islesSwitchUp" prefix="shuffledShops" updateItem={setShop} />
+              <SimpleIcon
+                imgUrl={unknownIcon}
+                title="Well, are they?"
+                storeKey="islesSwitchUp"
+                prefix="shuffledShops"
+                updateItem={setShop}
+              />
             <p></p>
             <p></p>
             <p className="full-grid">Jungle Japes:</p>
