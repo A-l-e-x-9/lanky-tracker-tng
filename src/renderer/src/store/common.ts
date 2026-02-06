@@ -1133,6 +1133,10 @@ interface ShopActions {
   setFactoryFunky: (id: string, val: boolean) => void
   setFactoryCandy: (id: string, val: boolean) => void
   setFactorySnide: (id: string, val: boolean) => void
+  setGalleonCranky: (id: string, val: boolean) => void
+  setGalleonFunky: (id: string, val: boolean) => void
+  setGalleonCandy: (id: string, val: boolean) => void
+  setGalleonSnide: (id: string, val: boolean) => void
 }
 
 export type ShopSlice = ShopState & ShopActions
