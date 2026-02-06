@@ -939,16 +939,22 @@ export type WinConSlice = WinConState & WinConActions
 interface IslesShopCollection {
   islesSwitchUp: boolean
 }
-/*  japesCrankyNoSwitch: boolean
+interface japesCranky {
+  japesCrankyNoSwitch: boolean
   japesCrankyFunky: boolean
   japesCrankySnide: boolean
+}
+interface japesFunky {
   japesFunkyCranky: boolean
   japesFunkyNoSwitch: boolean
   japesFunkySnide: boolean
+}
+interface japesSnide {
   japesSnideCranky: boolean
   japesSnideFunky: boolean
   japesSnideNoSwitch: boolean
-  aztecCrankyNoSwitch: boolean
+}
+/*  aztecCrankyNoSwitch: boolean
   aztecCrankyFunky: boolean
   aztecCrankyCandy: boolean
   aztecCrankySnide: boolean
@@ -1041,10 +1047,10 @@ interface IslesShopCollection {
 
 export interface ShopState {
   shuffledIslesShops: IslesShopCollection
-/*  shuffledJapesCranky: ShopCollection["japesCrankyNoSwitch,japesCrankyFunky,japesCrankySnide"],
-  shuffledJapesFunky: ShopCollection["japesFunkyCranky,japesFunkyNoSwitch,japesFunkySnide"],
-  shuffledJapesSnide: ShopCollection["japesSnideCranky,japesSnideFunky,japesSnideNoSwitch"],
-  shuffledAztecCranky: ShopCollection["aztecCrankyNoSwitch,aztecCrankyFunky,aztecCrankyCandy,aztecCrankySnide"],
+  shuffledJapesCranky: japesCranky
+  shuffledJapesFunky: japesFunky
+  shuffledJapesSnide: japesSnide
+/*  shuffledAztecCranky: ShopCollection["aztecCrankyNoSwitch,aztecCrankyFunky,aztecCrankyCandy,aztecCrankySnide"],
   shuffledAztecFunky: ShopCollection["aztecFunkyCranky,aztecFunkyNoSwitch,aztecFunkyCandy,aztecFunkySnide"],
   shuffledAztecCandy: ShopCollection["aztecCandyCranky,aztecCandyFunky,aztecCandyNoSwitch,aztecCandySnide"],
   shuffledAztecSnide: ShopCollection["aztecSnideCranky,aztecSnideFunky,aztecSnideCandy,aztecSnideNoSwitch"],
@@ -1071,6 +1077,9 @@ export interface ShopState {
 
 interface ShopActions {
   setIslesShops: (id: string, val: boolean) => void
+  setJapesCranky: (id: string, val: boolean) => void
+  setJapesFunky: (id: string, val: boolean) => void
+  setJapesSnide: (id: string, val: boolean) => void
 }
 
 export type ShopSlice = ShopState & ShopActions

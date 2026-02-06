@@ -4,8 +4,8 @@ import { AllSlice, ShopSlice, ShopState, donkResetFns } from './common'
 export const initialShop: ShopState = {
   shuffledIslesShops: {
     islesSwitchUp: false
-  }
-/*  shuffledJapesCranky: {
+  },
+  shuffledJapesCranky: {
     japesCrankyNoSwitch: true,
     japesCrankyFunky: false,
     japesCrankySnide: false
@@ -19,8 +19,8 @@ export const initialShop: ShopState = {
     japesSnideCranky: false,
     japesSnideFunky: false,
     japesSnideNoSwitch: true
-  },
-  shuffledAztecCranky: {
+  }
+/*  shuffledAztecCranky: {
     aztecCrankyNoSwitch: true,
     aztecCrankyFunky: false,
     aztecCrankyCandy: false,
@@ -174,8 +174,78 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
         }
         return state
       })
+    },
+    setJapesCranky: (id, val): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledJapesCranky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledJapesCranky: {
+            ...state.shuffledJapesCranky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledJapesCranky: {
+            ...state.shuffledJapesCranky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setJapesFunky: (id, val): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledJapesFunky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledJapesFunky: {
+            ...state.shuffledJapesFunky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledJapesFunky: {
+            ...state.shuffledJapesFunky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setJapesSnide: (id, val): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledJapesSnide)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledJapesSnide: {
+            ...state.shuffledJapesSnide,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledJapesSnide: {
+            ...state.shuffledJapesSnide,
+            [id]: false
+          }
+        }
+      })
     }
   }
 }
+
 
 export default shopSlice

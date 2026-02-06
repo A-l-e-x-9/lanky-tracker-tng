@@ -50,8 +50,8 @@ import fairyCamIcon from '../../assets/images/filmwave1.png'
 import crankyIcon from '../../assets/images/cranky.png'
 import unknownIcon from '../../assets/images/unknown-small.png'
 import kasplatIcon from '../../assets/images/settings/kasplat.png'
-//import funkyIcon from '../../assets/images/settings/funky.png'
-//import snideIcon from '../../assets/images/snide.png'
+import funkyIcon from '../../assets/images/settings/funky.png'
+import snideIcon from '../../assets/images/snide.png'
 //import candyIcon from '../../assets/images/candy.png'
 
 const customStyles: Modal.Styles = {
@@ -63,8 +63,8 @@ const customStyles: Modal.Styles = {
 
 const GeneratorSettings: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
-  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition, setIslesShops] = useDonkStore(
-    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi, state.setWinCondition, state.setIslesShops])
+  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition, setIslesShops, setJapesCranky, setJapesFunky, setJapesSnide] = useDonkStore(
+    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi, state.setWinCondition, state.setIslesShops, state.setJapesCranky, state.setJapesFunky, state.setJapesSnide])
   )
 
   const openModal = (): void => setOpen(true)
@@ -564,6 +564,79 @@ const GeneratorSettings: React.FC = () => {
               />
             <p></p>
             <p></p>
+            <p className="full-grid">Jungle Japes:</p>
+            <p>Cranky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="himself (no switch)"
+                storeKey="japesCrankyNoSwitch"
+                prefix="shuffledJapesCranky"
+                updateItem={setJapesCranky}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="japesCrankyFunky"
+                prefix="shuffledJapesCranky"
+                updateItem={setJapesCranky}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="japesCrankySnide"
+                prefix="shuffledJapesCranky"
+                updateItem={setJapesCranky}
+            />
+            <p></p>
+            <p></p>
+            <p>Funky swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="japesFunkyCranky"
+                prefix="shuffledJapesFunky"
+                updateItem={setJapesFunky}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="himself (no switch)"
+                storeKey="japesFunkyNoSwitch"
+                prefix="shuffledJapesFunky"
+                updateItem={setJapesFunky}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="Snide"
+                storeKey="japesFunkySnide"
+                prefix="shuffledJapesFunky"
+                updateItem={setJapesFunky}
+            />
+            <p></p>
+            <p></p>
+            <p>Snide swaps with:</p>
+            <SimpleRadioIcon
+                imgUrl={crankyIcon}
+                title="Cranky"
+                storeKey="japesSnideCranky"
+                prefix="shuffledJapesSnide"
+                updateItem={setJapesSnide}
+            />
+            <SimpleRadioIcon
+                imgUrl={funkyIcon}
+                title="Funky"
+                storeKey="japesSnideFunky"
+                prefix="shuffledJapesSnide"
+                updateItem={setJapesSnide}
+            />
+            <SimpleRadioIcon
+                imgUrl={snideIcon}
+                title="himself (no switch)"
+                storeKey="japesSnideNoSwitch"
+                prefix="shuffledJapesSnide"
+                updateItem={setJapesSnide}
+            />
+            <p></p>
+            <p></p>
             </>
             <h3>Fast Barrier Settings</h3>
             <>
@@ -762,80 +835,7 @@ const GeneratorSettings: React.FC = () => {
 
 export default GeneratorSettings
 
-/*            <p className="full-grid">Jungle Japes:</p>
-            <p>Cranky swaps with:</p>
-            <SimpleRadioIcon
-                imgUrl={crankyIcon}
-                title="himself (no switch)"
-                storeKey="japesCrankyNoSwitch"
-                prefix="shuffledJapesCranky"
-                updateItem={setShop}
-            />
-            <SimpleRadioIcon
-                imgUrl={funkyIcon}
-                title="Funky"
-                storeKey="japesCrankyFunky"
-                prefix="shuffledJapesCranky"
-                updateItem={setShop}
-            />
-            <SimpleRadioIcon
-                imgUrl={snideIcon}
-                title="Snide"
-                storeKey="japesCrankySnide"
-                prefix="shuffledJapesCranky"
-                updateItem={setShop}
-            />
-            <p></p>
-            <p></p>
-            <p>Funky swaps with:</p>
-            <SimpleRadioIcon
-                imgUrl={crankyIcon}
-                title="Cranky"
-                storeKey="japesFunkyCranky"
-                prefix="shuffledJapesFunky"
-                updateItem={setShop}
-            />
-            <SimpleRadioIcon
-                imgUrl={funkyIcon}
-                title="himself (no switch)"
-                storeKey="japesFunkyNoSwitch"
-                prefix="shuffledJapesFunky"
-                updateItem={setShop}
-            />
-            <SimpleRadioIcon
-                imgUrl={snideIcon}
-                title="Snide"
-                storeKey="japesFunkySnide"
-                prefix="shuffledJapesFunky"
-                updateItem={setShop}
-            />
-            <p></p>
-            <p></p>
-            <p>Snide swaps with:</p>
-            <SimpleRadioIcon
-                imgUrl={crankyIcon}
-                title="Cranky"
-                storeKey="japesSnideCranky"
-                prefix="shuffledJapesSnide"
-                updateItem={setShop}
-            />
-            <SimpleRadioIcon
-                imgUrl={funkyIcon}
-                title="Funky"
-                storeKey="japesSnideFunky"
-                prefix="shuffledJapesSnide"
-                updateItem={setShop}
-            />
-            <SimpleRadioIcon
-                imgUrl={snideIcon}
-                title="himself (no switch)"
-                storeKey="japesSnideNoSwitch"
-                prefix="shuffledJapesSnide"
-                updateItem={setShop}
-            />
-            <p></p>
-            <p></p>
-            <p className="full-grid">Angry Aztec:</p>
+/*            <p className="full-grid">Angry Aztec:</p>
             <p>Cranky swaps with:</p>
             <SimpleRadioIcon
                 imgUrl={crankyIcon}
