@@ -954,95 +954,141 @@ interface japesSnide {
   japesSnideFunky: boolean
   japesSnideNoSwitch: boolean
 }
+interface aztecCranky {
   aztecCrankyNoSwitch: boolean
   aztecCrankyFunky: boolean
   aztecCrankyCandy: boolean
   aztecCrankySnide: boolean
+}
+interface aztecFunky {
   aztecFunkyCranky: boolean
   aztecFunkyNoSwitch: boolean
   aztecFunkyCandy: boolean
   aztecFunkySnide: boolean
+}
+interface aztecCandy {
   aztecCandyCranky: boolean
   aztecCandyFunky: boolean
   aztecCandyNoSwitch: boolean
   aztecCandySnide: boolean
+}
+interface aztecSnide {
   aztecSnideCranky: boolean
   aztecSnideFunky: boolean
   aztecSnideCandy: boolean
   aztecSnideNoSwitch: boolean
+}
+interface factoryCranky {
   factoryCrankyNoSwitch: boolean
   factoryCrankyFunky: boolean
   factoryCrankyCandy: boolean
   factoryCrankySnide: boolean
+}
+interface factoryFunky {
   factoryFunkyCranky: boolean
   factoryFunkyNoSwitch: boolean
   factoryFunkyCandy: boolean
   factoryFunkySnide: boolean
+}
+interface factoryCandy {
   factoryCandyCranky: boolean
   factoryCandyFunky: boolean
   factoryCandyNoSwitch: boolean
   factoryCandySnide: boolean
+}
+interface factorySnide {
   factorySnideCranky: boolean
   factorySnideFunky: boolean
   factorySnideCandy: boolean
   factorySnideNoSwitch: boolean
+}
+interface galleonCranky {
   galleonCrankyNoSwitch: boolean
   galleonCrankyFunky: boolean
   galleonCrankyCandy: boolean
   galleonCrankySnide: boolean
+}
+interface galleonFunky {
   galleonFunkyCranky: boolean
   galleonFunkyNoSwitch: boolean
   galleonFunkyCandy: boolean
   galleonFunkySnide: boolean
+}
+interface galleonCandy {
   galleonCandyCranky: boolean
   galleonCandyFunky: boolean
   galleonCandyNoSwitch: boolean
   galleonCandySnide: boolean
+}
+interface galleonSnide {
   galleonSnideCranky: boolean
   galleonSnideFunky: boolean
   galleonSnideCandy: boolean
   galleonSnideNoSwitch: boolean
+}
+interface forestCranky {
   forestCrankyNoSwitch: boolean
   forestCrankyFunky: boolean
   forestCrankySnide: boolean
+}
+interface factoryFunky {
   forestFunkyCranky: boolean
   forestFunkyNoSwitch: boolean
   forestFunkySnide: boolean
+}
+interface factorySnide {
   forestSnideCranky: boolean
   forestSnideFunky: boolean
   forestSnideNoSwitch: boolean
+}
+interface cavesCranky {
   cavesCrankyNoSwitch: boolean
   cavesCrankyFunky: boolean
   cavesCrankyCandy: boolean
   cavesCrankySnide: boolean
+}
+interface cavesFunky {
   cavesFunkyCranky: boolean
   cavesFunkyNoSwitch: boolean
   cavesFunkyCandy: boolean
   cavesFunkySnide: boolean
+}
+interface cavesCandy {
   cavesCandyCranky: boolean
   cavesCandyFunky: boolean
   cavesCandyNoSwitch: boolean
   cavesCandySnide: boolean
+}
+interface cavesSnide {
   cavesSnideCranky: boolean
   cavesSnideFunky: boolean
   cavesSnideCandy: boolean
   cavesSnideNoSwitch: boolean
+}
+interface castleCranky {
   castleCrankyNoSwitch: boolean
   castleCrankyFunky: boolean
   castleCrankyCandy: boolean
   castleCrankySnide: boolean
+}
+interface castleFunky {
   castleFunkyCranky: boolean
   castleFunkyNoSwitch: boolean
   castleFunkyCandy: boolean
   castleFunkySnide: boolean
+}
+interface castleCandy {
   castleCandyCranky: boolean
   castleCandyFunky: boolean
   castleCandyNoSwitch: boolean
   castleCandySnide: boolean
+}
+interface castleSnide {
   castleSnideCranky: boolean
   castleSnideFunky: boolean
   castleSnideCandy: boolean
   castleSnideNoSwitch: boolean
+}
 
 export interface ShopState {
   shuffledIslesShops: IslesShopCollection
