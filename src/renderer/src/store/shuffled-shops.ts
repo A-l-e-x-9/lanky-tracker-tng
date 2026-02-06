@@ -175,7 +175,7 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
         return state
       })
     },
-    setJapesCranky: (id, val): void => {
+    setJapesCranky: (id): void => {
       set((state) => {
         const reset: Record<string, boolean> = {}
         for (const k of Object.keys(state.shuffledJapesCranky)) {
@@ -198,7 +198,7 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
         }
       })
     },
-    setJapesFunky: (id, val): void => {
+    setJapesFunky: (id): void => {
       set((state) => {
         const reset: Record<string, boolean> = {}
         for (const k of Object.keys(state.shuffledJapesFunky)) {
@@ -221,7 +221,7 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
         }
       })
     },
-    setJapesSnide: (id, val): void => {
+    setJapesSnide: (id): void => {
       set((state) => {
         const reset: Record<string, boolean> = {}
         for (const k of Object.keys(state.shuffledJapesSnide)) {
