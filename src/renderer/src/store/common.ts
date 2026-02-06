@@ -936,9 +936,10 @@ export type WinConSlice = WinConState & WinConActions
 //#endregion
 
 //Begin shuffled shop region
-interface ShopCollection {
+interface IslesShopCollection {
   islesSwitchUp: boolean
-  japesCrankyNoSwitch: boolean
+}
+/*  japesCrankyNoSwitch: boolean
   japesCrankyFunky: boolean
   japesCrankySnide: boolean
   japesFunkyCranky: boolean
@@ -1036,11 +1037,11 @@ interface ShopCollection {
   castleSnideFunky: boolean
   castleSnideCandy: boolean
   castleSnideNoSwitch: boolean
-}
+}*/
 
 export interface ShopState {
-  shuffledIslesShops: ShopCollection["islesSwitchUp"],
-  shuffledJapesCranky: ShopCollection["japesCrankyNoSwitch,japesCrankyFunky,japesCrankySnide"],
+  shuffledIslesShops: IslesShopCollection
+/*  shuffledJapesCranky: ShopCollection["japesCrankyNoSwitch,japesCrankyFunky,japesCrankySnide"],
   shuffledJapesFunky: ShopCollection["japesFunkyCranky,japesFunkyNoSwitch,japesFunkySnide"],
   shuffledJapesSnide: ShopCollection["japesSnideCranky,japesSnideFunky,japesSnideNoSwitch"],
   shuffledAztecCranky: ShopCollection["aztecCrankyNoSwitch,aztecCrankyFunky,aztecCrankyCandy,aztecCrankySnide"],
@@ -1065,11 +1066,11 @@ export interface ShopState {
   shuffledCastleCranky: ShopCollection["castleCrankyNoSwitch,castleCrankyFunky,castleCrankyCandy,castleCrankySnide"],
   shuffledCastleFunky: ShopCollection["castleFunkyCranky,castleFunkyNoSwitch,castleFunkyCandy,castleFunkySnide"],
   shuffledCastleCandy: ShopCollection["castleCandyCranky,castleCandyFunky,castleCandyNoSwitch,castleCandySnide"],
-  shuffledCastleSnide: ShopCollection["castleSnideCranky,castleSnideFunky,castleSnideCandy,castleSnideNoSwitch"]
+  shuffledCastleSnide: ShopCollection["castleSnideCranky,castleSnideFunky,castleSnideCandy,castleSnideNoSwitch"]*/
 }
 
 interface ShopActions {
-  setShop: (id: string, val: boolean) => void
+  setIslesShops: (id: string, val: boolean) => void
 }
 
 export type ShopSlice = ShopState & ShopActions
