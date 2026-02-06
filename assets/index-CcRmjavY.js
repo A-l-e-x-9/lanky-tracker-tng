@@ -10523,149 +10523,176 @@ const winConSlice = (set) => {
   };
 };
 const initialShop = {
-  shuffledShops: {
-    islesSwitchUp: false,
-    japesCrankyNoSwitch: true,
-    japesCrankyFunky: false,
-    japesCrankySnide: false,
-    japesFunkyCranky: false,
-    japesFunkyNoSwitch: true,
-    japesFunkySnide: false,
-    japesSnideCranky: false,
-    japesSnideFunky: false,
-    japesSnideNoSwitch: true,
-    aztecCrankyNoSwitch: true,
-    aztecCrankyFunky: false,
-    aztecCrankyCandy: false,
-    aztecCrankySnide: false,
-    aztecFunkyCranky: false,
-    aztecFunkyNoSwitch: true,
-    aztecFunkyCandy: false,
-    aztecFunkySnide: false,
-    aztecCandyCranky: false,
-    aztecCandyFunky: false,
-    aztecCandyNoSwitch: true,
-    aztecCandySnide: false,
-    aztecSnideCranky: false,
-    aztecSnideFunky: false,
-    aztecSnideCandy: false,
-    aztecSnideNoSwitch: true,
-    factoryCrankyNoSwitch: true,
-    factoryCrankyFunky: false,
-    factoryCrankyCandy: false,
-    factoryCrankySnide: false,
-    factoryFunkyCranky: false,
-    factoryFunkyNoSwitch: true,
-    factoryFunkyCandy: false,
-    factoryFunkySnide: false,
-    factoryCandyCranky: false,
-    factoryCandyFunky: false,
-    factoryCandyNoSwitch: true,
-    factoryCandySnide: false,
-    factorySnideCranky: false,
-    factorySnideFunky: false,
-    factorySnideCandy: false,
-    factorySnideNoSwitch: true,
-    galleonCrankyNoSwitch: true,
-    galleonCrankyFunky: false,
-    galleonCrankyCandy: false,
-    galleonCrankySnide: false,
-    galleonFunkyCranky: false,
-    galleonFunkyNoSwitch: true,
-    galleonFunkyCandy: false,
-    galleonFunkySnide: false,
-    galleonCandyCranky: false,
-    galleonCandyFunky: false,
-    galleonCandyNoSwitch: true,
-    galleonCandySnide: false,
-    galleonSnideCranky: false,
-    galleonSnideFunky: false,
-    galleonSnideCandy: false,
-    galleonSnideNoSwitch: true,
-    forestCrankyNoSwitch: true,
-    forestCrankyFunky: false,
-    forestCrankySnide: false,
-    forestFunkyCranky: false,
-    forestFunkyNoSwitch: true,
-    forestFunkySnide: false,
-    forestSnideCranky: false,
-    forestSnideFunky: false,
-    forestSnideNoSwitch: true,
-    cavesCrankyNoSwitch: true,
-    cavesCrankyFunky: false,
-    cavesCrankyCandy: false,
-    cavesCrankySnide: false,
-    cavesFunkyCranky: false,
-    cavesFunkyNoSwitch: true,
-    cavesFunkyCandy: false,
-    cavesFunkySnide: false,
-    cavesCandyCranky: false,
-    cavesCandyFunky: false,
-    cavesCandyNoSwitch: true,
-    cavesCandySnide: false,
-    cavesSnideCranky: false,
-    cavesSnideFunky: false,
-    cavesSnideCandy: false,
-    cavesSnideNoSwitch: true,
-    castleCrankyNoSwitch: true,
-    castleCrankyFunky: false,
-    castleCrankyCandy: false,
-    castleCrankySnide: false,
-    castleFunkyCranky: false,
-    castleFunkyNoSwitch: true,
-    castleFunkyCandy: false,
-    castleFunkySnide: false,
-    castleCandyCranky: false,
-    castleCandyFunky: false,
-    castleCandyNoSwitch: true,
-    castleCandySnide: false,
-    castleSnideCranky: false,
-    castleSnideFunky: false,
-    castleSnideCandy: false,
-    castleSnideNoSwitch: true
+  shuffledIslesShops: {
+    islesSwitchUp: false
   }
+  /*  shuffledJapesCranky: {
+      japesCrankyNoSwitch: true,
+      japesCrankyFunky: false,
+      japesCrankySnide: false
+    },
+    shuffledJapesFunky: {
+      japesFunkyCranky: false,
+      japesFunkyNoSwitch: true,
+      japesFunkySnide: false
+    },
+    shuffledJapesSnide: {
+      japesSnideCranky: false,
+      japesSnideFunky: false,
+      japesSnideNoSwitch: true
+    },
+    shuffledAztecCranky: {
+      aztecCrankyNoSwitch: true,
+      aztecCrankyFunky: false,
+      aztecCrankyCandy: false,
+      aztecCrankySnide: false
+    },
+    shuffledAztecFunky: {
+      aztecFunkyCranky: false,
+      aztecFunkyNoSwitch: true,
+      aztecFunkyCandy: false,
+      aztecFunkySnide: false
+    },
+    shuffledAztecCandy: {
+      aztecCandyCranky: false,
+      aztecCandyFunky: false,
+      aztecCandyNoSwitch: true,
+      aztecCandySnide: false
+    },
+    shuffledAztecSnide: {
+      aztecSnideCranky: false,
+      aztecSnideFunky: false,
+      aztecSnideCandy: false,
+      aztecSnideNoSwitch: true
+    },
+    shuffledFactoryCranky: {
+      factoryCrankyNoSwitch: true,
+      factoryCrankyFunky: false,
+      factoryCrankyCandy: false,
+      factoryCrankySnide: false
+    },
+    shuffledFactoryFunky: {
+      factoryFunkyCranky: false,
+      factoryFunkyNoSwitch: true,
+      factoryFunkyCandy: false,
+      factoryFunkySnide: false,
+    },
+    shuffledFactoryCandy: {
+      factoryCandyCranky: false,
+      factoryCandyFunky: false,
+      factoryCandyNoSwitch: true,
+      factoryCandySnide: false
+    },
+    shuffledFactorySnide: {
+      factorySnideCranky: false,
+      factorySnideFunky: false,
+      factorySnideCandy: false,
+      factorySnideNoSwitch: true
+    },
+    shuffledGalleonCranky: {
+      galleonCrankyNoSwitch: true,
+      galleonCrankyFunky: false,
+      galleonCrankyCandy: false,
+      galleonCrankySnide: false
+    },
+    shuffledGalleonFunky: {
+      galleonFunkyCranky: false,
+      galleonFunkyNoSwitch: true,
+      galleonFunkyCandy: false,
+      galleonFunkySnide: false
+    },
+    shuffledGalleonCandy: {
+      galleonCandyCranky: false,
+      galleonCandyFunky: false,
+      galleonCandyNoSwitch: true,
+      galleonCandySnide: false
+    },
+    shuffledGalleonSnide: {
+      galleonSnideCranky: false,
+      galleonSnideFunky: false,
+      galleonSnideCandy: false,
+      galleonSnideNoSwitch: true
+    },
+    shuffledForestCranky: {
+      forestCrankyNoSwitch: true,
+      forestCrankyFunky: false,
+      forestCrankySnide: false
+    },
+    shuffledForestFunky: {
+      forestFunkyCranky: false,
+      forestFunkyNoSwitch: true,
+      forestFunkySnide: false
+    },
+    shuffledForestSnide: {
+      forestSnideCranky: false,
+      forestSnideFunky: false,
+      forestSnideNoSwitch: true
+    },
+    shuffledCavesCranky: {
+      cavesCrankyNoSwitch: true,
+      cavesCrankyFunky: false,
+      cavesCrankyCandy: false,
+      cavesCrankySnide: false
+    },
+    shuffledCavesFunky: {
+      cavesFunkyCranky: false,
+      cavesFunkyNoSwitch: true,
+      cavesFunkyCandy: false,
+      cavesFunkySnide: false
+    },
+    shuffledCavesCandy: {
+      cavesCandyCranky: false,
+      cavesCandyFunky: false,
+      cavesCandyNoSwitch: true,
+      cavesCandySnide: false
+    },
+    shuffledCavesSnide: {
+      cavesSnideCranky: false,
+      cavesSnideFunky: false,
+      cavesSnideCandy: false,
+      cavesSnideNoSwitch: true
+    },
+    shuffledCastleCranky: {
+      castleCrankyNoSwitch: true,
+      castleCrankyFunky: false,
+      castleCrankyCandy: false,
+      castleCrankySnide: false
+    },
+    shuffledCastleFunky: {
+      castleFunkyCranky: false,
+      castleFunkyNoSwitch: true,
+      castleFunkyCandy: false,
+      castleFunkySnide: false
+    },
+    shuffledCastleCandy: {
+      castleCandyCranky: false,
+      castleCandyFunky: false,
+      castleCandyNoSwitch: true,
+      castleCandySnide: false
+    },
+    shuffledCastleSnide: {
+      castleSnideCranky: false,
+      castleSnideFunky: false,
+      castleSnideCandy: false,
+      castleSnideNoSwitch: true
+    }*/
 };
 const shopSlice = (set) => {
   donkResetFns.add(() => set(initialShop));
   return {
     ...initialShop,
-    setShop: (id2, val) => {
+    setIslesShops: (id2, val) => {
       set((state) => {
-        if (state.shuffledShops.islesSwitchUp) {
-          const target = {};
-          target[id2] = val;
-          state = {
-            ...state,
-            shuffledShops: {
-              ...state.shuffledShops,
-              ...target
-            }
-          };
-          return state;
-        }
-        if (val) {
-          const reset = {};
-          for (const k2 of Object.keys(state.shuffledShops)) {
-            if (k2 === "islesSwitchUp")
-              continue;
-            reset[k2] = false;
-          }
-          reset[id2] = true;
-          return {
-            ...state,
-            shuffledShops: {
-              ...state.shuffledShops,
-              ...reset
-            }
-          };
-        }
-        return {
+        const target = {};
+        target[id2] = val;
+        state = {
           ...state,
-          shuffledShops: {
-            ...state.shuffledShops,
-            [id2]: false
+          shuffledIslesShops: {
+            ...state.shuffledIslesShops,
+            ...target
           }
         };
+        return state;
       });
     }
   };
@@ -47715,7 +47742,7 @@ const blueprintIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAM
 const tinyBpIcon = "data:image/png;base64,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";
 const chunkyBpIcon = "data:image/png;base64,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";
 const crankyIcon = "data:image/png;base64,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";
-const funkyIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAA7CAMAAADsMjIyAAAC91BMVEUAAADw8PAYMDDwmIjwoIjokIAYODgQKCgYMDjo6OgQGBjwqIjIgHAoSEgoQEAoQEjYiHg4GAD4+Pjg4ODIyMjgiHjIiHgvWGBoMACwcGBYKADwsJDQiHjwuJjwkIAwWFgoSFjgiIC4eGiocGCgaFgQMDDAwMCwsLDosJDAeGioaGAQKDB4OABgKAD4wKDQmIjgkIDAgHCIWEhwMADY2Nj4uJjIiHAYOEC4uLigoKDwqJCYYFgwSFjQ0ND4yKAYKDAQGCjomIgwYGAYQEEoOEDIGBiIQBDgqIjYoIjoiIDYiIA4aHAoODgwEADwwJjoqIhIKADwkIjIkIDQiHA4aGg4YGiQYEgYKCiIOABAGACoqKjwwKCYmJi4gGjIeGiwcGgwYGjoSEgAGBhgMAD4sJDAiHCYaFjwWFiIWEDAGBiIGBCQQAD4wJjooIjgoIjgmIbQkIDAiHhAeHi4gHC4cGDQRlyASECwGBaoGBS4FhSYFhSwWBCQSBCAEhBIFgUwGAAoEADwuJDYmIjQmIA6cHWueGWoaFiQYFgoWFjeQliYXUgwSEiISEDQMj1wPTiIGBigFRKQFRJdEhKgWBCQQBDIGBDAGBCgSACIQACAOAD4yKjwsJj4qJCQkJDQoIiIiIhIgIh0bITYkIDQiIDIiICQgICkfHyMeHxAcHiwgHCQcGy4cGigcGCgaGDISFy0QFjQSEjYQEjIPEDYOjqULCzMKCyoWBCgSBCYSBCEPBCAOBB4OBBoMBBwFBCIEBBoEBAAEBB4EAlwOAB4MABoKACQsNiQoMi4sLCQkLDwyKCooKCgkJhwgJj4uJDgsJDgqJDYqIiIcIjYmIDImIA4eICIYIDQkHi4iHBgWHDIgGiwaGioWGjgYGCIYGBwWGDASGCIYFjYWFjAWFjgSEjASEiwSEgYSEh4SECIQEDgOECAQDh4QDiYODiIODDQMDC4MDBYMChoKCjIKBhoKBhwGBi4YBBgMBDQGBCwEBCYSACQSABYGABAAAD00AdiAAAAAXRSTlMAQObYZgAABshJREFUSMeM0jGK7DAMBuDlLyRhkFS6tJtUOYCbQEKSblJmSDvMWaZY2Eu8co/xDvHO8M7x9KZcMssabLDhQ7+M3s7XbX98XvZc1E397Qfr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";
+const shopIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAA7CAMAAADsMjIyAAAC91BMVEUAAADw8PAYMDDwmIjwoIjokIAYODgQKCgYMDjo6OgQGBjwqIjIgHAoSEgoQEAoQEjYiHg4GAD4+Pjg4ODIyMjgiHjIiHgvWGBoMACwcGBYKADwsJDQiHjwuJjwkIAwWFgoSFjgiIC4eGiocGCgaFgQMDDAwMCwsLDosJDAeGioaGAQKDB4OABgKAD4wKDQmIjgkIDAgHCIWEhwMADY2Nj4uJjIiHAYOEC4uLigoKDwqJCYYFgwSFjQ0ND4yKAYKDAQGCjomIgwYGAYQEEoOEDIGBiIQBDgqIjYoIjoiIDYiIA4aHAoODgwEADwwJjoqIhIKADwkIjIkIDQiHA4aGg4YGiQYEgYKCiIOABAGACoqKjwwKCYmJi4gGjIeGiwcGgwYGjoSEgAGBhgMAD4sJDAiHCYaFjwWFiIWEDAGBiIGBCQQAD4wJjooIjgoIjgmIbQkIDAiHhAeHi4gHC4cGDQRlyASECwGBaoGBS4FhSYFhSwWBCQSBCAEhBIFgUwGAAoEADwuJDYmIjQmIA6cHWueGWoaFiQYFgoWFjeQliYXUgwSEiISEDQMj1wPTiIGBigFRKQFRJdEhKgWBCQQBDIGBDAGBCgSACIQACAOAD4yKjwsJj4qJCQkJDQoIiIiIhIgIh0bITYkIDQiIDIiICQgICkfHyMeHxAcHiwgHCQcGy4cGigcGCgaGDISFy0QFjQSEjYQEjIPEDYOjqULCzMKCyoWBCgSBCYSBCEPBCAOBB4OBBoMBBwFBCIEBBoEBAAEBB4EAlwOAB4MABoKACQsNiQoMi4sLCQkLDwyKCooKCgkJhwgJj4uJDgsJDgqJDYqIiIcIjYmIDImIA4eICIYIDQkHi4iHBgWHDIgGiwaGioWGjgYGCIYGBwWGDASGCIYFjYWFjAWFjgSEjASEiwSEgYSEh4SECIQEDgOECAQDh4QDiYODiIODDQMDC4MDBYMChoKCjIKBhoKBhwGBi4YBBgMBDQGBCwEBCYSACQSABYGABAAAD00AdiAAAAAXRSTlMAQObYZgAABshJREFUSMeM0jGK7DAMBuDlLyRhkFS6tJtUOYCbQEKSblJmSDvMWaZY2Eu8co/xDvHO8M7x9KZcMssabLDhQ7+M3s7XbX98XvZc1E397Qfr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";
 const anyInstIcon = "" + new URL("candy-tHELuTmd.png", import.meta.url).href;
 const snideIcon = "data:image/png;base64,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";
 const MoveTable = () => {
@@ -47945,7 +47972,7 @@ const MoveTable = () => {
       " ",
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "cranky", title: "Cranky Kong", imgUrl: crankyIcon, prefix: "moves", updateItem: setMove }),
       " ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "funky", title: "New Funky Mode!", imgUrl: funkyIcon, prefix: "moves", updateItem: setMove }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "funky", title: "New Funky Mode!", imgUrl: shopIcon, prefix: "moves", updateItem: setMove }),
       " ",
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "candy", title: "Candy Kong", imgUrl: anyInstIcon, prefix: "moves", updateItem: setMove }),
       " ",
@@ -48910,8 +48937,8 @@ const customStyles = {
 };
 const GeneratorSettings = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
-  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition, setShop] = useDonkStore(
-    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi, state.setWinCondition, state.setShop])
+  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition, setIslesShops] = useDonkStore(
+    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi, state.setWinCondition, state.setIslesShops])
   );
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
@@ -48978,7 +49005,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: funkyIcon,
+                  imgUrl: shopIcon,
                   title: "Puts Cranky, Funky, and Candy Kong's shops in the pool.",
                   storeKey: "poolShops",
                   prefix: "settings",
@@ -49566,1056 +49593,11 @@ const GeneratorSettings = () => {
                   imgUrl: unknownIcon$1,
                   title: "Well, are they?",
                   storeKey: "islesSwitchUp",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
+                  prefix: "shuffledIslesShops",
+                  updateItem: setIslesShops
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Jungle Japes:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "japesCrankyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "japesCrankyFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "japesCrankySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "japesFunkyCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "japesFunkyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "japesFunkySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "japesSnideCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "japesSnideFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "japesSnideNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Angry Aztec:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "aztecCrankyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "aztecCrankyFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "aztecCrankyCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "aztecCrankySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "aztecFunkyCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "aztecFunkyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "aztecFunkyCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "aztecFunkySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "aztecCandyCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "aztecCandyFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "herself (no switch)",
-                  storeKey: "aztecCandyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "aztecCandySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "aztecSnideCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "aztecSnideFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "aztecSnideCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "aztecSnideNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Frantic Factory:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "factoryCrankyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "factoryCrankyFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "factoryCrankyCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "factoryCrankySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "factoryFunkyCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "factoryFunkyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "factoryFunkyCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "factoryFunkySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "factoryCandyCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "factoryCandyFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "herself (no switch)",
-                  storeKey: "factoryCandyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "factoryCandySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "factorySnideCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "factorySnideFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "factorySnideCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "factorySnideNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Gloomy Galleon:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "galleonCrankyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "galleonCrankyFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "galleonCrankyCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "galleonCrankySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "galleonFunkyCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "galleonFunkyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "galleonFunkyCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "galleonFunkySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "galleonCandyCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "galleonCandyFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "herself (no switch)",
-                  storeKey: "galleonCandyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "galleonCandySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "galleonSnideCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "galleonSnideFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "galleonSnideCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "galleonSnideNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Fungi Forest:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "forestCrankyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "forestCrankyFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "forestCrankySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "forestFunkyCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "forestFunkyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "forestFunkySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "forestSnideCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "forestSnideFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "forestSnideNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Crystal Caves:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "cavesCrankyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "cavesCrankyFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "cavesCrankyCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "cavesCrankySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "cavesFunkyCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "cavesFunkyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "cavesFunkyCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "cavesFunkySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "cavesCandyCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "cavesCandyFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "herself (no switch)",
-                  storeKey: "cavesCandyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "cavesCandySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "cavesSnideCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "cavesSnideFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "cavesSnideCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "cavesSnideNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Creepy Castle:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "castleCrankyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "castleCrankyFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "castleCrankyCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "castleCrankySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "castleFunkyCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "castleFunkyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "castleFunkyCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "castleFunkySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "castleCandyCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "castleCandyFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "herself (no switch)",
-                  storeKey: "castleCandyNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "castleCandySnide",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "castleSnideCranky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "castleSnideFunky",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "castleSnideCandy",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "castleSnideNoSwitch",
-                  prefix: "shuffledShops",
-                  updateItem: setShop
-                }
-              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", {})
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fast Barrier Settings" }),
