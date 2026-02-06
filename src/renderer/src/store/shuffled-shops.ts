@@ -19,8 +19,8 @@ export const initialShop: ShopState = {
     japesSnideCranky: false,
     japesSnideFunky: false,
     japesSnideNoSwitch: true
-  }
-/*  shuffledAztecCranky: {
+  },
+  shuffledAztecCranky: {
     aztecCrankyNoSwitch: true,
     aztecCrankyFunky: false,
     aztecCrankyCandy: false,
@@ -154,7 +154,7 @@ export const initialShop: ShopState = {
     castleSnideFunky: false,
     castleSnideCandy: false,
     castleSnideNoSwitch: true
-  }*/
+  }
 }
 
 const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {

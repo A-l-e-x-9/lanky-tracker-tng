@@ -954,7 +954,7 @@ interface japesSnide {
   japesSnideFunky: boolean
   japesSnideNoSwitch: boolean
 }
-/*  aztecCrankyNoSwitch: boolean
+  aztecCrankyNoSwitch: boolean
   aztecCrankyFunky: boolean
   aztecCrankyCandy: boolean
   aztecCrankySnide: boolean
@@ -1043,14 +1043,14 @@ interface japesSnide {
   castleSnideFunky: boolean
   castleSnideCandy: boolean
   castleSnideNoSwitch: boolean
-}*/
+}
 
 export interface ShopState {
   shuffledIslesShops: IslesShopCollection
   shuffledJapesCranky: japesCranky
   shuffledJapesFunky: japesFunky
   shuffledJapesSnide: japesSnide
-/*  shuffledAztecCranky: ShopCollection["aztecCrankyNoSwitch,aztecCrankyFunky,aztecCrankyCandy,aztecCrankySnide"],
+  shuffledAztecCranky: ShopCollection["aztecCrankyNoSwitch,aztecCrankyFunky,aztecCrankyCandy,aztecCrankySnide"],
   shuffledAztecFunky: ShopCollection["aztecFunkyCranky,aztecFunkyNoSwitch,aztecFunkyCandy,aztecFunkySnide"],
   shuffledAztecCandy: ShopCollection["aztecCandyCranky,aztecCandyFunky,aztecCandyNoSwitch,aztecCandySnide"],
   shuffledAztecSnide: ShopCollection["aztecSnideCranky,aztecSnideFunky,aztecSnideCandy,aztecSnideNoSwitch"],
@@ -1072,7 +1072,7 @@ export interface ShopState {
   shuffledCastleCranky: ShopCollection["castleCrankyNoSwitch,castleCrankyFunky,castleCrankyCandy,castleCrankySnide"],
   shuffledCastleFunky: ShopCollection["castleFunkyCranky,castleFunkyNoSwitch,castleFunkyCandy,castleFunkySnide"],
   shuffledCastleCandy: ShopCollection["castleCandyCranky,castleCandyFunky,castleCandyNoSwitch,castleCandySnide"],
-  shuffledCastleSnide: ShopCollection["castleSnideCranky,castleSnideFunky,castleSnideCandy,castleSnideNoSwitch"]*/
+  shuffledCastleSnide: ShopCollection["castleSnideCranky,castleSnideFunky,castleSnideCandy,castleSnideNoSwitch"]
 }
 
 interface ShopActions {

@@ -637,205 +637,7 @@ const GeneratorSettings: React.FC = () => {
             />
             <p></p>
             <p></p>
-            </>
-            <h3>Fast Barrier Settings</h3>
-            <>
-              <p>Japes Tunnel Gates?</p>
-              <SimpleIcon
-                imgUrl={coconutIcon}
-                title="Turn this on if the three gates that open after rescuing Diddy are pre-opened. Else, you'll need to do the &quot;freeing Diddy Kong&quot; GB to access Cranky/one shop and the Hive area, with all the nonsense that entails."
-                storeKey="japesCoconutGates"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Japes Hive Gate?</p>
-              <SimpleIcon
-                imgUrl={featherIcon}
-                title="Turn this on if the Hive Area is open. Else, you'll need Tiny and Feathers (by default, subject to Switchsanity) or pre-activated Bananaports to go there."
-                storeKey="japesHiveGate"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Tiny Temple Ice?</p>
-              <SimpleIcon
-                imgUrl={guitarIcon}
-                title="Turn this on if the ice on the pool in Aztec's Tiny Temple is already melted to start the seed; else, you will additionally need Diddy and Guitar to do certain checks there."
-                storeKey="aztecIce"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Aztec Back Access?</p>
-              <SimpleIcon
-                imgUrl={guitarIcon}
-                title="Turn this on if the big door to the second half of Aztec is pre-opened. Else, you'll need Diddy and Guitar (by default) as well as Vines and Climbing, or pre-activated Bananaports."
-                storeKey="aztecBack"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Aztec 5 Door Temple?</p>
-              <SimpleIcon
-                imgUrl={rocketIcon}
-                title="Turn this on if the 5-Door/Get Out Temple's switches are pre-spawned; else, you will need Diddy, Peanuts, Jetbarrel, and the appropriate Slam to do all checks in there."
-                storeKey="aztec5DoorTemple"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Aztec Llama Temple?</p>
-              <SimpleIcon
-                imgUrl={coconutIcon}
-                title="Turn this on if the three switches to get into the Llama Temple are pre-spawned; else, you will need DK and Blast to do all checks inside."
-                storeKey="aztecLlamaTemple"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Factory Production Power?</p>
-              <SimpleIcon
-                imgUrl={grabIcon}
-                title="Turn on if Prod Room is pre-activated. Else, you will need DK, Coconuts, and Grab to do the Prod Room checks."
-                storeKey="factoryProduction"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Factory Testing Area?</p>
-              <SimpleIcon
-                imgUrl={slamIcon}
-                title="Turn on if the upper half of Factory is pre-opened. Else, you will need a Simian Slam to explore that side."
-                storeKey="factoryTesting"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Galleon Lighthouse Area?</p>
-              <SimpleIcon
-                imgUrl={coconutIcon}
-                title="Turn this on if the lighthouse area is already open to start. Else, you will need a gun, Coconuts by default."
-                storeKey="galleonLighthouse"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Galleon Lighthouse Power?</p>
-              <SimpleIcon
-                imgUrl={grabIcon}
-                title="Turn this on if Gloomy Galleon's lighthouse is already on and the ship is already sailing when you start the level. Else, you will need DK, Climbing, and Grab to do any checks on the ship."
-                storeKey="galleonSeasick"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Galleon Outskirts Area?</p>
-              <SimpleIcon
-                imgUrl={peanutIcon}
-                title="Turn this on if you can access the shipwreck area. Else, you will need a gun to do so, Peanuts by default."
-                storeKey="galleonOutskirts"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Treasure Room?</p>
-              <SimpleIcon
-                imgUrl={lankyIcon}
-                title="Turn this on if the Treasure Room is already open to start your seed. Else, you will need Lanky to turn into Enguarde in the shipwreck area and jump through a DK star to open it."
-                storeKey="galleonTreasureRoom"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Forest Beanstalk Area?</p>
-              <SimpleIcon
-                imgUrl={beanIcon}
-                title="Turn this on if you can reach Area 2 of the Forest at the start of your seed. Else, you'll need two guns to get through the green tunnel (Feathers and Pineapples by default)."
-                storeKey="forestBeanstalk"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Forest Owl Tree?</p>
-              <SimpleIcon
-                imgUrl={grapeIcon}
-                title="Turn this on if you can reach Area 4 of the Forest by default. Else, you'll need a gun to get through a yellow tunnel from Area 3 (Grapes by default)."
-                storeKey="forestOwlTree"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Caves Igloo Insides?</p>
-              <SimpleIcon
-                imgUrl={rocketIcon}
-                title="Turn this on if the music pads are pre-spawned in front of the 5-Door Igloo in Caves. Else, you'll need Diddy and Jetbarrel to do 5DI checks."
-                storeKey="cavesIgloo"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Ice walls in Caves pre-punched?</p>
-              <SimpleIcon
-                imgUrl={chunkyIcon}
-                title="Turn this on if the ice walls in Caves have already been punched down. Else, you'll need Chunky and Primate Punch to do a few checks."
-                storeKey="cavesWalls"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Castle Crypt rooms pre-opened?</p>
-              <SimpleIcon
-                imgUrl={hardShootIcon}
-                title="Turn this on if the gun-activated gates in Creepy Castle's crypt area have been removed in your seed. Else, you'll need all five guns to do crypt/mausoleum checks."
-                storeKey="castleCrypt"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Roman numeral gates opened in Helm?</p>
-              <SimpleIcon
-                imgUrl={rocketIcon}
-                title="Turn this on if your Helm start is set to Vanilla and the Roman numeral gates are already open. Else, you'll need Gorilla Grab and Jetbarrel to get through Helm. (Not necessary on any other Helm start type.)"
-                storeKey="helmDKStarGates"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-              <p>Primate Punch gates opened in Helm?</p>
-              <SimpleIcon
-                imgUrl={chunkyIcon}
-                title="Turn this on if your Helm start is set to Vanilla and the Primate Punch gates are already down. Else, you'll need Primate Punch to get through Helm. (Not necessary on any other Helm start type.)"
-                storeKey="helmPunchGates"
-                prefix="removeBarriers"
-                updateItem={setBarrier}
-              />
-            </>
-            <h3>Fast Check Settings</h3>
-            <>
-              <p>Fast Factory Arcade?</p>
-              <SimpleIcon
-                imgUrl={dkPadIcon}
-                title="If this is on, then you only have to play DK Arcade once. What would normally be the first reward instead replaces the star at the end of DK's Barrel Blast course in Factory."
-                storeKey="factoryArcade"
-                prefix="fastChecks"
-                updateItem={setFastCheck}
-              />
-              <p>Number of pearls the Mermaid requires:</p>
-              <CountSelector
-                storeKey="galleonMermaid"
-                title="How many Pearls must you give the Mermaid to get her reward?"
-                imgUrl={pearlIcon}
-                prefix="fastChecks"
-                setCount={setFastCheck}
-                maxValue={5}
-              />
-            </>
-            <h3>Glitch Logic Settings</h3>
-            <>
-            <p className="full-grid"><strong>NOW UNDER CONSTRUCTION. AGAIN.</strong></p>
-            </>
-            <h3>UI Settings</h3>
-            <>
-              <p>Group by Regions?</p>
-              <CheckIcon storeKey="groupByRegion" prefix="ui" updateItem={setUi} />
-              <p>Hide unavailable checks?</p>
-              <CheckIcon storeKey="hideRed" prefix="ui" updateItem={setUi} />
-              <p>Hide logic-breaking checks?</p>
-              <CheckIcon storeKey="hideYellow" prefix="ui" updateItem={setUi} />
-            </>
-          </section>
-        </section>
-      </Modal>
-    </span>
-  )
-}
-
-export default GeneratorSettings
-
-/*            <p className="full-grid">Angry Aztec:</p>
+            <p className="full-grid">Angry Aztec:</p>
             <p>Cranky swaps with:</p>
             <SimpleRadioIcon
                 imgUrl={crankyIcon}
@@ -1512,4 +1314,201 @@ export default GeneratorSettings
                 prefix="shuffledCastleSnide"
                 updateItem={setShop}
             />
-            <p></p>*/
+            <p></p>
+            </>
+            <h3>Fast Barrier Settings</h3>
+            <>
+              <p>Japes Tunnel Gates?</p>
+              <SimpleIcon
+                imgUrl={coconutIcon}
+                title="Turn this on if the three gates that open after rescuing Diddy are pre-opened. Else, you'll need to do the &quot;freeing Diddy Kong&quot; GB to access Cranky/one shop and the Hive area, with all the nonsense that entails."
+                storeKey="japesCoconutGates"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Japes Hive Gate?</p>
+              <SimpleIcon
+                imgUrl={featherIcon}
+                title="Turn this on if the Hive Area is open. Else, you'll need Tiny and Feathers (by default, subject to Switchsanity) or pre-activated Bananaports to go there."
+                storeKey="japesHiveGate"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Tiny Temple Ice?</p>
+              <SimpleIcon
+                imgUrl={guitarIcon}
+                title="Turn this on if the ice on the pool in Aztec's Tiny Temple is already melted to start the seed; else, you will additionally need Diddy and Guitar to do certain checks there."
+                storeKey="aztecIce"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Aztec Back Access?</p>
+              <SimpleIcon
+                imgUrl={guitarIcon}
+                title="Turn this on if the big door to the second half of Aztec is pre-opened. Else, you'll need Diddy and Guitar (by default) as well as Vines and Climbing, or pre-activated Bananaports."
+                storeKey="aztecBack"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Aztec 5 Door Temple?</p>
+              <SimpleIcon
+                imgUrl={rocketIcon}
+                title="Turn this on if the 5-Door/Get Out Temple's switches are pre-spawned; else, you will need Diddy, Peanuts, Jetbarrel, and the appropriate Slam to do all checks in there."
+                storeKey="aztec5DoorTemple"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Aztec Llama Temple?</p>
+              <SimpleIcon
+                imgUrl={coconutIcon}
+                title="Turn this on if the three switches to get into the Llama Temple are pre-spawned; else, you will need DK and Blast to do all checks inside."
+                storeKey="aztecLlamaTemple"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Factory Production Power?</p>
+              <SimpleIcon
+                imgUrl={grabIcon}
+                title="Turn on if Prod Room is pre-activated. Else, you will need DK, Coconuts, and Grab to do the Prod Room checks."
+                storeKey="factoryProduction"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Factory Testing Area?</p>
+              <SimpleIcon
+                imgUrl={slamIcon}
+                title="Turn on if the upper half of Factory is pre-opened. Else, you will need a Simian Slam to explore that side."
+                storeKey="factoryTesting"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Galleon Lighthouse Area?</p>
+              <SimpleIcon
+                imgUrl={coconutIcon}
+                title="Turn this on if the lighthouse area is already open to start. Else, you will need a gun, Coconuts by default."
+                storeKey="galleonLighthouse"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Galleon Lighthouse Power?</p>
+              <SimpleIcon
+                imgUrl={grabIcon}
+                title="Turn this on if Gloomy Galleon's lighthouse is already on and the ship is already sailing when you start the level. Else, you will need DK, Climbing, and Grab to do any checks on the ship."
+                storeKey="galleonSeasick"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Galleon Outskirts Area?</p>
+              <SimpleIcon
+                imgUrl={peanutIcon}
+                title="Turn this on if you can access the shipwreck area. Else, you will need a gun to do so, Peanuts by default."
+                storeKey="galleonOutskirts"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Treasure Room?</p>
+              <SimpleIcon
+                imgUrl={lankyIcon}
+                title="Turn this on if the Treasure Room is already open to start your seed. Else, you will need Lanky to turn into Enguarde in the shipwreck area and jump through a DK star to open it."
+                storeKey="galleonTreasureRoom"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Forest Beanstalk Area?</p>
+              <SimpleIcon
+                imgUrl={beanIcon}
+                title="Turn this on if you can reach Area 2 of the Forest at the start of your seed. Else, you'll need two guns to get through the green tunnel (Feathers and Pineapples by default)."
+                storeKey="forestBeanstalk"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Forest Owl Tree?</p>
+              <SimpleIcon
+                imgUrl={grapeIcon}
+                title="Turn this on if you can reach Area 4 of the Forest by default. Else, you'll need a gun to get through a yellow tunnel from Area 3 (Grapes by default)."
+                storeKey="forestOwlTree"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Caves Igloo Insides?</p>
+              <SimpleIcon
+                imgUrl={rocketIcon}
+                title="Turn this on if the music pads are pre-spawned in front of the 5-Door Igloo in Caves. Else, you'll need Diddy and Jetbarrel to do 5DI checks."
+                storeKey="cavesIgloo"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Ice walls in Caves pre-punched?</p>
+              <SimpleIcon
+                imgUrl={chunkyIcon}
+                title="Turn this on if the ice walls in Caves have already been punched down. Else, you'll need Chunky and Primate Punch to do a few checks."
+                storeKey="cavesWalls"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Castle Crypt rooms pre-opened?</p>
+              <SimpleIcon
+                imgUrl={hardShootIcon}
+                title="Turn this on if the gun-activated gates in Creepy Castle's crypt area have been removed in your seed. Else, you'll need all five guns to do crypt/mausoleum checks."
+                storeKey="castleCrypt"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Roman numeral gates opened in Helm?</p>
+              <SimpleIcon
+                imgUrl={rocketIcon}
+                title="Turn this on if your Helm start is set to Vanilla and the Roman numeral gates are already open. Else, you'll need Gorilla Grab and Jetbarrel to get through Helm. (Not necessary on any other Helm start type.)"
+                storeKey="helmDKStarGates"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+              <p>Primate Punch gates opened in Helm?</p>
+              <SimpleIcon
+                imgUrl={chunkyIcon}
+                title="Turn this on if your Helm start is set to Vanilla and the Primate Punch gates are already down. Else, you'll need Primate Punch to get through Helm. (Not necessary on any other Helm start type.)"
+                storeKey="helmPunchGates"
+                prefix="removeBarriers"
+                updateItem={setBarrier}
+              />
+            </>
+            <h3>Fast Check Settings</h3>
+            <>
+              <p>Fast Factory Arcade?</p>
+              <SimpleIcon
+                imgUrl={dkPadIcon}
+                title="If this is on, then you only have to play DK Arcade once. What would normally be the first reward instead replaces the star at the end of DK's Barrel Blast course in Factory."
+                storeKey="factoryArcade"
+                prefix="fastChecks"
+                updateItem={setFastCheck}
+              />
+              <p>Number of pearls the Mermaid requires:</p>
+              <CountSelector
+                storeKey="galleonMermaid"
+                title="How many Pearls must you give the Mermaid to get her reward?"
+                imgUrl={pearlIcon}
+                prefix="fastChecks"
+                setCount={setFastCheck}
+                maxValue={5}
+              />
+            </>
+            <h3>Glitch Logic Settings</h3>
+            <>
+            <p className="full-grid"><strong>NOW UNDER CONSTRUCTION. AGAIN.</strong></p>
+            </>
+            <h3>UI Settings</h3>
+            <>
+              <p>Group by Regions?</p>
+              <CheckIcon storeKey="groupByRegion" prefix="ui" updateItem={setUi} />
+              <p>Hide unavailable checks?</p>
+              <CheckIcon storeKey="hideRed" prefix="ui" updateItem={setUi} />
+              <p>Hide logic-breaking checks?</p>
+              <CheckIcon storeKey="hideYellow" prefix="ui" updateItem={setUi} />
+            </>
+          </section>
+        </section>
+      </Modal>
+    </span>
+  )
+}
+
+export default GeneratorSettings
