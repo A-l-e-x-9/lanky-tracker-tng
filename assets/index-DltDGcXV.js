@@ -13588,59 +13588,57 @@ const Vanilla$7 = () => {
   const kremAscent = useIslesKremAscent();
   const cranky = useCranky();
   const snide = useSnide();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 110,
-        baseName: "Isles Cranky",
-        level: "DK Isles",
-        region: "Shops",
-        inLogic: cranky
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 140,
-        baseName: "Turn in Isles Blueprint for",
-        level: "DK Isles",
-        region: "Shops",
-        inLogic: kremAscent && snide
-      }
-    )
-  ] });
-};
-const Shuffled$I = () => {
-  const kremAscent = useIslesKremAscent();
-  const cranky = useCranky();
-  const snide = useSnide();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 140,
-        baseName: "Isles Cranky Location",
-        level: "DK Isles",
-        region: "Shops",
-        inLogic: cranky
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 170,
-        baseName: "Isles Snide Location",
-        level: "DK Isles",
-        region: "Shops",
-        inLogic: kremAscent && snide
-      }
-    )
-  ] });
+  const shuffledShops = useDonkStore(useShallow((state) => state.shuffledIslesShops.islesSwitchUp));
+  if (shuffledShops) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        ShopGenerator,
+        {
+          baseId: 110,
+          baseName: "Isles Cranky",
+          level: "DK Isles",
+          region: "Shops",
+          inLogic: kremAscent && cranky
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        ShopGenerator,
+        {
+          baseId: 140,
+          baseName: "Turn in Isles Blueprint for",
+          level: "DK Isles",
+          region: "Shops",
+          inLogic: snide
+        }
+      )
+    ] });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        ShopGenerator,
+        {
+          baseId: 110,
+          baseName: "Isles Cranky",
+          level: "DK Isles",
+          region: "Shops",
+          inLogic: cranky
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        ShopGenerator,
+        {
+          baseId: 140,
+          baseName: "Turn in Isles Blueprint for",
+          level: "DK Isles",
+          region: "Shops",
+          inLogic: kremAscent && snide
+        }
+      )
+    ] });
+  }
 };
 const ShopLocations$7 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$I, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {});
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {}) });
 };
 const WrinklyPool = ({ children }) => usePoolWrinkly() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const AztecLobbyDK = () => {
