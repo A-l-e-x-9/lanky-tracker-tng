@@ -4,8 +4,8 @@ import { AllSlice, ShopSlice, ShopState, donkResetFns } from './common'
 export const initialShop: ShopState = {
   shuffledIslesShops: {
     islesSwitchUp: false
-  },
-  shuffledJapesCranky: {
+  }
+/*  shuffledJapesCranky: {
     japesCrankyNoSwitch: true,
     japesCrankyFunky: false,
     japesCrankySnide: false
@@ -154,7 +154,7 @@ export const initialShop: ShopState = {
     castleSnideFunky: false,
     castleSnideCandy: false,
     castleSnideNoSwitch: true
-  }
+  }*/
 }
 
 const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {

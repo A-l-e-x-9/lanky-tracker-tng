@@ -50,9 +50,9 @@ import fairyCamIcon from '../../assets/images/filmwave1.png'
 import crankyIcon from '../../assets/images/cranky.png'
 import unknownIcon from '../../assets/images/unknown-small.png'
 import kasplatIcon from '../../assets/images/settings/kasplat.png'
-import funkyIcon from '../../assets/images/settings/funky.png'
-import snideIcon from '../../assets/images/snide.png'
-import candyIcon from '../../assets/images/candy.png'
+//import funkyIcon from '../../assets/images/settings/funky.png'
+//import snideIcon from '../../assets/images/snide.png'
+//import candyIcon from '../../assets/images/candy.png'
 
 const customStyles: Modal.Styles = {
   content: {
