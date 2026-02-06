@@ -1103,10 +1103,10 @@ export interface ShopState {
   shuffledFactoryFunky: factoryFunky
   shuffledFactoryCandy: factoryCandy
   shuffledFactorySnide: factorySnide
-  shuffledGalleonCranky: ShopCollection["galleonCrankyNoSwitch,galleonCrankyFunky,galleonCrankyCandy,galleonCrankySnide"],
-  shuffledGalleonFunky: ShopCollection["galleonFunkyCranky,galleonFunkyNoSwitch,galleonFunkyCandy,galleonFunkySnide"],
-  shuffledGalleonCandy: ShopCollection["galleonCandyCranky,galleonCandyFunky,galleonCandyNoSwitch,galleonCandySnide"],
-  shuffledGalleonSnide: ShopCollection["galleonSnideCranky,galleonSnideFunky,galleonSnideCandy,galleonSnideNoSwitch"],
+  shuffledGalleonCranky: galleonCranky
+  shuffledGalleonFunky: galleonFunky
+  shuffledGalleonCandy: galleonCandy
+  shuffledGalleonSnide: galleonSnide
   shuffledForestCranky: ShopCollection["forestCrankyNoSwitch,forestCrankyFunky,forestCrankySnide"],
   shuffledForestFunky: ShopCollection["forestFunkyCranky,forestFunkyNoSwitch,forestFunkySnide"],
   shuffledForestSnide: ShopCollection["forestSnideCranky,forestSnideFunky,forestSnideNoSwitch"],

@@ -427,6 +427,98 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
           }
         }
       })
+    },
+    setGalleonCranky: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledGalleonCranky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledGalleonCranky: {
+            ...state.shuffledGalleonCranky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledGalleonCranky: {
+            ...state.shuffledGalleonCranky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setGalleonFunky: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledGalleonFunky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledGalleonFunky: {
+            ...state.shuffledGalleonFunky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledGalleonFunky: {
+            ...state.shuffledGalleonFunky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setGalleonCandy: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledGalleonCandy)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledGalleonCandy: {
+            ...state.shuffledGalleonCandy,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledGalleonCandy: {
+            ...state.shuffledGalleonCandy,
+            [id]: false
+          }
+        }
+      })
+    },
+    setGalleonSnide: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledGalleonSnide)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledGalleonSnide: {
+            ...state.shuffledGalleonSnide,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledGalleonSnide: {
+            ...state.shuffledGalleonSnide,
+            [id]: false
+          }
+        }
+      })
     }
   }
 }
