@@ -1043,7 +1043,6 @@ interface japesSnide {
   castleSnideFunky: boolean
   castleSnideCandy: boolean
   castleSnideNoSwitch: boolean
-}
 
 export interface ShopState {
   shuffledIslesShops: IslesShopCollection
