@@ -243,9 +243,100 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
           }
         }
       })
+    },
+    setAztecCranky: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledAztecCranky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledAztecCranky: {
+            ...state.shuffledAztecCranky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledAztecCranky: {
+            ...state.shuffledAztecCranky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setAztecFunky: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledAztecFunky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledAztecFunky: {
+            ...state.shuffledAztecFunky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledAztecFunky: {
+            ...state.shuffledAztecFunky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setAztecCandy: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledAztecCandy)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledAztecCandy: {
+            ...state.shuffledAztecCandy,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledAztecCandy: {
+            ...state.shuffledAztecCandy,
+            [id]: false
+          }
+        }
+      })
+    },
+    setAztecSnide: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledAztecSnide)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledAztecSnide: {
+            ...state.shuffledAztecSnide,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledAztecSnide: {
+            ...state.shuffledAztecSnide,
+            [id]: false
+          }
+        }
+      })
     }
   }
 }
-
 
 export default shopSlice

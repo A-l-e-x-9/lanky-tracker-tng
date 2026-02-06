@@ -1095,10 +1095,10 @@ export interface ShopState {
   shuffledJapesCranky: japesCranky
   shuffledJapesFunky: japesFunky
   shuffledJapesSnide: japesSnide
-  shuffledAztecCranky: ShopCollection["aztecCrankyNoSwitch,aztecCrankyFunky,aztecCrankyCandy,aztecCrankySnide"],
-  shuffledAztecFunky: ShopCollection["aztecFunkyCranky,aztecFunkyNoSwitch,aztecFunkyCandy,aztecFunkySnide"],
-  shuffledAztecCandy: ShopCollection["aztecCandyCranky,aztecCandyFunky,aztecCandyNoSwitch,aztecCandySnide"],
-  shuffledAztecSnide: ShopCollection["aztecSnideCranky,aztecSnideFunky,aztecSnideCandy,aztecSnideNoSwitch"],
+  shuffledAztecCranky: aztecCranky
+  shuffledAztecFunky: aztecFunky
+  shuffledAztecCandy: aztecCandy
+  shuffledAztecSnide: aztecSnide
   shuffledFactoryCranky: ShopCollection["factoryCrankyNoSwitch,factoryCrankyFunky,factoryCrankyCandy,factoryCrankySnide"],
   shuffledFactoryFunky: ShopCollection["factoryFunkyCranky,factoryFunkyNoSwitch,factoryFunkyCandy,factoryFunkySnide"],
   shuffledFactoryCandy: ShopCollection["factoryCandyCranky,factoryCandyFunky,factoryCandyNoSwitch,factoryCandySnide"],
@@ -1125,6 +1125,10 @@ interface ShopActions {
   setJapesCranky: (id: string, val: boolean) => void
   setJapesFunky: (id: string, val: boolean) => void
   setJapesSnide: (id: string, val: boolean) => void
+  setAztecCranky: (id: string, val: boolean) => void
+  setAztecFunky: (id: string, val: boolean) => void
+  setAztecCandy: (id: string, val: boolean) => void
+  setAztecSnide: (id: string, val: boolean) => void
 }
 
 export type ShopSlice = ShopState & ShopActions
