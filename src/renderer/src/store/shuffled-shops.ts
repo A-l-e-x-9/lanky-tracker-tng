@@ -335,6 +335,98 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
           }
         }
       })
+    },
+    setFactoryCranky: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledFactoryCranky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledFactoryCranky: {
+            ...state.shuffledFactoryCranky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledFactoryCranky: {
+            ...state.shuffledFactoryCranky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setFactoryFunky: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledFactoryFunky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledFactoryFunky: {
+            ...state.shuffledFactoryFunky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledFactoryFunky: {
+            ...state.shuffledFactoryFunky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setFactoryCandy: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledFactoryCandy)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledFactoryCandy: {
+            ...state.shuffledFactoryCandy,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledFactoryCandy: {
+            ...state.shuffledFactoryCandy,
+            [id]: false
+          }
+        }
+      })
+    },
+    setFactorySnide: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledFactorySnide)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledFactorySnide: {
+            ...state.shuffledFactorySnide,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledFactorySnide: {
+            ...state.shuffledFactorySnide,
+            [id]: false
+          }
+        }
+      })
     }
   }
 }
