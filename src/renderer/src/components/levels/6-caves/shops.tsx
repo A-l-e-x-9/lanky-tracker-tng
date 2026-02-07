@@ -22,7 +22,7 @@ const ShopLocations: React.FC = () => {
         baseName="Caves Cranky"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasCranky && inStage.in && (!inSnideCave ? !angery)}
+        inLogic={hasCranky && (inSnideCave ? inStage.in : inStage.in && !angery)}
         outLogic={hasCranky && (inSnideCave ? instage.out : (inStage.out || angery))}
       />
       <ShopGenerator
@@ -30,7 +30,7 @@ const ShopLocations: React.FC = () => {
         baseName="Caves Funky"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasFunky && inStage.in && (!inSnideCave ? !angery)}
+        inLogic={hasFunky && (inSnideCave ? inStage.in : inStage.in && !angery)}
         outLogic={hasFunky && (inSnideCave ? instage.out : (inStage.out || angery))}
       />
       <ShopGenerator
@@ -38,7 +38,7 @@ const ShopLocations: React.FC = () => {
         baseName="Caves Candy"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasCandy && inStage.in && (!inSnideCave ? !angery)}
+        inLogic={hasCandy && (inSnideCave ? inStage.in : inStage.in && !angery)}
         outLogic={hasCandy && (inSnideCave ? instage.out : (inStage.out || angery))}
       />
       <ShopGenerator
@@ -46,7 +46,7 @@ const ShopLocations: React.FC = () => {
         baseName="Turn in Caves Blueprint for"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasSnide && inStage.in && (outOfSnideCave ? !angery)}
+        inLogic={hasSnide && (outOfSnideCave ? inStage.in && !angery : inStage.in)}
         outLogic={hasSnide && (outOfSnideCave ? (inStage.out || angery) : inStage.out)} //Snide is in a "safe zone", so no Angry Caves check for his vanilla location
       />
     </ShopPool>
