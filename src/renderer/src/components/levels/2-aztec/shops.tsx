@@ -13,6 +13,7 @@ const Vanilla: React.FC = () => {
   const hasCandy = useCandy()
   const hasSnide = useSnide()
   const [crankyCandy, funkyCandy, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledAztecCranky.aztecCrankyCandy, state.shuffledAztecFunky.aztecFunkyCandy, state.shuffledAztecSnide.aztecSnideCandy]))
+  const [candyCranky, candyFunky, candySnide] = useDonkStore(useShallow((state) => [state.shuffledAztecCandy.aztecCandyCranky, state.shuffledAztecCandy.aztecCandyFunky, state.shuffledAztecCandy.aztecCandySnide]))
   return (
     <>
       <ShopGenerator
