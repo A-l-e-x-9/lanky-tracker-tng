@@ -14748,7 +14748,7 @@ const TrainingGroundsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(Rainb
   /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingRear, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(Hoard, {})
 ] });
-const Shuffled$G = () => {
+const Shuffled$F = () => {
   const isBreathing = useAnyKong();
   const hasDK = useDk();
   const hasDiddy = useDiddy();
@@ -15549,9 +15549,9 @@ const Shuffled$G = () => {
     )
   ] });
 };
-const ShuffledArenas$8 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$G, {}) : null;
+const ShuffledArenas$8 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$F, {}) : null;
 const CratePool = ({ children }) => usePoolCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const Shuffled$F = () => {
+const Shuffled$E = () => {
   const isBreathing = useAnyKong();
   const hasDK = useDk();
   const hasDiddy = useDiddy();
@@ -16377,8 +16377,8 @@ const Shuffled$F = () => {
     )
   ] });
 };
-const ShuffledCrates$8 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$F, {}) : null;
-const Shuffled$E = () => {
+const ShuffledCrates$8 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$E, {}) : null;
+const Shuffled$D = () => {
   const isBreathing = useGeneralDirt$6();
   const hasShockwave = useShockwave();
   const hasClimbing = useClimbing();
@@ -17202,8 +17202,8 @@ const Shuffled$E = () => {
     )
   ] });
 };
-const ShuffledDirt$8 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$E, {}) : null;
-const Shuffled$D = () => {
+const ShuffledDirt$8 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
+const Shuffled$C = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$6();
   const vanillaFairy2 = useKremFairy();
@@ -17393,8 +17393,8 @@ const Shuffled$D = () => {
     )
   ] });
 };
-const ShuffledFairies$8 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
-const Shuffled$C = () => {
+const ShuffledFairies$8 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$C, {}) : null;
+const Shuffled$B = () => {
   const DKKasplat = useHelmKasplat();
   const diddyKasplat = useCastleKasplat();
   const lankyKasplat = useCavesKasplat();
@@ -17597,7 +17597,7 @@ const Shuffled$C = () => {
     )
   ] });
 };
-const ShuffledKasplats$1 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$C, {}) : null;
+const ShuffledKasplats$1 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$B, {}) : null;
 const IslesRegionChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -19779,7 +19779,7 @@ const StormyTunnelChecks = () => {
     ] })
   ] });
 };
-const Shuffled$B = () => {
+const Shuffled$A = () => {
   const isBreathing = useGeneralThing$5();
   const canReachFunky = useArena$4();
   const canReachPaintingRoom = useJapesPaintingOutside();
@@ -20310,8 +20310,8 @@ const Shuffled$B = () => {
     )
   ] });
 };
-const ShuffledArenas$7 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$B, {}) : null;
-const Shuffled$A = () => {
+const ShuffledArenas$7 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$A, {}) : null;
+const Shuffled$z = () => {
   const isBreathing = useGeneralThing$5();
   const canReachFunky = useArena$4();
   const canReachPaintingRoom = useJapesPaintingOutside();
@@ -20843,8 +20843,8 @@ const Shuffled$A = () => {
     )
   ] });
 };
-const ShuffledCrates$7 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$A, {}) : null;
-const Shuffled$z = () => {
+const ShuffledCrates$7 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$z, {}) : null;
+const Shuffled$y = () => {
   const isBreathing = useGeneralDirt$5();
   const hasShockwave = useShockwave();
   const canReachFunky = useArena$4();
@@ -21399,8 +21399,8 @@ const Shuffled$z = () => {
     )
   ] });
 };
-const ShuffledDirt$7 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$z, {}) : null;
-const Shuffled$y = () => {
+const ShuffledDirt$7 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$y, {}) : null;
+const Shuffled$x = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$5();
   const vanillaFairy1 = useRambiFairy();
@@ -21523,7 +21523,7 @@ const Shuffled$y = () => {
     )
   ] });
 };
-const ShuffledFairies$7 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$y, {}) : null;
+const ShuffledFairies$7 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$x, {}) : null;
 const JapesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$6, {}),
@@ -24020,7 +24020,7 @@ const TinyMedal$5 = () => {
     )
   ] });
 };
-const Shuffled$x = () => {
+const Shuffled$w = () => {
   const isBreathing = useGeneralThing$4();
   const canReachVanillaArena = useArena$3();
   const hasClimbing = useClimbing();
@@ -24698,8 +24698,8 @@ const Shuffled$x = () => {
     )
   ] });
 };
-const ShuffledArenas$6 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$x, {}) : null;
-const Shuffled$w = () => {
+const ShuffledArenas$6 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$w, {}) : null;
+const Shuffled$v = () => {
   const isBreathing = useGeneralThing$4();
   const hasClimbing = useClimbing();
   const hasVines = useVine();
@@ -25390,8 +25390,8 @@ const Shuffled$w = () => {
     )
   ] });
 };
-const ShuffledCrates$6 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$w, {}) : null;
-const Shuffled$v = () => {
+const ShuffledCrates$6 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$v, {}) : null;
+const Shuffled$u = () => {
   const isBreathing = useGeneralDirt$4();
   const hasShockwave = useShockwave();
   const canReachVanillaArena = useArena$3();
@@ -26070,8 +26070,8 @@ const Shuffled$v = () => {
     )
   ] });
 };
-const ShuffledDirt$6 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$v, {}) : null;
-const Shuffled$u = () => {
+const ShuffledDirt$6 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : null;
+const Shuffled$t = () => {
   const hasCam = useCamera();
   const hasDiving = useDive();
   const hasGrapes = useGrape();
@@ -26260,8 +26260,8 @@ const Shuffled$u = () => {
     )
   ] });
 };
-const ShuffledFairies$6 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : null;
-const Shuffled$t = () => {
+const ShuffledFairies$6 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {}) : null;
+const Shuffled$s = () => {
   const thing = useGeneralThing$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26311,7 +26311,7 @@ const Shuffled$t = () => {
     )
   ] });
 };
-const ShuffledKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {}) : null;
+const ShuffledKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : null;
 const Vanilla$5 = () => {
   const aztecFront = useAztecFront();
   const aztecBack = useAztecBack();
@@ -26319,6 +26319,8 @@ const Vanilla$5 = () => {
   const hasFunky = whatAFunky();
   const hasCandy = useCandy();
   const hasSnide = useSnide();
+  const [crankyCandy, funkyCandy, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledAztecCranky.aztecCrankyCandy, state.shuffledAztecFunky.aztecFunkyCandy, state.shuffledAztecSnide.aztecSnideCandy]));
+  const [candyCranky, candyFunky, candySnide] = useDonkStore(useShallow((state) => [state.shuffledAztecCandy.aztecCandyCranky, state.shuffledAztecCandy.aztecCandyFunky, state.shuffledAztecCandy.aztecCandySnide]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
@@ -26327,8 +26329,8 @@ const Vanilla$5 = () => {
         baseName: "Aztec Cranky",
         level: "Angry Aztec",
         region: "Shops",
-        inLogic: hasCranky && aztecBack.in,
-        outLogic: hasCranky && aztecBack.out
+        inLogic: hasCranky && (crankyCandy ? aztecFront.in : aztecBack.in),
+        outLogic: hasCranky && (crankyCandy ? aztecFront.out : aztecBack.out)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26338,8 +26340,8 @@ const Vanilla$5 = () => {
         baseName: "Aztec Funky",
         level: "Angry Aztec",
         region: "Shops",
-        inLogic: hasFunky && aztecBack.in,
-        outLogic: hasFunky && aztecBack.out
+        inLogic: hasFunky && (funkyCandy ? aztecFront.in : aztecBack.in),
+        outLogic: hasFunky && (funkyCandy ? aztecFront.out : aztecBack.out)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26349,8 +26351,8 @@ const Vanilla$5 = () => {
         baseName: "Aztec Candy",
         level: "Angry Aztec",
         region: "Shops",
-        inLogic: hasCandy && aztecFront.in,
-        outLogic: hasCandy && aztecFront.out
+        inLogic: hasCandy && (candyCranky || candyFunky || candySnide ? aztecBack.in : aztecFront.in),
+        outLogic: hasCandy && (candyCranky || candyFunky || candySnide ? aztecBack.out : aztecFront.out)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26360,69 +26362,14 @@ const Vanilla$5 = () => {
         baseName: "Turn in Aztec Blueprint for",
         level: "Angry Aztec",
         region: "Shops",
-        inLogic: hasSnide && aztecBack.in,
-        outLogic: hasSnide && aztecBack.out
-      }
-    )
-  ] });
-};
-const Shuffled$s = () => {
-  const aztecFront = useAztecFront();
-  const aztecBack = useAztecBack();
-  const hasCranky = useCranky();
-  const hasFunky = whatAFunky();
-  const hasCandy = useCandy();
-  const hasSnide = useSnide();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 2140,
-        baseName: "Aztec Cranky Location",
-        level: "Angry Aztec",
-        region: "Shops",
-        inLogic: hasCranky && aztecBack.in,
-        outLogic: hasCranky && aztecBack.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 2150,
-        baseName: "Aztec Funky Location",
-        level: "Angry Aztec",
-        region: "Shops",
-        inLogic: hasFunky && aztecBack.in,
-        outLogic: hasFunky && aztecBack.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 2160,
-        baseName: "Aztec Candy Location",
-        level: "Angry Aztec",
-        region: "Shops",
-        inLogic: hasCandy && aztecFront.in,
-        outLogic: hasCandy && aztecFront.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 2170,
-        baseName: "Aztec Snide Location",
-        level: "Angry Aztec",
-        region: "Shops",
-        inLogic: hasSnide && aztecBack.in,
-        outLogic: hasSnide && aztecBack.out
+        inLogic: hasSnide && (snideCandy ? aztecFront.in : aztecBack.in),
+        outLogic: hasSnide && (snideCandy ? aztecFront.out : aztecBack.out)
       }
     )
   ] });
 };
 const ShopLocations$5 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$5, {});
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$5, {}) });
 };
 const CircleVase = () => {
   const hasLogic = useVases();
