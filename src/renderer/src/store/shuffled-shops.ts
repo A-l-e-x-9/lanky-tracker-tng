@@ -681,24 +681,47 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
         }
       })
     },
-    setCavesCranky: (id): void => {
+    setCastleCranky: (id): void => {
       set((state) => {
         const reset: Record<string, boolean> = {}
-        for (const k of Object.keys(state.shuffledCavesCranky)) {
+        for (const k of Object.keys(state.shuffledCastleCranky)) {
           reset[k] = false
         }
         reset[id] = true
         return {
           ...state,
-          shuffledCavesCranky: {
-            ...state.shuffledCavesCranky,
+          shuffledCastleCranky: {
+            ...state.shuffledCastleCranky,
             ...reset
           }
         }
         return {
           ...state,
-          shuffledCavesCranky: {
-            ...state.shuffledCavesCranky,
+          shuffledCastleCranky: {
+            ...state.shuffledCastleCranky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setCastleFunky: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledCastleFunky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledCastleFunky: {
+            ...state.shuffledCastleFunky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledCastleFunky: {
+            ...state.shuffledCastleFunky,
             [id]: false
           }
         }
