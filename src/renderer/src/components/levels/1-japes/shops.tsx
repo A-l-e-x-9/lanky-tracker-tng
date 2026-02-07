@@ -1,7 +1,9 @@
+import { useShallow } from 'zustand/react/shallow'
+import useDonkStore from '@renderer/store'
 import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { useJapesKongGates, usePlayJapes } from '@renderer/hooks/japes'
-import { useShuffledShops, useBananaportAll } from '@renderer/hooks/settings'
+import { useBananaportAll } from '@renderer/hooks/settings'
 import { useCranky, whatAFunky, useSnide, useClimbing } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
@@ -12,6 +14,10 @@ const Vanilla: React.FC = () => {
   const hasCranky = useCranky()
   const hasFunky = whatAFunky()
   const hasSnide = useSnide()
+  const crankyFunky = useDonkStore(useShallow((state) => state.shuffledJapesCranky.japesCrankyFunky))
+  const crankySnide = useDonkStore(useShallow((state) => state.shuffledJapesCranky.japesCrankySnide))
+  const funkyCranky = useDonkStore(useShallow((state) => state.shuffledJapesFunky.japesFunkyCranky))
+  const snideCranky = useDonkStore(useShallow((state) => state.shuffledJapesSnide.japesSnideCranky))
 
   return (
     <>
@@ -20,71 +26,31 @@ const Vanilla: React.FC = () => {
         baseName="Japes Cranky"
         level="Jungle Japes"
         region="Shops"
-        inLogic={kongGates.in && hasCranky}
-        outLogic={kongGates.out && hasCranky}
+        inLogic={((crankyFunky || crankySnide) ? playJapes.in && (climbing || bananaport) : kongGates.in) && hasCranky}
+        outLogic={((crankyFunky || crankySnide) ? playJapes.out : kongGates.out) && hasCranky}
       />
       <ShopGenerator
         baseId={1120}
         baseName="Japes Funky"
         level="Jungle Japes"
         region="Shops"
-        inLogic={playJapes.in && (climbing || bananaport) && hasFunky}
-        outLogic={playJapes.out && hasFunky}
+        inLogic={(funkyCranky ? kongGates.in : playJapes.in && (climbing || bananaport)) && hasFunky}
+        outLogic={(funkyCranky ? kongGates.out : playJapes.out) && hasFunky}
       />
       <ShopGenerator
         baseId={1140}
         baseName="Turn in Japes Blueprint for"
         level="Jungle Japes"
         region="Shops"
-        inLogic={playJapes.in && (climbing || bananaport) && hasSnide}
-        outLogic={playJapes.out && hasSnide}
-      />
-
-    </>
-  )
-}
-
-const Shuffled: React.FC = () => {
-  const kongGates = useJapesKongGates()
-  const climbing = useClimbing()
-  const bananaport = useBananaportAll()
-  const hasCranky = useCranky()
-  const hasFunky = whatAFunky()
-  const hasSnide = useSnide()
-
-  return (
-    <>
-      <ShopGenerator
-        baseId={1140}
-        baseName="Japes Cranky Location"
-        level="Jungle Japes"
-        region="Shops"
-        inLogic={hasCranky && (kongGates.in || (climbing || bananaport))}
-        outLogic={hasCranky && kongGates.out}
-      />
-      <ShopGenerator
-        baseId={1150}
-        baseName="Japes Funky Location"
-        level="Jungle Japes"
-        region="Shops"
-        inLogic={hasFunky && (kongGates.in || (climbing || bananaport))}
-        outLogic={hasFunky && kongGates.out}
-      />
-      <ShopGenerator
-        baseId={1170}
-        baseName="Japes Snide Location"
-        level="Jungle Japes"
-        region="Shops"
-        inLogic={hasSnide && (kongGates.in || (climbing || bananaport))}
-        outLogic={hasSnide && kongGates.out}
+        inLogic={(snideCranky ? kongGates.in : playJapes.in && (climbing || bananaport)) && hasSnide}
+        outLogic={(snideCranky ? kongGates.out : playJapes.out) && hasSnide}
       />
     </>
   )
 }
 
 const ShopLocations: React.FC = () => {
-  const locations = useShuffledShops() ? <Shuffled /> : <Vanilla />
-  return <ShopPool>{locations}</ShopPool>
+  return <ShopPool><Vanilla /></ShopPool>
 }
 
 export default ShopLocations
