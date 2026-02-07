@@ -22,7 +22,7 @@ const ShopLocations: React.FC = () => {
         baseName="Caves Cranky"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasCranky && inStage.in && (inSnideCave ? : !angery)}
+        inLogic={hasCranky && inStage.in && (!inSnideCave ? !angery)}
         outLogic={hasCranky && (inSnideCave ? instage.out : (inStage.out || angery))}
       />
       <ShopGenerator
@@ -30,7 +30,7 @@ const ShopLocations: React.FC = () => {
         baseName="Caves Funky"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasFunky && inStage.in && (inSnideCave ? : !angery)}
+        inLogic={hasFunky && inStage.in && (!inSnideCave ? !angery)}
         outLogic={hasFunky && (inSnideCave ? instage.out : (inStage.out || angery))}
       />
       <ShopGenerator
@@ -38,7 +38,7 @@ const ShopLocations: React.FC = () => {
         baseName="Caves Candy"
         level="Crystal Caves"
         region="Shops"
-        inLogic={hasCandy && inStage.in && (inSnideCave ? : !angery)}
+        inLogic={hasCandy && inStage.in && (!inSnideCave ? !angery)}
         outLogic={hasCandy && (inSnideCave ? instage.out : (inStage.out || angery))}
       />
       <ShopGenerator
