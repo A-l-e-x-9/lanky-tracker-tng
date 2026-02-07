@@ -10540,142 +10540,142 @@ const initialShop = {
     japesSnideCranky: false,
     japesSnideFunky: false,
     japesSnideNoSwitch: true
+  },
+  shuffledAztecCranky: {
+    aztecCrankyNoSwitch: true,
+    aztecCrankyFunky: false,
+    aztecCrankyCandy: false,
+    aztecCrankySnide: false
+  },
+  shuffledAztecFunky: {
+    aztecFunkyCranky: false,
+    aztecFunkyNoSwitch: true,
+    aztecFunkyCandy: false,
+    aztecFunkySnide: false
+  },
+  shuffledAztecCandy: {
+    aztecCandyCranky: false,
+    aztecCandyFunky: false,
+    aztecCandyNoSwitch: true,
+    aztecCandySnide: false
+  },
+  shuffledAztecSnide: {
+    aztecSnideCranky: false,
+    aztecSnideFunky: false,
+    aztecSnideCandy: false,
+    aztecSnideNoSwitch: true
+  },
+  shuffledFactoryCranky: {
+    factoryCrankyNoSwitch: true,
+    factoryCrankyFunky: false,
+    factoryCrankyCandy: false,
+    factoryCrankySnide: false
+  },
+  shuffledFactoryFunky: {
+    factoryFunkyCranky: false,
+    factoryFunkyNoSwitch: true,
+    factoryFunkyCandy: false,
+    factoryFunkySnide: false
+  },
+  shuffledFactoryCandy: {
+    factoryCandyCranky: false,
+    factoryCandyFunky: false,
+    factoryCandyNoSwitch: true,
+    factoryCandySnide: false
+  },
+  shuffledFactorySnide: {
+    factorySnideCranky: false,
+    factorySnideFunky: false,
+    factorySnideCandy: false,
+    factorySnideNoSwitch: true
+  },
+  shuffledGalleonCranky: {
+    galleonCrankyNoSwitch: true,
+    galleonCrankyFunky: false,
+    galleonCrankyCandy: false,
+    galleonCrankySnide: false
+  },
+  shuffledGalleonFunky: {
+    galleonFunkyCranky: false,
+    galleonFunkyNoSwitch: true,
+    galleonFunkyCandy: false,
+    galleonFunkySnide: false
+  },
+  shuffledGalleonCandy: {
+    galleonCandyCranky: false,
+    galleonCandyFunky: false,
+    galleonCandyNoSwitch: true,
+    galleonCandySnide: false
+  },
+  shuffledGalleonSnide: {
+    galleonSnideCranky: false,
+    galleonSnideFunky: false,
+    galleonSnideCandy: false,
+    galleonSnideNoSwitch: true
+  },
+  shuffledForestCranky: {
+    forestCrankyNoSwitch: true,
+    forestCrankyFunky: false,
+    forestCrankySnide: false
+  },
+  shuffledForestFunky: {
+    forestFunkyCranky: false,
+    forestFunkyNoSwitch: true,
+    forestFunkySnide: false
+  },
+  shuffledForestSnide: {
+    forestSnideCranky: false,
+    forestSnideFunky: false,
+    forestSnideNoSwitch: true
+  },
+  shuffledCavesCranky: {
+    cavesCrankyNoSwitch: true,
+    cavesCrankyFunky: false,
+    cavesCrankyCandy: false,
+    cavesCrankySnide: false
+  },
+  shuffledCavesFunky: {
+    cavesFunkyCranky: false,
+    cavesFunkyNoSwitch: true,
+    cavesFunkyCandy: false,
+    cavesFunkySnide: false
+  },
+  shuffledCavesCandy: {
+    cavesCandyCranky: false,
+    cavesCandyFunky: false,
+    cavesCandyNoSwitch: true,
+    cavesCandySnide: false
+  },
+  shuffledCavesSnide: {
+    cavesSnideCranky: false,
+    cavesSnideFunky: false,
+    cavesSnideCandy: false,
+    cavesSnideNoSwitch: true
+  },
+  shuffledCastleCranky: {
+    castleCrankyNoSwitch: true,
+    castleCrankyFunky: false,
+    castleCrankyCandy: false,
+    castleCrankySnide: false
+  },
+  shuffledCastleFunky: {
+    castleFunkyCranky: false,
+    castleFunkyNoSwitch: true,
+    castleFunkyCandy: false,
+    castleFunkySnide: false
+  },
+  shuffledCastleCandy: {
+    castleCandyCranky: false,
+    castleCandyFunky: false,
+    castleCandyNoSwitch: true,
+    castleCandySnide: false
+  },
+  shuffledCastleSnide: {
+    castleSnideCranky: false,
+    castleSnideFunky: false,
+    castleSnideCandy: false,
+    castleSnideNoSwitch: true
   }
-  /*  shuffledAztecCranky: {
-      aztecCrankyNoSwitch: true,
-      aztecCrankyFunky: false,
-      aztecCrankyCandy: false,
-      aztecCrankySnide: false
-    },
-    shuffledAztecFunky: {
-      aztecFunkyCranky: false,
-      aztecFunkyNoSwitch: true,
-      aztecFunkyCandy: false,
-      aztecFunkySnide: false
-    },
-    shuffledAztecCandy: {
-      aztecCandyCranky: false,
-      aztecCandyFunky: false,
-      aztecCandyNoSwitch: true,
-      aztecCandySnide: false
-    },
-    shuffledAztecSnide: {
-      aztecSnideCranky: false,
-      aztecSnideFunky: false,
-      aztecSnideCandy: false,
-      aztecSnideNoSwitch: true
-    },
-    shuffledFactoryCranky: {
-      factoryCrankyNoSwitch: true,
-      factoryCrankyFunky: false,
-      factoryCrankyCandy: false,
-      factoryCrankySnide: false
-    },
-    shuffledFactoryFunky: {
-      factoryFunkyCranky: false,
-      factoryFunkyNoSwitch: true,
-      factoryFunkyCandy: false,
-      factoryFunkySnide: false,
-    },
-    shuffledFactoryCandy: {
-      factoryCandyCranky: false,
-      factoryCandyFunky: false,
-      factoryCandyNoSwitch: true,
-      factoryCandySnide: false
-    },
-    shuffledFactorySnide: {
-      factorySnideCranky: false,
-      factorySnideFunky: false,
-      factorySnideCandy: false,
-      factorySnideNoSwitch: true
-    },
-    shuffledGalleonCranky: {
-      galleonCrankyNoSwitch: true,
-      galleonCrankyFunky: false,
-      galleonCrankyCandy: false,
-      galleonCrankySnide: false
-    },
-    shuffledGalleonFunky: {
-      galleonFunkyCranky: false,
-      galleonFunkyNoSwitch: true,
-      galleonFunkyCandy: false,
-      galleonFunkySnide: false
-    },
-    shuffledGalleonCandy: {
-      galleonCandyCranky: false,
-      galleonCandyFunky: false,
-      galleonCandyNoSwitch: true,
-      galleonCandySnide: false
-    },
-    shuffledGalleonSnide: {
-      galleonSnideCranky: false,
-      galleonSnideFunky: false,
-      galleonSnideCandy: false,
-      galleonSnideNoSwitch: true
-    },
-    shuffledForestCranky: {
-      forestCrankyNoSwitch: true,
-      forestCrankyFunky: false,
-      forestCrankySnide: false
-    },
-    shuffledForestFunky: {
-      forestFunkyCranky: false,
-      forestFunkyNoSwitch: true,
-      forestFunkySnide: false
-    },
-    shuffledForestSnide: {
-      forestSnideCranky: false,
-      forestSnideFunky: false,
-      forestSnideNoSwitch: true
-    },
-    shuffledCavesCranky: {
-      cavesCrankyNoSwitch: true,
-      cavesCrankyFunky: false,
-      cavesCrankyCandy: false,
-      cavesCrankySnide: false
-    },
-    shuffledCavesFunky: {
-      cavesFunkyCranky: false,
-      cavesFunkyNoSwitch: true,
-      cavesFunkyCandy: false,
-      cavesFunkySnide: false
-    },
-    shuffledCavesCandy: {
-      cavesCandyCranky: false,
-      cavesCandyFunky: false,
-      cavesCandyNoSwitch: true,
-      cavesCandySnide: false
-    },
-    shuffledCavesSnide: {
-      cavesSnideCranky: false,
-      cavesSnideFunky: false,
-      cavesSnideCandy: false,
-      cavesSnideNoSwitch: true
-    },
-    shuffledCastleCranky: {
-      castleCrankyNoSwitch: true,
-      castleCrankyFunky: false,
-      castleCrankyCandy: false,
-      castleCrankySnide: false
-    },
-    shuffledCastleFunky: {
-      castleFunkyCranky: false,
-      castleFunkyNoSwitch: true,
-      castleFunkyCandy: false,
-      castleFunkySnide: false
-    },
-    shuffledCastleCandy: {
-      castleCandyCranky: false,
-      castleCandyFunky: false,
-      castleCandyNoSwitch: true,
-      castleCandySnide: false
-    },
-    shuffledCastleSnide: {
-      castleSnideCranky: false,
-      castleSnideFunky: false,
-      castleSnideCandy: false,
-      castleSnideNoSwitch: true
-    }*/
 };
 const shopSlice = (set) => {
   donkResetFns.add(() => set(initialShop));
@@ -10738,6 +10738,374 @@ const shopSlice = (set) => {
           ...state,
           shuffledJapesSnide: {
             ...state.shuffledJapesSnide,
+            ...reset
+          }
+        };
+      });
+    },
+    setAztecCranky: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledAztecCranky)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledAztecCranky: {
+            ...state.shuffledAztecCranky,
+            ...reset
+          }
+        };
+      });
+    },
+    setAztecFunky: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledAztecFunky)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledAztecFunky: {
+            ...state.shuffledAztecFunky,
+            ...reset
+          }
+        };
+      });
+    },
+    setAztecCandy: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledAztecCandy)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledAztecCandy: {
+            ...state.shuffledAztecCandy,
+            ...reset
+          }
+        };
+      });
+    },
+    setAztecSnide: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledAztecSnide)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledAztecSnide: {
+            ...state.shuffledAztecSnide,
+            ...reset
+          }
+        };
+      });
+    },
+    setFactoryCranky: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledFactoryCranky)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledFactoryCranky: {
+            ...state.shuffledFactoryCranky,
+            ...reset
+          }
+        };
+      });
+    },
+    setFactoryFunky: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledFactoryFunky)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledFactoryFunky: {
+            ...state.shuffledFactoryFunky,
+            ...reset
+          }
+        };
+      });
+    },
+    setFactoryCandy: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledFactoryCandy)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledFactoryCandy: {
+            ...state.shuffledFactoryCandy,
+            ...reset
+          }
+        };
+      });
+    },
+    setFactorySnide: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledFactorySnide)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledFactorySnide: {
+            ...state.shuffledFactorySnide,
+            ...reset
+          }
+        };
+      });
+    },
+    setGalleonCranky: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledGalleonCranky)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledGalleonCranky: {
+            ...state.shuffledGalleonCranky,
+            ...reset
+          }
+        };
+      });
+    },
+    setGalleonFunky: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledGalleonFunky)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledGalleonFunky: {
+            ...state.shuffledGalleonFunky,
+            ...reset
+          }
+        };
+      });
+    },
+    setGalleonCandy: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledGalleonCandy)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledGalleonCandy: {
+            ...state.shuffledGalleonCandy,
+            ...reset
+          }
+        };
+      });
+    },
+    setGalleonSnide: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledGalleonSnide)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledGalleonSnide: {
+            ...state.shuffledGalleonSnide,
+            ...reset
+          }
+        };
+      });
+    },
+    setForestCranky: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledForestCranky)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledForestCranky: {
+            ...state.shuffledForestCranky,
+            ...reset
+          }
+        };
+      });
+    },
+    setForestFunky: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledForestFunky)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledForestFunky: {
+            ...state.shuffledForestFunky,
+            ...reset
+          }
+        };
+      });
+    },
+    setForestSnide: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledForestSnide)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledForestSnide: {
+            ...state.shuffledForestSnide,
+            ...reset
+          }
+        };
+      });
+    },
+    setCavesCranky: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledCavesCranky)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledCavesCranky: {
+            ...state.shuffledCavesCranky,
+            ...reset
+          }
+        };
+      });
+    },
+    setCavesFunky: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledCavesFunky)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledCavesFunky: {
+            ...state.shuffledCavesFunky,
+            ...reset
+          }
+        };
+      });
+    },
+    setCavesCandy: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledCavesCandy)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledCavesCandy: {
+            ...state.shuffledCavesCandy,
+            ...reset
+          }
+        };
+      });
+    },
+    setCavesSnide: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledCavesSnide)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledCavesSnide: {
+            ...state.shuffledCavesSnide,
+            ...reset
+          }
+        };
+      });
+    },
+    setCastleCranky: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledCastleCranky)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledCastleCranky: {
+            ...state.shuffledCastleCranky,
+            ...reset
+          }
+        };
+      });
+    },
+    setCastleFunky: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledCastleFunky)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledCastleFunky: {
+            ...state.shuffledCastleFunky,
+            ...reset
+          }
+        };
+      });
+    },
+    setCastleCandy: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledCastleCandy)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledCastleCandy: {
+            ...state.shuffledCastleCandy,
+            ...reset
+          }
+        };
+      });
+    },
+    setCastleSnide: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledCastleSnide)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledCastleSnide: {
+            ...state.shuffledCastleSnide,
             ...reset
           }
         };
@@ -33170,7 +33538,7 @@ const useDiddyRaftersGb = () => {
   };
 };
 const useDkBlastGb$1 = () => {
-  const inStage = usePlayForest();
+  const inStage = useForestMushroomTop();
   return {
     in: useBlast() && inStage.in,
     out: useBlast() && inStage.out
@@ -47196,7 +47564,7 @@ const Shuffled$2 = () => {
       HelmCheck,
       {
         id: 28004,
-        name: "Shuffled Melon Crate:: Vanilla Location (on top of the Blast-O-Matic itself)",
+        name: "Shuffled Melon Crate: Vanilla Location (on top of the Blast-O-Matic itself)",
         region: "Hideout Helm",
         canGetLogic: canReachBOM.in && hasJetbarrel,
         canGetBreak: canReachBOM.out && hasJetbarrel
@@ -47206,7 +47574,7 @@ const Shuffled$2 = () => {
       HelmCheck,
       {
         id: 28005,
-        name: "Shuffled Melon Crate:: Left side of Blast-O-Matic platform",
+        name: "Shuffled Melon Crate: Left side of Blast-O-Matic platform",
         region: "Hideout Helm",
         canGetLogic: canReachBOM.in,
         canGetBreak: canReachBOM.out
@@ -47216,7 +47584,7 @@ const Shuffled$2 = () => {
       HelmCheck,
       {
         id: 28006,
-        name: "Shuffled Melon Crate:: Right side of Blast-O-Matic platform",
+        name: "Shuffled Melon Crate: Right side of Blast-O-Matic platform",
         region: "Hideout Helm",
         canGetLogic: canReachBOM.in,
         canGetBreak: canReachBOM.out
@@ -47226,7 +47594,7 @@ const Shuffled$2 = () => {
       HelmCheck,
       {
         id: 28007,
-        name: "Shuffled Melon Crate:: Under the K. Rool door",
+        name: "Shuffled Melon Crate: Under the K. Rool door",
         region: "Hideout Helm",
         canGetLogic: canReachBOM.in,
         canGetBreak: canReachBOM.out
@@ -47236,7 +47604,7 @@ const Shuffled$2 = () => {
       HelmCheck,
       {
         id: 28008,
-        name: "Shuffled Melon Crate:: Nav room, at the computers",
+        name: "Shuffled Melon Crate: Nav room, at the computers",
         region: "Hideout Helm",
         canGetLogic: canReachNav.in,
         canGetBreak: canReachNav.out
@@ -47246,7 +47614,7 @@ const Shuffled$2 = () => {
       HelmCheck,
       {
         id: 28009,
-        name: "Shuffled Melon Crate:: Nav room, left window",
+        name: "Shuffled Melon Crate: Nav room, left window",
         region: "Hideout Helm",
         canGetLogic: canReachNav.in,
         canGetBreak: canReachNav.out
@@ -47256,7 +47624,7 @@ const Shuffled$2 = () => {
       HelmCheck,
       {
         id: 28010,
-        name: "Shuffled Melon Crate:: Nav room, right window",
+        name: "Shuffled Melon Crate: Nav room, right window",
         region: "Hideout Helm",
         canGetLogic: canReachNav.in,
         canGetBreak: canReachNav.out
@@ -47266,7 +47634,7 @@ const Shuffled$2 = () => {
       HelmCheck,
       {
         id: 28011,
-        name: "Shuffled Melon Crate:: Behind K. Rool's throne",
+        name: "Shuffled Melon Crate: Behind K. Rool's throne",
         region: "Hideout Helm",
         canGetLogic: canReachThrone.in,
         canGetBreak: canReachThrone.out
@@ -47276,7 +47644,7 @@ const Shuffled$2 = () => {
       HelmCheck,
       {
         id: 28012,
-        name: "Shuffled Melon Crate:: In front of K. Rool's throne",
+        name: "Shuffled Melon Crate: In front of K. Rool's throne",
         region: "Hideout Helm",
         canGetLogic: canReachThrone.in,
         canGetBreak: canReachThrone.out
@@ -48983,8 +49351,8 @@ const customStyles = {
 };
 const GeneratorSettings = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
-  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition, setIslesShops, setJapesCranky, setJapesFunky, setJapesSnide] = useDonkStore(
-    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi, state.setWinCondition, state.setIslesShops, state.setJapesCranky, state.setJapesFunky, state.setJapesSnide])
+  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition, setIslesShops, setJapesCranky, setJapesFunky, setJapesSnide, setAztecCranky, setAztecFunky, setAztecCandy, setAztecSnide, setFactoryCranky, setFactoryFunky, setFactoryCandy, setFactorySnide, setGalleonCranky, setGalleonFunky, setGalleonCandy, setGalleonSnide, setForestCranky, setForestFunky, setForestSnide, setCavesCranky, setCavesFunky, setCavesCandy, setCavesSnide, setCastleCranky, setCastleFunky, setCastleCandy, setCastleSnide] = useDonkStore(
+    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi, state.setWinCondition, state.setIslesShops, state.setJapesCranky, state.setJapesFunky, state.setJapesSnide, state.setAztecCranky, state.setAztecFunky, state.setAztecCandy, state.setAztecSnide, state.setFactoryCranky, state.setFactoryFunky, state.setFactoryCandy, state.setFactorySnide, state.setGalleonCranky, state.setGalleonFunky, state.setGalleonCandy, state.setGalleonSnide, state.setForestCranky, state.setForestFunky, state.setForestSnide, state.setCavesCranky, state.setCavesFunky, state.setCavesCandy, state.setCavesSnide, state.setCastleCranky, state.setCastleFunky, state.setCastleCandy, state.setCastleSnide])
   );
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
@@ -49744,6 +50112,951 @@ const GeneratorSettings = () => {
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Angry Aztec:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "himself (no switch)",
+                  storeKey: "aztecCrankyNoSwitch",
+                  prefix: "shuffledAztecCranky",
+                  updateItem: setAztecCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "aztecCrankyFunky",
+                  prefix: "shuffledAztecCranky",
+                  updateItem: setAztecCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "aztecCrankyCandy",
+                  prefix: "shuffledAztecCranky",
+                  updateItem: setAztecCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "aztecCrankySnide",
+                  prefix: "shuffledAztecCranky",
+                  updateItem: setAztecCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "aztecFunkyCranky",
+                  prefix: "shuffledAztecFunky",
+                  updateItem: setAztecFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "himself (no switch)",
+                  storeKey: "aztecFunkyNoSwitch",
+                  prefix: "shuffledAztecFunky",
+                  updateItem: setAztecFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "aztecFunkyCandy",
+                  prefix: "shuffledAztecFunky",
+                  updateItem: setAztecFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "aztecFunkySnide",
+                  prefix: "shuffledAztecFunky",
+                  updateItem: setAztecFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "aztecCandyCranky",
+                  prefix: "shuffledAztecCandy",
+                  updateItem: setAztecCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "aztecCandyFunky",
+                  prefix: "shuffledAztecCandy",
+                  updateItem: setAztecCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "herself (no switch)",
+                  storeKey: "aztecCandyNoSwitch",
+                  prefix: "shuffledAztecCandy",
+                  updateItem: setAztecCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "aztecCandySnide",
+                  prefix: "shuffledAztecCandy",
+                  updateItem: setAztecCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "aztecSnideCranky",
+                  prefix: "shuffledAztecSnide",
+                  updateItem: setAztecSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "aztecSnideFunky",
+                  prefix: "shuffledAztecSnide",
+                  updateItem: setAztecSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "aztecSnideCandy",
+                  prefix: "shuffledAztecSnide",
+                  updateItem: setAztecSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "himself (no switch)",
+                  storeKey: "aztecSnideNoSwitch",
+                  prefix: "shuffledAztecSnide",
+                  updateItem: setAztecSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Frantic Factory:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "himself (no switch)",
+                  storeKey: "factoryCrankyNoSwitch",
+                  prefix: "shuffledFactoryCranky",
+                  updateItem: setFactoryCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "factoryCrankyFunky",
+                  prefix: "shuffledFactoryCranky",
+                  updateItem: setFactoryCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "factoryCrankyCandy",
+                  prefix: "shuffledFactoryCranky",
+                  updateItem: setFactoryCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "factoryCrankySnide",
+                  prefix: "shuffledFactoryCranky",
+                  updateItem: setFactoryCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "factoryFunkyCranky",
+                  prefix: "shuffledFactoryFunky",
+                  updateItem: setFactoryFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "himself (no switch)",
+                  storeKey: "factoryFunkyNoSwitch",
+                  prefix: "shuffledFactoryFunky",
+                  updateItem: setFactoryFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "factoryFunkyCandy",
+                  prefix: "shuffledFactoryFunky",
+                  updateItem: setFactoryFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "factoryFunkySnide",
+                  prefix: "shuffledFactoryFunky",
+                  updateItem: setFactoryFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "factoryCandyCranky",
+                  prefix: "shuffledFactoryCandy",
+                  updateItem: setFactoryCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "factoryCandyFunky",
+                  prefix: "shuffledFactoryCandy",
+                  updateItem: setFactoryCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "herself (no switch)",
+                  storeKey: "factoryCandyNoSwitch",
+                  prefix: "shuffledFactoryCandy",
+                  updateItem: setFactoryCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "factoryCandySnide",
+                  prefix: "shuffledFactoryCandy",
+                  updateItem: setFactoryCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "factorySnideCranky",
+                  prefix: "shuffledFactorySnide",
+                  updateItem: setFactorySnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "factorySnideFunky",
+                  prefix: "shuffledFactorySnide",
+                  updateItem: setFactorySnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "factorySnideCandy",
+                  prefix: "shuffledFactorySnide",
+                  updateItem: setFactorySnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "himself (no switch)",
+                  storeKey: "factorySnideNoSwitch",
+                  prefix: "shuffledFactorySnide",
+                  updateItem: setFactorySnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Gloomy Galleon:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "himself (no switch)",
+                  storeKey: "galleonCrankyNoSwitch",
+                  prefix: "shuffledGalleonCranky",
+                  updateItem: setGalleonCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "galleonCrankyFunky",
+                  prefix: "shuffledGalleonCranky",
+                  updateItem: setGalleonCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "galleonCrankyCandy",
+                  prefix: "shuffledGalleonCranky",
+                  updateItem: setGalleonCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "galleonCrankySnide",
+                  prefix: "shuffledGalleonCranky",
+                  updateItem: setGalleonCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "galleonFunkyCranky",
+                  prefix: "shuffledGalleonFunky",
+                  updateItem: setGalleonFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "himself (no switch)",
+                  storeKey: "galleonFunkyNoSwitch",
+                  prefix: "shuffledGalleonFunky",
+                  updateItem: setGalleonFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "galleonFunkyCandy",
+                  prefix: "shuffledGalleonFunky",
+                  updateItem: setGalleonFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "galleonFunkySnide",
+                  prefix: "shuffledGalleonFunky",
+                  updateItem: setGalleonFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "galleonCandyCranky",
+                  prefix: "shuffledGalleonCandy",
+                  updateItem: setGalleonCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "galleonCandyFunky",
+                  prefix: "shuffledGalleonCandy",
+                  updateItem: setGalleonCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "herself (no switch)",
+                  storeKey: "galleonCandyNoSwitch",
+                  prefix: "shuffledGalleonCandy",
+                  updateItem: setGalleonCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "galleonCandySnide",
+                  prefix: "shuffledGalleonCandy",
+                  updateItem: setGalleonCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "galleonSnideCranky",
+                  prefix: "shuffledGalleonSnide",
+                  updateItem: setGalleonSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "galleonSnideFunky",
+                  prefix: "shuffledGalleonSnide",
+                  updateItem: setGalleonSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "galleonSnideCandy",
+                  prefix: "shuffledGalleonSnide",
+                  updateItem: setGalleonSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "himself (no switch)",
+                  storeKey: "galleonSnideNoSwitch",
+                  prefix: "shuffledGalleonSnide",
+                  updateItem: setGalleonSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Fungi Forest:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "himself (no switch)",
+                  storeKey: "forestCrankyNoSwitch",
+                  prefix: "shuffledForestCranky",
+                  updateItem: setForestCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "forestCrankyFunky",
+                  prefix: "shuffledForestCranky",
+                  updateItem: setForestCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "forestCrankySnide",
+                  prefix: "shuffledForestCranky",
+                  updateItem: setForestCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "forestFunkyCranky",
+                  prefix: "shuffledForestFunky",
+                  updateItem: setForestFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "himself (no switch)",
+                  storeKey: "forestFunkyNoSwitch",
+                  prefix: "shuffledForestFunky",
+                  updateItem: setForestFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "forestFunkySnide",
+                  prefix: "shuffledForestFunky",
+                  updateItem: setForestFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "forestSnideCranky",
+                  prefix: "shuffledForestSnide",
+                  updateItem: setForestSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "forestSnideFunky",
+                  prefix: "shuffledForestSnide",
+                  updateItem: setForestSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "himself (no switch)",
+                  storeKey: "forestSnideNoSwitch",
+                  prefix: "shuffledForestSnide",
+                  updateItem: setForestSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Crystal Caves:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "himself (no switch)",
+                  storeKey: "cavesCrankyNoSwitch",
+                  prefix: "shuffledCavesCranky",
+                  updateItem: setCavesCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "cavesCrankyFunky",
+                  prefix: "shuffledCavesCranky",
+                  updateItem: setCavesCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "cavesCrankyCandy",
+                  prefix: "shuffledCavesCranky",
+                  updateItem: setCavesCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "cavesCrankySnide",
+                  prefix: "shuffledCavesCranky",
+                  updateItem: setCavesCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "cavesFunkyCranky",
+                  prefix: "shuffledCavesFunky",
+                  updateItem: setCavesFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "himself (no switch)",
+                  storeKey: "cavesFunkyNoSwitch",
+                  prefix: "shuffledCavesFunky",
+                  updateItem: setCavesFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "cavesFunkyCandy",
+                  prefix: "shuffledCavesFunky",
+                  updateItem: setCavesFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "cavesFunkySnide",
+                  prefix: "shuffledCavesFunky",
+                  updateItem: setCavesFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "cavesCandyCranky",
+                  prefix: "shuffledCavesCandy",
+                  updateItem: setCavesCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "cavesCandyFunky",
+                  prefix: "shuffledCavesCandy",
+                  updateItem: setCavesCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "herself (no switch)",
+                  storeKey: "cavesCandyNoSwitch",
+                  prefix: "shuffledCavesCandy",
+                  updateItem: setCavesCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "cavesCandySnide",
+                  prefix: "shuffledCavesCandy",
+                  updateItem: setCavesCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "cavesSnideCranky",
+                  prefix: "shuffledCavesSnide",
+                  updateItem: setCavesSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "cavesSnideFunky",
+                  prefix: "shuffledCavesSnide",
+                  updateItem: setCavesSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "cavesSnideCandy",
+                  prefix: "shuffledCavesSnide",
+                  updateItem: setCavesSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "himself (no switch)",
+                  storeKey: "cavesSnideNoSwitch",
+                  prefix: "shuffledCavesSnide",
+                  updateItem: setCavesSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Creepy Castle:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "himself (no switch)",
+                  storeKey: "castleCrankyNoSwitch",
+                  prefix: "shuffledCastleCranky",
+                  updateItem: setCastleCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "castleCrankyFunky",
+                  prefix: "shuffledCastleCranky",
+                  updateItem: setCastleCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "castleCrankyCandy",
+                  prefix: "shuffledCastleCranky",
+                  updateItem: setCastleCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "castleCrankySnide",
+                  prefix: "shuffledCastleCranky",
+                  updateItem: setCastleCranky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "castleFunkyCranky",
+                  prefix: "shuffledCastleFunky",
+                  updateItem: setCastleFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "himself (no switch)",
+                  storeKey: "castleFunkyNoSwitch",
+                  prefix: "shuffledCastleFunky",
+                  updateItem: setCastleFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "castleFunkyCandy",
+                  prefix: "shuffledCastleFunky",
+                  updateItem: setCastleFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "castleFunkySnide",
+                  prefix: "shuffledCastleFunky",
+                  updateItem: setCastleFunky
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "castleCandyCranky",
+                  prefix: "shuffledCastleCandy",
+                  updateItem: setCastleCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "castleCandyFunky",
+                  prefix: "shuffledCastleCandy",
+                  updateItem: setCastleCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "herself (no switch)",
+                  storeKey: "castleCandyNoSwitch",
+                  prefix: "shuffledCastleCandy",
+                  updateItem: setCastleCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "Snide",
+                  storeKey: "castleCandySnide",
+                  prefix: "shuffledCastleCandy",
+                  updateItem: setCastleCandy
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: crankyIcon,
+                  title: "Cranky",
+                  storeKey: "castleSnideCranky",
+                  prefix: "shuffledCastleSnide",
+                  updateItem: setCastleSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: funkyIcon,
+                  title: "Funky",
+                  storeKey: "castleSnideFunky",
+                  prefix: "shuffledCastleSnide",
+                  updateItem: setCastleSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: anyInstIcon,
+                  title: "Candy",
+                  storeKey: "castleSnideCandy",
+                  prefix: "shuffledCastleSnide",
+                  updateItem: setCastleSnide
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: snideIcon,
+                  title: "himself (no switch)",
+                  storeKey: "castleSnideNoSwitch",
+                  prefix: "shuffledCastleSnide",
+                  updateItem: setCastleSnide
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", {})
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fast Barrier Settings" }),
