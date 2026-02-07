@@ -19,10 +19,10 @@ const Vanilla: React.FC = () => {
   const hasFunky = whatAFunky()
   const hasCandy = useCandy()
   const hasSnide = useSnide()
-  const [crankyFunky, crankyCandy, crankySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonCranky.galleonCrankyFunky, state.shuffledGalleonCranky.galleonCrankyCandy, state.shuffledFactoryCranky.galleonCrankySnide]))
-  const [funkyCranky, funkySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonFunky.galleonFunkyCranky, state.shuffledGalleonFunky.factoryFunkySnide]))
+  const [crankyFunky, crankyCandy, crankySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonCranky.galleonCrankyFunky, state.shuffledGalleonCranky.galleonCrankyCandy, state.shuffledGalleonCranky.galleonCrankySnide]))
+  const [funkyCranky, funkySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonFunky.galleonFunkyCranky, state.shuffledGalleonFunky.galleonFunkySnide]))
   const [candyCranky, candySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonCandy.galleonCandyFunky, state.shuffledGalleonCandy.galleonCandySnide]))
-  const [snideCranky, snideFunky, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledGalleonSnide.galleonSnideCranky, state.shuffledGalleonSnide.galleonSnideFunky, state.shuffledGalleonSnide.factorySnideCandy]))
+  const [snideCranky, snideFunky, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledGalleonSnide.galleonSnideCranky, state.shuffledGalleonSnide.galleonSnideFunky, state.shuffledGalleonSnide.galleonSnideCandy]))
   return (
     <>
       <ShopGenerator
