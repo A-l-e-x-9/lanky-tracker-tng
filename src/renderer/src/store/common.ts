@@ -1114,7 +1114,7 @@ export interface ShopState {
   shuffledCavesFunky: cavesFunky
   shuffledCavesCandy: cavesCandy
   shuffledCavesSnide: cavesSnide
-  shuffledCastleCranky: ShopCollection["castleCrankyNoSwitch,castleCrankyFunky,castleCrankyCandy,castleCrankySnide"],
+  shuffledCastleCranky: castleCranky
   shuffledCastleFunky: ShopCollection["castleFunkyCranky,castleFunkyNoSwitch,castleFunkyCandy,castleFunkySnide"],
   shuffledCastleCandy: ShopCollection["castleCandyCranky,castleCandyFunky,castleCandyNoSwitch,castleCandySnide"],
   shuffledCastleSnide: ShopCollection["castleSnideCranky,castleSnideFunky,castleSnideCandy,castleSnideNoSwitch"]
@@ -1144,6 +1144,7 @@ interface ShopActions {
   setCavesFunky: (id: string, val: boolean) => void
   setCavesCandy: (id: string, val: boolean) => void
   setCavesSnide: (id: string, val: boolean) => void
+  setCastleCranky: (id: string, val: boolean) => void
 }
 
 export type ShopSlice = ShopState & ShopActions
