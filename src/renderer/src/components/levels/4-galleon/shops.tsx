@@ -6,7 +6,6 @@ import {
   useGalleonOutskirts,
   usePlayGalleon
 } from '@renderer/hooks/galleon'
-import { useShuffledShops } from '@renderer/hooks/settings'
 import { useCranky, whatAFunky, useCandy, useSnide } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
@@ -18,6 +17,10 @@ const Vanilla: React.FC = () => {
   const hasFunky = whatAFunky()
   const hasCandy = useCandy()
   const hasSnide = useSnide()
+  const [crankyFunky, crankyCandy, crankySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonCranky.galleonCrankyFunky, state.shuffledGalleonCranky.galleonCrankyCandy, state.shuffledFactoryCranky.galleonCrankySnide]))
+  const [funkyCranky, funkySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonFunky.galleonFunkyCranky, state.shuffledGalleonFunky.factoryFunkySnide]))
+  const [candyCranky, candySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonCandy.galleonCandyFunky, state.shuffledGalleonCandy.galleonCandySnide]))
+  const [snideCranky, snideFunky, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledGalleonSnide.galleonSnideCranky, state.shuffledGalleonSnide.galleonSnideFunky, state.shuffledGalleonSnide.factorySnideCandy]))
   return (
     <>
       <ShopGenerator
@@ -25,88 +28,39 @@ const Vanilla: React.FC = () => {
         baseName="Galleon Cranky"
         level="Gloomy Galleon"
         region="Shops"
-        inLogic={hasCranky && inStage.in}
-        outLogic={hasCranky && inStage.out}
+        inLogic={hasCranky && ((crankyFunky || crankyCandy) ? outskirts.in : crankySnide ? lighthouseArea.in && highTide.in : inStage.in)}
+        outLogic={hasCranky && ((crankyFunky || crankyCandy) ? outskirts.out : crankySnide ? lighthouseArea.out : inStage.out)}
       />
       <ShopGenerator
         baseId={4120}
         baseName="Galleon Funky"
         level="Gloomy Galleon"
         region="Shops"
-        inLogic={hasFunky && outskirts.in}
-        outLogic={hasFunky && outskirts.out}
+        inLogic={hasFunky && (funkyCranky ? inStage.in : funkySnide ? lighthouseArea.in && highTide.in : outskirts.in)}
+        outLogic={hasFunky && (funkyCranky ? inStage.out : funkySnide ? lighthouseArea.out : outskirts.out)}
       />
       <ShopGenerator
         baseId={4130}
         baseName="Galleon Candy"
         level="Gloomy Galleon"
         region="Shops"
-        inLogic={hasCandy && outskirts.in}
-        outLogic={hasCandy && outskirts.out}
+        inLogic={hasCandy && (candyCranky ? inStage.in : candySnide ? lighthouseArea.in && highTide.in : outskirts.in)}
+        outLogic={hasCandy && (candyCranky ? inStage.out : candySnide ? lighthouseArea.out : outskirts.out)}
       />
       <ShopGenerator
         baseId={4140}
         baseName="Turn in Galleon Blueprint for"
         level="Gloomy Galleon"
         region="Shops"
-        inLogic={hasSnide && lighthouseArea.in && highTide.in}
-        outLogic={hasSnide && lighthouseArea.out}
-      />
-    </>
-  )
-}
-
-const Shuffled: React.FC = () => {
-  const inStage = usePlayGalleon()
-  const outskirts = useGalleonOutskirts()
-  const lighthouseArea = useGalleonLighthouseArea()
-  const highTide = useGalleonHighTide()
-  const hasCranky = useCranky()
-  const hasFunky = whatAFunky()
-  const hasCandy = useCandy()
-  const hasSnide = useSnide()
-
-  return (
-    <>
-      <ShopGenerator
-        baseId={4140}
-        baseName="Galleon Cranky Location"
-        level="Gloomy Galleon"
-        region="Shops"
-        inLogic={hasCranky && inStage.in}
-        outLogic={hasCranky && inStage.out}
-      />
-      <ShopGenerator
-        baseId={4150}
-        baseName="Galleon Funky Location"
-        level="Gloomy Galleon"
-        region="Shops"
-        inLogic={hasFunky && outskirts.in}
-        outLogic={hasFunky && outskirts.out}
-      />
-      <ShopGenerator
-        baseId={4160}
-        baseName="Galleon Candy Location"
-        level="Gloomy Galleon"
-        region="Shops"
-        inLogic={hasCandy && outskirts.in}
-        outLogic={hasCandy && outskirts.out}
-      />
-      <ShopGenerator
-        baseId={4170}
-        baseName="Galleon Snide Location"
-        level="Gloomy Galleon"
-        region="Shops"
-        inLogic={hasSnide && lighthouseArea.in && highTide.in}
-        outLogic={hasSnide && lighthouseArea.out}
+        inLogic={hasSnide && (snideCranky ? inStage.in : (snideFunky || snideCandy) ? outskirts.in : lighthouseArea.in && highTide.in)}
+        outLogic={hasSnide && (snideCranky ? inStage.out : (snideFunky || snideCandy) ? outskirts.out : lighthouseArea.out)}
       />
     </>
   )
 }
 
 const ShopLocations: React.FC = () => {
-  const locations = useShuffledShops() ? <Shuffled /> : <Vanilla />
-  return <ShopPool>{locations}</ShopPool>
+  return <ShopPool><Vanilla /></ShopPool>
 }
 
 export default ShopLocations
