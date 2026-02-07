@@ -519,6 +519,75 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
           }
         }
       })
+    },
+    setForestCranky: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledForestCranky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledForestCranky: {
+            ...state.shuffledForestCranky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledForestCranky: {
+            ...state.shuffledForestCranky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setForestFunky: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledForestFunky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledForestFunky: {
+            ...state.shuffledForestFunky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledForestFunky: {
+            ...state.shuffledForestFunky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setForestSnide: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledForestSnide)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledForestSnide: {
+            ...state.shuffledForestSnide,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledForestSnide: {
+            ...state.shuffledForestSnide,
+            [id]: false
+          }
+        }
+      })
     }
   }
 }
