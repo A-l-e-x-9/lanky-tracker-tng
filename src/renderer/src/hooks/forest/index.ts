@@ -312,7 +312,7 @@ export const useDiddyRaftersGb = (): LogicBool => {
  * @returns true if we can get the banana.
  */
 export const useDkBlastGb = (): LogicBool => {
-  const inStage = usePlayForest()
+  const inStage = useForestMushroomTop()
   return {
     in: useBlast() && inStage.in,
     out: useBlast() && inStage.out
