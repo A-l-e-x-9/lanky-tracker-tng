@@ -14748,7 +14748,7 @@ const TrainingGroundsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(Rainb
   /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingRear, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(Hoard, {})
 ] });
-const Shuffled$F = () => {
+const Shuffled$E = () => {
   const isBreathing = useAnyKong();
   const hasDK = useDk();
   const hasDiddy = useDiddy();
@@ -15549,9 +15549,9 @@ const Shuffled$F = () => {
     )
   ] });
 };
-const ShuffledArenas$8 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$F, {}) : null;
+const ShuffledArenas$8 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$E, {}) : null;
 const CratePool = ({ children }) => usePoolCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const Shuffled$E = () => {
+const Shuffled$D = () => {
   const isBreathing = useAnyKong();
   const hasDK = useDk();
   const hasDiddy = useDiddy();
@@ -16377,8 +16377,8 @@ const Shuffled$E = () => {
     )
   ] });
 };
-const ShuffledCrates$8 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$E, {}) : null;
-const Shuffled$D = () => {
+const ShuffledCrates$8 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
+const Shuffled$C = () => {
   const isBreathing = useGeneralDirt$6();
   const hasShockwave = useShockwave();
   const hasClimbing = useClimbing();
@@ -17202,8 +17202,8 @@ const Shuffled$D = () => {
     )
   ] });
 };
-const ShuffledDirt$8 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
-const Shuffled$C = () => {
+const ShuffledDirt$8 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$C, {}) : null;
+const Shuffled$B = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$6();
   const vanillaFairy2 = useKremFairy();
@@ -17393,8 +17393,8 @@ const Shuffled$C = () => {
     )
   ] });
 };
-const ShuffledFairies$8 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$C, {}) : null;
-const Shuffled$B = () => {
+const ShuffledFairies$8 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$B, {}) : null;
+const Shuffled$A = () => {
   const DKKasplat = useHelmKasplat();
   const diddyKasplat = useCastleKasplat();
   const lankyKasplat = useCavesKasplat();
@@ -17597,7 +17597,7 @@ const Shuffled$B = () => {
     )
   ] });
 };
-const ShuffledKasplats$1 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$B, {}) : null;
+const ShuffledKasplats$1 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$A, {}) : null;
 const IslesRegionChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -19779,7 +19779,7 @@ const StormyTunnelChecks = () => {
     ] })
   ] });
 };
-const Shuffled$A = () => {
+const Shuffled$z = () => {
   const isBreathing = useGeneralThing$5();
   const canReachFunky = useArena$4();
   const canReachPaintingRoom = useJapesPaintingOutside();
@@ -20310,8 +20310,8 @@ const Shuffled$A = () => {
     )
   ] });
 };
-const ShuffledArenas$7 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$A, {}) : null;
-const Shuffled$z = () => {
+const ShuffledArenas$7 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$z, {}) : null;
+const Shuffled$y = () => {
   const isBreathing = useGeneralThing$5();
   const canReachFunky = useArena$4();
   const canReachPaintingRoom = useJapesPaintingOutside();
@@ -20843,8 +20843,8 @@ const Shuffled$z = () => {
     )
   ] });
 };
-const ShuffledCrates$7 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$z, {}) : null;
-const Shuffled$y = () => {
+const ShuffledCrates$7 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$y, {}) : null;
+const Shuffled$x = () => {
   const isBreathing = useGeneralDirt$5();
   const hasShockwave = useShockwave();
   const canReachFunky = useArena$4();
@@ -21399,8 +21399,8 @@ const Shuffled$y = () => {
     )
   ] });
 };
-const ShuffledDirt$7 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$y, {}) : null;
-const Shuffled$x = () => {
+const ShuffledDirt$7 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$x, {}) : null;
+const Shuffled$w = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$5();
   const vanillaFairy1 = useRambiFairy();
@@ -21523,7 +21523,7 @@ const Shuffled$x = () => {
     )
   ] });
 };
-const ShuffledFairies$7 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$x, {}) : null;
+const ShuffledFairies$7 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$w, {}) : null;
 const JapesRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$6, {}),
@@ -24020,7 +24020,7 @@ const TinyMedal$5 = () => {
     )
   ] });
 };
-const Shuffled$w = () => {
+const Shuffled$v = () => {
   const isBreathing = useGeneralThing$4();
   const canReachVanillaArena = useArena$3();
   const hasClimbing = useClimbing();
@@ -24698,8 +24698,8 @@ const Shuffled$w = () => {
     )
   ] });
 };
-const ShuffledArenas$6 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$w, {}) : null;
-const Shuffled$v = () => {
+const ShuffledArenas$6 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$v, {}) : null;
+const Shuffled$u = () => {
   const isBreathing = useGeneralThing$4();
   const hasClimbing = useClimbing();
   const hasVines = useVine();
@@ -25390,8 +25390,8 @@ const Shuffled$v = () => {
     )
   ] });
 };
-const ShuffledCrates$6 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$v, {}) : null;
-const Shuffled$u = () => {
+const ShuffledCrates$6 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : null;
+const Shuffled$t = () => {
   const isBreathing = useGeneralDirt$4();
   const hasShockwave = useShockwave();
   const canReachVanillaArena = useArena$3();
@@ -26070,8 +26070,8 @@ const Shuffled$u = () => {
     )
   ] });
 };
-const ShuffledDirt$6 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : null;
-const Shuffled$t = () => {
+const ShuffledDirt$6 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {}) : null;
+const Shuffled$s = () => {
   const hasCam = useCamera();
   const hasDiving = useDive();
   const hasGrapes = useGrape();
@@ -26260,8 +26260,8 @@ const Shuffled$t = () => {
     )
   ] });
 };
-const ShuffledFairies$6 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {}) : null;
-const Shuffled$s = () => {
+const ShuffledFairies$6 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : null;
+const Shuffled$r = () => {
   const thing = useGeneralThing$4();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -26311,7 +26311,7 @@ const Shuffled$s = () => {
     )
   ] });
 };
-const ShuffledKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : null;
+const ShuffledKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$r, {}) : null;
 const Vanilla$5 = () => {
   const aztecFront = useAztecFront();
   const aztecBack = useAztecBack();
@@ -28208,6 +28208,10 @@ const Vanilla$4 = () => {
   const hasFunky = whatAFunky();
   const hasCandy = useCandy();
   const hasSnide = useSnide();
+  const [crankyFunky, crankySnide] = useDonkStore(useShallow((state) => [state.shuffledFactoryCranky.factoryCrankyFunky, state.shuffledFactoryCranky.factoryCrankySnide]));
+  const [funkyCranky, funkyCandy] = useDonkStore(useShallow((state) => [state.shuffledFactoryFunky.factoryFunkyCranky, state.shuffledFactoryFunky.factoryFunkyCandy]));
+  const [candyFunky, candySnide] = useDonkStore(useShallow((state) => [state.shuffledFactoryCandy.factoryCandyFunky, state.shuffledFactoryCandy.factoryCandySnide]));
+  const [snideCranky, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledFactorySnide.factorySnideCranky, state.shuffledFactorySnide.factorySnideCandy]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
@@ -28216,8 +28220,8 @@ const Vanilla$4 = () => {
         baseName: "Factory Cranky",
         level: "Frantic Factory",
         region: "Shops",
-        inLogic: hasCranky && inStage.in,
-        outLogic: hasCranky && inStage.out
+        inLogic: hasCranky && (crankyFunky || crankySnide ? testing.in : inStage.in),
+        outLogic: hasCranky && (crankyFunky || crankySnide ? testing.out : inStage.out)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28227,8 +28231,8 @@ const Vanilla$4 = () => {
         baseName: "Factory Funky",
         level: "Frantic Factory",
         region: "Shops",
-        inLogic: hasFunky && inStage.in,
-        outLogic: hasFunky && inStage.out
+        inLogic: hasFunky && (funkyCranky || funkyCandy ? inStage.in : testing.in),
+        outLogic: hasFunky && (funkyCranky || funkyCandy ? inStage.out : testing.out)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28238,8 +28242,8 @@ const Vanilla$4 = () => {
         baseName: "Factory Candy",
         level: "Frantic Factory",
         region: "Shops",
-        inLogic: hasCandy && inStage.in,
-        outLogic: hasCandy && inStage.out
+        inLogic: hasCandy && (candyFunky || candySnide ? testing.in : inStage.in),
+        outLogic: hasCandy && (candyFunky || candySnide ? testing.out : inStage.out)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28249,69 +28253,14 @@ const Vanilla$4 = () => {
         baseName: "Turn in Factory Blueprint for",
         level: "Frantic Factory",
         region: "Shops",
-        inLogic: hasSnide && testing.in,
-        outLogic: hasSnide && testing.out
-      }
-    )
-  ] });
-};
-const Shuffled$r = () => {
-  const inStage = usePlayFactory();
-  const testing = useFactoryTesting();
-  const hasCranky = useCranky();
-  const hasFunky = whatAFunky();
-  const hasCandy = useCandy();
-  const hasSnide = useSnide();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 3140,
-        baseName: "Factory Cranky Location",
-        level: "Frantic Factory",
-        region: "Shops",
-        inLogic: hasCranky && inStage.in,
-        outLogic: hasCranky && inStage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 3150,
-        baseName: "Factory Funky Location",
-        level: "Frantic Factory",
-        region: "Shops",
-        inLogic: hasFunky && inStage.in,
-        outLogic: hasFunky && inStage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 3160,
-        baseName: "Factory Candy Location",
-        level: "Frantic Factory",
-        region: "Shops",
-        inLogic: hasCandy && inStage.in,
-        outLogic: hasCandy && inStage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
-      {
-        baseId: 3170,
-        baseName: "Factory Snide Location",
-        level: "Frantic Factory",
-        region: "Shops",
-        inLogic: hasSnide && testing.in,
-        outLogic: hasSnide && testing.out
+        inLogic: hasSnide && (snideCranky || snideCandy ? inStage.in : testing.in),
+        outLogic: hasSnide && (snideCranky || snideCandy ? inStage.out : testing.out)
       }
     )
   ] });
 };
 const ShopLocations$4 = () => {
-  const locations = useShuffledShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$r, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$4, {});
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: locations });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$4, {}) });
 };
 const TestingChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
