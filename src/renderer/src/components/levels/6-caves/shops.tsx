@@ -23,7 +23,7 @@ const ShopLocations: React.FC = () => {
         level="Crystal Caves"
         region="Shops"
         inLogic={hasCranky && (inSnideCave ? inStage.in : inStage.in && !angery)}
-        outLogic={hasCranky && (inSnideCave ? instage.out : (inStage.out || angery))}
+        outLogic={hasCranky && (inSnideCave ? inStage.out : (inStage.out || angery))}
       />
       <ShopGenerator
         baseId={6120}
@@ -31,7 +31,7 @@ const ShopLocations: React.FC = () => {
         level="Crystal Caves"
         region="Shops"
         inLogic={hasFunky && (inSnideCave ? inStage.in : inStage.in && !angery)}
-        outLogic={hasFunky && (inSnideCave ? instage.out : (inStage.out || angery))}
+        outLogic={hasFunky && (inSnideCave ? inStage.out : (inStage.out || angery))}
       />
       <ShopGenerator
         baseId={6130}
@@ -39,7 +39,7 @@ const ShopLocations: React.FC = () => {
         level="Crystal Caves"
         region="Shops"
         inLogic={hasCandy && (inSnideCave ? inStage.in : inStage.in && !angery)}
-        outLogic={hasCandy && (inSnideCave ? instage.out : (inStage.out || angery))}
+        outLogic={hasCandy && (inSnideCave ? inStage.out : (inStage.out || angery))}
       />
       <ShopGenerator
         baseId={6140}
