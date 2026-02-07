@@ -749,6 +749,29 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
           }
         }
       })
+    },
+    setCastleSnide: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledCastleSnide)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledCastleSnide: {
+            ...state.shuffledCastleSnide,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledCastleSnide: {
+            ...state.shuffledCastleSnide,
+            [id]: false
+          }
+        }
+      })
     }
   }
 }

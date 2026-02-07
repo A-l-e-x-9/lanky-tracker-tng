@@ -1117,7 +1117,7 @@ export interface ShopState {
   shuffledCastleCranky: castleCranky
   shuffledCastleFunky: castleFunky
   shuffledCastleCandy: castleCandy
-  shuffledCastleSnide: ShopCollection["castleSnideCranky,castleSnideFunky,castleSnideCandy,castleSnideNoSwitch"]
+  shuffledCastleSnide: castleSnide
 }
 
 interface ShopActions {
@@ -1147,6 +1147,7 @@ interface ShopActions {
   setCastleCranky: (id: string, val: boolean) => void
   setCastleFunky: (id: string, val: boolean) => void
   setCastleCandy: (id: string, val: boolean) => void
+  setCastleSnide: (id: string, val: boolean) => void
 }
 
 export type ShopSlice = ShopState & ShopActions
