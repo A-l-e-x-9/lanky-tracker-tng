@@ -1,7 +1,8 @@
+import { useShallow } from 'zustand/react/shallow'
+import useDonkStore from '@renderer/store'
 import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { usePlayCastle } from '@renderer/hooks/castle'
-import { useShuffledShops } from '@renderer/hooks/settings'
 import { useCranky, whatAFunky, useCandy, useSnide, useClimbing } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
@@ -11,6 +12,7 @@ const Vanilla: React.FC = () => {
   const hasCandy = useCandy()
   const hasClimbing = useClimbing()
   const hasSnide = useSnide()
+  const inFunkySpot = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyFunky || state.shuffledCastleFunky.castleFunkyNoSwitch || state.shuffledCastleCandy.castleCandyFunky || state.shuffledCastleSnide.castleSnideFunky]))
   return (
     <>
       <ShopGenerator
@@ -18,7 +20,7 @@ const Vanilla: React.FC = () => {
         baseName="Castle Cranky"
         level="Creepy Castle"
         region="Shops"
-        inLogic={hasCranky && inStage.in}
+        inLogic={hasCranky && (inFunkySpot ? inStage.in && hasClimbing : inStage.in)}
         outLogic={hasCranky && inStage.out}
       />
       <ShopGenerator
@@ -26,7 +28,7 @@ const Vanilla: React.FC = () => {
         baseName="Castle Funky"
         level="Creepy Castle"
         region="Shops"
-        inLogic={hasFunky && inStage.in && hasClimbing}
+        inLogic={hasFunky && (!inFunkySpot ? inStage.in : inStage.in && hasClimbing)}
         outLogic={hasFunky && inStage.out}
       />
       <ShopGenerator
@@ -34,7 +36,7 @@ const Vanilla: React.FC = () => {
         baseName="Castle Candy"
         level="Creepy Castle"
         region="Shops"
-        inLogic={hasCandy && inStage.in}
+        inLogic={hasCandy && (inFunkySpot ? inStage.in && hasClimbing : inStage.in)}
         outLogic={hasCandy && inStage.out}
       />
       <ShopGenerator
@@ -42,57 +44,15 @@ const Vanilla: React.FC = () => {
         baseName="Turn in Castle Blueprint for"
         level="Creepy Castle"
         region="Shops"
-        inLogic={hasSnide && inStage.in}
+        inLogic={hasSnide && (inFunkySpot ? inStage.in && hasClimbing : inStage.in)}
         outLogic={hasSnide && inStage.out}
       />
     </>
   )
 }
 
-const Shuffled: React.FC = () => {
-  const inStage = usePlayCastle()
-
-  return (
-    <>
-      <ShopGenerator
-        baseId={7140}
-        baseName="Castle Cranky Location"
-        level="Creepy Castle"
-        region="Shops"
-        inLogic={inStage.in}
-        outLogic={inStage.out}
-      />
-      <ShopGenerator
-        baseId={7150}
-        baseName="Castle Funky Location"
-        level="Creepy Castle"
-        region="Shops"
-        inLogic={inStage.in}
-        outLogic={inStage.out}
-      />
-      <ShopGenerator
-        baseId={7160}
-        baseName="Castle Candy Location"
-        level="Creepy Castle"
-        region="Shops"
-        inLogic={inStage.in}
-        outLogic={inStage.out}
-      />
-      <ShopGenerator
-        baseId={7170}
-        baseName="Castle Snide Location"
-        level="Creepy Castle"
-        region="Shops"
-        inLogic={inStage.in}
-        outLogic={inStage.out}
-      />
-    </>
-  )
-}
-
 const ShopLocations: React.FC = () => {
-  const locations = useShuffledShops() ? <Shuffled /> : <Vanilla />
-  return <ShopPool>{locations}</ShopPool>
+  return <ShopPool><Vanilla /></ShopPool>
 }
 
 export default ShopLocations
