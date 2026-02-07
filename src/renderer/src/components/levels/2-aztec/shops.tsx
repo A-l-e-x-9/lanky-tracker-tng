@@ -1,7 +1,8 @@
+import { useShallow } from 'zustand/react/shallow'
+import useDonkStore from '@renderer/store'
 import ShopGenerator from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { useAztecBack, useAztecFront } from '@renderer/hooks/aztec'
-import { useShuffledShops } from '@renderer/hooks/settings'
 import { useCranky, whatAFunky, useCandy, useSnide } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {
@@ -11,6 +12,7 @@ const Vanilla: React.FC = () => {
   const hasFunky = whatAFunky()
   const hasCandy = useCandy()
   const hasSnide = useSnide()
+  const [crankyCandy, funkyCandy, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledAztecCranky.aztecCrankyCandy, state.shuffledAztecFunky.aztecFunkyCandy, state.shuffledAztecSnide.aztecSnideCandy]))
   return (
     <>
       <ShopGenerator
@@ -18,86 +20,39 @@ const Vanilla: React.FC = () => {
         baseName="Aztec Cranky"
         level="Angry Aztec"
         region="Shops"
-        inLogic={hasCranky && aztecBack.in}
-        outLogic={hasCranky && aztecBack.out}
+        inLogic={hasCranky && (crankyCandy ? aztecFront.in : aztecBack.in)}
+        outLogic={hasCranky && (crankyCandy ? aztecFront.out : aztecBack.out)}
       />
       <ShopGenerator
         baseId={2120}
         baseName="Aztec Funky"
         level="Angry Aztec"
         region="Shops"
-        inLogic={hasFunky && aztecBack.in}
-        outLogic={hasFunky && aztecBack.out}
+        inLogic={hasFunky && (funkyCandy ? aztecFront.in : aztecBack.in)}
+        outLogic={hasFunky && (funkyCandy ? aztecFront.out : aztecBack.out)}
       />
       <ShopGenerator
         baseId={2130}
         baseName="Aztec Candy"
         level="Angry Aztec"
         region="Shops"
-        inLogic={hasCandy && aztecFront.in}
-        outLogic={hasCandy && aztecFront.out}
+        inLogic={hasCandy && ((candyCranky || candyFunky || candySnide) ? aztecBack.in : aztecFront.in)}
+        outLogic={hasCandy && ((candyCranky || candyFunky || candySnide) ? aztecBack.out : aztecFront.out)}
       />
       <ShopGenerator
         baseId={2140}
         baseName="Turn in Aztec Blueprint for"
         level="Angry Aztec"
         region="Shops"
-        inLogic={hasSnide && aztecBack.in}
-        outLogic={hasSnide && aztecBack.out}
-      />
-    </>
-  )
-}
-
-const Shuffled: React.FC = () => {
-  const aztecFront = useAztecFront()
-  const aztecBack = useAztecBack()
-  const hasCranky = useCranky()
-  const hasFunky = whatAFunky()
-  const hasCandy = useCandy()
-  const hasSnide = useSnide()
-
-  return (
-    <>
-      <ShopGenerator
-        baseId={2140}
-        baseName="Aztec Cranky Location"
-        level="Angry Aztec"
-        region="Shops"
-        inLogic={hasCranky && aztecBack.in}
-        outLogic={hasCranky && aztecBack.out}
-      />
-      <ShopGenerator
-        baseId={2150}
-        baseName="Aztec Funky Location"
-        level="Angry Aztec"
-        region="Shops"
-        inLogic={hasFunky && aztecBack.in}
-        outLogic={hasFunky && aztecBack.out}
-      />
-      <ShopGenerator
-        baseId={2160}
-        baseName="Aztec Candy Location"
-        level="Angry Aztec"
-        region="Shops"
-        inLogic={hasCandy && aztecFront.in}
-        outLogic={hasCandy && aztecFront.out}
-      />
-      <ShopGenerator
-        baseId={2170}
-        baseName="Aztec Snide Location"
-        level="Angry Aztec"
-        region="Shops"
-        inLogic={hasSnide && aztecBack.in}
-        outLogic={hasSnide && aztecBack.out}
+        inLogic={hasSnide && (snideCandy ? aztecFront.in : aztecBack.in)}
+        outLogic={hasSnide && (snideCandy ? aztecFront.out : aztecBack.out)}
       />
     </>
   )
 }
 
 const ShopLocations: React.FC = () => {
-  const locations = useShuffledShops() ? <Shuffled /> : <Vanilla />
-  return <ShopPool>{locations}</ShopPool>
+  return <ShopPool><Vanilla /></ShopPool>
 }
 
 export default ShopLocations
