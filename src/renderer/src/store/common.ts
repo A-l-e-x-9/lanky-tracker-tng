@@ -1110,10 +1110,10 @@ export interface ShopState {
   shuffledForestCranky: forestCranky
   shuffledForestFunky: forestFunky
   shuffledForestSnide: forestSnide
-  shuffledCavesCranky: ShopCollection["cavesCrankyNoSwitch,cavesCrankyFunky,cavesCrankyCandy,cavesCrankySnide"],
-  shuffledCavesFunky: ShopCollection["cavesFunkyCranky,cavesFunkyNoSwitch,cavesFunkyCandy,cavesFunkySnide"],
-  shuffledCavesCandy: ShopCollection["cavesCandyCranky,cavesCandyFunky,cavesCandyNoSwitch,cavesCandySnide"],
-  shuffledCavesSnide: ShopCollection["cavesSnideCranky,cavesSnideFunky,cavesSnideCandy,cavesSnideNoSwitch"],
+  shuffledCavesCranky: cavesCranky
+  shuffledCavesFunky: cavesFunky
+  shuffledCavesCandy: cavesCandy
+  shuffledCavesSnide: cavesSnide
   shuffledCastleCranky: ShopCollection["castleCrankyNoSwitch,castleCrankyFunky,castleCrankyCandy,castleCrankySnide"],
   shuffledCastleFunky: ShopCollection["castleFunkyCranky,castleFunkyNoSwitch,castleFunkyCandy,castleFunkySnide"],
   shuffledCastleCandy: ShopCollection["castleCandyCranky,castleCandyFunky,castleCandyNoSwitch,castleCandySnide"],
@@ -1140,6 +1140,10 @@ interface ShopActions {
   setForestCranky: (id: string, val: boolean) => void
   setForestFunky: (id: string, val: boolean) => void
   setForestSnide: (id: string, val: boolean) => void
+  setCavesCranky: (id: string, val: boolean) => void
+  setCavesFunky: (id: string, val: boolean) => void
+  setCavesCandy: (id: string, val: boolean) => void
+  setCavesSnide: (id: string, val: boolean) => void
 }
 
 export type ShopSlice = ShopState & ShopActions

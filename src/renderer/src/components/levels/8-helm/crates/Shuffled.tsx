@@ -13,63 +13,63 @@ const canReachThrone = useEOHDoor1()
     <CratePool>
       <HelmCheck
         id={28004}
-        name="Shuffled Melon Crate:: Vanilla Location (on top of the Blast-O-Matic itself)"
+        name="Shuffled Melon Crate: Vanilla Location (on top of the Blast-O-Matic itself)"
         region="Hideout Helm"
         canGetLogic={canReachBOM.in && hasJetbarrel}
         canGetBreak={canReachBOM.out && hasJetbarrel}
       />
       <HelmCheck
         id={28005}
-        name="Shuffled Melon Crate:: Left side of Blast-O-Matic platform"
+        name="Shuffled Melon Crate: Left side of Blast-O-Matic platform"
         region="Hideout Helm"
         canGetLogic={canReachBOM.in}
         canGetBreak={canReachBOM.out}
       />
       <HelmCheck
         id={28006}
-        name="Shuffled Melon Crate:: Right side of Blast-O-Matic platform"
+        name="Shuffled Melon Crate: Right side of Blast-O-Matic platform"
         region="Hideout Helm"
         canGetLogic={canReachBOM.in}
         canGetBreak={canReachBOM.out}
       />
       <HelmCheck
         id={28007}
-        name="Shuffled Melon Crate:: Under the K. Rool door"
+        name="Shuffled Melon Crate: Under the K. Rool door"
         region="Hideout Helm"
         canGetLogic={canReachBOM.in}
         canGetBreak={canReachBOM.out}
       />
       <HelmCheck
         id={28008}
-        name="Shuffled Melon Crate:: Nav room, at the computers"
+        name="Shuffled Melon Crate: Nav room, at the computers"
         region="Hideout Helm"
         canGetLogic={canReachNav.in}
         canGetBreak={canReachNav.out}
       />
       <HelmCheck
         id={28009}
-        name="Shuffled Melon Crate:: Nav room, left window"
+        name="Shuffled Melon Crate: Nav room, left window"
         region="Hideout Helm"
         canGetLogic={canReachNav.in}
         canGetBreak={canReachNav.out}
       />
       <HelmCheck
         id={28010}
-        name="Shuffled Melon Crate:: Nav room, right window"
+        name="Shuffled Melon Crate: Nav room, right window"
         region="Hideout Helm"
         canGetLogic={canReachNav.in}
         canGetBreak={canReachNav.out}
       />
       <HelmCheck
         id={28011}
-        name="Shuffled Melon Crate:: Behind K. Rool's throne"
+        name="Shuffled Melon Crate: Behind K. Rool's throne"
         region="Hideout Helm"
         canGetLogic={canReachThrone.in}
         canGetBreak={canReachThrone.out}
       />
       <HelmCheck
         id={28012}
-        name="Shuffled Melon Crate:: In front of K. Rool's throne"
+        name="Shuffled Melon Crate: In front of K. Rool's throne"
         region="Hideout Helm"
         canGetLogic={canReachThrone.in}
         canGetBreak={canReachThrone.out}

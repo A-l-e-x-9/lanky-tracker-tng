@@ -588,6 +588,98 @@ const shopSlice: StateCreator<AllSlice, [], [], ShopSlice> = (set) => {
           }
         }
       })
+    },
+    setCavesCranky: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledCavesCranky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledCavesCranky: {
+            ...state.shuffledCavesCranky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledCavesCranky: {
+            ...state.shuffledCavesCranky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setCavesFunky: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledCavesFunky)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledCavesFunky: {
+            ...state.shuffledCavesFunky,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledCavesFunky: {
+            ...state.shuffledCavesFunky,
+            [id]: false
+          }
+        }
+      })
+    },
+    setCavesCandy: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledCavesCandy)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledCavesCandy: {
+            ...state.shuffledCavesCandy,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledCavesCandy: {
+            ...state.shuffledCavesCandy,
+            [id]: false
+          }
+        }
+      })
+    },
+    setCavesSnide: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledCavesSnide)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledCavesSnide: {
+            ...state.shuffledCavesSnide,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledCavesSnide: {
+            ...state.shuffledCavesSnide,
+            [id]: false
+          }
+        }
+      })
     }
   }
 }
