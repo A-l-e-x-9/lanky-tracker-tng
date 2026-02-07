@@ -1031,12 +1031,12 @@ interface forestCranky {
   forestCrankyFunky: boolean
   forestCrankySnide: boolean
 }
-interface factoryFunky {
+interface forestFunky {
   forestFunkyCranky: boolean
   forestFunkyNoSwitch: boolean
   forestFunkySnide: boolean
 }
-interface factorySnide {
+interface forestSnide {
   forestSnideCranky: boolean
   forestSnideFunky: boolean
   forestSnideNoSwitch: boolean
@@ -1107,9 +1107,9 @@ export interface ShopState {
   shuffledGalleonFunky: galleonFunky
   shuffledGalleonCandy: galleonCandy
   shuffledGalleonSnide: galleonSnide
-  shuffledForestCranky: ShopCollection["forestCrankyNoSwitch,forestCrankyFunky,forestCrankySnide"],
-  shuffledForestFunky: ShopCollection["forestFunkyCranky,forestFunkyNoSwitch,forestFunkySnide"],
-  shuffledForestSnide: ShopCollection["forestSnideCranky,forestSnideFunky,forestSnideNoSwitch"],
+  shuffledForestCranky: forestCranky
+  shuffledForestFunky: forestFunky
+  shuffledForestSnide: forestSnide
   shuffledCavesCranky: ShopCollection["cavesCrankyNoSwitch,cavesCrankyFunky,cavesCrankyCandy,cavesCrankySnide"],
   shuffledCavesFunky: ShopCollection["cavesFunkyCranky,cavesFunkyNoSwitch,cavesFunkyCandy,cavesFunkySnide"],
   shuffledCavesCandy: ShopCollection["cavesCandyCranky,cavesCandyFunky,cavesCandyNoSwitch,cavesCandySnide"],
