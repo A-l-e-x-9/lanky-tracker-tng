@@ -1,9 +1,7 @@
-import { useShallow } from 'zustand/react/shallow'
-import useDonkStore from '@renderer/store'
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useTinyCagedGb } from '@renderer/hooks/japes'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useHighGrab, useDive, useRocket, useBoulderTech, useTwirl, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
+import { useDive, useBoulderTech, useTwirl, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -11,15 +9,10 @@ const notChunkyKasplat = useGateKasplat()
 const chunkyKasplat = useChunkyUndergroundGb()
 const isBreathing = useGeneralThing()
 const canReachRambiArea = useJapesRambi()
-const highGrab = useHighGrab()
 const canDoDiddyMtnGB = useJapesMine()
 const canReachHiveArea = useJapesHive()
 const canDoTinyCageGB = useTinyCagedGb()
-const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
 const hasDiving = useDive()
-const hasJetbarrel = useRocket()
-const boulderTech = useBoulderTech()
-const hinaKagiyama = useTwirl()
 const hasAGun = useAnyGun()
 const hasOranges = useOrange()
 const hasAnInstrument = useAnyMusic()
@@ -99,8 +92,7 @@ const hasAnInstrument = useAnyMusic()
         id={51010}
         name="Shuffled Kasplat: In Diddy's cave"
         region="Japes Lowlands"
-        canGetLogic={canDoDiddyMtnGB.in}
-        canGetBreak={canDoDiddyMtnGB.out}
+        canGetLogic={canReachDiddyCave}
       />
       <JapesCheck
         id={51011}
