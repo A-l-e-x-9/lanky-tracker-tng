@@ -1,30 +1,25 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGateKasplat, useChunkyUndergroundGb, useIslesKremAscent, useCheckChunkyPound, useIslesFungiIsland, useCavesLobbyGeneric, useCheckLankyPrison, useJapesLobbyGeneric, usePlayLobby, useIslesCrossFungi } from '@renderer/hooks/japes'
+import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useTinyCagedGb } from '@renderer/hooks/japes'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useAnyKong, useGrab, useHighGrab, useDive, useRocket, useBoulderTech, useTwirl, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
+import { useHighGrab, useDive, useRocket, useBoulderTech, useTwirl, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const notChunkyKasplat = useGateKasplat()
 const chunkyKasplat = useChunkyUndergroundGb()
-const isBreathing = useAnyKong()
-const canReachFactoryLobby = useIslesKremAscent()
-const hasGrab = useGrab()
+const isBreathing = useGeneralThing()
+const canReachRambiArea = useJapesRambi()
 const highGrab = useHighGrab()
-const canPoundTheX = useCheckChunkyPound()
+const canDoDiddyMtnGB = useJapesMine()
+const canReachHiveArea = useJapesHive()
+const canDoTinyCageGB = useTinyCagedGb()
 const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
 const hasDiving = useDive()
-const canReachForestLobby = useIslesFungiIsland()
-const canDoGuitarGB = useCavesLobbyGeneric()
 const hasJetbarrel = useRocket()
 const boulderTech = useBoulderTech()
 const hinaKagiyama = useTwirl()
-const canDoSprintGB = useCheckLankyPrison()
-const canReachJapesLobby = useJapesLobbyGeneric()
-const canReachHelmLobby = usePlayLobby('Hideout Helm')
-const canDoRoofDirt = useIslesCrossFungi()
 const hasAGun = useAnyGun()
 const hasOranges = useOrange()
 const hasAnInstrument = useAnyMusic()
@@ -69,37 +64,43 @@ const hasAnInstrument = useAnyMusic()
         id={51005}
         name="Shuffled Kasplat: Behind the Rambi Wall"
         region="Stormy Area"
-        canGetLogic={canReachRambiArea}
+        canGetLogic={canReachRambiArea.in}
+        canGetBreak={canReachRambiArea.out}
       />
       <JapesCheck
         id={51006}
         name="Shuffled Kasplat: Top of Diddy's Mountain"
         region="Japes Hillside"
-        canGetLogic={canDoDiddyMtnGB}
+        canGetLogic={canDoDiddyMtnGB.in}
+        canGetBreak={canDoDiddyMtnGB.out}
       />
       <JapesCheck
         id={51007}
         name="Shuffled Kasplat: Under Chunky's giant GB"
         region="Hive Area"
-        canGetLogic={canReachHiveArea}
+        canGetLogic={canReachHiveArea.in}
+        canGetBreak={canReachHiveArea.out}
       />
       <JapesCheck
         id={51008}
         name="Shuffled Kasplat: With Tiny's caged GB"
         region="Japes Hillside"
-        canGetLogic={canDoTinyCageGB}
+        canGetLogic={canDoTinyCageGB.in}
+        canGetBreak={canDoTinyCageGB.out}
       />
       <JapesCheck
         id={51009}
         name="Shuffled Kasplat: At the vanilla level start"
         region="Japes Lowlands"
-        canGetLogic={isBreathing}
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <JapesCheck
         id={51010}
         name="Shuffled Kasplat: In Diddy's cave"
         region="Japes Lowlands"
-        canGetLogic={canReachDiddyCave}
+        canGetLogic={canDoDiddyMtnGB.in}
+        canGetBreak={canDoDiddyMtnGB.out}
       />
       <JapesCheck
         id={51011}
@@ -112,8 +113,8 @@ const hasAnInstrument = useAnyMusic()
         id={51012}
         name="Shuffled Kasplat: In the Rambi tunnel's pool"
         region="Stormy Area"
-        canGetLogic={canReachRambiArea && (hasAGun || hasAnInstrument) && hasDiving.in}
-        canGetBreak={canReachRambiArea && hasOranges && hasDiving.out}
+        canGetLogic={canReachRambiArea.in && (hasAGun || hasAnInstrument) && hasDiving.in}
+        canGetBreak={canReachRambiArea.out && hasOranges && hasDiving.out}
       />
       <JapesCheck
         id={51013}
@@ -132,7 +133,8 @@ const hasAnInstrument = useAnyMusic()
         id={51015}
         name="Shuffled Kasplat: In Diddy's mountain"
         region="Japes Caves and Mines"
-        canGetLogic={canReachDiddyMtn}
+        canGetLogic={canDoDiddyMtnGB.in}
+        canGetBreak={canDoDiddyMtnGB.out}
       />
       <JapesCheck
         id={51016}
@@ -150,7 +152,8 @@ const hasAnInstrument = useAnyMusic()
         id={51018}
         name="Shuffled Kasplat: The minecart game's exit"
         region="Japes Hillside"
-        canGetLogic={isBreathing}
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
     </KasplatPool>
   )
