@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useTinyCagedGb } from '@renderer/hooks/japes'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useDive, useBoulderTech, useTwirl, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
+import { useDive, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
 const Shuffled: React.FC = () => {
