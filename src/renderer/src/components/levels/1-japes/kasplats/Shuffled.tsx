@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useTinyCagedGb, useJapesSideArea, useJapesKongGates, useDkFreebieGb } from '@renderer/hooks/japes'
+import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useTinyCagedGb, useJapesSideArea, useJapesKongGates, useDkFreebieGb, useJapesPaintingOutside } from '@renderer/hooks/japes'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useDive, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
+import { useDive, useAnyGun, useOrange, useAnyMusic, useMini } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -15,7 +15,9 @@ const canDoTinyCageGB = useTinyCagedGb()
 const canReachDiddyCave = useJapesSideArea()
 const canReachStormyArea = useJapesKongGates()
 const canReachDiddyCage = useDkFreebieGb()
+const canReachPaintingRoom = useJapesPaintingOutside()
 const hasDiving = useDive()
+const hasMiniMonkey = useMini()
 const hasAGun = useAnyGun()
 const hasOranges = useOrange()
 const hasAnInstrument = useAnyMusic()
@@ -137,13 +139,15 @@ const hasAnInstrument = useAnyMusic()
         id={51016}
         name="Shuffled Kasplat: In the hive"
         region="Hive Area"
-        canGetLogic={canGoInHive}
+        canGetLogic={canReachHiveArea.in && hasMiniMonkey}
+        canGetBreak={canReachHiveArea.out && hasMiniMonkey}
       />
       <JapesCheck
         id={51017}
         name="Shuffled Kasplat: In front of Lanky's painting room entrance"
         region="Japes Hillside"
-        canGetLogic={canReachPaintingRoom}
+        canGetLogic={canReachPaintingRoom.in}
+        canGetBreak={canReachPaintingRoom.out}
       />
       <JapesCheck
         id={51018}
