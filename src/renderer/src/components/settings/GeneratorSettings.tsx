@@ -1457,7 +1457,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Roman numeral gates opened in Helm?</p>
               <SimpleIcon
                 imgUrl={rocketIcon}
-                title="Turn this on if your Helm start is set to Vanilla and the Roman numeral gates are already open. Else, you'll need Gorilla Grab and Jetbarrel to get through Helm. (Not necessary on any other Helm start type.)"
+                title="Turn this on if the Roman numeral gates are already open for Helm. Else, you'll need Gorilla Grab and Jetbarrel to get through."
                 storeKey="helmDKStarGates"
                 prefix="removeBarriers"
                 updateItem={setBarrier}
@@ -1465,7 +1465,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Primate Punch gates opened in Helm?</p>
               <SimpleIcon
                 imgUrl={chunkyIcon}
-                title="Turn this on if your Helm start is set to Vanilla and the Primate Punch gates are already down. Else, you'll need Primate Punch to get through Helm. (Not necessary on any other Helm start type.)"
+                title="Turn this on if the Primate Punch gates are already down for Hideout Helm. Else, you'll need Primate Punch."
                 storeKey="helmPunchGates"
                 prefix="removeBarriers"
                 updateItem={setBarrier}

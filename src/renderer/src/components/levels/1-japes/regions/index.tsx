@@ -23,6 +23,7 @@ import ShuffledArenas from '../arenas/Shuffled'
 import ShuffledCrates from '../crates/Shuffled'
 import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
+import ShuffledKasplats from '../kasplats/Shuffled'
 
 const JapesRegionChecks: React.FC = () => (
 <>
@@ -61,6 +62,9 @@ const JapesRegionChecks: React.FC = () => (
     <ShuffledCrates />
     <ShuffledDirt />
     <ShuffledFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
+    <ShuffledKasplats />
   </div>
 </>
 )

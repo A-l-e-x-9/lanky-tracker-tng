@@ -25,6 +25,7 @@ import ShuffledArenas from './arenas/Shuffled'
 import ShuffledCrates from './crates/Shuffled'
 import ShuffledDirt from './dirt/Shuffled'
 import ShuffledFairies from './fairies/Shuffled'
+import ShuffledKasplats from './kasplats/Shuffled'
 
 const ClassicChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -59,6 +60,7 @@ return (
     <DropPool>
       <EnemyLocations />
     </DropPool>
+    <ShuffledKasplats />
   </div>
   <div className="grid">
     <ShuffledArenas />

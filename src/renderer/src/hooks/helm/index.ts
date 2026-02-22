@@ -98,7 +98,7 @@ export const useHelmDoors = (): LogicBool => {
   const romanNumGatesAlreadyDown = barriers.helmDKStarGates
   const punchGatesAlreadyDown = barriers.helmPunchGates
   return {
-    in: inLevel.in && entry && (helmAccess == 2 || (anyMusic && (helmAccess == 1 || (machine.in && ((grab && rocket) || romanNumGatesAlreadyDown) && (punch || punchGatesAlreadyDown))))),
+    in: inLevel.in && entry && (helmAccess == 2 || (anyMusic && ((machine.in && ((grab && rocket) || romanNumGatesAlreadyDown) && (punch || punchGatesAlreadyDown))))),
     out: inLevel.out && entry && machine.out && grab && rocket && punch
   }
 }

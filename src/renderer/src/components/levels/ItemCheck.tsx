@@ -86,12 +86,7 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
     || props.id === 7023
     || props.id === 7033
     || props.id === 7040
-    || props.id === 7043
-    || props.id === 8100
-    || props.id === 8101
-    || props.id === 8102
-    || props.id === 8103
-    || props.id === 8104))) {
+    || props.id === 7043))) {
     rowNames.push('foolish')
   } else if (isHoard) {
     rowNames.push('woth')
