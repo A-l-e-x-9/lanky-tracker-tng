@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useTinyCagedGb } from '@renderer/hooks/japes'
+import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useTinyCagedGb, useJapesSideArea, useJapesKongGates, useDkFreebieGb } from '@renderer/hooks/japes'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useDive, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
@@ -12,6 +12,9 @@ const canReachRambiArea = useJapesRambi()
 const canDoDiddyMtnGB = useJapesMine()
 const canReachHiveArea = useJapesHive()
 const canDoTinyCageGB = useTinyCagedGb()
+const canReachDiddyCave = useJapesSideArea()
+const canReachStormyArea = useJapesKongGates()
+const canReachDiddyCage = useDkFreebieGb()
 const hasDiving = useDive()
 const hasAGun = useAnyGun()
 const hasOranges = useOrange()
@@ -92,14 +95,15 @@ const hasAnInstrument = useAnyMusic()
         id={51010}
         name="Shuffled Kasplat: In Diddy's cave"
         region="Japes Lowlands"
-        canGetLogic={canReachDiddyCave}
+        canGetLogic={canReachDiddyCave.in}
+        canGetBreak={canReachDiddyCave.out}
       />
       <JapesCheck
         id={51011}
         name="Shuffled Kasplat: In the river"
         region="Japes Lowlands"
-        canGetLogic={(hasAGun || hasAnInstrument) && hasDiving.in}
-        canGetBreak={hasOranges && hasDiving.out}
+        canGetLogic={isBreathing.in && (hasAGun || hasAnInstrument) && hasDiving.in}
+        canGetBreak={isBreathing.out && hasOranges && hasDiving.out}
       />
       <JapesCheck
         id={51012}
@@ -112,14 +116,15 @@ const hasAnInstrument = useAnyMusic()
         id={51013}
         name="Shuffled Kasplat: Behind Cranky's"
         region="Stormy Area"
-        canGetLogic={canReachStormyArea}
+        canGetLogic={canReachStormyArea.in}
+        canGetBreak={canReachStormyArea.out}
       />
       <JapesCheck
         id={51014}
         name="Shuffled Kasplat: The Troff 'n' Scoff door on the Hillside"
         region="Japes Hillside"
-        canGetLogic={hasVines && hasClimbing}
-        canGetBreak={canReachDiddyCage}
+        canGetLogic={isBreathing.in && hasVines && hasClimbing}
+        canGetBreak={canReachDiddyCage.out}
       />
       <JapesCheck
         id={51015}
