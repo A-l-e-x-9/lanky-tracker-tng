@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import BananaMedalPool from '@renderer/components/pools/BananaMedals'
 import BossCheck from '../boss'
 import TopMountain from '../gold-bananas/diddy/TopMountain'
@@ -25,7 +27,9 @@ import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 import ShuffledKasplats from '../kasplats/Shuffled'
 
-const JapesRegionChecks: React.FC = () => (
+const JapesRegionChecks: React.FC = () => {
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+return (
 <>
   <div className="grid">
     <BananaMedalPool>
@@ -68,5 +72,6 @@ const JapesRegionChecks: React.FC = () => (
   </div>
 </>
 )
+}
 
 export default JapesRegionChecks
