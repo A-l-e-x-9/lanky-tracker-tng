@@ -1,17 +1,14 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent, useCheckChunkyPound, useIslesFungiIsland, useCavesLobbyGeneric, useCheckLankyPrison, useJapesLobbyGeneric, usePlayLobby, useIslesCrossFungi } from '@renderer/hooks/japes'
+import { useGateKasplat, useChunkyUndergroundGb, useIslesKremAscent, useCheckChunkyPound, useIslesFungiIsland, useCavesLobbyGeneric, useCheckLankyPrison, useJapesLobbyGeneric, usePlayLobby, useIslesCrossFungi } from '@renderer/hooks/japes'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useAnyKong, useGrab, useHighGrab, useDive, useRocket, useBoulderTech, useTwirl, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
 const Shuffled: React.FC = () => {
-const DKKasplat = useHelmKasplat()
-const diddyKasplat = useCastleKasplat()
-const lankyKasplat = useCavesKasplat()
-const tinyKasplat = useFactoryKasplat()
-const chunkyKasplat = useGalleonKasplat()
+const notChunkyKasplat = useGateKasplat()
+const chunkyKasplat = useChunkyUndergroundGb()
 const isBreathing = useAnyKong()
 const canReachFactoryLobby = useIslesKremAscent()
 const hasGrab = useGrab()
@@ -37,29 +34,29 @@ const hasAnInstrument = useAnyMusic()
         id={51000}
         name="Shuffled Kasplat: DK's Vanilla Location (lower portion of Hive Tunnel)"
         region="Hive Area"
-        canGetLogic={DKKasplat.in}
-        canGetBreak={DKKasplat.out}
+        canGetLogic={notChunkyKasplat.in}
+        canGetBreak={notChunkyKasplat.out}
       />
       <JapesCheck
         id={51001}
         name="Shuffled Kasplat: Diddy's Vanilla Location (Stormy Cave, near Lanky's painting room)"
         region="Stormy Area"
-        canGetLogic={diddyKasplat.in}
-        canGetBreak={diddyKasplat.out}
+        canGetLogic={notChunkyKasplat.in}
+        canGetBreak={notChunkyKasplat.out}
       />
       <JapesCheck
         id={51002}
         name="Shuffled Kasplat: Lanky's Vanilla Location (near his slope barrel in the Stormy Cave)"
         region="Stormy Area"
-        canGetLogic={lankyKasplat.in}
-        canGetBreak={lankyKasplat.out}
+        canGetLogic={notChunkyKasplat.in}
+        canGetBreak={notChunkyKasplat.out}
       />
       <JapesCheck
         id={51003}
         name="Shuffled Kasplat: Tiny's Vanilla Location (upper portion of Hive Tunnel)"
         region="Hive Area"
-        canGetLogic={tinyKasplat.in}
-        canGetBreak={tinyKasplat.out}
+        canGetLogic={notChunkyKasplat.in}
+        canGetBreak={notChunkyKasplat.out}
       />
       <JapesCheck
         id={51004}
