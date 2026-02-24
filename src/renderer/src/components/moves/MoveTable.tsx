@@ -81,7 +81,7 @@ const MoveTable = (): JSX.Element => {
       <SimpleIcon storeKey="bongos" title="Bongoes" imgUrl={dkInstIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="grab" title="Gorilla Grab" imgUrl={dkMoveIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="strong" title="Strong Kong" imgUrl={dkBarrelIcon} prefix="moves" updateItem={setMove} />
-      <SimpleIcon storeKey="blast" title="Barrel Blast" imgUrl={dkPadIcon} prefix="moves" updateItem={setMove} />
+      <SimpleIcon storeKey="blast" title="Baboon Blast" imgUrl={dkPadIcon} prefix="moves" updateItem={setMove} />
       <CountSelector
         storeKey="dkBp"
         imgUrl={dkBpIcon}

@@ -108,7 +108,7 @@ const hasTriangle = useTriangle()
       <CavesCheck
         id={26014}
         name="Shuffled Melon Crate: Tag Barrel at the Ice Castle"
-        region="Forest Area 1"
+        region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
