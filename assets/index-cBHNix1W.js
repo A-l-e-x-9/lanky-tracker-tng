@@ -37433,7 +37433,7 @@ const AnthillBanana = () => {
 };
 const AnthillBean = () => {
   const canDo = useTinyAntGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5034,
@@ -37442,7 +37442,7 @@ const AnthillBean = () => {
       canGetLogic: canDo.in,
       canGetBreak: canDo.out
     }
-  ) }) });
+  ) });
 };
 const BeanCheck = () => {
   const canDo = useTinyBeanGb();
@@ -41066,7 +41066,7 @@ const Shuffled$9 = () => {
       {
         id: 26014,
         name: "Shuffled Melon Crate: Tag Barrel at the Ice Castle",
-        region: "Forest Area 1",
+        region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
       }
@@ -48105,7 +48105,7 @@ const MoveTable = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "bongos", title: "Bongoes", imgUrl: dkMusicIcon, prefix: "moves", updateItem: setMove }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "grab", title: "Gorilla Grab", imgUrl: dkMoveIcon, prefix: "moves", updateItem: setMove }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "strong", title: "Strong Kong", imgUrl: dkBarrelIcon, prefix: "moves", updateItem: setMove }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "blast", title: "Barrel Blast", imgUrl: dkPadIcon, prefix: "moves", updateItem: setMove }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "blast", title: "Baboon Blast", imgUrl: dkPadIcon, prefix: "moves", updateItem: setMove }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         CountSelector,
         {
