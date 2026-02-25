@@ -59,7 +59,7 @@ const hasClimbing = useClimbing()
       <AztecCheck
         id={52004}
         name="Shuffled Kasplat: Chunky's Vanilla Location (in his 5DT room)"
-        region="5-Door Temple"
+        region="5 Door Temple"
         canGetLogic={chunkyVanillaKasplat.in}
         canGetBreak={chunkyVanillaKasplat.out}
       />
