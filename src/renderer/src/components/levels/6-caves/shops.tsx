@@ -15,13 +15,14 @@ const ShopLocations: React.FC = () => {
   const hasSnide = useCanAccessSnide()
   const [inSnideCave] = useDonkStore(useShallow((state) => [state.shuffledCavesCranky.cavesCrankySnide || state.shuffledCavesFunky.cavesFunkySnide || state.shuffledCavesCandy.cavesCandySnide]))
   const [outOfSnideCave] = useDonkStore(useShallow((state) => [state.shuffledCavesSnide.cavesSnideCranky || state.shuffledCavesSnide.cavesSnideFunky || state.shuffledCavesSnide.cavesSnideCandy]))
+  const [crankyCandy, funkyCandy, candyNoSwitch, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledCavesCranky.cavesCrankyCandy, state.shuffledCavesFunky.cavesFunkyCandy, state.shuffledCavesCandy.cavesCandyNoSwitch, state.shuffledCavesSnide.cavesSnideCandy]))
   return (
     <ShopPool>
       <ShopGenerator
         baseId={6110}
         baseName="Caves Cranky"
         level="Crystal Caves"
-        region="Shops"
+        region={crankyCandy ? "Caves Cabins" : "Crystal Caves Main"}
         inLogic={hasCranky && (inSnideCave ? inStage.in : inStage.in && !angery)}
         outLogic={hasCranky && (inSnideCave ? inStage.out : (inStage.out || angery))}
       />
@@ -29,7 +30,7 @@ const ShopLocations: React.FC = () => {
         baseId={6120}
         baseName="Caves Funky"
         level="Crystal Caves"
-        region="Shops"
+        region={funkyCandy ? "Caves Cabins" : "Crystal Caves Main"}
         inLogic={hasFunky && (inSnideCave ? inStage.in : inStage.in && !angery)}
         outLogic={hasFunky && (inSnideCave ? inStage.out : (inStage.out || angery))}
       />
@@ -37,7 +38,7 @@ const ShopLocations: React.FC = () => {
         baseId={6130}
         baseName="Caves Candy"
         level="Crystal Caves"
-        region="Shops"
+        region={candyNoSwitch ? "Caves Cabins" : "Crystal Caves Main"}
         inLogic={hasCandy && (inSnideCave ? inStage.in : inStage.in && !angery)}
         outLogic={hasCandy && (inSnideCave ? inStage.out : (inStage.out || angery))}
       />
@@ -45,7 +46,7 @@ const ShopLocations: React.FC = () => {
         baseId={6140}
         baseName="Turn in Caves Blueprint for"
         level="Crystal Caves"
-        region="Shops"
+        region={snideCandy ? "Caves Cabins" : "Crystal Caves Main"}
         inLogic={hasSnide && (outOfSnideCave ? inStage.in && !angery : inStage.in)}
         outLogic={hasSnide && (outOfSnideCave ? (inStage.out || angery) : inStage.out)} //Snide is in a "safe zone", so no Angry Caves check for his vanilla location
       />
