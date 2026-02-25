@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, useCoconutKasplat, useOasisKasplat, useLlamaLavaKasplat, useTunnelKasplat, useChunkyKasplat, useDkTunnelGb, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb } from '@renderer/hooks/aztec'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useDive, useAnyGun, useOrange, useAnyMusic, useMini, useVine, useClimbing, useRocket, useDiddy, useTiny, usePineapple, useGrape } from '@renderer/hooks/kongs'
+import { useDive, useVine, useClimbing, useRocket, useDiddy, useTiny, usePineapple, useGrape } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -18,7 +18,6 @@ const canGoInTinyTemple = useAztecTinyTemple()
 const canGetPastTTIce = useTinyTempleIce()
 const canDoDK5DT = useDk5DoorGb()
 const hasDiving = useDive()
-const hasMiniMonkey = useMini()
 const hasVines = useVine()
 const hasClimbing = useClimbing()
 const hasJetbarrel = useRocket()
