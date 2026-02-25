@@ -21,7 +21,7 @@ const Vanilla: React.FC = () => {
         baseId={5110}
         baseName="Forest Cranky"
         level="Fungi Forest"
-        region="Shops"
+        region={crankyFunky ? "Forest Area 2" : crankySnide ? "Forest Area 1" : "Forest Area 3"}
         inLogic={hasCranky && (crankyFunky ? beanstalk.in : crankySnide ? day.in : inStage.in)}
         outLogic={hasCranky && (crankyFunky ? beanstalk.out : crankySnide ? day.out : inStage.out)}
       />
@@ -29,7 +29,7 @@ const Vanilla: React.FC = () => {
         baseId={5120}
         baseName="Forest Funky"
         level="Fungi Forest"
-        region="Shops"
+        region={funkyCranky ? "Forest Area 3" : funkySnide ? "Forest Area 1" : "Forest Area 2"}
         inLogic={hasFunky && (funkyCranky ? inStage.in : funkySnide ? day.in : beanstalk.in)}
         outLogic={hasFunky && (funkyCranky ? inStage.out : funkySnide ? day.out : beanstalk.out)}
       />
@@ -37,7 +37,7 @@ const Vanilla: React.FC = () => {
         baseId={5140}
         baseName="Turn in Forest Blueprint for"
         level="Fungi Forest"
-        region="Shops"
+        region={snideCranky ? "Forest Area 3" : snideFunky ? "Forest Area 2" : "Forest Area 1"}
         inLogic={hasSnide && (snideCranky ? inStage.in : snideFunky ? beanstalk.in : day.in)}
         outLogic={hasSnide && (snideCranky ? inStage.out : snideFunky ? beanstalk.out : day.out)}
       />
