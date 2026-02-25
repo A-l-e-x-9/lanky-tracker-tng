@@ -25,7 +25,7 @@ const Vanilla: React.FC = () => {
         baseId={1110}
         baseName="Japes Cranky"
         level="Jungle Japes"
-        region="Shops"
+        region={crankyFunky || crankySnide ? "Japes Hillside" : "Stormy Area"}
         inLogic={((crankyFunky || crankySnide) ? playJapes.in && (climbing || bananaport) : kongGates.in) && hasCranky}
         outLogic={((crankyFunky || crankySnide) ? playJapes.out : kongGates.out) && hasCranky}
       />
@@ -33,7 +33,7 @@ const Vanilla: React.FC = () => {
         baseId={1120}
         baseName="Japes Funky"
         level="Jungle Japes"
-        region="Shops"
+        region={funkyCranky ? "Stormy Area" : "Japes Hillside"}
         inLogic={(funkyCranky ? kongGates.in : playJapes.in && (climbing || bananaport)) && hasFunky}
         outLogic={(funkyCranky ? kongGates.out : playJapes.out) && hasFunky}
       />
@@ -41,7 +41,7 @@ const Vanilla: React.FC = () => {
         baseId={1140}
         baseName="Turn in Japes Blueprint for"
         level="Jungle Japes"
-        region="Shops"
+        region={snideCranky ? "Stormy Area" : "Japes Hillside"}
         inLogic={(snideCranky ? kongGates.in : playJapes.in && (climbing || bananaport)) && hasSnide}
         outLogic={(snideCranky ? kongGates.out : playJapes.out) && hasSnide}
       />
