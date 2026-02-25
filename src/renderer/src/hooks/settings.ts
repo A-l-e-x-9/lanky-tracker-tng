@@ -140,10 +140,13 @@ export const usePoolBlueprints = (): boolean =>
 
 /**
  * Are the banana fairies in the rando pool?
- * @returns true if the fairies are in the pool.
+ * @returns true if the fairies are in the pool OR if they're not, but the win condition is to get fairies.
  */
-export const usePoolFairies = (): boolean =>
-  useDonkStore(useShallow((state) => state.settings.poolFairies))
+export const usePoolFairies = (): boolean => {
+  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies))
+  const fairyWinCon = useDonkStore(useShallow((state) => state.winCondition.fairies))
+  return fairiesInRotation || (fairyWinCon && !fairiesInRotation)
+}
 
 /**
  * Is Dropsanity turned on? That is, can enemy drops contain checks?

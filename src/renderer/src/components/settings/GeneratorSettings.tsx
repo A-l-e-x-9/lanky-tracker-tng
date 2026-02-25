@@ -368,7 +368,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Fairies</p>
               <SimpleRadioIcon
                 imgUrl={fairyIcon}
-                title="Highlights Banana Fairies in a red background."
+                title="Highlights Banana Fairies in a red background. Also highlights Fairy checks in red text if Fairies are not in the rotation."
                 storeKey="fairies"
                 prefix="winCondition"
                 updateItem={setWinCondition}

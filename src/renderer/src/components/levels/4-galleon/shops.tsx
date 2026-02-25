@@ -29,7 +29,7 @@ const Vanilla: React.FC = () => {
         baseId={4110}
         baseName="Galleon Cranky"
         level="Gloomy Galleon"
-        region="Shops"
+        region={crankyFunky || crankyCandy ? "Shipyard Outskirts" : crankySnide ? "Lighthouse Area" : "Galleon Caves"}
         inLogic={hasCranky && ((crankyFunky || crankyCandy) ? outskirts.in : crankySnide ? lighthouseArea.in && highTide.in : inStage.in)}
         outLogic={hasCranky && ((crankyFunky || crankyCandy) ? outskirts.out : crankySnide ? lighthouseArea.out : inStage.out)}
       />
@@ -37,7 +37,7 @@ const Vanilla: React.FC = () => {
         baseId={4120}
         baseName="Galleon Funky"
         level="Gloomy Galleon"
-        region="Shops"
+        region={funkyCranky ? "Galleon Caves" : funkySnide ? "Lighthouse Area" : "Shipyard Outskirts"}
         inLogic={hasFunky && (funkyCranky ? inStage.in : funkySnide ? lighthouseArea.in && highTide.in : outskirts.in)}
         outLogic={hasFunky && (funkyCranky ? inStage.out : funkySnide ? lighthouseArea.out : outskirts.out)}
       />
@@ -45,7 +45,7 @@ const Vanilla: React.FC = () => {
         baseId={4130}
         baseName="Galleon Candy"
         level="Gloomy Galleon"
-        region="Shops"
+        region={candyCranky ? "Galleon Caves" : candySnide ? "Lighthouse Area" : "Shipyard Outskirts"}
         inLogic={hasCandy && (candyCranky ? inStage.in : candySnide ? lighthouseArea.in && highTide.in : outskirts.in)}
         outLogic={hasCandy && (candyCranky ? inStage.out : candySnide ? lighthouseArea.out : outskirts.out)}
       />
@@ -53,7 +53,7 @@ const Vanilla: React.FC = () => {
         baseId={4140}
         baseName="Turn in Galleon Blueprint for"
         level="Gloomy Galleon"
-        region="Shops"
+        region={snideCranky ? "Galleon Caves" : snideFunky || snideCandy ? "Shipyard Outskirts" : "Lighthouse Area"}
         inLogic={hasSnide && (snideCranky ? inStage.in : (snideFunky || snideCandy) ? outskirts.in : lighthouseArea.in && highTide.in)}
         outLogic={hasSnide && (snideCranky ? inStage.out : (snideFunky || snideCandy) ? outskirts.out : lighthouseArea.out)}
       />
