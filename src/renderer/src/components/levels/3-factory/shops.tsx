@@ -22,7 +22,7 @@ const Vanilla: React.FC = () => {
         baseId={3110}
         baseName="Factory Cranky"
         level="Frantic Factory"
-        region="Shops"
+        region={crankyFunky || crankySnide ? "Testing Room" : "Storage and Arcade Area"}
         inLogic={hasCranky && ((crankyFunky || crankySnide) ? testing.in : inStage.in)}
         outLogic={hasCranky && ((crankyFunky || crankySnide) ? testing.out : inStage.out)}
       />
@@ -30,7 +30,7 @@ const Vanilla: React.FC = () => {
         baseId={3120}
         baseName="Factory Funky"
         level="Frantic Factory"
-        region="Shops"
+        region={funkyCranky || funkyCandy ? "Storage and Arcade Area" : "Testing Room"}
         inLogic={hasFunky && ((funkyCranky || funkyCandy) ? inStage.in : testing.in)}
         outLogic={hasFunky && ((funkyCranky || funkyCandy) ? inStage.out : testing.out)}
       />
@@ -38,7 +38,7 @@ const Vanilla: React.FC = () => {
         baseId={3130}
         baseName="Factory Candy"
         level="Frantic Factory"
-        region="Shops"
+        region={candyFunky || candySnide ? "Testing Room" : "Storage and Arcade Area"}
         inLogic={hasCandy && ((candyFunky || candySnide) ? testing.in : inStage.in)}
         outLogic={hasCandy && ((candyFunky || candySnide) ? testing.out : inStage.out)}
       />
@@ -46,7 +46,7 @@ const Vanilla: React.FC = () => {
         baseId={3140}
         baseName="Turn in Factory Blueprint for"
         level="Frantic Factory"
-        region="Shops"
+        region={snideCranky || snideCandy ? "Storage and Arcade Area" : "Testing Room"}
         inLogic={hasSnide && ((snideCranky || snideCandy) ? inStage.in : testing.in)}
         outLogic={hasSnide && ((snideCranky || snideCandy) ? inStage.out : testing.out)}
       />
