@@ -17,14 +17,14 @@ const Vanilla: React.FC = () => {
       baseId={110}
       baseName="Isles Cranky"
       level="DK Isles"
-      region="Shops"
+      region="K. Rool's Island"
       inLogic={kremAscent && cranky}
     />
     <ShopGenerator
       baseId={140}
       baseName="Turn in Isles Blueprint for"
       level="DK Isles"
-      region="Shops"
+      region="DK Island"
       inLogic={snide}
     />
   </>
@@ -36,14 +36,14 @@ const Vanilla: React.FC = () => {
       baseId={110}
       baseName="Isles Cranky"
       level="DK Isles"
-      region="Shops"
+      region="DK Island"
       inLogic={cranky}
     />
     <ShopGenerator
       baseId={140}
       baseName="Turn in Isles Blueprint for"
       level="DK Isles"
-      region="Shops"
+      region="K. Rool's Island"
       inLogic={kremAscent && snide}
     />
   </>
