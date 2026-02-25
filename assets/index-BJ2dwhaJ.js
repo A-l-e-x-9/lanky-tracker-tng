@@ -17694,6 +17694,7 @@ const WrinklyDoors = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExpo
 ] });
 const ClassicChecks$7 = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const isFairySeed = useDonkStore(useShallow((state) => [state.winCondition.fairies && !state.settings.poolFairies])) ? "foolish" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$7, {}),
@@ -17705,8 +17706,10 @@ const ClassicChecks$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$7, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CrateLocations$5, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(DirtLocations$3, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations$7, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DirtLocations$3, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations$7, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaLocations, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
@@ -17722,9 +17725,9 @@ const ClassicChecks$7 = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$8, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$8, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$8, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {})
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$8, {})
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$2, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$8, {})
