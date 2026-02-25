@@ -38992,7 +38992,7 @@ const EnemyLocations$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
 ] });
 const CabinFairy = () => {
   const cabin = useCabinFairy();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CavesCheck,
     {
       id: 6081,
@@ -39001,7 +39001,7 @@ const CabinFairy = () => {
       canGetLogic: cabin.in,
       canGetBreak: cabin.out
     }
-  ) }) }) });
+  ) }) });
 };
 const IglooFairy = () => {
   const canDo = useIglooFairy();
