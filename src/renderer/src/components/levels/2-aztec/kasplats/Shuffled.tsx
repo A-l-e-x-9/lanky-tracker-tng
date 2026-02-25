@@ -72,8 +72,8 @@ const hasPineapples = usePineapple()
         id={52005}
         name="Shuffled Kasplat: In DK's quicksand tunnel"
         region="Aztec Caves"
-        canGetLogic={candoQSGB.in}
-        canGetBreak={candoQSGB.out}
+        canGetLogic={canDoQSGB.in}
+        canGetBreak={canDoQSGB.out}
       />
       <AztecCheck
         id={52006}
