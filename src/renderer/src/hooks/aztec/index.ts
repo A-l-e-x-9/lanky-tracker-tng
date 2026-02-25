@@ -336,7 +336,7 @@ export const useDkTunnelGb = (): LogicBool => {
   const strong = useStrong()
   return {
     in: tunnel.in && strong,
-    out: (tunnel.in || tunnel.out)
+    out: tunnel.out
   }
 }
 
