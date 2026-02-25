@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useCoconutKasplat, useOasisKasplat, useLlamaLavaKasplat, useTunnelKasplat, useChunkyKasplat, useDkTunnelGb, useAztecBack } from '@renderer/hooks/aztec'
+import { useGeneralThing, useCoconutKasplat, useOasisKasplat, useLlamaLavaKasplat, useTunnelKasplat, useChunkyKasplat, useDkTunnelGb, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce } from '@renderer/hooks/aztec'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useDive, useAnyGun, useOrange, useAnyMusic, useMini, useVine, useClimbing, useRocket, useDiddy, useTiny, usePineapple } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
@@ -13,13 +13,9 @@ const chunkyVanillaKasplat = useChunkyKasplat()
 const isBreathing = useGeneralThing()
 const canDoQSGB = useDkTunnelGb()
 const canEnterBack = useAztecBack()
-const canDoDiddyMtnGB = useJapesMine()
-const canReachHiveArea = useJapesHive()
-const canDoTinyCageGB = useTinyCagedGb()
-const canReachDiddyCave = useJapesSideArea()
-const canReachStormyArea = useJapesKongGates()
-const canReachDiddyCage = useDkFreebieGb()
-const canReachPaintingRoom = useJapesPaintingOutside()
+const canGoInLlamaTemple = useAztecLlamaTemple()
+const canGoInTinyTemple = useAztecTinyTemple()
+const canGetPastTTIce = useTinyTempleIce()
 const hasDiving = useDive()
 const hasMiniMonkey = useMini()
 const hasAGun = useAnyGun()
@@ -105,38 +101,38 @@ const hasPineapples = usePineapple()
       />
       <AztecCheck
         id={52010}
-        name="Shuffled Kasplat: In Diddy's cave"
-        region="Japes Lowlands"
-        canGetLogic={canReachDiddyCave.in}
-        canGetBreak={canReachDiddyCave.out}
+        name="Shuffled Kasplat: Back top of the 5-Door Temple"
+        region="Aztec Main Area"
+        canGetLogic={canEnterBack.in}
+        canGetBreak={canEnterBack.out}
       />
       <AztecCheck
         id={52011}
-        name="Shuffled Kasplat: In the river"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in && (hasAGun || hasAnInstrument) && hasDiving.in}
-        canGetBreak={isBreathing.out && hasOranges && hasDiving.out}
+        name="Shuffled Kasplat: Platform near Snide's"
+        region="Aztec Main Area"
+        canGetLogic={canEnterBack.in}
+        canGetBreak={canEnterBack.out}
       />
       <AztecCheck
         id={52012}
-        name="Shuffled Kasplat: In the Rambi tunnel's pool"
-        region="Stormy Area"
-        canGetLogic={canReachRambiArea.in && (hasAGun || hasAnInstrument) && hasDiving.in}
-        canGetBreak={canReachRambiArea.out && hasOranges && hasDiving.out}
+        name="Shuffled Kasplat: Behind the Llama"
+        region="Llama Temple"
+        canGetLogic={canGoInLlamaTemple.in}
+        canGetBreak={canGoInLlamaTemple.out}
       />
       <AztecCheck
         id={52013}
-        name="Shuffled Kasplat: Behind Cranky's"
-        region="Stormy Area"
-        canGetLogic={canReachStormyArea.in}
-        canGetBreak={canReachStormyArea.out}
+        name="Shuffled Kasplat: At Tiny's Prison"
+        region="Tiny Temple"
+        canGetLogic={canGoInTinyTemple.in && canGetPastTTIce.in && hasDiving.in}
+        canGetBreak={canGoInTinyTemple.out && canGetPastTTIce.out && hasDiving.out}
       />
       <AztecCheck
         id={52014}
-        name="Shuffled Kasplat: The Troff 'n' Scoff door on the Hillside"
-        region="Japes Hillside"
-        canGetLogic={isBreathing.in && hasVines && hasClimbing}
-        canGetBreak={canReachDiddyCage.out}
+        name="Shuffled Kasplat: Behind Diddy's gongs"
+        region="Aztec Main Area"
+        canGetLogic={canEnterBack.in}
+        canGetBreak={canEnterBack.out}
       />
       <AztecCheck
         id={52015}
