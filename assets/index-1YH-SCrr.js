@@ -11216,7 +11216,11 @@ const usePoolToughBananas = () => useDonkStore(useShallow((state) => state.setti
 const usePoolMiniboss = () => useDonkStore(useShallow((state) => state.settings.poolMiniboss));
 const usePoolMisc = () => useDonkStore(useShallow((state) => state.settings.poolMisc));
 const usePoolBlueprints = () => useDonkStore(useShallow((state) => state.settings.poolBlueprints));
-const usePoolFairies = () => useDonkStore(useShallow((state) => state.settings.poolFairies));
+const usePoolFairies = () => {
+  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies));
+  const fairyWinCon = useDonkStore(useShallow((state) => state.winCondition.fairies));
+  return fairiesInRotation || fairyWinCon && !fairiesInRotation;
+};
 const usePoolDrops = () => useDonkStore(useShallow((state) => state.settings.poolDrops));
 const useShuffleColoredBananas = () => useDonkStore(useShallow((state) => state.settings.shuffleColoredBananas));
 const usePoolKeys = () => useDonkStore(useShallow((state) => state.settings.poolKeys));
@@ -13610,12 +13614,13 @@ const JetpacCheck = () => {
   const jetpacCount = useJetpacCount();
   const anyKong = useAnyKong();
   const cranky = useCranky();
+  const shuffledShops = useDonkStore(useShallow((state) => state.shuffledIslesShops.islesSwitchUp));
   return /* @__PURE__ */ jsxRuntimeExports.jsx(CompanyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 105,
       name: "Jetpac",
-      region: "Shops",
+      region: shuffledShops ? "K. Rool's Island" : "DK Island",
       canGetLogic: cranky && anyKong && medals >= jetpacCount
     }
   ) });
@@ -14012,7 +14017,7 @@ const Vanilla$7 = () => {
           baseId: 110,
           baseName: "Isles Cranky",
           level: "DK Isles",
-          region: "Shops",
+          region: "K. Rool's Island",
           inLogic: kremAscent && cranky
         }
       ),
@@ -14022,7 +14027,7 @@ const Vanilla$7 = () => {
           baseId: 140,
           baseName: "Turn in Isles Blueprint for",
           level: "DK Isles",
-          region: "Shops",
+          region: "DK Island",
           inLogic: snide
         }
       )
@@ -14035,7 +14040,7 @@ const Vanilla$7 = () => {
           baseId: 110,
           baseName: "Isles Cranky",
           level: "DK Isles",
-          region: "Shops",
+          region: "DK Island",
           inLogic: cranky
         }
       ),
@@ -14045,7 +14050,7 @@ const Vanilla$7 = () => {
           baseId: 140,
           baseName: "Turn in Isles Blueprint for",
           level: "DK Isles",
-          region: "Shops",
+          region: "K. Rool's Island",
           inLogic: kremAscent && snide
         }
       )
@@ -19646,7 +19651,7 @@ const Vanilla$6 = () => {
         baseId: 1110,
         baseName: "Japes Cranky",
         level: "Jungle Japes",
-        region: "Shops",
+        region: crankyFunky || crankySnide ? "Japes Hillside" : "Stormy Area",
         inLogic: (crankyFunky || crankySnide ? playJapes.in && (climbing || bananaport) : kongGates.in) && hasCranky,
         outLogic: (crankyFunky || crankySnide ? playJapes.out : kongGates.out) && hasCranky
       }
@@ -19657,7 +19662,7 @@ const Vanilla$6 = () => {
         baseId: 1120,
         baseName: "Japes Funky",
         level: "Jungle Japes",
-        region: "Shops",
+        region: funkyCranky ? "Stormy Area" : "Japes Hillside",
         inLogic: (funkyCranky ? kongGates.in : playJapes.in && (climbing || bananaport)) && hasFunky,
         outLogic: (funkyCranky ? kongGates.out : playJapes.out) && hasFunky
       }
@@ -19668,7 +19673,7 @@ const Vanilla$6 = () => {
         baseId: 1140,
         baseName: "Turn in Japes Blueprint for",
         level: "Jungle Japes",
-        region: "Shops",
+        region: snideCranky ? "Stormy Area" : "Japes Hillside",
         inLogic: (snideCranky ? kongGates.in : playJapes.in && (climbing || bananaport)) && hasSnide,
         outLogic: (snideCranky ? kongGates.out : playJapes.out) && hasSnide
       }
@@ -26538,6 +26543,7 @@ const Vanilla$5 = () => {
   const hasFunky = whatAFunky();
   const hasCandy = useCandy();
   const hasSnide = useSnide();
+  const [crankyNoSwitch, funkyCranky, snideCranky] = useDonkStore(useShallow((state) => [state.shuffledAztecCranky.aztecCrankyNoSwitch, state.shuffledAztecFunky.aztecFunkyCranky, state.shuffledAztecSnide.aztecSnideCranky]));
   const [crankyCandy, funkyCandy, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledAztecCranky.aztecCrankyCandy, state.shuffledAztecFunky.aztecFunkyCandy, state.shuffledAztecSnide.aztecSnideCandy]));
   const [candyCranky, candyFunky, candySnide] = useDonkStore(useShallow((state) => [state.shuffledAztecCandy.aztecCandyCranky, state.shuffledAztecCandy.aztecCandyFunky, state.shuffledAztecCandy.aztecCandySnide]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -26547,7 +26553,7 @@ const Vanilla$5 = () => {
         baseId: 2110,
         baseName: "Aztec Cranky",
         level: "Angry Aztec",
-        region: "Shops",
+        region: crankyNoSwitch ? "Aztec Caves" : "Aztec Main Area",
         inLogic: hasCranky && (crankyCandy ? aztecFront.in : aztecBack.in),
         outLogic: hasCranky && (crankyCandy ? aztecFront.out : aztecBack.out)
       }
@@ -26558,7 +26564,7 @@ const Vanilla$5 = () => {
         baseId: 2120,
         baseName: "Aztec Funky",
         level: "Angry Aztec",
-        region: "Shops",
+        region: funkyCranky ? "Aztec Caves" : "Aztec Main Area",
         inLogic: hasFunky && (funkyCandy ? aztecFront.in : aztecBack.in),
         outLogic: hasFunky && (funkyCandy ? aztecFront.out : aztecBack.out)
       }
@@ -26569,7 +26575,7 @@ const Vanilla$5 = () => {
         baseId: 2130,
         baseName: "Aztec Candy",
         level: "Angry Aztec",
-        region: "Shops",
+        region: candyCranky ? "Aztec Caves" : "Aztec Main Area",
         inLogic: hasCandy && (candyCranky || candyFunky || candySnide ? aztecBack.in : aztecFront.in),
         outLogic: hasCandy && (candyCranky || candyFunky || candySnide ? aztecBack.out : aztecFront.out)
       }
@@ -26580,7 +26586,7 @@ const Vanilla$5 = () => {
         baseId: 2140,
         baseName: "Turn in Aztec Blueprint for",
         level: "Angry Aztec",
-        region: "Shops",
+        region: snideCranky ? "Aztec Caves" : "Aztec Main Area",
         inLogic: hasSnide && (snideCandy ? aztecFront.in : aztecBack.in),
         outLogic: hasSnide && (snideCandy ? aztecFront.out : aztecBack.out)
       }
@@ -28438,7 +28444,7 @@ const Vanilla$4 = () => {
         baseId: 3110,
         baseName: "Factory Cranky",
         level: "Frantic Factory",
-        region: "Shops",
+        region: crankyFunky || crankySnide ? "Testing Room" : "Storage and Arcade Area",
         inLogic: hasCranky && (crankyFunky || crankySnide ? testing.in : inStage.in),
         outLogic: hasCranky && (crankyFunky || crankySnide ? testing.out : inStage.out)
       }
@@ -28449,7 +28455,7 @@ const Vanilla$4 = () => {
         baseId: 3120,
         baseName: "Factory Funky",
         level: "Frantic Factory",
-        region: "Shops",
+        region: funkyCranky || funkyCandy ? "Storage and Arcade Area" : "Testing Room",
         inLogic: hasFunky && (funkyCranky || funkyCandy ? inStage.in : testing.in),
         outLogic: hasFunky && (funkyCranky || funkyCandy ? inStage.out : testing.out)
       }
@@ -28460,7 +28466,7 @@ const Vanilla$4 = () => {
         baseId: 3130,
         baseName: "Factory Candy",
         level: "Frantic Factory",
-        region: "Shops",
+        region: candyFunky || candySnide ? "Testing Room" : "Storage and Arcade Area",
         inLogic: hasCandy && (candyFunky || candySnide ? testing.in : inStage.in),
         outLogic: hasCandy && (candyFunky || candySnide ? testing.out : inStage.out)
       }
@@ -28471,7 +28477,7 @@ const Vanilla$4 = () => {
         baseId: 3140,
         baseName: "Turn in Factory Blueprint for",
         level: "Frantic Factory",
-        region: "Shops",
+        region: snideCranky || snideCandy ? "Storage and Arcade Area" : "Testing Room",
         inLogic: hasSnide && (snideCranky || snideCandy ? inStage.in : testing.in),
         outLogic: hasSnide && (snideCranky || snideCandy ? inStage.out : testing.out)
       }
@@ -31599,7 +31605,7 @@ const Vanilla$3 = () => {
         baseId: 4110,
         baseName: "Galleon Cranky",
         level: "Gloomy Galleon",
-        region: "Shops",
+        region: crankyFunky || crankyCandy ? "Shipyard Outskirts" : crankySnide ? "Lighthouse Area" : "Galleon Caves",
         inLogic: hasCranky && (crankyFunky || crankyCandy ? outskirts.in : crankySnide ? lighthouseArea.in && highTide.in : inStage.in),
         outLogic: hasCranky && (crankyFunky || crankyCandy ? outskirts.out : crankySnide ? lighthouseArea.out : inStage.out)
       }
@@ -31610,7 +31616,7 @@ const Vanilla$3 = () => {
         baseId: 4120,
         baseName: "Galleon Funky",
         level: "Gloomy Galleon",
-        region: "Shops",
+        region: funkyCranky ? "Galleon Caves" : funkySnide ? "Lighthouse Area" : "Shipyard Outskirts",
         inLogic: hasFunky && (funkyCranky ? inStage.in : funkySnide ? lighthouseArea.in && highTide.in : outskirts.in),
         outLogic: hasFunky && (funkyCranky ? inStage.out : funkySnide ? lighthouseArea.out : outskirts.out)
       }
@@ -31621,7 +31627,7 @@ const Vanilla$3 = () => {
         baseId: 4130,
         baseName: "Galleon Candy",
         level: "Gloomy Galleon",
-        region: "Shops",
+        region: candyCranky ? "Galleon Caves" : candySnide ? "Lighthouse Area" : "Shipyard Outskirts",
         inLogic: hasCandy && (candyCranky ? inStage.in : candySnide ? lighthouseArea.in && highTide.in : outskirts.in),
         outLogic: hasCandy && (candyCranky ? inStage.out : candySnide ? lighthouseArea.out : outskirts.out)
       }
@@ -31632,7 +31638,7 @@ const Vanilla$3 = () => {
         baseId: 4140,
         baseName: "Turn in Galleon Blueprint for",
         level: "Gloomy Galleon",
-        region: "Shops",
+        region: snideCranky ? "Galleon Caves" : snideFunky || snideCandy ? "Shipyard Outskirts" : "Lighthouse Area",
         inLogic: hasSnide && (snideCranky ? inStage.in : snideFunky || snideCandy ? outskirts.in : lighthouseArea.in && highTide.in),
         outLogic: hasSnide && (snideCranky ? inStage.out : snideFunky || snideCandy ? outskirts.out : lighthouseArea.out)
       }
@@ -38165,7 +38171,7 @@ const Vanilla$2 = () => {
         baseId: 5110,
         baseName: "Forest Cranky",
         level: "Fungi Forest",
-        region: "Shops",
+        region: crankyFunky ? "Forest Area 2" : crankySnide ? "Forest Area 1" : "Forest Area 3",
         inLogic: hasCranky && (crankyFunky ? beanstalk.in : crankySnide ? day.in : inStage.in),
         outLogic: hasCranky && (crankyFunky ? beanstalk.out : crankySnide ? day.out : inStage.out)
       }
@@ -38176,7 +38182,7 @@ const Vanilla$2 = () => {
         baseId: 5120,
         baseName: "Forest Funky",
         level: "Fungi Forest",
-        region: "Shops",
+        region: funkyCranky ? "Forest Area 3" : funkySnide ? "Forest Area 1" : "Forest Area 2",
         inLogic: hasFunky && (funkyCranky ? inStage.in : funkySnide ? day.in : beanstalk.in),
         outLogic: hasFunky && (funkyCranky ? inStage.out : funkySnide ? day.out : beanstalk.out)
       }
@@ -38187,7 +38193,7 @@ const Vanilla$2 = () => {
         baseId: 5140,
         baseName: "Turn in Forest Blueprint for",
         level: "Fungi Forest",
-        region: "Shops",
+        region: snideCranky ? "Forest Area 3" : snideFunky ? "Forest Area 2" : "Forest Area 1",
         inLogic: hasSnide && (snideCranky ? inStage.in : snideFunky ? beanstalk.in : day.in),
         outLogic: hasSnide && (snideCranky ? inStage.out : snideFunky ? beanstalk.out : day.out)
       }
@@ -40203,6 +40209,7 @@ const ShopLocations$1 = () => {
   const hasSnide = useCanAccessSnide();
   const [inSnideCave] = useDonkStore(useShallow((state) => [state.shuffledCavesCranky.cavesCrankySnide || state.shuffledCavesFunky.cavesFunkySnide || state.shuffledCavesCandy.cavesCandySnide]));
   const [outOfSnideCave] = useDonkStore(useShallow((state) => [state.shuffledCavesSnide.cavesSnideCranky || state.shuffledCavesSnide.cavesSnideFunky || state.shuffledCavesSnide.cavesSnideCandy]));
+  const [crankyCandy, funkyCandy, candyNoSwitch, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledCavesCranky.cavesCrankyCandy, state.shuffledCavesFunky.cavesFunkyCandy, state.shuffledCavesCandy.cavesCandyNoSwitch, state.shuffledCavesSnide.cavesSnideCandy]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ShopPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
@@ -40210,7 +40217,7 @@ const ShopLocations$1 = () => {
         baseId: 6110,
         baseName: "Caves Cranky",
         level: "Crystal Caves",
-        region: "Shops",
+        region: crankyCandy ? "Caves Cabins" : "Crystal Caves Main",
         inLogic: hasCranky && (inSnideCave ? inStage.in : inStage.in && !angery),
         outLogic: hasCranky && (inSnideCave ? inStage.out : inStage.out || angery)
       }
@@ -40221,7 +40228,7 @@ const ShopLocations$1 = () => {
         baseId: 6120,
         baseName: "Caves Funky",
         level: "Crystal Caves",
-        region: "Shops",
+        region: funkyCandy ? "Caves Cabins" : "Crystal Caves Main",
         inLogic: hasFunky && (inSnideCave ? inStage.in : inStage.in && !angery),
         outLogic: hasFunky && (inSnideCave ? inStage.out : inStage.out || angery)
       }
@@ -40232,7 +40239,7 @@ const ShopLocations$1 = () => {
         baseId: 6130,
         baseName: "Caves Candy",
         level: "Crystal Caves",
-        region: "Shops",
+        region: candyNoSwitch ? "Caves Cabins" : "Crystal Caves Main",
         inLogic: hasCandy && (inSnideCave ? inStage.in : inStage.in && !angery),
         outLogic: hasCandy && (inSnideCave ? inStage.out : inStage.out || angery)
       }
@@ -40243,7 +40250,7 @@ const ShopLocations$1 = () => {
         baseId: 6140,
         baseName: "Turn in Caves Blueprint for",
         level: "Crystal Caves",
-        region: "Shops",
+        region: snideCandy ? "Caves Cabins" : "Crystal Caves Main",
         inLogic: hasSnide && (outOfSnideCave ? inStage.in && !angery : inStage.in),
         outLogic: hasSnide && (outOfSnideCave ? inStage.out || angery : inStage.out)
       }
@@ -46265,6 +46272,7 @@ const Vanilla = () => {
   const hasClimbing = useClimbing();
   const hasSnide = useSnide();
   const inFunkySpot = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyFunky || state.shuffledCastleFunky.castleFunkyNoSwitch || state.shuffledCastleCandy.castleCandyFunky || state.shuffledCastleSnide.castleSnideFunky]));
+  const inCandySpot = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyCandy || state.shuffledCastleFunky.castleFunkyCandy || state.shuffledCastleCandy.castleCandyNoSwitch || state.shuffledCastleSnide.castleSnideCandy]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
@@ -46272,7 +46280,7 @@ const Vanilla = () => {
         baseId: 7110,
         baseName: "Castle Cranky",
         level: "Creepy Castle",
-        region: "Shops",
+        region: inFunkySpot ? "Castle Crypt" : inCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
         inLogic: hasCranky && (inFunkySpot ? inStage.in && hasClimbing : inStage.in),
         outLogic: hasCranky && inStage.out
       }
@@ -46283,7 +46291,7 @@ const Vanilla = () => {
         baseId: 7120,
         baseName: "Castle Funky",
         level: "Creepy Castle",
-        region: "Shops",
+        region: inFunkySpot ? "Castle Crypt" : inCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
         inLogic: hasFunky && (!inFunkySpot ? inStage.in : inStage.in && hasClimbing),
         outLogic: hasFunky && inStage.out
       }
@@ -46294,7 +46302,7 @@ const Vanilla = () => {
         baseId: 7130,
         baseName: "Castle Candy",
         level: "Creepy Castle",
-        region: "Shops",
+        region: inFunkySpot ? "Castle Crypt" : inCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
         inLogic: hasCandy && (inFunkySpot ? inStage.in && hasClimbing : inStage.in),
         outLogic: hasCandy && inStage.out
       }
@@ -46305,7 +46313,7 @@ const Vanilla = () => {
         baseId: 7140,
         baseName: "Turn in Castle Blueprint for",
         level: "Creepy Castle",
-        region: "Shops",
+        region: inFunkySpot ? "Castle Crypt" : inCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
         inLogic: hasSnide && (inFunkySpot ? inStage.in && hasClimbing : inStage.in),
         outLogic: hasSnide && inStage.out
       }
@@ -49687,7 +49695,7 @@ const GeneratorSettings = () => {
                 SimpleRadioIcon,
                 {
                   imgUrl: fairyIcon,
-                  title: "Highlights Banana Fairies in a red background.",
+                  title: "Highlights Banana Fairies in a red background. Also highlights Fairy checks in red text if Fairies are not in the rotation.",
                   storeKey: "fairies",
                   prefix: "winCondition",
                   updateItem: setWinCondition
