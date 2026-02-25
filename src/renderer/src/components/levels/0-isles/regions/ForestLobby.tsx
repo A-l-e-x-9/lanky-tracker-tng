@@ -20,7 +20,7 @@ return (
     <ForestLobbyTiny />
     <ForestLobbyChunky />
   </div>
-  <div className{`grid ${isFairySeed}`}>
+  <div className={`grid ${isFairySeed}`}>
     <ForestLobbyFairy />
   </div>
   </>

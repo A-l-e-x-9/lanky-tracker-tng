@@ -10,7 +10,7 @@ return (
   <div className="grid">
     <SaxPad />
   </div>
-  <div className{`grid ${isFairySeed}`}>
+  <div className={`grid ${isFairySeed}`}>
     <UpperKremFairy />
   </div>
   </>

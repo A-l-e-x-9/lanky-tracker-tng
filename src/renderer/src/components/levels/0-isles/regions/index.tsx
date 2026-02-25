@@ -83,7 +83,7 @@ return (
     <ShuffledCrates />
     <ShuffledDirt />
   </div>
-  <div className{`grid ${isFairySeed}`}>
+  <div className={`grid ${isFairySeed}`}>
     <ShuffledFairies />
   </div>
   <div className={`grid ${isKremKaptureSeed}`}>
