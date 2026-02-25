@@ -35,6 +35,7 @@ import ShuffledKasplats from '../kasplats/Shuffled'
 
 const IslesRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const isFairySeed = useDonkStore(useShallow((state) => [state.winCondition.fairies && !state.settings.poolFairies])) ? 'foolish' : ''
 return (
 <>
   <div className="grid">
@@ -53,24 +54,24 @@ return (
     <IslesMainUpperChecks />
   <div className="grid">
     <DiddyAirspaceChecks />
+  </div>
     <OuterIslesChecks />
+  <div className="grid">
     <PrisonChecks />
   </div>
     <KremBaseChecks />
     <KremLiftChecks />
   <div className="grid">
     <SnideRoomChecks />
-    <KremTopChecks />
   </div>
+    <KremTopChecks />
     <JapesLobbyChecks />
   <div className="grid">
     <AztecLobbyChecks />
   </div>
     <FactoryLobbyChecks />
     <GalleonLobbyChecks />
-  <div className="grid">
     <ForestLobbyChecks />
-  </div>
     <CavesLobbyChecks />
     <CastleLobbyChecks />
     <HelmLobbyChecks />
@@ -81,6 +82,8 @@ return (
     <ShuffledArenas />
     <ShuffledCrates />
     <ShuffledDirt />
+  </div>
+  <div className{`grid ${isFairySeed}`}>
     <ShuffledFairies />
   </div>
   <div className={`grid ${isKremKaptureSeed}`}>
