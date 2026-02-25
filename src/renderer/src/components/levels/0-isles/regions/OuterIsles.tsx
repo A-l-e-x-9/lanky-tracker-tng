@@ -16,7 +16,7 @@ return (
     <CabinIsleDirt />
     <ReturnFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className={`grid ${isFairySeed}`}>
     <SmallIslandFairy />
   </div>
   </>
