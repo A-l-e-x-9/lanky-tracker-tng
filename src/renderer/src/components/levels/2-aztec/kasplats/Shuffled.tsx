@@ -1,12 +1,15 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing } from '@renderer/hooks/aztec'
+import { useGeneralThing, useCoconutKasplat, useOasisKasplat, useLlamaLavaKasplat, useTunnelKasplat, useChunkyKasplat } from '@renderer/hooks/aztec'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useDive, useAnyGun, useOrange, useAnyMusic, useMini, useVine, useClimbing } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 
 const Shuffled: React.FC = () => {
-const notChunkyKasplat = useGateKasplat()
-const chunkyKasplat = useChunkyUndergroundGb()
+const DKVanillaKasplat = useCoconutKasplat()
+const diddyVanillaKasplat = useOasisKasplat()
+const lankyVanillaKasplat = useLlamaLavaKasplat()
+const tinyVanillaKasplat = useTunnelKasplat()
+const chunkyVanillaKasplat = useChunkyKasplat()
 const isBreathing = useGeneralThing()
 const canReachRambiArea = useJapesRambi()
 const canDoDiddyMtnGB = useJapesMine()
@@ -27,38 +30,38 @@ const hasClimbing = useClimbing()
     <KasplatPool>
       <AztecCheck
         id={52000}
-        name="Shuffled Kasplat: DK's Vanilla Location (lower portion of Hive Tunnel)"
-        region="Hive Area"
-        canGetLogic={notChunkyKasplat.in}
-        canGetBreak={notChunkyKasplat.out}
+        name="Shuffled Kasplat: DK's Vanilla Location (a sub-tunnel at the level start)"
+        region="Aztec Caves"
+        canGetLogic={DKVanillaKasplat.in}
+        canGetBreak={DKVanillaKasplat.out}
       />
       <AztecCheck
         id={52001}
-        name="Shuffled Kasplat: Diddy's Vanilla Location (Stormy Cave, near Lanky's painting room)"
-        region="Stormy Area"
-        canGetLogic={notChunkyKasplat.in}
-        canGetBreak={notChunkyKasplat.out}
+        name="Shuffled Kasplat: Diddy's Vanilla Location (on top of the Tiny Temple)"
+        region="Aztec Main Area"
+        canGetLogic={diddyVanillaKasplat.in}
+        canGetBreak={diddyVanillaKasplat.out}
       />
       <AztecCheck
         id={52002}
-        name="Shuffled Kasplat: Lanky's Vanilla Location (near his slope barrel in the Stormy Cave)"
-        region="Stormy Area"
-        canGetLogic={notChunkyKasplat.in}
-        canGetBreak={notChunkyKasplat.out}
+        name="Shuffled Kasplat: Lanky's Vanilla Location (the lava pedestal GB)"
+        region="Llama Temple"
+        canGetLogic={lankyVanillaKasplat.in}
+        canGetBreak={lankyVanillaKasplat.out}
       />
       <AztecCheck
         id={52003}
-        name="Shuffled Kasplat: Tiny's Vanilla Location (upper portion of Hive Tunnel)"
-        region="Hive Area"
-        canGetLogic={notChunkyKasplat.in}
-        canGetBreak={notChunkyKasplat.out}
+        name="Shuffled Kasplat: Tiny's Vanilla Location (first 3-way intersection of middle tunnel)"
+        region="Aztec Caves"
+        canGetLogic={tinyVanillaKasplat.in}
+        canGetBreak={tinyVanillaKasplat.out}
       />
       <AztecCheck
         id={52004}
-        name="Shuffled Kasplat: Chunky's Vanilla Location (end of his mine, to the right)"
-        region="Japes Caves and Mines"
-        canGetLogic={chunkyKasplat.in}
-        canGetBreak={chunkyKasplat.out}
+        name="Shuffled Kasplat: Chunky's Vanilla Location (in his 5DT room)"
+        region="5-Door Temple"
+        canGetLogic={chunkyVanillaKasplat.in}
+        canGetBreak={chunkyVanillaKasplat.out}
       />
       <AztecCheck
         id={52005}
