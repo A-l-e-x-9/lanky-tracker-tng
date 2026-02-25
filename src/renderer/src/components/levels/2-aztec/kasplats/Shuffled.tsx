@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useCoconutKasplat, useOasisKasplat, useLlamaLavaKasplat, useTunnelKasplat, useChunkyKasplat, useDkTunnelGb, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce } from '@renderer/hooks/aztec'
+import { useGeneralThing, useCoconutKasplat, useOasisKasplat, useLlamaLavaKasplat, useTunnelKasplat, useChunkyKasplat, useDkTunnelGb, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb } from '@renderer/hooks/aztec'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useDive, useAnyGun, useOrange, useAnyMusic, useMini, useVine, useClimbing, useRocket, useDiddy, useTiny, usePineapple } from '@renderer/hooks/kongs'
+import { useDive, useAnyGun, useOrange, useAnyMusic, useMini, useVine, useClimbing, useRocket, useDiddy, useTiny, usePineapple, useGrape } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -16,17 +16,16 @@ const canEnterBack = useAztecBack()
 const canGoInLlamaTemple = useAztecLlamaTemple()
 const canGoInTinyTemple = useAztecTinyTemple()
 const canGetPastTTIce = useTinyTempleIce()
+const canDoDK5DT = useDk5DoorGb()
 const hasDiving = useDive()
 const hasMiniMonkey = useMini()
-const hasAGun = useAnyGun()
-const hasOranges = useOrange()
-const hasAnInstrument = useAnyMusic()
 const hasVines = useVine()
 const hasClimbing = useClimbing()
 const hasJetbarrel = useRocket()
 const hasDiddy = useDiddy()
 const hasTiny = useTiny()
 const hasPineapples = usePineapple()
+const hasGrapes = useGrape()
   return (
     <KasplatPool>
       <AztecCheck
@@ -136,31 +135,24 @@ const hasPineapples = usePineapple()
       />
       <AztecCheck
         id={52015}
-        name="Shuffled Kasplat: In Diddy's mountain"
-        region="Japes Caves and Mines"
-        canGetLogic={canDoDiddyMtnGB.in}
-        canGetBreak={canDoDiddyMtnGB.out}
+        name="Shuffled Kasplat: A contestant on Match Game '64"
+        region="Llama Temple"
+        canGetLogic={canGoInLlamaTemple.in && hasGrapes}
+        canGetBreak={canGoInLlamaTemple.out && hasGrapes}
       />
       <AztecCheck
         id={52016}
-        name="Shuffled Kasplat: In the hive"
-        region="Hive Area"
-        canGetLogic={canReachHiveArea.in && hasMiniMonkey}
-        canGetBreak={canReachHiveArea.out && hasMiniMonkey}
+        name="Shuffled Kasplat: At Tiny's barrel in the Tiny Temple"
+        region="Tiny Temple"
+        canGetLogic={canGoInTinyTemple.in}
+        canGetBreak={canGoInTinyTemple.out}
       />
       <AztecCheck
         id={52017}
-        name="Shuffled Kasplat: In front of Lanky's painting room entrance"
-        region="Japes Hillside"
-        canGetLogic={canReachPaintingRoom.in}
-        canGetBreak={canReachPaintingRoom.out}
-      />
-      <AztecCheck
-        id={52018}
-        name="Shuffled Kasplat: The minecart game's exit"
-        region="Japes Hillside"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Kasplat: Inside DK's 5DT room"
+        region="5 Door Temple"
+        canGetLogic={canDoDK5DT.in}
+        canGetBreak={canDoDK5DT.out}
       />
     </KasplatPool>
   )
