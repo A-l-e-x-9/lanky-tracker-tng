@@ -18691,10 +18691,9 @@ const EnemyLocations$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(CaveEnemies, {})
   ] });
 };
-const Miniboss = ({ children }) => usePoolMiniboss() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const PaintingFairy = () => {
   const painting = usePaintingFairy();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     JapesCheck,
     {
       id: 1081,
@@ -18702,7 +18701,7 @@ const PaintingFairy = () => {
       region: "Japes Caves and Mines",
       canGetLogic: painting
     }
-  ) }) }) });
+  ) }) });
 };
 const RambiFairy = () => {
   const canDo = useRambiFairy();
@@ -18926,6 +18925,7 @@ const GrapeGate = () => {
     }
   ) });
 };
+const Miniboss = ({ children }) => usePoolMiniboss() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const PaintingRoom = () => {
   const paintingGb = useLankyPaintingGb();
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies));
