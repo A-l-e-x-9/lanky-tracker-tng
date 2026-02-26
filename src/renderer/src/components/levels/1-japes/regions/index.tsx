@@ -29,6 +29,8 @@ import ShuffledKasplats from '../kasplats/Shuffled'
 
 const JapesRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
 <>
   <div className="grid">
@@ -53,9 +55,7 @@ return (
     <HiveOutsideChecks />
     <HiveInteriorChecks />
     <StormyTunnelChecks />
-  <div className="grid">
     <RambiGateChecks />
-  </div>
     <MineChecks />
     <PaintingRoomChecks />
     <UndergroundChecks />
@@ -65,6 +65,8 @@ return (
     <ShuffledArenas />
     <ShuffledCrates />
     <ShuffledDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ShuffledFairies />
   </div>
   <div className={`grid ${isKremKaptureSeed}`}>
