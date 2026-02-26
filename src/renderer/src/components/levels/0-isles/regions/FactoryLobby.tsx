@@ -13,6 +13,7 @@ import FactoryLobbyChunky from '../wrinkly/FactoryLobbyChunky'
 const FactoryLobbyChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => [state.winCondition.fairies && !state.settings.poolFairies])) ? 'foolish' : ''
+const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -23,7 +24,7 @@ return (
     <FactoryLobbyTiny />
     <FactoryLobbyChunky />
   </div>
-  <div className={`grid ${isFairySeed}`}>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <FactoryLobbyFairy />
   </div>
   <div className={`grid ${isKremKaptureSeed}`}>

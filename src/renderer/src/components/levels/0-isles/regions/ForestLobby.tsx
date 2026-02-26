@@ -10,6 +10,7 @@ import ForestLobbyChunky from '../wrinkly/ForestLobbyChunky'
 
 const ForestLobbyChecks: React.FC = () => {
 const isFairySeed = useDonkStore(useShallow((state) => [state.winCondition.fairies && !state.settings.poolFairies])) ? 'foolish' : ''
+const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -20,7 +21,7 @@ return (
     <ForestLobbyTiny />
     <ForestLobbyChunky />
   </div>
-  <div className={`grid ${isFairySeed}`}>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ForestLobbyFairy />
   </div>
   </>

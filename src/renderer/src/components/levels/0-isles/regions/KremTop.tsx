@@ -5,12 +5,13 @@ import SaxPad from '../gold-bananas/tiny/SaxPad'
 
 const KremTopChecks: React.FC = () => {
 const isFairySeed = useDonkStore(useShallow((state) => [state.winCondition.fairies && !state.settings.poolFairies])) ? 'foolish' : ''
+const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
     <SaxPad />
   </div>
-  <div className={`grid ${isFairySeed}`}>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <UpperKremFairy />
   </div>
   </>
