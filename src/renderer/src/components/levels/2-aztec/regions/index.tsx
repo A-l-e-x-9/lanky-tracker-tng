@@ -25,6 +25,8 @@ import TotemChecks from './Totem'
 
 const AztecRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
 <>
   <div className="grid">
@@ -53,6 +55,8 @@ return (
     <ShuffledArenas />
     <ShuffledCrates />
     <ShuffledDirtLocations />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ShuffledFairies />
   </div>
   <div className={`grid ${isKremKaptureSeed}`}>

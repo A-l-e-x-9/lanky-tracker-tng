@@ -29,6 +29,8 @@ import ShuffledFairies from './fairies/Shuffled'
 
 const ClassicChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
 <>
   <div className="grid">
@@ -44,7 +46,11 @@ return (
   <div className="grid">
     <CrateLocations />
     <DirtLocations />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <FairyLocations />
+  </div>
+  <div className="grid">
     <VultureArena />
     <BananaMedalPool>
       <DkMedal />
@@ -66,6 +72,8 @@ return (
     <ShuffledArenas />
     <ShuffledCrates />
     <ShuffledDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ShuffledFairies />
   </div>
 </>

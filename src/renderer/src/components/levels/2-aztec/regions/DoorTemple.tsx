@@ -16,6 +16,8 @@ import ChunkyKasplat from '../kasplats/Chunky'
 
 const DoorTempleChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -23,7 +25,11 @@ return (
     <DiddyDoorTemple />
     <LankyDoorTemple />
     <TinyDoorTemple />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <DoorFairy />
+  </div>
+  <div className="grid">
     <ChunkyDoorTemple />
     <TempleDirt />
   </div>

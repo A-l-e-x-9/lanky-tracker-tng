@@ -12,6 +12,8 @@ import LankyCage from '../gold-bananas/dk/LankyCage'
 
 const LlamaTempleChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -20,7 +22,11 @@ return (
     <LlamaBarrel />
     <MatchGame />
     <LavaPedestal />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <LlamaFairy />
+  </div>
+  <div className="grid">
     <LlamaInsideCrate />
   </div>
   <div className={`grid ${isKremKaptureSeed}`}>
