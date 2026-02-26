@@ -18928,16 +18928,31 @@ const GrapeGate = () => {
 };
 const PaintingRoom = () => {
   const paintingGb = useLankyPaintingGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    JapesCheck,
-    {
-      id: 1023,
-      name: "Lanky's Painting Room",
-      region: "Japes Caves and Mines",
-      canGetLogic: paintingGb.in,
-      canGetBreak: paintingGb.out
-    }
-  ) }) });
+  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies));
+  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies));
+  if (isFairySeed && !fairiesInRotation) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1023,
+        name: "Lanky's Painting Room",
+        region: "Japes Caves and Mines",
+        canGetLogic: paintingGb.in,
+        canGetBreak: paintingGb.out
+      }
+    ) });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 1023,
+        name: "Lanky's Painting Room",
+        region: "Japes Caves and Mines",
+        canGetLogic: paintingGb.in,
+        canGetBreak: paintingGb.out
+      }
+    ) }) });
+  }
 };
 const SlopeBarrel = () => {
   const slopeGb = useLankySlopeGb();
