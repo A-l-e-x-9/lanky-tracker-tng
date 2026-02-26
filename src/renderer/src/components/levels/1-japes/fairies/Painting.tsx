@@ -1,4 +1,3 @@
-import Miniboss from '@renderer/components/pools/Miniboss'
 import FairyPool from '@renderer/components/pools/Fairies'
 import VanillaFairy from '@renderer/components/pools/VanillaFairy'
 import { usePaintingFairy } from '@renderer/hooks/japes'
