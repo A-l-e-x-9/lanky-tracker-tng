@@ -7,7 +7,6 @@ import JapesCheck from '../check'
 const PaintingFairy: React.FC = () => {
   const painting = usePaintingFairy()
   return (
-  <Miniboss>
     <FairyPool>
       <VanillaFairy>
         <JapesCheck
@@ -18,7 +17,6 @@ const PaintingFairy: React.FC = () => {
         />
       </VanillaFairy>
     </FairyPool>
-  </Miniboss>
   )
 }
 
