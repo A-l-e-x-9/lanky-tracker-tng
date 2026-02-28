@@ -85,8 +85,7 @@ export const useIceWalls = (): boolean => {
 export const useCanAccessSnide = (): boolean => {
   const iceWalls = useIceWalls()
   const hasPunch = usePunch()
-  const hasSnide = useSnide()
-  return (iceWalls || hasPunch) && hasSnide
+  return iceWalls || hasPunch
 }
 
 /**
