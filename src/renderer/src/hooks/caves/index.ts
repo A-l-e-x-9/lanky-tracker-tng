@@ -33,7 +33,6 @@ import {
   useTriangle,
   useTrombone,
   useTwirl,
-  useSnide,
   useChunky
 } from '../kongs'
 import { useBananaportAll, useHardShooting, useAngryCaves } from '../settings'
