@@ -24774,7 +24774,8 @@ const Shuffled$s = () => {
         id: 12045,
         name: "Shuffled Battle Arena: Vanilla Warp 5, at DK's quicksand tunnel",
         region: "Aztec Caves",
-        canGetLogic: didGB[2002] || hasAllBananaports
+        canGetLogic: isBreathing.in && (didGB[2002] || hasAllBananaports),
+        canGetBreak: isBreathing.out && (didGB[2002] || hasAllBananaports)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -41031,7 +41032,8 @@ const Shuffled$a = () => {
         id: 16046,
         name: "Shuffled Battle Arena: Vanilla Warp 4 on spire near Cranky's",
         region: "Crystal Caves Main",
-        canGetLogic: hasDK || hasJetbarrel || isHinaKagiyama
+        canGetLogic: isBreathing.in && (hasDK || hasJetbarrel || isHinaKagiyama),
+        canGetBreak: isBreathing.out && (hasDK || hasJetbarrel || isHinaKagiyama)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -43765,7 +43767,8 @@ const Shuffled$7 = () => {
         id: 17039,
         name: "Shuffled Battle Arena: In DK's face puzzle room",
         region: "Castle Dungeon",
-        canGetLogic: hasDK && hasSlam
+        canGetLogic: isBreathing.in && hasDK && hasSlam,
+        canGetBreak: isBreathing.out && hasDK && hasSlam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
