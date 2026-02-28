@@ -27393,9 +27393,10 @@ const useDartFairy = () => {
 };
 const useProductionTopKasplat = () => {
   const production = useFactoryProductionTop();
+  const prodRoomOn = useFactoryProductionEnabled();
   return {
-    in: production.in,
-    out: production.out
+    in: production.in && prodRoomOn.in,
+    out: production.out && prodRoomOn.out
   };
 };
 const useProductionBaseKasplat = () => {
