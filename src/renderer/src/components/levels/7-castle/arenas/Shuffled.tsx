@@ -300,7 +300,8 @@ const hasBlast = useBlast()
         id={17039}
         name="Shuffled Battle Arena: In DK's face puzzle room"
         region="Castle Dungeon"
-        canGetLogic={hasDK && hasSlam}
+        canGetLogic={isBreathing.in && hasDK && hasSlam}
+        canGetBreak={isBreathing.out && hasDK && hasSlam}
       />
       <CastleCheck
         id={17040}

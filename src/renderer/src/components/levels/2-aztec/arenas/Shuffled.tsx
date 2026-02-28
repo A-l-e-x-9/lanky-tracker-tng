@@ -353,7 +353,8 @@ const canReachLavaRoom = useAztecLlamaLava()
         id={12045}
         name="Shuffled Battle Arena: Vanilla Warp 5, at DK's quicksand tunnel"
         region="Aztec Caves"
-        canGetLogic={didGB[2002] || hasAllBananaports}
+        canGetLogic={isBreathing.in && (didGB[2002] || hasAllBananaports)}
+        canGetBreak={isBreathing.out && (didGB[2002] || hasAllBananaports)}
       />
       <AztecCheck
         id={12046}

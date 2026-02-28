@@ -340,7 +340,8 @@ const hasTrombone = useTrombone()
         id={16046}
         name="Shuffled Battle Arena: Vanilla Warp 4 on spire near Cranky's"
         region="Crystal Caves Main"
-        canGetLogic={hasDK || hasJetbarrel || isHinaKagiyama}
+        canGetLogic={isBreathing.in && (hasDK || hasJetbarrel || isHinaKagiyama)}
+        canGetBreak={isBreathing.out && (hasDK || hasJetbarrel || isHinaKagiyama)}
       />
       <CavesCheck
         id={16047}
