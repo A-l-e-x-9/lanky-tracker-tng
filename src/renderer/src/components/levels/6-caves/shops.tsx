@@ -14,7 +14,9 @@ const ShopLocations: React.FC = () => {
   const hasCandy = useCandy()
   const hasSnide = useSnide()
   const snideCave = useCanAccessSnide()
-  const [inSnideCave] = useDonkStore(useShallow((state) => [state.shuffledCavesCranky.cavesCrankySnide || state.shuffledCavesFunky.cavesFunkySnide || state.shuffledCavesCandy.cavesCandySnide]))
+  const [crankyInSnideCave] = useDonkStore(useShallow((state) => [state.shuffledCavesCranky.cavesCrankySnide]))
+  const [funkyInSnideCave] = useDonkStore(useShallow((state) => [state.shuffledCavesFunky.cavesFunkySnide]))
+  const [candyInSnideCave] = useDonkStore(useShallow((state) => [state.shuffledCavesCandy.cavesCandySnide]))
   const [outOfSnideCave] = useDonkStore(useShallow((state) => [state.shuffledCavesSnide.cavesSnideCranky || state.shuffledCavesSnide.cavesSnideFunky || state.shuffledCavesSnide.cavesSnideCandy]))
   const [crankyCandy, funkyCandy, candyNoSwitch, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledCavesCranky.cavesCrankyCandy, state.shuffledCavesFunky.cavesFunkyCandy, state.shuffledCavesCandy.cavesCandyNoSwitch, state.shuffledCavesSnide.cavesSnideCandy]))
   return (
@@ -24,24 +26,24 @@ const ShopLocations: React.FC = () => {
         baseName="Caves Cranky"
         level="Crystal Caves"
         region={crankyCandy ? "Caves Cabins" : "Crystal Caves Main"}
-        inLogic={hasCranky && (inSnideCave ? inStage.in && snideCave : inStage.in && !angery)}
-        outLogic={hasCranky && (inSnideCave ? inStage.out && snideCave : (inStage.out || angery))}
+        inLogic={hasCranky && (crankyInSnideCave ? inStage.in && snideCave : inStage.in && !angery)}
+        outLogic={hasCranky && (crankyInSnideCave ? inStage.out && snideCave : (inStage.out || angery))}
       />
       <ShopGenerator
         baseId={6120}
         baseName="Caves Funky"
         level="Crystal Caves"
         region={funkyCandy ? "Caves Cabins" : "Crystal Caves Main"}
-        inLogic={hasFunky && (inSnideCave ? inStage.in && snideCave : inStage.in && !angery)}
-        outLogic={hasFunky && (inSnideCave ? inStage.out && snideCave : (inStage.out || angery))}
+        inLogic={hasFunky && (funkyInSnideCave ? inStage.in && snideCave : inStage.in && !angery)}
+        outLogic={hasFunky && (funkyInSnideCave ? inStage.out && snideCave : (inStage.out || angery))}
       />
       <ShopGenerator
         baseId={6130}
         baseName="Caves Candy"
         level="Crystal Caves"
         region={candyNoSwitch ? "Caves Cabins" : "Crystal Caves Main"}
-        inLogic={hasCandy && (inSnideCave ? inStage.in && snideCave : inStage.in && !angery)}
-        outLogic={hasCandy && (inSnideCave ? inStage.out && snideCave : (inStage.out || angery))}
+        inLogic={hasCandy && (candyInSnideCave ? inStage.in && snideCave : inStage.in && !angery)}
+        outLogic={hasCandy && (candyInSnideCave ? inStage.out && snideCave : (inStage.out || angery))}
       />
       <ShopGenerator
         baseId={6140}
