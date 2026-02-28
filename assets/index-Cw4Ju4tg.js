@@ -38633,8 +38633,7 @@ const useIceWalls = () => {
 const useCanAccessSnide = () => {
   const iceWalls = useIceWalls();
   const hasPunch = usePunch();
-  const hasSnide = useSnide();
-  return (iceWalls || hasPunch) && hasSnide;
+  return iceWalls || hasPunch;
 };
 const useCavesMiniFunky = () => {
   const inStage = usePlayCaves();
@@ -40421,7 +40420,8 @@ const ShopLocations$1 = () => {
   const hasCranky = useCranky();
   const hasFunky = whatAFunky();
   const hasCandy = useCandy();
-  const hasSnide = useCanAccessSnide();
+  const hasSnide = useSnide();
+  const snideCave = useCanAccessSnide();
   const [inSnideCave] = useDonkStore(useShallow((state) => [state.shuffledCavesCranky.cavesCrankySnide || state.shuffledCavesFunky.cavesFunkySnide || state.shuffledCavesCandy.cavesCandySnide]));
   const [outOfSnideCave] = useDonkStore(useShallow((state) => [state.shuffledCavesSnide.cavesSnideCranky || state.shuffledCavesSnide.cavesSnideFunky || state.shuffledCavesSnide.cavesSnideCandy]));
   const [crankyCandy, funkyCandy, candyNoSwitch, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledCavesCranky.cavesCrankyCandy, state.shuffledCavesFunky.cavesFunkyCandy, state.shuffledCavesCandy.cavesCandyNoSwitch, state.shuffledCavesSnide.cavesSnideCandy]));
@@ -40433,8 +40433,8 @@ const ShopLocations$1 = () => {
         baseName: "Caves Cranky",
         level: "Crystal Caves",
         region: crankyCandy ? "Caves Cabins" : "Crystal Caves Main",
-        inLogic: hasCranky && (inSnideCave ? inStage.in : inStage.in && !angery),
-        outLogic: hasCranky && (inSnideCave ? inStage.out : inStage.out || angery)
+        inLogic: hasCranky && (inSnideCave ? inStage.in && snideCave : inStage.in && !angery),
+        outLogic: hasCranky && (inSnideCave ? inStage.out && snideCave : inStage.out || angery)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -40444,8 +40444,8 @@ const ShopLocations$1 = () => {
         baseName: "Caves Funky",
         level: "Crystal Caves",
         region: funkyCandy ? "Caves Cabins" : "Crystal Caves Main",
-        inLogic: hasFunky && (inSnideCave ? inStage.in : inStage.in && !angery),
-        outLogic: hasFunky && (inSnideCave ? inStage.out : inStage.out || angery)
+        inLogic: hasFunky && (inSnideCave ? inStage.in && snideCave : inStage.in && !angery),
+        outLogic: hasFunky && (inSnideCave ? inStage.out && snideCave : inStage.out || angery)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -40455,8 +40455,8 @@ const ShopLocations$1 = () => {
         baseName: "Caves Candy",
         level: "Crystal Caves",
         region: candyNoSwitch ? "Caves Cabins" : "Crystal Caves Main",
-        inLogic: hasCandy && (inSnideCave ? inStage.in : inStage.in && !angery),
-        outLogic: hasCandy && (inSnideCave ? inStage.out : inStage.out || angery)
+        inLogic: hasCandy && (inSnideCave ? inStage.in && snideCave : inStage.in && !angery),
+        outLogic: hasCandy && (inSnideCave ? inStage.out && snideCave : inStage.out || angery)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -40466,8 +40466,8 @@ const ShopLocations$1 = () => {
         baseName: "Turn in Caves Blueprint for",
         level: "Crystal Caves",
         region: snideCandy ? "Caves Cabins" : "Crystal Caves Main",
-        inLogic: hasSnide && (outOfSnideCave ? inStage.in && !angery : inStage.in),
-        outLogic: hasSnide && (outOfSnideCave ? inStage.out || angery : inStage.out)
+        inLogic: hasSnide && (outOfSnideCave ? inStage.in && !angery : inStage.in && snideCave),
+        outLogic: hasSnide && (outOfSnideCave ? inStage.out || angery : inStage.out && snideCave)
       }
     )
   ] });
