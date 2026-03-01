@@ -31812,7 +31812,7 @@ const Vanilla$3 = () => {
   const hasSnide = useSnide();
   const [crankyFunky, crankyCandy, crankySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonCranky.galleonCrankyFunky, state.shuffledGalleonCranky.galleonCrankyCandy, state.shuffledGalleonCranky.galleonCrankySnide]));
   const [funkyCranky, funkySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonFunky.galleonFunkyCranky, state.shuffledGalleonFunky.galleonFunkySnide]));
-  const [candyCranky, candySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonCandy.galleonCandyFunky, state.shuffledGalleonCandy.galleonCandySnide]));
+  const [candyCranky, candySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonCandy.galleonCandyCranky, state.shuffledGalleonCandy.galleonCandySnide]));
   const [snideCranky, snideFunky, snideCandy] = useDonkStore(useShallow((state) => [state.shuffledGalleonSnide.galleonSnideCranky, state.shuffledGalleonSnide.galleonSnideFunky, state.shuffledGalleonSnide.galleonSnideCandy]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
