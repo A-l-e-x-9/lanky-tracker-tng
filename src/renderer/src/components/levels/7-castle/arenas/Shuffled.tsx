@@ -354,71 +354,71 @@ const hasBlast = useBlast()
         id={17047}
         name="Shuffled Battle Arena: At crypt entrance"
         region="Castle Crypt"
-        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
-        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+        canGetLogic={isBreathing.in && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={isBreathing.out && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened)}
       />
       <CastleCheck
         id={17048}
         name="Shuffled Battle Arena: Near Diddy's coffin"
         region="Castle Crypt"
-        canGetLogic={(hasPeanuts || cryptPreOpened) && hasClimbing}
-        canGetBreak={hasPeanuts || cryptPreOpened}
+        canGetLogic={isBreathing.in && (hasPeanuts || cryptPreOpened) && hasClimbing}
+        canGetBreak={isBreathing.out && (hasPeanuts || cryptPreOpened)}
       />
       <CastleCheck
         id={17049}
         name="Shuffled Battle Arena: Near Chunky's coffin"
         region="Castle Crypt"
-        canGetLogic={(hasPineapples || cryptPreOpened) && hasClimbing}
-        canGetBreak={hasPineapples || cryptPreOpened}
+        canGetLogic={isBreathing.in && (hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={isBreathing.out && (hasPineapples || cryptPreOpened)}
       />
       <CastleCheck
         id={17050}
         name="Shuffled Battle Arena: Crypt Vanilla Warp 1, central area"
         region="Castle Crypt"
-        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
-        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+        canGetLogic={isBreathing.in && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={isBreathing.out && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened)}
       />
       <CastleCheck
         id={17051}
         name="Shuffled Battle Arena: Crypt Vanilla Warp 1, outside Diddy's room"
         region="Castle Crypt"
-        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
-        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+        canGetLogic={isBreathing.in && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={isBreathing.out && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened)}
       />
       <CastleCheck
         id={17052}
         name="Shuffled Battle Arena: Crypt Vanilla Warp 2, central area"
         region="Castle Crypt"
-        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
-        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+        canGetLogic={isBreathing.in && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={isBreathing.out && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened)}
       />
       <CastleCheck
         id={17053}
         name="Shuffled Battle Arena: Crypt Vanilla Warp 2, outside DK's room"
         region="Castle Crypt"
-        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
-        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+        canGetLogic={isBreathing.in && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={isBreathing.out && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened)}
       />
       <CastleCheck
         id={17054}
         name="Shuffled Battle Arena: Crypt Vanilla Warp 3, central area"
         region="Castle Crypt"
-        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
-        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+        canGetLogic={isBreathing.in && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={isBreathing.out && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened)}
       />
       <CastleCheck
         id={17055}
         name="Shuffled Battle Arena: Crypt Vanilla Warp 3, outside Chunky's room"
         region="Castle Crypt"
-        canGetLogic={(hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
-        canGetBreak={hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened}
+        canGetLogic={isBreathing.in && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened) && hasClimbing}
+        canGetBreak={isBreathing.out && (hasCoconuts || hasPeanuts || hasPineapples || cryptPreOpened)}
       />
       <CastleCheck
         id={17056}
         name="Shuffled Battle Arena: Mausoleum entrance"
         region="Castle Crypt"
-        canGetLogic={(hasGrapes || hasFeathers || cryptPreOpened) && hasClimbing}
-        canGetBreak={hasGrapes || hasFeathers || cryptPreOpened}
+        canGetLogic={isBreathing.in && (hasGrapes || hasFeathers || cryptPreOpened) && hasClimbing}
+        canGetBreak={isBreathing.out && (hasGrapes || hasFeathers || cryptPreOpened)}
       />
       <CastleCheck
         id={17057}

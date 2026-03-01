@@ -354,7 +354,8 @@ const canReachLavaRoom = useAztecLlamaLava()
         id={32045}
         name="Shuffled Dirt Patch: Vanilla Warp 5, at DK's quicksand tunnel"
         region="Aztec Caves"
-        canGetLogic={(didGB[2002] || hasAllBananaports) && hasShockwave}
+        canGetLogic={(didGB[2002] || hasAllBananaports) && isBreathing.in}
+        canGetBreak={(didGB[2002] || hasAllBananaports) && isBreathing.out}
       />
       <AztecCheck
         id={32046}
