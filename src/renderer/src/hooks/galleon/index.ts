@@ -199,9 +199,10 @@ export const useGalleonOutskirts = (): LogicBool => {
   const inStage = usePlayGalleon()
   const target = useSwitchsanityGun('galleonOutskirts', 1)
   const removeBarriers = useDonkStore(useShallow((state) => state.removeBarriers))
+  const hasAllBananaports = useBananaportAll()
   return {
-    in: inStage.in && (target || removeBarriers.galleonOutskirts),
-    out: inStage.out && (target || removeBarriers.galleonOutskirts)
+    in: inStage.in && (target || removeBarriers.galleonOutskirts || hasAllBananaports),
+    out: inStage.out && (target || removeBarriers.galleonOutskirts || hasAllBananaports)
   }
 }
 
