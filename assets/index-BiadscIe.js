@@ -46492,8 +46492,8 @@ const Vanilla = () => {
   const hasCandy = useCandy();
   const hasClimbing = useClimbing();
   const hasSnide = useSnide();
-  const inFunkySpot = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyFunky || state.shuffledCastleFunky.castleFunkyNoSwitch || state.shuffledCastleCandy.castleCandyFunky || state.shuffledCastleSnide.castleSnideFunky]));
-  const inCandySpot = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyCandy || state.shuffledCastleFunky.castleFunkyCandy || state.shuffledCastleCandy.castleCandyNoSwitch || state.shuffledCastleSnide.castleSnideCandy]));
+  const [crankyInFunkySpot, funkyInFunkySpot, candyInFunkySpot, snideInFunkySpot] = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyFunky, state.shuffledCastleFunky.castleFunkyNoSwitch, state.shuffledCastleCandy.castleCandyFunky, state.shuffledCastleSnide.castleSnideFunky]));
+  const [crankyInCandySpot, funkyInCandySpot, candyInCandySpot, snideInCandySpot] = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyCandy, state.shuffledCastleFunky.castleFunkyCandy, state.shuffledCastleCandy.castleCandyNoSwitch, state.shuffledCastleSnide.castleSnideCandy]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ShopGenerator,
@@ -46501,8 +46501,8 @@ const Vanilla = () => {
         baseId: 7110,
         baseName: "Castle Cranky",
         level: "Creepy Castle",
-        region: inFunkySpot ? "Castle Crypt" : inCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
-        inLogic: hasCranky && (inFunkySpot ? inStage.in && hasClimbing : inStage.in),
+        region: crankyInFunkySpot ? "Castle Crypt" : crankyInCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
+        inLogic: hasCranky && (crankyInFunkySpot ? inStage.in && hasClimbing : inStage.in),
         outLogic: hasCranky && inStage.out
       }
     ),
@@ -46512,8 +46512,8 @@ const Vanilla = () => {
         baseId: 7120,
         baseName: "Castle Funky",
         level: "Creepy Castle",
-        region: inFunkySpot ? "Castle Crypt" : inCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
-        inLogic: hasFunky && (!inFunkySpot ? inStage.in : inStage.in && hasClimbing),
+        region: funkyInFunkySpot ? "Castle Crypt" : funkyInCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
+        inLogic: hasFunky && (!funkyInFunkySpot ? inStage.in : inStage.in && hasClimbing),
         outLogic: hasFunky && inStage.out
       }
     ),
@@ -46523,8 +46523,8 @@ const Vanilla = () => {
         baseId: 7130,
         baseName: "Castle Candy",
         level: "Creepy Castle",
-        region: inFunkySpot ? "Castle Crypt" : inCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
-        inLogic: hasCandy && (inFunkySpot ? inStage.in && hasClimbing : inStage.in),
+        region: candyInFunkySpot ? "Castle Crypt" : candyInCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
+        inLogic: hasCandy && (candyInFunkySpot ? inStage.in && hasClimbing : inStage.in),
         outLogic: hasCandy && inStage.out
       }
     ),
@@ -46534,8 +46534,8 @@ const Vanilla = () => {
         baseId: 7140,
         baseName: "Turn in Castle Blueprint for",
         level: "Creepy Castle",
-        region: inFunkySpot ? "Castle Crypt" : inCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
-        inLogic: hasSnide && (inFunkySpot ? inStage.in && hasClimbing : inStage.in),
+        region: snideInFunkySpot ? "Castle Crypt" : snideInCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
+        inLogic: hasSnide && (snideInFunkySpot ? inStage.in && hasClimbing : inStage.in),
         outLogic: hasSnide && inStage.out
       }
     )
