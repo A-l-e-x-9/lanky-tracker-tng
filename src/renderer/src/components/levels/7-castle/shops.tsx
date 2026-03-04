@@ -12,12 +12,10 @@ const Vanilla: React.FC = () => {
   const hasCandy = useCandy()
   const hasClimbing = useClimbing()
   const hasSnide = useSnide()
-  const crankyInFunkySpot = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyFunky]))
-  const funkyInFunkySpot = useDonkStore(useShallow((state) => [state.shuffledCastleFunky.castleFunkyNoSwitch]))
-  //state.shuffledCastleCandy.castleCandyFunky || state.shuffledCastleSnide.castleSnideFunky]))
-  const crankyInCandySpot = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyCandy]))
-  const funkyInCandySpot = useDonkStore(useShallow((state) => [state.shuffledCastleFunky.castleFunkyCandy]))
-  //state.shuffledCastleCandy.castleCandyNoSwitch || state.shuffledCastleSnide.castleSnideCandy]))
+  const [crankyInFunkySpot, funkyInCandySpot, candyInFunkySpot] = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyFunky, state.shuffledCastleFunky.castleFunkyNoSwitch, state.shuffledCastleCandy.castleCandyFunky]))
+  //state.shuffledCastleSnide.castleSnideFunky]))
+  const [crankyInCandySpot, funkyInCandySpot, candyInCandySpot] = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyCandy, state.shuffledCastleFunky.castleFunkyCandy, state.shuffledCastleCandy.castleCandyNoSwitch]))
+  //state.shuffledCastleSnide.castleSnideCandy]))
   return (
     <>
       <ShopGenerator
