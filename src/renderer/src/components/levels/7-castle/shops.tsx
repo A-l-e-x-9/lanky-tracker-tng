@@ -12,8 +12,12 @@ const Vanilla: React.FC = () => {
   const hasCandy = useCandy()
   const hasClimbing = useClimbing()
   const hasSnide = useSnide()
-  const crankyInFunkySpot = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyFunky])) //|| state.shuffledCastleFunky.castleFunkyNoSwitch || state.shuffledCastleCandy.castleCandyFunky || state.shuffledCastleSnide.castleSnideFunky]))
-  const crankyInCandySpot = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyCandy])) //|| state.shuffledCastleFunky.castleFunkyCandy || state.shuffledCastleCandy.castleCandyNoSwitch || state.shuffledCastleSnide.castleSnideCandy]))
+  const crankyInFunkySpot = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyFunky]))
+  const funkyInFunkySpot = useDonkStore(useShallow((state) => [state.shuffledCastleFunky.castleFunkyNoSwitch]))
+  //state.shuffledCastleCandy.castleCandyFunky || state.shuffledCastleSnide.castleSnideFunky]))
+  const crankyInCandySpot = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyCandy]))
+  const funkyInCandySpot = useDonkStore(useShallow((state) => [state.shuffledCastleFunky.castleFunkyCandy]))
+  //state.shuffledCastleCandy.castleCandyNoSwitch || state.shuffledCastleSnide.castleSnideCandy]))
   return (
     <>
       <ShopGenerator
@@ -28,8 +32,8 @@ const Vanilla: React.FC = () => {
         baseId={7120}
         baseName="Castle Funky"
         level="Creepy Castle"
-        region={inFunkySpot ? "Castle Crypt" : inCandySpot ? "Castle Dungeon" : "Creepy Castle Main"}
-        inLogic={hasFunky && (!inFunkySpot ? inStage.in : inStage.in && hasClimbing)}
+        region={funkyInFunkySpot ? "Castle Crypt" : funkyInCandySpot ? "Castle Dungeon" : "Creepy Castle Main"}
+        inLogic={hasFunky && (!funkyInFunkySpot ? inStage.in : inStage.in && hasClimbing)}
         outLogic={hasFunky && inStage.out}
       />
       <ShopGenerator
