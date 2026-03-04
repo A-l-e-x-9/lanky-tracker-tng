@@ -12,10 +12,8 @@ const Vanilla: React.FC = () => {
   const hasCandy = useCandy()
   const hasClimbing = useClimbing()
   const hasSnide = useSnide()
-  const [crankyInFunkySpot, funkyInCandySpot, candyInFunkySpot] = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyFunky, state.shuffledCastleFunky.castleFunkyNoSwitch, state.shuffledCastleCandy.castleCandyFunky]))
-  //state.shuffledCastleSnide.castleSnideFunky]))
-  const [crankyInCandySpot, funkyInCandySpot, candyInCandySpot] = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyCandy, state.shuffledCastleFunky.castleFunkyCandy, state.shuffledCastleCandy.castleCandyNoSwitch]))
-  //state.shuffledCastleSnide.castleSnideCandy]))
+  const [crankyInFunkySpot, funkyInFunkySpot, candyInFunkySpot, snideInFunkySpot] = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyFunky, state.shuffledCastleFunky.castleFunkyNoSwitch, state.shuffledCastleCandy.castleCandyFunky, state.shuffledCastleSnide.castleSnideFunky]))
+  const [crankyInCandySpot, funkyInCandySpot, candyInCandySpot, snideInCandySpot] = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyCandy, state.shuffledCastleFunky.castleFunkyCandy, state.shuffledCastleCandy.castleCandyNoSwitch, state.shuffledCastleSnide.castleSnideCandy]))
   return (
     <>
       <ShopGenerator
@@ -38,16 +36,16 @@ const Vanilla: React.FC = () => {
         baseId={7130}
         baseName="Castle Candy"
         level="Creepy Castle"
-        region={inFunkySpot ? "Castle Crypt" : inCandySpot ? "Castle Dungeon" : "Creepy Castle Main"}
-        inLogic={hasCandy && (inFunkySpot ? inStage.in && hasClimbing : inStage.in)}
+        region={candyInFunkySpot ? "Castle Crypt" : candyInCandySpot ? "Castle Dungeon" : "Creepy Castle Main"}
+        inLogic={hasCandy && (candyInFunkySpot ? inStage.in && hasClimbing : inStage.in)}
         outLogic={hasCandy && inStage.out}
       />
       <ShopGenerator
         baseId={7140}
         baseName="Turn in Castle Blueprint for"
         level="Creepy Castle"
-        region={inFunkySpot ? "Castle Crypt" : inCandySpot ? "Castle Dungeon" : "Creepy Castle Main"}
-        inLogic={hasSnide && (inFunkySpot ? inStage.in && hasClimbing : inStage.in)}
+        region={snideInFunkySpot ? "Castle Crypt" : snideInCandySpot ? "Castle Dungeon" : "Creepy Castle Main"}
+        inLogic={hasSnide && (snideInFunkySpot ? inStage.in && hasClimbing : inStage.in)}
         outLogic={hasSnide && inStage.out}
       />
     </>
