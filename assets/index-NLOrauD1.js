@@ -48140,7 +48140,7 @@ const SimpleIcon = (props) => {
 const DoubleIcon = (props) => {
   const isKremKaptureSeed = props.title === "Fairy Cam and Shockwave" && useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "all-bosses" : "";
   const isDKRapSeed = props.storeRight === "climbing" && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? "all-bosses" : "";
-  const coCoinSeed = props.storeRight === "climbing" && useDonkStore(useShallow((state) => state.winCondition.companyCoins)) ? "all-bosses" : "";
+  const coCoinSeed = props.title === "Nintendo and Rareware Coins" && useDonkStore(useShallow((state) => state.winCondition.companyCoins)) ? "all-bosses" : "";
   const [left, right] = useDonkStore(
     useShallow((state) => [
       state[props.prefix][props.storeLeft],
