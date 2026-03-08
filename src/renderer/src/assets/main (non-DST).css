@@ -265,18 +265,17 @@ main .grid {
   color: #00ff00;
 }
 
-.grid > :not(.checked).foolish {
+.grid > .foolish, div.grid.foolish {
   color: red;
+  font-weight: bold;
 }
-.grid > :not(.checked).woth {
+.grid > .woth {
   color: gold;
 }
 
 .full-grid {grid-column: span 6;}
 
-.react-tabs__tab--selected {background-color: #800040;}
-
-.font-changer h1, .font-changer h2, .font-changer h3, .font-changer h4, .font-changer h5, .font-changer h6 {font-family: Earthworm Jim;}
+.react-tabs__tab--selected {background-color: #ffffff;}
 
 .all-bosses {background-color: #800000;}
 
