@@ -359,7 +359,7 @@ switch (currentMonth) {
     break;
   case 2:
     {
-      getBody.style.backgroundColor = "#00c000";
+      getBody.style.backgroundColor = "#004000";
     }
     break;
   case 3:
@@ -391,7 +391,7 @@ switch (currentMonth) {
     break;
   case 10:
     {
-      getBody.style.backgroundColor = "#c00000";
+      getBody.style.backgroundColor = "#400000";
     }
     break;
   case 11:
