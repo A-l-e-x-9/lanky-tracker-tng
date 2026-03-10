@@ -13,8 +13,8 @@ const HelmEntryEnemies: React.FC = () => {
   const klump = useDefeatToughEnemy()
   return (
     <>
-      <HelmCheck id={8300} name="Enemy 0 at Start" canGetLogic={isBreathing.in && anyKong} />
-      <HelmCheck id={8301} name="Enemy 1 at Start" canGetLogic={isBreathing.in && anyKong} />
+      <HelmCheck id={8300} name="Enemy 0 at Start" canGetLogic={isBreathing && anyKong} />
+      <HelmCheck id={8301} name="Enemy 1 at Start" canGetLogic={isBreathing && anyKong} />
       <HelmCheck id={8302} name="Enemy Halfway Up Hill" canGetLogic={helmEntry.in && hasOStand && klump}
         canGetBreak={helmEntry.out && hasOStand && klump}
       />
