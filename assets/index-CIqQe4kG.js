@@ -47344,37 +47344,22 @@ const HelmDoorsEnemies = () => {
 };
 const HelmEntryEnemies = () => {
   const helmEntry = usePlayHelm();
+  const isBreathing = useHelmEnter();
   const hasOStand = useStand();
   const hasPineapples = usePineapple();
   const hasVines = useVine();
   const anyKong = useAnyKong();
   const klump = useDefeatToughEnemy();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8300,
-        name: "Enemy 0 at Start",
-        canGetLogic: helmEntry.in && anyKong,
-        canGetBreak: helmEntry.out && anyKong
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      HelmCheck,
-      {
-        id: 8301,
-        name: "Enemy 1 at Start",
-        canGetLogic: helmEntry.in && anyKong,
-        canGetBreak: helmEntry.out && anyKong
-      }
-    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8300, name: "Enemy 0 at Start", canGetLogic: isBreathing && anyKong }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8301, name: "Enemy 1 at Start", canGetLogic: isBreathing && anyKong }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       HelmCheck,
       {
         id: 8302,
         name: "Enemy Halfway Up Hill",
-        canGetLogic: helmEntry.in && anyKong && klump,
-        canGetBreak: helmEntry.out && anyKong && klump
+        canGetLogic: helmEntry.in && hasOStand && klump,
+        canGetBreak: helmEntry.out && hasOStand && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -47382,8 +47367,8 @@ const HelmEntryEnemies = () => {
       {
         id: 8303,
         name: "Enemy 0 Near Pineapple Switch",
-        canGetLogic: helmEntry.in && anyKong && klump,
-        canGetBreak: helmEntry.out && anyKong && klump
+        canGetLogic: helmEntry.in && hasOStand && klump,
+        canGetBreak: helmEntry.out && hasOStand && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -47391,8 +47376,8 @@ const HelmEntryEnemies = () => {
       {
         id: 8304,
         name: "Enemy 1 Near Pineapple Switch",
-        canGetLogic: helmEntry.in && anyKong,
-        canGetBreak: helmEntry.out && anyKong
+        canGetLogic: helmEntry.in && hasOStand && anyKong,
+        canGetBreak: helmEntry.out && hasOStand && anyKong
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -47819,6 +47804,7 @@ const Shuffled$2 = () => {
 const ShuffledCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2, {}) : null;
 const Shuffled$1 = () => {
   const isBreathing = usePlayHelm();
+  const isBreathingV2 = useHelmEnter();
   const hasShockwave = useShockwave();
   const hasOStand = useStand();
   const hasPineapples = usePineapple();
@@ -47834,8 +47820,7 @@ const Shuffled$1 = () => {
         id: 38e3,
         name: "Shuffled Dirt Patch: First room, left of the Tag Barrel",
         region: "Hideout Helm",
-        canGetLogic: isBreathing.in && hasShockwave,
-        canGetBreak: isBreathing.out && hasShockwave
+        canGetLogic: isBreathingV2 && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -47844,8 +47829,8 @@ const Shuffled$1 = () => {
         id: 38001,
         name: "Shuffled Dirt Patch: Ammo alcove in Pineapple Switch room",
         region: "Hideout Helm",
-        canGetLogic: isBreathing.in && hasOStand && hasShockwave,
-        canGetBreak: isBreathing.out && hasShockwave
+        canGetLogic: isBreathingV2 && hasOStand && hasShockwave,
+        canGetBreak: isBreathingV2 && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -47964,7 +47949,7 @@ const ShuffledDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.
 const Shuffled = () => {
   const hasCam = useCamera();
   const hasOStand = useStand();
-  const canEnterHelm = usePlayHelm();
+  const canEnterHelm = useHelmEnter();
   const canReachEndOfHelm = useHelmDoors();
   const canGetPastDoor1 = useEOHDoor1();
   const canGetPastDoor2 = useEOHDoor2();
@@ -47997,8 +47982,8 @@ const Shuffled = () => {
         id: 48002,
         name: "Shuffled Fairy: To the Pineapple Switch",
         region: "Hideout Helm",
-        canGetLogic: canEnterHelm.in && hasOStand && hasCam,
-        canGetBreak: canEnterHelm.out && hasCam
+        canGetLogic: canEnterHelm && hasOStand && hasCam,
+        canGetBreak: canEnterHelm && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
