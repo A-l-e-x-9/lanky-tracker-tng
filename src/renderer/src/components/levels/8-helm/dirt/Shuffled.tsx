@@ -21,15 +21,14 @@ const canReachThrone = useEOHDoor1()
         id={38000}
         name="Shuffled Dirt Patch: First room, left of the Tag Barrel"
         region="Hideout Helm"
-        canGetLogic={isBreathingV2.in && hasShockwave}
-        canGetBreak={isBreathingV2.out && hasShockwave}
+        canGetLogic={isBreathingV2 && hasShockwave}
       />
       <HelmCheck
         id={38001}
         name="Shuffled Dirt Patch: Ammo alcove in Pineapple Switch room"
         region="Hideout Helm"
-        canGetLogic={isBreathingV2.in && hasOStand && hasShockwave}
-        canGetBreak={isBreathingV2.out && hasShockwave}
+        canGetLogic={isBreathingV2 && hasOStand && hasShockwave}
+        canGetBreak={isBreathingV2 && hasShockwave}
       />
       <HelmCheck
         id={38002}
