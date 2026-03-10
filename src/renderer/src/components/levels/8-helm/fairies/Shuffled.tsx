@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useHelmDoors, usePlayHelm, useHelmMachine, useEOHDoor1, useEOHDoor2 } from '@renderer/hooks/helm'
+import { useHelmDoors, useHelmEnter, useHelmMachine, useEOHDoor1, useEOHDoor2 } from '@renderer/hooks/helm'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useCamera, useStand, useRocket } from '@renderer/hooks/kongs'
 import HelmCheck from '../check'
@@ -7,7 +7,7 @@ import HelmCheck from '../check'
 const Shuffled: React.FC = () => {
   const hasCam = useCamera()
   const hasOStand = useStand()
-  const canEnterHelm = usePlayHelm()
+  const canEnterHelm = useHelmEnter()
   const canReachEndOfHelm = useHelmDoors()
   const canGetPastDoor1 = useEOHDoor1()
   const canGetPastDoor2 = useEOHDoor2()
