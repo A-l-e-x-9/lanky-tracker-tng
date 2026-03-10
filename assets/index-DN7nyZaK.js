@@ -43106,6 +43106,7 @@ const UndergroundEnemies = () => {
   const feather = useFeather();
   const hasClimbing = useClimbing();
   const preOpenedCrypt = useOpenCrypt();
+  const hasChunky = useChunky();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
@@ -43213,8 +43214,8 @@ const UndergroundEnemies = () => {
         id: 7337,
         name: "Enemy 0 inside Chunky's Coffin",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && slam && hasClimbing,
-        canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && slam
+        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && hasChunky && slam && hasClimbing,
+        canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && hasChunky && slam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
