@@ -43224,8 +43224,8 @@ const UndergroundEnemies = () => {
         id: 7338,
         name: "Enemy 1 inside Chunky's Coffin",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && slam && hasClimbing,
-        canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && slam
+        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && hasChunky && slam && hasClimbing,
+        canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && hasChunky && slam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -43234,8 +43234,8 @@ const UndergroundEnemies = () => {
         id: 7339,
         name: "Enemy 2 inside Chunky's Coffin",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && slam && hasClimbing,
-        canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && slam
+        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && hasChunky && slam && hasClimbing,
+        canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && hasChunky && slam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -43244,8 +43244,8 @@ const UndergroundEnemies = () => {
         id: 7340,
         name: "Enemy 3 inside Chunky's Coffin",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && slam && hasClimbing,
-        canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && slam
+        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && hasChunky && slam && hasClimbing,
+        canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && hasChunky && slam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
