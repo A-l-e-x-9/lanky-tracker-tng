@@ -10,7 +10,8 @@ import {
   usePeanut,
   usePineapple,
   useSlam,
-  useClimbing
+  useClimbing,
+  useChunky
 } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
@@ -28,6 +29,7 @@ const UndergroundEnemies: React.FC = () => {
   const feather = useFeather()
   const hasClimbing = useClimbing()
   const preOpenedCrypt = useOpenCrypt()
+  const hasChunky = useChunky()
   return (
     <DropPool>
       <CastleCheck
@@ -104,8 +106,8 @@ const UndergroundEnemies: React.FC = () => {
         id={7337}
         name="Enemy 0 inside Chunky's Coffin"
         region="Castle Crypt"
-        canGetLogic={inStage.in && (pineapple || preOpenedCrypt) && slam && hasClimbing}
-        canGetBreak={inStage.out && (pineapple || preOpenedCrypt) && slam}
+        canGetLogic={inStage.in && (pineapple || preOpenedCrypt) && hasChunky && slam && hasClimbing}
+        canGetBreak={inStage.out && (pineapple || preOpenedCrypt) && hasChunky && slam}
       />
       <CastleCheck
         id={7338}
