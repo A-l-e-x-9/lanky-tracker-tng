@@ -33,8 +33,8 @@ const Shuffled: React.FC = () => {
         id={48002}
         name="Shuffled Fairy: To the Pineapple Switch"
         region="Hideout Helm"
-        canGetLogic={canEnterHelm.in && hasOStand && hasCam}
-        canGetBreak={canEnterHelm.out && hasCam}
+        canGetLogic={canEnterHelm && hasOStand && hasCam}
+        canGetBreak={canEnterHelm && hasCam}
       />
       <HelmCheck
         id={48003}
