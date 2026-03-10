@@ -1,11 +1,12 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useHelmMachine, useHelmDoors, usePlayHelm, useEOHDoor1 } from '@renderer/hooks/helm'
+import { useHelmMachine, useHelmDoors, usePlayHelm, useHelmEnter, useEOHDoor1 } from '@renderer/hooks/helm'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import { useShockwave, useStand, usePineapple, useVine, useRocket } from '@renderer/hooks/kongs'
 import HelmCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = usePlayHelm()
+const isBreathingV2 = useHelmEnter()
 const hasShockwave = useShockwave()
 const hasOStand = useStand()
 const hasPineapples = usePineapple()
@@ -20,15 +21,15 @@ const canReachThrone = useEOHDoor1()
         id={38000}
         name="Shuffled Dirt Patch: First room, left of the Tag Barrel"
         region="Hideout Helm"
-        canGetLogic={isBreathing.in && hasShockwave}
-        canGetBreak={isBreathing.out && hasShockwave}
+        canGetLogic={isBreathingV2.in && hasShockwave}
+        canGetBreak={isBreathingV2.out && hasShockwave}
       />
       <HelmCheck
         id={38001}
         name="Shuffled Dirt Patch: Ammo alcove in Pineapple Switch room"
         region="Hideout Helm"
-        canGetLogic={isBreathing.in && hasOStand && hasShockwave}
-        canGetBreak={isBreathing.out && hasShockwave}
+        canGetLogic={isBreathingV2.in && hasOStand && hasShockwave}
+        canGetBreak={isBreathingV2.out && hasShockwave}
       />
       <HelmCheck
         id={38002}
