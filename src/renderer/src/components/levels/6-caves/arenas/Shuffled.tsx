@@ -119,7 +119,7 @@ const hasTrombone = useTrombone()
       <CavesCheck
         id={16014}
         name="Shuffled Battle Arena: Tag Barrel at the Ice Castle"
-        region="Forest Area 1"
+        region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
