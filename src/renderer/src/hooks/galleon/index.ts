@@ -219,8 +219,8 @@ export const useGalleonTreasureRoom = (): LogicBool => {
   const preOpened = useDonkStore(useShallow((state) => state.removeBarriers.galleonTreasureRoom))
   const warpAll = useBananaportAll()
   return {
-    in: (inStage.in && warpAll) || (outskirts.in && (lanky && dive.in || preOpened) && highTide.in),
-    out: outskirts.out && (lanky && dive.out || preOpened)
+    in: (inStage.in && warpAll) || (outskirts.in && dive.in && (lanky || preOpened) && highTide.in),
+    out: outskirts.out && dive.out && (lanky || preOpened)
   }
 }
 
