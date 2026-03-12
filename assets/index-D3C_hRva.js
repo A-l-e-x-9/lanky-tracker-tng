@@ -47351,8 +47351,24 @@ const HelmEntryEnemies = () => {
   const anyKong = useAnyKong();
   const klump = useDefeatToughEnemy();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8300, name: "Enemy 0 at Start", canGetLogic: isBreathing && anyKong }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmCheck, { id: 8301, name: "Enemy 1 at Start", canGetLogic: isBreathing && anyKong }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8300,
+        name: "Enemy 0 at Start",
+        canGetLogic: helmEntry.in && isBreathing && anyKong,
+        canGetBreak: helmEntry.out && isBreathing && anyKong
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      HelmCheck,
+      {
+        id: 8301,
+        name: "Enemy 1 at Start",
+        canGetLogic: helmEntry.in && isBreathing && anyKong,
+        canGetBreak: helmEntry.out && isBreathing && anyKong
+      }
+    ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       HelmCheck,
       {
