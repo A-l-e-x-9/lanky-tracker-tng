@@ -67,6 +67,11 @@ return (
     <ShopLocations />
     <FairyReward />
     <JetpacCheck />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
+    <EnemyLocations />
+  </div>
+  <div className="grid">
     <ShuffledArenas />
     <ShuffledCrates />
     <ShuffledDirt />
@@ -76,9 +81,6 @@ return (
   </div>
   <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ShuffledKasplats />
-  </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
-    <EnemyLocations />
   </div>
   </>
 )
