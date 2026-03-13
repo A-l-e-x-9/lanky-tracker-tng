@@ -34,9 +34,8 @@ import ShuffledFairies from '../fairies/Shuffled'
 import ShuffledKasplats from '../kasplats/Shuffled'
 
 const IslesRegionChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
-const isFairySeed = useDonkStore(useShallow((state) => [state.winCondition.fairies && !state.settings.poolFairies])) ? 'foolish' : ''
-const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
+const [isKremKaptureSeed, isFairySeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.kremlingKapture, state.winCondition.fairies, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const [fairiesInRotation, kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolFairies, state.settings.poolKasplats])) ? '' : 'foolish'
 return (
 <>
   <div className="grid">
