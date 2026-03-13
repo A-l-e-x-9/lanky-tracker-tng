@@ -78,7 +78,7 @@ const hasAnInstrument = useAnyMusic()
         id={50006}
         name="Shuffled Kasplat: Factory Lobby, above the DK Portal"
         region="Japes-Forest Lobbies"
-        canGetLogic={canReachFactoryLobby && hasGrab}
+        canGetLogic={canReachFactoryLobby.in && hasGrab}
         canGetBreak={highGrab}
       />
       <IslesCheck
@@ -91,7 +91,8 @@ const hasAnInstrument = useAnyMusic()
         id={50008}
         name="Shuffled Kasplat: Behind Factory Lobby"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={canReachFactoryLobby.in}
+        canGetBreak={canReachFactoryLobby.out}
       />
       <IslesCheck
         id={50009}
@@ -138,7 +139,8 @@ const hasAnInstrument = useAnyMusic()
         id={50015}
         name="Shuffled Kasplat: In Snide's room"
         region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby}
+        canGetLogic={canReachFactoryLobby.in}
+        canGetBreak={canReachFactoryLObby.out}
       />
       <IslesCheck
         id={50016}
