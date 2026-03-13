@@ -312,7 +312,7 @@ const GeneratorSettings: React.FC = () => {
               <p>K. Rool's Challenge</p>
               <SimpleRadioIcon
                 imgUrl={hardShootIcon}
-                title="Highlights all Keys, as well as all 'turn in Blueprint to Snide' checks, Snide himself, boss checks, and Bonus Barrel checks."
+                title="Highlights all Keys, Blueprints, and bosses, as well as all boss and Bonus Barrel checks. Also highlights Kasplat checks if Kasplats are not in the rotation."
                 storeKey="kRoolChallenge"
                 prefix="winCondition"
                 updateItem={setWinCondition}

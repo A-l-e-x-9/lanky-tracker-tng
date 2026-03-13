@@ -4,7 +4,7 @@ import UpperKremFairy from '../fairies/UpperKrem'
 import SaxPad from '../gold-bananas/tiny/SaxPad'
 
 const KremTopChecks: React.FC = () => {
-const isFairySeed = useDonkStore(useShallow((state) => [state.winCondition.fairies && !state.settings.poolFairies])) ? 'foolish' : ''
+const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
   <>
