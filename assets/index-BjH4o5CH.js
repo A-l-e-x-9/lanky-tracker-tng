@@ -17754,14 +17754,16 @@ const ClassicChecks$7 = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyDoors, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(FairyReward, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$8, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$8, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$8, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$8, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$2, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$8, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$2, {}) })
   ] });
 };
 const IsleChecks = () => {
@@ -21832,9 +21834,8 @@ const JapesRegionChecks = () => {
   ] });
 };
 const ClassicChecks$6 = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
+  const [isKremKaptureSeed, isFairySeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.kremlingKapture, state.winCondition.fairies, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const [fairiesInRotation, kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolFairies, state.settings.poolBlueprints])) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$6, {}),
@@ -21843,7 +21844,7 @@ const ClassicChecks$6 = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$6, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$6, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$6, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$6, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CrateLocations$4, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DirtLocations$2, {})
@@ -21861,16 +21862,14 @@ const ClassicChecks$6 = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$7, {}) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$1, {})
-    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$7, {}) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$7, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$7, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$7, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$7, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$1, {}) })
   ] });
 };
 const JapesChecks = () => {
