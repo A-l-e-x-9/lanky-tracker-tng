@@ -17,7 +17,9 @@ import ChunkyKasplat from '../kasplats/Chunky'
 const DoorTempleChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
+const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -33,12 +35,14 @@ return (
     <ChunkyDoorTemple />
     <TempleDirt />
   </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <ChunkyKasplat />
+  </div>
   <div className={`grid ${isKremKaptureSeed}`}>
     <Dk5Enemies />
     <Diddy5Enemies />
     <Lanky5Enemies />
     <Tiny5Enemies />
-    <ChunkyKasplat />
     <Chunky5Enemies />
   </div>
   </>
