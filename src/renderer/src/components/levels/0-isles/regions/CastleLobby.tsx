@@ -12,7 +12,8 @@ import CastleLobbyTiny from '../wrinkly/CastleLobbyTiny'
 import CastleLobbyChunky from '../wrinkly/CastleLobbyChunky'
 
 const CastleLobbyChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const [isKremKaptureSeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.kremlingKapture, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const [kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolBlueprints])) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -25,8 +26,10 @@ return (
     <CastleLobbyTiny />
     <CastleLobbyChunky />
   </div>
+  <div className={`grid ${isKremKaptureSeed || ((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+     <DiddyKasplat />
+  </div>
   <div className={`grid ${isKremKaptureSeed}`}>
-    <DiddyKasplat />
     <CastleLobbyEnemies />
   </div>
   </>
