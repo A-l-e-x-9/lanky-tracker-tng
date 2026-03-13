@@ -26,7 +26,7 @@ return (
     <CastleLobbyTiny />
     <CastleLobbyChunky />
   </div>
-  <div className={`grid ${isKremKaptureSeed || ((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
      <DiddyKasplat />
   </div>
   <div className={`grid ${isKremKaptureSeed}`}>

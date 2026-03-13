@@ -21,7 +21,7 @@ return (
     <GalleonLobbyTiny />
     <GalleonLobbyChunky />
   </div>
-  <div className={`grid ${isKremKaptureSeed || ((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ChunkyKasplat />
   </div>
   </>

@@ -41,7 +41,7 @@ return (
     <TinyBananas />
     <ChunkyBananas />
   </div>
-  <div className={`grid ${isKremKaptureSeed || ((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <KasplatLocations />
   </div>
   <div className="grid">
@@ -74,7 +74,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ShuffledFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed || ((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ShuffledKasplats />
   </div>
   <div className={`grid ${isKremKaptureSeed}`}>
