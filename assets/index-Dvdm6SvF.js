@@ -14220,7 +14220,8 @@ const CastleLobbyChunky = () => {
   ) });
 };
 const CastleLobbyChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const [isKremKaptureSeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.kremlingKapture, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const [kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolBlueprints])) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CastleBarrel, {}),
@@ -14232,10 +14233,8 @@ const CastleLobbyChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyTiny, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyChunky, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$7, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyEnemies, {})
-    ] })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed || (isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$7, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyEnemies, {}) })
   ] });
 };
 const CavesLobbyDK = () => {
@@ -14317,7 +14316,8 @@ const CavesLobby = () => {
   ) });
 };
 const CavesLobbyChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const [isKremKaptureSeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.kremlingKapture, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const [kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolBlueprints])) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLava, {}),
@@ -14329,7 +14329,7 @@ const CavesLobbyChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyTiny, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyChunky, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$7, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed || (isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$7, {}) })
   ] });
 };
 const DiddyAirspaceChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -14403,9 +14403,8 @@ const FactoryLobbyChunky = () => {
   ) });
 };
 const FactoryLobbyChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
-  const isFairySeed = useDonkStore(useShallow((state) => [state.winCondition.fairies && !state.settings.poolFairies])) ? "foolish" : "";
-  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
+  const [isKremKaptureSeed, isFairySeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.kremlingKapture, state.winCondition.fairies, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const [fairiesInRotation, kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolFairies, state.settings.poolBlueprints])) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(BongosPad, {}),
@@ -14416,10 +14415,8 @@ const FactoryLobbyChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyChunky, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyFairy, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$7, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyEnemies, {})
-    ] })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed || (isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$7, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyEnemies, {}) })
   ] });
 };
 const ForestLobbyDK = () => {
@@ -14568,7 +14565,8 @@ const GalleonLobbyChunky = () => {
   ) });
 };
 const GalleonLobbyChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const [isKremKaptureSeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.kremlingKapture, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const [kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolBlueprints])) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonSwim, {}),
@@ -14578,13 +14576,14 @@ const GalleonLobbyChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyTiny, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyChunky, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$7, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed || (isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$7, {}) })
   ] });
 };
 const HelmLobbyChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const [isKremKaptureSeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.kremlingKapture, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const [kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolBlueprints])) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$7, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed || (isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$7, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(HelmBarrel, {}) })
   ] });
 };
