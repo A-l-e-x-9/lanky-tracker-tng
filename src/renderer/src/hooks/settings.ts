@@ -135,8 +135,12 @@ export const usePoolMisc = (): boolean =>
  * Are the blueprints the Kasplats hold in the rando pool?
  * @returns true if the blueprints are in the pool.
  */
-export const usePoolBlueprints = (): boolean =>
-  useDonkStore(useShallow((state) => state.settings.poolBlueprints))
+export const usePoolBlueprints = (): boolean => {
+  const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints))
+  const blueprintWinCon = useDonkStore(useShallow((state) => state.winCondition.fairies))
+  const isKRoolChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))
+  return kasplatsInRotation || ((blueprintWinCon || isKRoolChallenge) && !kasplatsInRotation)
+}
 
 /**
  * Are the banana fairies in the rando pool?
