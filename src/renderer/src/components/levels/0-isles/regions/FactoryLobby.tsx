@@ -30,7 +30,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <FactoryLobbyFairy />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${isKremKaptureSeed} ${isBlueprintSeed && kasplatsInRotation} ${isKRoolChallengeSeed && kasplatsInRotation}`}>
     <TinyKasplat />
   </div>
   <div className={`grid ${isKremKaptureSeed}`}>
