@@ -140,7 +140,7 @@ const hasAnInstrument = useAnyMusic()
         name="Shuffled Kasplat: In Snide's room"
         region="K. Rool's Island"
         canGetLogic={canReachFactoryLobby.in}
-        canGetBreak={canReachFactoryLObby.out}
+        canGetBreak={canReachFactoryLobby.out}
       />
       <IslesCheck
         id={50016}
