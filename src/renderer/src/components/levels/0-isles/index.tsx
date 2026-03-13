@@ -30,8 +30,12 @@ import ShuffledFairies from './fairies/Shuffled'
 import ShuffledKasplats from './kasplats/Shuffled'
 
 const ClassicChecks: React.FC = () => {
-const [isKremKaptureSeed, isFairySeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.kremlingKapture, state.winCondition.fairies, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
-const [fairiesInRotation, kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolFairies, state.settings.poolBlueprints])) ? '' : 'foolish'
+const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const isBlueprintSeed = useDonkStore(useShallow((state) => state.winCondition.blueprints)) ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
+const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
+const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
 <>
   <div className="grid">
@@ -74,7 +78,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ShuffledFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${isBlueprintSeed && kasplatsInRotation} ${isKRoolChallengeSeed && kasplatsInRotation}`}>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ShuffledKasplats />
   </div>
   <div className={`grid ${isKremKaptureSeed}`}>
