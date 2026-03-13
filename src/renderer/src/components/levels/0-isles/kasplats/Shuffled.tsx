@@ -1,7 +1,7 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesKremAscent, useCheckChunkyPound, useIslesFungiIsland, useCavesLobbyGeneric, useCheckLankyPrison, useJapesLobbyGeneric, usePlayLobby, useIslesCrossFungi } from '@renderer/hooks/isles'
+import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useCheckChunkyPound, useIslesFungiIsland, useCavesLobbyGeneric, useCheckLankyPrison, useJapesLobbyGeneric, usePlayLobby, useIslesCrossFungi } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useAnyKong, useGrab, useHighGrab, useDive, useRocket, useBoulderTech, useTwirl, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -13,7 +13,7 @@ const lankyKasplat = useCavesKasplat()
 const tinyKasplat = useFactoryKasplat()
 const chunkyKasplat = useGalleonKasplat()
 const isBreathing = useAnyKong()
-const canReachFactoryLobby = useIslesKremAscent()
+const canReachFactoryLobby = usePlayLobby('Frantic Factory')
 const hasGrab = useGrab()
 const highGrab = useHighGrab()
 const canPoundTheX = useCheckChunkyPound()
