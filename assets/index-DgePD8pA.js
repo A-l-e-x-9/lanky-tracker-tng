@@ -11215,7 +11215,12 @@ const usePoolShops = () => useDonkStore(useShallow((state) => state.settings.poo
 const usePoolToughBananas = () => useDonkStore(useShallow((state) => state.settings.poolToughBananas));
 const usePoolMiniboss = () => useDonkStore(useShallow((state) => state.settings.poolMiniboss));
 const usePoolMisc = () => useDonkStore(useShallow((state) => state.settings.poolMisc));
-const usePoolBlueprints = () => useDonkStore(useShallow((state) => state.settings.poolBlueprints));
+const usePoolBlueprints = () => {
+  const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints));
+  const blueprintWinCon = useDonkStore(useShallow((state) => state.winCondition.fairies));
+  const isKRoolChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
+  return kasplatsInRotation || (blueprintWinCon || isKRoolChallenge) && !kasplatsInRotation;
+};
 const usePoolFairies = () => {
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies));
   const fairyWinCon = useDonkStore(useShallow((state) => state.winCondition.fairies));
