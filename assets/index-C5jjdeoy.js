@@ -17428,7 +17428,7 @@ const Shuffled$y = () => {
   const tinyKasplat = useFactoryKasplat();
   const chunkyKasplat = useGalleonKasplat();
   const isBreathing = useAnyKong();
-  const canReachFactoryLobby = useIslesKremAscent();
+  const canReachFactoryLobby = usePlayLobby("Frantic Factory");
   const hasGrab = useGrab();
   const highGrab = useHighGrab();
   const canPoundTheX = useCheckChunkyPound();
@@ -17512,7 +17512,7 @@ const Shuffled$y = () => {
         id: 50006,
         name: "Shuffled Kasplat: Factory Lobby, above the DK Portal",
         region: "Japes-Forest Lobbies",
-        canGetLogic: canReachFactoryLobby && hasGrab,
+        canGetLogic: canReachFactoryLobby.in && hasGrab,
         canGetBreak: highGrab
       }
     ),
@@ -17531,7 +17531,8 @@ const Shuffled$y = () => {
         id: 50008,
         name: "Shuffled Kasplat: Behind Factory Lobby",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: canReachFactoryLobby.in,
+        canGetBreak: canReachFactoryLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17599,7 +17600,8 @@ const Shuffled$y = () => {
         id: 50015,
         name: "Shuffled Kasplat: In Snide's room",
         region: "K. Rool's Island",
-        canGetLogic: canReachFactoryLobby
+        canGetLogic: canReachFactoryLobby.in,
+        canGetBreak: canReachFactoryLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
