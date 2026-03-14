@@ -10,6 +10,8 @@ import LankyKasplat from '../kasplats/Lanky'
 
 const RNDChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -17,10 +19,12 @@ return (
     <RNDArena />
     <CarRace />
   </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <LankyKasplat />
+  </div>
   <div className={`grid ${isKremKaptureSeed}`}>
     <ChargeTest />
     <ToyMonster />
-    <LankyKasplat />
     <RNDEnemies />
   </div>
   </>
