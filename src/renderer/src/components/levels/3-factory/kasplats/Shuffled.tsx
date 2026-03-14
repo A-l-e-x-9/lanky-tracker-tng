@@ -1,8 +1,8 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useCoconutKasplat, useOasisKasplat, useLlamaLavaKasplat, useTunnelKasplat, useChunkyKasplat, useDkTunnelGb, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb } from '@renderer/hooks/aztec'
+import { useGeneralThing, useCoconutKasplat, useOasisKasplat, useLlamaLavaKasplat, useTunnelKasplat, useChunkyKasplat, useDkTunnelGb, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb } from '@renderer/hooks/factory'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useDive, useVine, useClimbing, useRocket, useDiddy, useTiny, usePineapple, useGrape } from '@renderer/hooks/kongs'
-import AztecCheck from '../check'
+import FactoryCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const DKVanillaKasplat = useCoconutKasplat()
@@ -27,127 +27,127 @@ const hasPineapples = usePineapple()
 const hasGrapes = useGrape()
   return (
     <KasplatPool>
-      <AztecCheck
-        id={52000}
+      <FactoryCheck
+        id={53000}
         name="Shuffled Kasplat: DK's Vanilla Location (a sub-tunnel at the level start)"
         region="Aztec Caves"
         canGetLogic={DKVanillaKasplat.in}
         canGetBreak={DKVanillaKasplat.out}
       />
-      <AztecCheck
-        id={52001}
+      <FactoryCheck
+        id={53001}
         name="Shuffled Kasplat: Diddy's Vanilla Location (on top of the Tiny Temple)"
         region="Aztec Main Area"
         canGetLogic={diddyVanillaKasplat.in}
         canGetBreak={diddyVanillaKasplat.out}
       />
-      <AztecCheck
-        id={52002}
+      <FactoryCheck
+        id={53002}
         name="Shuffled Kasplat: Lanky's Vanilla Location (the lava pedestal GB)"
         region="Llama Temple"
         canGetLogic={lankyVanillaKasplat.in}
         canGetBreak={lankyVanillaKasplat.out}
       />
-      <AztecCheck
-        id={52003}
+      <FactoryCheck
+        id={53003}
         name="Shuffled Kasplat: Tiny's Vanilla Location (first 3-way intersection of middle tunnel)"
         region="Aztec Caves"
         canGetLogic={tinyVanillaKasplat.in}
         canGetBreak={tinyVanillaKasplat.out}
       />
-      <AztecCheck
-        id={52004}
+      <FactoryCheck
+        id={53004}
         name="Shuffled Kasplat: Chunky's Vanilla Location (in his 5DT room)"
         region="5 Door Temple"
         canGetLogic={chunkyVanillaKasplat.in}
         canGetBreak={chunkyVanillaKasplat.out}
       />
-      <AztecCheck
-        id={52005}
+      <FactoryCheck
+        id={53005}
         name="Shuffled Kasplat: In DK's quicksand tunnel"
         region="Aztec Caves"
         canGetLogic={canDoQSGB.in}
         canGetBreak={canDoQSGB.out}
       />
-      <AztecCheck
-        id={52006}
+      <FactoryCheck
+        id={53006}
         name="Shuffled Kasplat: On the oasis"
         region="Aztec Main Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
-      <AztecCheck
-        id={52007}
+      <FactoryCheck
+        id={53007}
         name="Shuffled Kasplat: On top of the Llama's cage"
         region="Aztec Main Area"
         canGetLogic={isBreathing.in && hasClimbing && (hasVines || hasJetbarrel)}
         canGetBreak={isBreathing.out && (hasDiddy || hasTiny)}
       />
-      <AztecCheck
-        id={52008}
+      <FactoryCheck
+        id={53008}
         name="Shuffled Kasplat: Near the giant boulder"
         region="Aztec Caves"
         canGetLogic={canEnterBack.in}
         canGetBreak={canEnterBack.out}
       />
-      <AztecCheck
-        id={52009}
+      <FactoryCheck
+        id={53009}
         name="Shuffled Kasplat: In the vase room"
         region="Aztec Caves"
         canGetLogic={isBreathing.in && hasPineapples}
         canGetBreak={isBreathing.out && hasPineapples}
       />
-      <AztecCheck
-        id={52010}
+      <FactoryCheck
+        id={53010}
         name="Shuffled Kasplat: Back top of the 5-Door Temple"
         region="Aztec Main Area"
         canGetLogic={canEnterBack.in}
         canGetBreak={canEnterBack.out}
       />
-      <AztecCheck
-        id={52011}
+      <FactoryCheck
+        id={53011}
         name="Shuffled Kasplat: Platform near Snide's"
         region="Aztec Main Area"
         canGetLogic={canEnterBack.in}
         canGetBreak={canEnterBack.out}
       />
-      <AztecCheck
-        id={52012}
+      <FactoryCheck
+        id={53012}
         name="Shuffled Kasplat: Behind the Llama"
         region="Llama Temple"
         canGetLogic={canGoInLlamaTemple.in}
         canGetBreak={canGoInLlamaTemple.out}
       />
-      <AztecCheck
-        id={52013}
+      <FactoryCheck
+        id={53013}
         name="Shuffled Kasplat: At Tiny's Prison"
         region="Tiny Temple"
         canGetLogic={canGoInTinyTemple.in && canGetPastTTIce.in && hasDiving.in}
         canGetBreak={canGoInTinyTemple.out && canGetPastTTIce.out && hasDiving.out}
       />
-      <AztecCheck
-        id={52014}
+      <FactoryCheck
+        id={53014}
         name="Shuffled Kasplat: Behind Diddy's gongs"
         region="Aztec Main Area"
         canGetLogic={canEnterBack.in}
         canGetBreak={canEnterBack.out}
       />
-      <AztecCheck
-        id={52015}
+      <FactoryCheck
+        id={53015}
         name="Shuffled Kasplat: A contestant on Match Game '64"
         region="Llama Temple"
         canGetLogic={canGoInLlamaTemple.in && hasGrapes}
         canGetBreak={canGoInLlamaTemple.out && hasGrapes}
       />
-      <AztecCheck
-        id={52016}
+      <FactoryCheck
+        id={53016}
         name="Shuffled Kasplat: At Tiny's barrel in the Tiny Temple"
         region="Tiny Temple"
         canGetLogic={canGoInTinyTemple.in}
         canGetBreak={canGoInTinyTemple.out}
       />
-      <AztecCheck
-        id={52017}
+      <FactoryCheck
+        id={53017}
         name="Shuffled Kasplat: Inside DK's 5DT room"
         region="5 Door Temple"
         canGetLogic={canDoDK5DT.in}
