@@ -32157,23 +32157,31 @@ const OutskirtsChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$3, {}) })
   ] });
 };
-const FiveShipChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(Dk5Ship, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(Diddy5Ship, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(Lanky5Ship, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(Tiny5Ship, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ShipFairy, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(Chunky5Ship, {})
-] });
+const FiveShipChecks = () => {
+  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
+  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Dk5Ship, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Diddy5Ship, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Lanky5Ship, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tiny5Ship, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Chunky5Ship, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShipFairy, {}) })
+  ] });
+};
 const TreasureChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyGold, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyGold, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TreasureClams, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$3, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$3, {}) })
   ] });
 };
 const Shuffled$k = () => {
@@ -33977,8 +33985,8 @@ const GalleonRegionChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(LighthouseChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(OutskirtsChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TreasureChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FiveShipChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FiveShipChecks, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$3, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$4, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
