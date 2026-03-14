@@ -37707,16 +37707,30 @@ const ChunkyBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeE
 ] });
 const OwlRace = () => {
   const owlGb = useDiddyOwlGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ForestCheck,
-    {
-      id: 5011,
-      name: "Diddy's Owl Race",
-      region: "Forest Area 4",
-      canGetLogic: owlGb.in,
-      canGetBreak: owlGb.out
-    }
-  ) }) });
+  const [isBonusSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.bonuses, state.winCondition.kRoolChallenge]));
+  if (isBonusSeed || isKRoolChallengeSeed) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5011,
+        name: "Diddy's Owl Race",
+        region: "Forest Area 4",
+        canGetLogic: owlGb.in,
+        canGetBreak: owlGb.out
+      }
+    ) });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ToughGoldenBanana, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5011,
+        name: "Diddy's Owl Race",
+        region: "Forest Area 4",
+        canGetLogic: owlGb.in,
+        canGetBreak: owlGb.out
+      }
+    ) }) });
+  }
 };
 const DarkRafters = () => {
   const raftersGb = useDiddyRaftersGb();
