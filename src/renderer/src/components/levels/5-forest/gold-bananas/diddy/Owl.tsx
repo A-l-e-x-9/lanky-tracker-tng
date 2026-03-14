@@ -7,7 +7,7 @@ import ForestCheck from '../../check'
 
 const OwlRace: React.FC = () => {
   const owlGb = useDiddyOwlGb()
-  const [isBonusSeed. isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.bonuses, state.winCondition.kRoolChallenge]))
+  const [isBonusSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.bonuses, state.winCondition.kRoolChallenge]))
   if (isBonusSeed || isKRoolChallengeSeed) {
   return (
   <GBPool>
