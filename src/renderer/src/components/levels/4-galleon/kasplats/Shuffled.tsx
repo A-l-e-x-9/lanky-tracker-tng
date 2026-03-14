@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useDiddyGoldGb, useKevin, useCannonKasplat, useVineKasplat, useCactusKasplat, useFactoryHut, useGalleonLighthousePlatform, useGalleonLighthouseInside, useDiddyMechGb, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/galleon'
+import { useGeneralThing, useDiddyGoldGb, useKevin, useCannonKasplat, useVineKasplat, useCactusKasplat, useGalleonLighthousePlatform, useGalleonLighthouseInside, useDiddyMechGb } from '@renderer/hooks/galleon'
 import { useShuffleKasplats, useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, usePunch, useMini, useDk, useTwirl, useCoconut, useTrombone } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
