@@ -11,6 +11,8 @@ import DiddyKasplat from '../kasplats/Diddy'
 
 const LighthouseChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -21,8 +23,10 @@ return (
     <SeasickShip />
     <LighthouseDirt />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+    <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <DiddyKasplat />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <LighthouseEnemies />
   </div>
   </>
