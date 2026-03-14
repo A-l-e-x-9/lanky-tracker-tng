@@ -40,15 +40,15 @@ return (
       <LighthouseChecks />
       <OutskirtsChecks />
       <TreasureChecks />
-    <div className="grid">
       <FiveShipChecks />
+    <div className="grid">
       <ShopLocations />
       <BossCheck />
       <ShuffledArenas />
       <ShuffledCrates />
       <ShuffledDirt />
     </div>
-    <div className={`grid ${isFairySeed && fairiesInRotation}`}>    
+    <div className={`grid ${isFairySeed && fairiesInRotation}`}>
       <ShuffledFairies />
     </div>
     <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
