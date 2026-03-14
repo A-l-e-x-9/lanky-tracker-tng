@@ -30577,33 +30577,30 @@ const Shuffled$l = () => {
 };
 const ShuffledFairies$5 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
 const Shuffled$k = () => {
-  const DKVanillaKasplat = useCoconutKasplat();
-  const diddyVanillaKasplat = useOasisKasplat();
-  const lankyVanillaKasplat = useLlamaLavaKasplat();
-  const tinyVanillaKasplat = useTunnelKasplat();
-  const chunkyVanillaKasplat = useChunkyKasplat();
-  const isBreathing = useGeneralThing$4();
-  const canDoQSGB = useDkTunnelGb();
-  const canEnterBack = useAztecBack();
-  const canGoInLlamaTemple = useAztecLlamaTemple();
-  const canGoInTinyTemple = useAztecTinyTemple();
-  const canGetPastTTIce = useTinyTempleIce();
-  const canDoDK5DT = useDk5DoorGb();
-  const hasDiving = useDive();
-  const hasVines = useVine();
+  const DKVanillaKasplat = useProductionTopKasplat();
+  const diddyVanillaKasplat = useProductionBaseKasplat();
+  const lankyVanillaKasplat = useResearchKasplat();
+  const tinyVanillaKasplat = useStorageKasplat();
+  const chunkyVanillaKasplat = useBlockKasplat();
+  const isBreathing = useGeneralThing$3();
+  const canReachHut = useFactoryHut();
+  const canDoTinyProd = useFactoryProductionTop();
   const hasClimbing = useClimbing();
-  const hasJetbarrel = useRocket();
-  const hasDiddy = useDiddy();
-  const hasTiny = useTiny();
-  const hasPineapples = usePineapple();
-  const hasGrapes = useGrape();
+  const hasAllBananaports = useBananaportAll();
+  const hasPrimatePunch = usePunch();
+  const hasMiniMonkey = useMini();
+  const isHinaKagiyama = useTwirl();
+  const hasDK = useDk();
+  const hasCoconuts = useCoconut();
+  const hasTrombone = useTrombone();
+  const prodRoomOn = useFactoryProductionEnabled();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52e3,
-        name: "Shuffled Kasplat: DK's Vanilla Location (a sub-tunnel at the level start)",
-        region: "Aztec Caves",
+        id: 53e3,
+        name: "Shuffled Kasplat: DK's Vanilla Location (top of the Prod)",
+        region: "Prod Room",
         canGetLogic: DKVanillaKasplat.in,
         canGetBreak: DKVanillaKasplat.out
       }
@@ -30611,9 +30608,9 @@ const Shuffled$k = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52001,
-        name: "Shuffled Kasplat: Diddy's Vanilla Location (on top of the Tiny Temple)",
-        region: "Aztec Main Area",
+        id: 53001,
+        name: "Shuffled Kasplat: Diddy's Vanilla Location (bottom of the Prod)",
+        region: "Prod Room",
         canGetLogic: diddyVanillaKasplat.in,
         canGetBreak: diddyVanillaKasplat.out
       }
@@ -30621,9 +30618,9 @@ const Shuffled$k = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52002,
-        name: "Shuffled Kasplat: Lanky's Vanilla Location (the lava pedestal GB)",
-        region: "Llama Temple",
+        id: 53002,
+        name: "Shuffled Kasplat: Lanky's Vanilla Location (guarding R&D secrets)",
+        region: "R&D Room",
         canGetLogic: lankyVanillaKasplat.in,
         canGetBreak: lankyVanillaKasplat.out
       }
@@ -30631,9 +30628,9 @@ const Shuffled$k = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52003,
-        name: "Shuffled Kasplat: Tiny's Vanilla Location (first 3-way intersection of middle tunnel)",
-        region: "Aztec Caves",
+        id: 53003,
+        name: "Shuffled Kasplat: Tiny's Vanilla Location (bottom of the pole to the Arcade)",
+        region: "Storage and Arcade Area",
         canGetLogic: tinyVanillaKasplat.in,
         canGetBreak: tinyVanillaKasplat.out
       }
@@ -30641,9 +30638,9 @@ const Shuffled$k = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52004,
-        name: "Shuffled Kasplat: Chunky's Vanilla Location (in his 5DT room)",
-        region: "5 Door Temple",
+        id: 53004,
+        name: "Shuffled Kasplat: Chunky's Vanilla Location (at the Block Tower)",
+        region: "Testing Room",
         canGetLogic: chunkyVanillaKasplat.in,
         canGetBreak: chunkyVanillaKasplat.out
       }
@@ -30651,19 +30648,9 @@ const Shuffled$k = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52005,
-        name: "Shuffled Kasplat: In DK's quicksand tunnel",
-        region: "Aztec Caves",
-        canGetLogic: canDoQSGB.in,
-        canGetBreak: canDoQSGB.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 52006,
-        name: "Shuffled Kasplat: On the oasis",
-        region: "Aztec Main Area",
+        id: 53005,
+        name: "Shuffled Kasplat: At the window in front of Snide's",
+        region: "Factory Start Area",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
       }
@@ -30671,111 +30658,111 @@ const Shuffled$k = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52007,
-        name: "Shuffled Kasplat: On top of the Llama's cage",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in && hasClimbing && (hasVines || hasJetbarrel),
-        canGetBreak: isBreathing.out && (hasDiddy || hasTiny)
+        id: 53006,
+        name: "Shuffled Kasplat: In front of the Power Hut",
+        region: "Storage and Arcade Area",
+        canGetLogic: canReachHut.in,
+        canGetBreak: canReachHut.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52008,
-        name: "Shuffled Kasplat: Near the giant boulder",
-        region: "Aztec Caves",
-        canGetLogic: canEnterBack.in,
-        canGetBreak: canEnterBack.out
+        id: 53007,
+        name: "Shuffled Kasplat: Halfway down the hatch",
+        region: "Prod Room",
+        canGetLogic: isBreathing.in && (hasClimbing || hasAllBananaports),
+        canGetBreak: isBreathing.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52009,
-        name: "Shuffled Kasplat: In the vase room",
-        region: "Aztec Caves",
-        canGetLogic: isBreathing.in && hasPineapples,
-        canGetBreak: isBreathing.out && hasPineapples
+        id: 53008,
+        name: "Shuffled Kasplat: In the Dark Room",
+        region: "Storage and Arcade Area",
+        canGetLogic: isBreathing.in && hasPrimatePunch,
+        canGetBreak: isBreathing.out && hasPrimatePunch
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52010,
-        name: "Shuffled Kasplat: Back top of the 5-Door Temple",
-        region: "Aztec Main Area",
-        canGetLogic: canEnterBack.in,
-        canGetBreak: canEnterBack.out
+        id: 53009,
+        name: "Shuffled Kasplat: A step up in the Prod Room",
+        region: "Prod Room",
+        canGetLogic: prodRoomOn.in || hasAllBananaports,
+        canGetBreak: prodRoomOn.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52011,
-        name: "Shuffled Kasplat: Platform near Snide's",
-        region: "Aztec Main Area",
-        canGetLogic: canEnterBack.in,
-        canGetBreak: canEnterBack.out
+        id: 53010,
+        name: "Shuffled Kasplat: Window shopping",
+        region: "",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52012,
-        name: "Shuffled Kasplat: Behind the Llama",
-        region: "Llama Temple",
-        canGetLogic: canGoInLlamaTemple.in,
-        canGetBreak: canGoInLlamaTemple.out
+        id: 53011,
+        name: "Shuffled Kasplat: Inside the Power Hut",
+        region: "Storage and Arcade Area",
+        canGetLogic: canReachHut.in && hasCoconuts,
+        canGetBreak: canReachHut.out && hasCoconuts
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52013,
-        name: "Shuffled Kasplat: At Tiny's Prison",
-        region: "Tiny Temple",
-        canGetLogic: canGoInTinyTemple.in && canGetPastTTIce.in && hasDiving.in,
-        canGetBreak: canGoInTinyTemple.out && canGetPastTTIce.out && hasDiving.out
+        id: 53012,
+        name: "Shuffled Kasplat: By the car race entrance",
+        region: "R&D Room",
+        canGetLogic: lankyVanillaKasplat.in,
+        canGetBreak: lankyVanillaKasplat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52014,
-        name: "Shuffled Kasplat: Behind Diddy's gongs",
-        region: "Aztec Main Area",
-        canGetLogic: canEnterBack.in,
-        canGetBreak: canEnterBack.out
+        id: 53013,
+        name: "Shuffled Kasplat: At Tiny's dartboard",
+        region: "Testing Room",
+        canGetLogic: chunkyVanillaKasplat.in && hasMiniMonkey,
+        canGetBreak: chunkyVanillaKasplat.out && hasMiniMonkey
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52015,
-        name: "Shuffled Kasplat: A contestant on Match Game '64",
-        region: "Llama Temple",
-        canGetLogic: canGoInLlamaTemple.in && hasGrapes,
-        canGetBreak: canGoInLlamaTemple.out && hasGrapes
+        id: 53014,
+        name: "Shuffled Kasplat: In the crusher",
+        region: "Prod Room",
+        canGetLogic: prodRoomOn.in,
+        canGetBreak: prodRoomOn.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52016,
-        name: "Shuffled Kasplat: At Tiny's barrel in the Tiny Temple",
-        region: "Tiny Temple",
-        canGetLogic: canGoInTinyTemple.in,
-        canGetBreak: canGoInTinyTemple.out
+        id: 53015,
+        name: "Shuffled Kasplat: Past Tiny's Prod Room GB",
+        region: "Prod Room",
+        canGetLogic: canDoTinyProd.in && isHinaKagiyama,
+        canGetBreak: canDoTinyProd.out && hasDK
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 52017,
-        name: "Shuffled Kasplat: Inside DK's 5DT room",
-        region: "5 Door Temple",
-        canGetLogic: canDoDK5DT.in,
-        canGetBreak: canDoDK5DT.out
+        id: 53016,
+        name: "Shuffled Kasplat: Ripping his hair out while playing Lanky's damn piano game",
+        region: "R&D Room",
+        canGetLogic: lankyVanillaKasplat.in && hasTrombone,
+        canGetBreak: lankyVanillaKasplat.out && hasTrombone
       }
     )
   ] });
