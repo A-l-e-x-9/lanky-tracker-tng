@@ -298,7 +298,7 @@ export const useDiddyGoldGb = (): LogicBool => {
   const highGrab = useHighGrab()
   return {
     in: treasure.in && spring,
-    out: (treasure.in || treasure.out) && highGrab
+    out: treasure.out && highGrab
   }
 }
 
@@ -368,7 +368,7 @@ export const useLankyGoldGb = (): LogicBool => {
   const highGrab = useHighGrab()
   return {
     in: treasure.in && balloon,
-    out: (treasure.in || treasure.out) && highGrab
+    out: treasure.out && highGrab
   }
 }
 

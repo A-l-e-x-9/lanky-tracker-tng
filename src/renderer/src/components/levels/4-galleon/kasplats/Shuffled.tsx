@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useDiddyGoldGb, useKevin, useCannonKasplat, useVineKasplat, useCactusKasplat, useGalleonLighthousePlatform, useGalleonLighthouseInside, useDiddyMechGb } from '@renderer/hooks/galleon'
+import { useGeneralThing, useDiddyGoldGb, useKevin, useCannonKasplat, useVineKasplat, useCactusKasplat, useGalleonLighthousePlatform, useChunkySeasickGb, useGalleonLighthouseInside, useDiddyMechGb, useLankyGoldGb } from '@renderer/hooks/galleon'
 import { useShuffleKasplats, useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, usePunch, useMini, useDk, useTwirl, useCoconut, useTrombone } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
@@ -14,6 +14,8 @@ const isBreathing = useGeneralThing()
 const canReachLighthouseBase = useGalleonLighthousePlatform()
 const canGoInLighthouse = useGalleonLighthouseInside()
 const mechfishAgenda = useDiddyMechGb()
+const canDoLankyGoldTower = useLankyGoldGb()
+const canDoChunkyShip = useChunkySeasickGb()
 const hasClimbing = useClimbing()
 const hasAllBananaports = useBananaportAll()
 const hasPrimatePunch = usePunch()
@@ -96,52 +98,45 @@ const hasTrombone = useTrombone()
       />
       <GalleonCheck
         id={54010}
-        name="Shuffled Kasplat: Window shopping"
-        region=""
+        name="Shuffled Kasplat: On Lanky's gold tower"
+        region="Treasure Room"
+        canGetLogic={canDoLankyGoldTower.in}
+        canGetBreak={canDoLankyGoldTower.out}
+      />
+      <GalleonCheck
+        id={54011}
+        name="Shuffled Kasplat: Inside Chunky's ship"
+        region="Lighthouse Area"
+        canGetLogic={canDoChunkyShip.in}
+        canGetBreak={canDoChunkyShip.out}
+      />
+      <GalleonCheck
+        id={54012}
+        name="Shuffled Kasplat: Just above the cave to Chunky's chests"
+        region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <GalleonCheck
-        id={54011}
-        name="Shuffled Kasplat: Inside the Power Hut"
-        region="Storage and Arcade Area"
-        canGetLogic={canReachHut.in && hasCoconuts}
-        canGetBreak={canReachHut.out && hasCoconuts}
-      />
-      <GalleonCheck
-        id={54012}
-        name="Shuffled Kasplat: By the car race entrance"
-        region="R&D Room"
-        canGetLogic={lankyVanillaKasplat.in}
-        canGetBreak={lankyVanillaKasplat.out}
-      />
-      <GalleonCheck
         id={54013}
-        name="Shuffled Kasplat: At Tiny's dartboard"
-        region="Testing Room"
-        canGetLogic={chunkyVanillaKasplat.in && hasMiniMonkey}
-        canGetBreak={chunkyVanillaKasplat.out && hasMiniMonkey}
+        name="Shuffled Kasplat: At the vanilla level start"
+        region="Galleon Caves"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <GalleonCheck
         id={54014}
-        name="Shuffled Kasplat: In the crusher"
-        region="Prod Room"
-        canGetLogic={prodRoomOn.in}
-        canGetBreak={prodRoomOn.out}
+        name="Shuffled Kasplat: In Chunky's right chest"
+        region="Galleon Caves"
+        canGetLogic={isBreathing.in && hasPrimatePunch}
+        canGetBreak={isBreathing.out && hasPrimatePunch}
       />
       <GalleonCheck
         id={54015}
-        name="Shuffled Kasplat: Past Tiny's Prod Room GB"
-        region="Prod Room"
-        canGetLogic={canDoTinyProd.in && isHinaKagiyama}
-        canGetBreak={canDoTinyProd.out && hasDK}
-      />
-      <GalleonCheck
-        id={54016}
-        name="Shuffled Kasplat: Ripping his hair out while playing Lanky's damn piano game"
-        region="R&D Room"
-        canGetLogic={lankyVanillaKasplat.in && hasTrombone}
-        canGetBreak={lankyVanillaKasplat.out && hasTrombone}
+        name="Shuffled Kasplat: Also on the &quot;cactus&quot;"
+        region="Shipyard Outskirts"
+        canGetLogic={chunkyVanillaKasplat.in}
+        canGetBreak={chunkyVanillaKasplat.out}
       />
     </KasplatPool>
   )
