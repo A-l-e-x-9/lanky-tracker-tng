@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, useDiddyGoldGb, useKevin, useCannonKasplat, useVineKasplat, useCactusKasplat, useGalleonLighthousePlatform, useChunkySeasickGb, useGalleonLighthouseInside, useDiddyMechGb, useLankyGoldGb } from '@renderer/hooks/galleon'
-import { useShuffleKasplats, useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, usePunch, useMini, useDk, useTwirl, useCoconut, useTrombone } from '@renderer/hooks/kongs'
+import { useShuffleKasplats } from '@renderer/hooks/settings'
+import { useClimbing, usePunch } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -17,13 +17,7 @@ const mechfishAgenda = useDiddyMechGb()
 const canDoLankyGoldTower = useLankyGoldGb()
 const canDoChunkyShip = useChunkySeasickGb()
 const hasClimbing = useClimbing()
-const hasAllBananaports = useBananaportAll()
 const hasPrimatePunch = usePunch()
-const hasMiniMonkey = useMini()
-const isHinaKagiyama = useTwirl()
-const hasDK = useDk()
-const hasCoconuts = useCoconut()
-const hasTrombone = useTrombone()
   return (
     <KasplatPool>
       <GalleonCheck
