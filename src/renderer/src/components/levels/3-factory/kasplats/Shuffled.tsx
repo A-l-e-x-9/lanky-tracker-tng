@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useResearchKasplat, useStorageKasplat, useBlockKasplat, useFactoryHut, useDkTunnelGb, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
+import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useResearchKasplat, useStorageKasplat, useBlockKasplat, useFactoryHut, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
 import { useShuffleKasplats, useBananaportAll } from '@renderer/hooks/settings'
 import { useDive, useVine, useClimbing, useRocket, useDiddy, useTiny, usePineapple, useGrape, usePunch, useMini, useDk, useTwirl } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
@@ -13,10 +13,6 @@ const chunkyVanillaKasplat = useBlockKasplat()
 const isBreathing = useGeneralThing()
 const canReachHut = useFactoryHut()
 const canDoTinyProd = useFactoryProductionTop()
-const canDoQSGB = useDkTunnelGb()
-const canEnterBack = useAztecBack()
-const canGoInLlamaTemple = useAztecLlamaTemple()
-const canGoInTinyTemple = useAztecTinyTemple()
 const canGetPastTTIce = useTinyTempleIce()
 const canDoDK5DT = useDk5DoorGb()
 const hasDiving = useDive()
