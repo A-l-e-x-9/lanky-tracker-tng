@@ -16,6 +16,8 @@ import ChunkyCage from '../gold-bananas/lanky/ChunkyCage'
 
 const StorageChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -31,8 +33,10 @@ return (
     <TinyVent />
     <NintendoCoin />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <TinyKasplat />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <StorageEnemies />
   </div>
   </>
