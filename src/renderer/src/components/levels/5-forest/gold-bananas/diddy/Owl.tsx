@@ -9,6 +9,7 @@ const OwlRace: React.FC = () => {
   const owlGb = useDiddyOwlGb()
   const [isBonusSeed. isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.bonuses, state.winCondition.kRoolChallenge]))
   if (isBonusSeed || isKRoolChallengeSeed) {
+  return (
   <GBPool>
       <ForestCheck
         id={5011}
@@ -18,6 +19,7 @@ const OwlRace: React.FC = () => {
         canGetBreak={owlGb.out}
       />
     </GBPool>
+  )
   } else {
   return (
   <GBPool>
