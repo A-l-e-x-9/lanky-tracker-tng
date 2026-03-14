@@ -12,19 +12,33 @@ import ChunkyKasplat from '../kasplats/Chunky'
 
 const TestingChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
+const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
     <FunkyCrate />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <FunkyFairy />
+  </div>
+  <div className="grid">
     <BlockTower />
     <TinyDartboard />
     <TestingBarrel />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <NumberFairy />
+  </div>
+  <div className="grid">
     <NumberGame />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ChunkyKasplat />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <TestingEnemies />
   </div>
   </>
