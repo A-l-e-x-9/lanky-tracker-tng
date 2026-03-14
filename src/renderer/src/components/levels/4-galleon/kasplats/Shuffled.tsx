@@ -14,8 +14,6 @@ const isBreathing = useGeneralThing()
 const canReachLighthouseBase = useGalleonLighthousePlatform()
 const canGoInLighthouse = useGalleonLighthouseInside()
 const mechfishAgenda = useDiddyMechGb()
-const canReachHut = useFactoryHut()
-const canDoTinyProd = useFactoryProductionTop()
 const hasClimbing = useClimbing()
 const hasAllBananaports = useBananaportAll()
 const hasPrimatePunch = usePunch()
@@ -24,7 +22,6 @@ const isHinaKagiyama = useTwirl()
 const hasDK = useDk()
 const hasCoconuts = useCoconut()
 const hasTrombone = useTrombone()
-const prodRoomOn = useFactoryProductionEnabled()
   return (
     <KasplatPool>
       <GalleonCheck
