@@ -32105,18 +32105,22 @@ const ShopLocations$3 = () => {
 };
 const CavernsChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
+  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
+  const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CannonGame, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonChest, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ChestFairy, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CavernArena, {})
+      /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonChest, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChestFairy, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CavernArena, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$3, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$3, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CavernsEnemies, {})
-    ] })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$3, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(CavernsEnemies, {}) })
   ] });
 };
 const LighthouseChecks = () => {
