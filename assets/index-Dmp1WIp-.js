@@ -11806,8 +11806,8 @@ const useDiddyLighthouseGb = () => {
   const grab = useGrab();
   const highTide = useGalleonHighTide();
   return {
-    in: lighthouseArea.in && (seasick || highTide && canSlam && dk2 && grab) && rocket,
-    out: lighthouseArea.out && (seasick || canSlam && dk2 && grab) && rocket
+    in: lighthouseArea.in && (seasick || highTide && dk2 && grab) && canSlam && rocket,
+    out: lighthouseArea.out && (seasick || dk2 && grab) && canSlam && rocket
   };
 };
 const useChunkyChestGb = () => {
