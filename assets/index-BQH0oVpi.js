@@ -11855,7 +11855,7 @@ const useDiddyGoldGb = () => {
   const highGrab = useHighGrab();
   return {
     in: treasure.in && spring,
-    out: (treasure.in || treasure.out) && highGrab
+    out: treasure.out && highGrab
   };
 };
 const useDiddyMechGb = () => {
@@ -11915,7 +11915,7 @@ const useLankyGoldGb = () => {
   const highGrab = useHighGrab();
   return {
     in: treasure.in && balloon,
-    out: (treasure.in || treasure.out) && highGrab
+    out: treasure.out && highGrab
   };
 };
 const useLanky2DoorShipGb = () => {
@@ -33776,30 +33776,26 @@ const Shuffled$h = () => {
 };
 const ShuffledFairies$4 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$h, {}) : null;
 const Shuffled$g = () => {
-  const DKVanillaKasplat = useProductionTopKasplat();
-  const diddyVanillaKasplat = useProductionBaseKasplat();
-  const lankyVanillaKasplat = useResearchKasplat();
-  const tinyVanillaKasplat = useStorageKasplat();
-  const chunkyVanillaKasplat = useBlockKasplat();
-  const isBreathing = useGeneralThing$3();
-  const canReachHut = useFactoryHut();
-  const canDoTinyProd = useFactoryProductionTop();
+  const DKVanillaKasplat = useDiddyGoldGb();
+  const diddyVanillaKasplat = useKevin();
+  const lankyVanillaKasplat = useCannonKasplat();
+  const tinyVanillaKasplat = useVineKasplat();
+  const chunkyVanillaKasplat = useCactusKasplat();
+  const isBreathing = useGeneralThing$6();
+  const canReachLighthouseBase = useGalleonLighthousePlatform();
+  const canGoInLighthouse = useGalleonLighthouseInside();
+  const mechfishAgenda = useDiddyMechGb();
+  const canDoLankyGoldTower = useLankyGoldGb();
+  const canDoChunkyShip = useChunkySeasickGb();
   const hasClimbing = useClimbing();
-  const hasAllBananaports = useBananaportAll();
   const hasPrimatePunch = usePunch();
-  const hasMiniMonkey = useMini();
-  const isHinaKagiyama = useTwirl();
-  const hasDK = useDk();
-  const hasCoconuts = useCoconut();
-  const hasTrombone = useTrombone();
-  const prodRoomOn = useFactoryProductionEnabled();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53e3,
-        name: "Shuffled Kasplat: DK's Vanilla Location (top of the Prod)",
-        region: "Prod Room",
+        id: 54e3,
+        name: "Shuffled Kasplat: DK's Vanilla Location (on Diddy's gold pile)",
+        region: "Treasure Room",
         canGetLogic: DKVanillaKasplat.in,
         canGetBreak: DKVanillaKasplat.out
       }
@@ -33807,9 +33803,9 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53001,
-        name: "Shuffled Kasplat: Diddy's Vanilla Location (bottom of the Prod)",
-        region: "Prod Room",
+        id: 54001,
+        name: "Shuffled Kasplat: Diddy's Vanilla Location (Lighthouse alcove)",
+        region: "Lighthouse Area",
         canGetLogic: diddyVanillaKasplat.in,
         canGetBreak: diddyVanillaKasplat.out
       }
@@ -33817,9 +33813,9 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53002,
-        name: "Shuffled Kasplat: Lanky's Vanilla Location (guarding R&D secrets)",
-        region: "R&D Room",
+        id: 54002,
+        name: "Shuffled Kasplat: Lanky's Vanilla Location (the cannon game room)",
+        region: "Galleon Caves",
         canGetLogic: lankyVanillaKasplat.in,
         canGetBreak: lankyVanillaKasplat.out
       }
@@ -33827,9 +33823,9 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53003,
-        name: "Shuffled Kasplat: Tiny's Vanilla Location (bottom of the pole to the Arcade)",
-        region: "Storage and Arcade Area",
+        id: 54003,
+        name: "Shuffled Kasplat: Tiny's Vanilla Location (near vanilla warp 3 in the cave)",
+        region: "Galleon Caves",
         canGetLogic: tinyVanillaKasplat.in,
         canGetBreak: tinyVanillaKasplat.out
       }
@@ -33837,9 +33833,9 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53004,
-        name: "Shuffled Kasplat: Chunky's Vanilla Location (at the Block Tower)",
-        region: "Testing Room",
+        id: 54004,
+        name: `Shuffled Kasplat: Chunky's Vanilla Location (the "cactus")`,
+        region: "Shipyard Outskirts",
         canGetLogic: chunkyVanillaKasplat.in,
         canGetBreak: chunkyVanillaKasplat.out
       }
@@ -33847,39 +33843,19 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53005,
-        name: "Shuffled Kasplat: At the window in front of Snide's",
-        region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        id: 54005,
+        name: "Shuffled Kasplat: Base of the Lighthouse",
+        region: "Lighthouse Area",
+        canGetLogic: canReachLighthouseBase.in,
+        canGetBreak: canReachLighthouseBase.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53006,
-        name: "Shuffled Kasplat: In front of the Power Hut",
-        region: "Storage and Arcade Area",
-        canGetLogic: canReachHut.in,
-        canGetBreak: canReachHut.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 53007,
-        name: "Shuffled Kasplat: Halfway down the hatch",
-        region: "Prod Room",
-        canGetLogic: isBreathing.in && (hasClimbing || hasAllBananaports),
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 53008,
-        name: "Shuffled Kasplat: In the Dark Room",
-        region: "Storage and Arcade Area",
+        id: 54006,
+        name: "Shuffled Kasplat: At the vanilla Battle Arena",
+        region: "Galleon Caves",
         canGetLogic: isBreathing.in && hasPrimatePunch,
         canGetBreak: isBreathing.out && hasPrimatePunch
       }
@@ -33887,19 +33863,9 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53009,
-        name: "Shuffled Kasplat: A step up in the Prod Room",
-        region: "Prod Room",
-        canGetLogic: prodRoomOn.in || hasAllBananaports,
-        canGetBreak: prodRoomOn.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 53010,
-        name: "Shuffled Kasplat: Window shopping",
-        region: "",
+        id: 54007,
+        name: "Shuffled Kasplat: In front of Cranky's",
+        region: "Galleon Caves",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
       }
@@ -33907,61 +33873,81 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53011,
-        name: "Shuffled Kasplat: Inside the Power Hut",
-        region: "Storage and Arcade Area",
-        canGetLogic: canReachHut.in && hasCoconuts,
-        canGetBreak: canReachHut.out && hasCoconuts
+        id: 54008,
+        name: "Shuffled Kasplat: Top of the Whomp's Fortress ripoff area",
+        region: "Lighthouse Area",
+        canGetLogic: canGoInLighthouse.in && hasClimbing,
+        canGetBreak: canGoInLighthouse.out && hasClimbing
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53012,
-        name: "Shuffled Kasplat: By the car race entrance",
-        region: "R&D Room",
-        canGetLogic: lankyVanillaKasplat.in,
-        canGetBreak: lankyVanillaKasplat.out
+        id: 54009,
+        name: "Shuffled Kasplat: Inside the Mechfish",
+        region: "Shipyard Outskirts",
+        canGetLogic: mechfishAgenda.in,
+        canGetBreak: mechfishAgenda.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53013,
-        name: "Shuffled Kasplat: At Tiny's dartboard",
-        region: "Testing Room",
-        canGetLogic: chunkyVanillaKasplat.in && hasMiniMonkey,
-        canGetBreak: chunkyVanillaKasplat.out && hasMiniMonkey
+        id: 54010,
+        name: "Shuffled Kasplat: On Lanky's gold tower",
+        region: "Treasure Room",
+        canGetLogic: canDoLankyGoldTower.in,
+        canGetBreak: canDoLankyGoldTower.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53014,
-        name: "Shuffled Kasplat: In the crusher",
-        region: "Prod Room",
-        canGetLogic: prodRoomOn.in,
-        canGetBreak: prodRoomOn.out
+        id: 54011,
+        name: "Shuffled Kasplat: Inside Chunky's ship",
+        region: "Lighthouse Area",
+        canGetLogic: canDoChunkyShip.in,
+        canGetBreak: canDoChunkyShip.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53015,
-        name: "Shuffled Kasplat: Past Tiny's Prod Room GB",
-        region: "Prod Room",
-        canGetLogic: canDoTinyProd.in && isHinaKagiyama,
-        canGetBreak: canDoTinyProd.out && hasDK
+        id: 54012,
+        name: "Shuffled Kasplat: Just above the cave to Chunky's chests",
+        region: "Galleon Caves",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
-        id: 53016,
-        name: "Shuffled Kasplat: Ripping his hair out while playing Lanky's damn piano game",
-        region: "R&D Room",
-        canGetLogic: lankyVanillaKasplat.in && hasTrombone,
-        canGetBreak: lankyVanillaKasplat.out && hasTrombone
+        id: 54013,
+        name: "Shuffled Kasplat: At the vanilla level start",
+        region: "Galleon Caves",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 54014,
+        name: "Shuffled Kasplat: In Chunky's right chest",
+        region: "Galleon Caves",
+        canGetLogic: isBreathing.in && hasPrimatePunch,
+        canGetBreak: isBreathing.out && hasPrimatePunch
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 54015,
+        name: 'Shuffled Kasplat: Also on the "cactus"',
+        region: "Shipyard Outskirts",
+        canGetLogic: chunkyVanillaKasplat.in,
+        canGetBreak: chunkyVanillaKasplat.out
       }
     )
   ] });
