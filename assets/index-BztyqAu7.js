@@ -32125,6 +32125,8 @@ const CavernsChecks = () => {
 };
 const LighthouseChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DkLighthouse, {}),
@@ -32134,10 +32136,8 @@ const LighthouseChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(SeasickShip, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LighthouseDirt, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$3, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LighthouseEnemies, {})
-    ] })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$3, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LighthouseEnemies, {}) })
   ] });
 };
 const OutskirtsChecks = () => {
@@ -33765,28 +33765,6 @@ const Shuffled$h = () => {
   ] });
 };
 const ShuffledFairies$4 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$h, {}) : null;
-const GalleonRegionChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$3, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$3, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$3, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$3, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$3, {})
-  ] }) }),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CavernsChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(LighthouseChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(OutskirtsChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TreasureChecks, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(FiveShipChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$3, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$4, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$4, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$4, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$4, {})
-  ] })
-] });
 const Shuffled$g = () => {
   const DKVanillaKasplat = useProductionTopKasplat();
   const diddyVanillaKasplat = useProductionBaseKasplat();
@@ -33979,6 +33957,36 @@ const Shuffled$g = () => {
   ] });
 };
 const ShuffledKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$g, {}) : null;
+const GalleonRegionChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
+  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
+  const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$3, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$3, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$3, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$3, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$3, {})
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CavernsChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(LighthouseChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(OutskirtsChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TreasureChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FiveShipChecks, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$3, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$4, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$4, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$4, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$4, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$4, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats, {}) })
+  ] });
+};
 const ClassicChecks$3 = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
