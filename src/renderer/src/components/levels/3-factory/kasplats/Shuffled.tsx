@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useResearchKasplat, useStorageKasplat, useBlockKasplat, useFactoryHut, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
 import { useShuffleKasplats, useBananaportAll } from '@renderer/hooks/settings'
-import { useDive, useVine, useClimbing, useRocket, useDiddy, useTiny, usePineapple, useGrape, usePunch, useMini, useDk, useTwirl } from '@renderer/hooks/kongs'
+import { useClimbing, useGrape, usePunch, useMini, useDk, useTwirl, useCoconut, useTrombone } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -14,12 +14,13 @@ const isBreathing = useGeneralThing()
 const canReachHut = useFactoryHut()
 const canDoTinyProd = useFactoryProductionTop()
 const hasClimbing = useClimbing()
-const hasGrapes = useGrape()
 const hasAllBananaports = useBananaportAll()
 const hasPrimatePunch = usePunch()
 const hasMiniMonkey = useMini()
 const isHinaKagiyama = useTwirl()
 const hasDK = useDk()
+const hasCoconuts = useCoconut()
+const hasTrombone = useTrombone()
 const prodRoomOn = useFactoryProductionEnabled()
   return (
     <KasplatPool>
