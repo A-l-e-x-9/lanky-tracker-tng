@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useResearchKasplat, useStorageKasplat, useBlockKasplat, useFactoryHut, useDkTunnelGb, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb, useFactoryProductionEnabled } from '@renderer/hooks/factory'
+import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useResearchKasplat, useStorageKasplat, useBlockKasplat, useFactoryHut, useDkTunnelGb, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
 import { useShuffleKasplats, useBananaportAll } from '@renderer/hooks/settings'
-import { useDive, useVine, useClimbing, useRocket, useDiddy, useTiny, usePineapple, useGrape, usePunch } from '@renderer/hooks/kongs'
+import { useDive, useVine, useClimbing, useRocket, useDiddy, useTiny, usePineapple, useGrape, usePunch, useMini, useDk, useTwirl } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -12,6 +12,7 @@ const tinyVanillaKasplat = useStorageKasplat()
 const chunkyVanillaKasplat = useBlockKasplat()
 const isBreathing = useGeneralThing()
 const canReachHut = useFactoryHut()
+const canDoTinyProd = useFactoryProductionTop()
 const canDoQSGB = useDkTunnelGb()
 const canEnterBack = useAztecBack()
 const canGoInLlamaTemple = useAztecLlamaTemple()
@@ -28,6 +29,9 @@ const hasPineapples = usePineapple()
 const hasGrapes = useGrape()
 const hasAllBananaports = useBananaportAll()
 const hasPrimatePunch = usePunch()
+const hasMiniMonkey = useMini()
+const isHinaKagiyama = useTwirl()
+const hasDK = useDk()
 const prodRoomOn = useFactoryProductionEnabled()
   return (
     <KasplatPool>
@@ -98,64 +102,57 @@ const prodRoomOn = useFactoryProductionEnabled()
         id={53009}
         name="Shuffled Kasplat: A step up in the Prod Room"
         region="Prod Room"
-        canGetLogic={prodRoomOn || hasAllBananaports}
-        canGetBreak={isBreathing.out && hasPineapples}
+        canGetLogic={prodRoomOn.in || hasAllBananaports}
+        canGetBreak={prodRoomOn.out}
       />
       <FactoryCheck
         id={53010}
-        name="Shuffled Kasplat: Back top of the 5-Door Temple"
-        region="Aztec Main Area"
-        canGetLogic={canEnterBack.in}
-        canGetBreak={canEnterBack.out}
+        name="Shuffled Kasplat: Window shopping"
+        region=""
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <FactoryCheck
         id={53011}
-        name="Shuffled Kasplat: Platform near Snide's"
-        region="Aztec Main Area"
-        canGetLogic={canEnterBack.in}
-        canGetBreak={canEnterBack.out}
+        name="Shuffled Kasplat: Inside the Power Hut"
+        region="Storage and Arcade Area"
+        canGetLogic={canReachHut.in && hasCoconuts}
+        canGetBreak={canReachHut.out && hasCoconuts}
       />
       <FactoryCheck
         id={53012}
-        name="Shuffled Kasplat: Behind the Llama"
-        region="Llama Temple"
-        canGetLogic={canGoInLlamaTemple.in}
-        canGetBreak={canGoInLlamaTemple.out}
+        name="Shuffled Kasplat: By the car race entrance"
+        region="R&D Room"
+        canGetLogic={lankyVanillaKasplat.in}
+        canGetBreak={lankyVanillaKasplat.out}
       />
       <FactoryCheck
         id={53013}
-        name="Shuffled Kasplat: At Tiny's Prison"
-        region="Tiny Temple"
-        canGetLogic={canGoInTinyTemple.in && canGetPastTTIce.in && hasDiving.in}
-        canGetBreak={canGoInTinyTemple.out && canGetPastTTIce.out && hasDiving.out}
+        name="Shuffled Kasplat: At Tiny's dartboard"
+        region="Testing Room"
+        canGetLogic={chunkyVanillaKasplat.in && hasMiniMonkey}
+        canGetBreak={chunkyVanillaKasplat.out && hasMiniMonkey}
       />
       <FactoryCheck
         id={53014}
-        name="Shuffled Kasplat: Behind Diddy's gongs"
-        region="Aztec Main Area"
-        canGetLogic={canEnterBack.in}
-        canGetBreak={canEnterBack.out}
+        name="Shuffled Kasplat: In the crusher"
+        region="Prod Room"
+        canGetLogic={prodRoomOn.in}
+        canGetBreak={prodRoomOn.out}
       />
       <FactoryCheck
         id={53015}
-        name="Shuffled Kasplat: A contestant on Match Game '64"
-        region="Llama Temple"
-        canGetLogic={canGoInLlamaTemple.in && hasGrapes}
-        canGetBreak={canGoInLlamaTemple.out && hasGrapes}
+        name="Shuffled Kasplat: Past Tiny's Prod Room GB"
+        region="Prod Room"
+        canGetLogic={canDoTinyProd.in && isHinaKagiyama}
+        canGetBreak={canDoTinyProd.out && hasDK}
       />
       <FactoryCheck
         id={53016}
-        name="Shuffled Kasplat: At Tiny's barrel in the Tiny Temple"
-        region="Tiny Temple"
-        canGetLogic={canGoInTinyTemple.in}
-        canGetBreak={canGoInTinyTemple.out}
-      />
-      <FactoryCheck
-        id={53017}
-        name="Shuffled Kasplat: Inside DK's 5DT room"
-        region="5 Door Temple"
-        canGetLogic={canDoDK5DT.in}
-        canGetBreak={canDoDK5DT.out}
+        name="Shuffled Kasplat: Ripping his hair out while playing Lanky's damn piano game"
+        region="R&D Room"
+        canGetLogic={lankyVanillaKasplat.in && hasTrombone}
+        canGetBreak={lankyVanillaKasplat.out && hasTrombone}
       />
     </KasplatPool>
   )
