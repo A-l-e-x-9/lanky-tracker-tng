@@ -15,6 +15,8 @@ import Okuu from '../boulders/BeegRock'
 
 const MainChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -27,10 +29,12 @@ return (
     <KooshyKomeiji />
     <Okuu />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <DkKasplat />
     <DiddyKasplat />
     <LankyKasplat />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <MainEnemies />
   </div>
   </>
