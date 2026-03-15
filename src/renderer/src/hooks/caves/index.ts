@@ -300,7 +300,7 @@ export const useLankyRaceGb = (): LogicBool => {
   const sprint = useSprint()
   return {
     in: inStage.in && !angery && canSlam && sprint && balloon,
-    out: ((inStage.in && !angery) || (inStage.out || angery)) && canSlam && sprint && highGrab
+    out: (inStage.out || angery) && canSlam && sprint && highGrab
   }
 }
 

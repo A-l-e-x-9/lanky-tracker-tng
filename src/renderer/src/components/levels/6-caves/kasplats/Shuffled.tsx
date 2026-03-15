@@ -111,24 +111,24 @@ const hasSlam = useSlamCaves()
       />
       <CavesCheck
         id={56012}
-        name="Shuffled Kasplat: Inside the front mill room"
-        region="Forest Area 1"
-        canGetLogic={isBreathing.in && isDay.in}
-        canGetBreak={isBreathing.out && isDay.out}
+        name="Shuffled Kasplat: In the water, anchored to vanilla warp 4 near Cranky's"
+        region="Crystal Caves Main"
+        canGetLogic={isBreathing.in && hasDiving.in && (hasAGun || hasAnInstrument)}
+        canGetBreak={isBreathing.out && hasDiving.out}
       />
       <CavesCheck
         id={56013}
-        name="Shuffled Kasplat: In the Giant Shroom's moat"
-        region="Forest Area 3"
-        canGetLogic={isBreathing.in && (hasAGun || hasAnInstrument) && hasDiving.in}
-        canGetBreak={isBreathing.out && hasOranges && hasDiving.out}
+        name="Shuffled Kasplat: In between Funky's and the Ice Castle"
+        region="Crystal Caves Main"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <CavesCheck
         id={56014}
-        name="Shuffled Kasplat: Lanky switch at the top of the Giant Shroom"
-        region="Forest Area 3"
-        canGetLogic={canReachLankySwitch.in}
-        canGetBreak={canReachLankySwitch.out}
+        name="Shuffled Kasplat: In Lanky's beetle race! D:"
+        region="Crystal Caves Main"
+        //canGetLogic={}
+        canGetBreak={(isBreathing.in || isBreathing.out) && hasSlam && (hasBalloon || canHighGrab)}
       />
       <CavesCheck
         id={56015}
