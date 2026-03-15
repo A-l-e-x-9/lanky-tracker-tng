@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useIceCastleKasplat, useFunkyKasplat, usePillarKasplat, useCabinKasplat, useIglooKasplat, useCanAccessSnide, useTinyCaveGb } from '@renderer/hooks/caves'
+import { useGeneralThing, useIceCastleKasplat, useFunkyKasplat, usePillarKasplat, useCabinKasplat, useIglooKasplat, useCanAccessSnide, useTinyCaveGb, useChunkyClearGb, useSlamCaves } from '@renderer/hooks/caves'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useClimbing, useAnyGun, useAnyMusic, useOrange, useDive, useBalloon, useDiddy, useChunky } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
@@ -13,6 +13,7 @@ const chunkyVanillaKasplat = useIglooKasplat()
 const isBreathing = useGeneralThing()
 const canReachSnide = useCanAccessSnide()
 const canDoTinyMiniGB = useTinyCaveGb()
+const canDoGiantKoshaGB = useChunkyClearGb()
 const hasClimbing = useClimbing()
 const hasAGun = useAnyGun()
 const hasAnInstrument = useAnyMusic()
@@ -63,8 +64,7 @@ const hasSlam = useSlamCaves()
         id={56005}
         name="Shuffled Kasplat: Why doesn't Snide kill this one himself?"
         region="Crystal Caves Main"
-        canGetLogic={canReachSnide.in}
-        canGetBreak={canReachSnide.out}
+        canGetLogic={canReachSnide}
       />
       <CavesCheck
         id={56006}
@@ -75,10 +75,10 @@ const hasSlam = useSlamCaves()
       />
       <CavesCheck
         id={56007}
-        name="Shuffled Kasplat: By the Jetbarrel near Cranky's"
-        region="Forest Area 3"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Kasplat: Guarding the Monkeyport pad to the giant Kosha"
+        region="Caves Igloo"
+        canGetLogic={canDoGiantKoshaGB.in}
+        canGetBreak={canDoGiantKoshaGB.out}
       />
       <CavesCheck
         id={56008}
