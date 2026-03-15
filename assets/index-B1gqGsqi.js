@@ -38888,6 +38888,8 @@ const CenterChecks = () => {
 };
 const MushExteriorChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ForestBlast, {}),
@@ -38896,9 +38898,9 @@ const MushExteriorChecks = () => {
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$2, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$2, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(MushExteriorEnemies, {})
-    ] })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$2, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(MushExteriorEnemies, {}) })
   ] });
 };
 const MushInteriorChecks = () => {
