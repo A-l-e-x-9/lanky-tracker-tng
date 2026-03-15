@@ -39008,26 +39008,36 @@ const MillsChecks = () => {
   ] });
 };
 const Shuffled$c = () => {
-  const DKVanillaKasplat = useDiddyGoldGb();
-  const diddyVanillaKasplat = useKevin();
-  const lankyVanillaKasplat = useCannonKasplat();
-  const tinyVanillaKasplat = useVineKasplat();
-  const chunkyVanillaKasplat = useCactusKasplat();
-  const isBreathing = useGeneralThing$6();
-  const canReachLighthouseBase = useGalleonLighthousePlatform();
-  const canGoInLighthouse = useGalleonLighthouseInside();
-  const mechfishAgenda = useDiddyMechGb();
-  const canDoLankyGoldTower = useLankyGoldGb();
-  const canDoChunkyShip = useChunkySeasickGb();
+  const DKVanillaKasplat = useBarnKasplat();
+  const diddyVanillaKasplat = useMushInteriorKasplat();
+  const lankyVanillaKasplat = useOwlKasplat();
+  const tinyVanillaKasplat = useMushExteriorKasplat();
+  const chunkyVanillaKasplat = useNightKasplat();
+  const isBreathing = useGeneralThing$2();
+  const canPlantTheBean = useForestBean();
+  const canReachTopOfShroom = useForestMushroomTop();
+  const canReachArea4 = useForestOwl();
+  const isDay = useForestDay();
+  const isNight = useForestNight();
+  const canReachLankySwitch = useForestMushroomRoof();
+  const canReachLankyRooms = useLankyMushGb();
+  const canReachSpydar = useForestSpiderBoss();
   const hasClimbing = useClimbing();
-  const hasPrimatePunch = usePunch();
+  const hasAGun = useAnyGun();
+  const hasAnInstrument = useAnyMusic();
+  const hasOranges = useOrange();
+  const hasDiving = useDive();
+  const hasBalloon = useBalloon();
+  const hasDiddy = useDiddy();
+  const hasChunky = useChunky();
+  const hasSlam = useSlamForest();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 54e3,
-        name: "Shuffled Kasplat: DK's Vanilla Location (on Diddy's gold pile)",
-        region: "Treasure Room",
+        id: 55e3,
+        name: "Shuffled Kasplat: DK's Vanilla Location (behind the Thornvine Barn)",
+        region: "Forest Area 1",
         canGetLogic: DKVanillaKasplat.in,
         canGetBreak: DKVanillaKasplat.out
       }
@@ -39035,9 +39045,9 @@ const Shuffled$c = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 54001,
-        name: "Shuffled Kasplat: Diddy's Vanilla Location (Lighthouse alcove)",
-        region: "Lighthouse Area",
+        id: 55001,
+        name: "Shuffled Kasplat: Diddy's Vanilla Location (halfway up the Giant Shroom)",
+        region: "Inside the Giant Mushroom",
         canGetLogic: diddyVanillaKasplat.in,
         canGetBreak: diddyVanillaKasplat.out
       }
@@ -39045,9 +39055,9 @@ const Shuffled$c = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 54002,
-        name: "Shuffled Kasplat: Lanky's Vanilla Location (the cannon game room)",
-        region: "Galleon Caves",
+        id: 55002,
+        name: "Shuffled Kasplat: Lanky's Vanilla Location (inside the giant tree)",
+        region: "Forest Area 4",
         canGetLogic: lankyVanillaKasplat.in,
         canGetBreak: lankyVanillaKasplat.out
       }
@@ -39055,9 +39065,9 @@ const Shuffled$c = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 54003,
-        name: "Shuffled Kasplat: Tiny's Vanilla Location (near vanilla warp 3 in the cave)",
-        region: "Galleon Caves",
+        id: 55003,
+        name: "Shuffled Kasplat: Tiny's Vanilla Location (halfway up the Giant Shroom, on the outside)",
+        region: "Forest Area 3",
         canGetLogic: tinyVanillaKasplat.in,
         canGetBreak: tinyVanillaKasplat.out
       }
@@ -39065,9 +39075,9 @@ const Shuffled$c = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 54004,
-        name: `Shuffled Kasplat: Chunky's Vanilla Location (the "cactus")`,
-        region: "Shipyard Outskirts",
+        id: 55004,
+        name: "Shuffled Kasplat: Chunky's Vanilla Location (out the Giant Shroom's night door)",
+        region: "Forest Area 3",
         canGetLogic: chunkyVanillaKasplat.in,
         canGetBreak: chunkyVanillaKasplat.out
       }
@@ -39075,29 +39085,9 @@ const Shuffled$c = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 54005,
-        name: "Shuffled Kasplat: Base of the Lighthouse",
-        region: "Lighthouse Area",
-        canGetLogic: canReachLighthouseBase.in,
-        canGetBreak: canReachLighthouseBase.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 54006,
-        name: "Shuffled Kasplat: At the vanilla Battle Arena",
-        region: "Galleon Caves",
-        canGetLogic: isBreathing.in && hasPrimatePunch,
-        canGetBreak: isBreathing.out && hasPrimatePunch
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 54007,
-        name: "Shuffled Kasplat: In front of Cranky's",
-        region: "Galleon Caves",
+        id: 55005,
+        name: "Shuffled Kasplat: Behind Diddy's barn",
+        region: "Forest Area 1",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
       }
@@ -39105,49 +39095,19 @@ const Shuffled$c = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 54008,
-        name: "Shuffled Kasplat: Top of the Whomp's Fortress ripoff area",
-        region: "Lighthouse Area",
-        canGetLogic: canGoInLighthouse.in && hasClimbing,
-        canGetBreak: canGoInLighthouse.out && hasClimbing
+        id: 55006,
+        name: "Shuffled Kasplat: Trying to plant The Bean™",
+        region: "Forest Area 2",
+        canGetLogic: canPlantTheBean.in,
+        canGetBreak: canPlantTheBean.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 54009,
-        name: "Shuffled Kasplat: Inside the Mechfish",
-        region: "Shipyard Outskirts",
-        canGetLogic: mechfishAgenda.in,
-        canGetBreak: mechfishAgenda.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 54010,
-        name: "Shuffled Kasplat: On Lanky's gold tower",
-        region: "Treasure Room",
-        canGetLogic: canDoLankyGoldTower.in,
-        canGetBreak: canDoLankyGoldTower.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 54011,
-        name: "Shuffled Kasplat: Inside Chunky's ship",
-        region: "Lighthouse Area",
-        canGetLogic: canDoChunkyShip.in,
-        canGetBreak: canDoChunkyShip.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 54012,
-        name: "Shuffled Kasplat: Just above the cave to Chunky's chests",
-        region: "Galleon Caves",
+        id: 55007,
+        name: "Shuffled Kasplat: By the Jetbarrel near Cranky's",
+        region: "Forest Area 3",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
       }
@@ -39155,9 +39115,39 @@ const Shuffled$c = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 54013,
-        name: "Shuffled Kasplat: At the vanilla level start",
-        region: "Galleon Caves",
+        id: 55008,
+        name: "Shuffled Kasplat: Near the Tag Barrel at the Giant Shroom's top",
+        region: "Forest Area 3",
+        canGetLogic: canReachTopOfShroom.in,
+        canGetBreak: canReachTopOfShroom.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 55009,
+        name: "Shuffled Kasplat: Killing the Wabbit",
+        region: "Forest Area 4",
+        canGetLogic: canReachArea4.in,
+        canGetBreak: canReachArea4.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 55010,
+        name: "Shuffled Kasplat: Frolicking with the Zingers",
+        region: "Forest Area 4",
+        canGetLogic: canReachArea4.in,
+        canGetBreak: canReachArea4.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 55011,
+        name: "Shuffled Kasplat: Behind the clock",
+        region: "Forest Central Area",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
       }
@@ -39165,21 +39155,91 @@ const Shuffled$c = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 54014,
-        name: "Shuffled Kasplat: In Chunky's right chest",
-        region: "Galleon Caves",
-        canGetLogic: isBreathing.in && hasPrimatePunch,
-        canGetBreak: isBreathing.out && hasPrimatePunch
+        id: 55012,
+        name: "Shuffled Kasplat: Inside the front mill room",
+        region: "Forest Area 1",
+        canGetLogic: isBreathing.in && isDay.in,
+        canGetBreak: isBreathing.out && isDay.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
-        id: 54015,
-        name: 'Shuffled Kasplat: Also on the "cactus"',
-        region: "Shipyard Outskirts",
-        canGetLogic: chunkyVanillaKasplat.in,
-        canGetBreak: chunkyVanillaKasplat.out
+        id: 55013,
+        name: "Shuffled Kasplat: In the Giant Shroom's moat",
+        region: "Forest Area 3",
+        canGetLogic: isBreathing.in && (hasAGun || hasAnInstrument) && hasDiving.in,
+        canGetBreak: isBreathing.out && hasOranges && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 55014,
+        name: "Shuffled Kasplat: Lanky switch at the top of the Giant Shroom",
+        region: "Forest Area 3",
+        canGetLogic: canReachLankySwitch.in,
+        canGetBreak: canReachLankySwitch.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 55015,
+        name: "Shuffled Kasplat: Near Lanky's attic",
+        region: "Forest Area 1",
+        canGetLogic: isBreathing.in && (hasClimbing || hasBalloon),
+        canGetBreak: isBreathing.out && (hasClimbing || hasBalloon)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 55016,
+        name: "Shuffled Kasplat: At the minecart exit",
+        region: "Forest Area 1",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 55017,
+        name: "Shuffled Kasplat: In Lanky's mushroom slam room",
+        region: "Inside the Giant Mushroom",
+        canGetLogic: canReachLankyRooms.in,
+        canGetBreak: canReachLankyRooms.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 55018,
+        name: "Shuffled Kasplat: Not afraid of spiders",
+        region: "Forest Area 1",
+        canGetLogic: canReachSpydar.in,
+        canGetBreak: canReachSpydar.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 55019,
+        name: "Shuffled Kasplat: In the winch room",
+        region: "Forest Area 1",
+        canGetLogic: isBreathing.in && hasClimbing && hasDiddy && hasSlam && isNight.in,
+        canGetBreak: isBreathing.out && hasClimbing && hasDiddy && hasSlam && isNight.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 55020,
+        name: "Shuffled Kasplat: In Chunky's face puzzle room",
+        region: "Inside the Giant Mushroom",
+        canGetLogic: canReachTopOfShroom.in && hasChunky && hasSlam,
+        canGetBreak: canReachTopOfShroom.out && hasChunky && hasSlam
       }
     )
   ] });
