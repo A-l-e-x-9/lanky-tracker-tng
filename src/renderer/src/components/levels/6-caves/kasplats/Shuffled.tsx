@@ -64,7 +64,8 @@ const hasSlam = useSlamCaves()
         id={56005}
         name="Shuffled Kasplat: Why doesn't Snide kill this one himself?"
         region="Crystal Caves Main"
-        canGetLogic={canReachSnide}
+        canGetLogic={isBreathing.in && canReachSnide}
+        canGetBreak={isBreathing.out && canReachSnide}
       />
       <CavesCheck
         id={56006}
@@ -89,24 +90,24 @@ const hasSlam = useSlamCaves()
       />
       <CavesCheck
         id={56009}
-        name="Shuffled Kasplat: Killing the Wabbit"
-        region="Forest Area 4"
-        canGetLogic={canReachArea4.in}
-        canGetBreak={canReachArea4.out}
+        name="Shuffled Kasplat: Across the river from Candy's"
+        region="Caves Cabins"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <CavesCheck
         id={56010}
-        name="Shuffled Kasplat: Frolicking with the Zingers"
-        region="Forest Area 4"
-        canGetLogic={canReachArea4.in}
-        canGetBreak={canReachArea4.out}
+        name="Shuffled Kasplat: In the big rock room"
+        region="Crystal Caves Main"
+        canGetLogic={isBreathing.in && canReachSnide}
+        canGetBreak={isBreathing.out && canReachSnide}
       />
       <CavesCheck
         id={56011}
-        name="Shuffled Kasplat: Behind the clock"
-        region="Forest Central Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Kasplat: In the water, under DK's Blast pad"
+        region="Crystal Caves Main"
+        canGetLogic={isBreathing.in && hasDiving.in && hasAnInstrument}
+        canGetBreak={isBreathing.out && hasDiving.out}
       />
       <CavesCheck
         id={56012}
