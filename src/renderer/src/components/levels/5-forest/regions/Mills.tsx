@@ -21,13 +21,16 @@ import MillFrontKeg2 from '../boulders/MillFrontKeg2'
 
 const MillsChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
+const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
     <MillsGrassDirt />
     <RaftersCrate />
     <DarkRafters />
-    <RaftersFairy />
     <MillWinch />
     <DkMill />
     <ChunkyMill />
@@ -37,13 +40,18 @@ return (
     <BarnOutsideCrate />
     <DkBarn />
     <BarnInsideCrate />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <RaftersFairy />
     <BarnFairy />
   </div>
   <div className={`grid ${isKremKaptureSeed}`}>
     <LankyMill />
     <SpiderBoss />
-    <DkKasplat />
     <MillsEnemies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <DkKasplat />
   </div>
   </>
 )
