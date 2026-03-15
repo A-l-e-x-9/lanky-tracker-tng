@@ -14,7 +14,7 @@ const isBreathing = useGeneralThing()
 const canReachSnide = useCanAccessSnide()
 const canDoTinyMiniGB = useTinyCaveGb()
 const canDoGiantKoshaGB = useChunkyClearGb()
-const 5DIOpen = useCavesIgloo()
+const is5DIOpen = useCavesIgloo()
 const hasClimbing = useClimbing()
 const hasAGun = useAnyGun()
 const hasAnInstrument = useAnyMusic()
@@ -145,8 +145,8 @@ const hasBongoes = useBongo()
         id={56016}
         name="Shuffled Kasplat: In Diddy's 5DI room"
         region="Caves Igloo"
-        canGetLogic={5DIOpen.in && hasGuitar}
-        canGetBreak={5DIOpen.out && hasGuitar}
+        canGetLogic={is5DIOpen.in && hasGuitar}
+        canGetBreak={is5DIOpen.out && hasGuitar}
       />
       <CavesCheck
         id={56017}
