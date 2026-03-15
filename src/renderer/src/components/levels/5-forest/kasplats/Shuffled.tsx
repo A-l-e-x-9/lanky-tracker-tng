@@ -1,11 +1,11 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useDiddyGoldGb, useKevin, useCannonKasplat, useVineKasplat, useCactusKasplat, useGalleonLighthousePlatform, useChunkySeasickGb, useGalleonLighthouseInside, useDiddyMechGb, useLankyGoldGb } from '@renderer/hooks/forest'
+import { useGeneralThing, useBarnKasplat, useKevin, useCannonKasplat, useVineKasplat, useCactusKasplat, useGalleonLighthousePlatform, useChunkySeasickGb, useGalleonLighthouseInside, useDiddyMechGb, useLankyGoldGb } from '@renderer/hooks/forest'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useClimbing, usePunch } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
-const DKVanillaKasplat = useDiddyGoldGb()
+const DKVanillaKasplat = useBarnKasplat()
 const diddyVanillaKasplat = useKevin()
 const lankyVanillaKasplat = useCannonKasplat()
 const tinyVanillaKasplat = useVineKasplat()
@@ -22,8 +22,8 @@ const hasPrimatePunch = usePunch()
     <KasplatPool>
       <ForestCheck
         id={55000}
-        name="Shuffled Kasplat: DK's Vanilla Location (on Diddy's gold pile)"
-        region="Treasure Room"
+        name="Shuffled Kasplat: DK's Vanilla Location (behind the Thornvine Barn)"
+        region="Forest Area 1"
         canGetLogic={DKVanillaKasplat.in}
         canGetBreak={DKVanillaKasplat.out}
       />
