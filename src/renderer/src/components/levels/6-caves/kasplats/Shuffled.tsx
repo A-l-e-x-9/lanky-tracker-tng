@@ -82,10 +82,10 @@ const hasSlam = useSlamCaves()
       />
       <CavesCheck
         id={56008}
-        name="Shuffled Kasplat: Near the Tag Barrel at the Giant Shroom's top"
-        region="Forest Area 3"
-        canGetLogic={canReachTopOfShroom.in}
-        canGetBreak={canReachTopOfShroom.out}
+        name="Shuffled Kasplat: At warp 5, 5DC-side"
+        region="Caves Cabins"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <CavesCheck
         id={56009}
