@@ -38896,11 +38896,11 @@ const MushExteriorChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(MushroomTop, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(MushroomArena, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$2, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$2, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(MushExteriorEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(MushExteriorEnemies, {}) })
   ] });
 };
 const MushInteriorChecks = () => {
