@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, useIceCastleKasplat, useFunkyKasplat, usePillarKasplat, useCabinKasplat, useIglooKasplat, useCanAccessSnide, useTinyCaveGb, useChunkyClearGb, useSlamCaves, useCavesIgloo } from '@renderer/hooks/caves'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useClimbing, useAnyGun, useAnyMusic, useOrange, useDive, useBalloon, useDiddy, useChunky, useHighGrab, useMonkeyport, useGuitar, useBongo } from '@renderer/hooks/kongs'
+import { useClimbing, useAnyGun, useAnyMusic, useOrange, useDive, useBalloon, useDiddy, useChunky, useHighGrab, useMonkeyport, useGuitar, useBongos } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -27,7 +27,7 @@ const hasSlam = useSlamCaves()
 const canHighGrab = useHighGrab()
 const hasMonkeyport = useMonkeyport()
 const hasGuitar = useGuitar()
-const hasBongoes = useBongo()
+const hasBongoes = useBongos()
   return (
     <KasplatPool>
       <CavesCheck
@@ -157,24 +157,17 @@ const hasBongoes = useBongo()
       />
       <CavesCheck
         id={56018}
-        name="Shuffled Kasplat: Not afraid of spiders"
-        region="Forest Area 1"
-        canGetLogic={canReachSpydar.in}
-        canGetBreak={canReachSpydar.out}
+        name="Shuffled Kasplat: In Chunky's cave at the start"
+        region="Crystal Caves Main"
+        canGetLogic={isBreathing.in && canReachSnide}
+        canGetBreak={isBreathing.out && canReachSnide}
       />
       <CavesCheck
         id={56019}
-        name="Shuffled Kasplat: In the winch room"
+        name="Shuffled Kasplat: At the vanilla level entrance"
         region="Forest Area 1"
-        canGetLogic={isBreathing.in && hasClimbing && hasDiddy && hasSlam && isNight.in}
-        canGetBreak={isBreathing.out && hasClimbing && hasDiddy && hasSlam && isNight.out}
-      />
-      <CavesCheck
-        id={56020}
-        name="Shuffled Kasplat: In Chunky's face puzzle room"
-        region="Inside the Giant Mushroom"
-        canGetLogic={canReachTopOfShroom.in && hasChunky && hasSlam}
-        canGetBreak={canReachTopOfShroom.out && hasChunky && hasSlam}
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
     </KasplatPool>
   )
