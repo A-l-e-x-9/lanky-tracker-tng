@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useIceCastleKasplat, useFunkyKasplat, usePillarKasplat, useCabinKasplat } from '@renderer/hooks/caves'
+import { useGeneralThing, useIceCastleKasplat, useFunkyKasplat, usePillarKasplat, useCabinKasplat, useIglooKasplat } from '@renderer/hooks/caves'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useClimbing, useAnyGun, useAnyMusic, useOrange, useDive, useBalloon, useDiddy, useChunky } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
@@ -9,7 +9,7 @@ const DKVanillaKasplat = useIceCastleKasplat()
 const diddyVanillaKasplat = useFunkyKasplat()
 const lankyVanillaKasplat = usePillarKasplat()
 const tinyVanillaKasplat = useCabinKasplat()
-const chunkyVanillaKasplat = useNightKasplat()
+const chunkyVanillaKasplat = useIglooKasplat()
 const isBreathing = useGeneralThing()
 const hasClimbing = useClimbing()
 const hasAGun = useAnyGun()
@@ -52,8 +52,8 @@ const hasSlam = useSlamForest()
       />
       <CavesCheck
         id={56004}
-        name="Shuffled Kasplat: Chunky's Vanilla Location (out the Giant Shroom's night door)"
-        region="Forest Area 3"
+        name="Shuffled Kasplat: Chunky's Vanilla Location (top of the 5DI)"
+        region="Caves Igloos"
         canGetLogic={chunkyVanillaKasplat.in}
         canGetBreak={chunkyVanillaKasplat.out}
       />
