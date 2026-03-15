@@ -18,11 +18,11 @@ return (
     <MushroomTop />
     <MushroomArena />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <TinyKasplat />
     <ChunkyKasplat />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <MushExteriorEnemies />
   </div>
   </>
