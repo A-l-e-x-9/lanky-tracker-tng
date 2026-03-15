@@ -127,7 +127,6 @@ const hasSlam = useSlamCaves()
         id={56014}
         name="Shuffled Kasplat: In Lanky's beetle race! D:"
         region="Crystal Caves Main"
-        canGetLogic={}
         canGetBreak={(isBreathing.in || isBreathing.out) && hasSlam && (hasBalloon || canHighGrab)}
       />
       <CavesCheck

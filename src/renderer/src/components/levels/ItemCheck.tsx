@@ -7,7 +7,7 @@ export type LevelCheckProps = {
   id: number
   name: string
   region?: SelectableRegionValues
-  canGetLogic: boolean
+  canGetLogic?: boolean
   canGetBreak?: boolean
 }
 
