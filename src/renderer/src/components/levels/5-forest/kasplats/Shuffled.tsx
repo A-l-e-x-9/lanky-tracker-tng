@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useBarnKasplat, useMushInteriorKasplat, useOwlKasplat, useMushExteriorKasplat, useNightKasplat, useForestBean, useForestMushroomTop, useForestOwl } from '@renderer/hooks/forest'
+import { useGeneralThing, useBarnKasplat, useMushInteriorKasplat, useOwlKasplat, useMushExteriorKasplat, useNightKasplat, useForestBean, useForestMushroomTop, useForestOwl, useForestDay, useForestMushroomRoof, useLankyMushGb, useForestSpiderBoss, useSlamForest, useForestNight } from '@renderer/hooks/forest'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useClimbing, usePunch } from '@renderer/hooks/kongs'
+import { useClimbing, usePunch, useAnyGun, useAnyMusic, useOrange, useDive, useBalloon, useDiddy } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -14,8 +14,20 @@ const isBreathing = useGeneralThing()
 const canPlantTheBean = useForestBean()
 const canReachTopOfShroom = useForestMushroomTop()
 const canReachArea4 = useForestOwl()
+const isDay = useForestDay()
+const isNight = useForestNight()
+const canReachLankySwitch = useForestMushroomRoof()
+const canReachLankyRooms = useLankyMushGb()
+const canReachSpydar = useForestSpiderBoss()
 const hasClimbing = useClimbing()
 const hasPrimatePunch = usePunch()
+const hasAGun = useAnyGun()
+const hasAnInstrument = useAnyMusic()
+const hasOranges = useOrange()
+const hasDiving = useDive()
+const hasBalloon = useBalloon()
+const hasDiddy = useDiddy()
+const hasSlam = useSlamForest()
   return (
     <KasplatPool>
       <ForestCheck
@@ -90,45 +102,73 @@ const hasPrimatePunch = usePunch()
       />
       <ForestCheck
         id={55010}
-        name="Shuffled Kasplat: On Lanky's gold tower"
-        region="Treasure Room"
-        canGetLogic={canDoLankyGoldTower.in}
-        canGetBreak={canDoLankyGoldTower.out}
+        name="Shuffled Kasplat: Frolicking with the Zingers"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in}
+        canGetBreak={canReachArea4.out}
       />
       <ForestCheck
         id={55011}
-        name="Shuffled Kasplat: Inside Chunky's ship"
-        region="Lighthouse Area"
-        canGetLogic={canDoChunkyShip.in}
-        canGetBreak={canDoChunkyShip.out}
+        name="Shuffled Kasplat: Behind the clock"
+        region="Forest Central Area"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={55012}
-        name="Shuffled Kasplat: Just above the cave to Chunky's chests"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Kasplat: Inside the front mill room"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && isDay.in}
+        canGetBreak={isBreathing.out && isDay.out}
       />
       <ForestCheck
         id={55013}
-        name="Shuffled Kasplat: At the vanilla level start"
-        region="Galleon Caves"
+        name="Shuffled Kasplat: In the Giant Shroom's moat"
+        region="Forest Area 3"
+        canGetLogic={isBreathing.in && (hasAGun || hasAnInstrument) && hasDiving.in}
+        canGetBreak={isBreathing.out && hasOranges && hasDiving.out}
+      />
+      <ForestCheck
+        id={55014}
+        name="Shuffled Kasplat: Lanky switch at the top of the Giant Shroom"
+        region="Forest Area 3"
+        canGetLogic={canReachLankySwitch.in}
+        canGetBreak={canReachLankySwitch.out}
+      />
+      <ForestCheck
+        id={55015}
+        name="Shuffled Kasplat: Near Lanky's attic"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && (hasClimbing || hasBalloon)}
+        canGetBreak={isBreathing.out && (hasClimbing || hasBalloon)}
+      />
+      <ForestCheck
+        id={55016}
+        name="Shuffled Kasplat: At the minecart exit"
+        region="Forest Area 1"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={55014}
-        name="Shuffled Kasplat: In Chunky's right chest"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in && hasPrimatePunch}
-        canGetBreak={isBreathing.out && hasPrimatePunch}
+        id={55017}
+        name="Shuffled Kasplat: In Lanky's mushroom slam room"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canReachLankyRooms.in}
+        canGetBreak={canReachLankyRooms.out}
       />
       <ForestCheck
-        id={55015}
-        name="Shuffled Kasplat: Also on the &quot;cactus&quot;"
-        region="Shipyard Outskirts"
-        canGetLogic={chunkyVanillaKasplat.in}
-        canGetBreak={chunkyVanillaKasplat.out}
+        id={55018}
+        name="Shuffled Kasplat: Not afraid of spiders"
+        region="Forest Area 1"
+        canGetLogic={canReachSpydar.in}
+        canGetBreak={canReachSpydar.out}
+      />
+      <ForestCheck
+        id={55019}
+        name="Shuffled Kasplat: In the winch room"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && hasClimbing && hasDiddy && hasSlam && isNight.in}
+        canGetBreak={isBreathing.out && hasClimbing && hasDiddy && hasSlam && isNight.out}
       />
     </KasplatPool>
   )

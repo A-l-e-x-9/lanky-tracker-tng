@@ -399,7 +399,7 @@ export const useLankyRaceGb = (): LogicBool => {
   }
 }
 
-Thanks to an extremely infamous Season 3 tournament race where someone, I forgot who, choked the huge lead he had by spending, like, AN HOUR doing this banana with DK over and over and over again (one that, in my comment on the YouTube video, I felt met Albert Einstein's definition of insanity), 2Dos patched this banana so that you are now required to have Sprint! The "new" Lanky Race GB?*/
+Thanks to an extremely infamous Season 3 tournament race where someone, I forgot who, choked the huge lead he had by spending, like, AN HOUR doing this banana with DK over and over and over again (which inspired this from me in response: https://a-l-e-x-9.github.com/lanky-tracker-tng/src/renderer/src/assets/images/fucking-dumbass.png), 2Dos patched this banana so that you are now required to have Sprint! The "new" Lanky Race GB?*/
 export const useLankyRaceGb = (): LogicBool => {
   const isDay = useForestDay()
   const owl = useForestOwl()
