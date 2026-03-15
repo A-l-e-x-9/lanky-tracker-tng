@@ -14,6 +14,10 @@ import TinyKasplat from '../kasplats/Tiny'
 
 const CabinsChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
+const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
   <div className={`grid ${isKremKaptureSeed}`}>
@@ -27,14 +31,18 @@ return (
     <TinyCabin />
     <DiddyCandleCabin />
   </div>
-  <div className="grid">
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <CabinFairy />
+  </div>
+  <div className="grid">
     <RotatingCabin />
     <CabinArena />
     <SprintCabin />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <TinyKasplat />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <CabinsEnemies />
   </div>
   </>
