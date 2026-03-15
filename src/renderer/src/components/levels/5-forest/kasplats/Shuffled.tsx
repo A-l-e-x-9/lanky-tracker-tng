@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, useBarnKasplat, useMushInteriorKasplat, useOwlKasplat, useMushExteriorKasplat, useNightKasplat, useForestBean, useForestMushroomTop, useForestOwl, useForestDay, useForestMushroomRoof, useLankyMushGb, useForestSpiderBoss, useSlamForest, useForestNight } from '@renderer/hooks/forest'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useClimbing, usePunch, useAnyGun, useAnyMusic, useOrange, useDive, useBalloon, useDiddy } from '@renderer/hooks/kongs'
+import { useClimbing, useAnyGun, useAnyMusic, useOrange, useDive, useBalloon, useDiddy, useChunky } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -20,13 +20,13 @@ const canReachLankySwitch = useForestMushroomRoof()
 const canReachLankyRooms = useLankyMushGb()
 const canReachSpydar = useForestSpiderBoss()
 const hasClimbing = useClimbing()
-const hasPrimatePunch = usePunch()
 const hasAGun = useAnyGun()
 const hasAnInstrument = useAnyMusic()
 const hasOranges = useOrange()
 const hasDiving = useDive()
 const hasBalloon = useBalloon()
 const hasDiddy = useDiddy()
+const hasChunky = useChunky()
 const hasSlam = useSlamForest()
   return (
     <KasplatPool>
@@ -169,6 +169,13 @@ const hasSlam = useSlamForest()
         region="Forest Area 1"
         canGetLogic={isBreathing.in && hasClimbing && hasDiddy && hasSlam && isNight.in}
         canGetBreak={isBreathing.out && hasClimbing && hasDiddy && hasSlam && isNight.out}
+      />
+      <ForestCheck
+        id={55020}
+        name="Shuffled Kasplat: In Chunky's face puzzle room"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canReachTopOfShroom.in && hasChunky && hasSlam}
+        canGetBreak={canReachTopOfShroom.out && hasChunky && hasSlam}
       />
     </KasplatPool>
   )
