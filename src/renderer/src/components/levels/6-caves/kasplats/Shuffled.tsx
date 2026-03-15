@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useIceCastleKasplat, useFunkyKasplat, usePillarKasplat, useCabinKasplat, useIglooKasplat } from '@renderer/hooks/caves'
+import { useGeneralThing, useIceCastleKasplat, useFunkyKasplat, usePillarKasplat, useCabinKasplat, useIglooKasplat, useCanAccessSnide, useTinyCaveGb } from '@renderer/hooks/caves'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useClimbing, useAnyGun, useAnyMusic, useOrange, useDive, useBalloon, useDiddy, useChunky } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
@@ -11,6 +11,8 @@ const lankyVanillaKasplat = usePillarKasplat()
 const tinyVanillaKasplat = useCabinKasplat()
 const chunkyVanillaKasplat = useIglooKasplat()
 const isBreathing = useGeneralThing()
+const canReachSnide = useCanAccessSnide()
+const canDoTinyMiniGB = useTinyCaveGb()
 const hasClimbing = useClimbing()
 const hasAGun = useAnyGun()
 const hasAnInstrument = useAnyMusic()
@@ -19,7 +21,7 @@ const hasDiving = useDive()
 const hasBalloon = useBalloon()
 const hasDiddy = useDiddy()
 const hasChunky = useChunky()
-const hasSlam = useSlamForest()
+const hasSlam = useSlamCaves()
   return (
     <KasplatPool>
       <CavesCheck
@@ -53,23 +55,23 @@ const hasSlam = useSlamForest()
       <CavesCheck
         id={56004}
         name="Shuffled Kasplat: Chunky's Vanilla Location (top of the 5DI)"
-        region="Caves Igloos"
+        region="Caves Igloo"
         canGetLogic={chunkyVanillaKasplat.in}
         canGetBreak={chunkyVanillaKasplat.out}
       />
       <CavesCheck
         id={56005}
-        name="Shuffled Kasplat: Behind Diddy's barn"
-        region="Forest Area 1"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Kasplat: Why doesn't Snide kill this one himself?"
+        region="Crystal Caves Main"
+        canGetLogic={canReachSnide.in}
+        canGetBreak={canReachSnide.out}
       />
       <CavesCheck
         id={56006}
-        name="Shuffled Kasplat: Trying to plant The Bean™"
-        region="Forest Area 2"
-        canGetLogic={canPlantTheBean.in}
-        canGetBreak={canPlantTheBean.out}
+        name="Shuffled Kasplat: Stuck in Tiny's cave near the 5DI"
+        region="Crystal Caves Main"
+        canGetLogic={canDoTinyMiniGB.in}
+        canGetBreak={canDoTinyMiniGB.out}
       />
       <CavesCheck
         id={56007}
