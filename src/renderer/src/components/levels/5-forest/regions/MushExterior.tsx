@@ -9,6 +9,8 @@ import TinyKasplat from '../kasplats/Tiny'
 
 const MushExteriorChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -19,6 +21,8 @@ return (
   <div className={`grid ${isKremKaptureSeed}`}>
     <TinyKasplat />
     <ChunkyKasplat />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <MushExteriorEnemies />
   </div>
   </>
