@@ -1,21 +1,19 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useBarnKasplat, useKevin, useCannonKasplat, useVineKasplat, useCactusKasplat, useGalleonLighthousePlatform, useChunkySeasickGb, useGalleonLighthouseInside, useDiddyMechGb, useLankyGoldGb } from '@renderer/hooks/forest'
+import { useGeneralThing, useBarnKasplat, useMushInteriorKasplat, useOwlKasplat, useMushExteriorKasplat, useNightKasplat, useForestBean, useForestMushroomTop, useForestOwl } from '@renderer/hooks/forest'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useClimbing, usePunch } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const DKVanillaKasplat = useBarnKasplat()
-const diddyVanillaKasplat = useKevin()
-const lankyVanillaKasplat = useCannonKasplat()
-const tinyVanillaKasplat = useVineKasplat()
-const chunkyVanillaKasplat = useCactusKasplat()
+const diddyVanillaKasplat = useMushInteriorKasplat()
+const lankyVanillaKasplat = useOwlKasplat()
+const tinyVanillaKasplat = useMushExteriorKasplat()
+const chunkyVanillaKasplat = useNightKasplat()
 const isBreathing = useGeneralThing()
-const canReachLighthouseBase = useGalleonLighthousePlatform()
-const canGoInLighthouse = useGalleonLighthouseInside()
-const mechfishAgenda = useDiddyMechGb()
-const canDoLankyGoldTower = useLankyGoldGb()
-const canDoChunkyShip = useChunkySeasickGb()
+const canPlantTheBean = useForestBean()
+const canReachTopOfShroom = useForestMushroomTop()
+const canReachArea4 = useForestOwl()
 const hasClimbing = useClimbing()
 const hasPrimatePunch = usePunch()
   return (
@@ -29,66 +27,66 @@ const hasPrimatePunch = usePunch()
       />
       <ForestCheck
         id={55001}
-        name="Shuffled Kasplat: Diddy's Vanilla Location (Lighthouse alcove)"
-        region="Lighthouse Area"
+        name="Shuffled Kasplat: Diddy's Vanilla Location (halfway up the Giant Shroom)"
+        region="Inside the Giant Mushroom"
         canGetLogic={diddyVanillaKasplat.in}
         canGetBreak={diddyVanillaKasplat.out}
       />
       <ForestCheck
         id={55002}
-        name="Shuffled Kasplat: Lanky's Vanilla Location (the cannon game room)"
-        region="Galleon Caves"
+        name="Shuffled Kasplat: Lanky's Vanilla Location (inside the giant tree)"
+        region="Forest Area 4"
         canGetLogic={lankyVanillaKasplat.in}
         canGetBreak={lankyVanillaKasplat.out}
       />
       <ForestCheck
         id={55003}
-        name="Shuffled Kasplat: Tiny's Vanilla Location (near vanilla warp 3 in the cave)"
-        region="Galleon Caves"
+        name="Shuffled Kasplat: Tiny's Vanilla Location (halfway up the Giant Shroom, on the outside)"
+        region="Forest Area 3"
         canGetLogic={tinyVanillaKasplat.in}
         canGetBreak={tinyVanillaKasplat.out}
       />
       <ForestCheck
         id={55004}
-        name="Shuffled Kasplat: Chunky's Vanilla Location (the &quot;cactus&quot;)"
-        region="Shipyard Outskirts"
+        name="Shuffled Kasplat: Chunky's Vanilla Location (out the Giant Shroom's night door)"
+        region="Forest Area 3"
         canGetLogic={chunkyVanillaKasplat.in}
         canGetBreak={chunkyVanillaKasplat.out}
       />
       <ForestCheck
         id={55005}
-        name="Shuffled Kasplat: Base of the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseBase.in}
-        canGetBreak={canReachLighthouseBase.out}
+        name="Shuffled Kasplat: Behind Diddy's barn"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={55006}
-        name="Shuffled Kasplat: At the vanilla Battle Arena"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in && hasPrimatePunch}
-        canGetBreak={isBreathing.out && hasPrimatePunch}
+        name="Shuffled Kasplat: Trying to plant The Bean™"
+        region="Forest Area 2"
+        canGetLogic={canPlantTheBean.in}
+        canGetBreak={canPlantTheBean.out}
       />
       <ForestCheck
         id={55007}
-        name="Shuffled Kasplat: In front of Cranky's"
-        region="Galleon Caves"
+        name="Shuffled Kasplat: By the Jetbarrel near Cranky's"
+        region="Forest Area 3"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={55008}
-        name="Shuffled Kasplat: Top of the Whomp's Fortress ripoff area"
-        region="Lighthouse Area"
-        canGetLogic={canGoInLighthouse.in && hasClimbing}
-        canGetBreak={canGoInLighthouse.out && hasClimbing}
+        name="Shuffled Kasplat: Near the Tag Barrel at the Giant Shroom's top"
+        region="Forest Area 3"
+        canGetLogic={canReachTopOfShroom.in}
+        canGetBreak={canReachTopOfShroom.out}
       />
       <ForestCheck
         id={55009}
-        name="Shuffled Kasplat: Inside the Mechfish"
-        region="Shipyard Outskirts"
-        canGetLogic={mechfishAgenda.in}
-        canGetBreak={mechfishAgenda.out}
+        name="Shuffled Kasplat: Killing the Wabbit"
+        region="Forest Area 4"
+        canGetLogic={canReachArea4.in}
+        canGetBreak={canReachArea4.out}
       />
       <ForestCheck
         id={55010}
