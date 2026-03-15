@@ -1,12 +1,12 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useIceCastleKasplat } from '@renderer/hooks/caves'
+import { useGeneralThing, useIceCastleKasplat, useFunkyKasplat } from '@renderer/hooks/caves'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useClimbing, useAnyGun, useAnyMusic, useOrange, useDive, useBalloon, useDiddy, useChunky } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const DKVanillaKasplat = useIceCastleKasplat()
-const diddyVanillaKasplat = useMushInteriorKasplat()
+const diddyVanillaKasplat = useFunkyKasplat()
 const lankyVanillaKasplat = useOwlKasplat()
 const tinyVanillaKasplat = useMushExteriorKasplat()
 const chunkyVanillaKasplat = useNightKasplat()
@@ -31,8 +31,8 @@ const hasSlam = useSlamForest()
       />
       <CavesCheck
         id={56001}
-        name="Shuffled Kasplat: Diddy's Vanilla Location (halfway up the Giant Shroom)"
-        region="Inside the Giant Mushroom"
+        name="Shuffled Kasplat: Diddy's Vanilla Location (in Tiny's room near Funky's)"
+        region="Crystal Caves Main"
         canGetLogic={diddyVanillaKasplat.in}
         canGetBreak={diddyVanillaKasplat.out}
       />
