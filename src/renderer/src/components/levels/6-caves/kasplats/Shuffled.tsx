@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useIceCastleKasplat, useFunkyKasplat, usePillarKasplat, useCabinKasplat, useIglooKasplat, useCanAccessSnide, useTinyCaveGb, useChunkyClearGb, useSlamCaves } from '@renderer/hooks/caves'
+import { useGeneralThing, useIceCastleKasplat, useFunkyKasplat, usePillarKasplat, useCabinKasplat, useIglooKasplat, useCanAccessSnide, useTinyCaveGb, useChunkyClearGb, useSlamCaves, useCavesIgloo } from '@renderer/hooks/caves'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useClimbing, useAnyGun, useAnyMusic, useOrange, useDive, useBalloon, useDiddy, useChunky, useHighGrab } from '@renderer/hooks/kongs'
+import { useClimbing, useAnyGun, useAnyMusic, useOrange, useDive, useBalloon, useDiddy, useChunky, useHighGrab, useMonkeyport, useGuitar, useBongo } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -14,6 +14,7 @@ const isBreathing = useGeneralThing()
 const canReachSnide = useCanAccessSnide()
 const canDoTinyMiniGB = useTinyCaveGb()
 const canDoGiantKoshaGB = useChunkyClearGb()
+const 5DIOpen = useCavesIgloo()
 const hasClimbing = useClimbing()
 const hasAGun = useAnyGun()
 const hasAnInstrument = useAnyMusic()
@@ -23,7 +24,10 @@ const hasBalloon = useBalloon()
 const hasDiddy = useDiddy()
 const hasChunky = useChunky()
 const hasSlam = useSlamCaves()
-const hasHighGrab = useHighGrab()
+const canHighGrab = useHighGrab()
+const hasMonkeyport = useMonkeyport()
+const hasGuitar = useGuitar()
+const hasBongoes = useBongo()
   return (
     <KasplatPool>
       <CavesCheck
@@ -132,24 +136,24 @@ const hasHighGrab = useHighGrab()
       />
       <CavesCheck
         id={56015}
-        name="Shuffled Kasplat: Near Lanky's attic"
-        region="Forest Area 1"
-        canGetLogic={isBreathing.in && (hasClimbing || hasBalloon)}
-        canGetBreak={isBreathing.out && (hasClimbing || hasBalloon)}
+        name="Shuffled Kasplat: Guarding the giant Kosha"
+        region="Caves Igloo"
+        canGetLogic={canDoGiantKoshaGB.in && hasMonkeyport}
+        canGetBreak={canDoGiantKoshaGB.out && hasMonkeyport}
       />
       <CavesCheck
         id={56016}
-        name="Shuffled Kasplat: At the minecart exit"
-        region="Forest Area 1"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Kasplat: In Diddy's 5DI room"
+        region="Caves Igloo"
+        canGetLogic={5DIOpen.in && hasGuitar}
+        canGetBreak={5DIOpen.out && hasGuitar}
       />
       <CavesCheck
         id={56017}
-        name="Shuffled Kasplat: In Lanky's mushroom slam room"
-        region="Inside the Giant Mushroom"
-        canGetLogic={canReachLankyRooms.in}
-        canGetBreak={canReachLankyRooms.out}
+        name="Shuffled Kasplat: In DK's 5DC room"
+        region="Caves Cabins"
+        canGetLogic={isBreathing.in && hasBongoes}
+        canGetBreak={isBreathing.out && hasBongoes}
       />
       <CavesCheck
         id={56018}
