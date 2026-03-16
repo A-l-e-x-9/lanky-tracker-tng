@@ -44698,7 +44698,8 @@ const Shuffled$7 = () => {
         id: 17035,
         name: "Shuffled Battle Arena: Near left ballroom candle",
         region: "Various Castle Rooms",
-        canGetLogic: hasDiddy && hasSlam
+        canGetLogic: isBreathing.in && hasDiddy && hasSlam,
+        canGetBreak: isBreathing.out && hasDiddy && hasSlam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
