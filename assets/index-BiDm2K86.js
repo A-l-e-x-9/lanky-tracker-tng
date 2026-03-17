@@ -49000,20 +49000,22 @@ const Shuffled = () => {
 const ShuffledFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled, {}) : null;
 const HelmChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
+  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(BlastArena, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(MedalLocations, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(EndOfHelmFairies, {})
+      /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck, {})
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(EndOfHelmFairies, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations, {}) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies, {})
-    ] })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies, {}) })
   ] });
 };
 const Checklist = () => {
