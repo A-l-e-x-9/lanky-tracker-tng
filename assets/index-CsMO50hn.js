@@ -50487,6 +50487,7 @@ const GeneratorSettings = () => {
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
   const [isKeySeed, isKey8Seed, isKey38Seed, isKremKaptureSeed, isRapSeed, isChallengeSeed, isWabbitSeed, isGBSeed, isBPSeed, isCoCoinSeed, isMedalSeed, isCrownSeed, isFairySeed, isRainbowSeed, isBeanSeed, isPearlSeed, isBossSeed, isBonusSeed] = useDonkStore(useShallow((state) => [state.winCondition.bossKeys, state.winCondition.key8, state.winCondition.key3And8, state.winCondition.kremlingKapture, state.winCondition.takeItToTheFridge, state.winCondition.kRoolChallenge, state.winCondition.killTheWabbit, state.winCondition.goldBananas, state.winCondition.blueprints, state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.crowns, state.winCondition.fairies, state.winCondition.rainbowCoins, state.winCondition.theBean, state.winCondition.pearls, state.winCondition.bosses, state.winCondition.bonuses]));
+  const shopShuffler = useDonkStore(useShallow((state) => state.settings.shuffleShops)) ? "" : "shop-shuffler";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { onClick: openModal, title: "Generator Settings", children: "⚙️" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -51127,1067 +51128,1080 @@ const GeneratorSettings = () => {
                   updateItem: setSetting
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Shop Shuffler" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Are Cranky and Snide switched in Isles?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Shops?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: unknownIcon$1,
-                  title: "Well, are they?",
-                  storeKey: "islesSwitchUp",
-                  prefix: "shuffledIslesShops",
-                  updateItem: setIslesShops
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Jungle Japes:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "japesCrankyNoSwitch",
-                  prefix: "shuffledJapesCranky",
-                  updateItem: setJapesCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
                   imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "japesCrankyFunky",
-                  prefix: "shuffledJapesCranky",
-                  updateItem: setJapesCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "japesCrankySnide",
-                  prefix: "shuffledJapesCranky",
-                  updateItem: setJapesCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "japesFunkyCranky",
-                  prefix: "shuffledJapesFunky",
-                  updateItem: setJapesFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "japesFunkyNoSwitch",
-                  prefix: "shuffledJapesFunky",
-                  updateItem: setJapesFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "japesFunkySnide",
-                  prefix: "shuffledJapesFunky",
-                  updateItem: setJapesFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "japesSnideCranky",
-                  prefix: "shuffledJapesSnide",
-                  updateItem: setJapesSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "japesSnideFunky",
-                  prefix: "shuffledJapesSnide",
-                  updateItem: setJapesSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "japesSnideNoSwitch",
-                  prefix: "shuffledJapesSnide",
-                  updateItem: setJapesSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Angry Aztec:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "aztecCrankyNoSwitch",
-                  prefix: "shuffledAztecCranky",
-                  updateItem: setAztecCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "aztecCrankyFunky",
-                  prefix: "shuffledAztecCranky",
-                  updateItem: setAztecCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "aztecCrankyCandy",
-                  prefix: "shuffledAztecCranky",
-                  updateItem: setAztecCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "aztecCrankySnide",
-                  prefix: "shuffledAztecCranky",
-                  updateItem: setAztecCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "aztecFunkyCranky",
-                  prefix: "shuffledAztecFunky",
-                  updateItem: setAztecFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "aztecFunkyNoSwitch",
-                  prefix: "shuffledAztecFunky",
-                  updateItem: setAztecFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "aztecFunkyCandy",
-                  prefix: "shuffledAztecFunky",
-                  updateItem: setAztecFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "aztecFunkySnide",
-                  prefix: "shuffledAztecFunky",
-                  updateItem: setAztecFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "aztecCandyCranky",
-                  prefix: "shuffledAztecCandy",
-                  updateItem: setAztecCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "aztecCandyFunky",
-                  prefix: "shuffledAztecCandy",
-                  updateItem: setAztecCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "herself (no switch)",
-                  storeKey: "aztecCandyNoSwitch",
-                  prefix: "shuffledAztecCandy",
-                  updateItem: setAztecCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "aztecCandySnide",
-                  prefix: "shuffledAztecCandy",
-                  updateItem: setAztecCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "aztecSnideCranky",
-                  prefix: "shuffledAztecSnide",
-                  updateItem: setAztecSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "aztecSnideFunky",
-                  prefix: "shuffledAztecSnide",
-                  updateItem: setAztecSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "aztecSnideCandy",
-                  prefix: "shuffledAztecSnide",
-                  updateItem: setAztecSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "aztecSnideNoSwitch",
-                  prefix: "shuffledAztecSnide",
-                  updateItem: setAztecSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Frantic Factory:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "factoryCrankyNoSwitch",
-                  prefix: "shuffledFactoryCranky",
-                  updateItem: setFactoryCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "factoryCrankyFunky",
-                  prefix: "shuffledFactoryCranky",
-                  updateItem: setFactoryCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "factoryCrankyCandy",
-                  prefix: "shuffledFactoryCranky",
-                  updateItem: setFactoryCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "factoryCrankySnide",
-                  prefix: "shuffledFactoryCranky",
-                  updateItem: setFactoryCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "factoryFunkyCranky",
-                  prefix: "shuffledFactoryFunky",
-                  updateItem: setFactoryFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "factoryFunkyNoSwitch",
-                  prefix: "shuffledFactoryFunky",
-                  updateItem: setFactoryFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "factoryFunkyCandy",
-                  prefix: "shuffledFactoryFunky",
-                  updateItem: setFactoryFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "factoryFunkySnide",
-                  prefix: "shuffledFactoryFunky",
-                  updateItem: setFactoryFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "factoryCandyCranky",
-                  prefix: "shuffledFactoryCandy",
-                  updateItem: setFactoryCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "factoryCandyFunky",
-                  prefix: "shuffledFactoryCandy",
-                  updateItem: setFactoryCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "herself (no switch)",
-                  storeKey: "factoryCandyNoSwitch",
-                  prefix: "shuffledFactoryCandy",
-                  updateItem: setFactoryCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "factoryCandySnide",
-                  prefix: "shuffledFactoryCandy",
-                  updateItem: setFactoryCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "factorySnideCranky",
-                  prefix: "shuffledFactorySnide",
-                  updateItem: setFactorySnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "factorySnideFunky",
-                  prefix: "shuffledFactorySnide",
-                  updateItem: setFactorySnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "factorySnideCandy",
-                  prefix: "shuffledFactorySnide",
-                  updateItem: setFactorySnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "factorySnideNoSwitch",
-                  prefix: "shuffledFactorySnide",
-                  updateItem: setFactorySnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Gloomy Galleon:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "galleonCrankyNoSwitch",
-                  prefix: "shuffledGalleonCranky",
-                  updateItem: setGalleonCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "galleonCrankyFunky",
-                  prefix: "shuffledGalleonCranky",
-                  updateItem: setGalleonCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "galleonCrankyCandy",
-                  prefix: "shuffledGalleonCranky",
-                  updateItem: setGalleonCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "galleonCrankySnide",
-                  prefix: "shuffledGalleonCranky",
-                  updateItem: setGalleonCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "galleonFunkyCranky",
-                  prefix: "shuffledGalleonFunky",
-                  updateItem: setGalleonFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "galleonFunkyNoSwitch",
-                  prefix: "shuffledGalleonFunky",
-                  updateItem: setGalleonFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "galleonFunkyCandy",
-                  prefix: "shuffledGalleonFunky",
-                  updateItem: setGalleonFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "galleonFunkySnide",
-                  prefix: "shuffledGalleonFunky",
-                  updateItem: setGalleonFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "galleonCandyCranky",
-                  prefix: "shuffledGalleonCandy",
-                  updateItem: setGalleonCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "galleonCandyFunky",
-                  prefix: "shuffledGalleonCandy",
-                  updateItem: setGalleonCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "herself (no switch)",
-                  storeKey: "galleonCandyNoSwitch",
-                  prefix: "shuffledGalleonCandy",
-                  updateItem: setGalleonCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "galleonCandySnide",
-                  prefix: "shuffledGalleonCandy",
-                  updateItem: setGalleonCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "galleonSnideCranky",
-                  prefix: "shuffledGalleonSnide",
-                  updateItem: setGalleonSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "galleonSnideFunky",
-                  prefix: "shuffledGalleonSnide",
-                  updateItem: setGalleonSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "galleonSnideCandy",
-                  prefix: "shuffledGalleonSnide",
-                  updateItem: setGalleonSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "galleonSnideNoSwitch",
-                  prefix: "shuffledGalleonSnide",
-                  updateItem: setGalleonSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Fungi Forest:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "forestCrankyNoSwitch",
-                  prefix: "shuffledForestCranky",
-                  updateItem: setForestCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "forestCrankyFunky",
-                  prefix: "shuffledForestCranky",
-                  updateItem: setForestCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "forestCrankySnide",
-                  prefix: "shuffledForestCranky",
-                  updateItem: setForestCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "forestFunkyCranky",
-                  prefix: "shuffledForestFunky",
-                  updateItem: setForestFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "forestFunkyNoSwitch",
-                  prefix: "shuffledForestFunky",
-                  updateItem: setForestFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "forestFunkySnide",
-                  prefix: "shuffledForestFunky",
-                  updateItem: setForestFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "forestSnideCranky",
-                  prefix: "shuffledForestSnide",
-                  updateItem: setForestSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "forestSnideFunky",
-                  prefix: "shuffledForestSnide",
-                  updateItem: setForestSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "forestSnideNoSwitch",
-                  prefix: "shuffledForestSnide",
-                  updateItem: setForestSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Crystal Caves:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "cavesCrankyNoSwitch",
-                  prefix: "shuffledCavesCranky",
-                  updateItem: setCavesCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "cavesCrankyFunky",
-                  prefix: "shuffledCavesCranky",
-                  updateItem: setCavesCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "cavesCrankyCandy",
-                  prefix: "shuffledCavesCranky",
-                  updateItem: setCavesCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "cavesCrankySnide",
-                  prefix: "shuffledCavesCranky",
-                  updateItem: setCavesCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "cavesFunkyCranky",
-                  prefix: "shuffledCavesFunky",
-                  updateItem: setCavesFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "cavesFunkyNoSwitch",
-                  prefix: "shuffledCavesFunky",
-                  updateItem: setCavesFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "cavesFunkyCandy",
-                  prefix: "shuffledCavesFunky",
-                  updateItem: setCavesFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "cavesFunkySnide",
-                  prefix: "shuffledCavesFunky",
-                  updateItem: setCavesFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "cavesCandyCranky",
-                  prefix: "shuffledCavesCandy",
-                  updateItem: setCavesCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "cavesCandyFunky",
-                  prefix: "shuffledCavesCandy",
-                  updateItem: setCavesCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "herself (no switch)",
-                  storeKey: "cavesCandyNoSwitch",
-                  prefix: "shuffledCavesCandy",
-                  updateItem: setCavesCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "cavesCandySnide",
-                  prefix: "shuffledCavesCandy",
-                  updateItem: setCavesCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "cavesSnideCranky",
-                  prefix: "shuffledCavesSnide",
-                  updateItem: setCavesSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "cavesSnideFunky",
-                  prefix: "shuffledCavesSnide",
-                  updateItem: setCavesSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "cavesSnideCandy",
-                  prefix: "shuffledCavesSnide",
-                  updateItem: setCavesSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "cavesSnideNoSwitch",
-                  prefix: "shuffledCavesSnide",
-                  updateItem: setCavesSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Creepy Castle:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "castleCrankyNoSwitch",
-                  prefix: "shuffledCastleCranky",
-                  updateItem: setCastleCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "castleCrankyFunky",
-                  prefix: "shuffledCastleCranky",
-                  updateItem: setCastleCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "castleCrankyCandy",
-                  prefix: "shuffledCastleCranky",
-                  updateItem: setCastleCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "castleCrankySnide",
-                  prefix: "shuffledCastleCranky",
-                  updateItem: setCastleCranky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "castleFunkyCranky",
-                  prefix: "shuffledCastleFunky",
-                  updateItem: setCastleFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "himself (no switch)",
-                  storeKey: "castleFunkyNoSwitch",
-                  prefix: "shuffledCastleFunky",
-                  updateItem: setCastleFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "castleFunkyCandy",
-                  prefix: "shuffledCastleFunky",
-                  updateItem: setCastleFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "castleFunkySnide",
-                  prefix: "shuffledCastleFunky",
-                  updateItem: setCastleFunky
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "castleCandyCranky",
-                  prefix: "shuffledCastleCandy",
-                  updateItem: setCastleCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "castleCandyFunky",
-                  prefix: "shuffledCastleCandy",
-                  updateItem: setCastleCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "herself (no switch)",
-                  storeKey: "castleCandyNoSwitch",
-                  prefix: "shuffledCastleCandy",
-                  updateItem: setCastleCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "Snide",
-                  storeKey: "castleCandySnide",
-                  prefix: "shuffledCastleCandy",
-                  updateItem: setCastleCandy
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: crankyIcon,
-                  title: "Cranky",
-                  storeKey: "castleSnideCranky",
-                  prefix: "shuffledCastleSnide",
-                  updateItem: setCastleSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: funkyIcon,
-                  title: "Funky",
-                  storeKey: "castleSnideFunky",
-                  prefix: "shuffledCastleSnide",
-                  updateItem: setCastleSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: anyInstIcon,
-                  title: "Candy",
-                  storeKey: "castleSnideCandy",
-                  prefix: "shuffledCastleSnide",
-                  updateItem: setCastleSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: snideIcon,
-                  title: "himself (no switch)",
-                  storeKey: "castleSnideNoSwitch",
-                  prefix: "shuffledCastleSnide",
-                  updateItem: setCastleSnide
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", {})
+                  title: "If shops are shuffled, click here. The Shop Shuffler will then appear underneath to let you say who's swapped with whom.",
+                  storeKey: "shuffleShops",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { id: `${shopShuffler}`, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Shop Shuffler" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Are Cranky and Snide switched in Isles?" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleIcon,
+                  {
+                    imgUrl: unknownIcon$1,
+                    title: "Well, are they?",
+                    storeKey: "islesSwitchUp",
+                    prefix: "shuffledIslesShops",
+                    updateItem: setIslesShops
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Jungle Japes:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "japesCrankyNoSwitch",
+                    prefix: "shuffledJapesCranky",
+                    updateItem: setJapesCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "japesCrankyFunky",
+                    prefix: "shuffledJapesCranky",
+                    updateItem: setJapesCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "japesCrankySnide",
+                    prefix: "shuffledJapesCranky",
+                    updateItem: setJapesCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "japesFunkyCranky",
+                    prefix: "shuffledJapesFunky",
+                    updateItem: setJapesFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "japesFunkyNoSwitch",
+                    prefix: "shuffledJapesFunky",
+                    updateItem: setJapesFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "japesFunkySnide",
+                    prefix: "shuffledJapesFunky",
+                    updateItem: setJapesFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "japesSnideCranky",
+                    prefix: "shuffledJapesSnide",
+                    updateItem: setJapesSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "japesSnideFunky",
+                    prefix: "shuffledJapesSnide",
+                    updateItem: setJapesSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "himself (no switch)",
+                    storeKey: "japesSnideNoSwitch",
+                    prefix: "shuffledJapesSnide",
+                    updateItem: setJapesSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Angry Aztec:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "aztecCrankyNoSwitch",
+                    prefix: "shuffledAztecCranky",
+                    updateItem: setAztecCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "aztecCrankyFunky",
+                    prefix: "shuffledAztecCranky",
+                    updateItem: setAztecCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "aztecCrankyCandy",
+                    prefix: "shuffledAztecCranky",
+                    updateItem: setAztecCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "aztecCrankySnide",
+                    prefix: "shuffledAztecCranky",
+                    updateItem: setAztecCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "aztecFunkyCranky",
+                    prefix: "shuffledAztecFunky",
+                    updateItem: setAztecFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "aztecFunkyNoSwitch",
+                    prefix: "shuffledAztecFunky",
+                    updateItem: setAztecFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "aztecFunkyCandy",
+                    prefix: "shuffledAztecFunky",
+                    updateItem: setAztecFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "aztecFunkySnide",
+                    prefix: "shuffledAztecFunky",
+                    updateItem: setAztecFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "aztecCandyCranky",
+                    prefix: "shuffledAztecCandy",
+                    updateItem: setAztecCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "aztecCandyFunky",
+                    prefix: "shuffledAztecCandy",
+                    updateItem: setAztecCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "herself (no switch)",
+                    storeKey: "aztecCandyNoSwitch",
+                    prefix: "shuffledAztecCandy",
+                    updateItem: setAztecCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "aztecCandySnide",
+                    prefix: "shuffledAztecCandy",
+                    updateItem: setAztecCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "aztecSnideCranky",
+                    prefix: "shuffledAztecSnide",
+                    updateItem: setAztecSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "aztecSnideFunky",
+                    prefix: "shuffledAztecSnide",
+                    updateItem: setAztecSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "aztecSnideCandy",
+                    prefix: "shuffledAztecSnide",
+                    updateItem: setAztecSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "himself (no switch)",
+                    storeKey: "aztecSnideNoSwitch",
+                    prefix: "shuffledAztecSnide",
+                    updateItem: setAztecSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Frantic Factory:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "factoryCrankyNoSwitch",
+                    prefix: "shuffledFactoryCranky",
+                    updateItem: setFactoryCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "factoryCrankyFunky",
+                    prefix: "shuffledFactoryCranky",
+                    updateItem: setFactoryCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "factoryCrankyCandy",
+                    prefix: "shuffledFactoryCranky",
+                    updateItem: setFactoryCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "factoryCrankySnide",
+                    prefix: "shuffledFactoryCranky",
+                    updateItem: setFactoryCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "factoryFunkyCranky",
+                    prefix: "shuffledFactoryFunky",
+                    updateItem: setFactoryFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "factoryFunkyNoSwitch",
+                    prefix: "shuffledFactoryFunky",
+                    updateItem: setFactoryFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "factoryFunkyCandy",
+                    prefix: "shuffledFactoryFunky",
+                    updateItem: setFactoryFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "factoryFunkySnide",
+                    prefix: "shuffledFactoryFunky",
+                    updateItem: setFactoryFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "factoryCandyCranky",
+                    prefix: "shuffledFactoryCandy",
+                    updateItem: setFactoryCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "factoryCandyFunky",
+                    prefix: "shuffledFactoryCandy",
+                    updateItem: setFactoryCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "herself (no switch)",
+                    storeKey: "factoryCandyNoSwitch",
+                    prefix: "shuffledFactoryCandy",
+                    updateItem: setFactoryCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "factoryCandySnide",
+                    prefix: "shuffledFactoryCandy",
+                    updateItem: setFactoryCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "factorySnideCranky",
+                    prefix: "shuffledFactorySnide",
+                    updateItem: setFactorySnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "factorySnideFunky",
+                    prefix: "shuffledFactorySnide",
+                    updateItem: setFactorySnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "factorySnideCandy",
+                    prefix: "shuffledFactorySnide",
+                    updateItem: setFactorySnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "himself (no switch)",
+                    storeKey: "factorySnideNoSwitch",
+                    prefix: "shuffledFactorySnide",
+                    updateItem: setFactorySnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Gloomy Galleon:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "galleonCrankyNoSwitch",
+                    prefix: "shuffledGalleonCranky",
+                    updateItem: setGalleonCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "galleonCrankyFunky",
+                    prefix: "shuffledGalleonCranky",
+                    updateItem: setGalleonCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "galleonCrankyCandy",
+                    prefix: "shuffledGalleonCranky",
+                    updateItem: setGalleonCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "galleonCrankySnide",
+                    prefix: "shuffledGalleonCranky",
+                    updateItem: setGalleonCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "galleonFunkyCranky",
+                    prefix: "shuffledGalleonFunky",
+                    updateItem: setGalleonFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "galleonFunkyNoSwitch",
+                    prefix: "shuffledGalleonFunky",
+                    updateItem: setGalleonFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "galleonFunkyCandy",
+                    prefix: "shuffledGalleonFunky",
+                    updateItem: setGalleonFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "galleonFunkySnide",
+                    prefix: "shuffledGalleonFunky",
+                    updateItem: setGalleonFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "galleonCandyCranky",
+                    prefix: "shuffledGalleonCandy",
+                    updateItem: setGalleonCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "galleonCandyFunky",
+                    prefix: "shuffledGalleonCandy",
+                    updateItem: setGalleonCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "herself (no switch)",
+                    storeKey: "galleonCandyNoSwitch",
+                    prefix: "shuffledGalleonCandy",
+                    updateItem: setGalleonCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "galleonCandySnide",
+                    prefix: "shuffledGalleonCandy",
+                    updateItem: setGalleonCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "galleonSnideCranky",
+                    prefix: "shuffledGalleonSnide",
+                    updateItem: setGalleonSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "galleonSnideFunky",
+                    prefix: "shuffledGalleonSnide",
+                    updateItem: setGalleonSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "galleonSnideCandy",
+                    prefix: "shuffledGalleonSnide",
+                    updateItem: setGalleonSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "himself (no switch)",
+                    storeKey: "galleonSnideNoSwitch",
+                    prefix: "shuffledGalleonSnide",
+                    updateItem: setGalleonSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Fungi Forest:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "forestCrankyNoSwitch",
+                    prefix: "shuffledForestCranky",
+                    updateItem: setForestCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "forestCrankyFunky",
+                    prefix: "shuffledForestCranky",
+                    updateItem: setForestCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "forestCrankySnide",
+                    prefix: "shuffledForestCranky",
+                    updateItem: setForestCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "forestFunkyCranky",
+                    prefix: "shuffledForestFunky",
+                    updateItem: setForestFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "forestFunkyNoSwitch",
+                    prefix: "shuffledForestFunky",
+                    updateItem: setForestFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "forestFunkySnide",
+                    prefix: "shuffledForestFunky",
+                    updateItem: setForestFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "forestSnideCranky",
+                    prefix: "shuffledForestSnide",
+                    updateItem: setForestSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "forestSnideFunky",
+                    prefix: "shuffledForestSnide",
+                    updateItem: setForestSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "himself (no switch)",
+                    storeKey: "forestSnideNoSwitch",
+                    prefix: "shuffledForestSnide",
+                    updateItem: setForestSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Crystal Caves:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "cavesCrankyNoSwitch",
+                    prefix: "shuffledCavesCranky",
+                    updateItem: setCavesCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "cavesCrankyFunky",
+                    prefix: "shuffledCavesCranky",
+                    updateItem: setCavesCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "cavesCrankyCandy",
+                    prefix: "shuffledCavesCranky",
+                    updateItem: setCavesCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "cavesCrankySnide",
+                    prefix: "shuffledCavesCranky",
+                    updateItem: setCavesCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "cavesFunkyCranky",
+                    prefix: "shuffledCavesFunky",
+                    updateItem: setCavesFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "cavesFunkyNoSwitch",
+                    prefix: "shuffledCavesFunky",
+                    updateItem: setCavesFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "cavesFunkyCandy",
+                    prefix: "shuffledCavesFunky",
+                    updateItem: setCavesFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "cavesFunkySnide",
+                    prefix: "shuffledCavesFunky",
+                    updateItem: setCavesFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "cavesCandyCranky",
+                    prefix: "shuffledCavesCandy",
+                    updateItem: setCavesCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "cavesCandyFunky",
+                    prefix: "shuffledCavesCandy",
+                    updateItem: setCavesCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "herself (no switch)",
+                    storeKey: "cavesCandyNoSwitch",
+                    prefix: "shuffledCavesCandy",
+                    updateItem: setCavesCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "cavesCandySnide",
+                    prefix: "shuffledCavesCandy",
+                    updateItem: setCavesCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "cavesSnideCranky",
+                    prefix: "shuffledCavesSnide",
+                    updateItem: setCavesSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "cavesSnideFunky",
+                    prefix: "shuffledCavesSnide",
+                    updateItem: setCavesSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "cavesSnideCandy",
+                    prefix: "shuffledCavesSnide",
+                    updateItem: setCavesSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "himself (no switch)",
+                    storeKey: "cavesSnideNoSwitch",
+                    prefix: "shuffledCavesSnide",
+                    updateItem: setCavesSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Creepy Castle:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Cranky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "castleCrankyNoSwitch",
+                    prefix: "shuffledCastleCranky",
+                    updateItem: setCastleCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "castleCrankyFunky",
+                    prefix: "shuffledCastleCranky",
+                    updateItem: setCastleCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "castleCrankyCandy",
+                    prefix: "shuffledCastleCranky",
+                    updateItem: setCastleCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "castleCrankySnide",
+                    prefix: "shuffledCastleCranky",
+                    updateItem: setCastleCranky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Funky swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "castleFunkyCranky",
+                    prefix: "shuffledCastleFunky",
+                    updateItem: setCastleFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "himself (no switch)",
+                    storeKey: "castleFunkyNoSwitch",
+                    prefix: "shuffledCastleFunky",
+                    updateItem: setCastleFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "castleFunkyCandy",
+                    prefix: "shuffledCastleFunky",
+                    updateItem: setCastleFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "castleFunkySnide",
+                    prefix: "shuffledCastleFunky",
+                    updateItem: setCastleFunky
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Candy swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "castleCandyCranky",
+                    prefix: "shuffledCastleCandy",
+                    updateItem: setCastleCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "castleCandyFunky",
+                    prefix: "shuffledCastleCandy",
+                    updateItem: setCastleCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "herself (no switch)",
+                    storeKey: "castleCandyNoSwitch",
+                    prefix: "shuffledCastleCandy",
+                    updateItem: setCastleCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "Snide",
+                    storeKey: "castleCandySnide",
+                    prefix: "shuffledCastleCandy",
+                    updateItem: setCastleCandy
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Snide swaps with:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: crankyIcon,
+                    title: "Cranky",
+                    storeKey: "castleSnideCranky",
+                    prefix: "shuffledCastleSnide",
+                    updateItem: setCastleSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: funkyIcon,
+                    title: "Funky",
+                    storeKey: "castleSnideFunky",
+                    prefix: "shuffledCastleSnide",
+                    updateItem: setCastleSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: anyInstIcon,
+                    title: "Candy",
+                    storeKey: "castleSnideCandy",
+                    prefix: "shuffledCastleSnide",
+                    updateItem: setCastleSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SimpleRadioIcon,
+                  {
+                    imgUrl: snideIcon,
+                    title: "himself (no switch)",
+                    storeKey: "castleSnideNoSwitch",
+                    prefix: "shuffledCastleSnide",
+                    updateItem: setCastleSnide
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", {})
+              ] })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fast Barrier Settings" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [

@@ -36,7 +36,6 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
 }
 
 ul {
@@ -356,6 +355,8 @@ main .grid {
 .font-changer h1, .font-changer h2, .font-changer h3, .font-changer h4, .font-changer h5, .font-changer h6 {font-family: Earthworm Jim;}
 
 .all-bosses {background-color: #800000;}
+
+#shop-shuffler {display: none;}
 
 @media (max-width: 720px) {
   .text {
