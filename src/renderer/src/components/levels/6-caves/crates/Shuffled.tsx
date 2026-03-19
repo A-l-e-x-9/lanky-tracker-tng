@@ -89,7 +89,8 @@ const hasTriangle = useTriangle()
         id={26010}
         name="Shuffled Melon Crate: In giant boulder room"
         region="Crystal Caves Main"
-        canGetLogic={hasPunch || canGetPastIceWalls}
+        canGetLogic={isBreathing.in && (hasPunch || canGetPastIceWalls)}
+        canGetBreak={isBreathing.out && (hasPunch || canGetPastIceWalls)}
       />
       <CavesCheck
         id={26012}
