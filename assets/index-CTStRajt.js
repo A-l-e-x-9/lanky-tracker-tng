@@ -41989,7 +41989,8 @@ const Shuffled$b = () => {
         id: 26010,
         name: "Shuffled Melon Crate: In giant boulder room",
         region: "Crystal Caves Main",
-        canGetLogic: hasPunch || canGetPastIceWalls
+        canGetLogic: isBreathing.in && (hasPunch || canGetPastIceWalls),
+        canGetBreak: isBreathing.out && (hasPunch || canGetPastIceWalls)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
