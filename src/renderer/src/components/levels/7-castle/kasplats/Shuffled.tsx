@@ -1,15 +1,15 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useIceCastleKasplat, useFunkyKasplat, usePillarKasplat, useCabinKasplat, useIglooKasplat, useSlamCastle } from '@renderer/hooks/castle'
+import { useGeneralThing, useTreeKasplat, useMausoleumKasplat, usePathKasplat, useLonelyKasplat, useDungeonKasplat, useSlamCastle } from '@renderer/hooks/castle'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useAnyGun, useAnyMusic, useDive, useBalloon, useHighGrab, useMonkeyport, useGuitar, useBongos } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const Shuffled: React.FC = () => {
-const DKVanillaKasplat = useIceCastleKasplat()
-const diddyVanillaKasplat = useFunkyKasplat()
+const DKVanillaKasplat = useTreeKasplat()
+const diddyVanillaKasplat = useMausoleumKasplat()
 const lankyVanillaKasplat = usePillarKasplat()
-const tinyVanillaKasplat = useCabinKasplat()
-const chunkyVanillaKasplat = useIglooKasplat()
+const tinyVanillaKasplat = useLonelyKasplat()
+const chunkyVanillaKasplat = useDungeonKasplat()
 const isBreathing = useGeneralThing()
 const canReachSnide = useCanAccessSnide()
 const canDoTinyMiniGB = useTinyCaveGb()
@@ -28,36 +28,36 @@ const hasBongoes = useBongos()
     <KasplatPool>
       <CastleCheck
         id={57000}
-        name="Shuffled Kasplat: DK's Vanilla Location (behind the Ice Castle)"
-        region="Crystal Caves Main"
+        name="Shuffled Kasplat: DK's Vanilla Location (in the tree)"
+        region="Creepy Castle Main"
         canGetLogic={DKVanillaKasplat.in}
         canGetBreak={DKVanillaKasplat.out}
       />
       <CastleCheck
         id={57001}
-        name="Shuffled Kasplat: Diddy's Vanilla Location (in Tiny's room near Funky's)"
-        region="Crystal Caves Main"
+        name="Shuffled Kasplat: Diddy's Vanilla Location (between the Crypt and Mausoleum)"
+        region="Castle Crypt"
         canGetLogic={diddyVanillaKasplat.in}
         canGetBreak={diddyVanillaKasplat.out}
       />
       <CastleCheck
         id={57002}
-        name="Shuffled Kasplat: Lanky's Vanilla Location (a high platform near Funky's)"
-        region="Crystal Caves Main"
+        name="Shuffled Kasplat: Lanky's Vanilla Location (by upper vanilla warp 2)"
+        region="Creepy Castle Main"
         canGetLogic={lankyVanillaKasplat.in}
         canGetBreak={lankyVanillaKasplat.out}
       />
       <CastleCheck
         id={57003}
-        name="Shuffled Kasplat: Tiny's Vanilla Location (a high platform near Candy's)"
-        region="Caves Cabins"
+        name="Shuffled Kasplat: Tiny's Vanilla Location (past the Crypt, almost to the vanilla level start)"
+        region="Creepy Castle Main"
         canGetLogic={tinyVanillaKasplat.in}
         canGetBreak={tinyVanillaKasplat.out}
       />
       <CastleCheck
         id={57004}
-        name="Shuffled Kasplat: Chunky's Vanilla Location (top of the 5DI)"
-        region="Caves Igloo"
+        name="Shuffled Kasplat: Chunky's Vanilla Location (in front of Candy's)"
+        region="Castle Dungeon"
         canGetLogic={chunkyVanillaKasplat.in}
         canGetBreak={chunkyVanillaKasplat.out}
       />
