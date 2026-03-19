@@ -12,6 +12,8 @@ import TinyKasplat from '../kasplats/Tiny'
 
 const SurroundingsChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
+const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -26,9 +28,11 @@ return (
     <CastleTop />
     <TopFloorDirt />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <LankyKasplat />
     <TinyKasplat />
+  </div>
+  <div className={`grid ${isKremKaptureSeed}`}>
     <SurroundingsEnemies />
   </div>
   </>
