@@ -46598,32 +46598,33 @@ const Shuffled$5 = () => {
 };
 const ShuffledFairies$1 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$5, {}) : null;
 const Shuffled$4 = () => {
-  const DKVanillaKasplat = useIceCastleKasplat();
-  const diddyVanillaKasplat = useFunkyKasplat();
-  const lankyVanillaKasplat = usePillarKasplat();
-  const tinyVanillaKasplat = useCabinKasplat();
-  const chunkyVanillaKasplat = useIglooKasplat();
-  const isBreathing = useGeneralThing$1();
-  const canReachSnide = useCanAccessSnide();
-  const canDoTinyMiniGB = useTinyCaveGb();
-  const canDoGiantKoshaGB = useChunkyClearGb();
-  const is5DIOpen = useCavesIgloo();
+  const DKVanillaKasplat = useTreeKasplat();
+  const diddyVanillaKasplat = useMausoleumKasplat();
+  const lankyVanillaKasplat = usePathKasplat();
+  const tinyVanillaKasplat = useLonelyKasplat();
+  const chunkyVanillaKasplat = useDungeonKasplat();
+  const isBreathing = useGeneralThing();
   const hasAGun = useAnyGun();
   const hasAnInstrument = useAnyMusic();
   const hasDiving = useDive();
-  const hasBalloon = useBalloon();
-  const hasSlam = useSlamCaves();
-  const canHighGrab = useHighGrab();
+  const hasSlam = useSlamCastle();
   const hasMonkeyport = useMonkeyport();
-  const hasGuitar = useGuitar();
-  const hasBongoes = useBongos();
+  const hasDiddy = useDiddy();
+  const hasLanky = useLanky();
+  const hasPrimatePunch = usePunch();
+  const hasCoconuts = useCoconut();
+  const cryptPreOpened = useOpenCrypt();
+  const hasDK = useDk();
+  const hasJetbarrel = useRocket();
+  const hasClimbing = useClimbing();
+  const hasOranges = useOrange();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
-        id: 56e3,
-        name: "Shuffled Kasplat: DK's Vanilla Location (behind the Ice Castle)",
-        region: "Crystal Caves Main",
+        id: 57e3,
+        name: "Shuffled Kasplat: DK's Vanilla Location (in the tree)",
+        region: "Creepy Castle Main",
         canGetLogic: DKVanillaKasplat.in,
         canGetBreak: DKVanillaKasplat.out
       }
@@ -46631,9 +46632,9 @@ const Shuffled$4 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
-        id: 56001,
-        name: "Shuffled Kasplat: Diddy's Vanilla Location (in Tiny's room near Funky's)",
-        region: "Crystal Caves Main",
+        id: 57001,
+        name: "Shuffled Kasplat: Diddy's Vanilla Location (between the Crypt and Mausoleum)",
+        region: "Castle Crypt",
         canGetLogic: diddyVanillaKasplat.in,
         canGetBreak: diddyVanillaKasplat.out
       }
@@ -46641,9 +46642,9 @@ const Shuffled$4 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
-        id: 56002,
-        name: "Shuffled Kasplat: Lanky's Vanilla Location (a high platform near Funky's)",
-        region: "Crystal Caves Main",
+        id: 57002,
+        name: "Shuffled Kasplat: Lanky's Vanilla Location (by upper vanilla warp 2)",
+        region: "Creepy Castle Main",
         canGetLogic: lankyVanillaKasplat.in,
         canGetBreak: lankyVanillaKasplat.out
       }
@@ -46651,9 +46652,9 @@ const Shuffled$4 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
-        id: 56003,
-        name: "Shuffled Kasplat: Tiny's Vanilla Location (a high platform near Candy's)",
-        region: "Caves Cabins",
+        id: 57003,
+        name: "Shuffled Kasplat: Tiny's Vanilla Location (past the Crypt, almost to the vanilla level start)",
+        region: "Creepy Castle Main",
         canGetLogic: tinyVanillaKasplat.in,
         canGetBreak: tinyVanillaKasplat.out
       }
@@ -46661,9 +46662,9 @@ const Shuffled$4 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
-        id: 56004,
-        name: "Shuffled Kasplat: Chunky's Vanilla Location (top of the 5DI)",
-        region: "Caves Igloo",
+        id: 57004,
+        name: "Shuffled Kasplat: Chunky's Vanilla Location (in front of Candy's)",
+        region: "Castle Dungeon",
         canGetLogic: chunkyVanillaKasplat.in,
         canGetBreak: chunkyVanillaKasplat.out
       }
@@ -46671,39 +46672,19 @@ const Shuffled$4 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
-        id: 56005,
-        name: "Shuffled Kasplat: Why doesn't Snide kill this one himself?",
-        region: "Crystal Caves Main",
-        canGetLogic: isBreathing.in && canReachSnide,
-        canGetBreak: isBreathing.out && canReachSnide
+        id: 57005,
+        name: "Shuffled Kasplat: Where the vanilla Melon Crate would be",
+        region: "Castle Crypt",
+        canGetLogic: isBreathing.in && hasClimbing,
+        canGetBreak: isBreathing.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
-        id: 56006,
-        name: "Shuffled Kasplat: Stuck in Tiny's cave near the 5DI",
-        region: "Crystal Caves Main",
-        canGetLogic: canDoTinyMiniGB.in,
-        canGetBreak: canDoTinyMiniGB.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 56007,
-        name: "Shuffled Kasplat: Guarding the Monkeyport pad to the giant Kosha",
-        region: "Caves Igloo",
-        canGetLogic: canDoGiantKoshaGB.in,
-        canGetBreak: canDoGiantKoshaGB.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 56008,
-        name: "Shuffled Kasplat: At warp 5, 5DC-side",
-        region: "Caves Cabins",
+        id: 57006,
+        name: "Shuffled Kasplat: Near the Dungeon's exit",
+        region: "Castle Dungeon",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
       }
@@ -46711,9 +46692,29 @@ const Shuffled$4 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
-        id: 56009,
-        name: "Shuffled Kasplat: Across the river from Candy's",
-        region: "Caves Cabins",
+        id: 57007,
+        name: "Shuffled Kasplat: At the lowest Troff 'n' Scoff portal",
+        region: "Creepy Castle Main",
+        canGetLogic: isBreathing.in && hasClimbing,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 57008,
+        name: "Shuffled Kasplat: Inside Diddy's Ballroom",
+        region: "Various Castle Rooms",
+        canGetLogic: isBreathing.in && hasDiddy && hasSlam,
+        canGetBreak: isBreathing.out && hasDiddy && hasSlam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 57009,
+        name: "Shuffled Kasplat: Behind Lanky's wind tunnel",
+        region: "Creepy Castle Main",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
       }
@@ -46721,39 +46722,19 @@ const Shuffled$4 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
-        id: 56010,
-        name: "Shuffled Kasplat: In the big rock room",
-        region: "Crystal Caves Main",
-        canGetLogic: isBreathing.in && canReachSnide,
-        canGetBreak: isBreathing.out && canReachSnide
+        id: 57010,
+        name: "Shuffled Kasplat: In the pool near the big tree",
+        region: "Creepy Castle Main",
+        canGetLogic: isBreathing.in && (hasAGun || hasAnInstrument) && hasDiving.in,
+        canGetBreak: isBreathing.out && hasOranges && hasDiving.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
-        id: 56011,
-        name: "Shuffled Kasplat: In the water, under DK's Blast pad",
-        region: "Crystal Caves Main",
-        canGetLogic: isBreathing.in && hasDiving.in && hasAnInstrument,
-        canGetBreak: isBreathing.out && hasDiving.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 56012,
-        name: "Shuffled Kasplat: In the water, anchored to vanilla warp 4 near Cranky's",
-        region: "Crystal Caves Main",
-        canGetLogic: isBreathing.in && hasDiving.in && (hasAGun || hasAnInstrument),
-        canGetBreak: isBreathing.out && hasDiving.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 56013,
-        name: "Shuffled Kasplat: In between Funky's and the Ice Castle",
-        region: "Crystal Caves Main",
+        id: 57011,
+        name: "Shuffled Kasplat: In front of Cranky's",
+        region: "Creepy Castle Main",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
       }
@@ -46761,60 +46742,71 @@ const Shuffled$4 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
-        id: 56014,
-        name: "Shuffled Kasplat: In Lanky's beetle race! D:",
-        region: "Crystal Caves Main",
-        canGetBreak: (isBreathing.in || isBreathing.out) && hasSlam && (hasBalloon || canHighGrab)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 56015,
-        name: "Shuffled Kasplat: Guarding the giant Kosha",
-        region: "Caves Igloo",
-        canGetLogic: canDoGiantKoshaGB.in && hasMonkeyport,
-        canGetBreak: canDoGiantKoshaGB.out && hasMonkeyport
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 56016,
-        name: "Shuffled Kasplat: In Diddy's 5DI room",
-        region: "Caves Igloo",
-        canGetLogic: is5DIOpen.in && hasGuitar,
-        canGetBreak: is5DIOpen.out && hasGuitar
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 56017,
-        name: "Shuffled Kasplat: In DK's 5DC room",
-        region: "Caves Cabins",
-        canGetLogic: isBreathing.in && hasBongoes,
-        canGetBreak: isBreathing.out && hasBongoes
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 56018,
-        name: "Shuffled Kasplat: In Chunky's cave at the start",
-        region: "Crystal Caves Main",
-        canGetLogic: isBreathing.in && canReachSnide,
-        canGetBreak: isBreathing.out && canReachSnide
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 56019,
-        name: "Shuffled Kasplat: At the vanilla level entrance",
-        region: "Forest Area 1",
+        id: 57012,
+        name: "Shuffled Kasplat: At the Jetbarrel near the central warp area",
+        region: "Creepy Castle Main",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 57013,
+        name: "Shuffled Kasplat: Inside Lanky's greenhouse",
+        region: "Creepy Castle Main",
+        canGetLogic: isBreathing.in && hasLanky && hasSlam,
+        canGetBreak: isBreathing.out && hasLanky && hasSlam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 57014,
+        name: "Shuffled Kasplat: At the useless pedestal in the Museum",
+        region: "Various Castle Rooms",
+        canGetLogic: isBreathing.in && hasDiddy && hasSlam && hasMonkeyport,
+        canGetBreak: isBreathing.out && hasDiddy && hasSlam && hasMonkeyport
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 57015,
+        name: "Shuffled Kasplat: Caged near DK's face puzzle",
+        region: "Castle Dungeon",
+        canGetLogic: isBreathing.in && hasPrimatePunch,
+        canGetBreak: isBreathing.out && hasPrimatePunch
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 57016,
+        name: "Shuffled Kasplat: Outside DK's minecart game",
+        region: "Castle Crypt",
+        canGetLogic: isBreathing.in && (hasCoconuts || cryptPreOpened) && hasClimbing,
+        canGetBreak: isBreathing.out && (hasCoconuts || cryptPreOpened)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 57017,
+        name: "Shuffled Kasplat: In DK's library",
+        region: "Various Castle Rooms",
+        canGetLogic: isBreathing.in && hasDK && hasSlam,
+        canGetBreak: isBreathing.out && hasDK && hasSlam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 57018,
+        name: "Shuffled Kasplat: The cloud platforms near Diddy's Bonus Barrel",
+        region: "Creepy Castle Main",
+        canGetLogic: isBreathing.in && hasJetbarrel,
+        canGetBreak: isBreathing.out && hasJetbarrel
       }
     )
   ] });
