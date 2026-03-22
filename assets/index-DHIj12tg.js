@@ -10360,7 +10360,9 @@ const initialSettings = {
     helmItem1: 6,
     helmItemNum1: 4,
     helmItem2: 3,
-    helmItemNum2: 2
+    helmItemNum2: 2,
+    shuffleDKPortals: false,
+    shuffleLoadingZones: false
   }
 };
 const settingSlice = (set) => {
@@ -50708,6 +50710,8 @@ const switchsanityIcon = "" + new URL("switch-D6Og0W-L.png", import.meta.url).hr
 const wrinkly = "" + new URL("wrinkly-COxhSpd3.png", import.meta.url).href;
 const koshaHead = "" + new URL("kosha-DktGkC11.png", import.meta.url).href;
 const kasplatIcon = "" + new URL("kasplat-C3MHLT8N.png", import.meta.url).href;
+const DKPortalIcon = "" + new URL("dk-portal-DhmhLo9q.png", import.meta.url).href;
+const LZRIcon = "" + new URL("butwherewasthekasplat-D62HdKcb.png", import.meta.url).href;
 const customStyles = {
   content: {
     backgroundColor: "#002040",
@@ -51374,8 +51378,32 @@ const GeneratorSettings = () => {
                   updateItem: setSetting
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { id: `${shopShuffler}`, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Shop Shuffler" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "DK Portals?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: DKPortalIcon,
+                  title: "Click here to activate the DK Portal shuffler.",
+                  storeKey: "shuffleDKPortals",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Loading Zone Randomizer?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: LZRIcon,
+                  title: "If you're playing with the Loading Zone Randomizer, click here. This will activate the LZR sub-menu.",
+                  storeKey: "shuffleLoadingZones",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { id: `${shopShuffler}`, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Shop Shuffler" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Are Cranky and Snide switched in Isles?" }),
