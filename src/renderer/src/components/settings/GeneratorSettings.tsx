@@ -53,6 +53,8 @@ import kasplatIcon from '../../assets/images/settings/kasplat.png'
 import funkyIcon from '../../assets/images/settings/funky.png'
 import snideIcon from '../../assets/images/snide.png'
 import candyIcon from '../../assets/images/candy.png'
+import DKPortalIcon from '../../assets/images/dk-portal.png'
+import LZRIcon from '../../assets/images/settings/butwherewasthekasplat.png'
 
 const customStyles: Modal.Styles = {
   content: {
@@ -561,8 +563,26 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
+              <p>DK Portals?</p>
+              <SimpleIcon
+                imgUrl={DKPortalIcon}
+                title="Click here to activate the DK Portal shuffler."
+                storeKey="shuffleDKPortals"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Loading Zone Randomizer?</p>
+              <SimpleIcon
+                imgUrl={LZRIcon}
+                title="If you're playing with the Loading Zone Randomizer, click here. This will activate the LZR sub-menu."
+                storeKey="shuffleLoadingZones"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+          </>
           <div id={`${shopShuffler}`}>
             <h4>Shop Shuffler</h4>
+            <>
             <p></p>
             <p></p>
             <p>Are Cranky and Snide switched in Isles?</p>
@@ -1326,8 +1346,8 @@ const GeneratorSettings: React.FC = () => {
                 updateItem={setCastleSnide}
             />
             <p></p>
-          </div>
             </>
+          </div>
             <h3>Fast Barrier Settings</h3>
             <>
               <p>Japes Tunnel Gates?</p>

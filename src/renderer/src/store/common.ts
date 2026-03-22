@@ -611,8 +611,6 @@ interface SettingCollection {
   poolBlueprints: boolean
   /**
    * Are the locations of kasplats shuffled?
-   *
-   * @todo: See if this should be a range of three instead. (ALEX EDIT: It shouldn't. Just say "no" if you set your Kasplat shuffle to "Vanilla Locations".)
    */
   shuffleKasplats: boolean
   /**
@@ -669,6 +667,8 @@ interface SettingCollection {
   helmItemNum1: GoldBananaRange
   helmItem2: CrownRange
   helmItemNum2: GoldBananaRange
+  shuffleDKPortals: boolean
+  shuffleLoadingZones: boolean
 }
 
 export interface SettingState {
