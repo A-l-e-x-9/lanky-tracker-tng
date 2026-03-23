@@ -11217,6 +11217,16 @@ const usePoolShops = () => useDonkStore(useShallow((state) => state.settings.poo
 const usePoolToughBananas = () => useDonkStore(useShallow((state) => state.settings.poolToughBananas));
 const usePoolMiniboss = () => useDonkStore(useShallow((state) => state.settings.poolMiniboss));
 const usePoolMisc = () => useDonkStore(useShallow((state) => state.settings.poolMisc));
+const usePoolPearls = () => {
+  const beanAndPearlsInRotation = usePoolMisc();
+  const pearlWinCon = useDonkStore(useShallow((state) => state.winCondition.pearls));
+  return pearlWinCon && !beanAndPearlsInRotation;
+};
+const useBean$1 = () => {
+  const beanAndPearlsInRotation = usePoolMisc();
+  const beanWinCon = useDonkStore(useShallow((state) => state.winCondition.theBean));
+  return beanWinCon && !beanAndPearlsInRotation;
+};
 const usePoolBlueprints = () => {
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints));
   const blueprintWinCon = useDonkStore(useShallow((state) => state.winCondition.fairies));
@@ -31278,9 +31288,11 @@ const LankyBananas$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(Lanky5Ship, {})
 ] });
 const MiscPool = ({ children }) => usePoolMisc() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const PearlPool = ({ children }) => usePoolPearls() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const BeanPool = ({ children }) => useBean$1() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const TreasureClams = () => {
   const clams = useTinyClams();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(MiscPool, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(PearlPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
@@ -31331,7 +31343,7 @@ const TreasureClams = () => {
         canGetBreak: clams.out
       }
     )
-  ] });
+  ] }) });
 };
 const MermaidReward = () => {
   const canDo = useTinyMermaidGb();
@@ -38117,7 +38129,7 @@ const AnthillBanana = () => {
 };
 const AnthillBean = () => {
   const canDo = useTinyAntGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(BeanPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5034,
@@ -38126,7 +38138,7 @@ const AnthillBean = () => {
       canGetLogic: canDo.in,
       canGetBreak: canDo.out
     }
-  ) });
+  ) }) });
 };
 const BeanCheck = () => {
   const canDo = useTinyBeanGb();
