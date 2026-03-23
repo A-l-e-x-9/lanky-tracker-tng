@@ -131,6 +131,18 @@ export const usePoolMiniboss = (): boolean =>
 export const usePoolMisc = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.poolMisc))
 
+export const usePoolPearls = (): boolean => {
+  const beanAndPearlsInRotation = usePoolMisc()
+  const pearlWinCon = useDonkStore(useShallow((state) => state.winCondition.pearls))
+  return pearlWinCon && !beanAndPearlsInRotation
+}
+
+export const useBean = (): boolean => {
+  const beanAndPearlsInRotation = usePoolMisc()
+  const beanWinCon = useDonkStore(useShallow((state) => state.winCondition.theBean))
+  return beanWinCon && !beanAndPearlsInRotation
+}
+
 /**
  * Are the blueprints the Kasplats hold in the rando pool?
  * @returns true if the blueprints are in the pool.
