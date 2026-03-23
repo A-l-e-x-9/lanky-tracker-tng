@@ -2,15 +2,11 @@ import { useState } from 'react'
 import Modal from 'react-modal'
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
-import fairyCamIcon from '../../assets/images/filmwave1.png'
 import crankyIcon from '../../assets/images/cranky.png'
 import unknownIcon from '../../assets/images/unknown-small.png'
-import kasplatIcon from '../../assets/images/settings/kasplat.png'
 import funkyIcon from '../../assets/images/settings/funky.png'
 import snideIcon from '../../assets/images/snide.png'
 import candyIcon from '../../assets/images/candy.png'
-import DKPortalIcon from '../../assets/images/dk-portal.png'
-import LZRIcon from '../../assets/images/settings/butwherewasthekasplat.png'
 
 const customStyles: Modal.Styles = {
   content: {
@@ -21,14 +17,11 @@ const customStyles: Modal.Styles = {
 
 const ShuffledShops: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
-  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition, setIslesShops, setJapesCranky, setJapesFunky, setJapesSnide, setAztecCranky, setAztecFunky, setAztecCandy, setAztecSnide, setFactoryCranky, setFactoryFunky, setFactoryCandy, setFactorySnide, setGalleonCranky, setGalleonFunky, setGalleonCandy, setGalleonSnide, setForestCranky, setForestFunky, setForestSnide, setCavesCranky, setCavesFunky, setCavesCandy, setCavesSnide, setCastleCranky, setCastleFunky, setCastleCandy, setCastleSnide] = useDonkStore(
-    useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi, state.setWinCondition, state.setIslesShops, state.setJapesCranky, state.setJapesFunky, state.setJapesSnide, state.setAztecCranky, state.setAztecFunky, state.setAztecCandy, state.setAztecSnide, state.setFactoryCranky, state.setFactoryFunky, state.setFactoryCandy, state.setFactorySnide, state.setGalleonCranky, state.setGalleonFunky, state.setGalleonCandy, state.setGalleonSnide, state.setForestCranky, state.setForestFunky, state.setForestSnide, state.setCavesCranky, state.setCavesFunky, state.setCavesCandy, state.setCavesSnide, state.setCastleCranky, state.setCastleFunky, state.setCastleCandy, state.setCastleSnide])
+  const [setIslesShops, setJapesCranky, setJapesFunky, setJapesSnide, setAztecCranky, setAztecFunky, setAztecCandy, setAztecSnide, setFactoryCranky, setFactoryFunky, setFactoryCandy, setFactorySnide, setGalleonCranky, setGalleonFunky, setGalleonCandy, setGalleonSnide, setForestCranky, setForestFunky, setForestSnide, setCavesCranky, setCavesFunky, setCavesCandy, setCavesSnide, setCastleCranky, setCastleFunky, setCastleCandy, setCastleSnide] = useDonkStore(
+    useShallow((state) => [state.setIslesShops, state.setJapesCranky, state.setJapesFunky, state.setJapesSnide, state.setAztecCranky, state.setAztecFunky, state.setAztecCandy, state.setAztecSnide, state.setFactoryCranky, state.setFactoryFunky, state.setFactoryCandy, state.setFactorySnide, state.setGalleonCranky, state.setGalleonFunky, state.setGalleonCandy, state.setGalleonSnide, state.setForestCranky, state.setForestFunky, state.setForestSnide, state.setCavesCranky, state.setCavesFunky, state.setCavesCandy, state.setCavesSnide, state.setCastleCranky, state.setCastleFunky, state.setCastleCandy, state.setCastleSnide])
   )
-
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
-  const [isKeySeed, isKey8Seed, isKey38Seed, isKremKaptureSeed, isRapSeed, isChallengeSeed, isWabbitSeed, isGBSeed, isBPSeed, isCoCoinSeed, isMedalSeed, isCrownSeed, isFairySeed, isRainbowSeed, isBeanSeed, isPearlSeed, isBossSeed, isBonusSeed] = useDonkStore(useShallow((state) => [state.winCondition.bossKeys, state.winCondition.key8, state.winCondition.key3And8, state.winCondition.kremlingKapture, state.winCondition.takeItToTheFridge, state.winCondition.kRoolChallenge, state.winCondition.killTheWabbit, state.winCondition.goldBananas, state.winCondition.blueprints, state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.crowns, state.winCondition.fairies, state.winCondition.rainbowCoins, state.winCondition.theBean, state.winCondition.pearls, state.winCondition.bosses, state.winCondition.bonuses]))
-  
   const shopShuffler = useDonkStore(useShallow((state) => state.settings.shuffleShops)) ? '' : 'shop-shuffler'
 
   return (
