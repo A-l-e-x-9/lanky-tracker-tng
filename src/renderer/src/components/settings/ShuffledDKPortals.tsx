@@ -30,6 +30,19 @@ const ShuffledDKPortals: React.FC = () => {
         <section className="modal-settings">
         <h2>DK Portal Shuffler</h2>
           <section className="pool">
+            <h3>Jungle Japes</h3>
+            <p className="full-grid">Coming Soon™.</p>
+            <h3>Angry Aztec</h3>
+            <p className="full-grid">Coming Soon™.</p>
+            <h3>Frantic Factory</h3>
+            <p className="full-grid">Coming Soon™.</p>
+            <h3>Gloomy Galleon</h3>
+            <p className="full-grid">Coming Soon™.</p>
+            <h3>Fungi Forest</h3>
+            <p className="full-grid">Coming Soon™.</p>
+            <h3>Crystal Caves</h3>
+            <p className="full-grid">Coming Soon™.</p>
+            <h3>Creepy Castle</h3>
             <p className="full-grid">Coming Soon™.</p>
           </section>
         </section>
