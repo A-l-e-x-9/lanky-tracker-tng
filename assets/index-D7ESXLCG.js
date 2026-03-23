@@ -52789,7 +52789,22 @@ const ShuffledDKPortals = () => {
         style: customStyles$1,
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "DK Portal Shuffler" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "pool", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Jungle Japes" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Angry Aztec" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Frantic Factory" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Gloomy Galleon" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fungi Forest" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Crystal Caves" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Creepy Castle" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." })
+          ] })
         ] })
       }
     )
