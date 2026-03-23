@@ -40,7 +40,9 @@ return (
     <DkBananas />
     <DiddyBananas />
     <LankyBananas />
+  </div>
     <TinyBananas />
+  <div className="grid">
     <ChunkyBananas />
   </div>
   <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
