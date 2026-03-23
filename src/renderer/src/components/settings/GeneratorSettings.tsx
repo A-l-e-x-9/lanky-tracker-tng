@@ -62,7 +62,7 @@ const customStyles: Modal.Styles = {
 
 const GeneratorSettings: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
-  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition, setIslesShops, setJapesCranky, setJapesFunky, setJapesSnide, setAztecCranky, setAztecFunky, setAztecCandy, setAztecSnide, setFactoryCranky, setFactoryFunky, setFactoryCandy, setFactorySnide, setGalleonCranky, setGalleonFunky, setGalleonCandy, setGalleonSnide, setForestCranky, setForestFunky, setForestSnide, setCavesCranky, setCavesFunky, setCavesCandy, setCavesSnide, setCastleCranky, setCastleFunky, setCastleCandy, setCastleSnide] = useDonkStore(
+  const [setSetting, setBarrier, setFastCheck, setUi, setWinCondition] = useDonkStore(
     useShallow((state) => [state.setSetting, state.setBarrier, state.setFastCheck, state.setUi, state.setWinCondition])
   )
 
