@@ -280,7 +280,7 @@ main .grid {
 
 .all-bosses {background-color: #800000;}
 
-#shop-shuffler {display: none;}
+.shop-shuffler, .lzr-shuffler, .portal-shuffler {display: none;}
 
 @media (max-width: 720px) {
   .text {

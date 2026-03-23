@@ -4,6 +4,9 @@ import useDonkStore from '@renderer/store'
 import { BananaportRange } from '@renderer/store/common'
 import GeneratorSettings from './GeneratorSettings'
 import { useForestTime, useGalleonTideStartHigh } from '@renderer/hooks/settings'
+import ShuffledShops from './ShuffledShops'
+import ShuffledDKPortals from './ShuffledDKPortals'
+import LoadingZoneRandomizer from './LZR'
 
 const timeToString = (time: BananaportRange): string => {
   switch (time) {
@@ -59,6 +62,10 @@ const RuntimeSettings: React.FC = () => {
     }
   }
 
+  const shopShuffler = useDonkStore(useShallow((state) => state.settings.shuffleShops)) ? '' : 'shop-shuffler'
+  const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? '' : 'portal-shuffler'
+  const lzrShuffler = useDonkStore(useShallow((state) => state.settings.shuffleLoadingZones)) ? '' : 'lzr-shuffler'
+
   return (
     <section className="runtime-settings">
       <div>
@@ -72,6 +79,12 @@ const RuntimeSettings: React.FC = () => {
         <span onClick={handleClick} onContextMenu={handleContextClick} onWheel={handleWheel}>
           {timeToString(forestTime)}
         </span>
+        <p className={`${shopShuffler}`}>Shuffled Shops:</p>
+        <ShuffledShops />
+        <p className={`${portalShuffler}`}>Shuffled DK Portals:</p>
+        <ShuffledDKPortals />
+        <p className={`${lzrShuffler}`}>Loading Zone Randomizer:</p>
+        <LoadingZoneRandomizer />
       </div>
     </section>
   )
