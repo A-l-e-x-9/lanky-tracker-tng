@@ -16,7 +16,7 @@ const ShuffledDKPortals: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
-  const [setJapesPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal]))
+  const [setJapesPortal, setAztecPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal]))
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? '' : 'portal-shuffler'
 
   return (
@@ -53,7 +53,24 @@ const ShuffledDKPortals: React.FC = () => {
             />
             </>
             <h3>Angry Aztec</h3>
-            <p className="full-grid">Coming Soon™.</p>
+            <>
+            <p>Vanilla/any location not listed</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do."
+                storeKey="vanilla"
+                prefix="shuffledAztecPortals"
+                updateItem={setAztecPortal}
+            />
+            <p>Anywhere in the second half of the level or the cave leading to it</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is past the gate requiring Guitar to open."
+                storeKey="secondHalfPortal"
+                prefix="shuffledAztecPortals"
+                updateItem={setAztecPortal}
+            />
+            </>
             <h3>Frantic Factory</h3>
             <p className="full-grid">Coming Soon™.</p>
             <h3>Gloomy Galleon</h3>

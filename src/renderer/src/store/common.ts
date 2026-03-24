@@ -1157,13 +1157,19 @@ interface japesPortals {
   vanilla: boolean
   portalNearDiddy: boolean
 }
+interface aztecPortals {
+  vanilla: boolean
+  secondHalfPortal: boolean
+}
 
 export interface PortalState {
   shuffledJapesPortals: japesPortals
+  shuffledAztecPortals: aztecPortals
 }
 
 interface PortalActions {
   setJapesPortal: (id: string, val: boolean) => void
+  setAztecPortal: (id: string, val: boolean) => void
 }
 
 export type PortalSlice = PortalState & PortalActions

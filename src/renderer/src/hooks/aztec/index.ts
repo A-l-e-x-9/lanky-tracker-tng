@@ -55,6 +55,12 @@ export const usePlayAztec = (): LogicBool => {
   }
 }
 
+/*Alex addition: shuffled DK Portals*/
+//Is the DK Portal past the gate blocking access to the second half of the level?
+export const useSecondHalfPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal))
+/*end shuffled DK Portals*/
+
 /**
  * Can we slam down switches in Angry Aztec?
  * @todo Handle both options of the progressive slam setting.
@@ -114,9 +120,10 @@ export const useAztecBack = (): LogicBool => {
   const [diddy, tiny, backGateOpen] = useDonkStore(
     useShallow((state) => [state.moves.diddy, state.moves.tiny, state.removeBarriers.aztecBack])
   )
+  const DKPortal = useSecondHalfPortal()
   return {
-    in: aztecFront.in && (backGateOpen || warpAll || (hasClimbing && (vine || rocket) && musicSwitch)),
-    out: aztecFront.out && (backGateOpen || warpAll || (musicSwitch && (diddy || tiny)))
+    in: (aztecFront.in && (backGateOpen || warpAll || (hasClimbing && (vine || rocket) && musicSwitch))) || DKPortal,
+    out: (aztecFront.out && (backGateOpen || warpAll || (musicSwitch && (diddy || tiny)))) || DKPortal
   }
 }
 
