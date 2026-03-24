@@ -3,6 +3,7 @@ import Modal from 'react-modal'
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import SimpleRadioIcon from './SimpleRadioIcon'
+import dkPortalIcon from '../../assets/images/dk-portal.png'
 
 const customStyles: Modal.Styles = {
   content: {
