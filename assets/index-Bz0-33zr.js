@@ -50772,7 +50772,7 @@ const switchsanityIcon = "" + new URL("switch-D6Og0W-L.png", import.meta.url).hr
 const wrinkly = "" + new URL("wrinkly-COxhSpd3.png", import.meta.url).href;
 const koshaHead = "" + new URL("kosha-DktGkC11.png", import.meta.url).href;
 const kasplatIcon = "" + new URL("kasplat-C3MHLT8N.png", import.meta.url).href;
-const DKPortalIcon = "" + new URL("dk-portal-DhmhLo9q.png", import.meta.url).href;
+const dkPortalIcon = "" + new URL("dk-portal-DhmhLo9q.png", import.meta.url).href;
 const LZRIcon = "" + new URL("butwherewasthekasplat-D62HdKcb.png", import.meta.url).href;
 const customStyles$3 = {
   content: {
@@ -51443,7 +51443,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: DKPortalIcon,
+                  imgUrl: dkPortalIcon,
                   title: "Click here to activate the DK Portal shuffler.",
                   storeKey: "shuffleDKPortals",
                   prefix: "settings",
@@ -52819,6 +52819,7 @@ const ShuffledDKPortals = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
+  const [setJapesPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal]));
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? "" : "portal-shuffler";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `${portalShuffler}`, onClick: openModal, title: "Click to open the DK Portal Shuffler.", children: "⚙️" }),
@@ -52834,10 +52835,28 @@ const ShuffledDKPortals = () => {
           /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Jungle Japes" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla location" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "radio", id: "vanilla", name: "shuffledJapesPortals", value: "vanilla" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla/any location not listed" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
+                  storeKey: "vanilla",
+                  prefix: "shuffledJapesPortals",
+                  updateItem: setJapesPortal
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Near Diddy's prison" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "radio", id: "portalNearDiddy", name: "shuffledJapesPortals", value: "portalNearDiddy" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at the peak of the Japes Highlands.",
+                  storeKey: "portalNearDiddy",
+                  prefix: "shuffledJapesPortals",
+                  updateItem: setJapesPortal
+                }
+              )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Angry Aztec" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
