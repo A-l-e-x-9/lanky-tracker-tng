@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Modal from 'react-modal'
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
+import SimpleRadioIcon from './SimpleRadioIcon'
 
 const customStyles: Modal.Styles = {
   content: {
@@ -14,6 +15,7 @@ const ShuffledDKPortals: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
+  const [setJapesPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal]))
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? '' : 'portal-shuffler'
 
   return (
@@ -32,10 +34,22 @@ const ShuffledDKPortals: React.FC = () => {
           <section className="pool">
             <h3>Jungle Japes</h3>
             <>
-            <p>Vanilla location</p>
-            <input type="radio" id="vanilla" name="shuffledJapesPortals" value="vanilla" />
+            <p>Vanilla/any location not listed</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do."
+                storeKey="vanilla"
+                prefix="shuffledJapesPortals"
+                updateItem={setJapesPortal}
+            />
             <p>Near Diddy's prison</p>
-            <input type="radio" id="portalNearDiddy" name="shuffledJapesPortals" value="portalNearDiddy" />
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is at the peak of the Japes Highlands."
+                storeKey="portalNearDiddy"
+                prefix="shuffledJapesPortals"
+                updateItem={setJapesPortal}
+            />
             </>
             <h3>Angry Aztec</h3>
             <p className="full-grid">Coming Soon™.</p>
