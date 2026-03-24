@@ -31,7 +31,12 @@ const ShuffledDKPortals: React.FC = () => {
         <h2>DK Portal Shuffler</h2>
           <section className="pool">
             <h3>Jungle Japes</h3>
-            <p className="full-grid">Coming Soon™.</p>
+            <>
+            <p>Vanilla location</p>
+            <input type="radio" id="vanilla" name="shuffledJapesPortals" value="vanilla" />
+            <p>Near Diddy's prison</p>
+            <input type="radio" id="portalNearDiddy" name="shuffledJapesPortals" value="portalNearDiddy" />
+            </>
             <h3>Angry Aztec</h3>
             <p className="full-grid">Coming Soon™.</p>
             <h3>Frantic Factory</h3>
