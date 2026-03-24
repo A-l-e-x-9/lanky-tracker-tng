@@ -1152,6 +1152,23 @@ interface ShopActions {
 export type ShopSlice = ShopState & ShopActions
 //#endregion
 
+//Begin shuffled DK Portal region
+interface japesPortals {
+  vanilla: boolean
+  portalNearDiddy: boolean
+}
+
+export interface PortalState {
+  shuffledJapesPortals: japesPortals
+}
+
+interface PortalActions {
+  setJapesPortal: (id: string, val: boolean) => void
+}
+
+export type PortalSlice = PortalState & PortalActions
+//#endregion
+
 export type AllSlice = CheckSlice &
   MoveSlice &
   ConsumablesSlice &
@@ -1167,7 +1184,8 @@ export type AllSlice = CheckSlice &
   RoolSlice &
   UiSlice &
   WinConSlice &
-  ShopSlice
+  ShopSlice &
+  PortalSlice
 
 export const donkResetFns = new Set<() => void>()
 
