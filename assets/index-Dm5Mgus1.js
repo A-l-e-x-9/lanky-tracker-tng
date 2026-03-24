@@ -11115,6 +11115,34 @@ const shopSlice = (set) => {
     }
   };
 };
+const initialPortal = {
+  shuffledJapesPortals: {
+    vanilla: true,
+    portalNearDiddy: false
+  }
+};
+const portalSlice = (set) => {
+  donkResetFns.add(() => set(initialPortal));
+  return {
+    ...initialPortal,
+    setJapesPortal: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledJapesPortals)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledJapesPortals: {
+            ...state.shuffledJapesPortals,
+            ...reset
+          }
+        };
+      });
+    }
+  };
+};
 const initializer = (...d) => ({
   ...coreSlice(...d),
   ...settingSlice(...d),
@@ -11131,7 +11159,8 @@ const initializer = (...d) => ({
   ...roolSlice(...d),
   ...uiSlice(...d),
   ...winConSlice(...d),
-  ...shopSlice(...d)
+  ...shopSlice(...d),
+  ...portalSlice(...d)
 });
 const useDonkStore = create()(
   persist(initializer, {
@@ -17790,6 +17819,7 @@ const usePlayJapes = () => {
   };
 };
 const useSlamJapes = () => useSlamLevel("Jungle Japes");
+const usePortalNearDiddy = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy));
 const useJapesKongGates = () => {
   const inStage = usePlayJapes();
   const [barriers, checks] = useDonkStore(
@@ -17825,9 +17855,10 @@ const useJapesMine = () => {
   const canPlay = usePlayJapes();
   const hasClimbing = useClimbing();
   const hasBananaports = useBananaportAll();
+  const DKPortal = usePortalNearDiddy();
   return {
-    in: peanut && (hasClimbing || hasBananaports) && canPlay.in,
-    out: peanut && (canPlay.in || canPlay.out)
+    in: peanut && (hasClimbing || hasBananaports || DKPortal) && canPlay.in,
+    out: peanut && canPlay.out
   };
 };
 const useJapesHive = () => {
@@ -17850,8 +17881,9 @@ const useJapesPaintingOutside = () => {
   const dk2 = useDk();
   const tiny = useTiny();
   const chunky = useChunky();
+  const DKPortal = usePortalNearDiddy();
   return {
-    in: inStage.in && (stand || climbing && twirl),
+    in: inStage.in && (stand || (climbing || DKPortal) && twirl),
     out: (inStage.in || inStage.out) && climbing && (dk2 || tiny || chunky)
   };
 };
@@ -17963,9 +17995,10 @@ const useDkFreebieGb = () => {
   const hasClimbing = useClimbing();
   const hasBananaports = useBananaportAll();
   const hasOStand = useStand();
+  const DKPortal = usePortalNearDiddy();
   return {
-    in: inStage.in && anyKong && (hasClimbing || hasBananaports),
-    out: (inStage.in || inStage.out) && hasOStand
+    in: inStage.in && anyKong && (hasClimbing || hasBananaports || DKPortal),
+    out: inStage.out && hasOStand
   };
 };
 const useFreeDiddySwitch = () => {
@@ -18028,9 +18061,11 @@ const useLankyCagedGb = () => {
   const canSlam = useSlamJapes();
   const hasClimbing = useClimbing();
   const hasBananaports = useBananaportAll();
+  const DKPortal = usePortalNearDiddy();
+  const hasOStand = useStand();
   return {
     in: rambi.in && lanky && canSlam && (hasClimbing || hasBananaports),
-    out: rambi.out && lanky && canSlam
+    out: rambi.out && lanky && canSlam && (DKPortal || hasOStand)
   };
 };
 const useLankyGateGb = () => {
@@ -18047,7 +18082,7 @@ const useLankySlopeGb = () => {
   const anyKong = useAnyKong();
   return {
     in: tunnel.in && stand,
-    out: (tunnel.in || tunnel.out) && anyKong
+    out: tunnel.out && anyKong
   };
 };
 const useLankyPaintingGb = () => {
@@ -18107,8 +18142,9 @@ const useArena$4 = () => {
   const hasClimbing = useClimbing();
   const hasBananaports = useBananaportAll();
   const hasOStand = useStand();
+  const DKPortal = usePortalNearDiddy();
   return {
-    in: isBreathing.in && (hasClimbing || hasBananaports),
+    in: isBreathing.in && (hasClimbing || hasBananaports || DKPortal),
     out: isBreathing.out && hasOStand
   };
 };
@@ -18180,9 +18216,10 @@ const useMtnCrate = () => {
   const hasClimbing = useClimbing();
   const hasBananaports = useBananaportAll();
   const hasOStand = useStand();
+  const DKPortal = usePortalNearDiddy();
   return {
-    in: canEnterLevel.in && (hasClimbing || hasBananaports),
-    out: (canEnterLevel.in || canEnterLevel.out) && hasOStand
+    in: canEnterLevel.in && (hasClimbing || hasBananaports || DKPortal),
+    out: canEnterLevel.out && hasOStand
   };
 };
 const JapesCheck = (props) => {
@@ -19266,11 +19303,12 @@ const useDiddyMedalCommonLogic$5 = () => {
   const kongGates = useJapesKongGates();
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
+  const DKPortal = usePortalNearDiddy();
   let bananas = 5;
   if (climbing) {
     bananas += 20;
   }
-  if (climbing || bananaport) {
+  if (climbing || bananaport || DKPortal) {
     bananas += 7;
   }
   if (dive.in || dive.out) {
@@ -19279,7 +19317,7 @@ const useDiddyMedalCommonLogic$5 = () => {
   if ((sideArea.in || sideArea.out) && gun) {
     bananas += 10;
   }
-  if (gun && (climbing || bananaport)) {
+  if (gun && (climbing || bananaport || DKPortal)) {
     bananas += 20;
     if (canSlam) {
       bananas += 15;
@@ -19302,6 +19340,7 @@ const useDiddyMedalInLogic$6 = () => {
   const shuffleBananas = useShuffleColoredBananas();
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
+  const DKPortal = usePortalNearDiddy();
   let bananas = useDiddyMedalCommonLogic$5();
   if (!inStage.in) {
     return 0;
@@ -19312,7 +19351,7 @@ const useDiddyMedalInLogic$6 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if ((climbing || bananaport) && gun && canSlam && move) {
+  if ((climbing || bananaport || DKPortal) && gun && canSlam && move) {
     bananas += 5;
   }
   return bananas;
@@ -19325,6 +19364,7 @@ const useDiddyMedalOutLogic$6 = () => {
   const shuffleBananas = useShuffleColoredBananas();
   const climbing = useClimbing();
   const bananaport = useBananaportAll();
+  const DKPortal = usePortalNearDiddy();
   let bananas = useDiddyMedalCommonLogic$5();
   if (!inStage.out) {
     return 0;
@@ -19335,7 +19375,7 @@ const useDiddyMedalOutLogic$6 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if ((climbing || bananaport) && gun && highGrab) {
+  if ((climbing || bananaport || DKPortal) && gun && highGrab) {
     bananas += 5;
   }
   return bananas;
@@ -19379,6 +19419,7 @@ const useDkMedalInLogic$6 = () => {
   const climbing = useClimbing();
   const bananaports = useBananaportAll();
   const shuffleBananas = useShuffleColoredBananas();
+  const DKPortal = usePortalNearDiddy();
   if (!inStage.in) {
     return 0;
   }
@@ -19392,7 +19433,7 @@ const useDkMedalInLogic$6 = () => {
   if (climbing) {
     bananas += 15;
   }
-  if (climbing || bananaports) {
+  if (climbing || bananaports || DKPortal) {
     bananas += 16;
   }
   if (vine && climbing) {
@@ -19426,6 +19467,7 @@ const useDkMedalOutLogic$6 = () => {
   const climbing = useClimbing();
   const bananaports = useBananaportAll();
   const shuffleBananas = useShuffleColoredBananas();
+  const DKPortal = usePortalNearDiddy();
   if (!inStage.out) {
     return 0;
   }
@@ -19439,7 +19481,7 @@ const useDkMedalOutLogic$6 = () => {
   if (climbing) {
     bananas += 15;
   }
-  if (climbing || bananaports) {
+  if (climbing || bananaports || DKPortal) {
     bananas += 16;
   }
   if (vine && climbing) {
@@ -52791,7 +52833,12 @@ const ShuffledDKPortals = () => {
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "DK Portal Shuffler" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Jungle Japes" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla location" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "radio", id: "vanilla", name: "shuffledJapesPortals", value: "vanilla" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Near Diddy's prison" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "radio", id: "portalNearDiddy", name: "shuffledJapesPortals", value: "portalNearDiddy" })
+            ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Angry Aztec" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Frantic Factory" }),
