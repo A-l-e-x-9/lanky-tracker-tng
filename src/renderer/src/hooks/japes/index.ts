@@ -51,6 +51,12 @@ export const usePlayJapes = (): LogicBool => {
  */
 export const useSlamJapes = (): boolean => useSlamLevel('Jungle Japes')
 
+/*Alex addition: shuffled DK Portals*/
+//Is the DK Portal near Diddy's vanilla prison?
+export const usePortalNearDiddy = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy))
+/*end shuffled DK Portals*/
+
 export const useJapesKongGates = (): LogicBool => {
   const inStage = usePlayJapes()
   const [barriers, checks] = useDonkStore(
@@ -123,9 +129,10 @@ export const useJapesMine = (): LogicBool => {
   const canPlay = usePlayJapes()
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
+  const DKPortal = usePortalNearDiddy()
   return {
-    in: peanut && (hasClimbing || hasBananaports) && canPlay.in,
-    out: peanut && (canPlay.in || canPlay.out)
+    in: peanut && (hasClimbing || hasBananaports || DKPortal) && canPlay.in,
+    out: peanut && canPlay.out
   }
 }
 
@@ -158,8 +165,9 @@ export const useJapesPaintingOutside = (): LogicBool => {
   const dk = useDk()
   const tiny = useTiny()
   const chunky = useChunky()
+  const DKPortal = usePortalNearDiddy()
   return {
-    in: inStage.in && (stand || (climbing && twirl)),
+    in: inStage.in && (stand || ((climbing || DKPortal) && twirl)),
     out: (inStage.in || inStage.out) && climbing && (dk || tiny || chunky)
   }
 }
@@ -297,9 +305,10 @@ export const useDkFreebieGb = (): LogicBool => {
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
   const hasOStand = useStand()
+  const DKPortal = usePortalNearDiddy()
   return {
-    in: inStage.in && anyKong && (hasClimbing || hasBananaports),
-    out: (inStage.in || inStage.out) && hasOStand
+    in: inStage.in && anyKong && (hasClimbing || hasBananaports || DKPortal),
+    out: inStage.out && hasOStand
   }
 }
 
@@ -367,9 +376,11 @@ export const useLankyCagedGb = (): LogicBool => {
   const canSlam = useSlamJapes()
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
+  const DKPortal = usePortalNearDiddy()
+  const hasOStand = useStand()
   return {
     in: rambi.in && lanky && canSlam && (hasClimbing || hasBananaports),
-    out: rambi.out && lanky && canSlam
+    out: rambi.out && lanky && canSlam && (DKPortal || hasOStand)
   }
 }
 
@@ -388,7 +399,7 @@ export const useLankySlopeGb = (): LogicBool => {
   const anyKong = useAnyKong()
   return {
     in: tunnel.in && stand,
-    out: (tunnel.in || tunnel.out) && anyKong
+    out: tunnel.out && anyKong
   }
 }
 
@@ -455,8 +466,9 @@ export const useArena = (): LogicBool => {
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
   const hasOStand = useStand()
+  const DKPortal = usePortalNearDiddy()
   return {
-    in: isBreathing.in && (hasClimbing || hasBananaports),
+    in: isBreathing.in && (hasClimbing || hasBananaports || DKPortal),
     out: isBreathing.out && hasOStand
   }
 }
@@ -538,8 +550,9 @@ export const useMtnCrate = (): LogicBool => {
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
   const hasOStand = useStand()
+  const DKPortal = usePortalNearDiddy()
   return {
-    in: canEnterLevel.in && (hasClimbing || hasBananaports),
-    out: (canEnterLevel.in || canEnterLevel.out) && hasOStand
+    in: canEnterLevel.in && (hasClimbing || hasBananaports || DKPortal),
+    out: canEnterLevel.out && hasOStand
   }
 }
