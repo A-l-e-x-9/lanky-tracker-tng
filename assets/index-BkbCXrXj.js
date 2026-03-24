@@ -11119,6 +11119,10 @@ const initialPortal = {
   shuffledJapesPortals: {
     vanilla: true,
     portalNearDiddy: false
+  },
+  shuffledAztecPortals: {
+    vanilla: true,
+    secondHalfPortal: false
   }
 };
 const portalSlice = (set) => {
@@ -11136,6 +11140,22 @@ const portalSlice = (set) => {
           ...state,
           shuffledJapesPortals: {
             ...state.shuffledJapesPortals,
+            ...reset
+          }
+        };
+      });
+    },
+    setAztecPortal: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledAztecPortals)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledAztecPortals: {
+            ...state.shuffledAztecPortals,
             ...reset
           }
         };
@@ -21948,6 +21968,7 @@ const usePlayAztec = () => {
     out: canEnter.out
   };
 };
+const useSecondHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal));
 const useSlamAztec = () => useSlamLevel("Angry Aztec");
 const useAztecCoconutSwitch = () => useSwitchsanityGun("aztecBlueprint", 0);
 const useAztecGuitarSwitch = () => useSwitchsanityMusicPad("aztecBack", 1);
@@ -21982,9 +22003,10 @@ const useAztecBack = () => {
   const [diddy, tiny, backGateOpen] = useDonkStore(
     useShallow((state) => [state.moves.diddy, state.moves.tiny, state.removeBarriers.aztecBack])
   );
+  const DKPortal = useSecondHalfPortal();
   return {
-    in: aztecFront.in && (backGateOpen || warpAll || hasClimbing && (vine || rocket) && musicSwitch),
-    out: aztecFront.out && (backGateOpen || warpAll || musicSwitch && (diddy || tiny))
+    in: aztecFront.in && (backGateOpen || warpAll || hasClimbing && (vine || rocket) && musicSwitch) || DKPortal,
+    out: aztecFront.out && (backGateOpen || warpAll || musicSwitch && (diddy || tiny)) || DKPortal
   };
 };
 const useAztecTinyTemple = () => {
@@ -52820,7 +52842,7 @@ const ShuffledDKPortals = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
-  const [setJapesPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal]));
+  const [setJapesPortal, setAztecPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal]));
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? "" : "portal-shuffler";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `${portalShuffler}`, onClick: openModal, title: "Click to open the DK Portal Shuffler.", children: "⚙️" }),
@@ -52860,7 +52882,30 @@ const ShuffledDKPortals = () => {
               )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Angry Aztec" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla/any location not listed" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
+                  storeKey: "vanilla",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Anywhere in the second half of the level or the cave leading to it" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is past the gate requiring Guitar to open.",
+                  storeKey: "secondHalfPortal",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              )
+            ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Frantic Factory" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Gloomy Galleon" }),
