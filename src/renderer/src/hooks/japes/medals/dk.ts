@@ -1,6 +1,6 @@
 import { useBlast, useClimbing, useCoconut, useDk, useVine } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas, useBananaportAll } from '@renderer/hooks/settings'
-import { useJapesKongGates, useJapesRambi, usePlayJapes } from '..'
+import { useJapesKongGates, useJapesRambi, usePlayJapes, usePortalNearDiddy } from '..'
 
 export const useDkMedalInLogic = (): number => {
   const inStage = usePlayJapes()
@@ -13,6 +13,7 @@ export const useDkMedalInLogic = (): number => {
   const climbing = useClimbing()
   const bananaports = useBananaportAll()
   const shuffleBananas = useShuffleColoredBananas()
+  const DKPortal = usePortalNearDiddy()
 
   if (!inStage.in) {
     return 0
@@ -28,7 +29,7 @@ export const useDkMedalInLogic = (): number => {
   if (climbing) {
     bananas += 15 //Bunches on the trees in front of Funky's, behind the Barrel Cannon, Diddy's cage
   }
-  if (climbing || bananaports) {
+  if (climbing || bananaports || DKPortal) {
     bananas += 16 //six singles surrounding the mount-ehn and a balloon in front of Snide's
   }
   if (vine && climbing) {
@@ -68,6 +69,7 @@ export const useDkMedalOutLogic = (): number => {
   const climbing = useClimbing()
   const bananaports = useBananaportAll()
   const shuffleBananas = useShuffleColoredBananas()
+  const DKPortal = usePortalNearDiddy()
 
   if (!inStage.out) {
     return 0
@@ -83,7 +85,7 @@ export const useDkMedalOutLogic = (): number => {
   if (climbing) {
     bananas += 15 //Bunches on the trees in front of Funky's, behind the Barrel Cannon, Diddy's cage
   }
-  if (climbing || bananaports) {
+  if (climbing || bananaports || DKPortal) {
     bananas += 16 //six singles surrounding the mount-ehn and a balloon in front of Snide's
   }
   if (vine && climbing) {
