@@ -50821,7 +50821,7 @@ const koshaHead = "" + new URL("kosha-DktGkC11.png", import.meta.url).href;
 const kasplatIcon = "" + new URL("kasplat-C3MHLT8N.png", import.meta.url).href;
 const dkPortalIcon = "" + new URL("dk-portal-DhmhLo9q.png", import.meta.url).href;
 const LZRIcon = "" + new URL("butwherewasthekasplat-D62HdKcb.png", import.meta.url).href;
-const customStyles$3 = {
+const customStyles$4 = {
   content: {
     backgroundColor: "#002040",
     color: "#ffffff"
@@ -50843,7 +50843,7 @@ const GeneratorSettings = () => {
         isOpen,
         onRequestClose: closeModal,
         contentLabel: "Generator Settings",
-        style: customStyles$3,
+        style: customStyles$4,
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Tracker Settings" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
@@ -51764,7 +51764,7 @@ const GeneratorSettings = () => {
     )
   ] });
 };
-const customStyles$2 = {
+const customStyles$3 = {
   content: {
     backgroundColor: "#400020",
     color: "#ffffff"
@@ -51786,7 +51786,7 @@ const ShuffledShops = () => {
         isOpen,
         onRequestClose: closeModal,
         contentLabel: "Shop Shuffler",
-        style: customStyles$2,
+        style: customStyles$3,
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Shop Shuffler" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "pool", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -52856,6 +52856,34 @@ const ShuffledShops = () => {
     )
   ] });
 };
+const customStyles$2 = {
+  content: {
+    backgroundColor: "#404000",
+    color: "#ffffff"
+  }
+};
+const SlamShuffler = () => {
+  const [isOpen, setOpen] = reactExports.useState(false);
+  const openModal = () => setOpen(true);
+  const closeModal = () => setOpen(false);
+  const slamShuffler = useDonkStore(useShallow((state) => state.settings.progressiveSlams)) ? "" : "slam-shuffler";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `${slamShuffler}`, onClick: openModal, title: "Click to open the Progressive Slam Shuffler.", children: "⚙️" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Modal,
+      {
+        isOpen,
+        onRequestClose: closeModal,
+        contentLabel: "Progressive Slam Settings",
+        style: customStyles$2,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Progressive Slam Shuffler" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "pool", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming whenever I play a seed where I messed with the Simian Slam levels. ^^" }) })
+        ] })
+      }
+    )
+  ] });
+};
 const customStyles$1 = {
   content: {
     backgroundColor: "#200040",
@@ -53051,6 +53079,7 @@ const RuntimeSettings = () => {
   const shopShuffler = useDonkStore(useShallow((state) => state.settings.shuffleShops)) ? "" : "shop-shuffler";
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? "" : "portal-shuffler";
   const lzrShuffler = useDonkStore(useShallow((state) => state.settings.shuffleLoadingZones)) ? "" : "lzr-shuffler";
+  const slamShuffler = useDonkStore(useShallow((state) => state.settings.progressiveSlams)) ? "" : "slam-shuffler";
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "runtime-settings", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Settings" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GeneratorSettings, {}),
@@ -53060,6 +53089,8 @@ const RuntimeSettings = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { onClick: handleClick, onContextMenu: handleContextClick, onWheel: handleWheel, children: timeToString(forestTime) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `${shopShuffler}`, children: "Shuffled Shops:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledShops, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `${slamShuffler}`, children: "Progressive Slams:" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(SlamShuffler, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `${portalShuffler}`, children: "Shuffled DK Portals:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDKPortals, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `${lzrShuffler}`, children: "Loading Zone Randomizer:" }),
