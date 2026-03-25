@@ -14090,6 +14090,12 @@ const ShopGenerator = (props) => {
   });
   return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
 };
+const SnideGenerator = (props) => {
+  const children = [...Array(5).keys()].map((x2) => {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(SingleShopCheck, { ...props, baseId: props.baseId + x2 + 1 }, props.baseId + x2);
+  });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
+};
 const ShopPool = ({ children }) => usePoolShops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const Vanilla$7 = () => {
   const kremAscent = useIslesKremAscent();
@@ -14109,7 +14115,7 @@ const Vanilla$7 = () => {
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
-        ShopGenerator,
+        SnideGenerator,
         {
           baseId: 140,
           baseName: "Turn in Isles Blueprint for",
@@ -14132,7 +14138,7 @@ const Vanilla$7 = () => {
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
-        ShopGenerator,
+        SnideGenerator,
         {
           baseId: 140,
           baseName: "Turn in Isles Blueprint for",
@@ -19815,7 +19821,7 @@ const Vanilla$6 = () => {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
+      SnideGenerator,
       {
         baseId: 1140,
         baseName: "Turn in Japes Blueprint for",
@@ -26905,7 +26911,7 @@ const Vanilla$5 = () => {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
+      SnideGenerator,
       {
         baseId: 2140,
         baseName: "Turn in Aztec Blueprint for",
@@ -28818,7 +28824,7 @@ const Vanilla$4 = () => {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
+      SnideGenerator,
       {
         baseId: 3140,
         baseName: "Turn in Factory Blueprint for",
@@ -32191,7 +32197,7 @@ const Vanilla$3 = () => {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
+      SnideGenerator,
       {
         baseId: 4140,
         baseName: "Turn in Galleon Blueprint for",
@@ -38974,7 +38980,7 @@ const Vanilla$2 = () => {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
+      SnideGenerator,
       {
         baseId: 5140,
         baseName: "Turn in Forest Blueprint for",
@@ -41295,7 +41301,7 @@ const ShopLocations$1 = () => {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
+      SnideGenerator,
       {
         baseId: 6140,
         baseName: "Turn in Caves Blueprint for",
@@ -47820,7 +47826,7 @@ const Vanilla = () => {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ShopGenerator,
+      SnideGenerator,
       {
         baseId: 7140,
         baseName: "Turn in Castle Blueprint for",
