@@ -18104,7 +18104,7 @@ const useLankyCagedGb = () => {
   const DKPortal = usePortalNearDiddy();
   const hasOStand = useStand();
   return {
-    in: rambi.in && lanky && canSlam && (hasClimbing || hasBananaports),
+    in: rambi.in && lanky && canSlam && (hasClimbing || hasBananaports || DKPortal),
     out: rambi.out && lanky && canSlam && (DKPortal || hasOStand)
   };
 };
