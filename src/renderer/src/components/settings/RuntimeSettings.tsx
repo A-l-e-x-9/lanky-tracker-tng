@@ -65,6 +65,7 @@ const RuntimeSettings: React.FC = () => {
   const shopShuffler = useDonkStore(useShallow((state) => state.settings.shuffleShops)) ? '' : 'shop-shuffler'
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? '' : 'portal-shuffler'
   const lzrShuffler = useDonkStore(useShallow((state) => state.settings.shuffleLoadingZones)) ? '' : 'lzr-shuffler'
+  const slamShuffler = useDonkStore(useShallow((state) => state.settings.progressiveSlams)) ? '' : 'slam-shuffler'
 
   return (
     <section className="runtime-settings">
@@ -81,6 +82,8 @@ const RuntimeSettings: React.FC = () => {
         </span>
         <p className={`${shopShuffler}`}>Shuffled Shops:</p>
         <ShuffledShops />
+        <p className={`${slamShuffler}`}>Progressive Slams:</p>
+        <SlamShuffler />
         <p className={`${portalShuffler}`}>Shuffled DK Portals:</p>
         <ShuffledDKPortals />
         <p className={`${lzrShuffler}`}>Loading Zone Randomizer:</p>
