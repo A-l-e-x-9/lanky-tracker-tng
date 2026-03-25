@@ -214,9 +214,11 @@ export const useChunkyCagedGb = (): LogicBool => {
   const rambi = useJapesRambi()
   const climbing = useClimbing()
   const hasBananaports = useBananaportAll()
+  const DKPortal = usePortalNearDiddy()
+  const hasOStand = useStand()
   return {
-    in: rambi.in && boulderTech && canSlam && (climbing || hasBananaports),
-    out: rambi.out && boulderTech && canSlam
+    in: rambi.in && boulderTech && canSlam && (climbing || hasBananaports || DKPortal),
+    out: rambi.out && boulderTech && canSlam && hasOStand
   }
 }
 
