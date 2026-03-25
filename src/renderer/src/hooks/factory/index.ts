@@ -47,6 +47,12 @@ export const usePlayFactory = (): LogicBool => {
   }
 }
 
+/*Alex addition: shuffled DK Portals*/
+//Is the DK Portal in the R&D area?
+export const useRAndDPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledFactoryPortals.portalInRAndD))
+/*end shuffled DK Portals*/
+
 /**
  * Can we slam down switches in Frantic Factory?
  * @todo Handle both options of the progressive slam setting.
@@ -64,9 +70,10 @@ export const useFactoryTesting = (): LogicBool => {
   const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]))
   const hasClimbing = useClimbing()
   const hasBananaport = useBananaportAll()
+  const RAndDPortal = useRAndDPortal()
   return {
-    in: inStage.in && (((removeBarriers.factoryTesting || slam) && hasClimbing) || hasBananaport),
-    out: inStage.out && (((removeBarriers.factoryTesting || slam) && hasClimbing) || hasBananaport)
+    in: inStage.in && (((removeBarriers.factoryTesting || slam) && hasClimbing) || hasBananaport || RAndDPortal),
+    out: inStage.out && (((removeBarriers.factoryTesting || slam) && hasClimbing) || hasBananaport || RAndDPortal)
   }
 }
 
@@ -81,7 +88,7 @@ export const useFactoryHut = (): LogicBool => {
   const tiny = useTiny()
   return {
     in: testing.in,
-    out: (inStage.in || inStage.out) && (diddy || tiny)
+    out: inStage.out && (diddy || tiny)
   }
 }
 
@@ -115,6 +122,19 @@ export const useFactoryProductionTop = (): LogicBool => {
     out: (factoryOn.out && climbing) || (inStage.out && warpAll)
   }
 }
+
+/*Alex addition: And now, we come to the very thing that pushed me to finally implement shuffled DK Portals after months of opposition: if shuffled DK Portals are on, and we get a start at the bottom floor (Prod Room/Storage), can we climb up the hatch to reach the vanilla level start? You'd be surprised how often the answer is "no", and how often I get stuck here with no Climbing or pre-activated Bananaports! =_=;
+export const useFoyerFromStorage = (): LogicBool => {
+  const inStage = usePlayFactory()
+  const startAtBottom = useStorageDKPortal()
+  const climbing = useClimbing()
+  const warpAll = useBananaportAll()
+  return {
+    in: inStage.in && startAtBottom && (climbing || warpAll),
+    out: inStage.out && startAtBottom && (climbing || warpAll)
+  }
+}
+*/
 
 export const useChunkyKaijuGb = (): LogicBool => {
   const testing = useFactoryTesting()

@@ -72,7 +72,24 @@ const ShuffledDKPortals: React.FC = () => {
             />
             </>
             <h3>Frantic Factory</h3>
-            <p className="full-grid">Coming Soon™.</p>
+            <>
+            <p>Vanilla/any location not listed</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do."
+                storeKey="vanilla"
+                prefix="shuffledFactoryPortals"
+                updateItem={setFactoryPortal}
+            />
+            <p>The R&D Room</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in the R&D Room or the two hatches leading in/out of it."
+                storeKey="portalInRAndD"
+                prefix="shuffledFactoryPortals"
+                updateItem={setFactoryPortal}
+            />
+            </>
             <h3>Gloomy Galleon</h3>
             <p className="full-grid">Coming Soon™.</p>
             <h3>Fungi Forest</h3>
