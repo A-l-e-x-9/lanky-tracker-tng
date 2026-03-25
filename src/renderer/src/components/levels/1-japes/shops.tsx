@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
-import ShopGenerator from '@renderer/components/pools/ShopGenerator'
+import ShopGenerator, { SnideGenerator } from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { useJapesKongGates, usePlayJapes, usePortalNearDiddy } from '@renderer/hooks/japes'
 import { useBananaportAll } from '@renderer/hooks/settings'
@@ -38,7 +38,7 @@ const Vanilla: React.FC = () => {
         inLogic={(funkyCranky ? kongGates.in : playJapes.in && (climbing || bananaport || DKPortal)) && hasFunky}
         outLogic={(funkyCranky ? kongGates.out : playJapes.out) && hasFunky}
       />
-      <ShopGenerator
+      <SnideGenerator
         baseId={1140}
         baseName="Turn in Japes Blueprint for"
         level="Jungle Japes"

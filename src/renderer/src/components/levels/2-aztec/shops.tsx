@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
-import ShopGenerator from '@renderer/components/pools/ShopGenerator'
+import ShopGenerator, { SnideGenerator } from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { useAztecBack, useAztecFront } from '@renderer/hooks/aztec'
 import { useCranky, whatAFunky, useCandy, useSnide } from '@renderer/hooks/kongs'
@@ -41,7 +41,7 @@ const Vanilla: React.FC = () => {
         inLogic={hasCandy && ((candyCranky || candyFunky || candySnide) ? aztecBack.in : aztecFront.in)}
         outLogic={hasCandy && ((candyCranky || candyFunky || candySnide) ? aztecBack.out : aztecFront.out)}
       />
-      <ShopGenerator
+      <SnideGenerator
         baseId={2140}
         baseName="Turn in Aztec Blueprint for"
         level="Angry Aztec"

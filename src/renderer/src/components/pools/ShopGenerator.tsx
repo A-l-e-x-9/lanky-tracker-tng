@@ -84,4 +84,12 @@ const ShopGenerator: React.FC<ShopGeneratorProps> = (props) => {
   return <>{children}</>
 }
 
+export const SnideGenerator: React.FC<ShopGeneratorProps> = (props) => {
+  const children: JSX.Element[] = [...Array(5).keys()].map((x) => {
+    return <SingleShopCheck key={props.baseId + x} {...props} baseId={props.baseId + x + 1} />
+  })
+
+  return <>{children}</>
+}
+
 export default ShopGenerator

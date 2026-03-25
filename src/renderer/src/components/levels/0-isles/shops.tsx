@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
-import ShopGenerator from '@renderer/components/pools/ShopGenerator'
+import ShopGenerator, { SnideGenerator } from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { useIslesKremAscent } from '@renderer/hooks/isles'
 import { useCranky, useSnide } from '@renderer/hooks/kongs'
@@ -20,7 +20,7 @@ const Vanilla: React.FC = () => {
       region="K. Rool's Island"
       inLogic={kremAscent && cranky}
     />
-    <ShopGenerator
+    <SnideGenerator
       baseId={140}
       baseName="Turn in Isles Blueprint for"
       level="DK Isles"
@@ -39,7 +39,7 @@ const Vanilla: React.FC = () => {
       region="DK Island"
       inLogic={cranky}
     />
-    <ShopGenerator
+    <SnideGenerator
       baseId={140}
       baseName="Turn in Isles Blueprint for"
       level="DK Isles"

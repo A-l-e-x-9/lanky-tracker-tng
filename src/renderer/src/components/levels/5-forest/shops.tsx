@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
-import ShopGenerator from '@renderer/components/pools/ShopGenerator'
+import ShopGenerator, { SnideGenerator } from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { useForestBean, useForestDay, usePlayForest } from '@renderer/hooks/forest'
 import { useCranky, whatAFunky, useSnide } from '@renderer/hooks/kongs'
@@ -33,7 +33,7 @@ const Vanilla: React.FC = () => {
         inLogic={hasFunky && (funkyCranky ? inStage.in : funkySnide ? day.in : beanstalk.in)}
         outLogic={hasFunky && (funkyCranky ? inStage.out : funkySnide ? day.out : beanstalk.out)}
       />
-      <ShopGenerator
+      <SnideGenerator
         baseId={5140}
         baseName="Turn in Forest Blueprint for"
         level="Fungi Forest"

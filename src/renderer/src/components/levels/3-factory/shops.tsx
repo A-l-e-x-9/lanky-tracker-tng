@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
-import ShopGenerator from '@renderer/components/pools/ShopGenerator'
+import ShopGenerator, { SnideGenerator } from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { useFactoryTesting, usePlayFactory } from '@renderer/hooks/factory'
 import { useCranky, whatAFunky, useCandy, useSnide } from '@renderer/hooks/kongs'
@@ -42,7 +42,7 @@ const Vanilla: React.FC = () => {
         inLogic={hasCandy && ((candyFunky || candySnide) ? testing.in : inStage.in)}
         outLogic={hasCandy && ((candyFunky || candySnide) ? testing.out : inStage.out)}
       />
-      <ShopGenerator
+      <SnideGenerator
         baseId={3140}
         baseName="Turn in Factory Blueprint for"
         level="Frantic Factory"

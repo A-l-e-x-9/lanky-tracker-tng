@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
-import ShopGenerator from '@renderer/components/pools/ShopGenerator'
+import ShopGenerator, { SnideGenerator } from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { usePlayCastle } from '@renderer/hooks/castle'
 import { useCranky, whatAFunky, useCandy, useSnide, useClimbing } from '@renderer/hooks/kongs'
@@ -40,7 +40,7 @@ const Vanilla: React.FC = () => {
         inLogic={hasCandy && (candyInFunkySpot ? inStage.in && hasClimbing : inStage.in)}
         outLogic={hasCandy && inStage.out}
       />
-      <ShopGenerator
+      <SnideGenerator
         baseId={7140}
         baseName="Turn in Castle Blueprint for"
         level="Creepy Castle"

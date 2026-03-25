@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
-import ShopGenerator from '@renderer/components/pools/ShopGenerator'
+import ShopGenerator, { SnideGenerator } from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import {
   useGalleonHighTide,
@@ -49,7 +49,7 @@ const Vanilla: React.FC = () => {
         inLogic={hasCandy && (candyCranky ? inStage.in : candySnide ? lighthouseArea.in && highTide.in : outskirts.in)}
         outLogic={hasCandy && (candyCranky ? inStage.out : candySnide ? lighthouseArea.out : outskirts.out)}
       />
-      <ShopGenerator
+      <SnideGenerator
         baseId={4140}
         baseName="Turn in Galleon Blueprint for"
         level="Gloomy Galleon"

@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
-import ShopGenerator from '@renderer/components/pools/ShopGenerator'
+import ShopGenerator, { SnideGenerator } from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
 import { usePlayCaves, useCanAccessSnide } from '@renderer/hooks/caves'
 import { useCranky, whatAFunky, useCandy, useSnide } from '@renderer/hooks/kongs'
@@ -45,7 +45,7 @@ const ShopLocations: React.FC = () => {
         inLogic={hasCandy && (candyInSnideCave ? inStage.in && snideCave : inStage.in && !angery)}
         outLogic={hasCandy && (candyInSnideCave ? inStage.out && snideCave : (inStage.out || angery))}
       />
-      <ShopGenerator
+      <SnideGenerator
         baseId={6140}
         baseName="Turn in Caves Blueprint for"
         level="Crystal Caves"
