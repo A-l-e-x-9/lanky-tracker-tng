@@ -16,7 +16,7 @@ const ShuffledDKPortals: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
-  const [setJapesPortal, setAztecPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal]))
+  const [setJapesPortal, setAztecPortal, setFactoryPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal]))
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? '' : 'portal-shuffler'
 
   return (
