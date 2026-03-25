@@ -5,6 +5,7 @@ import { BananaportRange } from '@renderer/store/common'
 import GeneratorSettings from './GeneratorSettings'
 import { useForestTime, useGalleonTideStartHigh } from '@renderer/hooks/settings'
 import ShuffledShops from './ShuffledShops'
+import SlamShuffler from './ProgressiveSlams'
 import ShuffledDKPortals from './ShuffledDKPortals'
 import LoadingZoneRandomizer from './LZR'
 
