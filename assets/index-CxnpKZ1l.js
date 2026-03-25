@@ -11123,6 +11123,10 @@ const initialPortal = {
   shuffledAztecPortals: {
     vanilla: true,
     secondHalfPortal: false
+  },
+  shuffledFactoryPortals: {
+    vanilla: true,
+    portalInRAndD: false
   }
 };
 const portalSlice = (set) => {
@@ -11156,6 +11160,22 @@ const portalSlice = (set) => {
           ...state,
           shuffledAztecPortals: {
             ...state.shuffledAztecPortals,
+            ...reset
+          }
+        };
+      });
+    },
+    setFactoryPortal: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledFactoryPortals)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledFactoryPortals: {
+            ...state.shuffledFactoryPortals,
             ...reset
           }
         };
@@ -27181,6 +27201,7 @@ const usePlayFactory = () => {
     out: canEnter.out
   };
 };
+const useRAndDPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.portalInRAndD));
 const useSlamFactory = () => useSlamLevel("Frantic Factory");
 const useFactoryTesting = () => {
   const inStage = usePlayFactory();
@@ -27188,9 +27209,10 @@ const useFactoryTesting = () => {
   const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
   const hasClimbing = useClimbing();
   const hasBananaport = useBananaportAll();
+  const RAndDPortal = useRAndDPortal();
   return {
-    in: inStage.in && ((removeBarriers.factoryTesting || slam) && hasClimbing || hasBananaport),
-    out: inStage.out && ((removeBarriers.factoryTesting || slam) && hasClimbing || hasBananaport)
+    in: inStage.in && ((removeBarriers.factoryTesting || slam) && hasClimbing || hasBananaport || RAndDPortal),
+    out: inStage.out && ((removeBarriers.factoryTesting || slam) && hasClimbing || hasBananaport || RAndDPortal)
   };
 };
 const useFactoryHut = () => {
@@ -27200,7 +27222,7 @@ const useFactoryHut = () => {
   const tiny = useTiny();
   return {
     in: testing.in,
-    out: (inStage.in || inStage.out) && (diddy || tiny)
+    out: inStage.out && (diddy || tiny)
   };
 };
 const useFactoryProductionEnabled = () => {
@@ -52842,7 +52864,7 @@ const ShuffledDKPortals = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
-  const [setJapesPortal, setAztecPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal]));
+  const [setJapesPortal, setAztecPortal, setFactoryPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal]));
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? "" : "portal-shuffler";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `${portalShuffler}`, onClick: openModal, title: "Click to open the DK Portal Shuffler.", children: "⚙️" }),
@@ -52907,7 +52929,30 @@ const ShuffledDKPortals = () => {
               )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Frantic Factory" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla/any location not listed" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
+                  storeKey: "vanilla",
+                  prefix: "shuffledFactoryPortals",
+                  updateItem: setFactoryPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "The R&D Room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the R&D Room or the two hatches leading in/out of it.",
+                  storeKey: "portalInRAndD",
+                  prefix: "shuffledFactoryPortals",
+                  updateItem: setFactoryPortal
+                }
+              )
+            ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Gloomy Galleon" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fungi Forest" }),
