@@ -38224,16 +38224,30 @@ const AnthillBanana = () => {
 };
 const AnthillBean = () => {
   const canDo = useTinyAntGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BeanPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ForestCheck,
-    {
-      id: 5034,
-      name: "THE BEAN (Tree Stump Gauntlet's Second Reward)",
-      region: "Forest Area 4",
-      canGetLogic: canDo.in,
-      canGetBreak: canDo.out
-    }
-  ) }) });
+  const beanWinCon = useBean$1();
+  if (beanWinCon) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(BeanPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5034,
+        name: "THE BEAN (Tree Stump Gauntlet's Second Reward)",
+        region: "Forest Area 4",
+        canGetLogic: canDo.in,
+        canGetBreak: canDo.out
+      }
+    ) });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5034,
+        name: "THE BEAN (Tree Stump Gauntlet's Second Reward)",
+        region: "Forest Area 4",
+        canGetLogic: canDo.in,
+        canGetBreak: canDo.out
+      }
+    ) });
+  }
 };
 const BeanCheck = () => {
   const canDo = useTinyBeanGb();
