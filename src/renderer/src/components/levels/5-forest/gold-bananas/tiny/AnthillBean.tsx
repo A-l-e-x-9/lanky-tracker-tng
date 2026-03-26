@@ -5,8 +5,8 @@ import ForestCheck from '../../check'
 const AnthillBean: React.FC = () => {
 const canDo = useTinyAntGb()
 return (
+<BeanPool>
   <MiscPool>
-  <BeanPool>
     <ForestCheck
       id={5034}
       name="THE BEAN (Tree Stump Gauntlet's Second Reward)"
@@ -14,8 +14,8 @@ return (
       canGetLogic={canDo.in}
       canGetBreak={canDo.out}
     />
-  </BeanPool>
   </MiscPool>
+  </BeanPool>
 )
 }
 
