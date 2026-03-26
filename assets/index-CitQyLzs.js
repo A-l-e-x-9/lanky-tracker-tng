@@ -38224,7 +38224,7 @@ const AnthillBanana = () => {
 };
 const AnthillBean = () => {
   const canDo = useTinyAntGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(BeanPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BeanPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5034,
