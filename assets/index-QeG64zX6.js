@@ -17972,9 +17972,10 @@ const useJapesPaintingOutside = () => {
   const tiny = useTiny();
   const chunky = useChunky();
   const DKPortal = usePortalNearDiddy();
+  const DKPortal2 = useDiddyMinePortal();
   return {
-    in: inStage.in && (stand || (climbing || DKPortal) && twirl),
-    out: (inStage.in || inStage.out) && climbing && (dk2 || tiny || chunky)
+    in: inStage.in && (stand || climbing && twirl),
+    out: inStage.out && (climbing || DKPortal || DKPortal2) && (dk2 || tiny || chunky)
   };
 };
 const useJapesPainting = () => {
@@ -18009,9 +18010,10 @@ const useChunkyCagedGb = () => {
   const climbing = useClimbing();
   const hasBananaports = useBananaportAll();
   const DKPortal = usePortalNearDiddy();
+  const DKPortal2 = useDiddyMinePortal();
   const hasOStand = useStand();
   return {
-    in: rambi.in && boulderTech && canSlam && (climbing || hasBananaports || DKPortal),
+    in: rambi.in && boulderTech && canSlam && (climbing || hasBananaports || DKPortal || DKPortal2),
     out: rambi.out && boulderTech && canSlam && hasOStand
   };
 };
@@ -18088,8 +18090,9 @@ const useDkFreebieGb = () => {
   const hasBananaports = useBananaportAll();
   const hasOStand = useStand();
   const DKPortal = usePortalNearDiddy();
+  const DKPortal2 = useDiddyMinePortal();
   return {
-    in: inStage.in && anyKong && (hasClimbing || hasBananaports || DKPortal),
+    in: inStage.in && anyKong && (hasClimbing || hasBananaports || DKPortal || DKPortal2),
     out: inStage.out && hasOStand
   };
 };
@@ -18153,11 +18156,10 @@ const useLankyCagedGb = () => {
   const canSlam = useSlamJapes();
   const hasClimbing = useClimbing();
   const hasBananaports = useBananaportAll();
-  const DKPortal = usePortalNearDiddy();
   const hasOStand = useStand();
   return {
-    in: rambi.in && lanky && canSlam && (hasClimbing || hasBananaports || DKPortal),
-    out: rambi.out && lanky && canSlam && (DKPortal || hasOStand)
+    in: rambi.in && lanky && canSlam && (hasClimbing || hasBananaports),
+    out: rambi.out && lanky && canSlam && hasOStand
   };
 };
 const useLankyGateGb = () => {
@@ -18235,8 +18237,9 @@ const useArena$4 = () => {
   const hasBananaports = useBananaportAll();
   const hasOStand = useStand();
   const DKPortal = usePortalNearDiddy();
+  const DKPortal2 = useDiddyMinePortal();
   return {
-    in: isBreathing.in && (hasClimbing || hasBananaports || DKPortal),
+    in: isBreathing.in && (hasClimbing || hasBananaports || DKPortal || DKPortal2),
     out: isBreathing.out && hasOStand
   };
 };
@@ -18309,8 +18312,9 @@ const useMtnCrate = () => {
   const hasBananaports = useBananaportAll();
   const hasOStand = useStand();
   const DKPortal = usePortalNearDiddy();
+  const DKPortal2 = useDiddyMinePortal();
   return {
-    in: canEnterLevel.in && (hasClimbing || hasBananaports || DKPortal),
+    in: canEnterLevel.in && (hasClimbing || hasBananaports || DKPortal || DKPortal2),
     out: canEnterLevel.out && hasOStand
   };
 };
