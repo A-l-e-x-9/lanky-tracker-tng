@@ -57,6 +57,12 @@ export const usePlayCastle = (): LogicBool => {
  */
 export const useSlamCastle = (): boolean => useSlamLevel('Creepy Castle')
 
+/*Alex addition: shuffled DK Portals*/
+//Is the DK Portal in the Ballroom?
+export const useBallroomPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal))
+/*end shuffled DK Portals*/
+
 /**
  * Can we enter the Tree in Castle?
  * @returns true if we can enter the Tree in Castle.
@@ -139,10 +145,14 @@ export const useDiddyTopGb = (): LogicBool => {
 }
 
 export const useDiddyRoomGb = (): LogicBool => {
-  const topGb = useDiddyTopGb()
+  const isInLevel = usePlayCastle()
+  const hasDiddy = useDiddy()
+  const canSlam = useSlamCastle()
+  const hasJetbarrel = useRocket()
+  const DKPortal = useBallroomPortal()
   return {
-    in: useSlamCastle() && topGb.in,
-    out: useSlamCastle() && topGb.out
+    in: isInLevel.in && ((hasDiddy && canSlam) || DKPortal) && hasJetbarrel,
+    out: isInLevel.out && ((hasDiddy && canSlam) || DKPortal) && hasJetbarrel
   }
 }
 
@@ -277,9 +287,10 @@ export const useTinyRoomGb = (): LogicBool => {
   const canSlam = useSlamCastle()
   const port = useMonkeyport()
   const mini = useMini()
+  const DKPortal = useBallroomPortal()
   return {
-    in: inStage.in && diddy && canSlam && port && mini,
-    out: inStage.out && diddy && canSlam && port && mini
+    in: inStage.in && ((diddy && canSlam) || DKPortal) && port && mini,
+    out: inStage.out && ((diddy && canSlam) || DKPortal) && port && mini
   }
 }
 

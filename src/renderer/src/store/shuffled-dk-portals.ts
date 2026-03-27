@@ -17,6 +17,10 @@ export const initialPortal: PortalState = {
   shuffledCavesPortals: {
     vanilla: true,
     bigRockPortal: false
+  },
+  shuffledCastlePortals: {
+    vanilla: true,
+    ballroomPortal: false
   }
 }
 
@@ -111,6 +115,29 @@ const portalSlice: StateCreator<AllSlice, [], [], PortalSlice> = (set) => {
           ...state,
           shuffledCavesPortals: {
             ...state.shuffledCavesPortals,
+            [id]: false
+          }
+        }
+      })
+    },
+    setCastlePortal: (id): void => {
+      set((state) => {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.shuffledCastlePortals)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
+          ...state,
+          shuffledCastlePortals: {
+            ...state.shuffledCastlePortals,
+            ...reset
+          }
+        }
+        return {
+          ...state,
+          shuffledCastlePortals: {
+            ...state.shuffledCastlePortals,
             [id]: false
           }
         }

@@ -1169,12 +1169,17 @@ interface cavesPortals {
   vanilla: boolean
   bigRockPortal: boolean
 }
+interface castlePortals {
+  vanilla: boolean
+  ballroomPortal: boolean
+}
 
 export interface PortalState {
   shuffledJapesPortals: japesPortals
   shuffledAztecPortals: aztecPortals
   shuffledFactoryPortals: factoryPortals
   shuffledCavesPortals: cavesPortals
+  shuffledCastlePortals: castlePortals
 }
 
 interface PortalActions {
@@ -1182,6 +1187,7 @@ interface PortalActions {
   setAztecPortal: (id: string, val: boolean) => void
   setFactoryPortal: (id: string, val: boolean) => void
   setCavesPortal: (id: string, val: boolean) => void
+  setCastlePortal: (id: string, val: boolean) => void
 }
 
 export type PortalSlice = PortalState & PortalActions

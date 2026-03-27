@@ -16,7 +16,7 @@ const ShuffledDKPortals: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
-  const [setJapesPortal, setAztecPortal, setFactoryPortal, setCavesPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setCavesPortal]))
+  const [setJapesPortal, setAztecPortal, setFactoryPortal, setCavesPortal, setCastlePortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setCavesPortal, state.setCastlePortal]))
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? '' : 'portal-shuffler'
 
   return (
@@ -114,7 +114,24 @@ const ShuffledDKPortals: React.FC = () => {
             />
             </>
             <h3>Creepy Castle</h3>
-            <p className="full-grid">Coming Soon™.</p>
+            <>
+            <p>Vanilla/any location not listed</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do."
+                storeKey="vanilla"
+                prefix="shuffledCastlePortals"
+                updateItem={setCastlePortal}
+            />
+            <p>The Ballroom</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in Diddy's ballroom."
+                storeKey="ballroomPortal"
+                prefix="shuffledCastlePortals"
+                updateItem={setCastlePortal}
+            />
+            </>
           </section>
         </section>
       </Modal>
