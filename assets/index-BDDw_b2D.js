@@ -11131,6 +11131,10 @@ const initialPortal = {
   shuffledCavesPortals: {
     vanilla: true,
     bigRockPortal: false
+  },
+  shuffledCastlePortals: {
+    vanilla: true,
+    ballroomPortal: false
   }
 };
 const portalSlice = (set) => {
@@ -11196,6 +11200,22 @@ const portalSlice = (set) => {
           ...state,
           shuffledCavesPortals: {
             ...state.shuffledCavesPortals,
+            ...reset
+          }
+        };
+      });
+    },
+    setCastlePortal: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledCastlePortals)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledCastlePortals: {
+            ...state.shuffledCastlePortals,
             ...reset
           }
         };
@@ -43595,6 +43615,7 @@ const usePlayCastle = () => {
   };
 };
 const useSlamCastle = () => useSlamLevel("Creepy Castle");
+const useBallroomPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal));
 const useCastleTree = () => {
   const inStage = usePlayCastle();
   const blast = useBlast();
@@ -43661,10 +43682,14 @@ const useDiddyTopGb = () => {
   };
 };
 const useDiddyRoomGb = () => {
-  const topGb = useDiddyTopGb();
+  const isInLevel = usePlayCastle();
+  const hasDiddy = useDiddy();
+  const canSlam = useSlamCastle();
+  const hasJetbarrel = useRocket();
+  const DKPortal = useBallroomPortal();
   return {
-    in: useSlamCastle() && topGb.in,
-    out: useSlamCastle() && topGb.out
+    in: isInLevel.in && (hasDiddy && canSlam || DKPortal) && hasJetbarrel,
+    out: isInLevel.out && (hasDiddy && canSlam || DKPortal) && hasJetbarrel
   };
 };
 const useDiddyCryptGb = () => {
@@ -43788,9 +43813,10 @@ const useTinyRoomGb = () => {
   const canSlam = useSlamCastle();
   const port = useMonkeyport();
   const mini = useMini();
+  const DKPortal = useBallroomPortal();
   return {
-    in: inStage.in && diddy && canSlam && port && mini,
-    out: inStage.out && diddy && canSlam && port && mini
+    in: inStage.in && (diddy && canSlam || DKPortal) && port && mini,
+    out: inStage.out && (diddy && canSlam || DKPortal) && port && mini
   };
 };
 const useTinyTrashGb = () => {
@@ -52994,7 +53020,7 @@ const ShuffledDKPortals = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
-  const [setJapesPortal, setAztecPortal, setFactoryPortal, setCavesPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setCavesPortal]));
+  const [setJapesPortal, setAztecPortal, setFactoryPortal, setCavesPortal, setCastlePortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setCavesPortal, state.setCastlePortal]));
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? "" : "portal-shuffler";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `${portalShuffler}`, onClick: openModal, title: "Click to open the DK Portal Shuffler.", children: "⚙️" }),
@@ -53113,7 +53139,30 @@ const ShuffledDKPortals = () => {
               )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Creepy Castle" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla/any location not listed" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
+                  storeKey: "vanilla",
+                  prefix: "shuffledCastlePortals",
+                  updateItem: setCastlePortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "The Ballroom" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Diddy's ballroom.",
+                  storeKey: "ballroomPortal",
+                  prefix: "shuffledCastlePortals",
+                  updateItem: setCastlePortal
+                }
+              )
+            ] })
           ] })
         ] })
       }
