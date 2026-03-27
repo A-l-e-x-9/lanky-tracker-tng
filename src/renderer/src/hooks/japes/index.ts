@@ -276,9 +276,10 @@ export const useDiddyCagedGb = (): LogicBool => {
 export const useDiddyMountainGb = (): LogicBool => {
   const mine = useJapesMine()
   const canSlam = useSlamJapes()
+  const hasPeanuts = usePeanut()
   return {
-    in: mine.in && canSlam,
-    out: mine.out && canSlam
+    in: mine.in && canSlam && hasPeanuts,
+    out: mine.out && canSlam && hasPeanuts
   }
 }
 
