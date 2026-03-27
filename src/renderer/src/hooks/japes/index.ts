@@ -56,7 +56,7 @@ export const useSlamJapes = (): boolean => useSlamLevel('Jungle Japes')
 export const usePortalNearDiddy = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy))
 //Is the DK Portal in Diddy's mine?
-export const usePortalNearDiddy = (): boolean =>
+export const useDiddyMinePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine))
 /*end shuffled DK Portals*/
 
@@ -133,7 +133,7 @@ export const useJapesMine = (): LogicBool => {
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
   const DKPortal = usePortalNearDiddy()
-  const DKPortal2 = usePortalInDiddyMine()
+  const DKPortal2 = useDiddyMinePortal()
   return {
     in: peanut && (hasClimbing || hasBananaports || DKPortal) && canPlay.in,
     out: (peanut || DKPortal2) && canPlay.out //DKPortal2 is logic-breaking because if you don't have Peanuts, you can't get back in
