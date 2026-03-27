@@ -11118,7 +11118,8 @@ const shopSlice = (set) => {
 const initialPortal = {
   shuffledJapesPortals: {
     vanilla: true,
-    portalNearDiddy: false
+    portalNearDiddy: false,
+    portalInDiddyMine: false
   },
   shuffledAztecPortals: {
     vanilla: true,
@@ -17906,6 +17907,7 @@ const usePlayJapes = () => {
 };
 const useSlamJapes = () => useSlamLevel("Jungle Japes");
 const usePortalNearDiddy = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy));
+const useDiddyMinePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine));
 const useJapesKongGates = () => {
   const inStage = usePlayJapes();
   const [barriers, checks] = useDonkStore(
@@ -17942,9 +17944,11 @@ const useJapesMine = () => {
   const hasClimbing = useClimbing();
   const hasBananaports = useBananaportAll();
   const DKPortal = usePortalNearDiddy();
+  const DKPortal2 = useDiddyMinePortal();
   return {
     in: peanut && (hasClimbing || hasBananaports || DKPortal) && canPlay.in,
-    out: peanut && canPlay.out
+    out: (peanut || DKPortal2) && canPlay.out
+    //DKPortal2 is logic-breaking because if you don't have Peanuts, you can't get back in
   };
 };
 const useJapesHive = () => {
@@ -53054,6 +53058,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is at the peak of the Japes Highlands.",
                   storeKey: "portalNearDiddy",
+                  prefix: "shuffledJapesPortals",
+                  updateItem: setJapesPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In Diddy's mine" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is inside Diddy's mine at the peak of the Japes Highlands.",
+                  storeKey: "portalInDiddyMine",
                   prefix: "shuffledJapesPortals",
                   updateItem: setJapesPortal
                 }
