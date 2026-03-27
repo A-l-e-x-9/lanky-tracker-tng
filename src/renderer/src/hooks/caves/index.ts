@@ -505,7 +505,7 @@ export const useOrin = (): LogicBool => {
   const hasBarrels = useBarrel()
   const DKPortal = useBigRockPortal()
   return {
-    in: ((otherStuff.in && (hasPunch || canGetPastIceWalls) || DKPortal) && hasHunky && hasBarrels,
-    out: ((otherStuff.out && (hasPunch || canGetPastIceWalls) || DKPortal) && hasHunky && hasBarrels
+    in: ((otherStuff.in && (hasPunch || canGetPastIceWalls)) || DKPortal) && hasHunky && hasBarrels,
+    out: ((otherStuff.out && (hasPunch || canGetPastIceWalls)) || DKPortal) && hasHunky && hasBarrels
   }
 }
