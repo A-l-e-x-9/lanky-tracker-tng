@@ -51,6 +51,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledJapesPortals"
                 updateItem={setJapesPortal}
             />
+            <p>In Diddy's mine</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is inside Diddy's mine at the peak of the Japes Highlands."
+                storeKey="portalInDiddyMine"
+                prefix="shuffledJapesPortals"
+                updateItem={setJapesPortal}
+            />
             </>
             <h3>Angry Aztec</h3>
             <>

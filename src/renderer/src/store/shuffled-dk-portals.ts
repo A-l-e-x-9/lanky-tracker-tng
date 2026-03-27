@@ -4,7 +4,8 @@ import { AllSlice, PortalSlice, PortalState, donkResetFns } from './common'
 export const initialPortal: PortalState = {
   shuffledJapesPortals: {
     vanilla: true,
-    portalNearDiddy: false
+    portalNearDiddy: false,
+    portalInDiddyMine: false
   },
   shuffledAztecPortals: {
     vanilla: true,
