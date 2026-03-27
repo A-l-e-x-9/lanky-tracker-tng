@@ -11123,6 +11123,7 @@ const initialPortal = {
   },
   shuffledAztecPortals: {
     vanilla: true,
+    firstHalfPortal: true,
     secondHalfPortal: false
   },
   shuffledFactoryPortals: {
@@ -22045,6 +22046,7 @@ const usePlayAztec = () => {
     out: canEnter.out
   };
 };
+const useFirstHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.firstHalfPortal));
 const useSecondHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal));
 const useSlamAztec = () => useSlamLevel("Angry Aztec");
 const useAztecCoconutSwitch = () => useSwitchsanityGun("aztecBlueprint", 0);
@@ -22057,9 +22059,10 @@ const useAztecFront = () => {
   const aztecPlay = usePlayAztec();
   const vine = useVine();
   const twirl = useTwirl();
+  const DKPortal = useFirstHalfPortal();
   return {
-    in: aztecPlay.in && (vine || twirl),
-    out: aztecPlay.in || aztecPlay.out
+    in: aztecPlay.in && (vine || twirl || DKPortal),
+    out: aztecPlay.out
   };
 };
 const useAztecFrontKasplat = () => {
@@ -53088,6 +53091,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
                   storeKey: "vanilla",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Anywhere in the first half of the level" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is anywhere past the two pits of quicksand needing Vines or Ponytail Twirl to get past.",
+                  storeKey: "firstHalfPortal",
                   prefix: "shuffledAztecPortals",
                   updateItem: setAztecPortal
                 }
