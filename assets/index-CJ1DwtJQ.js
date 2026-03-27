@@ -19841,6 +19841,7 @@ const Vanilla$6 = () => {
   const hasFunky = whatAFunky();
   const hasSnide = useSnide();
   const DKPortal = usePortalNearDiddy();
+  const DKPortal2 = useDiddyMinePortal();
   const crankyFunky = useDonkStore(useShallow((state) => state.shuffledJapesCranky.japesCrankyFunky));
   const crankySnide = useDonkStore(useShallow((state) => state.shuffledJapesCranky.japesCrankySnide));
   const funkyCranky = useDonkStore(useShallow((state) => state.shuffledJapesFunky.japesFunkyCranky));
@@ -19853,7 +19854,7 @@ const Vanilla$6 = () => {
         baseName: "Japes Cranky",
         level: "Jungle Japes",
         region: crankyFunky || crankySnide ? "Japes Hillside" : "Stormy Area",
-        inLogic: (crankyFunky || crankySnide ? playJapes.in && (climbing || bananaport || DKPortal) : kongGates.in) && hasCranky,
+        inLogic: (crankyFunky || crankySnide ? playJapes.in && (climbing || bananaport || DKPortal || DKPortal2) : kongGates.in) && hasCranky,
         outLogic: (crankyFunky || crankySnide ? playJapes.out : kongGates.out) && hasCranky
       }
     ),
@@ -19864,7 +19865,7 @@ const Vanilla$6 = () => {
         baseName: "Japes Funky",
         level: "Jungle Japes",
         region: funkyCranky ? "Stormy Area" : "Japes Hillside",
-        inLogic: (funkyCranky ? kongGates.in : playJapes.in && (climbing || bananaport || DKPortal)) && hasFunky,
+        inLogic: (funkyCranky ? kongGates.in : playJapes.in && (climbing || bananaport || DKPortal || DKPortal2)) && hasFunky,
         outLogic: (funkyCranky ? kongGates.out : playJapes.out) && hasFunky
       }
     ),
@@ -19875,7 +19876,7 @@ const Vanilla$6 = () => {
         baseName: "Turn in Japes Blueprint for",
         level: "Jungle Japes",
         region: snideCranky ? "Stormy Area" : "Japes Hillside",
-        inLogic: (snideCranky ? kongGates.in : playJapes.in && (climbing || bananaport || DKPortal)) && hasSnide,
+        inLogic: (snideCranky ? kongGates.in : playJapes.in && (climbing || bananaport || DKPortal || DKPortal2)) && hasSnide,
         outLogic: (snideCranky ? kongGates.out : playJapes.out) && hasSnide
       }
     )
