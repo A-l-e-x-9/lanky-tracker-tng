@@ -135,8 +135,8 @@ export const useJapesMine = (): LogicBool => {
   const DKPortal = usePortalNearDiddy()
   const DKPortal2 = useDiddyMinePortal()
   return {
-    in: peanut && (hasClimbing || hasBananaports || DKPortal) && canPlay.in,
-    out: (peanut || DKPortal2) && canPlay.out //DKPortal2 is logic-breaking because if you don't have Peanuts, you can't get back in
+    in: ((peanut && (hasClimbing || hasBananaports || DKPortal)) || DKPortal2) && canPlay.in,
+    out: ((peanut && (hasClimbing || hasBananaports || DKPortal)) || DKPortal2) && canPlay.out
   }
 }
 
