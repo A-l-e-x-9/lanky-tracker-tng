@@ -70,6 +70,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledAztecPortals"
                 updateItem={setAztecPortal}
             />
+            <p>Anywhere in the first half of the level</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is anywhere past the two pits of quicksand needing Vines or Ponytail Twirl to get past."
+                storeKey="firstHalfPortal"
+                prefix="shuffledAztecPortals"
+                updateItem={setAztecPortal}
+            />
             <p>Anywhere in the second half of the level or the cave leading to it</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}

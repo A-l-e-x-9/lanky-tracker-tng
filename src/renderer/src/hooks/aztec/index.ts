@@ -56,6 +56,9 @@ export const usePlayAztec = (): LogicBool => {
 }
 
 /*Alex addition: shuffled DK Portals*/
+//Is the DK Portal past the two quicksand pits blocking the first half of the level?
+export const useFirstHalfPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledAztecPortals.firstHalfPortal))
 //Is the DK Portal past the gate blocking access to the second half of the level?
 export const useSecondHalfPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal))
@@ -87,9 +90,10 @@ export const useAztecFront = (): LogicBool => {
   const aztecPlay = usePlayAztec()
   const vine = useVine()
   const twirl = useTwirl()
+  const DKPortal = useFirstHalfPortal()
   return {
-    in: aztecPlay.in && (vine || twirl),
-    out: aztecPlay.in || aztecPlay.out
+    in: aztecPlay.in && (vine || twirl || DKPortal),
+    out: aztecPlay.out
   }
 }
 

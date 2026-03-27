@@ -1160,6 +1160,7 @@ interface japesPortals {
 }
 interface aztecPortals {
   vanilla: boolean
+  firstHalfPortal: boolean
   secondHalfPortal: boolean
 }
 interface factoryPortals {
