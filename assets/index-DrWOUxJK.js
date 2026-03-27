@@ -11127,6 +11127,10 @@ const initialPortal = {
   shuffledFactoryPortals: {
     vanilla: true,
     portalInRAndD: false
+  },
+  shuffledCavesPortals: {
+    vanilla: true,
+    bigRockPortal: false
   }
 };
 const portalSlice = (set) => {
@@ -11176,6 +11180,22 @@ const portalSlice = (set) => {
           ...state,
           shuffledFactoryPortals: {
             ...state.shuffledFactoryPortals,
+            ...reset
+          }
+        };
+      });
+    },
+    setCavesPortal: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledCavesPortals)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledCavesPortals: {
+            ...state.shuffledCavesPortals,
             ...reset
           }
         };
@@ -31387,58 +31407,114 @@ const PearlPool = ({ children }) => usePoolPearls() ? /* @__PURE__ */ jsxRuntime
 const BeanPool = ({ children }) => useBean$1() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const TreasureClams = () => {
   const clams = useTinyClams();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(PearlPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4034,
-        name: "Treasure Chest, Center Clam",
-        region: "Treasure Room",
-        canGetLogic: clams.in,
-        canGetBreak: clams.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4035,
-        name: "Treasure Chest, Front Left Clam",
-        region: "Treasure Room",
-        canGetLogic: clams.in,
-        canGetBreak: clams.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4036,
-        name: "Treasure Chest, Back Left Clam",
-        region: "Treasure Room",
-        canGetLogic: clams.in,
-        canGetBreak: clams.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4037,
-        name: "Treasure Chest, Back Right Clam",
-        region: "Treasure Room",
-        canGetLogic: clams.in,
-        canGetBreak: clams.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 4038,
-        name: "Treasure Chest, Front Right Clam",
-        region: "Treasure Room",
-        canGetLogic: clams.in,
-        canGetBreak: clams.out
-      }
-    )
-  ] }) });
+  const pearlWinCon = usePoolPearls();
+  if (pearlWinCon) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(PearlPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GalleonCheck,
+        {
+          id: 4034,
+          name: "Treasure Chest, Center Clam",
+          region: "Treasure Room",
+          canGetLogic: clams.in,
+          canGetBreak: clams.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GalleonCheck,
+        {
+          id: 4035,
+          name: "Treasure Chest, Front Left Clam",
+          region: "Treasure Room",
+          canGetLogic: clams.in,
+          canGetBreak: clams.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GalleonCheck,
+        {
+          id: 4036,
+          name: "Treasure Chest, Back Left Clam",
+          region: "Treasure Room",
+          canGetLogic: clams.in,
+          canGetBreak: clams.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GalleonCheck,
+        {
+          id: 4037,
+          name: "Treasure Chest, Back Right Clam",
+          region: "Treasure Room",
+          canGetLogic: clams.in,
+          canGetBreak: clams.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GalleonCheck,
+        {
+          id: 4038,
+          name: "Treasure Chest, Front Right Clam",
+          region: "Treasure Room",
+          canGetLogic: clams.in,
+          canGetBreak: clams.out
+        }
+      )
+    ] });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(MiscPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GalleonCheck,
+        {
+          id: 4034,
+          name: "Treasure Chest, Center Clam",
+          region: "Treasure Room",
+          canGetLogic: clams.in,
+          canGetBreak: clams.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GalleonCheck,
+        {
+          id: 4035,
+          name: "Treasure Chest, Front Left Clam",
+          region: "Treasure Room",
+          canGetLogic: clams.in,
+          canGetBreak: clams.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GalleonCheck,
+        {
+          id: 4036,
+          name: "Treasure Chest, Back Left Clam",
+          region: "Treasure Room",
+          canGetLogic: clams.in,
+          canGetBreak: clams.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GalleonCheck,
+        {
+          id: 4037,
+          name: "Treasure Chest, Back Right Clam",
+          region: "Treasure Room",
+          canGetLogic: clams.in,
+          canGetBreak: clams.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GalleonCheck,
+        {
+          id: 4038,
+          name: "Treasure Chest, Front Right Clam",
+          region: "Treasure Room",
+          canGetLogic: clams.in,
+          canGetBreak: clams.out
+        }
+      )
+    ] });
+  }
 };
 const MermaidReward = () => {
   const canDo = useTinyMermaidGb();
@@ -39467,6 +39543,7 @@ const usePlayCaves = () => {
   };
 };
 const useSlamCaves = () => useSlamLevel("Crystal Caves");
+const useBigRockPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.bigRockPortal));
 const useCavesIgloo = () => {
   const inStage = usePlayCaves();
   const angery = useAngryCaves();
@@ -39575,8 +39652,9 @@ const useChunkyClearGb = () => {
   const wallsPrePunched = useIceWalls();
   const boulder = useBoulderTech();
   const hunky = useHunky();
+  const DKPortal = useBigRockPortal();
   return {
-    in: inStage.in && !angery && (punch || wallsPrePunched) && boulder && hunky,
+    in: inStage.in && !angery && (punch || wallsPrePunched || DKPortal) && boulder && hunky,
     out: (inStage.out || angery) && (punch || wallsPrePunched) && boulder
   };
 };
@@ -39842,9 +39920,11 @@ const useOrin = () => {
   const canGetPastIceWalls = useIceWalls();
   const hasPunch = usePunch();
   const hasHunky = useHunky();
+  const hasBarrels = useBarrel();
+  const DKPortal = useBigRockPortal();
   return {
-    in: otherStuff.in && (hasPunch || canGetPastIceWalls) && hasHunky,
-    out: otherStuff.out && (hasPunch || canGetPastIceWalls) && hasHunky
+    in: (otherStuff.in && (hasPunch || canGetPastIceWalls) || DKPortal) && hasHunky && hasBarrels,
+    out: (otherStuff.out && (hasPunch || canGetPastIceWalls) || DKPortal) && hasHunky && hasBarrels
   };
 };
 const CavesCheck = (props) => {
@@ -52914,7 +52994,7 @@ const ShuffledDKPortals = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
-  const [setJapesPortal, setAztecPortal, setFactoryPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal]));
+  const [setJapesPortal, setAztecPortal, setFactoryPortal, setCavesPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setCavesPortal]));
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? "" : "portal-shuffler";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `${portalShuffler}`, onClick: openModal, title: "Click to open the DK Portal Shuffler.", children: "⚙️" }),
@@ -53008,7 +53088,30 @@ const ShuffledDKPortals = () => {
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fungi Forest" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Crystal Caves" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla/any location not listed" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
+                  storeKey: "vanilla",
+                  prefix: "shuffledCavesPortals",
+                  updateItem: setCavesPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "The big boulder room near Cranky's" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the big boulder room.",
+                  storeKey: "bigRockPortal",
+                  prefix: "shuffledCavesPortals",
+                  updateItem: setCavesPortal
+                }
+              )
+            ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Creepy Castle" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." })
           ] })
