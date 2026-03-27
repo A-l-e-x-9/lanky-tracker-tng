@@ -170,9 +170,10 @@ export const useJapesPaintingOutside = (): LogicBool => {
   const tiny = useTiny()
   const chunky = useChunky()
   const DKPortal = usePortalNearDiddy()
+  const DKPortal2 = useDiddyMinePortal()
   return {
-    in: inStage.in && (stand || ((climbing || DKPortal) && twirl)),
-    out: (inStage.in || inStage.out) && climbing && (dk || tiny || chunky)
+    in: inStage.in && (stand || (climbing && twirl)),
+    out: inStage.out && (climbing || DKPortal || DKPortal2) && (dk || tiny || chunky)
   }
 }
 
@@ -219,9 +220,10 @@ export const useChunkyCagedGb = (): LogicBool => {
   const climbing = useClimbing()
   const hasBananaports = useBananaportAll()
   const DKPortal = usePortalNearDiddy()
+  const DKPortal2 = useDiddyMinePortal()
   const hasOStand = useStand()
   return {
-    in: rambi.in && boulderTech && canSlam && (climbing || hasBananaports || DKPortal),
+    in: rambi.in && boulderTech && canSlam && (climbing || hasBananaports || DKPortal || DKPortal2),
     out: rambi.out && boulderTech && canSlam && hasOStand
   }
 }
@@ -312,8 +314,9 @@ export const useDkFreebieGb = (): LogicBool => {
   const hasBananaports = useBananaportAll()
   const hasOStand = useStand()
   const DKPortal = usePortalNearDiddy()
+  const DKPortal2 = useDiddyMinePortal()
   return {
-    in: inStage.in && anyKong && (hasClimbing || hasBananaports || DKPortal),
+    in: inStage.in && anyKong && (hasClimbing || hasBananaports || DKPortal || DKPortal2),
     out: inStage.out && hasOStand
   }
 }
@@ -382,11 +385,10 @@ export const useLankyCagedGb = (): LogicBool => {
   const canSlam = useSlamJapes()
   const hasClimbing = useClimbing()
   const hasBananaports = useBananaportAll()
-  const DKPortal = usePortalNearDiddy()
   const hasOStand = useStand()
   return {
-    in: rambi.in && lanky && canSlam && (hasClimbing || hasBananaports || DKPortal),
-    out: rambi.out && lanky && canSlam && (DKPortal || hasOStand)
+    in: rambi.in && lanky && canSlam && (hasClimbing || hasBananaports),
+    out: rambi.out && lanky && canSlam && hasOStand
   }
 }
 
@@ -473,8 +475,9 @@ export const useArena = (): LogicBool => {
   const hasBananaports = useBananaportAll()
   const hasOStand = useStand()
   const DKPortal = usePortalNearDiddy()
+  const DKPortal2 = useDiddyMinePortal()
   return {
-    in: isBreathing.in && (hasClimbing || hasBananaports || DKPortal),
+    in: isBreathing.in && (hasClimbing || hasBananaports || DKPortal || DKPortal2),
     out: isBreathing.out && hasOStand
   }
 }
@@ -557,8 +560,9 @@ export const useMtnCrate = (): LogicBool => {
   const hasBananaports = useBananaportAll()
   const hasOStand = useStand()
   const DKPortal = usePortalNearDiddy()
+  const DKPortal2 = useDiddyMinePortal()
   return {
-    in: canEnterLevel.in && (hasClimbing || hasBananaports || DKPortal),
+    in: canEnterLevel.in && (hasClimbing || hasBananaports || DKPortal || DKPortal2),
     out: canEnterLevel.out && hasOStand
   }
 }
