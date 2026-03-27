@@ -57,6 +57,12 @@ export const usePlayCaves = (): LogicBool => {
  */
 export const useSlamCaves = (): boolean => useSlamLevel('Crystal Caves')
 
+/*Alex addition: shuffled DK Portals*/
+//Is the DK Portal in the big rock room near Cranky's?
+export const useBigRockPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCavesPortals.bigRockPortal))
+/*end shuffled DK Portals*/
+
 /**
  * Can we enter the Igloo in Caves?
  * @returns true if we can enter the Igloo in Caves.
@@ -192,8 +198,9 @@ export const useChunkyClearGb = (): LogicBool => {
   const wallsPrePunched = useIceWalls()
   const boulder = useBoulderTech()
   const hunky = useHunky()
+  const DKPortal = useBigRockPortal()
   return {
-    in: inStage.in && !angery && (punch || wallsPrePunched) && boulder && hunky,
+    in: inStage.in && !angery && (punch || wallsPrePunched || DKPortal) && boulder && hunky,
     out: (inStage.out || angery) && (punch || wallsPrePunched) && boulder
   }
 }
@@ -495,8 +502,10 @@ export const useOrin = (): LogicBool => {
   const canGetPastIceWalls = useIceWalls()
   const hasPunch = usePunch()
   const hasHunky = useHunky()
+  const hasBarrels = useBarrel()
+  const DKPortal = useBigRockPortal()
   return {
-    in: otherStuff.in && (hasPunch || canGetPastIceWalls) && hasHunky,
-    out: otherStuff.out && (hasPunch || canGetPastIceWalls) && hasHunky
+    in: ((otherStuff.in && (hasPunch || canGetPastIceWalls) || DKPortal) && hasHunky && hasBarrels,
+    out: ((otherStuff.out && (hasPunch || canGetPastIceWalls) || DKPortal) && hasHunky && hasBarrels
   }
 }

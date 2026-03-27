@@ -16,7 +16,7 @@ const ShuffledDKPortals: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
-  const [setJapesPortal, setAztecPortal, setFactoryPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal]))
+  const [setJapesPortal, setAztecPortal, setFactoryPortal, setCavesPortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setCavesPortal]))
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? '' : 'portal-shuffler'
 
   return (
@@ -95,7 +95,24 @@ const ShuffledDKPortals: React.FC = () => {
             <h3>Fungi Forest</h3>
             <p className="full-grid">Coming Soon™.</p>
             <h3>Crystal Caves</h3>
-            <p className="full-grid">Coming Soon™.</p>
+            <>
+            <p>Vanilla/any location not listed</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do."
+                storeKey="vanilla"
+                prefix="shuffledCavesPortals"
+                updateItem={setCavesPortal}
+            />
+            <p>The big boulder room near Cranky's</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in the big boulder room."
+                storeKey="bigRockPortal"
+                prefix="shuffledCavesPortals"
+                updateItem={setCavesPortal}
+            />
+            </>
             <h3>Creepy Castle</h3>
             <p className="full-grid">Coming Soon™.</p>
           </section>
