@@ -1188,6 +1188,7 @@ export interface PortalState {
   shuffledJapesPortals: japesPortals
   shuffledAztecPortals: aztecPortals
   shuffledFactoryPortals: factoryPortals
+  shuffledForestPortals: forestPortals
   shuffledCavesPortals: cavesPortals
   shuffledCastlePortals: castlePortals
 }
