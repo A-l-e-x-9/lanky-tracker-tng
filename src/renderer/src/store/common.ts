@@ -1197,6 +1197,7 @@ interface PortalActions {
   setJapesPortal: (id: string, val: boolean) => void
   setAztecPortal: (id: string, val: boolean) => void
   setFactoryPortal: (id: string, val: boolean) => void
+  setForestPortal: (id: string, val: boolean) => void
   setCavesPortal: (id: string, val: boolean) => void
   setCastlePortal: (id: string, val: boolean) => void
 }
