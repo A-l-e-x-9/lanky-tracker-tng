@@ -1168,6 +1168,7 @@ interface aztecPortals {
 interface factoryPortals {
   vanilla: boolean
   portalInRAndD: boolean
+  storagePortal: boolean
 }
 interface cavesPortals {
   vanilla: boolean

@@ -51,6 +51,9 @@ export const usePlayFactory = (): LogicBool => {
 //Is the DK Portal in the R&D area?
 export const useRAndDPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledFactoryPortals.portalInRAndD))
+//Is the DK Portal in Storage or the lowest level of Prod Room?
+export const useStoragePortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledFactoryPortals.storagePortal))
 /*end shuffled DK Portals*/
 
 /**
@@ -123,7 +126,7 @@ export const useFactoryProductionTop = (): LogicBool => {
   }
 }
 
-/*Alex addition: And now, we come to the very thing that pushed me to finally implement shuffled DK Portals after months of opposition: if shuffled DK Portals are on, and we get a start at the bottom floor (Prod Room/Storage), can we climb up the hatch to reach the vanilla level start? You'd be surprised how often the answer is "no", and how often I get stuck here with no Climbing or pre-activated Bananaports! =_=;
+/*Alex addition: And now, we come to the very thing that pushed me to finally implement shuffled DK Portals after months of opposition: if shuffled DK Portals are on, and we get a start at the bottom floor (Prod Room/Storage), can we climb up the hatch to reach the vanilla level start? You'd be surprised how often for me the answer is "no", and how often I get stuck here with no Climbing or pre-activated Bananaports! =_=;*/
 export const useFoyerFromStorage = (): LogicBool => {
   const inStage = usePlayFactory()
   const startAtBottom = useStorageDKPortal()
@@ -134,7 +137,6 @@ export const useFoyerFromStorage = (): LogicBool => {
     out: inStage.out && startAtBottom && (climbing || warpAll)
   }
 }
-*/
 
 export const useChunkyKaijuGb = (): LogicBool => {
   const testing = useFactoryTesting()
