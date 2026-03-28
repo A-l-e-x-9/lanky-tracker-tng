@@ -11119,7 +11119,8 @@ const initialPortal = {
   shuffledJapesPortals: {
     vanilla: true,
     portalNearDiddy: false,
-    portalInDiddyMine: false
+    portalInDiddyMine: false,
+    stormyPortal: false
   },
   shuffledAztecPortals: {
     vanilla: true,
@@ -17909,11 +17910,10 @@ const usePlayJapes = () => {
 const useSlamJapes = () => useSlamLevel("Jungle Japes");
 const usePortalNearDiddy = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy));
 const useDiddyMinePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine));
+const useStormyPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal));
 const useJapesKongGates = () => {
   const inStage = usePlayJapes();
-  const [barriers, checks] = useDonkStore(
-    useShallow((state) => [state.removeBarriers, state.checks])
-  );
+  const [barriers, checks] = useDonkStore(useShallow((state) => [state.removeBarriers, state.checks]));
   return {
     in: inStage.in && (checks[1002] || barriers.japesCoconutGates),
     out: inStage.out && (checks[1002] || barriers.japesCoconutGates)
@@ -17933,10 +17933,11 @@ const useJapesSideArea = () => {
 };
 const useJapesRambi = () => {
   const canPlay = useJapesKongGates();
+  const DKPortal = useStormyPortal();
   const rambiSwitch = useJapesRambiSwitch();
   return {
-    in: rambiSwitch && canPlay.in,
-    out: rambiSwitch && canPlay.out
+    in: rambiSwitch && (canPlay.in || DKPortal),
+    out: rambiSwitch && (canPlay.out || DKPortal)
   };
 };
 const useJapesMine = () => {
@@ -18173,11 +18174,12 @@ const useLankyGateGb = () => {
 };
 const useLankySlopeGb = () => {
   const tunnel = useJapesKongGates();
+  const DKPortal = useStormyPortal();
   const stand = useStand();
   const anyKong = useAnyKong();
   return {
-    in: tunnel.in && stand,
-    out: tunnel.out && anyKong
+    in: (tunnel.in || DKPortal) && stand,
+    out: (tunnel.out || DKPortal) && anyKong
   };
 };
 const useLankyPaintingGb = () => {
@@ -18304,9 +18306,16 @@ const useDkKasplat = () => {
     out: gate.out
   };
 };
-const useDiddyKasplat = () => useDkKasplat();
-const useLankyKasplat = () => useDkKasplat();
 const useTinyKasplat = () => useDkKasplat();
+const useDiddyKasplat = () => {
+  const gate = useGateKasplat();
+  const DKPortal = useStormyPortal();
+  return {
+    in: gate.in || DKPortal,
+    out: gate.out || DKPortal
+  };
+};
+const useLankyKasplat = () => useDiddyKasplat();
 const useMtnCrate = () => {
   const canEnterLevel = usePlayJapes();
   const hasClimbing = useClimbing();
@@ -53077,6 +53086,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is inside Diddy's mine at the peak of the Japes Highlands.",
                   storeKey: "portalInDiddyMine",
+                  prefix: "shuffledJapesPortals",
+                  updateItem: setJapesPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In the Stormy Area" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the Stormy Zone or the cave leading to it.",
+                  storeKey: "stormyPortal",
                   prefix: "shuffledJapesPortals",
                   updateItem: setJapesPortal
                 }
