@@ -11130,7 +11130,13 @@ const initialPortal = {
   },
   shuffledFactoryPortals: {
     vanilla: true,
-    portalInRAndD: false
+    portalInRAndD: false,
+    storagePortal: false
+  },
+  shuffledForestPortals: {
+    vanilla: true,
+    frontMillPortal: false,
+    backMillPortal: false
   },
   shuffledCavesPortals: {
     vanilla: true,
@@ -11188,6 +11194,22 @@ const portalSlice = (set) => {
           ...state,
           shuffledFactoryPortals: {
             ...state.shuffledFactoryPortals,
+            ...reset
+          }
+        };
+      });
+    },
+    setForestPortal: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledForestPortals)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledForestPortals: {
+            ...state.shuffledForestPortals,
             ...reset
           }
         };
@@ -34266,6 +34288,8 @@ const usePlayForest = () => {
   };
 };
 const useSlamForest = () => useSlamLevel("Fungi Forest");
+const useFrontMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.frontMillPortal));
+const useBackMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.backMillPortal));
 const useForestDay = () => {
   const inStage = usePlayForest();
   const anyGun = useAnyGun();
@@ -34313,9 +34337,11 @@ const useForestSpiderBoss = () => {
   const mini = useMini();
   const punch = usePunch();
   const day = useForestDay();
+  const DKPortal1 = useBackMillPortal();
+  const DKPortal2 = useFrontMillPortal();
   return {
-    in: day.in && punch && night.in && mini || dusk.in && punch,
-    out: day.out && punch && night.out && mini || dusk.out && punch
+    in: day.in && punch && night.in && mini || dusk.in && punch || DKPortal1,
+    out: day.out && punch && night.out && mini || dusk.out && punch || DKPortal2 && mini
   };
 };
 const useForestMushroomTop = () => {
@@ -34407,9 +34433,10 @@ const useChunkyMillGb = () => {
   const punch = usePunch();
   const grab = useGrab();
   const triangle = useTriangle();
+  const DKPortal = useBackMillPortal();
   return {
-    in: inStage.in && day.in && boulderTech && punch && triangle && grab,
-    out: (inStage.in || inStage.out) && day.out && boulderTech && punch && triangle
+    in: inStage.in && day.in && boulderTech && (punch || DKPortal) && triangle && grab,
+    out: inStage.out && day.out && boulderTech && (punch || DKPortal) && triangle
   };
 };
 const useDiddyTopGb$1 = () => {
@@ -34435,14 +34462,15 @@ const useDiddyOwlGb = () => {
 };
 const useDiddyCageGb = () => {
   const inStage = usePlayForest();
+  const isNight = useForestNight();
   const hasClimbing = useClimbing();
   const hasSlam = useSlamForest();
   const charge = useCharge();
   const guitar = useGuitar();
   const anyGun = useAnyGun();
   return {
-    in: inStage.in && hasClimbing && hasSlam && charge && guitar && anyGun,
-    out: inStage.out && hasClimbing && hasSlam && charge && guitar && anyGun
+    in: inStage.in && isNight.in && hasClimbing && hasSlam && charge && guitar && anyGun,
+    out: inStage.out && isNight.out && hasClimbing && hasSlam && charge && guitar && anyGun
   };
 };
 const useDiddyRaftersGb = () => {
@@ -34453,7 +34481,7 @@ const useDiddyRaftersGb = () => {
   const highGrab = useHighGrab();
   return {
     in: inStage.in && night.in && spring && guitar,
-    out: (inStage.in || inStage.out) && night.out && (spring || highGrab)
+    out: inStage.out && night.out && highGrab
   };
 };
 const useDkBlastGb$1 = () => {
@@ -34477,9 +34505,10 @@ const useDkMillGb = () => {
   const night = useForestNight();
   const canSlam = useSlamForest();
   const grab = useGrab();
+  const DKPortal = useFrontMillPortal();
   return {
-    in: inStage.in && day.in && night.in && canSlam && grab,
-    out: inStage.out && day.out && night.out && canSlam && grab
+    in: inStage.in && (day.in || DKPortal) && night.in && canSlam && grab,
+    out: inStage.out && (day.out || DKPortal) && night.out && canSlam && grab
   };
 };
 const useForestBarn = () => {
@@ -34490,7 +34519,7 @@ const useForestBarn = () => {
   const strong = useStrong();
   return {
     in: inStage.in && night.in && canSlam && strong,
-    out: (inStage.in || inStage.out) && night.out && dk2 && canSlam
+    out: inStage.out && night.out && dk2 && canSlam
   };
 };
 const useDkBarnGb = () => {
@@ -34513,7 +34542,7 @@ const useLankyMillGb = () => {
   const lanky = useLanky();
   return {
     in: inStage.in && night.in && lanky && canSlam && anyGun && (homing || hardShooting),
-    out: (inStage.in || inStage.out) && night.out && lanky && canSlam && anyGun
+    out: inStage.out && night.out && lanky && canSlam && anyGun
   };
 };
 const useLankyMushGb = () => {
@@ -34686,22 +34715,25 @@ const useMushExteriorKasplat = () => {
 };
 const useMillFrontKegs = () => {
   const canEnterMills = useForestDay();
+  const DKPortal = useFrontMillPortal();
   const hasChunky = useChunky();
   const hasBarrels = useBarrel();
   return {
-    in: canEnterMills.in && hasChunky && hasBarrels,
-    out: canEnterMills.out && hasChunky && hasBarrels
+    in: (canEnterMills.in || DKPortal) && hasChunky && hasBarrels,
+    out: (canEnterMills.out || DKPortal) && hasChunky && hasBarrels
   };
 };
 const useMillBackKeg = () => {
   const canEnterMills = useForestDay();
   const hasPrimatePunch = usePunch();
   const hasMiniMonkey = useMini();
+  const DKPortal1 = useFrontMillPortal();
+  const DKPortal2 = useBackMillPortal();
   const hasChunky = useChunky();
   const hasBarrels = useBarrel();
   return {
-    in: canEnterMills.in && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels,
-    out: canEnterMills.out && (hasPrimatePunch || hasMiniMonkey) && hasChunky && hasBarrels
+    in: (DKPortal1 && hasMiniMonkey || canEnterMills.in && (hasPrimatePunch || hasMiniMonkey) || DKPortal2) && hasChunky && hasBarrels,
+    out: (DKPortal1 && hasMiniMonkey || canEnterMills.out && (hasPrimatePunch || hasMiniMonkey) || DKPortal2) && hasChunky && hasBarrels
   };
 };
 const ForestCheck = (props) => {
@@ -53044,7 +53076,7 @@ const ShuffledDKPortals = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
-  const [setJapesPortal, setAztecPortal, setFactoryPortal, setCavesPortal, setCastlePortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setCavesPortal, state.setCastlePortal]));
+  const [setJapesPortal, setAztecPortal, setFactoryPortal, setForestPortal, setCavesPortal, setCastlePortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setForestPortal, state.setCavesPortal, state.setCastlePortal]));
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? "" : "portal-shuffler";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `${portalShuffler}`, onClick: openModal, title: "Click to open the DK Portal Shuffler.", children: "⚙️" }),
@@ -53175,12 +53207,57 @@ const ShuffledDKPortals = () => {
                   prefix: "shuffledFactoryPortals",
                   updateItem: setFactoryPortal
                 }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Storage or lower Prod Room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the lowest level.",
+                  storeKey: "storagePortal",
+                  prefix: "shuffledFactoryPortals",
+                  updateItem: setFactoryPortal
+                }
               )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Gloomy Galleon" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fungi Forest" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla/any location not listed" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
+                  storeKey: "vanilla",
+                  prefix: "shuffledForestPortals",
+                  updateItem: setForestPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Area 1, front mill" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the front mill room.",
+                  storeKey: "frontMillPortal",
+                  prefix: "shuffledForestPortals",
+                  updateItem: setForestPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Area 1, back mill" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the back mill room.",
+                  storeKey: "backMillPortal",
+                  prefix: "shuffledForestPortals",
+                  updateItem: setForestPortal
+                }
+              )
+            ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Crystal Caves" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla/any location not listed" }),
