@@ -71,7 +71,7 @@ export const useLankyMedalOutLogic = (): number => {
   const aztecBack = useAztecBack()
   const llamaTemple = useAztecLlamaTemple()
   const doorTemple = useAztec5DoorTemple()
-  const anyMusic = useAnyMusic()
+  const anyMusic = useFreeLankySwitch()
   const kong = useLanky()
   const gun = useGrape()
   const vine = useVine()
