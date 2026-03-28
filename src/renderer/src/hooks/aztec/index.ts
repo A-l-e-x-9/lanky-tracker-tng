@@ -62,6 +62,9 @@ export const useFirstHalfPortal = (): boolean =>
 //Is the DK Portal past the gate blocking access to the second half of the level?
 export const useSecondHalfPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal))
+//Is the DK Portal inside the Llama Temple?
+export const useLlamaPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal))
 /*end shuffled DK Portals*/
 
 /**
@@ -178,9 +181,10 @@ export const useAztecLlamaTemple = (): LogicBool => {
   const barrier = useDonkStore(useShallow((state) => state.removeBarriers.aztecLlamaTemple))
   const entry = blast || barrier
   const properGun = llama1 || llama2 || llama3
+  const DKPortal = useLlamaPortal()
   return {
-    in: aztecBack.in && entry && properGun,
-    out: aztecBack.out && entry && properGun
+    in: (aztecBack.in && entry && properGun) || DKPortal,
+    out: (aztecBack.out && entry && properGun) || DKPortal
   }
 }
 

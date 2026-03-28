@@ -94,6 +94,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledAztecPortals"
                 updateItem={setAztecPortal}
             />
+            <p>Inside the Llama Temple</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is inside the Llama Temple, except for any area further gated (the Lava Pedestals, Match Game, etc.)."
+                storeKey="llamaPortal"
+                prefix="shuffledAztecPortals"
+                updateItem={setAztecPortal}
+            />
             </>
             <h3>Frantic Factory</h3>
             <>

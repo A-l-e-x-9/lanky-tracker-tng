@@ -10,8 +10,9 @@ export const initialPortal: PortalState = {
   },
   shuffledAztecPortals: {
     vanilla: true,
-    firstHalfPortal: true,
-    secondHalfPortal: false
+    firstHalfPortal: false,
+    secondHalfPortal: false,
+    llamaPortal: false
   },
   shuffledFactoryPortals: {
     vanilla: true,

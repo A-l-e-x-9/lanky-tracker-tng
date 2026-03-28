@@ -1163,6 +1163,7 @@ interface aztecPortals {
   vanilla: boolean
   firstHalfPortal: boolean
   secondHalfPortal: boolean
+  llamaPortal: boolean
 }
 interface factoryPortals {
   vanilla: boolean
