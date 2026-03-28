@@ -129,7 +129,7 @@ export const useFactoryProductionTop = (): LogicBool => {
 /*Alex addition: And now, we come to the very thing that pushed me to finally implement shuffled DK Portals after months of opposition: if shuffled DK Portals are on, and we get a start at the bottom floor (Prod Room/Storage), can we climb up the hatch to reach the vanilla level start? You'd be surprised how often for me the answer is "no", and how often I get stuck here with no Climbing or pre-activated Bananaports! =_=;*/
 export const useFoyerFromStorage = (): LogicBool => {
   const inStage = usePlayFactory()
-  const startAtBottom = useStorageDKPortal()
+  const startAtBottom = useStoragePortal()
   const climbing = useClimbing()
   const warpAll = useBananaportAll()
   return {

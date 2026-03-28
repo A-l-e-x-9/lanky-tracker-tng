@@ -1170,6 +1170,11 @@ interface factoryPortals {
   portalInRAndD: boolean
   storagePortal: boolean
 }
+interface forestPortals {
+  vanilla: boolean
+  frontMillPortal: boolean
+  backMillPortal: boolean
+}
 interface cavesPortals {
   vanilla: boolean
   bigRockPortal: boolean

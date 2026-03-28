@@ -16,7 +16,7 @@ const ShuffledDKPortals: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
-  const [setJapesPortal, setAztecPortal, setFactoryPortal, setCavesPortal, setCastlePortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setCavesPortal, state.setCastlePortal]))
+  const [setJapesPortal, setAztecPortal, setFactoryPortal, setForestPortal, setCavesPortal, setCastlePortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setForestPortal, state.setCavesPortal, state.setCastlePortal]))
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? '' : 'portal-shuffler'
 
   return (
@@ -133,7 +133,32 @@ const ShuffledDKPortals: React.FC = () => {
             <h3>Gloomy Galleon</h3>
             <p className="full-grid">Coming Soon™.</p>
             <h3>Fungi Forest</h3>
-            <p className="full-grid">Coming Soon™.</p>
+            <>
+            <p>Vanilla/any location not listed</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do."
+                storeKey="vanilla"
+                prefix="shuffledForestPortals"
+                updateItem={setForestPortal}
+            />
+            <p>Area 1, front mill</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in the front mill room."
+                storeKey="frontMillPortal"
+                prefix="shuffledForestPortals"
+                updateItem={setForestPortal}
+            />
+            <p>Area 1, back mill</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in the back mill room."
+                storeKey="backMillPortal"
+                prefix="shuffledForestPortals"
+                updateItem={setForestPortal}
+            />
+            </>
             <h3>Crystal Caves</h3>
             <>
             <p>Vanilla/any location not listed</p>
