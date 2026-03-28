@@ -609,7 +609,7 @@ export const useMillBackKeg = (): LogicBool => {
   const hasChunky = useChunky()
   const hasBarrels = useBarrel()
   return {
-    in: ((DKPortal1 && hasMiniMonkey) || ((canEnterMills.in && (hasPrimatePunch || hasMiniMonkey)) || DKPortal2) && hasChunky && hasBarrels,
-    out: ((DKPortal1 && hasMiniMonkey) || ((canEnterMills.out && (hasPrimatePunch || hasMiniMonkey)) || DKPortal2) && hasChunky && hasBarrels
+    in: ((DKPortal1 && hasMiniMonkey) || (canEnterMills.in && (hasPrimatePunch || hasMiniMonkey)) || DKPortal2) && hasChunky && hasBarrels,
+    out: ((DKPortal1 && hasMiniMonkey) || (canEnterMills.out && (hasPrimatePunch || hasMiniMonkey)) || DKPortal2) && hasChunky && hasBarrels
   }
 }
