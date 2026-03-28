@@ -11124,8 +11124,9 @@ const initialPortal = {
   },
   shuffledAztecPortals: {
     vanilla: true,
-    firstHalfPortal: true,
-    secondHalfPortal: false
+    firstHalfPortal: false,
+    secondHalfPortal: false,
+    llamaPortal: false
   },
   shuffledFactoryPortals: {
     vanilla: true,
@@ -22057,6 +22058,7 @@ const usePlayAztec = () => {
 };
 const useFirstHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.firstHalfPortal));
 const useSecondHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal));
+const useLlamaPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal));
 const useSlamAztec = () => useSlamLevel("Angry Aztec");
 const useAztecCoconutSwitch = () => useSwitchsanityGun("aztecBlueprint", 0);
 const useAztecGuitarSwitch = () => useSwitchsanityMusicPad("aztecBack", 1);
@@ -22131,9 +22133,10 @@ const useAztecLlamaTemple = () => {
   const barrier = useDonkStore(useShallow((state) => state.removeBarriers.aztecLlamaTemple));
   const entry = blast || barrier;
   const properGun = llama1 || llama2 || llama3;
+  const DKPortal = useLlamaPortal();
   return {
-    in: aztecBack.in && entry && properGun,
-    out: aztecBack.out && entry && properGun
+    in: aztecBack.in && entry && properGun || DKPortal,
+    out: aztecBack.out && entry && properGun || DKPortal
   };
 };
 const useAztecLlamaLava = () => {
@@ -53133,6 +53136,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is past the gate requiring Guitar to open.",
                   storeKey: "secondHalfPortal",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Inside the Llama Temple" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is inside the Llama Temple, except for any area further gated (the Lava Pedestals, Match Game, etc.).",
+                  storeKey: "llamaPortal",
                   prefix: "shuffledAztecPortals",
                   updateItem: setAztecPortal
                 }
