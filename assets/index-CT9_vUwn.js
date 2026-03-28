@@ -27314,8 +27314,8 @@ const useFactoryProductionTop = () => {
   const climbing = useClimbing();
   const warpAll = useBananaportAll();
   return {
-    in: factoryOn.in && climbing || inStage.in && warpAll,
-    out: factoryOn.out && climbing || inStage.out && warpAll
+    in: inStage.in && factoryOn.in && (climbing || warpAll),
+    out: inStage.out && factoryOn.out && (climbing || warpAll)
   };
 };
 const useChunkyKaijuGb = () => {
