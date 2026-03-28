@@ -58,14 +58,14 @@ export const usePortalNearDiddy = (): boolean =>
 //Is the DK Portal in Diddy's mine?
 export const useDiddyMinePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine))
+//Is the DK Portal in any part of the Stormy Area other than either of Lanky's slopes or the Rambi wall?
+export const useStormyPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal))
 /*end shuffled DK Portals*/
 
 export const useJapesKongGates = (): LogicBool => {
   const inStage = usePlayJapes()
-  const [barriers, checks] = useDonkStore(
-    useShallow((state) => [state.removeBarriers, state.checks])
-  )
-
+  const [barriers, checks] = useDonkStore(useShallow((state) => [state.removeBarriers, state.checks]))
   return {
     in: inStage.in && (checks[1002] || barriers.japesCoconutGates),
     out: inStage.out && (checks[1002] || barriers.japesCoconutGates)
@@ -114,10 +114,11 @@ export const useJapesSideArea = (): LogicBool => {
  */
 export const useJapesRambi = (): LogicBool => {
   const canPlay = useJapesKongGates()
+  const DKPortal = useStormyPortal()
   const rambiSwitch = useJapesRambiSwitch()
   return {
-    in: rambiSwitch && canPlay.in,
-    out: rambiSwitch && canPlay.out
+    in: rambiSwitch && (canPlay.in || DKPortal),
+    out: rambiSwitch && (canPlay.out || DKPortal)
   }
 }
 
@@ -404,11 +405,12 @@ export const useLankyGateGb = (): LogicBool => {
 
 export const useLankySlopeGb = (): LogicBool => {
   const tunnel = useJapesKongGates()
+  const DKPortal = useStormyPortal()
   const stand = useStand()
   const anyKong = useAnyKong()
   return {
-    in: tunnel.in && stand,
-    out: tunnel.out && anyKong
+    in: (tunnel.in || DKPortal) && stand,
+    out: (tunnel.out || DKPortal) && anyKong
   }
 }
 
@@ -551,9 +553,18 @@ export const useDkKasplat = (): LogicBool => {
   }
 }
 
-export const useDiddyKasplat = (): LogicBool => useDkKasplat()
-export const useLankyKasplat = (): LogicBool => useDkKasplat()
 export const useTinyKasplat = (): LogicBool => useDkKasplat()
+
+export const useDiddyKasplat = (): LogicBool => {
+  const gate = useGateKasplat()
+  const DKPortal = useStormyPortal()
+  return {
+    in: gate.in || DKPortal,
+    out: gate.out || DKPortal
+  }
+}
+
+export const useLankyKasplat = (): LogicBool => useDiddyKasplat()
 
 export const useMtnCrate = (): LogicBool => {
   const canEnterLevel = usePlayJapes()

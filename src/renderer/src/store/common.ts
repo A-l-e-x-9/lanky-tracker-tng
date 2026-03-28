@@ -1157,6 +1157,7 @@ interface japesPortals {
   vanilla: boolean
   portalNearDiddy: boolean
   portalInDiddyMine: boolean
+  stormyPortal: boolean
 }
 interface aztecPortals {
   vanilla: boolean
