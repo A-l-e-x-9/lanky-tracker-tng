@@ -24227,7 +24227,7 @@ const useLankyMedalInLogic$5 = () => {
   const aztecBack = useAztecBack();
   const llamaTemple = useAztecLlamaTemple();
   const doorTemple = useAztec5DoorTemple();
-  const anyMusic = useAnyMusic();
+  const anyMusic = useFreeLankySwitch();
   const kong = useLanky();
   const gun = useGrape();
   const vine = useVine();
@@ -24262,7 +24262,7 @@ const useLankyMedalInLogic$5 = () => {
         if (gun && vine) {
           bananas += 5;
         }
-        if (anyMusic && dive.in && gun) {
+        if (anyMusic.in && dive.in && gun) {
           bananas += 20;
         }
       }
@@ -24277,7 +24277,7 @@ const useLankyMedalOutLogic$5 = () => {
   const aztecBack = useAztecBack();
   const llamaTemple = useAztecLlamaTemple();
   const doorTemple = useAztec5DoorTemple();
-  const anyMusic = useAnyMusic();
+  const anyMusic = useFreeLankySwitch();
   const kong = useLanky();
   const gun = useGrape();
   const vine = useVine();
@@ -24313,7 +24313,7 @@ const useLankyMedalOutLogic$5 = () => {
         if (gun && vine) {
           bananas += 5;
         }
-        if (anyMusic && dive.out && gun) {
+        if (anyMusic.out && dive.out && gun) {
           bananas += 20;
         }
       }
