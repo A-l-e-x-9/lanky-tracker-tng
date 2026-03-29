@@ -129,6 +129,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledFactoryPortals"
                 updateItem={setFactoryPortal}
             />
+            <p>The arcade room</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is near the DK Arcade game."
+                storeKey="arcadePortal"
+                prefix="shuffledFactoryPortals"
+                updateItem={setFactoryPortal}
+            />
             </>
             <h3>Gloomy Galleon</h3>
             <p className="full-grid">Coming Soon™.</p>

@@ -54,6 +54,8 @@ export const useRAndDPortal = (): boolean =>
 //Is the DK Portal in Storage or the lowest level of Prod Room?
 export const useStoragePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledFactoryPortals.storagePortal))
+export const useArcadePortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledFactoryPortals.arcadePortal))
 /*end shuffled DK Portals*/
 
 /**
@@ -129,7 +131,9 @@ export const useFactoryProductionTop = (): LogicBool => {
 /*Alex addition: And now, we come to the very thing that pushed me to finally implement shuffled DK Portals after months of opposition: if shuffled DK Portals are on, and we get a start at the bottom floor (Prod Room/Storage), can we climb up the hatch to reach the vanilla level start? You'd be surprised how often for me the answer is "no", and how often I get stuck here with no Climbing or pre-activated Bananaports! =_=;*/
 export const useFoyerFromStorage = (): LogicBool => {
   const inStage = usePlayFactory()
-  const startAtBottom = useStoragePortal()
+  const storagePortal = useStoragePortal()
+  const arcadePortal = useArcadePortal()
+  const startAtBottom = (storagePortal || arcadePortal)
   const climbing = useClimbing()
   const warpAll = useBananaportAll()
   return {
@@ -155,10 +159,11 @@ export const useChunkyArcadeGb = (): LogicBool => {
   const inStage = usePlayFactory()
   const hasClimbing = useClimbing()
   const hasBananaport = useBananaportAll()
+  const DKPortal = useArcadePortal()
   const punch = usePunch()
   return {
-    in: inStage.in && (hasClimbing || hasBananaport) && punch,
-    out: inStage.out && (hasClimbing || hasBananaport) && punch
+    in: inStage.in && (hasClimbing || hasBananaport || DKPortal) && punch,
+    out: inStage.out && (hasClimbing || hasBananaport || DKPortal) && punch
   }
 }
 
@@ -266,9 +271,10 @@ export const useDkBlastGb = (): LogicBool => {
   const grab = useGrab()
   const hasClimbing = useClimbing()
   const hasBananaport = useBananaportAll()
+  const DKPortal = useArcadePortal()
   return {
-    in: inStage.in && blast && (fastArcade || ((hasClimbing || hasBananaport) && grab)),
-    out: inStage.out && blast && (fastArcade || ((hasClimbing || hasBananaport) && grab))
+    in: inStage.in && blast && (fastArcade || ((hasClimbing || hasBananaport || DKPortal) && grab)),
+    out: inStage.out && blast && (fastArcade || ((hasClimbing || hasBananaport || DKPortal) && grab))
   }
 }
 
@@ -277,9 +283,10 @@ export const useDkCoin = (): LogicBool => {
   const grab = useGrab()
   const climbing = useClimbing()
   const warps = useBananaportAll()
+  const DKPortal = useArcadePortal()
   return {
-    in: blast.in && (climbing || warps) && grab,
-    out: blast.out && (climbing || warps) && grab
+    in: blast.in && (climbing || warps || DKPortal) && grab,
+    out: blast.out && (climbing || warps || DKPortal) && grab
   }
 }
 
@@ -361,9 +368,10 @@ export const useTinyArcadeGb = (): LogicBool => {
   const mini = useMini()
   const climbing = useClimbing()
   const hasBananaport = useBananaportAll()
+  const DKPortal = useArcadePortal()
   return {
-    in: inStage.in && (climbing || hasBananaport) && mini,
-    out: inStage.out && (climbing || hasBananaport) && mini
+    in: inStage.in && (climbing || hasBananaport || DKPortal) && mini,
+    out: inStage.out && (climbing || hasBananaport || DKPortal) && mini
   }
 }
 

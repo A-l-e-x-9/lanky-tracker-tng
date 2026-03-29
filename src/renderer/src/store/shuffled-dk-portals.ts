@@ -17,7 +17,8 @@ export const initialPortal: PortalState = {
   shuffledFactoryPortals: {
     vanilla: true,
     portalInRAndD: false,
-    storagePortal: false
+    storagePortal: false,
+    arcadePortal: false
   },
   shuffledForestPortals: {
     vanilla: true,
