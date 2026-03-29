@@ -11131,7 +11131,8 @@ const initialPortal = {
   shuffledFactoryPortals: {
     vanilla: true,
     portalInRAndD: false,
-    storagePortal: false
+    storagePortal: false,
+    arcadePortal: false
   },
   shuffledForestPortals: {
     vanilla: true,
@@ -27296,6 +27297,7 @@ const usePlayFactory = () => {
   };
 };
 const useRAndDPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.portalInRAndD));
+const useArcadePortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.arcadePortal));
 const useSlamFactory = () => useSlamLevel("Frantic Factory");
 const useFactoryTesting = () => {
   const inStage = usePlayFactory();
@@ -27356,10 +27358,11 @@ const useChunkyArcadeGb = () => {
   const inStage = usePlayFactory();
   const hasClimbing = useClimbing();
   const hasBananaport = useBananaportAll();
+  const DKPortal = useArcadePortal();
   const punch = usePunch();
   return {
-    in: inStage.in && (hasClimbing || hasBananaport) && punch,
-    out: inStage.out && (hasClimbing || hasBananaport) && punch
+    in: inStage.in && (hasClimbing || hasBananaport || DKPortal) && punch,
+    out: inStage.out && (hasClimbing || hasBananaport || DKPortal) && punch
   };
 };
 const useChunkyDarkGb = () => {
@@ -27452,9 +27455,10 @@ const useDkBlastGb$2 = () => {
   const grab = useGrab();
   const hasClimbing = useClimbing();
   const hasBananaport = useBananaportAll();
+  const DKPortal = useArcadePortal();
   return {
-    in: inStage.in && blast && (fastArcade || (hasClimbing || hasBananaport) && grab),
-    out: inStage.out && blast && (fastArcade || (hasClimbing || hasBananaport) && grab)
+    in: inStage.in && blast && (fastArcade || (hasClimbing || hasBananaport || DKPortal) && grab),
+    out: inStage.out && blast && (fastArcade || (hasClimbing || hasBananaport || DKPortal) && grab)
   };
 };
 const useDkCoin = () => {
@@ -27462,9 +27466,10 @@ const useDkCoin = () => {
   const grab = useGrab();
   const climbing = useClimbing();
   const warps = useBananaportAll();
+  const DKPortal = useArcadePortal();
   return {
-    in: blast.in && (climbing || warps) && grab,
-    out: blast.out && (climbing || warps) && grab
+    in: blast.in && (climbing || warps || DKPortal) && grab,
+    out: blast.out && (climbing || warps || DKPortal) && grab
   };
 };
 const useDkProdGb = () => {
@@ -27538,9 +27543,10 @@ const useTinyArcadeGb = () => {
   const mini = useMini();
   const climbing = useClimbing();
   const hasBananaport = useBananaportAll();
+  const DKPortal = useArcadePortal();
   return {
-    in: inStage.in && (climbing || hasBananaport) && mini,
-    out: inStage.out && (climbing || hasBananaport) && mini
+    in: inStage.in && (climbing || hasBananaport || DKPortal) && mini,
+    out: inStage.out && (climbing || hasBananaport || DKPortal) && mini
   };
 };
 const useTinyProductionGb = () => {
@@ -53215,6 +53221,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in the lowest level.",
                   storeKey: "storagePortal",
+                  prefix: "shuffledFactoryPortals",
+                  updateItem: setFactoryPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "The arcade room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is near the DK Arcade game.",
+                  storeKey: "arcadePortal",
                   prefix: "shuffledFactoryPortals",
                   updateItem: setFactoryPortal
                 }
