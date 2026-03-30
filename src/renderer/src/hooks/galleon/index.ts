@@ -56,7 +56,7 @@ export const useSlamGalleon = (): boolean => useSlamLevel('Gloomy Galleon')
 /*Alex addition: shuffled DK Portals*/
 //Is the DK Portal inside Chunky's ship?
 export const useChunkyShipPortal = (): boolean =>
-  useDonkStore(useShallow((state) => state.shuffledGalleonPortals.portalNearDiddy))
+  useDonkStore(useShallow((state) => state.shuffledGalleonPortals.chunkyShipPortal))
 /*end shuffled DK Portals*/
 
 /**
