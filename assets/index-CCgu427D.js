@@ -11380,7 +11380,13 @@ const usePoolKeys = () => useDonkStore(useShallow((state) => state.settings.pool
 const usePoolCrates = () => useDonkStore(useShallow((state) => state.settings.poolCrates));
 const usePoolRainbowCoins = () => useDonkStore(useShallow((state) => state.settings.poolRainbowCoins));
 const usePoolCrowns = () => useDonkStore(useShallow((state) => state.settings.poolCrowns));
-const usePoolBananaMedals = () => useDonkStore(useShallow((state) => state.settings.poolBananaMedals));
+const usePoolBananaMedals = () => {
+  const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals));
+  const medalWinCon = useDonkStore(useShallow((state) => state.winCondition.bananaMedals));
+  const bossWinCon = useDonkStore(useShallow((state) => state.winCondition.bosses));
+  const kRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
+  return medalsInRotation || (medalWinCon || bossWinCon || kRoolsChallenge) && !medalsInRotation;
+};
 const usePoolCompanyCoins = () => useDonkStore(useShallow((state) => state.settings.poolCompanyCoins));
 const useShuffleDirt = () => useDonkStore(useShallow((state) => state.settings.shuffleDirt));
 const useShuffleFairies = () => useDonkStore(useShallow((state) => state.settings.shuffleFairies));
