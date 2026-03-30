@@ -11119,8 +11119,9 @@ const initialPortal = {
   shuffledJapesPortals: {
     vanilla: true,
     portalNearDiddy: false,
+    stormyPortal: false,
     portalInDiddyMine: false,
-    stormyPortal: false
+    portalInChunkyMine: false
   },
   shuffledAztecPortals: {
     vanilla: true,
@@ -17939,8 +17940,9 @@ const usePlayJapes = () => {
 };
 const useSlamJapes = () => useSlamLevel("Jungle Japes");
 const usePortalNearDiddy = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy));
-const useDiddyMinePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine));
 const useStormyPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal));
+const useDiddyMinePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine));
+const useChunkyMinePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInChunkyMine));
 const useJapesKongGates = () => {
   const inStage = usePlayJapes();
   const [barriers, checks] = useDonkStore(useShallow((state) => [state.removeBarriers, state.checks]));
@@ -18021,9 +18023,10 @@ const useJapesUnderground = () => {
   const slam = useSlam();
   const boulderTech = useBoulderTech();
   const inStage = usePlayJapes();
+  const DKPortal = useChunkyMinePortal();
   return {
-    in: inStage.in && boulderTech && slam,
-    out: inStage.out && boulderTech && slam
+    in: inStage.in && (boulderTech && slam || DKPortal),
+    out: inStage.out && (boulderTech && slam || DKPortal)
   };
 };
 const useChunkyBoulderGb = () => {
@@ -53126,6 +53129,17 @@ const ShuffledDKPortals = () => {
                   updateItem: setJapesPortal
                 }
               ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In the Stormy Area" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the Stormy Zone or the cave leading to it.",
+                  storeKey: "stormyPortal",
+                  prefix: "shuffledJapesPortals",
+                  updateItem: setJapesPortal
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In Diddy's mine" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleRadioIcon,
@@ -53137,13 +53151,13 @@ const ShuffledDKPortals = () => {
                   updateItem: setJapesPortal
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In the Stormy Area" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In Chunky's mine" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleRadioIcon,
                 {
                   imgUrl: dkPortalIcon,
-                  title: "The DK Portal is in the Stormy Zone or the cave leading to it.",
-                  storeKey: "stormyPortal",
+                  title: "The DK Portal is in Chunky's mine, blocked by a big X platform in the Lowlands.",
+                  storeKey: "portalInChunkyMine",
                   prefix: "shuffledJapesPortals",
                   updateItem: setJapesPortal
                 }
