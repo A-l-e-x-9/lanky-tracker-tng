@@ -51,6 +51,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledJapesPortals"
                 updateItem={setJapesPortal}
             />
+            <p>In the Stormy Area</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in the Stormy Zone or the cave leading to it."
+                storeKey="stormyPortal"
+                prefix="shuffledJapesPortals"
+                updateItem={setJapesPortal}
+            />
             <p>In Diddy's mine</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}
@@ -59,11 +67,11 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledJapesPortals"
                 updateItem={setJapesPortal}
             />
-            <p>In the Stormy Area</p>
+            <p>In Chunky's mine</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}
-                title="The DK Portal is in the Stormy Zone or the cave leading to it."
-                storeKey="stormyPortal"
+                title="The DK Portal is in Chunky's mine, blocked by a big X platform in the Lowlands."
+                storeKey="portalInChunkyMine"
                 prefix="shuffledJapesPortals"
                 updateItem={setJapesPortal}
             />

@@ -5,8 +5,9 @@ export const initialPortal: PortalState = {
   shuffledJapesPortals: {
     vanilla: true,
     portalNearDiddy: false,
+    stormyPortal: false,
     portalInDiddyMine: false,
-    stormyPortal: false
+    portalInChunkyMine: false
   },
   shuffledAztecPortals: {
     vanilla: true,

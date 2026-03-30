@@ -55,12 +55,15 @@ export const useSlamJapes = (): boolean => useSlamLevel('Jungle Japes')
 //Is the DK Portal near Diddy's vanilla prison?
 export const usePortalNearDiddy = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy))
-//Is the DK Portal in Diddy's mine?
-export const useDiddyMinePortal = (): boolean =>
-  useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine))
 //Is the DK Portal in any part of the Stormy Area other than either of Lanky's slopes or the Rambi wall?
 export const useStormyPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal))
+//Is the DK Portal in Diddy's mine?
+export const useDiddyMinePortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine))
+//Is the DK Portal in Chunky's mine?
+export const useChunkyMinePortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInChunkyMine))
 /*end shuffled DK Portals*/
 
 export const useJapesKongGates = (): LogicBool => {
@@ -199,9 +202,10 @@ export const useJapesUnderground = (): LogicBool => {
   const slam = useSlam()
   const boulderTech = useBoulderTech()
   const inStage = usePlayJapes()
+  const DKPortal = useChunkyMinePortal()
   return {
-    in: inStage.in && boulderTech && slam,
-    out: inStage.out && boulderTech && slam
+    in: inStage.in && ((boulderTech && slam) || DKPortal),
+    out: inStage.out && ((boulderTech && slam) || DKPortal)
   }
 }
 

@@ -1156,8 +1156,9 @@ export type ShopSlice = ShopState & ShopActions
 interface japesPortals {
   vanilla: boolean
   portalNearDiddy: boolean
-  portalInDiddyMine: boolean
   stormyPortal: boolean
+  portalInDiddyMine: boolean
+  portalInChunkyMine: boolean
 }
 interface aztecPortals {
   vanilla: boolean
