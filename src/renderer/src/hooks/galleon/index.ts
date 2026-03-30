@@ -53,6 +53,12 @@ export const usePlayGalleon = (): LogicBool => {
  */
 export const useSlamGalleon = (): boolean => useSlamLevel('Gloomy Galleon')
 
+/*Alex addition: shuffled DK Portals*/
+//Is the DK Portal inside Chunky's ship?
+export const useChunkyShipPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledGalleonPortals.portalNearDiddy))
+/*end shuffled DK Portals*/
+
 /**
  * Can we enter the Lighthouse area in Galleon?
  * @returns true if we can enter the Lighthouse area.
@@ -61,9 +67,12 @@ export const useGalleonLighthouseArea = (): LogicBool => {
   const inStage = usePlayGalleon()
   const target = useSwitchsanityGun('galleonLighthouse', 0)
   const removeBarriers = useDonkStore(useShallow((state) => state.removeBarriers))
+//  const DKPortal1 = useLighthousePortal()
+//  const DKPortal2 = usePortalInLighthouse()
+  const DKPortal3 = useChunkyShipPortal()
   return {
-    in: inStage.in && (target || removeBarriers.galleonLighthouse),
-    out: inStage.out && (target || removeBarriers.galleonLighthouse)
+    in: inStage.in && (target || removeBarriers.galleonLighthouse || DKPortal3),
+    out: inStage.out && (target || removeBarriers.galleonLighthouse || DKPortal3)
   }
 }
 

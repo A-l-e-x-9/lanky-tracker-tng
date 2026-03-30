@@ -1172,6 +1172,10 @@ interface factoryPortals {
   storagePortal: boolean
   arcadePortal: boolean
 }
+interface galleonPortals {
+  vanilla: boolean
+  chunkyShipPortal: boolean
+}
 interface forestPortals {
   vanilla: boolean
   frontMillPortal: boolean
@@ -1190,6 +1194,7 @@ export interface PortalState {
   shuffledJapesPortals: japesPortals
   shuffledAztecPortals: aztecPortals
   shuffledFactoryPortals: factoryPortals
+  shuffledGalleonPortals: galleonPortals
   shuffledForestPortals: forestPortals
   shuffledCavesPortals: cavesPortals
   shuffledCastlePortals: castlePortals
@@ -1199,6 +1204,7 @@ interface PortalActions {
   setJapesPortal: (id: string, val: boolean) => void
   setAztecPortal: (id: string, val: boolean) => void
   setFactoryPortal: (id: string, val: boolean) => void
+  setGalleonPortal: (id: string, val: boolean) => void
   setForestPortal: (id: string, val: boolean) => void
   setCavesPortal: (id: string, val: boolean) => void
   setCastlePortal: (id: string, val: boolean) => void

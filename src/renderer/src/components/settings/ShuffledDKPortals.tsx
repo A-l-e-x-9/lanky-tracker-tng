@@ -16,7 +16,7 @@ const ShuffledDKPortals: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
-  const [setJapesPortal, setAztecPortal, setFactoryPortal, setForestPortal, setCavesPortal, setCastlePortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setForestPortal, state.setCavesPortal, state.setCastlePortal]))
+  const [setJapesPortal, setAztecPortal, setFactoryPortal, setGalleonPortal, setForestPortal, setCavesPortal, setCastlePortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setGalleonPortal, state.setForestPortal, state.setCavesPortal, state.setCastlePortal]))
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? '' : 'portal-shuffler'
 
   return (
@@ -147,7 +147,24 @@ const ShuffledDKPortals: React.FC = () => {
             />
             </>
             <h3>Gloomy Galleon</h3>
-            <p className="full-grid">Coming Soon™.</p>
+            <>
+            <p>Vanilla/any location not listed</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do."
+                storeKey="vanilla"
+                prefix="shuffledGalleonPortals"
+                updateItem={setGalleonPortal}
+            />
+            <p>Inside Chunky's ship</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in the &quot;seasick ship&quot;."
+                storeKey="chunkyShipPortal"
+                prefix="shuffledGalleonPortals"
+                updateItem={setGalleonPortal}
+            />
+            </>
             <h3>Fungi Forest</h3>
             <>
             <p>Vanilla/any location not listed</p>
