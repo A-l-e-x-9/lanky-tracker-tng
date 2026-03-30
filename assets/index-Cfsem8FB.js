@@ -11135,6 +11135,10 @@ const initialPortal = {
     storagePortal: false,
     arcadePortal: false
   },
+  shuffledGalleonPortals: {
+    vanilla: true,
+    chunkyShipPortal: false
+  },
   shuffledForestPortals: {
     vanilla: true,
     frontMillPortal: false,
@@ -11196,6 +11200,22 @@ const portalSlice = (set) => {
           ...state,
           shuffledFactoryPortals: {
             ...state.shuffledFactoryPortals,
+            ...reset
+          }
+        };
+      });
+    },
+    setGalleonPortal: (id2) => {
+      set((state) => {
+        const reset = {};
+        for (const k2 of Object.keys(state.shuffledGalleonPortals)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
+          ...state,
+          shuffledGalleonPortals: {
+            ...state.shuffledGalleonPortals,
             ...reset
           }
         };
@@ -11823,13 +11843,15 @@ const usePlayGalleon = () => {
   };
 };
 const useSlamGalleon = () => useSlamLevel("Gloomy Galleon");
+const useChunkyShipPortal = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.chunkyShipPortal));
 const useGalleonLighthouseArea = () => {
   const inStage = usePlayGalleon();
   const target = useSwitchsanityGun("galleonLighthouse", 0);
   const removeBarriers = useDonkStore(useShallow((state) => state.removeBarriers));
+  const DKPortal3 = useChunkyShipPortal();
   return {
-    in: inStage.in && (target || removeBarriers.galleonLighthouse),
-    out: inStage.out && (target || removeBarriers.galleonLighthouse)
+    in: inStage.in && (target || removeBarriers.galleonLighthouse || DKPortal3),
+    out: inStage.out && (target || removeBarriers.galleonLighthouse || DKPortal3)
   };
 };
 const useGalleonHighTide = () => {
@@ -53091,7 +53113,7 @@ const ShuffledDKPortals = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
-  const [setJapesPortal, setAztecPortal, setFactoryPortal, setForestPortal, setCavesPortal, setCastlePortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setForestPortal, state.setCavesPortal, state.setCastlePortal]));
+  const [setJapesPortal, setAztecPortal, setFactoryPortal, setGalleonPortal, setForestPortal, setCavesPortal, setCastlePortal] = useDonkStore(useShallow((state) => [state.setJapesPortal, state.setAztecPortal, state.setFactoryPortal, state.setGalleonPortal, state.setForestPortal, state.setCavesPortal, state.setCastlePortal]));
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? "" : "portal-shuffler";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `${portalShuffler}`, onClick: openModal, title: "Click to open the DK Portal Shuffler.", children: "⚙️" }),
@@ -53258,7 +53280,30 @@ const ShuffledDKPortals = () => {
               )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Gloomy Galleon" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla/any location not listed" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
+                  storeKey: "vanilla",
+                  prefix: "shuffledGalleonPortals",
+                  updateItem: setGalleonPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Inside Chunky's ship" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: 'The DK Portal is in the "seasick ship".',
+                  storeKey: "chunkyShipPortal",
+                  prefix: "shuffledGalleonPortals",
+                  updateItem: setGalleonPortal
+                }
+              )
+            ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Fungi Forest" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla/any location not listed" }),
