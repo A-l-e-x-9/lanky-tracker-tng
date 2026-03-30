@@ -208,10 +208,18 @@ export const usePoolCrowns = (): boolean =>
 
 /**
  * Are the banana medals in the rando pool?
- * @returns true if the banana medals are in the pool.
+ * @returns true if...
+  * banana medals are in the pool
+  * banana medals are NOT in the pool, but your seed's win condition involves the Banana Medals
+  * banana medals are NOT in the pool, but your seed's win condition involves the bosses; this will be a very crude way of determining if you can get enough Colored Bananas to overcome the Troff 'n' Scoff portals. Intended to be a temporary measure until Alex can properly implement Troff 'n' Scoff checks.
  */
-export const usePoolBananaMedals = (): boolean =>
-  useDonkStore(useShallow((state) => state.settings.poolBananaMedals))
+export const usePoolBananaMedals = (): boolean => {
+  const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals))
+  const medalWinCon = useDonkStore(useShallow((state) => state.winCondition.bananaMedals))
+  const bossWinCon = useDonkStore(useShallow((state) => state.winCondition.bosses))
+  const kRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))
+  return medalsInRotation || ((medalWinCon || bossWinCon || kRoolsChallenge) && !medalsInRotation)
+}
 
 /**
  * Are the company coins in the rando pool?
