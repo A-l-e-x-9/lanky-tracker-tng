@@ -29,7 +29,8 @@ export const initialPortal: PortalState = {
   shuffledForestPortals: {
     vanilla: true,
     frontMillPortal: false,
-    backMillPortal: false
+    backMillPortal: false,
+    area2Portal: false
   },
   shuffledCavesPortals: {
     vanilla: true,

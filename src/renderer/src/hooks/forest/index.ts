@@ -68,6 +68,9 @@ export const useFrontMillPortal = (): boolean =>
 //Is the DK Portal in the back mill room?
 export const useBackMillPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledForestPortals.backMillPortal))
+//Is the DK Portal in Area 2?
+export const useArea2Portal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledForestPortals.area2Portal))
 /*end shuffled DK Portals*/
 
 /**
@@ -202,9 +205,10 @@ export const useForestBean = (): LogicBool => {
   const door2 = useSwitchsanityGun('forestBean2', 4)
   const warpAll = useBananaportAll()
   const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]))
+  const DKPortal = useArea2Portal()
   return {
-    in: inStage.in && (warpAll || removeBarriers.forestBeanstalk || (door1 && door2)),
-    out: inStage.out && (warpAll || removeBarriers.forestBeanstalk || (door1 && door2))
+    in: inStage.in && (warpAll || removeBarriers.forestBeanstalk || (door1 && door2) || DKPortal),
+    out: inStage.out && (warpAll || removeBarriers.forestBeanstalk || (door1 && door2) || DKPortal)
   }
 }
 

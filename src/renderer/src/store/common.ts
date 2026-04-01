@@ -1181,6 +1181,7 @@ interface forestPortals {
   vanilla: boolean
   frontMillPortal: boolean
   backMillPortal: boolean
+  area2Portal: boolean
 }
 interface cavesPortals {
   vanilla: boolean
