@@ -11143,7 +11143,8 @@ const initialPortal = {
   shuffledForestPortals: {
     vanilla: true,
     frontMillPortal: false,
-    backMillPortal: false
+    backMillPortal: false,
+    area2Portal: false
   },
   shuffledCavesPortals: {
     vanilla: true,
@@ -34331,6 +34332,7 @@ const usePlayForest = () => {
 const useSlamForest = () => useSlamLevel("Fungi Forest");
 const useFrontMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.frontMillPortal));
 const useBackMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.backMillPortal));
+const useArea2Portal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.area2Portal));
 const useForestDay = () => {
   const inStage = usePlayForest();
   const anyGun = useAnyGun();
@@ -34421,9 +34423,10 @@ const useForestBean = () => {
   const door2 = useSwitchsanityGun("forestBean2", 4);
   const warpAll = useBananaportAll();
   const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
+  const DKPortal = useArea2Portal();
   return {
-    in: inStage.in && (warpAll || removeBarriers.forestBeanstalk || door1 && door2),
-    out: inStage.out && (warpAll || removeBarriers.forestBeanstalk || door1 && door2)
+    in: inStage.in && (warpAll || removeBarriers.forestBeanstalk || door1 && door2 || DKPortal),
+    out: inStage.out && (warpAll || removeBarriers.forestBeanstalk || door1 && door2 || DKPortal)
   };
 };
 const useForestOwl = () => {
@@ -53350,6 +53353,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in the back mill room.",
                   storeKey: "backMillPortal",
+                  prefix: "shuffledForestPortals",
+                  updateItem: setForestPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Area 2" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is anywhere in the area where The Bean™ is planted.",
+                  storeKey: "area2Portal",
                   prefix: "shuffledForestPortals",
                   updateItem: setForestPortal
                 }
