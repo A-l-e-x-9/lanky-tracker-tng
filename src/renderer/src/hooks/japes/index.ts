@@ -58,6 +58,9 @@ export const usePortalNearDiddy = (): boolean =>
 //Is the DK Portal in any part of the Stormy Area other than either of Lanky's slopes or the Rambi wall?
 export const useStormyPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal))
+//Is the DK Portal in any part of the Hive Area other than inside the Hive itself?
+export const useHiveOutsidePortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledJapesPortals.hiveOutsidePortal))
 //Is the DK Portal in Diddy's mine?
 export const useDiddyMinePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine))
@@ -155,9 +158,10 @@ export const useJapesHive = (): LogicBool => {
   const japesMine = useJapesMine()
   const warpAll = useBananaportAll()
   const [hiveGateOpen] = useDonkStore(useShallow((state) => [state.removeBarriers.japesHiveGate]))
+  const DKPortal = useHiveOutsidePortal()
   return {
-    in: canPlay.in && ((coconutGates.in && (hiveGateOpen || hiveSwitch)) || (japesMine.in && warpAll)),
-    out: canPlay.out && ((coconutGates.out && (hiveGateOpen || hiveSwitch)) || (japesMine.out && warpAll))
+    in: canPlay.in && ((coconutGates.in && (hiveGateOpen || hiveSwitch)) || (japesMine.in && warpAll) || DKPortal),
+    out: canPlay.out && ((coconutGates.out && (hiveGateOpen || hiveSwitch)) || (japesMine.out && warpAll) || DKPortal)
   }
 }
 
@@ -551,9 +555,10 @@ export const useGateKasplat = (): LogicBool => {
 
 export const useDkKasplat = (): LogicBool => {
   const gate = useGateKasplat()
+  const DKPortal = useHiveOutsidePortal()
   return {
-    in: gate.in,
-    out: gate.out
+    in: gate.in || DKPortal,
+    out: gate.out || DKPortal
   }
 }
 

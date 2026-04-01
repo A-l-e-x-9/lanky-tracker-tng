@@ -59,6 +59,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledJapesPortals"
                 updateItem={setJapesPortal}
             />
+            <p>In the Hive Area</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in the Hive Zone, but not in the Hive itself."
+                storeKey="hiveOutsidePortal"
+                prefix="shuffledJapesPortals"
+                updateItem={setJapesPortal}
+            />
             <p>In Diddy's mine</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}

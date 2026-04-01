@@ -6,6 +6,7 @@ export const initialPortal: PortalState = {
     vanilla: true,
     portalNearDiddy: false,
     stormyPortal: false,
+    hiveOutsidePortal: false,
     portalInDiddyMine: false,
     portalInChunkyMine: false
   },
