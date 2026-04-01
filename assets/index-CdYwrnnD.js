@@ -11120,6 +11120,7 @@ const initialPortal = {
     vanilla: true,
     portalNearDiddy: false,
     stormyPortal: false,
+    hiveOutsidePortal: false,
     portalInDiddyMine: false,
     portalInChunkyMine: false
   },
@@ -17963,6 +17964,7 @@ const usePlayJapes = () => {
 const useSlamJapes = () => useSlamLevel("Jungle Japes");
 const usePortalNearDiddy = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy));
 const useStormyPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal));
+const useHiveOutsidePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.hiveOutsidePortal));
 const useDiddyMinePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine));
 const useChunkyMinePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInChunkyMine));
 const useJapesKongGates = () => {
@@ -18013,9 +18015,10 @@ const useJapesHive = () => {
   const japesMine = useJapesMine();
   const warpAll = useBananaportAll();
   const [hiveGateOpen] = useDonkStore(useShallow((state) => [state.removeBarriers.japesHiveGate]));
+  const DKPortal = useHiveOutsidePortal();
   return {
-    in: canPlay.in && (coconutGates.in && (hiveGateOpen || hiveSwitch) || japesMine.in && warpAll),
-    out: canPlay.out && (coconutGates.out && (hiveGateOpen || hiveSwitch) || japesMine.out && warpAll)
+    in: canPlay.in && (coconutGates.in && (hiveGateOpen || hiveSwitch) || japesMine.in && warpAll || DKPortal),
+    out: canPlay.out && (coconutGates.out && (hiveGateOpen || hiveSwitch) || japesMine.out && warpAll || DKPortal)
   };
 };
 const useJapesPaintingOutside = () => {
@@ -18356,9 +18359,10 @@ const useGateKasplat = () => {
 };
 const useDkKasplat = () => {
   const gate = useGateKasplat();
+  const DKPortal = useHiveOutsidePortal();
   return {
-    in: gate.in,
-    out: gate.out
+    in: gate.in || DKPortal,
+    out: gate.out || DKPortal
   };
 };
 const useTinyKasplat = () => useDkKasplat();
@@ -53158,6 +53162,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in the Stormy Zone or the cave leading to it.",
                   storeKey: "stormyPortal",
+                  prefix: "shuffledJapesPortals",
+                  updateItem: setJapesPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In the Hive Area" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the Hive Zone, but not in the Hive itself.",
+                  storeKey: "hiveOutsidePortal",
                   prefix: "shuffledJapesPortals",
                   updateItem: setJapesPortal
                 }
