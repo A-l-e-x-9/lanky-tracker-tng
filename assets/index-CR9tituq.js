@@ -34404,8 +34404,8 @@ const useForestMushroomRoof = () => {
   const rocket = useRocket();
   const tiny = useTiny();
   return {
-    in: inStage.in && canGetToTop.in && stand,
-    out: inStage.out && canGetToTop.out && (rocket || tiny)
+    in: inStage.in && canGetToTop.in && (stand || rocket),
+    out: inStage.out && canGetToTop.out && tiny
   };
 };
 const useForestBeanHalf = () => {
