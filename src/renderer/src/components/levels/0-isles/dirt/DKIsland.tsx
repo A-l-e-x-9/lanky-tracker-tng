@@ -1,3 +1,5 @@
+import IslesCheck from '../check'
+
 const DKIslandDirt: React.FC = () => {
     return (
     <>

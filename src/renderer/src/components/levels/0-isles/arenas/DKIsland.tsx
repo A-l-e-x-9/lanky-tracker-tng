@@ -1,3 +1,5 @@
+import IslesCheck from '../check'
+
 const DKIslandArenas: React.FC = () => {
     return (
     <>
