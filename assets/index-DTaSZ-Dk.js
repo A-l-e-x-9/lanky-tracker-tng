@@ -14982,7 +14982,7 @@ const DKIslandArenas = () => {
   const hasClimbing = useClimbing();
   const bananaportSettings = useBananaport();
   const hasVines = useVine();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -15246,6 +15246,7 @@ const DKIslandArenas = () => {
     )
   ] });
 };
+const CratePool = ({ children }) => usePoolCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const DKIslandCrates = () => {
   const isBreathing = useAnyKong();
   const jetbarrelExists = useIslesRocket();
@@ -15264,7 +15265,7 @@ const DKIslandCrates = () => {
   const hasAGun = useAnyGun();
   const hasDiving = useDive();
   const hasOranges = useOrange();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -15551,7 +15552,7 @@ const DKIslandDirt = () => {
   const canDoIslesDirt5 = hasVines && hasClimbing;
   const hasShockwave = useShockwave();
   const canReachFungiLobby = useIslesFungiIsland();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -15820,7 +15821,7 @@ const DKIslandFairies = () => {
   const canReachAztecLobby = useIslesUpper();
   const hasClimbing = useClimbing();
   const hasCam = useCamera();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -15868,7 +15869,7 @@ const DKIslandKasplats = () => {
   const hasOranges = useOrange();
   const canDoRoofDirt = useIslesCrossFungi();
   const hasAnInstrument = useAnyMusic();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -16527,7 +16528,6 @@ const Shuffled$H = () => {
   ] });
 };
 const ShuffledArenas$8 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$H, {}) : null;
-const CratePool = ({ children }) => usePoolCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const Shuffled$G = () => {
   const isBreathing = useAnyKong();
   const hasDiddy = useDiddy();
