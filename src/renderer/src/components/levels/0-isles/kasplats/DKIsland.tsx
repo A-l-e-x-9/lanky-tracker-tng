@@ -1,8 +1,9 @@
 import IslesCheck from '../check'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import { useAnyKong, useAnyGun } from '@renderer/hooks/kongs'
 
 const DKIslandKasplats: React.FC = () => {
   const isBreathing = useAnyKong()
+  const hasAGun = useAnyGun()
     return (
     <>
       <IslesCheck
