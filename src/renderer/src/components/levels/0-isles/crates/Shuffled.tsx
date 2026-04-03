@@ -1,28 +1,23 @@
 import { useShallow } from 'zustand/react/shallow'
 import CratePool from '@renderer/components/pools/Crates'
-import { useSnideArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, useIslesKremTop, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
-import { useShuffleCrates, useBananaport } from '@renderer/hooks/settings'
-import { useAnyKong, useDiddy, useTiny, useBoulderTech, useClimbing, useTwirl, useDk, useVine, useRocket, useBalloon, useStrong, useAnyGun, useOrange, useDive } from '@renderer/hooks/kongs'
+import { useSnideArena, useIslesFungiIsland, useIslesKremAscent, useIslesKremTop, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
+import { useShuffleCrates } from '@renderer/hooks/settings'
+import { useAnyKong, useDiddy, useTiny, useBoulderTech, useTwirl, useRocket, useBalloon, useStrong } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 import DKIslandCrates from './DKIsland'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()
-const hasDK = useDk()
 const hasDiddy = useDiddy()
 const hasTiny = useTiny()
 const hasBoulderTech = useBoulderTech()
 const isHinaKagiyama = useTwirl()
 const hasJetbarrel = useRocket()
-const hasVines = useVine()
-const hasClimbing = useClimbing()
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena1 = useSnideArena()
 const canDoIslesArena2 = canGetInForestLobby
-const canReachAztecLobby = useIslesUpper()
 const canReachFungiLobby = useIslesFungiIsland()
-const canReachWaterfall = useIslesCrossFungi()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canDoIslesDirt1 = canReachFungiLobby
 const canReachFactoryLobby = useIslesKremAscent()
@@ -33,9 +28,6 @@ const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const hasAGun = useAnyGun()
-const hasOranges = useOrange()
-const hasDiving = useDive()
 const canReachBFI = useCheckBFIInitial()
 const canGetRareBanana = useCheckBananaFairyIsle()
 const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]))
@@ -48,8 +40,6 @@ const canGetInHelmChunky = useCheckChunkyHelm()
 const canGetInHelmDK = useHelmKasplat()
 const hasStrongKong = useStrong()
 const hasBalloon = useBalloon()
-const bananaportState = useBananaport()
-const jetbarrelExists = useIslesRocket()
 return (
     <CratePool>
       <DKIslandCrates />
