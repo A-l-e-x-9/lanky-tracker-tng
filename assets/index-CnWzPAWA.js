@@ -14967,73 +14967,22 @@ const TrainingGroundsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(Rainb
   /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingRear, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(Hoard, {})
 ] });
-const Shuffled$H = () => {
+const DKIslandArenas = () => {
   const isBreathing = useAnyKong();
-  const hasDK = useDk();
+  const jetbarrelExists = useIslesRocket();
+  const canReachFungiLobby = useIslesFungiIsland();
+  const hasJetbarrel = useRocket();
+  const canReachAztecLobby = useIslesUpper();
+  const hasBoulderTech = useBoulderTech();
   const hasDiddy = useDiddy();
   const hasTiny = useTiny();
-  const hasBoulderTech = useBoulderTech();
-  const isHinaKagiyama = useTwirl();
-  const hasJetbarrel = useRocket();
-  const hasVines = useVine();
-  const hasClimbing = useClimbing();
-  const canDoIslesArena1 = useSnideArena();
-  const canDoIslesArena2 = useForestArena();
-  const canReachAztecLobby = useIslesUpper();
-  const canReachFungiLobby = useIslesFungiIsland();
   const canReachWaterfall = useIslesCrossFungi();
-  const canGetInCastleLobby = usePlayLobby("Creepy Castle");
-  const canDoIslesDirt1 = canReachFungiLobby;
-  const canReachFactoryLobby = useIslesKremAscent();
-  const canReachHelmLobby = useIslesKremTop();
-  const canGetInJapesLobby = usePlayLobby("Jungle Japes");
-  const canGetInAztecLobby = usePlayLobby("Angry Aztec");
-  const canGetInFactoryLobby = usePlayLobby("Frantic Factory");
-  const canGetInGalleonLobby = usePlayLobby("Gloomy Galleon");
-  const canGetInForestLobby = usePlayLobby("Fungi Forest");
-  const canGetInCavesLobby = usePlayLobby("Crystal Caves");
-  const canGetInHelmLobby = usePlayLobby("Hideout Helm");
-  const canReachBFI = useCheckBFIInitial();
-  const canGetRareBanana = useCheckBananaFairyIsle();
-  const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]));
-  const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8;
-  const canGetInAztecBack = useAztecLobbyChunky();
-  const canGetInFactoryUpper = useFactoryLobbyUpper();
-  const canGetInCavesKasplat = useCavesKasplat();
-  const canGetInHelmChunky = useCheckChunkyHelm();
-  const canGetInHelmDK = useHelmKasplat();
-  const hasBalloon = useBalloon();
+  const hasDK = useDk();
+  const isHinaKagiyama = useTwirl();
+  const hasClimbing = useClimbing();
   const bananaportSettings = useBananaport();
-  const jetbarrelExists = useIslesRocket();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 1e4,
-        name: "Shuffled Battle Arena: Vanilla Arena 1 (under the rock in Snide's room)",
-        region: "K. Rool's Island",
-        canGetLogic: canDoIslesArena1
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10001,
-        name: "Shuffled Battle Arena: Vanilla Arena 2 (Check of Legends 2)",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: canDoIslesArena2.in,
-        canGetBreak: canDoIslesArena2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10002,
-        name: "Shuffled Battle Arena: In front of the Fungi Lobby entrance",
-        region: "Outer Isles",
-        canGetLogic: isBreathing && canDoIslesDirt1
-      }
-    ),
+  const hasVines = useVine();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -15057,16 +15006,6 @@ const Shuffled$H = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
-        id: 10005,
-        name: "Shuffled Battle Arena: Under Lanky's Castle Lobby barrel",
-        region: "Caves-Helm Lobbies",
-        canGetLogic: canGetInCastleLobby.in && hasBoulderTech && hasBalloon,
-        canGetBreak: canGetInCastleLobby.out && (hasDiddy || hasTiny)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
         id: 10006,
         name: "Shuffled Battle Arena: At the Banana Hoard",
         region: "DK Island",
@@ -15080,33 +15019,6 @@ const Shuffled$H = () => {
         name: "Shuffled Battle Arena: Tunnel next to Cranky",
         region: "DK Island",
         canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10008,
-        name: "Shuffled Battle Arena: Back of K. Lumsy's prison",
-        region: "K. Rool's Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10009,
-        name: "Shuffled Battle Arena: Behind Forest Lobby building",
-        region: "Outer Isles",
-        canGetLogic: isBreathing && canReachFungiLobby
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10010,
-        name: "Shuffled Battle Arena: Somewhere on the Fungi Lobby island",
-        region: "Outer Isles",
-        canGetLogic: isBreathing && canReachFungiLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15192,6 +15104,990 @@ const Shuffled$H = () => {
         region: "DK Island",
         canGetLogic: isBreathing && canReachAztecLobby.in,
         canGetBreak: isBreathing && canReachAztecLobby.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10034,
+        name: "Shuffled Battle Arena: Vanilla Warp 1 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10036,
+        name: "Shuffled Battle Arena: Vanilla Warp 2 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10037,
+        name: "Shuffled Battle Arena: Vanilla Warp 2 at Aztec Lobby",
+        region: "DK Island",
+        canGetLogic: isBreathing && canReachAztecLobby.in,
+        canGetBreak: isBreathing && canReachAztecLobby.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10038,
+        name: "Shuffled Battle Arena: Vanilla Warp 3 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10039,
+        name: "Shuffled Battle Arena: Vanilla Warp 3 at back of DK Isle",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10040,
+        name: "Shuffled Battle Arena: Vanilla Warp 4 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10042,
+        name: "Shuffled Battle Arena: Vanilla Warp 5 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10066,
+        name: "Shuffled Battle Arena: On the mountain next to Cranky's",
+        region: "DK Island",
+        canGetLogic: isBreathing && hasClimbing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10067,
+        name: "Shuffled Battle Arena: On the Treehouse Area's rear hill",
+        region: "DK Island",
+        canGetLogic: isBreathing && hasClimbing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10068,
+        name: "Shuffled Battle Arena: On the Treehouse Area's entrance hill",
+        region: "DK Island",
+        canGetLogic: hasClimbing && isHinaKagiyama,
+        canGetBreak: hasClimbing && hasDK
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10069,
+        name: "Shuffled Battle Arena: On the mountain over the Treehouse Area exit",
+        region: "DK Island",
+        canGetLogic: hasClimbing && isHinaKagiyama,
+        canGetBreak: hasClimbing && hasDK
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10070,
+        name: "Shuffled Battle Arena: In the cave next to Cranky's, behind the vanilla dirt location",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10071,
+        name: "Shuffled Battle Arena: In the back of the Banana Hoard",
+        region: "DK Island",
+        canGetLogic: hasClimbing && hasVines
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10073,
+        name: "Shuffled Battle Arena: In front of the Treehouse's pool",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10074,
+        name: "Shuffled Battle Arena: Inside the Treehouse itself",
+        region: "DK Island",
+        canGetLogic: isBreathing && hasClimbing
+      }
+    )
+  ] });
+};
+const DKIslandCrates = () => {
+  const isBreathing = useAnyKong();
+  const jetbarrelExists = useIslesRocket();
+  const canReachFungiLobby = useIslesFungiIsland();
+  const hasJetbarrel = useRocket();
+  const canReachAztecLobby = useIslesUpper();
+  const hasBoulderTech = useBoulderTech();
+  const hasDiddy = useDiddy();
+  const hasTiny = useTiny();
+  const canReachWaterfall = useIslesCrossFungi();
+  const hasDK = useDk();
+  const isHinaKagiyama = useTwirl();
+  const hasClimbing = useClimbing();
+  const bananaportState = useBananaport();
+  const hasVines = useVine();
+  const hasAGun = useAnyGun();
+  const hasDiving = useDive();
+  const hasOranges = useOrange();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20003,
+        name: "Shuffled Melon Crate: On the Aztec Lobby roof",
+        region: "DK Island",
+        canGetLogic: jetbarrelExists && canReachFungiLobby && hasJetbarrel,
+        canGetBreak: canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny) || canReachWaterfall && (hasDK || isHinaKagiyama)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20004,
+        name: "Shuffled Melon Crate: Under the Caves Lobby entrance",
+        region: "DK Island",
+        canGetLogic: isBreathing && (hasClimbing || bananaportState != 0 || canReachWaterfall.in),
+        canGetBreak: isBreathing && canReachWaterfall.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20006,
+        name: "Shuffled Melon Crate: At the Banana Hoard",
+        region: "DK Island",
+        canGetLogic: hasVines && hasClimbing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20007,
+        name: "Shuffled Melon Crate: Tunnel next to Cranky",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20011,
+        name: "Shuffled Melon Crate: Top of the waterfall",
+        region: "DK Island",
+        canGetLogic: canReachWaterfall.in,
+        canGetBreak: canReachWaterfall.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20012,
+        name: "Shuffled Melon Crate: Under tree on path to Aztec Lobby",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20013,
+        name: "Shuffled Melon Crate: Back of DK Island",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20014,
+        name: "Shuffled Melon Crate: Near the Fungi cannon",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20015,
+        name: "Shuffled Melon Crate: On the Fungi cannon's island",
+        region: "DK Island",
+        canGetLogic: canReachFungiLobby
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20016,
+        name: "Shuffled Melon Crate: Next to the Aztec Lobby Tree",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20017,
+        name: "Shuffled Melon Crate: At the boulders near Caves Lobby",
+        region: "DK Island",
+        canGetLogic: isBreathing && canReachAztecLobby.in,
+        canGetBreak: isBreathing && canReachAztecLobby.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20018,
+        name: "Shuffled Melon Crate: In front of the Aztec Lobby entrance",
+        region: "DK Island",
+        canGetLogic: isBreathing && canReachAztecLobby.in,
+        canGetBreak: isBreathing && canReachAztecLobby.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20019,
+        name: "Shuffled Melon Crate: Behind the Aztec Lobby entrance",
+        region: "DK Island",
+        canGetLogic: isBreathing && canReachAztecLobby.in,
+        canGetBreak: isBreathing && canReachAztecLobby.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20034,
+        name: "Shuffled Melon Crate: Vanilla Warp 1 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20036,
+        name: "Shuffled Melon Crate: Vanilla Warp 2 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20037,
+        name: "Shuffled Melon Crate: Vanilla Warp 2 at Aztec Lobby",
+        region: "DK Island",
+        canGetLogic: isBreathing && canReachAztecLobby.in,
+        canGetBreak: isBreathing && canReachAztecLobby.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20038,
+        name: "Shuffled Melon Crate: Vanilla Warp 3 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20039,
+        name: "Shuffled Melon Crate: Vanilla Warp 3 at back of DK Isle",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20040,
+        name: "Shuffled Melon Crate: Vanilla Warp 4 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20042,
+        name: "Shuffled Melon Crate: Vanilla Warp 5 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20066,
+        name: "Shuffled Melon Crate: On the mountain next to Cranky's",
+        region: "DK Island",
+        canGetLogic: hasClimbing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20067,
+        name: "Shuffled Melon Crate: On the Treehouse Area's rear hill",
+        region: "DK Island",
+        canGetLogic: hasClimbing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20068,
+        name: "Shuffled Melon Crate: On the Treehouse Area's entrance hill",
+        region: "DK Island",
+        canGetLogic: hasClimbing && isHinaKagiyama,
+        canGetBreak: hasClimbing && hasDK
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20069,
+        name: "Shuffled Melon Crate: On the mountain over the Treehouse Area exit",
+        region: "DK Island",
+        canGetLogic: hasClimbing && isHinaKagiyama,
+        canGetBreak: hasClimbing && hasDK
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20070,
+        name: "Shuffled Melon Crate: In the cave next to Cranky's, behind the vanilla dirt location",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20071,
+        name: "Shuffled Melon Crate: In the back of the Banana Hoard",
+        region: "DK Island",
+        canGetLogic: hasClimbing && hasVines
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20072,
+        name: "Shuffled Melon Crate: In the pool next to the Treehouse",
+        region: "DK Island",
+        canGetLogic: hasAGun && hasDiving.in,
+        canGetBreak: hasOranges && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20073,
+        name: "Shuffled Melon Crate: In front of the Treehouse's pool",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 20074,
+        name: "Shuffled Melon Crate: Inside the Treehouse itself",
+        region: "DK Island",
+        canGetLogic: hasClimbing
+      }
+    )
+  ] });
+};
+const DKIslandDirt = () => {
+  const isBreathing = useGeneralDirt$6();
+  const canReachAztecLobby = useIslesUpper();
+  const canReachWaterfall = useIslesCrossFungi();
+  const hasDK = useDk();
+  const isHinaKagiyama = useTwirl();
+  const hasClimbing = useClimbing();
+  const hasVines = useVine();
+  const canDoIslesDirt2 = useAztecDirt();
+  const canDoIslesDirt3 = useUnderCaveDirt();
+  const canDoIslesDirt5 = hasVines && hasClimbing;
+  const hasShockwave = useShockwave();
+  const canReachFungiLobby = useIslesFungiIsland();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30003,
+        name: "Shuffled Dirt Patch: Vanilla Location 2 (on the Aztec Lobby roof)",
+        region: "DK Island",
+        canGetLogic: canDoIslesDirt2.in,
+        canGetBreak: canDoIslesDirt2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30004,
+        name: "Shuffled Dirt Patch: Vanilla Location 3 (under the Caves Lobby entrance)",
+        region: "DK Island",
+        canGetLogic: canDoIslesDirt3.in,
+        canGetBreak: canDoIslesDirt3.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30006,
+        name: "Shuffled Dirt Patch: Vanilla Location 5 (at the Banana Hoard)",
+        region: "DK Island",
+        canGetLogic: isBreathing && canDoIslesDirt5
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30007,
+        name: "Shuffled Dirt Patch: Vanilla Location 6 (tunnel next to Cranky)",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30011,
+        name: "Shuffled Dirt Patch: Top of the waterfall",
+        region: "DK Island",
+        canGetLogic: canReachWaterfall.in && hasShockwave,
+        canGetBreak: canReachWaterfall.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30012,
+        name: "Shuffled Dirt Patch: Under tree on path to Aztec Lobby",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30013,
+        name: "Shuffled Dirt Patch: Back of DK Island",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30014,
+        name: "Shuffled Dirt Patch: Near the Fungi cannon",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30015,
+        name: "Shuffled Dirt Patch: On the Fungi cannon's island",
+        region: "DK Island",
+        canGetLogic: canReachFungiLobby && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30016,
+        name: "Shuffled Dirt Patch: Next to the Aztec Lobby Tree",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30017,
+        name: "Shuffled Dirt Patch: At the boulders near Caves Lobby",
+        region: "DK Island",
+        canGetLogic: canReachAztecLobby.in && hasShockwave,
+        canGetBreak: canReachAztecLobby.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30018,
+        name: "Shuffled Dirt Patch: In front of the Aztec Lobby entrance",
+        region: "DK Island",
+        canGetLogic: canReachAztecLobby.in && hasShockwave,
+        canGetBreak: canReachAztecLobby.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30019,
+        name: "Shuffled Dirt Patch: Behind the Aztec Lobby entrance",
+        region: "DK Island",
+        canGetLogic: canReachAztecLobby.in && hasShockwave,
+        canGetBreak: canReachAztecLobby.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30034,
+        name: "Shuffled Dirt Patch: Vanilla Warp 1 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30036,
+        name: "Shuffled Dirt Patch: Vanilla Warp 2 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30037,
+        name: "Shuffled Dirt Patch: Vanilla Warp 2 at Aztec Lobby",
+        region: "DK Island",
+        canGetLogic: canReachAztecLobby.in && hasShockwave,
+        canGetBreak: canReachAztecLobby.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30038,
+        name: "Shuffled Dirt Patch: Vanilla Warp 3 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30039,
+        name: "Shuffled Dirt Patch: Vanilla Warp 3 at back of DK Isle",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30040,
+        name: "Shuffled Dirt Patch: Vanilla Warp 4 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30042,
+        name: "Shuffled Dirt Patch: Vanilla Warp 5 at DK Isle start",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30066,
+        name: "Shuffled Dirt Patch: On the mountain next to Cranky's",
+        region: "DK Island",
+        canGetLogic: hasClimbing && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30067,
+        name: "Shuffled Dirt Patch: On the Treehouse Area's rear hill",
+        region: "DK Island",
+        canGetLogic: hasClimbing && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30068,
+        name: "Shuffled Dirt Patch: On the Treehouse Area's entrance hill",
+        region: "DK Island",
+        canGetLogic: hasClimbing && isHinaKagiyama && hasShockwave,
+        canGetBreak: hasClimbing && hasDK && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30069,
+        name: "Shuffled Dirt Patch: On the mountain over the Treehouse Area exit",
+        region: "DK Island",
+        canGetLogic: hasClimbing && isHinaKagiyama && hasShockwave,
+        canGetBreak: hasClimbing && hasDK && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30070,
+        name: "Shuffled Dirt Patch: In the cave next to Cranky's, behind the vanilla dirt location",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30071,
+        name: "Shuffled Dirt Patch: In the back of the Banana Hoard",
+        region: "DK Island",
+        canGetLogic: hasClimbing && hasVines && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30073,
+        name: "Shuffled Dirt Patch: In front of the Treehouse's pool",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 30074,
+        name: "Shuffled Dirt Patch: Inside the Treehouse itself",
+        region: "DK Island",
+        canGetLogic: hasClimbing && hasShockwave
+      }
+    )
+  ] });
+};
+const DKIslandFairies = () => {
+  const isBreathing = useGeneralFairy$6();
+  const canReachAztecLobby = useIslesUpper();
+  const hasClimbing = useClimbing();
+  const hasCam = useCamera();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 40004,
+        name: "Shuffled Fairy: Aztec Roof",
+        region: "DK Island",
+        canGetLogic: canReachAztecLobby.in && hasCam,
+        canGetBreak: canReachAztecLobby.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 40015,
+        name: "Shuffled Fairy: At the exit to DK's Treehouse area",
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 40016,
+        name: "Shuffled Fairy: 'Hidden mountain' in between Training Grounds and Cranky's",
+        region: "DK Island",
+        canGetLogic: hasClimbing && hasCam,
+        canGetBreak: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 40017,
+        name: "Shuffled Fairy: Looking out the windows in DK's Treehouse",
+        region: "DK Island",
+        canGetLogic: hasClimbing && hasCam
+      }
+    )
+  ] });
+};
+const DKIslandKasplats = () => {
+  const isBreathing = useAnyKong();
+  const hasAGun = useAnyGun();
+  const hasDiving = useDive();
+  const hasOranges = useOrange();
+  const canDoRoofDirt = useIslesCrossFungi();
+  const hasAnInstrument = useAnyMusic();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50005,
+        name: 'Shuffled Kasplat: The "beaver beach" in front of Japes Lobby',
+        region: "DK Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50016,
+        name: "Shuffled Kasplat: Roof of Aztec Lobby",
+        region: "DK Island",
+        canGetLogic: canDoRoofDirt.in,
+        canGetBreak: canDoRoofDirt.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 50017,
+        name: "Shuffled Kasplat: In the waterfall's pool",
+        region: "DK Island",
+        canGetLogic: hasDiving.in && (hasAGun || hasOranges || hasAnInstrument),
+        canGetBreak: hasDiving.out && (hasAGun || hasOranges || hasAnInstrument)
+      }
+    )
+  ] });
+};
+const IslesRegionChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
+  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
+  const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$7, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$7, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$7, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$7, {})
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingGroundsChecks, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainUpperChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyAirspaceChecks, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DKIslandArenas, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DKIslandCrates, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DKIslandDirt, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DKIslandFairies, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DKIslandKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(OuterIslesChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PrisonChecks, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(KremBaseChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(KremLiftChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SnideRoomChecks, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(KremTopChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyChecks, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmLobbyChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FairyReward, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {})
+    ] })
+  ] });
+};
+const BoulderLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyTrombonePad, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyTrianglePad, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobby, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobby, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobby, {})
+] });
+const WrinklyDoors = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyDK, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyDiddy, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyLanky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyTiny, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyChunky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyDK, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyDiddy, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyLanky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyTiny, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyChunky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyDK, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyDiddy, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyLanky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyTiny, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyChunky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyDK, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyDiddy, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyLanky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyTiny, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyChunky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyDK, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyDiddy, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyLanky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyTiny, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyChunky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyDK, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyDiddy, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyLanky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyTiny, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyChunky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyDK, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyDiddy, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyLanky, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyTiny, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyChunky, {})
+] });
+const Shuffled$H = () => {
+  const isBreathing = useAnyKong();
+  const hasDiddy = useDiddy();
+  const hasTiny = useTiny();
+  const hasBoulderTech = useBoulderTech();
+  const isHinaKagiyama = useTwirl();
+  const hasJetbarrel = useRocket();
+  const canDoIslesArena1 = useSnideArena();
+  const canDoIslesArena2 = useForestArena();
+  const canReachFungiLobby = useIslesFungiIsland();
+  const canGetInCastleLobby = usePlayLobby("Creepy Castle");
+  const canDoIslesDirt1 = canReachFungiLobby;
+  const canReachFactoryLobby = useIslesKremAscent();
+  const canReachHelmLobby = useIslesKremTop();
+  const canGetInJapesLobby = usePlayLobby("Jungle Japes");
+  const canGetInAztecLobby = usePlayLobby("Angry Aztec");
+  const canGetInFactoryLobby = usePlayLobby("Frantic Factory");
+  const canGetInGalleonLobby = usePlayLobby("Gloomy Galleon");
+  const canGetInForestLobby = usePlayLobby("Fungi Forest");
+  const canGetInCavesLobby = usePlayLobby("Crystal Caves");
+  const canGetInHelmLobby = usePlayLobby("Hideout Helm");
+  const canReachBFI = useCheckBFIInitial();
+  const canGetRareBanana = useCheckBananaFairyIsle();
+  const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]));
+  const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8;
+  const canGetInAztecBack = useAztecLobbyChunky();
+  const canGetInFactoryUpper = useFactoryLobbyUpper();
+  const canGetInCavesKasplat = useCavesKasplat();
+  const canGetInHelmChunky = useCheckChunkyHelm();
+  const canGetInHelmDK = useHelmKasplat();
+  const hasBalloon = useBalloon();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DKIslandArenas, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 1e4,
+        name: "Shuffled Battle Arena: Vanilla Arena 1 (under the rock in Snide's room)",
+        region: "K. Rool's Island",
+        canGetLogic: canDoIslesArena1
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10001,
+        name: "Shuffled Battle Arena: Vanilla Arena 2 (Check of Legends 2)",
+        region: "Japes-Forest Lobbies",
+        canGetLogic: canDoIslesArena2.in,
+        canGetBreak: canDoIslesArena2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10002,
+        name: "Shuffled Battle Arena: In front of the Fungi Lobby entrance",
+        region: "Outer Isles",
+        canGetLogic: isBreathing && canDoIslesDirt1
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10005,
+        name: "Shuffled Battle Arena: Under Lanky's Castle Lobby barrel",
+        region: "Caves-Helm Lobbies",
+        canGetLogic: canGetInCastleLobby.in && hasBoulderTech && hasBalloon,
+        canGetBreak: canGetInCastleLobby.out && (hasDiddy || hasTiny)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10008,
+        name: "Shuffled Battle Arena: Back of K. Lumsy's prison",
+        region: "K. Rool's Island",
+        canGetLogic: isBreathing
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10009,
+        name: "Shuffled Battle Arena: Behind Forest Lobby building",
+        region: "Outer Isles",
+        canGetLogic: isBreathing && canReachFungiLobby
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IslesCheck,
+      {
+        id: 10010,
+        name: "Shuffled Battle Arena: Somewhere on the Fungi Lobby island",
+        region: "Outer Isles",
+        canGetLogic: isBreathing && canReachFungiLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15323,64 +16219,9 @@ const Shuffled$H = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
-        id: 10034,
-        name: "Shuffled Battle Arena: Vanilla Warp 1 at DK Isle start",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
         id: 10035,
         name: "Shuffled Battle Arena: Vanilla Warp 1 at K. Lumsy",
         region: "K. Rool's Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10036,
-        name: "Shuffled Battle Arena: Vanilla Warp 2 at DK Isle start",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10037,
-        name: "Shuffled Battle Arena: Vanilla Warp 2 at Aztec Lobby",
-        region: "DK Island",
-        canGetLogic: isBreathing && canReachAztecLobby.in,
-        canGetBreak: isBreathing && canReachAztecLobby.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10038,
-        name: "Shuffled Battle Arena: Vanilla Warp 3 at DK Isle start",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10039,
-        name: "Shuffled Battle Arena: Vanilla Warp 3 at back of DK Isle",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10040,
-        name: "Shuffled Battle Arena: Vanilla Warp 4 at DK Isle start",
-        region: "DK Island",
         canGetLogic: isBreathing
       }
     ),
@@ -15391,15 +16232,6 @@ const Shuffled$H = () => {
         name: "Shuffled Battle Arena: Vanilla Warp 4 at Factory Lobby entrance",
         region: "K. Rool's Island",
         canGetLogic: isBreathing && canReachFactoryLobby
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10042,
-        name: "Shuffled Battle Arena: Vanilla Warp 5 at DK Isle start",
-        region: "DK Island",
-        canGetLogic: isBreathing
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15614,80 +16446,6 @@ const Shuffled$H = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
-        id: 10066,
-        name: "Shuffled Battle Arena: On the mountain next to Cranky's",
-        region: "DK Island",
-        canGetLogic: isBreathing && hasClimbing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10067,
-        name: "Shuffled Battle Arena: On the Treehouse Area's rear hill",
-        region: "DK Island",
-        canGetLogic: isBreathing && hasClimbing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10068,
-        name: "Shuffled Battle Arena: On the Treehouse Area's entrance hill",
-        region: "DK Island",
-        canGetLogic: hasClimbing && isHinaKagiyama,
-        canGetBreak: hasClimbing && hasDK
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10069,
-        name: "Shuffled Battle Arena: On the mountain over the Treehouse Area exit",
-        region: "DK Island",
-        canGetLogic: hasClimbing && isHinaKagiyama,
-        canGetBreak: hasClimbing && hasDK
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10070,
-        name: "Shuffled Battle Arena: In the cave next to Cranky's, behind the vanilla dirt location",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10071,
-        name: "Shuffled Battle Arena: In the back of the Banana Hoard",
-        region: "DK Island",
-        canGetLogic: hasClimbing && hasVines
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10073,
-        name: "Shuffled Battle Arena: In front of the Treehouse's pool",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 10074,
-        name: "Shuffled Battle Arena: Inside the Treehouse itself",
-        region: "DK Island",
-        canGetLogic: isBreathing && hasClimbing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
         id: 10075,
         name: "Shuffled Battle Arena: To the right of the Banana Fairy Queen",
         region: "Outer Isles",
@@ -15772,20 +16530,15 @@ const ShuffledArenas$8 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeE
 const CratePool = ({ children }) => usePoolCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const Shuffled$G = () => {
   const isBreathing = useAnyKong();
-  const hasDK = useDk();
   const hasDiddy = useDiddy();
   const hasTiny = useTiny();
   const hasBoulderTech = useBoulderTech();
   const isHinaKagiyama = useTwirl();
   const hasJetbarrel = useRocket();
-  const hasVines = useVine();
-  const hasClimbing = useClimbing();
   const canGetInForestLobby = usePlayLobby("Fungi Forest");
   const canDoIslesArena1 = useSnideArena();
   const canDoIslesArena2 = canGetInForestLobby;
-  const canReachAztecLobby = useIslesUpper();
   const canReachFungiLobby = useIslesFungiIsland();
-  const canReachWaterfall = useIslesCrossFungi();
   const canGetInCastleLobby = usePlayLobby("Creepy Castle");
   const canDoIslesDirt1 = canReachFungiLobby;
   const canReachFactoryLobby = useIslesKremAscent();
@@ -15796,9 +16549,6 @@ const Shuffled$G = () => {
   const canGetInGalleonLobby = usePlayLobby("Gloomy Galleon");
   const canGetInCavesLobby = usePlayLobby("Crystal Caves");
   const canGetInHelmLobby = usePlayLobby("Hideout Helm");
-  const hasAGun = useAnyGun();
-  const hasOranges = useOrange();
-  const hasDiving = useDive();
   const canReachBFI = useCheckBFIInitial();
   const canGetRareBanana = useCheckBananaFairyIsle();
   const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]));
@@ -15811,9 +16561,8 @@ const Shuffled$G = () => {
   const canGetInHelmDK = useHelmKasplat();
   const hasStrongKong = useStrong();
   const hasBalloon = useBalloon();
-  const bananaportState = useBananaport();
-  const jetbarrelExists = useIslesRocket();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DKIslandCrates, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -15845,49 +16594,11 @@ const Shuffled$G = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
-        id: 20003,
-        name: "Shuffled Melon Crate: On the Aztec Lobby roof",
-        region: "DK Island",
-        canGetLogic: jetbarrelExists && canReachFungiLobby && hasJetbarrel,
-        canGetBreak: canReachAztecLobby.out && hasBoulderTech && (hasDiddy || hasTiny) || canReachWaterfall && (hasDK || isHinaKagiyama)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20004,
-        name: "Shuffled Melon Crate: Under the Caves Lobby entrance",
-        region: "DK Island",
-        canGetLogic: isBreathing && (hasClimbing || bananaportState != 0 || canReachWaterfall.in),
-        canGetBreak: isBreathing && canReachWaterfall.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
         id: 20005,
         name: "Shuffled Melon Crate: Under Lanky's Castle Lobby barrel",
         region: "Caves-Helm Lobbies",
         canGetLogic: canGetInCastleLobby.in && hasBoulderTech && hasBalloon,
         canGetBreak: canGetInCastleLobby.out && (hasDiddy || hasTiny)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20006,
-        name: "Shuffled Melon Crate: At the Banana Hoard",
-        region: "DK Island",
-        canGetLogic: hasVines && hasClimbing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20007,
-        name: "Shuffled Melon Crate: Tunnel next to Cranky",
-        region: "DK Island",
-        canGetLogic: isBreathing
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15915,91 +16626,6 @@ const Shuffled$G = () => {
         name: "Shuffled Melon Crate: Somewhere on the Fungi Lobby island",
         region: "Outer Isles",
         canGetLogic: canReachFungiLobby
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20011,
-        name: "Shuffled Melon Crate: Top of the waterfall",
-        region: "DK Island",
-        canGetLogic: canReachWaterfall.in,
-        canGetBreak: canReachWaterfall.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20012,
-        name: "Shuffled Melon Crate: Under tree on path to Aztec Lobby",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20013,
-        name: "Shuffled Melon Crate: Back of DK Island",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20014,
-        name: "Shuffled Melon Crate: Near the Fungi cannon",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20015,
-        name: "Shuffled Melon Crate: On the Fungi cannon's island",
-        region: "DK Island",
-        canGetLogic: canReachFungiLobby
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20016,
-        name: "Shuffled Melon Crate: Next to the Aztec Lobby Tree",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20017,
-        name: "Shuffled Melon Crate: At the boulders near Caves Lobby",
-        region: "DK Island",
-        canGetLogic: isBreathing && canReachAztecLobby.in,
-        canGetBreak: isBreathing && canReachAztecLobby.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20018,
-        name: "Shuffled Melon Crate: In front of the Aztec Lobby entrance",
-        region: "DK Island",
-        canGetLogic: isBreathing && canReachAztecLobby.in,
-        canGetBreak: isBreathing && canReachAztecLobby.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20019,
-        name: "Shuffled Melon Crate: Behind the Aztec Lobby entrance",
-        region: "DK Island",
-        canGetLogic: isBreathing && canReachAztecLobby.in,
-        canGetBreak: isBreathing && canReachAztecLobby.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16131,64 +16757,9 @@ const Shuffled$G = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
-        id: 20034,
-        name: "Shuffled Melon Crate: Vanilla Warp 1 at DK Isle start",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
         id: 20035,
         name: "Shuffled Melon Crate: Vanilla Warp 1 at K. Lumsy",
         region: "K. Rool's Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20036,
-        name: "Shuffled Melon Crate: Vanilla Warp 2 at DK Isle start",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20037,
-        name: "Shuffled Melon Crate: Vanilla Warp 2 at Aztec Lobby",
-        region: "DK Island",
-        canGetLogic: isBreathing && canReachAztecLobby.in,
-        canGetBreak: isBreathing && canReachAztecLobby.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20038,
-        name: "Shuffled Melon Crate: Vanilla Warp 3 at DK Isle start",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20039,
-        name: "Shuffled Melon Crate: Vanilla Warp 3 at back of DK Isle",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20040,
-        name: "Shuffled Melon Crate: Vanilla Warp 4 at DK Isle start",
-        region: "DK Island",
         canGetLogic: isBreathing
       }
     ),
@@ -16199,15 +16770,6 @@ const Shuffled$G = () => {
         name: "Shuffled Melon Crate: Vanilla Warp 4 at Factory Lobby entrance",
         region: "K. Rool's Island",
         canGetLogic: isBreathing && canReachFactoryLobby
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20042,
-        name: "Shuffled Melon Crate: Vanilla Warp 5 at DK Isle start",
-        region: "DK Island",
-        canGetLogic: isBreathing
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16432,90 +16994,6 @@ const Shuffled$G = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
-        id: 20066,
-        name: "Shuffled Melon Crate: On the mountain next to Cranky's",
-        region: "DK Island",
-        canGetLogic: hasClimbing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20067,
-        name: "Shuffled Melon Crate: On the Treehouse Area's rear hill",
-        region: "DK Island",
-        canGetLogic: hasClimbing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20068,
-        name: "Shuffled Melon Crate: On the Treehouse Area's entrance hill",
-        region: "DK Island",
-        canGetLogic: hasClimbing && isHinaKagiyama,
-        canGetBreak: hasClimbing && hasDK
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20069,
-        name: "Shuffled Melon Crate: On the mountain over the Treehouse Area exit",
-        region: "DK Island",
-        canGetLogic: hasClimbing && isHinaKagiyama,
-        canGetBreak: hasClimbing && hasDK
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20070,
-        name: "Shuffled Melon Crate: In the cave next to Cranky's, behind the vanilla dirt location",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20071,
-        name: "Shuffled Melon Crate: In the back of the Banana Hoard",
-        region: "DK Island",
-        canGetLogic: hasClimbing && hasVines
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20072,
-        name: "Shuffled Melon Crate: In the pool next to the Treehouse",
-        region: "DK Island",
-        canGetLogic: hasAGun && hasDiving.in,
-        canGetBreak: hasOranges && hasDiving.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20073,
-        name: "Shuffled Melon Crate: In front of the Treehouse's pool",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 20074,
-        name: "Shuffled Melon Crate: Inside the Treehouse itself",
-        region: "DK Island",
-        canGetLogic: hasClimbing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
         id: 20075,
         name: "Shuffled Melon Crate: To the right of the Banana Fairy Queen",
         region: "Outer Isles",
@@ -16600,21 +17078,13 @@ const ShuffledCrates$8 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeEx
 const Shuffled$F = () => {
   const isBreathing = useGeneralDirt$6();
   const hasShockwave = useShockwave();
-  const hasClimbing = useClimbing();
-  const hasVines = useVine();
   const canReachFactoryLobby = useIslesKremAscent();
   const canGetInForestLobby = usePlayLobby("Fungi Forest");
   const canDoIslesArena1 = canReachFactoryLobby && hasShockwave;
   const canDoIslesArena2In = canGetInForestLobby.in && hasShockwave;
   const canDoIslesArena2Out = canGetInForestLobby.out && hasShockwave;
   const canDoIslesDirt1 = useIslandDirt();
-  const canDoIslesDirt2 = useAztecDirt();
-  const canDoIslesDirt3 = useUnderCaveDirt();
   const canDoIslesDirt4 = useCastleDirt();
-  const canDoIslesDirt5 = hasVines && hasClimbing;
-  const canReachFungiLobby = useIslesFungiIsland();
-  const canReachWaterfall = useIslesCrossFungi();
-  const canReachAztecLobby = useIslesUpper();
   const canReachHelmLobby = useIslesKremTop();
   const canGetInJapesLobby = usePlayLobby("Jungle Japes");
   const canGetInAztecLobby = usePlayLobby("Angry Aztec");
@@ -16624,7 +17094,6 @@ const Shuffled$F = () => {
   const canGetInCastleLobby = usePlayLobby("Creepy Castle");
   const canGetInHelmLobby = usePlayLobby("Hideout Helm");
   const isHinaKagiyama = useTwirl();
-  const hasDK = useDk();
   const canReachBFI = useCheckBFIInitial();
   const canGetRareBanana = useCheckBananaFairyIsle();
   const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]));
@@ -16639,6 +17108,7 @@ const Shuffled$F = () => {
   const hasStrongKong = useStrong();
   const hasJetbarrel = useRocket();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DKIslandDirt, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -16670,49 +17140,11 @@ const Shuffled$F = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
-        id: 30003,
-        name: "Shuffled Dirt Patch: Vanilla Location 2 (on the Aztec Lobby roof)",
-        region: "DK Island",
-        canGetLogic: canDoIslesDirt2.in,
-        canGetBreak: canDoIslesDirt2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30004,
-        name: "Shuffled Dirt Patch: Vanilla Location 3 (under the Caves Lobby entrance)",
-        region: "DK Island",
-        canGetLogic: canDoIslesDirt3.in,
-        canGetBreak: canDoIslesDirt3.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
         id: 30005,
         name: "Shuffled Dirt Patch: Vanilla Location 4 (under Lanky's Castle Lobby barrel)",
         region: "Caves-Helm Lobbies",
         canGetLogic: canDoIslesDirt4.in,
         canGetBreak: canDoIslesDirt4.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30006,
-        name: "Shuffled Dirt Patch: Vanilla Location 5 (at the Banana Hoard)",
-        region: "DK Island",
-        canGetLogic: isBreathing && canDoIslesDirt5
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30007,
-        name: "Shuffled Dirt Patch: Vanilla Location 6 (tunnel next to Cranky)",
-        region: "DK Island",
-        canGetLogic: isBreathing
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16740,91 +17172,6 @@ const Shuffled$F = () => {
         name: "Shuffled Dirt Patch: Somewhere on the Fungi Lobby island",
         region: "Outer Isles",
         canGetLogic: canDoIslesDirt1
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30011,
-        name: "Shuffled Dirt Patch: Top of the waterfall",
-        region: "DK Island",
-        canGetLogic: canReachWaterfall.in && hasShockwave,
-        canGetBreak: canReachWaterfall.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30012,
-        name: "Shuffled Dirt Patch: Under tree on path to Aztec Lobby",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30013,
-        name: "Shuffled Dirt Patch: Back of DK Island",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30014,
-        name: "Shuffled Dirt Patch: Near the Fungi cannon",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30015,
-        name: "Shuffled Dirt Patch: On the Fungi cannon's island",
-        region: "DK Island",
-        canGetLogic: canReachFungiLobby && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30016,
-        name: "Shuffled Dirt Patch: Next to the Aztec Lobby Tree",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30017,
-        name: "Shuffled Dirt Patch: At the boulders near Caves Lobby",
-        region: "DK Island",
-        canGetLogic: canReachAztecLobby.in && hasShockwave,
-        canGetBreak: canReachAztecLobby.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30018,
-        name: "Shuffled Dirt Patch: In front of the Aztec Lobby entrance",
-        region: "DK Island",
-        canGetLogic: canReachAztecLobby.in && hasShockwave,
-        canGetBreak: canReachAztecLobby.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30019,
-        name: "Shuffled Dirt Patch: Behind the Aztec Lobby entrance",
-        region: "DK Island",
-        canGetLogic: canReachAztecLobby.in && hasShockwave,
-        canGetBreak: canReachAztecLobby.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16956,64 +17303,9 @@ const Shuffled$F = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
-        id: 30034,
-        name: "Shuffled Dirt Patch: Vanilla Warp 1 at DK Isle start",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
         id: 30035,
         name: "Shuffled Dirt Patch: Vanilla Warp 1 at K. Lumsy",
         region: "K. Rool's Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30036,
-        name: "Shuffled Dirt Patch: Vanilla Warp 2 at DK Isle start",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30037,
-        name: "Shuffled Dirt Patch: Vanilla Warp 2 at Aztec Lobby",
-        region: "DK Island",
-        canGetLogic: canReachAztecLobby.in && hasShockwave,
-        canGetBreak: canReachAztecLobby.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30038,
-        name: "Shuffled Dirt Patch: Vanilla Warp 3 at DK Isle start",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30039,
-        name: "Shuffled Dirt Patch: Vanilla Warp 3 at back of DK Isle",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30040,
-        name: "Shuffled Dirt Patch: Vanilla Warp 4 at DK Isle start",
-        region: "DK Island",
         canGetLogic: isBreathing
       }
     ),
@@ -17024,15 +17316,6 @@ const Shuffled$F = () => {
         name: "Shuffled Dirt Patch: Vanilla Warp 4 at Factory Lobby entrance",
         region: "K. Rool's Island",
         canGetLogic: canReachFactoryLobby && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30042,
-        name: "Shuffled Dirt Patch: Vanilla Warp 5 at DK Isle start",
-        region: "DK Island",
-        canGetLogic: isBreathing
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17267,80 +17550,6 @@ const Shuffled$F = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
-        id: 30066,
-        name: "Shuffled Dirt Patch: On the mountain next to Cranky's",
-        region: "DK Island",
-        canGetLogic: hasClimbing && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30067,
-        name: "Shuffled Dirt Patch: On the Treehouse Area's rear hill",
-        region: "DK Island",
-        canGetLogic: hasClimbing && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30068,
-        name: "Shuffled Dirt Patch: On the Treehouse Area's entrance hill",
-        region: "DK Island",
-        canGetLogic: hasClimbing && isHinaKagiyama && hasShockwave,
-        canGetBreak: hasClimbing && hasDK && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30069,
-        name: "Shuffled Dirt Patch: On the mountain over the Treehouse Area exit",
-        region: "DK Island",
-        canGetLogic: hasClimbing && isHinaKagiyama && hasShockwave,
-        canGetBreak: hasClimbing && hasDK && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30070,
-        name: "Shuffled Dirt Patch: In the cave next to Cranky's, behind the vanilla dirt location",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30071,
-        name: "Shuffled Dirt Patch: In the back of the Banana Hoard",
-        region: "DK Island",
-        canGetLogic: hasClimbing && hasVines && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30073,
-        name: "Shuffled Dirt Patch: In front of the Treehouse's pool",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 30074,
-        name: "Shuffled Dirt Patch: Inside the Treehouse itself",
-        region: "DK Island",
-        canGetLogic: hasClimbing && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
         id: 30075,
         name: "Shuffled Dirt Patch: To the right of the Banana Fairy Queen",
         region: "Outer Isles",
@@ -17428,7 +17637,6 @@ const Shuffled$E = () => {
   const vanillaFairy2 = useKremFairy();
   const vanillaFairy3 = useFactoryFairy();
   const vanillaFairy4 = useForestFairy();
-  const canReachAztecLobby = useIslesUpper();
   const canReachForestLobby = useIslesFungiIsland();
   const canUseJetbarrel = useIslesRocket();
   const hasJetbarrel = useRocket();
@@ -17438,8 +17646,8 @@ const Shuffled$E = () => {
   const canReachCastleLobbyLanky = useCheckLankyCastle();
   const canReachCastleLobby = useCastleLobbyGeneric();
   const iceWallBreakdown = useCavesKasplat();
-  const hasClimbing = useClimbing();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DKIslandFairies, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -17476,16 +17684,6 @@ const Shuffled$E = () => {
         region: "Japes-Forest Lobbies",
         canGetLogic: vanillaFairy4.in,
         canGetBreak: vanillaFairy4.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 40004,
-        name: "Shuffled Fairy: Aztec Roof",
-        region: "DK Island",
-        canGetLogic: canReachAztecLobby.in && hasCam,
-        canGetBreak: canReachAztecLobby.out && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17581,34 +17779,6 @@ const Shuffled$E = () => {
         region: "K. Rool's Island",
         canGetLogic: canReachFactoryLobby && hasCam
       }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 40015,
-        name: "Shuffled Fairy: At the exit to DK's Treehouse area",
-        region: "DK Island",
-        canGetLogic: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 40016,
-        name: "Shuffled Fairy: 'Hidden mountain' in between Training Grounds and Cranky's",
-        region: "DK Island",
-        canGetLogic: hasClimbing && hasCam,
-        canGetBreak: isBreathing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 40017,
-        name: "Shuffled Fairy: Looking out the windows in DK's Treehouse",
-        region: "DK Island",
-        canGetLogic: hasClimbing && hasCam
-      }
     )
   ] });
 };
@@ -17634,11 +17804,8 @@ const Shuffled$D = () => {
   const canDoSprintGB = useCheckLankyPrison();
   const canReachJapesLobby = useJapesLobbyGeneric();
   const canReachHelmLobby = usePlayLobby("Hideout Helm");
-  const canDoRoofDirt = useIslesCrossFungi();
-  const hasAGun = useAnyGun();
-  const hasOranges = useOrange();
-  const hasAnInstrument = useAnyMusic();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DKIslandKasplats, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -17687,15 +17854,6 @@ const Shuffled$D = () => {
         region: "Japes-Forest Lobbies",
         canGetLogic: chunkyKasplat.in,
         canGetBreak: chunkyKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 50005,
-        name: 'Shuffled Kasplat: The "beaver beach" in front of Japes Lobby',
-        region: "DK Island",
-        canGetLogic: isBreathing
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17795,120 +17953,10 @@ const Shuffled$D = () => {
         canGetLogic: canReachFactoryLobby.in,
         canGetBreak: canReachFactoryLobby.out
       }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 50016,
-        name: "Shuffled Kasplat: Roof of Aztec Lobby",
-        region: "DK Island",
-        canGetLogic: canDoRoofDirt.in,
-        canGetBreak: canDoRoofDirt.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 50017,
-        name: "Shuffled Kasplat: In the waterfall's pool",
-        region: "DK Island",
-        canGetLogic: hasDiving.in && (hasAGun || hasOranges || hasAnInstrument),
-        canGetBreak: hasDiving.out && (hasAGun || hasOranges || hasAnInstrument)
-      }
     )
   ] });
 };
 const ShuffledKasplats$7 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
-const IslesRegionChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
-  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
-  const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$7, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$7, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$7, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$7, {})
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingGroundsChecks, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainUpperChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyAirspaceChecks, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(OuterIslesChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PrisonChecks, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(KremBaseChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(KremLiftChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SnideRoomChecks, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(KremTopChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyChecks, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HelmLobbyChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FairyReward, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(JetpacCheck, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$8, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$8, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$8, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$8, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$7, {}) })
-  ] });
-};
-const BoulderLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyTrombonePad, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyTrianglePad, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobby, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobby, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobby, {})
-] });
-const WrinklyDoors = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyDK, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyDiddy, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyLanky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyTiny, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobbyChunky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyDK, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyDiddy, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyLanky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyTiny, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyChunky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyDK, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyDiddy, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyLanky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyTiny, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyChunky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyDK, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyDiddy, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyLanky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyTiny, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyChunky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyDK, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyDiddy, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyLanky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyTiny, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyChunky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyDK, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyDiddy, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyLanky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyTiny, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyChunky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyDK, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyDiddy, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyLanky, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyTiny, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyChunky, {})
-] });
 const ClassicChecks$7 = () => {
   const [isKremKaptureSeed, isFairySeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.kremlingKapture, state.winCondition.fairies, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const [fairiesInRotation, kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolFairies, state.settings.poolBlueprints])) ? "" : "foolish";
