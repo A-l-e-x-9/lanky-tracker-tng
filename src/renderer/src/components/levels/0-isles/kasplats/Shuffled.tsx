@@ -1,9 +1,9 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useCheckChunkyPound, useIslesFungiIsland, useCavesLobbyGeneric, useCheckLankyPrison, useJapesLobbyGeneric, usePlayLobby, useIslesCrossFungi } from '@renderer/hooks/isles'
+import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useCheckChunkyPound, useIslesFungiIsland, useCavesLobbyGeneric, useCheckLankyPrison, useJapesLobbyGeneric, usePlayLobby } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useAnyKong, useGrab, useHighGrab, useDive, useRocket, useBoulderTech, useTwirl, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
+import { useAnyKong, useGrab, useHighGrab, useDive, useRocket, useBoulderTech, useTwirl } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import DKIslandKasplats from './DKIsland'
 
@@ -28,10 +28,6 @@ const hinaKagiyama = useTwirl()
 const canDoSprintGB = useCheckLankyPrison()
 const canReachJapesLobby = useJapesLobbyGeneric()
 const canReachHelmLobby = usePlayLobby('Hideout Helm')
-const canDoRoofDirt = useIslesCrossFungi()
-const hasAGun = useAnyGun()
-const hasOranges = useOrange()
-const hasAnInstrument = useAnyMusic()
   return (
     <KasplatPool>
       <DKIslandKasplats />
