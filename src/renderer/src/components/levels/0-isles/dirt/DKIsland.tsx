@@ -1,5 +1,5 @@
 import IslesCheck from '../check'
-import { useGeneralDirt, useIslesUpper, useIslesCrossFungi, useAztecDirt, useUnderCaveDirt } from '@renderer/hooks/isles'
+import { useGeneralDirt, useIslesUpper, useIslesCrossFungi, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland } from '@renderer/hooks/isles'
 import { useDk, useTwirl, useClimbing, useVine, useShockwave } from '@renderer/hooks/kongs'
 
 const DKIslandDirt: React.FC = () => {
@@ -14,6 +14,7 @@ const DKIslandDirt: React.FC = () => {
   const canDoIslesDirt3 = useUnderCaveDirt()
   const canDoIslesDirt5 = hasVines && hasClimbing
   const hasShockwave = useShockwave()
+  const canReachFungiLobby = useIslesFungiIsland()
     return (
     <>
       <IslesCheck
