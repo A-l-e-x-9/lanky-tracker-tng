@@ -1,27 +1,22 @@
 import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesCrossFungi, useIslesUpper, useIslesKremAscent, useIslesKremTop, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
-import { useShuffledArenas, useBananaport } from '@renderer/hooks/settings'
-import { useAnyKong, useDiddy, useTiny, useBoulderTech, useClimbing, useTwirl, useDk, useVine, useRocket, useBalloon } from '@renderer/hooks/kongs'
+import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesKremAscent, useIslesKremTop, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesRocket, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useShuffledArenas } from '@renderer/hooks/settings'
+import { useAnyKong, useDiddy, useTiny, useBoulderTech, useTwirl, useRocket, useBalloon } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 import DKIslandArenas from './DKIsland'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()
-const hasDK = useDk()
 const hasDiddy = useDiddy()
 const hasTiny = useTiny()
 const hasBoulderTech = useBoulderTech()
 const isHinaKagiyama = useTwirl()
 const hasJetbarrel = useRocket()
-const hasVines = useVine()
-const hasClimbing = useClimbing()
 const canDoIslesArena1 = useSnideArena()
 const canDoIslesArena2 = useForestArena()
-const canReachAztecLobby = useIslesUpper()
 const canReachFungiLobby = useIslesFungiIsland()
-const canReachWaterfall = useIslesCrossFungi()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canDoIslesDirt1 = canReachFungiLobby
 const canReachFactoryLobby = useIslesKremAscent()
@@ -43,7 +38,6 @@ const canGetInCavesKasplat = useCavesKasplat()
 const canGetInHelmChunky = useCheckChunkyHelm()
 const canGetInHelmDK = useHelmKasplat()
 const hasBalloon = useBalloon()
-const bananaportSettings = useBananaport()
 const jetbarrelExists = useIslesRocket()
   return (
     <ArenaPool>
