@@ -1,5 +1,5 @@
 import IslesCheck from '../check'
-import { useIslesRocket, useIslesFungiIsland() } from '@renderer/hooks/isles'
+import { useIslesRocket, useIslesFungiIsland } from '@renderer/hooks/isles'
 
 const DKIslandCrates: React.FC = () => {
   const jetbarrelExists = useIslesRocket()
