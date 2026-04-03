@@ -12,6 +12,7 @@ const DKIslandDirt: React.FC = () => {
   const hasVines = useVine()
   const canDoIslesDirt2 = useAztecDirt()
   const canDoIslesDirt3 = useUnderCaveDirt()
+  const canDoIslesDirt5 = hasVines && hasClimbing
     return (
     <>
       <IslesCheck
