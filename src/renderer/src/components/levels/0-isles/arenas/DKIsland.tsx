@@ -1,6 +1,6 @@
 import IslesCheck from '../check'
 import { useIslesRocket, useIslesFungiIsland, useIslesUpper, useIslesCrossFungi } from '@renderer/hooks/isles'
-import { useAnyKong, useRocket, useBoulderTech, useDiddy, useTiny, useDk, useTwirl, useClimbing } from '@renderer/hooks/kongs'
+import { useAnyKong, useRocket, useBoulderTech, useDiddy, useTiny, useDk, useTwirl, useClimbing, useVine } from '@renderer/hooks/kongs'
 import { useBananaport } from '@renderer/hooks/settings'
 
 const DKIslandArenas: React.FC = () => {
@@ -17,6 +17,7 @@ const DKIslandArenas: React.FC = () => {
   const isHinaKagiyama = useTwirl()
   const hasClimbing = useClimbing()
   const bananaportSettings = useBananaport()
+  const hasVines = useVine()
     return (
     <>
       <IslesCheck
