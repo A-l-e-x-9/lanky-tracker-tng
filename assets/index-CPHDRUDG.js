@@ -15862,7 +15862,7 @@ const DKIslandFairies = () => {
     )
   ] });
 };
-const DKIslandKasplats = () => {
+const Shuffled$I = () => {
   const isBreathing = useAnyKong();
   const hasAGun = useAnyGun();
   const hasDiving = useDive();
@@ -15901,6 +15901,7 @@ const DKIslandKasplats = () => {
     )
   ] });
 };
+const DKIslandKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$I, {}) : null;
 const IslesRegionChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
