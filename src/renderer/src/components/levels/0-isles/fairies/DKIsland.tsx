@@ -1,4 +1,5 @@
 import IslesCheck from '../check'
+import FairyPool from '@renderer/components/pools/Fairies'
 import { useGeneralFairy, useIslesUpper } from '@renderer/hooks/isles'
 import { useClimbing, useCamera } from '@renderer/hooks/kongs'
 
@@ -8,7 +9,7 @@ const DKIslandFairies: React.FC = () => {
   const hasClimbing = useClimbing()
   const hasCam = useCamera()
     return (
-    <>
+    <FairyPool>
       <IslesCheck
         id={40004}
         name="Shuffled Fairy: Aztec Roof"
@@ -35,7 +36,7 @@ const DKIslandFairies: React.FC = () => {
         region="DK Island"
         canGetLogic={hasClimbing && hasCam}
       />
-    </>
+    </FairyPool>
     )
 }
 

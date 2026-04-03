@@ -1,4 +1,5 @@
 import IslesCheck from '../check'
+import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useGeneralDirt, useIslesUpper, useIslesCrossFungi, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland } from '@renderer/hooks/isles'
 import { useDk, useTwirl, useClimbing, useVine, useShockwave } from '@renderer/hooks/kongs'
 
@@ -16,7 +17,7 @@ const DKIslandDirt: React.FC = () => {
   const hasShockwave = useShockwave()
   const canReachFungiLobby = useIslesFungiIsland()
     return (
-    <>
+    <RainbowCoinPool>
       <IslesCheck
         id={30003}
         name="Shuffled Dirt Patch: Vanilla Location 2 (on the Aztec Lobby roof)"
@@ -194,7 +195,7 @@ const DKIslandDirt: React.FC = () => {
         region="DK Island"
         canGetLogic={hasClimbing && hasShockwave}
       />
-    </>
+    </RainbowCoinPool>
     )
 }
 

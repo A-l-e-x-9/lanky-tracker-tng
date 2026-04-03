@@ -1,4 +1,5 @@
 import IslesCheck from '../check'
+import ArenaPool from '@renderer/components/pools/Arenas'
 import { useIslesRocket, useIslesFungiIsland, useIslesUpper, useIslesCrossFungi } from '@renderer/hooks/isles'
 import { useAnyKong, useRocket, useBoulderTech, useDiddy, useTiny, useDk, useTwirl, useClimbing, useVine } from '@renderer/hooks/kongs'
 import { useBananaport } from '@renderer/hooks/settings'
@@ -19,7 +20,7 @@ const DKIslandArenas: React.FC = () => {
   const bananaportSettings = useBananaport()
   const hasVines = useVine()
     return (
-    <>
+    <ArenaPool>
       <IslesCheck
         id={10003}
         name="Shuffled Battle Arena: On the Aztec Lobby roof"
@@ -197,7 +198,7 @@ const DKIslandArenas: React.FC = () => {
         region="DK Island"
         canGetLogic={isBreathing && hasClimbing}
       />
-    </>
+    </ArenaPool>
     )
 }
 

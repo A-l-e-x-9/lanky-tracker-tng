@@ -1,4 +1,5 @@
 import IslesCheck from '../check'
+import CratePool from '@renderer/components/pools/Crates'
 import { useIslesRocket, useIslesFungiIsland, useIslesUpper, useIslesCrossFungi } from '@renderer/hooks/isles'
 import { useAnyKong, useRocket, useBoulderTech, useDiddy, useTiny, useDk, useTwirl, useClimbing, useVine, useAnyGun, useDive, useOrange } from '@renderer/hooks/kongs'
 import { useBananaport } from '@renderer/hooks/settings'
@@ -22,7 +23,7 @@ const DKIslandCrates: React.FC = () => {
   const hasDiving = useDive()
   const hasOranges = useOrange()
     return (
-    <>
+    <CratePool>
       <IslesCheck
         id={20003}
         name="Shuffled Melon Crate: On the Aztec Lobby roof"
@@ -207,7 +208,7 @@ const DKIslandCrates: React.FC = () => {
         region="DK Island"
         canGetLogic={hasClimbing}
       />
-    </>
+    </CratePool>
     )
 }
 

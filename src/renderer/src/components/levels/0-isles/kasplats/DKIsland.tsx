@@ -1,4 +1,5 @@
 import IslesCheck from '../check'
+import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useIslesCrossFungi } from '@renderer/hooks/isles'
 import { useAnyKong, useAnyGun, useDive, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
 
@@ -10,7 +11,7 @@ const DKIslandKasplats: React.FC = () => {
   const canDoRoofDirt = useIslesCrossFungi()
   const hasAnInstrument = useAnyMusic()
     return (
-    <>
+    <KasplatPool>
       <IslesCheck
         id={50005}
         name="Shuffled Kasplat: The &quot;beaver beach&quot; in front of Japes Lobby"
@@ -31,7 +32,7 @@ const DKIslandKasplats: React.FC = () => {
         canGetLogic={hasDiving.in && (hasAGun || hasOranges || hasAnInstrument)}
         canGetBreak={hasDiving.out && (hasAGun || hasOranges || hasAnInstrument)}
       />
-    </>
+    </KasplatPool>
     )
 }
 
