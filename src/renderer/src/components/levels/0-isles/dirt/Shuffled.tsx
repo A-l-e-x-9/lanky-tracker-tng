@@ -2,7 +2,7 @@ import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useGeneralDirt, useIslandDirt, useCastleDirt, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesKremTop, useAztecLobbyChunky, useFactoryLobbyUpper, useCheckTinyGalleonLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffleDirt } from '@renderer/hooks/settings'
-import { useShockwave, useClimbing, useTwirl, useVine, useBoulderTech, useStrong, useRocket } from '@renderer/hooks/kongs'
+import { useShockwave, useTwirl, useBoulderTech, useStrong, useRocket } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 import DKIslandDirt from './DKIsland'
@@ -10,8 +10,6 @@ import DKIslandDirt from './DKIsland'
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const hasShockwave = useShockwave()
-const hasClimbing = useClimbing()
-const hasVines = useVine()
 const canReachFactoryLobby = useIslesKremAscent()
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena1 = canReachFactoryLobby && hasShockwave
