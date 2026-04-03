@@ -1,5 +1,5 @@
 import IslesCheck from '../check'
-import { useIslesRocket, useIslesFungiIsland, useIslesUpper } from '@renderer/hooks/isles'
+import { useIslesRocket, useIslesFungiIsland, useIslesUpper, useIslesCrossFungi } from '@renderer/hooks/isles'
 import { useRocket, useBoulderTech, useDiddy, useTiny } from '@renderer/hooks/kongs'
 
 const DKIslandCrates: React.FC = () => {
@@ -10,6 +10,7 @@ const DKIslandCrates: React.FC = () => {
   const hasBoulderTech = useBoulderTech()
   const hasDiddy = useDiddy()
   const hasTiny = useTiny()
+  const canReachWaterfall = useIslesCrossFungi()
     return (
     <>
       <IslesCheck
