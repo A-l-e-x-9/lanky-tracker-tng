@@ -1,6 +1,8 @@
 import IslesCheck from '../check'
+import { useIslesUpper } from '@renderer/hooks/isles'
 
 const DKIslandFairies: React.FC = () => {
+  const canReachAztecLobby = useIslesUpper()
     return (
     <>
       <IslesCheck
