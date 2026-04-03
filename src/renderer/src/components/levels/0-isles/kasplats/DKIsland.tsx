@@ -1,9 +1,10 @@
 import IslesCheck from '../check'
 import KasplatPool from '@renderer/components/pools/Kasplats'
+import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useIslesCrossFungi } from '@renderer/hooks/isles'
 import { useAnyKong, useAnyGun, useDive, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
 
-const DKIslandKasplats: React.FC = () => {
+const Shuffled: React.FC = () => {
   const isBreathing = useAnyKong()
   const hasAGun = useAnyGun()
   const hasDiving = useDive()
@@ -36,4 +37,5 @@ const DKIslandKasplats: React.FC = () => {
     )
 }
 
+const DKIslandKasplats: React.FC = () => (useShuffleKasplats() ? <Shuffled /> : null)
 export default DKIslandKasplats
