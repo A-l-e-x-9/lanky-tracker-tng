@@ -27,11 +27,11 @@ import PrisonChecks from './Prison'
 import SnideRoomChecks from './SnideRoom'
 import TrainingGroundsChecks from './TrainingGrounds'
 import FairyReward from '../fairies/FairyReward'
-import ShuffledArenas from '../arenas/Shuffled'
-import ShuffledCrates from '../crates/Shuffled'
-import ShuffledDirt from '../dirt/Shuffled'
-import ShuffledFairies from '../fairies/Shuffled'
-import ShuffledKasplats from '../kasplats/Shuffled'
+import DKIslandArenas from '../arenas/DKIsland'
+import DKIslandCrates from '../crates/DKIsland'
+import DKIslandDirt from '../dirt/DKIsland'
+import DKIslandFairies from '../fairies/DKIsland'
+import DKIslandKasplats from '../kasplats/DKIsland'
 
 const IslesRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -57,6 +57,15 @@ return (
     <IslesMainUpperChecks />
   <div className="grid">
     <DiddyAirspaceChecks />
+    <DKIslandArenas />
+    <DKIslandCrates />
+    <DKIslandDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <DKIslandFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <DKIslandKasplats />
   </div>
     <OuterIslesChecks />
   <div className="grid">
@@ -82,15 +91,6 @@ return (
     <ShopLocations />
     <FairyReward />
     <JetpacCheck />
-    <ShuffledArenas />
-    <ShuffledCrates />
-    <ShuffledDirt />
-  </div>
-  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
-    <ShuffledFairies />
-  </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
-    <ShuffledKasplats />
   </div>
   </>
 )

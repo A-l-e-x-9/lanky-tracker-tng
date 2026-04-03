@@ -3,6 +3,7 @@ import { useGeneralFairy, useKremFairy, useFactoryFairy, useForestFairy, useIsle
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useCamera, useRocket, useClimbing } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
+import DKIslandFairies from './DKIsland'
 
 const Shuffled: React.FC = () => {
   const hasCam = useCamera()
@@ -23,6 +24,7 @@ const Shuffled: React.FC = () => {
   const hasClimbing = useClimbing()
   return (
     <FairyPool>
+      <DKIslandFairies />
       <IslesCheck
         id={40000}
         name="Shuffled Fairy: Vanilla Location #1 (behind BFI)"
@@ -48,13 +50,6 @@ const Shuffled: React.FC = () => {
         region="Japes-Forest Lobbies"
         canGetLogic={vanillaFairy4.in}
         canGetBreak={vanillaFairy4.out}
-      />
-      <IslesCheck
-        id={40004}
-        name="Shuffled Fairy: Aztec Roof"
-        region="DK Island"
-        canGetLogic={canReachAztecLobby.in && hasCam}
-        canGetBreak={canReachAztecLobby.out && hasCam}
       />
       <IslesCheck
         id={40005}
@@ -119,25 +114,6 @@ const Shuffled: React.FC = () => {
         name="Shuffled Fairy: In Snide's room"
         region="K. Rool's Island"
         canGetLogic={canReachFactoryLobby && hasCam}
-      />
-      <IslesCheck
-        id={40015}
-        name="Shuffled Fairy: At the exit to DK's Treehouse area"
-        region="DK Island"
-        canGetLogic={isBreathing}
-      />
-      <IslesCheck
-        id={40016}
-        name="Shuffled Fairy: 'Hidden mountain' in between Training Grounds and Cranky's"
-        region="DK Island"
-        canGetLogic={hasClimbing && hasCam}
-        canGetBreak={isBreathing}
-      />
-      <IslesCheck
-        id={40017}
-        name="Shuffled Fairy: Looking out the windows in DK's Treehouse"
-        region="DK Island"
-        canGetLogic={hasClimbing && hasCam}
       />
     </FairyPool>
   )

@@ -5,6 +5,7 @@ import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, u
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useAnyKong, useGrab, useHighGrab, useDive, useRocket, useBoulderTech, useTwirl, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
+import DKIslandKasplats from './DKIsland'
 
 const Shuffled: React.FC = () => {
 const DKKasplat = useHelmKasplat()
@@ -33,6 +34,7 @@ const hasOranges = useOrange()
 const hasAnInstrument = useAnyMusic()
   return (
     <KasplatPool>
+      <DKIslandKasplats />
       <IslesCheck
         id={50000}
         name="Shuffled Kasplat: DK's Vanilla Location (Helm Lobby)"
@@ -67,12 +69,6 @@ const hasAnInstrument = useAnyMusic()
         region="Japes-Forest Lobbies"
         canGetLogic={chunkyKasplat.in}
         canGetBreak={chunkyKasplat.out}
-      />
-      <IslesCheck
-        id={50005}
-        name="Shuffled Kasplat: The &quot;beaver beach&quot; in front of Japes Lobby"
-        region="DK Island"
-        canGetLogic={isBreathing}
       />
       <IslesCheck
         id={50006}
@@ -141,20 +137,6 @@ const hasAnInstrument = useAnyMusic()
         region="K. Rool's Island"
         canGetLogic={canReachFactoryLobby.in}
         canGetBreak={canReachFactoryLobby.out}
-      />
-      <IslesCheck
-        id={50016}
-        name="Shuffled Kasplat: Roof of Aztec Lobby"
-        region="DK Island"
-        canGetLogic={canDoRoofDirt.in}
-        canGetBreak={canDoRoofDirt.out}
-      />
-      <IslesCheck
-        id={50017}
-        name="Shuffled Kasplat: In the waterfall's pool"
-        region="DK Island"
-        canGetLogic={hasDiving.in && (hasAGun || hasOranges || hasAnInstrument)}
-        canGetBreak={hasDiving.out && (hasAGun || hasOranges || hasAnInstrument)}
       />
     </KasplatPool>
   )
