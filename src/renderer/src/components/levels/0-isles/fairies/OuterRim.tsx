@@ -1,7 +1,7 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useShuffleFairies, useIslesFungiIsland } from '@renderer/hooks/settings'
+import { useShuffleFairies } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
-import { useGeneralFairy } from '@renderer/hooks/isles'
+import { useGeneralFairy, useIslesFungiIsland } from '@renderer/hooks/isles'
 
 const Shuffled: React.FC = () => {
   const isBreathing = useGeneralFairy()

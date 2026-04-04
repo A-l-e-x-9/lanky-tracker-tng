@@ -1,6 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useShuffleKasplats, useIslesFungiIsland } from '@renderer/hooks/settings'
+import { useShuffleKasplats } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
+import { useIslesFungiIsland } from '@renderer/hooks/isles'
 import { useAnyKong } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {

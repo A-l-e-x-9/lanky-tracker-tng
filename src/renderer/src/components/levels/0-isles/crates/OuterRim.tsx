@@ -1,6 +1,7 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useShuffleCrates, useIslesFungiIsland } from '@renderer/hooks/settings'
+import { useShuffleCrates } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
+import { useIslesFungiIsland } from '@renderer/hooks/isles'
 import { useAnyKong } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
