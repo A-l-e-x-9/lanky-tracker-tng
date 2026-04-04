@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useSnideArena, useForestArena, useIslesFungiIsland, useIslesKremAscent, useIslesKremTop, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useForestArena, useIslesFungiIsland, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import { useAnyKong, useDiddy, useTiny, useBoulderTech, useTwirl, useRocket, useBalloon } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -15,13 +15,10 @@ const hasTiny = useTiny()
 const hasBoulderTech = useBoulderTech()
 const isHinaKagiyama = useTwirl()
 const hasJetbarrel = useRocket()
-const canDoIslesArena1 = useSnideArena()
 const canDoIslesArena2 = useForestArena()
 const canReachFungiLobby = useIslesFungiIsland()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canDoIslesDirt1 = canReachFungiLobby
-const canReachFactoryLobby = useIslesKremAscent()
-const canReachHelmLobby = useIslesKremTop()
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
 const canGetInAztecLobby = usePlayLobby('Angry Aztec')
 const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
@@ -32,7 +29,6 @@ const canGetInHelmLobby = usePlayLobby('Hideout Helm')
 const canReachBFI = useCheckBFIInitial()
 const canGetRareBanana = useCheckBananaFairyIsle()
 const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]))
-const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8
 const canGetInAztecBack = useAztecLobbyChunky()
 const canGetInFactoryUpper = useFactoryLobbyUpper()
 const canGetInCavesKasplat = useCavesKasplat()
