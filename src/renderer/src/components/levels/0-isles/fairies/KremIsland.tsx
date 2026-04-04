@@ -1,13 +1,16 @@
 import IslesCheck from '../check'
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useIslesKremAscent, useKremFairy } from '@renderer/hooks/isles'
-import { useCamera } from '@renderer/hooks/kongs'
+import { useGeneralFairy, useIslesKremAscent, useKremFairy, useIslesFungiIsland, useIslesRocket } from '@renderer/hooks/isles'
+import { useCamera, useRocket } from '@renderer/hooks/kongs'
 
 const KremIslandFairies: React.FC = () => {
 const isBreathing = useGeneralFairy()
 const canReachFactoryLobby = useIslesKremAscent()
 const vanillaFairy2 = useKremFairy()
 const hasCam = useCamera()
+const canReachForestLobby = useIslesFungiIsland()
+const canUseJetbarrel = useIslesRocket()
+const hasJetbarrel = useRocket()
   return (
     <FairyPool>
       <IslesCheck
