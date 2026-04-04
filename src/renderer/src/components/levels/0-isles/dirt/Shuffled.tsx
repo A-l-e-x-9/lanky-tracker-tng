@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useIslandDirt, useCastleDirt, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useIslesKremTop, useAztecLobbyChunky, useFactoryLobbyUpper, useCheckTinyGalleonLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useGeneralDirt, useIslandDirt, useCastleDirt, useIslesKremAscent, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useAztecLobbyChunky, useFactoryLobbyUpper, useCheckTinyGalleonLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import { useShockwave, useTwirl, useBoulderTech, useStrong, useRocket } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -13,12 +13,10 @@ const isBreathing = useGeneralDirt()
 const hasShockwave = useShockwave()
 const canReachFactoryLobby = useIslesKremAscent()
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
-const canDoIslesArena1 = canReachFactoryLobby && hasShockwave
 const canDoIslesArena2In = canGetInForestLobby.in && hasShockwave
 const canDoIslesArena2Out = canGetInForestLobby.out && hasShockwave
 const canDoIslesDirt1 = useIslandDirt()
 const canDoIslesDirt4 = useCastleDirt()
-const canReachHelmLobby = useIslesKremTop()
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
 const canGetInAztecLobby = usePlayLobby('Angry Aztec')
 const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
@@ -30,7 +28,6 @@ const isHinaKagiyama = useTwirl()
 const canReachBFI = useCheckBFIInitial()
 const canGetRareBanana = useCheckBananaFairyIsle()
 const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]))
-const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8
 const hasBoulderTech = useBoulderTech()
 const canGetInAztecBack = useAztecLobbyChunky()
 const canGetInFactoryUpper = useFactoryLobbyUpper()
