@@ -2,10 +2,11 @@ import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import IslesCheck from '../check'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
+import { useShuffleDirt } from '@renderer/hooks/settings'
 import { useGeneralDirt, useIslesKremAscent, useIslesKremTop } from '@renderer/hooks/isles'
 import { useShockwave } from '@renderer/hooks/kongs'
 
-const KremIslandDirt: React.FC = () => {
+const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const hasShockwave = useShockwave()
 const canReachFactoryLobby = useIslesKremAscent()
@@ -133,4 +134,5 @@ const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && 
   )
 }
 
+const KremIslandDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
 export default KremIslandDirt

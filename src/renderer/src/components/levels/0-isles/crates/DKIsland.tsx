@@ -1,10 +1,11 @@
 import IslesCheck from '../check'
 import CratePool from '@renderer/components/pools/Crates'
+import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useIslesRocket, useIslesFungiIsland, useIslesUpper, useIslesCrossFungi } from '@renderer/hooks/isles'
 import { useAnyKong, useRocket, useBoulderTech, useDiddy, useTiny, useDk, useTwirl, useClimbing, useVine, useAnyGun, useDive, useOrange } from '@renderer/hooks/kongs'
 import { useBananaport } from '@renderer/hooks/settings'
 
-const DKIslandCrates: React.FC = () => {
+const Shuffled: React.FC = () => {
   const isBreathing = useAnyKong()
   const jetbarrelExists = useIslesRocket()
   const canReachFungiLobby = useIslesFungiIsland()
@@ -212,4 +213,5 @@ const DKIslandCrates: React.FC = () => {
     )
 }
 
+const DKIslandCrates: React.FC = () => (useShuffleCrates() ? <Shuffled /> : null)
 export default DKIslandCrates

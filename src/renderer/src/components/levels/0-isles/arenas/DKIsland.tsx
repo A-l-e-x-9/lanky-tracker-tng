@@ -1,10 +1,11 @@
 import IslesCheck from '../check'
 import ArenaPool from '@renderer/components/pools/Arenas'
+import { useShuffledArenas } from '@renderer/hooks/settings'
 import { useIslesRocket, useIslesFungiIsland, useIslesUpper, useIslesCrossFungi } from '@renderer/hooks/isles'
 import { useAnyKong, useRocket, useBoulderTech, useDiddy, useTiny, useDk, useTwirl, useClimbing, useVine } from '@renderer/hooks/kongs'
 import { useBananaport } from '@renderer/hooks/settings'
 
-const DKIslandArenas: React.FC = () => {
+const Shuffled: React.FC = () => {
   const isBreathing = useAnyKong()
   const jetbarrelExists = useIslesRocket()
   const canReachFungiLobby = useIslesFungiIsland()
@@ -202,4 +203,5 @@ const DKIslandArenas: React.FC = () => {
     )
 }
 
+const DKIslandArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
 export default DKIslandArenas

@@ -107,7 +107,7 @@ return (
     <OuterFairies />
   </div>
   <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
-    <OUterKasplats />
+    <OuterKasplats />
   </div>
     <JapesLobbyChecks />
   <div className="grid">

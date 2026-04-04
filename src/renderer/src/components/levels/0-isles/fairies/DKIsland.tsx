@@ -40,5 +40,6 @@ const Shuffled: React.FC = () => {
     </FairyPool>
     )
 }
+
 const DKIslandFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
 export default DKIslandFairies

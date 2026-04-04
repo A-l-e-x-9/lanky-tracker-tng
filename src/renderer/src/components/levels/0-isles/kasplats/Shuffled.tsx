@@ -6,6 +6,8 @@ import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useAnyKong, useGrab, useHighGrab, useDive, useRocket, useBoulderTech, useTwirl } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import DKIslandKasplats from './DKIsland'
+import KremIslandKasplats from './KremIsland'
+import OuterKasplats from './OuterRim'
 
 const Shuffled: React.FC = () => {
 const DKKasplat = useHelmKasplat()
@@ -29,6 +31,8 @@ const canReachJapesLobby = useJapesLobbyGeneric()
   return (
     <KasplatPool>
       <DKIslandKasplats />
+      <KremIslandKasplats />
+      <OuterKasplats />
       <IslesCheck
         id={50000}
         name="Shuffled Kasplat: DK's Vanilla Location (Helm Lobby)"
@@ -70,25 +74,6 @@ const canReachJapesLobby = useJapesLobbyGeneric()
         region="Japes-Forest Lobbies"
         canGetLogic={canReachFactoryLobby.in && hasGrab}
         canGetBreak={highGrab}
-      />
-      <IslesCheck
-        id={50007}
-        name="Shuffled Kasplat: Inside the big rock opened by pounding the X"
-        region="Outer Isles"
-        canGetLogic={canPoundTheX}
-      />
-      <IslesCheck
-        id={50009}
-        name="Shuffled Kasplat: On the X"
-        region="Outer Isles"
-        canGetLogic={isBreathing && !didCheck[42]}
-        canGetBreak={isBreathing && didCheck[42] && hasDiving.out}
-      />
-      <IslesCheck
-        id={50010}
-        name="Shuffled Kasplat: Behind the Forest Lobby"
-        region="Outer Isles"
-        canGetLogic={canReachForestLobby}
       />
       <IslesCheck
         id={50011}

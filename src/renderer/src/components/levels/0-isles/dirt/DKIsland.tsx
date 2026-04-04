@@ -1,9 +1,10 @@
 import IslesCheck from '../check'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
+import { useShuffleDirt } from '@renderer/hooks/settings'
 import { useGeneralDirt, useIslesUpper, useIslesCrossFungi, useAztecDirt, useUnderCaveDirt, useIslesFungiIsland } from '@renderer/hooks/isles'
 import { useDk, useTwirl, useClimbing, useVine, useShockwave } from '@renderer/hooks/kongs'
 
-const DKIslandDirt: React.FC = () => {
+const Shuffled: React.FC = () => {
   const isBreathing = useGeneralDirt()
   const canReachAztecLobby = useIslesUpper()
   const canReachWaterfall = useIslesCrossFungi()
@@ -199,4 +200,5 @@ const DKIslandDirt: React.FC = () => {
     )
 }
 
+const DKIslandDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
 export default DKIslandDirt

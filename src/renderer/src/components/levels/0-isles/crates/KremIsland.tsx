@@ -2,10 +2,11 @@ import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import IslesCheck from '../check'
 import CratePool from '@renderer/components/pools/Crates'
+import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useSnideArena, useIslesKremAscent, useIslesKremTop } from '@renderer/hooks/isles'
 import { useAnyKong } from '@renderer/hooks/kongs'
 
-const KremIslandCrates: React.FC = () => {
+const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()
 const canDoIslesArena1 = useSnideArena()
 const canReachFactoryLobby = useIslesKremAscent()
@@ -132,4 +133,5 @@ const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && 
   )
 }
 
+const KremIslandCrates: React.FC = () => (useShuffleCrates() ? <Shuffled /> : null)
 export default KremIslandCrates
