@@ -1,3 +1,5 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import IslesCheck from '../check'
 import CratePool from '@renderer/components/pools/Crates'
 import { useSnideArena, useIslesKremAscent, useIslesKremTop } from '@renderer/hooks/isles'
@@ -8,6 +10,7 @@ const isBreathing = useAnyKong()
 const canDoIslesArena1 = useSnideArena()
 const canReachFactoryLobby = useIslesKremAscent()
 const canReachHelmLobby = useIslesKremTop()
+const [key1, key2, key3, key4, key5, key6, key7, key8] = useDonkStore(useShallow((state) => [state.key1, state.key2, state.key3, state.key4, state.key5, state.key6, state.key7, state.key8]))
 const hasAllEightKeys = key1 && key2 && key3 && key4 && key5 && key6 && key7 && key8
   return (
     <CratePool>
