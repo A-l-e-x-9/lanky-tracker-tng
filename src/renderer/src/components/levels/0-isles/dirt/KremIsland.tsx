@@ -2,6 +2,7 @@ import IslesCheck from '../check'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 
 const KremIslandDirt: React.FC = () => {
+const canDoIslesArena1 = canReachFactoryLobby && hasShockwave
   return (
     <RainbowCoinPool>
       <IslesCheck

@@ -1,7 +1,9 @@
 import IslesCheck from '../check'
 import CratePool from '@renderer/components/pools/Crates'
+import { useSnideArena } from '@renderer/hooks/isles'
 
 const KremIslandCrates: React.FC = () => {
+const canDoIslesArena1 = useSnideArena()
   return (
     <CratePool>
       <IslesCheck

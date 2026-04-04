@@ -1,7 +1,9 @@
 import IslesCheck from '../check'
 import ArenaPool from '@renderer/components/pools/Arenas'
+import { useSnideArena } from '@renderer/hooks/isles'
 
 const KremIslandArenas: React.FC = () => {
+  const canDoIslesArena1 = useSnideArena()
     return (
     <ArenaPool>
       <IslesCheck
