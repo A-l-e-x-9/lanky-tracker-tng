@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useForestArena, useIslesFungiIsland, usePlayLobby, useCheckBananaFairyIsle, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useForestArena, usePlayLobby, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import { useAnyKong, useDiddy, useTiny, useBoulderTech, useTwirl, useRocket, useBalloon } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -15,7 +15,6 @@ const hasBoulderTech = useBoulderTech()
 const isHinaKagiyama = useTwirl()
 const hasJetbarrel = useRocket()
 const canDoIslesArena2 = useForestArena()
-const canReachFungiLobby = useIslesFungiIsland()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
 const canGetInAztecLobby = usePlayLobby('Angry Aztec')
@@ -24,7 +23,6 @@ const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const canGetRareBanana = useCheckBananaFairyIsle()
 const canGetInAztecBack = useAztecLobbyChunky()
 const canGetInFactoryUpper = useFactoryLobbyUpper()
 const canGetInCavesKasplat = useCavesKasplat()

@@ -1,10 +1,11 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useShuffledArenas } from '@renderer/hooks/settings'
+import { useShuffledArenas, useIslesFungiIsland } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
 import { useAnyKong } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()
+const canReachFungiLobby = useIslesFungiIsland()
 const canDoIslesDirt1 = canReachFungiLobby
   return (
     <ArenaPool>
