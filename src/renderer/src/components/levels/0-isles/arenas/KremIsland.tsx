@@ -1,11 +1,12 @@
 import IslesCheck from '../check'
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useSnideArena } from '@renderer/hooks/isles'
+import { useSnideArena, useIslesKremAscent } from '@renderer/hooks/isles'
 import { useAnyKong } from '@renderer/hooks/kongs'
 
 const KremIslandArenas: React.FC = () => {
   const isBreathing = useAnyKong()
   const canDoIslesArena1 = useSnideArena()
+  const canReachFactoryLobby = useIslesKremAscent()
     return (
     <ArenaPool>
       <IslesCheck

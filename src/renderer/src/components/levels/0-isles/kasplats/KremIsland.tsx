@@ -1,8 +1,10 @@
 import IslesCheck from '../check'
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
+import { usePlayLobby } from '@renderer/hooks/isles'
 
 const Shuffled: React.FC = () => {
+  const canReachFactoryLobby = usePlayLobby('Frantic Factory')
     return (
     <KasplatPool>
       <IslesCheck
