@@ -1,8 +1,10 @@
 import IslesCheck from '../check'
 import CratePool from '@renderer/components/pools/Crates'
 import { useSnideArena } from '@renderer/hooks/isles'
+import { useAnyKong } from '@renderer/hooks/kongs'
 
 const KremIslandCrates: React.FC = () => {
+const isBreathing = useAnyKong()
 const canDoIslesArena1 = useSnideArena()
   return (
     <CratePool>
