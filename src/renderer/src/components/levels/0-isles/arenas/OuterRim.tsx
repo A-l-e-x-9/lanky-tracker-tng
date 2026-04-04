@@ -5,6 +5,7 @@ import { useAnyKong } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()
+const canDoIslesDirt1 = canReachFungiLobby
   return (
     <ArenaPool>
       <IslesCheck
