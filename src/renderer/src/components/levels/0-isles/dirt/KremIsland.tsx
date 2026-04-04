@@ -1,11 +1,12 @@
 import IslesCheck from '../check'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useIslesKremAscent } from '@renderer/hooks/isles'
+import { useGeneralDirt, useIslesKremAscent, useIslesKremTop } from '@renderer/hooks/isles'
 
 const KremIslandDirt: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const canReachFactoryLobby = useIslesKremAscent()
 const canDoIslesArena1 = canReachFactoryLobby && hasShockwave
+const canReachHelmLobby = useIslesKremTop()
   return (
     <RainbowCoinPool>
       <IslesCheck

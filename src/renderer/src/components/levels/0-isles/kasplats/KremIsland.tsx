@@ -5,6 +5,7 @@ import { usePlayLobby } from '@renderer/hooks/isles'
 
 const Shuffled: React.FC = () => {
   const canReachFactoryLobby = usePlayLobby('Frantic Factory')
+  const canReachHelmLobby = usePlayLobby('Hideout Helm')
     return (
     <KasplatPool>
       <IslesCheck
