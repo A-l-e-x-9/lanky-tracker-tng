@@ -6,6 +6,7 @@ import { useShockwave, useTwirl, useBoulderTech, useStrong, useRocket } from '@r
 import IslesCheck from '../check'
 import useDonkStore from '@renderer/store'
 import DKIslandDirt from './DKIsland'
+import KremIslandDirt from './KremIsland'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
@@ -42,12 +43,7 @@ const hasJetbarrel = useRocket()
   return (
     <RainbowCoinPool>
       <DKIslandDirt />
-      <IslesCheck
-        id={30000}
-        name="Shuffled Dirt Patch: Under the rock in Snide's room"
-        region="K. Rool's Island"
-        canGetLogic={canDoIslesArena1}
-      />
+      <KremIslandDirt />
       <IslesCheck
         id={30001}
         name="Shuffled Dirt Patch: Check of Legends 2"
@@ -69,12 +65,6 @@ const hasJetbarrel = useRocket()
         canGetBreak={canDoIslesDirt4.out}
       />
       <IslesCheck
-        id={30008}
-        name="Shuffled Dirt Patch: Vanilla Location 7 (back of K. Lumsy's prison)"
-        region="K. Rool's Island"
-        canGetLogic={isBreathing}
-      />
-      <IslesCheck
         id={30009}
         name="Shuffled Dirt Patch: Behind Forest Lobby building"
         region="Outer Isles"
@@ -85,72 +75,6 @@ const hasJetbarrel = useRocket()
         name="Shuffled Dirt Patch: Somewhere on the Fungi Lobby island"
         region="Outer Isles"
         canGetLogic={canDoIslesDirt1}
-      />
-      <IslesCheck
-        id={30020}
-        name="Shuffled Dirt Patch: Outer rim of K. Lumsy's island"
-        region="K. Rool's Island"
-        canGetLogic={isBreathing}
-      />
-      <IslesCheck
-        id={30021}
-        name="Shuffled Dirt Patch: Near the bottom Monkeyport pad"
-        region="K. Rool's Island"
-        canGetLogic={isBreathing}
-      />
-      <IslesCheck
-        id={30022}
-        name="Shuffled Dirt Patch: Back middle of K. Rool's Island"
-        region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby && hasShockwave}
-      />
-      <IslesCheck
-        id={30023}
-        name="Shuffled Dirt Patch: Under DK's caged Banana"
-        region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby && hasShockwave}
-      />
-      <IslesCheck
-        id={30024}
-        name="Shuffled Dirt Patch: At the rotors"
-        region="K. Rool's Island"
-        canGetLogic={isBreathing}
-      />
-      <IslesCheck
-        id={30025}
-        name="Shuffled Dirt Patch: Behind Factory Lobby entrance"
-        region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby && hasShockwave}
-      />
-      <IslesCheck
-        id={30026}
-        name="Shuffled Dirt Patch: To the right of the Factory Lobby entrance"
-        region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby && hasShockwave}
-      />
-      <IslesCheck
-        id={30027}
-        name="Shuffled Dirt Patch: Behind Helm Lobby entrance"
-        region="K. Rool's Island"
-        canGetLogic={canReachHelmLobby && hasShockwave}
-      />
-      <IslesCheck
-        id={30028}
-        name="Shuffled Dirt Patch: Krem Isle's left arm, side"
-        region="K. Rool's Island"
-        canGetLogic={canReachHelmLobby && hasShockwave}
-      />
-      <IslesCheck
-        id={30029}
-        name="Shuffled Dirt Patch: Krem Isle's left arm, front"
-        region="K. Rool's Island"
-        canGetLogic={canReachHelmLobby && hasShockwave}
-      />
-      <IslesCheck
-        id={30030}
-        name="Shuffled Dirt Patch: Krem Isle's right arm, front"
-        region="K. Rool's Island"
-        canGetLogic={canReachHelmLobby && hasShockwave}
       />
       <IslesCheck
         id={30031}
@@ -169,18 +93,6 @@ const hasJetbarrel = useRocket()
         name="Shuffled Dirt Patch: The small island"
         region="Outer Isles"
         canGetLogic={isBreathing}
-      />
-      <IslesCheck
-        id={30035}
-        name="Shuffled Dirt Patch: Vanilla Warp 1 at K. Lumsy"
-        region="K. Rool's Island"
-        canGetLogic={isBreathing}
-      />
-      <IslesCheck
-        id={30041}
-        name="Shuffled Dirt Patch: Vanilla Warp 4 at Factory Lobby entrance"
-        region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby && hasShockwave}
       />
       <IslesCheck
         id={30043}
@@ -371,30 +283,6 @@ const hasJetbarrel = useRocket()
         name="Shuffled Dirt Patch: In the right side of the Rareware GB room"
         region="Outer Isles"
         canGetLogic={canGetRareBanana && hasShockwave}
-      />
-      <IslesCheck
-        id={30080}
-        name="Shuffled Dirt Patch: Next to Snide's"
-        region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby && hasShockwave}
-      />
-      <IslesCheck
-        id={30081}
-        name="Shuffled Dirt Patch: Back right of K. Lumsy's prison"
-        region="K. Rool's Island"
-        canGetLogic={isBreathing}
-      />
-      <IslesCheck
-        id={30082}
-        name="Shuffled Dirt Patch: Front left of K. Lumsy's prison"
-        region="K. Rool's Island"
-        canGetLogic={isBreathing}
-      />
-      <IslesCheck
-        id={30083}
-        name="Shuffled Dirt Patch: Under K. Lumsy himself"
-        region="K. Rool's Island"
-        canGetLogic={hasAllEightKeys && hasShockwave}
       />
     </RainbowCoinPool>
   )

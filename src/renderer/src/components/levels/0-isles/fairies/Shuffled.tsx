@@ -4,6 +4,7 @@ import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useCamera, useRocket } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import DKIslandFairies from './DKIsland'
+import KremIslandFairies from './KremIsland'
 
 const Shuffled: React.FC = () => {
   const hasCam = useCamera()
@@ -23,17 +24,12 @@ const Shuffled: React.FC = () => {
   return (
     <FairyPool>
       <DKIslandFairies />
+      <KremIslandFairies />
       <IslesCheck
         id={40000}
         name="Shuffled Fairy: Vanilla Location #1 (behind BFI)"
         region="Outer Isles"
         canGetLogic={isBreathing}
-      />
-      <IslesCheck
-        id={40001}
-        name="Shuffled Fairy: Vanilla Location #2 (top of K. Rool's Island)"
-        region="K. Rool's Island"
-        canGetLogic={vanillaFairy2}
       />
       <IslesCheck
         id={40002}
@@ -62,25 +58,6 @@ const Shuffled: React.FC = () => {
         canGetLogic={canReachForestLobby && canUseJetbarrel && hasJetbarrel && hasCam} //...Yeah, this one's pretty complex. FUN FACT: I didn't even know the top of BFI was reachable this way until I started doing this Randomizer stuff! D:
       />
       <IslesCheck
-        id={40007}
-        name="Shuffled Fairy: Near Factory Lobby entrance"
-        region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby && hasCam}
-      />
-      <IslesCheck
-        id={40008}
-        name="Shuffled Fairy: Over K. Lumsy's Island"
-        region="K. Rool's Island"
-        canGetLogic={canReachForestLobby && canUseJetbarrel && hasJetbarrel && hasCam}
-        canGetBreak={isBreathing}
-      />
-      <IslesCheck
-        id={40009}
-        name="Shuffled Fairy: Bottom of K. Rool's Island"
-        region="K. Rool's Island"
-        canGetLogic={isBreathing}
-      />
-      <IslesCheck
         id={40010}
         name="Shuffled Fairy: Flying above the Fairy Queen herself (LOL WUT)"
         region="Outer Isles"
@@ -106,12 +83,6 @@ const Shuffled: React.FC = () => {
         region="Caves-Helm Lobbies"
         canGetLogic={iceWallBreakdown.in && hasCam}
         canGetBreak={iceWallBreakdown.out && hasCam}
-      />
-      <IslesCheck
-        id={40014}
-        name="Shuffled Fairy: In Snide's room"
-        region="K. Rool's Island"
-        canGetLogic={canReachFactoryLobby && hasCam}
       />
     </FairyPool>
   )
