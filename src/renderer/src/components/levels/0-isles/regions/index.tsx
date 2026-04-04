@@ -37,6 +37,11 @@ import KremIslandCrates from '../crates/KremIsland'
 import KremIslandDirt from '../dirt/KremIsland'
 import KremIslandFairies from '../fairies/KremIsland'
 import KremIslandKasplats from '../kasplats/KremIsland'
+import OuterArenas from '../arenas/OuterRim'
+import OuterCrates from '../crates/OuterRim'
+import OuterDirt from '../dirt/OuterRim'
+import OuterFairies from '../fairies/OuterRim'
+import OuterKasplats from '../kasplats/OuterRim'
 
 const IslesRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -93,6 +98,17 @@ return (
     <KremIslandKasplats />
   </div>
     <OuterIslesChecks />
+  <div className="grid">
+    <OuterArenas />
+    <OuterCrates />
+    <OuterDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <OuterFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <OUterKasplats />
+  </div>
     <JapesLobbyChecks />
   <div className="grid">
     <AztecLobbyChecks />

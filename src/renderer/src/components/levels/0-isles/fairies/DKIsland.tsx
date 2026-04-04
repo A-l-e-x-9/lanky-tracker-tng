@@ -1,9 +1,10 @@
 import IslesCheck from '../check'
 import FairyPool from '@renderer/components/pools/Fairies'
+import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useGeneralFairy, useIslesUpper } from '@renderer/hooks/isles'
 import { useClimbing, useCamera } from '@renderer/hooks/kongs'
 
-const DKIslandFairies: React.FC = () => {
+const Shuffled: React.FC = () => {
   const isBreathing = useGeneralFairy()
   const canReachAztecLobby = useIslesUpper()
   const hasClimbing = useClimbing()
@@ -39,5 +40,5 @@ const DKIslandFairies: React.FC = () => {
     </FairyPool>
     )
 }
-
+const DKIslandFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
 export default DKIslandFairies

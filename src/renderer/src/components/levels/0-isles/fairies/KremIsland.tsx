@@ -1,9 +1,10 @@
 import IslesCheck from '../check'
 import FairyPool from '@renderer/components/pools/Fairies'
+import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useGeneralFairy, useIslesKremAscent, useKremFairy, useIslesFungiIsland, useIslesRocket } from '@renderer/hooks/isles'
 import { useCamera, useRocket } from '@renderer/hooks/kongs'
 
-const KremIslandFairies: React.FC = () => {
+const Shuffled: React.FC = () => {
 const isBreathing = useGeneralFairy()
 const canReachFactoryLobby = useIslesKremAscent()
 const vanillaFairy2 = useKremFairy()
@@ -48,4 +49,5 @@ const hasJetbarrel = useRocket()
   )
 }
 
+const KremIslandFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
 export default KremIslandFairies
