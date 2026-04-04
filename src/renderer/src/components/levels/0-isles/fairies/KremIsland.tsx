@@ -1,10 +1,11 @@
 import IslesCheck from '../check'
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useIslesKremAscent } from '@renderer/hooks/isles'
+import { useGeneralFairy, useIslesKremAscent, useKremFairy } from '@renderer/hooks/isles'
 
 const KremIslandFairies: React.FC = () => {
 const isBreathing = useGeneralFairy()
 const canReachFactoryLobby = useIslesKremAscent()
+const vanillaFairy2 = useKremFairy()
   return (
     <FairyPool>
       <IslesCheck
