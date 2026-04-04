@@ -3,9 +3,11 @@ import { useShallow } from 'zustand/react/shallow'
 import IslesCheck from '../check'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useGeneralDirt, useIslesKremAscent, useIslesKremTop } from '@renderer/hooks/isles'
+import { useShockwave } from '@renderer/hooks/kongs'
 
 const KremIslandDirt: React.FC = () => {
 const isBreathing = useGeneralDirt()
+const hasShockwave = useShockwave()
 const canReachFactoryLobby = useIslesKremAscent()
 const canDoIslesArena1 = canReachFactoryLobby && hasShockwave
 const canReachHelmLobby = useIslesKremTop()
