@@ -1,12 +1,17 @@
+import { useShallow } from 'zustand/react/shallow'
+import useDonkStore from '@renderer/store'
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
-import { useIslesFungiIsland } from '@renderer/hooks/isles'
-import { useAnyKong } from '@renderer/hooks/kongs'
+import { useIslesFungiIsland, useCheckChunkyPound } from '@renderer/hooks/isles'
+import { useAnyKong, useDive } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()
 const canReachForestLobby = useIslesFungiIsland()
+const canPoundTheX = useCheckChunkyPound()
+const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
+const hasDiving = useDive()
   return (
     <KasplatPool>
       <IslesCheck

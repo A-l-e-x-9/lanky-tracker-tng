@@ -1,12 +1,16 @@
 import FairyPool from '@renderer/components/pools/Fairies'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
-import { useGeneralFairy, useIslesFungiIsland, useCheckBFIInitial } from '@renderer/hooks/isles'
+import { useGeneralFairy, useIslesFungiIsland, useCheckBFIInitial, useIslesRocket } from '@renderer/hooks/isles'
+import { useCamera, useRocket } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
   const isBreathing = useGeneralFairy()
   const canReachForestLobby = useIslesFungiIsland()
   const canGoInBFI = useCheckBFIInitial()
+  const hasCam = useCamera()
+  const canUseJetbarrel = useIslesRocket()
+  const hasJetbarrel = useRocket()
   return (
     <FairyPool>
       <IslesCheck
