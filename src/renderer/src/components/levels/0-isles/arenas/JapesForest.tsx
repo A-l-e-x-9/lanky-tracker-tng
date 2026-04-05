@@ -1,6 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import IslesCheck from '../check'
 import JapesLobbyArenas from './JapesLobby'
 import AztecLobbyArenas from './AztecLobby'
 import FactoryLobbyArenas from './FactoryLobby'
