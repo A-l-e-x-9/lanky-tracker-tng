@@ -1,5 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { usePlayLobby, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
+import { usePlayLobby, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useAnyKong, useDiddy, useTiny, useBoulderTech, useTwirl, useRocket, useBalloon, useStrong } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -18,12 +18,10 @@ const hasJetbarrel = useRocket()
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena2 = canGetInForestLobby
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
-const canGetInAztecLobby = usePlayLobby('Angry Aztec')
 const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const canGetInAztecBack = useAztecLobbyChunky()
 const canGetInFactoryUpper = useFactoryLobbyUpper()
 const canGetInGalleonTiny = useCheckTinyGalleonLobby()
 const canGetInCavesKasplat = useCavesKasplat()
@@ -50,27 +48,6 @@ return (
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCastleLobby.in && hasBoulderTech && hasBalloon}
         canGetBreak={canGetInCastleLobby.out && (hasDiddy || hasTiny)}
-      />
-      <IslesCheck
-        id={20049}
-        name="Shuffled Melon Crate: Near the Grab lever in Factory Lobby"
-        region="Japes-Forest Lobbies"
-        canGetLogic={isBreathing && canGetInFactoryLobby.in}
-        canGetBreak={isBreathing && canGetInFactoryLobby.out}
-      />
-      <IslesCheck
-        id={20050}
-        name="Shuffled Melon Crate: On a Factory Lobby high platform"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInFactoryUpper.in}
-        canGetBreak={canGetInFactoryUpper.out}
-      />
-      <IslesCheck
-        id={20051}
-        name="Shuffled Melon Crate: Over the Factory DK Portal"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInFactoryUpper.in}
-        canGetBreak={canGetInFactoryUpper.out}
       />
       <IslesCheck
         id={20052}
