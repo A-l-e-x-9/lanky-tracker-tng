@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useCavesLobbyGeneric, useJapesLobbyGeneric, usePlayLobby } from '@renderer/hooks/isles'
+import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useCavesLobbyGeneric, usePlayLobby } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useGrab, useHighGrab, useRocket, useBoulderTech, useTwirl } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -21,7 +21,6 @@ const canDoGuitarGB = useCavesLobbyGeneric()
 const hasJetbarrel = useRocket()
 const boulderTech = useBoulderTech()
 const hinaKagiyama = useTwirl()
-const canReachJapesLobby = useJapesLobbyGeneric()
   return (
     <KasplatPool>
       <DKIslandKasplats />
