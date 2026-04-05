@@ -77,13 +77,6 @@ const canReachJapesLobby = useJapesLobbyGeneric()
         canGetLogic={canDoGuitarGB.in && hasJetbarrel}
         canGetBreak={canDoGuitarGB.out && boulderTech && hinaKagiyama}
       />
-      <IslesCheck
-        id={50013}
-        name="Shuffled Kasplat: Japes Lobby"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canReachJapesLobby.in}
-        canGetBreak={canReachJapesLobby.out}
-      />
     </KasplatPool>
   )
 }

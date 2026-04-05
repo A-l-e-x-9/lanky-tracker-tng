@@ -22,7 +22,7 @@ return (
 }
 
 const Shuffled: React.FC = () => {
-const canDo = useFactoryFairy()
+const canDo = useForestFairy()
 return (
   <FairyPool>
     <IslesCheck

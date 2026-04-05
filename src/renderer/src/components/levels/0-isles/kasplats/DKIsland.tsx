@@ -20,14 +20,14 @@ const Shuffled: React.FC = () => {
         canGetLogic={isBreathing}
       />
       <IslesCheck
-        id={50016}
+        id={50017}
         name="Shuffled Kasplat: Roof of Aztec Lobby"
         region="DK Island"
         canGetLogic={canDoRoofDirt.in}
         canGetBreak={canDoRoofDirt.out}
       />
       <IslesCheck
-        id={50017}
+        id={50018}
         name="Shuffled Kasplat: In the waterfall's pool"
         region="DK Island"
         canGetLogic={hasDiving.in && (hasAGun || hasOranges || hasAnInstrument)}

@@ -17,21 +17,21 @@ const Shuffled: React.FC = () => {
         canGetBreak={canReachFactoryLobby.out}
       />
       <IslesCheck
-        id={50012}
+        id={50013}
         name="Shuffled Kasplat: Inside the &quot;sprint cage&quot; in K. Lumsy's prison"
         region="K. Rool's Island"
         canGetLogic={canDoSprintGB.in}
         canGetBreak={canDoSprintGB.out}
       />
       <IslesCheck
-        id={50014}
+        id={50015}
         name="Shuffled Kasplat: Behind Helm Lobby"
         region="K. Rool's Island"
         canGetLogic={canReachHelmLobby.in}
         canGetBreak={canReachHelmLobby.out}
       />
       <IslesCheck
-        id={50015}
+        id={50016}
         name="Shuffled Kasplat: In Snide's room"
         region="K. Rool's Island"
         canGetLogic={canReachFactoryLobby.in}
