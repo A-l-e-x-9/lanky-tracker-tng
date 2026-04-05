@@ -27,6 +27,7 @@ const canReachJapesLobby = useJapesLobbyGeneric()
       <DKIslandKasplats />
       <KremIslandKasplats />
       <OuterKasplats />
+      <JapesForestKasplats />
       <IslesCheck
         id={50000}
         name="Shuffled Kasplat: DK's Vanilla Location (Helm Lobby)"

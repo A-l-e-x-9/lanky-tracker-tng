@@ -21,6 +21,7 @@ const Shuffled: React.FC = () => {
       <DKIslandFairies />
       <KremIslandFairies />
       <OuterFairies />
+      <JapesForestFairies />
       <IslesCheck
         id={40002}
         name="Shuffled Fairy: Vanilla Location #3 (crate inside Factory Lobby)"

@@ -36,6 +36,7 @@ const hasJetbarrel = useRocket()
       <DKIslandDirt />
       <KremIslandDirt />
       <OuterDirt />
+      <JapesForestDirt />
       <IslesCheck
         id={30001}
         name="Shuffled Dirt Patch: Check of Legends 2"

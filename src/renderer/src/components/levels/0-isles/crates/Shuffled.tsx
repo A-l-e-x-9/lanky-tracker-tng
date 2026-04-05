@@ -37,6 +37,7 @@ return (
       <DKIslandCrates />
       <KremIslandCrates />
       <OuterCrates />
+      <JapesForestCrates />
       <IslesCheck
         id={20001}
         name="Shuffled Melon Crate: Where the Check of Legends 2 Battle Arena would spawn in vanilla"
