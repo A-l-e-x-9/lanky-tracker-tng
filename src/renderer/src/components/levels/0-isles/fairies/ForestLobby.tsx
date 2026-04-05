@@ -1,5 +1,6 @@
 import FairyPool from '@renderer/components/pools/Fairies'
 import VanillaFairy from '@renderer/components/pools/VanillaFairy'
+import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useForestFairy } from '@renderer/hooks/isles'
 import IslesCheck from '../check'
 
@@ -28,8 +29,8 @@ return (
       id={40003}
       name="Shuffled Fairy: Vanilla Location #4 (my condolences...)"
       region="Japes-Forest Lobbies"
-      canGetLogic={vanillaFairy4.in}
-      canGetBreak={vanillaFairy4.out}
+      canGetLogic={canDo.in}
+      canGetBreak={canDo.out}
     />
   </FairyPool>
 )

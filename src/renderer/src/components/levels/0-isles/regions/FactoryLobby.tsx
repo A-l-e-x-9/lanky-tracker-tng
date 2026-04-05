@@ -12,7 +12,6 @@ import FactoryLobbyChunky from '../wrinkly/FactoryLobbyChunky'
 import FactoryLobbyArenas from '../arenas/FactoryLobby'
 import FactoryLobbyCrates from '../crates/FactoryLobby'
 import FactoryLobbyDirt from '../dirt/FactoryLobby'
-import FactoryLobbyFairies from '../fairies/FactoryLobby'
 import FactoryLobbyKasplats from '../kasplats/FactoryLobby'
 
 const FactoryLobbyChecks: React.FC = () => {
