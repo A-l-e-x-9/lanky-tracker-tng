@@ -2,12 +2,14 @@ import IslesCheck from '../check'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import { useGeneralDirt, useIslandDirt, useCheckBFIInitial, useCheckBananaFairyIsle } from '@renderer/hooks/isles'
+import { useShockwave } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const canDoIslesDirt1 = useIslandDirt()
 const canReachBFI = useCheckBFIInitial()
 const canGetRareBanana = useCheckBananaFairyIsle()
+const hasShockwave = useShockwave()
     return (
     <RainbowCoinPool>
       <IslesCheck
