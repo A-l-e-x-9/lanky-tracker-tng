@@ -1,11 +1,12 @@
 import IslesCheck from '../check'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useShuffleDirt } from '@renderer/hooks/settings'
-import { useGeneralDirt, useIslandDirt } from '@renderer/hooks/isles'
+import { useGeneralDirt, useIslandDirt, useCheckBFIInitial } from '@renderer/hooks/isles'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const canDoIslesDirt1 = useIslandDirt()
+const canReachBFI = useCheckBFIInitial()
     return (
     <RainbowCoinPool>
       <IslesCheck
