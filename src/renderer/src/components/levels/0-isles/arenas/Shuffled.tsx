@@ -17,7 +17,6 @@ const isHinaKagiyama = useTwirl()
 const hasJetbarrel = useRocket()
 const canDoIslesArena2 = useForestArena()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
-const canGetInJapesLobby = usePlayLobby('Jungle Japes')
 const canGetInAztecLobby = usePlayLobby('Angry Aztec')
 const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
@@ -49,27 +48,6 @@ const hasBalloon = useBalloon()
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCastleLobby.in && hasBoulderTech && hasBalloon}
         canGetBreak={canGetInCastleLobby.out && (hasDiddy || hasTiny)}
-      />
-      <IslesCheck
-        id={10046}
-        name="Shuffled Battle Arena: In front of DK's Wrinkly Door in Aztec Lobby"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecLobby.in}
-        canGetBreak={canGetInAztecLobby.out}
-      />
-      <IslesCheck
-        id={10047}
-        name="Shuffled Battle Arena: Right side of the Aztec Lobby back room"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecBack.in}
-        canGetBreak={canGetInAztecBack.out}
-      />
-      <IslesCheck
-        id={10048}
-        name="Shuffled Battle Arena: Left side of the Aztec Lobby back room"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecBack.in}
-        canGetBreak={canGetInAztecBack.out}
       />
       <IslesCheck
         id={10049}
