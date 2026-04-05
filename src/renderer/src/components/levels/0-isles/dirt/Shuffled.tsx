@@ -14,7 +14,6 @@ const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena2In = canGetInForestLobby.in && hasShockwave
 const canDoIslesArena2Out = canGetInForestLobby.out && hasShockwave
 const canDoIslesDirt4 = useCastleDirt()
-const canGetInJapesLobby = usePlayLobby('Jungle Japes')
 const canGetInAztecLobby = usePlayLobby('Angry Aztec')
 const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
@@ -50,27 +49,6 @@ const hasJetbarrel = useRocket()
         region="Caves-Helm Lobbies"
         canGetLogic={canDoIslesDirt4.in}
         canGetBreak={canDoIslesDirt4.out}
-      />
-      <IslesCheck
-        id={30046}
-        name="Shuffled Dirt Patch: In front of DK's Wrinkly Door in Aztec Lobby"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecLobby.in && hasShockwave}
-        canGetBreak={canGetInAztecLobby.out && hasShockwave}
-      />
-      <IslesCheck
-        id={30047}
-        name="Shuffled Dirt Patch: Right side of the Aztec Lobby back room"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecBack.in && hasShockwave}
-        canGetBreak={canGetInAztecBack.out && hasShockwave}
-      />
-      <IslesCheck
-        id={30048}
-        name="Shuffled Dirt Patch: Left side of the Aztec Lobby back room"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecBack.in && hasShockwave}
-        canGetBreak={canGetInAztecBack.out && hasShockwave}
       />
       <IslesCheck
         id={30049}
