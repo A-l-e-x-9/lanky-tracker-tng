@@ -51,20 +51,6 @@ const hasBalloon = useBalloon()
         canGetBreak={canGetInCastleLobby.out && (hasDiddy || hasTiny)}
       />
       <IslesCheck
-        id={10044}
-        name="Shuffled Battle Arena: At Japes Lobby Tag Barrel"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInJapesLobby.in}
-        canGetBreak={canGetInJapesLobby.out}
-      />
-      <IslesCheck
-        id={10045}
-        name="Shuffled Battle Arena: At Japes Lobby DK Portal"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInJapesLobby.in}
-        canGetBreak={canGetInJapesLobby.out}
-      />
-      <IslesCheck
         id={10046}
         name="Shuffled Battle Arena: In front of DK's Wrinkly Door in Aztec Lobby"
         region="Japes-Forest Lobbies"
