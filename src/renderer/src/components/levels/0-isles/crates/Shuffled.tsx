@@ -1,5 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useIslesFungiIsland, usePlayLobby, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
+import { usePlayLobby, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useAnyKong, useDiddy, useTiny, useBoulderTech, useTwirl, useRocket, useBalloon, useStrong } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -16,7 +16,6 @@ const isHinaKagiyama = useTwirl()
 const hasJetbarrel = useRocket()
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena2 = canGetInForestLobby
-const canReachFungiLobby = useIslesFungiIsland()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
 const canGetInAztecLobby = usePlayLobby('Angry Aztec')
