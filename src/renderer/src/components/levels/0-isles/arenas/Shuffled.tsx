@@ -17,7 +17,6 @@ const isHinaKagiyama = useTwirl()
 const hasJetbarrel = useRocket()
 const canDoIslesArena2 = useForestArena()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
-const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
@@ -32,25 +31,11 @@ const hasBalloon = useBalloon()
       <OuterArenas />
       <JapesForestArenas />
       <IslesCheck
-        id={10001}
-        name="Shuffled Battle Arena: Vanilla Arena 2 (Check of Legends 2)"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesArena2.in}
-        canGetBreak={canDoIslesArena2.out}
-      />
-      <IslesCheck
         id={10005}
         name="Shuffled Battle Arena: Under Lanky's Castle Lobby barrel"
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCastleLobby.in && hasBoulderTech && hasBalloon}
         canGetBreak={canGetInCastleLobby.out && (hasDiddy || hasTiny)}
-      />
-      <IslesCheck
-        id={10055}
-        name="Shuffled Battle Arena: On the Tag Barrel crate in Forest Lobby"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInForestLobby.in}
-        canGetBreak={canGetInForestLobby.out}
       />
       <IslesCheck
         id={10057}
