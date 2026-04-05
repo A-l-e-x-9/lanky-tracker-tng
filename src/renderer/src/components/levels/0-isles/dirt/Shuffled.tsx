@@ -1,5 +1,5 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useCastleDirt, usePlayLobby, useFactoryLobbyUpper, useCheckTinyGalleonLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useCastleDirt, usePlayLobby, useCheckTinyGalleonLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import { useShockwave, useTwirl, useBoulderTech, useStrong, useRocket } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -14,14 +14,12 @@ const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena2In = canGetInForestLobby.in && hasShockwave
 const canDoIslesArena2Out = canGetInForestLobby.out && hasShockwave
 const canDoIslesDirt4 = useCastleDirt()
-const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
 const isHinaKagiyama = useTwirl()
 const hasBoulderTech = useBoulderTech()
-const canGetInFactoryUpper = useFactoryLobbyUpper()
 const canGetInGalleonTiny = useCheckTinyGalleonLobby()
 const canGetInCavesKasplat = useCavesKasplat()
 const canGetInHelmChunky = useCheckChunkyHelm()
@@ -47,27 +45,6 @@ const hasJetbarrel = useRocket()
         region="Caves-Helm Lobbies"
         canGetLogic={canDoIslesDirt4.in}
         canGetBreak={canDoIslesDirt4.out}
-      />
-      <IslesCheck
-        id={30052}
-        name="Shuffled Dirt Patch: To the right of the Galleon DK Portal"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInGalleonLobby.in && hasShockwave}
-        canGetBreak={canGetInGalleonLobby.out && hasShockwave}
-      />
-      <IslesCheck
-        id={30053}
-        name="Shuffled Dirt Patch: To the left of the Galleon DK Portal"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInGalleonLobby.in && hasShockwave}
-        canGetBreak={canGetInGalleonLobby.out && hasShockwave}
-      />
-      <IslesCheck
-        id={30054}
-        name="Shuffled Dirt Patch: Galleon Lobby Mini Monkey room"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInGalleonTiny.in && hasShockwave}
-        canGetBreak={canGetInGalleonTiny.out && hasShockwave}
       />
       <IslesCheck
         id={30055}
