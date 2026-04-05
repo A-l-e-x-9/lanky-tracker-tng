@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useForestArena, usePlayLobby, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useForestArena, usePlayLobby, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import { useAnyKong, useDiddy, useTiny, useBoulderTech, useTwirl, useRocket, useBalloon } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -17,13 +17,11 @@ const isHinaKagiyama = useTwirl()
 const hasJetbarrel = useRocket()
 const canDoIslesArena2 = useForestArena()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
-const canGetInAztecLobby = usePlayLobby('Angry Aztec')
 const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const canGetInAztecBack = useAztecLobbyChunky()
 const canGetInFactoryUpper = useFactoryLobbyUpper()
 const canGetInCavesKasplat = useCavesKasplat()
 const canGetInHelmChunky = useCheckChunkyHelm()
@@ -48,27 +46,6 @@ const hasBalloon = useBalloon()
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCastleLobby.in && hasBoulderTech && hasBalloon}
         canGetBreak={canGetInCastleLobby.out && (hasDiddy || hasTiny)}
-      />
-      <IslesCheck
-        id={10049}
-        name="Shuffled Battle Arena: Near the Grab lever in Factory Lobby"
-        region="Japes-Forest Lobbies"
-        canGetLogic={isBreathing && canGetInFactoryLobby.in}
-        canGetBreak={isBreathing && canGetInFactoryLobby.out}
-      />
-      <IslesCheck
-        id={10050}
-        name="Shuffled Battle Arena: On a Factory Lobby high platform"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInFactoryUpper.in}
-        canGetBreak={canGetInFactoryUpper.out}
-      />
-      <IslesCheck
-        id={10051}
-        name="Shuffled Battle Arena: Over the Factory DK Portal"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInFactoryUpper.in}
-        canGetBreak={canGetInFactoryUpper.out}
       />
       <IslesCheck
         id={10052}
