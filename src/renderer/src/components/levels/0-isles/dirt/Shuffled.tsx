@@ -1,18 +1,17 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useIslandDirt, useCastleDirt, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useAztecLobbyChunky, useFactoryLobbyUpper, useCheckTinyGalleonLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useCastleDirt, usePlayLobby, useAztecLobbyChunky, useFactoryLobbyUpper, useCheckTinyGalleonLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import { useShockwave, useTwirl, useBoulderTech, useStrong, useRocket } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import DKIslandDirt from './DKIsland'
 import KremIslandDirt from './KremIsland'
+import OuterDirt from './OuterRim'
 
 const Shuffled: React.FC = () => {
-const isBreathing = useGeneralDirt()
 const hasShockwave = useShockwave()
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena2In = canGetInForestLobby.in && hasShockwave
 const canDoIslesArena2Out = canGetInForestLobby.out && hasShockwave
-const canDoIslesDirt1 = useIslandDirt()
 const canDoIslesDirt4 = useCastleDirt()
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
 const canGetInAztecLobby = usePlayLobby('Angry Aztec')
@@ -22,8 +21,6 @@ const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
 const isHinaKagiyama = useTwirl()
-const canReachBFI = useCheckBFIInitial()
-const canGetRareBanana = useCheckBananaFairyIsle()
 const hasBoulderTech = useBoulderTech()
 const canGetInAztecBack = useAztecLobbyChunky()
 const canGetInFactoryUpper = useFactoryLobbyUpper()
@@ -37,6 +34,7 @@ const hasJetbarrel = useRocket()
     <RainbowCoinPool>
       <DKIslandDirt />
       <KremIslandDirt />
+      <OuterDirt />
       <IslesCheck
         id={30001}
         name="Shuffled Dirt Patch: Check of Legends 2"
