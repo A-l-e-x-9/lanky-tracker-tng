@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useForestArena, usePlayLobby, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useForestArena, usePlayLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import { useAnyKong, useDiddy, useTiny, useBoulderTech, useTwirl, useRocket, useBalloon } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -17,12 +17,10 @@ const isHinaKagiyama = useTwirl()
 const hasJetbarrel = useRocket()
 const canDoIslesArena2 = useForestArena()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
-const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const canGetInFactoryUpper = useFactoryLobbyUpper()
 const canGetInCavesKasplat = useCavesKasplat()
 const canGetInHelmChunky = useCheckChunkyHelm()
 const canGetInHelmDK = useHelmKasplat()
@@ -46,20 +44,6 @@ const hasBalloon = useBalloon()
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCastleLobby.in && hasBoulderTech && hasBalloon}
         canGetBreak={canGetInCastleLobby.out && (hasDiddy || hasTiny)}
-      />
-      <IslesCheck
-        id={10052}
-        name="Shuffled Battle Arena: To the right of the Galleon DK Portal"
-        region="Japes-Forest Lobbies"
-        canGetLogic={isBreathing && canGetInGalleonLobby.in}
-        canGetBreak={isBreathing && canGetInGalleonLobby.out}
-      />
-      <IslesCheck
-        id={10053}
-        name="Shuffled Battle Arena: To the left of the Galleon DK Portal"
-        region="Japes-Forest Lobbies"
-        canGetLogic={isBreathing && canGetInGalleonLobby.in}
-        canGetBreak={isBreathing && canGetInGalleonLobby.out}
       />
       <IslesCheck
         id={10055}
