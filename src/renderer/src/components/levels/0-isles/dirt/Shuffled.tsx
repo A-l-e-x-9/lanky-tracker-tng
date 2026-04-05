@@ -14,13 +14,11 @@ const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena2In = canGetInForestLobby.in && hasShockwave
 const canDoIslesArena2Out = canGetInForestLobby.out && hasShockwave
 const canDoIslesDirt4 = useCastleDirt()
-const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
 const isHinaKagiyama = useTwirl()
 const hasBoulderTech = useBoulderTech()
-const canGetInGalleonTiny = useCheckTinyGalleonLobby()
 const canGetInCavesKasplat = useCavesKasplat()
 const canGetInHelmChunky = useCheckChunkyHelm()
 const canGetInHelmDK = useHelmKasplat()
@@ -33,25 +31,11 @@ const hasJetbarrel = useRocket()
       <OuterDirt />
       <JapesForestDirt />
       <IslesCheck
-        id={30001}
-        name="Shuffled Dirt Patch: Check of Legends 2"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesArena2In}
-        canGetBreak={canDoIslesArena2Out}
-      />
-      <IslesCheck
         id={30005}
         name="Shuffled Dirt Patch: Vanilla Location 4 (under Lanky's Castle Lobby barrel)"
         region="Caves-Helm Lobbies"
         canGetLogic={canDoIslesDirt4.in}
         canGetBreak={canDoIslesDirt4.out}
-      />
-      <IslesCheck
-        id={30055}
-        name="Shuffled Dirt Patch: On the Tag Barrel crate in Forest Lobby"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInForestLobby.in && hasShockwave}
-        canGetBreak={canGetInForestLobby.out && hasShockwave}
       />
       <IslesCheck
         id={30056}

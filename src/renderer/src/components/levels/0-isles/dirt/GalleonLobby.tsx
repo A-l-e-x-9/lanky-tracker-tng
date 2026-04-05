@@ -5,7 +5,7 @@ import { usePlayLobby, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
 import { useShockwave } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
-const canGetInGalleonLobby = usePlayLobby('Galleon Lobby')
+const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const hasShockwave = useShockwave()
 const canGetInGalleonTiny = useCheckTinyGalleonLobby()
 return (
@@ -35,5 +35,5 @@ return (
   )
 }
 
-const FactoryLobbyDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
-export default FactoryLobbyDirt
+const GalleonLobbyDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
+export default GalleonLobbyDirt
