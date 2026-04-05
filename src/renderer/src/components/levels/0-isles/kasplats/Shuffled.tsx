@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useIslesFungiIsland, useCavesLobbyGeneric, useJapesLobbyGeneric, usePlayLobby } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useGrab, useHighGrab, useDive, useRocket, useBoulderTech, useTwirl } from '@renderer/hooks/kongs'
+import { useGrab, useHighGrab, useRocket, useBoulderTech, useTwirl } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import DKIslandKasplats from './DKIsland'
 import KremIslandKasplats from './KremIsland'
@@ -16,7 +16,6 @@ const chunkyKasplat = useGalleonKasplat()
 const canReachFactoryLobby = usePlayLobby('Frantic Factory')
 const hasGrab = useGrab()
 const highGrab = useHighGrab()
-const hasDiving = useDive()
 const canReachForestLobby = useIslesFungiIsland()
 const canDoGuitarGB = useCavesLobbyGeneric()
 const hasJetbarrel = useRocket()
