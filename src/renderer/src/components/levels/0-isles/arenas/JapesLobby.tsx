@@ -25,5 +25,5 @@ const canGetInJapesLobby = usePlayLobby('Jungle Japes')
   )
 }
 
-const JapesLobby: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
-export default JapesLobby
+const JapesLobbyArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
+export default JapesLobbyArenas
