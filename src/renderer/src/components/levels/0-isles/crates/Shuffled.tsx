@@ -1,5 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useIslesFungiIsland, usePlayLobby, useCheckBFIInitial, useCheckBananaFairyIsle, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
+import { useIslesFungiIsland, usePlayLobby, useAztecLobbyChunky, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useAnyKong, useDiddy, useTiny, useBoulderTech, useTwirl, useRocket, useBalloon, useStrong } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -18,15 +18,12 @@ const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena2 = canGetInForestLobby
 const canReachFungiLobby = useIslesFungiIsland()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
-const canDoIslesDirt1 = canReachFungiLobby
 const canGetInJapesLobby = usePlayLobby('Jungle Japes')
 const canGetInAztecLobby = usePlayLobby('Angry Aztec')
 const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const canReachBFI = useCheckBFIInitial()
-const canGetRareBanana = useCheckBananaFairyIsle()
 const canGetInAztecBack = useAztecLobbyChunky()
 const canGetInFactoryUpper = useFactoryLobbyUpper()
 const canGetInGalleonTiny = useCheckTinyGalleonLobby()
