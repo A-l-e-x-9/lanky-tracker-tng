@@ -18,7 +18,6 @@ const hasJetbarrel = useRocket()
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena2 = canGetInForestLobby
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
-const canGetInJapesLobby = usePlayLobby('Jungle Japes')
 const canGetInAztecLobby = usePlayLobby('Angry Aztec')
 const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
@@ -51,27 +50,6 @@ return (
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCastleLobby.in && hasBoulderTech && hasBalloon}
         canGetBreak={canGetInCastleLobby.out && (hasDiddy || hasTiny)}
-      />
-      <IslesCheck
-        id={20046}
-        name="Shuffled Melon Crate: In front of DK's Wrinkly Door in Aztec Lobby"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecLobby.in}
-        canGetBreak={canGetInAztecLobby.out}
-      />
-      <IslesCheck
-        id={20047}
-        name="Shuffled Melon Crate: Right side of the Aztec Lobby back room"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecBack.in}
-        canGetBreak={canGetInAztecBack.out}
-      />
-      <IslesCheck
-        id={20048}
-        name="Shuffled Melon Crate: Left side of the Aztec Lobby back room"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInAztecBack.in}
-        canGetBreak={canGetInAztecBack.out}
       />
       <IslesCheck
         id={20049}
