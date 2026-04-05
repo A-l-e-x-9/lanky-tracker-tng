@@ -52,20 +52,6 @@ const hasJetbarrel = useRocket()
         canGetBreak={canDoIslesDirt4.out}
       />
       <IslesCheck
-        id={30044}
-        name="Shuffled Dirt Patch: At Japes Lobby Tag Barrel"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInJapesLobby.in && hasShockwave}
-        canGetBreak={canGetInJapesLobby.out && hasShockwave}
-      />
-      <IslesCheck
-        id={30045}
-        name="Shuffled Dirt Patch: At Japes Lobby DK Portal"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInJapesLobby.in && hasShockwave}
-        canGetBreak={canGetInJapesLobby.out && hasShockwave}
-      />
-      <IslesCheck
         id={30046}
         name="Shuffled Dirt Patch: In front of DK's Wrinkly Door in Aztec Lobby"
         region="Japes-Forest Lobbies"
