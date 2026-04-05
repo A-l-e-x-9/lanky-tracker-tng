@@ -10,9 +10,6 @@ import JapesForestDirt from './JapesForest'
 
 const Shuffled: React.FC = () => {
 const hasShockwave = useShockwave()
-const canGetInForestLobby = usePlayLobby('Fungi Forest')
-const canDoIslesArena2In = canGetInForestLobby.in && hasShockwave
-const canDoIslesArena2Out = canGetInForestLobby.out && hasShockwave
 const canDoIslesDirt4 = useCastleDirt()
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')

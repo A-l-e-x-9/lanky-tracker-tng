@@ -37,13 +37,6 @@ const Shuffled: React.FC = () => {
         canGetBreak={vanillaFairy4.out}
       />
       <IslesCheck
-        id={40011}
-        name="Shuffled Fairy: Inside Chunky's room in Aztec Lobby"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canReachAztecLobbyChunky.in && hasCam}
-        canGetBreak={canReachAztecLobbyChunky.out && hasCam}
-      />
-      <IslesCheck
         id={40012}
         name="Shuffled Fairy: At Lanky's Castle Lobby checks"
         region="Caves-Helm Lobbies"

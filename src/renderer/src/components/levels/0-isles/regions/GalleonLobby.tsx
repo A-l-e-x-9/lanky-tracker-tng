@@ -10,14 +10,11 @@ import GalleonLobbyChunky from '../wrinkly/GalleonLobbyChunky'
 import GalleonLobbyArenas from '../arenas/GalleonLobby'
 import GalleonLobbyCrates from '../crates/GalleonLobby'
 import GalleonLobbyDirt from '../dirt/GalleonLobby'
-import GalleonLobbyFairies from '../fairies/GalleonLobby'
 import GalleonLobbyKasplats from '../kasplats/GalleonLobby'
 
 const GalleonLobbyChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
-const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
-const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
@@ -36,9 +33,6 @@ return (
     <GalleonLobbyArenas />
     <GalleonLobbyCrates />
     <GalleonLobbyDirt />
-  </div>
-  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
-    <GalleonLobbyFairies />
   </div>
   <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <GalleonLobbyKasplats />
