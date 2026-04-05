@@ -1,5 +1,5 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useCastleDirt, usePlayLobby, useCheckTinyGalleonLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useCastleDirt, usePlayLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import { useShockwave, useTwirl, useBoulderTech, useStrong, useRocket } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'

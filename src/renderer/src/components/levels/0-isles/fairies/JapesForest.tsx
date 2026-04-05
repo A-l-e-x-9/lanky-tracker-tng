@@ -7,12 +7,12 @@ import ForestLobbyFairies from './ForestLobby'
 const Shuffled: React.FC = () => {
   return (
     <FairyPool>
-      <AztecLobbyFairy />
-      <FactoryLobbyFairy />
-      <ForestLobbyFairy />
+      <AztecLobbyFairies />
+      <FactoryLobbyFairies />
+      <ForestLobbyFairies />
     </FairyPool>
   )
 }
 
-const JapesForestFairies: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
+const JapesForestFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
 export default JapesForestFairies

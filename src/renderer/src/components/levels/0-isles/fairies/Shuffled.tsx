@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useFactoryFairy, useForestFairy, useAztecLobbyChunky, useCheckLankyCastle, useCastleLobbyGeneric, useCavesKasplat } from '@renderer/hooks/isles'
+import { useFactoryFairy, useForestFairy, useCheckLankyCastle, useCastleLobbyGeneric, useCavesKasplat } from '@renderer/hooks/isles'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useCamera } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -12,7 +12,6 @@ const Shuffled: React.FC = () => {
   const hasCam = useCamera()
   const vanillaFairy3 = useFactoryFairy()
   const vanillaFairy4 = useForestFairy()
-  const canReachAztecLobbyChunky = useAztecLobbyChunky()
   const canReachCastleLobbyLanky = useCheckLankyCastle()
   const canReachCastleLobby = useCastleLobbyGeneric()
   const iceWallBreakdown = useCavesKasplat()
