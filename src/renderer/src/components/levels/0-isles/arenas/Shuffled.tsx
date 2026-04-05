@@ -6,6 +6,7 @@ import IslesCheck from '../check'
 import DKIslandArenas from './DKIsland'
 import KremIslandArenas from './KremIsland'
 import OuterArenas from './OuterRim'
+import JapesForestArenas from './JapesForest'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()
@@ -34,6 +35,7 @@ const hasBalloon = useBalloon()
       <DKIslandArenas />
       <KremIslandArenas />
       <OuterArenas />
+      <JapesForestArenas />
       <IslesCheck
         id={10001}
         name="Shuffled Battle Arena: Vanilla Arena 2 (Check of Legends 2)"

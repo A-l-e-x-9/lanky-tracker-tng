@@ -9,6 +9,11 @@ import FactoryLobbyDiddy from '../wrinkly/FactoryLobbyDiddy'
 import FactoryLobbyLanky from '../wrinkly/FactoryLobbyLanky'
 import FactoryLobbyTiny from '../wrinkly/FactoryLobbyTiny'
 import FactoryLobbyChunky from '../wrinkly/FactoryLobbyChunky'
+import FactoryLobbyArenas from '../arenas/FactoryLobby'
+import FactoryLobbyCrates from '../crates/FactoryLobby'
+import FactoryLobbyDirt from '../dirt/FactoryLobby'
+import FactoryLobbyFairies from '../fairies/FactoryLobby'
+import FactoryLobbyKasplats from '../kasplats/FactoryLobby'
 
 const FactoryLobbyChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -34,6 +39,17 @@ return (
   </div>
   <div className={`grid ${isKremKaptureSeed}`}>
     <FactoryLobbyEnemies />
+  </div>
+  <div className="grid">
+  <FactoryLobbyArenas />
+  <FactoryLobbyCrates />
+  <FactoryLobbyDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <FactoryLobbyFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <FactoryLobbyKasplats />
   </div>
   </>
 )

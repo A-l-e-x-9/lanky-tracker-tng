@@ -6,6 +6,7 @@ import IslesCheck from '../check'
 import DKIslandCrates from './DKIsland'
 import KremIslandCrates from './KremIsland'
 import OuterCrates from './OuterRim'
+import JapesForestCrates from './JapesForest'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()

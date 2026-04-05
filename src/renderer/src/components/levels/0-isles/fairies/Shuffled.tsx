@@ -6,6 +6,7 @@ import IslesCheck from '../check'
 import DKIslandFairies from './DKIsland'
 import KremIslandFairies from './KremIsland'
 import OuterFairies from './OuterRim'
+import JapesForestFairies from './JapesForest'
 
 const Shuffled: React.FC = () => {
   const hasCam = useCamera()

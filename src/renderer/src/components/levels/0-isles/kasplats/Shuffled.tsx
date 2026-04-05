@@ -6,6 +6,7 @@ import IslesCheck from '../check'
 import DKIslandKasplats from './DKIsland'
 import KremIslandKasplats from './KremIsland'
 import OuterKasplats from './OuterRim'
+import JapesForestKasplats from './JapesForest'
 
 const Shuffled: React.FC = () => {
 const DKKasplat = useHelmKasplat()

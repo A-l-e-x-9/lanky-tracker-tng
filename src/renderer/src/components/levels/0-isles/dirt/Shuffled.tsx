@@ -6,6 +6,7 @@ import IslesCheck from '../check'
 import DKIslandDirt from './DKIsland'
 import KremIslandDirt from './KremIsland'
 import OuterDirt from './OuterRim'
+import JapesForestDirt from './JapesForest'
 
 const Shuffled: React.FC = () => {
 const hasShockwave = useShockwave()

@@ -110,9 +110,7 @@ return (
     <OuterKasplats />
   </div>
     <JapesLobbyChecks />
-  <div className="grid">
     <AztecLobbyChecks />
-  </div>
     <FactoryLobbyChecks />
     <GalleonLobbyChecks />
     <ForestLobbyChecks />
