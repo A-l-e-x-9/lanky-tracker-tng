@@ -1,5 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { usePlayLobby, useFactoryLobbyUpper, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat, useCheckTinyGalleonLobby } from '@renderer/hooks/isles'
+import { usePlayLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useAnyKong, useDiddy, useTiny, useBoulderTech, useTwirl, useRocket, useBalloon, useStrong } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -18,10 +18,8 @@ const hasJetbarrel = useRocket()
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena2 = canGetInForestLobby
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
-const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const canGetInGalleonTiny = useCheckTinyGalleonLobby()
 const canGetInCavesKasplat = useCavesKasplat()
 const canGetInHelmChunky = useCheckChunkyHelm()
 const canGetInHelmDK = useHelmKasplat()
@@ -33,13 +31,6 @@ return (
       <KremIslandCrates />
       <OuterCrates />
       <JapesForestCrates />
-      <IslesCheck
-        id={20001}
-        name="Shuffled Melon Crate: Where the Check of Legends 2 Battle Arena would spawn in vanilla"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canDoIslesArena2.in}
-        canGetBreak={canDoIslesArena2.out}
-      />
       <IslesCheck
         id={20005}
         name="Shuffled Melon Crate: Under Lanky's Castle Lobby barrel"
