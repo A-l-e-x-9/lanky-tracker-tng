@@ -18,11 +18,9 @@ const hasJetbarrel = useRocket()
 const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena2 = canGetInForestLobby
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
-const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const canGetInFactoryUpper = useFactoryLobbyUpper()
 const canGetInGalleonTiny = useCheckTinyGalleonLobby()
 const canGetInCavesKasplat = useCavesKasplat()
 const canGetInHelmChunky = useCheckChunkyHelm()
@@ -48,27 +46,6 @@ return (
         region="Caves-Helm Lobbies"
         canGetLogic={canGetInCastleLobby.in && hasBoulderTech && hasBalloon}
         canGetBreak={canGetInCastleLobby.out && (hasDiddy || hasTiny)}
-      />
-      <IslesCheck
-        id={20052}
-        name="Shuffled Melon Crate: To the right of the Galleon DK Portal"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInGalleonLobby.in}
-        canGetBreak={canGetInGalleonLobby.out}
-      />
-      <IslesCheck
-        id={20053}
-        name="Shuffled Melon Crate: To the left of the Galleon DK Portal"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInGalleonLobby.in}
-        canGetBreak={canGetInGalleonLobby.out}
-      />
-      <IslesCheck
-        id={20054}
-        name="Shuffled Melon Crate: Galleon Lobby Mini Monkey room"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInGalleonTiny.in}
-        canGetBreak={canGetInGalleonTiny.out}
       />
       <IslesCheck
         id={20056}
