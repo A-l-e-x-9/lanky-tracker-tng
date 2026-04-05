@@ -1,5 +1,5 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useCastleDirt, usePlayLobby, useAztecLobbyChunky, useFactoryLobbyUpper, useCheckTinyGalleonLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useCastleDirt, usePlayLobby, useFactoryLobbyUpper, useCheckTinyGalleonLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import { useShockwave, useTwirl, useBoulderTech, useStrong, useRocket } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -14,7 +14,6 @@ const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canDoIslesArena2In = canGetInForestLobby.in && hasShockwave
 const canDoIslesArena2Out = canGetInForestLobby.out && hasShockwave
 const canDoIslesDirt4 = useCastleDirt()
-const canGetInAztecLobby = usePlayLobby('Angry Aztec')
 const canGetInFactoryLobby = usePlayLobby('Frantic Factory')
 const canGetInGalleonLobby = usePlayLobby('Gloomy Galleon')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
@@ -22,7 +21,6 @@ const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
 const isHinaKagiyama = useTwirl()
 const hasBoulderTech = useBoulderTech()
-const canGetInAztecBack = useAztecLobbyChunky()
 const canGetInFactoryUpper = useFactoryLobbyUpper()
 const canGetInGalleonTiny = useCheckTinyGalleonLobby()
 const canGetInCavesKasplat = useCavesKasplat()
@@ -49,27 +47,6 @@ const hasJetbarrel = useRocket()
         region="Caves-Helm Lobbies"
         canGetLogic={canDoIslesDirt4.in}
         canGetBreak={canDoIslesDirt4.out}
-      />
-      <IslesCheck
-        id={30049}
-        name="Shuffled Dirt Patch: Near the Grab lever in Factory Lobby"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInFactoryLobby.in && hasShockwave}
-        canGetBreak={canGetInFactoryLobby.out && hasShockwave}
-      />
-      <IslesCheck
-        id={30050}
-        name="Shuffled Dirt Patch: On a Factory Lobby high platform"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInFactoryUpper.in && hasShockwave}
-        canGetBreak={canGetInFactoryUpper.out && hasShockwave}
-      />
-      <IslesCheck
-        id={30051}
-        name="Shuffled Dirt Patch: Over the Factory DK Portal"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canGetInFactoryUpper.in && hasShockwave}
-        canGetBreak={canGetInFactoryUpper.out && hasShockwave}
       />
       <IslesCheck
         id={30052}
