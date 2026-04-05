@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useForestArena, usePlayLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { usePlayLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import { useAnyKong, useDiddy, useTiny, useBoulderTech, useTwirl, useRocket, useBalloon } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -15,9 +15,7 @@ const hasTiny = useTiny()
 const hasBoulderTech = useBoulderTech()
 const isHinaKagiyama = useTwirl()
 const hasJetbarrel = useRocket()
-const canDoIslesArena2 = useForestArena()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
-const canGetInForestLobby = usePlayLobby('Fungi Forest')
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
 const canGetInCavesKasplat = useCavesKasplat()
