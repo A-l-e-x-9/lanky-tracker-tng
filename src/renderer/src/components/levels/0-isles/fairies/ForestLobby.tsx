@@ -20,4 +20,20 @@ return (
 )
 }
 
+const Shuffled: React.FC = () => {
+const canDo = useFactoryFairy()
+return (
+  <FairyPool>
+    <IslesCheck
+      id={40003}
+      name="Shuffled Fairy: Vanilla Location #4 (my condolences...)"
+      region="Japes-Forest Lobbies"
+      canGetLogic={vanillaFairy4.in}
+      canGetBreak={vanillaFairy4.out}
+    />
+  </FairyPool>
+)
+}
+
+export const ForestLobbyFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
 export default ForestLobbyFairy

@@ -1,5 +1,6 @@
 import FairyPool from '@renderer/components/pools/Fairies'
 import VanillaFairy from '@renderer/components/pools/VanillaFairy'
+import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useFactoryFairy } from '@renderer/hooks/isles'
 import IslesCheck from '../check'
 
@@ -20,4 +21,20 @@ return (
 )
 }
 
+const Shuffled: React.FC = () => {
+const canDo = useFactoryFairy()
+return (
+  <FairyPool>
+    <IslesCheck
+      id={40002}
+      name="Shuffled Fairy: Vanilla Location #3 (crate inside Factory Lobby)"
+      region="Japes-Forest Lobbies"
+      canGetLogic={canDo.in}
+      canGetBreak={canDo.out}
+    />
+  </FairyPool>
+)
+}
+
+export const FactoryLobbyFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
 export default FactoryLobbyFairy

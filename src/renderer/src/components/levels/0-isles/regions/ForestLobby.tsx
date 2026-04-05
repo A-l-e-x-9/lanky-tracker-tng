@@ -1,7 +1,7 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import GoneArena from '../arenas/Gone'
-import ForestLobbyFairy from '../fairies/ForestLobby'
+import ForestLobbyFairy, { ForestLobbyFairies } from '../fairies/ForestLobby'
 import ForestLobbyDK from '../wrinkly/ForestLobbyDK'
 import ForestLobbyDiddy from '../wrinkly/ForestLobbyDiddy'
 import ForestLobbyLanky from '../wrinkly/ForestLobbyLanky'
@@ -10,7 +10,6 @@ import ForestLobbyChunky from '../wrinkly/ForestLobbyChunky'
 import ForestLobbyArenas from '../arenas/ForestLobby'
 import ForestLobbyCrates from '../crates/ForestLobby'
 import ForestLobbyDirt from '../dirt/ForestLobby'
-import ForestLobbyFairies from '../fairies/ForestLobby'
 import ForestLobbyKasplats from '../kasplats/ForestLobby'
 
 const ForestLobbyChecks: React.FC = () => {

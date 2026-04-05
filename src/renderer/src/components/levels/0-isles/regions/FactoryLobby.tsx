@@ -1,7 +1,7 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import FactoryLobbyEnemies from '../enemies/FactoryLobby'
-import FactoryLobbyFairy from '../fairies/FactoryLobby'
+import FactoryLobbyFairy, { FactoryLobbyFairies } from '../fairies/FactoryLobby'
 import BongosPad from '../gold-bananas/dk/BongosPad'
 import TinyKasplat from '../kasplats/Tiny'
 import FactoryLobbyDK from '../wrinkly/FactoryLobbyDK'

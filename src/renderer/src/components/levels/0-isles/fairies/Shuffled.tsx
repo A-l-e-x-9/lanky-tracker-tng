@@ -22,20 +22,6 @@ const Shuffled: React.FC = () => {
       <OuterFairies />
       <JapesForestFairies />
       <IslesCheck
-        id={40002}
-        name="Shuffled Fairy: Vanilla Location #3 (crate inside Factory Lobby)"
-        region="Japes-Forest Lobbies"
-        canGetLogic={vanillaFairy3.in}
-        canGetBreak={vanillaFairy3.out}
-      />
-      <IslesCheck
-        id={40003}
-        name="Shuffled Fairy: Vanilla Location #4 (my condolences...)"
-        region="Japes-Forest Lobbies"
-        canGetLogic={vanillaFairy4.in}
-        canGetBreak={vanillaFairy4.out}
-      />
-      <IslesCheck
         id={40012}
         name="Shuffled Fairy: At Lanky's Castle Lobby checks"
         region="Caves-Helm Lobbies"
