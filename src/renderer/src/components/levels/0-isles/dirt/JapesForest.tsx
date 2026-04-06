@@ -5,7 +5,7 @@ import FactoryLobbyDirt from './FactoryLobby'
 import GalleonLobbyDirt from './GalleonLobby'
 import ForestLobbyDirt from './ForestLobby'
 
-const Shuffled: React.FC = () => {
+const JapesForestDirt: React.FC = () => {
   return (
     <RainbowCoinPool>
       <JapesLobbyDirt />
