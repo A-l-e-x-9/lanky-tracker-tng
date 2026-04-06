@@ -9,7 +9,6 @@ import CavesHelmKasplats from './CavesHelm'
 
 const ShuffledKasplats: React.FC = () => {
 const DKKasplat = useHelmKasplat()
-const diddyKasplat = useCastleKasplat()
   return (
     <KasplatPool>
       <DKIslandKasplats />
@@ -23,13 +22,6 @@ const diddyKasplat = useCastleKasplat()
         region="Caves-Helm Lobbies"
         canGetLogic={DKKasplat.in}
         canGetBreak={DKKasplat.out}
-      />
-      <IslesCheck
-        id={50001}
-        name="Shuffled Kasplat: Diddy's Vanilla Location (a cage in Castle Lobby)"
-        region="Caves-Helm Lobbies"
-        canGetLogic={diddyKasplat.in}
-        canGetBreak={diddyKasplat.out}
       />
     </KasplatPool>
   )

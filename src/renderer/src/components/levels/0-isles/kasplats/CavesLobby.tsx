@@ -31,4 +31,4 @@ const hinaKagiyama = useTwirl()
 }
 
 const CavesLobbyKasplats: React.FC = () => (useShuffleKasplats() ? <Shuffled /> : null)
-export default CastleLobbyKasplats
+export default CavesLobbyKasplats
