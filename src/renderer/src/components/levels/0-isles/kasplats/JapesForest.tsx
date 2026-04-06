@@ -1,11 +1,10 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useShuffleKasplats } from '@renderer/hooks/settings'
 import JapesLobbyKasplats from './JapesLobby'
 import AztecLobbyKasplats from './AztecLobby'
 import FactoryLobbyKasplats from './FactoryLobby'
 import GalleonLobbyKasplats from './GalleonLobby'
 
-const Shuffled: React.FC = () => {
+const JapesForestKasplats: React.FC = () => {
   return (
     <KasplatPool>
       <JapesLobbyKasplats />
@@ -16,5 +15,4 @@ const Shuffled: React.FC = () => {
   )
 }
 
-const JapesForestKasplats: React.FC = () => (useShuffleKasplats() ? <Shuffled /> : null)
 export default JapesForestKasplats
