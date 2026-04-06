@@ -4,7 +4,6 @@ import JapesLobbyKasplats from './JapesLobby'
 import AztecLobbyKasplats from './AztecLobby'
 import FactoryLobbyKasplats from './FactoryLobby'
 import GalleonLobbyKasplats from './GalleonLobby'
-import ForestLobbyKasplats from './ForestLobby'
 
 const Shuffled: React.FC = () => {
   return (
@@ -13,7 +12,6 @@ const Shuffled: React.FC = () => {
       <AztecLobbyKasplats />
       <FactoryLobbyKasplats />
       <GalleonLobbyKasplats />
-      <ForestLobbyKasplats />
     </KasplatPool>
   )
 }

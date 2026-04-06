@@ -10,7 +10,6 @@ import ForestLobbyChunky from '../wrinkly/ForestLobbyChunky'
 import ForestLobbyArenas from '../arenas/ForestLobby'
 import ForestLobbyCrates from '../crates/ForestLobby'
 import ForestLobbyDirt from '../dirt/ForestLobby'
-import ForestLobbyKasplats from '../kasplats/ForestLobby'
 
 const ForestLobbyChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -38,9 +37,6 @@ return (
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ForestLobbyFairies />
-  </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
-    <ForestLobbyKasplats />
   </div>
   </>
 )

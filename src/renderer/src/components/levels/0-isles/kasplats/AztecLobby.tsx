@@ -18,5 +18,5 @@ return (
 )
 }
 
-const JapesLobbyKasplats: React.FC = () => (useShuffleKasplats() ? <Shuffled /> : null)
-export default JapesLobbyKasplats
+const AztecLobbyKasplats: React.FC = () => (useShuffleKasplats() ? <Shuffled /> : null)
+export default AztecLobbyKasplats

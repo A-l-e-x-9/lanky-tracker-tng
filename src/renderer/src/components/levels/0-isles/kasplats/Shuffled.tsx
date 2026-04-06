@@ -49,25 +49,11 @@ const hinaKagiyama = useTwirl()
         canGetBreak={lankyKasplat.out}
       />
       <IslesCheck
-        id={50003}
-        name="Shuffled Kasplat: Tiny's Vanilla Location (a box in Factory Lobby)"
-        region="Japes-Forest Lobbies"
-        canGetLogic={tinyKasplat.in}
-        canGetBreak={tinyKasplat.out}
-      />
-      <IslesCheck
         id={50004}
         name="Shuffled Kasplat: Chunky's Vanilla Location (Galleon Lobby)"
         region="Japes-Forest Lobbies"
         canGetLogic={chunkyKasplat.in}
         canGetBreak={chunkyKasplat.out}
-      />
-      <IslesCheck
-        id={50006}
-        name="Shuffled Kasplat: Factory Lobby, above the DK Portal"
-        region="Japes-Forest Lobbies"
-        canGetLogic={canReachFactoryLobby.in && hasGrab}
-        canGetBreak={highGrab}
       />
       <IslesCheck
         id={50011}
