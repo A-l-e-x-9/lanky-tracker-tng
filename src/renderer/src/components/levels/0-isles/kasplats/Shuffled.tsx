@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useGalleonKasplat, useCavesLobbyGeneric } from '@renderer/hooks/isles'
+import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useCavesLobbyGeneric } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useRocket, useBoulderTech, useTwirl } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
@@ -12,7 +12,6 @@ const Shuffled: React.FC = () => {
 const DKKasplat = useHelmKasplat()
 const diddyKasplat = useCastleKasplat()
 const lankyKasplat = useCavesKasplat()
-const chunkyKasplat = useGalleonKasplat()
 const canDoGuitarGB = useCavesLobbyGeneric()
 const hasJetbarrel = useRocket()
 const boulderTech = useBoulderTech()
