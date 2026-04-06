@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { usePlayLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { usePlayLobby, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useAnyKong, useDiddy, useTiny, useBoulderTech, useTwirl, useRocket, useBalloon } from '@renderer/hooks/kongs'
+import { useAnyKong, useDiddy, useTiny, useBoulderTech, useBalloon } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import DKIslandArenas from './DKIsland'
 import KremIslandArenas from './KremIsland'
@@ -14,12 +14,8 @@ const isBreathing = useAnyKong()
 const hasDiddy = useDiddy()
 const hasTiny = useTiny()
 const hasBoulderTech = useBoulderTech()
-const isHinaKagiyama = useTwirl()
-const hasJetbarrel = useRocket()
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
-const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const canGetInCavesKasplat = useCavesKasplat()
 const canGetInHelmChunky = useCheckChunkyHelm()
 const canGetInHelmDK = useHelmKasplat()
 const hasBalloon = useBalloon()
@@ -30,34 +26,6 @@ const hasBalloon = useBalloon()
       <OuterArenas />
       <JapesForestArenas />
       <CavesHelmArenas />
-      <IslesCheck
-        id={10005}
-        name="Shuffled Battle Arena: Under Lanky's Castle Lobby barrel"
-        region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCastleLobby.in && hasBoulderTech && hasBalloon}
-        canGetBreak={canGetInCastleLobby.out && (hasDiddy || hasTiny)}
-      />
-      <IslesCheck
-        id={10060}
-        name="Shuffled Battle Arena: Behind Castle Lobby entrance"
-        region="Caves-Helm Lobbies"
-        canGetLogic={isBreathing && canGetInCastleLobby.in}
-        canGetBreak={isBreathing && canGetInCastleLobby.out}
-      />
-      <IslesCheck
-        id={10061}
-        name="Shuffled Battle Arena: To the right of the Castle Lobby entrance"
-        region="Caves-Helm Lobbies"
-        canGetLogic={isBreathing && canGetInCastleLobby.in}
-        canGetBreak={isBreathing && canGetInCastleLobby.out}
-      />
-      <IslesCheck
-        id={10062}
-        name="Shuffled Battle Arena: To the left of the Castle DK Portal"
-        region="Caves-Helm Lobbies"
-        canGetLogic={isBreathing && canGetInCastleLobby.in}
-        canGetBreak={isBreathing && canGetInCastleLobby.out}
-      />
       <IslesCheck
         id={10063}
         name="Shuffled Battle Arena: Next to the Helm Lobby Tag Barrel"
