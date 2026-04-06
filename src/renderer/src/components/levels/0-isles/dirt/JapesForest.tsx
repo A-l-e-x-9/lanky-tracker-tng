@@ -1,5 +1,4 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useShuffleDirt } from '@renderer/hooks/settings'
 import JapesLobbyDirt from './JapesLobby'
 import AztecLobbyDirt from './AztecLobby'
 import FactoryLobbyDirt from './FactoryLobby'
@@ -18,5 +17,4 @@ const Shuffled: React.FC = () => {
   )
 }
 
-const JapesForestDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
 export default JapesForestDirt

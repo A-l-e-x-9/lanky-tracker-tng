@@ -1,7 +1,6 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useCastleDirt, usePlayLobby, useCavesKasplat, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
-import { useShuffleDirt } from '@renderer/hooks/settings'
-import { useShockwave, useTwirl, useBoulderTech, useStrong, useRocket } from '@renderer/hooks/kongs'
+import { useCastleDirt, usePlayLobby, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
+import { useShockwave, useTwirl, useBoulderTech, useRocket } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import DKIslandDirt from './DKIsland'
 import KremIslandDirt from './KremIsland'
@@ -9,19 +8,13 @@ import OuterDirt from './OuterRim'
 import JapesForestDirt from './JapesForest'
 import CavesHelmDirt from './CavesHelm'
 
-const Shuffled: React.FC = () => {
+const ShuffledDirt: React.FC = () => {
 const hasShockwave = useShockwave()
 const canDoIslesDirt4 = useCastleDirt()
-const canGetInCavesLobby = usePlayLobby('Crystal Caves')
 const canGetInCastleLobby = usePlayLobby('Creepy Castle')
 const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const isHinaKagiyama = useTwirl()
-const hasBoulderTech = useBoulderTech()
-const canGetInCavesKasplat = useCavesKasplat()
 const canGetInHelmChunky = useCheckChunkyHelm()
 const canGetInHelmDK = useHelmKasplat()
-const hasStrongKong = useStrong()
-const hasJetbarrel = useRocket()
   return (
     <RainbowCoinPool>
       <DKIslandDirt />
@@ -35,34 +28,6 @@ const hasJetbarrel = useRocket()
         region="Caves-Helm Lobbies"
         canGetLogic={canDoIslesDirt4.in}
         canGetBreak={canDoIslesDirt4.out}
-      />
-      <IslesCheck
-        id={30056}
-        name="Shuffled Dirt Patch: Somehow not frying in the Caves Lobby lava room"
-        region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCavesKasplat.in && hasStrongKong && hasShockwave}
-        canGetBreak={canGetInCavesKasplat.out && hasStrongKong && hasShockwave}
-      />
-      <IslesCheck
-        id={30057}
-        name="Shuffled Dirt Patch: To the right of the Caves DK Portal"
-        region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCavesLobby.in && hasShockwave}
-        canGetBreak={canGetInCavesLobby.out && hasShockwave}
-      />
-      <IslesCheck
-        id={30058}
-        name="Shuffled Dirt Patch: Diddy's ledge in Caves Lobby"
-        region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCavesLobby.in && hasJetbarrel && hasShockwave}
-        canGetBreak={canGetInCavesLobby.out && hasBoulderTech && isHinaKagiyama && hasShockwave}
-      />
-      <IslesCheck
-        id={30059}
-        name="Shuffled Dirt Patch: Caves Lobby boulder room"
-        region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCavesKasplat.in && hasShockwave}
-        canGetBreak={canGetInCavesKasplat.out && hasShockwave}
       />
       <IslesCheck
         id={30060}
@@ -110,5 +75,4 @@ const hasJetbarrel = useRocket()
   )
 }
 
-const ShuffledDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
 export default ShuffledDirt
