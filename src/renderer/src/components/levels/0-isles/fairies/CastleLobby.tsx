@@ -1,40 +1,25 @@
-import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useShuffleDirt } from '@renderer/hooks/settings'
+import FairyPool from '@renderer/components/pools/Fairies'
+import { useShuffleFairies } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
-import { usePlayLobby, useCheckChunkyHelm, useHelmKasplat } from '@renderer/hooks/isles'
-import { useShockwave } from '@renderer/hooks/kongs'
+import { useCheckLankyCastle, useCastleLobbyGeneric } from '@renderer/hooks/isles'
+import { useCamera } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
-const canGetInHelmLobby = usePlayLobby('Hideout Helm')
-const hasShockwave = useShockwave()
-const canGetInHelmChunky = useCheckChunkyHelm()
-const canGetInHelmDK = useHelmKasplat()
+  const hasCam = useCamera()
+  const canReachCastleLobbyLanky = useCheckLankyCastle()
+  const canReachCastleLobby = useCastleLobbyGeneric()
   return (
-    <RainbowCoinPool>
+    <FairyPool>
       <IslesCheck
-        id={30063}
-        name="Shuffled Dirt Patch: Next to the Helm Lobby Tag Barrel"
+        id={40012}
+        name="Shuffled Fairy: At Lanky's Castle Lobby checks"
         region="Caves-Helm Lobbies"
-        canGetLogic={canGetInHelmLobby.in && hasShockwave}
-        canGetBreak={canGetInHelmLobby.out && hasShockwave}
+        canGetLogic={canReachCastleLobbyLanky.in && hasCam}
+        canGetBreak={canReachCastleLobby.out && hasCam}
       />
-      <IslesCheck
-        id={30064}
-        name="Shuffled Dirt Patch: Under Chunky's Bonus Barrel in Helm Lobby"
-        region="Caves-Helm Lobbies"
-        canGetLogic={canGetInHelmChunky.in && hasShockwave}
-        canGetBreak={canGetInHelmChunky.out && hasShockwave}
-      />
-      <IslesCheck
-        id={30065}
-        name="Shuffled Dirt Patch: On the island with DK's Kasplat in Helm Lobby"
-        region="Caves-Helm Lobbies"
-        canGetLogic={canGetInHelmDK.in && hasShockwave}
-        canGetBreak={canGetInHelmDK.out && hasShockwave}
-      />
-    </RainbowCoinPool>
+    </FairyPool>
   )
 }
 
-const HelmLobbyDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
-export default HelmLobbyDirt
+const CastleLobbyFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
+export default CastleLobbyFairies

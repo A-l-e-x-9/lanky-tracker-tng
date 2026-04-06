@@ -5,7 +5,6 @@ import DkKasplat from '../kasplats/Dk'
 import HelmLobbyArenas from '../arenas/HelmLobby'
 import HelmLobbyCrates from '../crates/HelmLobby'
 import HelmLobbyDirt from '../dirt/HelmLobby'
-import HelmLobbyFairies from '../fairies/HelmLobby'
 import HelmLobbyKasplats from '../kasplats/HelmLobby'
 
 const HelmLobbyChecks: React.FC = () => {
