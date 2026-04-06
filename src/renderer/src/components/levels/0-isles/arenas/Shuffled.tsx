@@ -7,6 +7,7 @@ import DKIslandArenas from './DKIsland'
 import KremIslandArenas from './KremIsland'
 import OuterArenas from './OuterRim'
 import JapesForestArenas from './JapesForest'
+import CavesHelmArenas from './CavesHelm'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()
@@ -28,6 +29,7 @@ const hasBalloon = useBalloon()
       <KremIslandArenas />
       <OuterArenas />
       <JapesForestArenas />
+      <CavesHelmArenas />
       <IslesCheck
         id={10005}
         name="Shuffled Battle Arena: Under Lanky's Castle Lobby barrel"

@@ -7,6 +7,7 @@ import DKIslandKasplats from './DKIsland'
 import KremIslandKasplats from './KremIsland'
 import OuterKasplats from './OuterRim'
 import JapesForestKasplats from './JapesForest'
+import CavesHelmKasplats from './CavesHelm'
 
 const Shuffled: React.FC = () => {
 const DKKasplat = useHelmKasplat()
@@ -22,6 +23,7 @@ const hinaKagiyama = useTwirl()
       <KremIslandKasplats />
       <OuterKasplats />
       <JapesForestKasplats />
+      <CavesHelmKasplats />
       <IslesCheck
         id={50000}
         name="Shuffled Kasplat: DK's Vanilla Location (Helm Lobby)"

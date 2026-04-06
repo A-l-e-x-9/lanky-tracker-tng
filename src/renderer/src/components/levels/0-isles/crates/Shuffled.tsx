@@ -7,6 +7,7 @@ import DKIslandCrates from './DKIsland'
 import KremIslandCrates from './KremIsland'
 import OuterCrates from './OuterRim'
 import JapesForestCrates from './JapesForest'
+import CavesHelmCrates from './CavesHelm'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useAnyKong()
@@ -29,6 +30,7 @@ return (
       <KremIslandCrates />
       <OuterCrates />
       <JapesForestCrates />
+      <CavesHelmCrates />
       <IslesCheck
         id={20005}
         name="Shuffled Melon Crate: Under Lanky's Castle Lobby barrel"

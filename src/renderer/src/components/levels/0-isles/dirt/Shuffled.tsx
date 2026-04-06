@@ -7,6 +7,7 @@ import DKIslandDirt from './DKIsland'
 import KremIslandDirt from './KremIsland'
 import OuterDirt from './OuterRim'
 import JapesForestDirt from './JapesForest'
+import CavesHelmDirt from './CavesHelm'
 
 const Shuffled: React.FC = () => {
 const hasShockwave = useShockwave()
@@ -27,6 +28,7 @@ const hasJetbarrel = useRocket()
       <KremIslandDirt />
       <OuterDirt />
       <JapesForestDirt />
+      <CavesHelmDirt />
       <IslesCheck
         id={30005}
         name="Shuffled Dirt Patch: Vanilla Location 4 (under Lanky's Castle Lobby barrel)"
