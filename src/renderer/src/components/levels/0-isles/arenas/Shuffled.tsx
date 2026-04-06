@@ -38,27 +38,6 @@ const hasBalloon = useBalloon()
         canGetBreak={canGetInCastleLobby.out && (hasDiddy || hasTiny)}
       />
       <IslesCheck
-        id={10057}
-        name="Shuffled Battle Arena: To the right of the Caves DK Portal"
-        region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCavesLobby.in}
-        canGetBreak={canGetInCavesLobby.out}
-      />
-      <IslesCheck
-        id={10058}
-        name="Shuffled Battle Arena: Diddy's ledge in Caves Lobby"
-        region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCavesLobby.in && hasJetbarrel}
-        canGetBreak={canGetInCavesLobby.out && hasBoulderTech && isHinaKagiyama}
-      />
-      <IslesCheck
-        id={10059}
-        name="Shuffled Battle Arena: Caves Lobby boulder room"
-        region="Caves-Helm Lobbies"
-        canGetLogic={canGetInCavesKasplat.in}
-        canGetBreak={canGetInCavesKasplat.out}
-      />
-      <IslesCheck
         id={10060}
         name="Shuffled Battle Arena: Behind Castle Lobby entrance"
         region="Caves-Helm Lobbies"
