@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useFactoryKasplat, useGalleonKasplat, useCavesLobbyGeneric, usePlayLobby } from '@renderer/hooks/isles'
+import { useHelmKasplat, useCastleKasplat, useCavesKasplat, useGalleonKasplat, useCavesLobbyGeneric } from '@renderer/hooks/isles'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useGrab, useHighGrab, useRocket, useBoulderTech, useTwirl } from '@renderer/hooks/kongs'
+import { useRocket, useBoulderTech, useTwirl } from '@renderer/hooks/kongs'
 import IslesCheck from '../check'
 import DKIslandKasplats from './DKIsland'
 import KremIslandKasplats from './KremIsland'
@@ -12,11 +12,7 @@ const Shuffled: React.FC = () => {
 const DKKasplat = useHelmKasplat()
 const diddyKasplat = useCastleKasplat()
 const lankyKasplat = useCavesKasplat()
-const tinyKasplat = useFactoryKasplat()
 const chunkyKasplat = useGalleonKasplat()
-const canReachFactoryLobby = usePlayLobby('Frantic Factory')
-const hasGrab = useGrab()
-const highGrab = useHighGrab()
 const canDoGuitarGB = useCavesLobbyGeneric()
 const hasJetbarrel = useRocket()
 const boulderTech = useBoulderTech()
@@ -47,13 +43,6 @@ const hinaKagiyama = useTwirl()
         region="Caves-Helm Lobbies"
         canGetLogic={lankyKasplat.in}
         canGetBreak={lankyKasplat.out}
-      />
-      <IslesCheck
-        id={50004}
-        name="Shuffled Kasplat: Chunky's Vanilla Location (Galleon Lobby)"
-        region="Japes-Forest Lobbies"
-        canGetLogic={chunkyKasplat.in}
-        canGetBreak={chunkyKasplat.out}
       />
       <IslesCheck
         id={50011}
