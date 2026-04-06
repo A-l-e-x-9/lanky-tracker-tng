@@ -3,7 +3,7 @@ import CavesLobbyCrates from './CavesLobby'
 import CastleLobbyCrates from './CastleLobby'
 import HelmLobbyCrates from './HelmLobby'
 
-const CavesHelmArenas: React.FC = () => {
+const CavesHelmCrates: React.FC = () => {
   return (
     <CratePool>
       <CavesLobbyCrates />

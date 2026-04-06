@@ -13,7 +13,7 @@ const hasJetbarrel = useRocket()
 const isHinaKagiyama = useTwirl()
 const canGetInCavesLobby = usePlayLobby('Crystal Caves')
   return (
-    <ArenaPool>
+    <CratePool>
       <IslesCheck
         id={20056}
         name="Shuffled Melon Crate: Somehow not frying in the Caves Lobby lava room"
@@ -42,7 +42,7 @@ const canGetInCavesLobby = usePlayLobby('Crystal Caves')
         canGetLogic={canGetInCavesKasplat.in}
         canGetBreak={canGetInCavesKasplat.out}
       />
-    </ArenaPool>
+    </CratePool>
   )
 }
 
