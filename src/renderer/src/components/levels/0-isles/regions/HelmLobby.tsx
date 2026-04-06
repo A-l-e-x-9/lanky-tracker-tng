@@ -10,9 +10,7 @@ import HelmLobbyKasplats from '../kasplats/HelmLobby'
 
 const HelmLobbyChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
-const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
-const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
@@ -26,9 +24,6 @@ return (
     <HelmLobbyArenas />
     <HelmLobbyCrates />
     <HelmLobbyDirt />
-  </div>
-  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
-    <HelmLobbyFairies />
   </div>
   <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <HelmLobbyKasplats />
