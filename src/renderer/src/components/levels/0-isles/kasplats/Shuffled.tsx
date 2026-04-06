@@ -6,7 +6,6 @@ import JapesForestKasplats from './JapesForest'
 import CavesHelmKasplats from './CavesHelm'
 
 const ShuffledKasplats: React.FC = () => {
-const DKKasplat = useHelmKasplat()
   return (
     <KasplatPool>
       <DKIslandKasplats />
