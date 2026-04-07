@@ -1,19 +1,18 @@
 import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useArena, useJapesPaintingOutside, useJapesSideArea, useJapesHive, useJapesKongGates, useJapesRambi, useMtnCrate, useRambiCrate, useDkFreebieGb, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb, usePaintingDirt } from '@renderer/hooks/japes'
+import { useGeneralDirt, useArena, useJapesPaintingOutside, useJapesHive, useJapesKongGates, useJapesRambi, useMtnCrate, useRambiCrate, useDkFreebieGb, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb, usePaintingDirt } from '@renderer/hooks/japes'
 import { useShuffleDirt, useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useStand, useVine, useShockwave } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import useDonkStore from '@renderer/store'
 import LowlandDirt from './Lowlands'
 
-const Shuffled: React.FC = () => {
+const ShuffledDirt: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const hasShockwave = useShockwave()
 const canReachFunky = useArena()
 const canReachPaintingRoom = useJapesPaintingOutside()
 const hasClimbing = useClimbing()
-const canReachDiddyTunnel = useJapesSideArea()
 const canReachHiveZone = useJapesHive()
 const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
@@ -45,48 +44,6 @@ const canDoVanillaDirt = usePaintingDirt()
         region="Japes Hillside"
         canGetLogic={canDoVanillaDirt.in}
         canGetBreak={canDoVanillaDirt.out}
-      />
-      <JapesCheck
-        id={31002}
-        name="Shuffled Dirt Patch: Near vanilla level entrance"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
-        id={31003}
-        name="Shuffled Dirt Patch: On a tree in the starting area"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in && hasClimbing}
-        canGetBreak={isBreathing.out && hasClimbing}
-      />
-      <JapesCheck
-        id={31004}
-        name="Shuffled Dirt Patch: Next to first tunnel entrance"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in && hasShockwave}
-        canGetBreak={isBreathing.out && hasShockwave}
-      />
-      <JapesCheck
-        id={31005}
-        name="Shuffled Dirt Patch: In the first tunnel"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
-        id={31006}
-        name="Shuffled Dirt Patch: In Diddy's sub-tunnel"
-        region="Japes Lowlands"
-        canGetLogic={canReachDiddyTunnel.in && hasShockwave}
-        canGetBreak={canReachDiddyTunnel.out && hasShockwave}
-      />
-      <JapesCheck
-        id={31007}
-        name="Shuffled Dirt Patch: In the first tunnel, main area-side"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
       />
       <JapesCheck
         id={31008}
@@ -250,46 +207,11 @@ const canDoVanillaDirt = usePaintingDirt()
         canGetBreak={isBreathing.out && canReachDiddyCage.out}
       />
       <JapesCheck
-        id={31031}
-        name="Shuffled Dirt Patch: In front of the river"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
-        id={31032}
-        name="Shuffled Dirt Patch: Vanilla Warp 1, level start"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
-        id={31033}
-        name="Shuffled Dirt Patch: Vanilla Warp 1, after the early cave"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
-        id={31034}
-        name="Shuffled Dirt Patch: Vanilla Warp 2, main area"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
         id={31035}
         name="Shuffled Dirt Patch: Vanilla Warp 2, in front of Diddy's mountain"
         region="Japes Hillside"
         canGetLogic={canReachMtn.in && hasShockwave}
         canGetBreak={canReachMtn.out && hasShockwave}
-      />
-      <JapesCheck
-        id={31036}
-        name="Shuffled Dirt Patch: Vanilla Warp 3, at the hive tunnel"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
       />
       <JapesCheck
         id={31037}
@@ -325,13 +247,6 @@ const canDoVanillaDirt = usePaintingDirt()
         region="Hive Area"
         canGetLogic={canReachHiveZone.in && hasShockwave}
         canGetBreak={canReachHiveZone.out && hasShockwave}
-      />
-      <JapesCheck
-        id={31042}
-        name="Shuffled Dirt Patch: Behind the boulder leading to Chunky's underground"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
       />
       <JapesCheck
         id={31043}
@@ -407,5 +322,4 @@ const canDoVanillaDirt = usePaintingDirt()
   )
 }
 
-const ShuffledDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
 export default ShuffledDirt
