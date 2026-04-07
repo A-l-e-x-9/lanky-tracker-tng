@@ -5,6 +5,7 @@ import { useShuffleDirt, useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useStand, useVine, useShockwave } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import useDonkStore from '@renderer/store'
+import LowlandDirt from './Lowlands'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()

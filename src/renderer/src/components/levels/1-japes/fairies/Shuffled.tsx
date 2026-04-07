@@ -3,6 +3,7 @@ import { useGeneralFairy, useRambiFairy, usePaintingFairy, useMtnCrate, useJapes
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useCamera } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
+import LowlandFairies from './Lowlands'
 
 const Shuffled: React.FC = () => {
   const hasCam = useCamera()

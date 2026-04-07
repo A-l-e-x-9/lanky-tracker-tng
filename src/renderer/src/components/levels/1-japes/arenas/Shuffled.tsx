@@ -5,6 +5,7 @@ import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useStand, useVine } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import useDonkStore from '@renderer/store'
+import LowlandArenas from './Lowlands'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()

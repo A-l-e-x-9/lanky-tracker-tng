@@ -3,6 +3,7 @@ import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi,
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useDive, useAnyGun, useOrange, useAnyMusic, useMini, useVine, useClimbing } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
+import LowlandKasplats from './Lowlands'
 
 const Shuffled: React.FC = () => {
 const notChunkyKasplat = useGateKasplat()
