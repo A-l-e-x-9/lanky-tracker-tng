@@ -1,11 +1,10 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useTinyCagedGb, useJapesSideArea, useJapesKongGates, useDkFreebieGb, useJapesPaintingOutside } from '@renderer/hooks/japes'
-import { useShuffleKasplats } from '@renderer/hooks/settings'
+import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useTinyCagedGb, useJapesKongGates, useDkFreebieGb, useJapesPaintingOutside } from '@renderer/hooks/japes'
 import { useDive, useAnyGun, useOrange, useAnyMusic, useMini, useVine, useClimbing } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandKasplats from './Lowlands'
 
-const Shuffled: React.FC = () => {
+const ShuffledKasplats: React.FC = () => {
 const notChunkyKasplat = useGateKasplat()
 const chunkyKasplat = useChunkyUndergroundGb()
 const isBreathing = useGeneralThing()
@@ -13,7 +12,6 @@ const canReachRambiArea = useJapesRambi()
 const canDoDiddyMtnGB = useJapesMine()
 const canReachHiveArea = useJapesHive()
 const canDoTinyCageGB = useTinyCagedGb()
-const canReachDiddyCave = useJapesSideArea()
 const canReachStormyArea = useJapesKongGates()
 const canReachDiddyCage = useDkFreebieGb()
 const canReachPaintingRoom = useJapesPaintingOutside()
@@ -26,6 +24,7 @@ const hasVines = useVine()
 const hasClimbing = useClimbing()
   return (
     <KasplatPool>
+      <LowlandKasplats />
       <JapesCheck
         id={51000}
         name="Shuffled Kasplat: DK's Vanilla Location (lower portion of Hive Tunnel)"
@@ -90,27 +89,6 @@ const hasClimbing = useClimbing()
         canGetBreak={canDoTinyCageGB.out}
       />
       <JapesCheck
-        id={51009}
-        name="Shuffled Kasplat: At the vanilla level start"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
-        id={51010}
-        name="Shuffled Kasplat: In Diddy's cave"
-        region="Japes Lowlands"
-        canGetLogic={canReachDiddyCave.in}
-        canGetBreak={canReachDiddyCave.out}
-      />
-      <JapesCheck
-        id={51011}
-        name="Shuffled Kasplat: In the river"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in && (hasAGun || hasAnInstrument) && hasDiving.in}
-        canGetBreak={isBreathing.out && hasOranges && hasDiving.out}
-      />
-      <JapesCheck
         id={51012}
         name="Shuffled Kasplat: In the Rambi tunnel's pool"
         region="Stormy Area"
@@ -163,5 +141,4 @@ const hasClimbing = useClimbing()
   )
 }
 
-const ShuffledKasplats: React.FC = () => (useShuffleKasplats() ? <Shuffled /> : null)
 export default ShuffledKasplats
