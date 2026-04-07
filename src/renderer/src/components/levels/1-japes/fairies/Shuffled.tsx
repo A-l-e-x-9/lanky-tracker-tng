@@ -18,6 +18,7 @@ const Shuffled: React.FC = () => {
   const canGoUnder = useJapesUnderground()
   return (
     <FairyPool>
+      <LowlandFairies />
       <JapesCheck
         id={41000}
         name="Shuffled Fairy: Vanilla Location #1 (pool after Rambi door)"
