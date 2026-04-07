@@ -31,6 +31,7 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
 const canDoVanillaDirt = usePaintingDirt()
   return (
     <RainbowCoinPool>
+      <LowlandDirt />
       <JapesCheck
         id={31000}
         name="Shuffled Dirt Patch: In front of Funky's"

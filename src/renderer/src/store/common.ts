@@ -1190,6 +1190,7 @@ interface cavesPortals {
 interface castlePortals {
   vanilla: boolean
   ballroomPortal: boolean
+  windTunnelPortal: boolean
 }
 
 export interface PortalState {

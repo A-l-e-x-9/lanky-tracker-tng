@@ -61,6 +61,9 @@ export const useSlamCastle = (): boolean => useSlamLevel('Creepy Castle')
 //Is the DK Portal in the Ballroom?
 export const useBallroomPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal))
+//Is the DK Portal in the Wind Tunnel?
+export const useWindTunnelPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCastlePortals.windTunnelPortal))
 /*end shuffled DK Portals*/
 
 /**
@@ -96,7 +99,7 @@ export const useChunkyShedGb = (): LogicBool => {
   const hasAGun = useAnyGun()
   return {
     in: inStage.in && punch && (triangle || (gone && pineapple)),
-    out: (inStage.in || inStage.out) && punch && (anyMusic || hasAGun)
+    out: inStage.out && punch && (anyMusic || hasAGun)
   }
 }
 
@@ -197,7 +200,7 @@ export const useDkRoomGb = (): LogicBool => {
   const strong = useStrong()
   return {
     in: inStage.in && slam && strong,
-    out: (inStage.in || inStage.out) && slam && dk //Why DK? Because, assuming this is indeed the library GB, getting hit by the books triggers the "getting up" animation, same as if you'd been hit by a Klobber, and DK has none. The other Kongs get absolutely combo'd and rekt by the books! xD
+    out: inStage.out && slam && dk //Why DK? Because, assuming this is indeed the library GB, getting hit by the books triggers the "getting up" animation, same as if you'd been hit by a Klobber, and DK has none. The other Kongs get absolutely combo'd and rekt by the books! xD
   }
 }
 
@@ -230,9 +233,10 @@ export const useLankyRoomGb = (): LogicBool => {
   const balloon = useBalloon()
   const sniper = useSniper()
   const homing = useHoming()
+  const DKPortal = useWindTunnelPortal()
   return {
-    in: inStage.in && slam && grape && balloon && sniper,
-    out: (inStage.in || inStage.out) && slam && grape && balloon && homing
+    in: inStage.in && (slam || DKPortal) && grape && balloon && sniper,
+    out: inStage.out && (slam || DKPortal) && grape && balloon && homing
   }
 }
 
@@ -265,7 +269,7 @@ export const useLankyMausoleumGb = (): LogicBool => {
   const hasClimbing = useClimbing()
   return {
     in: inStage.in && (feather || grape || preOpened) && grape && sprint && vine && trombone && hasClimbing,
-    out: (inStage.in || inStage.out) && (feather || grape || preOpened) && grape && (sprint || dk || diddy)
+    out: inStage.out && (feather || grape || preOpened) && grape && (sprint || dk || diddy)
   }
 }
 
@@ -277,7 +281,7 @@ export const useLankyDungeonGb = (): LogicBool => {
   const twirl = useTwirl()
   return {
     in: inStage.in && canSlam && trombone && balloon,
-    out: (inStage.in || inStage.out) && canSlam && trombone && twirl
+    out: inStage.out && canSlam && trombone && twirl
   }
 }
 
@@ -303,7 +307,7 @@ export const useTinyTrashGb = (): LogicBool => {
   const anyGun = useAnyGun()
   return {
     in: inStage.in && mini && (sax || (anyGun && (homing || hardShooting))),
-    out: (inStage.in || inStage.out) && mini && (sax || anyGun)
+    out: inStage.out && mini && (sax || anyGun)
   }
 }
 
@@ -323,7 +327,7 @@ export const useTinyMausoleumGb = (): LogicBool => {
   const preOpened = useOpenCrypt()
   return {
     in: inStage.in && (feather || grape || preOpened) && canSlam && twirl && hasClimbing,
-    out: (inStage.in || inStage.out) && (feather || grape || preOpened) && canSlam && (dk || twirl)
+    out: inStage.out && (feather || grape || preOpened) && canSlam && (dk || twirl)
   }
 }
 
@@ -380,7 +384,7 @@ export const useRoomFairy = (): LogicBool => {
   const chunky = useChunky()
   return {
     in: inStage.in && slam && camera && diddy && port,
-    out: (inStage.in || inStage.out) && slam && camera && chunky
+    out: inStage.out && slam && camera && chunky
   }
 }
 
@@ -398,7 +402,7 @@ export const useMausoleumKasplat = (): LogicBool => {
   const hasClimbing = useClimbing()
   return {
     in: inStage.in && hasClimbing,
-    out: (inStage.in || inStage.out)
+    out: inStage.out
   }
 }
 
@@ -415,7 +419,7 @@ export const useLonelyKasplat = (): LogicBool => {
   const hasClimbing = useClimbing()
   return {
     in: inStage.in && hasClimbing,
-    out: (inStage.in || inStage.out)
+    out: inStage.out
   }
 }
 
@@ -432,6 +436,6 @@ export const useCrate = (): LogicBool => {
   const hasClimbing = useClimbing()
   return {
     in: useAnyKong() && inStage.in && hasClimbing,
-    out: useAnyKong() && (inStage.in || inStage.out)
+    out: useAnyKong() && inStage.out
   }
 }
