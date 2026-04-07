@@ -1,18 +1,17 @@
 import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useJapesPaintingOutside, useJapesSideArea, useJapesHive, useJapesKongGates, useJapesRambi, useMtnCrate, useDkFreebieGb, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
-import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
+import { useGeneralThing, useArena, useJapesPaintingOutside, useJapesHive, useJapesKongGates, useJapesRambi, useMtnCrate, useDkFreebieGb, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
+import { useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useStand, useVine } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import useDonkStore from '@renderer/store'
 import LowlandArenas from './Lowlands'
 
-const Shuffled: React.FC = () => {
+const ShuffledArenas: React.FC = () => {
 const isBreathing = useGeneralThing()
 const canReachFunky = useArena()
 const canReachPaintingRoom = useJapesPaintingOutside()
 const hasClimbing = useClimbing()
-const canReachDiddyTunnel = useJapesSideArea()
 const canReachHiveZone = useJapesHive()
 const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
@@ -28,6 +27,7 @@ const canGetInHive = useTinyStumpGb()
 const canGetInHivePastRoom1 = useTinyHiveGb()
   return (
     <ArenaPool>
+      <LowlandArenas />
       <JapesCheck
         id={11000}
         name="Shuffled Battle Arena: Vanilla Arena (what a Funky's!)"
@@ -41,48 +41,6 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
         region="Japes Hillside"
         canGetLogic={canReachPaintingRoom.in}
         canGetBreak={canReachPaintingRoom.out}
-      />
-      <JapesCheck
-        id={11002}
-        name="Shuffled Battle Arena: Near vanilla level entrance"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
-        id={11003}
-        name="Shuffled Battle Arena: On a tree in the starting area"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in && hasClimbing}
-        canGetBreak={isBreathing.out && hasClimbing}
-      />
-      <JapesCheck
-        id={11004}
-        name="Shuffled Battle Arena: Next to first tunnel entrance"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
-        id={11005}
-        name="Shuffled Battle Arena: In the first tunnel"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
-        id={11006}
-        name="Shuffled Battle Arena: In Diddy's sub-tunnel"
-        region="Japes Lowlands"
-        canGetLogic={canReachDiddyTunnel.in}
-        canGetBreak={canReachDiddyTunnel.out}
-      />
-      <JapesCheck
-        id={11007}
-        name="Shuffled Battle Arena: In the first tunnel, main area-side"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
       />
       <JapesCheck
         id={11008}
@@ -239,46 +197,11 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
         canGetBreak={isBreathing.out && canReachDiddyCage.out}
       />
       <JapesCheck
-        id={11031}
-        name="Shuffled Battle Arena: In front of the river"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
-        id={11032}
-        name="Shuffled Battle Arena: Vanilla Warp 1, level start"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
-        id={11033}
-        name="Shuffled Battle Arena: Vanilla Warp 1, after the early cave"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
-        id={11034}
-        name="Shuffled Battle Arena: Vanilla Warp 2, main area"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <JapesCheck
         id={11035}
         name="Shuffled Battle Arena: Vanilla Warp 2, in front of Diddy's mountain"
         region="Japes Hillside"
         canGetLogic={canReachMtn.in}
         canGetBreak={canReachMtn.out}
-      />
-      <JapesCheck
-        id={11036}
-        name="Shuffled Battle Arena: Vanilla Warp 3, at the hive tunnel"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
       />
       <JapesCheck
         id={11037}
@@ -313,13 +236,6 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
         region="Hive Area"
         canGetLogic={canReachHiveZone.in}
         canGetBreak={canReachHiveZone.out}
-      />
-      <JapesCheck
-        id={11042}
-        name="Shuffled Battle Arena: Behind the boulder leading to Chunky's underground"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
       />
       <JapesCheck
         id={11043}
@@ -388,5 +304,4 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
   )
 }
 
-const ShuffledArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
 export default ShuffledArenas

@@ -1,7 +1,7 @@
 import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useGeneralDirt, useArena, useJapesPaintingOutside, useJapesHive, useJapesKongGates, useJapesRambi, useMtnCrate, useRambiCrate, useDkFreebieGb, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb, usePaintingDirt } from '@renderer/hooks/japes'
-import { useShuffleDirt, useBananaportAll } from '@renderer/hooks/settings'
+import { useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useStand, useVine, useShockwave } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import useDonkStore from '@renderer/store'
