@@ -21,11 +21,11 @@ import PeanutGateChecks from './PeanutGate'
 import RambiGateChecks from './RambiGate'
 import UndergroundChecks from './Underground'
 import StormyTunnelChecks from './StormyTunnel'
-import ShuffledArenas from '../arenas/Shuffled'
-import ShuffledCrates from '../crates/Shuffled'
-import ShuffledDirt from '../dirt/Shuffled'
-import ShuffledFairies from '../fairies/Shuffled'
-import ShuffledKasplats from '../kasplats/Shuffled'
+import LowlandArenas from '../arenas/Lowlands'
+import LowlandCrates from '../crates/Lowlands'
+import LowlandDirt from '../dirt/Lowlands'
+import LowlandFairies from '../fairies/Lowlands'
+import LowlandKasplats from '../kasplats/Lowlands'
 
 const JapesRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -48,6 +48,15 @@ return (
     <PeanutGateChecks />
   <div className="grid">
     <BaboonBlast />
+    <LowlandArenas />
+    <LowlandCrates />
+    <LowlandDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <LowlandFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <LowlandKasplats />
   </div>
     <JapesMainChecks />
   <div className="grid">
@@ -64,15 +73,6 @@ return (
   <div className="grid">
     <ShopLocations />
     <BossCheck />
-    <ShuffledArenas />
-    <ShuffledCrates />
-    <ShuffledDirt />
-  </div>
-  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
-    <ShuffledFairies />
-  </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
-    <ShuffledKasplats />
   </div>
 </>
 )
