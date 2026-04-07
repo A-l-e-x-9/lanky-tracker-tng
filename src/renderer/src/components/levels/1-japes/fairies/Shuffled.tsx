@@ -1,11 +1,10 @@
 import FairyPool from '@renderer/components/pools/Fairies'
 import { useGeneralFairy, useRambiFairy, usePaintingFairy, useMtnCrate, useJapesHive, useTinyHiveGb, useJapesKongGates, useJapesUnderground, useJapesMine } from '@renderer/hooks/japes'
-import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useCamera } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandFairies from './Lowlands'
 
-const Shuffled: React.FC = () => {
+const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
   const isBreathing = useGeneralFairy()
   const vanillaFairy1 = useRambiFairy()
@@ -45,13 +44,6 @@ const Shuffled: React.FC = () => {
         region="Japes Hillside"
         canGetLogic={canReachUpperArea.in && hasCam}
         canGetBreak={canReachUpperArea.out && hasCam}
-      />
-      <JapesCheck
-        id={41004}
-        name="Shuffled Fairy: Over Chunky's cave entrance"
-        region="Japes Lowlands"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
       />
       <JapesCheck
         id={41005}
@@ -99,5 +91,4 @@ const Shuffled: React.FC = () => {
   )
 }
 
-const ShuffledFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
 export default ShuffledFairies
