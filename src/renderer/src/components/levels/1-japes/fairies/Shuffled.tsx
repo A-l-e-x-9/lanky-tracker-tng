@@ -1,12 +1,11 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useRambiFairy, usePaintingFairy, useMtnCrate, useJapesHive, useTinyHiveGb, useJapesKongGates, useJapesUnderground, useJapesMine } from '@renderer/hooks/japes'
+import { useRambiFairy, usePaintingFairy, useMtnCrate, useJapesHive, useTinyHiveGb, useJapesKongGates, useJapesUnderground, useJapesMine } from '@renderer/hooks/japes'
 import { useCamera } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandFairies from './Lowlands'
 
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
-  const isBreathing = useGeneralFairy()
   const vanillaFairy1 = useRambiFairy()
   const vanillaFairy2 = usePaintingFairy()
   const canReachUpperArea = useMtnCrate()
