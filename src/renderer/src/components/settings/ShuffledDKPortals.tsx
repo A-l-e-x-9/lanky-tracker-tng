@@ -102,6 +102,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledAztecPortals"
                 updateItem={setAztecPortal}
             />
+            <p>Behind the Guitar Pad in Tiny Temple that Diddy must use to melt the ice over the pool</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in the Tiny Temple at the ice-melting pad."
+                storeKey="tinyTempleIcePortal"
+                prefix="shuffledAztecPortals"
+                updateItem={setAztecPortal}
+            />
             <p>Anywhere in the second half of the level or the cave leading to it</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}

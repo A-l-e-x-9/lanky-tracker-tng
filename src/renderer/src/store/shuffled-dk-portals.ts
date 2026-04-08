@@ -13,6 +13,7 @@ export const initialPortal: PortalState = {
   shuffledAztecPortals: {
     vanilla: true,
     firstHalfPortal: false,
+    tinyTempleIcePortal: false,
     secondHalfPortal: false,
     llamaPortal: false
   },

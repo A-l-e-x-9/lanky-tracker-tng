@@ -1164,6 +1164,7 @@ interface japesPortals {
 interface aztecPortals {
   vanilla: boolean
   firstHalfPortal: boolean
+  tinyTempleIcePortal: boolean
   secondHalfPortal: boolean
   llamaPortal: boolean
 }

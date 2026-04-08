@@ -59,6 +59,9 @@ export const usePlayAztec = (): LogicBool => {
 //Is the DK Portal past the two quicksand pits blocking the first half of the level?
 export const useFirstHalfPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.firstHalfPortal))
+//Is the DK Portal behind the Guitar Pad needed to melt the ice in Tiny Temple?
+export const useTinyTempleIcePortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleIcePortal))
 //Is the DK Portal past the gate blocking access to the second half of the level?
 export const useSecondHalfPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal))
@@ -146,11 +149,11 @@ export const useAztecTinyTemple = (): LogicBool => {
   const grape = useGrape()
   const feather = useFeather()
   const pineapple = usePineapple()
-
   const properGun = peanut || grape || feather || pineapple
+  const DKPortal = useTinyTempleIcePortal()
   return {
-    in: aztecFront.in && properGun,
-    out: aztecFront.out && properGun
+    in: (aztecFront.in && properGun) || DKPortal,
+    out: (aztecFront.out && properGun) || DKPortal
   }
 }
 
@@ -163,8 +166,8 @@ export const useTinyTempleIce = (): LogicBool => {
   const hasGuitar = useGuitar()
   const preMelted = useDonkStore(useShallow((state) => state.removeBarriers.aztecIce))
   return {
-    in: canEnterTT.in && ((hasDiddy && canSlam && hasPeanuts && hasGuitar) || preMelted),
-    out: canEnterTT.out && ((hasDiddy && canSlam && hasPeanuts && hasGuitar) || preMelted)
+    in: (canEnterTT.in && ((hasDiddy && canSlam && hasPeanuts && hasGuitar)) || (DKPortal && hasGuitar) || preMelted),
+    out: (canEnterTT.out && ((hasDiddy && canSlam && hasPeanuts && hasGuitar)) || (DKPortal && hasGuitar) || preMelted)
   }
 }
 
