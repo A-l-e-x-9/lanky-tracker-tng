@@ -165,6 +165,7 @@ export const useTinyTempleIce = (): LogicBool => {
   const hasPeanuts = usePeanut()
   const hasGuitar = useGuitar()
   const preMelted = useDonkStore(useShallow((state) => state.removeBarriers.aztecIce))
+  const DKPortal = useTinyTempleIcePortal()
   return {
     in: (canEnterTT.in && ((hasDiddy && canSlam && hasPeanuts && hasGuitar)) || (DKPortal && hasGuitar) || preMelted),
     out: (canEnterTT.out && ((hasDiddy && canSlam && hasPeanuts && hasGuitar)) || (DKPortal && hasGuitar) || preMelted)
