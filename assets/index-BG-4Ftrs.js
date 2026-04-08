@@ -11152,6 +11152,7 @@ const initialPortal = {
   },
   shuffledCastlePortals: {
     vanilla: true,
+    treeChunkyPortal: false,
     ballroomPortal: false,
     windTunnelPortal: false
   }
@@ -44224,6 +44225,7 @@ const usePlayCastle = () => {
   };
 };
 const useSlamCastle = () => useSlamLevel("Creepy Castle");
+const useTreeChunkyPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.treeChunkyPortal));
 const useBallroomPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal));
 const useWindTunnelPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.windTunnelPortal));
 const useCastleTree = () => {
@@ -44257,9 +44259,10 @@ const useChunkyTreeGb = () => {
   const pineapple = usePineapple();
   const sniper = useSniper();
   const hardShooting = useHardShooting();
+  const DKPortal2 = useTreeChunkyPortal();
   return {
     in: tree.in && punch && pineapple && (sniper || hardShooting),
-    out: tree.out && punch && pineapple
+    out: (tree.out && punch || DKPortal2) && pineapple
   };
 };
 const useChunkyRoomGb = () => {
@@ -44328,9 +44331,10 @@ const useDkTreeGb = () => {
   const canEnterTree = useCastleTree();
   const coconut = useCoconut();
   const sniper = useSniper();
+  const DKPortal2 = useTreeChunkyPortal();
   return {
     in: canEnterTree.in && coconut && sniper,
-    out: canEnterTree.out && coconut
+    out: (canEnterTree.out || DKPortal2) && coconut
     //You're supposed to be able to do this check without Sniper. I've had no such luck, but I"ll keep it in here just in case. =_=;
   };
 };
@@ -44490,8 +44494,9 @@ const useGeneralFairy = () => {
 const useTreeFairy = () => {
   const tree = useTreeKasplat();
   const camera = useCamera();
+  const waterIsLava = useDonkStore(useShallow((state) => state.settings.waterIsLava));
   return {
-    in: tree.in && camera,
+    in: tree.in && camera && !waterIsLava,
     out: tree.out && camera
   };
 };
@@ -44510,9 +44515,10 @@ const useRoomFairy = () => {
 const useTreeKasplat = () => {
   const tree = useCastleTree();
   const coconut = useCoconut();
+  const DKPortal2 = useTreeChunkyPortal();
   return {
     in: tree.in && coconut,
-    out: tree.out && coconut
+    out: (tree.out || DKPortal2) && coconut
   };
 };
 const useMausoleumKasplat = () => {
@@ -53914,6 +53920,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
                   storeKey: "vanilla",
+                  prefix: "shuffledCastlePortals",
+                  updateItem: setCastlePortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In Chunky's room in the tree" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Chunky's room in the big tree.",
+                  storeKey: "treeChunkyPortal",
                   prefix: "shuffledCastlePortals",
                   updateItem: setCastlePortal
                 }
