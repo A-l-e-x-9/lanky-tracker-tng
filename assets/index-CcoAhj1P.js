@@ -11127,6 +11127,7 @@ const initialPortal = {
   shuffledAztecPortals: {
     vanilla: true,
     firstHalfPortal: false,
+    tinyTempleIcePortal: false,
     secondHalfPortal: false,
     llamaPortal: false
   },
@@ -22626,6 +22627,7 @@ const usePlayAztec = () => {
   };
 };
 const useFirstHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.firstHalfPortal));
+const useTinyTempleIcePortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleIcePortal));
 const useSecondHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal));
 const useLlamaPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal));
 const useSlamAztec = () => useSlamLevel("Angry Aztec");
@@ -22676,9 +22678,10 @@ const useAztecTinyTemple = () => {
   const feather = useFeather();
   const pineapple = usePineapple();
   const properGun = peanut || grape || feather || pineapple;
+  const DKPortal = useTinyTempleIcePortal();
   return {
-    in: aztecFront.in && properGun,
-    out: aztecFront.out && properGun
+    in: aztecFront.in && properGun || DKPortal,
+    out: aztecFront.out && properGun || DKPortal
   };
 };
 const useTinyTempleIce = () => {
@@ -22688,9 +22691,10 @@ const useTinyTempleIce = () => {
   const hasPeanuts = usePeanut();
   const hasGuitar = useGuitar();
   const preMelted = useDonkStore(useShallow((state) => state.removeBarriers.aztecIce));
+  const DKPortal = useTinyTempleIcePortal();
   return {
-    in: canEnterTT.in && (hasDiddy && canSlam && hasPeanuts && hasGuitar || preMelted),
-    out: canEnterTT.out && (hasDiddy && canSlam && hasPeanuts && hasGuitar || preMelted)
+    in: canEnterTT.in && (hasDiddy && canSlam && hasPeanuts && hasGuitar) || DKPortal && hasGuitar || preMelted,
+    out: canEnterTT.out && (hasDiddy && canSlam && hasPeanuts && hasGuitar) || DKPortal && hasGuitar || preMelted
   };
 };
 const useAztecLlamaTemple = () => {
@@ -53740,6 +53744,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is anywhere past the two pits of quicksand needing Vines or Ponytail Twirl to get past.",
                   storeKey: "firstHalfPortal",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Behind the Guitar Pad in Tiny Temple that Diddy must use to melt the ice over the pool" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the Tiny Temple at the ice-melting pad.",
+                  storeKey: "tinyTempleIcePortal",
                   prefix: "shuffledAztecPortals",
                   updateItem: setAztecPortal
                 }
