@@ -38,6 +38,7 @@ export const initialPortal: PortalState = {
   },
   shuffledCastlePortals: {
     vanilla: true,
+    treeChunkyPortal: false,
     ballroomPortal: false,
     windTunnelPortal: false
   }

@@ -1189,6 +1189,7 @@ interface cavesPortals {
 }
 interface castlePortals {
   vanilla: boolean
+  treeChunkyPortal: boolean
   ballroomPortal: boolean
   windTunnelPortal: boolean
 }

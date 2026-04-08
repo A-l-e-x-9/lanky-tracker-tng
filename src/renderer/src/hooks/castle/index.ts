@@ -58,6 +58,9 @@ export const usePlayCastle = (): LogicBool => {
 export const useSlamCastle = (): boolean => useSlamLevel('Creepy Castle')
 
 /*Alex addition: shuffled DK Portals*/
+//Is the DK Portal behind Chunky's room in the big tree? Should cause any relevant check to turn yellow if you don't have Chunky, Primate Punch (to get IN his room to begin with), DK, or Blast (to get into the tree itself), and thus can't get back in once you leave those areas.
+export const useTreeChunkyPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCastlePortals.treeChunkyPortal))
 //Is the DK Portal in the Ballroom?
 export const useBallroomPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal))
@@ -109,9 +112,10 @@ export const useChunkyTreeGb = (): LogicBool => {
   const pineapple = usePineapple()
   const sniper = useSniper()
   const hardShooting = useHardShooting()
+  const DKPortal2 = useTreeChunkyPortal()
   return {
     in: tree.in && punch && pineapple && (sniper || hardShooting),
-    out: tree.out && punch && pineapple
+    out: ((tree.out && punch) || DKPortal2) && pineapple
   }
 }
 
@@ -187,9 +191,10 @@ export const useDkTreeGb = (): LogicBool => {
   const canEnterTree = useCastleTree()
   const coconut = useCoconut()
   const sniper = useSniper()
+  const DKPortal2 = useChunkyTreePortal()
   return {
     in: canEnterTree.in && coconut && sniper,
-    out: canEnterTree.out && coconut //You're supposed to be able to do this check without Sniper. I've had no such luck, but I"ll keep it in here just in case. =_=;
+    out: (canEnterTree.out || DKPortal2) && coconut //You're supposed to be able to do this check without Sniper. I've had no such luck, but I"ll keep it in here just in case. =_=;
     }
 }
 
@@ -369,11 +374,12 @@ export const useGeneralFairy = (): LogicBool => {
 export const useTreeFairy = (): LogicBool => {
   const tree = useTreeKasplat()
   const camera = useCamera()
+  const waterIsLava = useDonkStore(useShallow((state) => state.settings.waterIsLava))
   return {
-    in: tree.in && camera,
+    in: tree.in && camera && !waterIsLava,
     out: tree.out && camera
   }
-} //TO DO?: Despite technically not requiring Diving unless you've filled the water to max, this check is affected by Water is Lava...
+}
 
 export const useRoomFairy = (): LogicBool => {
   const slam = useSlamCastle()
@@ -391,9 +397,10 @@ export const useRoomFairy = (): LogicBool => {
 export const useTreeKasplat = (): LogicBool => {
   const tree = useCastleTree()
   const coconut = useCoconut()
+  const DKPortal2 = useTreeChunkyPortal()
   return {
     in: tree.in && coconut,
-    out: tree.out && coconut
+    out: (tree.out || DKPortal2) && coconut
   }
 }
 
