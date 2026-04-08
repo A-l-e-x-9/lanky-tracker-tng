@@ -191,7 +191,7 @@ export const useDkTreeGb = (): LogicBool => {
   const canEnterTree = useCastleTree()
   const coconut = useCoconut()
   const sniper = useSniper()
-  const DKPortal2 = useChunkyTreePortal()
+  const DKPortal2 = useTreeChunkyPortal()
   return {
     in: canEnterTree.in && coconut && sniper,
     out: (canEnterTree.out || DKPortal2) && coconut //You're supposed to be able to do this check without Sniper. I've had no such luck, but I"ll keep it in here just in case. =_=;
