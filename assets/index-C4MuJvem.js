@@ -11149,7 +11149,8 @@ const initialPortal = {
   },
   shuffledCavesPortals: {
     vanilla: true,
-    bigRockPortal: false
+    bigRockPortal: false,
+    diddyUpperCabinPortal: false
   },
   shuffledCastlePortals: {
     vanilla: true,
@@ -40178,6 +40179,7 @@ const usePlayCaves = () => {
 };
 const useSlamCaves = () => useSlamLevel("Crystal Caves");
 const useBigRockPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.bigRockPortal));
+const useDiddyUpperCabinPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.diddyUpperCabinPortal));
 const useCavesIgloo = () => {
   const inStage = usePlayCaves();
   const angery = useAngryCaves();
@@ -40335,9 +40337,10 @@ const useDiddyCandleGb = () => {
   const guitar = useGuitar();
   const rocket = useRocket();
   const spring = useSpring();
+  const DKPortal = useDiddyUpperCabinPortal();
   return {
-    in: inStage.in && !angery && guitar && rocket && spring,
-    out: (inStage.out || angery) && guitar && rocket
+    in: (inStage.in && !angery && guitar || DKPortal) && rocket && spring,
+    out: ((inStage.out || angery) && guitar || DKPortal) && rocket
     //If you're playing a seed with the "move Diddy Upper Cabin Barrel" option on under the "quality of life" settings, you may not be able to do this. Don't know if I should edit this check to account for that option...it's a lot of effort for just one check! -_-;
   };
 };
@@ -53926,6 +53929,17 @@ const ShuffledDKPortals = () => {
                 }
               )
             ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Diddy's upper cabin" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: dkPortalIcon,
+                title: "The DK Portal is in Diddy's upper cabin.",
+                storeKey: "diddyUpperCabinPortal",
+                prefix: "shuffledCavesPortals",
+                updateItem: setCavesPortal
+              }
+            ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Creepy Castle" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla/any location not listed" }),
