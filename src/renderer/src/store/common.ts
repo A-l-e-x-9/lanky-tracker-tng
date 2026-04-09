@@ -1187,6 +1187,7 @@ interface forestPortals {
 interface cavesPortals {
   vanilla: boolean
   bigRockPortal: boolean
+  diddyUpperCabinPortal: boolean
 }
 interface castlePortals {
   vanilla: boolean

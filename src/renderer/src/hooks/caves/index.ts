@@ -61,6 +61,9 @@ export const useSlamCaves = (): boolean => useSlamLevel('Crystal Caves')
 //Is the DK Portal in the big rock room near Cranky's?
 export const useBigRockPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCavesPortals.bigRockPortal))
+//Is the DK Portal in Diddy's upper cabin?
+export const useDiddyUpperCabinPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCavesPortals.diddyUpperCabinPortal))
 /*end shuffled DK Portals*/
 
 /**
@@ -252,9 +255,10 @@ export const useDiddyCandleGb = (): LogicBool => {
   const guitar = useGuitar()
   const rocket = useRocket()
   const spring = useSpring()
+  const DKPortal = useDiddyUpperCabinPortal()
   return {
-    in: inStage.in && !angery && guitar && rocket && spring,
-    out: (inStage.out || angery) && guitar && rocket //If you're playing a seed with the "move Diddy Upper Cabin Barrel" option on under the "quality of life" settings, you may not be able to do this. Don't know if I should edit this check to account for that option...it's a lot of effort for just one check! -_-;
+    in: ((inStage.in && !angery && guitar) || DKPortal) && rocket && spring,
+    out: (((inStage.out || angery) && guitar) || DKPortal) && rocket //If you're playing a seed with the "move Diddy Upper Cabin Barrel" option on under the "quality of life" settings, you may not be able to do this. Don't know if I should edit this check to account for that option...it's a lot of effort for just one check! -_-;
   }
 }
 

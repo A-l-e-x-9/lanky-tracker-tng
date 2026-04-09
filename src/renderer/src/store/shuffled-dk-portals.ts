@@ -35,7 +35,8 @@ export const initialPortal: PortalState = {
   },
   shuffledCavesPortals: {
     vanilla: true,
-    bigRockPortal: false
+    bigRockPortal: false,
+    diddyUpperCabinPortal: false
   },
   shuffledCastlePortals: {
     vanilla: true,
