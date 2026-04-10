@@ -1,13 +1,16 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
-import { useArena, useJapesPaintingOutside, useGeneralThing } from '@renderer/hooks/japes'
+import { useArena, useJapesPaintingOutside, useGeneralThing, useMtnCrate, useDkFreebieGb, useJapesMine } from '@renderer/hooks/japes'
 import {  } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const canReachFunky = useArena()
 const canReachPaintingRoom = useJapesPaintingOutside()
 const isBreathing = useGeneralThing()
+const canDoVanillaCrate1 = useMtnCrate()
+const canReachDiddyCage = useDkFreebieGb()
+const canReachMtn = useJapesMine()
   return (
     <ArenaPool>
       <JapesCheck
