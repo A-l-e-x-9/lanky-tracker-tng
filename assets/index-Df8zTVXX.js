@@ -13199,7 +13199,7 @@ const CastleLobby$1 = () => {
     }
   ) }) });
 };
-const Shuffled$1q = () => {
+const Shuffled$1v = () => {
   const canDoIslesDirt4 = useCastleDirt();
   const canGetInCastleLobby = usePlayLobby("Creepy Castle");
   const hasShockwave = useShockwave();
@@ -13246,7 +13246,7 @@ const Shuffled$1q = () => {
     )
   ] });
 };
-const CastleLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1q, {}) : null;
+const CastleLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1v, {}) : null;
 const Hoard = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   IslesCheck,
   {
@@ -13539,7 +13539,7 @@ const FactoryLobbyFairy = () => {
     }
   ) }) });
 };
-const Shuffled$1p = () => {
+const Shuffled$1u = () => {
   const canDo = useFactoryFairy();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
@@ -13552,7 +13552,7 @@ const Shuffled$1p = () => {
     }
   ) });
 };
-const FactoryLobbyFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1p, {}) : null;
+const FactoryLobbyFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1u, {}) : null;
 const ForestLobbyFairy = () => {
   const canDo = useForestFairy();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -13566,7 +13566,7 @@ const ForestLobbyFairy = () => {
     }
   ) }) });
 };
-const Shuffled$1o = () => {
+const Shuffled$1t = () => {
   const canDo = useForestFairy();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
@@ -13579,7 +13579,7 @@ const Shuffled$1o = () => {
     }
   ) });
 };
-const ForestLobbyFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1o, {}) : null;
+const ForestLobbyFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1t, {}) : null;
 const SmallIslandFairy = () => /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaFairy, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
   IslesCheck,
   {
@@ -14397,7 +14397,7 @@ const AztecLobbyChunky = () => {
     }
   ) });
 };
-const Shuffled$1n = () => {
+const Shuffled$1s = () => {
   const canGetInAztecLobby = usePlayLobby("Angry Aztec");
   const canGetInAztecBack = useAztecLobbyChunky();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
@@ -14433,9 +14433,9 @@ const Shuffled$1n = () => {
     )
   ] });
 };
-const AztecLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1n, {}) : null;
+const AztecLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1s, {}) : null;
 const CratePool = ({ children }) => usePoolCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const Shuffled$1m = () => {
+const Shuffled$1r = () => {
   const canGetInAztecLobby = usePlayLobby("Angry Aztec");
   const canGetInAztecBack = useAztecLobbyChunky();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
@@ -14471,8 +14471,8 @@ const Shuffled$1m = () => {
     )
   ] });
 };
-const AztecLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1m, {}) : null;
-const Shuffled$1l = () => {
+const AztecLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1r, {}) : null;
+const Shuffled$1q = () => {
   const canGetInAztecLobby = usePlayLobby("Angry Aztec");
   const hasShockwave = useShockwave();
   const canGetInAztecBack = useAztecLobbyChunky();
@@ -14509,8 +14509,8 @@ const Shuffled$1l = () => {
     )
   ] });
 };
-const AztecLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1l, {}) : null;
-const Shuffled$1k = () => {
+const AztecLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1q, {}) : null;
+const Shuffled$1p = () => {
   const canReachAztecLobbyChunky = useAztecLobbyChunky();
   const hasCam = useCamera();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14524,8 +14524,8 @@ const Shuffled$1k = () => {
     }
   ) });
 };
-const AztecLobbyFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1k, {}) : null;
-const Shuffled$1j = () => {
+const AztecLobbyFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1p, {}) : null;
+const Shuffled$1o = () => {
   const canReachChunkyWrinklyDoor = useAztecLobbyChunky();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
@@ -14538,7 +14538,7 @@ const Shuffled$1j = () => {
     }
   ) });
 };
-const AztecLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1j, {}) : null;
+const AztecLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1o, {}) : null;
 const AztecLobbyChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
@@ -14640,7 +14640,7 @@ const CastleLobbyChunky = () => {
     }
   ) });
 };
-const Shuffled$1i = () => {
+const Shuffled$1n = () => {
   const isBreathing = useAnyKong();
   const canGetInCastleLobby = usePlayLobby("Creepy Castle");
   const hasBoulderTech = useBoulderTech();
@@ -14690,8 +14690,8 @@ const Shuffled$1i = () => {
     )
   ] });
 };
-const CastleLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1i, {}) : null;
-const Shuffled$1h = () => {
+const CastleLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1n, {}) : null;
+const Shuffled$1m = () => {
   const canGetInCastleLobby = usePlayLobby("Creepy Castle");
   const hasBoulderTech = useBoulderTech();
   const hasBalloon = useBalloon();
@@ -14740,8 +14740,8 @@ const Shuffled$1h = () => {
     )
   ] });
 };
-const CastleLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1h, {}) : null;
-const Shuffled$1g = () => {
+const CastleLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1m, {}) : null;
+const Shuffled$1l = () => {
   const hasCam = useCamera();
   const canReachCastleLobbyLanky = useCheckLankyCastle();
   const canReachCastleLobby = useCastleLobbyGeneric();
@@ -14756,8 +14756,8 @@ const Shuffled$1g = () => {
     }
   ) });
 };
-const CastleLobbyFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1g, {}) : null;
-const Shuffled$1f = () => {
+const CastleLobbyFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1l, {}) : null;
+const Shuffled$1k = () => {
   const diddyKasplat = useCastleKasplat();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
@@ -14770,7 +14770,7 @@ const Shuffled$1f = () => {
     }
   ) });
 };
-const CastleLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1f, {}) : null;
+const CastleLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1k, {}) : null;
 const CastleLobbyChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
@@ -14877,7 +14877,7 @@ const CavesLobby = () => {
     }
   ) });
 };
-const Shuffled$1e = () => {
+const Shuffled$1j = () => {
   const canGetInCavesLobby = usePlayLobby("Crystal Caves");
   const hasJetbarrel = useRocket();
   const hasBoulderTech = useBoulderTech();
@@ -14916,8 +14916,8 @@ const Shuffled$1e = () => {
     )
   ] });
 };
-const CavesLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1e, {}) : null;
-const Shuffled$1d = () => {
+const CavesLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1j, {}) : null;
+const Shuffled$1i = () => {
   const canGetInCavesKasplat = useCavesKasplat();
   const hasStrongKong = useStrong();
   const orangeYourself = useOrange();
@@ -14968,8 +14968,8 @@ const Shuffled$1d = () => {
     )
   ] });
 };
-const CavesLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1d, {}) : null;
-const Shuffled$1c = () => {
+const CavesLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1i, {}) : null;
+const Shuffled$1h = () => {
   const canGetInCavesLobby = usePlayLobby("Crystal Caves");
   const canGetInCavesKasplat = useCavesKasplat();
   const hasStrongKong = useStrong();
@@ -15021,8 +15021,8 @@ const Shuffled$1c = () => {
     )
   ] });
 };
-const CavesLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1c, {}) : null;
-const Shuffled$1b = () => {
+const CavesLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1h, {}) : null;
+const Shuffled$1g = () => {
   const hasCam = useCamera();
   const iceWallBreakdown = useCavesKasplat();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15036,8 +15036,8 @@ const Shuffled$1b = () => {
     }
   ) });
 };
-const CavesLobbyFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1b, {}) : null;
-const Shuffled$1a = () => {
+const CavesLobbyFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1g, {}) : null;
+const Shuffled$1f = () => {
   const lankyKasplat = useCavesKasplat();
   const canDoGuitarGB = useCavesLobbyGeneric();
   const hasJetbarrel = useRocket();
@@ -15066,7 +15066,7 @@ const Shuffled$1a = () => {
     )
   ] });
 };
-const CavesLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1a, {}) : null;
+const CavesLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1f, {}) : null;
 const CavesLobbyChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
@@ -15164,7 +15164,7 @@ const FactoryLobbyChunky = () => {
     }
   ) });
 };
-const Shuffled$19 = () => {
+const Shuffled$1e = () => {
   const isBreathing = useAnyKong();
   const canGetInFactoryLobby = usePlayLobby("Frantic Factory");
   const canGetInFactoryUpper = useFactoryLobbyUpper();
@@ -15201,8 +15201,8 @@ const Shuffled$19 = () => {
     )
   ] });
 };
-const FactoryLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$19, {}) : null;
-const Shuffled$18 = () => {
+const FactoryLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1e, {}) : null;
+const Shuffled$1d = () => {
   const isBreathing = useAnyKong();
   const canGetInFactoryLobby = usePlayLobby("Frantic Factory");
   const canGetInFactoryUpper = useFactoryLobbyUpper();
@@ -15239,8 +15239,8 @@ const Shuffled$18 = () => {
     )
   ] });
 };
-const FactoryLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$18, {}) : null;
-const Shuffled$17 = () => {
+const FactoryLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1d, {}) : null;
+const Shuffled$1c = () => {
   const canGetInFactoryLobby = usePlayLobby("Frantic Factory");
   const hasShockwave = useShockwave();
   const canGetInFactoryUpper = useFactoryLobbyUpper();
@@ -15277,8 +15277,8 @@ const Shuffled$17 = () => {
     )
   ] });
 };
-const FactoryLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$17, {}) : null;
-const Shuffled$16 = () => {
+const FactoryLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1c, {}) : null;
+const Shuffled$1b = () => {
   const tinyKasplat = useFactoryKasplat();
   const canReachFactoryLobby = usePlayLobby("Frantic Factory");
   const hasGrab = useGrab();
@@ -15306,7 +15306,7 @@ const Shuffled$16 = () => {
     )
   ] });
 };
-const FactoryLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$16, {}) : null;
+const FactoryLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1b, {}) : null;
 const FactoryLobbyChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
@@ -15399,7 +15399,7 @@ const ForestLobbyChunky = () => {
     }
   ) });
 };
-const Shuffled$15 = () => {
+const Shuffled$1a = () => {
   const canDoIslesArena2 = useForestArena();
   const canGetInForestLobby = usePlayLobby("Fungi Forest");
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
@@ -15425,8 +15425,8 @@ const Shuffled$15 = () => {
     )
   ] });
 };
-const ForestLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$15, {}) : null;
-const Shuffled$14 = () => {
+const ForestLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1a, {}) : null;
+const Shuffled$19 = () => {
   const canDoIslesArena2 = usePlayLobby("Fungi Forest");
   return /* @__PURE__ */ jsxRuntimeExports.jsx(CratePool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
@@ -15439,8 +15439,8 @@ const Shuffled$14 = () => {
     }
   ) });
 };
-const ForestLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$14, {}) : null;
-const Shuffled$13 = () => {
+const ForestLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$19, {}) : null;
+const Shuffled$18 = () => {
   const canGetInForestLobby = usePlayLobby("Fungi Forest");
   const hasShockwave = useShockwave();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
@@ -15466,7 +15466,7 @@ const Shuffled$13 = () => {
     )
   ] });
 };
-const ForestLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$13, {}) : null;
+const ForestLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$18, {}) : null;
 const ForestLobbyChecks = () => {
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
@@ -15553,7 +15553,7 @@ const GalleonLobbyChunky = () => {
     }
   ) });
 };
-const Shuffled$12 = () => {
+const Shuffled$17 = () => {
   const isBreathing = useAnyKong();
   const canGetInGalleonLobby = usePlayLobby("Gloomy Galleon");
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
@@ -15579,8 +15579,8 @@ const Shuffled$12 = () => {
     )
   ] });
 };
-const GalleonLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$12, {}) : null;
-const Shuffled$11 = () => {
+const GalleonLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$17, {}) : null;
+const Shuffled$16 = () => {
   const canGetInGalleonLobby = usePlayLobby("Gloomy Galleon");
   const canGetInGalleonTiny = useCheckTinyGalleonLobby();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
@@ -15616,8 +15616,8 @@ const Shuffled$11 = () => {
     )
   ] });
 };
-const GalleonLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$11, {}) : null;
-const Shuffled$10 = () => {
+const GalleonLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$16, {}) : null;
+const Shuffled$15 = () => {
   const canGetInGalleonLobby = usePlayLobby("Gloomy Galleon");
   const hasShockwave = useShockwave();
   const canGetInGalleonTiny = useCheckTinyGalleonLobby();
@@ -15654,8 +15654,8 @@ const Shuffled$10 = () => {
     )
   ] });
 };
-const GalleonLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$10, {}) : null;
-const Shuffled$$ = () => {
+const GalleonLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$15, {}) : null;
+const Shuffled$14 = () => {
   const chunkyKasplat = useGalleonKasplat();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
@@ -15668,7 +15668,7 @@ const Shuffled$$ = () => {
     }
   ) });
 };
-const GalleonLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$$, {}) : null;
+const GalleonLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$14, {}) : null;
 const GalleonLobbyChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
@@ -15691,7 +15691,7 @@ const GalleonLobbyChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyKasplats, {}) })
   ] });
 };
-const Shuffled$_ = () => {
+const Shuffled$13 = () => {
   const isBreathing = useAnyKong();
   const canGetInHelmLobby = usePlayLobby("Hideout Helm");
   const canGetInHelmChunky = useCheckChunkyHelm();
@@ -15729,8 +15729,8 @@ const Shuffled$_ = () => {
     )
   ] });
 };
-const HelmLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$_, {}) : null;
-const Shuffled$Z = () => {
+const HelmLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$13, {}) : null;
+const Shuffled$12 = () => {
   const isBreathing = useAnyKong();
   const canGetInHelmLobby = usePlayLobby("Hideout Helm");
   const canGetInHelmChunky = useCheckChunkyHelm();
@@ -15768,8 +15768,8 @@ const Shuffled$Z = () => {
     )
   ] });
 };
-const HelmLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$Z, {}) : null;
-const Shuffled$Y = () => {
+const HelmLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$12, {}) : null;
+const Shuffled$11 = () => {
   const canGetInHelmLobby = usePlayLobby("Hideout Helm");
   const hasShockwave = useShockwave();
   const canGetInHelmChunky = useCheckChunkyHelm();
@@ -15807,8 +15807,8 @@ const Shuffled$Y = () => {
     )
   ] });
 };
-const HelmLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$Y, {}) : null;
-const Shuffled$X = () => {
+const HelmLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$11, {}) : null;
+const Shuffled$10 = () => {
   const DKKasplat = useHelmKasplat();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
@@ -15821,7 +15821,7 @@ const Shuffled$X = () => {
     }
   ) });
 };
-const HelmLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$X, {}) : null;
+const HelmLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$10, {}) : null;
 const HelmLobbyChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
@@ -15963,7 +15963,7 @@ const JapesLobbyChunky = () => {
     }
   ) });
 };
-const Shuffled$W = () => {
+const Shuffled$$ = () => {
   const canGetInJapesLobby = usePlayLobby("Jungle Japes");
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -15988,8 +15988,8 @@ const Shuffled$W = () => {
     )
   ] });
 };
-const JapesLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$W, {}) : null;
-const Shuffled$V = () => {
+const JapesLobbyArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$$, {}) : null;
+const Shuffled$_ = () => {
   const canGetInJapesLobby = usePlayLobby("Jungle Japes");
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16014,8 +16014,8 @@ const Shuffled$V = () => {
     )
   ] });
 };
-const JapesLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$V, {}) : null;
-const Shuffled$U = () => {
+const JapesLobbyCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$_, {}) : null;
+const Shuffled$Z = () => {
   const canGetInJapesLobby = usePlayLobby("Jungle Japes");
   const hasShockwave = useShockwave();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
@@ -16041,8 +16041,8 @@ const Shuffled$U = () => {
     )
   ] });
 };
-const JapesLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$U, {}) : null;
-const Shuffled$T = () => {
+const JapesLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$Z, {}) : null;
+const Shuffled$Y = () => {
   const canReachJapesLobby = useJapesLobbyGeneric();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
@@ -16055,7 +16055,7 @@ const Shuffled$T = () => {
     }
   ) });
 };
-const JapesLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$T, {}) : null;
+const JapesLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$Y, {}) : null;
 const JapesLobbyChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
@@ -16126,7 +16126,7 @@ const TrainingGroundsChecks = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(Rainb
   /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingRear, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(Hoard, {})
 ] });
-const Shuffled$S = () => {
+const Shuffled$X = () => {
   const isBreathing = useAnyKong();
   const jetbarrelExists = useIslesRocket();
   const canReachFungiLobby = useIslesFungiIsland();
@@ -16405,8 +16405,8 @@ const Shuffled$S = () => {
     )
   ] });
 };
-const DKIslandArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$S, {}) : null;
-const Shuffled$R = () => {
+const DKIslandArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$X, {}) : null;
+const Shuffled$W = () => {
   const isBreathing = useAnyKong();
   const jetbarrelExists = useIslesRocket();
   const canReachFungiLobby = useIslesFungiIsland();
@@ -16698,8 +16698,8 @@ const Shuffled$R = () => {
     )
   ] });
 };
-const DKIslandCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$R, {}) : null;
-const Shuffled$Q = () => {
+const DKIslandCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$W, {}) : null;
+const Shuffled$V = () => {
   const isBreathing = useGeneralDirt$6();
   const canReachAztecLobby = useIslesUpper();
   const canReachWaterfall = useIslesCrossFungi();
@@ -16976,8 +16976,8 @@ const Shuffled$Q = () => {
     )
   ] });
 };
-const DKIslandDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$Q, {}) : null;
-const Shuffled$P = () => {
+const DKIslandDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$V, {}) : null;
+const Shuffled$U = () => {
   const isBreathing = useGeneralFairy$6();
   const canReachAztecLobby = useIslesUpper();
   const hasClimbing = useClimbing();
@@ -17023,8 +17023,8 @@ const Shuffled$P = () => {
     )
   ] });
 };
-const DKIslandFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$P, {}) : null;
-const Shuffled$O = () => {
+const DKIslandFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$U, {}) : null;
+const Shuffled$T = () => {
   const isBreathing = useAnyKong();
   const hasAGun = useAnyGun();
   const hasDiving = useDive();
@@ -17063,8 +17063,8 @@ const Shuffled$O = () => {
     )
   ] });
 };
-const DKIslandKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$O, {}) : null;
-const Shuffled$N = () => {
+const DKIslandKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$T, {}) : null;
+const Shuffled$S = () => {
   const isBreathing = useAnyKong();
   const canDoIslesArena1 = useSnideArena();
   const canReachFactoryLobby = useIslesKremAscent();
@@ -17245,8 +17245,8 @@ const Shuffled$N = () => {
     )
   ] });
 };
-const KremIslandArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$N, {}) : null;
-const Shuffled$M = () => {
+const KremIslandArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$S, {}) : null;
+const Shuffled$R = () => {
   const isBreathing = useAnyKong();
   const canDoIslesArena1 = useSnideArena();
   const canReachFactoryLobby = useIslesKremAscent();
@@ -17427,8 +17427,8 @@ const Shuffled$M = () => {
     )
   ] });
 };
-const KremIslandCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$M, {}) : null;
-const Shuffled$L = () => {
+const KremIslandCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$R, {}) : null;
+const Shuffled$Q = () => {
   const isBreathing = useGeneralDirt$6();
   const hasShockwave = useShockwave();
   const canReachFactoryLobby = useIslesKremAscent();
@@ -17610,8 +17610,8 @@ const Shuffled$L = () => {
     )
   ] });
 };
-const KremIslandDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$L, {}) : null;
-const Shuffled$K = () => {
+const KremIslandDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$Q, {}) : null;
+const Shuffled$P = () => {
   const isBreathing = useGeneralFairy$6();
   const canReachFactoryLobby = useIslesKremAscent();
   const vanillaFairy2 = useKremFairy();
@@ -17668,8 +17668,8 @@ const Shuffled$K = () => {
     )
   ] });
 };
-const KremIslandFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$K, {}) : null;
-const Shuffled$J = () => {
+const KremIslandFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$P, {}) : null;
+const Shuffled$O = () => {
   const canReachFactoryLobby = usePlayLobby("Frantic Factory");
   const canReachHelmLobby = usePlayLobby("Hideout Helm");
   const canDoSprintGB = useCheckLankyPrison();
@@ -17716,8 +17716,8 @@ const Shuffled$J = () => {
     )
   ] });
 };
-const KremIslandKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$J, {}) : null;
-const Shuffled$I = () => {
+const KremIslandKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$O, {}) : null;
+const Shuffled$N = () => {
   const isBreathing = useAnyKong();
   const canReachFungiLobby = useIslesFungiIsland();
   const canDoIslesDirt1 = canReachFungiLobby;
@@ -17834,8 +17834,8 @@ const Shuffled$I = () => {
     )
   ] });
 };
-const OuterArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$I, {}) : null;
-const Shuffled$H = () => {
+const OuterArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$N, {}) : null;
+const Shuffled$M = () => {
   const isBreathing = useAnyKong();
   const canReachFungiLobby = useIslesFungiIsland();
   const canDoIslesDirt1 = canReachFungiLobby;
@@ -17952,8 +17952,8 @@ const Shuffled$H = () => {
     )
   ] });
 };
-const OuterCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$H, {}) : null;
-const Shuffled$G = () => {
+const OuterCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$M, {}) : null;
+const Shuffled$L = () => {
   const isBreathing = useGeneralDirt$6();
   const canDoIslesDirt1 = useIslandDirt();
   const canReachBFI = useCheckBFIInitial();
@@ -18070,8 +18070,8 @@ const Shuffled$G = () => {
     )
   ] });
 };
-const OuterDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$G, {}) : null;
-const Shuffled$F = () => {
+const OuterDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$L, {}) : null;
+const Shuffled$K = () => {
   const isBreathing = useGeneralFairy$6();
   const canReachForestLobby = useIslesFungiIsland();
   const canGoInBFI = useCheckBFIInitial();
@@ -18117,8 +18117,8 @@ const Shuffled$F = () => {
     )
   ] });
 };
-const OuterFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$F, {}) : null;
-const Shuffled$E = () => {
+const OuterFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$K, {}) : null;
+const Shuffled$J = () => {
   const isBreathing = useAnyKong();
   const canReachForestLobby = useIslesFungiIsland();
   const canPoundTheX = useCheckChunkyPound();
@@ -18155,7 +18155,7 @@ const Shuffled$E = () => {
     )
   ] });
 };
-const OuterKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$E, {}) : null;
+const OuterKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$J, {}) : null;
 const IslesRegionChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
@@ -18337,14 +18337,14 @@ const ShuffledDirt$8 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(CavesHelmDirt, {})
   ] });
 };
-const Shuffled$D = () => {
+const Shuffled$I = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyFairies, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyFairies, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyFairies, {})
   ] });
 };
-const JapesForestFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
+const JapesForestFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$I, {}) : null;
 const CavesHelmFairies = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyFairies, {}),
@@ -20544,7 +20544,7 @@ const StormyTunnelChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(StormyTunnelEnemies, {}) })
   ] });
 };
-const Shuffled$C = () => {
+const Shuffled$H = () => {
   const isBreathing = useGeneralThing$5();
   const hasClimbing = useClimbing();
   const canReachDiddyTunnel = useJapesSideArea();
@@ -20671,8 +20671,8 @@ const Shuffled$C = () => {
     )
   ] });
 };
-const LowlandArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$C, {}) : null;
-const Shuffled$B = () => {
+const LowlandArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$H, {}) : null;
+const Shuffled$G = () => {
   const isBreathing = useGeneralThing$5();
   const hasClimbing = useClimbing();
   const canReachDiddyTunnel = useJapesSideArea();
@@ -20799,8 +20799,8 @@ const Shuffled$B = () => {
     )
   ] });
 };
-const LowlandCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$B, {}) : null;
-const Shuffled$A = () => {
+const LowlandCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$G, {}) : null;
+const Shuffled$F = () => {
   const isBreathing = useGeneralDirt$5();
   const hasClimbing = useClimbing();
   const canReachDiddyTunnel = useJapesSideArea();
@@ -20928,8 +20928,8 @@ const Shuffled$A = () => {
     )
   ] });
 };
-const LowlandsDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$A, {}) : null;
-const Shuffled$z = () => {
+const LowlandsDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$F, {}) : null;
+const Shuffled$E = () => {
   const isBreathing = useGeneralFairy$5();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     JapesCheck,
@@ -20942,8 +20942,8 @@ const Shuffled$z = () => {
     }
   ) });
 };
-const LowlandFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$z, {}) : null;
-const Shuffled$y = () => {
+const LowlandFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$E, {}) : null;
+const Shuffled$D = () => {
   const isBreathing = useGeneralThing$5();
   const canReachDiddyCave = useJapesSideArea();
   const hasAGun = useAnyGun();
@@ -20983,6 +20983,549 @@ const Shuffled$y = () => {
     )
   ] });
 };
+const LowlandKasplats$1 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$D, {}) : null;
+const Shuffled$C = () => {
+  const canReachFunky = useArena$4();
+  const canReachPaintingRoom = useJapesPaintingOutside();
+  const isBreathing = useGeneralThing$5();
+  const canDoVanillaCrate1 = useMtnCrate();
+  const canReachDiddyCage = useDkFreebieGb();
+  const canReachMtn = useJapesMine();
+  const hasClimbing = useClimbing();
+  const hasVines = useVine();
+  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
+  const hasAllBananaports = useBananaportAll();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: Vanilla Arena (what a Funky's!)",
+        region: "Japes Hillside",
+        canGetLogic: canReachFunky.in,
+        canGetBreak: canReachFunky.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: In front of door to Lanky's painting room",
+        region: "Japes Hillside",
+        canGetLogic: canReachPaintingRoom.in,
+        canGetBreak: canReachPaintingRoom.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: In front of the Painting Hill",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: At the minecart exit",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: Near Snide's",
+        region: "Japes Hillside",
+        canGetLogic: canReachFunky.in,
+        canGetBreak: canReachFunky.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: Behind Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: canDoVanillaCrate1.in,
+        canGetBreak: canDoVanillaCrate1.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: In front of Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: Near the Barrel Cannon to Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: Behind Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: Near the cannon platform",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: In the Troff 'n' Scoff alcove",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in && hasClimbing && hasVines,
+        canGetBreak: isBreathing.out && canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: Vanilla Warp 2, in front of Diddy's mountain",
+        region: "Japes Hillside",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: Vanilla Warp 3, at the painting room",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 11e3,
+        name: "Shuffled Battle Arena: Vanilla Warp 5, on top of Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: didGB[1011] || hasAllBananaports
+      }
+    )
+  ] });
+};
+const HillsideArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$C, {}) : null;
+const Shuffled$B = () => {
+  const canReachFunky = useArena$4();
+  const canReachPaintingRoom = useJapesPaintingOutside();
+  const isBreathing = useGeneralThing$5();
+  const canDoVanillaCrate1 = useMtnCrate();
+  const canReachDiddyCage = useDkFreebieGb();
+  const canReachMtn = useJapesMine();
+  const hasClimbing = useClimbing();
+  const hasVines = useVine();
+  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
+  const hasAllBananaports = useBananaportAll();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21e3,
+        name: "Shuffled Melon Crate: In front of Funky's",
+        region: "Japes Hillside",
+        canGetLogic: canReachFunky.in,
+        canGetBreak: canReachFunky.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21001,
+        name: "Shuffled Melon Crate: In front of door to Lanky's painting room",
+        region: "Japes Hillside",
+        canGetLogic: canReachPaintingRoom.in,
+        canGetBreak: canReachPaintingRoom.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21023,
+        name: "Shuffled Melon Crate: At the minecart exit",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21024,
+        name: "Shuffled Melon Crate: Near Snide's",
+        region: "Japes Hillside",
+        canGetLogic: canReachFunky.in,
+        canGetBreak: canReachFunky.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21025,
+        name: "Shuffled Melon Crate: Behind Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: canDoVanillaCrate1.in,
+        canGetBreak: canDoVanillaCrate1.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21026,
+        name: "Shuffled Melon Crate: In front of Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21027,
+        name: "Shuffled Melon Crate: Near the Barrel Cannon to Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21028,
+        name: "Shuffled Melon Crate: Vanilla Location 2 (behind Diddy's Mountain)",
+        region: "Japes Hillside",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21029,
+        name: "Shuffled Melon Crate: Near the cannon platform",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21030,
+        name: "Shuffled Melon Crate: In the Troff 'n' Scoff alcove",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in && hasClimbing && hasVines,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21035,
+        name: "Shuffled Melon Crate: Vanilla Warp 2, in front of Diddy's mountain",
+        region: "Japes Hillside",
+        canGetLogic: canReachMtn.in,
+        canGetBreak: canReachMtn.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21037,
+        name: "Shuffled Melon Crate: Vanilla Warp 3, at the painting room",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 21040,
+        name: "Shuffled Melon Crate: Vanilla Warp 5, on top of Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: didGB[1011] || hasAllBananaports
+      }
+    )
+  ] });
+};
+const HillsideCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$B, {}) : null;
+const Shuffled$A = () => {
+  const canReachFunky = useArena$4();
+  const hasShockwave = useShockwave();
+  const canDoVanillaDirt = usePaintingDirt();
+  const isBreathing = useGeneralDirt$5();
+  const canDoVanillaCrate1 = useMtnCrate();
+  const canReachDiddyCage = useDkFreebieGb();
+  const canReachMtn = useJapesMine();
+  const hasClimbing = useClimbing();
+  const hasVines = useVine();
+  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
+  const hasAllBananaports = useBananaportAll();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31e3,
+        name: "Shuffled Dirt Patch: In front of Funky's",
+        region: "Japes Hillside",
+        canGetLogic: canReachFunky.in && hasShockwave,
+        canGetBreak: canReachFunky.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31001,
+        name: "Shuffled Dirt Patch: Vanilla Location (in front of door to Lanky's painting room)",
+        region: "Japes Hillside",
+        canGetLogic: canDoVanillaDirt.in,
+        canGetBreak: canDoVanillaDirt.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31008,
+        name: "Shuffled Dirt Patch: In front of the Painting Hill",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31023,
+        name: "Shuffled Dirt Patch: At the minecart exit",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31024,
+        name: "Shuffled Dirt Patch: Near Snide's",
+        region: "Japes Hillside",
+        canGetLogic: canReachFunky.in && hasShockwave,
+        canGetBreak: canReachFunky.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31025,
+        name: "Shuffled Dirt Patch: Behind Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: canDoVanillaCrate1.in && hasShockwave,
+        canGetBreak: canDoVanillaCrate1.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31026,
+        name: "Shuffled Dirt Patch: In front of Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in && hasShockwave,
+        canGetBreak: canReachDiddyCage.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31027,
+        name: "Shuffled Dirt Patch: Near the Barrel Cannon to Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in && hasShockwave,
+        canGetBreak: canReachDiddyCage.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31028,
+        name: "Shuffled Dirt Patch: Vanilla Location 2 (behind Diddy's Mountain)",
+        region: "Japes Hillside",
+        canGetLogic: canReachMtn.in && hasShockwave,
+        canGetBreak: canReachMtn.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31029,
+        name: "Shuffled Dirt Patch: Near the cannon platform",
+        region: "Japes Hillside",
+        canGetLogic: canReachDiddyCage.in && hasShockwave,
+        canGetBreak: canReachDiddyCage.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31030,
+        name: "Shuffled Dirt Patch: In the Troff 'n' Scoff alcove",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in && hasClimbing && hasVines,
+        canGetBreak: isBreathing.out && canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31035,
+        name: "Shuffled Dirt Patch: Vanilla Warp 2, in front of Diddy's mountain",
+        region: "Japes Hillside",
+        canGetLogic: canReachMtn.in && hasShockwave,
+        canGetBreak: canReachMtn.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31037,
+        name: "Shuffled Dirt Patch: Vanilla Warp 3, at the painting room",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 31040,
+        name: "Shuffled Dirt Patch: Vanilla Warp 5, on top of Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in && (didGB[1011] || hasAllBananaports),
+        canGetBreak: isBreathing.out && (didGB[1011] || hasAllBananaports)
+      }
+    )
+  ] });
+};
+const HillsideDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$A, {}) : null;
+const Shuffled$z = () => {
+  const canReachUpperArea = useMtnCrate();
+  const hasCam = useCamera();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 41002,
+        name: "Shuffled Fairy: In front of Diddy's cage",
+        region: "Japes Hillside",
+        canGetLogic: canReachUpperArea.in && hasCam,
+        canGetBreak: canReachUpperArea.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 41003,
+        name: "Shuffled Fairy: Overlooking Diddy's mine",
+        region: "Japes Hillside",
+        canGetLogic: canReachUpperArea.in && hasCam,
+        canGetBreak: canReachUpperArea.out && hasCam
+      }
+    )
+  ] });
+};
+const HillsideFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$z, {}) : null;
+const Shuffled$y = () => {
+  const canDoDiddyMtnGB = useJapesMine();
+  const canDoTinyCageGB = useTinyCagedGb();
+  const isBreathing = useGeneralThing$5();
+  const hasVines = useVine();
+  const hasClimbing = useClimbing();
+  const canReachDiddyCage = useDkFreebieGb();
+  const canReachPaintingRoom = useJapesPaintingOutside();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 51006,
+        name: "Shuffled Kasplat: Top of Diddy's Mountain",
+        region: "Japes Hillside",
+        canGetLogic: canDoDiddyMtnGB.in,
+        canGetBreak: canDoDiddyMtnGB.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 51008,
+        name: "Shuffled Kasplat: With Tiny's caged GB",
+        region: "Japes Hillside",
+        canGetLogic: canDoTinyCageGB.in,
+        canGetBreak: canDoTinyCageGB.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 51014,
+        name: "Shuffled Kasplat: The Troff 'n' Scoff door on the Hillside",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in && hasVines && hasClimbing,
+        canGetBreak: canReachDiddyCage.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 51017,
+        name: "Shuffled Kasplat: In front of Lanky's painting room entrance",
+        region: "Japes Hillside",
+        canGetLogic: canReachPaintingRoom.in,
+        canGetBreak: canReachPaintingRoom.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      JapesCheck,
+      {
+        id: 51018,
+        name: "Shuffled Kasplat: The minecart game's exit",
+        region: "Japes Hillside",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    )
+  ] });
+};
 const LowlandKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$y, {}) : null;
 const JapesRegionChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
@@ -21007,9 +21550,16 @@ const JapesRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandsDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandKasplats$1, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(JapesMainChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(TopMountain, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TopMountain, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(HillsideArenas, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(HillsideCrates, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(HillsideDirt, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(HillsideFairies, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(HiveTunnelChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(HiveOutsideChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(HiveInteriorChecks, {}),
@@ -21025,55 +21575,17 @@ const JapesRegionChecks = () => {
   ] });
 };
 const ShuffledArenas$7 = () => {
-  const isBreathing = useGeneralThing$5();
-  const canReachFunky = useArena$4();
-  const canReachPaintingRoom = useJapesPaintingOutside();
-  const hasClimbing = useClimbing();
   const canReachHiveZone = useJapesHive();
   const canReachStormyZone = useJapesKongGates();
   const hasOStand = useStand();
   const hasRambi = useJapesRambi();
-  const canDoVanillaCrate1 = useMtnCrate();
-  const canReachDiddyCage = useDkFreebieGb();
   const canReachMtn = useJapesMine();
-  const hasVines = useVine();
-  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
-  const hasAllBananaports = useBananaportAll();
   const canReachChunkyCave = useJapesUnderground();
   const canGetInHive = useTinyStumpGb();
   const canGetInHivePastRoom1 = useTinyHiveGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandArenas, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11e3,
-        name: "Shuffled Battle Arena: Vanilla Arena (what a Funky's!)",
-        region: "Japes Hillside",
-        canGetLogic: canReachFunky.in,
-        canGetBreak: canReachFunky.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11001,
-        name: "Shuffled Battle Arena: In front of door to Lanky's painting room",
-        region: "Japes Hillside",
-        canGetLogic: canReachPaintingRoom.in,
-        canGetBreak: canReachPaintingRoom.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11008,
-        name: "Shuffled Battle Arena: In front of the Painting Hill",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HillsideArenas, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
@@ -21207,106 +21719,6 @@ const ShuffledArenas$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
-        id: 11023,
-        name: "Shuffled Battle Arena: At the minecart exit",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11024,
-        name: "Shuffled Battle Arena: Near Snide's",
-        region: "Japes Hillside",
-        canGetLogic: canReachFunky.in,
-        canGetBreak: canReachFunky.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11025,
-        name: "Shuffled Battle Arena: Behind Diddy's Mountain",
-        region: "Japes Hillside",
-        canGetLogic: canDoVanillaCrate1.in,
-        canGetBreak: canDoVanillaCrate1.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11026,
-        name: "Shuffled Battle Arena: In front of Diddy's cage",
-        region: "Japes Hillside",
-        canGetLogic: canReachDiddyCage.in,
-        canGetBreak: canReachDiddyCage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11027,
-        name: "Shuffled Battle Arena: Near the Barrel Cannon to Diddy's cage",
-        region: "Japes Hillside",
-        canGetLogic: canReachDiddyCage.in,
-        canGetBreak: canReachDiddyCage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11028,
-        name: "Shuffled Battle Arena: Behind Diddy's Mountain",
-        region: "Japes Hillside",
-        canGetLogic: canReachMtn.in,
-        canGetBreak: canReachMtn.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11029,
-        name: "Shuffled Battle Arena: Near the cannon platform",
-        region: "Japes Hillside",
-        canGetLogic: canReachDiddyCage.in,
-        canGetBreak: canReachDiddyCage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11030,
-        name: "Shuffled Battle Arena: In the Troff 'n' Scoff alcove",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in && hasClimbing && hasVines,
-        canGetBreak: isBreathing.out && canReachDiddyCage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11035,
-        name: "Shuffled Battle Arena: Vanilla Warp 2, in front of Diddy's mountain",
-        region: "Japes Hillside",
-        canGetLogic: canReachMtn.in,
-        canGetBreak: canReachMtn.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11037,
-        name: "Shuffled Battle Arena: Vanilla Warp 3, at the painting room",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
         id: 11038,
         name: "Shuffled Battle Arena: Vanilla Warp 4, Stormy Tunnel entrance",
         region: "Stormy Area",
@@ -21322,15 +21734,6 @@ const ShuffledArenas$7 = () => {
         region: "Stormy Area",
         canGetLogic: canReachStormyZone.in,
         canGetBreak: canReachStormyZone.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 11040,
-        name: "Shuffled Battle Arena: Vanilla Warp 5, on top of Diddy's Mountain",
-        region: "Japes Hillside",
-        canGetLogic: didGB[1011] || hasAllBananaports
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21436,46 +21839,19 @@ const ShuffledArenas$7 = () => {
   ] });
 };
 const ShuffledCrates$7 = () => {
-  const isBreathing = useGeneralThing$5();
-  const canReachFunky = useArena$4();
   const canReachPaintingRoom = useJapesPaintingOutside();
-  const hasClimbing = useClimbing();
   const canReachHiveZone = useJapesHive();
   const canReachStormyZone = useJapesKongGates();
   const hasOStand = useStand();
   const hasRambi = useJapesRambi();
-  const canDoVanillaCrate1 = useMtnCrate();
   const canDoVanillaCrate2 = useRambiCrate();
-  const canReachDiddyCage = useDkFreebieGb();
   const canReachMtn = useJapesMine();
-  const hasVines = useVine();
-  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
-  const hasAllBananaports = useBananaportAll();
   const canReachChunkyCave = useJapesUnderground();
   const canGetInHive = useTinyStumpGb();
   const canGetInHivePastRoom1 = useTinyHiveGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandCrates, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 21e3,
-        name: "Shuffled Melon Crate: In front of Funky's",
-        region: "Japes Hillside",
-        canGetLogic: canReachFunky.in,
-        canGetBreak: canReachFunky.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 21001,
-        name: "Shuffled Melon Crate: In front of door to Lanky's painting room",
-        region: "Japes Hillside",
-        canGetLogic: canReachPaintingRoom.in,
-        canGetBreak: canReachPaintingRoom.out
-      }
-    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HillsideCrates, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
@@ -21609,106 +21985,6 @@ const ShuffledCrates$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
-        id: 21023,
-        name: "Shuffled Melon Crate: At the minecart exit",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 21024,
-        name: "Shuffled Melon Crate: Near Snide's",
-        region: "Japes Hillside",
-        canGetLogic: canReachFunky.in,
-        canGetBreak: canReachFunky.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 21025,
-        name: "Shuffled Melon Crate: Behind Diddy's Mountain",
-        region: "Japes Hillside",
-        canGetLogic: canDoVanillaCrate1.in,
-        canGetBreak: canDoVanillaCrate1.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 21026,
-        name: "Shuffled Melon Crate: In front of Diddy's cage",
-        region: "Japes Hillside",
-        canGetLogic: canReachDiddyCage.in,
-        canGetBreak: canReachDiddyCage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 21027,
-        name: "Shuffled Melon Crate: Near the Barrel Cannon to Diddy's cage",
-        region: "Japes Hillside",
-        canGetLogic: canReachDiddyCage.in,
-        canGetBreak: canReachDiddyCage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 21028,
-        name: "Shuffled Melon Crate: Vanilla Location 2 (behind Diddy's Mountain)",
-        region: "Japes Hillside",
-        canGetLogic: canReachMtn.in,
-        canGetBreak: canReachMtn.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 21029,
-        name: "Shuffled Melon Crate: Near the cannon platform",
-        region: "Japes Hillside",
-        canGetLogic: canReachDiddyCage.in,
-        canGetBreak: canReachDiddyCage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 21030,
-        name: "Shuffled Melon Crate: In the Troff 'n' Scoff alcove",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in && hasClimbing && hasVines,
-        canGetBreak: canReachDiddyCage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 21035,
-        name: "Shuffled Melon Crate: Vanilla Warp 2, in front of Diddy's mountain",
-        region: "Japes Hillside",
-        canGetLogic: canReachMtn.in,
-        canGetBreak: canReachMtn.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 21037,
-        name: "Shuffled Melon Crate: Vanilla Warp 3, at the painting room",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
         id: 21038,
         name: "Shuffled Melon Crate: Vanilla Warp 4, Stormy Tunnel entrance",
         region: "Stormy Area",
@@ -21724,15 +22000,6 @@ const ShuffledCrates$7 = () => {
         region: "Stormy Area",
         canGetLogic: canReachStormyZone.in,
         canGetBreak: canReachStormyZone.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 21040,
-        name: "Shuffled Melon Crate: Vanilla Warp 5, on top of Diddy's Mountain",
-        region: "Japes Hillside",
-        canGetLogic: didGB[1011] || hasAllBananaports
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21848,58 +22115,20 @@ const ShuffledCrates$7 = () => {
   ] });
 };
 const ShuffledDirt$7 = () => {
-  const isBreathing = useGeneralDirt$5();
   const hasShockwave = useShockwave();
-  const canReachFunky = useArena$4();
   const canReachPaintingRoom = useJapesPaintingOutside();
-  const hasClimbing = useClimbing();
   const canReachHiveZone = useJapesHive();
   const canReachStormyZone = useJapesKongGates();
   const hasOStand = useStand();
   const hasRambi = useJapesRambi();
-  const canDoVanillaCrate1 = useMtnCrate();
   const canDoVanillaCrate2 = useRambiCrate();
-  const canReachDiddyCage = useDkFreebieGb();
   const canReachMtn = useJapesMine();
-  const hasVines = useVine();
-  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
-  const hasAllBananaports = useBananaportAll();
   const canReachChunkyCave = useJapesUnderground();
   const canGetInHive = useTinyStumpGb();
   const canGetInHivePastRoom1 = useTinyHiveGb();
-  const canDoVanillaDirt = usePaintingDirt();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandsDirt, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31e3,
-        name: "Shuffled Dirt Patch: In front of Funky's",
-        region: "Japes Hillside",
-        canGetLogic: canReachFunky.in && hasShockwave,
-        canGetBreak: canReachFunky.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31001,
-        name: "Shuffled Dirt Patch: Vanilla Location (in front of door to Lanky's painting room)",
-        region: "Japes Hillside",
-        canGetLogic: canDoVanillaDirt.in,
-        canGetBreak: canDoVanillaDirt.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31008,
-        name: "Shuffled Dirt Patch: In front of the Painting Hill",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HillsideDirt, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
@@ -22043,106 +22272,6 @@ const ShuffledDirt$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
-        id: 31023,
-        name: "Shuffled Dirt Patch: At the minecart exit",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31024,
-        name: "Shuffled Dirt Patch: Near Snide's",
-        region: "Japes Hillside",
-        canGetLogic: canReachFunky.in && hasShockwave,
-        canGetBreak: canReachFunky.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31025,
-        name: "Shuffled Dirt Patch: Behind Diddy's Mountain",
-        region: "Japes Hillside",
-        canGetLogic: canDoVanillaCrate1.in && hasShockwave,
-        canGetBreak: canDoVanillaCrate1.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31026,
-        name: "Shuffled Dirt Patch: In front of Diddy's cage",
-        region: "Japes Hillside",
-        canGetLogic: canReachDiddyCage.in && hasShockwave,
-        canGetBreak: canReachDiddyCage.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31027,
-        name: "Shuffled Dirt Patch: Near the Barrel Cannon to Diddy's cage",
-        region: "Japes Hillside",
-        canGetLogic: canReachDiddyCage.in && hasShockwave,
-        canGetBreak: canReachDiddyCage.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31028,
-        name: "Shuffled Dirt Patch: Vanilla Location 2 (behind Diddy's Mountain)",
-        region: "Japes Hillside",
-        canGetLogic: canReachMtn.in && hasShockwave,
-        canGetBreak: canReachMtn.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31029,
-        name: "Shuffled Dirt Patch: Near the cannon platform",
-        region: "Japes Hillside",
-        canGetLogic: canReachDiddyCage.in && hasShockwave,
-        canGetBreak: canReachDiddyCage.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31030,
-        name: "Shuffled Dirt Patch: In the Troff 'n' Scoff alcove",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in && hasClimbing && hasVines,
-        canGetBreak: isBreathing.out && canReachDiddyCage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31035,
-        name: "Shuffled Dirt Patch: Vanilla Warp 2, in front of Diddy's mountain",
-        region: "Japes Hillside",
-        canGetLogic: canReachMtn.in && hasShockwave,
-        canGetBreak: canReachMtn.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31037,
-        name: "Shuffled Dirt Patch: Vanilla Warp 3, at the painting room",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
         id: 31038,
         name: "Shuffled Dirt Patch: Vanilla Warp 4, Stormy Tunnel entrance",
         region: "Stormy Area",
@@ -22158,16 +22287,6 @@ const ShuffledDirt$7 = () => {
         region: "Stormy Area",
         canGetLogic: canReachStormyZone.in && hasShockwave,
         canGetBreak: canReachStormyZone.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 31040,
-        name: "Shuffled Dirt Patch: Vanilla Warp 5, on top of Diddy's Mountain",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in && (didGB[1011] || hasAllBananaports),
-        canGetBreak: isBreathing.out && (didGB[1011] || hasAllBananaports)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22286,7 +22405,6 @@ const ShuffledFairies$7 = () => {
   const hasCam = useCamera();
   const vanillaFairy1 = useRambiFairy();
   const vanillaFairy2 = usePaintingFairy();
-  const canReachUpperArea = useMtnCrate();
   const canGoPastGates = useJapesKongGates();
   const canReachHiveArea = useJapesHive();
   const canGoInMine = useJapesMine();
@@ -22294,6 +22412,7 @@ const ShuffledFairies$7 = () => {
   const canGoUnder = useJapesUnderground();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandFairies, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HillsideFairies, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
@@ -22311,26 +22430,6 @@ const ShuffledFairies$7 = () => {
         name: "Shuffled Fairy: Vanilla Location #2 (Lanky's painting room)",
         region: "Japes Caves and Mines",
         canGetLogic: vanillaFairy2
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 41002,
-        name: "Shuffled Fairy: In front of Diddy's cage",
-        region: "Japes Hillside",
-        canGetLogic: canReachUpperArea.in && hasCam,
-        canGetBreak: canReachUpperArea.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 41003,
-        name: "Shuffled Fairy: Overlooking Diddy's mine",
-        region: "Japes Hillside",
-        canGetLogic: canReachUpperArea.in && hasCam,
-        canGetBreak: canReachUpperArea.out && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22398,22 +22497,17 @@ const ShuffledFairies$7 = () => {
 const ShuffledKasplats$6 = () => {
   const notChunkyKasplat = useGateKasplat();
   const chunkyKasplat = useChunkyUndergroundGb();
-  const isBreathing = useGeneralThing$5();
   const canReachRambiArea = useJapesRambi();
   const canDoDiddyMtnGB = useJapesMine();
   const canReachHiveArea = useJapesHive();
-  const canDoTinyCageGB = useTinyCagedGb();
   const canReachStormyArea = useJapesKongGates();
-  const canReachDiddyCage = useDkFreebieGb();
-  const canReachPaintingRoom = useJapesPaintingOutside();
   const hasDiving = useDive();
   const hasMiniMonkey = useMini();
   const hasAGun = useAnyGun();
   const hasOranges = useOrange();
   const hasAnInstrument = useAnyMusic();
-  const hasVines = useVine();
-  const hasClimbing = useClimbing();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandKasplats$1, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandKasplats, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -22478,31 +22572,11 @@ const ShuffledKasplats$6 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
-        id: 51006,
-        name: "Shuffled Kasplat: Top of Diddy's Mountain",
-        region: "Japes Hillside",
-        canGetLogic: canDoDiddyMtnGB.in,
-        canGetBreak: canDoDiddyMtnGB.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
         id: 51007,
         name: "Shuffled Kasplat: Under Chunky's giant GB",
         region: "Hive Area",
         canGetLogic: canReachHiveArea.in,
         canGetBreak: canReachHiveArea.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 51008,
-        name: "Shuffled Kasplat: With Tiny's caged GB",
-        region: "Japes Hillside",
-        canGetLogic: canDoTinyCageGB.in,
-        canGetBreak: canDoTinyCageGB.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22528,16 +22602,6 @@ const ShuffledKasplats$6 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
-        id: 51014,
-        name: "Shuffled Kasplat: The Troff 'n' Scoff door on the Hillside",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in && hasVines && hasClimbing,
-        canGetBreak: canReachDiddyCage.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
         id: 51015,
         name: "Shuffled Kasplat: In Diddy's mountain",
         region: "Japes Caves and Mines",
@@ -22553,26 +22617,6 @@ const ShuffledKasplats$6 = () => {
         region: "Hive Area",
         canGetLogic: canReachHiveArea.in && hasMiniMonkey,
         canGetBreak: canReachHiveArea.out && hasMiniMonkey
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 51017,
-        name: "Shuffled Kasplat: In front of Lanky's painting room entrance",
-        region: "Japes Hillside",
-        canGetLogic: canReachPaintingRoom.in,
-        canGetBreak: canReachPaintingRoom.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      JapesCheck,
-      {
-        id: 51018,
-        name: "Shuffled Kasplat: The minecart game's exit",
-        region: "Japes Hillside",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
       }
     )
   ] });
