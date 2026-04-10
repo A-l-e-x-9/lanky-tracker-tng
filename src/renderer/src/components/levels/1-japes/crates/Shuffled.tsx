@@ -1,29 +1,18 @@
-import { useShallow } from 'zustand/react/shallow'
 import CratePool from '@renderer/components/pools/Crates'
-import { useGeneralThing, useArena, useJapesPaintingOutside, useJapesHive, useJapesKongGates, useJapesRambi, useMtnCrate, useRambiCrate, useDkFreebieGb, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
-import { useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, useStand, useVine } from '@renderer/hooks/kongs'
+import { useJapesPaintingOutside, useJapesHive, useJapesKongGates, useJapesRambi, useRambiCrate, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
+import { useStand } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
-import useDonkStore from '@renderer/store'
 import LowlandCrates from './Lowlands'
 import HillsideCrates from './Hillside'
 
 const ShuffledCrates: React.FC = () => {
-const isBreathing = useGeneralThing()
-const canReachFunky = useArena()
 const canReachPaintingRoom = useJapesPaintingOutside()
-const hasClimbing = useClimbing()
 const canReachHiveZone = useJapesHive()
 const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
 const hasRambi = useJapesRambi()
-const canDoVanillaCrate1 = useMtnCrate()
 const canDoVanillaCrate2 = useRambiCrate()
-const canReachDiddyCage = useDkFreebieGb()
 const canReachMtn = useJapesMine()
-const hasVines = useVine()
-const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
-const hasAllBananaports = useBananaportAll()
 const canReachChunkyCave = useJapesUnderground()
 const canGetInHive = useTinyStumpGb()
 const canGetInHivePastRoom1 = useTinyHiveGb()

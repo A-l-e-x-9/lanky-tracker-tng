@@ -3,7 +3,7 @@ import { useRambiFairy, usePaintingFairy, useMtnCrate, useJapesHive, useTinyHive
 import { useCamera } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandFairies from './Lowlands'
-import HillsideArenas from './Hillside'
+import HillsideFairies from './Hillside'
 
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
