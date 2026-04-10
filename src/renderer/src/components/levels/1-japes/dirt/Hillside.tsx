@@ -1,7 +1,7 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
-import { useArena, usePaintingDirt, useGeneralDirt } from '@renderer/hooks/japes'
+import { useArena, usePaintingDirt, useGeneralDirt, useMtnCrate, useDkFreebieGb, useJapesMine } from '@renderer/hooks/japes'
 import { useShockwave } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
@@ -9,6 +9,9 @@ const canReachFunky = useArena()
 const hasShockwave = useShockwave()
 const canDoVanillaDirt = usePaintingDirt()
 const isBreathing = useGeneralDirt()
+const canDoVanillaCrate1 = useMtnCrate()
+const canReachDiddyCage = useDkFreebieGb()
+const canReachMtn = useJapesMine()
   return (
     <RainbowCoinPool>
       <JapesCheck
