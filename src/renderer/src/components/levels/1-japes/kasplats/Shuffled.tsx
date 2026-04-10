@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useJapesKongGates } from '@renderer/hooks/japes'
+import { useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useJapesKongGates } from '@renderer/hooks/japes'
 import { useDive, useAnyGun, useOrange, useAnyMusic, useMini } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandKasplats from './Lowlands'
