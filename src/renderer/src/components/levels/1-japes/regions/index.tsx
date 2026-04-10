@@ -66,15 +66,15 @@ return (
     <JapesMainChecks />
   <div className="grid">
     <TopMountain />
-    <LowlandArenas />
-    <LowlandCrates />
-    <LowlandDirt />
+    <HillsideArenas />
+    <HillsideCrates />
+    <HillsideDirt />
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
-    <LowlandFairies />
+    <HillsideFairies />
   </div>
   <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
-    <LowlandKasplats />
+    <HillsideKasplats />
   </div>
     <HiveTunnelChecks />
     <HiveOutsideChecks />

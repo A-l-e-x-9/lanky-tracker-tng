@@ -1,10 +1,7 @@
-import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useJapesPaintingOutside, useJapesHive, useJapesKongGates, useJapesRambi, useRambiCrate, useDkFreebieGb, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb, usePaintingDirt } from '@renderer/hooks/japes'
-import { useBananaportAll } from '@renderer/hooks/settings'
-import { useStand, useVine, useShockwave } from '@renderer/hooks/kongs'
+import { useJapesPaintingOutside, useJapesHive, useJapesKongGates, useJapesRambi, useRambiCrate, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
+import { useStand, useShockwave } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
-import useDonkStore from '@renderer/store'
 import LowlandDirt from './Lowlands'
 import HillsideDirt from './Hillside'
 
@@ -16,15 +13,10 @@ const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
 const hasRambi = useJapesRambi()
 const canDoVanillaCrate2 = useRambiCrate()
-const canReachDiddyCage = useDkFreebieGb()
 const canReachMtn = useJapesMine()
-const hasVines = useVine()
-const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
-const hasAllBananaports = useBananaportAll()
 const canReachChunkyCave = useJapesUnderground()
 const canGetInHive = useTinyStumpGb()
 const canGetInHivePastRoom1 = useTinyHiveGb()
-const canDoVanillaDirt = usePaintingDirt()
   return (
     <RainbowCoinPool>
       <LowlandDirt />
