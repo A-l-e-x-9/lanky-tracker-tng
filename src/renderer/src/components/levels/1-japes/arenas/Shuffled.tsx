@@ -1,24 +1,18 @@
 import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useJapesPaintingOutside, useJapesHive, useJapesKongGates, useJapesRambi, useMtnCrate, useDkFreebieGb, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
+import { useJapesHive, useJapesKongGates, useJapesRambi, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
 import { useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, useStand, useVine } from '@renderer/hooks/kongs'
+import { useStand, useVine } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import useDonkStore from '@renderer/store'
 import LowlandArenas from './Lowlands'
 import HillsideArenas from './Hillside'
 
 const ShuffledArenas: React.FC = () => {
-const isBreathing = useGeneralThing()
-const canReachFunky = useArena()
-const canReachPaintingRoom = useJapesPaintingOutside()
-const hasClimbing = useClimbing()
 const canReachHiveZone = useJapesHive()
 const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
 const hasRambi = useJapesRambi()
-const canDoVanillaCrate1 = useMtnCrate()
-const canReachDiddyCage = useDkFreebieGb()
 const canReachMtn = useJapesMine()
 const hasVines = useVine()
 const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
