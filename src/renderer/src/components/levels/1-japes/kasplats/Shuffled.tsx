@@ -1,6 +1,6 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useTinyCagedGb, useJapesKongGates, useDkFreebieGb, useJapesPaintingOutside } from '@renderer/hooks/japes'
-import { useDive, useAnyGun, useOrange, useAnyMusic, useMini, useVine, useClimbing } from '@renderer/hooks/kongs'
+import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useJapesKongGates } from '@renderer/hooks/japes'
+import { useDive, useAnyGun, useOrange, useAnyMusic, useMini } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandKasplats from './Lowlands'
 import HillsideKasplats from './Hillside'
@@ -8,21 +8,15 @@ import HillsideKasplats from './Hillside'
 const ShuffledKasplats: React.FC = () => {
 const notChunkyKasplat = useGateKasplat()
 const chunkyKasplat = useChunkyUndergroundGb()
-const isBreathing = useGeneralThing()
 const canReachRambiArea = useJapesRambi()
 const canDoDiddyMtnGB = useJapesMine()
 const canReachHiveArea = useJapesHive()
-const canDoTinyCageGB = useTinyCagedGb()
 const canReachStormyArea = useJapesKongGates()
-const canReachDiddyCage = useDkFreebieGb()
-const canReachPaintingRoom = useJapesPaintingOutside()
 const hasDiving = useDive()
 const hasMiniMonkey = useMini()
 const hasAGun = useAnyGun()
 const hasOranges = useOrange()
 const hasAnInstrument = useAnyMusic()
-const hasVines = useVine()
-const hasClimbing = useClimbing()
   return (
     <KasplatPool>
       <LowlandKasplats />

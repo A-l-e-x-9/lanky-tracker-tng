@@ -1,10 +1,17 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
-import {  } from '@renderer/hooks/japes'
-import {  } from '@renderer/hooks/kongs'
+import { useJapesMine, useTinyCagedGb, useGeneralThing, useDkFreebieGb, useJapesPaintingOutside } from '@renderer/hooks/japes'
+import { useVine, useClimbing } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
+const canDoDiddyMtnGB = useJapesMine()
+const canDoTinyCageGB = useTinyCagedGb()
+const isBreathing = useGeneralThing()
+const hasVines = useVine()
+const hasClimbing = useClimbing()
+const canReachDiddyCage = useDkFreebieGb()
+const canReachPaintingRoom = useJapesPaintingOutside()
 return (
     <KasplatPool>
       <JapesCheck
