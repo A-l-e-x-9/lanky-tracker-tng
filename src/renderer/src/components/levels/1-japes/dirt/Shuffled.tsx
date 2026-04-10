@@ -6,6 +6,7 @@ import { useClimbing, useStand, useVine, useShockwave } from '@renderer/hooks/ko
 import JapesCheck from '../check'
 import useDonkStore from '@renderer/store'
 import LowlandDirt from './Lowlands'
+import HillsideDirt from './Hillside'
 
 const ShuffledDirt: React.FC = () => {
 const isBreathing = useGeneralDirt()
@@ -31,6 +32,7 @@ const canDoVanillaDirt = usePaintingDirt()
   return (
     <RainbowCoinPool>
       <LowlandDirt />
+      <HillsideDirt />
       <JapesCheck
         id={31000}
         name="Shuffled Dirt Patch: In front of Funky's"

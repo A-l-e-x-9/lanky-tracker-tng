@@ -6,6 +6,7 @@ import { useClimbing, useStand, useVine } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import useDonkStore from '@renderer/store'
 import LowlandArenas from './Lowlands'
+import HillsideArenas from './Hillside'
 
 const ShuffledArenas: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -28,6 +29,7 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
   return (
     <ArenaPool>
       <LowlandArenas />
+      <HillsideArenas />
       <JapesCheck
         id={11000}
         name="Shuffled Battle Arena: Vanilla Arena (what a Funky's!)"

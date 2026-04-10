@@ -26,6 +26,11 @@ import LowlandCrates from '../crates/Lowlands'
 import LowlandDirt from '../dirt/Lowlands'
 import LowlandFairies from '../fairies/Lowlands'
 import LowlandKasplats from '../kasplats/Lowlands'
+import HillsideArenas from '../arenas/Hillside'
+import HillsideCrates from '../crates/Hillside'
+import HillsideDirt from '../dirt/Hillside'
+import HillsideFairies from '../fairies/Hillside'
+import HillsideKasplats from '../kasplats/Hillside'
 
 const JapesRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -61,6 +66,15 @@ return (
     <JapesMainChecks />
   <div className="grid">
     <TopMountain />
+    <LowlandArenas />
+    <LowlandCrates />
+    <LowlandDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <LowlandFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <LowlandKasplats />
   </div>
     <HiveTunnelChecks />
     <HiveOutsideChecks />

@@ -3,6 +3,7 @@ import { useRambiFairy, usePaintingFairy, useMtnCrate, useJapesHive, useTinyHive
 import { useCamera } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandFairies from './Lowlands'
+import HillsideArenas from './Hillside'
 
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
@@ -17,6 +18,7 @@ const ShuffledFairies: React.FC = () => {
   return (
     <FairyPool>
       <LowlandFairies />
+      <HillsideFairies />
       <JapesCheck
         id={41000}
         name="Shuffled Fairy: Vanilla Location #1 (pool after Rambi door)"

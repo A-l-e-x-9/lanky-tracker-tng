@@ -6,6 +6,7 @@ import { useClimbing, useStand, useVine } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import useDonkStore from '@renderer/store'
 import LowlandCrates from './Lowlands'
+import HillsideCrates from './Hillside'
 
 const ShuffledCrates: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -29,6 +30,7 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
   return (
     <CratePool>
       <LowlandCrates />
+      <HillsideCrates />
       <JapesCheck
         id={21000}
         name="Shuffled Melon Crate: In front of Funky's"

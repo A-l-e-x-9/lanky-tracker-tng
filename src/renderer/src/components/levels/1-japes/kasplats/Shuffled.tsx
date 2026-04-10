@@ -3,6 +3,7 @@ import { useGeneralThing, useGateKasplat, useChunkyUndergroundGb, useJapesRambi,
 import { useDive, useAnyGun, useOrange, useAnyMusic, useMini, useVine, useClimbing } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandKasplats from './Lowlands'
+import HillsideKasplats from './Hillside'
 
 const ShuffledKasplats: React.FC = () => {
 const notChunkyKasplat = useGateKasplat()
@@ -25,6 +26,7 @@ const hasClimbing = useClimbing()
   return (
     <KasplatPool>
       <LowlandKasplats />
+      <HillsideKasplats />
       <JapesCheck
         id={51000}
         name="Shuffled Kasplat: DK's Vanilla Location (lower portion of Hive Tunnel)"
