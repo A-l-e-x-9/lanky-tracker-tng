@@ -1,8 +1,10 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useShuffleDirt } from '@renderer/hooks/settings'
+import { useShuffleDirt, useBananaportAll } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
 import { useArena, usePaintingDirt, useGeneralDirt, useMtnCrate, useDkFreebieGb, useJapesMine } from '@renderer/hooks/japes'
-import { useShockwave } from '@renderer/hooks/kongs'
+import { useShockwave, useClimbing, useVine } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const canReachFunky = useArena()
@@ -12,6 +14,10 @@ const isBreathing = useGeneralDirt()
 const canDoVanillaCrate1 = useMtnCrate()
 const canReachDiddyCage = useDkFreebieGb()
 const canReachMtn = useJapesMine()
+const hasClimbing = useClimbing()
+const hasVines = useVine()
+const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
+const hasAllBananaports = useBananaportAll()
   return (
     <RainbowCoinPool>
       <JapesCheck

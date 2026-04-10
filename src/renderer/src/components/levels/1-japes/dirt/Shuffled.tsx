@@ -1,24 +1,20 @@
 import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useArena, useJapesPaintingOutside, useJapesHive, useJapesKongGates, useJapesRambi, useMtnCrate, useRambiCrate, useDkFreebieGb, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb, usePaintingDirt } from '@renderer/hooks/japes'
+import { useJapesPaintingOutside, useJapesHive, useJapesKongGates, useJapesRambi, useRambiCrate, useDkFreebieGb, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb, usePaintingDirt } from '@renderer/hooks/japes'
 import { useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, useStand, useVine, useShockwave } from '@renderer/hooks/kongs'
+import { useStand, useVine, useShockwave } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import useDonkStore from '@renderer/store'
 import LowlandDirt from './Lowlands'
 import HillsideDirt from './Hillside'
 
 const ShuffledDirt: React.FC = () => {
-const isBreathing = useGeneralDirt()
 const hasShockwave = useShockwave()
-const canReachFunky = useArena()
 const canReachPaintingRoom = useJapesPaintingOutside()
-const hasClimbing = useClimbing()
 const canReachHiveZone = useJapesHive()
 const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
 const hasRambi = useJapesRambi()
-const canDoVanillaCrate1 = useMtnCrate()
 const canDoVanillaCrate2 = useRambiCrate()
 const canReachDiddyCage = useDkFreebieGb()
 const canReachMtn = useJapesMine()
