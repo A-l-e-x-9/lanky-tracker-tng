@@ -1,10 +1,7 @@
-import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useJapesHive, useJapesKongGates, useJapesRambi, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
-import { useBananaportAll } from '@renderer/hooks/settings'
-import { useStand, useVine } from '@renderer/hooks/kongs'
+import { useStand } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
-import useDonkStore from '@renderer/store'
 import LowlandArenas from './Lowlands'
 import HillsideArenas from './Hillside'
 
@@ -14,9 +11,6 @@ const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
 const hasRambi = useJapesRambi()
 const canReachMtn = useJapesMine()
-const hasVines = useVine()
-const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
-const hasAllBananaports = useBananaportAll()
 const canReachChunkyCave = useJapesUnderground()
 const canGetInHive = useTinyStumpGb()
 const canGetInHivePastRoom1 = useTinyHiveGb()
