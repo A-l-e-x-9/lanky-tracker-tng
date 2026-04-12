@@ -1183,6 +1183,7 @@ interface forestPortals {
   frontMillPortal: boolean
   backMillPortal: boolean
   area2Portal: boolean
+  shroomTopPortal: boolean
 }
 interface cavesPortals {
   vanilla: boolean

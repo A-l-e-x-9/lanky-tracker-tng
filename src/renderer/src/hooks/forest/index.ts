@@ -71,6 +71,9 @@ export const useBackMillPortal = (): boolean =>
 //Is the DK Portal in Area 2?
 export const useArea2Portal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledForestPortals.area2Portal))
+//Is the DK Portal at the top of the Giant Mushroom?
+export const useShroomTopPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledForestPortals.shroomTopPortal))
 /*end shuffled DK Portals*/
 
 /**
@@ -162,10 +165,11 @@ export const useForestMushroomTop = (): LogicBool => {
   const inStage = usePlayForest() //the old version had just this check
   const canClimbShroom = useClimbing() //You now need Climbing to be able to reach the top from the bottom...
   const hasBananaports = useBananaportAll() //...or have all Bananaports pre-activated...
-  const hasJetbarrel = useRocket() //...or have Jetbarrel.
+  const hasJetbarrel = useRocket() //...or have Jetbarrel...
+  const DKPortal = useShroomTopPortal() //...or have a lucky DK Portal.
   return {
-    in: inStage.in && (canClimbShroom || hasBananaports || hasJetbarrel),
-    out: inStage.out && (canClimbShroom || hasBananaports || hasJetbarrel)
+    in: inStage.in && (canClimbShroom || hasBananaports || hasJetbarrel || DKPortal),
+    out: inStage.out && (canClimbShroom || hasBananaports || hasJetbarrel || DKPortal)
   }
 }
 

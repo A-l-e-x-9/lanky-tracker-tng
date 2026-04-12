@@ -31,7 +31,8 @@ export const initialPortal: PortalState = {
     vanilla: true,
     frontMillPortal: false,
     backMillPortal: false,
-    area2Portal: false
+    area2Portal: false,
+    shroomTopPortal: false
   },
   shuffledCavesPortals: {
     vanilla: true,
