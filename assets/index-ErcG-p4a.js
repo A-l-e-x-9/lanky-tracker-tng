@@ -11145,7 +11145,8 @@ const initialPortal = {
     vanilla: true,
     frontMillPortal: false,
     backMillPortal: false,
-    area2Portal: false
+    area2Portal: false,
+    shroomTopPortal: false
   },
   shuffledCavesPortals: {
     vanilla: true,
@@ -34893,6 +34894,7 @@ const useSlamForest = () => useSlamLevel("Fungi Forest");
 const useFrontMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.frontMillPortal));
 const useBackMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.backMillPortal));
 const useArea2Portal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.area2Portal));
+const useShroomTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.shroomTopPortal));
 const useForestDay = () => {
   const inStage = usePlayForest();
   const anyGun = useAnyGun();
@@ -34952,9 +34954,10 @@ const useForestMushroomTop = () => {
   const canClimbShroom = useClimbing();
   const hasBananaports = useBananaportAll();
   const hasJetbarrel = useRocket();
+  const DKPortal = useShroomTopPortal();
   return {
-    in: inStage.in && (canClimbShroom || hasBananaports || hasJetbarrel),
-    out: inStage.out && (canClimbShroom || hasBananaports || hasJetbarrel)
+    in: inStage.in && (canClimbShroom || hasBananaports || hasJetbarrel || DKPortal),
+    out: inStage.out && (canClimbShroom || hasBananaports || hasJetbarrel || DKPortal)
   };
 };
 const useForestMushroomRoof = () => {
@@ -53946,6 +53949,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is anywhere in the area where The Bean™ is planted.",
                   storeKey: "area2Portal",
+                  prefix: "shuffledForestPortals",
+                  updateItem: setForestPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Top of the Giant Mushroom" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is anywhere at the top of the Giant Mushroom, inside or outside, minus Lanky's rooms and Chunky's face puzzle room.",
+                  storeKey: "shroomTopPortal",
                   prefix: "shuffledForestPortals",
                   updateItem: setForestPortal
                 }
