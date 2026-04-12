@@ -11150,6 +11150,7 @@ const initialPortal = {
   shuffledCavesPortals: {
     vanilla: true,
     bigRockPortal: false,
+    tiny5DIPortal: false,
     diddyUpperCabinPortal: false
   },
   shuffledCastlePortals: {
@@ -40223,6 +40224,7 @@ const usePlayCaves = () => {
 };
 const useSlamCaves = () => useSlamLevel("Crystal Caves");
 const useBigRockPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.bigRockPortal));
+const useTiny5DIPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.tiny5DIPortal));
 const useDiddyUpperCabinPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.diddyUpperCabinPortal));
 const useCavesIgloo = () => {
   const inStage = usePlayCaves();
@@ -40481,10 +40483,11 @@ const useTinyPortGb = () => {
 const useTinyIglooGb = () => {
   const igloo = useCavesIgloo();
   const sax = useSax();
+  const DKPortal = useTiny5DIPortal();
   const slam = useSlam();
   return {
-    in: igloo.in && sax && slam,
-    out: igloo.out && sax && slam
+    in: (igloo.in && sax || DKPortal) && slam,
+    out: (igloo.out && sax || DKPortal) && slam
     //I would argue that having Super Duper Simian Slam is "out of logic", as this check is quite hard to do with it. But that was too complicated for me to replicate here ^^;
   };
 };
@@ -53971,19 +53974,30 @@ const ShuffledDKPortals = () => {
                   prefix: "shuffledCavesPortals",
                   updateItem: setCavesPortal
                 }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Tiny's 5DI room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Tiny's 5-Door Igloo room.",
+                  storeKey: "tiny5DIPortal",
+                  prefix: "shuffledCavesPortals",
+                  updateItem: setCavesPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Diddy's upper cabin" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Diddy's upper cabin.",
+                  storeKey: "diddyUpperCabinPortal",
+                  prefix: "shuffledCavesPortals",
+                  updateItem: setCavesPortal
+                }
               )
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Diddy's upper cabin" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              SimpleRadioIcon,
-              {
-                imgUrl: dkPortalIcon,
-                title: "The DK Portal is in Diddy's upper cabin.",
-                storeKey: "diddyUpperCabinPortal",
-                prefix: "shuffledCavesPortals",
-                updateItem: setCavesPortal
-              }
-            ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Creepy Castle" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Vanilla/any location not listed" }),
