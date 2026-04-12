@@ -61,6 +61,9 @@ export const useSlamCaves = (): boolean => useSlamLevel('Crystal Caves')
 //Is the DK Portal in the big rock room near Cranky's?
 export const useBigRockPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCavesPortals.bigRockPortal))
+//Is the DK Portal in Tiny's 5DI room?
+export const useTiny5DIPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCavesPortals.tiny5DIPortal))
 //Is the DK Portal in Diddy's upper cabin?
 export const useDiddyUpperCabinPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCavesPortals.diddyUpperCabinPortal))
@@ -372,10 +375,11 @@ export const useTinyPortGb = (): LogicBool => {
 export const useTinyIglooGb = (): LogicBool => {
   const igloo = useCavesIgloo()
   const sax = useSax()
-  const slam = useSlam()
+  const DKPortal = useTiny5DIPortal()
+  const slam = useSlamCaves()
   return {
-    in: igloo.in && sax && slam,
-    out: igloo.out && sax && slam //I would argue that having Super Duper Simian Slam is "out of logic", as this check is quite hard to do with it. But that was too complicated for me to replicate here ^^;
+    in: ((igloo.in && sax) || DKPortal) && slam !== 2,
+    out: ((igloo.out && sax) || DKPortal) && slam === 2 //Having Super Duper Simian Slam is "out of logic" because this check is somewhat hard to do with it.
   }
 }
 
