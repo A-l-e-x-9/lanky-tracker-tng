@@ -376,10 +376,10 @@ export const useTinyIglooGb = (): LogicBool => {
   const igloo = useCavesIgloo()
   const sax = useSax()
   const DKPortal = useTiny5DIPortal()
-  const slam = useSlamCaves()
+  const slam = useSlam()
   return {
-    in: ((igloo.in && sax) || DKPortal) && slam !== 2,
-    out: ((igloo.out && sax) || DKPortal) && slam === 2 //Having Super Duper Simian Slam is "out of logic" because this check is somewhat hard to do with it.
+    in: ((igloo.in && sax) || DKPortal) && slam,
+    out: ((igloo.out && sax) || DKPortal) && slam //I would argue that having Super Duper Simian Slam is "out of logic", as this check is quite hard to do with it. But that was too complicated for me to replicate here ^^;
   }
 }
 
