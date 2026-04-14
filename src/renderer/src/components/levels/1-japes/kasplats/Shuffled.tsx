@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGateKasplat, useJapesRambi, useJapesMine, useJapesHive, useJapesKongGates } from '@renderer/hooks/japes'
+import { useGateKasplat, useJapesRambi, useJapesHive, useJapesKongGates } from '@renderer/hooks/japes'
 import { useDive, useAnyGun, useOrange, useAnyMusic, useMini } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandKasplats from './Lowlands'
@@ -9,7 +9,6 @@ import MineKasplats from './Mine'
 const ShuffledKasplats: React.FC = () => {
 const notChunkyKasplat = useGateKasplat()
 const canReachRambiArea = useJapesRambi()
-const canDoDiddyMtnGB = useJapesMine()
 const canReachHiveArea = useJapesHive()
 const canReachStormyArea = useJapesKongGates()
 const hasDiving = useDive()
