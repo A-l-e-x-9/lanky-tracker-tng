@@ -4,6 +4,7 @@ import { useDive, useAnyGun, useOrange, useAnyMusic, useMini } from '@renderer/h
 import JapesCheck from '../check'
 import LowlandKasplats from './Lowlands'
 import HillsideKasplats from './Hillside'
+import MineKasplats from './Mine'
 
 const ShuffledKasplats: React.FC = () => {
 const notChunkyKasplat = useGateKasplat()
@@ -21,6 +22,7 @@ const hasAnInstrument = useAnyMusic()
     <KasplatPool>
       <LowlandKasplats />
       <HillsideKasplats />
+      <MineKasplats />
       <JapesCheck
         id={51000}
         name="Shuffled Kasplat: DK's Vanilla Location (lower portion of Hive Tunnel)"

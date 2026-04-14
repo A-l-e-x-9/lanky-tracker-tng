@@ -4,6 +4,7 @@ import { useStand } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandArenas from './Lowlands'
 import HillsideArenas from './Hillside'
+import MineArenas from './Mine'
 
 const ShuffledArenas: React.FC = () => {
 const canReachHiveZone = useJapesHive()
@@ -18,6 +19,7 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
     <ArenaPool>
       <LowlandArenas />
       <HillsideArenas />
+      <MineArenas />
       <JapesCheck
         id={11009}
         name="Shuffled Battle Arena: Under Chunky's barrel in the hive zone"

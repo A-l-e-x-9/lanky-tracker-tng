@@ -4,6 +4,7 @@ import { useStand, useShockwave } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandDirt from './Lowlands'
 import HillsideDirt from './Hillside'
+import MineDirt from './Mine'
 
 const ShuffledDirt: React.FC = () => {
 const hasShockwave = useShockwave()
@@ -21,6 +22,7 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
     <RainbowCoinPool>
       <LowlandDirt />
       <HillsideDirt />
+      <MineDirt />
       <JapesCheck
         id={31009}
         name="Shuffled Dirt Patch: Under Chunky's barrel in the hive zone"

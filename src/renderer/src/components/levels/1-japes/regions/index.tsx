@@ -31,6 +31,11 @@ import HillsideCrates from '../crates/Hillside'
 import HillsideDirt from '../dirt/Hillside'
 import HillsideFairies from '../fairies/Hillside'
 import HillsideKasplats from '../kasplats/Hillside'
+import MineArenas from '../arenas/Mine'
+import MineCrates from '../crates/Mine'
+import MineDirt from '../dirt/Mine'
+import MineFairies from '../fairies/Mine'
+import MineKasplats from '../kasplats/Mine'
 
 const JapesRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -84,6 +89,17 @@ return (
     <MineChecks />
     <PaintingRoomChecks />
     <UndergroundChecks />
+  <div className="grid">
+    <MineArenas />
+    <MineCrates />
+    <MineDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <MineFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <MineKasplats />
+  </div>
   <div className="grid">
     <ShopLocations />
     <BossCheck />
