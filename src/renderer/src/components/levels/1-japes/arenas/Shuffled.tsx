@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useJapesHive, useJapesKongGates, useJapesRambi, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
+import { useJapesHive, useJapesKongGates, useJapesRambi, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
 import { useStand } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandArenas from './Lowlands'
@@ -11,8 +11,6 @@ const canReachHiveZone = useJapesHive()
 const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
 const hasRambi = useJapesRambi()
-const canReachMtn = useJapesMine()
-const canReachChunkyCave = useJapesUnderground()
 const canGetInHive = useTinyStumpGb()
 const canGetInHivePastRoom1 = useTinyHiveGb()
   return (
@@ -131,48 +129,6 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
         region="Hive Area"
         canGetLogic={canReachHiveZone.in}
         canGetBreak={canReachHiveZone.out}
-      />
-      <JapesCheck
-        id={11043}
-        name="Shuffled Battle Arena: Chunky's underground, behind exit cannon"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachChunkyCave.in}
-        canGetBreak={canReachChunkyCave.out}
-      />
-      <JapesCheck
-        id={11044}
-        name="Shuffled Battle Arena: Chunky's underground, at vines"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachChunkyCave.in}
-        canGetBreak={canReachChunkyCave.out}
-      />
-      <JapesCheck
-        id={11046}
-        name="Shuffled Battle Arena: Near entrance to Diddy's mountain"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachMtn.in}
-        canGetBreak={canReachMtn.out}
-      />
-      <JapesCheck
-        id={11047}
-        name="Shuffled Battle Arena: On platform opposide Diddy's mountain switch"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachMtn.in}
-        canGetBreak={canReachMtn.out}
-      />
-      <JapesCheck
-        id={11048}
-        name="Shuffled Battle Arena: On the barrel with Diddy's mountain switch"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachMtn.in}
-        canGetBreak={canReachMtn.out}
-      />
-      <JapesCheck
-        id={11049}
-        name="Shuffled Battle Arena: Near the hi-lo machine"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachMtn.in}
-        canGetBreak={canReachMtn.out}
       />
       <JapesCheck
         id={11051}
