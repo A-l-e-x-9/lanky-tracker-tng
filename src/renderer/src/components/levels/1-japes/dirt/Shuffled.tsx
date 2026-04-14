@@ -1,5 +1,5 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useJapesPaintingOutside, useJapesHive, useJapesKongGates, useJapesRambi, useRambiCrate, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
+import { useJapesHive, useJapesKongGates, useJapesRambi, useRambiCrate, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
 import { useStand, useShockwave } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandDirt from './Lowlands'
@@ -13,7 +13,6 @@ const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
 const hasRambi = useJapesRambi()
 const canDoVanillaCrate2 = useRambiCrate()
-const canReachMtn = useJapesMine()
 const canGetInHive = useTinyStumpGb()
 const canGetInHivePastRoom1 = useTinyHiveGb()
   return (

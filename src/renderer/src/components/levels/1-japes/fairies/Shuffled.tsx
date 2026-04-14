@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useRambiFairy, usePaintingFairy, useJapesHive, useTinyHiveGb, useJapesKongGates, useJapesUnderground, useJapesMine } from '@renderer/hooks/japes'
+import { useRambiFairy, useJapesHive, useTinyHiveGb, useJapesKongGates } from '@renderer/hooks/japes'
 import { useCamera } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandFairies from './Lowlands'
@@ -9,12 +9,9 @@ import MineFairies from './Mine'
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
   const vanillaFairy1 = useRambiFairy()
-  const vanillaFairy2 = usePaintingFairy()
   const canGoPastGates = useJapesKongGates()
   const canReachHiveArea = useJapesHive()
-  const canGoInMine = useJapesMine()
   const canGoInHive = useTinyHiveGb()
-  const canGoUnder = useJapesUnderground()
   return (
     <FairyPool>
       <LowlandFairies />
@@ -26,12 +23,6 @@ const ShuffledFairies: React.FC = () => {
         region="Stormy Area"
         canGetLogic={vanillaFairy1.in}
         canGetBreak={vanillaFairy1.out}
-      />
-      <JapesCheck
-        id={41001}
-        name="Shuffled Fairy: Vanilla Location #2 (Lanky's painting room)"
-        region="Japes Caves and Mines"
-        canGetLogic={vanillaFairy2}
       />
       <JapesCheck
         id={41005}
@@ -53,27 +44,6 @@ const ShuffledFairies: React.FC = () => {
         region="Stormy Area"
         canGetLogic={canGoPastGates.in && hasCam}
         canGetBreak={canGoPastGates.out && hasCam}
-      />
-      <JapesCheck
-        id={41008}
-        name="Shuffled Fairy: Inside Diddy's mine"
-        region="Japes Caves and Mines"
-        canGetLogic={canGoInMine.in && hasCam}
-        canGetBreak={canGoInMine.out && hasCam}
-      />
-      <JapesCheck
-        id={41009}
-        name="Shuffled Fairy: Along Chunky's underground pathway"
-        region="Japes Caves and Mines"
-        canGetLogic={canGoUnder.in && hasCam}
-        canGetBreak={canGoUnder.out && hasCam}
-      />
-      <JapesCheck
-        id={41010}
-        name="Shuffled Fairy: At the end of the Chunky underground path"
-        region="Japes Caves and Mines"
-        canGetLogic={canGoUnder.in && hasCam}
-        canGetBreak={canGoUnder.out && hasCam}
       />
     </FairyPool>
   )
