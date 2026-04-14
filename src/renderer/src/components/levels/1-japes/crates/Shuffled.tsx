@@ -1,5 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useJapesPaintingOutside, useJapesHive, useJapesKongGates, useJapesRambi, useRambiCrate, useJapesMine, useJapesUnderground, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
+import { useJapesHive, useJapesKongGates, useJapesRambi, useRambiCrate, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
 import { useStand } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandCrates from './Lowlands'
@@ -7,14 +7,11 @@ import HillsideCrates from './Hillside'
 import MineCrates from './Mine'
 
 const ShuffledCrates: React.FC = () => {
-const canReachPaintingRoom = useJapesPaintingOutside()
 const canReachHiveZone = useJapesHive()
 const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
 const hasRambi = useJapesRambi()
 const canDoVanillaCrate2 = useRambiCrate()
-const canReachMtn = useJapesMine()
-const canReachChunkyCave = useJapesUnderground()
 const canGetInHive = useTinyStumpGb()
 const canGetInHivePastRoom1 = useTinyHiveGb()
   return (
@@ -133,55 +130,6 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
         region="Hive Area"
         canGetLogic={canReachHiveZone.in}
         canGetBreak={canReachHiveZone.out}
-      />
-      <JapesCheck
-        id={21043}
-        name="Shuffled Melon Crate: Chunky's underground, behind exit cannon"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachChunkyCave.in}
-        canGetBreak={canReachChunkyCave.out}
-      />
-      <JapesCheck
-        id={21044}
-        name="Shuffled Melon Crate: Chunky's underground, at vines"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachChunkyCave.in}
-        canGetBreak={canReachChunkyCave.out}
-      />
-      <JapesCheck
-        id={21045}
-        name="Shuffled Melon Crate: In between the pegs in Lanky's painting room"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachPaintingRoom.in}
-        canGetBreak={canReachPaintingRoom.out}
-      />
-      <JapesCheck
-        id={21046}
-        name="Shuffled Melon Crate: Near entrance to Diddy's mountain"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachMtn.in}
-        canGetBreak={canReachMtn.out}
-      />
-      <JapesCheck
-        id={21047}
-        name="Shuffled Melon Crate: On platform opposide Diddy's mountain switch"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachMtn.in}
-        canGetBreak={canReachMtn.out}
-      />
-      <JapesCheck
-        id={21048}
-        name="Shuffled Melon Crate: On the barrel with Diddy's mountain switch"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachMtn.in}
-        canGetBreak={canReachMtn.out}
-      />
-      <JapesCheck
-        id={21049}
-        name="Shuffled Melon Crate: Near the hi-lo machine"
-        region="Japes Caves and Mines"
-        canGetLogic={canReachMtn.in}
-        canGetBreak={canReachMtn.out}
       />
       <JapesCheck
         id={21051}
