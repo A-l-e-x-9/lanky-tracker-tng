@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGateKasplat, useChunkyUndergroundGb, useJapesRambi, useJapesMine, useJapesHive, useJapesKongGates } from '@renderer/hooks/japes'
+import { useGateKasplat, useJapesRambi, useJapesMine, useJapesHive, useJapesKongGates } from '@renderer/hooks/japes'
 import { useDive, useAnyGun, useOrange, useAnyMusic, useMini } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandKasplats from './Lowlands'
@@ -8,7 +8,6 @@ import MineKasplats from './Mine'
 
 const ShuffledKasplats: React.FC = () => {
 const notChunkyKasplat = useGateKasplat()
-const chunkyKasplat = useChunkyUndergroundGb()
 const canReachRambiArea = useJapesRambi()
 const canDoDiddyMtnGB = useJapesMine()
 const canReachHiveArea = useJapesHive()
@@ -52,13 +51,6 @@ const hasAnInstrument = useAnyMusic()
         canGetBreak={notChunkyKasplat.out}
       />
       <JapesCheck
-        id={51004}
-        name="Shuffled Kasplat: Chunky's Vanilla Location (end of his mine, to the right)"
-        region="Japes Caves and Mines"
-        canGetLogic={chunkyKasplat.in}
-        canGetBreak={chunkyKasplat.out}
-      />
-      <JapesCheck
         id={51005}
         name="Shuffled Kasplat: Behind the Rambi Wall"
         region="Stormy Area"
@@ -85,13 +77,6 @@ const hasAnInstrument = useAnyMusic()
         region="Stormy Area"
         canGetLogic={canReachStormyArea.in}
         canGetBreak={canReachStormyArea.out}
-      />
-      <JapesCheck
-        id={51015}
-        name="Shuffled Kasplat: In Diddy's mountain"
-        region="Japes Caves and Mines"
-        canGetLogic={canDoDiddyMtnGB.in}
-        canGetBreak={canDoDiddyMtnGB.out}
       />
       <JapesCheck
         id={51016}
