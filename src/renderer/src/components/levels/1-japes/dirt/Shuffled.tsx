@@ -3,7 +3,7 @@ import LowlandDirt from './Lowlands'
 import HillsideDirt from './Hillside'
 import MineDirt from './Mine'
 import HiveDirt from './Hive'
-import StormyDirt from './Stormy
+import StormyDirt from './Stormy'
 
 const ShuffledDirt: React.FC = () => {
   return (
