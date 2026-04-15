@@ -5,6 +5,7 @@ import JapesCheck from '../check'
 import LowlandFairies from './Lowlands'
 import HillsideFairies from './Hillside'
 import MineFairies from './Mine'
+import HiveFairies from './Hive'
 
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
@@ -17,6 +18,7 @@ const ShuffledFairies: React.FC = () => {
       <LowlandFairies />
       <HillsideFairies />
       <MineFairies />
+      <HiveFairies />
       <JapesCheck
         id={41000}
         name="Shuffled Fairy: Vanilla Location #1 (pool after Rambi door)"

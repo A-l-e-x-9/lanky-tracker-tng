@@ -5,6 +5,7 @@ import JapesCheck from '../check'
 import LowlandDirt from './Lowlands'
 import HillsideDirt from './Hillside'
 import MineDirt from './Mine'
+import HiveDirt from './Hive'
 
 const ShuffledDirt: React.FC = () => {
 const hasShockwave = useShockwave()
@@ -20,6 +21,7 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
       <LowlandDirt />
       <HillsideDirt />
       <MineDirt />
+      <HiveDirt />
       <JapesCheck
         id={31009}
         name="Shuffled Dirt Patch: Under Chunky's barrel in the hive zone"

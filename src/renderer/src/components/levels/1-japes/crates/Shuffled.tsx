@@ -5,6 +5,7 @@ import JapesCheck from '../check'
 import LowlandCrates from './Lowlands'
 import HillsideCrates from './Hillside'
 import MineCrates from './Mine'
+import HiveCrates from './Hive'
 
 const ShuffledCrates: React.FC = () => {
 const canReachHiveZone = useJapesHive()
@@ -19,6 +20,7 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
       <LowlandCrates />
       <HillsideCrates />
       <MineCrates />
+      <HiveCrates />
       <JapesCheck
         id={21009}
         name="Shuffled Melon Crate: Under Chunky's barrel in the hive zone"
