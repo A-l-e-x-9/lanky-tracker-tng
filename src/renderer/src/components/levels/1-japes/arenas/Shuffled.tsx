@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useJapesKongGates, useJapesRambi, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
+import { useJapesKongGates, useJapesRambi, useTinyHiveGb } from '@renderer/hooks/japes'
 import { useStand } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandArenas from './Lowlands'
@@ -11,7 +11,6 @@ const ShuffledArenas: React.FC = () => {
 const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
 const hasRambi = useJapesRambi()
-const canGetInHive = useTinyStumpGb()
 const canGetInHivePastRoom1 = useTinyHiveGb()
   return (
     <ArenaPool>
