@@ -1,9 +1,10 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
-import {  } from '@renderer/hooks/japes'
+import { useJapesHive } from '@renderer/hooks/japes'
 
 const Shuffled: React.FC = () => {
+const canReachHiveArea = useJapesHive()
 return (
     <KasplatPool>
       <JapesCheck

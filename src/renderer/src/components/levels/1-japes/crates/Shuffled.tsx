@@ -1,5 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useJapesHive, useJapesKongGates, useJapesRambi, useRambiCrate, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
+import { useJapesKongGates, useJapesRambi, useRambiCrate, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
 import { useStand } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandCrates from './Lowlands'
@@ -8,7 +8,6 @@ import MineCrates from './Mine'
 import HiveCrates from './Hive'
 
 const ShuffledCrates: React.FC = () => {
-const canReachHiveZone = useJapesHive()
 const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
 const hasRambi = useJapesRambi()

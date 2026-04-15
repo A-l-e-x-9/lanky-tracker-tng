@@ -1,5 +1,5 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useJapesHive, useJapesKongGates, useJapesRambi, useRambiCrate, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
+import { useJapesKongGates, useJapesRambi, useRambiCrate, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
 import { useStand, useShockwave } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandDirt from './Lowlands'
@@ -9,7 +9,6 @@ import HiveDirt from './Hive'
 
 const ShuffledDirt: React.FC = () => {
 const hasShockwave = useShockwave()
-const canReachHiveZone = useJapesHive()
 const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
 const hasRambi = useJapesRambi()

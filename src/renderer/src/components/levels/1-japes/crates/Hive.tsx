@@ -1,9 +1,10 @@
 import CratePool from '@renderer/components/pools/Crates'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
-import {  } from '@renderer/hooks/japes'
+import { useJapesHive } from '@renderer/hooks/japes'
 
 const Shuffled: React.FC = () => {
+const canReachHiveZone = useJapesHive()
   return (
     <CratePool>
       <JapesCheck

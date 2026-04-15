@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useRambiFairy, useJapesHive, useTinyHiveGb, useJapesKongGates } from '@renderer/hooks/japes'
+import { useRambiFairy, useTinyHiveGb, useJapesKongGates } from '@renderer/hooks/japes'
 import { useCamera } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandFairies from './Lowlands'
@@ -11,7 +11,6 @@ const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
   const vanillaFairy1 = useRambiFairy()
   const canGoPastGates = useJapesKongGates()
-  const canReachHiveArea = useJapesHive()
   const canGoInHive = useTinyHiveGb()
   return (
     <FairyPool>

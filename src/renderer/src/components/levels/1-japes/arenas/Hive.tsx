@@ -1,9 +1,10 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
-import {  } from '@renderer/hooks/japes'
+import { useJapesHive } from '@renderer/hooks/japes'
 
 const Shuffled: React.FC = () => {
+const canReachHiveZone = useJapesHive()
   return (
     <ArenaPool>
       <JapesCheck

@@ -1,11 +1,12 @@
 import FairyPool from '@renderer/components/pools/Fairies'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
-import {  } from '@renderer/hooks/japes'
+import { useJapesHive } from '@renderer/hooks/japes'
 import { useCamera } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
   const hasCam = useCamera()
+  const canReachHiveArea = useJapesHive()
   return (
     <FairyPool>
       <JapesCheck
