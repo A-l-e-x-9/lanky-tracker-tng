@@ -41,6 +41,11 @@ import HiveCrates from '../crates/Hive'
 import HiveDirt from '../dirt/Hive'
 import HiveFairies from '../fairies/Hive'
 import HiveKasplats from '../kasplats/Hive'
+import StormyArenas from '../arenas/Stormy'
+import StormyCrates from '../crates/Stormy'
+import StormyDirt from '../dirt/Stormy'
+import StormyFairies from '../fairies/Stormy'
+import StormyKasplats from '../kasplats/Stormy'
 
 const JapesRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -102,6 +107,17 @@ return (
   </div>
     <StormyTunnelChecks />
     <RambiGateChecks />
+  <div className="grid">
+    <StormyArenas />
+    <StormyCrates />
+    <StormyDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <StormyFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <StormyKasplats />
+  </div>
     <MineChecks />
     <PaintingRoomChecks />
     <UndergroundChecks />
