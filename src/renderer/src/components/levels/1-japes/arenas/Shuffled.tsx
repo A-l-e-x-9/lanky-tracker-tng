@@ -21,27 +21,6 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
       <MineArenas />
       <HiveArenas />
       <JapesCheck
-        id={11009}
-        name="Shuffled Battle Arena: Under Chunky's barrel in the hive zone"
-        region="Hive Area"
-        canGetLogic={canReachHiveZone.in}
-        canGetBreak={canReachHiveZone.out}
-      />
-      <JapesCheck
-        id={11010}
-        name="Shuffled Battle Arena: Near Tiny's stump"
-        region="Hive Area"
-        canGetLogic={canReachHiveZone.in}
-        canGetBreak={canReachHiveZone.out}
-      />
-      <JapesCheck
-        id={11011}
-        name="Shuffled Battle Arena: Near one of Tiny's logs"
-        region="Hive Area"
-        canGetLogic={canReachHiveZone.in}
-        canGetBreak={canReachHiveZone.out}
-      />
-      <JapesCheck
         id={11012}
         name="Shuffled Battle Arena: Near the vine pit"
         region="Stormy Area"
@@ -124,34 +103,6 @@ const canGetInHivePastRoom1 = useTinyHiveGb()
         region="Stormy Area"
         canGetLogic={canReachStormyZone.in}
         canGetBreak={canReachStormyZone.out}
-      />
-      <JapesCheck
-        id={11041}
-        name="Shuffled Battle Arena: Vanilla Warp 5, hive area"
-        region="Hive Area"
-        canGetLogic={canReachHiveZone.in}
-        canGetBreak={canReachHiveZone.out}
-      />
-      <JapesCheck
-        id={11051}
-        name="Shuffled Battle Arena: In the main room of Tiny's hive"
-        region="Hive Area"
-        canGetLogic={canGetInHive.in}
-        canGetBreak={canGetInHive.out}
-      />
-      <JapesCheck
-        id={11052}
-        name="Shuffled Battle Arena: In the first room of Tiny's hive"
-        region="Hive Area"
-        canGetLogic={canGetInHive.in}
-        canGetBreak={canGetInHive.out}
-      />
-      <JapesCheck
-        id={11053}
-        name="Shuffled Battle Arena: In the final room of Tiny's hive"
-        region="Hive Area"
-        canGetLogic={canGetInHivePastRoom1.in}
-        canGetBreak={canGetInHivePastRoom1.out}
       />
     </ArenaPool>
   )
