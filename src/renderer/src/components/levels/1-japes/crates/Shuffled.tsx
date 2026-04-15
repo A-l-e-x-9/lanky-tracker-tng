@@ -1,5 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useJapesKongGates, useJapesRambi, useRambiCrate, useTinyHiveGb } from '@renderer/hooks/japes'
+import { useJapesKongGates, useJapesRambi, useRambiCrate } from '@renderer/hooks/japes'
 import { useStand } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandCrates from './Lowlands'
@@ -12,7 +12,6 @@ const canReachStormyZone = useJapesKongGates()
 const hasOStand = useStand()
 const hasRambi = useJapesRambi()
 const canDoVanillaCrate2 = useRambiCrate()
-const canGetInHivePastRoom1 = useTinyHiveGb()
   return (
     <CratePool>
       <LowlandCrates />
