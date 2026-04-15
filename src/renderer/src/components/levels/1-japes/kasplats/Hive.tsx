@@ -1,10 +1,13 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
-import { useJapesHive } from '@renderer/hooks/japes'
+import { useJapesHive, useGateKasplat } from '@renderer/hooks/japes'
+import { useMini } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const canReachHiveArea = useJapesHive()
+const notChunkyKasplat = useGateKasplat()
+const hasMiniMonkey = useMini()
 return (
     <KasplatPool>
       <JapesCheck

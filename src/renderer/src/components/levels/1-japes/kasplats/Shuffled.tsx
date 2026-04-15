@@ -1,6 +1,6 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGateKasplat, useJapesRambi, useJapesKongGates } from '@renderer/hooks/japes'
-import { useDive, useAnyGun, useOrange, useAnyMusic, useMini } from '@renderer/hooks/kongs'
+import { useDive, useAnyGun, useOrange, useAnyMusic } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 import LowlandKasplats from './Lowlands'
 import HillsideKasplats from './Hillside'
@@ -12,7 +12,6 @@ const notChunkyKasplat = useGateKasplat()
 const canReachRambiArea = useJapesRambi()
 const canReachStormyArea = useJapesKongGates()
 const hasDiving = useDive()
-const hasMiniMonkey = useMini()
 const hasAGun = useAnyGun()
 const hasOranges = useOrange()
 const hasAnInstrument = useAnyMusic()
