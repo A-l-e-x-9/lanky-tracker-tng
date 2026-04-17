@@ -5,6 +5,7 @@ import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import useDonkStore from '@renderer/store'
+import CaveArenas from './Cave'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -35,6 +36,7 @@ const hasMiniMonkey = useMini()
 const canReachLavaRoom = useAztecLlamaLava()
   return (
     <ArenaPool>
+      <CaveArenas />
       <AztecCheck
         id={12000}
         name="Shuffled Battle Arena: Vanilla Arena (Lanky's reward for killing a Necky)"

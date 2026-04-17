@@ -5,6 +5,7 @@ import { useShuffleDirt, useBananaportAll } from '@renderer/hooks/settings'
 import { useShockwave, useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import useDonkStore from '@renderer/store'
+import CaveDirt from './Cave'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
@@ -36,6 +37,7 @@ const hasMiniMonkey = useMini()
 const canReachLavaRoom = useAztecLlamaLava()
   return (
     <RainbowCoinPool>
+      <CaveDirt />
       <AztecCheck
         id={32000}
         name="Shuffled Dirt Patch: Lanky's reward for killing a Necky"

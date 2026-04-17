@@ -5,6 +5,7 @@ import { useShuffleCrates, useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini, useAnyGun, useOrange } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import useDonkStore from '@renderer/store'
+import CaveCrates from './Cave'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -37,6 +38,7 @@ const hasAGun = useAnyGun()
 const hasOranges = useOrange()
   return (
     <CratePool>
+      <CaveCrates />
       <AztecCheck
         id={22000}
         name="Shuffled Melon Crate: Lanky's vulture room"

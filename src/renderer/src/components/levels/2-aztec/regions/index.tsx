@@ -1,13 +1,8 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import BananaMedalPool from '@renderer/components/pools/BananaMedals'
-import ShuffledArenas from '../arenas/Shuffled'
 import BossCheck from '../boss'
-import ShuffledCrates from '../crates/Shuffled'
-import ShuffledDirtLocations from '../dirt/Shuffled'
-import ShuffledFairies from '../fairies/Shuffled'
 import QuicksandTunnel from '../gold-bananas/dk/Quicksand'
-import ShuffledKasplats from '../kasplats/Shuffled'
 import ChunkyMedal from '../medals/ChunkyMedal'
 import DiddyMedal from '../medals/DiddyMedal'
 import DkMedal from '../medals/DkMedal'
@@ -22,6 +17,11 @@ import OasisChecks from './Oasis'
 import TinyStartChecks from './TinyStart'
 import TinySwimChecks from './TinySwim'
 import TotemChecks from './Totem'
+import CaveArenas from '../arenas/Cave'
+import CaveCrates from '../crates/Cave'
+import CaveDirt from '../dirt/Cave'
+import CaveFairies from '../fairies/Cave'
+import caveKasplats from '../kasplats/Cave'
 
 const AztecRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -44,6 +44,15 @@ return (
     <ConnectorTunnelChecks />
   <div className="grid">
     <QuicksandTunnel />
+    <CaveArenas />
+    <CaveCrates />
+    <CaveDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <CaveFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <CaveKasplats />
   </div>
     <OasisChecks />
     <TotemChecks />
@@ -54,15 +63,6 @@ return (
   <div className="grid">
     <ShopLocations />
     <BossCheck />
-    <ShuffledArenas />
-    <ShuffledCrates />
-    <ShuffledDirtLocations />
-  </div>
-  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
-    <ShuffledFairies />
-  </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
-    <ShuffledKasplats />
   </div>
 </>
 )
