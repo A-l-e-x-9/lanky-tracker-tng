@@ -4,7 +4,6 @@ import ArenaPool from '@renderer/components/pools/Arenas'
 import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
 import { useGeneralThing, useCoconutKasplat, useAztecBack, useDkTunnelGb } from '@renderer/hooks/aztec'
-import {  } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()

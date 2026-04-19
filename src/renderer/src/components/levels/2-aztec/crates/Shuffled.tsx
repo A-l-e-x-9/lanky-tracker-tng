@@ -96,20 +96,6 @@ const hasOranges = useOrange()
         canGetBreak={canReachTinyTemple.out && iceMelted.out && hasDiving.out}
       />
       <AztecCheck
-        id={22008}
-        name="Shuffled Melon Crate: In front of DK's room in the first tunnel"
-        region="Aztec Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={22009}
-        name="Shuffled Melon Crate: In DK's room in the first tunnel"
-        region="Aztec Caves"
-        canGetLogic={canReachDKKasplat.in}
-        canGetBreak={canReachDKKasplat.out}
-      />
-      <AztecCheck
         id={22010}
         name="Shuffled Melon Crate: Near oasis sand"
         region="Aztec Main Area"
@@ -157,34 +143,6 @@ const hasOranges = useOrange()
         region="Aztec Main Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={22017}
-        name="Shuffled Melon Crate: Near Chunky's barrel"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={22018}
-        name="Shuffled Melon Crate: Left of the caged GB"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={22019}
-        name="Shuffled Melon Crate: Right of the caged GB"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={22020}
-        name="Shuffled Melon Crate: Behind the caged GB"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
       />
       <AztecCheck
         id={22021}
@@ -285,20 +243,6 @@ const hasOranges = useOrange()
         canGetBreak={canReachArea2.out}
       />
       <AztecCheck
-        id={22035}
-        name="Shuffled Melon Crate: Inside DK's quicksand tunnel"
-        region="Aztec Caves"
-        canGetLogic={canReachQSTunnel.in}
-        canGetBreak={canReachQSTunnel.out}
-      />
-      <AztecCheck
-        id={22036}
-        name="Shuffled Melon Crate: Vanilla Warp 1, level start"
-        region="Aztec Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
         id={22037}
         name="Shuffled Melon Crate: Vanilla Warp 1, at the oasis"
         region="Aztec Main Area"
@@ -311,20 +255,6 @@ const hasOranges = useOrange()
         region="Aztec Main Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={22039}
-        name="Shuffled Melon Crate: Vanilla Warp 2, end of the middle tunnel"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={22040}
-        name="Shuffled Melon Crate: Vanilla Warp 3, at Cranky's"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
       />
       <AztecCheck
         id={22041}
@@ -417,84 +347,84 @@ const hasOranges = useOrange()
         canGetBreak={canReachLT.out}
       />
       <AztecCheck
-        id={22053}
+        id={22054}
         name="Shuffled Melon Crate: Vanilla Location 3 (Llama Temple entrance)"
         region="Llama Temple"
         canGetLogic={canReachLT.in}
         canGetBreak={canReachLT.out}
       />
       <AztecCheck
-        id={22054}
+        id={22055}
         name="Shuffled Melon Crate: Right of the Llama, upper"
         region="Llama Temple"
         canGetLogic={canReachLT.in}
         canGetBreak={canReachLT.out}
       />
       <AztecCheck
-        id={22055}
+        id={22056}
         name="Shuffled Melon Crate: Left of the Llama, upper"
         region="Llama Temple"
         canGetLogic={canReachLT.in}
         canGetBreak={canReachLT.out}
       />
       <AztecCheck
-        id={22056}
+        id={22057}
         name="Shuffled Melon Crate: Left of the Llama, lower"
         region="Llama Temple"
         canGetLogic={canReachLT.in}
         canGetBreak={canReachLT.out}
       />
       <AztecCheck
-        id={22057}
+        id={22058}
         name="Shuffled Melon Crate: Fraternizing with Gene Rayburn"
         region="Llama Temple"
         canGetLogic={canReachLT.in && hasGrapes}
         canGetBreak={canReachLT.out && hasGrapes}
       />
       <AztecCheck
-        id={22058}
+        id={22059}
         name="Shuffled Melon Crate: LT Vanilla Warp 1, entrance left"
         region="Llama Temple"
         canGetLogic={canReachLT.in}
         canGetBreak={canReachLT.out}
       />
       <AztecCheck
-        id={22059}
+        id={22060}
         name="Shuffled Melon Crate: LT Vanilla Warp 1, near the Match Game studio"
         region="Llama Temple"
         canGetLogic={canReachLT.in}
         canGetBreak={canReachLT.out}
       />
       <AztecCheck
-        id={22060}
+        id={22061}
         name="Shuffled Melon Crate: LT Vanilla Warp 2, entrance right"
         region="Llama Temple"
         canGetLogic={canReachLT.in}
         canGetBreak={canReachLT.out}
       />
       <AztecCheck
-        id={22061}
+        id={22062}
         name="Shuffled Melon Crate: LT Vanilla Warp 2, in Tiny's lava room"
         region="Llama Temple"
         canGetLogic={canReachLT.in && hasMiniMonkey}
         canGetBreak={canReachLT.out && hasMiniMonkey}
       />
       <AztecCheck
-        id={22062}
+        id={22063}
         name="Shuffled Melon Crate: In the Llama's swimming pool"
         region="Llama Temple"
         canGetLogic={canReachLT.in && canFreeLanky.in && hasDiving.in}
         canGetBreak={canReachLT.out && (hasAGun || hasOranges) && hasDiving.out}
       />
       <AztecCheck
-        id={22063}
+        id={22064}
         name="Shuffled Melon Crate: DK's quicksand tunnel switch"
         region="Llama Temple"
         canGetLogic={canReachLT.in}
         canGetBreak={canReachLT.out}
       />
       <AztecCheck
-        id={22064}
+        id={22065}
         name="Shuffled Melon Crate: Tiny's lava room"
         region="Llama Temple"
         canGetLogic={canReachLavaRoom.in}
