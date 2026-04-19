@@ -1,13 +1,13 @@
 import { useShallow } from 'zustand/react/shallow'
 import RainbowCoinPool from '@renderer/components/pools/Arenas'
-import { useGeneralDirt, useArena, useTempleDirt, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useCoconutKasplat, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDkTunnelGb, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useOasisKasplat } from '@renderer/hooks/aztec'
-import { useShuffleDirt, useBananaportAll } from '@renderer/hooks/settings'
+import { useGeneralDirt, useArena, useTempleDirt, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDkTunnelGb, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useOasisKasplat } from '@renderer/hooks/aztec'
+import { useBananaportAll } from '@renderer/hooks/settings'
 import { useShockwave, useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import useDonkStore from '@renderer/store'
 import CaveDirt from './Cave'
 
-const Shuffled: React.FC = () => {
+const ShuffledDirt: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const hasShockwave = useShockwave()
 const canReachVanillaArena = useArena()
@@ -20,7 +20,6 @@ const hasDiddy = useDiddy()
 const hasSlam = useSlamAztec()
 const iceMelted = useTinyTempleIce()
 const hasDiving = useDive()
-const canReachDKKasplat = useCoconutKasplat()
 const canReachDiddyKasplat = useOasisKasplat()
 const canReachArea2 = useAztecBack()
 const canDoVanillaCrate2 = useLlamaOutsideCrate()
@@ -419,5 +418,4 @@ const canReachLavaRoom = useAztecLlamaLava()
   )
 }
 
-const ShuffledDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
 export default ShuffledDirt

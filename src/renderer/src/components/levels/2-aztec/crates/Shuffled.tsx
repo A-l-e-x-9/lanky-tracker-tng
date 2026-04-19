@@ -1,13 +1,13 @@
 import { useShallow } from 'zustand/react/shallow'
 import CratePool from '@renderer/components/pools/Crates'
 import { useGeneralThing, useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useOasisKasplat, useFreeLankySwitch } from '@renderer/hooks/aztec'
-import { useShuffleCrates, useBananaportAll } from '@renderer/hooks/settings'
+import { useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini, useAnyGun, useOrange } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import useDonkStore from '@renderer/store'
 import CaveCrates from './Cave'
 
-const Shuffled: React.FC = () => {
+const ShuffledCrates: React.FC = () => {
 const isBreathing = useGeneralThing()
 const hasClimbing = useClimbing()
 const hasVines = useVine()
@@ -432,5 +432,4 @@ const hasOranges = useOrange()
   )
 }
 
-const ShuffledCrates: React.FC = () => (useShuffleCrates() ? <Shuffled /> : null)
 export default ShuffledCrates
