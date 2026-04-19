@@ -1,10 +1,13 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
-import {  } from '@renderer/hooks/japes'
+import { useGeneralThing, useCoconutKasplat, useAztecBack } from '@renderer/hooks/japes'
 import {  } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
+const isBreathing = useGeneralThing()
+const canReachDKKasplat = useCoconutKasplat()
+const canReachArea2 = useAztecBack()
   return (
     <ArenaPool>
       <AztecCheck
