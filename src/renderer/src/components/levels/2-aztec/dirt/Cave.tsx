@@ -1,7 +1,9 @@
+import { useShallow } from 'zustand/react/shallow'
+import useDonkStore from '@renderer/store'
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useShuffleDirt } from '@renderer/hooks/settings'
+import { useShuffleDirt, useBananaportAll } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
-import { useGeneralDirt, useCoconutKasplat, useAztecBack } from '@renderer/hooks/japes'
+import { useGeneralDirt, useCoconutKasplat, useAztecBack, useDkTunnelGb } from '@renderer/hooks/aztec'
 import { useShockwave } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
@@ -9,6 +11,9 @@ const isBreathing = useGeneralDirt()
 const hasShockwave = useShockwave()
 const canReachDKKasplat = useCoconutKasplat()
 const canReachArea2 = useAztecBack()
+const canReachQSTunnel = useDkTunnelGb()
+const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
+const hasAllBananaports = useBananaportAll()
   return (
     <RainbowCoinPool>
       <AztecCheck
