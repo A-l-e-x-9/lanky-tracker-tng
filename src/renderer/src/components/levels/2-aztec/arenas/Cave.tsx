@@ -1,13 +1,18 @@
+import { useShallow } from 'zustand/react/shallow'
+import useDonkStore from '@renderer/store'
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useShuffledArenas } from '@renderer/hooks/settings'
+import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
-import { useGeneralThing, useCoconutKasplat, useAztecBack } from '@renderer/hooks/japes'
+import { useGeneralThing, useCoconutKasplat, useAztecBack, useDkTunnelGb } from '@renderer/hooks/aztec'
 import {  } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
 const canReachDKKasplat = useCoconutKasplat()
 const canReachArea2 = useAztecBack()
+const canReachQSTunnel = useDkTunnelGb()
+const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
+const hasAllBananaports = useBananaportAll()
   return (
     <ArenaPool>
       <AztecCheck

@@ -1,10 +1,7 @@
-import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDkTunnelGb, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useOasisKasplat } from '@renderer/hooks/aztec'
-import { useBananaportAll } from '@renderer/hooks/settings'
+import { useGeneralThing, useArena, useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useOasisKasplat } from '@renderer/hooks/aztec'
 import { useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
-import useDonkStore from '@renderer/store'
 import CaveArenas from './Cave'
 
 const ShuffledArenas: React.FC = () => {
@@ -12,7 +9,6 @@ const isBreathing = useGeneralThing()
 const canReachVanillaArena = useArena()
 const hasClimbing = useClimbing()
 const hasVines = useVine()
-const hasAllBananaports = useBananaportAll()
 const canReachVanillaDirt2 = useChunky5DoorGb()
 const canReachTinyTemple = useAztecTinyTemple()
 const hasDiddy = useDiddy()
@@ -23,8 +19,6 @@ const canReachDiddyKasplat = useOasisKasplat()
 const canReachArea2 = useAztecBack()
 const canDoVanillaCrate2 = useLlamaOutsideCrate()
 const hasJetbarrel = useRocket()
-const canReachQSTunnel = useDkTunnelGb()
-const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
 const canGetDK5DT = useDk5DoorGb()
 const canGetDiddy5DT = useDiddy5DoorGb()
 const canGetLanky5DT = useLanky5DoorGb()
