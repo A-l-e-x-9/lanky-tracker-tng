@@ -332,77 +332,77 @@ const canReachLavaRoom = useAztecLlamaLava()
         canGetBreak={canReachLT.out && hasShockwave}
       />
       <AztecCheck
-        id={32053}
+        id={32054}
         name="Shuffled Dirt Patch: Llama Temple entrance"
         region="Llama Temple"
         canGetLogic={canReachLT.in && hasShockwave}
         canGetBreak={canReachLT.out && hasShockwave}
       />
       <AztecCheck
-        id={32054}
+        id={32055}
         name="Shuffled Dirt Patch: Right of the Llama, upper"
         region="Llama Temple"
         canGetLogic={canReachLT.in && hasShockwave}
         canGetBreak={canReachLT.out && hasShockwave}
       />
       <AztecCheck
-        id={32055}
+        id={32056}
         name="Shuffled Dirt Patch: Left of the Llama, upper"
         region="Llama Temple"
         canGetLogic={canReachLT.in && hasShockwave}
         canGetBreak={canReachLT.out && hasShockwave}
       />
       <AztecCheck
-        id={32056}
+        id={32057}
         name="Shuffled Dirt Patch: Left of the Llama, lower"
         region="Llama Temple"
         canGetLogic={canReachLT.in && hasShockwave}
         canGetBreak={canReachLT.out && hasShockwave}
       />
       <AztecCheck
-        id={32057}
+        id={32058}
         name="Shuffled Dirt Patch: Fraternizing with Gene Rayburn"
         region="Llama Temple"
         canGetLogic={canReachLT.in && hasGrapes && hasShockwave}
         canGetBreak={canReachLT.out && hasGrapes && hasShockwave}
       />
       <AztecCheck
-        id={32058}
+        id={32059}
         name="Shuffled Dirt Patch: LT Vanilla Warp 1, entrance left"
         region="Llama Temple"
         canGetLogic={canReachLT.in && hasShockwave}
         canGetBreak={canReachLT.out && hasShockwave}
       />
       <AztecCheck
-        id={32059}
+        id={32060}
         name="Shuffled Dirt Patch: LT Vanilla Warp 1, near the Match Game studio"
         region="Llama Temple"
         canGetLogic={canReachLT.in && hasShockwave}
         canGetBreak={canReachLT.out && hasShockwave}
       />
       <AztecCheck
-        id={32060}
+        id={32061}
         name="Shuffled Dirt Patch: LT Vanilla Warp 2, entrance right"
         region="Llama Temple"
         canGetLogic={canReachLT.in && hasShockwave}
         canGetBreak={canReachLT.out && hasShockwave}
       />
       <AztecCheck
-        id={32061}
+        id={32062}
         name="Shuffled Dirt Patch: LT Vanilla Warp 2, in Tiny's lava room"
         region="Llama Temple"
         canGetLogic={canReachLT.in && hasMiniMonkey && hasShockwave}
         canGetBreak={canReachLT.out && hasMiniMonkey && hasShockwave}
       />
       <AztecCheck
-        id={32063}
+        id={32064}
         name="Shuffled Dirt Patch: DK's quicksand tunnel switch"
         region="Llama Temple"
         canGetLogic={canReachLT.in && hasShockwave}
         canGetBreak={canReachLT.out && hasShockwave}
       />
       <AztecCheck
-        id={32064}
+        id={32065}
         name="Shuffled Dirt Patch: Tiny's lava room"
         region="Llama Temple"
         canGetLogic={canReachLavaRoom.in && hasShockwave}

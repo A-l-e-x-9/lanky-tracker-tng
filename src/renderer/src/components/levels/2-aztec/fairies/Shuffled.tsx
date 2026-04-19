@@ -5,14 +5,13 @@ import { useCamera, useGrape, useDive } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveFairies from './Cave'
 
-const Shuffled: React.FC = () => {
+const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
   const hasDiving = useDive()
   const hasGrapes = useGrape()
   const isBreathing = useGeneralFairy()
   const vanillaFairy1 = useTinyFairy()
   const vanillaFairy2 = useLlamaFairy()
-  const canReachVases = useChunkyVaseGb()
   const canReachBack = useAztecBack()
   const canGoInDK5DT = useDk5DoorGb()
   const canGoInDiddy5DT = useDiddy5DoorGb()
@@ -39,13 +38,6 @@ const Shuffled: React.FC = () => {
         canGetBreak={vanillaFairy2.out}
       />
       <AztecCheck
-        id={42002}
-        name="Shuffled Fairy: Vase room"
-        region="Aztec Caves"
-        canGetLogic={canReachVases.in && hasCam}
-        canGetBreak={canReachVases.out && hasCam}
-      />
-      <AztecCheck
         id={42003}
         name="Shuffled Fairy: At the oasis"
         region="Aztec Main Area"
@@ -58,20 +50,6 @@ const Shuffled: React.FC = () => {
         region="Aztec Main Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={42005}
-        name="Shuffled Fairy: On the path to Cranky's"
-        region="Aztec Caves"
-        canGetLogic={canReachBack.in && hasCam}
-        canGetBreak={canReachBack.out && hasCam}
-      />
-      <AztecCheck
-        id={42006}
-        name="Shuffled Fairy: At Chunky's Bonus Barrel"
-        region="Aztec Caves"
-        canGetLogic={canReachBack.in && hasCam}
-        canGetBreak={canReachBack.out && hasCam}
       />
       <AztecCheck
         id={42007}
@@ -147,5 +125,4 @@ const Shuffled: React.FC = () => {
   )
 }
 
-const ShuffledFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
 export default ShuffledFairies
