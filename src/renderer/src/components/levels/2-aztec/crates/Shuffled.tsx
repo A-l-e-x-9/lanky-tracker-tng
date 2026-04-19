@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import CratePool from '@renderer/components/pools/Crates'
-import { useGeneralThing, useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDkTunnelGb, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useOasisKasplat, useFreeLankySwitch } from '@renderer/hooks/aztec'
+import { useGeneralThing, useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useOasisKasplat, useFreeLankySwitch } from '@renderer/hooks/aztec'
 import { useShuffleCrates, useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini, useAnyGun, useOrange } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
@@ -22,7 +22,6 @@ const canReachDiddyKasplat = useOasisKasplat()
 const canReachArea2 = useAztecBack()
 const canDoVanillaCrate2 = useLlamaOutsideCrate()
 const hasJetbarrel = useRocket()
-const canReachQSTunnel = useDkTunnelGb()
 const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
 const canGetDK5DT = useDk5DoorGb()
 const canGetDiddy5DT = useDiddy5DoorGb()

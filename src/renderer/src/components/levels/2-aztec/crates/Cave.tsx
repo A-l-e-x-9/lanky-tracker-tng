@@ -1,13 +1,13 @@
 import CratePool from '@renderer/components/pools/Crates'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
-import { useGeneralThing, useCoconutKasplat, useAztecBack } from '@renderer/hooks/aztec'
-import {  } from '@renderer/hooks/kongs'
+import { useGeneralThing, useCoconutKasplat, useAztecBack, useDkTunnelGb } from '@renderer/hooks/aztec'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
 const canReachDKKasplat = useCoconutKasplat()
 const canReachArea2 = useAztecBack()
+const canReachQSTunnel = useDkTunnelGb()
   return (
     <CratePool>
       <AztecCheck
