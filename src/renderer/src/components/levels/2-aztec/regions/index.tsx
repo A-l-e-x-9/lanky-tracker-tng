@@ -21,7 +21,7 @@ import CaveArenas from '../arenas/Cave'
 import CaveCrates from '../crates/Cave'
 import CaveDirt from '../dirt/Cave'
 import CaveFairies from '../fairies/Cave'
-import caveKasplats from '../kasplats/Cave'
+import CaveKasplats from '../kasplats/Cave'
 
 const AztecRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''

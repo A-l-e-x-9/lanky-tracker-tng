@@ -1,13 +1,13 @@
 import { useShallow } from 'zustand/react/shallow'
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useGeneralThing, useArena, useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useCoconutKasplat, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDkTunnelGb, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useOasisKasplat } from '@renderer/hooks/aztec'
-import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
+import { useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import useDonkStore from '@renderer/store'
 import CaveArenas from './Cave'
 
-const Shuffled: React.FC = () => {
+const ShuffledArenas: React.FC = () => {
 const isBreathing = useGeneralThing()
 const canReachVanillaArena = useArena()
 const hasClimbing = useClimbing()
@@ -93,20 +93,6 @@ const canReachLavaRoom = useAztecLlamaLava()
         canGetBreak={canReachTinyTemple.out && iceMelted.out && hasDiving.out}
       />
       <AztecCheck
-        id={12008}
-        name="Shuffled Battle Arena: In front of DK's room in the first tunnel"
-        region="Aztec Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={12009}
-        name="Shuffled Battle Arena: In DK's room in the first tunnel"
-        region="Aztec Caves"
-        canGetLogic={canReachDKKasplat.in}
-        canGetBreak={canReachDKKasplat.out}
-      />
-      <AztecCheck
         id={12010}
         name="Shuffled Battle Arena: Near oasis sand"
         region="Aztec Main Area"
@@ -154,34 +140,6 @@ const canReachLavaRoom = useAztecLlamaLava()
         region="Aztec Main Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={12017}
-        name="Shuffled Battle Arena: Near Chunky's barrel"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12018}
-        name="Shuffled Battle Arena: Left of the caged GB"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12019}
-        name="Shuffled Battle Arena: Right of the caged GB"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12020}
-        name="Shuffled Battle Arena: Behind the caged GB"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
       />
       <AztecCheck
         id={12021}
@@ -282,20 +240,6 @@ const canReachLavaRoom = useAztecLlamaLava()
         canGetBreak={canReachArea2.out}
       />
       <AztecCheck
-        id={12035}
-        name="Shuffled Battle Arena: Inside DK's quicksand tunnel"
-        region="Aztec Caves"
-        canGetLogic={canReachQSTunnel.in}
-        canGetBreak={canReachQSTunnel.out}
-      />
-      <AztecCheck
-        id={12036}
-        name="Shuffled Battle Arena: Vanilla Warp 1, level start"
-        region="Aztec Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
         id={12037}
         name="Shuffled Battle Arena: Vanilla Warp 1, at the oasis"
         region="Aztec Main Area"
@@ -308,20 +252,6 @@ const canReachLavaRoom = useAztecLlamaLava()
         region="Aztec Main Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={12039}
-        name="Shuffled Battle Arena: Vanilla Warp 2, end of the middle tunnel"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12040}
-        name="Shuffled Battle Arena: Vanilla Warp 3, at Cranky's"
-        region="Aztec Caves"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
       />
       <AztecCheck
         id={12041}
@@ -350,13 +280,6 @@ const canReachLavaRoom = useAztecLlamaLava()
         region="Aztec Main Area"
         canGetLogic={canReachArea2.in}
         canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12045}
-        name="Shuffled Battle Arena: Vanilla Warp 5, at DK's quicksand tunnel"
-        region="Aztec Caves"
-        canGetLogic={isBreathing.in && (didGB[2002] || hasAllBananaports)}
-        canGetBreak={isBreathing.out && (didGB[2002] || hasAllBananaports)}
       />
       <AztecCheck
         id={12046}
@@ -495,5 +418,4 @@ const canReachLavaRoom = useAztecLlamaLava()
   )
 }
 
-const ShuffledArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
 export default ShuffledArenas
