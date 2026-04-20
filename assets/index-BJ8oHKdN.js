@@ -25218,2454 +25218,6 @@ const TinyMedal$5 = () => {
     )
   ] });
 };
-const Shuffled$x = () => {
-  const isBreathing = useGeneralThing$4();
-  const canReachVanillaArena = useArena$3();
-  const hasClimbing = useClimbing();
-  const hasVines = useVine();
-  const hasAllBananaports = useBananaportAll();
-  const canReachVanillaDirt2 = useChunky5DoorGb();
-  const canReachTinyTemple = useAztecTinyTemple();
-  const hasDiddy = useDiddy();
-  const hasSlam = useSlamAztec();
-  const iceMelted = useTinyTempleIce();
-  const hasDiving = useDive();
-  const canReachDKKasplat = useCoconutKasplat();
-  const canReachDiddyKasplat = useOasisKasplat();
-  const canReachArea2 = useAztecBack();
-  const canDoVanillaCrate2 = useLlamaOutsideCrate();
-  const hasJetbarrel = useRocket();
-  const canReachQSTunnel = useDkTunnelGb();
-  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
-  const canGetDK5DT = useDk5DoorGb();
-  const canGetDiddy5DT = useDiddy5DoorGb();
-  const canGetLanky5DT = useLanky5DoorGb();
-  const canGetTiny5DT = useTiny5DoorGb();
-  const canReachLT = useAztecLlamaTemple();
-  const hasGrapes = useGrape();
-  const hasMiniMonkey = useMini();
-  const canReachLavaRoom = useAztecLlamaLava();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12e3,
-        name: "Shuffled Battle Arena: Vanilla Arena (Lanky's reward for killing a Necky)",
-        region: "Tiny Temple",
-        canGetLogic: canReachVanillaArena
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12001,
-        name: "Shuffled Battle Arena: At the oasis",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12002,
-        name: "Shuffled Battle Arena: In Chunky's 5DT room",
-        region: "5 Door Temple",
-        canGetLogic: canReachVanillaDirt2.in,
-        canGetBreak: canReachVanillaDirt2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12003,
-        name: "Shuffled Battle Arena: Back left of Tiny Temple's main room",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in,
-        canGetBreak: canReachTinyTemple.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12004,
-        name: "Shuffled Battle Arena: TT starting room, low",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in,
-        canGetBreak: canReachTinyTemple.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12005,
-        name: "Shuffled Battle Arena: TT starting room, high",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in && hasDiddy && hasSlam,
-        canGetBreak: canReachTinyTemple.out && hasDiddy && hasSlam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12006,
-        name: "Shuffled Battle Arena: Tiny's prison room",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in,
-        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12007,
-        name: "Shuffled Battle Arena: Next to Tiny's cage",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in,
-        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12008,
-        name: "Shuffled Battle Arena: In front of DK's room in the first tunnel",
-        region: "Aztec Caves",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12009,
-        name: "Shuffled Battle Arena: In DK's room in the first tunnel",
-        region: "Aztec Caves",
-        canGetLogic: canReachDKKasplat.in,
-        canGetBreak: canReachDKKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12010,
-        name: "Shuffled Battle Arena: Near oasis sand",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12011,
-        name: "Shuffled Battle Arena: Behind the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12012,
-        name: "Shuffled Battle Arena: To the left of the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12013,
-        name: "Shuffled Battle Arena: To the right of the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12014,
-        name: "Shuffled Battle Arena: Top of the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: canReachDiddyKasplat.in,
-        canGetBreak: canReachDiddyKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12015,
-        name: "Shuffled Battle Arena: In front of Candy's",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12016,
-        name: "Shuffled Battle Arena: Behind the Llama's cage",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12017,
-        name: "Shuffled Battle Arena: Near Chunky's barrel",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12018,
-        name: "Shuffled Battle Arena: Left of the caged GB",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12019,
-        name: "Shuffled Battle Arena: Right of the caged GB",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12020,
-        name: "Shuffled Battle Arena: Behind the caged GB",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12021,
-        name: "Shuffled Battle Arena: Near the Llama Temple, left",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12022,
-        name: "Shuffled Battle Arena: Near the Llama Temple, right",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12023,
-        name: "Shuffled Battle Arena: Next to the Llama Temple",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12024,
-        name: "Shuffled Battle Arena: On top of the Llama Temple, back",
-        region: "Aztec Main Area",
-        canGetLogic: canDoVanillaCrate2.in,
-        canGetBreak: canDoVanillaCrate2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12025,
-        name: "Shuffled Battle Arena: On top of the Llama Temple",
-        region: "Aztec Main Area",
-        canGetLogic: canDoVanillaCrate2.in,
-        canGetBreak: canDoVanillaCrate2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12026,
-        name: "Shuffled Battle Arena: Near Funky's",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12027,
-        name: "Shuffled Battle Arena: On top of the 5DT",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasJetbarrel,
-        canGetBreak: canReachArea2.out && hasJetbarrel
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12028,
-        name: "Shuffled Battle Arena: Near vanilla Warp 5",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12029,
-        name: "Shuffled Battle Arena: Near the Diddy Vulture's cage",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && (hasClimbing && hasVines || hasJetbarrel),
-        canGetBreak: canReachArea2.out && (hasClimbing && hasVines || hasJetbarrel)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12030,
-        name: "Shuffled Battle Arena: Under the Diddy Vulture's cage",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12031,
-        name: "Shuffled Battle Arena: Next to Snide's",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12032,
-        name: "Shuffled Battle Arena: Behind the gong tower",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12033,
-        name: "Shuffled Battle Arena: To the left of the gong tower",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12034,
-        name: "Shuffled Battle Arena: Near the gong tower",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12035,
-        name: "Shuffled Battle Arena: Inside DK's quicksand tunnel",
-        region: "Aztec Caves",
-        canGetLogic: canReachQSTunnel.in,
-        canGetBreak: canReachQSTunnel.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12036,
-        name: "Shuffled Battle Arena: Vanilla Warp 1, level start",
-        region: "Aztec Caves",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12037,
-        name: "Shuffled Battle Arena: Vanilla Warp 1, at the oasis",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12038,
-        name: "Shuffled Battle Arena: Vanilla Warp 2, in front of Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12039,
-        name: "Shuffled Battle Arena: Vanilla Warp 2, end of the middle tunnel",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12040,
-        name: "Shuffled Battle Arena: Vanilla Warp 3, at Cranky's",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12041,
-        name: "Shuffled Battle Arena: Vanilla Warp 3, end of the middle tunnel",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12042,
-        name: "Shuffled Battle Arena: Vanilla Warp 4, end of the middle tunnel",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12043,
-        name: "Shuffled Battle Arena: Vanilla Warp 4, at Funky's",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12044,
-        name: "Shuffled Battle Arena: Vanilla Warp 5, near Snide's",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12045,
-        name: "Shuffled Battle Arena: Vanilla Warp 5, at DK's quicksand tunnel",
-        region: "Aztec Caves",
-        canGetLogic: isBreathing.in && (didGB[2002] || hasAllBananaports),
-        canGetBreak: isBreathing.out && (didGB[2002] || hasAllBananaports)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12046,
-        name: "Shuffled Battle Arena: A dead end in DK's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetDK5DT.in,
-        canGetBreak: canGetDK5DT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12047,
-        name: "Shuffled Battle Arena: A dead end in Diddy's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetDiddy5DT.in,
-        canGetBreak: canGetDiddy5DT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12048,
-        name: "Shuffled Battle Arena: The sole dead end in Lanky's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetLanky5DT.in,
-        canGetBreak: canGetLanky5DT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12049,
-        name: "Shuffled Battle Arena: The right side of Lanky's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetLanky5DT.in,
-        canGetBreak: canGetLanky5DT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12050,
-        name: "Shuffled Battle Arena: The sole dead end in Tiny's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetTiny5DT.in,
-        canGetBreak: canGetTiny5DT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12051,
-        name: "Shuffled Battle Arena: Right side of Chunky's room",
-        region: "5 Door Temple",
-        canGetLogic: canReachVanillaDirt2.in,
-        canGetBreak: canReachVanillaDirt2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12052,
-        name: "Shuffled Battle Arena: Left side of Chunky's room",
-        region: "5 Door Temple",
-        canGetLogic: canReachVanillaDirt2.in,
-        canGetBreak: canReachVanillaDirt2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12053,
-        name: "Shuffled Battle Arena: Right of the Llama, lower",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12053,
-        name: "Shuffled Battle Arena: Llama Temple entrance",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12054,
-        name: "Shuffled Battle Arena: Right of the Llama, upper",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12055,
-        name: "Shuffled Battle Arena: Left of the Llama, upper",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12056,
-        name: "Shuffled Battle Arena: Left of the Llama, lower",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12057,
-        name: "Shuffled Battle Arena: Fraternizing with Gene Rayburn",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasGrapes,
-        canGetBreak: canReachLT.out && hasGrapes
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12058,
-        name: "Shuffled Battle Arena: LT Vanilla Warp 1, entrance left",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12059,
-        name: "Shuffled Battle Arena: LT Vanilla Warp 1, near the Match Game studio",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12060,
-        name: "Shuffled Battle Arena: LT Vanilla Warp 2, entrance right",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12061,
-        name: "Shuffled Battle Arena: LT Vanilla Warp 2, in Tiny's lava room",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasMiniMonkey,
-        canGetBreak: canReachLT.out && hasMiniMonkey
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12063,
-        name: "Shuffled Battle Arena: DK's quicksand tunnel switch",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 12064,
-        name: "Shuffled Battle Arena: Tiny's lava room",
-        region: "Llama Temple",
-        canGetLogic: canReachLavaRoom.in,
-        canGetBreak: canReachLavaRoom.out
-      }
-    )
-  ] });
-};
-const ShuffledArenas$6 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$x, {}) : null;
-const Shuffled$w = () => {
-  const isBreathing = useGeneralThing$4();
-  const hasClimbing = useClimbing();
-  const hasVines = useVine();
-  const hasAllBananaports = useBananaportAll();
-  const canReachVanillaDirt2 = useChunky5DoorGb();
-  const canReachTinyTemple = useAztecTinyTemple();
-  const hasDiddy = useDiddy();
-  const hasSlam = useSlamAztec();
-  const iceMelted = useTinyTempleIce();
-  const hasDiving = useDive();
-  const canReachDKKasplat = useCoconutKasplat();
-  const canReachDiddyKasplat = useOasisKasplat();
-  const canReachArea2 = useAztecBack();
-  const canDoVanillaCrate2 = useLlamaOutsideCrate();
-  const hasJetbarrel = useRocket();
-  const canReachQSTunnel = useDkTunnelGb();
-  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
-  const canGetDK5DT = useDk5DoorGb();
-  const canGetDiddy5DT = useDiddy5DoorGb();
-  const canGetLanky5DT = useLanky5DoorGb();
-  const canGetTiny5DT = useTiny5DoorGb();
-  const canReachLT = useAztecLlamaTemple();
-  const hasGrapes = useGrape();
-  const hasMiniMonkey = useMini();
-  const canReachLavaRoom = useAztecLlamaLava();
-  const canFreeLanky = useFreeLankySwitch();
-  const hasAGun = useAnyGun();
-  const hasOranges = useOrange();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22e3,
-        name: "Shuffled Melon Crate: Lanky's vulture room",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in,
-        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22001,
-        name: "Shuffled Melon Crate: At the oasis",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22002,
-        name: "Shuffled Melon Crate: In Chunky's 5DT room",
-        region: "5 Door Temple",
-        canGetLogic: canReachVanillaDirt2.in,
-        canGetBreak: canReachVanillaDirt2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22003,
-        name: "Shuffled Melon Crate: Back left of Tiny Temple's main room",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in,
-        canGetBreak: canReachTinyTemple.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22004,
-        name: "Shuffled Melon Crate: TT starting room, low",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in,
-        canGetBreak: canReachTinyTemple.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22005,
-        name: "Shuffled Melon Crate: TT starting room, high",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in && hasDiddy && hasSlam,
-        canGetBreak: canReachTinyTemple.out && hasDiddy && hasSlam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22006,
-        name: "Shuffled Melon Crate: Tiny's prison room",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in,
-        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22007,
-        name: "Shuffled Melon Crate: Next to Tiny's cage",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in,
-        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22008,
-        name: "Shuffled Melon Crate: In front of DK's room in the first tunnel",
-        region: "Aztec Caves",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22009,
-        name: "Shuffled Melon Crate: In DK's room in the first tunnel",
-        region: "Aztec Caves",
-        canGetLogic: canReachDKKasplat.in,
-        canGetBreak: canReachDKKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22010,
-        name: "Shuffled Melon Crate: Near oasis sand",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22011,
-        name: "Shuffled Melon Crate: Behind the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22012,
-        name: "Shuffled Melon Crate: To the left of the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22013,
-        name: "Shuffled Melon Crate: To the right of the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22014,
-        name: "Shuffled Melon Crate: Top of the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: canReachDiddyKasplat.in,
-        canGetBreak: canReachDiddyKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22015,
-        name: "Shuffled Melon Crate: In front of Candy's",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22016,
-        name: "Shuffled Melon Crate: Behind the Llama's cage",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22017,
-        name: "Shuffled Melon Crate: Near Chunky's barrel",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22018,
-        name: "Shuffled Melon Crate: Left of the caged GB",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22019,
-        name: "Shuffled Melon Crate: Right of the caged GB",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22020,
-        name: "Shuffled Melon Crate: Behind the caged GB",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22021,
-        name: "Shuffled Melon Crate: Near the Llama Temple, left",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22022,
-        name: "Shuffled Melon Crate: Near the Llama Temple, right",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22023,
-        name: "Shuffled Melon Crate: Next to the Llama Temple",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22024,
-        name: "Shuffled Melon Crate: On top of the Llama Temple, back",
-        region: "Aztec Main Area",
-        canGetLogic: canDoVanillaCrate2.in,
-        canGetBreak: canDoVanillaCrate2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22025,
-        name: "Shuffled Melon Crate: Vanilla Location 1 (on top of the Llama Temple)",
-        region: "Aztec Main Area",
-        canGetLogic: canDoVanillaCrate2.in,
-        canGetBreak: canDoVanillaCrate2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22026,
-        name: "Shuffled Melon Crate: Near Funky's",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22027,
-        name: "Shuffled Melon Crate: On top of the 5DT",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasJetbarrel,
-        canGetBreak: canReachArea2.out && hasJetbarrel
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22028,
-        name: "Shuffled Melon Crate: Near vanilla Warp 5",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22029,
-        name: "Shuffled Melon Crate: Near the Diddy Vulture's cage",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && (hasClimbing && hasVines || hasJetbarrel),
-        canGetBreak: canReachArea2.out && (hasClimbing && hasVines || hasJetbarrel)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22030,
-        name: "Shuffled Melon Crate: Under the Diddy Vulture's cage",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22031,
-        name: "Shuffled Melon Crate: Next to Snide's",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22032,
-        name: "Shuffled Melon Crate: Behind the gong tower",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22033,
-        name: "Shuffled Melon Crate: To the left of the gong tower",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22034,
-        name: "Shuffled Melon Crate: Vanilla Location 2 (near the gong tower)",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22035,
-        name: "Shuffled Melon Crate: Inside DK's quicksand tunnel",
-        region: "Aztec Caves",
-        canGetLogic: canReachQSTunnel.in,
-        canGetBreak: canReachQSTunnel.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22036,
-        name: "Shuffled Melon Crate: Vanilla Warp 1, level start",
-        region: "Aztec Caves",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22037,
-        name: "Shuffled Melon Crate: Vanilla Warp 1, at the oasis",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22038,
-        name: "Shuffled Melon Crate: Vanilla Warp 2, in front of Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22039,
-        name: "Shuffled Melon Crate: Vanilla Warp 2, end of the middle tunnel",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22040,
-        name: "Shuffled Melon Crate: Vanilla Warp 3, at Cranky's",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22041,
-        name: "Shuffled Melon Crate: Vanilla Warp 3, end of the middle tunnel",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22042,
-        name: "Shuffled Melon Crate: Vanilla Warp 4, end of the middle tunnel",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22043,
-        name: "Shuffled Melon Crate: Vanilla Warp 4, at Funky's",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22044,
-        name: "Shuffled Melon Crate: Vanilla Warp 5, near Snide's",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in,
-        canGetBreak: canReachArea2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22045,
-        name: "Shuffled Melon Crate: Vanilla Warp 5, at DK's quicksand tunnel",
-        region: "Aztec Caves",
-        canGetLogic: didGB[2002] || hasAllBananaports
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22046,
-        name: "Shuffled Melon Crate: A dead end in DK's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetDK5DT.in,
-        canGetBreak: canGetDK5DT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22047,
-        name: "Shuffled Melon Crate: A dead end in Diddy's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetDiddy5DT.in,
-        canGetBreak: canGetDiddy5DT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22048,
-        name: "Shuffled Melon Crate: The sole dead end in Lanky's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetLanky5DT.in,
-        canGetBreak: canGetLanky5DT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22049,
-        name: "Shuffled Melon Crate: The right side of Lanky's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetLanky5DT.in,
-        canGetBreak: canGetLanky5DT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22050,
-        name: "Shuffled Melon Crate: The sole dead end in Tiny's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetTiny5DT.in,
-        canGetBreak: canGetTiny5DT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22051,
-        name: "Shuffled Melon Crate: Right side of Chunky's room",
-        region: "5 Door Temple",
-        canGetLogic: canReachVanillaDirt2.in,
-        canGetBreak: canReachVanillaDirt2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22052,
-        name: "Shuffled Melon Crate: Left side of Chunky's room",
-        region: "5 Door Temple",
-        canGetLogic: canReachVanillaDirt2.in,
-        canGetBreak: canReachVanillaDirt2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22053,
-        name: "Shuffled Melon Crate: Right of the Llama, lower",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22053,
-        name: "Shuffled Melon Crate: Vanilla Location 3 (Llama Temple entrance)",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22054,
-        name: "Shuffled Melon Crate: Right of the Llama, upper",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22055,
-        name: "Shuffled Melon Crate: Left of the Llama, upper",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22056,
-        name: "Shuffled Melon Crate: Left of the Llama, lower",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22057,
-        name: "Shuffled Melon Crate: Fraternizing with Gene Rayburn",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasGrapes,
-        canGetBreak: canReachLT.out && hasGrapes
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22058,
-        name: "Shuffled Melon Crate: LT Vanilla Warp 1, entrance left",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22059,
-        name: "Shuffled Melon Crate: LT Vanilla Warp 1, near the Match Game studio",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22060,
-        name: "Shuffled Melon Crate: LT Vanilla Warp 2, entrance right",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22061,
-        name: "Shuffled Melon Crate: LT Vanilla Warp 2, in Tiny's lava room",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasMiniMonkey,
-        canGetBreak: canReachLT.out && hasMiniMonkey
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22062,
-        name: "Shuffled Melon Crate: In the Llama's swimming pool",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && canFreeLanky.in && hasDiving.in,
-        canGetBreak: canReachLT.out && (hasAGun || hasOranges) && hasDiving.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22063,
-        name: "Shuffled Melon Crate: DK's quicksand tunnel switch",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in,
-        canGetBreak: canReachLT.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 22064,
-        name: "Shuffled Melon Crate: Tiny's lava room",
-        region: "Llama Temple",
-        canGetLogic: canReachLavaRoom.in,
-        canGetBreak: canReachLavaRoom.out
-      }
-    )
-  ] });
-};
-const ShuffledCrates$6 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$w, {}) : null;
-const Shuffled$v = () => {
-  const isBreathing = useGeneralDirt$4();
-  const hasShockwave = useShockwave();
-  const canReachVanillaArena = useArena$3();
-  const hasClimbing = useClimbing();
-  const hasVines = useVine();
-  const hasAllBananaports = useBananaportAll();
-  const canReachVanillaDirt2 = useTempleDirt();
-  const canReachTinyTemple = useAztecTinyTemple();
-  const hasDiddy = useDiddy();
-  const hasSlam = useSlamAztec();
-  const iceMelted = useTinyTempleIce();
-  const hasDiving = useDive();
-  const canReachDKKasplat = useCoconutKasplat();
-  const canReachDiddyKasplat = useOasisKasplat();
-  const canReachArea2 = useAztecBack();
-  const canDoVanillaCrate2 = useLlamaOutsideCrate();
-  const hasJetbarrel = useRocket();
-  const canReachQSTunnel = useDkTunnelGb();
-  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
-  const canGetDK5DT = useDk5DoorGb();
-  const canGetDiddy5DT = useDiddy5DoorGb();
-  const canGetLanky5DT = useLanky5DoorGb();
-  const canGetTiny5DT = useTiny5DoorGb();
-  const canReachLT = useAztecLlamaTemple();
-  const hasGrapes = useGrape();
-  const hasMiniMonkey = useMini();
-  const canReachLavaRoom = useAztecLlamaLava();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32e3,
-        name: "Shuffled Dirt Patch: Lanky's reward for killing a Necky",
-        region: "Tiny Temple",
-        canGetLogic: canReachVanillaArena && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32001,
-        name: "Shuffled Dirt Patch: Vanilla Dirt 1 (at the oasis)",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32002,
-        name: "Shuffled Dirt Patch: Vanilla Dirt 2 (in Chunky's 5DT room)",
-        region: "5 Door Temple",
-        canGetLogic: canReachVanillaDirt2.in,
-        canGetBreak: canReachVanillaDirt2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32003,
-        name: "Shuffled Dirt Patch: Back left of Tiny Temple's main room",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in && hasShockwave,
-        canGetBreak: canReachTinyTemple.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32004,
-        name: "Shuffled Dirt Patch: TT starting room, low",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in && hasShockwave,
-        canGetBreak: canReachTinyTemple.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32005,
-        name: "Shuffled Dirt Patch: TT starting room, high",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in && hasDiddy && hasSlam && hasShockwave,
-        canGetBreak: canReachTinyTemple.out && hasDiddy && hasSlam && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32006,
-        name: "Shuffled Dirt Patch: Tiny's prison room",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in && hasShockwave,
-        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32007,
-        name: "Shuffled Dirt Patch: Next to Tiny's cage",
-        region: "Tiny Temple",
-        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in && hasShockwave,
-        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32008,
-        name: "Shuffled Dirt Patch: In front of DK's room in the first tunnel",
-        region: "Aztec Caves",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32009,
-        name: "Shuffled Dirt Patch: In DK's room in the first tunnel",
-        region: "Aztec Caves",
-        canGetLogic: canReachDKKasplat.in && hasShockwave,
-        canGetBreak: canReachDKKasplat.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32010,
-        name: "Shuffled Dirt Patch: Near oasis sand",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32011,
-        name: "Shuffled Dirt Patch: Behind the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32012,
-        name: "Shuffled Dirt Patch: To the left of the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32013,
-        name: "Shuffled Dirt Patch: To the right of the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32014,
-        name: "Shuffled Dirt Patch: Top of the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: canReachDiddyKasplat.in && hasShockwave,
-        canGetBreak: canReachDiddyKasplat.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32015,
-        name: "Shuffled Dirt Patch: In front of Candy's",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32016,
-        name: "Shuffled Dirt Patch: Behind the Llama's cage",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32017,
-        name: "Shuffled Dirt Patch: Near Chunky's barrel",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32018,
-        name: "Shuffled Dirt Patch: Left of the caged GB",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32019,
-        name: "Shuffled Dirt Patch: Right of the caged GB",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32020,
-        name: "Shuffled Dirt Patch: Behind the caged GB",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32021,
-        name: "Shuffled Dirt Patch: Near the Llama Temple, left",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32022,
-        name: "Shuffled Dirt Patch: Near the Llama Temple, right",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32023,
-        name: "Shuffled Dirt Patch: Next to the Llama Temple",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32024,
-        name: "Shuffled Dirt Patch: On top of the Llama Temple, back",
-        region: "Aztec Main Area",
-        canGetLogic: canDoVanillaCrate2.in && hasShockwave,
-        canGetBreak: canDoVanillaCrate2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32025,
-        name: "Shuffled Dirt Patch: On top of the Llama Temple",
-        region: "Aztec Main Area",
-        canGetLogic: canDoVanillaCrate2.in && hasShockwave,
-        canGetBreak: canDoVanillaCrate2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32026,
-        name: "Shuffled Dirt Patch: Near Funky's",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32027,
-        name: "Shuffled Dirt Patch: On top of the 5DT",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasJetbarrel && hasShockwave,
-        canGetBreak: canReachArea2.out && hasJetbarrel && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32028,
-        name: "Shuffled Dirt Patch: Near vanilla Warp 5",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32029,
-        name: "Shuffled Dirt Patch: Near the Diddy Vulture's cage",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && (hasClimbing && hasVines || hasJetbarrel) && hasShockwave,
-        canGetBreak: canReachArea2.out && (hasClimbing && hasVines || hasJetbarrel) && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32030,
-        name: "Shuffled Dirt Patch: Under the Diddy Vulture's cage",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32031,
-        name: "Shuffled Dirt Patch: Next to Snide's",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32032,
-        name: "Shuffled Dirt Patch: Behind the gong tower",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32033,
-        name: "Shuffled Dirt Patch: To the left of the gong tower",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32034,
-        name: "Shuffled Dirt Patch: Near the gong tower",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32035,
-        name: "Shuffled Dirt Patch: Inside DK's quicksand tunnel",
-        region: "Aztec Caves",
-        canGetLogic: canReachQSTunnel.in && hasShockwave,
-        canGetBreak: canReachQSTunnel.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32036,
-        name: "Shuffled Dirt Patch: Vanilla Warp 1, level start",
-        region: "Aztec Caves",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32037,
-        name: "Shuffled Dirt Patch: Vanilla Warp 1, at the oasis",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32038,
-        name: "Shuffled Dirt Patch: Vanilla Warp 2, in front of Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32039,
-        name: "Shuffled Dirt Patch: Vanilla Warp 2, end of the middle tunnel",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32040,
-        name: "Shuffled Dirt Patch: Vanilla Warp 3, at Cranky's",
-        region: "Aztec Caves",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32041,
-        name: "Shuffled Dirt Patch: Vanilla Warp 3, end of the middle tunnel",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32042,
-        name: "Shuffled Dirt Patch: Vanilla Warp 4, end of the middle tunnel",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32043,
-        name: "Shuffled Dirt Patch: Vanilla Warp 4, at Funky's",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32044,
-        name: "Shuffled Dirt Patch: Vanilla Warp 5, near Snide's",
-        region: "Aztec Main Area",
-        canGetLogic: canReachArea2.in && hasShockwave,
-        canGetBreak: canReachArea2.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32045,
-        name: "Shuffled Dirt Patch: Vanilla Warp 5, at DK's quicksand tunnel",
-        region: "Aztec Caves",
-        canGetLogic: (didGB[2002] || hasAllBananaports) && isBreathing.in,
-        canGetBreak: (didGB[2002] || hasAllBananaports) && isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32046,
-        name: "Shuffled Dirt Patch: A dead end in DK's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetDK5DT.in && hasShockwave,
-        canGetBreak: canGetDK5DT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32047,
-        name: "Shuffled Dirt Patch: A dead end in Diddy's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetDiddy5DT.in && hasShockwave,
-        canGetBreak: canGetDiddy5DT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32048,
-        name: "Shuffled Dirt Patch: The sole dead end in Lanky's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetLanky5DT.in && hasShockwave,
-        canGetBreak: canGetLanky5DT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32049,
-        name: "Shuffled Dirt Patch: The right side of Lanky's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetLanky5DT.in && hasShockwave,
-        canGetBreak: canGetLanky5DT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32050,
-        name: "Shuffled Dirt Patch: The sole dead end in Tiny's room",
-        region: "5 Door Temple",
-        canGetLogic: canGetTiny5DT.in && hasShockwave,
-        canGetBreak: canGetTiny5DT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32051,
-        name: "Shuffled Dirt Patch: Right side of Chunky's room",
-        region: "5 Door Temple",
-        canGetLogic: canReachVanillaDirt2.in,
-        canGetBreak: canReachVanillaDirt2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32052,
-        name: "Shuffled Dirt Patch: Left side of Chunky's room",
-        region: "5 Door Temple",
-        canGetLogic: canReachVanillaDirt2.in,
-        canGetBreak: canReachVanillaDirt2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32053,
-        name: "Shuffled Dirt Patch: Right of the Llama, lower",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasShockwave,
-        canGetBreak: canReachLT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32053,
-        name: "Shuffled Dirt Patch: Llama Temple entrance",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasShockwave,
-        canGetBreak: canReachLT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32054,
-        name: "Shuffled Dirt Patch: Right of the Llama, upper",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasShockwave,
-        canGetBreak: canReachLT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32055,
-        name: "Shuffled Dirt Patch: Left of the Llama, upper",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasShockwave,
-        canGetBreak: canReachLT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32056,
-        name: "Shuffled Dirt Patch: Left of the Llama, lower",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasShockwave,
-        canGetBreak: canReachLT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32057,
-        name: "Shuffled Dirt Patch: Fraternizing with Gene Rayburn",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasGrapes && hasShockwave,
-        canGetBreak: canReachLT.out && hasGrapes && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32058,
-        name: "Shuffled Dirt Patch: LT Vanilla Warp 1, entrance left",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasShockwave,
-        canGetBreak: canReachLT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32059,
-        name: "Shuffled Dirt Patch: LT Vanilla Warp 1, near the Match Game studio",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasShockwave,
-        canGetBreak: canReachLT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32060,
-        name: "Shuffled Dirt Patch: LT Vanilla Warp 2, entrance right",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasShockwave,
-        canGetBreak: canReachLT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32061,
-        name: "Shuffled Dirt Patch: LT Vanilla Warp 2, in Tiny's lava room",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasMiniMonkey && hasShockwave,
-        canGetBreak: canReachLT.out && hasMiniMonkey && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32063,
-        name: "Shuffled Dirt Patch: DK's quicksand tunnel switch",
-        region: "Llama Temple",
-        canGetLogic: canReachLT.in && hasShockwave,
-        canGetBreak: canReachLT.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 32064,
-        name: "Shuffled Dirt Patch: Tiny's lava room",
-        region: "Llama Temple",
-        canGetLogic: canReachLavaRoom.in && hasShockwave,
-        canGetBreak: canReachLavaRoom.out && hasShockwave
-      }
-    )
-  ] });
-};
-const ShuffledDirt$6 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$v, {}) : null;
-const Shuffled$u = () => {
-  const hasCam = useCamera();
-  const hasDiving = useDive();
-  const hasGrapes = useGrape();
-  const isBreathing = useGeneralFairy$4();
-  const vanillaFairy1 = useTinyFairy();
-  const vanillaFairy2 = useLlamaFairy();
-  const canReachVases = useChunkyVaseGb();
-  const canReachBack = useAztecBack();
-  const canGoInDK5DT = useDk5DoorGb();
-  const canGoInDiddy5DT = useDiddy5DoorGb();
-  const canGoInLanky5DT = useLanky5DoorGb();
-  const canGoInChunky5DT = useChunky5DoorGb();
-  const canGoInLlamaTemple = useAztecLlamaTemple();
-  const canGoInTinyTemple = useAztecTinyTemple();
-  const iceMelted = useTinyTempleIce();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42e3,
-        name: "Shuffled Fairy: Vanilla Location #1 (Tiny's 5DT room)",
-        region: "5 Door Temple",
-        canGetLogic: vanillaFairy1.in,
-        canGetBreak: vanillaFairy1.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42001,
-        name: "Shuffled Fairy: Vanilla Location #2 (Llama Temple)",
-        region: "Llama Temple",
-        canGetLogic: vanillaFairy2.in,
-        canGetBreak: vanillaFairy2.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42002,
-        name: "Shuffled Fairy: Vase room",
-        region: "Aztec Caves",
-        canGetLogic: canReachVases.in && hasCam,
-        canGetBreak: canReachVases.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42003,
-        name: "Shuffled Fairy: At the oasis",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42004,
-        name: "Shuffled Fairy: Behind the Tiny Temple",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42005,
-        name: "Shuffled Fairy: On the path to Cranky's",
-        region: "Aztec Caves",
-        canGetLogic: canReachBack.in && hasCam,
-        canGetBreak: canReachBack.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42006,
-        name: "Shuffled Fairy: At Chunky's Bonus Barrel",
-        region: "Aztec Caves",
-        canGetLogic: canReachBack.in && hasCam,
-        canGetBreak: canReachBack.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42007,
-        name: "Shuffled Fairy: At the Totem",
-        region: "Aztec Main Area",
-        canGetLogic: canReachBack.in && hasCam,
-        canGetBreak: canReachBack.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42008,
-        name: "Shuffled Fairy: At the Gong Tower",
-        region: "Aztec Main Area",
-        canGetLogic: canReachBack.in && hasCam,
-        canGetBreak: canReachBack.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42009,
-        name: "Shuffled Fairy: Inside DK's 5DT room",
-        region: "5 Door Temple",
-        canGetLogic: canGoInDK5DT.in && hasCam,
-        canGetBreak: canGoInDK5DT.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42010,
-        name: "Shuffled Fairy: Inside Diddy's 5DT room",
-        region: "5 Door Temple",
-        canGetLogic: canGoInDiddy5DT.in && hasCam,
-        canGetBreak: canGoInDiddy5DT.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42011,
-        name: "Shuffled Fairy: Inside Lanky's 5DT room",
-        region: "5 Door Temple",
-        canGetLogic: canGoInLanky5DT.in && hasCam,
-        canGetBreak: canGoInLanky5DT.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42012,
-        name: "Shuffled Fairy: Inside Chunky's 5DT room",
-        region: "5 Door Temple",
-        canGetLogic: canGoInChunky5DT.in && hasCam,
-        canGetBreak: canGoInChunky5DT.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42013,
-        name: "Shuffled Fairy: Over the Swimming Pool",
-        region: "Llama Temple",
-        canGetLogic: canGoInLlamaTemple.in && hasCam,
-        canGetBreak: canGoInLlamaTemple.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42014,
-        name: "Shuffled Fairy: Playing Match Game and doing BLANK",
-        region: "Llama Temple",
-        canGetLogic: canGoInLlamaTemple.in && hasGrapes && hasCam,
-        canGetBreak: canGoInLlamaTemple.out && hasGrapes && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42015,
-        name: "Shuffled Fairy: Over the Tiny Temple's pool",
-        region: "Tiny Temple",
-        canGetLogic: canGoInTinyTemple.in && hasCam,
-        canGetBreak: canGoInTinyTemple.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 42016,
-        name: "Shuffled Fairy: At Tiny's cage",
-        region: "Tiny Temple",
-        canGetLogic: canGoInTinyTemple.in && iceMelted && hasDiving.in && hasCam,
-        canGetBreak: canGoInTinyTemple.out && iceMelted && hasDiving.out && hasCam
-      }
-    )
-  ] });
-};
-const ShuffledFairies$6 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : null;
-const Shuffled$t = () => {
-  const DKVanillaKasplat = useCoconutKasplat();
-  const diddyVanillaKasplat = useOasisKasplat();
-  const lankyVanillaKasplat = useLlamaLavaKasplat();
-  const tinyVanillaKasplat = useTunnelKasplat();
-  const chunkyVanillaKasplat = useChunkyKasplat();
-  const isBreathing = useGeneralThing$4();
-  const canDoQSGB = useDkTunnelGb();
-  const canEnterBack = useAztecBack();
-  const canGoInLlamaTemple = useAztecLlamaTemple();
-  const canGoInTinyTemple = useAztecTinyTemple();
-  const canGetPastTTIce = useTinyTempleIce();
-  const canDoDK5DT = useDk5DoorGb();
-  const hasDiving = useDive();
-  const hasVines = useVine();
-  const hasClimbing = useClimbing();
-  const hasJetbarrel = useRocket();
-  const hasDiddy = useDiddy();
-  const hasTiny = useTiny();
-  const hasPineapples = usePineapple();
-  const hasGrapes = useGrape();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52e3,
-        name: "Shuffled Kasplat: DK's Vanilla Location (a sub-tunnel at the level start)",
-        region: "Aztec Caves",
-        canGetLogic: DKVanillaKasplat.in,
-        canGetBreak: DKVanillaKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52001,
-        name: "Shuffled Kasplat: Diddy's Vanilla Location (on top of the Tiny Temple)",
-        region: "Aztec Main Area",
-        canGetLogic: diddyVanillaKasplat.in,
-        canGetBreak: diddyVanillaKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52002,
-        name: "Shuffled Kasplat: Lanky's Vanilla Location (the lava pedestal GB)",
-        region: "Llama Temple",
-        canGetLogic: lankyVanillaKasplat.in,
-        canGetBreak: lankyVanillaKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52003,
-        name: "Shuffled Kasplat: Tiny's Vanilla Location (first 3-way intersection of middle tunnel)",
-        region: "Aztec Caves",
-        canGetLogic: tinyVanillaKasplat.in,
-        canGetBreak: tinyVanillaKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52004,
-        name: "Shuffled Kasplat: Chunky's Vanilla Location (in his 5DT room)",
-        region: "5 Door Temple",
-        canGetLogic: chunkyVanillaKasplat.in,
-        canGetBreak: chunkyVanillaKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52005,
-        name: "Shuffled Kasplat: In DK's quicksand tunnel",
-        region: "Aztec Caves",
-        canGetLogic: canDoQSGB.in,
-        canGetBreak: canDoQSGB.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52006,
-        name: "Shuffled Kasplat: On the oasis",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52007,
-        name: "Shuffled Kasplat: On top of the Llama's cage",
-        region: "Aztec Main Area",
-        canGetLogic: isBreathing.in && hasClimbing && (hasVines || hasJetbarrel),
-        canGetBreak: isBreathing.out && (hasDiddy || hasTiny)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52008,
-        name: "Shuffled Kasplat: Near the giant boulder",
-        region: "Aztec Caves",
-        canGetLogic: canEnterBack.in,
-        canGetBreak: canEnterBack.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52009,
-        name: "Shuffled Kasplat: In the vase room",
-        region: "Aztec Caves",
-        canGetLogic: isBreathing.in && hasPineapples,
-        canGetBreak: isBreathing.out && hasPineapples
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52010,
-        name: "Shuffled Kasplat: Back top of the 5-Door Temple",
-        region: "Aztec Main Area",
-        canGetLogic: canEnterBack.in,
-        canGetBreak: canEnterBack.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52011,
-        name: "Shuffled Kasplat: Platform near Snide's",
-        region: "Aztec Main Area",
-        canGetLogic: canEnterBack.in,
-        canGetBreak: canEnterBack.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52012,
-        name: "Shuffled Kasplat: Behind the Llama",
-        region: "Llama Temple",
-        canGetLogic: canGoInLlamaTemple.in,
-        canGetBreak: canGoInLlamaTemple.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52013,
-        name: "Shuffled Kasplat: At Tiny's Prison",
-        region: "Tiny Temple",
-        canGetLogic: canGoInTinyTemple.in && canGetPastTTIce.in && hasDiving.in,
-        canGetBreak: canGoInTinyTemple.out && canGetPastTTIce.out && hasDiving.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52014,
-        name: "Shuffled Kasplat: Behind Diddy's gongs",
-        region: "Aztec Main Area",
-        canGetLogic: canEnterBack.in,
-        canGetBreak: canEnterBack.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52015,
-        name: "Shuffled Kasplat: A contestant on Match Game '64",
-        region: "Llama Temple",
-        canGetLogic: canGoInLlamaTemple.in && hasGrapes,
-        canGetBreak: canGoInLlamaTemple.out && hasGrapes
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52016,
-        name: "Shuffled Kasplat: At Tiny's barrel in the Tiny Temple",
-        region: "Tiny Temple",
-        canGetLogic: canGoInTinyTemple.in,
-        canGetBreak: canGoInTinyTemple.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AztecCheck,
-      {
-        id: 52017,
-        name: "Shuffled Kasplat: Inside DK's 5DT room",
-        region: "5 Door Temple",
-        canGetLogic: canDoDK5DT.in,
-        canGetBreak: canDoDK5DT.out
-      }
-    )
-  ] });
-};
-const ShuffledKasplats$5 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {}) : null;
 const Vanilla$5 = () => {
   const aztecFront = useAztecFront();
   const aztecBack = useAztecBack();
@@ -27914,6 +25466,457 @@ const TotemChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TotemEnemies, {}) })
   ] });
 };
+const Shuffled$x = () => {
+  const isBreathing = useGeneralThing$4();
+  const canReachDKKasplat = useCoconutKasplat();
+  const canReachArea2 = useAztecBack();
+  const canReachQSTunnel = useDkTunnelGb();
+  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
+  const hasAllBananaports = useBananaportAll();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12e3,
+        name: "Shuffled Battle Arena: In front of DK's room in the first tunnel",
+        region: "Aztec Caves",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12e3,
+        name: "Shuffled Battle Arena: In DK's room in the first tunnel",
+        region: "Aztec Caves",
+        canGetLogic: canReachDKKasplat.in,
+        canGetBreak: canReachDKKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12e3,
+        name: "Shuffled Battle Arena: Near Chunky's barrel",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12e3,
+        name: "Shuffled Battle Arena: Left of the caged GB",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12e3,
+        name: "Shuffled Battle Arena: Right of the caged GB",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12e3,
+        name: "Shuffled Battle Arena: Behind the caged GB",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12e3,
+        name: "Shuffled Battle Arena: Inside DK's quicksand tunnel",
+        region: "Aztec Caves",
+        canGetLogic: canReachQSTunnel.in,
+        canGetBreak: canReachQSTunnel.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12e3,
+        name: "Shuffled Battle Arena: Vanilla Warp 1, level start",
+        region: "Aztec Caves",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12e3,
+        name: "Shuffled Battle Arena: Vanilla Warp 2, end of the middle tunnel",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12e3,
+        name: "Shuffled Battle Arena: Vanilla Warp 3, at Cranky's",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12e3,
+        name: "Shuffled Battle Arena: Vanilla Warp 5, at DK's quicksand tunnel",
+        region: "Aztec Caves",
+        canGetLogic: isBreathing.in && (didGB[2002] || hasAllBananaports),
+        canGetBreak: isBreathing.out && (didGB[2002] || hasAllBananaports)
+      }
+    )
+  ] });
+};
+const CaveArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$x, {}) : null;
+const Shuffled$w = () => {
+  const isBreathing = useGeneralThing$4();
+  const canReachDKKasplat = useCoconutKasplat();
+  const canReachArea2 = useAztecBack();
+  const canReachQSTunnel = useDkTunnelGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22008,
+        name: "Shuffled Melon Crate: In front of DK's room in the first tunnel",
+        region: "Aztec Caves",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22009,
+        name: "Shuffled Melon Crate: In DK's room in the first tunnel",
+        region: "Aztec Caves",
+        canGetLogic: canReachDKKasplat.in,
+        canGetBreak: canReachDKKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22017,
+        name: "Shuffled Melon Crate: Near Chunky's barrel",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22018,
+        name: "Shuffled Melon Crate: Left of the caged GB",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22019,
+        name: "Shuffled Melon Crate: Right of the caged GB",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22020,
+        name: "Shuffled Melon Crate: Behind the caged GB",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22035,
+        name: "Shuffled Melon Crate: Inside DK's quicksand tunnel",
+        region: "Aztec Caves",
+        canGetLogic: canReachQSTunnel.in,
+        canGetBreak: canReachQSTunnel.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22036,
+        name: "Shuffled Melon Crate: Vanilla Warp 1, level start",
+        region: "Aztec Caves",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22039,
+        name: "Shuffled Melon Crate: Vanilla Warp 2, end of the middle tunnel",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22040,
+        name: "Shuffled Melon Crate: Vanilla Warp 3, at Cranky's",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    )
+  ] });
+};
+const CaveCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$w, {}) : null;
+const Shuffled$v = () => {
+  const isBreathing = useGeneralDirt$4();
+  const hasShockwave = useShockwave();
+  const canReachDKKasplat = useCoconutKasplat();
+  const canReachArea2 = useAztecBack();
+  const canReachQSTunnel = useDkTunnelGb();
+  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
+  const hasAllBananaports = useBananaportAll();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32008,
+        name: "Shuffled Dirt Patch: In front of DK's room in the first tunnel",
+        region: "Aztec Caves",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32009,
+        name: "Shuffled Dirt Patch: In DK's room in the first tunnel",
+        region: "Aztec Caves",
+        canGetLogic: canReachDKKasplat.in && hasShockwave,
+        canGetBreak: canReachDKKasplat.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32017,
+        name: "Shuffled Dirt Patch: Near Chunky's barrel",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32018,
+        name: "Shuffled Dirt Patch: Left of the caged GB",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32019,
+        name: "Shuffled Dirt Patch: Right of the caged GB",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32020,
+        name: "Shuffled Dirt Patch: Behind the caged GB",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32035,
+        name: "Shuffled Dirt Patch: Inside DK's quicksand tunnel",
+        region: "Aztec Caves",
+        canGetLogic: canReachQSTunnel.in && hasShockwave,
+        canGetBreak: canReachQSTunnel.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32036,
+        name: "Shuffled Dirt Patch: Vanilla Warp 1, level start",
+        region: "Aztec Caves",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32039,
+        name: "Shuffled Dirt Patch: Vanilla Warp 2, end of the middle tunnel",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32040,
+        name: "Shuffled Dirt Patch: Vanilla Warp 3, at Cranky's",
+        region: "Aztec Caves",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32045,
+        name: "Shuffled Dirt Patch: Vanilla Warp 5, at DK's quicksand tunnel",
+        region: "Aztec Caves",
+        canGetLogic: (didGB[2002] || hasAllBananaports) && isBreathing.in,
+        canGetBreak: (didGB[2002] || hasAllBananaports) && isBreathing.out
+      }
+    )
+  ] });
+};
+const CaveDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$v, {}) : null;
+const Shuffled$u = () => {
+  const hasCam = useCamera();
+  const canReachVases = useChunkyVaseGb();
+  const canReachBack = useAztecBack();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42002,
+        name: "Shuffled Fairy: Vase room",
+        region: "Aztec Caves",
+        canGetLogic: canReachVases.in && hasCam,
+        canGetBreak: canReachVases.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42005,
+        name: "Shuffled Fairy: On the path to Cranky's",
+        region: "Aztec Caves",
+        canGetLogic: canReachBack.in && hasCam,
+        canGetBreak: canReachBack.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42006,
+        name: "Shuffled Fairy: At Chunky's Bonus Barrel",
+        region: "Aztec Caves",
+        canGetLogic: canReachBack.in && hasCam,
+        canGetBreak: canReachBack.out && hasCam
+      }
+    )
+  ] });
+};
+const CaveFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : null;
+const Shuffled$t = () => {
+  const isBreathing = useGeneralThing$4();
+  const DKVanillaKasplat = useCoconutKasplat();
+  const tinyVanillaKasplat = useTunnelKasplat();
+  const canDoQSGB = useDkTunnelGb();
+  const canEnterBack = useAztecBack();
+  const hasPineapples = usePineapple();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52e3,
+        name: "Shuffled Kasplat: DK's Vanilla Location (a sub-tunnel at the level start)",
+        region: "Aztec Caves",
+        canGetLogic: DKVanillaKasplat.in,
+        canGetBreak: DKVanillaKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52003,
+        name: "Shuffled Kasplat: Tiny's Vanilla Location (first 3-way intersection of middle tunnel)",
+        region: "Aztec Caves",
+        canGetLogic: tinyVanillaKasplat.in,
+        canGetBreak: tinyVanillaKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52005,
+        name: "Shuffled Kasplat: In DK's quicksand tunnel",
+        region: "Aztec Caves",
+        canGetLogic: canDoQSGB.in,
+        canGetBreak: canDoQSGB.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52008,
+        name: "Shuffled Kasplat: Near the giant boulder",
+        region: "Aztec Caves",
+        canGetLogic: canEnterBack.in,
+        canGetBreak: canEnterBack.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52009,
+        name: "Shuffled Kasplat: In the vase room",
+        region: "Aztec Caves",
+        canGetLogic: isBreathing.in && hasPineapples,
+        canGetBreak: isBreathing.out && hasPineapples
+      }
+    )
+  ] });
+};
+const CaveKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {}) : null;
 const AztecRegionChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
@@ -27930,7 +25933,14 @@ const AztecRegionChecks = () => {
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(BeforeOasisChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ConnectorTunnelChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(QuicksandTunnel, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(QuicksandTunnel, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CaveArenas, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CaveCrates, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CaveDirt, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(CaveFairies, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(CaveKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(OasisChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TotemChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TinyStartChecks, {}),
@@ -27939,13 +25949,8 @@ const AztecRegionChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaTempleChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$5, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$6, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$6, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$6, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$6, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$6, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$5, {}) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$6, {})
+    ] })
   ] });
 };
 const BoulderLocations$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -27955,6 +25960,2039 @@ const BoulderLocations$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleVase, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(PlusVase, {})
 ] });
+const ShuffledArenas$6 = () => {
+  const isBreathing = useGeneralThing$4();
+  const canReachVanillaArena = useArena$3();
+  const hasClimbing = useClimbing();
+  const hasVines = useVine();
+  const canReachVanillaDirt2 = useChunky5DoorGb();
+  const canReachTinyTemple = useAztecTinyTemple();
+  const hasDiddy = useDiddy();
+  const hasSlam = useSlamAztec();
+  const iceMelted = useTinyTempleIce();
+  const hasDiving = useDive();
+  const canReachDiddyKasplat = useOasisKasplat();
+  const canReachArea2 = useAztecBack();
+  const canDoVanillaCrate2 = useLlamaOutsideCrate();
+  const hasJetbarrel = useRocket();
+  const canGetDK5DT = useDk5DoorGb();
+  const canGetDiddy5DT = useDiddy5DoorGb();
+  const canGetLanky5DT = useLanky5DoorGb();
+  const canGetTiny5DT = useTiny5DoorGb();
+  const canReachLT = useAztecLlamaTemple();
+  const hasGrapes = useGrape();
+  const hasMiniMonkey = useMini();
+  const canReachLavaRoom = useAztecLlamaLava();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CaveArenas, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12e3,
+        name: "Shuffled Battle Arena: Vanilla Arena (Lanky's reward for killing a Necky)",
+        region: "Tiny Temple",
+        canGetLogic: canReachVanillaArena
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12001,
+        name: "Shuffled Battle Arena: At the oasis",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12002,
+        name: "Shuffled Battle Arena: In Chunky's 5DT room",
+        region: "5 Door Temple",
+        canGetLogic: canReachVanillaDirt2.in,
+        canGetBreak: canReachVanillaDirt2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12003,
+        name: "Shuffled Battle Arena: Back left of Tiny Temple's main room",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in,
+        canGetBreak: canReachTinyTemple.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12004,
+        name: "Shuffled Battle Arena: TT starting room, low",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in,
+        canGetBreak: canReachTinyTemple.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12005,
+        name: "Shuffled Battle Arena: TT starting room, high",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in && hasDiddy && hasSlam,
+        canGetBreak: canReachTinyTemple.out && hasDiddy && hasSlam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12006,
+        name: "Shuffled Battle Arena: Tiny's prison room",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in,
+        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12007,
+        name: "Shuffled Battle Arena: Next to Tiny's cage",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in,
+        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12010,
+        name: "Shuffled Battle Arena: Near oasis sand",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12011,
+        name: "Shuffled Battle Arena: Behind the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12012,
+        name: "Shuffled Battle Arena: To the left of the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12013,
+        name: "Shuffled Battle Arena: To the right of the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12014,
+        name: "Shuffled Battle Arena: Top of the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: canReachDiddyKasplat.in,
+        canGetBreak: canReachDiddyKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12015,
+        name: "Shuffled Battle Arena: In front of Candy's",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12016,
+        name: "Shuffled Battle Arena: Behind the Llama's cage",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12021,
+        name: "Shuffled Battle Arena: Near the Llama Temple, left",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12022,
+        name: "Shuffled Battle Arena: Near the Llama Temple, right",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12023,
+        name: "Shuffled Battle Arena: Next to the Llama Temple",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12024,
+        name: "Shuffled Battle Arena: On top of the Llama Temple, back",
+        region: "Aztec Main Area",
+        canGetLogic: canDoVanillaCrate2.in,
+        canGetBreak: canDoVanillaCrate2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12025,
+        name: "Shuffled Battle Arena: On top of the Llama Temple",
+        region: "Aztec Main Area",
+        canGetLogic: canDoVanillaCrate2.in,
+        canGetBreak: canDoVanillaCrate2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12026,
+        name: "Shuffled Battle Arena: Near Funky's",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12027,
+        name: "Shuffled Battle Arena: On top of the 5DT",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasJetbarrel,
+        canGetBreak: canReachArea2.out && hasJetbarrel
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12028,
+        name: "Shuffled Battle Arena: Near vanilla Warp 5",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12029,
+        name: "Shuffled Battle Arena: Near the Diddy Vulture's cage",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && (hasClimbing && hasVines || hasJetbarrel),
+        canGetBreak: canReachArea2.out && (hasClimbing && hasVines || hasJetbarrel)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12030,
+        name: "Shuffled Battle Arena: Under the Diddy Vulture's cage",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12031,
+        name: "Shuffled Battle Arena: Next to Snide's",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12032,
+        name: "Shuffled Battle Arena: Behind the gong tower",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12033,
+        name: "Shuffled Battle Arena: To the left of the gong tower",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12034,
+        name: "Shuffled Battle Arena: Near the gong tower",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12037,
+        name: "Shuffled Battle Arena: Vanilla Warp 1, at the oasis",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12038,
+        name: "Shuffled Battle Arena: Vanilla Warp 2, in front of Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12041,
+        name: "Shuffled Battle Arena: Vanilla Warp 3, end of the middle tunnel",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12042,
+        name: "Shuffled Battle Arena: Vanilla Warp 4, end of the middle tunnel",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12043,
+        name: "Shuffled Battle Arena: Vanilla Warp 4, at Funky's",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12044,
+        name: "Shuffled Battle Arena: Vanilla Warp 5, near Snide's",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12046,
+        name: "Shuffled Battle Arena: A dead end in DK's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetDK5DT.in,
+        canGetBreak: canGetDK5DT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12047,
+        name: "Shuffled Battle Arena: A dead end in Diddy's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetDiddy5DT.in,
+        canGetBreak: canGetDiddy5DT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12048,
+        name: "Shuffled Battle Arena: The sole dead end in Lanky's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetLanky5DT.in,
+        canGetBreak: canGetLanky5DT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12049,
+        name: "Shuffled Battle Arena: The right side of Lanky's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetLanky5DT.in,
+        canGetBreak: canGetLanky5DT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12050,
+        name: "Shuffled Battle Arena: The sole dead end in Tiny's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetTiny5DT.in,
+        canGetBreak: canGetTiny5DT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12051,
+        name: "Shuffled Battle Arena: Right side of Chunky's room",
+        region: "5 Door Temple",
+        canGetLogic: canReachVanillaDirt2.in,
+        canGetBreak: canReachVanillaDirt2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12052,
+        name: "Shuffled Battle Arena: Left side of Chunky's room",
+        region: "5 Door Temple",
+        canGetLogic: canReachVanillaDirt2.in,
+        canGetBreak: canReachVanillaDirt2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12053,
+        name: "Shuffled Battle Arena: Right of the Llama, lower",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12053,
+        name: "Shuffled Battle Arena: Llama Temple entrance",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12054,
+        name: "Shuffled Battle Arena: Right of the Llama, upper",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12055,
+        name: "Shuffled Battle Arena: Left of the Llama, upper",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12056,
+        name: "Shuffled Battle Arena: Left of the Llama, lower",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12057,
+        name: "Shuffled Battle Arena: Fraternizing with Gene Rayburn",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasGrapes,
+        canGetBreak: canReachLT.out && hasGrapes
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12058,
+        name: "Shuffled Battle Arena: LT Vanilla Warp 1, entrance left",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12059,
+        name: "Shuffled Battle Arena: LT Vanilla Warp 1, near the Match Game studio",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12060,
+        name: "Shuffled Battle Arena: LT Vanilla Warp 2, entrance right",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12061,
+        name: "Shuffled Battle Arena: LT Vanilla Warp 2, in Tiny's lava room",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasMiniMonkey,
+        canGetBreak: canReachLT.out && hasMiniMonkey
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12063,
+        name: "Shuffled Battle Arena: DK's quicksand tunnel switch",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 12064,
+        name: "Shuffled Battle Arena: Tiny's lava room",
+        region: "Llama Temple",
+        canGetLogic: canReachLavaRoom.in,
+        canGetBreak: canReachLavaRoom.out
+      }
+    )
+  ] });
+};
+const ShuffledCrates$6 = () => {
+  const isBreathing = useGeneralThing$4();
+  const hasClimbing = useClimbing();
+  const hasVines = useVine();
+  const hasAllBananaports = useBananaportAll();
+  const canReachVanillaDirt2 = useChunky5DoorGb();
+  const canReachTinyTemple = useAztecTinyTemple();
+  const hasDiddy = useDiddy();
+  const hasSlam = useSlamAztec();
+  const iceMelted = useTinyTempleIce();
+  const hasDiving = useDive();
+  const canReachDiddyKasplat = useOasisKasplat();
+  const canReachArea2 = useAztecBack();
+  const canDoVanillaCrate2 = useLlamaOutsideCrate();
+  const hasJetbarrel = useRocket();
+  const [didGB] = useDonkStore(useShallow((state) => [state.checks]));
+  const canGetDK5DT = useDk5DoorGb();
+  const canGetDiddy5DT = useDiddy5DoorGb();
+  const canGetLanky5DT = useLanky5DoorGb();
+  const canGetTiny5DT = useTiny5DoorGb();
+  const canReachLT = useAztecLlamaTemple();
+  const hasGrapes = useGrape();
+  const hasMiniMonkey = useMini();
+  const canReachLavaRoom = useAztecLlamaLava();
+  const canFreeLanky = useFreeLankySwitch();
+  const hasAGun = useAnyGun();
+  const hasOranges = useOrange();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CaveCrates, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22e3,
+        name: "Shuffled Melon Crate: Lanky's vulture room",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in,
+        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22001,
+        name: "Shuffled Melon Crate: At the oasis",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22002,
+        name: "Shuffled Melon Crate: In Chunky's 5DT room",
+        region: "5 Door Temple",
+        canGetLogic: canReachVanillaDirt2.in,
+        canGetBreak: canReachVanillaDirt2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22003,
+        name: "Shuffled Melon Crate: Back left of Tiny Temple's main room",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in,
+        canGetBreak: canReachTinyTemple.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22004,
+        name: "Shuffled Melon Crate: TT starting room, low",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in,
+        canGetBreak: canReachTinyTemple.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22005,
+        name: "Shuffled Melon Crate: TT starting room, high",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in && hasDiddy && hasSlam,
+        canGetBreak: canReachTinyTemple.out && hasDiddy && hasSlam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22006,
+        name: "Shuffled Melon Crate: Tiny's prison room",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in,
+        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22007,
+        name: "Shuffled Melon Crate: Next to Tiny's cage",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in,
+        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22010,
+        name: "Shuffled Melon Crate: Near oasis sand",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22011,
+        name: "Shuffled Melon Crate: Behind the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22012,
+        name: "Shuffled Melon Crate: To the left of the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22013,
+        name: "Shuffled Melon Crate: To the right of the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22014,
+        name: "Shuffled Melon Crate: Top of the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: canReachDiddyKasplat.in,
+        canGetBreak: canReachDiddyKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22015,
+        name: "Shuffled Melon Crate: In front of Candy's",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22016,
+        name: "Shuffled Melon Crate: Behind the Llama's cage",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22021,
+        name: "Shuffled Melon Crate: Near the Llama Temple, left",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22022,
+        name: "Shuffled Melon Crate: Near the Llama Temple, right",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22023,
+        name: "Shuffled Melon Crate: Next to the Llama Temple",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22024,
+        name: "Shuffled Melon Crate: On top of the Llama Temple, back",
+        region: "Aztec Main Area",
+        canGetLogic: canDoVanillaCrate2.in,
+        canGetBreak: canDoVanillaCrate2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22025,
+        name: "Shuffled Melon Crate: Vanilla Location 1 (on top of the Llama Temple)",
+        region: "Aztec Main Area",
+        canGetLogic: canDoVanillaCrate2.in,
+        canGetBreak: canDoVanillaCrate2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22026,
+        name: "Shuffled Melon Crate: Near Funky's",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22027,
+        name: "Shuffled Melon Crate: On top of the 5DT",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasJetbarrel,
+        canGetBreak: canReachArea2.out && hasJetbarrel
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22028,
+        name: "Shuffled Melon Crate: Near vanilla Warp 5",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22029,
+        name: "Shuffled Melon Crate: Near the Diddy Vulture's cage",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && (hasClimbing && hasVines || hasJetbarrel),
+        canGetBreak: canReachArea2.out && (hasClimbing && hasVines || hasJetbarrel)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22030,
+        name: "Shuffled Melon Crate: Under the Diddy Vulture's cage",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22031,
+        name: "Shuffled Melon Crate: Next to Snide's",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22032,
+        name: "Shuffled Melon Crate: Behind the gong tower",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22033,
+        name: "Shuffled Melon Crate: To the left of the gong tower",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22034,
+        name: "Shuffled Melon Crate: Vanilla Location 2 (near the gong tower)",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22037,
+        name: "Shuffled Melon Crate: Vanilla Warp 1, at the oasis",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22038,
+        name: "Shuffled Melon Crate: Vanilla Warp 2, in front of Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22041,
+        name: "Shuffled Melon Crate: Vanilla Warp 3, end of the middle tunnel",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22042,
+        name: "Shuffled Melon Crate: Vanilla Warp 4, end of the middle tunnel",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22043,
+        name: "Shuffled Melon Crate: Vanilla Warp 4, at Funky's",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22044,
+        name: "Shuffled Melon Crate: Vanilla Warp 5, near Snide's",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in,
+        canGetBreak: canReachArea2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22045,
+        name: "Shuffled Melon Crate: Vanilla Warp 5, at DK's quicksand tunnel",
+        region: "Aztec Caves",
+        canGetLogic: didGB[2002] || hasAllBananaports
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22046,
+        name: "Shuffled Melon Crate: A dead end in DK's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetDK5DT.in,
+        canGetBreak: canGetDK5DT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22047,
+        name: "Shuffled Melon Crate: A dead end in Diddy's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetDiddy5DT.in,
+        canGetBreak: canGetDiddy5DT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22048,
+        name: "Shuffled Melon Crate: The sole dead end in Lanky's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetLanky5DT.in,
+        canGetBreak: canGetLanky5DT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22049,
+        name: "Shuffled Melon Crate: The right side of Lanky's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetLanky5DT.in,
+        canGetBreak: canGetLanky5DT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22050,
+        name: "Shuffled Melon Crate: The sole dead end in Tiny's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetTiny5DT.in,
+        canGetBreak: canGetTiny5DT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22051,
+        name: "Shuffled Melon Crate: Right side of Chunky's room",
+        region: "5 Door Temple",
+        canGetLogic: canReachVanillaDirt2.in,
+        canGetBreak: canReachVanillaDirt2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22052,
+        name: "Shuffled Melon Crate: Left side of Chunky's room",
+        region: "5 Door Temple",
+        canGetLogic: canReachVanillaDirt2.in,
+        canGetBreak: canReachVanillaDirt2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22053,
+        name: "Shuffled Melon Crate: Right of the Llama, lower",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22054,
+        name: "Shuffled Melon Crate: Vanilla Location 3 (Llama Temple entrance)",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22055,
+        name: "Shuffled Melon Crate: Right of the Llama, upper",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22056,
+        name: "Shuffled Melon Crate: Left of the Llama, upper",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22057,
+        name: "Shuffled Melon Crate: Left of the Llama, lower",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22058,
+        name: "Shuffled Melon Crate: Fraternizing with Gene Rayburn",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasGrapes,
+        canGetBreak: canReachLT.out && hasGrapes
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22059,
+        name: "Shuffled Melon Crate: LT Vanilla Warp 1, entrance left",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22060,
+        name: "Shuffled Melon Crate: LT Vanilla Warp 1, near the Match Game studio",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22061,
+        name: "Shuffled Melon Crate: LT Vanilla Warp 2, entrance right",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22062,
+        name: "Shuffled Melon Crate: LT Vanilla Warp 2, in Tiny's lava room",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasMiniMonkey,
+        canGetBreak: canReachLT.out && hasMiniMonkey
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22063,
+        name: "Shuffled Melon Crate: In the Llama's swimming pool",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && canFreeLanky.in && hasDiving.in,
+        canGetBreak: canReachLT.out && (hasAGun || hasOranges) && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22064,
+        name: "Shuffled Melon Crate: DK's quicksand tunnel switch",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in,
+        canGetBreak: canReachLT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 22065,
+        name: "Shuffled Melon Crate: Tiny's lava room",
+        region: "Llama Temple",
+        canGetLogic: canReachLavaRoom.in,
+        canGetBreak: canReachLavaRoom.out
+      }
+    )
+  ] });
+};
+const ShuffledDirt$6 = () => {
+  const isBreathing = useGeneralDirt$4();
+  const hasShockwave = useShockwave();
+  const canReachVanillaArena = useArena$3();
+  const hasClimbing = useClimbing();
+  const hasVines = useVine();
+  const canReachVanillaDirt2 = useTempleDirt();
+  const canReachTinyTemple = useAztecTinyTemple();
+  const hasDiddy = useDiddy();
+  const hasSlam = useSlamAztec();
+  const iceMelted = useTinyTempleIce();
+  const hasDiving = useDive();
+  const canReachDiddyKasplat = useOasisKasplat();
+  const canReachArea2 = useAztecBack();
+  const canDoVanillaCrate2 = useLlamaOutsideCrate();
+  const hasJetbarrel = useRocket();
+  const canGetDK5DT = useDk5DoorGb();
+  const canGetDiddy5DT = useDiddy5DoorGb();
+  const canGetLanky5DT = useLanky5DoorGb();
+  const canGetTiny5DT = useTiny5DoorGb();
+  const canReachLT = useAztecLlamaTemple();
+  const hasGrapes = useGrape();
+  const hasMiniMonkey = useMini();
+  const canReachLavaRoom = useAztecLlamaLava();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CaveDirt, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32e3,
+        name: "Shuffled Dirt Patch: Lanky's reward for killing a Necky",
+        region: "Tiny Temple",
+        canGetLogic: canReachVanillaArena && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32001,
+        name: "Shuffled Dirt Patch: Vanilla Dirt 1 (at the oasis)",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32002,
+        name: "Shuffled Dirt Patch: Vanilla Dirt 2 (in Chunky's 5DT room)",
+        region: "5 Door Temple",
+        canGetLogic: canReachVanillaDirt2.in,
+        canGetBreak: canReachVanillaDirt2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32003,
+        name: "Shuffled Dirt Patch: Back left of Tiny Temple's main room",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in && hasShockwave,
+        canGetBreak: canReachTinyTemple.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32004,
+        name: "Shuffled Dirt Patch: TT starting room, low",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in && hasShockwave,
+        canGetBreak: canReachTinyTemple.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32005,
+        name: "Shuffled Dirt Patch: TT starting room, high",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in && hasDiddy && hasSlam && hasShockwave,
+        canGetBreak: canReachTinyTemple.out && hasDiddy && hasSlam && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32006,
+        name: "Shuffled Dirt Patch: Tiny's prison room",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in && hasShockwave,
+        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32007,
+        name: "Shuffled Dirt Patch: Next to Tiny's cage",
+        region: "Tiny Temple",
+        canGetLogic: canReachTinyTemple.in && iceMelted.in && hasDiving.in && hasShockwave,
+        canGetBreak: canReachTinyTemple.out && iceMelted.out && hasDiving.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32010,
+        name: "Shuffled Dirt Patch: Near oasis sand",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32011,
+        name: "Shuffled Dirt Patch: Behind the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32012,
+        name: "Shuffled Dirt Patch: To the left of the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32013,
+        name: "Shuffled Dirt Patch: To the right of the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32014,
+        name: "Shuffled Dirt Patch: Top of the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: canReachDiddyKasplat.in && hasShockwave,
+        canGetBreak: canReachDiddyKasplat.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32015,
+        name: "Shuffled Dirt Patch: In front of Candy's",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32016,
+        name: "Shuffled Dirt Patch: Behind the Llama's cage",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32021,
+        name: "Shuffled Dirt Patch: Near the Llama Temple, left",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32022,
+        name: "Shuffled Dirt Patch: Near the Llama Temple, right",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32023,
+        name: "Shuffled Dirt Patch: Next to the Llama Temple",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32024,
+        name: "Shuffled Dirt Patch: On top of the Llama Temple, back",
+        region: "Aztec Main Area",
+        canGetLogic: canDoVanillaCrate2.in && hasShockwave,
+        canGetBreak: canDoVanillaCrate2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32025,
+        name: "Shuffled Dirt Patch: On top of the Llama Temple",
+        region: "Aztec Main Area",
+        canGetLogic: canDoVanillaCrate2.in && hasShockwave,
+        canGetBreak: canDoVanillaCrate2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32026,
+        name: "Shuffled Dirt Patch: Near Funky's",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32027,
+        name: "Shuffled Dirt Patch: On top of the 5DT",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasJetbarrel && hasShockwave,
+        canGetBreak: canReachArea2.out && hasJetbarrel && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32028,
+        name: "Shuffled Dirt Patch: Near vanilla Warp 5",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32029,
+        name: "Shuffled Dirt Patch: Near the Diddy Vulture's cage",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && (hasClimbing && hasVines || hasJetbarrel) && hasShockwave,
+        canGetBreak: canReachArea2.out && (hasClimbing && hasVines || hasJetbarrel) && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32030,
+        name: "Shuffled Dirt Patch: Under the Diddy Vulture's cage",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32031,
+        name: "Shuffled Dirt Patch: Next to Snide's",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32032,
+        name: "Shuffled Dirt Patch: Behind the gong tower",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32033,
+        name: "Shuffled Dirt Patch: To the left of the gong tower",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32034,
+        name: "Shuffled Dirt Patch: Near the gong tower",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32037,
+        name: "Shuffled Dirt Patch: Vanilla Warp 1, at the oasis",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32038,
+        name: "Shuffled Dirt Patch: Vanilla Warp 2, in front of Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32041,
+        name: "Shuffled Dirt Patch: Vanilla Warp 3, end of the middle tunnel",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32042,
+        name: "Shuffled Dirt Patch: Vanilla Warp 4, end of the middle tunnel",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32043,
+        name: "Shuffled Dirt Patch: Vanilla Warp 4, at Funky's",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32044,
+        name: "Shuffled Dirt Patch: Vanilla Warp 5, near Snide's",
+        region: "Aztec Main Area",
+        canGetLogic: canReachArea2.in && hasShockwave,
+        canGetBreak: canReachArea2.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32046,
+        name: "Shuffled Dirt Patch: A dead end in DK's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetDK5DT.in && hasShockwave,
+        canGetBreak: canGetDK5DT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32047,
+        name: "Shuffled Dirt Patch: A dead end in Diddy's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetDiddy5DT.in && hasShockwave,
+        canGetBreak: canGetDiddy5DT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32048,
+        name: "Shuffled Dirt Patch: The sole dead end in Lanky's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetLanky5DT.in && hasShockwave,
+        canGetBreak: canGetLanky5DT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32049,
+        name: "Shuffled Dirt Patch: The right side of Lanky's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetLanky5DT.in && hasShockwave,
+        canGetBreak: canGetLanky5DT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32050,
+        name: "Shuffled Dirt Patch: The sole dead end in Tiny's room",
+        region: "5 Door Temple",
+        canGetLogic: canGetTiny5DT.in && hasShockwave,
+        canGetBreak: canGetTiny5DT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32051,
+        name: "Shuffled Dirt Patch: Right side of Chunky's room",
+        region: "5 Door Temple",
+        canGetLogic: canReachVanillaDirt2.in,
+        canGetBreak: canReachVanillaDirt2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32052,
+        name: "Shuffled Dirt Patch: Left side of Chunky's room",
+        region: "5 Door Temple",
+        canGetLogic: canReachVanillaDirt2.in,
+        canGetBreak: canReachVanillaDirt2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32053,
+        name: "Shuffled Dirt Patch: Right of the Llama, lower",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasShockwave,
+        canGetBreak: canReachLT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32054,
+        name: "Shuffled Dirt Patch: Llama Temple entrance",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasShockwave,
+        canGetBreak: canReachLT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32055,
+        name: "Shuffled Dirt Patch: Right of the Llama, upper",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasShockwave,
+        canGetBreak: canReachLT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32056,
+        name: "Shuffled Dirt Patch: Left of the Llama, upper",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasShockwave,
+        canGetBreak: canReachLT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32057,
+        name: "Shuffled Dirt Patch: Left of the Llama, lower",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasShockwave,
+        canGetBreak: canReachLT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32058,
+        name: "Shuffled Dirt Patch: Fraternizing with Gene Rayburn",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasGrapes && hasShockwave,
+        canGetBreak: canReachLT.out && hasGrapes && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32059,
+        name: "Shuffled Dirt Patch: LT Vanilla Warp 1, entrance left",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasShockwave,
+        canGetBreak: canReachLT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32060,
+        name: "Shuffled Dirt Patch: LT Vanilla Warp 1, near the Match Game studio",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasShockwave,
+        canGetBreak: canReachLT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32061,
+        name: "Shuffled Dirt Patch: LT Vanilla Warp 2, entrance right",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasShockwave,
+        canGetBreak: canReachLT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32062,
+        name: "Shuffled Dirt Patch: LT Vanilla Warp 2, in Tiny's lava room",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasMiniMonkey && hasShockwave,
+        canGetBreak: canReachLT.out && hasMiniMonkey && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32064,
+        name: "Shuffled Dirt Patch: DK's quicksand tunnel switch",
+        region: "Llama Temple",
+        canGetLogic: canReachLT.in && hasShockwave,
+        canGetBreak: canReachLT.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 32065,
+        name: "Shuffled Dirt Patch: Tiny's lava room",
+        region: "Llama Temple",
+        canGetLogic: canReachLavaRoom.in && hasShockwave,
+        canGetBreak: canReachLavaRoom.out && hasShockwave
+      }
+    )
+  ] });
+};
+const ShuffledFairies$6 = () => {
+  const hasCam = useCamera();
+  const hasDiving = useDive();
+  const hasGrapes = useGrape();
+  const isBreathing = useGeneralFairy$4();
+  const vanillaFairy1 = useTinyFairy();
+  const vanillaFairy2 = useLlamaFairy();
+  const canReachBack = useAztecBack();
+  const canGoInDK5DT = useDk5DoorGb();
+  const canGoInDiddy5DT = useDiddy5DoorGb();
+  const canGoInLanky5DT = useLanky5DoorGb();
+  const canGoInChunky5DT = useChunky5DoorGb();
+  const canGoInLlamaTemple = useAztecLlamaTemple();
+  const canGoInTinyTemple = useAztecTinyTemple();
+  const iceMelted = useTinyTempleIce();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CaveFairies, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42e3,
+        name: "Shuffled Fairy: Vanilla Location #1 (Tiny's 5DT room)",
+        region: "5 Door Temple",
+        canGetLogic: vanillaFairy1.in,
+        canGetBreak: vanillaFairy1.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42001,
+        name: "Shuffled Fairy: Vanilla Location #2 (Llama Temple)",
+        region: "Llama Temple",
+        canGetLogic: vanillaFairy2.in,
+        canGetBreak: vanillaFairy2.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42003,
+        name: "Shuffled Fairy: At the oasis",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42004,
+        name: "Shuffled Fairy: Behind the Tiny Temple",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42007,
+        name: "Shuffled Fairy: At the Totem",
+        region: "Aztec Main Area",
+        canGetLogic: canReachBack.in && hasCam,
+        canGetBreak: canReachBack.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42008,
+        name: "Shuffled Fairy: At the Gong Tower",
+        region: "Aztec Main Area",
+        canGetLogic: canReachBack.in && hasCam,
+        canGetBreak: canReachBack.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42009,
+        name: "Shuffled Fairy: Inside DK's 5DT room",
+        region: "5 Door Temple",
+        canGetLogic: canGoInDK5DT.in && hasCam,
+        canGetBreak: canGoInDK5DT.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42010,
+        name: "Shuffled Fairy: Inside Diddy's 5DT room",
+        region: "5 Door Temple",
+        canGetLogic: canGoInDiddy5DT.in && hasCam,
+        canGetBreak: canGoInDiddy5DT.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42011,
+        name: "Shuffled Fairy: Inside Lanky's 5DT room",
+        region: "5 Door Temple",
+        canGetLogic: canGoInLanky5DT.in && hasCam,
+        canGetBreak: canGoInLanky5DT.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42012,
+        name: "Shuffled Fairy: Inside Chunky's 5DT room",
+        region: "5 Door Temple",
+        canGetLogic: canGoInChunky5DT.in && hasCam,
+        canGetBreak: canGoInChunky5DT.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42013,
+        name: "Shuffled Fairy: Over the Swimming Pool",
+        region: "Llama Temple",
+        canGetLogic: canGoInLlamaTemple.in && hasCam,
+        canGetBreak: canGoInLlamaTemple.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42014,
+        name: "Shuffled Fairy: Playing Match Game and doing BLANK",
+        region: "Llama Temple",
+        canGetLogic: canGoInLlamaTemple.in && hasGrapes && hasCam,
+        canGetBreak: canGoInLlamaTemple.out && hasGrapes && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42015,
+        name: "Shuffled Fairy: Over the Tiny Temple's pool",
+        region: "Tiny Temple",
+        canGetLogic: canGoInTinyTemple.in && hasCam,
+        canGetBreak: canGoInTinyTemple.out && hasCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 42016,
+        name: "Shuffled Fairy: At Tiny's cage",
+        region: "Tiny Temple",
+        canGetLogic: canGoInTinyTemple.in && iceMelted && hasDiving.in && hasCam,
+        canGetBreak: canGoInTinyTemple.out && iceMelted && hasDiving.out && hasCam
+      }
+    )
+  ] });
+};
+const ShuffledKasplats$5 = () => {
+  const diddyVanillaKasplat = useOasisKasplat();
+  const lankyVanillaKasplat = useLlamaLavaKasplat();
+  const chunkyVanillaKasplat = useChunkyKasplat();
+  const isBreathing = useGeneralThing$4();
+  const canEnterBack = useAztecBack();
+  const canGoInLlamaTemple = useAztecLlamaTemple();
+  const canGoInTinyTemple = useAztecTinyTemple();
+  const canGetPastTTIce = useTinyTempleIce();
+  const canDoDK5DT = useDk5DoorGb();
+  const hasDiving = useDive();
+  const hasVines = useVine();
+  const hasClimbing = useClimbing();
+  const hasJetbarrel = useRocket();
+  const hasDiddy = useDiddy();
+  const hasTiny = useTiny();
+  const hasGrapes = useGrape();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CaveKasplats, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52001,
+        name: "Shuffled Kasplat: Diddy's Vanilla Location (on top of the Tiny Temple)",
+        region: "Aztec Main Area",
+        canGetLogic: diddyVanillaKasplat.in,
+        canGetBreak: diddyVanillaKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52002,
+        name: "Shuffled Kasplat: Lanky's Vanilla Location (the lava pedestal GB)",
+        region: "Llama Temple",
+        canGetLogic: lankyVanillaKasplat.in,
+        canGetBreak: lankyVanillaKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52004,
+        name: "Shuffled Kasplat: Chunky's Vanilla Location (in his 5DT room)",
+        region: "5 Door Temple",
+        canGetLogic: chunkyVanillaKasplat.in,
+        canGetBreak: chunkyVanillaKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52006,
+        name: "Shuffled Kasplat: On the oasis",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52007,
+        name: "Shuffled Kasplat: On top of the Llama's cage",
+        region: "Aztec Main Area",
+        canGetLogic: isBreathing.in && hasClimbing && (hasVines || hasJetbarrel),
+        canGetBreak: isBreathing.out && (hasDiddy || hasTiny)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52010,
+        name: "Shuffled Kasplat: Back top of the 5-Door Temple",
+        region: "Aztec Main Area",
+        canGetLogic: canEnterBack.in,
+        canGetBreak: canEnterBack.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52011,
+        name: "Shuffled Kasplat: Platform near Snide's",
+        region: "Aztec Main Area",
+        canGetLogic: canEnterBack.in,
+        canGetBreak: canEnterBack.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52012,
+        name: "Shuffled Kasplat: Behind the Llama",
+        region: "Llama Temple",
+        canGetLogic: canGoInLlamaTemple.in,
+        canGetBreak: canGoInLlamaTemple.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52013,
+        name: "Shuffled Kasplat: At Tiny's Prison",
+        region: "Tiny Temple",
+        canGetLogic: canGoInTinyTemple.in && canGetPastTTIce.in && hasDiving.in,
+        canGetBreak: canGoInTinyTemple.out && canGetPastTTIce.out && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52014,
+        name: "Shuffled Kasplat: Behind Diddy's gongs",
+        region: "Aztec Main Area",
+        canGetLogic: canEnterBack.in,
+        canGetBreak: canEnterBack.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52015,
+        name: "Shuffled Kasplat: A contestant on Match Game '64",
+        region: "Llama Temple",
+        canGetLogic: canGoInLlamaTemple.in && hasGrapes,
+        canGetBreak: canGoInLlamaTemple.out && hasGrapes
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52016,
+        name: "Shuffled Kasplat: At Tiny's barrel in the Tiny Temple",
+        region: "Tiny Temple",
+        canGetLogic: canGoInTinyTemple.in,
+        canGetBreak: canGoInTinyTemple.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 52017,
+        name: "Shuffled Kasplat: Inside DK's 5DT room",
+        region: "5 Door Temple",
+        canGetLogic: canDoDK5DT.in,
+        canGetBreak: canDoDK5DT.out
+      }
+    )
+  ] });
+};
 const ClassicChecks$5 = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
