@@ -1,8 +1,8 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
-import { useOasisKasplat, useGeneralThing } from '@renderer/hooks/aztec'
-import { useVine, useClimbing, useRocket, useDiddy } from '@renderer/hooks/kongs'
+import { useOasisKasplat, useGeneralThing, useAztecBack } from '@renderer/hooks/aztec'
+import { useVine, useClimbing, useRocket, useDiddy, useTiny } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const diddyVanillaKasplat = useOasisKasplat()
@@ -11,6 +11,8 @@ const hasVines = useVine()
 const hasClimbing = useClimbing()
 const hasJetbarrel = useRocket()
 const hasDiddy = useDiddy()
+const hasTiny = useTiny()
+const canEnterBack = useAztecBack()
 return (
     <KasplatPool>
       <AztecCheck

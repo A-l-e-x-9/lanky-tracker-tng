@@ -1,6 +1,6 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useLlamaLavaKasplat, useChunkyKasplat, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb } from '@renderer/hooks/aztec'
-import { useDive, useTiny, useGrape } from '@renderer/hooks/kongs'
+import { useDive, useGrape } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveKasplats from './Cave'
 import AztecMainKasplats from './AztecMain'
@@ -8,13 +8,11 @@ import AztecMainKasplats from './AztecMain'
 const ShuffledKasplats: React.FC = () => {
 const lankyVanillaKasplat = useLlamaLavaKasplat()
 const chunkyVanillaKasplat = useChunkyKasplat()
-const canEnterBack = useAztecBack()
 const canGoInLlamaTemple = useAztecLlamaTemple()
 const canGoInTinyTemple = useAztecTinyTemple()
 const canGetPastTTIce = useTinyTempleIce()
 const canDoDK5DT = useDk5DoorGb()
 const hasDiving = useDive()
-const hasTiny = useTiny()
 const hasGrapes = useGrape()
   return (
     <KasplatPool>
