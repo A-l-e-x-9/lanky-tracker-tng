@@ -11,6 +11,7 @@ const canReachDKKasplat = useCoconutKasplat()
 const canReachArea2 = useAztecBack()
 const canReachQSTunnel = useDkTunnelGb()
 const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
+const hasAllBananaports = useBananaportAll()
   return (
     <CratePool>
       <AztecCheck
