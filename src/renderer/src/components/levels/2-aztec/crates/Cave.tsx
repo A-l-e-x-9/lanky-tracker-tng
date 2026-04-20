@@ -10,6 +10,7 @@ const isBreathing = useGeneralThing()
 const canReachDKKasplat = useCoconutKasplat()
 const canReachArea2 = useAztecBack()
 const canReachQSTunnel = useDkTunnelGb()
+const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
   return (
     <CratePool>
       <AztecCheck
