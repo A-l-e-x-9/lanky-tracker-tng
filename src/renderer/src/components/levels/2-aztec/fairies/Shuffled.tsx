@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useTinyFairy, useLlamaFairy, useAztecBack, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useChunky5DoorGb, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce } from '@renderer/hooks/aztec'
+import { useTinyFairy, useLlamaFairy, useAztecBack, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useChunky5DoorGb, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce } from '@renderer/hooks/aztec'
 import { useCamera, useGrape, useDive } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveFairies from './Cave'
@@ -9,7 +9,6 @@ const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
   const hasDiving = useDive()
   const hasGrapes = useGrape()
-  const isBreathing = useGeneralFairy()
   const vanillaFairy1 = useTinyFairy()
   const vanillaFairy2 = useLlamaFairy()
   const canReachBack = useAztecBack()
@@ -37,34 +36,6 @@ const ShuffledFairies: React.FC = () => {
         region="Llama Temple"
         canGetLogic={vanillaFairy2.in}
         canGetBreak={vanillaFairy2.out}
-      />
-      <AztecCheck
-        id={42003}
-        name="Shuffled Fairy: At the oasis"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={42004}
-        name="Shuffled Fairy: Behind the Tiny Temple"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={42007}
-        name="Shuffled Fairy: At the Totem"
-        region="Aztec Main Area"
-        canGetLogic={canReachBack.in && hasCam}
-        canGetBreak={canReachBack.out && hasCam}
-      />
-      <AztecCheck
-        id={42008}
-        name="Shuffled Fairy: At the Gong Tower"
-        region="Aztec Main Area"
-        canGetLogic={canReachBack.in && hasCam}
-        canGetBreak={canReachBack.out && hasCam}
       />
       <AztecCheck
         id={42009}
