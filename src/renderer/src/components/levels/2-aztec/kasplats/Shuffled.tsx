@@ -4,6 +4,7 @@ import { useDive, useGrape } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveKasplats from './Cave'
 import AztecMainKasplats from './AztecMain'
+import TTKasplats from './TinyTemple'
 
 const ShuffledKasplats: React.FC = () => {
 const lankyVanillaKasplat = useLlamaLavaKasplat()
@@ -18,6 +19,7 @@ const hasGrapes = useGrape()
     <KasplatPool>
       <CaveKasplats />
       <AztecMainKasplats />
+      <TTKasplats />
       <AztecCheck
         id={52002}
         name="Shuffled Kasplat: Lanky's Vanilla Location (the lava pedestal GB)"
@@ -40,25 +42,11 @@ const hasGrapes = useGrape()
         canGetBreak={canGoInLlamaTemple.out}
       />
       <AztecCheck
-        id={52013}
-        name="Shuffled Kasplat: At Tiny's Prison"
-        region="Tiny Temple"
-        canGetLogic={canGoInTinyTemple.in && canGetPastTTIce.in && hasDiving.in}
-        canGetBreak={canGoInTinyTemple.out && canGetPastTTIce.out && hasDiving.out}
-      />
-      <AztecCheck
         id={52015}
         name="Shuffled Kasplat: A contestant on Match Game '64"
         region="Llama Temple"
         canGetLogic={canGoInLlamaTemple.in && hasGrapes}
         canGetBreak={canGoInLlamaTemple.out && hasGrapes}
-      />
-      <AztecCheck
-        id={52016}
-        name="Shuffled Kasplat: At Tiny's barrel in the Tiny Temple"
-        region="Tiny Temple"
-        canGetLogic={canGoInTinyTemple.in}
-        canGetBreak={canGoInTinyTemple.out}
       />
       <AztecCheck
         id={52017}
