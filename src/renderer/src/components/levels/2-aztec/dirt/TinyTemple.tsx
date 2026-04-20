@@ -2,9 +2,10 @@ import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
 import { useArena, useAztecTinyTemple, useSlamAztec, useTinyTempleIce } from '@renderer/hooks/aztec'
-import { useDiddy, useDive } from '@renderer/hooks/kongs'
+import { useShockwave, useDiddy, useDive } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
+const hasShockwave = useShockwave()
 const canReachVanillaArena = useArena()
 const canReachTinyTemple = useAztecTinyTemple()
 const hasDiddy = useDiddy()
