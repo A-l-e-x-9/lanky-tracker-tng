@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useTinyFairy, useLlamaFairy, useAztecBack, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useChunky5DoorGb, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce } from '@renderer/hooks/aztec'
+import { useTinyFairy, useLlamaFairy, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useChunky5DoorGb, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce } from '@renderer/hooks/aztec'
 import { useCamera, useGrape, useDive } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveFairies from './Cave'
@@ -11,7 +11,6 @@ const ShuffledFairies: React.FC = () => {
   const hasGrapes = useGrape()
   const vanillaFairy1 = useTinyFairy()
   const vanillaFairy2 = useLlamaFairy()
-  const canReachBack = useAztecBack()
   const canGoInDK5DT = useDk5DoorGb()
   const canGoInDiddy5DT = useDiddy5DoorGb()
   const canGoInLanky5DT = useLanky5DoorGb()
