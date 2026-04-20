@@ -1,6 +1,6 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useTinyFairy, useLlamaFairy, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useChunky5DoorGb, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce } from '@renderer/hooks/aztec'
-import { useCamera, useGrape, useDive } from '@renderer/hooks/kongs'
+import { useTinyFairy, useLlamaFairy, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useChunky5DoorGb, useAztecLlamaTemple } from '@renderer/hooks/aztec'
+import { useCamera, useGrape } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveFairies from './Cave'
 import AztecMainFairies from './AztecMain'
@@ -8,7 +8,6 @@ import TTFairies from './TinyTemple'
 
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
-  const hasDiving = useDive()
   const hasGrapes = useGrape()
   const vanillaFairy1 = useTinyFairy()
   const vanillaFairy2 = useLlamaFairy()
@@ -17,8 +16,6 @@ const ShuffledFairies: React.FC = () => {
   const canGoInLanky5DT = useLanky5DoorGb()
   const canGoInChunky5DT = useChunky5DoorGb()
   const canGoInLlamaTemple = useAztecLlamaTemple()
-  const canGoInTinyTemple = useAztecTinyTemple()
-  const iceMelted = useTinyTempleIce()
   return (
     <FairyPool>
       <CaveFairies />
