@@ -6,6 +6,7 @@ import { useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini, 
 import AztecCheck from '../check'
 import useDonkStore from '@renderer/store'
 import CaveCrates from './Cave'
+import AztecMainCrates from './AztecMain'
 
 const ShuffledCrates: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -37,6 +38,7 @@ const hasOranges = useOrange()
   return (
     <CratePool>
       <CaveCrates />
+      <AztecMainCrates />
       <AztecCheck
         id={22000}
         name="Shuffled Melon Crate: Lanky's vulture room"

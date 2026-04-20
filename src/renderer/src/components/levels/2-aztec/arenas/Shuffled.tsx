@@ -3,6 +3,7 @@ import { useGeneralThing, useArena, useChunky5DoorGb, useAztecTinyTemple, useSla
 import { useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveArenas from './Cave'
+import AztecMainArenas from './AztecMain'
 
 const ShuffledArenas: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -30,6 +31,7 @@ const canReachLavaRoom = useAztecLlamaLava()
   return (
     <ArenaPool>
       <CaveArenas />
+      <AztecMainArenas />
       <AztecCheck
         id={12000}
         name="Shuffled Battle Arena: Vanilla Arena (Lanky's reward for killing a Necky)"

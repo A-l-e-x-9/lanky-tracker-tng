@@ -3,6 +3,7 @@ import { useGeneralFairy, useTinyFairy, useLlamaFairy, useAztecBack, useDk5DoorG
 import { useCamera, useGrape, useDive } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveFairies from './Cave'
+import AztecMainFairies from './AztecMain'
 
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
@@ -22,6 +23,7 @@ const ShuffledFairies: React.FC = () => {
   return (
     <FairyPool>
       <CaveFairies />
+      <AztecMainFairies />
       <AztecCheck
         id={42000}
         name="Shuffled Fairy: Vanilla Location #1 (Tiny's 5DT room)"

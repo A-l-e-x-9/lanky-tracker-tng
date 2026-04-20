@@ -3,6 +3,7 @@ import { useGeneralThing, useOasisKasplat, useLlamaLavaKasplat, useChunkyKasplat
 import { useDive, useVine, useClimbing, useRocket, useDiddy, useTiny, useGrape } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveKasplats from './Cave'
+import AztecMainKasplats from './AztecMain'
 
 const ShuffledKasplats: React.FC = () => {
 const diddyVanillaKasplat = useOasisKasplat()
@@ -24,6 +25,7 @@ const hasGrapes = useGrape()
   return (
     <KasplatPool>
       <CaveKasplats />
+      <AztecMainKasplats />
       <AztecCheck
         id={52001}
         name="Shuffled Kasplat: Diddy's Vanilla Location (on top of the Tiny Temple)"

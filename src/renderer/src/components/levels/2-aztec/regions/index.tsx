@@ -22,6 +22,11 @@ import CaveCrates from '../crates/Cave'
 import CaveDirt from '../dirt/Cave'
 import CaveFairies from '../fairies/Cave'
 import CaveKasplats from '../kasplats/Cave'
+import AztecMainArenas from '../arenas/AztecMain'
+import AztecMainCrates from '../crates/AztecMain'
+import AztecMainDirt from '../dirt/AztecMain'
+import AztecMainFairies from '../fairies/AztecMain'
+import AztecMainKasplats from '../kasplats/AztecMain'
 
 const AztecRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -56,6 +61,17 @@ return (
   </div>
     <OasisChecks />
     <TotemChecks />
+  <div className="grid">
+    <AztecMainArenas />
+    <AztecMainCrates />
+    <AztecMainDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <AztecMainFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <AztecMainKasplats />
+  </div>
     <TinyStartChecks />
     <TinySwimChecks />
     <DoorTempleChecks />
