@@ -2,7 +2,7 @@ import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
 import { useGeneralDirt, useOasisKasplat, useAztecBack, useLlamaOutsideCrate } from '@renderer/hooks/aztec'
-import { useShockwave } from '@renderer/hooks/kongs'
+import { useShockwave, useRocket, useClimbing, useVine } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
@@ -10,6 +10,9 @@ const hasShockwave = useShockwave()
 const canReachDiddyKasplat = useOasisKasplat()
 const canReachArea2 = useAztecBack()
 const canDoVanillaCrate2 = useLlamaOutsideCrate()
+const hasJetbarrel = useRocket()
+const hasClimbing = useClimbing()
+const hasVines = useVine()
   return (
     <RainbowCoinPool>
       <AztecCheck

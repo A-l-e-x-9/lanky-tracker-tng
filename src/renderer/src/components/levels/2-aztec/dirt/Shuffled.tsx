@@ -1,6 +1,6 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useArena, useTempleDirt, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useAztecLlamaTemple, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava } from '@renderer/hooks/aztec'
-import { useShockwave, useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini } from '@renderer/hooks/kongs'
+import { useShockwave, useDiddy, useDive, useGrape, useMini } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveDirt from './Cave'
 import AztecMainDirt from './AztecMain'
@@ -8,15 +8,12 @@ import AztecMainDirt from './AztecMain'
 const ShuffledDirt: React.FC = () => {
 const hasShockwave = useShockwave()
 const canReachVanillaArena = useArena()
-const hasClimbing = useClimbing()
-const hasVines = useVine()
 const canReachVanillaDirt2 = useTempleDirt()
 const canReachTinyTemple = useAztecTinyTemple()
 const hasDiddy = useDiddy()
 const hasSlam = useSlamAztec()
 const iceMelted = useTinyTempleIce()
 const hasDiving = useDive()
-const hasJetbarrel = useRocket()
 const canGetDK5DT = useDk5DoorGb()
 const canGetDiddy5DT = useDiddy5DoorGb()
 const canGetLanky5DT = useLanky5DoorGb()
