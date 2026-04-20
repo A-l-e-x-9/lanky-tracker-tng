@@ -4,6 +4,7 @@ import { useDiddy, useDive, useGrape, useMini, useAnyGun, useOrange } from '@ren
 import AztecCheck from '../check'
 import CaveCrates from './Cave'
 import AztecMainCrates from './AztecMain'
+import TTCrates from './TinyTemple'
 
 const ShuffledCrates: React.FC = () => {
 const canReachVanillaDirt2 = useChunky5DoorGb()
@@ -27,54 +28,13 @@ const hasOranges = useOrange()
     <CratePool>
       <CaveCrates />
       <AztecMainCrates />
-      <AztecCheck
-        id={22000}
-        name="Shuffled Melon Crate: Lanky's vulture room"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in && iceMelted.in && hasDiving.in}
-        canGetBreak={canReachTinyTemple.out && iceMelted.out && hasDiving.out}
-      />
+      <TTCrates />
       <AztecCheck
         id={22002}
         name="Shuffled Melon Crate: In Chunky's 5DT room"
         region="5 Door Temple"
         canGetLogic={canReachVanillaDirt2.in}
         canGetBreak={canReachVanillaDirt2.out}
-      />
-      <AztecCheck
-        id={22003}
-        name="Shuffled Melon Crate: Back left of Tiny Temple's main room"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in}
-        canGetBreak={canReachTinyTemple.out}
-      />
-      <AztecCheck
-        id={22004}
-        name="Shuffled Melon Crate: TT starting room, low"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in}
-        canGetBreak={canReachTinyTemple.out}
-      />
-      <AztecCheck
-        id={22005}
-        name="Shuffled Melon Crate: TT starting room, high"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in && hasDiddy && hasSlam}
-        canGetBreak={canReachTinyTemple.out && hasDiddy && hasSlam}
-      />
-      <AztecCheck
-        id={22006}
-        name="Shuffled Melon Crate: Tiny's prison room"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in && iceMelted.in && hasDiving.in}
-        canGetBreak={canReachTinyTemple.out && iceMelted.out && hasDiving.out}
-      />
-      <AztecCheck
-        id={22007}
-        name="Shuffled Melon Crate: Next to Tiny's cage"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in && iceMelted.in && hasDiving.in}
-        canGetBreak={canReachTinyTemple.out && iceMelted.out && hasDiving.out}
       />
       <AztecCheck
         id={22046}
