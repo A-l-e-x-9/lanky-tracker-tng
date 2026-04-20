@@ -2,13 +2,14 @@ import CratePool from '@renderer/components/pools/Crates'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
 import { useAztecTinyTemple, useSlamAztec, useTinyTempleIce } from '@renderer/hooks/aztec'
-import { useDiddy } from '@renderer/hooks/kongs'
+import { useDiddy, useDive } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const canReachTinyTemple = useAztecTinyTemple()
 const hasDiddy = useDiddy()
 const hasSlam = useSlamAztec()
 const iceMelted = useTinyTempleIce()
+const hasDiving = useDive()
   return (
     <CratePool>
       <AztecCheck
