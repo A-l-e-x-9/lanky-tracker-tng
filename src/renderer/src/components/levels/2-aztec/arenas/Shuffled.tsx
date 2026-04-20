@@ -1,19 +1,13 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useArena, useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useAztecLlamaTemple, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava } from '@renderer/hooks/aztec'
-import { useDiddy, useDive, useGrape, useMini } from '@renderer/hooks/kongs'
+import { useChunky5DoorGb, useAztecLlamaTemple, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava } from '@renderer/hooks/aztec'
+import { useGrape, useMini } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveArenas from './Cave'
 import AztecMainArenas from './AztecMain'
 import TTArenas from './TinyTemple'
 
 const ShuffledArenas: React.FC = () => {
-const canReachVanillaArena = useArena()
 const canReachVanillaDirt2 = useChunky5DoorGb()
-const canReachTinyTemple = useAztecTinyTemple()
-const hasDiddy = useDiddy()
-const hasSlam = useSlamAztec()
-const iceMelted = useTinyTempleIce()
-const hasDiving = useDive()
 const canGetDK5DT = useDk5DoorGb()
 const canGetDiddy5DT = useDiddy5DoorGb()
 const canGetLanky5DT = useLanky5DoorGb()
