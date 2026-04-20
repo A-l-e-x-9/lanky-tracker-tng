@@ -1,5 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useAztecBack, useAztecLlamaTemple, useLlamaOutsideCrate, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useOasisKasplat, useFreeLankySwitch } from '@renderer/hooks/aztec'
+import { useChunky5DoorGb, useAztecTinyTemple, useSlamAztec, useTinyTempleIce, useAztecLlamaTemple, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useFreeLankySwitch } from '@renderer/hooks/aztec'
 import { useClimbing, useVine, useDiddy, useDive, useRocket, useGrape, useMini, useAnyGun, useOrange } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveCrates from './Cave'
@@ -14,9 +14,6 @@ const hasDiddy = useDiddy()
 const hasSlam = useSlamAztec()
 const iceMelted = useTinyTempleIce()
 const hasDiving = useDive()
-const canReachDiddyKasplat = useOasisKasplat()
-const canReachArea2 = useAztecBack()
-const canDoVanillaCrate2 = useLlamaOutsideCrate()
 const hasJetbarrel = useRocket()
 const canGetDK5DT = useDk5DoorGb()
 const canGetDiddy5DT = useDiddy5DoorGb()
