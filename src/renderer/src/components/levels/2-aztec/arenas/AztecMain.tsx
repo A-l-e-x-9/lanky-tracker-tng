@@ -1,218 +1,56 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
-import { useGeneralThing, useOasisKasplat, useAztecBack, useLlamaOutsideCrate } from '@renderer/hooks/aztec'
-import { useRocket, useClimbing, useVine } from '@renderer/hooks/kongs'
+import {  } from '@renderer/hooks/aztec'
+import {  } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
-const isBreathing = useGeneralThing()
-const canReachDiddyKasplat = useOasisKasplat()
-const canReachArea2 = useAztecBack()
-const canDoVanillaCrate2 = useLlamaOutsideCrate()
-const hasJetbarrel = useRocket()
-const hasClimbing = useClimbing()
-const hasVines = useVine()
   return (
     <ArenaPool>
       <AztecCheck
         id={12000}
-        name="Shuffled Battle Arena: At the oasis"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: Vanilla Arena (Lanky's reward for killing a Necky)"
+        region="Tiny Temple"
+        canGetLogic={canReachVanillaArena}
       />
       <AztecCheck
         id={12000}
-        name="Shuffled Battle Arena: Near oasis sand"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: Back left of Tiny Temple's main room"
+        region="Tiny Temple"
+        canGetLogic={canReachTinyTemple.in}
+        canGetBreak={canReachTinyTemple.out}
       />
       <AztecCheck
         id={12000}
-        name="Shuffled Battle Arena: Behind the Tiny Temple"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: TT starting room, low"
+        region="Tiny Temple"
+        canGetLogic={canReachTinyTemple.in}
+        canGetBreak={canReachTinyTemple.out}
       />
       <AztecCheck
         id={12000}
-        name="Shuffled Battle Arena: To the left of the Tiny Temple"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: TT starting room, high"
+        region="Tiny Temple"
+        canGetLogic={canReachTinyTemple.in && hasDiddy && hasSlam}
+        canGetBreak={canReachTinyTemple.out && hasDiddy && hasSlam}
       />
       <AztecCheck
         id={12000}
-        name="Shuffled Battle Arena: To the right of the Tiny Temple"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: Tiny's prison room"
+        region="Tiny Temple"
+        canGetLogic={canReachTinyTemple.in && iceMelted.in && hasDiving.in}
+        canGetBreak={canReachTinyTemple.out && iceMelted.out && hasDiving.out}
       />
       <AztecCheck
         id={12000}
-        name="Shuffled Battle Arena: Top of the Tiny Temple"
-        region="Aztec Main Area"
-        canGetLogic={canReachDiddyKasplat.in}
-        canGetBreak={canReachDiddyKasplat.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: In front of Candy's"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Behind the Llama's cage"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Near the Llama Temple, left"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Near the Llama Temple, right"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Next to the Llama Temple"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: On top of the Llama Temple, back"
-        region="Aztec Main Area"
-        canGetLogic={canDoVanillaCrate2.in}
-        canGetBreak={canDoVanillaCrate2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: On top of the Llama Temple"
-        region="Aztec Main Area"
-        canGetLogic={canDoVanillaCrate2.in}
-        canGetBreak={canDoVanillaCrate2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Near Funky's"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: On top of the 5DT"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in && hasJetbarrel}
-        canGetBreak={canReachArea2.out && hasJetbarrel}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Near vanilla Warp 5"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Near the Diddy Vulture's cage"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in && ((hasClimbing && hasVines) || hasJetbarrel)}
-        canGetBreak={canReachArea2.out && ((hasClimbing && hasVines) || hasJetbarrel)}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Under the Diddy Vulture's cage"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Next to Snide's"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Behind the gong tower"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: To the left of the gong tower"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Near the gong tower"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Vanilla Warp 1, at the oasis"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Vanilla Warp 2, in front of Tiny Temple"
-        region="Aztec Main Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Vanilla Warp 3, end of the middle tunnel"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Vanilla Warp 4, end of the middle tunnel"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Vanilla Warp 4, at Funky's"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
-      />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Vanilla Warp 5, near Snide's"
-        region="Aztec Main Area"
-        canGetLogic={canReachArea2.in}
-        canGetBreak={canReachArea2.out}
+        name="Shuffled Battle Arena: Next to Tiny's cage"
+        region="Tiny Temple"
+        canGetLogic={canReachTinyTemple.in && iceMelted.in && hasDiving.in}
+        canGetBreak={canReachTinyTemple.out && iceMelted.out && hasDiving.out}
       />
     </ArenaPool>
   )
 }
 
-const AztecMainArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
-export default AztecMainArenas
+const TTArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
+export default TTArenas

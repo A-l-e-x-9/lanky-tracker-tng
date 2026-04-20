@@ -4,6 +4,7 @@ import { useDiddy, useDive, useGrape, useMini } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveArenas from './Cave'
 import AztecMainArenas from './AztecMain'
+import TTArenas from './TinyTemple'
 
 const ShuffledArenas: React.FC = () => {
 const canReachVanillaArena = useArena()
@@ -25,53 +26,13 @@ const canReachLavaRoom = useAztecLlamaLava()
     <ArenaPool>
       <CaveArenas />
       <AztecMainArenas />
-      <AztecCheck
-        id={12000}
-        name="Shuffled Battle Arena: Vanilla Arena (Lanky's reward for killing a Necky)"
-        region="Tiny Temple"
-        canGetLogic={canReachVanillaArena}
-      />
+      <TTArenas />
       <AztecCheck
         id={12002}
         name="Shuffled Battle Arena: In Chunky's 5DT room"
         region="5 Door Temple"
         canGetLogic={canReachVanillaDirt2.in}
         canGetBreak={canReachVanillaDirt2.out}
-      />
-      <AztecCheck
-        id={12003}
-        name="Shuffled Battle Arena: Back left of Tiny Temple's main room"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in}
-        canGetBreak={canReachTinyTemple.out}
-      />
-      <AztecCheck
-        id={12004}
-        name="Shuffled Battle Arena: TT starting room, low"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in}
-        canGetBreak={canReachTinyTemple.out}
-      />
-      <AztecCheck
-        id={12005}
-        name="Shuffled Battle Arena: TT starting room, high"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in && hasDiddy && hasSlam}
-        canGetBreak={canReachTinyTemple.out && hasDiddy && hasSlam}
-      />
-      <AztecCheck
-        id={12006}
-        name="Shuffled Battle Arena: Tiny's prison room"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in && iceMelted.in && hasDiving.in}
-        canGetBreak={canReachTinyTemple.out && iceMelted.out && hasDiving.out}
-      />
-      <AztecCheck
-        id={12007}
-        name="Shuffled Battle Arena: Next to Tiny's cage"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in && iceMelted.in && hasDiving.in}
-        canGetBreak={canReachTinyTemple.out && iceMelted.out && hasDiving.out}
       />
       <AztecCheck
         id={12046}
