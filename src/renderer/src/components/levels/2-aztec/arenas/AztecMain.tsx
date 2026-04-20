@@ -1,11 +1,10 @@
-import { useShallow } from 'zustand/react/shallow'
-import useDonkStore from '@renderer/store'
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
-import {  } from '@renderer/hooks/aztec'
+import { useGeneralThing } from '@renderer/hooks/aztec'
 
 const Shuffled: React.FC = () => {
+const isBreathing = useGeneralThing()
   return (
     <ArenaPool>
       <AztecCheck
