@@ -4,6 +4,7 @@ import { useCamera, useGrape, useDive } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveFairies from './Cave'
 import AztecMainFairies from './AztecMain'
+import TTFairies from './TinyTemple'
 
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
@@ -22,6 +23,7 @@ const ShuffledFairies: React.FC = () => {
     <FairyPool>
       <CaveFairies />
       <AztecMainFairies />
+      <TTFairies />
       <AztecCheck
         id={42000}
         name="Shuffled Fairy: Vanilla Location #1 (Tiny's 5DT room)"
@@ -77,20 +79,6 @@ const ShuffledFairies: React.FC = () => {
         region="Llama Temple"
         canGetLogic={canGoInLlamaTemple.in && hasGrapes && hasCam}
         canGetBreak={canGoInLlamaTemple.out && hasGrapes && hasCam}
-      />
-      <AztecCheck
-        id={42015}
-        name="Shuffled Fairy: Over the Tiny Temple's pool"
-        region="Tiny Temple"
-        canGetLogic={canGoInTinyTemple.in && hasCam}
-        canGetBreak={canGoInTinyTemple.out && hasCam}
-      />
-      <AztecCheck
-        id={42016}
-        name="Shuffled Fairy: At Tiny's cage"
-        region="Tiny Temple"
-        canGetLogic={canGoInTinyTemple.in && iceMelted && hasDiving.in && hasCam}
-        canGetBreak={canGoInTinyTemple.out && iceMelted && hasDiving.out && hasCam}
       />
     </FairyPool>
   )
