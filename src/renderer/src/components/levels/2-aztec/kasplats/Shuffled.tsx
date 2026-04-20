@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useLlamaLavaKasplat, useChunkyKasplat, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb } from '@renderer/hooks/aztec'
+import { useLlamaLavaKasplat, useChunkyKasplat, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb } from '@renderer/hooks/aztec'
 import { useDive, useGrape } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveKasplats from './Cave'
