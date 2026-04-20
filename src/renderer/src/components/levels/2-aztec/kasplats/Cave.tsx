@@ -1,10 +1,16 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
-import {  } from '@renderer/hooks/aztec'
-import {  } from '@renderer/hooks/kongs'
+import { useGeneralThing, useCoconutKasplat, useTunnelKasplat, useDkTunnelGb, useAztecBack } from '@renderer/hooks/aztec'
+import { usePineapple } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
+const isBreathing = useGeneralThing()
+const DKVanillaKasplat = useCoconutKasplat()
+const tinyVanillaKasplat = useTunnelKasplat()
+const canDoQSGB = useDkTunnelGb()
+const canEnterBack = useAztecBack()
+const hasPineapples = usePineapple()
 return (
     <KasplatPool>
       <AztecCheck

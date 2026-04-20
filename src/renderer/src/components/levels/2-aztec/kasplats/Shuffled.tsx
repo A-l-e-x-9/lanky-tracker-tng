@@ -1,17 +1,14 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useCoconutKasplat, useOasisKasplat, useLlamaLavaKasplat, useTunnelKasplat, useChunkyKasplat, useDkTunnelGb, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb } from '@renderer/hooks/aztec'
-import { useDive, useVine, useClimbing, useRocket, useDiddy, useTiny, usePineapple, useGrape } from '@renderer/hooks/kongs'
+import { useGeneralThing, useOasisKasplat, useLlamaLavaKasplat, useChunkyKasplat, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb } from '@renderer/hooks/aztec'
+import { useDive, useVine, useClimbing, useRocket, useDiddy, useTiny, useGrape } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveKasplats from './Cave'
 
 const ShuffledKasplats: React.FC = () => {
-const DKVanillaKasplat = useCoconutKasplat()
 const diddyVanillaKasplat = useOasisKasplat()
 const lankyVanillaKasplat = useLlamaLavaKasplat()
-const tinyVanillaKasplat = useTunnelKasplat()
 const chunkyVanillaKasplat = useChunkyKasplat()
 const isBreathing = useGeneralThing()
-const canDoQSGB = useDkTunnelGb()
 const canEnterBack = useAztecBack()
 const canGoInLlamaTemple = useAztecLlamaTemple()
 const canGoInTinyTemple = useAztecTinyTemple()
@@ -23,7 +20,6 @@ const hasClimbing = useClimbing()
 const hasJetbarrel = useRocket()
 const hasDiddy = useDiddy()
 const hasTiny = useTiny()
-const hasPineapples = usePineapple()
 const hasGrapes = useGrape()
   return (
     <KasplatPool>
