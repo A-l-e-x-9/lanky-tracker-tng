@@ -4,6 +4,7 @@ import { useShockwave, useDiddy, useDive, useGrape, useMini } from '@renderer/ho
 import AztecCheck from '../check'
 import CaveDirt from './Cave'
 import AztecMainDirt from './AztecMain'
+import TTDirt from './TinyTemple'
 
 const ShuffledDirt: React.FC = () => {
 const hasShockwave = useShockwave()
@@ -26,53 +27,13 @@ const canReachLavaRoom = useAztecLlamaLava()
     <RainbowCoinPool>
       <CaveDirt />
       <AztecMainDirt />
-      <AztecCheck
-        id={32000}
-        name="Shuffled Dirt Patch: Lanky's reward for killing a Necky"
-        region="Tiny Temple"
-        canGetLogic={canReachVanillaArena && hasShockwave}
-      />
+      <TTDirt />
       <AztecCheck
         id={32002}
         name="Shuffled Dirt Patch: Vanilla Dirt 2 (in Chunky's 5DT room)"
         region="5 Door Temple"
         canGetLogic={canReachVanillaDirt2.in}
         canGetBreak={canReachVanillaDirt2.out}
-      />
-      <AztecCheck
-        id={32003}
-        name="Shuffled Dirt Patch: Back left of Tiny Temple's main room"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in && hasShockwave}
-        canGetBreak={canReachTinyTemple.out && hasShockwave}
-      />
-      <AztecCheck
-        id={32004}
-        name="Shuffled Dirt Patch: TT starting room, low"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in && hasShockwave}
-        canGetBreak={canReachTinyTemple.out && hasShockwave}
-      />
-      <AztecCheck
-        id={32005}
-        name="Shuffled Dirt Patch: TT starting room, high"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in && hasDiddy && hasSlam && hasShockwave}
-        canGetBreak={canReachTinyTemple.out && hasDiddy && hasSlam && hasShockwave}
-      />
-      <AztecCheck
-        id={32006}
-        name="Shuffled Dirt Patch: Tiny's prison room"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in && iceMelted.in && hasDiving.in && hasShockwave}
-        canGetBreak={canReachTinyTemple.out && iceMelted.out && hasDiving.out && hasShockwave}
-      />
-      <AztecCheck
-        id={32007}
-        name="Shuffled Dirt Patch: Next to Tiny's cage"
-        region="Tiny Temple"
-        canGetLogic={canReachTinyTemple.in && iceMelted.in && hasDiving.in && hasShockwave}
-        canGetBreak={canReachTinyTemple.out && iceMelted.out && hasDiving.out && hasShockwave}
       />
       <AztecCheck
         id={32046}
