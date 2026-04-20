@@ -1,5 +1,7 @@
+import { useShallow } from 'zustand/react/shallow'
+import useDonkStore from '@renderer/store'
 import CratePool from '@renderer/components/pools/Crates'
-import { useShuffleCrates } from '@renderer/hooks/settings'
+import { useShuffleCrates, useBananaportAll } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
 import { useGeneralThing, useCoconutKasplat, useAztecBack, useDkTunnelGb } from '@renderer/hooks/aztec'
 
@@ -79,6 +81,12 @@ const canReachQSTunnel = useDkTunnelGb()
         region="Aztec Caves"
         canGetLogic={canReachArea2.in}
         canGetBreak={canReachArea2.out}
+      />
+      <AztecCheck
+        id={22045}
+        name="Shuffled Melon Crate: Vanilla Warp 5, at DK's quicksand tunnel"
+        region="Aztec Caves"
+        canGetLogic={didGB[2002] || hasAllBananaports}
       />
     </CratePool>
   )
