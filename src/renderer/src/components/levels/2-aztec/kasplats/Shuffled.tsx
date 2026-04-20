@@ -1,11 +1,10 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, useCoconutKasplat, useOasisKasplat, useLlamaLavaKasplat, useTunnelKasplat, useChunkyKasplat, useDkTunnelGb, useAztecBack, useAztecLlamaTemple, useAztecTinyTemple, useTinyTempleIce, useDk5DoorGb } from '@renderer/hooks/aztec'
-import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useDive, useVine, useClimbing, useRocket, useDiddy, useTiny, usePineapple, useGrape } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveKasplats from './Cave'
 
-const Shuffled: React.FC = () => {
+const ShuffledKasplats: React.FC = () => {
 const DKVanillaKasplat = useCoconutKasplat()
 const diddyVanillaKasplat = useOasisKasplat()
 const lankyVanillaKasplat = useLlamaLavaKasplat()
@@ -30,13 +29,6 @@ const hasGrapes = useGrape()
     <KasplatPool>
       <CaveKasplats />
       <AztecCheck
-        id={52000}
-        name="Shuffled Kasplat: DK's Vanilla Location (a sub-tunnel at the level start)"
-        region="Aztec Caves"
-        canGetLogic={DKVanillaKasplat.in}
-        canGetBreak={DKVanillaKasplat.out}
-      />
-      <AztecCheck
         id={52001}
         name="Shuffled Kasplat: Diddy's Vanilla Location (on top of the Tiny Temple)"
         region="Aztec Main Area"
@@ -51,25 +43,11 @@ const hasGrapes = useGrape()
         canGetBreak={lankyVanillaKasplat.out}
       />
       <AztecCheck
-        id={52003}
-        name="Shuffled Kasplat: Tiny's Vanilla Location (first 3-way intersection of middle tunnel)"
-        region="Aztec Caves"
-        canGetLogic={tinyVanillaKasplat.in}
-        canGetBreak={tinyVanillaKasplat.out}
-      />
-      <AztecCheck
         id={52004}
         name="Shuffled Kasplat: Chunky's Vanilla Location (in his 5DT room)"
         region="5 Door Temple"
         canGetLogic={chunkyVanillaKasplat.in}
         canGetBreak={chunkyVanillaKasplat.out}
-      />
-      <AztecCheck
-        id={52005}
-        name="Shuffled Kasplat: In DK's quicksand tunnel"
-        region="Aztec Caves"
-        canGetLogic={canDoQSGB.in}
-        canGetBreak={canDoQSGB.out}
       />
       <AztecCheck
         id={52006}
@@ -84,20 +62,6 @@ const hasGrapes = useGrape()
         region="Aztec Main Area"
         canGetLogic={isBreathing.in && hasClimbing && (hasVines || hasJetbarrel)}
         canGetBreak={isBreathing.out && (hasDiddy || hasTiny)}
-      />
-      <AztecCheck
-        id={52008}
-        name="Shuffled Kasplat: Near the giant boulder"
-        region="Aztec Caves"
-        canGetLogic={canEnterBack.in}
-        canGetBreak={canEnterBack.out}
-      />
-      <AztecCheck
-        id={52009}
-        name="Shuffled Kasplat: In the vase room"
-        region="Aztec Caves"
-        canGetLogic={isBreathing.in && hasPineapples}
-        canGetBreak={isBreathing.out && hasPineapples}
       />
       <AztecCheck
         id={52010}
@@ -159,5 +123,4 @@ const hasGrapes = useGrape()
   )
 }
 
-const ShuffledKasplats: React.FC = () => (useShuffleKasplats() ? <Shuffled /> : null)
 export default ShuffledKasplats
