@@ -1,6 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useChunky5DoorGb, useAztecLlamaTemple, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava, useFreeLankySwitch } from '@renderer/hooks/aztec'
-import { useDive, useGrape, useMini, useAnyGun, useOrange } from '@renderer/hooks/kongs'
+import { useChunky5DoorGb, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../check'
 import CaveCrates from './Cave'
 import AztecMainCrates from './AztecMain'
@@ -9,18 +8,10 @@ import LlamaCrates from './LlamaTemple'
 
 const ShuffledCrates: React.FC = () => {
 const canReachVanillaDirt2 = useChunky5DoorGb()
-const hasDiving = useDive()
 const canGetDK5DT = useDk5DoorGb()
 const canGetDiddy5DT = useDiddy5DoorGb()
 const canGetLanky5DT = useLanky5DoorGb()
 const canGetTiny5DT = useTiny5DoorGb()
-const canReachLT = useAztecLlamaTemple()
-const hasGrapes = useGrape()
-const hasMiniMonkey = useMini()
-const canReachLavaRoom = useAztecLlamaLava()
-const canFreeLanky = useFreeLankySwitch()
-const hasAGun = useAnyGun()
-const hasOranges = useOrange()
   return (
     <CratePool>
       <CaveCrates />
