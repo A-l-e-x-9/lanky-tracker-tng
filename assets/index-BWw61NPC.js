@@ -11150,6 +11150,7 @@ const initialPortal = {
   },
   shuffledCavesPortals: {
     vanilla: true,
+    gonePortal: false,
     bigRockPortal: false,
     tiny5DIPortal: false,
     diddyUpperCabinPortal: false
@@ -40535,6 +40536,7 @@ const usePlayCaves = () => {
   };
 };
 const useSlamCaves = () => useSlamLevel("Crystal Caves");
+const useGonePortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.gonePortal));
 const useBigRockPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.bigRockPortal));
 const useTiny5DIPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.tiny5DIPortal));
 const useDiddyUpperCabinPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.diddyUpperCabinPortal));
@@ -40633,10 +40635,11 @@ const useChunkyGoneGb = () => {
   const inStage = usePlayCaves();
   const punch = usePunch();
   const wallsPrePunched = useIceWalls();
+  const DKPortal = useGonePortal();
   const gone = useGone();
   return {
-    in: inStage.in && (punch || wallsPrePunched) && gone,
-    out: inStage.out && (punch || wallsPrePunched) && gone
+    in: inStage.in && (punch || wallsPrePunched || DKPortal) && gone,
+    out: inStage.out && (punch || wallsPrePunched || DKPortal) && gone
   };
 };
 const useChunkyClearGb = () => {
@@ -54138,6 +54141,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
                   storeKey: "vanilla",
+                  prefix: "shuffledCavesPortals",
+                  updateItem: setCavesPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Where a certain refrigerator once led..." }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Chunky's Gorilla Gone room near the vanilla start.",
+                  storeKey: "gonePortal",
                   prefix: "shuffledCavesPortals",
                   updateItem: setCavesPortal
                 }
