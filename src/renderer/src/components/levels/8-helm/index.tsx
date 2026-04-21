@@ -8,7 +8,6 @@ import EndOfHelmFairies from './fairies/End'
 import MedalLocations from './medals'
 import ShuffledArenas from './arenas/Shuffled'
 import ShuffledCrates from './crates/Shuffled'
-import ShuffledDirt from './dirt/Shuffled'
 import ShuffledFairies from './fairies/Shuffled'
 
 const HelmChecks: React.FC = () => {
@@ -33,7 +32,6 @@ const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.pool
     <div className="grid">
       <ShuffledArenas />
       <ShuffledCrates />
-      <ShuffledDirt />
     </div>
     <div className={`grid ${isFairySeed && fairiesInRotation}`}>
       <ShuffledFairies />
