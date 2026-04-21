@@ -26,6 +26,7 @@ const hasOranges = useOrange()
       <CaveCrates />
       <AztecMainCrates />
       <TTCrates />
+      <LlamaCrates />
       <AztecCheck
         id={22002}
         name="Shuffled Melon Crate: In Chunky's 5DT room"
