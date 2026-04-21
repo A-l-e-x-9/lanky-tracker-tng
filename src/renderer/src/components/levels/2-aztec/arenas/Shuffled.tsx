@@ -1,6 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useChunky5DoorGb, useAztecLlamaTemple, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava } from '@renderer/hooks/aztec'
-import { useGrape, useMini } from '@renderer/hooks/kongs'
+import { useChunky5DoorGb, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb } from '@renderer/hooks/aztec'
 import AztecCheck from '../check'
 import CaveArenas from './Cave'
 import AztecMainArenas from './AztecMain'
@@ -13,10 +12,6 @@ const canGetDK5DT = useDk5DoorGb()
 const canGetDiddy5DT = useDiddy5DoorGb()
 const canGetLanky5DT = useLanky5DoorGb()
 const canGetTiny5DT = useTiny5DoorGb()
-const canReachLT = useAztecLlamaTemple()
-const hasGrapes = useGrape()
-const hasMiniMonkey = useMini()
-const canReachLavaRoom = useAztecLlamaLava()
   return (
     <ArenaPool>
       <CaveArenas />
