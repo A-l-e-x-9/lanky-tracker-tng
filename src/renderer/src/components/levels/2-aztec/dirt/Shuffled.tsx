@@ -1,6 +1,6 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useTempleDirt, useAztecLlamaTemple, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb, useAztecLlamaLava } from '@renderer/hooks/aztec'
-import { useShockwave, useGrape, useMini } from '@renderer/hooks/kongs'
+import { useTempleDirt, useDk5DoorGb, useDiddy5DoorGb, useLanky5DoorGb, useTiny5DoorGb } from '@renderer/hooks/aztec'
+import { useShockwave } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
 import CaveDirt from './Cave'
 import AztecMainDirt from './AztecMain'
@@ -14,10 +14,6 @@ const canGetDK5DT = useDk5DoorGb()
 const canGetDiddy5DT = useDiddy5DoorGb()
 const canGetLanky5DT = useLanky5DoorGb()
 const canGetTiny5DT = useTiny5DoorGb()
-const canReachLT = useAztecLlamaTemple()
-const hasGrapes = useGrape()
-const hasMiniMonkey = useMini()
-const canReachLavaRoom = useAztecLlamaLava()
   return (
     <RainbowCoinPool>
       <CaveDirt />
