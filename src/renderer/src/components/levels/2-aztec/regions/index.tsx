@@ -37,6 +37,11 @@ import LlamaCrates from '../crates/LlamaTemple'
 import LlamaDirt from '../dirt/LlamaTemple'
 import LlamaFairies from '../fairies/LlamaTemple'
 import LlamaKasplats from '../kasplats/LlamaTemple'
+import FDTArenas from '../arenas/5DT'
+import FDTCrates from '../crates/5DT'
+import FDTDirt from '../dirt/5DT'
+import FDTFairies from '../fairies/5DT'
+import FDTKasplats from '../kasplats/5DT'
 
 const AztecRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -96,6 +101,17 @@ return (
     <TTKasplats />
   </div>
     <DoorTempleChecks />
+  <div className="grid">
+    <FDTArenas />
+    <FDTCrates />
+    <FDTDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <FDTFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <FDTKasplats />
+  </div>
     <LlamaTempleChecks />
   <div className="grid">
     <LlamaArenas />
