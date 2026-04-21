@@ -5,6 +5,7 @@ import AztecCheck from '../check'
 import CaveFairies from './Cave'
 import AztecMainFairies from './AztecMain'
 import TTFairies from './TinyTemple'
+import LlamaFairies from './LlamaTemple'
 
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
@@ -21,19 +22,13 @@ const ShuffledFairies: React.FC = () => {
       <CaveFairies />
       <AztecMainFairies />
       <TTFairies />
+      <LlamaFairies />
       <AztecCheck
         id={42000}
         name="Shuffled Fairy: Vanilla Location #1 (Tiny's 5DT room)"
         region="5 Door Temple"
         canGetLogic={vanillaFairy1.in}
         canGetBreak={vanillaFairy1.out}
-      />
-      <AztecCheck
-        id={42001}
-        name="Shuffled Fairy: Vanilla Location #2 (Llama Temple)"
-        region="Llama Temple"
-        canGetLogic={vanillaFairy2.in}
-        canGetBreak={vanillaFairy2.out}
       />
       <AztecCheck
         id={42009}
@@ -62,20 +57,6 @@ const ShuffledFairies: React.FC = () => {
         region="5 Door Temple"
         canGetLogic={canGoInChunky5DT.in && hasCam}
         canGetBreak={canGoInChunky5DT.out && hasCam}
-      />
-      <AztecCheck
-        id={42013}
-        name="Shuffled Fairy: Over the Swimming Pool"
-        region="Llama Temple"
-        canGetLogic={canGoInLlamaTemple.in && hasCam}
-        canGetBreak={canGoInLlamaTemple.out && hasCam}
-      />
-      <AztecCheck
-        id={42014}
-        name="Shuffled Fairy: Playing Match Game and doing BLANK"
-        region="Llama Temple"
-        canGetLogic={canGoInLlamaTemple.in && hasGrapes && hasCam}
-        canGetBreak={canGoInLlamaTemple.out && hasGrapes && hasCam}
       />
     </FairyPool>
   )
