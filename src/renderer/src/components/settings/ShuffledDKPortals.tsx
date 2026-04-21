@@ -234,6 +234,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledCavesPortals"
                 updateItem={setCavesPortal}
             />
+            <p>Where a certain refrigerator once led...</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in Chunky's Gorilla Gone room near the vanilla start."
+                storeKey="gonePortal"
+                prefix="shuffledCavesPortals"
+                updateItem={setCavesPortal}
+            />
             <p>The big boulder room near Cranky's</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}

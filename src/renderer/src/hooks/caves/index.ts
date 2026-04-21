@@ -58,6 +58,9 @@ export const usePlayCaves = (): LogicBool => {
 export const useSlamCaves = (): boolean => useSlamLevel('Crystal Caves')
 
 /*Alex addition: shuffled DK Portals*/
+//Is the DK Portal where the refrigerator in DK's Treehouse from beta footage led to?
+export const useGonePortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCavesPortals.gonePortal))
 //Is the DK Portal in the big rock room near Cranky's?
 export const useBigRockPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCavesPortals.bigRockPortal))
@@ -190,10 +193,11 @@ export const useChunkyGoneGb = (): LogicBool => {
   const inStage = usePlayCaves()
   const punch = usePunch()
   const wallsPrePunched = useIceWalls()
+  const DKPortal = useGonePortal()
   const gone = useGone()
   return {
-    in: inStage.in && (punch || wallsPrePunched) && gone,
-    out: inStage.out && (punch || wallsPrePunched) && gone
+    in: inStage.in && (punch || wallsPrePunched || DKPortal) && gone,
+    out: inStage.out && (punch || wallsPrePunched || DKPortal) && gone
   }
 }
 
