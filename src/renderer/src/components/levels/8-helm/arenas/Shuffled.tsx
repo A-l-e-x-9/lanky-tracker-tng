@@ -23,84 +23,84 @@ const canReachThrone = useEOHDoor1()
         canGetBreak={isBreathing.out}
       />
       <HelmCheck
-        id={18001}
+        id={18000}
         name="Shuffled Battle Arena: Ammo alcove in Pineapple Switch room"
         region="Hideout Helm"
         canGetLogic={isBreathing.in && hasOStand}
         canGetBreak={isBreathing.out}
       />
       <HelmCheck
-        id={18002}
+        id={18000}
         name="Shuffled Battle Arena: Metal grating in Mini Monkey room"
         region="Hideout Helm"
         canGetLogic={isBreathing.in && hasOStand && hasPineapples && hasVines}
         canGetBreak={isBreathing.out && hasPineapples && hasVines}
       />
       <HelmCheck
-        id={18003}
+        id={18000}
         name="Shuffled Battle Arena: Right side of Mini Monkey room"
         region="Hideout Helm"
         canGetLogic={isBreathing.in && hasOStand && hasPineapples && hasVines}
         canGetBreak={isBreathing.out && hasPineapples && hasVines}
       />
       <HelmCheck
-        id={18004}
+        id={18000}
         name="Shuffled Battle Arena: Vanilla Location (on top of the Blast-O-Matic itself)"
         region="Hideout Helm"
         canGetLogic={canReachBOM.in && hasJetbarrel}
         canGetBreak={canReachBOM.out && hasJetbarrel}
       />
       <HelmCheck
-        id={18005}
+        id={18000}
         name="Shuffled Battle Arena: Left side of Blast-O-Matic platform"
         region="Hideout Helm"
         canGetLogic={canReachBOM.in}
         canGetBreak={canReachBOM.out}
       />
       <HelmCheck
-        id={18006}
+        id={18000}
         name="Shuffled Battle Arena: Right side of Blast-O-Matic platform"
         region="Hideout Helm"
         canGetLogic={canReachBOM.in}
         canGetBreak={canReachBOM.out}
       />
       <HelmCheck
-        id={18007}
+        id={18000}
         name="Shuffled Battle Arena: Under the K. Rool door"
         region="Hideout Helm"
         canGetLogic={canReachBOM.in}
         canGetBreak={canReachBOM.out}
       />
       <HelmCheck
-        id={18008}
+        id={18000}
         name="Shuffled Battle Arena: Nav room, at the computers"
         region="Hideout Helm"
         canGetLogic={canReachNav.in}
         canGetBreak={canReachNav.out}
       />
       <HelmCheck
-        id={18009}
+        id={18000}
         name="Shuffled Battle Arena: Nav room, left window"
         region="Hideout Helm"
         canGetLogic={canReachNav.in}
         canGetBreak={canReachNav.out}
       />
       <HelmCheck
-        id={18010}
+        id={18000}
         name="Shuffled Battle Arena: Nav room, right window"
         region="Hideout Helm"
         canGetLogic={canReachNav.in}
         canGetBreak={canReachNav.out}
       />
       <HelmCheck
-        id={18011}
+        id={18000}
         name="Shuffled Battle Arena: Behind K. Rool's throne"
         region="Hideout Helm"
         canGetLogic={canReachThrone.in}
         canGetBreak={canReachThrone.out}
       />
       <HelmCheck
-        id={18012}
+        id={18000}
         name="Shuffled Battle Arena: In front of K. Rool's throne"
         region="Hideout Helm"
         canGetLogic={canReachThrone.in}
