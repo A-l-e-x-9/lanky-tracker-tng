@@ -1,8 +1,9 @@
 import FairyPool from '@renderer/components/pools/Fairies'
 import { useGeneralFairy, useNumberFairy, useDartFairy, useFactoryProductionEnabled, useFactoryProductionTop, useFactoryTesting, useDkProdGb, useDiddyBlockGb } from '@renderer/hooks/factory'
-import { useShuffleFairies, useBananaportAll } from '@renderer/hooks/settings'
+import { useBananaportAll } from '@renderer/hooks/settings'
 import { useCamera, useClimbing, useGuitar, usePunch, useTriangle, useHighGrab } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
+import StartFairies from './Start'
 
 const Shuffled: React.FC = () => {
   const hasCam = useCamera()
@@ -22,6 +23,7 @@ const Shuffled: React.FC = () => {
   const highGrab = useHighGrab()
   return (
     <FairyPool>
+      <StartFairies />
       <FactoryCheck
         id={43000}
         name="Shuffled Fairy: Vanilla Location #1 (tunnel to DK's number game)"
@@ -36,16 +38,9 @@ const Shuffled: React.FC = () => {
         canGetLogic={vanillaFairy2}
       />
       <FactoryCheck
-        id={43002}
-        name="Shuffled Fairy: At the vanilla entrance"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
         id={43003}
         name="Shuffled Fairy: Down the pole to the Prod Room"
-        region="Factory Start Area"
+        region="Prod Room"
         canGetLogic={isBreathing.in && hasClimbing}
         canGetBreak={isBreathing.out}
       />
