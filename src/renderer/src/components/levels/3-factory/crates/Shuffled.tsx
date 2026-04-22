@@ -4,6 +4,7 @@ import { useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, usePunch, useTwirl, useCoconut, useTrombone, useGuitar, useTriangle } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartCrates from './Start'
+import StarcadeCrates from './Starcade'
 
 const ShuffledCrates: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -26,13 +27,7 @@ const hasTriangle = useTriangle()
   return (
     <CratePool>
       <StartCrates />
-      <FactoryCheck
-        id={23001}
-        name="Shuffled Melon Crate: In Chunky's dark room"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && hasPrimatePunch}
-        canGetBreak={isBreathing.out && hasPrimatePunch}
-      />
+      <StarcadeCrates />
       <FactoryCheck
         id={23007}
         name="Shuffled Melon Crate: Center of the hatch"
@@ -81,41 +76,6 @@ const hasTriangle = useTriangle()
         region="Prod Room"
         canGetLogic={upperProd.in && isHinaKagiyama}
         canGetBreak={upperProd.out}
-      />
-      <FactoryCheck
-        id={23014}
-        name="Shuffled Melon Crate: Corner of the Storage Room"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={23016}
-        name="Shuffled Melon Crate: Vanilla Crate (in front of Candy's)"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={23017}
-        name="Shuffled Melon Crate: Corner of Chunky's dark room"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && hasPrimatePunch}
-        canGetBreak={isBreathing.out && hasPrimatePunch}
-      />
-      <FactoryCheck
-        id={23018}
-        name="Shuffled Melon Crate: Bench in the arcade room"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && (hasClimbing || hasAllBananaports)}
-        canGetBreak={isBreathing.out && (hasClimbing || hasAllBananaports)}
-      />
-      <FactoryCheck
-        id={23019}
-        name="Shuffled Melon Crate: Next to the arcade game"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && (hasClimbing || hasAllBananaports)}
-        canGetBreak={isBreathing.out && (hasClimbing || hasAllBananaports)}
       />
       <FactoryCheck
         id={23020}
@@ -251,13 +211,6 @@ const hasTriangle = useTriangle()
         canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
-        id={23042}
-        name="Shuffled Melon Crate: Vanilla Warp 1, in storage"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
         id={23044}
         name="Shuffled Melon Crate: Vanilla Warp 2, R&D-side"
         region="R&D Room"
@@ -286,13 +239,6 @@ const hasTriangle = useTriangle()
         canGetBreak={upperProd.out}
       />
       <FactoryCheck
-        id={23049}
-        name="Shuffled Melon Crate: Vanilla Warp 5, in the arcade"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && (hasClimbing || hasAllBananaports)}
-        canGetBreak={isBreathing.out && (hasClimbing || hasAllBananaports)}
-      />
-      <FactoryCheck
         id={23050}
         name="Shuffled Melon Crate: Vanilla Warp 5, at Funky's"
         region="Testing Room"
@@ -305,13 +251,6 @@ const hasTriangle = useTriangle()
         region="Prod Room"
         canGetLogic={canDoCrusher.in}
         canGetBreak={canDoCrusher.out}
-      />
-      <FactoryCheck
-        id={23052}
-        name="Shuffled Melon Crate: Inside DK's power hut"
-        region="Storage and Arcade Area"
-        canGetLogic={canReachHut.in && hasCoconuts}
-        canGetBreak={canReachHut.out && hasCoconuts}
       />
     </CratePool>
   )
