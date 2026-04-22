@@ -5,7 +5,7 @@ import { useCamera, useClimbing, useGuitar, usePunch, useTriangle, useHighGrab }
 import FactoryCheck from '../check'
 import StartFairies from './Start'
 
-const Shuffled: React.FC = () => {
+const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
   const hasClimbing = useClimbing()
   const hasGuitar = useGuitar()
@@ -160,5 +160,4 @@ const Shuffled: React.FC = () => {
   )
 }
 
-const ShuffledFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
 export default ShuffledFairies
