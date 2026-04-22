@@ -31,7 +31,7 @@ jobs:
     - name: Building the project
       run: npm run build
     - name: Upload the website
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v7.0.1
       with:
         name: test-artifact
         path: out/renderer/
