@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useGeneralThing, useArena, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, usePunch, useTwirl } from '@renderer/hooks/kongs'
+import { useClimbing, useTwirl } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartArenas from './Start'
 import StarcadeArenas from './Starcade'

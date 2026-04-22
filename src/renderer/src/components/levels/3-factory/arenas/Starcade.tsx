@@ -1,10 +1,11 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
-import { useFactoryHut } from '@renderer/hooks/factory'
+import { useGeneralThing, useFactoryHut } from '@renderer/hooks/factory'
 import { usePunch, useCoconut } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
+const isBreathing = useGeneralThing()
 const hasPrimatePunch = usePunch()
 const canReachHut = useFactoryHut()
 const hasCoconuts = useCoconut()
