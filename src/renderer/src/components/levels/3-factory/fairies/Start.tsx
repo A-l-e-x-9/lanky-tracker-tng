@@ -1,7 +1,7 @@
 import FairyPool from '@renderer/components/pools/Fairies'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
-import { useGeneralFairy } from '@renderer/hooks/aztec'
+import { useGeneralFairy } from '@renderer/hooks/factory'
 
 const Shuffled: React.FC = () => {
   const isBreathing = useGeneralFairy()

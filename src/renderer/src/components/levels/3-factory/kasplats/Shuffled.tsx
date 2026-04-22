@@ -1,10 +1,10 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useResearchKasplat, useStorageKasplat, useBlockKasplat, useFactoryHut, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
-import { useShuffleKasplats, useBananaportAll } from '@renderer/hooks/settings'
+import { useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, usePunch, useMini, useDk, useTwirl, useCoconut, useTrombone } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 
-const Shuffled: React.FC = () => {
+const ShuffledKasplats: React.FC = () => {
 const DKVanillaKasplat = useProductionTopKasplat()
 const diddyVanillaKasplat = useProductionBaseKasplat()
 const lankyVanillaKasplat = useResearchKasplat()
@@ -58,13 +58,6 @@ const prodRoomOn = useFactoryProductionEnabled()
         region="Testing Room"
         canGetLogic={chunkyVanillaKasplat.in}
         canGetBreak={chunkyVanillaKasplat.out}
-      />
-      <FactoryCheck
-        id={53005}
-        name="Shuffled Kasplat: At the window in front of Snide's"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
       />
       <FactoryCheck
         id={53006}
@@ -147,5 +140,4 @@ const prodRoomOn = useFactoryProductionEnabled()
   )
 }
 
-const ShuffledKasplats: React.FC = () => (useShuffleKasplats() ? <Shuffled /> : null)
 export default ShuffledKasplats
