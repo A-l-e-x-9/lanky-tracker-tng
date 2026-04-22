@@ -1,7 +1,7 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useShuffleDirt } from '@renderer/hooks/settings'
-import AztecCheck from '../check'
-import { useGeneralDirt } from '@renderer/hooks/aztec'
+import FactoryCheck from '../check'
+import { useGeneralDirt } from '@renderer/hooks/factory'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
