@@ -32,44 +32,9 @@ const hasTriangle = useTriangle()
         canGetBreak={isBreathing.out && hasPrimatePunch}
       />
       <FactoryCheck
-        id={23002}
-        name="Shuffled Melon Crate: On carpet at vanilla level start"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={23003}
-        name="Shuffled Melon Crate: Near carpet at vanilla level start"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={23004}
-        name="Shuffled Melon Crate: Clock-in room, left side"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={23005}
-        name="Shuffled Melon Crate: Clock-in room, right side"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={23006}
-        name="Shuffled Melon Crate: Top of the hatch"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
         id={23007}
         name="Shuffled Melon Crate: Center of the hatch"
-        region="Factory Start Area"
+        region="Prod Room"
         canGetLogic={isBreathing.in && hasClimbing}
         canGetBreak={isBreathing.out}
       />
@@ -153,14 +118,14 @@ const hasTriangle = useTriangle()
       <FactoryCheck
         id={23020}
         name="Shuffled Melon Crate: Near Snide's"
-        region="Factory Start Area"
+        region="Testing Room"
         canGetLogic={canReachTesting.in}
         canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={23021}
         name="Shuffled Melon Crate: Near Snide's, hidden"
-        region="Factory Start Area"
+        region="Testing Room"
         canGetLogic={canReachTesting.in}
         canGetBreak={canReachTesting.out}
       />
@@ -284,23 +249,9 @@ const hasTriangle = useTriangle()
         canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
-        id={23041}
-        name="Shuffled Melon Crate: Vanilla Warp 1, level start"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
         id={23042}
         name="Shuffled Melon Crate: Vanilla Warp 1, in storage"
         region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={23043}
-        name="Shuffled Melon Crate: Vanilla Warp 2, level start"
-        region="Factory Start Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
@@ -312,16 +263,9 @@ const hasTriangle = useTriangle()
         canGetBreak={canReachTesting.out && hasClimbing}
       />
       <FactoryCheck
-        id={23045}
-        name="Shuffled Melon Crate: Vanilla Warp 3, in front of Snide's"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
         id={23046}
         name="Shuffled Melon Crate: Vanilla Warp 3, at Snide's"
-        region="Factory Start Area"
+        region="Testing Room"
         canGetLogic={canReachTesting.in}
         canGetBreak={canReachTesting.out}
       />
