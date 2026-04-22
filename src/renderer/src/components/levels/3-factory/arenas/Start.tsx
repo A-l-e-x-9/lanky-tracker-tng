@@ -1,9 +1,10 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
-import {  } from '@renderer/hooks/factory'
+import { useGeneralThing } from '@renderer/hooks/factory'
 
 const Shuffled: React.FC = () => {
+const isBreathing = useGeneralThing()
   return (
     <ArenaPool>
       <FactoryCheck
