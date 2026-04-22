@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb, useFactoryHut } from '@renderer/hooks/factory'
+import { useGeneralThing, useArena, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, usePunch, useTwirl, useCoconut } from '@renderer/hooks/kongs'
+import { useClimbing, usePunch, useTwirl } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartArenas from './Start'
 import StarcadeArenas from './Starcade'
@@ -10,7 +10,6 @@ const ShuffledArenas: React.FC = () => {
 const isBreathing = useGeneralThing()
 const canReachVanillaArena = useArena()
 const hasClimbing = useClimbing()
-const hasPrimatePunch = usePunch()
 const prodRoomOn = useFactoryProductionEnabled()
 const hasAllBananaports = useBananaportAll()
 const upperProd = useFactoryProductionTop()
@@ -19,8 +18,6 @@ const isHinaKagiyama = useTwirl()
 const canReachTesting = useFactoryTesting()
 const canReachCar = useTinyRaceGb()
 const canDoCrusher = useDkProdGb()
-const canReachHut = useFactoryHut()
-const hasCoconuts = useCoconut()
   return (
     <ArenaPool>
       <StartArenas />
