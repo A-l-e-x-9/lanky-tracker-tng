@@ -1,13 +1,16 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useShuffleCrates } from '@renderer/hooks/settings'
+import { useShuffleCrates, useBananaportAll } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
 import { useGeneralThing, useFactoryHut } from '@renderer/hooks/factory'
-import { useCoconut } from '@renderer/hooks/kongs'
+import { useCoconut, useClimbing, usePunch } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
 const canReachHut = useFactoryHut()
 const hasCoconuts = useCoconut()
+const hasClimbing = useClimbing()
+const hasPrimatePunch = usePunch()
+const hasAllBananaports = useBananaportAll()
   return (
     <CratePool>
       <FactoryCheck
