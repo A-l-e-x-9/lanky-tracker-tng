@@ -31,14 +31,14 @@ jobs:
     - name: Building the project
       run: npm run build
     - name: Upload the website
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: test-artifact
         path: out/renderer/
         if-no-files-found: error
         overwrite: true
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4.5.0
+      uses: JamesIves/github-pages-deploy-action@v5
       with:
         folder: out/renderer/
         ssh-key: ${{ secrets.WEB_DEPLOY_KEY }}
