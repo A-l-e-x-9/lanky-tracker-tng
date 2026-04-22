@@ -1,10 +1,11 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useGeneralDirt, useArena, useFactoryDirt, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb, useFactoryHut, useDiddyBlockGb } from '@renderer/hooks/factory'
-import { useShuffleDirt, useBananaportAll } from '@renderer/hooks/settings'
+import { useBananaportAll } from '@renderer/hooks/settings'
 import { useShockwave, useClimbing, usePunch, useTwirl, useCoconut, useTrombone, useGuitar, useTriangle } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
+import StartDirt from './Start'
 
-const Shuffled: React.FC = () => {
+const ShuffledDirt: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const hasShockwave = useShockwave()
 const canReachVanillaArena = useArena()
@@ -27,6 +28,7 @@ const hasTrombone = useTrombone()
 const hasTriangle = useTriangle()
   return (
     <RainbowCoinPool>
+      <StartDirt />
       <FactoryCheck
         id={33000}
         name="Shuffled Dirt Patch: In the R&D Room where the vanilla Battle Arena would be"
@@ -42,44 +44,9 @@ const hasTriangle = useTriangle()
         canGetBreak={canDoVanillaDirt.out}
       />
       <FactoryCheck
-        id={33002}
-        name="Shuffled Dirt Patch: On carpet at vanilla level start"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={33003}
-        name="Shuffled Dirt Patch: Near carpet at vanilla level start"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={33004}
-        name="Shuffled Dirt Patch: Clock-in room, left side"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={33005}
-        name="Shuffled Dirt Patch: Clock-in room, right side"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={33006}
-        name="Shuffled Dirt Patch: Top of the hatch"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
         id={33007}
         name="Shuffled Dirt Patch: Center of the hatch"
-        region="Factory Start Area"
+        region="Prod Room"
         canGetLogic={isBreathing.in && hasClimbing}
         canGetBreak={isBreathing.out}
       />
@@ -170,14 +137,14 @@ const hasTriangle = useTriangle()
       <FactoryCheck
         id={33020}
         name="Shuffled Dirt Patch: Near Snide's"
-        region="Factory Start Area"
+        region="Testing Room"
         canGetLogic={canReachTesting.in && hasShockwave}
         canGetBreak={canReachTesting.out && hasShockwave}
       />
       <FactoryCheck
         id={33021}
         name="Shuffled Dirt Patch: Near Snide's, hidden"
-        region="Factory Start Area"
+        region="Testing Room"
         canGetLogic={canReachTesting.in && hasShockwave}
         canGetBreak={canReachTesting.out && hasShockwave}
       />
@@ -315,23 +282,9 @@ const hasTriangle = useTriangle()
         canGetBreak={canReachVanillaArena.out && hasShockwave}
       />
       <FactoryCheck
-        id={33041}
-        name="Shuffled Dirt Patch: Vanilla Warp 1, level start"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
         id={33042}
         name="Shuffled Dirt Patch: Vanilla Warp 1, in storage"
         region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={33043}
-        name="Shuffled Dirt Patch: Vanilla Warp 2, level start"
-        region="Factory Start Area"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
@@ -343,16 +296,9 @@ const hasTriangle = useTriangle()
         canGetBreak={canReachTesting.out && hasClimbing && hasShockwave}
       />
       <FactoryCheck
-        id={33045}
-        name="Shuffled Dirt Patch: Vanilla Warp 3, in front of Snide's"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
         id={33046}
         name="Shuffled Dirt Patch: Vanilla Warp 3, at Snide's"
-        region="Factory Start Area"
+        region="Testing Room"
         canGetLogic={canReachTesting.in && hasShockwave}
         canGetBreak={canReachTesting.out && hasShockwave}
       />
@@ -402,5 +348,4 @@ const hasTriangle = useTriangle()
   )
 }
 
-const ShuffledDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
 export default ShuffledDirt

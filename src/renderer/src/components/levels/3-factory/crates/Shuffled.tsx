@@ -25,6 +25,7 @@ const hasTrombone = useTrombone()
 const hasTriangle = useTriangle()
   return (
     <CratePool>
+      <StartCrates />
       <FactoryCheck
         id={23001}
         name="Shuffled Melon Crate: In Chunky's dark room"
