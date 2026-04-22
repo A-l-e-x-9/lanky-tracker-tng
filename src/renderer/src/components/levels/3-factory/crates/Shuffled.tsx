@@ -1,10 +1,11 @@
 import CratePool from '@renderer/components/pools/Crates'
 import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb, useFactoryHut, useDiddyBlockGb } from '@renderer/hooks/factory'
-import { useShuffleCrates, useBananaportAll } from '@renderer/hooks/settings'
+import { useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, usePunch, useTwirl, useCoconut, useTrombone, useGuitar, useTriangle } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
+import StartCrates from './Start'
 
-const Shuffled: React.FC = () => {
+const ShuffledCrates: React.FC = () => {
 const isBreathing = useGeneralThing()
 const hasClimbing = useClimbing()
 const hasPrimatePunch = usePunch()
@@ -315,5 +316,4 @@ const hasTriangle = useTriangle()
   )
 }
 
-const ShuffledCrates: React.FC = () => (useShuffleCrates() ? <Shuffled /> : null)
 export default ShuffledCrates
