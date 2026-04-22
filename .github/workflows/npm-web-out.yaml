@@ -38,7 +38,7 @@ jobs:
         if-no-files-found: error
         overwrite: true
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v5
+      uses: JamesIves/github-pages-deploy-action@v4.8.0
       with:
         folder: out/renderer/
         ssh-key: ${{ secrets.WEB_DEPLOY_KEY }}
