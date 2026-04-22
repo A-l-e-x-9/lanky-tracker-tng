@@ -13,11 +13,11 @@ import TestingChecks from './Testing'
 import RNDChecks from './Research'
 import StorageChecks from './Storage'
 import ProductionChecks from './Production'
-import ShuffledArenas from '../arenas/Shuffled'
-import ShuffledCrates from '../crates/Shuffled'
-import ShuffledDirt from '../dirt/Shuffled'
-import ShuffledFairies from '../fairies/Shuffled'
-import ShuffledKasplats from '../kasplats/Shuffled'
+import StartArenas from '../arenas/Start'
+import StartCrates from '../crates/Start'
+import StartDirt from '../dirt/Start'
+import StartFairies from '../fairies/Start'
+import StartKasplats from '../kasplats/Start'
 
 const FactoryRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -39,6 +39,17 @@ return (
   <div className={`grid ${isKremKaptureSeed}`}>
     <StartEnemies />
   </div>
+  <div className="grid">
+    <StartArenas />
+    <StartCrates />
+    <StartDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <StartFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <StartKasplats />
+  </div>
     <TestingChecks />
     <RNDChecks />
     <StorageChecks />
@@ -46,15 +57,6 @@ return (
   <div className="grid">
     <ShopLocations />
     <BossCheck />
-    <ShuffledArenas />
-    <ShuffledCrates />
-    <ShuffledDirt />
-  </div>
-  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
-    <ShuffledFairies />
-  </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
-    <ShuffledKasplats />
   </div>
 </>
 )
