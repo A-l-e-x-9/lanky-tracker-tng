@@ -4,6 +4,7 @@ import { useBananaportAll } from '@renderer/hooks/settings'
 import { useShockwave, useClimbing, usePunch, useTwirl, useCoconut, useTrombone, useGuitar, useTriangle } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartDirt from './Start'
+import StarcadeDirt from './Starcade'
 
 const ShuffledDirt: React.FC = () => {
 const isBreathing = useGeneralDirt()
@@ -29,19 +30,13 @@ const hasTriangle = useTriangle()
   return (
     <RainbowCoinPool>
       <StartDirt />
+      <StarcadeDirt />
       <FactoryCheck
         id={33000}
         name="Shuffled Dirt Patch: In the R&D Room where the vanilla Battle Arena would be"
         region="R&D Room"
         canGetLogic={canReachVanillaArena.in && hasShockwave}
         canGetBreak={canReachVanillaArena.out && hasShockwave}
-      />
-      <FactoryCheck
-        id={33001}
-        name="Shuffled Dirt Patch: Vanilla Dirt (in Chunky's dark room)"
-        region="Storage and Arcade Area"
-        canGetLogic={canDoVanillaDirt.in}
-        canGetBreak={canDoVanillaDirt.out}
       />
       <FactoryCheck
         id={33007}
@@ -91,48 +86,6 @@ const hasTriangle = useTriangle()
         region="Prod Room"
         canGetLogic={upperProd.in && isHinaKagiyama && hasShockwave}
         canGetBreak={upperProd.out && hasShockwave}
-      />
-      <FactoryCheck
-        id={33014}
-        name="Shuffled Dirt Patch: Corner of the Storage Room"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={33015}
-        name="Shuffled Dirt Patch: In front of Cranky's"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={33016}
-        name="Shuffled Dirt Patch: In front of Candy's"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={33017}
-        name="Shuffled Dirt Patch: Corner of Chunky's dark room"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && hasPrimatePunch}
-        canGetBreak={isBreathing.out && hasPrimatePunch}
-      />
-      <FactoryCheck
-        id={33018}
-        name="Shuffled Dirt Patch: Bench in the arcade room"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && (hasClimbing || hasAllBananaports)}
-        canGetBreak={isBreathing.out && (hasClimbing || hasAllBananaports)}
-      />
-      <FactoryCheck
-        id={33019}
-        name="Shuffled Dirt Patch: Next to the arcade game"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && (hasClimbing || hasAllBananaports)}
-        canGetBreak={isBreathing.out && (hasClimbing || hasAllBananaports)}
       />
       <FactoryCheck
         id={33020}
@@ -282,13 +235,6 @@ const hasTriangle = useTriangle()
         canGetBreak={canReachVanillaArena.out && hasShockwave}
       />
       <FactoryCheck
-        id={33042}
-        name="Shuffled Dirt Patch: Vanilla Warp 1, in storage"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
         id={33044}
         name="Shuffled Dirt Patch: Vanilla Warp 2, R&D-side"
         region="R&D Room"
@@ -317,13 +263,6 @@ const hasTriangle = useTriangle()
         canGetBreak={upperProd.out && hasShockwave}
       />
       <FactoryCheck
-        id={33049}
-        name="Shuffled Dirt Patch: Vanilla Warp 5, in the arcade"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && (hasClimbing || hasAllBananaports)}
-        canGetBreak={isBreathing.out && (hasClimbing || hasAllBananaports)}
-      />
-      <FactoryCheck
         id={33050}
         name="Shuffled Dirt Patch: Vanilla Warp 5, at Funky's"
         region="Testing Room"
@@ -336,13 +275,6 @@ const hasTriangle = useTriangle()
         region="Prod Room"
         canGetLogic={canDoCrusher.in && hasShockwave}
         canGetBreak={canDoCrusher.out && hasShockwave}
-      />
-      <FactoryCheck
-        id={33052}
-        name="Shuffled Dirt Patch: Inside DK's power hut"
-        region="Storage and Arcade Area"
-        canGetLogic={canReachHut.in && hasCoconuts && hasShockwave}
-        canGetBreak={canReachHut.out && hasCoconuts && hasShockwave}
       />
     </RainbowCoinPool>
   )
