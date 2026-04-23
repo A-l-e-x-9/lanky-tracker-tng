@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useResearchKasplat, useBlockKasplat, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, useMini, useDk, useTwirl, useCoconut, useTrombone } from '@renderer/hooks/kongs'
+import { useClimbing, useMini, useDk, useTwirl, useTrombone } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartKasplats from './Start'
 import StarcadeKasplats from './Starcade'
@@ -18,7 +18,6 @@ const hasAllBananaports = useBananaportAll()
 const hasMiniMonkey = useMini()
 const isHinaKagiyama = useTwirl()
 const hasDK = useDk()
-const hasCoconuts = useCoconut()
 const hasTrombone = useTrombone()
 const prodRoomOn = useFactoryProductionEnabled()
   return (

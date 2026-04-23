@@ -2,13 +2,14 @@ import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
 import { useGeneralThing, useStorageKasplat, useFactoryHut } from '@renderer/hooks/factory'
-import { usePunch } from '@renderer/hooks/kongs'
+import { usePunch, useCoconut } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
 const tinyVanillaKasplat = useStorageKasplat()
 const canReachHut = useFactoryHut()
 const hasPrimatePunch = usePunch()
+const hasCoconuts = useCoconut()
   return (
     <KasplatPool>
       <FactoryCheck
