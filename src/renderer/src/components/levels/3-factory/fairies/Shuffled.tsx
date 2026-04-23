@@ -4,6 +4,7 @@ import { useBananaportAll } from '@renderer/hooks/settings'
 import { useCamera, useClimbing, useGuitar, usePunch, useTriangle, useHighGrab } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartFairies from './Start'
+import StarcadeFairies from './Starcade'
 
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
@@ -24,6 +25,7 @@ const ShuffledFairies: React.FC = () => {
   return (
     <FairyPool>
       <StartFairies />
+      <StarcadeFairies />
       <FactoryCheck
         id={43000}
         name="Shuffled Fairy: Vanilla Location #1 (tunnel to DK's number game)"
@@ -64,34 +66,6 @@ const ShuffledFairies: React.FC = () => {
         region="Prod Room"
         canGetLogic={prodRoomTop.in && hasCam}
         canGetBreak={prodRoomTop.out && hasCam}
-      />
-      <FactoryCheck
-        id={43007}
-        name="Shuffled Fairy: In Storage"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={43008}
-        name="Shuffled Fairy: At Cranky's/Candy's"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={43009}
-        name="Shuffled Fairy: In the tunnel to the Arcade room"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && (hasClimbing || hasBananaports)}
-        canGetBreak={isBreathing.out && (hasClimbing || hasBananaports)}
-      />
-      <FactoryCheck
-        id={43010}
-        name="Shuffled Fairy: Suffering through DK Arcade"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && (hasClimbing || hasBananaports)}
-        canGetBreak={isBreathing.out && (hasClimbing || hasBananaports)}
       />
       <FactoryCheck
         id={43011}
@@ -141,13 +115,6 @@ const ShuffledFairies: React.FC = () => {
         region="R&D Room"
         canGetLogic={canDoTesting.in && hasCam && (hasClimbing || hasBananaports)}
         canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports)}
-      />
-      <FactoryCheck
-        id={43018}
-        name="Shuffled Fairy: In Chunky's Dark Room"
-        region="Storage and Arcade Area"
-        canGetLogic={isBreathing.in && hasPrimatePunch}
-        canGetBreak={isBreathing.out && hasPrimatePunch}
       />
       <FactoryCheck
         id={43019}
