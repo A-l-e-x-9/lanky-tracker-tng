@@ -2,10 +2,11 @@ import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useShuffleDirt, useBananaportAll } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
 import { useGeneralDirt, useFactoryDirt, useFactoryHut } from '@renderer/hooks/factory'
-import { useCoconut, useClimbing, usePunch } from '@renderer/hooks/kongs'
+import { useShockwave, useCoconut, useClimbing, usePunch } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
+const hasShockwave = useShockwave()
 const canDoVanillaDirt = useFactoryDirt()
 const canReachHut = useFactoryHut()
 const hasCoconuts = useCoconut()
