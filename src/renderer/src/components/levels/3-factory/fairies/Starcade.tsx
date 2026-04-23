@@ -1,10 +1,14 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useShuffleFairies } from '@renderer/hooks/settings'
+import { useShuffleFairies, useBananaportAll } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
 import { useGeneralFairy } from '@renderer/hooks/factory'
+import { useClimbing, usePunch } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
   const isBreathing = useGeneralFairy()
+  const hasClimbing = useClimbing()
+  const hasPrimatePunch = usePunch()
+  const hasBananaports = useBananaportAll()
   return (
     <FairyPool>
       <FactoryCheck
