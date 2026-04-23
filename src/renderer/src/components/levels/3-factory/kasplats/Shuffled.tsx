@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useResearchKasplat, useStorageKasplat, useBlockKasplat, useFactoryHut, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
+import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useResearchKasplat, useBlockKasplat, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, usePunch, useMini, useDk, useTwirl, useCoconut, useTrombone } from '@renderer/hooks/kongs'
+import { useClimbing, useMini, useDk, useTwirl, useCoconut, useTrombone } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartKasplats from './Start'
 import StarcadeKasplats from './Starcade'
@@ -10,14 +10,11 @@ const ShuffledKasplats: React.FC = () => {
 const DKVanillaKasplat = useProductionTopKasplat()
 const diddyVanillaKasplat = useProductionBaseKasplat()
 const lankyVanillaKasplat = useResearchKasplat()
-const tinyVanillaKasplat = useStorageKasplat()
 const chunkyVanillaKasplat = useBlockKasplat()
 const isBreathing = useGeneralThing()
-const canReachHut = useFactoryHut()
 const canDoTinyProd = useFactoryProductionTop()
 const hasClimbing = useClimbing()
 const hasAllBananaports = useBananaportAll()
-const hasPrimatePunch = usePunch()
 const hasMiniMonkey = useMini()
 const isHinaKagiyama = useTwirl()
 const hasDK = useDk()
