@@ -51,6 +51,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledJapesPortals"
                 updateItem={setJapesPortal}
             />
+            <p>Outside Lanky's painting room</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is just outside of the entrance to Lanky's painting room."
+                storeKey="outsidePaintingPortal"
+                prefix="shuffledJapesPortals"
+                updateItem={setJapesPortal}
+            />
             <p>In the Stormy Area</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}

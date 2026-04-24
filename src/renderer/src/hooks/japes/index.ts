@@ -55,6 +55,9 @@ export const useSlamJapes = (): boolean => useSlamLevel('Jungle Japes')
 //Is the DK Portal near Diddy's vanilla prison?
 export const usePortalNearDiddy = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy))
+//Is the DK Portal just outside the entrance to Lanky's painting room?
+export const useOutsidePaintingPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledJapesPortals.outsidePaintingPortal))
 //Is the DK Portal in any part of the Stormy Area other than either of Lanky's slopes or the Rambi wall?
 export const useStormyPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal))
@@ -179,9 +182,10 @@ export const useJapesPaintingOutside = (): LogicBool => {
   const chunky = useChunky()
   const DKPortal = usePortalNearDiddy()
   const DKPortal2 = useDiddyMinePortal()
+  const DKPortal3 = useOutsidePaintingPortal()
   return {
-    in: inStage.in && (stand || (climbing && twirl)),
-    out: inStage.out && (climbing || DKPortal || DKPortal2) && (dk || tiny || chunky)
+    in: inStage.in && (DKPortal3 || (stand || (climbing && twirl))),
+    out: inStage.out && (DKPortal3 || ((climbing || DKPortal || DKPortal2) && (dk || tiny || chunky)))
   }
 }
 

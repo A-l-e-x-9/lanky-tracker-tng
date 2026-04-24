@@ -1156,6 +1156,7 @@ export type ShopSlice = ShopState & ShopActions
 interface japesPortals {
   vanilla: boolean
   portalNearDiddy: boolean
+  outsidePaintingPortal: boolean
   stormyPortal: boolean
   hiveOutsidePortal: boolean
   portalInDiddyMine: boolean
