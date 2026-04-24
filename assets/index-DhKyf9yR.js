@@ -11119,6 +11119,7 @@ const initialPortal = {
   shuffledJapesPortals: {
     vanilla: true,
     portalNearDiddy: false,
+    outsidePaintingPortal: false,
     stormyPortal: false,
     hiveOutsidePortal: false,
     portalInDiddyMine: false,
@@ -18443,6 +18444,7 @@ const usePlayJapes = () => {
 };
 const useSlamJapes = () => useSlamLevel("Jungle Japes");
 const usePortalNearDiddy = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy));
+const useOutsidePaintingPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.outsidePaintingPortal));
 const useStormyPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal));
 const useHiveOutsidePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.hiveOutsidePortal));
 const useDiddyMinePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine));
@@ -18511,9 +18513,10 @@ const useJapesPaintingOutside = () => {
   const chunky = useChunky();
   const DKPortal = usePortalNearDiddy();
   const DKPortal2 = useDiddyMinePortal();
+  const DKPortal3 = useOutsidePaintingPortal();
   return {
-    in: inStage.in && (stand || climbing && twirl),
-    out: inStage.out && (climbing || DKPortal || DKPortal2) && (dk2 || tiny || chunky)
+    in: inStage.in && (DKPortal3 || (stand || climbing && twirl)),
+    out: inStage.out && (DKPortal3 || (climbing || DKPortal || DKPortal2) && (dk2 || tiny || chunky))
   };
 };
 const useJapesPainting = () => {
@@ -53980,6 +53983,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is at the peak of the Japes Highlands.",
                   storeKey: "portalNearDiddy",
+                  prefix: "shuffledJapesPortals",
+                  updateItem: setJapesPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Outside Lanky's painting room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is just outside of the entrance to Lanky's painting room.",
+                  storeKey: "outsidePaintingPortal",
                   prefix: "shuffledJapesPortals",
                   updateItem: setJapesPortal
                 }
