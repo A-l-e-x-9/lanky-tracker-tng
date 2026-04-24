@@ -11135,6 +11135,7 @@ const initialPortal = {
     vanilla: true,
     portalInRAndD: false,
     storagePortal: false,
+    crusherPortal: false,
     arcadePortal: false
   },
   shuffledGalleonPortals: {
@@ -28205,6 +28206,7 @@ const usePlayFactory = () => {
 };
 const useRAndDPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.portalInRAndD));
 const useArcadePortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.arcadePortal));
+const useCrusherPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.crusherPortal));
 const useSlamFactory = () => useSlamLevel("Frantic Factory");
 const useFactoryTesting = () => {
   const inStage = usePlayFactory();
@@ -28381,12 +28383,13 @@ const useDkCoin = () => {
 };
 const useDkProdGb = () => {
   const production = useFactoryProductionEnabled();
+  const DKPortal = useCrusherPortal();
   const strong = useStrong();
   const dk2 = useDk();
   const diddy = useDiddy();
   return {
-    in: production.in && strong,
-    out: (production.in || production.out) && (dk2 || diddy)
+    in: (production.in || DKPortal) && strong,
+    out: (production.out || DKPortal) && (dk2 || diddy)
   };
 };
 const useLankyTestingGb = () => {
@@ -28395,7 +28398,7 @@ const useLankyTestingGb = () => {
   const twirl = useTwirl();
   return {
     in: testing.in && balloon,
-    out: (testing.in || testing.out) && twirl
+    out: testing.out && twirl
   };
 };
 const useLankyPianoGb = () => {
@@ -54115,6 +54118,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in the lowest level.",
                   storeKey: "storagePortal",
+                  prefix: "shuffledFactoryPortals",
+                  updateItem: setFactoryPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Inside the Crusher" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in DK's crusher in Prod Room.",
+                  storeKey: "crusherPortal",
                   prefix: "shuffledFactoryPortals",
                   updateItem: setFactoryPortal
                 }
