@@ -21,6 +21,7 @@ export const initialPortal: PortalState = {
     vanilla: true,
     portalInRAndD: false,
     storagePortal: false,
+    crusherPortal: false,
     arcadePortal: false
   },
   shuffledGalleonPortals: {

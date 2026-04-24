@@ -153,6 +153,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledFactoryPortals"
                 updateItem={setFactoryPortal}
             />
+            <p>Inside the Crusher</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in DK's crusher in Prod Room."
+                storeKey="crusherPortal"
+                prefix="shuffledFactoryPortals"
+                updateItem={setFactoryPortal}
+            />
             <p>The arcade room</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}

@@ -1172,6 +1172,7 @@ interface factoryPortals {
   vanilla: boolean
   portalInRAndD: boolean
   storagePortal: boolean
+  crusherPortal:
   arcadePortal: boolean
 }
 interface galleonPortals {

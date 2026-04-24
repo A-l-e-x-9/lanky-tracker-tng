@@ -56,6 +56,9 @@ export const useStoragePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledFactoryPortals.storagePortal))
 export const useArcadePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledFactoryPortals.arcadePortal))
+//Is the DK Portal in the Crusher?
+export const useCrusherPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledFactoryPortals.crusherPortal))
 /*end shuffled DK Portals*/
 
 /**
@@ -133,7 +136,8 @@ export const useFoyerFromStorage = (): LogicBool => {
   const inStage = usePlayFactory()
   const storagePortal = useStoragePortal()
   const arcadePortal = useArcadePortal()
-  const startAtBottom = (storagePortal || arcadePortal)
+  const crusherPortal = useCrusherPortal()
+  const startAtBottom = (storagePortal || arcadePortal || crusherPortal)
   const climbing = useClimbing()
   const warpAll = useBananaportAll()
   return {
@@ -292,12 +296,13 @@ export const useDkCoin = (): LogicBool => {
 
 export const useDkProdGb = (): LogicBool => {
   const production = useFactoryProductionEnabled()
+  const DKPortal = useCrusherPortal()
   const strong = useStrong()
   const dk = useDk()
   const diddy = useDiddy()
   return {
-    in: production.in && strong,
-    out: (production.in || production.out) && (dk || diddy)
+    in: (production.in || DKPortal) && strong,
+    out: (production.out || DKPortal) && (dk || diddy)
   }
 }
 
@@ -307,7 +312,7 @@ export const useLankyTestingGb = (): LogicBool => {
   const twirl = useTwirl()
   return {
     in: testing.in && balloon,
-    out: (testing.in || testing.out) && twirl
+    out: testing.out && twirl
   }
 }
 
