@@ -301,6 +301,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledCastlePortals"
                 updateItem={setCastlePortal}
             />
+            <p>In the tree</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in the big tree."
+                storeKey="treePortal"
+                prefix="shuffledCastlePortals"
+                updateItem={setCastlePortal}
+            />
             <p>In Chunky's room in the tree</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}

@@ -58,13 +58,16 @@ export const usePlayCastle = (): LogicBool => {
 export const useSlamCastle = (): boolean => useSlamLevel('Creepy Castle')
 
 /*Alex addition: shuffled DK Portals*/
-//Is the DK Portal behind Chunky's room in the big tree? Should cause any relevant check to turn yellow if you don't have Chunky, Primate Punch (to get IN his room to begin with), DK, or Blast (to get into the tree itself), and thus can't get back in once you leave those areas.
+//Is the DK Portal in the big tree?
+export const useTreePortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCastlePortals.treePortal))
+//Is the DK Portal behind Chunky's room in the big tree?
 export const useTreeChunkyPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.treeChunkyPortal))
 //Is the DK Portal in the Ballroom?
 export const useBallroomPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal))
-//Is the DK Portal in the Wind Tunnel?
+//Is the DK Portal in Lanky's Wind Tunnel room?
 export const useWindTunnelPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.windTunnelPortal))
 /*end shuffled DK Portals*/
@@ -76,9 +79,10 @@ export const useWindTunnelPortal = (): boolean =>
 export const useCastleTree = (): LogicBool => {
   const inStage = usePlayCastle()
   const blast = useBlast()
+  const DKPortal = useTreePortal()
   return {
-    in: inStage.in && blast,
-    out: inStage.out && blast
+    in: inStage.in && (blast || DKPortal),
+    out: inStage.out && (blast || DKPortal)
   }
 }
 
@@ -114,7 +118,7 @@ export const useChunkyTreeGb = (): LogicBool => {
   const hardShooting = useHardShooting()
   const DKPortal2 = useTreeChunkyPortal()
   return {
-    in: tree.in && punch && pineapple && (sniper || hardShooting),
+    in: ((tree.in && punch) || DKPortal2) && pineapple && (sniper || hardShooting),
     out: ((tree.out && punch) || DKPortal2) && pineapple
   }
 }
@@ -193,8 +197,8 @@ export const useDkTreeGb = (): LogicBool => {
   const sniper = useSniper()
   const DKPortal2 = useTreeChunkyPortal()
   return {
-    in: canEnterTree.in && coconut && sniper,
-    out: (canEnterTree.out || DKPortal2) && coconut //You're supposed to be able to do this check without Sniper. I've had no such luck, but I"ll keep it in here just in case. =_=;
+    in: (canEnterTree.in || DKPortal2) && coconut && sniper,
+    out: (canEnterTree.out || DKPortal2) && coconut //You're supposed to be able to do this check without Sniper. I've had no such luck, but I'll keep it in here just in case. =_=;
     }
 }
 
@@ -399,7 +403,7 @@ export const useTreeKasplat = (): LogicBool => {
   const coconut = useCoconut()
   const DKPortal2 = useTreeChunkyPortal()
   return {
-    in: tree.in && coconut,
+    in: (tree.in || DKPortal2) && coconut,
     out: (tree.out || DKPortal2) && coconut
   }
 }
