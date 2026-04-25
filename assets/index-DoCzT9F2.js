@@ -11136,6 +11136,7 @@ const initialPortal = {
     vanilla: true,
     portalInRAndD: false,
     storagePortal: false,
+    upperProdPortal: false,
     crusherPortal: false,
     arcadePortal: false
   },
@@ -28208,7 +28209,9 @@ const usePlayFactory = () => {
   };
 };
 const useRAndDPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.portalInRAndD));
+const useStoragePortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.storagePortal));
 const useArcadePortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.arcadePortal));
+const useUpperProdPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.upperProdPortal));
 const useCrusherPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.crusherPortal));
 const useSlamFactory = () => useSlamLevel("Frantic Factory");
 const useFactoryTesting = () => {
@@ -28252,6 +28255,20 @@ const useFactoryProductionTop = () => {
   return {
     in: inStage.in && factoryOn.in && (climbing || warpAll),
     out: inStage.out && factoryOn.out && (climbing || warpAll)
+  };
+};
+const useFoyerFromStorage = () => {
+  const inStage = usePlayFactory();
+  const storagePortal = useStoragePortal();
+  const arcadePortal = useArcadePortal();
+  const crusherPortal = useCrusherPortal();
+  const upperProdPortal = useUpperProdPortal();
+  const startAtBottom = storagePortal || arcadePortal || upperProdPortal || crusherPortal;
+  const climbing = useClimbing();
+  const warpAll = useBananaportAll();
+  return {
+    in: inStage.in && startAtBottom && (climbing || warpAll),
+    out: inStage.out && startAtBottom && (climbing || warpAll)
   };
 };
 const useChunkyKaijuGb = () => {
@@ -30183,14 +30200,15 @@ const Shuffled$u = () => {
 const StartDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : null;
 const Shuffled$t = () => {
   const isBreathing = useGeneralFairy$3();
+  const canReachStart = useFoyerFromStorage();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(FairyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     FactoryCheck,
     {
       id: 43002,
       name: "Shuffled Fairy: At the vanilla entrance",
       region: "Factory Start Area",
-      canGetLogic: isBreathing.in,
-      canGetBreak: isBreathing.out
+      canGetLogic: isBreathing.in && canReachStart.in,
+      canGetBreak: isBreathing.out && canReachStart.out
     }
   ) });
 };
@@ -54132,6 +54150,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in the lowest level.",
                   storeKey: "storagePortal",
+                  prefix: "shuffledFactoryPortals",
+                  updateItem: setFactoryPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "At or around the Prod Room's Troff 'n' Scoff portal" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is on the path to Diddy, Lanky, and Tiny's Prod Room bananas.",
+                  storeKey: "upperProdPortal",
                   prefix: "shuffledFactoryPortals",
                   updateItem: setFactoryPortal
                 }
