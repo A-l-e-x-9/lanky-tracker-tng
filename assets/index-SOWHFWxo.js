@@ -28267,8 +28267,8 @@ const useFoyerFromStorage = () => {
   const climbing = useClimbing();
   const warpAll = useBananaportAll();
   return {
-    in: inStage.in && startAtBottom && (climbing || warpAll),
-    out: inStage.out && startAtBottom && (climbing || warpAll)
+    in: inStage.in && (!startAtBottom || startAtBottom && (climbing || warpAll)),
+    out: inStage.out && (!startAtBottom || startAtBottom && (climbing || warpAll))
   };
 };
 const useChunkyKaijuGb = () => {
@@ -28753,6 +28753,7 @@ const RNDEnemies = () => {
 const StartEnemies = () => {
   const inStage = usePlayFactory();
   const robo = useDefeatToughEnemy();
+  const canReach = useFoyerFromStorage();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -28760,8 +28761,8 @@ const StartEnemies = () => {
         id: 3302,
         name: "Enemy at Lobby Left",
         region: "Factory Start Area",
-        canGetLogic: inStage.in && robo,
-        canGetBreak: inStage.out && robo
+        canGetLogic: inStage.in && robo && canReach.in,
+        canGetBreak: inStage.out && robo && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28770,8 +28771,8 @@ const StartEnemies = () => {
         id: 3303,
         name: "Enemy at Lobby Right",
         region: "Factory Start Area",
-        canGetLogic: inStage.in && robo,
-        canGetBreak: inStage.out && robo
+        canGetLogic: inStage.in && robo && canReach.in,
+        canGetBreak: inStage.out && robo && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28780,8 +28781,8 @@ const StartEnemies = () => {
         id: 3308,
         name: "Enemy in the Tunnel to Hatch",
         region: "Factory Start Area",
-        canGetLogic: inStage.in && robo,
-        canGetBreak: inStage.out && robo
+        canGetLogic: inStage.in && robo && canReach.in,
+        canGetBreak: inStage.out && robo && canReach.out
       }
     )
   ] });
@@ -29942,6 +29943,7 @@ const ProductionChecks = () => {
 };
 const Shuffled$w = () => {
   const isBreathing = useGeneralThing$3();
+  const canReach = useFoyerFromStorage();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -29949,8 +29951,8 @@ const Shuffled$w = () => {
         id: 13e3,
         name: "Shuffled Battle Arena: On carpet at vanilla level start",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -29959,8 +29961,8 @@ const Shuffled$w = () => {
         id: 13e3,
         name: "Shuffled Battle Arena: Near carpet at vanilla level start",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -29969,8 +29971,8 @@ const Shuffled$w = () => {
         id: 13e3,
         name: "Shuffled Battle Arena: Clock-in room, left side",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -29979,8 +29981,8 @@ const Shuffled$w = () => {
         id: 13e3,
         name: "Shuffled Battle Arena: Clock-in room, right side",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -29989,8 +29991,8 @@ const Shuffled$w = () => {
         id: 13e3,
         name: "Shuffled Battle Arena: Top of the hatch",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -29999,8 +30001,8 @@ const Shuffled$w = () => {
         id: 13e3,
         name: "Shuffled Battle Arena: Vanilla Warp 1, level start",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30009,8 +30011,8 @@ const Shuffled$w = () => {
         id: 13e3,
         name: "Shuffled Battle Arena: Vanilla Warp 2, level start",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30019,8 +30021,8 @@ const Shuffled$w = () => {
         id: 13e3,
         name: "Shuffled Battle Arena: Vanilla Warp 3, in front of Snide's",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     )
   ] });
@@ -30028,6 +30030,7 @@ const Shuffled$w = () => {
 const StartArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$w, {}) : null;
 const Shuffled$v = () => {
   const isBreathing = useGeneralThing$3();
+  const canReach = useFoyerFromStorage();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -30035,8 +30038,8 @@ const Shuffled$v = () => {
         id: 23002,
         name: "Shuffled Melon Crate: On carpet at vanilla level start",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30045,8 +30048,8 @@ const Shuffled$v = () => {
         id: 23003,
         name: "Shuffled Melon Crate: Near carpet at vanilla level start",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30055,8 +30058,8 @@ const Shuffled$v = () => {
         id: 23004,
         name: "Shuffled Melon Crate: Clock-in room, left side",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30065,8 +30068,8 @@ const Shuffled$v = () => {
         id: 23005,
         name: "Shuffled Melon Crate: Clock-in room, right side",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30075,8 +30078,8 @@ const Shuffled$v = () => {
         id: 23006,
         name: "Shuffled Melon Crate: Top of the hatch",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30085,8 +30088,8 @@ const Shuffled$v = () => {
         id: 23041,
         name: "Shuffled Melon Crate: Vanilla Warp 1, level start",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30095,8 +30098,8 @@ const Shuffled$v = () => {
         id: 23043,
         name: "Shuffled Melon Crate: Vanilla Warp 2, level start",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30105,8 +30108,8 @@ const Shuffled$v = () => {
         id: 23045,
         name: "Shuffled Melon Crate: Vanilla Warp 3, in front of Snide's",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     )
   ] });
@@ -30114,6 +30117,7 @@ const Shuffled$v = () => {
 const StartCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$v, {}) : null;
 const Shuffled$u = () => {
   const isBreathing = useGeneralDirt$3();
+  const canReach = useFoyerFromStorage();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -30121,8 +30125,8 @@ const Shuffled$u = () => {
         id: 33002,
         name: "Shuffled Dirt Patch: On carpet at vanilla level start",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30131,8 +30135,8 @@ const Shuffled$u = () => {
         id: 33003,
         name: "Shuffled Dirt Patch: Near carpet at vanilla level start",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30141,8 +30145,8 @@ const Shuffled$u = () => {
         id: 33004,
         name: "Shuffled Dirt Patch: Clock-in room, left side",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30151,8 +30155,8 @@ const Shuffled$u = () => {
         id: 33005,
         name: "Shuffled Dirt Patch: Clock-in room, right side",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30161,8 +30165,8 @@ const Shuffled$u = () => {
         id: 33006,
         name: "Shuffled Dirt Patch: Top of the hatch",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30171,8 +30175,8 @@ const Shuffled$u = () => {
         id: 33041,
         name: "Shuffled Dirt Patch: Vanilla Warp 1, level start",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30181,8 +30185,8 @@ const Shuffled$u = () => {
         id: 33043,
         name: "Shuffled Dirt Patch: Vanilla Warp 2, level start",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30191,8 +30195,8 @@ const Shuffled$u = () => {
         id: 33045,
         name: "Shuffled Dirt Patch: Vanilla Warp 3, in front of Snide's",
         region: "Factory Start Area",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
+        canGetLogic: isBreathing.in && canReach.in,
+        canGetBreak: isBreathing.out && canReach.out
       }
     )
   ] });
@@ -30215,14 +30219,15 @@ const Shuffled$t = () => {
 const StartFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {}) : null;
 const Shuffled$s = () => {
   const isBreathing = useGeneralThing$3();
+  const canReach = useFoyerFromStorage();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     FactoryCheck,
     {
       id: 53005,
       name: "Shuffled Kasplat: At the window in front of Snide's",
       region: "Factory Start Area",
-      canGetLogic: isBreathing.in,
-      canGetBreak: isBreathing.out
+      canGetLogic: isBreathing.in && canReach.in,
+      canGetBreak: isBreathing.out && canReach.out
     }
   ) });
 };
