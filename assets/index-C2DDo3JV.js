@@ -28217,13 +28217,14 @@ const useSlamFactory = () => useSlamLevel("Frantic Factory");
 const useFactoryTesting = () => {
   const inStage = usePlayFactory();
   const slam = useSlam();
+  const canReachFoyerFromStorage = useFoyerFromStorage();
   const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
   const hasClimbing = useClimbing();
   const hasBananaport = useBananaportAll();
   const RAndDPortal = useRAndDPortal();
   return {
-    in: inStage.in && ((removeBarriers.factoryTesting || slam) && hasClimbing || hasBananaport || RAndDPortal),
-    out: inStage.out && ((removeBarriers.factoryTesting || slam) && hasClimbing || hasBananaport || RAndDPortal)
+    in: inStage.in && ((removeBarriers.factoryTesting || slam) && canReachFoyerFromStorage.in && hasClimbing || hasBananaport || RAndDPortal),
+    out: inStage.out && ((removeBarriers.factoryTesting || slam) && canReachFoyerFromStorage.out && hasClimbing || hasBananaport || RAndDPortal)
   };
 };
 const useFactoryHut = () => {
@@ -28252,9 +28253,10 @@ const useFactoryProductionTop = () => {
   const factoryOn = useFactoryProductionEnabled();
   const climbing = useClimbing();
   const warpAll = useBananaportAll();
+  const DKPortal = useUpperProdPortal();
   return {
-    in: inStage.in && factoryOn.in && (climbing || warpAll),
-    out: inStage.out && factoryOn.out && (climbing || warpAll)
+    in: inStage.in && (DKPortal || factoryOn.in && (climbing || warpAll)),
+    out: inStage.out && (DKPortal || factoryOn.out && (climbing || warpAll))
   };
 };
 const useFoyerFromStorage = () => {
@@ -28318,7 +28320,7 @@ const useDiddyBlockGb = () => {
   const highGrab = useHighGrab();
   return {
     in: testing.in && spring,
-    out: (testing.in || testing.out) && highGrab
+    out: testing.out && highGrab
   };
 };
 const useDiddyEnemyGb = () => {
