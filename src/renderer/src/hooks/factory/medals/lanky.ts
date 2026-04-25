@@ -69,10 +69,9 @@ export const useLankyMedalOutLogic = (): number => {
   const inStage = usePlayFactory()
   const kong = useLanky()
   const shuffleBananas = useShuffleColoredBananas()
-  const bananas = useLankyMedalCommonLogic()
   const canReachFoyerFromStorage = useFoyerFromStorage()
   let bananas = useLankyMedalCommonLogic()
-
+  
   if (!inStage.out) {
     return 0
   }
