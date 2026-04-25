@@ -29626,7 +29626,7 @@ const useLankyMedalCommonLogic$4 = () => {
   const prodTop = useFactoryProductionTop();
   const gun = useGrape();
   const music = useTrombone();
-  let bananas = 10;
+  let bananas = 5;
   if (testing.in || testing.out) {
     bananas += 15;
     if (gun && music) {
@@ -29647,6 +29647,7 @@ const useLankyMedalInLogic$4 = () => {
   const kong = useLanky();
   const move = useStand();
   const shuffleBananas = useShuffleColoredBananas();
+  const canReachFoyerFromStorage = useFoyerFromStorage();
   let bananas = useLankyMedalCommonLogic$4();
   if (!inStage.in) {
     return 0;
@@ -29663,13 +29664,17 @@ const useLankyMedalInLogic$4 = () => {
       bananas += 25;
     }
   }
+  if (canReachFoyerFromStorage.in) {
+    bananas += 5;
+  }
   return bananas;
 };
 const useLankyMedalOutLogic$4 = () => {
   const inStage = usePlayFactory();
   const kong = useLanky();
   const shuffleBananas = useShuffleColoredBananas();
-  const bananas = useLankyMedalCommonLogic$4();
+  const canReachFoyerFromStorage = useFoyerFromStorage();
+  let bananas = useLankyMedalCommonLogic$4();
   if (!inStage.out) {
     return 0;
   }
@@ -29678,6 +29683,9 @@ const useLankyMedalOutLogic$4 = () => {
   }
   if (shuffleBananas) {
     return 100;
+  }
+  if (canReachFoyerFromStorage.out) {
+    bananas += 5;
   }
   return bananas + 30;
 };
@@ -31951,8 +31959,8 @@ const ShuffledKasplats$4 = () => {
         id: 53009,
         name: "Shuffled Kasplat: A step up in the Prod Room",
         region: "Prod Room",
-        canGetLogic: prodRoomOn.in || hasAllBananaports,
-        canGetBreak: prodRoomOn.out
+        canGetLogic: canDoTinyProd.in || (prodRoomOn.in || hasAllBananaports),
+        canGetBreak: canDoTinyProd.out || prodRoomOn.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
