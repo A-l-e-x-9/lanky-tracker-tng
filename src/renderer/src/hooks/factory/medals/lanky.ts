@@ -71,6 +71,7 @@ export const useLankyMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   const bananas = useLankyMedalCommonLogic()
   const canReachFoyerFromStorage = useFoyerFromStorage()
+  let bananas = useLankyMedalCommonLogic()
 
   if (!inStage.out) {
     return 0
