@@ -31959,7 +31959,7 @@ const ShuffledKasplats$4 = () => {
         id: 53009,
         name: "Shuffled Kasplat: A step up in the Prod Room",
         region: "Prod Room",
-        canGetLogic: canDoTinyProd.in || (prodRoomOn.in || hasAllBananaports),
+        canGetLogic: canDoTinyProd.in || prodRoomOn.in || hasAllBananaports,
         canGetBreak: canDoTinyProd.out || prodRoomOn.out
       }
     ),
