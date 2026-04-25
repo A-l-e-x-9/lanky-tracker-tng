@@ -54,8 +54,12 @@ export const useRAndDPortal = (): boolean =>
 //Is the DK Portal in Storage or the lowest level of Prod Room?
 export const useStoragePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledFactoryPortals.storagePortal))
+//Is the DK Portal near the Arcade game?
 export const useArcadePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledFactoryPortals.arcadePortal))
+//Is the DK Portal in the upper section of Prod Room, near its Troff 'n' Scoff?
+export const useUpperProdPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledFactoryPortals.upperProdPortal))
 //Is the DK Portal in the Crusher?
 export const useCrusherPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledFactoryPortals.crusherPortal))
@@ -137,7 +141,8 @@ export const useFoyerFromStorage = (): LogicBool => {
   const storagePortal = useStoragePortal()
   const arcadePortal = useArcadePortal()
   const crusherPortal = useCrusherPortal()
-  const startAtBottom = (storagePortal || arcadePortal || crusherPortal)
+  const upperProdPortal = useUpperProdPortal()
+  const startAtBottom = (storagePortal || arcadePortal || upperProdPortal || crusherPortal)
   const climbing = useClimbing()
   const warpAll = useBananaportAll()
   return {

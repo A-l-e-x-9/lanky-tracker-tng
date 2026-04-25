@@ -22,6 +22,7 @@ export const initialPortal: PortalState = {
     vanilla: true,
     portalInRAndD: false,
     storagePortal: false,
+    upperProdPortal: false,
     crusherPortal: false,
     arcadePortal: false
   },
