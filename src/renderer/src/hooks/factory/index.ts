@@ -79,13 +79,14 @@ export const useSlamFactory = (): boolean => useSlamLevel('Frantic Factory')
 export const useFactoryTesting = (): LogicBool => {
   const inStage = usePlayFactory()
   const slam = useSlam()
+  const canReachFoyerFromStorage = useFoyerFromStorage()
   const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]))
   const hasClimbing = useClimbing()
   const hasBananaport = useBananaportAll()
   const RAndDPortal = useRAndDPortal()
   return {
-    in: inStage.in && (((removeBarriers.factoryTesting || slam) && hasClimbing) || hasBananaport || RAndDPortal),
-    out: inStage.out && (((removeBarriers.factoryTesting || slam) && hasClimbing) || hasBananaport || RAndDPortal)
+    in: inStage.in && (((removeBarriers.factoryTesting || slam) && canReachFoyerFromStorage.in && hasClimbing) || hasBananaport || RAndDPortal),
+    out: inStage.out && (((removeBarriers.factoryTesting || slam) && canReachFoyerFromStorage.out && hasClimbing) || hasBananaport || RAndDPortal)
   }
 }
 
@@ -129,9 +130,10 @@ export const useFactoryProductionTop = (): LogicBool => {
   const factoryOn = useFactoryProductionEnabled()
   const climbing = useClimbing()
   const warpAll = useBananaportAll()
+  const DKPortal = useUpperProdPortal()
   return {
-    in: inStage.in && factoryOn.in && (climbing || warpAll),
-    out: inStage.out && factoryOn.out && (climbing || warpAll)
+    in: inStage.in && (DKPortal || (factoryOn.in && (climbing || warpAll))),
+    out: inStage.out && (DKPortal || (factoryOn.out && (climbing || warpAll)))
   }
 }
 
@@ -186,6 +188,7 @@ export const useChunkyDarkGb = (): LogicBool => {
   }
 }
 
+//ALEX NOTE: "useFactoryProductionTop" was recently edited to account for a shuffled DK Portal being at the Prod Room's Troff 'n' Scoff. However, because of the timed nature of this GB, having that Portal is not an advantage for Chunky...he still needs to have Prod Room on and Climbing/access to both Warp 4's, and he can't pause-exit to get back to the portal if he doesn't have these. Will have to refine this one, maybe...
 export const useChunkyProductionGb = (): LogicBool => {
   const production = useFactoryProductionTop()
   const chunky = useChunky()
@@ -202,7 +205,7 @@ export const useDiddyBlockGb = (): LogicBool => {
   const highGrab = useHighGrab()
   return {
     in: testing.in && spring,
-    out: (testing.in || testing.out) && highGrab
+    out: testing.out && highGrab
   }
 }
 
