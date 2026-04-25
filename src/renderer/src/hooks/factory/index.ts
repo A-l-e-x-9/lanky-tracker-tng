@@ -146,8 +146,8 @@ export const useFoyerFromStorage = (): LogicBool => {
   const climbing = useClimbing()
   const warpAll = useBananaportAll()
   return {
-    in: inStage.in && startAtBottom && (climbing || warpAll),
-    out: inStage.out && startAtBottom && (climbing || warpAll)
+    in: inStage.in && (!startAtBottom || (startAtBottom && (climbing || warpAll))),
+    out: inStage.out && (!startAtBottom || (startAtBottom && (climbing || warpAll)))
   }
 }
 
