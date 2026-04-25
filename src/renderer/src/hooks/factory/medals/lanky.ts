@@ -4,7 +4,8 @@ import {
   useFactoryProductionEnabled,
   useFactoryProductionTop,
   useFactoryTesting,
-  usePlayFactory
+  usePlayFactory,
+  useFoyerFromStorage
 } from '..'
 
 const useLankyMedalCommonLogic = (): number => {
@@ -14,7 +15,7 @@ const useLankyMedalCommonLogic = (): number => {
   const gun = useGrape()
   const music = useTrombone()
 
-  let bananas = 10
+  let bananas = 5
   if (testing.in || testing.out) {
     bananas += 15
     if (gun && music) {
@@ -37,6 +38,7 @@ export const useLankyMedalInLogic = (): number => {
   const kong = useLanky()
   const move = useStand()
   const shuffleBananas = useShuffleColoredBananas()
+  const canReachFoyerFromStorage = useFoyerFromStorage()
   let bananas = useLankyMedalCommonLogic()
 
   if (!inStage.in) {
@@ -54,6 +56,10 @@ export const useLankyMedalInLogic = (): number => {
     if (production.in) {
       bananas += 25
     }
+  }
+  
+  if (canReachFoyerFromStorage.in) {
+    bananas += 5
   }
 
   return bananas
@@ -73,6 +79,10 @@ export const useLankyMedalOutLogic = (): number => {
   }
   if (shuffleBananas) {
     return 100
+  }
+
+  if (canReachFoyerFromStorage.out) {
+    bananas += 5
   }
 
   return bananas + 30
