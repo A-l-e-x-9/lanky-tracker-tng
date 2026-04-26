@@ -245,15 +245,14 @@ export const useDkLighthouseGb = (): LogicBool => {
 }
 
 export const useDiddyLighthouseGb = (): LogicBool => {
-  const seasick = useDonkStore(useShallow((state) => state.removeBarriers.galleonSeasick))
   const canSlam = useSlamGalleon()
   const lighthouseArea = useGalleonLighthouseArea()
   const rocket = useRocket()
   const highTide = useGalleonHighTide()
   const isLighthouseOn = useDkLighthouseGb()
   return {
-    in: lighthouseArea.in && (seasick || (highTide && isLighthouseOn)) && canSlam && rocket,
-    out: lighthouseArea.out && (seasick || isLighthouseOn) && canSlam && rocket
+    in: lighthouseArea.in && highTide && isLighthouseOn.in && canSlam && rocket,
+    out: lighthouseArea.out && isLighthouseOn.out && canSlam && rocket
   }
 }
 
