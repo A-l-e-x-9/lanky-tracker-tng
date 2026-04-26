@@ -249,12 +249,11 @@ export const useDiddyLighthouseGb = (): LogicBool => {
   const canSlam = useSlamGalleon()
   const lighthouseArea = useGalleonLighthouseArea()
   const rocket = useRocket()
-  const dk = useDk()
-  const grab = useGrab()
   const highTide = useGalleonHighTide()
+  const isLighthouseOn = useDkLighthouseGb()
   return {
-    in: lighthouseArea.in && (seasick || (highTide && dk && grab)) && canSlam && rocket,
-    out: lighthouseArea.out && (seasick || (dk && grab)) && canSlam && rocket
+    in: lighthouseArea.in && (seasick || (highTide && isLighthouseOn)) && canSlam && rocket,
+    out: lighthouseArea.out && (seasick || isLighthouseOn) && canSlam && rocket
   }
 }
 
