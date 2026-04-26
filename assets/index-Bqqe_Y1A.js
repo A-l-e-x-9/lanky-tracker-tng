@@ -11156,6 +11156,7 @@ const initialPortal = {
     gonePortal: false,
     bigRockPortal: false,
     tiny5DIPortal: false,
+    DK5DCPortal: false,
     diddyUpperCabinPortal: false
   },
   shuffledCastlePortals: {
@@ -40659,6 +40660,7 @@ const useSlamCaves = () => useSlamLevel("Crystal Caves");
 const useGonePortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.gonePortal));
 const useBigRockPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.bigRockPortal));
 const useTiny5DIPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.tiny5DIPortal));
+const useDK5DCPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.DK5DCPortal));
 const useDiddyUpperCabinPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.diddyUpperCabinPortal));
 const useCavesIgloo = () => {
   const inStage = usePlayCaves();
@@ -40735,9 +40737,10 @@ const useDkCabinGb = () => {
   const homing = useHoming();
   const hardShooting = useHardShooting();
   const anyGun = useAnyGun();
+  const DKPortal = useDK5DCPortal();
   return {
-    in: inStage.in && !angery && bongos && anyGun && (homing || hardShooting),
-    out: (inStage.in && !angery || (inStage.out || angery)) && bongos && anyGun
+    in: inStage.in && (!angery && bongos || DKPortal) && anyGun && (homing || hardShooting),
+    out: (inStage.out || (angery && bongos || DKPortal)) && anyGun
   };
 };
 const useDiddyGauntletGb = () => {
@@ -54329,6 +54332,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in Tiny's 5-Door Igloo room.",
                   storeKey: "tiny5DIPortal",
+                  prefix: "shuffledCavesPortals",
+                  updateItem: setCavesPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "DK's 5DC room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in DK's 5-Door Cabin room.",
+                  storeKey: "DK5DCPortal",
                   prefix: "shuffledCavesPortals",
                   updateItem: setCavesPortal
                 }
