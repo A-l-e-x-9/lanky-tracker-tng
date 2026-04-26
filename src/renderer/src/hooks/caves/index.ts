@@ -67,6 +67,9 @@ export const useBigRockPortal = (): boolean =>
 //Is the DK Portal in Tiny's 5DI room?
 export const useTiny5DIPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCavesPortals.tiny5DIPortal))
+//Is the DK Portal in DK's 5DC room?
+export const useDK5DCPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCavesPortals.DK5DCPortal))
 //Is the DK Portal in Diddy's upper cabin?
 export const useDiddyUpperCabinPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCavesPortals.diddyUpperCabinPortal))
@@ -170,9 +173,10 @@ export const useDkCabinGb = (): LogicBool => {
   const homing = useHoming()
   const hardShooting = useHardShooting()
   const anyGun = useAnyGun()
+  const DKPortal = useDK5DCPortal()
   return {
-    in: inStage.in && !angery && bongos && anyGun && (homing || hardShooting),
-    out: ((inStage.in && !angery) || (inStage.out || angery)) && bongos && anyGun
+    in: inStage.in && ((!angery && bongos) || DKPortal) && anyGun && (homing || hardShooting),
+    out: (inStage.out || ((angery && bongos) || DKPortal)) && anyGun
   }
 }
 

@@ -42,6 +42,7 @@ export const initialPortal: PortalState = {
     gonePortal: false,
     bigRockPortal: false,
     tiny5DIPortal: false,
+    DK5DCPortal: false,
     diddyUpperCabinPortal: false
   },
   shuffledCastlePortals: {

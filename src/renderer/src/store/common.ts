@@ -1193,6 +1193,7 @@ interface cavesPortals {
   gonePortal: boolean
   bigRockPortal: boolean
   tiny5DIPortal: boolean
+  DK5DCPortal: boolean
   diddyUpperCabinPortal: boolean
 }
 interface castlePortals {
