@@ -54,6 +54,9 @@ export const usePlayGalleon = (): LogicBool => {
 export const useSlamGalleon = (): boolean => useSlamLevel('Gloomy Galleon')
 
 /*Alex addition: shuffled DK Portals*/
+//Is the DK Portal inside the Lighthouse?
+export const usePortalInLighthouse = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledGalleonPortals.lighthousePortal))
 //Is the DK Portal inside Chunky's ship?
 export const useChunkyShipPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledGalleonPortals.chunkyShipPortal))
@@ -68,11 +71,11 @@ export const useGalleonLighthouseArea = (): LogicBool => {
   const target = useSwitchsanityGun('galleonLighthouse', 0)
   const removeBarriers = useDonkStore(useShallow((state) => state.removeBarriers))
 //  const DKPortal1 = useLighthousePortal()
-//  const DKPortal2 = usePortalInLighthouse()
+  const DKPortal2 = usePortalInLighthouse()
   const DKPortal3 = useChunkyShipPortal()
   return {
-    in: inStage.in && (target || removeBarriers.galleonLighthouse || DKPortal3),
-    out: inStage.out && (target || removeBarriers.galleonLighthouse || DKPortal3)
+    in: inStage.in && (target || removeBarriers.galleonLighthouse || DKPortal2 || DKPortal3),
+    out: inStage.out && (target || removeBarriers.galleonLighthouse || DKPortal2 || DKPortal3)
   }
 }
 
@@ -144,9 +147,10 @@ export const useGalleonLighthouseInside = (): LogicBool => {
   const dk = useDk()
   const hasClimbing = useClimbing()
   const hasJetbarrel = useRocket()
+  const DKPortal = usePortalInLighthouse()
   return {
-    in: lighthousePlatform.in && canSlam && dk && hasClimbing,
-    out: lighthousePlatform.out && canSlam && dk && (hasClimbing || hasJetbarrel)
+    in: (lighthousePlatform.in && canSlam && dk && hasClimbing) || DKPortal,
+    out: (lighthousePlatform.out && canSlam && dk && (hasClimbing || hasJetbarrel)) || DKPortal
   }
 }
 

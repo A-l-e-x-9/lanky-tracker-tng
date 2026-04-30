@@ -189,7 +189,7 @@ export const useDiddyGauntletGb = (): LogicBool => {
   const orange = useOrange()
   return {
     in: inStage.in && !angery && guitar && rocket && orange,
-    out: ((inStage.in && !angery) || (inStage.out || angery)) && guitar && orange
+    out: (inStage.out || angery) && guitar && orange
   }
 }
 

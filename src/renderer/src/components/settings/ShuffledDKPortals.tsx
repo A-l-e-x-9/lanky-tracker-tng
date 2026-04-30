@@ -196,6 +196,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledGalleonPortals"
                 updateItem={setGalleonPortal}
             />
+            <p>Inside the Lighthouse</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is at the bottom of the Lighthouse itself."
+                storeKey="lighthousePortal"
+                prefix="shuffledGalleonPortals"
+                updateItem={setGalleonPortal}
+            />
             <p>Inside Chunky's ship</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}

@@ -1179,6 +1179,7 @@ interface factoryPortals {
 }
 interface galleonPortals {
   vanilla: boolean
+  lighthousePortal: boolean
   chunkyShipPortal: boolean
 }
 interface forestPortals {
