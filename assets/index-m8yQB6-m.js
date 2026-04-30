@@ -11142,6 +11142,7 @@ const initialPortal = {
   },
   shuffledGalleonPortals: {
     vanilla: true,
+    lighthousePortal: false,
     chunkyShipPortal: false
   },
   shuffledForestPortals: {
@@ -11857,15 +11858,17 @@ const usePlayGalleon = () => {
   };
 };
 const useSlamGalleon = () => useSlamLevel("Gloomy Galleon");
+const usePortalInLighthouse = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.lighthousePortal));
 const useChunkyShipPortal = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.chunkyShipPortal));
 const useGalleonLighthouseArea = () => {
   const inStage = usePlayGalleon();
   const target = useSwitchsanityGun("galleonLighthouse", 0);
   const removeBarriers = useDonkStore(useShallow((state) => state.removeBarriers));
+  const DKPortal2 = usePortalInLighthouse();
   const DKPortal3 = useChunkyShipPortal();
   return {
-    in: inStage.in && (target || removeBarriers.galleonLighthouse || DKPortal3),
-    out: inStage.out && (target || removeBarriers.galleonLighthouse || DKPortal3)
+    in: inStage.in && (target || removeBarriers.galleonLighthouse || DKPortal2 || DKPortal3),
+    out: inStage.out && (target || removeBarriers.galleonLighthouse || DKPortal2 || DKPortal3)
   };
 };
 const useGalleonHighTide = () => {
@@ -11917,9 +11920,10 @@ const useGalleonLighthouseInside = () => {
   const dk2 = useDk();
   const hasClimbing = useClimbing();
   const hasJetbarrel = useRocket();
+  const DKPortal = usePortalInLighthouse();
   return {
-    in: lighthousePlatform.in && canSlam && dk2 && hasClimbing,
-    out: lighthousePlatform.out && canSlam && dk2 && (hasClimbing || hasJetbarrel)
+    in: lighthousePlatform.in && canSlam && dk2 && hasClimbing || DKPortal,
+    out: lighthousePlatform.out && canSlam && dk2 && (hasClimbing || hasJetbarrel) || DKPortal
   };
 };
 const useGalleonSeasickShip = () => {
@@ -40751,7 +40755,7 @@ const useDiddyGauntletGb = () => {
   const orange = useOrange();
   return {
     in: inStage.in && !angery && guitar && rocket && orange,
-    out: (inStage.in && !angery || (inStage.out || angery)) && guitar && orange
+    out: (inStage.out || angery) && guitar && orange
   };
 };
 const useChunkyGoneGb = () => {
@@ -54216,6 +54220,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
                   storeKey: "vanilla",
+                  prefix: "shuffledGalleonPortals",
+                  updateItem: setGalleonPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Inside the Lighthouse" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at the bottom of the Lighthouse itself.",
+                  storeKey: "lighthousePortal",
                   prefix: "shuffledGalleonPortals",
                   updateItem: setGalleonPortal
                 }
