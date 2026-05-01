@@ -11150,7 +11150,8 @@ const initialPortal = {
     frontMillPortal: false,
     backMillPortal: false,
     area2Portal: false,
-    shroomTopPortal: false
+    shroomTopPortal: false,
+    lankyShroomTopPortal: false
   },
   shuffledCavesPortals: {
     vanilla: true,
@@ -35330,6 +35331,7 @@ const useFrontMillPortal = () => useDonkStore(useShallow((state) => state.shuffl
 const useBackMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.backMillPortal));
 const useArea2Portal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.area2Portal));
 const useShroomTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.shroomTopPortal));
+const useLankyShroomTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.lankyShroomTopPortal));
 const useForestDay = () => {
   const inStage = usePlayForest();
   const anyGun = useAnyGun();
@@ -35390,9 +35392,10 @@ const useForestMushroomTop = () => {
   const hasBananaports = useBananaportAll();
   const hasJetbarrel = useRocket();
   const DKPortal = useShroomTopPortal();
+  const DKPortal2 = useLankyShroomTopPortal();
   return {
-    in: inStage.in && (canClimbShroom || hasBananaports || hasJetbarrel || DKPortal),
-    out: inStage.out && (canClimbShroom || hasBananaports || hasJetbarrel || DKPortal)
+    in: inStage.in && (canClimbShroom || hasBananaports || hasJetbarrel || DKPortal || DKPortal2),
+    out: inStage.out && (canClimbShroom || hasBananaports || hasJetbarrel || DKPortal || DKPortal2)
   };
 };
 const useForestMushroomRoof = () => {
@@ -35489,7 +35492,7 @@ const useDiddyTopGb$1 = () => {
   const stand = useStand();
   return {
     in: inStage.in && rocket,
-    out: (inStage.in || inStage.out) && (diddy || tiny) && (tiny || stand)
+    out: inStage.out && (diddy || tiny) && (tiny || stand)
   };
 };
 const useDiddyOwlGb = () => {
@@ -35591,9 +35594,10 @@ const useLankyMushGb = () => {
   const roof = useForestMushroomRoof();
   const lanky = useLanky();
   const canSlam = useSlamForest();
+  const DKPortal = useLankyShroomTopPortal();
   return {
-    in: roof.in && lanky && canSlam,
-    out: roof.out && lanky && canSlam
+    in: roof.in && lanky && canSlam || DKPortal,
+    out: roof.out && lanky && canSlam || DKPortal
   };
 };
 const useLankyRaceGb$1 = () => {
@@ -54300,6 +54304,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is anywhere at the top of the Giant Mushroom, inside or outside, minus Lanky's rooms and Chunky's face puzzle room.",
                   storeKey: "shroomTopPortal",
+                  prefix: "shuffledForestPortals",
+                  updateItem: setForestPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In either of Lanky's mushroom top rooms" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Lanky's Zinger or colored mushroom slam room.",
+                  storeKey: "lankyShroomTopPortal",
                   prefix: "shuffledForestPortals",
                   updateItem: setForestPortal
                 }
