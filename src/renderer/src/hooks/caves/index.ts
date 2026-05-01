@@ -64,6 +64,9 @@ export const useGonePortal = (): boolean =>
 //Is the DK Portal in the big rock room near Cranky's?
 export const useBigRockPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCavesPortals.bigRockPortal))
+//Is the DK Portal in DK's 5DI room?
+export const useDK5DIPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCavesPortals.DK5DIPortal))
 //Is the DK Portal in Tiny's 5DI room?
 export const useTiny5DIPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCavesPortals.tiny5DIPortal))
@@ -292,9 +295,10 @@ export const useDkIglooGb = (): LogicBool => {
   const bongos = useBongos()
   const strong = useStrong()
   const hinaKagiyama = useTwirl()
+  const DKPortal = useDK5DIPortal()
   return {
-    in: igloo.in && bongos && strong,
-    out: igloo.out && (bongos || hinaKagiyama) //You are able to do this check out of logic if you have Tiny and Ponytail Twirl, although you need good timing to not get hit by the spiky ice wall.
+    in: ((igloo.in && bongos) || DKPortal) && strong,
+    out: ((igloo.out && bongos) || DKPortal) && hinaKagiyama //You are able to do this check out of logic if you have Tiny and Ponytail Twirl, although you need good timing to not get hit by the spiky ice wall.
   }
 }
 

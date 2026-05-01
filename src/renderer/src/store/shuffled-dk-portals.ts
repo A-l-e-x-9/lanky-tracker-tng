@@ -43,6 +43,7 @@ export const initialPortal: PortalState = {
     vanilla: true,
     gonePortal: false,
     bigRockPortal: false,
+    DK5DIPortal: false,
     tiny5DIPortal: false,
     DK5DCPortal: false,
     diddyUpperCabinPortal: false

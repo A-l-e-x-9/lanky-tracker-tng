@@ -1194,6 +1194,7 @@ interface cavesPortals {
   vanilla: boolean
   gonePortal: boolean
   bigRockPortal: boolean
+  DK5DIPortal: boolean
   tiny5DIPortal: boolean
   DK5DCPortal: boolean
   diddyUpperCabinPortal: boolean
