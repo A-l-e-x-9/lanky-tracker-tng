@@ -74,6 +74,9 @@ export const useArea2Portal = (): boolean =>
 //Is the DK Portal at the top of the Giant Mushroom?
 export const useShroomTopPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledForestPortals.shroomTopPortal))
+//Is the DK Portal in either of Lanky's rooms at the top of the Giant Mushroom?
+export const useLankyShroomTopPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledForestPortals.lankyShroomTopPortal))
 /*end shuffled DK Portals*/
 
 /**
@@ -167,9 +170,10 @@ export const useForestMushroomTop = (): LogicBool => {
   const hasBananaports = useBananaportAll() //...or have all Bananaports pre-activated...
   const hasJetbarrel = useRocket() //...or have Jetbarrel...
   const DKPortal = useShroomTopPortal() //...or have a lucky DK Portal.
+  const DKPortal2 = useLankyShroomTopPortal()
   return {
-    in: inStage.in && (canClimbShroom || hasBananaports || hasJetbarrel || DKPortal),
-    out: inStage.out && (canClimbShroom || hasBananaports || hasJetbarrel || DKPortal)
+    in: inStage.in && (canClimbShroom || hasBananaports || hasJetbarrel || DKPortal || DKPortal2),
+    out: inStage.out && (canClimbShroom || hasBananaports || hasJetbarrel || DKPortal || DKPortal2)
   }
 }
 
@@ -287,7 +291,7 @@ export const useDiddyTopGb = (): LogicBool => {
   const stand = useStand()
   return {
     in: inStage.in && rocket,
-    out: (inStage.in || inStage.out) && (diddy || tiny) && (tiny || stand)
+    out: inStage.out && (diddy || tiny) && (tiny || stand)
   }
 }
 
@@ -403,6 +407,7 @@ export const useLankyMushGb = (): LogicBool => {
   const roof = useForestMushroomRoof()
   const lanky = useLanky()
   const canSlam = useSlamForest()
+  const DKPortal = useLankyShroomTopPortal()
   return {
     in: roof.in && lanky && canSlam,
     out: roof.out && lanky && canSlam
