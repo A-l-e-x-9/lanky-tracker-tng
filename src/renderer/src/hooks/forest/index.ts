@@ -409,8 +409,8 @@ export const useLankyMushGb = (): LogicBool => {
   const canSlam = useSlamForest()
   const DKPortal = useLankyShroomTopPortal()
   return {
-    in: roof.in && lanky && canSlam,
-    out: roof.out && lanky && canSlam
+    in: (roof.in && lanky && canSlam) || DKPortal,
+    out: (roof.out && lanky && canSlam) || DKPortal
   }
 }
 
