@@ -172,6 +172,10 @@ export const useGalleonSeasickShip = (): LogicBool => {
   }
 }
 
+/*Alex addition: If given a DK Portal in the Lighthouse Area, can we make it back to the caves?
+
+Unless you're playing with No Logic/Minimal Logic (which this tracker doesn't account for), I don't think it's even possible for the Randomizer to put a DK Portal in the Lighthouse zone without the gate being pre-opened, Bananaports pre-activated, or the absolute cancer that is Loading Zone Randomizer being on, but I'm reserving a spot here just in case.*/
+
 /**
  * Do we have access to the small platforms in the Galleon Caverns?
  *
@@ -236,6 +240,10 @@ export const useGalleonTreasureRoom = (): LogicBool => {
     out: outskirts.out && dive.out && (lanky || preOpened)
   }
 }
+
+/*Alex addition: If given a DK Portal in the Shipyard, can we make it back to the caves?
+
+Unless you're playing with No Logic/Minimal Logic (which this tracker doesn't account for), I don't think it's even possible for the Randomizer to put a DK Portal in the ship zone without the gate being pre-opened, Bananaports pre-activated, or the absolute cancer that is Loading Zone Randomizer being on, but I'm reserving a spot here just in case.*/
 
 export const useDkLighthouseGb = (): LogicBool => {
   const grab = useGrab()

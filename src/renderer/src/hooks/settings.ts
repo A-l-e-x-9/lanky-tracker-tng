@@ -149,7 +149,7 @@ export const useBean = (): boolean => {
  */
 export const usePoolBlueprints = (): boolean => {
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints))
-  const blueprintWinCon = useDonkStore(useShallow((state) => state.winCondition.fairies))
+  const blueprintWinCon = useDonkStore(useShallow((state) => state.winCondition.blueprints))
   const isKRoolChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))
   return kasplatsInRotation || ((blueprintWinCon || isKRoolChallenge) && !kasplatsInRotation)
 }
