@@ -11157,6 +11157,7 @@ const initialPortal = {
     vanilla: true,
     gonePortal: false,
     bigRockPortal: false,
+    DK5DIPortal: false,
     tiny5DIPortal: false,
     DK5DCPortal: false,
     diddyUpperCabinPortal: false
@@ -40667,6 +40668,7 @@ const usePlayCaves = () => {
 const useSlamCaves = () => useSlamLevel("Crystal Caves");
 const useGonePortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.gonePortal));
 const useBigRockPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.bigRockPortal));
+const useDK5DIPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.DK5DIPortal));
 const useTiny5DIPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.tiny5DIPortal));
 const useDK5DCPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.DK5DCPortal));
 const useDiddyUpperCabinPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.diddyUpperCabinPortal));
@@ -40849,9 +40851,10 @@ const useDkIglooGb = () => {
   const bongos = useBongos();
   const strong = useStrong();
   const hinaKagiyama = useTwirl();
+  const DKPortal = useDK5DIPortal();
   return {
-    in: igloo.in && bongos && strong,
-    out: igloo.out && (bongos || hinaKagiyama)
+    in: (igloo.in && bongos || DKPortal) && strong,
+    out: (igloo.out && bongos || DKPortal) && hinaKagiyama
     //You are able to do this check out of logic if you have Tiny and Ponytail Twirl, although you need good timing to not get hit by the spiky ice wall.
   };
 };
@@ -54351,6 +54354,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in the big boulder room.",
                   storeKey: "bigRockPortal",
+                  prefix: "shuffledCavesPortals",
+                  updateItem: setCavesPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "DK's 5DI room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in DK's 5-Door Igloo room.",
+                  storeKey: "DK5DIPortal",
                   prefix: "shuffledCavesPortals",
                   updateItem: setCavesPortal
                 }
