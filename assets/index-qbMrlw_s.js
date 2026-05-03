@@ -11138,6 +11138,7 @@ const initialPortal = {
     storagePortal: false,
     upperProdPortal: false,
     crusherPortal: false,
+    freeChunkyPortal: false,
     arcadePortal: false
   },
   shuffledGalleonPortals: {
@@ -28218,6 +28219,7 @@ const useRAndDPortal = () => useDonkStore(useShallow((state) => state.shuffledFa
 const useStoragePortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.storagePortal));
 const useArcadePortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.arcadePortal));
 const useUpperProdPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.upperProdPortal));
+const useFreeChunkyPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.freeChunkyPortal));
 const useCrusherPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.crusherPortal));
 const useSlamFactory = () => useSlamLevel("Frantic Factory");
 const useFactoryTesting = () => {
@@ -28238,9 +28240,12 @@ const useFactoryHut = () => {
   const testing = useFactoryTesting();
   const diddy = useDiddy();
   const tiny = useTiny();
+  const twirl = useTwirl();
+  const DK = useDk();
+  const DKPortal = useFreeChunkyPortal();
   return {
-    in: testing.in,
-    out: inStage.out && (diddy || tiny)
+    in: testing.in || DKPortal && twirl,
+    out: inStage.out && (diddy || tiny) && (twirl || DK)
   };
 };
 const useFactoryProductionEnabled = () => {
@@ -28271,7 +28276,8 @@ const useFoyerFromStorage = () => {
   const arcadePortal = useArcadePortal();
   const crusherPortal = useCrusherPortal();
   const upperProdPortal = useUpperProdPortal();
-  const startAtBottom = storagePortal || arcadePortal || upperProdPortal || crusherPortal;
+  const freeChunkyPortal = useFreeChunkyPortal();
+  const startAtBottom = storagePortal || arcadePortal || upperProdPortal || crusherPortal || freeChunkyPortal;
   const climbing = useClimbing();
   const warpAll = useBananaportAll();
   return {
@@ -28443,9 +28449,10 @@ const useLankyFreeChunkyGb = () => {
   const isLanky = useLanky();
   const hasOStand = useStand();
   const inStage = usePlayFactory();
+  const DKPortal = useFreeChunkyPortal();
   return {
-    in: inStage.in && isLanky && hasOStand && hasSlam,
-    out: inStage.out && isLanky && hasSlam
+    in: (inStage.in && hasOStand || DKPortal) && isLanky && hasSlam,
+    out: (inStage.out || DKPortal) && isLanky && hasSlam
   };
 };
 const useLankyProductionGb = () => {
@@ -28456,7 +28463,7 @@ const useLankyProductionGb = () => {
   const tiny = useTiny();
   return {
     in: production.in && canSlam && hasLanky && stand,
-    out: (production.in || production.out) && canSlam && hasLanky && tiny
+    out: production.out && canSlam && hasLanky && tiny
   };
 };
 const useTinyRaceGb = () => {
@@ -54202,6 +54209,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in DK's crusher in Prod Room.",
                   storeKey: "crusherPortal",
+                  prefix: "shuffledFactoryPortals",
+                  updateItem: setFactoryPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "At Lanky's switch to free Chunky" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is near the Free Chunky switch.",
+                  storeKey: "freeChunkyPortal",
                   prefix: "shuffledFactoryPortals",
                   updateItem: setFactoryPortal
                 }
