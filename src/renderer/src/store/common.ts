@@ -1175,6 +1175,7 @@ interface factoryPortals {
   storagePortal: boolean
   upperProdPortal: boolean
   crusherPortal: boolean
+  freeChunkyPortal: boolean
   arcadePortal: boolean
 }
 interface galleonPortals {

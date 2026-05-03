@@ -60,6 +60,9 @@ export const useArcadePortal = (): boolean =>
 //Is the DK Portal in the upper section of Prod Room, near its Troff 'n' Scoff?
 export const useUpperProdPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledFactoryPortals.upperProdPortal))
+//Is the DK Portal at the "Free Chunky" switch?
+export const useFreeChunkyPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledFactoryPortals.freeChunkyPortal))
 //Is the DK Portal in the Crusher?
 export const useCrusherPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledFactoryPortals.crusherPortal))
@@ -99,9 +102,12 @@ export const useFactoryHut = (): LogicBool => {
   const testing = useFactoryTesting()
   const diddy = useDiddy()
   const tiny = useTiny()
+  const twirl = useTwirl()
+  const DK = useDk()
+  const DKPortal = useFreeChunkyPortal()
   return {
-    in: testing.in,
-    out: inStage.out && (diddy || tiny)
+    in: testing.in || (DKPortal && twirl),
+    out: inStage.out && (diddy || tiny) && (twirl || DK)
   }
 }
 
@@ -144,7 +150,8 @@ export const useFoyerFromStorage = (): LogicBool => {
   const arcadePortal = useArcadePortal()
   const crusherPortal = useCrusherPortal()
   const upperProdPortal = useUpperProdPortal()
-  const startAtBottom = (storagePortal || arcadePortal || upperProdPortal || crusherPortal)
+  const freeChunkyPortal = useFreeChunkyPortal()
+  const startAtBottom = (storagePortal || arcadePortal || upperProdPortal || crusherPortal || freeChunkyPortal)
   const climbing = useClimbing()
   const warpAll = useBananaportAll()
   return {
@@ -339,9 +346,10 @@ export const useLankyFreeChunkyGb = (): LogicBool => {
   const isLanky = useLanky()
   const hasOStand = useStand()
   const inStage = usePlayFactory()
+  const DKPortal = useFreeChunkyPortal()
   return {
-    in: inStage.in && isLanky && hasOStand && hasSlam,
-    out: inStage.out && isLanky && hasSlam
+    in: ((inStage.in && hasOStand) || DKPortal) && isLanky && hasSlam,
+    out: (inStage.out || DKPortal) && isLanky && hasSlam
   }
 }
 
@@ -353,7 +361,7 @@ export const useLankyProductionGb = (): LogicBool => {
   const tiny = useTiny()
   return {
     in: production.in && canSlam && hasLanky && stand,
-    out: (production.in || production.out) && canSlam && hasLanky && tiny
+    out: production.out && canSlam && hasLanky && tiny
   }
 }
 
