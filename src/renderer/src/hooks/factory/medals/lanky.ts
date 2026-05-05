@@ -15,11 +15,11 @@ const useLankyMedalCommonLogic = (): number => {
   const gun = useGrape()
   const music = useTrombone()
 
-  let bananas = 5
+  let bananas = 5 //Bananaport #2 at vanilla entrance
   if (testing.in || testing.out) {
-    bananas += 15
+    bananas += 15 //R&D room
     if (gun && music) {
-      bananas += 10
+      bananas += 10 //balloon in the fucking piano lame room
     }
   }
   if (prodTop.in || prodTop.out) {

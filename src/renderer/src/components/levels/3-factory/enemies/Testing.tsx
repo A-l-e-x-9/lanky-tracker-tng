@@ -1,11 +1,10 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatToughEnemy, useDefeatZinger } from '@renderer/hooks/enemies'
-import { useFactoryTesting, usePlayFactory } from '@renderer/hooks/factory'
+import { useFactoryTesting } from '@renderer/hooks/factory'
 import { useAnyKong } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 
 const TestingEnemies: React.FC = () => {
-  const inStage = usePlayFactory()
   const testing = useFactoryTesting()
   const anyKong = useAnyKong()
   const robo = useDefeatToughEnemy()
@@ -44,8 +43,8 @@ const TestingEnemies: React.FC = () => {
         id={3316}
         name="Enemy at pole to block tower"
         region="Testing Room"
-        canGetLogic={inStage.in && zinger.in}
-        canGetBreak={inStage.out && zinger.out}
+        canGetLogic={testing.in && zinger.in}
+        canGetBreak={testing.out && zinger.out}
       />
     </DropPool>
   )
