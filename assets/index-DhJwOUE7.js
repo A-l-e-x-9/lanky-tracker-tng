@@ -28861,7 +28861,6 @@ const StorageEnemies = () => {
   ] });
 };
 const TestingEnemies = () => {
-  const inStage = usePlayFactory();
   const testing = useFactoryTesting();
   const anyKong = useAnyKong();
   const robo = useDefeatToughEnemy();
@@ -28913,8 +28912,8 @@ const TestingEnemies = () => {
         id: 3316,
         name: "Enemy at pole to block tower",
         region: "Testing Room",
-        canGetLogic: inStage.in && zinger.in,
-        canGetBreak: inStage.out && zinger.out
+        canGetLogic: testing.in && zinger.in,
+        canGetBreak: testing.out && zinger.out
       }
     )
   ] });
