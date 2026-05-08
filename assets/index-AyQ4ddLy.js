@@ -11123,6 +11123,7 @@ const initialPortal = {
     stormyPortal: false,
     hiveOutsidePortal: false,
     portalInDiddyMine: false,
+    paintingRoomPortal: false,
     portalInChunkyMine: false
   },
   shuffledAztecPortals: {
@@ -18456,6 +18457,7 @@ const useOutsidePaintingPortal = () => useDonkStore(useShallow((state) => state.
 const useStormyPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal));
 const useHiveOutsidePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.hiveOutsidePortal));
 const useDiddyMinePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine));
+const usePaintingRoomPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.paintingRoomPortal));
 const useChunkyMinePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInChunkyMine));
 const useJapesKongGates = () => {
   const inStage = usePlayJapes();
@@ -18522,17 +18524,19 @@ const useJapesPaintingOutside = () => {
   const DKPortal = usePortalNearDiddy();
   const DKPortal2 = useDiddyMinePortal();
   const DKPortal3 = useOutsidePaintingPortal();
+  const DKPortal4 = usePaintingRoomPortal();
   return {
-    in: inStage.in && (DKPortal3 || (stand || climbing && twirl)),
-    out: inStage.out && (DKPortal3 || (climbing || DKPortal || DKPortal2) && (dk2 || tiny || chunky))
+    in: inStage.in && (DKPortal3 || DKPortal4 || (stand || climbing && twirl)),
+    out: inStage.out && (DKPortal3 || DKPortal4 || (climbing || DKPortal || DKPortal2) && (dk2 || tiny || chunky))
   };
 };
 const useJapesPainting = () => {
   const canPlay = useJapesPaintingOutside();
   const paintingSwitch = useJapesPaintingSwitch();
+  const DKPortal = usePaintingRoomPortal();
   return {
-    in: canPlay.in && paintingSwitch,
-    out: canPlay.out && paintingSwitch
+    in: canPlay.in && (paintingSwitch || DKPortal),
+    out: canPlay.out && (paintingSwitch || DKPortal)
   };
 };
 const useJapesUnderground = () => {
@@ -18654,22 +18658,20 @@ const useFreeDiddySwitch = () => {
   const tiny = useFeather();
   const chunky = usePineapple();
   const anyGun = useAnyGun();
-  const freeDiddy2 = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeDiddy));
-  switch (freeDiddy2) {
+  const freeDiddy = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeDiddy));
+  switch (freeDiddy) {
     case 1:
-      return dk2;
-    case 2:
       return diddy;
-    case 3:
+    case 2:
       return lanky;
-    case 4:
+    case 3:
       return tiny;
-    case 5:
+    case 4:
       return chunky;
-    case 6:
+    case 5:
       return anyGun;
     default:
-      return true;
+      return dk2;
   }
 };
 const useDkFreeDiddyGb = () => {
@@ -54085,6 +54087,17 @@ const ShuffledDKPortals = () => {
                   updateItem: setJapesPortal
                 }
               ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In Lanky's painting room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is inside the Painting Room.",
+                  storeKey: "paintingRoomPortal",
+                  prefix: "shuffledJapesPortals",
+                  updateItem: setJapesPortal
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In Chunky's mine" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleRadioIcon,
@@ -54633,13 +54646,12 @@ const SwitchsanitySwitch = (props) => {
 const allKong = [dkKongIcon, diddyKongIcon, lankyKongIcon, tinyKongIcon, chunkyKongIcon];
 const allGun = [dkGunIcon, diddyGunIcon, lankyGunIcon, tinyGunIcon, chunkyGunIcon, anyGunIcon];
 const allMusic = [dkMusicIcon, diddyMusicIcon, lankyMusicIcon, tinyMusicIcon, chunkyMusicIcon, anyInstIcon];
-const freeDiddy = [unknownIcon$1].concat(allGun);
-const freeTiny = [unknownIcon$1, diddyMoveIcon, chunkyMoveIcon];
+const freeTiny = [diddyMoveIcon, chunkyMoveIcon];
 const FreeKongSelector = () => {
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Diddy:" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeDiddy, storeKey: "freeDiddy", images: freeDiddy }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeDiddy, storeKey: "freeDiddy", images: allGun }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Lanky:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeLanky, storeKey: "freeLanky", images: allMusic }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Tiny:" }),
