@@ -1160,6 +1160,7 @@ interface japesPortals {
   stormyPortal: boolean
   hiveOutsidePortal: boolean
   portalInDiddyMine: boolean
+  paintingRoomPortal: boolean
   portalInChunkyMine: boolean
 }
 interface aztecPortals {

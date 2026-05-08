@@ -9,6 +9,7 @@ export const initialPortal: PortalState = {
     stormyPortal: false,
     hiveOutsidePortal: false,
     portalInDiddyMine: false,
+    paintingRoomPortal: false,
     portalInChunkyMine: false
   },
   shuffledAztecPortals: {

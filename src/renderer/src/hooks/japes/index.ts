@@ -67,6 +67,9 @@ export const useHiveOutsidePortal = (): boolean =>
 //Is the DK Portal in Diddy's mine?
 export const useDiddyMinePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine))
+//Is the DK Portal in Lanky's painting room?
+export const usePaintingRoomPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledJapesPortals.paintingRoomPortal))
 //Is the DK Portal in Chunky's mine?
 export const useChunkyMinePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInChunkyMine))
@@ -183,9 +186,10 @@ export const useJapesPaintingOutside = (): LogicBool => {
   const DKPortal = usePortalNearDiddy()
   const DKPortal2 = useDiddyMinePortal()
   const DKPortal3 = useOutsidePaintingPortal()
+  const DKPortal4 = usePaintingRoomPortal()
   return {
-    in: inStage.in && (DKPortal3 || (stand || (climbing && twirl))),
-    out: inStage.out && (DKPortal3 || ((climbing || DKPortal || DKPortal2) && (dk || tiny || chunky)))
+    in: inStage.in && (DKPortal3 || DKPortal4 || (stand || (climbing && twirl))),
+    out: inStage.out && (DKPortal3 || DKPortal4 || ((climbing || DKPortal || DKPortal2) && (dk || tiny || chunky)))
   }
 }
 
@@ -196,9 +200,10 @@ export const useJapesPaintingOutside = (): LogicBool => {
 export const useJapesPainting = (): LogicBool => {
   const canPlay = useJapesPaintingOutside()
   const paintingSwitch = useJapesPaintingSwitch()
+  const DKPortal = usePaintingRoomPortal()
   return {
-    in: canPlay.in && paintingSwitch,
-    out: canPlay.out && paintingSwitch
+    in: canPlay.in && (paintingSwitch || DKPortal),
+    out: canPlay.out && (paintingSwitch || DKPortal)
   }
 }
 
@@ -345,19 +350,17 @@ const useFreeDiddySwitch = (): boolean => {
   const freeDiddy = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeDiddy))
   switch (freeDiddy) {
     case 1:
-      return dk
-    case 2:
       return diddy
-    case 3:
+    case 2:
       return lanky
-    case 4:
+    case 3:
       return tiny
-    case 5:
+    case 4:
       return chunky
-    case 6:
+    case 5:
       return anyGun
     default:
-      return true
+      return dk
   }
 }
 

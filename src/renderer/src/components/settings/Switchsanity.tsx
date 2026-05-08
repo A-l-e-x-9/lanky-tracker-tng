@@ -26,23 +26,20 @@ import tinyKongIcon from '../../assets/images/tiny.png'
 import tinyGunIcon from '../../assets/images/tiny_gun.png'
 import tinyMusicIcon from '../../assets/images/tiny_inst.png'
 import tinyPadIcon from '../../assets/images/tinypad.png'
-import unknownIcon from '../../assets/images/unknown-small.png'
 import anyGunIcon from '../../assets/images/settings/hard_shoot.png'
 import anyInstIcon from '../../assets/images/candy.png'
 
 const allKong = [dkKongIcon, diddyKongIcon, lankyKongIcon, tinyKongIcon, chunkyKongIcon]
 const allGun = [dkGunIcon, diddyGunIcon, lankyGunIcon, tinyGunIcon, chunkyGunIcon, anyGunIcon]
 const allMusic = [dkMusicIcon, diddyMusicIcon, lankyMusicIcon, tinyMusicIcon, chunkyMusicIcon, anyInstIcon]
-
-const freeDiddy = [unknownIcon].concat(allGun)
-const freeTiny = [unknownIcon, diddyMoveIcon, chunkyMoveIcon]
+const freeTiny = [diddyMoveIcon, chunkyMoveIcon]
 
 const FreeKongSelector: React.FC = () => {
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]))
   return (
     <>
       <p>To free Diddy:</p>
-      <SwitchsanitySwitch currValue={switches.freeDiddy} storeKey="freeDiddy" images={freeDiddy} />
+      <SwitchsanitySwitch currValue={switches.freeDiddy} storeKey="freeDiddy" images={allGun} />
       <p>To free Lanky:</p>
       <SwitchsanitySwitch currValue={switches.freeLanky} storeKey="freeLanky" images={allMusic} />
       <p>To free Tiny:</p>
