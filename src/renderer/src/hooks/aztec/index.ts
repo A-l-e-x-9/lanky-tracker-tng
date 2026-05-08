@@ -294,11 +294,9 @@ const useFreeTinySwitch = (): boolean => {
   const freeTiny = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeTiny))
   switch (freeTiny) {
     case 1:
-      return charge
-    case 2:
       return punch
     default:
-      return true
+      return charge
   }
 }
 
