@@ -22970,11 +22970,9 @@ const useFreeTinySwitch = () => {
   const freeTiny2 = useDonkStore(useShallow((state) => state.switchsanitySwitches.freeTiny));
   switch (freeTiny2) {
     case 1:
-      return charge;
-    case 2:
       return punch;
     default:
-      return true;
+      return charge;
   }
 };
 const useDiddyFreeTinyGb = () => {
