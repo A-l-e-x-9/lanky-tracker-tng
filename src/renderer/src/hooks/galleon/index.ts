@@ -54,6 +54,9 @@ export const usePlayGalleon = (): LogicBool => {
 export const useSlamGalleon = (): boolean => useSlamLevel('Gloomy Galleon')
 
 /*Alex addition: shuffled DK Portals*/
+//Is the DK Portal near Tiny's vanilla Kasplat?
+export const useTinyKasplatPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledGalleonPortals.tinyKasplatPortal))
 //Is the DK Portal inside the Lighthouse?
 export const usePortalInLighthouse = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledGalleonPortals.lighthousePortal))
@@ -189,8 +192,9 @@ export const useGalleonCavernTop = (): LogicBool => {
   const dive = useDive()
   const vine = useVine()
   const warpAll = useBananaportAll()
+  const DKPortal = useTinyKasplatPortal()
   return {
-    in: inStage.in && (vine || (warpAll && (dive.in || rocket))),
+    in: inStage.in && (vine || DKPortal || (warpAll && (dive.in || rocket))),
     out: (inStage.in || inStage.out) && seasick.out
   }
 }

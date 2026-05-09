@@ -212,6 +212,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledGalleonPortals"
                 updateItem={setGalleonPortal}
             />
+            <p>At vanilla Bananaport 3 in the central cave</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is near Tiny's Kasplat."
+                storeKey="tinyKasplatPortal"
+                prefix="shuffledGalleonPortals"
+                updateItem={setGalleonPortal}
+            />
             <p>Inside the Lighthouse</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}
