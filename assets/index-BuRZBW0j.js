@@ -11144,6 +11144,7 @@ const initialPortal = {
   },
   shuffledGalleonPortals: {
     vanilla: true,
+    tinyKasplatPortal: false,
     lighthousePortal: false,
     chunkyShipPortal: false
   },
@@ -11862,6 +11863,7 @@ const usePlayGalleon = () => {
   };
 };
 const useSlamGalleon = () => useSlamLevel("Gloomy Galleon");
+const useTinyKasplatPortal = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.tinyKasplatPortal));
 const usePortalInLighthouse = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.lighthousePortal));
 const useChunkyShipPortal = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.chunkyShipPortal));
 const useGalleonLighthouseArea = () => {
@@ -11950,8 +11952,9 @@ const useGalleonCavernTop = () => {
   const dive = useDive();
   const vine = useVine();
   const warpAll = useBananaportAll();
+  const DKPortal = useTinyKasplatPortal();
   return {
-    in: inStage.in && (vine || warpAll && (dive.in || rocket)),
+    in: inStage.in && (vine || DKPortal || warpAll && (dive.in || rocket)),
     out: (inStage.in || inStage.out) && seasick.out
   };
 };
@@ -54255,6 +54258,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
                   storeKey: "vanilla",
+                  prefix: "shuffledGalleonPortals",
+                  updateItem: setGalleonPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "At vanilla Bananaport 3 in the central cave" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is near Tiny's Kasplat.",
+                  storeKey: "tinyKasplatPortal",
                   prefix: "shuffledGalleonPortals",
                   updateItem: setGalleonPortal
                 }
