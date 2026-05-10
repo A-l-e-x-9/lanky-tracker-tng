@@ -1192,6 +1192,7 @@ interface forestPortals {
   area2Portal: boolean
   shroomTopPortal: boolean
   lankyShroomTopPortal: boolean
+  area4Portal: boolean
 }
 interface cavesPortals {
   vanilla: boolean

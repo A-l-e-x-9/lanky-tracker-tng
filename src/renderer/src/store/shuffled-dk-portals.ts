@@ -40,7 +40,8 @@ export const initialPortal: PortalState = {
     backMillPortal: false,
     area2Portal: false,
     shroomTopPortal: false,
-    lankyShroomTopPortal: false
+    lankyShroomTopPortal: false,
+    area4Portal: false
   },
   shuffledCavesPortals: {
     vanilla: true,

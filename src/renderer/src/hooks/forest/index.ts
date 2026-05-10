@@ -77,6 +77,9 @@ export const useShroomTopPortal = (): boolean =>
 //Is the DK Portal in either of Lanky's rooms at the top of the Giant Mushroom?
 export const useLankyShroomTopPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledForestPortals.lankyShroomTopPortal))
+//Is the DK Portal in Area 4?
+export const useArea4Portal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledForestPortals.area4Portal))
 /*end shuffled DK Portals*/
 
 /**
@@ -229,9 +232,10 @@ export const useForestOwl = (): LogicBool => {
   const door = useSwitchsanityGun('forestOwlTree', 2)
   const warpAll = useBananaportAll()
   const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]))
+  const DKPortal = useArea4Portal()
   return {
-    in: inStage.in && (warpAll || removeBarriers.forestOwlTree || door),
-    out: inStage.out && (warpAll || removeBarriers.forestOwlTree || door)
+    in: inStage.in && (warpAll || removeBarriers.forestOwlTree || door || DKPortal),
+    out: inStage.out && (warpAll || removeBarriers.forestOwlTree || door || DKPortal)
   }
 }
 
