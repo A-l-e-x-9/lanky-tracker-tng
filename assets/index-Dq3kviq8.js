@@ -11154,7 +11154,8 @@ const initialPortal = {
     backMillPortal: false,
     area2Portal: false,
     shroomTopPortal: false,
-    lankyShroomTopPortal: false
+    lankyShroomTopPortal: false,
+    area4Portal: false
   },
   shuffledCavesPortals: {
     vanilla: true,
@@ -35342,6 +35343,7 @@ const useBackMillPortal = () => useDonkStore(useShallow((state) => state.shuffle
 const useArea2Portal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.area2Portal));
 const useShroomTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.shroomTopPortal));
 const useLankyShroomTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.lankyShroomTopPortal));
+const useArea4Portal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.area4Portal));
 const useForestDay = () => {
   const inStage = usePlayForest();
   const anyGun = useAnyGun();
@@ -35445,9 +35447,10 @@ const useForestOwl = () => {
   const door = useSwitchsanityGun("forestOwlTree", 2);
   const warpAll = useBananaportAll();
   const [removeBarriers] = useDonkStore(useShallow((state) => [state.removeBarriers]));
+  const DKPortal = useArea4Portal();
   return {
-    in: inStage.in && (warpAll || removeBarriers.forestOwlTree || door),
-    out: inStage.out && (warpAll || removeBarriers.forestOwlTree || door)
+    in: inStage.in && (warpAll || removeBarriers.forestOwlTree || door || DKPortal),
+    out: inStage.out && (warpAll || removeBarriers.forestOwlTree || door || DKPortal)
   };
 };
 const useChunkyMineGb = () => {
@@ -54360,6 +54363,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in Lanky's Zinger or colored mushroom slam room.",
                   storeKey: "lankyShroomTopPortal",
+                  prefix: "shuffledForestPortals",
+                  updateItem: setForestPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Area 4" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the area where the Rabbit, Owl, and Tree Stump are.",
+                  storeKey: "area4Portal",
                   prefix: "shuffledForestPortals",
                   updateItem: setForestPortal
                 }
