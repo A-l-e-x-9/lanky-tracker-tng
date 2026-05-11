@@ -48870,7 +48870,6 @@ const useLankyMedalInLogic = () => {
   const music = useTrombone();
   const crystal = useSprint();
   const pad = useBalloon();
-  const sniper = useSniper();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic();
   if (!inStage.in) {
@@ -48885,7 +48884,7 @@ const useLankyMedalInLogic = () => {
   if (gun && crystal) {
     bananas += 10;
   }
-  if (canSlam && gun && (music && pad || sniper)) {
+  if (canSlam && gun && music && pad) {
     bananas += 10;
   }
   return bananas;
@@ -48901,7 +48900,6 @@ const useLankyMedalOutLogic = () => {
   const dk2 = useDk();
   const diddy = useDiddy();
   const twirl = useTwirl();
-  const sniper = useSniper();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic();
   if (!inStage.out) {
@@ -48916,7 +48914,7 @@ const useLankyMedalOutLogic = () => {
   if (gun && (crystal || dk2 || diddy)) {
     bananas += 10;
   }
-  if (canSlam && gun && (music && pad || sniper) || twirl) {
+  if (canSlam && gun && (music && pad || twirl)) {
     bananas += 10;
   }
   return bananas;
