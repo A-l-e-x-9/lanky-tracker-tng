@@ -40,7 +40,7 @@ const useTinyMedalCommonLogic = (): number => {
   if ((punch || prePunched) && boulderTech && hunky && pad) {
     bananas += 20
   }
-  if (igloo && music) {
+  if ((igloo.in || igloo.out) && music) {
     bananas += 5
     if (gun) {
       bananas += 10
