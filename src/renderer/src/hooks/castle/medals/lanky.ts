@@ -4,7 +4,6 @@ import {
   useDk,
   useGrape,
   useLanky,
-  useSniper,
   useSprint,
   useTrombone,
   useTwirl
@@ -34,7 +33,6 @@ export const useLankyMedalInLogic = (): number => {
   const music = useTrombone()
   const crystal = useSprint()
   const pad = useBalloon()
-  const sniper = useSniper()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useLankyMedalCommonLogic()
 
@@ -68,7 +66,6 @@ export const useLankyMedalOutLogic = (): number => {
   const dk = useDk()
   const diddy = useDiddy()
   const twirl = useTwirl()
-  const sniper = useSniper()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useLankyMedalCommonLogic()
 
