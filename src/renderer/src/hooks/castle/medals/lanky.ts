@@ -51,7 +51,7 @@ export const useLankyMedalInLogic = (): number => {
   if (gun && crystal) {
     bananas += 10
   }
-  if (canSlam && gun && ((music && pad) || sniper)) {
+  if (canSlam && gun && music && pad) {
     bananas += 10
   }
   return bananas
@@ -85,7 +85,7 @@ export const useLankyMedalOutLogic = (): number => {
   if (gun && (crystal || dk || diddy)) {
     bananas += 10
   }
-  if ((canSlam && gun && ((music && pad) || sniper)) || twirl) {
+  if (canSlam && gun && ((music && pad) || twirl)) {
     bananas += 10
   }
   return bananas
