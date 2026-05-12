@@ -69,6 +69,7 @@ const GeneratorSettings: React.FC = () => {
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
   const [isKeySeed, isKey8Seed, isKey38Seed, isKremKaptureSeed, isRapSeed, isChallengeSeed, isWabbitSeed, isGBSeed, isBPSeed, isCoCoinSeed, isMedalSeed, isCrownSeed, isFairySeed, isRainbowSeed, isBeanSeed, isPearlSeed, isBossSeed, isBonusSeed] = useDonkStore(useShallow((state) => [state.winCondition.bossKeys, state.winCondition.key8, state.winCondition.key3And8, state.winCondition.kremlingKapture, state.winCondition.takeItToTheFridge, state.winCondition.kRoolChallenge, state.winCondition.killTheWabbit, state.winCondition.goldBananas, state.winCondition.blueprints, state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.crowns, state.winCondition.fairies, state.winCondition.rainbowCoins, state.winCondition.theBean, state.winCondition.pearls, state.winCondition.bosses, state.winCondition.bonuses]))
+  const capRemoved = useDonkStore(useShallow((state) => state.setUi.itemCountModifier))
 
   return (
     <span>
@@ -420,7 +421,7 @@ const GeneratorSettings: React.FC = () => {
                 storeKey="winConItemCount"
                 prefix="winCondition"
                 setCount={setWinCondition}
-                maxValue={isKeySeed ? 8 : isGBSeed ? 201 : (isBPSeed || isMedalSeed) ? 40 : isCoCoinSeed ? 2 : isCrownSeed ? 10 : isFairySeed ? 20 : isRainbowSeed ? 16 : isBeanSeed ? 1 : isPearlSeed ? 5 : isBossSeed ? 7 : isBonusSeed ? 43 : 0} //I know no good way of implementing Hideout Helm bonuses at this time, so the "Bonuses" win con caps out at 43 even though it can go to 53.
+                maxValue={isKeySeed ? 8 : isGBSeed ? (capRemoved ? 255 : 201) : isBPSeed ? 40 : isCoCoinSeed ? 2 : isMedalSeed ? (capRemoved ? 255 : 40): isCrownSeed ? (capRemoved ? 255 : 10) : isFairySeed ? (capRemoved ? 255 : 20) : isRainbowSeed ? (capRemoved ? 255 : 16) : isBeanSeed ? 1 : isPearlSeed ? (capRemoved ? 255 : 5) : isBossSeed ? 7 : isBonusSeed ? 43 : 0} //I know no good way of implementing Hideout Helm bonuses at this time, so the "Bonuses" win con caps out at 43 even though it can go to 53.
               />
             <p></p>
             <p></p>
@@ -747,7 +748,7 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={pearlIcon}
                 prefix="fastChecks"
                 setCount={setFastCheck}
-                maxValue={5}
+                maxValue={5} //I don't currently know if the Randomizer allows the Mermaid to demand more than five Pearls if you allotted more with the Item Count Modifier; not currently putting the "capRemoved" modifier here
               />
             </>
             <h3>Glitch Logic Settings</h3>
@@ -762,7 +763,7 @@ const GeneratorSettings: React.FC = () => {
               <CheckIcon storeKey="hideRed" prefix="ui" updateItem={setUi} />
               <p>Hide logic-breaking checks?</p>
               <CheckIcon storeKey="hideYellow" prefix="ui" updateItem={setUi} />
-              <p title="Checking this will cause the Banana, Fairy, Medal, Rainbow Coin, Crown, and Pearl counters to cap out at 255 instead of their normal limits, both in the upper left corner tracker and on the Helm Doors listed up above.">Did you use the Item Count Modifier to give yourself more than the default for any item?</p>
+              <p title="Checking this will cause the Banana, Fairy, Medal, Rainbow Coin, Crown, and Pearl counters to cap out at 255 instead of their normal limits, both in the upper left corner tracker and on the Helm Doors and win condition listed up above.">Did you use the Item Count Modifier to give yourself more than the default for any item?</p>
               <CheckIcon storeKey="itemCountModifier" prefix="ui" updateItem={setUi} />
             </>
           </section>

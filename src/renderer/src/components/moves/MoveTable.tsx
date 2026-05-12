@@ -72,6 +72,7 @@ const MoveTable = (): JSX.Element => {
   const [setMove, setConsumable] = useDonkStore(
     useShallow((state) => [state.setMove, state.setConsumable])
   )
+  const capRemoved = useDonkStore(useShallow((state) => state.setUi.itemCountModifier))
   return (
   <section className="move-section">
     <h3>Moves, Kongs, and Major Collectibles</h3>
@@ -107,7 +108,7 @@ const MoveTable = (): JSX.Element => {
         imgUrl={crownIcon}
         prefix="consumables"
         setCount={setConsumable}
-        maxValue={10}
+        maxValue={capRemoved ? 255 : 10}
       />
       <SimpleIcon storeKey="diddy" title="Diddy Kong" imgUrl={diddyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="peanut" title="Peanuts" imgUrl={diddyGunIcon} prefix="moves" updateItem={setMove} />
@@ -140,7 +141,7 @@ const MoveTable = (): JSX.Element => {
         imgUrl={bananaMedalIcon}
         prefix="consumables"
         setCount={setConsumable}
-        maxValue={45}
+        maxValue={capRemoved ? 255 : 40}
       />
       <SimpleIcon storeKey="lanky" title="Lanky Kong" imgUrl={lankyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="grape" title="Grapes" imgUrl={lankyGunIcon} prefix="moves" updateItem={setMove} />
@@ -173,7 +174,7 @@ const MoveTable = (): JSX.Element => {
         imgUrl={rainbowCoinICon}
         prefix="consumables"
         setCount={setConsumable}
-        maxValue={16}
+        maxValue={capRemoved ? 255 : 16}
       />
       <SimpleIcon storeKey="tiny" title="Tiny Kong" imgUrl={tinyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="feather" title="Feathers" imgUrl={tinyGunIcon} prefix="moves" updateItem={setMove} />
@@ -201,7 +202,7 @@ const MoveTable = (): JSX.Element => {
       />
       <SimpleIcon
         storeKey="bean"
-        title="THE BEAN!!!"
+        title="The Bean™!"
         imgUrl={beanIcon}
         prefix="consumables"
         updateItem={setConsumable}
@@ -212,7 +213,7 @@ const MoveTable = (): JSX.Element => {
         imgUrl={fairyIcon}
         prefix="consumables"
         setCount={setConsumable}
-        maxValue={20}
+        maxValue={capRemoved ? 255 : 20}
       />
       <SimpleIcon storeKey="chunky" title="Chunky Kong" imgUrl={chunkyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="pineapple" title="Pineapples" imgUrl={chunkyGunIcon} prefix="moves" updateItem={setMove} />
@@ -235,7 +236,7 @@ const MoveTable = (): JSX.Element => {
         imgUrl={pearlIcon}
         prefix="consumables"
         setCount={setConsumable}
-        maxValue={5}
+        maxValue={capRemoved ? 255 : 5}
       />
       <CountSelector
         storeKey="goldBananas"
@@ -243,7 +244,7 @@ const MoveTable = (): JSX.Element => {
         imgUrl={goldBananaIcon}
         prefix="consumables"
         setCount={setConsumable}
-        maxValue={201}
+        maxValue={capRemoved ? 255 : 201}
       />
       &nbsp;
       <SimpleIcon storeKey="cranky" title="Cranky Kong" imgUrl={crankyIcon} prefix="moves" updateItem={setMove} />
