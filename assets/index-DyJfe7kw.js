@@ -50761,6 +50761,7 @@ const MoveTable = () => {
   const [setMove, setConsumable] = useDonkStore(
     useShallow((state) => [state.setMove, state.setConsumable])
   );
+  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "move-section", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Moves, Kongs, and Major Collectibles" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "move-table", children: [
@@ -50803,7 +50804,7 @@ const MoveTable = () => {
           imgUrl: crownIcon,
           prefix: "consumables",
           setCount: setConsumable,
-          maxValue: 10
+          maxValue: capRemoved ? 255 : 10
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "diddy", title: "Diddy Kong", imgUrl: diddyKongIcon, prefix: "moves", updateItem: setMove }),
@@ -50845,7 +50846,7 @@ const MoveTable = () => {
           imgUrl: medalIcon,
           prefix: "consumables",
           setCount: setConsumable,
-          maxValue: 45
+          maxValue: capRemoved ? 255 : 40
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "lanky", title: "Lanky Kong", imgUrl: lankyKongIcon, prefix: "moves", updateItem: setMove }),
@@ -50887,7 +50888,7 @@ const MoveTable = () => {
           imgUrl: rainbowCoinIcon,
           prefix: "consumables",
           setCount: setConsumable,
-          maxValue: 16
+          maxValue: capRemoved ? 255 : 16
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "tiny", title: "Tiny Kong", imgUrl: tinyKongIcon, prefix: "moves", updateItem: setMove }),
@@ -50924,7 +50925,7 @@ const MoveTable = () => {
         SimpleIcon,
         {
           storeKey: "bean",
-          title: "THE BEAN!!!",
+          title: "The Bean™!",
           imgUrl: beanIcon,
           prefix: "consumables",
           updateItem: setConsumable
@@ -50938,7 +50939,7 @@ const MoveTable = () => {
           imgUrl: fairyIcon,
           prefix: "consumables",
           setCount: setConsumable,
-          maxValue: 20
+          maxValue: capRemoved ? 255 : 20
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "chunky", title: "Chunky Kong", imgUrl: chunkyKongIcon, prefix: "moves", updateItem: setMove }),
@@ -50967,7 +50968,7 @@ const MoveTable = () => {
           imgUrl: pearlIcon,
           prefix: "consumables",
           setCount: setConsumable,
-          maxValue: 5
+          maxValue: capRemoved ? 255 : 5
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -50978,7 +50979,7 @@ const MoveTable = () => {
           imgUrl: gbIcon,
           prefix: "consumables",
           setCount: setConsumable,
-          maxValue: 201
+          maxValue: capRemoved ? 255 : 201
         }
       ),
       " ",
@@ -51826,6 +51827,7 @@ const prevItem = (num) => clamp(num - 1);
 const HelmDoorSelector1 = () => {
   const helmItem1 = useHelmItem1();
   const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]));
+  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier));
   const handleNextItem = () => {
     setSetting("helmItem1", nextItem(helmItem1));
   };
@@ -51846,7 +51848,7 @@ const HelmDoorSelector1 = () => {
       {
         className: "simple-icon",
         height: 24,
-        title: helmItem1 == 1 ? "Golden Bananas" : helmItem1 == 2 ? "Blueprints" : helmItem1 == 3 ? "Company Coins" : helmItem1 == 4 ? "Keys" : helmItem1 == 5 ? "Banana Medals" : helmItem1 == 6 ? "Battle Arena Crowns" : helmItem1 == 7 ? "Banana Fairies" : helmItem1 == 8 ? "Rainbow Coins" : helmItem1 == 9 ? "THE BEAN" : helmItem1 == 10 ? "Pearls" : "Door already opened",
+        title: helmItem1 == 1 ? "Golden Bananas" : helmItem1 == 2 ? "Blueprints" : helmItem1 == 3 ? "Company Coins" : helmItem1 == 4 ? "Keys" : helmItem1 == 5 ? "Banana Medals" : helmItem1 == 6 ? "Battle Arena Crowns" : helmItem1 == 7 ? "Banana Fairies" : helmItem1 == 8 ? "Rainbow Coins" : helmItem1 == 9 ? "The Bean™" : helmItem1 == 10 ? "Pearls" : "Door already opened",
         src: itemToIcon(helmItem1),
         onClick: handleNextItem,
         onContextMenu: handlePrevItem,
@@ -51862,7 +51864,7 @@ const HelmDoorSelector1 = () => {
         storeKey: "helmItemNum1",
         prefix: "settings",
         setCount: setSetting,
-        maxValue: helmItem1 == 1 ? 201 : helmItem1 == 2 ? 40 : helmItem1 == 3 ? 2 : helmItem1 == 4 ? 8 : helmItem1 == 5 ? 40 : helmItem1 == 6 ? 10 : helmItem1 == 7 ? 20 : helmItem1 == 8 ? 16 : helmItem1 == 9 ? 1 : helmItem1 == 10 ? 5 : 0
+        maxValue: helmItem1 == 1 ? capRemoved ? 255 : 201 : helmItem1 == 2 ? 40 : helmItem1 == 3 ? 2 : helmItem1 == 4 ? 8 : helmItem1 == 5 ? capRemoved ? 255 : 40 : helmItem1 == 6 ? capRemoved ? 255 : 10 : helmItem1 == 7 ? capRemoved ? 255 : 20 : helmItem1 == 8 ? capRemoved ? 255 : 16 : helmItem1 == 9 ? 1 : helmItem1 == 10 ? capRemoved ? 255 : 5 : 0
       }
     )
   ] });
@@ -51870,6 +51872,7 @@ const HelmDoorSelector1 = () => {
 const HelmDoorSelector2 = () => {
   const helmItem2 = useHelmItem2();
   const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]));
+  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier));
   const handleNextItem = () => {
     setSetting("helmItem2", nextItem(helmItem2));
   };
@@ -51906,7 +51909,7 @@ const HelmDoorSelector2 = () => {
         storeKey: "helmItemNum2",
         prefix: "settings",
         setCount: setSetting,
-        maxValue: helmItem2 == 1 ? 201 : helmItem2 == 2 ? 40 : helmItem2 == 3 ? 2 : helmItem2 == 4 ? 8 : helmItem2 == 5 ? 40 : helmItem2 == 6 ? 10 : helmItem2 == 7 ? 20 : helmItem2 == 8 ? 16 : helmItem2 == 9 ? 1 : helmItem2 == 10 ? 5 : 0
+        maxValue: helmItem2 == 1 ? capRemoved ? 255 : 201 : helmItem2 == 2 ? 40 : helmItem2 == 3 ? 2 : helmItem2 == 4 ? 8 : helmItem2 == 5 ? capRemoved ? 255 : 40 : helmItem2 == 6 ? capRemoved ? 255 : 10 : helmItem2 == 7 ? capRemoved ? 255 : 20 : helmItem2 == 8 ? capRemoved ? 255 : 16 : helmItem2 == 9 ? 1 : helmItem2 == 10 ? capRemoved ? 255 : 5 : 0
       }
     )
   ] });
@@ -51957,6 +51960,7 @@ const GeneratorSettings = () => {
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
   const [isKeySeed, isKey8Seed, isKey38Seed, isKremKaptureSeed, isRapSeed, isChallengeSeed, isWabbitSeed, isGBSeed, isBPSeed, isCoCoinSeed, isMedalSeed, isCrownSeed, isFairySeed, isRainbowSeed, isBeanSeed, isPearlSeed, isBossSeed, isBonusSeed] = useDonkStore(useShallow((state) => [state.winCondition.bossKeys, state.winCondition.key8, state.winCondition.key3And8, state.winCondition.kremlingKapture, state.winCondition.takeItToTheFridge, state.winCondition.kRoolChallenge, state.winCondition.killTheWabbit, state.winCondition.goldBananas, state.winCondition.blueprints, state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.crowns, state.winCondition.fairies, state.winCondition.rainbowCoins, state.winCondition.theBean, state.winCondition.pearls, state.winCondition.bosses, state.winCondition.bonuses]));
+  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { onClick: openModal, title: "Generator Settings", children: "⚙️" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -52424,7 +52428,7 @@ const GeneratorSettings = () => {
                   storeKey: "winConItemCount",
                   prefix: "winCondition",
                   setCount: setWinCondition,
-                  maxValue: isKeySeed ? 8 : isGBSeed ? 201 : isBPSeed || isMedalSeed ? 40 : isCoCoinSeed ? 2 : isCrownSeed ? 10 : isFairySeed ? 20 : isRainbowSeed ? 16 : isBeanSeed ? 1 : isPearlSeed ? 5 : isBossSeed ? 7 : isBonusSeed ? 43 : 0
+                  maxValue: isKeySeed ? 8 : isGBSeed ? capRemoved ? 255 : 201 : isBPSeed ? 40 : isCoCoinSeed ? 2 : isMedalSeed ? capRemoved ? 255 : 40 : isCrownSeed ? capRemoved ? 255 : 10 : isFairySeed ? capRemoved ? 255 : 20 : isRainbowSeed ? capRemoved ? 255 : 16 : isBeanSeed ? 1 : isPearlSeed ? capRemoved ? 255 : 5 : isBossSeed ? 7 : isBonusSeed ? 43 : 0
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
@@ -52879,7 +52883,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideRed", prefix: "ui", updateItem: setUi }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Hide logic-breaking checks?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideYellow", prefix: "ui", updateItem: setUi }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { title: "Checking this will cause the Banana, Fairy, Medal, Rainbow Coin, Crown, and Pearl counters to cap out at 255 instead of their normal limits, both in the upper left corner tracker and on the Helm Doors listed up above.", children: "Did you use the Item Count Modifier to give yourself more than the default for any item?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { title: "Checking this will cause the Banana, Fairy, Medal, Rainbow Coin, Crown, and Pearl counters to cap out at 255 instead of their normal limits, both in the upper left corner tracker and on the Helm Doors and win condition listed up above.", children: "Did you use the Item Count Modifier to give yourself more than the default for any item?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "itemCountModifier", prefix: "ui", updateItem: setUi })
             ] })
           ] })
