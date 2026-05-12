@@ -9,11 +9,15 @@ const TreasureChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
+const isPearlSeed = useDonkStore(useShallow((state) => state.winCondition.pearls)) ? 'foolish' : ''
+const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolMisc)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
     <DiddyGold />
     <LankyGold />
+  </div>
+  <div className={`grid ${isPearlSeed && pearlsInRotation}`}>
     <TreasureClams />
   </div>
   <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
