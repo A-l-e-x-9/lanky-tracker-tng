@@ -736,7 +736,8 @@ export interface UiCollection {
   groupByRegion: boolean,
   hideRed: boolean,
   hideYellow: boolean,
-  hideKRool: boolean
+  hideKRool: boolean,
+  itemCountModifier: boolean
 }
 
 export interface UiState {

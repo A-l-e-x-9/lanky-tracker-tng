@@ -6,7 +6,8 @@ export const initialUi: UiState = {
     groupByRegion: false,
     hideRed: false,
     hideYellow: false,
-    hideKRool: true
+    hideKRool: true,
+    itemCountModifier: false
   }
 }
 

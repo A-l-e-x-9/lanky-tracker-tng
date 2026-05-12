@@ -762,6 +762,8 @@ const GeneratorSettings: React.FC = () => {
               <CheckIcon storeKey="hideRed" prefix="ui" updateItem={setUi} />
               <p>Hide logic-breaking checks?</p>
               <CheckIcon storeKey="hideYellow" prefix="ui" updateItem={setUi} />
+              <p title="Checking this will cause the Banana, Fairy, Medal, Rainbow Coin, Crown, and Pearl counters to cap out at 255 instead of their normal limits, both in the upper left corner tracker and on the Helm Doors listed up above.">Did you use the Item Count Modifier to give yourself more than the default for any item?</p>
+              <CheckIcon storeKey="itemCountModifier" prefix="ui" updateItem={setUi} />
             </>
           </section>
         </section>
