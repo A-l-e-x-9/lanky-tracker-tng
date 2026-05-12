@@ -32684,13 +32684,19 @@ const Tiny2Ship = () => {
     }
   ) });
 };
-const TinyBananas$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  /* @__PURE__ */ jsxRuntimeExports.jsx(MermaidReward, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TinySub, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(Tiny2Ship, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(Tiny5Ship, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(TreasureClams, {})
-] });
+const TinyBananas$3 = () => {
+  const isPearlSeed = useDonkStore(useShallow((state) => state.winCondition.pearls)) ? "foolish" : "";
+  const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolMisc)) ? "" : "foolish";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(MermaidReward, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TinySub, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tiny2Ship, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tiny5Ship, {})
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isPearlSeed && pearlsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TreasureClams, {}) })
+  ] });
+};
 const ChunkyKasplat$3 = () => {
   const canDo = useCactusKasplat();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -33476,12 +33482,14 @@ const TreasureChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
+  const isPearlSeed = useDonkStore(useShallow((state) => state.winCondition.pearls)) ? "foolish" : "";
+  const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolMisc)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyGold, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyGold, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TreasureClams, {})
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyGold, {})
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isPearlSeed && pearlsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TreasureClams, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$3, {}) })
   ] });
 };
@@ -35294,10 +35302,10 @@ const ClassicChecks$3 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$3, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$3, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$3, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$3, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$3, {})
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$3, {})
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$3, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$3, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$3, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CactusCrate, {}),
