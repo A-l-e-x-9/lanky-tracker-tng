@@ -28,7 +28,7 @@ const prevItem = (num: number): number => clamp(num - 1)
 export const HelmDoorSelector1: React.FC = () => {
   const helmItem1 = useHelmItem1()
   const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]))
-  const capRemoved = useDonkStore(useShallow((state) => state.setUi.itemCountModifier))
+  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier))
 
   const handleNextItem = (): void => {
     setSetting('helmItem1', nextItem(helmItem1))
@@ -74,7 +74,7 @@ export const HelmDoorSelector1: React.FC = () => {
 export const HelmDoorSelector2: React.FC = () => {
   const helmItem2 = useHelmItem2()
   const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]))
-  const capRemoved = useDonkStore(useShallow((state) => state.setUi.itemCountModifier))
+  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier))
 
   const handleNextItem = (): void => {
     setSetting('helmItem2', nextItem(helmItem2))

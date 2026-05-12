@@ -72,7 +72,7 @@ const MoveTable = (): JSX.Element => {
   const [setMove, setConsumable] = useDonkStore(
     useShallow((state) => [state.setMove, state.setConsumable])
   )
-  const capRemoved = useDonkStore(useShallow((state) => state.setUi.itemCountModifier))
+  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier))
   return (
   <section className="move-section">
     <h3>Moves, Kongs, and Major Collectibles</h3>
