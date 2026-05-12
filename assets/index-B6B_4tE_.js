@@ -10438,7 +10438,8 @@ const initialUi = {
     groupByRegion: false,
     hideRed: false,
     hideYellow: false,
-    hideKRool: true
+    hideKRool: true,
+    itemCountModifier: false
   }
 };
 const uiSlice = (set) => {
@@ -52877,7 +52878,9 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Hide unavailable checks?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideRed", prefix: "ui", updateItem: setUi }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Hide logic-breaking checks?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideYellow", prefix: "ui", updateItem: setUi })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideYellow", prefix: "ui", updateItem: setUi }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { title: "Checking this will cause the Banana, Fairy, Medal, Rainbow Coin, Crown, and Pearl counters to cap out at 255 instead of their normal limits, both in the upper left corner tracker and on the Helm Doors listed up above.", children: "Did you use the Item Count Modifier to give yourself more than the default for any item?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "itemCountModifier", prefix: "ui", updateItem: setUi })
             ] })
           ] })
         ] })
