@@ -34,7 +34,8 @@ import {
   useTrombone,
   useTwirl,
   useVine,
-  useClimbing
+  useClimbing,
+  useHighGrab
 } from '../kongs'
 import { useHardShooting } from '../settings'
 import { LogicBool } from '../world'
