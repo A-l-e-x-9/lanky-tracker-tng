@@ -11171,6 +11171,7 @@ const initialPortal = {
     vanilla: true,
     treePortal: false,
     treeChunkyPortal: false,
+    mausoleumPortal: false,
     ballroomPortal: false,
     windTunnelPortal: false
   }
@@ -44743,16 +44744,36 @@ const CavesChecks = () => {
 };
 const usePlayCastle = () => {
   const canEnter = usePlayLevel("Creepy Castle");
+  const canGetUp = useReachCastleFromCrypt();
   return {
-    in: canEnter.in,
-    out: canEnter.out
+    in: canEnter.in && canGetUp.in,
+    out: canEnter.out && canGetUp.out
   };
 };
 const useSlamCastle = () => useSlamLevel("Creepy Castle");
 const useTreePortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.treePortal));
 const useTreeChunkyPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.treeChunkyPortal));
+const useMausoleumPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.mausoleumPortal));
 const useBallroomPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal));
 const useWindTunnelPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.windTunnelPortal));
+const useReachCastleFromCrypt = () => {
+  const DKPortal = useMausoleumPortal();
+  const hasClimbing = useClimbing();
+  const highGrab = useHighGrab();
+  if (DKPortal) {
+    return {
+      in: hasClimbing,
+      out: highGrab
+      //To reach the rest of Castle from the Crypt without Climbing, you have to jump on the tombstones (which is fucking annoying) and abuse high grabs. Killing your Kong or pause-exiting only work if you have a Portal above the Crypt (i.e. the vanilla one).
+    };
+  } else {
+    return {
+      in: true,
+      out: true
+      //Do nothing if you don't have a DK Portal in the Crypt.
+    };
+  }
+};
 const useCastleTree = () => {
   const inStage = usePlayCastle();
   const blast = useBlast();
@@ -44883,7 +44904,7 @@ const useDkCryptGb = () => {
   const canEnter = usePlayCastle();
   return {
     in: canEnter.in && (coconut || cryptPreOpened) && grab && hasClimbing,
-    out: (canEnter.in || canEnter.out) && (coconut || cryptPreOpened) && grab
+    out: canEnter.out && (coconut || cryptPreOpened) && grab
   };
 };
 const useDkDungeonGb = () => {
@@ -44932,9 +44953,10 @@ const useLankyMausoleumGb = () => {
   const dk2 = useDk();
   const diddy = useDiddy();
   const hasClimbing = useClimbing();
+  const DKPortal = useMausoleumPortal();
   return {
-    in: inStage.in && (feather || grape || preOpened) && grape && sprint && vine && trombone && hasClimbing,
-    out: inStage.out && (feather || grape || preOpened) && grape && (sprint || dk2 || diddy)
+    in: inStage.in && (feather || grape || preOpened || DKPortal) && grape && sprint && vine && trombone && hasClimbing,
+    out: inStage.out && (feather || grape || preOpened || DKPortal) && grape && (sprint || dk2 || diddy)
   };
 };
 const useLankyDungeonGb = () => {
@@ -44981,9 +45003,10 @@ const useTinyMausoleumGb = () => {
   const dk2 = useDk();
   const hasClimbing = useClimbing();
   const preOpened = useOpenCrypt();
+  const DKPortal = useMausoleumPortal();
   return {
-    in: inStage.in && (feather || grape || preOpened) && canSlam && twirl && hasClimbing,
-    out: inStage.out && (feather || grape || preOpened) && canSlam && (dk2 || twirl)
+    in: inStage.in && (feather || grape || preOpened || DKPortal) && canSlam && twirl && hasClimbing,
+    out: inStage.out && (feather || grape || preOpened || DKPortal) && canSlam && (dk2 || twirl)
   };
 };
 const useTinyChasmGb = () => {
@@ -54503,6 +54526,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in Chunky's room in the big tree.",
                   storeKey: "treeChunkyPortal",
+                  prefix: "shuffledCastlePortals",
+                  updateItem: setCastlePortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "The Mausoleum" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Lanky and Tiny's mausoleum in the Crypt area.",
+                  storeKey: "mausoleumPortal",
                   prefix: "shuffledCastlePortals",
                   updateItem: setCastlePortal
                 }
