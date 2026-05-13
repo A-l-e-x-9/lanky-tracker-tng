@@ -45,9 +45,10 @@ import { LogicBool } from '../world'
  */
 export const usePlayCastle = (): LogicBool => {
   const canEnter = usePlayLevel('Creepy Castle')
+  const canGetUp = useReachCastleFromCrypt()
   return {
-    in: canEnter.in,
-    out: canEnter.out
+    in: canEnter.in && canGetUp.in,
+    out: canEnter.out && canGetUp.out
   }
 }
 /**
@@ -64,6 +65,9 @@ export const useTreePortal = (): boolean =>
 //Is the DK Portal behind Chunky's room in the big tree?
 export const useTreeChunkyPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.treeChunkyPortal))
+//Is the DK Portal in the Mausoleum?
+export const useMausoleumPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCastlePortals.mausoleumPortal))
 //Is the DK Portal in the Ballroom?
 export const useBallroomPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal))
@@ -71,6 +75,24 @@ export const useBallroomPortal = (): boolean =>
 export const useWindTunnelPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.windTunnelPortal))
 /*end shuffled DK Portals*/
+
+/*An Alex addition: If shuffled DK Portals is on, and we're given a Portal in the Crypt, or outside on the lowest level of Castle, can we get up so that we can play the rest of the level? You'd be surprised, for me, how often the answer is "no", hence that warning in big red text that appears whenever you click on the Castle tab.*/
+export const useReachCastleFromCrypt = (): LogicBool => {
+  const DKPortal = useMausoleumPortal()
+  const hasClimbing = useClimbing()
+  const highGrab = useHighGrab()
+  if (DKPortal) {
+    return {
+      in: hasClimbing,
+      out: highGrab //To reach the rest of Castle from the Crypt without Climbing, you have to jump on the tombstones (which is fucking annoying) and abuse high grabs. Killing your Kong or pause-exiting only work if you have a Portal above the Crypt (i.e. the vanilla one).
+    }
+  } else {
+    return {
+      in: true,
+      out: true //Do nothing if you don't have a DK Portal in the Crypt.
+    }
+  }
+}
 
 /**
  * Can we enter the Tree in Castle?
@@ -221,7 +243,7 @@ export const useDkCryptGb = (): LogicBool => {
   const canEnter = usePlayCastle()
   return {
     in: canEnter.in && (coconut || cryptPreOpened) && grab && hasClimbing,
-    out: (canEnter.in || canEnter.out) && (coconut || cryptPreOpened) && grab
+    out: canEnter.out && (coconut || cryptPreOpened) && grab
   }
 }
 
@@ -276,9 +298,10 @@ export const useLankyMausoleumGb = (): LogicBool => {
   const dk = useDk()
   const diddy = useDiddy()
   const hasClimbing = useClimbing()
+  const DKPortal = useMausoleumPortal()
   return {
-    in: inStage.in && (feather || grape || preOpened) && grape && sprint && vine && trombone && hasClimbing,
-    out: inStage.out && (feather || grape || preOpened) && grape && (sprint || dk || diddy)
+    in: inStage.in && (feather || grape || preOpened || DKPortal) && grape && sprint && vine && trombone && hasClimbing,
+    out: inStage.out && (feather || grape || preOpened || DKPortal) && grape && (sprint || dk || diddy)
   }
 }
 
@@ -334,9 +357,10 @@ export const useTinyMausoleumGb = (): LogicBool => {
   const dk = useDk()
   const hasClimbing = useClimbing()
   const preOpened = useOpenCrypt()
+  const DKPortal = useMausoleumPortal()
   return {
-    in: inStage.in && (feather || grape || preOpened) && canSlam && twirl && hasClimbing,
-    out: inStage.out && (feather || grape || preOpened) && canSlam && (dk || twirl)
+    in: inStage.in && (feather || grape || preOpened || DKPortal) && canSlam && twirl && hasClimbing,
+    out: inStage.out && (feather || grape || preOpened || DKPortal) && canSlam && (dk || twirl)
   }
 }
 

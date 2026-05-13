@@ -1208,6 +1208,7 @@ interface castlePortals {
   vanilla: boolean
   treePortal: boolean
   treeChunkyPortal: boolean
+  mausoleumPortal: boolean
   ballroomPortal: boolean
   windTunnelPortal: boolean
 }

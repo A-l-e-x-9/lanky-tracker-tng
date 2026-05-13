@@ -56,6 +56,7 @@ export const initialPortal: PortalState = {
     vanilla: true,
     treePortal: false,
     treeChunkyPortal: false,
+    mausoleumPortal: false,
     ballroomPortal: false,
     windTunnelPortal: false
   }
