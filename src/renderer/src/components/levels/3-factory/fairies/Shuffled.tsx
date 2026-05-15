@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useDartFairy, useFactoryProductionEnabled, useFactoryProductionTop, useFactoryTesting, useDkProdGb, useDiddyBlockGb } from '@renderer/hooks/factory'
+import { useGeneralFairy, useFactoryProductionEnabled, useFactoryProductionTop, useFactoryTesting, useDkProdGb } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
 import { useCamera, useClimbing, useGuitar, usePunch, useTriangle, useHighGrab } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'

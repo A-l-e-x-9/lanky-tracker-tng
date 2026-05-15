@@ -1,7 +1,7 @@
 import FairyPool from '@renderer/components/pools/Fairies'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
-import { useNumberFairy, useDirtFairy, useDiddyBlockGb, useFactoryTesting } from '@renderer/hooks/factory'
+import { useNumberFairy, useDartFairy, useDiddyBlockGb, useFactoryTesting } from '@renderer/hooks/factory'
 import { useCamera, useClimbing } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
