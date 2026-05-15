@@ -1,21 +1,20 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useResearchKasplat, useBlockKasplat, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
+import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useResearchKasplat, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, useMini, useDk, useTwirl, useTrombone } from '@renderer/hooks/kongs'
+import { useClimbing, useDk, useTwirl, useTrombone } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartKasplats from './Start'
 import StarcadeKasplats from './Starcade'
+import TestingKasplats from './Testing'
 
 const ShuffledKasplats: React.FC = () => {
 const DKVanillaKasplat = useProductionTopKasplat()
 const diddyVanillaKasplat = useProductionBaseKasplat()
 const lankyVanillaKasplat = useResearchKasplat()
-const chunkyVanillaKasplat = useBlockKasplat()
 const isBreathing = useGeneralThing()
 const canDoTinyProd = useFactoryProductionTop()
 const hasClimbing = useClimbing()
 const hasAllBananaports = useBananaportAll()
-const hasMiniMonkey = useMini()
 const isHinaKagiyama = useTwirl()
 const hasDK = useDk()
 const hasTrombone = useTrombone()
@@ -24,6 +23,7 @@ const prodRoomOn = useFactoryProductionEnabled()
     <KasplatPool>
       <StartKasplats />
       <StarcadeKasplats />
+      <TestingKasplats />
       <FactoryCheck
         id={53000}
         name="Shuffled Kasplat: DK's Vanilla Location (top of the Prod)"
@@ -44,13 +44,6 @@ const prodRoomOn = useFactoryProductionEnabled()
         region="R&D Room"
         canGetLogic={lankyVanillaKasplat.in}
         canGetBreak={lankyVanillaKasplat.out}
-      />
-      <FactoryCheck
-        id={53004}
-        name="Shuffled Kasplat: Chunky's Vanilla Location (at the Block Tower)"
-        region="Testing Room"
-        canGetLogic={chunkyVanillaKasplat.in}
-        canGetBreak={chunkyVanillaKasplat.out}
       />
       <FactoryCheck
         id={53007}
@@ -79,13 +72,6 @@ const prodRoomOn = useFactoryProductionEnabled()
         region="R&D Room"
         canGetLogic={lankyVanillaKasplat.in}
         canGetBreak={lankyVanillaKasplat.out}
-      />
-      <FactoryCheck
-        id={53013}
-        name="Shuffled Kasplat: At Tiny's dartboard"
-        region="Testing Room"
-        canGetLogic={chunkyVanillaKasplat.in && hasMiniMonkey}
-        canGetBreak={chunkyVanillaKasplat.out && hasMiniMonkey}
       />
       <FactoryCheck
         id={53014}
