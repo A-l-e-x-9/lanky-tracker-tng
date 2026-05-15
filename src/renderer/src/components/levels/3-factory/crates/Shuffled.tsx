@@ -1,10 +1,11 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb, useDiddyBlockGb } from '@renderer/hooks/factory'
+import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, usePunch, useTwirl, useTrombone, useGuitar, useTriangle } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartCrates from './Start'
 import StarcadeCrates from './Starcade'
+import TestingCrates from './Testing'
 
 const ShuffledCrates: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -18,7 +19,6 @@ const isHinaKagiyama = useTwirl()
 const canReachTesting = useFactoryTesting()
 const canReachCar = useTinyRaceGb()
 const canDoCrusher = useDkProdGb()
-const canDoBlockTower = useDiddyBlockGb()
 const hasGuitar = useGuitar()
 const hasTrombone = useTrombone()
 const hasTriangle = useTriangle()
@@ -26,6 +26,7 @@ const hasTriangle = useTriangle()
     <CratePool>
       <StartCrates />
       <StarcadeCrates />
+      <TestingCrates />
       <FactoryCheck
         id={23007}
         name="Shuffled Melon Crate: Center of the hatch"
@@ -74,76 +75,6 @@ const hasTriangle = useTriangle()
         region="Prod Room"
         canGetLogic={upperProd.in && isHinaKagiyama}
         canGetBreak={upperProd.out}
-      />
-      <FactoryCheck
-        id={23020}
-        name="Shuffled Melon Crate: Near Snide's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={23021}
-        name="Shuffled Melon Crate: Near Snide's, hidden"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={23022}
-        name="Shuffled Melon Crate: Right hallway"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={23023}
-        name="Shuffled Melon Crate: At DK's number game"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={23024}
-        name="Shuffled Melon Crate: Under the stairs to Tiny's dartboard"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={23025}
-        name="Shuffled Melon Crate: On the Block Tower"
-        region="Testing Room"
-        canGetLogic={canDoBlockTower.in}
-        canGetBreak={canDoBlockTower.out}
-      />
-      <FactoryCheck
-        id={23026}
-        name="Shuffled Melon Crate: Under Lanky's Testing Bonus Barrel"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={23028}
-        name="Shuffled Melon Crate: Left of Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={23029}
-        name="Shuffled Melon Crate: Right of Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={23030}
-        name="Shuffled Melon Crate: Right of the entrance to Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={23031}
@@ -216,13 +147,6 @@ const hasTriangle = useTriangle()
         canGetBreak={canReachTesting.out && hasClimbing}
       />
       <FactoryCheck
-        id={23046}
-        name="Shuffled Melon Crate: Vanilla Warp 3, at Snide's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
         id={23047}
         name="Shuffled Melon Crate: Vanilla Warp 4, bottom of the Prod Room"
         region="Prod Room"
@@ -235,13 +159,6 @@ const hasTriangle = useTriangle()
         region="Prod Room"
         canGetLogic={upperProd.in}
         canGetBreak={upperProd.out}
-      />
-      <FactoryCheck
-        id={23050}
-        name="Shuffled Melon Crate: Vanilla Warp 5, at Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={23051}
