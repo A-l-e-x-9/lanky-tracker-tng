@@ -1,10 +1,11 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useNumberFairy, useDartFairy, useFactoryProductionEnabled, useFactoryProductionTop, useFactoryTesting, useDkProdGb, useDiddyBlockGb } from '@renderer/hooks/factory'
+import { useGeneralFairy, useDartFairy, useFactoryProductionEnabled, useFactoryProductionTop, useFactoryTesting, useDkProdGb, useDiddyBlockGb } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
 import { useCamera, useClimbing, useGuitar, usePunch, useTriangle, useHighGrab } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartFairies from './Start'
 import StarcadeFairies from './Starcade'
+import TestingFairies from './Testing'
 
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
@@ -14,31 +15,16 @@ const ShuffledFairies: React.FC = () => {
   const hasTriangle = useTriangle()
   const hasBananaports = useBananaportAll()
   const isBreathing = useGeneralFairy()
-  const vanillaFairy1 = useNumberFairy()
-  const vanillaFairy2 = useDartFairy()
   const prodRoomOn = useFactoryProductionEnabled()
   const prodRoomTop = useFactoryProductionTop()
   const crusher = useDkProdGb()
   const canDoTesting = useFactoryTesting()
-  const canDoBlockTower = useDiddyBlockGb()
   const highGrab = useHighGrab()
   return (
     <FairyPool>
       <StartFairies />
       <StarcadeFairies />
-      <FactoryCheck
-        id={43000}
-        name="Shuffled Fairy: Vanilla Location #1 (tunnel to DK's number game)"
-        region="Testing Room"
-        canGetLogic={vanillaFairy1.in}
-        canGetBreak={vanillaFairy1.out}
-      />
-      <FactoryCheck
-        id={43001}
-        name="Shuffled Fairy: Vanilla Location #2 (Funky's after Tiny's dart game)"
-        region="Testing Room"
-        canGetLogic={vanillaFairy2}
-      />
+      <TestingFairies />
       <FactoryCheck
         id={43003}
         name="Shuffled Fairy: Down the pole to the Prod Room"
@@ -66,27 +52,6 @@ const ShuffledFairies: React.FC = () => {
         region="Prod Room"
         canGetLogic={prodRoomTop.in && hasCam}
         canGetBreak={prodRoomTop.out && hasCam}
-      />
-      <FactoryCheck
-        id={43011}
-        name="Shuffled Fairy: Top of Diddy's Block Tower"
-        region="Testing Room"
-        canGetLogic={canDoBlockTower.in && hasCam}
-        canGetBreak={canDoBlockTower.out && hasCam}
-      />
-      <FactoryCheck
-        id={43012}
-        name="Shuffled Fairy: Boxes to Tiny's Dartboard"
-        region="Testing Room"
-        canGetLogic={canDoTesting.in && hasCam}
-        canGetBreak={canDoTesting.out && hasCam}
-      />
-      <FactoryCheck
-        id={43013}
-        name="Shuffled Fairy: Pole to the R&D Room"
-        region="Testing Room"
-        canGetLogic={canDoTesting.in && hasCam && hasClimbing}
-        canGetBreak={canDoTesting.out && hasCam}
       />
       <FactoryCheck
         id={43014}
