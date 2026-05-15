@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
+import { useShuffledArenas } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
 import { useFactoryTesting } from '@renderer/hooks/factory'
 
