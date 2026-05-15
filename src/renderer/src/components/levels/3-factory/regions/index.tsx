@@ -23,6 +23,11 @@ import StarcadeCrates from '../crates/Starcade'
 import StarcadeDirt from '../dirt/Starcade'
 import StarcadeFairies from '../fairies/Starcade'
 import StarcadeKasplats from '../kasplats/Starcade'
+import TestingArenas from '../arenas/Testing'
+import TestingCrates from '../crates/Testing'
+import TestingDirt from '../dirt/Testing'
+import TestingFairies from '../fairies/Testing'
+import TestingKasplats from '../kasplats/Testing'
 
 const FactoryRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -56,6 +61,17 @@ return (
     <StartKasplats />
   </div>
     <TestingChecks />
+  <div className="grid">
+    <TestingArenas />
+    <TestingCrates />
+    <TestingDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <TestingFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <TestingKasplats />
+  </div>
     <RNDChecks />
     <StorageChecks />
   <div className="grid">
