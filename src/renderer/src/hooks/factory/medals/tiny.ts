@@ -1,7 +1,6 @@
 import { useDk, useFeather, useMini, useTiny, useTwirl, useClimbing } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
-  useFactoryProductionEnabled,
   useFactoryProductionTop,
   useFactoryTesting,
   usePlayFactory, useFoyerFromStorage
