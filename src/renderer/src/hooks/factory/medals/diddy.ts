@@ -13,7 +13,7 @@ const useDiddyMedalCommonLogic = (): number => {
   if (climbing) {
     bananas += 10 //10 in arcade area
   }
-  if (production.in || production.out) {
+  if ((production.in || production.out) && climbing) {
     bananas += 15
   }
   if (testing.in || testing.out) {
