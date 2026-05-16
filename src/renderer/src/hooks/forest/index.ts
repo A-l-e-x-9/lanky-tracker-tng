@@ -68,6 +68,9 @@ export const useFrontMillPortal = (): boolean =>
 //Is the DK Portal in the back mill room?
 export const useBackMillPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledForestPortals.backMillPortal))
+//Is the DK Portal at the top floor of the Thornvine Barn? (Yes, we do have to treat this one differently than a bottom floor portal because of the need for Climbing to get here normally. >_<)
+export const useThornvineTopPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledForestPortals.thornvineTopPortal))
 //Is the DK Portal in Area 2?
 export const useArea2Portal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledForestPortals.area2Portal))
@@ -376,9 +379,10 @@ export const useForestBarn = (): LogicBool => {
   const canSlam = useSlamForest()
   const dk = useDk()
   const strong = useStrong()
+  const DKPortal = useThornvineTopPortal()
   return {
-    in: inStage.in && night.in && canSlam && strong,
-    out: inStage.out && night.out && dk && canSlam
+    in: (inStage.in && night.in && canSlam && strong) || DKPortal,
+    out: (inStage.out && night.out && dk && canSlam) || DKPortal
   }
 }
 
@@ -524,9 +528,10 @@ export const useBarnFairy = (): LogicBool => {
   const barn = useForestBarn()
   const hasClimbing = useClimbing()
   const camera = useCamera()
+  const DKPortal = useThornvineTopPortal()
   return {
-    in: barn.in && hasClimbing && camera,
-    out: barn.out && camera
+    in: ((barn.in && hasClimbing) || DKPortal) && camera,
+    out: (barn.out || DKPortal) && camera
   }
 }
 
