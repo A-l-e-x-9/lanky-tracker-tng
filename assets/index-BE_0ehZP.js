@@ -29737,11 +29737,18 @@ const LankyMedal$4 = () => {
 };
 const useTinyMedalCommonLogic$4 = () => {
   const testing = useFactoryTesting();
-  const production = useFactoryProductionEnabled();
   const prodTop = useFactoryProductionTop();
   const gun = useFeather();
   const crystal = useMini();
-  let banana = 15;
+  const hasClimbing = useClimbing();
+  const canReachHatch = useFoyerFromStorage();
+  let banana = 0;
+  if (canReachHatch) {
+    banana += 10;
+  }
+  if (hasClimbing) {
+    banana += 5;
+  }
   if (testing.in || testing.out) {
     banana += 25;
     if (crystal) {
@@ -29751,17 +29758,17 @@ const useTinyMedalCommonLogic$4 = () => {
       banana += 20;
     }
   }
-  if (prodTop.in || prodTop.out) {
+  if (gun) {
     banana += 10;
   }
-  if (production.in || production.out) {
+  if (prodTop.in || prodTop.out) {
     banana += 20;
   }
   return banana;
 };
 const useTinyMedalInLogic$4 = () => {
   const inStage = usePlayFactory();
-  const production = useFactoryProductionEnabled();
+  const prodTop = useFactoryProductionTop();
   const kong = useTiny();
   const move = useTwirl();
   const shuffleBananas = useShuffleColoredBananas();
@@ -29775,14 +29782,14 @@ const useTinyMedalInLogic$4 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (production.in && move) {
+  if (prodTop.in && move) {
     bananas += 5;
   }
   return bananas;
 };
 const useTinyMedalOutLogic$4 = () => {
   const inStage = usePlayFactory();
-  const production = useFactoryProductionEnabled();
+  const prodTop = useFactoryProductionTop();
   const kong = useTiny();
   const dk2 = useDk();
   const shuffleBananas = useShuffleColoredBananas();
@@ -29796,7 +29803,7 @@ const useTinyMedalOutLogic$4 = () => {
   if (shuffleBananas) {
     return 100;
   }
-  if (production.out && dk2) {
+  if (prodTop.out && dk2) {
     bananas += 5;
   }
   return bananas;
