@@ -1,10 +1,11 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatToughEnemy, useDefeatZinger } from '@renderer/hooks/enemies'
-import { useForestMushroomRoof, usePlayForest, useForestDay, useForestNight } from '@renderer/hooks/forest'
+import { useForestMushroomRoof, usePlayForest, useForestDay, useForestNight, useForestMushroomTop } from '@renderer/hooks/forest'
 import ForestCheck from '../check'
 
 const MushExteriorEnemies: React.FC = () => {
   const inStage = usePlayForest()
+  const canReachTopOfShroom = useForestMushroomTop()
   const roof = useForestMushroomRoof()
   const klump = useDefeatToughEnemy()
   const zinger = useDefeatZinger()
@@ -72,29 +73,29 @@ const MushExteriorEnemies: React.FC = () => {
         id={5331}
         name="Enemy Near DK Pad"
         region="Forest Area 3"
-        canGetLogic={inStage.in && zinger.in}
-        canGetBreak={inStage.out && zinger.out}
+        canGetLogic={canReachTopOfShroom.in && zinger.in}
+        canGetBreak={canReachTopOfShroom.out && zinger.out}
       />
       <ForestCheck
         id={5332}
         name="Enemy Near Face Puzzle Entrance"
         region="Forest Area 3"
-        canGetLogic={inStage.in && zinger.in}
-        canGetBreak={inStage.out && zinger.out}
+        canGetLogic={canReachTopOfShroom.in && zinger.in}
+        canGetBreak={canReachTopOfShroom.out && zinger.out}
       />
       <ForestCheck
         id={5333}
         name="Enemy Near Battle Arena"
         region="Forest Area 3"
-        canGetLogic={inStage.in && zinger.in}
-        canGetBreak={inStage.out && zinger.out}
+        canGetLogic={canReachTopOfShroom.in && zinger.in}
+        canGetBreak={canReachTopOfShroom.out && zinger.out}
       />
       <ForestCheck
         id={5334}
         name="Enemy Near High Warp 5"
         region="Forest Area 3"
-        canGetLogic={inStage.in && zinger.in}
-        canGetBreak={inStage.out && zinger.out}
+        canGetLogic={canReachTopOfShroom.in && zinger.in}
+        canGetBreak={canReachTopOfShroom.out && zinger.out}
       />
       <ForestCheck
         id={5335}
