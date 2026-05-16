@@ -11153,6 +11153,7 @@ const initialPortal = {
     vanilla: true,
     frontMillPortal: false,
     backMillPortal: false,
+    thornvineTopPortal: false,
     area2Portal: false,
     shroomTopPortal: false,
     lankyShroomTopPortal: false,
@@ -35401,6 +35402,7 @@ const usePlayForest = () => {
 const useSlamForest = () => useSlamLevel("Fungi Forest");
 const useFrontMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.frontMillPortal));
 const useBackMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.backMillPortal));
+const useThornvineTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.thornvineTopPortal));
 const useArea2Portal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.area2Portal));
 const useShroomTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.shroomTopPortal));
 const useLankyShroomTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.lankyShroomTopPortal));
@@ -35636,9 +35638,10 @@ const useForestBarn = () => {
   const canSlam = useSlamForest();
   const dk2 = useDk();
   const strong = useStrong();
+  const DKPortal = useThornvineTopPortal();
   return {
-    in: inStage.in && night.in && canSlam && strong,
-    out: inStage.out && night.out && dk2 && canSlam
+    in: inStage.in && night.in && canSlam && strong || DKPortal,
+    out: inStage.out && night.out && dk2 && canSlam || DKPortal
   };
 };
 const useDkBarnGb = () => {
@@ -35759,9 +35762,10 @@ const useBarnFairy = () => {
   const barn = useForestBarn();
   const hasClimbing = useClimbing();
   const camera = useCamera();
+  const DKPortal = useThornvineTopPortal();
   return {
-    in: barn.in && hasClimbing && camera,
-    out: barn.out && camera
+    in: (barn.in && hasClimbing || DKPortal) && camera,
+    out: (barn.out || DKPortal) && camera
   };
 };
 const useRaftersFairy = () => {
@@ -54417,6 +54421,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in the back mill room.",
                   storeKey: "backMillPortal",
+                  prefix: "shuffledForestPortals",
+                  updateItem: setForestPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Top floor of Thornvine Barn" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the top floor of DK's barn.",
+                  storeKey: "thornvineTopPortal",
                   prefix: "shuffledForestPortals",
                   updateItem: setForestPortal
                 }
