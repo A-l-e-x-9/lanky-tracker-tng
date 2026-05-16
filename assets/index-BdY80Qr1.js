@@ -29469,7 +29469,7 @@ const useDiddyMedalCommonLogic$4 = () => {
   if (climbing) {
     bananas += 10;
   }
-  if (production.in || production.out) {
+  if ((production.in || production.out) && climbing) {
     bananas += 15;
   }
   if (testing.in || testing.out) {
