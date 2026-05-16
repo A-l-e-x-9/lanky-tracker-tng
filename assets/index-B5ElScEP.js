@@ -38605,6 +38605,7 @@ const BeanstalkEnemies = () => {
 };
 const MushExteriorEnemies = () => {
   const inStage = usePlayForest();
+  const canReachTopOfShroom = useForestMushroomTop();
   const roof = useForestMushroomRoof();
   const klump = useDefeatToughEnemy();
   const zinger = useDefeatZinger();
@@ -38697,8 +38698,8 @@ const MushExteriorEnemies = () => {
         id: 5331,
         name: "Enemy Near DK Pad",
         region: "Forest Area 3",
-        canGetLogic: inStage.in && zinger.in,
-        canGetBreak: inStage.out && zinger.out
+        canGetLogic: canReachTopOfShroom.in && zinger.in,
+        canGetBreak: canReachTopOfShroom.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -38707,8 +38708,8 @@ const MushExteriorEnemies = () => {
         id: 5332,
         name: "Enemy Near Face Puzzle Entrance",
         region: "Forest Area 3",
-        canGetLogic: inStage.in && zinger.in,
-        canGetBreak: inStage.out && zinger.out
+        canGetLogic: canReachTopOfShroom.in && zinger.in,
+        canGetBreak: canReachTopOfShroom.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -38717,8 +38718,8 @@ const MushExteriorEnemies = () => {
         id: 5333,
         name: "Enemy Near Battle Arena",
         region: "Forest Area 3",
-        canGetLogic: inStage.in && zinger.in,
-        canGetBreak: inStage.out && zinger.out
+        canGetLogic: canReachTopOfShroom.in && zinger.in,
+        canGetBreak: canReachTopOfShroom.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -38727,8 +38728,8 @@ const MushExteriorEnemies = () => {
         id: 5334,
         name: "Enemy Near High Warp 5",
         region: "Forest Area 3",
-        canGetLogic: inStage.in && zinger.in,
-        canGetBreak: inStage.out && zinger.out
+        canGetLogic: canReachTopOfShroom.in && zinger.in,
+        canGetBreak: canReachTopOfShroom.out && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -38744,7 +38745,7 @@ const MushExteriorEnemies = () => {
   ] });
 };
 const MushInteriorEnemies = () => {
-  const inStage = usePlayForest();
+  const inStage = useForestMushroomTop();
   const klump = useDefeatToughEnemy();
   const zinger = useDefeatZinger();
   const lanky = useLanky();
