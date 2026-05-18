@@ -11172,6 +11172,7 @@ const initialPortal = {
     vanilla: true,
     treePortal: false,
     treeChunkyPortal: false,
+    DKCryptPortal: false,
     mausoleumPortal: false,
     ballroomPortal: false,
     windTunnelPortal: false
@@ -44809,11 +44810,12 @@ const usePlayCastle = () => {
 const useSlamCastle = () => useSlamLevel("Creepy Castle");
 const useTreePortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.treePortal));
 const useTreeChunkyPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.treeChunkyPortal));
+const useDKCryptPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.DKCryptPortal));
 const useMausoleumPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.mausoleumPortal));
 const useBallroomPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal));
 const useWindTunnelPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.windTunnelPortal));
 const useReachCastleFromCrypt = () => {
-  const DKPortal = useMausoleumPortal();
+  const DKPortal = useMausoleumPortal() || useDKCryptPortal();
   const hasClimbing = useClimbing();
   const highGrab = useHighGrab();
   if (DKPortal) {
@@ -44916,7 +44918,7 @@ const useDiddyCryptGb = () => {
   const canEnter = usePlayCastle();
   return {
     in: canEnter.in && (peanut || cryptPreOpened) && charge && hasClimbing,
-    out: (canEnter.in || canEnter.out) && (peanut || cryptPreOpened) && charge
+    out: canEnter.out && (peanut || cryptPreOpened) && charge
   };
 };
 const useDiddyDungeonGb = () => {
@@ -44958,9 +44960,10 @@ const useDkCryptGb = () => {
   const grab = useGrab();
   const hasClimbing = useClimbing();
   const canEnter = usePlayCastle();
+  const DKPortal = useDKCryptPortal();
   return {
-    in: canEnter.in && (coconut || cryptPreOpened) && grab && hasClimbing,
-    out: canEnter.out && (coconut || cryptPreOpened) && grab
+    in: canEnter.in && (coconut || cryptPreOpened || DKPortal) && grab && hasClimbing,
+    out: canEnter.out && (coconut || cryptPreOpened || DKPortal) && grab
   };
 };
 const useDkDungeonGb = () => {
@@ -54593,6 +54596,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in Chunky's room in the big tree.",
                   storeKey: "treeChunkyPortal",
+                  prefix: "shuffledCastlePortals",
+                  updateItem: setCastlePortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "DK's Crypt room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is near the entrance to DK's minecart game.",
+                  storeKey: "DKCryptPortal",
                   prefix: "shuffledCastlePortals",
                   updateItem: setCastlePortal
                 }
