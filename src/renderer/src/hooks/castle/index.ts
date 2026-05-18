@@ -66,6 +66,9 @@ export const useTreePortal = (): boolean =>
 //Is the DK Portal behind Chunky's room in the big tree?
 export const useTreeChunkyPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.treeChunkyPortal))
+//Is the DK Portal in DK's Crypt room?
+export const useDKCryptPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCastlePortals.DKCryptPortal))
 //Is the DK Portal in the Mausoleum?
 export const useMausoleumPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.mausoleumPortal))
@@ -79,7 +82,7 @@ export const useWindTunnelPortal = (): boolean =>
 
 /*An Alex addition: If shuffled DK Portals is on, and we're given a Portal in the Crypt, or outside on the lowest level of Castle, can we get up so that we can play the rest of the level? You'd be surprised, for me, how often the answer is "no", hence that warning in big red text that appears whenever you click on the Castle tab.*/
 export const useReachCastleFromCrypt = (): LogicBool => {
-  const DKPortal = useMausoleumPortal()
+  const DKPortal = useMausoleumPortal() || useDKCryptPortal()
   const hasClimbing = useClimbing()
   const highGrab = useHighGrab()
   if (DKPortal) {
@@ -198,7 +201,7 @@ export const useDiddyCryptGb = (): LogicBool => {
   const canEnter = usePlayCastle()
   return {
     in: canEnter.in && (peanut || cryptPreOpened) && charge && hasClimbing,
-    out: (canEnter.in || canEnter.out) && (peanut || cryptPreOpened) && charge
+    out: canEnter.out && (peanut || cryptPreOpened) && charge
   }
 }
 
@@ -242,9 +245,10 @@ export const useDkCryptGb = (): LogicBool => {
   const grab = useGrab()
   const hasClimbing = useClimbing()
   const canEnter = usePlayCastle()
+  const DKPortal = useDKCryptPortal()
   return {
-    in: canEnter.in && (coconut || cryptPreOpened) && grab && hasClimbing,
-    out: canEnter.out && (coconut || cryptPreOpened) && grab
+    in: canEnter.in && (coconut || cryptPreOpened || DKPortal) && grab && hasClimbing,
+    out: canEnter.out && (coconut || cryptPreOpened || DKPortal) && grab
   }
 }
 

@@ -57,6 +57,7 @@ export const initialPortal: PortalState = {
     vanilla: true,
     treePortal: false,
     treeChunkyPortal: false,
+    DKCryptPortal: false,
     mausoleumPortal: false,
     ballroomPortal: false,
     windTunnelPortal: false

@@ -1209,6 +1209,7 @@ interface castlePortals {
   vanilla: boolean
   treePortal: boolean
   treeChunkyPortal: boolean
+  DKCryptPortal: boolean
   mausoleumPortal: boolean
   ballroomPortal: boolean
   windTunnelPortal: boolean
