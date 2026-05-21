@@ -11131,6 +11131,7 @@ const initialPortal = {
     vanilla: true,
     firstHalfPortal: false,
     tinyTempleIcePortal: false,
+    tinyTemplePoolPortal: false,
     secondHalfPortal: false,
     llamaPortal: false
   },
@@ -22814,6 +22815,7 @@ const usePlayAztec = () => {
 };
 const useFirstHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.firstHalfPortal));
 const useTinyTempleIcePortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleIcePortal));
+const useTinyTemplePoolPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTemplePoolPortal));
 const useSecondHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal));
 const useLlamaPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal));
 const useSlamAztec = () => useSlamLevel("Angry Aztec");
@@ -22865,9 +22867,11 @@ const useAztecTinyTemple = () => {
   const pineapple = usePineapple();
   const properGun = peanut || grape || feather || pineapple;
   const DKPortal = useTinyTempleIcePortal();
+  const DKPortal2 = useTinyTemplePoolPortal();
+  const hasAPortal = DKPortal || DKPortal2;
   return {
-    in: aztecFront.in && properGun || DKPortal,
-    out: aztecFront.out && properGun || DKPortal
+    in: aztecFront.in && properGun || hasAPortal,
+    out: aztecFront.out && properGun || hasAPortal
   };
 };
 const useTinyTempleIce = () => {
@@ -22939,12 +22943,10 @@ const useChunkyVaseGb = () => {
   };
 };
 const useChunkyKlaptrapGb = () => {
-  const front = useAztecFront();
-  const gun = usePineapple();
   const triangle = useTriangle();
   const tinyTemple = useAztecTinyTemple();
   return {
-    in: front.in && gun && triangle,
+    in: tinyTemple.in && triangle,
     out: tinyTemple.out && triangle
   };
 };
@@ -22987,10 +22989,11 @@ const useDiddyFreeTinyGb = () => {
   const temple = useAztecTinyTemple();
   const iceMelted = useTinyTempleIce();
   const dive = useDive();
+  const DKPortal = useTinyTemplePoolPortal();
   const free = useFreeTinySwitch();
   return {
-    in: temple.in && iceMelted.in && dive.in && free,
-    out: temple.out && iceMelted.out && dive.out && free
+    in: (temple.in && iceMelted.in && dive.in || DKPortal) && free,
+    out: (temple.out && iceMelted.out && dive.out || DKPortal) && free
   };
 };
 const useDiddyGongGb = () => {
@@ -23090,9 +23093,10 @@ const useLankyVultureGb = () => {
   const tinyTemple = useAztecTinyTemple();
   const lanky = useLanky();
   const iceMelted = useTinyTempleIce();
+  const DKPortal = useTinyTemplePoolPortal();
   return {
-    in: front.in && tinyTemple.in && iceMelted.in && dive.in && lanky && canSlam,
-    out: front.out && tinyTemple.out && iceMelted.out && dive.out && canSlam && lanky
+    in: (front.in && tinyTemple.in && iceMelted.in || DKPortal) && dive.in && lanky && canSlam,
+    out: (front.out && tinyTemple.out && iceMelted.out || DKPortal) && dive.out && lanky && canSlam
   };
 };
 const useArena$3 = () => {
@@ -23265,15 +23269,7 @@ const useTunnelBoulder = () => {
     out: hasBackAccess.out && hasBarrels && hasHunky
   };
 };
-const useVases = () => {
-  const hasAccess = useAztecFront();
-  const hasPineapples = usePineapple();
-  const hasBarrels = useBarrel();
-  return {
-    in: hasAccess.in && hasBarrels && hasPineapples,
-    out: hasAccess.out && hasBarrels && hasPineapples
-  };
-};
+const useVases = () => useChunkyVaseGb();
 const AztecCheck = (props) => {
   const checks = useDonkStore(useShallow((state) => state.checks));
   return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -54240,6 +54236,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in the Tiny Temple at the ice-melting pad.",
                   storeKey: "tinyTempleIcePortal",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In the Tiny Temple pool, Tiny's prison room, or Lanky's Necky room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the Tiny Temple beyond the pool.",
+                  storeKey: "tinyTemplePoolPortal",
                   prefix: "shuffledAztecPortals",
                   updateItem: setAztecPortal
                 }
