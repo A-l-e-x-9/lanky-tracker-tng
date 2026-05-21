@@ -126,6 +126,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledAztecPortals"
                 updateItem={setAztecPortal}
             />
+            <p>In the Tiny Temple pool, Tiny's prison room, or Lanky's Necky room</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in the Tiny Temple beyond the pool."
+                storeKey="tinyTemplePoolPortal"
+                prefix="shuffledAztecPortals"
+                updateItem={setAztecPortal}
+            />
             <p>Anywhere in the second half of the level or the cave leading to it</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}

@@ -1168,6 +1168,7 @@ interface aztecPortals {
   vanilla: boolean
   firstHalfPortal: boolean
   tinyTempleIcePortal: boolean
+  tinyTemplePoolPortal: boolean
   secondHalfPortal: boolean
   llamaPortal: boolean
 }

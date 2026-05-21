@@ -16,6 +16,7 @@ export const initialPortal: PortalState = {
     vanilla: true,
     firstHalfPortal: false,
     tinyTempleIcePortal: false,
+    tinyTemplePoolPortal: false,
     secondHalfPortal: false,
     llamaPortal: false
   },

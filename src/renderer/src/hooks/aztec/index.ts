@@ -62,6 +62,9 @@ export const useFirstHalfPortal = (): boolean =>
 //Is the DK Portal behind the Guitar Pad needed to melt the ice in Tiny Temple?
 export const useTinyTempleIcePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleIcePortal))
+//Is the DK Portal in the Tiny Temple's pool or either room accessed by it?
+export const useTinyTemplePoolPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTemplePoolPortal))
 //Is the DK Portal past the gate blocking access to the second half of the level?
 export const useSecondHalfPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal))
@@ -151,9 +154,11 @@ export const useAztecTinyTemple = (): LogicBool => {
   const pineapple = usePineapple()
   const properGun = peanut || grape || feather || pineapple
   const DKPortal = useTinyTempleIcePortal()
+  const DKPortal2 = useTinyTemplePoolPortal()
+  const hasAPortal = DKPortal || DKPortal2
   return {
-    in: (aztecFront.in && properGun) || DKPortal,
-    out: (aztecFront.out && properGun) || DKPortal
+    in: (aztecFront.in && properGun) || hasAPortal,
+    out: (aztecFront.out && properGun) || hasAPortal
   }
 }
 
@@ -251,12 +256,10 @@ export const useChunkyVaseGb = (): LogicBool => {
 }
 
 export const useChunkyKlaptrapGb = (): LogicBool => {
-  const front = useAztecFront()
-  const gun = usePineapple()
   const triangle = useTriangle()
   const tinyTemple = useAztecTinyTemple()
   return {
-    in: front.in && gun && triangle,
+    in: tinyTemple.in && triangle,
     out: tinyTemple.out && triangle
   }
 }
@@ -304,10 +307,11 @@ export const useDiddyFreeTinyGb = (): LogicBool => {
   const temple = useAztecTinyTemple()
   const iceMelted = useTinyTempleIce()
   const dive = useDive()
+  const DKPortal = useTinyTemplePoolPortal()
   const free = useFreeTinySwitch()
   return {
-    in: temple.in && iceMelted.in && dive.in && free,
-    out: temple.out && iceMelted.out && dive.out && free
+    in: ((temple.in && iceMelted.in && dive.in) || DKPortal) && free,
+    out: ((temple.out && iceMelted.out && dive.out) || DKPortal) && free
   }
 }
 
@@ -416,9 +420,10 @@ export const useLankyVultureGb = (): LogicBool => {
   const tinyTemple = useAztecTinyTemple()
   const lanky = useLanky()
   const iceMelted = useTinyTempleIce()
+  const DKPortal = useTinyTemplePoolPortal()
   return {
-    in: front.in && tinyTemple.in && iceMelted.in && dive.in && lanky && canSlam,
-    out: front.out && tinyTemple.out && iceMelted.out && dive.out && canSlam && lanky
+    in: ((front.in && tinyTemple.in && iceMelted.in) || DKPortal) && dive.in && lanky && canSlam,
+    out: ((front.out && tinyTemple.out && iceMelted.out) || DKPortal) && dive.out && lanky && canSlam
   }
 }
 
@@ -613,12 +618,4 @@ export const useTunnelBoulder = (): LogicBool => {
   }
 }
 
-export const useVases = (): LogicBool => {
-  const hasAccess = useAztecFront()
-  const hasPineapples = usePineapple()
-  const hasBarrels = useBarrel()
-  return {
-    in: hasAccess.in && hasBarrels && hasPineapples,
-    out: hasAccess.out && hasBarrels && hasPineapples
-  }
-}
+export const useVases = (): LogicBool => useChunkyVaseGb()
