@@ -1,7 +1,7 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb } from '@renderer/hooks/factory'
+import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useDkProdGb } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, useTwirl, useTriangle } from '@renderer/hooks/kongs'
+import { useClimbing, useTwirl } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartCrates from './Start'
 import StarcadeCrates from './Starcade'
@@ -16,7 +16,6 @@ const hasAllBananaports = useBananaportAll()
 const upperProd = useFactoryProductionTop()
 const canDoTinyProd = useTinyProductionGb()
 const isHinaKagiyama = useTwirl()
-const canReachTesting = useFactoryTesting()
 const canDoCrusher = useDkProdGb()
   return (
     <CratePool>
