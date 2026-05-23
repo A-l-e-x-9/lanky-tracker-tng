@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb } from '@renderer/hooks/factory'
+import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useDkProdGb } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useTwirl } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
@@ -16,7 +16,6 @@ const hasAllBananaports = useBananaportAll()
 const upperProd = useFactoryProductionTop()
 const canDoTinyProd = useTinyProductionGb()
 const isHinaKagiyama = useTwirl()
-const canReachTesting = useFactoryTesting()
 const canDoCrusher = useDkProdGb()
   return (
     <ArenaPool>
