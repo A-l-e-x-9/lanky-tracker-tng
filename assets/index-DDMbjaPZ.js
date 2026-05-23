@@ -31089,7 +31089,7 @@ const Shuffled$u = () => {
     )
   ] });
 };
-const TestingDirt$1 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : null;
+const TestingDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$u, {}) : null;
 const Shuffled$t = () => {
   const hasCam = useCamera();
   const vanillaFairy1 = useNumberFairy();
@@ -31361,14 +31361,110 @@ const RNDCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.j
 const Shuffled$p = () => {
   const hasShockwave = useShockwave();
   const canReachTesting = useFactoryTesting();
-  const canDoBlockTower = useDiddyBlockGb();
+  const canReachVanillaArena = useArena$2();
+  const hasTrombone = useTrombone();
+  const hasGuitar = useGuitar();
+  const hasClimbing = useClimbing();
+  const hasPrimatePunch = usePunch();
+  const hasTriangle = useTriangle();
+  const canReachCar = useTinyRaceGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 33020,
-        name: "Shuffled Dirt Patch: Near Snide's",
-        region: "Testing Room",
+        id: 33e3,
+        name: "Shuffled Dirt Patch: In the R&D Room where the vanilla Battle Arena would be",
+        region: "R&D Room",
+        canGetLogic: canReachVanillaArena.in && hasShockwave,
+        canGetBreak: canReachVanillaArena.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 33031,
+        name: "Shuffled Dirt Patch: Left corner of Lanky's piano room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasTrombone && hasShockwave,
+        canGetBreak: canReachTesting.out && hasTrombone && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 33032,
+        name: "Shuffled Dirt Patch: Right corner of Lanky's piano room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasTrombone && hasShockwave,
+        canGetBreak: canReachTesting.out && hasTrombone && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 33033,
+        name: "Shuffled Dirt Patch: Corner of Diddy's pincode room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasGuitar && hasShockwave,
+        canGetBreak: canReachTesting.out && hasGuitar && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 33034,
+        name: "Shuffled Dirt Patch: In Diddy's pincode room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasGuitar && hasShockwave,
+        canGetBreak: canReachTesting.out && hasGuitar && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 33035,
+        name: "Shuffled Dirt Patch: In Chunky's toy monster room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasClimbing && hasPrimatePunch && hasTriangle && hasShockwave,
+        canGetBreak: canReachTesting.out && hasClimbing && hasPrimatePunch && hasTriangle && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 33036,
+        name: "Shuffled Dirt Patch: Just outside of Chunky's toy monster room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasClimbing && hasPrimatePunch && hasTriangle && hasShockwave,
+        canGetBreak: canReachTesting.out && hasClimbing && hasPrimatePunch && hasTriangle && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 33037,
+        name: "Shuffled Dirt Patch: In Tiny's car race room",
+        region: "R&D Room",
+        canGetLogic: canReachCar.in && hasShockwave,
+        canGetBreak: canReachCar.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 33038,
+        name: "Shuffled Dirt Patch: Also in Tiny's car race room",
+        region: "R&D Room",
+        canGetLogic: canReachCar.in && hasShockwave,
+        canGetBreak: canReachCar.out && hasShockwave
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 33039,
+        name: "Shuffled Dirt Patch: In front of DK's R&D level",
+        region: "R&D Room",
         canGetLogic: canReachTesting.in && hasShockwave,
         canGetBreak: canReachTesting.out && hasShockwave
       }
@@ -31376,126 +31472,26 @@ const Shuffled$p = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 33021,
-        name: "Shuffled Dirt Patch: Near Snide's, hidden",
-        region: "Testing Room",
-        canGetLogic: canReachTesting.in && hasShockwave,
-        canGetBreak: canReachTesting.out && hasShockwave
+        id: 33040,
+        name: "Shuffled Battle Arena: Under the grate that doesn't have the vanilla Battle Arena",
+        region: "R&D Room",
+        canGetLogic: canReachVanillaArena.in && hasShockwave,
+        canGetBreak: canReachVanillaArena.out && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 33022,
-        name: "Shuffled Dirt Patch: Right hallway",
-        region: "Testing Room",
-        canGetLogic: canReachTesting.in && hasShockwave,
-        canGetBreak: canReachTesting.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33023,
-        name: "Shuffled Dirt Patch: At DK's number game",
-        region: "Testing Room",
-        canGetLogic: canReachTesting.in && hasShockwave,
-        canGetBreak: canReachTesting.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33024,
-        name: "Shuffled Dirt Patch: Under the stairs to Tiny's dartboard",
-        region: "Testing Room",
-        canGetLogic: canReachTesting.in && hasShockwave,
-        canGetBreak: canReachTesting.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33025,
-        name: "Shuffled Dirt Patch: On the Block Tower",
-        region: "Testing Room",
-        canGetLogic: canDoBlockTower.in && hasShockwave,
-        canGetBreak: canDoBlockTower.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33026,
-        name: "Shuffled Dirt Patch: Under Lanky's Testing Bonus Barrel",
-        region: "Testing Room",
-        canGetLogic: canReachTesting.in && hasShockwave,
-        canGetBreak: canReachTesting.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33027,
-        name: "Shuffled Dirt Patch: Left of the entrance to Funky's",
-        region: "Testing Room",
-        canGetLogic: canReachTesting.in && hasShockwave,
-        canGetBreak: canReachTesting.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33028,
-        name: "Shuffled Dirt Patch: Left of Funky's",
-        region: "Testing Room",
-        canGetLogic: canReachTesting.in && hasShockwave,
-        canGetBreak: canReachTesting.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33029,
-        name: "Shuffled Dirt Patch: Right of Funky's",
-        region: "Testing Room",
-        canGetLogic: canReachTesting.in && hasShockwave,
-        canGetBreak: canReachTesting.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33030,
-        name: "Shuffled Dirt Patch: Right of the entrance to Funky's",
-        region: "Testing Room",
-        canGetLogic: canReachTesting.in && hasShockwave,
-        canGetBreak: canReachTesting.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33046,
-        name: "Shuffled Dirt Patch: Vanilla Warp 3, at Snide's",
-        region: "Testing Room",
-        canGetLogic: canReachTesting.in && hasShockwave,
-        canGetBreak: canReachTesting.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33050,
-        name: "Shuffled Dirt Patch: Vanilla Warp 5, at Funky's",
-        region: "Testing Room",
-        canGetLogic: canReachTesting.in && hasShockwave,
-        canGetBreak: canReachTesting.out && hasShockwave
+        id: 33044,
+        name: "Shuffled Dirt Patch: Vanilla Warp 2, R&D-side",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasClimbing && hasShockwave,
+        canGetBreak: canReachTesting.out && hasClimbing && hasShockwave
       }
     )
   ] });
 };
-const TestingDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : null;
+const RNDDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : null;
 const Shuffled$o = () => {
   const hasCam = useCamera();
   const vanillaFairy1 = useNumberFairy();
@@ -31609,7 +31605,7 @@ const FactoryRegionChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(TestingArenas, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TestingCrates, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TestingDirt$1, {})
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TestingDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingFairies$1, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingKasplats$1, {}) }),
@@ -31617,7 +31613,7 @@ const FactoryRegionChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(RNDArenas, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(RNDCrates, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TestingDirt, {})
+      /* @__PURE__ */ jsxRuntimeExports.jsx(RNDDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingFairies, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingKasplats, {}) }),
@@ -31871,35 +31867,18 @@ const ShuffledCrates$5 = () => {
 const ShuffledDirt$4 = () => {
   const isBreathing = useGeneralDirt$3();
   const hasShockwave = useShockwave();
-  const canReachVanillaArena = useArena$2();
   const hasClimbing = useClimbing();
-  const hasPrimatePunch = usePunch();
   const prodRoomOn = useFactoryProductionEnabled();
   const hasAllBananaports = useBananaportAll();
   const upperProd = useFactoryProductionTop();
   const canDoTinyProd = useTinyProductionGb();
   const isHinaKagiyama = useTwirl();
-  const canReachTesting = useFactoryTesting();
-  const canReachCar = useTinyRaceGb();
   const canDoCrusher = useDkProdGb();
-  const hasGuitar = useGuitar();
-  const hasTrombone = useTrombone();
-  const hasTriangle = useTriangle();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(RainbowCoinPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(StartDirt, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(StarcadeDirt, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TestingDirt$1, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TestingDirt, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33e3,
-        name: "Shuffled Dirt Patch: In the R&D Room where the vanilla Battle Arena would be",
-        region: "R&D Room",
-        canGetLogic: canReachVanillaArena.in && hasShockwave,
-        canGetBreak: canReachVanillaArena.out && hasShockwave
-      }
-    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(RNDDirt, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
@@ -31968,116 +31947,6 @@ const ShuffledDirt$4 = () => {
         region: "Prod Room",
         canGetLogic: upperProd.in && isHinaKagiyama && hasShockwave,
         canGetBreak: upperProd.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33031,
-        name: "Shuffled Dirt Patch: Left corner of Lanky's piano room",
-        region: "R&D Room",
-        canGetLogic: canReachTesting.in && hasTrombone && hasShockwave,
-        canGetBreak: canReachTesting.out && hasTrombone && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33032,
-        name: "Shuffled Dirt Patch: Right corner of Lanky's piano room",
-        region: "R&D Room",
-        canGetLogic: canReachTesting.in && hasTrombone && hasShockwave,
-        canGetBreak: canReachTesting.out && hasTrombone && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33033,
-        name: "Shuffled Dirt Patch: Corner of Diddy's pincode room",
-        region: "R&D Room",
-        canGetLogic: canReachTesting.in && hasGuitar && hasShockwave,
-        canGetBreak: canReachTesting.out && hasGuitar && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33034,
-        name: "Shuffled Dirt Patch: In Diddy's pincode room",
-        region: "R&D Room",
-        canGetLogic: canReachTesting.in && hasGuitar && hasShockwave,
-        canGetBreak: canReachTesting.out && hasGuitar && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33035,
-        name: "Shuffled Dirt Patch: In Chunky's toy monster room",
-        region: "R&D Room",
-        canGetLogic: canReachTesting.in && hasClimbing && hasPrimatePunch && hasTriangle && hasShockwave,
-        canGetBreak: canReachTesting.out && hasClimbing && hasPrimatePunch && hasTriangle && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33036,
-        name: "Shuffled Dirt Patch: Just outside of Chunky's toy monster room",
-        region: "R&D Room",
-        canGetLogic: canReachTesting.in && hasClimbing && hasPrimatePunch && hasTriangle && hasShockwave,
-        canGetBreak: canReachTesting.out && hasClimbing && hasPrimatePunch && hasTriangle && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33037,
-        name: "Shuffled Dirt Patch: In Tiny's car race room",
-        region: "R&D Room",
-        canGetLogic: canReachCar.in && hasShockwave,
-        canGetBreak: canReachCar.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33038,
-        name: "Shuffled Dirt Patch: Also in Tiny's car race room",
-        region: "R&D Room",
-        canGetLogic: canReachCar.in && hasShockwave,
-        canGetBreak: canReachCar.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33039,
-        name: "Shuffled Dirt Patch: In front of DK's R&D level",
-        region: "R&D Room",
-        canGetLogic: canReachTesting.in && hasShockwave,
-        canGetBreak: canReachTesting.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33040,
-        name: "Shuffled Battle Arena: Under the grate that doesn't have the vanilla Battle Arena",
-        region: "R&D Room",
-        canGetLogic: canReachVanillaArena.in && hasShockwave,
-        canGetBreak: canReachVanillaArena.out && hasShockwave
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 33044,
-        name: "Shuffled Dirt Patch: Vanilla Warp 2, R&D-side",
-        region: "R&D Room",
-        canGetLogic: canReachTesting.in && hasClimbing && hasShockwave,
-        canGetBreak: canReachTesting.out && hasClimbing && hasShockwave
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
