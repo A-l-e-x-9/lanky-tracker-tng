@@ -1,5 +1,5 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb } from '@renderer/hooks/factory'
+import { useGeneralDirt, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useDkProdGb } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
 import { useShockwave, useClimbing, useTwirl } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
@@ -17,8 +17,6 @@ const hasAllBananaports = useBananaportAll()
 const upperProd = useFactoryProductionTop()
 const canDoTinyProd = useTinyProductionGb()
 const isHinaKagiyama = useTwirl()
-const canReachTesting = useFactoryTesting()
-const canReachCar = useTinyRaceGb()
 const canDoCrusher = useDkProdGb()
   return (
     <RainbowCoinPool>
