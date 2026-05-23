@@ -28,13 +28,6 @@ const canDoCrusher = useDkProdGb()
       <RNDArenas />
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: Vanilla Arena (in the R&D Room)"
-        region="R&D Room"
-        canGetLogic={canReachVanillaArena.in}
-        canGetBreak={canReachVanillaArena.out}
-      />
-      <FactoryCheck
-        id={13000}
         name="Shuffled Battle Arena: Center of the hatch"
         region="Prod Room"
         canGetLogic={isBreathing.in && hasClimbing}
@@ -81,41 +74,6 @@ const canDoCrusher = useDkProdGb()
         region="Prod Room"
         canGetLogic={upperProd.in && isHinaKagiyama}
         canGetBreak={upperProd.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: In Tiny's car race room"
-        region="R&D Room"
-        canGetLogic={canReachCar.in}
-        canGetBreak={canReachCar.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Also in Tiny's car race room"
-        region="R&D Room"
-        canGetLogic={canReachCar.in}
-        canGetBreak={canReachCar.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: In front of DK's R&D level"
-        region="R&D Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Under the grate that doesn't have the vanilla Arena"
-        region="R&D Room"
-        canGetLogic={canReachVanillaArena.in}
-        canGetBreak={canReachVanillaArena.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Vanilla Warp 2, R&D-side"
-        region="R&D Room"
-        canGetLogic={canReachTesting.in && hasClimbing}
-        canGetBreak={canReachTesting.out && hasClimbing}
       />
       <FactoryCheck
         id={13000}
