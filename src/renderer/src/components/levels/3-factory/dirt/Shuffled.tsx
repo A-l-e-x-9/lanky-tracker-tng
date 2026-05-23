@@ -1,7 +1,7 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useArena, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb } from '@renderer/hooks/factory'
+import { useGeneralDirt, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
-import { useShockwave, useClimbing, usePunch, useTwirl, useTrombone, useGuitar, useTriangle } from '@renderer/hooks/kongs'
+import { useShockwave, useClimbing, usePunch, useTwirl, useTriangle } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartDirt from './Start'
 import StarcadeDirt from './Starcade'
@@ -11,7 +11,6 @@ import RNDDirt from './RND'
 const ShuffledDirt: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const hasShockwave = useShockwave()
-const canReachVanillaArena = useArena()
 const hasClimbing = useClimbing()
 const hasPrimatePunch = usePunch()
 const prodRoomOn = useFactoryProductionEnabled()
@@ -22,8 +21,6 @@ const isHinaKagiyama = useTwirl()
 const canReachTesting = useFactoryTesting()
 const canReachCar = useTinyRaceGb()
 const canDoCrusher = useDkProdGb()
-const hasGuitar = useGuitar()
-const hasTrombone = useTrombone()
 const hasTriangle = useTriangle()
   return (
     <RainbowCoinPool>
