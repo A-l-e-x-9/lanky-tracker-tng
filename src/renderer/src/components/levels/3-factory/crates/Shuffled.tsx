@@ -1,7 +1,7 @@
 import CratePool from '@renderer/components/pools/Crates'
 import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, usePunch, useTwirl, useTriangle } from '@renderer/hooks/kongs'
+import { useClimbing, useTwirl, useTriangle } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartCrates from './Start'
 import StarcadeCrates from './Starcade'
@@ -11,16 +11,13 @@ import RNDCrates from './RND'
 const ShuffledCrates: React.FC = () => {
 const isBreathing = useGeneralThing()
 const hasClimbing = useClimbing()
-const hasPrimatePunch = usePunch()
 const prodRoomOn = useFactoryProductionEnabled()
 const hasAllBananaports = useBananaportAll()
 const upperProd = useFactoryProductionTop()
 const canDoTinyProd = useTinyProductionGb()
 const isHinaKagiyama = useTwirl()
 const canReachTesting = useFactoryTesting()
-const canReachCar = useTinyRaceGb()
 const canDoCrusher = useDkProdGb()
-const hasTriangle = useTriangle()
   return (
     <CratePool>
       <StartCrates />

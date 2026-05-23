@@ -1,14 +1,17 @@
 import CratePool from '@renderer/components/pools/Crates'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
-import { useFactoryTesting } from '@renderer/hooks/factory'
-import { useTrombone, useGuitar, useClimbing } from '@renderer/hooks/kongs'
+import { useFactoryTesting, useTinyRaceGb } from '@renderer/hooks/factory'
+import { useTrombone, useGuitar, useClimbing, usePunch, useTriangle } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const canReachTesting = useFactoryTesting()
 const hasTrombone = useTrombone()
 const hasGuitar = useGuitar()
 const hasClimbing = useClimbing()
+const hasPrimatePunch = usePunch()
+const hasTriangle = useTriangle()
+const canReachCar = useTinyRaceGb()
   return (
     <CratePool>
       <FactoryCheck
