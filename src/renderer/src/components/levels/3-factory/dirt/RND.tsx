@@ -2,13 +2,17 @@ import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
 import { useFactoryTesting, useArena } from '@renderer/hooks/factory'
-import { useShockwave, useTrombone, useGuitar } from '@renderer/hooks/kongs'
+import { useShockwave, useTrombone, useGuitar, useClimbing, usePunch, useTriangle } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const hasShockwave = useShockwave()
 const canReachTesting = useFactoryTesting()
 const canReachVanillaArena = useArena()
 const hasTrombone = useTrombone()
+const hasGuitar = useGuitar()
+const hasClimbing = useClimbing()
+const hasPrimatePunch = usePunch()
+const hasTriangle = useTriangle()
   return (
     <RainbowCoinPool>
       <FactoryCheck
