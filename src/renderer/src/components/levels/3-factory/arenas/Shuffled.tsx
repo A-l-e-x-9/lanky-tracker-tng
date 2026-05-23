@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb } from '@renderer/hooks/factory'
+import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useFactoryTesting, useTinyRaceGb, useDkProdGb } from '@renderer/hooks/factory'
 import { useBananaportAll } from '@renderer/hooks/settings'
 import { useClimbing, useTwirl } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
@@ -10,7 +10,6 @@ import RNDArenas from './RND'
 
 const ShuffledArenas: React.FC = () => {
 const isBreathing = useGeneralThing()
-const canReachVanillaArena = useArena()
 const hasClimbing = useClimbing()
 const prodRoomOn = useFactoryProductionEnabled()
 const hasAllBananaports = useBananaportAll()
@@ -18,7 +17,6 @@ const upperProd = useFactoryProductionTop()
 const canDoTinyProd = useTinyProductionGb()
 const isHinaKagiyama = useTwirl()
 const canReachTesting = useFactoryTesting()
-const canReachCar = useTinyRaceGb()
 const canDoCrusher = useDkProdGb()
   return (
     <ArenaPool>
