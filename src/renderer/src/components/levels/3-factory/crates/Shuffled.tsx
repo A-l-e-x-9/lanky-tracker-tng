@@ -6,6 +6,7 @@ import FactoryCheck from '../check'
 import StartCrates from './Start'
 import StarcadeCrates from './Starcade'
 import TestingCrates from './Testing'
+import RNDCrates from './RND'
 
 const ShuffledCrates: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -27,6 +28,7 @@ const hasTriangle = useTriangle()
       <StartCrates />
       <StarcadeCrates />
       <TestingCrates />
+      <RNDCrates />
       <FactoryCheck
         id={23007}
         name="Shuffled Melon Crate: Center of the hatch"

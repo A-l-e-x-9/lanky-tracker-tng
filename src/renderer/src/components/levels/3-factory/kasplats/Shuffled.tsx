@@ -6,6 +6,7 @@ import FactoryCheck from '../check'
 import StartKasplats from './Start'
 import StarcadeKasplats from './Starcade'
 import TestingKasplats from './Testing'
+import RNDKasplats from './RND'
 
 const ShuffledKasplats: React.FC = () => {
 const DKVanillaKasplat = useProductionTopKasplat()
@@ -24,6 +25,7 @@ const prodRoomOn = useFactoryProductionEnabled()
       <StartKasplats />
       <StarcadeKasplats />
       <TestingKasplats />
+      <RNDKasplats />
       <FactoryCheck
         id={53000}
         name="Shuffled Kasplat: DK's Vanilla Location (top of the Prod)"

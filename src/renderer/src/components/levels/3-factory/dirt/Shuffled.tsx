@@ -6,6 +6,7 @@ import FactoryCheck from '../check'
 import StartDirt from './Start'
 import StarcadeDirt from './Starcade'
 import TestingDirt from './Testing'
+import RNDDirt from './RND'
 
 const ShuffledDirt: React.FC = () => {
 const isBreathing = useGeneralDirt()
@@ -29,6 +30,7 @@ const hasTriangle = useTriangle()
       <StartDirt />
       <StarcadeDirt />
       <TestingDirt />
+      <RNDDirt />
       <FactoryCheck
         id={33000}
         name="Shuffled Dirt Patch: In the R&D Room where the vanilla Battle Arena would be"

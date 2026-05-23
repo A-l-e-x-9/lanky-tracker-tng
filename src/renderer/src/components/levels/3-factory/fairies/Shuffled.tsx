@@ -6,6 +6,7 @@ import FactoryCheck from '../check'
 import StartFairies from './Start'
 import StarcadeFairies from './Starcade'
 import TestingFairies from './Testing'
+import RNDFairies from './RND'
 
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
@@ -25,6 +26,7 @@ const ShuffledFairies: React.FC = () => {
       <StartFairies />
       <StarcadeFairies />
       <TestingFairies />
+      <RNDFairies />
       <FactoryCheck
         id={43003}
         name="Shuffled Fairy: Down the pole to the Prod Room"

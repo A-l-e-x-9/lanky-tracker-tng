@@ -6,6 +6,7 @@ import FactoryCheck from '../check'
 import StartArenas from './Start'
 import StarcadeArenas from './Starcade'
 import TestingArenas from './Testing'
+import RNDArenas from './RND'
 
 const ShuffledArenas: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -24,6 +25,7 @@ const canDoCrusher = useDkProdGb()
       <StartArenas />
       <StarcadeArenas />
       <TestingArenas />
+      <RNDArenas />
       <FactoryCheck
         id={13000}
         name="Shuffled Battle Arena: Vanilla Arena (in the R&D Room)"
