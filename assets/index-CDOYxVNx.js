@@ -31149,7 +31149,7 @@ const Shuffled$t = () => {
     )
   ] });
 };
-const TestingFairies$1 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {}) : null;
+const TestingFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {}) : null;
 const Shuffled$s = () => {
   const chunkyVanillaKasplat = useBlockKasplat();
   const hasMiniMonkey = useMini();
@@ -31494,64 +31494,57 @@ const Shuffled$p = () => {
 const RNDDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : null;
 const Shuffled$o = () => {
   const hasCam = useCamera();
-  const vanillaFairy1 = useNumberFairy();
-  const vanillaFairy2 = useDartFairy();
-  const canDoBlockTower = useDiddyBlockGb();
   const canDoTesting = useFactoryTesting();
   const hasClimbing = useClimbing();
+  const hasBananaports = useBananaportAll();
+  const hasGuitar = useGuitar();
+  const hasPrimatePunch = usePunch();
+  const hasTriangle = useTriangle();
+  const highGrab = useHighGrab();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 43e3,
-        name: "Shuffled Fairy: Vanilla Location #1 (tunnel to DK's number game)",
-        region: "Testing Room",
-        canGetLogic: vanillaFairy1.in,
-        canGetBreak: vanillaFairy1.out
+        id: 43014,
+        name: "Shuffled Fairy: In Diddy's Pincode Room",
+        region: "R&D Room",
+        canGetLogic: canDoTesting.in && hasCam && (hasClimbing || hasBananaports) && hasGuitar,
+        canGetBreak: canDoTesting.out && hasCam && (hasClimbing || hasBananaports) && hasGuitar
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 43001,
-        name: "Shuffled Fairy: Vanilla Location #2 (Funky's after Tiny's dart game)",
-        region: "Testing Room",
-        canGetLogic: vanillaFairy2
+        id: 43015,
+        name: "Shuffled Fairy: Tunnel to Tiny's Car Race",
+        region: "R&D Room",
+        canGetLogic: canDoTesting.in && hasCam && (hasClimbing || hasBananaports),
+        canGetBreak: canDoTesting.out && hasCam && (hasClimbing || hasBananaports)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 43011,
-        name: "Shuffled Fairy: Top of Diddy's Block Tower",
-        region: "Testing Room",
-        canGetLogic: canDoBlockTower.in && hasCam,
-        canGetBreak: canDoBlockTower.out && hasCam
+        id: 43016,
+        name: "Shuffled Fairy: In Chunky's Toy Monster Room",
+        region: "R&D Room",
+        canGetLogic: canDoTesting.in && hasCam && (hasClimbing || hasBananaports) && hasPrimatePunch && hasTriangle,
+        canGetBreak: canDoTesting.out && hasCam && (hasClimbing || hasBananaports) && highGrab && hasPrimatePunch && hasTriangle
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 43012,
-        name: "Shuffled Fairy: Boxes to Tiny's Dartboard",
-        region: "Testing Room",
-        canGetLogic: canDoTesting.in && hasCam,
-        canGetBreak: canDoTesting.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 43013,
-        name: "Shuffled Fairy: Pole to the R&D Room",
-        region: "Testing Room",
-        canGetLogic: canDoTesting.in && hasCam && hasClimbing,
-        canGetBreak: canDoTesting.out && hasCam
+        id: 43017,
+        name: "Shuffled Fairy: At the chute to the Storage Room",
+        region: "R&D Room",
+        canGetLogic: canDoTesting.in && hasCam && (hasClimbing || hasBananaports),
+        canGetBreak: canDoTesting.out && hasCam && (hasClimbing || hasBananaports)
       }
     )
   ] });
 };
-const TestingFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$o, {}) : null;
+const RNDFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$o, {}) : null;
 const Shuffled$n = () => {
   const chunkyVanillaKasplat = useBlockKasplat();
   const hasMiniMonkey = useMini();
@@ -31607,7 +31600,7 @@ const FactoryRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(TestingCrates, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TestingDirt, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingFairies$1, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingFairies, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingKasplats$1, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(RNDChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -31615,7 +31608,7 @@ const FactoryRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(RNDCrates, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(RNDDirt, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingFairies, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RNDFairies, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(StorageChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -31984,21 +31977,15 @@ const ShuffledDirt$4 = () => {
 const ShuffledFairies$5 = () => {
   const hasCam = useCamera();
   const hasClimbing = useClimbing();
-  const hasGuitar = useGuitar();
-  const hasPrimatePunch = usePunch();
-  const hasTriangle = useTriangle();
-  const hasBananaports = useBananaportAll();
   const isBreathing = useGeneralFairy$3();
   const prodRoomOn = useFactoryProductionEnabled();
   const prodRoomTop = useFactoryProductionTop();
   const crusher = useDkProdGb();
-  const canDoTesting = useFactoryTesting();
-  const highGrab = useHighGrab();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(StartFairies, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(StarcadeFairies, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TestingFairies$1, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TestingFairies, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(RNDFairies, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
@@ -32037,46 +32024,6 @@ const ShuffledFairies$5 = () => {
         region: "Prod Room",
         canGetLogic: prodRoomTop.in && hasCam,
         canGetBreak: prodRoomTop.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 43014,
-        name: "Shuffled Fairy: In Diddy's Pincode Room",
-        region: "R&D Room",
-        canGetLogic: canDoTesting.in && hasCam && (hasClimbing || hasBananaports) && hasGuitar,
-        canGetBreak: canDoTesting.out && hasCam && (hasClimbing || hasBananaports) && hasGuitar
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 43015,
-        name: "Shuffled Fairy: Tunnel to Tiny's Car Race",
-        region: "R&D Room",
-        canGetLogic: canDoTesting.in && hasCam && (hasClimbing || hasBananaports),
-        canGetBreak: canDoTesting.out && hasCam && (hasClimbing || hasBananaports)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 43016,
-        name: "Shuffled Fairy: In Chunky's Toy Monster Room",
-        region: "R&D Room",
-        canGetLogic: canDoTesting.in && hasCam && (hasClimbing || hasBananaports) && hasPrimatePunch && hasTriangle,
-        canGetBreak: canDoTesting.out && hasCam && (hasClimbing || hasBananaports) && highGrab && hasPrimatePunch && hasTriangle
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 43017,
-        name: "Shuffled Fairy: At the chute to the Storage Room",
-        region: "R&D Room",
-        canGetLogic: canDoTesting.in && hasCam && (hasClimbing || hasBananaports),
-        canGetBreak: canDoTesting.out && hasCam && (hasClimbing || hasBananaports)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
