@@ -1,31 +1,38 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
-import { useBlockKasplat } from '@renderer/hooks/factory'
-import { useMini } from '@renderer/hooks/kongs'
+import { useResearchKasplat } from '@renderer/hooks/factory'
+import { useTrombone } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
-const chunkyVanillaKasplat = useBlockKasplat()
-const hasMiniMonkey = useMini()
+const lankyVanillaKasplat = useResearchKasplat()
+const hasTrombone = useTrombone()
   return (
     <KasplatPool>
       <FactoryCheck
-        id={53004}
-        name="Shuffled Kasplat: Chunky's Vanilla Location (at the Block Tower)"
-        region="Testing Room"
-        canGetLogic={chunkyVanillaKasplat.in}
-        canGetBreak={chunkyVanillaKasplat.out}
+        id={53002}
+        name="Shuffled Kasplat: Lanky's Vanilla Location (guarding R&D secrets)"
+        region="R&D Room"
+        canGetLogic={lankyVanillaKasplat.in}
+        canGetBreak={lankyVanillaKasplat.out}
       />
       <FactoryCheck
-        id={53013}
-        name="Shuffled Kasplat: At Tiny's dartboard"
-        region="Testing Room"
-        canGetLogic={chunkyVanillaKasplat.in && hasMiniMonkey}
-        canGetBreak={chunkyVanillaKasplat.out && hasMiniMonkey}
+        id={53012}
+        name="Shuffled Kasplat: By the car race entrance"
+        region="R&D Room"
+        canGetLogic={lankyVanillaKasplat.in}
+        canGetBreak={lankyVanillaKasplat.out}
+      />
+      <FactoryCheck
+        id={53016}
+        name="Shuffled Kasplat: Ripping his hair out while playing Lanky's damn piano game"
+        region="R&D Room"
+        canGetLogic={lankyVanillaKasplat.in && hasTrombone}
+        canGetBreak={lankyVanillaKasplat.out && hasTrombone}
       />
     </KasplatPool>
   )
 }
 
-const TestingKasplats: React.FC = () => (useShuffleKasplats() ? <Shuffled /> : null)
-export default TestingKasplats
+const RNDKasplats: React.FC = () => (useShuffleKasplats() ? <Shuffled /> : null)
+export default RNDKasplats
