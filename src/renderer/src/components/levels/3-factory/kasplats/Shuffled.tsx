@@ -1,77 +1,27 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
-import { useBananaportAll } from '@renderer/hooks/settings'
-import { useClimbing, useDk, useTwirl } from '@renderer/hooks/kongs'
+import { useGeneralThing } from '@renderer/hooks/factory'
 import FactoryCheck from '../check'
 import StartKasplats from './Start'
 import StarcadeKasplats from './Starcade'
 import TestingKasplats from './Testing'
 import RNDKasplats from './RND'
+import ProdRoomKasplats from './ProdRoom'
 
 const ShuffledKasplats: React.FC = () => {
-const DKVanillaKasplat = useProductionTopKasplat()
-const diddyVanillaKasplat = useProductionBaseKasplat()
 const isBreathing = useGeneralThing()
-const canDoTinyProd = useFactoryProductionTop()
-const hasClimbing = useClimbing()
-const hasAllBananaports = useBananaportAll()
-const isHinaKagiyama = useTwirl()
-const hasDK = useDk()
-const prodRoomOn = useFactoryProductionEnabled()
   return (
     <KasplatPool>
       <StartKasplats />
       <StarcadeKasplats />
       <TestingKasplats />
       <RNDKasplats />
-      <FactoryCheck
-        id={53000}
-        name="Shuffled Kasplat: DK's Vanilla Location (top of the Prod)"
-        region="Prod Room"
-        canGetLogic={DKVanillaKasplat.in}
-        canGetBreak={DKVanillaKasplat.out}
-      />
-      <FactoryCheck
-        id={53001}
-        name="Shuffled Kasplat: Diddy's Vanilla Location (bottom of the Prod)"
-        region="Prod Room"
-        canGetLogic={diddyVanillaKasplat.in}
-        canGetBreak={diddyVanillaKasplat.out}
-      />
-      <FactoryCheck
-        id={53007}
-        name="Shuffled Kasplat: Halfway down the hatch"
-        region="Prod Room"
-        canGetLogic={isBreathing.in && (hasClimbing || hasAllBananaports)}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={53009}
-        name="Shuffled Kasplat: A step up in the Prod Room"
-        region="Prod Room"
-        canGetLogic={canDoTinyProd.in || prodRoomOn.in || hasAllBananaports}
-        canGetBreak={canDoTinyProd.out || prodRoomOn.out}
-      />
+      <ProdRoomKasplats />
       <FactoryCheck
         id={53010}
         name="Shuffled Kasplat: Window shopping"
         region=""
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={53014}
-        name="Shuffled Kasplat: In the crusher"
-        region="Prod Room"
-        canGetLogic={prodRoomOn.in}
-        canGetBreak={prodRoomOn.out}
-      />
-      <FactoryCheck
-        id={53015}
-        name="Shuffled Kasplat: Past Tiny's Prod Room GB"
-        region="Prod Room"
-        canGetLogic={canDoTinyProd.in && isHinaKagiyama}
-        canGetBreak={canDoTinyProd.out && hasDK}
       />
     </KasplatPool>
   )
