@@ -1,7 +1,6 @@
 import FairyPool from '@renderer/components/pools/Fairies'
 import { useGeneralFairy, useFactoryProductionEnabled, useFactoryProductionTop, useFactoryTesting, useDkProdGb } from '@renderer/hooks/factory'
-import { useBananaportAll } from '@renderer/hooks/settings'
-import { useCamera, useClimbing, useGuitar, usePunch, useTriangle, useHighGrab } from '@renderer/hooks/kongs'
+import { useCamera, useClimbing, usePunch, useTriangle, useHighGrab } from '@renderer/hooks/kongs'
 import FactoryCheck from '../check'
 import StartFairies from './Start'
 import StarcadeFairies from './Starcade'
@@ -11,10 +10,8 @@ import RNDFairies from './RND'
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
   const hasClimbing = useClimbing()
-  const hasGuitar = useGuitar()
   const hasPrimatePunch = usePunch()
   const hasTriangle = useTriangle()
-  const hasBananaports = useBananaportAll()
   const isBreathing = useGeneralFairy()
   const prodRoomOn = useFactoryProductionEnabled()
   const prodRoomTop = useFactoryProductionTop()
