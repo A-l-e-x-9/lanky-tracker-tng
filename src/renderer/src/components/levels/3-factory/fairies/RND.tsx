@@ -14,42 +14,36 @@ const Shuffled: React.FC = () => {
   return (
     <FairyPool>
       <FactoryCheck
-        id={43000}
-        name="Shuffled Fairy: Vanilla Location #1 (tunnel to DK's number game)"
-        region="Testing Room"
-        canGetLogic={vanillaFairy1.in}
-        canGetBreak={vanillaFairy1.out}
+        id={43014}
+        name="Shuffled Fairy: In Diddy's Pincode Room"
+        region="R&D Room"
+        canGetLogic={canDoTesting.in && hasCam && (hasClimbing || hasBananaports) && hasGuitar}
+        canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports) && hasGuitar}
       />
       <FactoryCheck
-        id={43001}
-        name="Shuffled Fairy: Vanilla Location #2 (Funky's after Tiny's dart game)"
-        region="Testing Room"
-        canGetLogic={vanillaFairy2}
+        id={43015}
+        name="Shuffled Fairy: Tunnel to Tiny's Car Race"
+        region="R&D Room"
+        canGetLogic={canDoTesting.in && hasCam && (hasClimbing || hasBananaports)}
+        canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports)}
       />
       <FactoryCheck
-        id={43011}
-        name="Shuffled Fairy: Top of Diddy's Block Tower"
-        region="Testing Room"
-        canGetLogic={canDoBlockTower.in && hasCam}
-        canGetBreak={canDoBlockTower.out && hasCam}
+        id={43016}
+        name="Shuffled Fairy: In Chunky's Toy Monster Room"
+        region="R&D Room"
+        canGetLogic={canDoTesting.in && hasCam && (hasClimbing || hasBananaports) && hasPrimatePunch && hasTriangle}
+        canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports) && highGrab && hasPrimatePunch && hasTriangle}
       />
       <FactoryCheck
-        id={43012}
-        name="Shuffled Fairy: Boxes to Tiny's Dartboard"
-        region="Testing Room"
-        canGetLogic={canDoTesting.in && hasCam}
-        canGetBreak={canDoTesting.out && hasCam}
-      />
-      <FactoryCheck
-        id={43013}
-        name="Shuffled Fairy: Pole to the R&D Room"
-        region="Testing Room"
-        canGetLogic={canDoTesting.in && hasCam && hasClimbing}
-        canGetBreak={canDoTesting.out && hasCam}
+        id={43017}
+        name="Shuffled Fairy: At the chute to the Storage Room"
+        region="R&D Room"
+        canGetLogic={canDoTesting.in && hasCam && (hasClimbing || hasBananaports)}
+        canGetBreak={canDoTesting.out && hasCam && (hasClimbing || hasBananaports)}
       />
     </FairyPool>
   )
 }
 
-const TestingFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
-export default TestingFairies
+const RNDFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
+export default RNDFairies
