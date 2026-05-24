@@ -1,93 +1,99 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
+import { useShuffledArenas } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
-import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useDkProdGb } from '@renderer/hooks/factory'
-import { useClimbing, useTwirl } from '@renderer/hooks/kongs'
+import { useFactoryTesting } from '@renderer/hooks/factory'
 
 const Shuffled: React.FC = () => {
-const isBreathing = useGeneralThing()
-const hasClimbing = useClimbing()
-const prodRoomOn = useFactoryProductionEnabled()
-const hasAllBananaports = useBananaportAll()
-const upperProd = useFactoryProductionTop()
-const canDoTinyProd = useTinyProductionGb()
-const isHinaKagiyama = useTwirl()
-const canDoCrusher = useDkProdGb()
+const canReachTesting = useFactoryTesting()
   return (
     <ArenaPool>
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: Center of the hatch"
-        region="Prod Room"
-        canGetLogic={isBreathing.in && hasClimbing}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: Near Snide's"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: Bottom of the hatch"
-        region="Prod Room"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: Near Snide's, hidden"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: In the tunnel to the Prod Room"
-        region="Prod Room"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: Right hallway"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: Prod Room lower area"
-        region="Prod Room"
-        canGetLogic={prodRoomOn.in || hasAllBananaports}
-        canGetBreak={prodRoomOn.out || hasAllBananaports}
+        name="Shuffled Battle Arena: At DK's number game"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: Under conveyors to Tiny's Prod Room GB"
-        region="Prod Room"
-        canGetLogic={upperProd.in}
-        canGetBreak={upperProd.out}
+        name="Shuffled Battle Arena: Under the stairs to Tiny's dartboard"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: The platform past Tiny's Prod Room GB"
-        region="Prod Room"
-        canGetLogic={canDoTinyProd.in}
-        canGetBreak={canDoTinyProd.out}
+        name="Shuffled Battle Arena: Under Lanky's Testing Bonus Barrel"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: On a vent platform near the elevators"
-        region="Prod Room"
-        canGetLogic={upperProd.in && isHinaKagiyama}
-        canGetBreak={upperProd.out}
+        name="Shuffled Battle Arena: Left of the entrance to Funky's"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: Vanilla Warp 4, bottom of the Prod Room"
-        region="Prod Room"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        name="Shuffled Battle Arena: Left of Funky's"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: Vanilla Warp 4, top of the Prod Room"
-        region="Prod Room"
-        canGetLogic={upperProd.in}
-        canGetBreak={upperProd.out}
+        name="Shuffled Battle Arena: Right of Funky's"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: At the bend in the crusher's path"
-        region="Prod Room"
-        canGetLogic={canDoCrusher.in}
-        canGetBreak={canDoCrusher.out}
+        name="Shuffled Battle Arena: Right of the entrance to Funky's"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
+      />
+      <FactoryCheck
+        id={13000}
+        name="Shuffled Battle Arena: Vanilla Warp 3, at Snide's"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
+      />
+      <FactoryCheck
+        id={13000}
+        name="Shuffled Battle Arena: Vanilla Warp 5, at Funky's"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in}
+        canGetBreak={canReachTesting.out}
       />
     </ArenaPool>
   )
 }
 
-const ProdRoomArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
-export default ProdRoomArenas
+const TestingArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
+export default TestingArenas
