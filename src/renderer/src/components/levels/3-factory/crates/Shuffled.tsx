@@ -7,6 +7,7 @@ import StartCrates from './Start'
 import StarcadeCrates from './Starcade'
 import TestingCrates from './Testing'
 import RNDCrates from './RND'
+import ProdRoomCrates from './ProdRoom'
 
 const ShuffledCrates: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -23,6 +24,7 @@ const canDoCrusher = useDkProdGb()
       <StarcadeCrates />
       <TestingCrates />
       <RNDCrates />
+      <ProdRoomCrates />
       <FactoryCheck
         id={23007}
         name="Shuffled Melon Crate: Center of the hatch"

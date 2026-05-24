@@ -1,5 +1,4 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import FactoryCheck from '../check'
 import StartArenas from './Start'
 import StarcadeArenas from './Starcade'
 import TestingArenas from './Testing'
