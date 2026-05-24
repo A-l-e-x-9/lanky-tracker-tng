@@ -33,6 +33,11 @@ import RNDCrates from '../crates/RND'
 import RNDDirt from '../dirt/RND'
 import RNDFairies from '../fairies/RND'
 import RNDKasplats from '../kasplats/RND'
+import ProdRoomArenas from '../arenas/ProdRoom'
+import ProdRoomCrates from '../crates/ProdRoom'
+import ProdRoomDirt from '../dirt/ProdRoom'
+import ProdRoomFairies from '../fairies/ProdRoom'
+import ProdRoomKasplats from '../kasplats/ProdRoom'
 
 const FactoryRegionChecks: React.FC = () => {
 const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
@@ -102,6 +107,17 @@ return (
     <StarcadeKasplats />
   </div>
     <ProductionChecks />
+  <div className="grid">
+    <ProdRoomArenas />
+    <ProdRoomCrates />
+    <ProdRoomDirt />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <ProdRoomFairies />
+  </div>
+  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <ProdRoomKasplats />
+  </div>
   <div className="grid">
     <ShopLocations />
     <BossCheck />
