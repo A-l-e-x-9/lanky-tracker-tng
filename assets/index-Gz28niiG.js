@@ -31176,7 +31176,7 @@ const Shuffled$s = () => {
     )
   ] });
 };
-const TestingKasplats$1 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : null;
+const TestingKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : null;
 const Shuffled$r = () => {
   const canReachTesting = useFactoryTesting();
   const canReachVanillaArena = useArena$2();
@@ -31546,32 +31546,42 @@ const Shuffled$o = () => {
 };
 const RNDFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$o, {}) : null;
 const Shuffled$n = () => {
-  const chunkyVanillaKasplat = useBlockKasplat();
-  const hasMiniMonkey = useMini();
+  const lankyVanillaKasplat = useResearchKasplat();
+  const hasTrombone = useTrombone();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 53004,
-        name: "Shuffled Kasplat: Chunky's Vanilla Location (at the Block Tower)",
-        region: "Testing Room",
-        canGetLogic: chunkyVanillaKasplat.in,
-        canGetBreak: chunkyVanillaKasplat.out
+        id: 53002,
+        name: "Shuffled Kasplat: Lanky's Vanilla Location (guarding R&D secrets)",
+        region: "R&D Room",
+        canGetLogic: lankyVanillaKasplat.in,
+        canGetBreak: lankyVanillaKasplat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 53013,
-        name: "Shuffled Kasplat: At Tiny's dartboard",
-        region: "Testing Room",
-        canGetLogic: chunkyVanillaKasplat.in && hasMiniMonkey,
-        canGetBreak: chunkyVanillaKasplat.out && hasMiniMonkey
+        id: 53012,
+        name: "Shuffled Kasplat: By the car race entrance",
+        region: "R&D Room",
+        canGetLogic: lankyVanillaKasplat.in,
+        canGetBreak: lankyVanillaKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 53016,
+        name: "Shuffled Kasplat: Ripping his hair out while playing Lanky's damn piano game",
+        region: "R&D Room",
+        canGetLogic: lankyVanillaKasplat.in && hasTrombone,
+        canGetBreak: lankyVanillaKasplat.out && hasTrombone
       }
     )
   ] });
 };
-const TestingKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {}) : null;
+const RNDKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {}) : null;
 const FactoryRegionChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
@@ -31601,7 +31611,7 @@ const FactoryRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(TestingDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingKasplats$1, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(RNDChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(RNDArenas, {}),
@@ -31609,7 +31619,7 @@ const FactoryRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(RNDDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RNDFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RNDKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(StorageChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(StarcadeArenas, {}),
@@ -32041,20 +32051,18 @@ const ShuffledFairies$5 = () => {
 const ShuffledKasplats$4 = () => {
   const DKVanillaKasplat = useProductionTopKasplat();
   const diddyVanillaKasplat = useProductionBaseKasplat();
-  const lankyVanillaKasplat = useResearchKasplat();
   const isBreathing = useGeneralThing$3();
   const canDoTinyProd = useFactoryProductionTop();
   const hasClimbing = useClimbing();
   const hasAllBananaports = useBananaportAll();
   const isHinaKagiyama = useTwirl();
   const hasDK = useDk();
-  const hasTrombone = useTrombone();
   const prodRoomOn = useFactoryProductionEnabled();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(StartKasplats, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(StarcadeKasplats, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TestingKasplats$1, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TestingKasplats, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(RNDKasplats, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
@@ -32073,16 +32081,6 @@ const ShuffledKasplats$4 = () => {
         region: "Prod Room",
         canGetLogic: diddyVanillaKasplat.in,
         canGetBreak: diddyVanillaKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 53002,
-        name: "Shuffled Kasplat: Lanky's Vanilla Location (guarding R&D secrets)",
-        region: "R&D Room",
-        canGetLogic: lankyVanillaKasplat.in,
-        canGetBreak: lankyVanillaKasplat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -32118,16 +32116,6 @@ const ShuffledKasplats$4 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
-        id: 53012,
-        name: "Shuffled Kasplat: By the car race entrance",
-        region: "R&D Room",
-        canGetLogic: lankyVanillaKasplat.in,
-        canGetBreak: lankyVanillaKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
         id: 53014,
         name: "Shuffled Kasplat: In the crusher",
         region: "Prod Room",
@@ -32143,16 +32131,6 @@ const ShuffledKasplats$4 = () => {
         region: "Prod Room",
         canGetLogic: canDoTinyProd.in && isHinaKagiyama,
         canGetBreak: canDoTinyProd.out && hasDK
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 53016,
-        name: "Shuffled Kasplat: Ripping his hair out while playing Lanky's damn piano game",
-        region: "R&D Room",
-        canGetLogic: lankyVanillaKasplat.in && hasTrombone,
-        canGetBreak: lankyVanillaKasplat.out && hasTrombone
       }
     )
   ] });
