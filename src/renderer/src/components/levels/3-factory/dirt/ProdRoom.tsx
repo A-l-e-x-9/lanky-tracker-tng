@@ -1,0 +1,94 @@
+import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
+import { useShuffleDirt, useBananaportAll } from '@renderer/hooks/settings'
+import FactoryCheck from '../check'
+import { useGeneralDirt, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useDkProdGb } from '@renderer/hooks/factory'
+import { useShockwave, useClimbing, useTwirl } from '@renderer/hooks/kongs'
+
+const Shuffled: React.FC = () => {
+const isBreathing = useGeneralDirt()
+const hasShockwave = useShockwave()
+const hasClimbing = useClimbing()
+const prodRoomOn = useFactoryProductionEnabled()
+const hasAllBananaports = useBananaportAll()
+const upperProd = useFactoryProductionTop()
+const canDoTinyProd = useTinyProductionGb()
+const isHinaKagiyama = useTwirl()
+const canDoCrusher = useDkProdGb()
+  return (
+    <RainbowCoinPool>
+      <FactoryCheck
+        id={33007}
+        name="Shuffled Dirt Patch: Center of the hatch"
+        region="Prod Room"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out}
+      />
+      <FactoryCheck
+        id={33008}
+        name="Shuffled Dirt Patch: Bottom of the hatch"
+        region="Prod Room"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <FactoryCheck
+        id={33009}
+        name="Shuffled Dirt Patch: In the tunnel to the Prod Room"
+        region="Prod Room"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <FactoryCheck
+        id={33010}
+        name="Shuffled Dirt Patch: Prod Room lower area"
+        region="Prod Room"
+        canGetLogic={isBreathing.in && (prodRoomOn.in || hasAllBananaports)}
+        canGetBreak={isBreathing.out && (prodRoomOn.out || hasAllBananaports)}
+      />
+      <FactoryCheck
+        id={33011}
+        name="Shuffled Dirt Patch: Under conveyors to Tiny's Prod Room GB"
+        region="Prod Room"
+        canGetLogic={upperProd.in && hasShockwave}
+        canGetBreak={upperProd.out && hasShockwave}
+      />
+      <FactoryCheck
+        id={33012}
+        name="Shuffled Dirt Patch: The platform past Tiny's Prod Room GB"
+        region="Prod Room"
+        canGetLogic={canDoTinyProd.in && hasShockwave}
+        canGetBreak={canDoTinyProd.out && hasShockwave}
+      />
+      <FactoryCheck
+        id={33013}
+        name="Shuffled Dirt Patch: On a vent platform near the elevators"
+        region="Prod Room"
+        canGetLogic={upperProd.in && isHinaKagiyama && hasShockwave}
+        canGetBreak={upperProd.out && hasShockwave}
+      />
+      <FactoryCheck
+        id={33047}
+        name="Shuffled Dirt Patch: Vanilla Warp 4, bottom of the Prod Room"
+        region="Prod Room"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <FactoryCheck
+        id={33048}
+        name="Shuffled Dirt Patch: Vanilla Warp 4, top of the Prod Room"
+        region="Prod Room"
+        canGetLogic={upperProd.in && hasShockwave}
+        canGetBreak={upperProd.out && hasShockwave}
+      />
+      <FactoryCheck
+        id={33051}
+        name="Shuffled Dirt Patch: At the bend in the crusher's path"
+        region="Prod Room"
+        canGetLogic={canDoCrusher.in && hasShockwave}
+        canGetBreak={canDoCrusher.out && hasShockwave}
+      />
+    </RainbowCoinPool>
+  )
+}
+
+const ProdRoomDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
+export default ProdRoomDirt
