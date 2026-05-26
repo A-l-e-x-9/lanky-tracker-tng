@@ -17,6 +17,13 @@ const hasMiniMonkey = useMini()
         canGetBreak={chunkyVanillaKasplat.out}
       />
       <FactoryCheck
+        id={53010}
+        name="Shuffled Kasplat: Window shopping from Snide's room"
+        region="Testing Room"
+        canGetLogic={chunkyVanillaKasplat.in}
+        canGetBreak={chunkyVanillaKasplat.out}
+      />
+      <FactoryCheck
         id={53013}
         name="Shuffled Kasplat: At Tiny's dartboard"
         region="Testing Room"
