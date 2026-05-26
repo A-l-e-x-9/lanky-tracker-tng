@@ -31167,6 +31167,16 @@ const Shuffled$x = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
+        id: 53010,
+        name: "Shuffled Kasplat: Window shopping from Snide's room",
+        region: "Testing Room",
+        canGetLogic: chunkyVanillaKasplat.in,
+        canGetBreak: chunkyVanillaKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
         id: 53013,
         name: "Shuffled Kasplat: At Tiny's dartboard",
         region: "Testing Room",
@@ -32211,23 +32221,12 @@ const ShuffledFairies$5 = () => {
   ] });
 };
 const ShuffledKasplats$4 = () => {
-  const isBreathing = useGeneralThing$3();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(StartKasplats, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(StarcadeKasplats, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TestingKasplats, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(RNDKasplats, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ProdRoomKasplats, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FactoryCheck,
-      {
-        id: 53010,
-        name: "Shuffled Kasplat: Window shopping",
-        region: "",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    )
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ProdRoomKasplats, {})
   ] });
 };
 const ClassicChecks$4 = () => {
