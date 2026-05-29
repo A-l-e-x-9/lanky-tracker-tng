@@ -7,6 +7,7 @@ export const initialPortal: PortalState = {
     portalNearDiddy: false,
     outsidePaintingPortal: false,
     stormyPortal: false,
+    rambiPortal: false,
     hiveOutsidePortal: false,
     portalInDiddyMine: false,
     paintingRoomPortal: false,

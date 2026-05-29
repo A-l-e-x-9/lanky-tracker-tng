@@ -61,6 +61,9 @@ export const useOutsidePaintingPortal = (): boolean =>
 //Is the DK Portal in any part of the Stormy Area other than either of Lanky's slopes or the Rambi wall?
 export const useStormyPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal))
+//Is the DK Portal in any part of the Stormy Area other than either of Lanky's slopes or the Rambi wall?
+export const useRambiPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledJapesPortals.rambiPortal))
 //Is the DK Portal in any part of the Hive Area other than inside the Hive itself?
 export const useHiveOutsidePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.hiveOutsidePortal))
@@ -239,10 +242,11 @@ export const useChunkyCagedGb = (): LogicBool => {
   const hasBananaports = useBananaportAll()
   const DKPortal = usePortalNearDiddy()
   const DKPortal2 = useDiddyMinePortal()
+  const DKPortal3 = useRambiPortal()
   const hasOStand = useStand()
   return {
-    in: rambi.in && boulderTech && canSlam && (climbing || hasBananaports || DKPortal || DKPortal2),
-    out: rambi.out && boulderTech && canSlam && hasOStand
+    in: (rambi.in || DKPortal3) && boulderTech && canSlam && (climbing || hasBananaports || DKPortal || DKPortal2),
+    out: (rambi.out || DKPortal3) && boulderTech && canSlam && hasOStand
   }
 }
 
@@ -421,11 +425,13 @@ export const useLankyGateGb = (): LogicBool => {
 export const useLankySlopeGb = (): LogicBool => {
   const tunnel = useJapesKongGates()
   const DKPortal = useStormyPortal()
+  const DKPortal2 = useRambiPortal()
+  const canReach = DKPortal || DKPortal2
   const stand = useStand()
   const anyKong = useAnyKong()
   return {
-    in: (tunnel.in || DKPortal) && stand,
-    out: (tunnel.out || DKPortal) && anyKong
+    in: (tunnel.in || canReach) && stand,
+    out: (tunnel.out || canReach) && anyKong
   }
 }
 
@@ -503,9 +509,10 @@ export const useArena = (): LogicBool => {
 export const useRambiCrate = (): LogicBool => {
   const anyKong = useAnyKong()
   const hasRambi = useJapesRambi()
+  const DKPortal = useRambiPortal()
   return {
-    in: hasRambi.in && anyKong,
-    out: hasRambi.out && anyKong
+    in: (hasRambi.in || DKPortal) && anyKong,
+    out: (hasRambi.out || DKPortal) && anyKong
   }
 }
 
@@ -530,9 +537,10 @@ export const useGeneralDirt = (): LogicBool => {
 export const useRambiFairy = (): LogicBool => {
   const camera = useCamera()
   const japesRambi = useJapesRambi()
+  const DKPortal = useRambiPortal()
   return {
-    in: japesRambi.in && camera,
-    out: japesRambi.out && camera
+    in: (japesRambi.in || DKPortal) && camera,
+    out: (japesRambi.out || DKPortal) && camera
   }
 }
 
@@ -574,9 +582,11 @@ export const useTinyKasplat = (): LogicBool => useDkKasplat()
 export const useDiddyKasplat = (): LogicBool => {
   const gate = useGateKasplat()
   const DKPortal = useStormyPortal()
+  const DKPortal2 = useRambiPortal()
+  const canReach = DKPortal || DKPortal2
   return {
-    in: gate.in || DKPortal,
-    out: gate.out || DKPortal
+    in: gate.in || canReach,
+    out: gate.out || canReach
   }
 }
 

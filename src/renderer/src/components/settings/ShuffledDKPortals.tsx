@@ -67,6 +67,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledJapesPortals"
                 updateItem={setJapesPortal}
             />
+            <p>Behind the Rambi block</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is behind a block in the Stormy Zone's cave that Rambi must bash down."
+                storeKey="rambiPortal"
+                prefix="shuffledJapesPortals"
+                updateItem={setJapesPortal}
+            />
             <p>In the Hive Area</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}
