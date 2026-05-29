@@ -11122,6 +11122,7 @@ const initialPortal = {
     portalNearDiddy: false,
     outsidePaintingPortal: false,
     stormyPortal: false,
+    rambiPortal: false,
     hiveOutsidePortal: false,
     portalInDiddyMine: false,
     paintingRoomPortal: false,
@@ -18464,6 +18465,7 @@ const useSlamJapes = () => useSlamLevel("Jungle Japes");
 const usePortalNearDiddy = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy));
 const useOutsidePaintingPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.outsidePaintingPortal));
 const useStormyPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal));
+const useRambiPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.rambiPortal));
 const useHiveOutsidePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.hiveOutsidePortal));
 const useDiddyMinePortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalInDiddyMine));
 const usePaintingRoomPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.paintingRoomPortal));
@@ -18574,10 +18576,11 @@ const useChunkyCagedGb = () => {
   const hasBananaports = useBananaportAll();
   const DKPortal = usePortalNearDiddy();
   const DKPortal2 = useDiddyMinePortal();
+  const DKPortal3 = useRambiPortal();
   const hasOStand = useStand();
   return {
-    in: rambi.in && boulderTech && canSlam && (climbing || hasBananaports || DKPortal || DKPortal2),
-    out: rambi.out && boulderTech && canSlam && hasOStand
+    in: (rambi.in || DKPortal3) && boulderTech && canSlam && (climbing || hasBananaports || DKPortal || DKPortal2),
+    out: (rambi.out || DKPortal3) && boulderTech && canSlam && hasOStand
   };
 };
 const useChunkyHiveGb = () => {
@@ -18735,11 +18738,13 @@ const useLankyGateGb = () => {
 const useLankySlopeGb = () => {
   const tunnel = useJapesKongGates();
   const DKPortal = useStormyPortal();
+  const DKPortal2 = useRambiPortal();
+  const canReach = DKPortal || DKPortal2;
   const stand = useStand();
   const anyKong = useAnyKong();
   return {
-    in: (tunnel.in || DKPortal) && stand,
-    out: (tunnel.out || DKPortal) && anyKong
+    in: (tunnel.in || canReach) && stand,
+    out: (tunnel.out || canReach) && anyKong
   };
 };
 const useLankyPaintingGb = () => {
@@ -18809,9 +18814,10 @@ const useArena$4 = () => {
 const useRambiCrate = () => {
   const anyKong = useAnyKong();
   const hasRambi = useJapesRambi();
+  const DKPortal = useRambiPortal();
   return {
-    in: hasRambi.in && anyKong,
-    out: hasRambi.out && anyKong
+    in: (hasRambi.in || DKPortal) && anyKong,
+    out: (hasRambi.out || DKPortal) && anyKong
   };
 };
 const usePaintingDirt = () => {
@@ -18833,9 +18839,10 @@ const useGeneralDirt$5 = () => {
 const useRambiFairy = () => {
   const camera = useCamera();
   const japesRambi = useJapesRambi();
+  const DKPortal = useRambiPortal();
   return {
-    in: japesRambi.in && camera,
-    out: japesRambi.out && camera
+    in: (japesRambi.in || DKPortal) && camera,
+    out: (japesRambi.out || DKPortal) && camera
   };
 };
 const usePaintingFairy = () => {
@@ -18871,9 +18878,11 @@ const useTinyKasplat = () => useDkKasplat();
 const useDiddyKasplat = () => {
   const gate = useGateKasplat();
   const DKPortal = useStormyPortal();
+  const DKPortal2 = useRambiPortal();
+  const canReach = DKPortal || DKPortal2;
   return {
-    in: gate.in || DKPortal,
-    out: gate.out || DKPortal
+    in: gate.in || canReach,
+    out: gate.out || canReach
   };
 };
 const useLankyKasplat = () => useDiddyKasplat();
@@ -54293,6 +54302,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in the Stormy Zone or the cave leading to it.",
                   storeKey: "stormyPortal",
+                  prefix: "shuffledJapesPortals",
+                  updateItem: setJapesPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Behind the Rambi block" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is behind a block in the Stormy Zone's cave that Rambi must bash down.",
+                  storeKey: "rambiPortal",
                   prefix: "shuffledJapesPortals",
                   updateItem: setJapesPortal
                 }
