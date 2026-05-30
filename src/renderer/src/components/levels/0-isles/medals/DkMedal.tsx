@@ -2,15 +2,11 @@ import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/hooks/isles/med
 import { useCbCount } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
 
-/**
- * The logic of DK's Medal in Japes, wrapped neatly in this component.
- * @returns the check for DK's Medal in Japes.
- */
 const DkMedal: React.FC = (): JSX.Element => {
   const inLogic = useDkMedalInLogic()
   const outLogic = useDkMedalOutLogic()
   const cbCount = useCbCount()
-  const halfMedal = Math.round(cbCount / 2)
+  const halfMedal = Math.floor(cbCount / 2)
 
   return (
   <>
