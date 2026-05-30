@@ -14005,7 +14005,7 @@ const ChunkyMedal$7 = () => {
   const inLogic = useChunkyMedalInLogic$7();
   const outLogic = useChunkyMedalOutLogic$7();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14060,7 +14060,7 @@ const DiddyMedal$7 = () => {
   const inLogic = useDiddyMedalInLogic$7();
   const outLogic = useDiddyMedalOutLogic$7();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14112,7 +14112,7 @@ const DkMedal$7 = () => {
   const inLogic = useDkMedalInLogic$7();
   const outLogic = useDkMedalOutLogic$7();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14163,7 +14163,7 @@ const LankyMedal$7 = () => {
   const inLogic = useLankyMedalInLogic$7();
   const outLogic = useLankyMedalOutLogic$7();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -14203,7 +14203,7 @@ const TinyMedal$7 = () => {
   const inLogic = useTinyMedalInLogic$7();
   const outLogic = useTinyMedalOutLogic$7();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
@@ -19946,7 +19946,7 @@ const ChunkyMedal$6 = () => {
   const inLogic = useChunkyMedalInLogic$6();
   const outLogic = useChunkyMedalOutLogic$6();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -20060,7 +20060,7 @@ const DiddyMedal$6 = () => {
   const inLogic = useDiddyMedalInLogic$6();
   const outLogic = useDiddyMedalOutLogic$6();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -20184,7 +20184,7 @@ const DkMedal$6 = () => {
   const inLogic = useDkMedalInLogic$6();
   const outLogic = useDkMedalOutLogic$6();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -20305,7 +20305,7 @@ const LankyMedal$6 = () => {
   const inLogic = useLankyMedalInLogic$6();
   const outLogic = useLankyMedalOutLogic$6();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -20388,7 +20388,7 @@ const TinyMedal$6 = () => {
   const inLogic = useTinyMedalInLogic$6();
   const outLogic = useTinyMedalOutLogic$6();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
@@ -24707,7 +24707,7 @@ const ChunkyMedal$5 = () => {
   const inLogic = useChunkyMedalInLogic$5();
   const outLogic = useChunkyMedalOutLogic$5();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -24843,7 +24843,7 @@ const DiddyMedal$5 = () => {
   const inLogic = useDiddyMedalInLogic$5();
   const outLogic = useDiddyMedalOutLogic$5();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -24958,7 +24958,7 @@ const DkMedal$5 = () => {
   const inLogic = useDkMedalInLogic$5();
   const outLogic = useDkMedalOutLogic$5();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -25087,7 +25087,7 @@ const LankyMedal$5 = () => {
   const inLogic = useLankyMedalInLogic$5();
   const outLogic = useLankyMedalOutLogic$5();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -25220,7 +25220,7 @@ const TinyMedal$5 = () => {
   const inLogic = useTinyMedalInLogic$5();
   const outLogic = useTinyMedalOutLogic$5();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -29442,7 +29442,7 @@ const ChunkyMedal$4 = () => {
   const inLogic = useChunkyMedalInLogic$4();
   const outLogic = useChunkyMedalOutLogic$4();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -29533,7 +29533,7 @@ const DiddyMedal$4 = () => {
   const inLogic = useDiddyMedalInLogic$4();
   const outLogic = useDiddyMedalOutLogic$4();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -29621,7 +29621,7 @@ const DkMedal$4 = () => {
   const inLogic = useDkMedalInLogic$4();
   const outLogic = useDkMedalOutLogic$4();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -29718,7 +29718,7 @@ const LankyMedal$4 = () => {
   const inLogic = useLankyMedalInLogic$4();
   const outLogic = useLankyMedalOutLogic$4();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -29819,7 +29819,7 @@ const TinyMedal$4 = () => {
   const inLogic = useTinyMedalInLogic$4();
   const outLogic = useTinyMedalOutLogic$4();
   const cbCount = useCbCount();
-  const halfMedal = Math.round(cbCount / 2);
+  const halfMedal = Math.floor(cbCount / 2);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
