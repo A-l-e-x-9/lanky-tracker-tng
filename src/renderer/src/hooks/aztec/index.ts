@@ -134,9 +134,11 @@ export const useAztecBack = (): LogicBool => {
     useShallow((state) => [state.moves.diddy, state.moves.tiny, state.removeBarriers.aztecBack])
   )
   const DKPortal = useSecondHalfPortal()
+  const DKPortal2 = useLlamaPortal()
+  const portal = DKPortal || DKPortal2
   return {
-    in: (aztecFront.in && (backGateOpen || warpAll || (hasClimbing && (vine || rocket) && musicSwitch))) || DKPortal,
-    out: (aztecFront.out && (backGateOpen || warpAll || (musicSwitch && (diddy || tiny)))) || DKPortal
+    in: (aztecFront.in && (backGateOpen || warpAll || (hasClimbing && (vine || rocket) && musicSwitch))) || portal,
+    out: (aztecFront.out && (backGateOpen || warpAll || (musicSwitch && (diddy || tiny)))) || portal
   }
 }
 
