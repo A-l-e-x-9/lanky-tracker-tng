@@ -263,6 +263,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledForestPortals"
                 updateItem={setForestPortal}
             />
+            <p>Area 1, on top of the main mill near Lanky's attic</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is on top of the main mill."
+                storeKey="millTopPortal"
+                prefix="shuffledForestPortals"
+                updateItem={setForestPortal}
+            />
             <p>Area 1, front mill</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}

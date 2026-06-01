@@ -62,6 +62,9 @@ export const usePlayForest = (): LogicBool => {
 export const useSlamForest = (): boolean => useSlamLevel('Fungi Forest')
 
 /*Alex addition: shuffled DK Portals*/
+//Is the DK Portal on top of the main mill in Area 1, near Lanky's attic?
+export const useMillTopPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledForestPortals.millTopPortal))
 //Is the DK Portal in the front mill room?
 export const useFrontMillPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledForestPortals.frontMillPortal))

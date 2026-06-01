@@ -1190,6 +1190,7 @@ interface galleonPortals {
 }
 interface forestPortals {
   vanilla: boolean
+  millTopPortal: boolean
   frontMillPortal: boolean
   backMillPortal: boolean
   thornvineTopPortal: boolean

@@ -38,6 +38,7 @@ export const initialPortal: PortalState = {
   },
   shuffledForestPortals: {
     vanilla: true,
+    millTopPortal: false,
     frontMillPortal: false,
     backMillPortal: false,
     thornvineTopPortal: false,
