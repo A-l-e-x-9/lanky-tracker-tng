@@ -11153,6 +11153,7 @@ const initialPortal = {
   },
   shuffledForestPortals: {
     vanilla: true,
+    millTopPortal: false,
     frontMillPortal: false,
     backMillPortal: false,
     thornvineTopPortal: false,
@@ -54569,6 +54570,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
                   storeKey: "vanilla",
+                  prefix: "shuffledForestPortals",
+                  updateItem: setForestPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Area 1, on top of the main mill near Lanky's attic" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is on top of the main mill.",
+                  storeKey: "millTopPortal",
                   prefix: "shuffledForestPortals",
                   updateItem: setForestPortal
                 }
