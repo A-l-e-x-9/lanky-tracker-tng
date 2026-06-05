@@ -11169,6 +11169,7 @@ const initialPortal = {
     DK5DIPortal: false,
     tiny5DIPortal: false,
     DK5DCPortal: false,
+    tiny5DCPortal: false,
     diddyUpperCabinPortal: false
   },
   shuffledCastlePortals: {
@@ -35546,6 +35547,7 @@ const usePlayForest = () => {
   };
 };
 const useSlamForest = () => useSlamLevel("Fungi Forest");
+const useMillTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.millTopPortal));
 const useFrontMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.frontMillPortal));
 const useBackMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.backMillPortal));
 const useThornvineTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.thornvineTopPortal));
@@ -35808,9 +35810,12 @@ const useLankyMillGb = () => {
   const hardShooting = useHardShooting();
   const anyGun = useAnyGun();
   const lanky = useLanky();
+  const hasBalloon = useBalloon();
+  const hasClimbing = useClimbing();
+  const DKPortal = useMillTopPortal();
   return {
-    in: inStage.in && night.in && lanky && canSlam && anyGun && (homing || hardShooting),
-    out: inStage.out && night.out && lanky && canSlam && anyGun
+    in: inStage.in && (hasBalloon || hasClimbing || DKPortal) && night.in && lanky && canSlam && anyGun && (homing || hardShooting),
+    out: inStage.out && (hasBalloon || hasClimbing || DKPortal) && night.out && lanky && canSlam && anyGun
   };
 };
 const useLankyMushGb = () => {
@@ -40895,6 +40900,7 @@ const useBigRockPortal = () => useDonkStore(useShallow((state) => state.shuffled
 const useDK5DIPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.DK5DIPortal));
 const useTiny5DIPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.tiny5DIPortal));
 const useDK5DCPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.DK5DCPortal));
+const useTiny5DCPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.tiny5DCPortal));
 const useDiddyUpperCabinPortal = () => useDonkStore(useShallow((state) => state.shuffledCavesPortals.diddyUpperCabinPortal));
 const useCavesIgloo = () => {
   const inStage = usePlayCaves();
@@ -40925,7 +40931,7 @@ const useCavesMiniFunky = () => {
   const warpAll = useBananaportAll();
   return {
     in: inStage.in && !angery && (warpAll || twirl && mini),
-    out: (inStage.out || angery) && mini
+    out: (inStage.out || angery) && (warpAll || twirl && mini)
   };
 };
 const useCavesPillar = () => {
@@ -40961,7 +40967,7 @@ const useCavesLankyCabinSpecial = () => {
   const tiny = useTiny();
   return {
     in: inStage.in && trombone && balloon,
-    out: (inStage.in || inStage.out) && trombone && (diddy || tiny)
+    out: inStage.out && trombone && (diddy || tiny)
   };
 };
 const useDkCabinGb = () => {
@@ -41169,9 +41175,10 @@ const useTinyCabinGb = () => {
   const angery = useAngryCaves();
   const sax = useSax();
   const orange = useOrange();
+  const DKPortal = useTiny5DCPortal();
   return {
-    in: inStage.in && !angery && sax && orange,
-    out: (inStage.out || angery) && sax && orange
+    in: (inStage.in && !angery && sax || DKPortal) && orange,
+    out: ((inStage.out || angery) && sax || DKPortal) && orange
   };
 };
 const useGeneralThing$1 = () => {
@@ -54727,6 +54734,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in DK's 5-Door Cabin room.",
                   storeKey: "DK5DCPortal",
+                  prefix: "shuffledCavesPortals",
+                  updateItem: setCavesPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Tiny's 5DC room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Tiny's 5-Door Cabin room.",
+                  storeKey: "tiny5DCPortal",
                   prefix: "shuffledCavesPortals",
                   updateItem: setCavesPortal
                 }
