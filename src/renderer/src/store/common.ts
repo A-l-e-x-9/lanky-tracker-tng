@@ -1206,6 +1206,7 @@ interface cavesPortals {
   DK5DIPortal: boolean
   tiny5DIPortal: boolean
   DK5DCPortal: boolean
+  tiny5DCPortal: boolean
   diddyUpperCabinPortal: boolean
 }
 interface castlePortals {

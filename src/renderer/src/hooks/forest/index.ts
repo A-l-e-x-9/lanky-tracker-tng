@@ -37,7 +37,8 @@ import {
   useVine,
   useClimbing,
   useBarrel,
-  useTwirl
+  useTwirl,
+  useBalloon
 } from '../kongs'
 import { useBananaportAll, useForestTime, useHardShooting, useAutoBonus } from '../settings'
 import { LogicBool, useSwitchsanityGun } from '../world'
@@ -408,9 +409,12 @@ export const useLankyMillGb = (): LogicBool => {
   const hardShooting = useHardShooting()
   const anyGun = useAnyGun()
   const lanky = useLanky()
+  const hasBalloon = useBalloon()
+  const hasClimbing = useClimbing()
+  const DKPortal = useMillTopPortal()
   return {
-    in: inStage.in && night.in && lanky && canSlam && anyGun && (homing || hardShooting),
-    out: inStage.out && night.out && lanky && canSlam && anyGun
+    in: inStage.in && (hasBalloon || hasClimbing || DKPortal) && night.in && lanky && canSlam && anyGun && (homing || hardShooting),
+    out: inStage.out && (hasBalloon || hasClimbing || DKPortal) && night.out && lanky && canSlam && anyGun
   }
 }
 

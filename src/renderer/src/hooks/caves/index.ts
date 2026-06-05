@@ -73,6 +73,9 @@ export const useTiny5DIPortal = (): boolean =>
 //Is the DK Portal in DK's 5DC room?
 export const useDK5DCPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCavesPortals.DK5DCPortal))
+//Is the DK Portal in Tiny's 5DC room?
+export const useTiny5DCPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCavesPortals.tiny5DCPortal))
 //Is the DK Portal in Diddy's upper cabin?
 export const useDiddyUpperCabinPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCavesPortals.diddyUpperCabinPortal))
@@ -111,7 +114,7 @@ export const useCanAccessSnide = (): boolean => {
 /**
  * Can we access the mini cavern by Funky in Caves?
  * @returns true if we can access the mini cavern by Funky.
- Alex edit: The original "out logic" of inStage + mini, the "Twirl-less" trick, is a Crystal Coconut hog with way too much of a chance for something to go wrong and is highly not recommended by me. Was originally changed to a boolean check but changed back when I implemented the "Angry Caves" option in the settings.
+ Alex edit: The original "out logic" of inStage + mini, the "Twirl-less" trick, is a Crystal Coconut hog with way too much of a chance for something to go wrong and is highly not recommended by me.
  */
 export const useCavesMiniFunky = (): LogicBool => {
   const inStage = usePlayCaves()
@@ -121,7 +124,7 @@ export const useCavesMiniFunky = (): LogicBool => {
   const warpAll = useBananaportAll()
   return {
     in: inStage.in && !angery && (warpAll || (twirl && mini)),
-    out: (inStage.out || angery) && mini
+    out: (inStage.out || angery) && (warpAll || (twirl && mini))
   }
 }
 
@@ -165,7 +168,7 @@ export const useCavesLankyCabinSpecial = (): LogicBool => {
   const tiny = useTiny()
   return {
     in: inStage.in && trombone && balloon,
-    out: (inStage.in || inStage.out) && trombone && (diddy || tiny)
+    out: inStage.out && trombone && (diddy || tiny)
   }
 }
 
@@ -401,9 +404,10 @@ export const useTinyCabinGb = (): LogicBool => {
   const angery = useAngryCaves()
   const sax = useSax()
   const orange = useOrange()
+  const DKPortal = useTiny5DCPortal()
   return {
-    in: inStage.in && !angery && sax && orange,
-    out: (inStage.out || angery) && sax && orange
+    in: ((inStage.in && !angery && sax) || DKPortal) && orange,
+    out: (((inStage.out || angery) && sax) || DKPortal) && orange
   }
 }
 

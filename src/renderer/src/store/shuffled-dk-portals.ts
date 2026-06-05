@@ -54,6 +54,7 @@ export const initialPortal: PortalState = {
     DK5DIPortal: false,
     tiny5DIPortal: false,
     DK5DCPortal: false,
+    tiny5DCPortal: false,
     diddyUpperCabinPortal: false
   },
   shuffledCastlePortals: {
