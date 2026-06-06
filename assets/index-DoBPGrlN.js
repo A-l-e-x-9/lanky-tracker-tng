@@ -11177,6 +11177,7 @@ const initialPortal = {
     treePortal: false,
     treeChunkyPortal: false,
     DKCryptPortal: false,
+    chunkyCryptPortal: false,
     mausoleumPortal: false,
     ballroomPortal: false,
     windTunnelPortal: false
@@ -44963,11 +44964,15 @@ const useSlamCastle = () => useSlamLevel("Creepy Castle");
 const useTreePortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.treePortal));
 const useTreeChunkyPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.treeChunkyPortal));
 const useDKCryptPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.DKCryptPortal));
+const useChunkyCryptPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.chunkyCryptPortal));
 const useMausoleumPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.mausoleumPortal));
 const useBallroomPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal));
 const useWindTunnelPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.windTunnelPortal));
 const useReachCastleFromCrypt = () => {
-  const DKPortal = useMausoleumPortal() || useDKCryptPortal();
+  const DKCrypt = useDKCryptPortal();
+  const chunkyCrypt = useChunkyCryptPortal();
+  const mausoleum = useMausoleumPortal();
+  const DKPortal = DKCrypt || chunkyCrypt || mausoleum;
   const hasClimbing = useClimbing();
   const highGrab = useHighGrab();
   if (DKPortal) {
@@ -45038,9 +45043,10 @@ const useChunkyCryptGb = () => {
   const punch = usePunch();
   const preOpened = useOpenCrypt();
   const hasClimbing = useClimbing();
+  const DKPortal = useChunkyCryptPortal();
   return {
-    in: inStage.in && (pineapple || preOpened) && punch && hasClimbing,
-    out: inStage.out && (pineapple || preOpened) && punch
+    in: inStage.in && (pineapple || preOpened || DKPortal) && punch && hasClimbing,
+    out: inStage.out && (pineapple || preOpened || DKPortal) && punch
   };
 };
 const useDiddyTopGb = () => {
@@ -54803,6 +54809,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is near the entrance to DK's minecart game.",
                   storeKey: "DKCryptPortal",
+                  prefix: "shuffledCastlePortals",
+                  updateItem: setCastlePortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Chunky's Crypt room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Chunky's Crypt room.",
+                  storeKey: "chunkyCryptPortal",
                   prefix: "shuffledCastlePortals",
                   updateItem: setCastlePortal
                 }
