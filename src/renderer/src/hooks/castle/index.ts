@@ -69,6 +69,9 @@ export const useTreeChunkyPortal = (): boolean =>
 //Is the DK Portal in DK's Crypt room?
 export const useDKCryptPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.DKCryptPortal))
+//Is the DK Portal in Chunky's Crypt room?
+export const useChunkyCryptPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCastlePortals.chunkyCryptPortal))
 //Is the DK Portal in the Mausoleum?
 export const useMausoleumPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.mausoleumPortal))
@@ -82,7 +85,10 @@ export const useWindTunnelPortal = (): boolean =>
 
 /*An Alex addition: If shuffled DK Portals is on, and we're given a Portal in the Crypt, or outside on the lowest level of Castle, can we get up so that we can play the rest of the level? You'd be surprised, for me, how often the answer is "no", hence that warning in big red text that appears whenever you click on the Castle tab.*/
 export const useReachCastleFromCrypt = (): LogicBool => {
-  const DKPortal = useMausoleumPortal() || useDKCryptPortal()
+  const DKCrypt = useDKCryptPortal()
+  const chunkyCrypt = useChunkyCryptPortal()
+  const mausoleum = useMausoleumPortal()
+  const DKPortal = DKCrypt || chunkyCrypt || mausoleum
   const hasClimbing = useClimbing()
   const highGrab = useHighGrab()
   if (DKPortal) {
@@ -166,9 +172,10 @@ export const useChunkyCryptGb = (): LogicBool => {
   const punch = usePunch()
   const preOpened = useOpenCrypt()
   const hasClimbing = useClimbing()
+  const DKPortal = useChunkyCryptPortal()
   return {
-    in: inStage.in && (pineapple || preOpened) && punch && hasClimbing,
-    out: inStage.out && (pineapple || preOpened) && punch
+    in: inStage.in && (pineapple || preOpened || DKPortal) && punch && hasClimbing,
+    out: inStage.out && (pineapple || preOpened || DKPortal) && punch
   }
 }
 
@@ -276,7 +283,7 @@ export const useLankyRoomGb = (): LogicBool => {
   }
 }
 
-/*The O-Stand Sprint barrel here is a total red herring. You can do it without.*/
+/*The O-Stand Sprint barrel here is a total red herring. You can easily do it without.*/
 export const useLankyGreenhouseGb = (): LogicBool => {
   const lanky = useLanky()
   const slam = useSlamCastle()
