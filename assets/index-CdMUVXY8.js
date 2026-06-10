@@ -35703,10 +35703,9 @@ const useChunkyMillGb = () => {
   const punch = usePunch();
   const grab = useGrab();
   const triangle = useTriangle();
-  const DKPortal = useBackMillPortal();
   return {
-    in: inStage.in && day.in && boulderTech && (punch || DKPortal) && triangle && grab,
-    out: inStage.out && day.out && boulderTech && (punch || DKPortal) && triangle
+    in: inStage.in && day.in && boulderTech && punch && triangle && grab,
+    out: inStage.out && day.out && boulderTech && punch && triangle
   };
 };
 const useDiddyTopGb$1 = () => {
