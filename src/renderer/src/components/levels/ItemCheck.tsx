@@ -26,7 +26,7 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
   const hoardValues = Object.values(hoard)
   const isFoolish = foolishValues.some((f) => f === region)
   const isHoard = hoardValues.some((f) => f === region)
-  const [isBossCheck, isKillTheWabbit, isBonusSeed, isKRoolsChallenge] = useDonkStore(useShallow((state) => [state.winCondition.bosses, state.winCondition.killTheWabbit, state.winCondition.bonuses, state.winCondition.kRoolChallenge]))
+  const [isMedalCheck, isBossCheck, isKillTheWabbit, isBonusSeed, isKRoolsChallenge] = useDonkStore(useShallow((state) => [state.winCondition.bananaMedals, state.winCondition.bosses, state.winCondition.killTheWabbit, state.winCondition.bonuses, state.winCondition.kRoolChallenge]))
   if (canGetBreak === undefined) {
     canGetBreak = canGetLogic
   }
@@ -42,6 +42,7 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
     rowNames.push('checked')
   }
   if (isFoolish
+  || (isMedalCheck && props.region === 'Banana Medals')
   || ((isBossCheck || isKRoolsChallenge) && props.region === 'Bosses')
   || (isKillTheWabbit && props.id === 6042)
   || ((isBonusSeed || isKRoolsChallenge) && (props.id === 10
