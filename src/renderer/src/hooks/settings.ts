@@ -266,8 +266,11 @@ export const useShuffledShops = (): boolean =>
 export const useChunkySlamLevel = (): SlamRange =>
   useDonkStore(useShallow((state) => state.settings.chunkySlamLevel))
   
-export const useIslesBananaMedals = (): boolean =>
-  useDonkStore(useShallow((state) => state.settings.poolIslesMedals))
+export const useIslesBananaMedals = (): boolean => {
+  const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolIslesMedals))
+  const medalWinCon = useDonkStore(useShallow((state) => state.winCondition.bananaMedals))
+  return medalsInRotation || (medalWinCon && !medalsInRotation)
+}
 
 export const usePoolKongs = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.poolKongs))
