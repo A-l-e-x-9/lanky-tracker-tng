@@ -11446,7 +11446,11 @@ const usePoolWrinkly = () => useDonkStore(useShallow((state) => state.settings.p
 const useShuffleKasplats = () => useDonkStore(useShallow((state) => state.settings.shuffleKasplats));
 const useShuffledArenas = () => useDonkStore(useShallow((state) => state.settings.shuffleArenas));
 const useChunkySlamLevel = () => useDonkStore(useShallow((state) => state.settings.chunkySlamLevel));
-const useIslesBananaMedals = () => useDonkStore(useShallow((state) => state.settings.poolIslesMedals));
+const useIslesBananaMedals = () => {
+  const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolIslesMedals));
+  const medalWinCon = useDonkStore(useShallow((state) => state.winCondition.bananaMedals));
+  return medalsInRotation || medalWinCon && !medalsInRotation;
+};
 const usePoolKongs = () => useDonkStore(useShallow((state) => state.settings.poolKongs));
 const usePoolGoldBananas = () => useDonkStore(useShallow((state) => state.settings.poolGoldBananas));
 const useBetaLankyPhase = () => useDonkStore(useShallow((state) => state.settings.betaLankyPhase));
