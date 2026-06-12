@@ -11342,102 +11342,116 @@ const slamSlice = (set) => {
   donkResetFns.add(() => set(initialSlam));
   return {
     ...initialSlam,
-    setJapesSlam: (id2, val) => {
+    setJapesSlam: (id2) => {
       set((state) => {
-        const target = {};
-        target[id2] = val;
-        state = {
+        const reset = {};
+        for (const k2 of Object.keys(state.japesSlam)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
           ...state,
           japesSlam: {
             ...state.japesSlam,
-            ...target
+            ...reset
           }
         };
-        return state;
       });
     },
-    setAztecSlam: (id2, val) => {
+    setAztecSlam: (id2) => {
       set((state) => {
-        const target = {};
-        target[id2] = val;
-        state = {
+        const reset = {};
+        for (const k2 of Object.keys(state.aztecSlam)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
           ...state,
           aztecSlam: {
             ...state.aztecSlam,
-            ...target
+            ...reset
           }
         };
-        return state;
       });
     },
-    setFactorySlam: (id2, val) => {
+    setFactorySlam: (id2) => {
       set((state) => {
-        const target = {};
-        target[id2] = val;
-        state = {
+        const reset = {};
+        for (const k2 of Object.keys(state.factorySlam)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
           ...state,
           factorySlam: {
             ...state.factorySlam,
-            ...target
+            ...reset
           }
         };
-        return state;
       });
     },
-    setGalleonSlam: (id2, val) => {
+    setGalleonSlam: (id2) => {
       set((state) => {
-        const target = {};
-        target[id2] = val;
-        state = {
+        const reset = {};
+        for (const k2 of Object.keys(state.galleonSlam)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
           ...state,
           galleonSlam: {
             ...state.galleonSlam,
-            ...target
+            ...reset
           }
         };
-        return state;
       });
     },
-    setForestSlam: (id2, val) => {
+    setForestSlam: (id2) => {
       set((state) => {
-        const target = {};
-        target[id2] = val;
-        state = {
+        const reset = {};
+        for (const k2 of Object.keys(state.forestSlam)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
           ...state,
           forestSlam: {
             ...state.forestSlam,
-            ...target
+            ...reset
           }
         };
-        return state;
       });
     },
-    setCavesSlam: (id2, val) => {
+    setCavesSlam: (id2) => {
       set((state) => {
-        const target = {};
-        target[id2] = val;
-        state = {
+        const reset = {};
+        for (const k2 of Object.keys(state.cavesSlam)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
           ...state,
           cavesSlam: {
             ...state.cavesSlam,
-            ...target
+            ...reset
           }
         };
-        return state;
       });
     },
-    setCastleSlam: (id2, val) => {
+    setCastleSlam: (id2) => {
       set((state) => {
-        const target = {};
-        target[id2] = val;
-        state = {
+        const reset = {};
+        for (const k2 of Object.keys(state.castleSlam)) {
+          reset[k2] = false;
+        }
+        reset[id2] = true;
+        return {
           ...state,
           castleSlam: {
             ...state.castleSlam,
-            ...target
+            ...reset
           }
         };
-        return state;
       });
     }
   };
