@@ -474,7 +474,7 @@ export const useSlamLevel = (level: Level): boolean => {
   } else {
     switch (level) {
       case 'Jungle Japes':
-        switch (japesSlam) {
+        switch (true) {
           case japesSlam.blueSlam:
             return superSlam
           case japesSlam.redSlam:
