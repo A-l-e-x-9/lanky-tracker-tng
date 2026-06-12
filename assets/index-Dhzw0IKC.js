@@ -11301,6 +11301,147 @@ const portalSlice = (set) => {
     }
   };
 };
+const initialSlam = {
+  japesSlam: {
+    greenSlam: true,
+    blueSlam: false,
+    redSlam: false
+  },
+  aztecSlam: {
+    greenSlam: true,
+    blueSlam: false,
+    redSlam: false
+  },
+  factorySlam: {
+    greenSlam: true,
+    blueSlam: false,
+    redSlam: false
+  },
+  galleonSlam: {
+    greenSlam: true,
+    blueSlam: false,
+    redSlam: false
+  },
+  forestSlam: {
+    greenSlam: false,
+    blueSlam: true,
+    redSlam: false
+  },
+  cavesSlam: {
+    greenSlam: false,
+    blueSlam: true,
+    redSlam: false
+  },
+  castleSlam: {
+    greenSlam: false,
+    blueSlam: true,
+    redSlam: false
+  }
+};
+const slamSlice = (set) => {
+  donkResetFns.add(() => set(initialSlam));
+  return {
+    ...initialSlam,
+    setJapesSlam: (id2, val) => {
+      set((state) => {
+        const target = {};
+        target[id2] = val;
+        state = {
+          ...state,
+          japesSlam: {
+            ...state.japesSlam,
+            ...target
+          }
+        };
+        return state;
+      });
+    },
+    setAztecSlam: (id2, val) => {
+      set((state) => {
+        const target = {};
+        target[id2] = val;
+        state = {
+          ...state,
+          aztecSlam: {
+            ...state.aztecSlam,
+            ...target
+          }
+        };
+        return state;
+      });
+    },
+    setFactorySlam: (id2, val) => {
+      set((state) => {
+        const target = {};
+        target[id2] = val;
+        state = {
+          ...state,
+          factorySlam: {
+            ...state.factorySlam,
+            ...target
+          }
+        };
+        return state;
+      });
+    },
+    setGalleonSlam: (id2, val) => {
+      set((state) => {
+        const target = {};
+        target[id2] = val;
+        state = {
+          ...state,
+          galleonSlam: {
+            ...state.galleonSlam,
+            ...target
+          }
+        };
+        return state;
+      });
+    },
+    setForestSlam: (id2, val) => {
+      set((state) => {
+        const target = {};
+        target[id2] = val;
+        state = {
+          ...state,
+          forestSlam: {
+            ...state.forestSlam,
+            ...target
+          }
+        };
+        return state;
+      });
+    },
+    setCavesSlam: (id2, val) => {
+      set((state) => {
+        const target = {};
+        target[id2] = val;
+        state = {
+          ...state,
+          cavesSlam: {
+            ...state.cavesSlam,
+            ...target
+          }
+        };
+        return state;
+      });
+    },
+    setCastleSlam: (id2, val) => {
+      set((state) => {
+        const target = {};
+        target[id2] = val;
+        state = {
+          ...state,
+          castleSlam: {
+            ...state.castleSlam,
+            ...target
+          }
+        };
+        return state;
+      });
+    }
+  };
+};
 const initializer = (...d) => ({
   ...coreSlice(...d),
   ...settingSlice(...d),
@@ -11318,7 +11459,8 @@ const initializer = (...d) => ({
   ...uiSlice(...d),
   ...winConSlice(...d),
   ...shopSlice(...d),
-  ...portalSlice(...d)
+  ...portalSlice(...d),
+  ...slamSlice(...d)
 });
 const useDonkStore = create()(
   persist(initializer, {
@@ -12625,18 +12767,7 @@ const useSlamLevel = (level) => {
   const superSlam = useSuperSlam();
   const duperSlam = useSuperDuperSlam();
   const progressiveSlams = useProgressiveSlams();
-  const [level1, level2, level3, level4, level5, level6, level7, level8] = useDonkStore(
-    useShallow((state) => [
-      state.level1,
-      state.level2,
-      state.level3,
-      state.level4,
-      state.level5,
-      state.level6,
-      state.level7,
-      state.level8
-    ])
-  );
+  const [japesSlam, aztecSlam, factorySlam, galleonSlam, forestSlam, cavesSlam, castleSlam] = useDonkStore(useShallow((state) => [state.japesSlam, state.aztecSlam, state.factorySlam, state.galleonSlam, state.forestSlam, state.cavesSlam, state.castleSlam]));
   if (!canPlay) {
     return false;
   }
@@ -12654,18 +12785,76 @@ const useSlamLevel = (level) => {
       default:
         return duperSlam;
     }
+  } else {
+    switch (level) {
+      case "Jungle Japes":
+        switch (true) {
+          case japesSlam.blueSlam:
+            return superSlam;
+          case japesSlam.redSlam:
+            return duperSlam;
+          default:
+            return slam;
+        }
+      case "Angry Aztec":
+        switch (true) {
+          case aztecSlam.blueSlam:
+            return superSlam;
+          case aztecSlam.redSlam:
+            return duperSlam;
+          default:
+            return slam;
+        }
+      case "Frantic Factory":
+        switch (true) {
+          case factorySlam.blueSlam:
+            return superSlam;
+          case factorySlam.redSlam:
+            return duperSlam;
+          default:
+            return slam;
+        }
+      case "Gloomy Galleon":
+      case "DK Isles":
+        switch (true) {
+          case galleonSlam.blueSlam:
+            return superSlam;
+          case galleonSlam.redSlam:
+            return duperSlam;
+          default:
+            return slam;
+        }
+      case "Fungi Forest":
+        switch (true) {
+          case forestSlam.blueSlam:
+            return superSlam;
+          case forestSlam.redSlam:
+            return duperSlam;
+          default:
+            return slam;
+        }
+      case "Crystal Caves":
+        switch (true) {
+          case cavesSlam.blueSlam:
+            return superSlam;
+          case cavesSlam.redSlam:
+            return duperSlam;
+          default:
+            return slam;
+        }
+      case "Creepy Castle":
+        switch (true) {
+          case castleSlam.blueSlam:
+            return superSlam;
+          case castleSlam.redSlam:
+            return duperSlam;
+          default:
+            return slam;
+        }
+      default:
+        return false;
+    }
   }
-  const predicate = (e2) => e2 === level;
-  if ([level1, level2, level3, level4].some(predicate)) {
-    return slam;
-  }
-  if ([level5, level6].some(predicate)) {
-    return superSlam;
-  }
-  if ([level7, level8].some(predicate)) {
-    return duperSlam;
-  }
-  return false;
 };
 const useCheckDkJapesRock = () => useAnyKong();
 const useCheckDkCoconutCage = () => {
@@ -50851,17 +51040,17 @@ const DoubleIcon = (props) => {
     " "
   ] });
 };
-const slamIcon = "data:image/png;base64,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";
-const superIcon = "data:image/png;base64,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";
-const duperIcon = "data:image/png;base64,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";
+const greenSlamIcon = "data:image/png;base64,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";
+const blueSlamIcon = "data:image/png;base64,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";
+const redSlamIcon = "data:image/png;base64,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";
 const slamToIcon = (num) => {
   switch (num) {
     case 2:
-      return superIcon;
+      return blueSlamIcon;
     case 3:
-      return duperIcon;
+      return redSlamIcon;
     default:
-      return slamIcon;
+      return greenSlamIcon;
   }
 };
 const slamName = (num) => {
@@ -52744,7 +52933,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: slamIcon,
+                  imgUrl: greenSlamIcon,
                   title: "In the vanilla game, you didn't actually need Blast to complete his phase. If this is on, however, you do.",
                   storeKey: "balancedRoolPhases",
                   prefix: "settings",
@@ -52961,7 +53150,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: slamIcon,
+                  imgUrl: greenSlamIcon,
                   title: "Turn on if the upper half of Factory is pre-opened. Else, you will need a Simian Slam to explore that side.",
                   storeKey: "factoryTesting",
                   prefix: "removeBarriers",
@@ -54235,6 +54424,10 @@ const customStyles$2 = {
 };
 const SlamShuffler = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
+  const [setJapesSlam, setAztecSlam, setFactorySlam, setGalleonSlam, setForestSlam, setCavesSlam, setCastleSlam] = useDonkStore(
+    useShallow((state) => [state.setJapesSlam, state.setAztecSlam, state.setFactorySlam, state.setGalleonSlam, state.setForestSlam, state.setCavesSlam, state.setCastleSlam])
+    //Despite spoiler logs giving you a slam level for Hideout Helm, I've chosen to not define Helm here, as I don't think there's anything Slam-locked there. The switch in Chunky's phase of the K. Rool fight, which might seem to some like it would belong with Helm, has its own define in GeneratorSettings.tsx.
+  );
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
   const slamShuffler = useDonkStore(useShallow((state) => state.settings.progressiveSlams)) ? "" : "slam-shuffler";
@@ -54249,7 +54442,225 @@ const SlamShuffler = () => {
         style: customStyles$2,
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Progressive Slam Shuffler" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "pool", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming whenever I play a seed where I messed with the Simian Slam levels. ^^" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Jungle Japes:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "japesSlam",
+                updateItem: setJapesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "japesSlam",
+                updateItem: setJapesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "japesSlam",
+                updateItem: setJapesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Angry Aztec:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "aztecSlam",
+                updateItem: setAztecSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "aztecSlam",
+                updateItem: setAztecSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "aztecSlam",
+                updateItem: setAztecSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Frantic Factory:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "factorySlam",
+                updateItem: setFactorySlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "factorySlam",
+                updateItem: setFactorySlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "factorySlam",
+                updateItem: setFactorySlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Gloomy Galleon (and the Chunky switch in its lobby):" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "galleonSlam",
+                updateItem: setGalleonSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "galleonSlam",
+                updateItem: setGalleonSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "galleonSlam",
+                updateItem: setGalleonSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Fungi Forest:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "forestSlam",
+                updateItem: setForestSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "forestSlam",
+                updateItem: setForestSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "forestSlam",
+                updateItem: setForestSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Crystal Caves:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "cavesSlam",
+                updateItem: setCavesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "cavesSlam",
+                updateItem: setCavesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "cavesSlam",
+                updateItem: setCavesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Creepy Castle:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "castleSlam",
+                updateItem: setCastleSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "castleSlam",
+                updateItem: setCastleSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "castleSlam",
+                updateItem: setCastleSlam
+              }
+            )
+          ] })
         ] })
       }
     )
