@@ -43,102 +43,165 @@ const slamSlice: StateCreator<AllSlice, [], [], SlamSlice> = (set) => {
   donkResetFns.add(() => set(initialSlam))
   return {
     ...initialSlam,
-    setJapesSlam: (id, val): void => {
+    setJapesSlam: (id): void => {
       set((state) => {
-        const target: Record<string, boolean> = {}
-        target[id] = val
-        state = {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.japesSlam)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
           ...state,
           japesSlam: {
             ...state.japesSlam,
-            ...target
+            ...reset
           }
         }
-        return state
+        return {
+          ...state,
+          japesSlam: {
+            ...state.japesSlam,
+            [id]: false
+          }
+        }
       })
     },
-    setAztecSlam: (id, val): void => {
+    setAztecSlam: (id): void => {
       set((state) => {
-        const target: Record<string, boolean> = {}
-        target[id] = val
-        state = {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.aztecSlam)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
           ...state,
           aztecSlam: {
             ...state.aztecSlam,
-            ...target
+            ...reset
           }
         }
-        return state
+        return {
+          ...state,
+          aztecSlam: {
+            ...state.aztecSlam,
+            [id]: false
+          }
+        }
       })
     },
-    setFactorySlam: (id, val): void => {
+    setFactorySlam: (id): void => {
       set((state) => {
-        const target: Record<string, boolean> = {}
-        target[id] = val
-        state = {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.factorySlam)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
           ...state,
           factorySlam: {
             ...state.factorySlam,
-            ...target
+            ...reset
           }
         }
-        return state
+        return {
+          ...state,
+          factorySlam: {
+            ...state.factorySlam,
+            [id]: false
+          }
+        }
       })
     },
-    setGalleonSlam: (id, val): void => {
+    setGalleonSlam: (id): void => {
       set((state) => {
-        const target: Record<string, boolean> = {}
-        target[id] = val
-        state = {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.galleonSlam)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
           ...state,
           galleonSlam: {
             ...state.galleonSlam,
-            ...target
+            ...reset
           }
         }
-        return state
+        return {
+          ...state,
+          galleonSlam: {
+            ...state.galleonSlam,
+            [id]: false
+          }
+        }
       })
     },
-    setForestSlam: (id, val): void => {
+    setForestSlam: (id): void => {
       set((state) => {
-        const target: Record<string, boolean> = {}
-        target[id] = val
-        state = {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.forestSlam)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
           ...state,
           forestSlam: {
             ...state.forestSlam,
-            ...target
+            ...reset
           }
         }
-        return state
+        return {
+          ...state,
+          forestSlam: {
+            ...state.forestSlam,
+            [id]: false
+          }
+        }
       })
     },
-    setCavesSlam: (id, val): void => {
+    setCavesSlam: (id): void => {
       set((state) => {
-        const target: Record<string, boolean> = {}
-        target[id] = val
-        state = {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.cavesSlam)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
           ...state,
           cavesSlam: {
             ...state.cavesSlam,
-            ...target
+            ...reset
           }
         }
-        return state
+        return {
+          ...state,
+          cavesSlam: {
+            ...state.cavesSlam,
+            [id]: false
+          }
+        }
       })
     },
-    setCastleSlam: (id, val): void => {
+    setCastleSlam: (id): void => {
       set((state) => {
-        const target: Record<string, boolean> = {}
-        target[id] = val
-        state = {
+        const reset: Record<string, boolean> = {}
+        for (const k of Object.keys(state.castleSlam)) {
+          reset[k] = false
+        }
+        reset[id] = true
+        return {
           ...state,
           castleSlam: {
             ...state.castleSlam,
-            ...target
+            ...reset
           }
         }
-        return state
+        return {
+          ...state,
+          castleSlam: {
+            ...state.castleSlam,
+            [id]: false
+          }
+        }
       })
     }
   }
