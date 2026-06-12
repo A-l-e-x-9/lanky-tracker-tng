@@ -54443,237 +54443,237 @@ const SlamShuffler = () => {
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Progressive Slam Shuffler" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Jungle Japes:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: greenSlamIcon,
-                  title: "Simian Slam",
-                  storeKey: "greenSlam",
-                  prefix: "japesSlam",
-                  updateItem: setJapesSlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: blueSlamIcon,
-                  title: "Super Simian Slam",
-                  storeKey: "blueSlam",
-                  prefix: "japesSlam",
-                  updateItem: setJapesSlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: redSlamIcon,
-                  title: "Super Duper Simian Slam",
-                  storeKey: "redSlam",
-                  prefix: "japesSlam",
-                  updateItem: setJapesSlam
-                }
-              )
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Angry Aztec:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: greenSlamIcon,
-                  title: "Simian Slam",
-                  storeKey: "greenSlam",
-                  prefix: "aztecSlam",
-                  updateItem: setAztecSlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: blueSlamIcon,
-                  title: "Super Simian Slam",
-                  storeKey: "blueSlam",
-                  prefix: "aztecSlam",
-                  updateItem: setAztecSlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: redSlamIcon,
-                  title: "Super Duper Simian Slam",
-                  storeKey: "redSlam",
-                  prefix: "aztecSlam",
-                  updateItem: setAztecSlam
-                }
-              )
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Frantic Factory:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: greenSlamIcon,
-                  title: "Simian Slam",
-                  storeKey: "greenSlam",
-                  prefix: "factorySlam",
-                  updateItem: setFactorySlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: blueSlamIcon,
-                  title: "Super Simian Slam",
-                  storeKey: "blueSlam",
-                  prefix: "factorySlam",
-                  updateItem: setFactorySlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: redSlamIcon,
-                  title: "Super Duper Simian Slam",
-                  storeKey: "redSlam",
-                  prefix: "factorySlam",
-                  updateItem: setFactorySlam
-                }
-              )
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Gloomy Galleon (and the Chunky switch in its lobby):" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: greenSlamIcon,
-                  title: "Simian Slam",
-                  storeKey: "greenSlam",
-                  prefix: "galleonSlam",
-                  updateItem: setGalleonSlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: blueSlamIcon,
-                  title: "Super Simian Slam",
-                  storeKey: "blueSlam",
-                  prefix: "galleonSlam",
-                  updateItem: setGalleonSlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: redSlamIcon,
-                  title: "Super Duper Simian Slam",
-                  storeKey: "redSlam",
-                  prefix: "galleonSlam",
-                  updateItem: setGalleonSlam
-                }
-              )
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Fungi Forest:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: greenSlamIcon,
-                  title: "Simian Slam",
-                  storeKey: "greenSlam",
-                  prefix: "forestSlam",
-                  updateItem: setForestSlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: blueSlamIcon,
-                  title: "Super Simian Slam",
-                  storeKey: "blueSlam",
-                  prefix: "forestSlam",
-                  updateItem: setForestSlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: redSlamIcon,
-                  title: "Super Duper Simian Slam",
-                  storeKey: "redSlam",
-                  prefix: "forestSlam",
-                  updateItem: setForestSlam
-                }
-              )
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Crystal Caves:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: greenSlamIcon,
-                  title: "Simian Slam",
-                  storeKey: "greenSlam",
-                  prefix: "cavesSlam",
-                  updateItem: setCavesSlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: blueSlamIcon,
-                  title: "Super Simian Slam",
-                  storeKey: "blueSlam",
-                  prefix: "cavesSlam",
-                  updateItem: setCavesSlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: redSlamIcon,
-                  title: "Super Duper Simian Slam",
-                  storeKey: "redSlam",
-                  prefix: "cavesSlam",
-                  updateItem: setCavesSlam
-                }
-              )
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Creepy Castle:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: greenSlamIcon,
-                  title: "Simian Slam",
-                  storeKey: "greenSlam",
-                  prefix: "castleSlam",
-                  updateItem: setCastleSlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: blueSlamIcon,
-                  title: "Super Simian Slam",
-                  storeKey: "blueSlam",
-                  prefix: "castleSlam",
-                  updateItem: setCastleSlam
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                SimpleRadioIcon,
-                {
-                  imgUrl: redSlamIcon,
-                  title: "Super Duper Simian Slam",
-                  storeKey: "redSlam",
-                  prefix: "castleSlam",
-                  updateItem: setCastleSlam
-                }
-              )
-            ] })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Jungle Japes:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "japesSlam",
+                updateItem: setJapesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "japesSlam",
+                updateItem: setJapesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "japesSlam",
+                updateItem: setJapesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Angry Aztec:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "aztecSlam",
+                updateItem: setAztecSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "aztecSlam",
+                updateItem: setAztecSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "aztecSlam",
+                updateItem: setAztecSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Frantic Factory:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "factorySlam",
+                updateItem: setFactorySlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "factorySlam",
+                updateItem: setFactorySlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "factorySlam",
+                updateItem: setFactorySlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Gloomy Galleon (and the Chunky switch in its lobby):" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "galleonSlam",
+                updateItem: setGalleonSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "galleonSlam",
+                updateItem: setGalleonSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "galleonSlam",
+                updateItem: setGalleonSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Fungi Forest:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "forestSlam",
+                updateItem: setForestSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "forestSlam",
+                updateItem: setForestSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "forestSlam",
+                updateItem: setForestSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Crystal Caves:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "cavesSlam",
+                updateItem: setCavesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "cavesSlam",
+                updateItem: setCavesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "cavesSlam",
+                updateItem: setCavesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Creepy Castle:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: greenSlamIcon,
+                title: "Simian Slam",
+                storeKey: "greenSlam",
+                prefix: "castleSlam",
+                updateItem: setCastleSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: blueSlamIcon,
+                title: "Super Simian Slam",
+                storeKey: "blueSlam",
+                prefix: "castleSlam",
+                updateItem: setCastleSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
+                imgUrl: redSlamIcon,
+                title: "Super Duper Simian Slam",
+                storeKey: "redSlam",
+                prefix: "castleSlam",
+                updateItem: setCastleSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {})
           ] })
         ] })
       }
