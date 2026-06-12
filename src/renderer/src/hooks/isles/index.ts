@@ -483,7 +483,7 @@ export const useSlamLevel = (level: Level): boolean => {
             return slam
         }
       case 'Angry Aztec':
-        switch (aztecSlam) {
+        switch (true) {
           case aztecSlam.blueSlam:
             return superSlam
           case aztecSlam.redSlam:
@@ -492,7 +492,7 @@ export const useSlamLevel = (level: Level): boolean => {
             return slam
         }
       case 'Frantic Factory':
-        switch (factorySlam) {
+        switch (true) {
           case factorySlam.blueSlam:
             return superSlam
           case factorySlam.redSlam:
@@ -502,7 +502,7 @@ export const useSlamLevel = (level: Level): boolean => {
         }
       case 'Gloomy Galleon':
       case 'DK Isles':
-        switch (galleonSlam) {
+        switch (true) {
           case galleonSlam.blueSlam:
             return superSlam
           case galleonSlam.redSlam:
@@ -511,7 +511,7 @@ export const useSlamLevel = (level: Level): boolean => {
             return slam
         }
       case 'Fungi Forest':
-        switch (forestSlam) {
+        switch (true) {
           case forestSlam.blueSlam:
             return superSlam
           case forestSlam.redSlam:
@@ -520,7 +520,7 @@ export const useSlamLevel = (level: Level): boolean => {
             return slam
         }
       case 'Crystal Caves':
-        switch (cavesSlam) {
+        switch (true) {
           case cavesSlam.blueSlam:
             return superSlam
           case cavesSlam.redSlam:
@@ -529,7 +529,7 @@ export const useSlamLevel = (level: Level): boolean => {
             return slam
         }
       case 'Creepy Castle':
-        switch (castleSlam) {
+        switch (true) {
           case castleSlam.blueSlam:
             return superSlam
           case castleSlam.redSlam:
