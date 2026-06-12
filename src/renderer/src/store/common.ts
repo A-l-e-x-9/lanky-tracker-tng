@@ -1243,6 +1243,24 @@ interface PortalActions {
 export type PortalSlice = PortalState & PortalActions
 //#endregion
 
+//Begin shuffled Simian Slam region
+interface japesSlam {
+  greenSlam: boolean
+  blueSlam: boolean
+  redSlam: boolean
+}
+
+export interface SlamState {
+  japesSlam: japesSlam
+}
+
+interface SlamActions {
+  setJapesSlam: (id: string, val: boolean) => void
+}
+
+export type SlamSlice = SlamState & SlamActions
+//#endregion
+
 export type AllSlice = CheckSlice &
   MoveSlice &
   ConsumablesSlice &
@@ -1259,7 +1277,8 @@ export type AllSlice = CheckSlice &
   UiSlice &
   WinConSlice &
   ShopSlice &
-  PortalSlice
+  PortalSlice &
+  SlamSlice
 
 export const donkResetFns = new Set<() => void>()
 
