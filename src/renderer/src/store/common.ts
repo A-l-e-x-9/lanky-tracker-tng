@@ -1254,15 +1254,29 @@ interface aztecSlam {
   blueSlam: boolean
   redSlam: boolean
 }
+interface factorySlam {
+  greenSlam: boolean
+  blueSlam: boolean
+  redSlam: boolean
+}
+interface galleonSlam {
+  greenSlam: boolean
+  blueSlam: boolean
+  redSlam: boolean
+}
 
 export interface SlamState {
   japesSlam: japesSlam
   aztecSlam: aztecSlam
+  factorySlam: factorySlam
+  galleonSlam: galleonSlam
 }
 
 interface SlamActions {
   setJapesSlam: (id: string, val: boolean) => void
   setAztecSlam: (id: string, val: boolean) => void
+  setFactorySlam: (id: string, val: boolean) => void
+  setGalleonSlam: (id: string, val: boolean) => void
 }
 
 export type SlamSlice = SlamState & SlamActions

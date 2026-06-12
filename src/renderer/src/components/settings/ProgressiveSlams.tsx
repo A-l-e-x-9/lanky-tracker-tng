@@ -77,6 +77,50 @@ const SlamShuffler: React.FC = () => {
                 prefix="aztecSlam"
                 updateItem={setAztecSlam}
             />
+            <p>Slam level for Frantic Factory:</p>
+            <SimpleRadioIcon
+                imgUrl={greenSlamIcon}
+                title="Simian Slam"
+                storeKey="greenSlam"
+                prefix="factorySlam"
+                updateItem={setFactorySlam}
+            />
+            <SimpleRadioIcon
+                imgUrl={blueSlamIcon}
+                title="Super Simian Slam"
+                storeKey="blueSlam"
+                prefix="factorySlam"
+                updateItem={setFactorySlam}
+            />
+            <SimpleRadioIcon
+                imgUrl={redSlamIcon}
+                title="Super Duper Simian Slam"
+                storeKey="redSlam"
+                prefix="factorySlam"
+                updateItem={setFactorySlam}
+            />
+            <p>Slam level for Gloomy Galleon:</p>
+            <SimpleRadioIcon
+                imgUrl={greenSlamIcon}
+                title="Simian Slam"
+                storeKey="greenSlam"
+                prefix="galleonSlam"
+                updateItem={setGalleonSlam}
+            />
+            <SimpleRadioIcon
+                imgUrl={blueSlamIcon}
+                title="Super Simian Slam"
+                storeKey="blueSlam"
+                prefix="galleonSlam"
+                updateItem={setGalleonSlam}
+            />
+            <SimpleRadioIcon
+                imgUrl={redSlamIcon}
+                title="Super Duper Simian Slam"
+                storeKey="redSlam"
+                prefix="galleonSlam"
+                updateItem={setGalleonSlam}
+            />
           </section>
         </section>
       </Modal>
