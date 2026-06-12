@@ -37,6 +37,7 @@ const SlamShuffler: React.FC = () => {
         <section className="modal-settings">
         <h2>Progressive Slam Shuffler</h2>
           <section className="pool">
+          <>
             <p>Slam level for Jungle Japes:</p>
             <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
@@ -59,6 +60,8 @@ const SlamShuffler: React.FC = () => {
                 prefix="japesSlam"
                 updateItem={setJapesSlam}
             />
+          </>
+          <>
             <p>Slam level for Angry Aztec:</p>
             <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
@@ -81,6 +84,8 @@ const SlamShuffler: React.FC = () => {
                 prefix="aztecSlam"
                 updateItem={setAztecSlam}
             />
+          </>
+          <>
             <p>Slam level for Frantic Factory:</p>
             <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
@@ -103,6 +108,8 @@ const SlamShuffler: React.FC = () => {
                 prefix="factorySlam"
                 updateItem={setFactorySlam}
             />
+          </>
+          <>
             <p>Slam level for Gloomy Galleon (and the Chunky switch in its lobby):</p>
             <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
@@ -125,6 +132,8 @@ const SlamShuffler: React.FC = () => {
                 prefix="galleonSlam"
                 updateItem={setGalleonSlam}
             />
+          </>
+          <>
             <p>Slam level for Fungi Forest:</p>
             <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
@@ -147,6 +156,8 @@ const SlamShuffler: React.FC = () => {
                 prefix="forestSlam"
                 updateItem={setForestSlam}
             />
+          </>
+          <>
             <p>Slam level for Crystal Caves:</p>
             <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
@@ -169,6 +180,8 @@ const SlamShuffler: React.FC = () => {
                 prefix="cavesSlam"
                 updateItem={setCavesSlam}
             />
+          </>
+          <>
             <p>Slam level for Creepy Castle:</p>
             <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
@@ -191,6 +204,7 @@ const SlamShuffler: React.FC = () => {
                 prefix="castleSlam"
                 updateItem={setCastleSlam}
             />
+          </>
           </section>
         </section>
       </Modal>

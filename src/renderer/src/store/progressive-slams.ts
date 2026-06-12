@@ -34,8 +34,8 @@ export const initialSlam: SlamState = {
   },
   castleSlam: {
     greenSlam: false,
-    blueSlam: true,
-    redSlam: false
+    blueSlam: false,
+    redSlam: true
   }
 }
 
