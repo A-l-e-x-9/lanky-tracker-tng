@@ -1249,13 +1249,20 @@ interface japesSlam {
   blueSlam: boolean
   redSlam: boolean
 }
+interface aztecSlam {
+  greenSlam: boolean
+  blueSlam: boolean
+  redSlam: boolean
+}
 
 export interface SlamState {
   japesSlam: japesSlam
+  aztecSlam: aztecSlam
 }
 
 interface SlamActions {
   setJapesSlam: (id: string, val: boolean) => void
+  setAztecSlam: (id: string, val: boolean) => void
 }
 
 export type SlamSlice = SlamState & SlamActions

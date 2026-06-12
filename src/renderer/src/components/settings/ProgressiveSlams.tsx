@@ -55,6 +55,28 @@ const SlamShuffler: React.FC = () => {
                 prefix="japesSlam"
                 updateItem={setJapesSlam}
             />
+            <p>Slam level for Angry Aztec:</p>
+            <SimpleRadioIcon
+                imgUrl={greenSlamIcon}
+                title="Simian Slam"
+                storeKey="greenSlam"
+                prefix="aztecSlam"
+                updateItem={setAztecSlam}
+            />
+            <SimpleRadioIcon
+                imgUrl={blueSlamIcon}
+                title="Super Simian Slam"
+                storeKey="blueSlam"
+                prefix="aztecSlam"
+                updateItem={setAztecSlam}
+            />
+            <SimpleRadioIcon
+                imgUrl={redSlamIcon}
+                title="Super Duper Simian Slam"
+                storeKey="redSlam"
+                prefix="aztecSlam"
+                updateItem={setAztecSlam}
+            />
           </section>
         </section>
       </Modal>
