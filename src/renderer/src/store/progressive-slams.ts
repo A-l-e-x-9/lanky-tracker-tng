@@ -26,6 +26,16 @@ export const initialSlam: SlamState = {
     greenSlam: false,
     blueSlam: true,
     redSlam: false
+  },
+  cavesSlam: {
+    greenSlam: false,
+    blueSlam: true,
+    redSlam: false
+  },
+  castleSlam: {
+    greenSlam: false,
+    blueSlam: true,
+    redSlam: false
   }
 }
 
@@ -97,6 +107,34 @@ const slamSlice: StateCreator<AllSlice, [], [], SlamSlice> = (set) => {
           ...state,
           forestSlam: {
             ...state.forestSlam,
+            ...target
+          }
+        }
+        return state
+      })
+    },
+    setCavesSlam: (id, val): void => {
+      set((state) => {
+        const target: Record<string, boolean> = {}
+        target[id] = val
+        state = {
+          ...state,
+          cavesSlam: {
+            ...state.cavesSlam,
+            ...target
+          }
+        }
+        return state
+      })
+    },
+    setCastleSlam: (id, val): void => {
+      set((state) => {
+        const target: Record<string, boolean> = {}
+        target[id] = val
+        state = {
+          ...state,
+          castleSlam: {
+            ...state.castleSlam,
             ...target
           }
         }

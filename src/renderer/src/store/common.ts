@@ -1269,6 +1269,16 @@ interface forestSlam {
   blueSlam: boolean
   redSlam: boolean
 }
+interface cavesSlam {
+  greenSlam: boolean
+  blueSlam: boolean
+  redSlam: boolean
+}
+interface castleSlam {
+  greenSlam: boolean
+  blueSlam: boolean
+  redSlam: boolean
+}
 
 export interface SlamState {
   japesSlam: japesSlam
@@ -1276,6 +1286,8 @@ export interface SlamState {
   factorySlam: factorySlam
   galleonSlam: galleonSlam
   forestSlam: forestSlam
+  cavesSlam: cavesSlam
+  castleSlam: castleSlam
 }
 
 interface SlamActions {
@@ -1284,6 +1296,8 @@ interface SlamActions {
   setFactorySlam: (id: string, val: boolean) => void
   setGalleonSlam: (id: string, val: boolean) => void
   setForestSlam: (id: string, val: boolean) => void
+  setCavesSlam: (id: string, val: boolean) => void
+  setCastleSlam: (id: string, val: boolean) => void
 }
 
 export type SlamSlice = SlamState & SlamActions

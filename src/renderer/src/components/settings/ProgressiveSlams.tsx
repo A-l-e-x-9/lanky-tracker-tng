@@ -103,7 +103,7 @@ const SlamShuffler: React.FC = () => {
                 prefix="factorySlam"
                 updateItem={setFactorySlam}
             />
-            <p>Slam level for Gloomy Galleon:</p>
+            <p>Slam level for Gloomy Galleon (and the Chunky switch in its lobby):</p>
             <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
                 title="Simian Slam"
@@ -124,6 +124,72 @@ const SlamShuffler: React.FC = () => {
                 storeKey="redSlam"
                 prefix="galleonSlam"
                 updateItem={setGalleonSlam}
+            />
+            <p>Slam level for Fungi Forest:</p>
+            <SimpleRadioIcon
+                imgUrl={greenSlamIcon}
+                title="Simian Slam"
+                storeKey="greenSlam"
+                prefix="forestSlam"
+                updateItem={setForestSlam}
+            />
+            <SimpleRadioIcon
+                imgUrl={blueSlamIcon}
+                title="Super Simian Slam"
+                storeKey="blueSlam"
+                prefix="forestSlam"
+                updateItem={setForestSlam}
+            />
+            <SimpleRadioIcon
+                imgUrl={redSlamIcon}
+                title="Super Duper Simian Slam"
+                storeKey="redSlam"
+                prefix="forestSlam"
+                updateItem={setForestSlam}
+            />
+            <p>Slam level for Crystal Caves:</p>
+            <SimpleRadioIcon
+                imgUrl={greenSlamIcon}
+                title="Simian Slam"
+                storeKey="greenSlam"
+                prefix="cavesSlam"
+                updateItem={setCavesSlam}
+            />
+            <SimpleRadioIcon
+                imgUrl={blueSlamIcon}
+                title="Super Simian Slam"
+                storeKey="blueSlam"
+                prefix="cavesSlam"
+                updateItem={setCavesSlam}
+            />
+            <SimpleRadioIcon
+                imgUrl={redSlamIcon}
+                title="Super Duper Simian Slam"
+                storeKey="redSlam"
+                prefix="cavesSlam"
+                updateItem={setCavesSlam}
+            />
+            <p>Slam level for Creepy Castle:</p>
+            <SimpleRadioIcon
+                imgUrl={greenSlamIcon}
+                title="Simian Slam"
+                storeKey="greenSlam"
+                prefix="castleSlam"
+                updateItem={setCastleSlam}
+            />
+            <SimpleRadioIcon
+                imgUrl={blueSlamIcon}
+                title="Super Simian Slam"
+                storeKey="blueSlam"
+                prefix="castleSlam"
+                updateItem={setCastleSlam}
+            />
+            <SimpleRadioIcon
+                imgUrl={redSlamIcon}
+                title="Super Duper Simian Slam"
+                storeKey="redSlam"
+                prefix="castleSlam"
+                updateItem={setCastleSlam}
             />
           </section>
         </section>

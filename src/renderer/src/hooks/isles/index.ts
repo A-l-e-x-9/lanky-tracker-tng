@@ -452,18 +452,6 @@ export const useSlamLevel = (level: Level): boolean => {
   const duperSlam = useSuperDuperSlam()
   const progressiveSlams = useProgressiveSlams()
   const [japesSlam, aztecSlam, factorySlam, galleonSlam, forestSlam, cavesSlam, castleSlam] = useDonkStore(useShallow((state) => [state.japesSlam, state.aztecSlam, state.factorySlam, state.galleonSlam, state.forestSlam, state.cavesSlam, state.castleSlam]))
-  const [level1, level2, level3, level4, level5, level6, level7, level8] = useDonkStore(
-    useShallow((state) => [
-      state.level1,
-      state.level2,
-      state.level3,
-      state.level4,
-      state.level5,
-      state.level6,
-      state.level7,
-      state.level8
-    ])
-  )
 
   if (!canPlay) {
     return false
