@@ -451,6 +451,7 @@ export const useSlamLevel = (level: Level): boolean => {
   const superSlam = useSuperSlam()
   const duperSlam = useSuperDuperSlam()
   const progressiveSlams = useProgressiveSlams()
+  const [japesSlam, aztecSlam, factorySlam, galleonSlam, forestSlam, cavesSlam, castleSlam] = useDonkStore(useShallow((state) => [state.japesSlam, state.aztecSlam, state.factorySlam, state.galleonSlam, state.forestSlam, state.cavesSlam, state.castleSlam]))
   const [level1, level2, level3, level4, level5, level6, level7, level8] = useDonkStore(
     useShallow((state) => [
       state.level1,
@@ -482,23 +483,76 @@ export const useSlamLevel = (level: Level): boolean => {
       default:
         return duperSlam
     }
+  } else {
+    switch (level) {
+      case 'Jungle Japes':
+        switch (japesSlam) {
+          case japesSlam.blueSlam:
+            return superSlam
+          case japesSlam.redSlam:
+            return duperSlam
+          default:
+            return slam
+        }
+      case 'Angry Aztec':
+        switch (aztecSlam) {
+          case aztecSlam.blueSlam:
+            return superSlam
+          case aztecSlam.redSlam:
+            return duperSlam
+          default:
+            return slam
+        }
+      case 'Frantic Factory':
+        switch (factorySlam) {
+          case factorySlam.blueSlam:
+            return superSlam
+          case factorySlam.redSlam:
+            return duperSlam
+          default:
+            return slam
+        }
+      case 'Gloomy Galleon':
+      case 'DK Isles':
+        switch (galleonSlam) {
+          case galleonSlam.blueSlam:
+            return superSlam
+          case galleonSlam.redSlam:
+            return duperSlam
+          default:
+            return slam
+        }
+      case 'Fungi Forest':
+        switch (forestSlam) {
+          case forestSlam.blueSlam:
+            return superSlam
+          case forestSlam.redSlam:
+            return duperSlam
+          default:
+            return slam
+        }
+      case 'Crystal Caves':
+        switch (cavesSlam) {
+          case cavesSlam.blueSlam:
+            return superSlam
+          case cavesSlam.redSlam:
+            return duperSlam
+          default:
+            return slam
+        }
+      case 'Creepy Castle':
+        switch (castleSlam) {
+          case castleSlam.blueSlam:
+            return superSlam
+          case castleSlam.redSlam:
+            return duperSlam
+          default:
+            return slam
+        }
+      default:
+        return false
+    }
   }
-
-  const predicate = (e: Level): boolean => e === level
-
-  if ([level1, level2, level3, level4].some(predicate)) {
-    return slam
-  }
-
-  if ([level5, level6].some(predicate)) {
-    return superSlam
-  }
-
-  if ([level7, level8].some(predicate)) {
-    return duperSlam
-  }
-
-  return false
 }
 
 /**
