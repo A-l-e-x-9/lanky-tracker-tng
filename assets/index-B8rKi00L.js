@@ -10327,13 +10327,15 @@ const initialSettings = {
     shuffleShops: false,
     poolGoldBananas: true,
     poolShops: true,
-    poolMisc: true,
+    poolPearls: true,
+    poolBean: true,
     poolKeys: true,
     poolKongs: true,
     shuffleDirt: false,
     poolRainbowCoins: true,
     poolCrowns: true,
     poolBananaMedals: true,
+    poolHalfMedals: true,
     poolIslesMedals: true,
     shuffleArenas: false,
     poolToughBananas: true,
@@ -10345,7 +10347,8 @@ const initialSettings = {
     shuffleCrates: false,
     shuffleFairies: false,
     autoBonus: false,
-    poolCompanyCoins: true,
+    poolNintendoCoin: true,
+    poolRarewareCoin: true,
     poolDrops: true,
     shuffleEnemies: true,
     hardShooting: false,
@@ -10361,7 +10364,7 @@ const initialSettings = {
     helmItemNum1: 4,
     helmItem2: 3,
     helmItemNum2: 2,
-    shuffleDKPortals: false,
+    shuffleDKPortals: true,
     shuffleLoadingZones: false
   }
 };
@@ -11559,16 +11562,15 @@ const useShuffleCrates = () => useDonkStore(useShallow((state) => state.settings
 const usePoolShops = () => useDonkStore(useShallow((state) => state.settings.poolShops));
 const usePoolToughBananas = () => useDonkStore(useShallow((state) => state.settings.poolToughBananas));
 const usePoolMiniboss = () => useDonkStore(useShallow((state) => state.settings.poolMiniboss));
-const usePoolMisc = () => useDonkStore(useShallow((state) => state.settings.poolMisc));
 const usePoolPearls = () => {
-  const beanAndPearlsInRotation = usePoolMisc();
+  const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolPearls));
   const pearlWinCon = useDonkStore(useShallow((state) => state.winCondition.pearls));
-  return pearlWinCon && !beanAndPearlsInRotation;
+  return pearlsInRotation || pearlWinCon && !pearlsInRotation;
 };
 const useBean$1 = () => {
-  const beanAndPearlsInRotation = usePoolMisc();
+  const beanInRotation = useDonkStore(useShallow((state) => state.settings.poolBean));
   const beanWinCon = useDonkStore(useShallow((state) => state.winCondition.theBean));
-  return beanWinCon && !beanAndPearlsInRotation;
+  return beanInRotation || beanWinCon && !beanInRotation;
 };
 const usePoolBlueprints = () => {
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints));
@@ -11594,7 +11596,8 @@ const usePoolBananaMedals = () => {
   const kRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
   return medalsInRotation || (medalWinCon || bossWinCon || kRoolsChallenge) && !medalsInRotation;
 };
-const usePoolCompanyCoins = () => useDonkStore(useShallow((state) => state.settings.poolCompanyCoins));
+const usePoolNintendoCoin = () => useDonkStore(useShallow((state) => state.settings.poolNintendoCoin));
+const usePoolRarewareCoin = () => useDonkStore(useShallow((state) => state.settings.poolRarewareCoin));
 const useShuffleDirt = () => useDonkStore(useShallow((state) => state.settings.shuffleDirt));
 const useShuffleFairies = () => useDonkStore(useShallow((state) => state.settings.shuffleFairies));
 const usePoolBoulders = () => useDonkStore(useShallow((state) => state.settings.poolBoulders));
@@ -11606,6 +11609,10 @@ const useIslesBananaMedals = () => {
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolIslesMedals));
   const medalWinCon = useDonkStore(useShallow((state) => state.winCondition.bananaMedals));
   return medalsInRotation || medalWinCon && !medalsInRotation;
+};
+const useHalfMedals = () => {
+  const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolHalfMedals));
+  return medalsInRotation;
 };
 const usePoolKongs = () => useDonkStore(useShallow((state) => state.settings.poolKongs));
 const usePoolGoldBananas = () => useDonkStore(useShallow((state) => state.settings.poolGoldBananas));
@@ -11660,6 +11667,7 @@ const useHelmItemNum2 = () => useDonkStore(useShallow((state) => state.settings.
 const useKRoolItemNum = () => useDonkStore(useShallow((state) => state.winCondition.winConItemCount));
 const BananaMedalPool = ({ children }) => usePoolBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const IslesMedalPool = ({ children }) => useIslesBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const HalfMedalPool = ({ children }) => useHalfMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const ArenaPool = ({ children }) => usePoolCrowns() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const VanillaArena = ({ children }) => useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
 const useCurrentBananaMedalCount = () => useDonkStore(useShallow((state) => state.consumables.bananaMedals));
@@ -14108,19 +14116,19 @@ const TinyBananas$7 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExp
   /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonSwim, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ReturnFairies, {})
 ] });
-const CompanyPool = ({ children }) => usePoolCompanyCoins() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const NintendoCoinPool = ({ children }) => usePoolNintendoCoin() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const RarewareCoinPool = ({ children }) => usePoolRarewareCoin() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const JetpacCheck = () => {
   const medals = useCurrentBananaMedalCount();
   const jetpacCount = useJetpacCount();
   const anyKong = useAnyKong();
   const cranky = useCranky();
-  const shuffledShops = useDonkStore(useShallow((state) => state.shuffledIslesShops.islesSwitchUp));
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(CompanyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(RarewareCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
     {
       id: 105,
       name: "Jetpac",
-      region: shuffledShops ? "K. Rool's Island" : "DK Island",
+      region: "",
       canGetLogic: cranky && anyKong && medals >= jetpacCount
     }
   ) });
@@ -14217,7 +14225,7 @@ const ChunkyMedal$7 = () => {
   const outLogic = useChunkyMedalOutLogic$7();
   const cbCount = useCbCount();
   const halfMedal = Math.floor(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -14228,7 +14236,7 @@ const ChunkyMedal$7 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
         id: 204,
@@ -14237,7 +14245,7 @@ const ChunkyMedal$7 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDiddyMedalInLogic$7 = () => {
@@ -14272,7 +14280,7 @@ const DiddyMedal$7 = () => {
   const outLogic = useDiddyMedalOutLogic$7();
   const cbCount = useCbCount();
   const halfMedal = Math.floor(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -14283,7 +14291,7 @@ const DiddyMedal$7 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
         id: 201,
@@ -14292,7 +14300,7 @@ const DiddyMedal$7 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDkMedalInLogic$7 = () => {
@@ -14324,7 +14332,7 @@ const DkMedal$7 = () => {
   const outLogic = useDkMedalOutLogic$7();
   const cbCount = useCbCount();
   const halfMedal = Math.floor(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -14335,7 +14343,7 @@ const DkMedal$7 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
         id: 200,
@@ -14344,7 +14352,7 @@ const DkMedal$7 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useLankyMedalInLogic$7 = () => {
@@ -14375,7 +14383,7 @@ const LankyMedal$7 = () => {
   const outLogic = useLankyMedalOutLogic$7();
   const cbCount = useCbCount();
   const halfMedal = Math.floor(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -14386,7 +14394,7 @@ const LankyMedal$7 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
         id: 202,
@@ -14395,7 +14403,7 @@ const LankyMedal$7 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useTinyMedalInLogic$7 = () => {
@@ -14415,7 +14423,7 @@ const TinyMedal$7 = () => {
   const outLogic = useTinyMedalOutLogic$7();
   const cbCount = useCbCount();
   const halfMedal = Math.floor(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -14426,7 +14434,7 @@ const TinyMedal$7 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
         id: 203,
@@ -14435,7 +14443,7 @@ const TinyMedal$7 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useShopLogic = (id2) => {
@@ -18399,13 +18407,13 @@ const IslesRegionChecks = () => {
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$7, {})
-      ] }) }),
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingGroundsChecks, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainChecks, {}),
@@ -18638,13 +18646,13 @@ const ClassicChecks$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations$7, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaLocations, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$7, {})
-      ] }) }),
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderLocations$3, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyDoors, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
@@ -20169,7 +20177,7 @@ const ChunkyMedal$6 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
         id: 1204,
@@ -20178,7 +20186,7 @@ const ChunkyMedal$6 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDiddyMedalCommonLogic$5 = () => {
@@ -20283,7 +20291,7 @@ const DiddyMedal$6 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
         id: 1201,
@@ -20292,7 +20300,7 @@ const DiddyMedal$6 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDkMedalInLogic$6 = () => {
@@ -20407,7 +20415,7 @@ const DkMedal$6 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
         id: 1200,
@@ -20416,7 +20424,7 @@ const DkMedal$6 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useLankyMedalCommonLogic$5 = () => {
@@ -20528,7 +20536,7 @@ const LankyMedal$6 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
         id: 1202,
@@ -20537,7 +20545,7 @@ const LankyMedal$6 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useTinyMedalInLogic$6 = () => {
@@ -20611,7 +20619,7 @@ const TinyMedal$6 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       JapesCheck,
       {
         id: 1203,
@@ -20620,7 +20628,7 @@ const TinyMedal$6 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const Vanilla$6 = () => {
@@ -24932,7 +24940,7 @@ const ChunkyMedal$5 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2204,
@@ -24941,7 +24949,7 @@ const ChunkyMedal$5 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDiddyMedalInLogic$5 = () => {
@@ -25068,7 +25076,7 @@ const DiddyMedal$5 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2201,
@@ -25077,7 +25085,7 @@ const DiddyMedal$5 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDkMedalInLogic$5 = () => {
@@ -25183,7 +25191,7 @@ const DkMedal$5 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2200,
@@ -25192,7 +25200,7 @@ const DkMedal$5 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useLankyMedalInLogic$5 = () => {
@@ -25312,7 +25320,7 @@ const LankyMedal$5 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2202,
@@ -25321,7 +25329,7 @@ const LankyMedal$5 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useTinyMedalInLogic$5 = () => {
@@ -25445,7 +25453,7 @@ const TinyMedal$5 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
       {
         id: 2203,
@@ -25454,7 +25462,7 @@ const TinyMedal$5 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const Vanilla$5 = () => {
@@ -29295,7 +29303,7 @@ const DiddyBananas$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
 ] });
 const NintendoCoin = () => {
   const howHigh = useDkCoin();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(CompanyPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(NintendoCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     FactoryCheck,
     {
       id: 3005,
@@ -29308,16 +29316,30 @@ const NintendoCoin = () => {
 };
 const FactoryBlast = () => {
   const canDo = useDkBlastGb$2();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    FactoryCheck,
-    {
-      id: 3003,
-      name: "Barrel Blast course (and possibly DK Arcade Round 1)",
-      region: "Storage and Arcade Area",
-      canGetLogic: canDo.in,
-      canGetBreak: canDo.out
-    }
-  ) });
+  const fastArcade = useFastArcade();
+  if (fastArcade) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3003,
+        name: "Barrel Blast course",
+        region: "Storage and Arcade Area",
+        canGetLogic: canDo.in,
+        canGetBreak: canDo.out
+      }
+    ) });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(NintendoCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 3003,
+        name: "Barrel Blast course + DK Arcade Round 1",
+        region: "Storage and Arcade Area",
+        canGetLogic: canDo.in,
+        canGetBreak: canDo.out
+      }
+    ) });
+  }
 };
 const CrusherRoom = () => {
   const prodGb = useDkProdGb();
@@ -29667,7 +29689,7 @@ const ChunkyMedal$4 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
         id: 3204,
@@ -29676,7 +29698,7 @@ const ChunkyMedal$4 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDiddyMedalCommonLogic$4 = () => {
@@ -29758,7 +29780,7 @@ const DiddyMedal$4 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
         id: 3201,
@@ -29767,7 +29789,7 @@ const DiddyMedal$4 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDkMedalCommonLogic$4 = () => {
@@ -29846,7 +29868,7 @@ const DkMedal$4 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
         id: 3200,
@@ -29855,7 +29877,7 @@ const DkMedal$4 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useLankyMedalCommonLogic$4 = () => {
@@ -29943,7 +29965,7 @@ const LankyMedal$4 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
         id: 3202,
@@ -29952,7 +29974,7 @@ const LankyMedal$4 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useTinyMedalCommonLogic$4 = () => {
@@ -30044,7 +30066,7 @@ const TinyMedal$4 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
         id: 3203,
@@ -30053,7 +30075,7 @@ const TinyMedal$4 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const Vanilla$4 = () => {
@@ -32928,119 +32950,62 @@ const LankyBananas$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(Lanky2Ship, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(Lanky5Ship, {})
 ] });
-const MiscPool = ({ children }) => usePoolMisc() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const PearlPool = ({ children }) => usePoolPearls() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const BeanPool = ({ children }) => useBean$1() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const TreasureClams = () => {
   const clams = useTinyClams();
-  const pearlWinCon = usePoolPearls();
-  if (pearlWinCon) {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(PearlPool, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        GalleonCheck,
-        {
-          id: 4034,
-          name: "Treasure Chest, Center Clam",
-          region: "Treasure Room",
-          canGetLogic: clams.in,
-          canGetBreak: clams.out
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        GalleonCheck,
-        {
-          id: 4035,
-          name: "Treasure Chest, Front Left Clam",
-          region: "Treasure Room",
-          canGetLogic: clams.in,
-          canGetBreak: clams.out
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        GalleonCheck,
-        {
-          id: 4036,
-          name: "Treasure Chest, Back Left Clam",
-          region: "Treasure Room",
-          canGetLogic: clams.in,
-          canGetBreak: clams.out
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        GalleonCheck,
-        {
-          id: 4037,
-          name: "Treasure Chest, Back Right Clam",
-          region: "Treasure Room",
-          canGetLogic: clams.in,
-          canGetBreak: clams.out
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        GalleonCheck,
-        {
-          id: 4038,
-          name: "Treasure Chest, Front Right Clam",
-          region: "Treasure Room",
-          canGetLogic: clams.in,
-          canGetBreak: clams.out
-        }
-      )
-    ] });
-  } else {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(MiscPool, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        GalleonCheck,
-        {
-          id: 4034,
-          name: "Treasure Chest, Center Clam",
-          region: "Treasure Room",
-          canGetLogic: clams.in,
-          canGetBreak: clams.out
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        GalleonCheck,
-        {
-          id: 4035,
-          name: "Treasure Chest, Front Left Clam",
-          region: "Treasure Room",
-          canGetLogic: clams.in,
-          canGetBreak: clams.out
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        GalleonCheck,
-        {
-          id: 4036,
-          name: "Treasure Chest, Back Left Clam",
-          region: "Treasure Room",
-          canGetLogic: clams.in,
-          canGetBreak: clams.out
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        GalleonCheck,
-        {
-          id: 4037,
-          name: "Treasure Chest, Back Right Clam",
-          region: "Treasure Room",
-          canGetLogic: clams.in,
-          canGetBreak: clams.out
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        GalleonCheck,
-        {
-          id: 4038,
-          name: "Treasure Chest, Front Right Clam",
-          region: "Treasure Room",
-          canGetLogic: clams.in,
-          canGetBreak: clams.out
-        }
-      )
-    ] });
-  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(PearlPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4034,
+        name: "Treasure Chest, Center Clam",
+        region: "Treasure Room",
+        canGetLogic: clams.in,
+        canGetBreak: clams.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4035,
+        name: "Treasure Chest, Front Left Clam",
+        region: "Treasure Room",
+        canGetLogic: clams.in,
+        canGetBreak: clams.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4036,
+        name: "Treasure Chest, Back Left Clam",
+        region: "Treasure Room",
+        canGetLogic: clams.in,
+        canGetBreak: clams.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4037,
+        name: "Treasure Chest, Back Right Clam",
+        region: "Treasure Room",
+        canGetLogic: clams.in,
+        canGetBreak: clams.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 4038,
+        name: "Treasure Chest, Front Right Clam",
+        region: "Treasure Room",
+        canGetLogic: clams.in,
+        canGetBreak: clams.out
+      }
+    )
+  ] });
 };
 const MermaidReward = () => {
   const canDo = useTinyMermaidGb();
@@ -33096,7 +33061,7 @@ const Tiny2Ship = () => {
 };
 const TinyBananas$3 = () => {
   const isPearlSeed = useDonkStore(useShallow((state) => state.winCondition.pearls)) ? "foolish" : "";
-  const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolMisc)) ? "" : "foolish";
+  const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolPearls)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(MermaidReward, {}),
@@ -33285,7 +33250,7 @@ const ChunkyMedal$3 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
         id: 4204,
@@ -33294,7 +33259,7 @@ const ChunkyMedal$3 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDiddyMedalCommonLogic$3 = () => {
@@ -33394,7 +33359,7 @@ const DiddyMedal$3 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
         id: 4201,
@@ -33403,7 +33368,7 @@ const DiddyMedal$3 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDkMedalCommonLogic$3 = () => {
@@ -33512,7 +33477,7 @@ const DkMedal$3 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
         id: 4200,
@@ -33521,7 +33486,7 @@ const DkMedal$3 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useLankyMedalCommonLogic$3 = () => {
@@ -33622,7 +33587,7 @@ const LankyMedal$3 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
         id: 4202,
@@ -33631,7 +33596,7 @@ const LankyMedal$3 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useTinyMedalCommonLogic$3 = () => {
@@ -33745,7 +33710,7 @@ const TinyMedal$3 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
         id: 4203,
@@ -33754,7 +33719,7 @@ const TinyMedal$3 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const Vanilla$3 = () => {
@@ -33893,7 +33858,7 @@ const TreasureChecks = () => {
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   const isPearlSeed = useDonkStore(useShallow((state) => state.winCondition.pearls)) ? "foolish" : "";
-  const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolMisc)) ? "" : "foolish";
+  const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolPearls)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyGold, {}),
@@ -39860,30 +39825,16 @@ const AnthillBanana = () => {
 };
 const AnthillBean = () => {
   const canDo = useTinyAntGb();
-  const beanWinCon = useBean$1();
-  if (beanWinCon) {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(BeanPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5034,
-        name: "THE BEAN (Tree Stump Gauntlet's Second Reward)",
-        region: "Forest Area 4",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ) });
-  } else {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(MiscPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 5034,
-        name: "THE BEAN (Tree Stump Gauntlet's Second Reward)",
-        region: "Forest Area 4",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ) });
-  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BeanPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    ForestCheck,
+    {
+      id: 5034,
+      name: "Tree Stump Gauntlet's Second Reward (home of The Bean™ in vanilla)",
+      region: "Forest Area 4",
+      canGetLogic: canDo.in,
+      canGetBreak: canDo.out
+    }
+  ) });
 };
 const BeanCheck = () => {
   const canDo = useTinyBeanGb();
@@ -40103,7 +40054,7 @@ const ChunkyMedal$2 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
         id: 5204,
@@ -40112,7 +40063,7 @@ const ChunkyMedal$2 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDiddyMedalCommonLogic$2 = () => {
@@ -40216,7 +40167,7 @@ const DiddyMedal$2 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
         id: 5201,
@@ -40225,7 +40176,7 @@ const DiddyMedal$2 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDkMedalCommonLogic$2 = () => {
@@ -40338,7 +40289,7 @@ const DkMedal$2 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
         id: 5200,
@@ -40347,7 +40298,7 @@ const DkMedal$2 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useLankyMedalCommonLogic$2 = () => {
@@ -40441,7 +40392,7 @@ const LankyMedal$2 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
         id: 5202,
@@ -40450,7 +40401,7 @@ const LankyMedal$2 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useTinyMedalCommonLogic$2 = () => {
@@ -40573,7 +40524,7 @@ const TinyMedal$2 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
         id: 5203,
@@ -40582,7 +40533,7 @@ const TinyMedal$2 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const BeanstalkChecks = () => {
