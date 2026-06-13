@@ -1,6 +1,6 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import BananaMedalPool, { IslesMedalPool } from '@renderer/components/pools/BananaMedals'
+import BananaMedalPool from '@renderer/components/pools/BananaMedals'
 import ChunkyMedal from '../medals/ChunkyMedal'
 import DiddyMedal from '../medals/DiddyMedal'
 import DkMedal from '../medals/DkMedal'
