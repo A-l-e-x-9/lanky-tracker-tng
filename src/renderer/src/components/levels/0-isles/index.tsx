@@ -1,4 +1,4 @@
-import BananaMedalPool from '@renderer/components/pools/BananaMedals'
+import BananaMedalPool, { IslesMedalPool } from '@renderer/components/pools/BananaMedals'
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import ArenaLocations from './arenas'
@@ -54,11 +54,13 @@ return (
   <div className="grid">
     <ArenaLocations />
     <BananaMedalPool>
-      <DkMedal />
-      <DiddyMedal />
-      <LankyMedal />
-      <TinyMedal />
-      <ChunkyMedal />
+      <IslesMedalPool>
+        <DkMedal />
+        <DiddyMedal />
+        <LankyMedal />
+        <TinyMedal />
+        <ChunkyMedal />
+      </IslesMedalPool>
     </BananaMedalPool>
     <BoulderLocations />
     <WrinklyDoors />

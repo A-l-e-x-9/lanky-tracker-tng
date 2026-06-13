@@ -1,7 +1,7 @@
 import { useTinyMedalInLogic, useTinyMedalOutLogic } from '@renderer/hooks/isles/medals/tiny'
 import { useCbCount } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
-import { IslesMedalPool, HalfMedalPool } from '@renderer/components/pools/BananaMedals'
+import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const TinyMedal: React.FC = () => {
   const inLogic = useTinyMedalInLogic()
@@ -10,7 +10,7 @@ const TinyMedal: React.FC = () => {
   const halfMedal = Math.floor(cbCount / 2)
 
   return (
-  <IslesMedalPool>
+  <>
     <IslesCheck
       id={103}
       name="Tiny's Medal"
@@ -27,7 +27,7 @@ const TinyMedal: React.FC = () => {
       canGetBreak={outLogic >= halfMedal}
     />
     </HalfMedalPool>
-  </IslesMedalPool>
+  </>
   )
 }
 
