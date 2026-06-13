@@ -14225,7 +14225,7 @@ const ChunkyMedal$7 = () => {
   const outLogic = useChunkyMedalOutLogic$7();
   const cbCount = useCbCount();
   const halfMedal = Math.floor(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -14280,7 +14280,7 @@ const DiddyMedal$7 = () => {
   const outLogic = useDiddyMedalOutLogic$7();
   const cbCount = useCbCount();
   const halfMedal = Math.floor(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -14332,7 +14332,7 @@ const DkMedal$7 = () => {
   const outLogic = useDkMedalOutLogic$7();
   const cbCount = useCbCount();
   const halfMedal = Math.floor(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -14383,7 +14383,7 @@ const LankyMedal$7 = () => {
   const outLogic = useLankyMedalOutLogic$7();
   const cbCount = useCbCount();
   const halfMedal = Math.floor(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -14423,7 +14423,7 @@ const TinyMedal$7 = () => {
   const outLogic = useTinyMedalOutLogic$7();
   const cbCount = useCbCount();
   const halfMedal = Math.floor(cbCount / 2);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IslesCheck,
       {
@@ -18407,13 +18407,13 @@ const IslesRegionChecks = () => {
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$7, {})
-      ] }),
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingGroundsChecks, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainChecks, {}),
@@ -18646,13 +18646,13 @@ const ClassicChecks$7 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations$7, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaLocations, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IslesMedalPool, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$7, {})
-      ] }),
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderLocations$3, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(WrinklyDoors, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$7, {}),
