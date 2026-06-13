@@ -12,7 +12,7 @@ export const useFastArcade = (): boolean =>
 /**
  * Does the mermaid only need one pearl for her check, or five?
  * @returns true if the mermaid only needs one pearl.
- * Alex update: Since V4, the Mermaid can require 2, 3, or 4 Pearls for her check. Updated this variable to reflect that...
+ * Alex update: Since V4, the Mermaid can require 2, 3, 4, or perhaps no Pearls for her check. Updated this variable to reflect that...
  */
 export const useFastMermaid = (): number =>
   useDonkStore(useShallow((state) => state.fastChecks.galleonMermaid))

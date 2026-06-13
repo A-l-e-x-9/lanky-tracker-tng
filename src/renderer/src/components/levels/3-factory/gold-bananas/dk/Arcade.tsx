@@ -1,11 +1,11 @@
-import CompanyPool from '@renderer/components/pools/Company'
+import { NintendoCoinPool } from '@renderer/components/pools/Company'
 import { useDkCoin } from '@renderer/hooks/factory'
 import FactoryCheck from '../../check'
 
 const NintendoCoin: React.FC = () => {
 const howHigh = useDkCoin()
 return (
-  <CompanyPool>
+  <NintendoCoinPool>
     <FactoryCheck
       id={3005}
       name="DK Arcade Round 2"
@@ -13,7 +13,7 @@ return (
       canGetLogic={howHigh.in}
       canGetBreak={howHigh.out}
     />
-  </CompanyPool>
+  </NintendoCoinPool>
 )
 }
 

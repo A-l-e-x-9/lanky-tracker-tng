@@ -1,6 +1,7 @@
 import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/hooks/factory/medals/dk'
 import { useCbCount } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
+import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const DkMedal: React.FC = () => {
   const inLogic = useDkMedalInLogic()
@@ -17,6 +18,7 @@ const DkMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <HalfMedalPool>
     <FactoryCheck
       id={3200}
       name="DK's Half-Medal"
@@ -24,6 +26,7 @@ const DkMedal: React.FC = () => {
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />
+    </HalfMedalPool>
   </>
   )
 }
