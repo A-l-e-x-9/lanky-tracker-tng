@@ -29,6 +29,8 @@ import keyIcon from '../../assets/images/key.png'
 import blueprintIcon from '../../assets/images/lanky_bp.png'
 import grapeIcon from '../../assets/images/lanky_gun.png'
 import companyCoinIcon from '../../assets/images/n64rw_coin.png'
+import nintendoCoinIcon from '../../assets/images/n64rw_coin_rwbw.png'
+import rarewareCoinIcon from '../../assets/images/n64rw_coin_n64bw.png'
 import pearlIcon from '../../assets/images/pearl.png'
 import rainbowCoinIcon from '../../assets/images/rainbowcoin.png'
 import bananaMedalIcon from '../../assets/images/settings/bananamedal.gif'
@@ -143,6 +145,14 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
+              <p>Half Medals?</p>
+              <SimpleIcon
+                imgUrl={halfMedalIcon}
+                title="Puts checks in the pool for getting half the required amount of CB's for a Medal, rounded down."
+                storeKey="poolHalfMedals"
+                prefix="settings"
+                updateItem={setSetting}
+              />
               <p>Isles Banana Medals?</p>
               <SimpleIcon
                 imgUrl={bananaMedalIcon}
@@ -199,19 +209,35 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
-              <p>Pearls & Bean?</p>
+              <p>Pearls?</p>
               <SimpleIcon
-                imgUrl={beanIcon}
-                title="Puts the Galleon clam checks in the pool, as well as your second reward for clearing Tiny's tree stump check in Forest."
-                storeKey="poolMisc"
+                imgUrl={pearlIcon}
+                title="Puts the Galleon clam checks in the pool."
+                storeKey="poolPearls"
                 prefix="settings"
                 updateItem={setSetting}
               />
-              <p>Company Coins?</p>
+              <p>The Bean™?</p>
               <SimpleIcon
-                imgUrl={companyCoinIcon}
-                title="Puts the Jetpac and DK Arcade checks in the pool."
-                storeKey="poolCompanyCoins"
+                imgUrl={beanIcon}
+                title="Puts the second reward for clearing Tiny's Forest Area 4 tree stump in the pool."
+                storeKey="poolBean"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Nintendo Coin?</p>
+              <SimpleIcon
+                imgUrl={nintendoCoinIcon}
+                title="Puts DK Arcade in the pool."
+                storeKey="poolNintendoCoin"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Rareware Coin?</p>
+              <SimpleIcon
+                imgUrl={rarewareCoinIcon}
+                title="Puts Jetpac in the pool."
+                storeKey="poolRarewareCoin"
                 prefix="settings"
                 updateItem={setSetting}
               />
@@ -368,7 +394,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Fairies</p>
               <SimpleRadioIcon
                 imgUrl={fairyIcon}
-                title="Highlights Banana Fairies in a red background. Also highlights Fairy checks in red text if Fairies are not in the rotation."
+                title="Highlights Banana Fairies in a red background."
                 storeKey="fairies"
                 prefix="winCondition"
                 updateItem={setWinCondition}
@@ -750,10 +776,6 @@ const GeneratorSettings: React.FC = () => {
                 setCount={setFastCheck}
                 maxValue={5} //I don't currently know if the Randomizer allows the Mermaid to demand more than five Pearls if you allotted more with the Item Count Modifier; not currently putting the "capRemoved" modifier here
               />
-            </>
-            <h3>Glitch Logic Settings</h3>
-            <>
-            <p className="full-grid"><strong>NOW UNDER CONSTRUCTION. AGAIN.</strong></p>
             </>
             <h3>UI Settings</h3>
             <>
