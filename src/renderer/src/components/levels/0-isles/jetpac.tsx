@@ -1,5 +1,3 @@
-import { useShallow } from 'zustand/react/shallow'
-import useDonkStore from '@renderer/store'
 import { RarewareCoinPool } from '@renderer/components/pools/Company'
 import { useCurrentBananaMedalCount } from '@renderer/hooks/consumables'
 import { useAnyKong, useCranky } from '@renderer/hooks/kongs'
@@ -11,7 +9,6 @@ const JetpacCheck: React.FC = () => {
   const jetpacCount = useJetpacCount()
   const anyKong = useAnyKong()
   const cranky = useCranky()
-  const shuffledShops = useDonkStore(useShallow((state) => state.shuffledIslesShops.islesSwitchUp))
   return (
     <RarewareCoinPool>
       <IslesCheck
