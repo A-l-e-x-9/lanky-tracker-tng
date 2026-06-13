@@ -524,6 +524,7 @@ interface SettingCollection {
    * 0: None
    * 1: Isles
    * 2: All
+   * ALEX EDIT: TO DO: At some point in Season 4 or 5's development, "Isles" was split into "Isles" and "Isles with Helm Lobby". The Isles option currently includes Helm Lobby. Should probably make an option to exclude...
    */
   bananaportOpen: BananaportRange
   /**
@@ -542,7 +543,7 @@ interface SettingCollection {
   /**
    * How far do we start in Helm?
    * 0: "Vanilla" setting in Randomizer (back of the level)
-   * 1: "Skip Start" (start at the Blast-O-Matic's room with the doors to each Kong's section pre-opened and the Primate Punch gates taken down)
+   * 1: "Skip Start" (start at the Blast-O-Matic's room. The doors to each Kong's section were pre-opened and the Primate Punch gates taken down until sometime in Season 5, when those became barrier options.)
    * 2: "Skip All" (Blast-O-Matic is already deactivated and you start at the nav room/Crown Door area)
    */
   helmAccess: BananaportRange
@@ -570,6 +571,8 @@ interface SettingCollection {
    * Are the banana medal rewards for collecting enough colored bananas shuffled?
    */
   poolBananaMedals: boolean
+  /*Are Half-Medals in the pool?*/
+  poolHalfMedals: boolean
   /**
    * Are the dirt patches shuffled elsewhere in the levels?
    */
@@ -579,9 +582,13 @@ interface SettingCollection {
    */
   poolCrowns: boolean
   /**
-   * Are the misc items (pearls nad beans) shuffled?
+   * Are pearls shuffled?
    */
-  poolMisc: boolean
+  poolPearls: boolean
+  /**
+   * Is The Bean™ shuffled?
+   */
+  poolBean: boolean
   /**
    * Are the melon crate contents shuffled?
    */
@@ -628,7 +635,8 @@ interface SettingCollection {
   /**
    * Are the Nintendo Coin and Rareware Coin in the shuffle?
    */
-  poolCompanyCoins: boolean
+  poolNintendoCoin: boolean
+  poolRarewareCoin: boolean
   /**
    * Are the boss keys shuffled?
    */
@@ -647,27 +655,39 @@ interface SettingCollection {
   hardShooting: boolean
   /**
    * Are the lobbies already opened without needing to find a key?
-   *
-   * Note that all keys are still required to fight K. Rool.
    */
   openLobbies: boolean
   /**
    * Does the DK Phase of the K. Rool fight require Barrel Blast? (Known as "Balanced K. Rool Phases" in Season 3, but in Season 4, the Blast requirement became a separate thing and it became possible to require any of all three Slams for Chunky's phase.)
    */
   balancedRoolPhases: boolean
+  //What's the Simian Slam level for Chunky Phase of K. Rool?
   chunkySlamLevel: SlamRange
+  //Are Wrinkly's doors shuffled? (TO DO: Implement locking them.)
   poolWrinkly: boolean
+  //Are the Boulders in the pool?
   poolBoulders: boolean
+  //Are Kong cage checks in the pool?
   poolKongs: boolean
+  //Are Isles Banana Medals in the pool?
   poolIslesMedals: boolean
+  //Is Lanky required to shoot a balloon for his phase of K. Rool rather than play his Trombone?
   betaLankyPhase: boolean
+  //Does the water in the game act like lava, slowly damaging all who swim in it?
   waterIsLava: boolean
+  //Is "Angry Caves" on, or are you playing the vanilla game/is "Calm Caves" off and you haven't yet killed the giant Kosha?
   angyKosha: boolean
+  //What locks the door to K. Rool's throne?
   helmItem1: CrownRange
+  //How much of that item do you need?
   helmItemNum1: GoldBananaRange
+  //What locks the door to Key 8?
   helmItem2: CrownRange
+  //How much of that item do you need?
   helmItemNum2: GoldBananaRange
+  //Are DK Portals shuffled?
   shuffleDKPortals: boolean
+  //Is the dreaded Loading Zone Randomizer on?
   shuffleLoadingZones: boolean
 }
 
