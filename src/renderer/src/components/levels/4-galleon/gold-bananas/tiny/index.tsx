@@ -8,7 +8,7 @@ import Tiny2Ship from './Switch'
 
 const TinyBananas: React.FC = () => {
 const isPearlSeed = useDonkStore(useShallow((state) => state.winCondition.pearls)) ? 'foolish' : ''
-const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolMisc)) ? '' : 'foolish'
+const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolPearls)) ? '' : 'foolish'
 return (
 <>
   <div className="grid">

@@ -1,6 +1,7 @@
 import { useDiddyMedalInLogic, useDiddyMedalOutLogic } from '@renderer/hooks/galleon/medals/diddy'
 import { useCbCount } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
+import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const DiddyMedal: React.FC = () => {
   const inLogic = useDiddyMedalInLogic()
@@ -17,6 +18,7 @@ const DiddyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <HalfMedalPool>
     <GalleonCheck
       id={4201}
       name="Diddy's Half-Medal"
@@ -24,6 +26,7 @@ const DiddyMedal: React.FC = () => {
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />
+    </HalfMedalPool>
   </>
   )
 }

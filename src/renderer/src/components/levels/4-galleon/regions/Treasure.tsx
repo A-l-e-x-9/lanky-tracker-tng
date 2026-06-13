@@ -10,7 +10,7 @@ const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 const isPearlSeed = useDonkStore(useShallow((state) => state.winCondition.pearls)) ? 'foolish' : ''
-const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolMisc)) ? '' : 'foolish'
+const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolPearls)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
