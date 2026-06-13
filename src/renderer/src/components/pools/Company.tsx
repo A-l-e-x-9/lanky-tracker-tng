@@ -1,6 +1,7 @@
-import { usePoolCompanyCoins } from '@renderer/hooks/settings'
+import { usePoolNintendoCoin, usePoolRarewareCoin } from '@renderer/hooks/settings'
 
-const CompanyPool: React.FC<React.PropsWithChildren> = ({ children }) =>
-  usePoolCompanyCoins() ? <>{children}</> : null
+export const NintendoCoinPool: React.FC<React.PropsWithChildren> = ({ children }) =>
+  usePoolNintendoCoin() ? <>{children}</> : null
 
-export default CompanyPool
+export const RarewareCoinPool: React.FC<React.PropsWithChildren> = ({ children }) =>
+  usePoolRarewareCoin() ? <>{children}</> : null
