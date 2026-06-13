@@ -1,6 +1,7 @@
 import { useDiddyMedalInLogic, useDiddyMedalOutLogic } from '@renderer/hooks/isles/medals/diddy'
 import { useCbCount } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
+import { IslesMedalPool, HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const DiddyMedal: React.FC = (): JSX.Element => {
   const inLogic = useDiddyMedalInLogic()
@@ -9,7 +10,7 @@ const DiddyMedal: React.FC = (): JSX.Element => {
   const halfMedal = Math.floor(cbCount / 2)
 
   return (
-  <>
+  <IslesMedalPool>
     <IslesCheck
       id={101}
       name="Diddy's Medal"
@@ -17,6 +18,7 @@ const DiddyMedal: React.FC = (): JSX.Element => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <HalfMedalPool>
     <IslesCheck
       id={201}
       name="Diddy's Half-Medal"
@@ -24,7 +26,8 @@ const DiddyMedal: React.FC = (): JSX.Element => {
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />
-  </>
+    </HalfMedalPool>
+  </IslesMedalPool>
   )
 }
 
