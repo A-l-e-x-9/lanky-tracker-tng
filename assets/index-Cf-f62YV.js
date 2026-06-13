@@ -11607,8 +11607,9 @@ const useShuffledArenas = () => useDonkStore(useShallow((state) => state.setting
 const useChunkySlamLevel = () => useDonkStore(useShallow((state) => state.settings.chunkySlamLevel));
 const useIslesBananaMedals = () => {
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolIslesMedals));
+  const regularMedalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals));
   const medalWinCon = useDonkStore(useShallow((state) => state.winCondition.bananaMedals));
-  return medalsInRotation && !medalWinCon || medalWinCon && !medalsInRotation;
+  return medalsInRotation || medalWinCon && !regularMedalsInRotation;
 };
 const useHalfMedals = () => {
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolHalfMedals));
