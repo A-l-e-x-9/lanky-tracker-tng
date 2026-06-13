@@ -53,13 +53,11 @@ return (
 <>
   <div className="grid">
     <BananaMedalPool>
-      <IslesMedalPool>
       <DkMedal />
       <DiddyMedal />
       <LankyMedal />
       <TinyMedal />
       <ChunkyMedal />
-      </IslesMedalPool>
     </BananaMedalPool>
     <TrainingGroundsChecks />
   </div>

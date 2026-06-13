@@ -1,6 +1,7 @@
 import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/hooks/japes/medals/dk'
 import { useCbCount } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
+import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 /**
  * The logic of DK's Medal in Japes, wrapped neatly in this component.
@@ -21,6 +22,7 @@ const DkMedal: React.FC = (): JSX.Element => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <HalfMedalPool>
     <JapesCheck
       id={1200}
       name="DK's Half-Medal"
@@ -28,6 +30,7 @@ const DkMedal: React.FC = (): JSX.Element => {
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />
+    </HalfMedalPool>
   </>
   )
 }

@@ -1,6 +1,7 @@
 import { useDiddyMedalInLogic, useDiddyMedalOutLogic } from '@renderer/hooks/japes/medals/diddy'
 import { useCbCount } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
+import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const DiddyMedal: React.FC = (): JSX.Element => {
   const inLogic = useDiddyMedalInLogic()
@@ -17,6 +18,7 @@ const DiddyMedal: React.FC = (): JSX.Element => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <HalfMedalPool>
     <JapesCheck
       id={1201}
       name="Diddy's Half-Medal"
@@ -24,6 +26,7 @@ const DiddyMedal: React.FC = (): JSX.Element => {
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />
+    </HalfMedalPool>
   </>
   )
 }
