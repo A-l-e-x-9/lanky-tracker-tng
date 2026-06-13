@@ -42,8 +42,7 @@ const TreasureClams: React.FC = () => {
         canGetBreak={clams.out}
       />
     </PearlPool>
-  )  
-  }
+  )
 }
 
 export default TreasureClams
