@@ -1,6 +1,7 @@
 import { useLankyMedalInLogic, useLankyMedalOutLogic } from '@renderer/hooks/aztec/medals/lanky'
 import { useCbCount } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
+import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const LankyMedal: React.FC = () => {
   const inLogic = useLankyMedalInLogic()
@@ -17,6 +18,7 @@ const LankyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <HalfMedalPool>
     <AztecCheck
       id={2202}
       name="Lanky's Half-Medal"
@@ -24,6 +26,7 @@ const LankyMedal: React.FC = () => {
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />
+    </HalfMedalPool>
   </>
   )
 }
