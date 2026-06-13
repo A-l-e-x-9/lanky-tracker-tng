@@ -27,7 +27,7 @@ export const useIsSwitchsanity = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.isSwitchsanity))
 
 /**
- * Are the lobbies open at the start of the game, with keys only being needed for K. Rool?
+ * Are the lobbies open at the start of the game?
  * @returns true if the lobbies are already open without needing keys.
  */
 export const useOpenLobbies = (): boolean =>
@@ -41,9 +41,9 @@ export const useHardShooting = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.hardShooting))
 
 /**
- * Does each level's slam requirement get higher the further in the game we are?
+ * Does each level's slam requirement get higher the further in the game we are (or, from version 5 of the Randomizer onward, are the Slams randomized)?
  *
- * This depends on Lobby Shuffle: the lobbies in 5 onward require Super, and 7 onward require Super Duper.
+ * By default, the lobbies in 5 onward require Super, and 7 onward require Super Duper.
  * @returns true if the slam switches get more progressive.
  */
 export const useProgressiveSlams = (): boolean =>
@@ -128,19 +128,16 @@ export const usePoolMiniboss = (): boolean =>
  * Are the miscellaneous items in the rando pool?
  * @returns true if the misc. items are in the pool.
  */
-export const usePoolMisc = (): boolean =>
-  useDonkStore(useShallow((state) => state.settings.poolMisc))
-
 export const usePoolPearls = (): boolean => {
-  const beanAndPearlsInRotation = usePoolMisc()
+  const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolPearls))
   const pearlWinCon = useDonkStore(useShallow((state) => state.winCondition.pearls))
-  return pearlWinCon && !beanAndPearlsInRotation
+  return pearlsInRotation || (pearlWinCon && !pearlsInRotation)
 }
 
 export const useBean = (): boolean => {
-  const beanAndPearlsInRotation = usePoolMisc()
+  const beanInRotation = useDonkStore(useShallow((state) => state.settings.poolBean))
   const beanWinCon = useDonkStore(useShallow((state) => state.winCondition.theBean))
-  return beanWinCon && !beanAndPearlsInRotation
+  return beanInRotation || (beanWinCon && !beanInRotation)
 }
 
 /**
@@ -225,9 +222,11 @@ export const usePoolBananaMedals = (): boolean => {
  * Are the company coins in the rando pool?
  * @returns true if the company coins are in the pool.
  */
-export const usePoolCompanyCoins = (): boolean =>
-  useDonkStore(useShallow((state) => state.settings.poolCompanyCoins))
-
+export const usePoolNintendoCoin = (): boolean =>
+  useDonkStore(useShallow((state) => state.settings.poolNintendoCoin))
+export const usePoolRarewareCoin = (): boolean =>
+  useDonkStore(useShallow((state) => state.settings.poolRarewareCoin))
+  
 /**
  * Are the dirt locations shuffled around in this seed?
  * @returns true if the dirt locations are shuffled this seed.
@@ -270,6 +269,11 @@ export const useIslesBananaMedals = (): boolean => {
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolIslesMedals))
   const medalWinCon = useDonkStore(useShallow((state) => state.winCondition.bananaMedals))
   return medalsInRotation || (medalWinCon && !medalsInRotation)
+}
+
+export const useHalfMedals = (): boolean => {
+  const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolHalfMedals))
+  return medalsInRotation
 }
 
 export const usePoolKongs = (): boolean =>
