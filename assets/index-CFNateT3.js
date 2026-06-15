@@ -11183,6 +11183,7 @@ const initialPortal = {
     chunkyCryptPortal: false,
     mausoleumPortal: false,
     ballroomPortal: false,
+    libraryBackPortal: false,
     windTunnelPortal: false
   }
 };
@@ -45126,6 +45127,7 @@ const useDKCryptPortal = () => useDonkStore(useShallow((state) => state.shuffled
 const useChunkyCryptPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.chunkyCryptPortal));
 const useMausoleumPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.mausoleumPortal));
 const useBallroomPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal));
+const useLibraryBackPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.libraryBackPortal));
 const useWindTunnelPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.windTunnelPortal));
 const useReachCastleFromCrypt = () => {
   const DKCrypt = useDKCryptPortal();
@@ -45265,9 +45267,10 @@ const useDkRoomGb = () => {
   const slam = useSlamCastle();
   const dk2 = useDk();
   const strong = useStrong();
+  const DKPortal = useLibraryBackPortal();
   return {
-    in: inStage.in && slam && strong,
-    out: inStage.out && slam && dk2
+    in: (inStage.in && slam || DKPortal) && strong,
+    out: (inStage.out && slam || DKPortal) && dk2
     //Why DK? Because, assuming this is indeed the library GB, getting hit by the books triggers the "getting up" animation, same as if you'd been hit by a Klobber, and DK has none. The other Kongs get absolutely combo'd and rekt by the books! xD
   };
 };
@@ -55269,6 +55272,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in Diddy's ballroom.",
                   storeKey: "ballroomPortal",
+                  prefix: "shuffledCastlePortals",
+                  updateItem: setCastlePortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "DK's Library room, at the back" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is where the flying books are.",
+                  storeKey: "libraryBackPortal",
                   prefix: "shuffledCastlePortals",
                   updateItem: setCastlePortal
                 }
