@@ -1237,6 +1237,7 @@ interface castlePortals {
   chunkyCryptPortal: boolean
   mausoleumPortal: boolean
   ballroomPortal: boolean
+  libraryBackPortal: boolean
   windTunnelPortal: boolean
 }
 

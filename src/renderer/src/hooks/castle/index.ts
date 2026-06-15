@@ -78,6 +78,9 @@ export const useMausoleumPortal = (): boolean =>
 //Is the DK Portal in the Ballroom?
 export const useBallroomPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal))
+//Is the DK Portal in the back portion of the Library, normally locked by an enemy gauntlet and a Slam?
+export const useLibraryBackPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCastlePortals.libraryBackPortal))
 //Is the DK Portal in Lanky's Wind Tunnel room?
 export const useWindTunnelPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.windTunnelPortal))
@@ -240,9 +243,10 @@ export const useDkRoomGb = (): LogicBool => {
   const slam = useSlamCastle()
   const dk = useDk()
   const strong = useStrong()
+  const DKPortal = useLibraryBackPortal()
   return {
-    in: inStage.in && slam && strong,
-    out: inStage.out && slam && dk //Why DK? Because, assuming this is indeed the library GB, getting hit by the books triggers the "getting up" animation, same as if you'd been hit by a Klobber, and DK has none. The other Kongs get absolutely combo'd and rekt by the books! xD
+    in: ((inStage.in && slam) || DKPortal) && strong,
+    out: ((inStage.out && slam) || DKPortal) && dk //Why DK? Because, assuming this is indeed the library GB, getting hit by the books triggers the "getting up" animation, same as if you'd been hit by a Klobber, and DK has none. The other Kongs get absolutely combo'd and rekt by the books! xD
   }
 }
 

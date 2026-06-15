@@ -65,6 +65,7 @@ export const initialPortal: PortalState = {
     chunkyCryptPortal: false,
     mausoleumPortal: false,
     ballroomPortal: false,
+    libraryBackPortal: false,
     windTunnelPortal: false
   }
 }

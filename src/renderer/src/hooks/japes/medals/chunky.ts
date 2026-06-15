@@ -30,7 +30,7 @@ const useChunkyMedalCommonLogic = (): number => {
     return 100
   }
 
-  let bananas = 5 // by underground (5), Funky's roof (10)
+  let bananas = 5 // by underground (5)
   if (climbing || bananaport) {
     bananas += 10 //Funky's roof (10)
   }
