@@ -66,6 +66,9 @@ export const useTreePortal = (): boolean =>
 //Is the DK Portal behind Chunky's room in the big tree?
 export const useTreeChunkyPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.treeChunkyPortal))
+//Is the DK Portal in the Crypt's entrance or the strip of land immediately outside of it?
+export const useCryptOutsidePortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCastlePortals.cryptOutsidePortal))
 //Is the DK Portal in DK's Crypt room?
 export const useDKCryptPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.DKCryptPortal))
@@ -88,10 +91,11 @@ export const useWindTunnelPortal = (): boolean =>
 
 /*An Alex addition: If shuffled DK Portals is on, and we're given a Portal in the Crypt, or outside on the lowest level of Castle, can we get up so that we can play the rest of the level? You'd be surprised, for me, how often the answer is "no", hence that warning in big red text that appears whenever you click on the Castle tab.*/
 export const useReachCastleFromCrypt = (): LogicBool => {
+  const main = useCryptOutsidePortal()
   const DKCrypt = useDKCryptPortal()
   const chunkyCrypt = useChunkyCryptPortal()
   const mausoleum = useMausoleumPortal()
-  const DKPortal = DKCrypt || chunkyCrypt || mausoleum
+  const DKPortal = main || DKCrypt || chunkyCrypt || mausoleum
   const hasClimbing = useClimbing()
   const highGrab = useHighGrab()
   if (DKPortal) {

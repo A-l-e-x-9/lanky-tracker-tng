@@ -9,13 +9,13 @@ The instructions on how to use this thing can be found in "instructions.html".
 As with the original, this tracker was written in JavaScript, primarily with an [electron-vite](https://electron-vite.org/) setup in addition to Facebook/the Meta Group's [React](https://reactjs.org/) and Microsoft's [TypeScript](https://www.typescriptlang.org/). Obviously, you need JavaScript in order to use it.
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
+- Implement the "Half Medal Percentage" feature. Right now, a Half Medal can only be quite literally half of the number of CB's you need for a full Medal, because until circa June 22, 2026, it wasn't customizable.
 - Recolor the pad and barrel icons to match the "color-coded Kong Pads/Barrels" option in the Randomizer.
 - Currently, the "Bonuses" and "K. Rool's Challenge" win conditions don't account for the Oil Drums in Hideout Helm, so if your current seed's win con is >43 Bonus Barrels, you're outta luck.
 - Right now, the B. Locker barriers available in the tracker can only accept bananas, so if you're playing a "Chaos B. Lockers" seed (where he often requires things other than bananas so that you can get into the level), you're out of luck. :(
 - Make it so that you can just type how many bananas, etc., you have in the "count" selectors (such as "Colored bananas needed for medal" in Settings) so you don't have to click so much.
 - Similarly, make it so that for the shuffled Arenas, Crates, Dirts, Fairies, and eventually Kasplats and Colored Bananas, there's only one or two checks each, and you can use a drop-down list or something to choose where they are.
 - Make the left side of the tracker sticky...either Alex really sucks at using the "position: sticky;" CSS command, or something else about the tracker's design is stopping it from being sticky.
-- Change the progressive Slam settings to account for the fact that you can now customize how progressive they are as of the Version 5 Dev Randomizer.
 - Alex took out the "Region Hints" section of the original Tracker because he thought it was poorly done. Reimplement it?
 - Need an easy way to reset the tracker if need be. (Currently, in Firefox, you have to do it by right-clicking, go to "Inspect", click the "Storage" tab, then on "Local Storage", then on the website's name, and deleting the "donk-storage" entry.)
 
@@ -26,11 +26,7 @@ If you know the answer to any of these (or any of the above that Alex hasn't don
 - Alex also took out the "presets" dropdown underneath the Switchsanity settings, and will probably NOT re-implement this.
 - Any way to take the Loading Zone Randomizer into account...you're completely on your own there. At worst, this tracker was made for Complex Level Order seeds with the possibility of Hideout Helm being shuffled.
   - Putting in the rarely-seen feature that allows you to change where your start location is (and makes the relevant pause menu feature say "Exit to Spawn" instead of "Exit to Isles")
-- Could possibly add in the new "Item Count Modifier" feature, but I don't think it'll have much effect.
-- Snide Rewards and the Max Snide Reward Limit, due to redundancy.
-  - And on that note, progressive Wrinkly hints, something that's been a feature since at least Season 3
-- Alex attempted to implement glitch logic. The feature was intended to be in the settings, between "Fast Check Settings" and "UI Settings", and the intent was for you to click on buttons to set whatever glitches were in your seed if you made one with the "Glitch Logic" setting. Any checks affected by the buttons you clicked on would turn pink to indicate that they could be gotten by using the indicated glitch, until you could legitimately get them, at which point they would turn green. But not only is glitch logic VERY subjective, Alex doesn't really know how to do many of the glitches the Randomizer can make seeds with, and he doesn't have a very good understanding of what each glitch enables. Furthermore, when he attempted to put in what checks B. Locker skipping enabled, the tracker's code became somewhat aggressive and skipped over the yellow check code, and at one point, he completely wrecked the Aztec checks and made them all red even when they should have been green. So, no glitch logic checks.
-  - Taking this out also removed a reference to [the Touhou Project](https://en.wikipedia.org/wiki/Touhou_Project)...the icon for the Skew Glitch was famed flipper [Seija Kijin](https://en.touhouwiki.net/wiki/Seija_Kijin). :(
+- Implementing Glitch Logic.
 
 # Development
 

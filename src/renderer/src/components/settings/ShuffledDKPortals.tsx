@@ -421,6 +421,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledCastlePortals"
                 updateItem={setCastlePortal}
             />
+            <p>Bottom floor/Crypt entrance</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is at the Crypt area's entrance or the area immediately outside of it."
+                storeKey="cryptOutsidePortal"
+                prefix="shuffledCastlePortals"
+                updateItem={setCastlePortal}
+            />
             <p>DK's Crypt room</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}
