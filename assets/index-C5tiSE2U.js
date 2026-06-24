@@ -11179,6 +11179,7 @@ const initialPortal = {
     vanilla: true,
     treePortal: false,
     treeChunkyPortal: false,
+    cryptOutsidePortal: false,
     DKCryptPortal: false,
     chunkyCryptPortal: false,
     mausoleumPortal: false,
@@ -45123,6 +45124,7 @@ const usePlayCastle = () => {
 const useSlamCastle = () => useSlamLevel("Creepy Castle");
 const useTreePortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.treePortal));
 const useTreeChunkyPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.treeChunkyPortal));
+const useCryptOutsidePortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.cryptOutsidePortal));
 const useDKCryptPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.DKCryptPortal));
 const useChunkyCryptPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.chunkyCryptPortal));
 const useMausoleumPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.mausoleumPortal));
@@ -45130,10 +45132,11 @@ const useBallroomPortal = () => useDonkStore(useShallow((state) => state.shuffle
 const useLibraryBackPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.libraryBackPortal));
 const useWindTunnelPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.windTunnelPortal));
 const useReachCastleFromCrypt = () => {
+  const main = useCryptOutsidePortal();
   const DKCrypt = useDKCryptPortal();
   const chunkyCrypt = useChunkyCryptPortal();
   const mausoleum = useMausoleumPortal();
-  const DKPortal = DKCrypt || chunkyCrypt || mausoleum;
+  const DKPortal = main || DKCrypt || chunkyCrypt || mausoleum;
   const hasClimbing = useClimbing();
   const highGrab = useHighGrab();
   if (DKPortal) {
@@ -55228,6 +55231,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in Chunky's room in the big tree.",
                   storeKey: "treeChunkyPortal",
+                  prefix: "shuffledCastlePortals",
+                  updateItem: setCastlePortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Bottom floor/Crypt entrance" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at the Crypt area's entrance or the area immediately outside of it.",
+                  storeKey: "cryptOutsidePortal",
                   prefix: "shuffledCastlePortals",
                   updateItem: setCastlePortal
                 }
