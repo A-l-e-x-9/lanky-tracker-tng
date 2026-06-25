@@ -11134,6 +11134,7 @@ const initialPortal = {
   shuffledAztecPortals: {
     vanilla: true,
     firstHalfPortal: false,
+    tinyTempleFrontPortal: false,
     tinyTempleIcePortal: false,
     tinyTemplePoolPortal: false,
     secondHalfPortal: false,
@@ -23044,7 +23045,7 @@ const usePlayAztec = () => {
     out: canEnter.out
   };
 };
-const useFirstHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.firstHalfPortal));
+const useTinyTempleFrontPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleFrontPortal));
 const useTinyTempleIcePortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleIcePortal));
 const useTinyTemplePoolPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTemplePoolPortal));
 const useSecondHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal));
@@ -23060,9 +23061,9 @@ const useAztecFront = () => {
   const aztecPlay = usePlayAztec();
   const vine = useVine();
   const twirl = useTwirl();
-  const DKPortal = useFirstHalfPortal();
+  const DKPortal = useDonkStore(useShallow((state) => state.shuffledAztecPortals.vanilla));
   return {
-    in: aztecPlay.in && (vine || twirl || DKPortal),
+    in: aztecPlay.in && (vine || twirl || !DKPortal),
     out: aztecPlay.out
   };
 };
@@ -23101,7 +23102,8 @@ const useAztecTinyTemple = () => {
   const properGun = peanut || grape || feather || pineapple;
   const DKPortal = useTinyTempleIcePortal();
   const DKPortal2 = useTinyTemplePoolPortal();
-  const hasAPortal = DKPortal || DKPortal2;
+  const DKPortal3 = useTinyTempleFrontPortal();
+  const hasAPortal = DKPortal || DKPortal2 || DKPortal3;
   return {
     in: aztecFront.in && properGun || hasAPortal,
     out: aztecFront.out && properGun || hasAPortal
@@ -54831,6 +54833,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is anywhere past the two pits of quicksand needing Vines or Ponytail Twirl to get past.",
                   storeKey: "firstHalfPortal",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Tiny Temple entrance" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the entrance portion of the Tiny Temple.",
+                  storeKey: "tinyTempleFrontPortal",
                   prefix: "shuffledAztecPortals",
                   updateItem: setAztecPortal
                 }
