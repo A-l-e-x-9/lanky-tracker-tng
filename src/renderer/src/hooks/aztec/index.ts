@@ -59,6 +59,9 @@ export const usePlayAztec = (): LogicBool => {
 //Is the DK Portal past the two quicksand pits blocking the first half of the level?
 export const useFirstHalfPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.firstHalfPortal))
+//Is the DK Portal in the front portion of the Tiny Temple?
+export const useTinyTempleFrontPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleFrontPortal))
 //Is the DK Portal behind the Guitar Pad needed to melt the ice in Tiny Temple?
 export const useTinyTempleIcePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleIcePortal))
@@ -99,9 +102,9 @@ export const useAztecFront = (): LogicBool => {
   const aztecPlay = usePlayAztec()
   const vine = useVine()
   const twirl = useTwirl()
-  const DKPortal = useFirstHalfPortal()
+  const DKPortal = useDonkStore(useShallow((state) => state.shuffledAztecPortals.vanilla))
   return {
-    in: aztecPlay.in && (vine || twirl || DKPortal),
+    in: aztecPlay.in && (vine || twirl || !DKPortal),
     out: aztecPlay.out
   }
 }
@@ -157,7 +160,8 @@ export const useAztecTinyTemple = (): LogicBool => {
   const properGun = peanut || grape || feather || pineapple
   const DKPortal = useTinyTempleIcePortal()
   const DKPortal2 = useTinyTemplePoolPortal()
-  const hasAPortal = DKPortal || DKPortal2
+  const DKPortal3 = useTinyTempleFrontPortal()
+  const hasAPortal = DKPortal || DKPortal2 || DKPortal3
   return {
     in: (aztecFront.in && properGun) || hasAPortal,
     out: (aztecFront.out && properGun) || hasAPortal

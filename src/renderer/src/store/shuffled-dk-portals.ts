@@ -16,6 +16,7 @@ export const initialPortal: PortalState = {
   shuffledAztecPortals: {
     vanilla: true,
     firstHalfPortal: false,
+    tinyTempleFrontPortal: false,
     tinyTempleIcePortal: false,
     tinyTemplePoolPortal: false,
     secondHalfPortal: false,
