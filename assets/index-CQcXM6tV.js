@@ -45482,8 +45482,11 @@ const useLonelyKasplat = () => {
 };
 const useDungeonKasplat = () => {
   const inStage = usePlayCastle();
+  const waterIsLava = useDonkStore(useShallow((state) => state.settings.waterIsLava));
+  const hasDK = useDk();
+  const hasTwirl = useTwirl();
   return {
-    in: inStage.in,
+    in: inStage.in && (!waterIsLava || waterIsLava && (hasDK || hasTwirl)),
     out: inStage.out
   };
 };
