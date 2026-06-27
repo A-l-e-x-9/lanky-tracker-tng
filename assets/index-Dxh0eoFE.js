@@ -11144,6 +11144,7 @@ const initialPortal = {
     vanilla: true,
     portalInRAndD: false,
     storagePortal: false,
+    powerHutPortal: false,
     upperProdPortal: false,
     crusherPortal: false,
     freeChunkyPortal: false,
@@ -28457,6 +28458,7 @@ const usePlayFactory = () => {
 };
 const useRAndDPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.portalInRAndD));
 const useStoragePortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.storagePortal));
+const usePowerHutPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.powerHutPortal));
 const useArcadePortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.arcadePortal));
 const useUpperProdPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.upperProdPortal));
 const useFreeChunkyPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.freeChunkyPortal));
@@ -28517,7 +28519,8 @@ const useFoyerFromStorage = () => {
   const crusherPortal = useCrusherPortal();
   const upperProdPortal = useUpperProdPortal();
   const freeChunkyPortal = useFreeChunkyPortal();
-  const startAtBottom = storagePortal || arcadePortal || upperProdPortal || crusherPortal || freeChunkyPortal;
+  const powerHutPortal = usePowerHutPortal();
+  const startAtBottom = storagePortal || arcadePortal || upperProdPortal || crusherPortal || freeChunkyPortal || powerHutPortal;
   const climbing = useClimbing();
   const warpAll = useBananaportAll();
   return {
@@ -28626,9 +28629,10 @@ const useDkHutGb = () => {
   const productionPower = useDonkStore(
     useShallow((state) => state.removeBarriers.factoryProduction)
   );
+  const DKPortal = usePowerHutPortal();
   return {
-    in: hut.in && coconut && (productionPower || grab),
-    out: hut.out && coconut && (productionPower || grab)
+    in: hut.in && (coconut || DKPortal) && (productionPower || grab),
+    out: hut.out && (coconut || DKPortal) && (productionPower || grab)
   };
 };
 const useDkBlastGb$2 = () => {
@@ -54930,6 +54934,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in the lowest level.",
                   storeKey: "storagePortal",
+                  prefix: "shuffledFactoryPortals",
+                  updateItem: setFactoryPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In DK's Power Hut" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the power hut.",
+                  storeKey: "powerHutPortal",
                   prefix: "shuffledFactoryPortals",
                   updateItem: setFactoryPortal
                 }
