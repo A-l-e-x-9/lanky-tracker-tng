@@ -11184,6 +11184,7 @@ const initialPortal = {
     DKCryptPortal: false,
     chunkyCryptPortal: false,
     mausoleumPortal: false,
+    museumPortal: false,
     ballroomPortal: false,
     libraryBackPortal: false,
     windTunnelPortal: false
@@ -45130,6 +45131,7 @@ const useCryptOutsidePortal = () => useDonkStore(useShallow((state) => state.shu
 const useDKCryptPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.DKCryptPortal));
 const useChunkyCryptPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.chunkyCryptPortal));
 const useMausoleumPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.mausoleumPortal));
+const useMuseumPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.museumPortal));
 const useBallroomPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal));
 const useLibraryBackPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.libraryBackPortal));
 const useWindTunnelPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.windTunnelPortal));
@@ -45198,9 +45200,10 @@ const useChunkyRoomGb = () => {
   const slam = useSlamCastle();
   const boulder = useBoulderTech();
   const punch = usePunch();
+  const DKPortal = useMuseumPortal();
   return {
-    in: inStage.in && slam && boulder && punch,
-    out: inStage.out && slam && boulder && punch
+    in: inStage.in && (slam || DKPortal) && boulder && punch,
+    out: inStage.out && (slam || DKPortal) && boulder && punch
   };
 };
 const useChunkyCryptGb = () => {
@@ -55288,6 +55291,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in Lanky and Tiny's mausoleum in the Crypt area.",
                   storeKey: "mausoleumPortal",
+                  prefix: "shuffledCastlePortals",
+                  updateItem: setCastlePortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Chunky's Museum" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Chunky's museum room, except for either room accessible by Monkeyport.",
+                  storeKey: "museumPortal",
                   prefix: "shuffledCastlePortals",
                   updateItem: setCastlePortal
                 }
