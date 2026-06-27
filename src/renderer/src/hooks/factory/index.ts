@@ -54,6 +54,9 @@ export const useRAndDPortal = (): boolean =>
 //Is the DK Portal in Storage or the lowest level of Prod Room?
 export const useStoragePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledFactoryPortals.storagePortal))
+//Is the DK Portal in DK's Power Hut?
+export const usePowerHutPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledFactoryPortals.powerHutPortal))
 //Is the DK Portal near the Arcade game?
 export const useArcadePortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledFactoryPortals.arcadePortal))
@@ -151,7 +154,8 @@ export const useFoyerFromStorage = (): LogicBool => {
   const crusherPortal = useCrusherPortal()
   const upperProdPortal = useUpperProdPortal()
   const freeChunkyPortal = useFreeChunkyPortal()
-  const startAtBottom = (storagePortal || arcadePortal || upperProdPortal || crusherPortal || freeChunkyPortal)
+  const powerHutPortal = usePowerHutPortal()
+  const startAtBottom = (storagePortal || arcadePortal || upperProdPortal || crusherPortal || freeChunkyPortal || powerHutPortal)
   const climbing = useClimbing()
   const warpAll = useBananaportAll()
   return {
@@ -271,9 +275,10 @@ export const useDkHutGb = (): LogicBool => {
   const productionPower = useDonkStore(
     useShallow((state) => state.removeBarriers.factoryProduction)
   )
+  const DKPortal = usePowerHutPortal()
   return {
-    in: hut.in && coconut && (productionPower || grab),
-    out: hut.out && coconut && (productionPower || grab)
+    in: hut.in && (coconut || DKPortal) && (productionPower || grab),
+    out: hut.out && (coconut || DKPortal) && (productionPower || grab)
   }
 }
 

@@ -1198,6 +1198,7 @@ interface factoryPortals {
   vanilla: boolean
   portalInRAndD: boolean
   storagePortal: boolean
+  powerHutPortal: boolean
   upperProdPortal: boolean
   crusherPortal: boolean
   freeChunkyPortal: boolean

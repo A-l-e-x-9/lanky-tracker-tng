@@ -26,6 +26,7 @@ export const initialPortal: PortalState = {
     vanilla: true,
     portalInRAndD: false,
     storagePortal: false,
+    powerHutPortal: false,
     upperProdPortal: false,
     crusherPortal: false,
     freeChunkyPortal: false,
