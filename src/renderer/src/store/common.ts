@@ -1238,6 +1238,7 @@ interface castlePortals {
   DKCryptPortal: boolean
   chunkyCryptPortal: boolean
   mausoleumPortal: boolean
+  museumPortal: boolean
   ballroomPortal: boolean
   libraryBackPortal: boolean
   windTunnelPortal: boolean

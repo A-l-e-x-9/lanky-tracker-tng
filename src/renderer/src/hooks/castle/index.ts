@@ -78,6 +78,9 @@ export const useChunkyCryptPortal = (): boolean =>
 //Is the DK Portal in the Mausoleum?
 export const useMausoleumPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.mausoleumPortal))
+//Is the DK Portal in Chunky's museum room?
+export const useMuseumPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCastlePortals.museumPortal))
 //Is the DK Portal in the Ballroom?
 export const useBallroomPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.ballroomPortal))
@@ -167,9 +170,10 @@ export const useChunkyRoomGb = (): LogicBool => {
   const slam = useSlamCastle()
   const boulder = useBoulderTech()
   const punch = usePunch()
+  const DKPortal = useMuseumPortal()
   return {
-    in: inStage.in && slam && boulder && punch,
-    out: inStage.out && slam && boulder && punch
+    in: inStage.in && (slam || DKPortal) && boulder && punch,
+    out: inStage.out && (slam || DKPortal) && boulder && punch
   }
 }
 
