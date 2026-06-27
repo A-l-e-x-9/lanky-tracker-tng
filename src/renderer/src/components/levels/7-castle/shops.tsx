@@ -21,7 +21,7 @@ const Vanilla: React.FC = () => {
         baseName="Castle Cranky"
         level="Creepy Castle"
         region={crankyInFunkySpot ? "Castle Crypt" : crankyInCandySpot ? "Castle Dungeon" : "Creepy Castle Main"}
-        inLogic={hasCranky && (crankyInFunkySpot ? (inStage.in && hasClimbing) : crankyInCandySpot ? inStage.in && (!waterIsLava || (waterIsLava && (hasDK || hasTwirl))))) : inStage.in)}
+        inLogic={hasCranky && (crankyInFunkySpot ? inStage.in && hasClimbing : inStage.in)}
         outLogic={hasCranky && inStage.out}
       />
       <ShopGenerator
@@ -29,7 +29,7 @@ const Vanilla: React.FC = () => {
         baseName="Castle Funky"
         level="Creepy Castle"
         region={funkyInFunkySpot ? "Castle Crypt" : funkyInCandySpot ? "Castle Dungeon" : "Creepy Castle Main"}
-        inLogic={hasFunky && (funkyInFunkySpot ? (inStage.in && hasClimbing) : funkyInCandySpot ? inStage.in && (!waterIsLava || (waterIsLava && (hasDK || hasTwirl))))) : inStage.in)}
+        inLogic={hasFunky && (!funkyInFunkySpot ? inStage.in : inStage.in && hasClimbing)}
         outLogic={hasFunky && inStage.out}
       />
       <ShopGenerator
@@ -37,7 +37,7 @@ const Vanilla: React.FC = () => {
         baseName="Castle Candy"
         level="Creepy Castle"
         region={candyInFunkySpot ? "Castle Crypt" : candyInCandySpot ? "Castle Dungeon" : "Creepy Castle Main"}
-        inLogic={hasCandy && (candyInFunkySpot ? (inStage.in && hasClimbing) : candyInCandySpot ? inStage.in && (!waterIsLava || (waterIsLava && (hasDK || hasTwirl))))) : inStage.in)}
+        inLogic={hasCandy && (candyInFunkySpot ? inStage.in && hasClimbing : inStage.in)}
         outLogic={hasCandy && inStage.out}
       />
       <SnideGenerator
@@ -45,7 +45,7 @@ const Vanilla: React.FC = () => {
         baseName="Turn in Castle Blueprint for"
         level="Creepy Castle"
         region={snideInFunkySpot ? "Castle Crypt" : snideInCandySpot ? "Castle Dungeon" : "Creepy Castle Main"}
-        inLogic={hasSnide && (snideInFunkySpot ? (inStage.in && hasClimbing) : snideInCandySpot ? inStage.in && (!waterIsLava || (waterIsLava && (hasDK || hasTwirl))))) : inStage.in)}
+        inLogic={hasSnide && (snideInFunkySpot ? inStage.in && hasClimbing : inStage.in)}
         outLogic={hasSnide && inStage.out}
       />
     </>
