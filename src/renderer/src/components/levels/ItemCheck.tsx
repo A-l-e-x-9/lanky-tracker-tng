@@ -30,7 +30,7 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals))
   const ninCoin = useDonkStore(useShallow((state) => state.settings.poolNintendoCoin))
   const rareCoin = useDonkStore(useShallow((state) => state.settings.poolRarewareCoin))
-  const coCoinsInRotation = ninCoin && rareCoin
+  const coCoinsInRotation = ninCoin || rareCoin
   if (canGetBreak === undefined) {
     canGetBreak = canGetLogic
   }
