@@ -14,7 +14,7 @@ return (
 <GBPool>
   <CavesCheck
     id={6042}
-    name="Chunky's 5-Door Igloo Room (SHOOT THIS BASTARD NOW!!!)"
+    name="Chunky's 5-Door Igloo Room (SHOOT THIS BASTARD TO END YOUR SEED!!!)"
     region="Caves Igloo"
     canGetLogic={thatFuckingRabbit.in}
     canGetBreak={thatFuckingRabbit.out}
@@ -35,6 +35,7 @@ return (
 </Miniboss>
 </GBPool>
 )
+}
 }
 
 export default ChunkyIgloo
