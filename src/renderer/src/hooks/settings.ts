@@ -220,12 +220,19 @@ export const usePoolBananaMedals = (): boolean => {
 
 /**
  * Are the company coins in the rando pool?
- * @returns true if the company coins are in the pool.
+ * @returns true if the company coins are in the pool OR if they're not, but getting them is the win condition.
  */
-export const usePoolNintendoCoin = (): boolean =>
-  useDonkStore(useShallow((state) => state.settings.poolNintendoCoin))
-export const usePoolRarewareCoin = (): boolean =>
-  useDonkStore(useShallow((state) => state.settings.poolRarewareCoin))
+export const usePoolNintendoCoin = (): boolean => {
+  const coinInRotation = useDonkStore(useShallow((state) => state.settings.poolNintendoCoin))
+  const coinWinCon = useDonkStore(useShallow((state) => state.winCondition.companyCoins))
+  return coinInRotation || (coinWinCon && !coinInRotation)
+}
+
+export const usePoolRarewareCoin = (): boolean => {
+  const coinInRotation = useDonkStore(useShallow((state) => state.settings.poolRarewareCoin))
+  const coinWinCon = useDonkStore(useShallow((state) => state.winCondition.companyCoins))
+  return coinInRotation || (coinWinCon && !coinInRotation)
+}
   
 /**
  * Are the dirt locations shuffled around in this seed?
