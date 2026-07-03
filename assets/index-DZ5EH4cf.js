@@ -13328,8 +13328,11 @@ const ItemCheck = (props) => {
   const hoardValues = Object.values(hoard);
   const isFoolish = foolishValues.some((f2) => f2 === region);
   const isHoard = hoardValues.some((f2) => f2 === region);
-  const [isMedalCheck, isBossCheck, isKillTheWabbit, isBonusSeed, isKRoolsChallenge] = useDonkStore(useShallow((state) => [state.winCondition.bananaMedals, state.winCondition.bosses, state.winCondition.killTheWabbit, state.winCondition.bonuses, state.winCondition.kRoolChallenge]));
+  const [isCoCoinCheck, isMedalCheck, isBossCheck, isKillTheWabbit, isBonusSeed, isKRoolsChallenge] = useDonkStore(useShallow((state) => [state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.bosses, state.winCondition.killTheWabbit, state.winCondition.bonuses, state.winCondition.kRoolChallenge]));
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals));
+  const ninCoin = useDonkStore(useShallow((state) => state.settings.poolNintendoCoin));
+  const rareCoin = useDonkStore(useShallow((state) => state.settings.poolRarewareCoin));
+  const coCoinsInRotation = ninCoin && rareCoin;
   if (canGetBreak === void 0) {
     canGetBreak = canGetLogic;
   }
@@ -13343,7 +13346,7 @@ const ItemCheck = (props) => {
   if (done) {
     rowNames.push("checked");
   }
-  if (isFoolish || isMedalCheck && props.region === "Banana Medals" && !medalsInRotation || (isBossCheck || isKRoolsChallenge) && props.region === "Bosses" || isKillTheWabbit && props.id === 6042 || (isBonusSeed || isKRoolsChallenge) && (props.id === 10 || props.id === 12 || props.id === 23 || props.id === 32 || props.id === 43 || props.id === 1021 || props.id === 1022 || props.id === 1031 || props.id === 1042 || props.id === 2002 || props.id === 2021 || props.id === 2022 || props.id === 2042 || props.id === 2043 || props.id === 3010 || props.id === 3012 || props.id === 3020 || props.id === 3033 || props.id === 3042 || props.id === 4004 || props.id === 4011 || props.id === 4013 || props.id === 4021 || props.id === 4031 || props.id === 4032 || props.id === 4043 || props.id === 5001 || props.id === 5004 || props.id === 5010 || props.id === 5011 || props.id === 5021 || props.id === 5030 || props.id === 6001 || props.id === 6010 || props.id === 6030 || props.id === 6043 || props.id === 7010 || props.id === 7011 || props.id === 7020 || props.id === 7023 || props.id === 7033 || props.id === 7040 || props.id === 7043)) {
+  if (isFoolish || isCoCoinCheck && (props.id === 105 || props.id === 3005) && !coCoinsInRotation || isMedalCheck && props.region === "Banana Medals" && !medalsInRotation || (isBossCheck || isKRoolsChallenge) && props.region === "Bosses" || isKillTheWabbit && props.id === 6042 || (isBonusSeed || isKRoolsChallenge) && (props.id === 10 || props.id === 12 || props.id === 23 || props.id === 32 || props.id === 43 || props.id === 1021 || props.id === 1022 || props.id === 1031 || props.id === 1042 || props.id === 2002 || props.id === 2021 || props.id === 2022 || props.id === 2042 || props.id === 2043 || props.id === 3010 || props.id === 3012 || props.id === 3020 || props.id === 3033 || props.id === 3042 || props.id === 4004 || props.id === 4011 || props.id === 4013 || props.id === 4021 || props.id === 4031 || props.id === 4032 || props.id === 4043 || props.id === 5001 || props.id === 5004 || props.id === 5010 || props.id === 5011 || props.id === 5021 || props.id === 5030 || props.id === 6001 || props.id === 6010 || props.id === 6030 || props.id === 6043 || props.id === 7010 || props.id === 7011 || props.id === 7020 || props.id === 7023 || props.id === 7033 || props.id === 7040 || props.id === 7043)) {
     rowNames.push("foolish");
   } else if (isHoard) {
     rowNames.push("woth");
