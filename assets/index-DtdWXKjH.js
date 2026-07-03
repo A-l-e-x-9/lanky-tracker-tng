@@ -41981,16 +41981,30 @@ const EarlyGone = () => {
 };
 const ChunkyIgloo = () => {
   const thatFuckingRabbit = useChunkyIglooGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CavesCheck,
-    {
-      id: 6042,
-      name: "Chunky's 5-Door Igloo Room (with that damn rabbit)",
-      region: "Caves Igloo",
-      canGetLogic: thatFuckingRabbit.in,
-      canGetBreak: thatFuckingRabbit.out
-    }
-  ) }) });
+  const isKillTheWabbit = useDonkStore(useShallow((state) => state.winCondition.killTheWabbit));
+  if (isKillTheWabbit) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6042,
+        name: "Chunky's 5-Door Igloo Room (SHOOT THIS BASTARD TO END YOUR SEED!!!)",
+        region: "Caves Igloo",
+        canGetLogic: thatFuckingRabbit.in,
+        canGetBreak: thatFuckingRabbit.out
+      }
+    ) });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 6042,
+        name: "Chunky's 5-Door Igloo Room (with that damn rabbit)",
+        region: "Caves Igloo",
+        canGetLogic: thatFuckingRabbit.in,
+        canGetBreak: thatFuckingRabbit.out
+      }
+    ) }) });
+  }
 };
 const ChunkyBananas$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(EarlyGone, {}),
