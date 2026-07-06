@@ -20,6 +20,7 @@ export const initialPortal: PortalState = {
     tinyTempleIcePortal: false,
     tinyTemplePoolPortal: false,
     secondHalfPortal: false,
+    chunky5DTPortal: false,
     llamaPortal: false
   },
   shuffledFactoryPortals: {

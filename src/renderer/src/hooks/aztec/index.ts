@@ -71,6 +71,9 @@ export const useTinyTemplePoolPortal = (): boolean =>
 //Is the DK Portal past the gate blocking access to the second half of the level?
 export const useSecondHalfPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal))
+//Is the DK Portal in Chunky's 5DT room?
+export const useChunky5DTPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledAztecPortals.chunky5DTPortal))
 //Is the DK Portal inside the Llama Temple?
 export const useLlamaPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal))
@@ -138,7 +141,8 @@ export const useAztecBack = (): LogicBool => {
   )
   const DKPortal = useSecondHalfPortal()
   const DKPortal2 = useLlamaPortal()
-  const portal = DKPortal || DKPortal2
+  const DKPortal3 = useChunky5DTPortal()
+  const portal = DKPortal || DKPortal2 || DKPortal3
   return {
     in: (aztecFront.in && (backGateOpen || warpAll || (hasClimbing && (vine || rocket) && musicSwitch))) || portal,
     out: (aztecFront.out && (backGateOpen || warpAll || (musicSwitch && (diddy || tiny)))) || portal
@@ -542,10 +546,11 @@ export const useGeneralDirt = (): LogicBool => {
 
 export const useTempleDirt = (): LogicBool => {
   const thing = useChunky5DoorGb()
+  const DKPortal = useChunky5DTPortal()
   const shockwave = useShockwave()
   return {
-    in: shockwave && thing.in,
-    out: shockwave && thing.out
+    in: shockwave && (thing.in || DKPortal),
+    out: shockwave && (thing.out || DKPortal)
   }
 }
 
