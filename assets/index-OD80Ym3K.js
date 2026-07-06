@@ -11138,6 +11138,7 @@ const initialPortal = {
     tinyTempleIcePortal: false,
     tinyTemplePoolPortal: false,
     secondHalfPortal: false,
+    chunky5DTPortal: false,
     llamaPortal: false
   },
   shuffledFactoryPortals: {
@@ -23062,6 +23063,7 @@ const useTinyTempleFrontPortal = () => useDonkStore(useShallow((state) => state.
 const useTinyTempleIcePortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleIcePortal));
 const useTinyTemplePoolPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTemplePoolPortal));
 const useSecondHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal));
+const useChunky5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.chunky5DTPortal));
 const useLlamaPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal));
 const useSlamAztec = () => useSlamLevel("Angry Aztec");
 const useAztecCoconutSwitch = () => useSwitchsanityGun("aztecBlueprint", 0);
@@ -23100,7 +23102,8 @@ const useAztecBack = () => {
   );
   const DKPortal = useSecondHalfPortal();
   const DKPortal2 = useLlamaPortal();
-  const portal = DKPortal || DKPortal2;
+  const DKPortal3 = useChunky5DTPortal();
+  const portal = DKPortal || DKPortal2 || DKPortal3;
   return {
     in: aztecFront.in && (backGateOpen || warpAll || hasClimbing && (vine || rocket) && musicSwitch) || portal,
     out: aztecFront.out && (backGateOpen || warpAll || musicSwitch && (diddy || tiny)) || portal
@@ -23444,10 +23447,11 @@ const useGeneralDirt$4 = () => {
 };
 const useTempleDirt = () => {
   const thing = useChunky5DoorGb();
+  const DKPortal = useChunky5DTPortal();
   const shockwave = useShockwave();
   return {
-    in: shockwave && thing.in,
-    out: shockwave && thing.out
+    in: shockwave && (thing.in || DKPortal),
+    out: shockwave && (thing.out || DKPortal)
   };
 };
 const useGeneralFairy$4 = () => {
@@ -23780,6 +23784,7 @@ const ConnectorTunnelEnemies = () => {
 };
 const Chunky5Enemies = () => {
   const door = useAztec5DoorTemple();
+  const DKPortal = useChunky5DTPortal();
   const pineapple = usePineapple();
   const zinger = useDefeatZinger();
   const klobber = useDefeatToughEnemy();
@@ -23790,8 +23795,8 @@ const Chunky5Enemies = () => {
         id: 2349,
         name: "Chunky 5DT Start Left Enemy",
         region: "5 Door Temple",
-        canGetLogic: door.in && pineapple && klobber,
-        canGetBreak: door.out && pineapple && klobber
+        canGetLogic: (door.in && pineapple || DKPortal) && klobber,
+        canGetBreak: (door.out && pineapple || DKPortal) && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23800,8 +23805,8 @@ const Chunky5Enemies = () => {
         id: 2350,
         name: "Chunky 5DT Start Right Enemy",
         region: "5 Door Temple",
-        canGetLogic: door.in && pineapple && klobber,
-        canGetBreak: door.out && pineapple && klobber
+        canGetLogic: (door.in && pineapple || DKPortal) && klobber,
+        canGetBreak: (door.out && pineapple || DKPortal) && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23810,8 +23815,8 @@ const Chunky5Enemies = () => {
         id: 2351,
         name: "Chunky 5DT Second Left Enemy",
         region: "5 Door Temple",
-        canGetLogic: door.in && pineapple && klobber,
-        canGetBreak: door.out && pineapple && klobber
+        canGetLogic: (door.in && pineapple || DKPortal) && klobber,
+        canGetBreak: (door.out && pineapple || DKPortal) && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23820,8 +23825,8 @@ const Chunky5Enemies = () => {
         id: 2352,
         name: "Chunky 5DT Second Right Enemy",
         region: "5 Door Temple",
-        canGetLogic: door.in && pineapple && klobber,
-        canGetBreak: door.out && pineapple && klobber
+        canGetLogic: (door.in && pineapple || DKPortal) && klobber,
+        canGetBreak: (door.out && pineapple || DKPortal) && klobber
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23830,8 +23835,8 @@ const Chunky5Enemies = () => {
         id: 2353,
         name: "Enemy at Chunky 5DT Reward",
         region: "5 Door Temple",
-        canGetLogic: door.in && pineapple && zinger.in,
-        canGetBreak: door.out && pineapple && zinger.out
+        canGetLogic: (door.in || DKPortal) && pineapple && zinger.in,
+        canGetBreak: (door.out || DKPortal) && pineapple && zinger.out
       }
     )
   ] });
@@ -54912,6 +54917,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is past the gate requiring Guitar to open.",
                   storeKey: "secondHalfPortal",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In the second hallway of Chunky's 5-Door Temple room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is near a vanilla dirt patch.",
+                  storeKey: "chunky5DTPortal",
                   prefix: "shuffledAztecPortals",
                   updateItem: setAztecPortal
                 }
