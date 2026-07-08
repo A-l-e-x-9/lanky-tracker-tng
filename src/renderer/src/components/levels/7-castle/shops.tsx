@@ -2,7 +2,7 @@ import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import ShopGenerator, { SnideGenerator } from '@renderer/components/pools/ShopGenerator'
 import ShopPool from '@renderer/components/pools/Shops'
-import { usePlayCastle, useCastleOutsidePortal } from '@renderer/hooks/castle'
+import { usePlayCastle, useCryptOutsidePortal } from '@renderer/hooks/castle'
 import { useCranky, whatAFunky, useCandy, useSnide, useClimbing } from '@renderer/hooks/kongs'
 
 const Vanilla: React.FC = () => {

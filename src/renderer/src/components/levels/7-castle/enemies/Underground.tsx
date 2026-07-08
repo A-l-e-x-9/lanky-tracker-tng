@@ -1,5 +1,5 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { usePlayCastle, useOpenCrypt, useCastleOutsidePortal } from '@renderer/hooks/castle'
+import { usePlayCastle, useOpenCrypt, useCryptOutsidePortal } from '@renderer/hooks/castle'
 import { useDefeatZinger, useDefeatToughEnemy } from '@renderer/hooks/enemies'
 import {
   useAnyKong,
