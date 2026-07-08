@@ -184,8 +184,9 @@ export const useChunkyCryptGb = (): LogicBool => {
   const preOpened = useOpenCrypt()
   const hasClimbing = useClimbing()
   const DKPortal = useChunkyCryptPortal()
+  const DKPortal2 = useCryptOutsidePortal()
   return {
-    in: inStage.in && (pineapple || preOpened || DKPortal) && punch && hasClimbing,
+    in: ((inStage.in && hasClimbing) || DKPortal2) && (pineapple || preOpened || DKPortal) && punch,
     out: inStage.out && (pineapple || preOpened || DKPortal) && punch
   }
 }
@@ -217,8 +218,9 @@ export const useDiddyCryptGb = (): LogicBool => {
   const charge = useCharge()
   const hasClimbing = useClimbing()
   const canEnter = usePlayCastle()
+  const DKPortal = useCryptOutsidePortal()
   return {
-    in: canEnter.in && (peanut || cryptPreOpened) && charge && hasClimbing,
+    in: ((canEnter.in && hasClimbing) || DKPortal) && (peanut || cryptPreOpened) && charge,
     out: canEnter.out && (peanut || cryptPreOpened) && charge
   }
 }
@@ -265,8 +267,9 @@ export const useDkCryptGb = (): LogicBool => {
   const hasClimbing = useClimbing()
   const canEnter = usePlayCastle()
   const DKPortal = useDKCryptPortal()
+  const DKPortal2 = useCryptOutsidePortal()
   return {
-    in: canEnter.in && (coconut || cryptPreOpened || DKPortal) && grab && hasClimbing,
+    in: ((canEnter.in && hasClimbing) || DKPortal2) && (coconut || cryptPreOpened || DKPortal) && grab,
     out: canEnter.out && (coconut || cryptPreOpened || DKPortal) && grab
   }
 }
@@ -323,8 +326,9 @@ export const useLankyMausoleumGb = (): LogicBool => {
   const diddy = useDiddy()
   const hasClimbing = useClimbing()
   const DKPortal = useMausoleumPortal()
+  const DKPortal2 = useCryptOutsidePortal()
   return {
-    in: inStage.in && (feather || grape || preOpened || DKPortal) && grape && sprint && vine && trombone && hasClimbing,
+    in: ((inStage.in && hasClimbing) || DKPortal2) && (feather || grape || preOpened || DKPortal) && grape && sprint && vine && trombone,
     out: inStage.out && (feather || grape || preOpened || DKPortal) && grape && (sprint || dk || diddy)
   }
 }
@@ -382,8 +386,9 @@ export const useTinyMausoleumGb = (): LogicBool => {
   const hasClimbing = useClimbing()
   const preOpened = useOpenCrypt()
   const DKPortal = useMausoleumPortal()
+  const DKPortal2 = useCryptOutsidePortal()
   return {
-    in: inStage.in && (feather || grape || preOpened || DKPortal) && canSlam && twirl && hasClimbing,
+    in: ((inStage.in && hasClimbing) || DKPortal2) && (feather || grape || preOpened || DKPortal) && canSlam && twirl,
     out: inStage.out && (feather || grape || preOpened || DKPortal) && canSlam && (dk || twirl)
   }
 }
@@ -459,8 +464,9 @@ export const useTreeKasplat = (): LogicBool => {
 export const useMausoleumKasplat = (): LogicBool => {
   const inStage = usePlayCastle()
   const hasClimbing = useClimbing()
+  const DKPortal = useCryptOutsidePortal()
   return {
-    in: inStage.in && hasClimbing,
+    in: (inStage.in && hasClimbing) || DKPortal,
     out: inStage.out
   }
 }
@@ -476,8 +482,9 @@ export const usePathKasplat = (): LogicBool => {
 export const useLonelyKasplat = (): LogicBool => {
   const inStage = usePlayCastle()
   const hasClimbing = useClimbing()
+  const DKPortal = useCryptOutsidePortal()
   return {
-    in: inStage.in && hasClimbing,
+    in: (inStage.in && hasClimbing) || DKPortal,
     out: inStage.out
   }
 }
