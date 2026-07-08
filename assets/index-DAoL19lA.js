@@ -45906,6 +45906,7 @@ const UndergroundEnemies = () => {
   const hasClimbing = useClimbing();
   const preOpenedCrypt = useOpenCrypt();
   const hasChunky = useChunky();
+  const DKPortal = useCryptOutsidePortal();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
@@ -45913,7 +45914,7 @@ const UndergroundEnemies = () => {
         id: 7327,
         name: "Enemy in front of Crypt",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && anyKong && kosha && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && anyKong && kosha,
         canGetBreak: inStage.out && anyKong && kosha
       }
     ),
@@ -45923,7 +45924,7 @@ const UndergroundEnemies = () => {
         id: 7328,
         name: "Enemy at the Right Stairs to Crypt",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && anyKong && kosha && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && anyKong && kosha,
         canGetBreak: inStage.out && anyKong && kosha
       }
     ),
@@ -45933,7 +45934,7 @@ const UndergroundEnemies = () => {
         id: 7329,
         name: "Enemy at the Left Stairs to Crypt",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && anyKong && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && anyKong,
         canGetBreak: inStage.out && anyKong
       }
     ),
@@ -45943,7 +45944,7 @@ const UndergroundEnemies = () => {
         id: 7330,
         name: "Enemy Guarding the Mausoleum",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && anyKong && bat.in && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && anyKong && bat.in,
         canGetBreak: inStage.out && anyKong && bat.out
       }
     ),
@@ -45953,7 +45954,7 @@ const UndergroundEnemies = () => {
         id: 7331,
         name: "Enemy Guarding Funky's",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && anyKong && bat.in && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && anyKong && bat.in,
         canGetBreak: inStage.out && anyKong && bat.out
       }
     ),
@@ -45963,7 +45964,7 @@ const UndergroundEnemies = () => {
         id: 7332,
         name: "Enemy Between Funky's and Nearby Tag Barrel",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && anyKong && bat.in && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && anyKong && bat.in,
         canGetBreak: inStage.out && anyKong && bat.out
       }
     ),
@@ -45973,7 +45974,7 @@ const UndergroundEnemies = () => {
         id: 7333,
         name: "Enemy 0 inside Diddy's Coffins",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (peanut || preOpenedCrypt) && charge && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (peanut || preOpenedCrypt) && charge,
         canGetBreak: inStage.out && (peanut || preOpenedCrypt) && charge
       }
     ),
@@ -45983,7 +45984,7 @@ const UndergroundEnemies = () => {
         id: 7334,
         name: "Enemy 1 inside Diddy's Coffins",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (peanut || preOpenedCrypt) && charge && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (peanut || preOpenedCrypt) && charge,
         canGetBreak: inStage.out && (peanut || preOpenedCrypt) && charge
       }
     ),
@@ -45993,7 +45994,7 @@ const UndergroundEnemies = () => {
         id: 7335,
         name: "Enemy 2 inside Diddy's Coffins",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (peanut || preOpenedCrypt) && charge && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (peanut || preOpenedCrypt) && charge,
         canGetBreak: inStage.out && (peanut || preOpenedCrypt) && charge
       }
     ),
@@ -46003,7 +46004,7 @@ const UndergroundEnemies = () => {
         id: 7336,
         name: "Enemy 3 inside Diddy's Coffins",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (peanut || preOpenedCrypt) && charge && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (peanut || preOpenedCrypt) && charge,
         canGetBreak: inStage.out && (peanut || preOpenedCrypt) && charge
       }
     ),
@@ -46013,7 +46014,7 @@ const UndergroundEnemies = () => {
         id: 7337,
         name: "Enemy 0 inside Chunky's Coffin",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && hasChunky && slam && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (pineapple || preOpenedCrypt) && hasChunky && slam,
         canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && hasChunky && slam
       }
     ),
@@ -46023,7 +46024,7 @@ const UndergroundEnemies = () => {
         id: 7338,
         name: "Enemy 1 inside Chunky's Coffin",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && hasChunky && slam && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (pineapple || preOpenedCrypt) && hasChunky && slam,
         canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && hasChunky && slam
       }
     ),
@@ -46033,7 +46034,7 @@ const UndergroundEnemies = () => {
         id: 7339,
         name: "Enemy 2 inside Chunky's Coffin",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && hasChunky && slam && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (pineapple || preOpenedCrypt) && hasChunky && slam,
         canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && hasChunky && slam
       }
     ),
@@ -46043,7 +46044,7 @@ const UndergroundEnemies = () => {
         id: 7340,
         name: "Enemy 3 inside Chunky's Coffin",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (pineapple || preOpenedCrypt) && hasChunky && slam && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (pineapple || preOpenedCrypt) && hasChunky && slam,
         canGetBreak: inStage.out && (pineapple || preOpenedCrypt) && hasChunky && slam
       }
     ),
@@ -46053,7 +46054,7 @@ const UndergroundEnemies = () => {
         id: 7341,
         name: "Enemy at DK's Minecart Entry",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (coconut || preOpenedCrypt) && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (coconut || preOpenedCrypt),
         canGetBreak: inStage.out && (coconut || preOpenedCrypt)
       }
     ),
@@ -46063,7 +46064,7 @@ const UndergroundEnemies = () => {
         id: 7342,
         name: "Enemy at Fork to DK and Diddy's Crypts",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (coconut || peanut || pineapple || preOpenedCrypt),
         canGetBreak: inStage.out && (coconut || peanut || pineapple || preOpenedCrypt)
       }
     ),
@@ -46073,7 +46074,7 @@ const UndergroundEnemies = () => {
         id: 7343,
         name: "Enemy Outside Diddy's Crypt",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (coconut || peanut || pineapple || preOpenedCrypt),
         canGetBreak: inStage.out && (coconut || peanut || pineapple || preOpenedCrypt)
       }
     ),
@@ -46083,7 +46084,7 @@ const UndergroundEnemies = () => {
         id: 7344,
         name: "Enemy Outside Chunky's Crypt",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (coconut || peanut || pineapple || preOpenedCrypt) && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (coconut || peanut || pineapple || preOpenedCrypt),
         canGetBreak: inStage.out && (coconut || peanut || pineapple || preOpenedCrypt)
       }
     ),
@@ -46093,7 +46094,7 @@ const UndergroundEnemies = () => {
         id: 7345,
         name: "Enemy Outside Tiny's Mausoleum Room",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (feather || grape || preOpenedCrypt) && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (feather || grape || preOpenedCrypt),
         canGetBreak: inStage.out && (feather || grape || preOpenedCrypt)
       }
     ),
@@ -46103,7 +46104,7 @@ const UndergroundEnemies = () => {
         id: 7346,
         name: "Enemy on Lanky's Mausolem Path, at Switch",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (feather || grape || preOpenedCrypt) && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (feather || grape || preOpenedCrypt),
         canGetBreak: inStage.out && (feather || grape || preOpenedCrypt)
       }
     ),
@@ -46113,7 +46114,7 @@ const UndergroundEnemies = () => {
         id: 7347,
         name: "Enemy near Lanky's Mausoleum Gate",
         region: "Castle Crypt",
-        canGetLogic: inStage.in && (feather || grape || preOpenedCrypt) && hasClimbing,
+        canGetLogic: (inStage.in && hasClimbing || DKPortal) && (feather || grape || preOpenedCrypt),
         canGetBreak: inStage.out && (feather || grape || preOpenedCrypt)
       }
     )
@@ -49506,6 +49507,7 @@ const Vanilla = () => {
   const hasCandy = useCandy();
   const hasClimbing = useClimbing();
   const hasSnide = useSnide();
+  const DKPortal = useCryptOutsidePortal();
   const [crankyInFunkySpot, funkyInFunkySpot, candyInFunkySpot, snideInFunkySpot] = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyFunky, state.shuffledCastleFunky.castleFunkyNoSwitch, state.shuffledCastleCandy.castleCandyFunky, state.shuffledCastleSnide.castleSnideFunky]));
   const [crankyInCandySpot, funkyInCandySpot, candyInCandySpot, snideInCandySpot] = useDonkStore(useShallow((state) => [state.shuffledCastleCranky.castleCrankyCandy, state.shuffledCastleFunky.castleFunkyCandy, state.shuffledCastleCandy.castleCandyNoSwitch, state.shuffledCastleSnide.castleSnideCandy]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -49516,7 +49518,7 @@ const Vanilla = () => {
         baseName: "Castle Cranky",
         level: "Creepy Castle",
         region: crankyInFunkySpot ? "Castle Crypt" : crankyInCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
-        inLogic: hasCranky && (crankyInFunkySpot ? inStage.in && hasClimbing : inStage.in),
+        inLogic: hasCranky && (crankyInFunkySpot ? inStage.in && hasClimbing || DKPortal : inStage.in),
         outLogic: hasCranky && inStage.out
       }
     ),
@@ -49527,7 +49529,7 @@ const Vanilla = () => {
         baseName: "Castle Funky",
         level: "Creepy Castle",
         region: funkyInFunkySpot ? "Castle Crypt" : funkyInCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
-        inLogic: hasFunky && (!funkyInFunkySpot ? inStage.in : inStage.in && hasClimbing),
+        inLogic: hasFunky && (!funkyInFunkySpot ? inStage.in : inStage.in && hasClimbing || DKPortal),
         outLogic: hasFunky && inStage.out
       }
     ),
@@ -49538,7 +49540,7 @@ const Vanilla = () => {
         baseName: "Castle Candy",
         level: "Creepy Castle",
         region: candyInFunkySpot ? "Castle Crypt" : candyInCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
-        inLogic: hasCandy && (candyInFunkySpot ? inStage.in && hasClimbing : inStage.in),
+        inLogic: hasCandy && (candyInFunkySpot ? inStage.in && hasClimbing || DKPortal : inStage.in),
         outLogic: hasCandy && inStage.out
       }
     ),
@@ -49549,7 +49551,7 @@ const Vanilla = () => {
         baseName: "Turn in Castle Blueprint for",
         level: "Creepy Castle",
         region: snideInFunkySpot ? "Castle Crypt" : snideInCandySpot ? "Castle Dungeon" : "Creepy Castle Main",
-        inLogic: hasSnide && (snideInFunkySpot ? inStage.in && hasClimbing : inStage.in),
+        inLogic: hasSnide && (snideInFunkySpot ? inStage.in && hasClimbing || DKPortal : inStage.in),
         outLogic: hasSnide && inStage.out
       }
     )
