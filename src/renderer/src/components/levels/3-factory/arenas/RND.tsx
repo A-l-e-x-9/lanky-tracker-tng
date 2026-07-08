@@ -1,10 +1,14 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
-import { useFactoryTesting } from '@renderer/hooks/factory'
+import { useFactoryTesting, useArena, useTinyRaceGb } from '@renderer/hooks/factory'
+import { useClimbing } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const canReachTesting = useFactoryTesting()
+const canReachVanillaArena = useArena()
+const canReachCar = useTinyRaceGb()
+const hasClimbing = useClimbing()
   return (
     <ArenaPool>
       <FactoryCheck
