@@ -13,6 +13,7 @@ const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 const isBeanSeed = useDonkStore(useShallow((state) => state.winCondition.theBean)) ? 'foolish' : ''
+const beabInRotation = useDonkStore(useShallow((state) => state.settings.poolBean)) ? '' : 'foolish'
 return (
   <>
   <div className="grid">
@@ -20,7 +21,7 @@ return (
     <RabbitRace />
     <AnthillBanana />
   </div>
-  <div className={`grid ${isBeanSeed}`}>
+  <div className={`grid ${isBeanSeed && beanInRotation}`}>
     <AnthillBean />
   </div>
   <div className="grid">

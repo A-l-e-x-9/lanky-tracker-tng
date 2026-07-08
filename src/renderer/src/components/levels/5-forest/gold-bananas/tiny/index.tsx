@@ -8,13 +8,14 @@ import SpiderBoss from './Spider'
 
 const TinyBananas: React.FC = () => {
   const isBeanSeed = useDonkStore(useShallow((state) => state.winCondition.theBean)) ? 'foolish' : ''
+  const beanInRotation = useDonkStore(useShallow((state) => state.settings.poolBean)) ? '' : 'foolish'
   return (
   <>
     <div className="grid">
       <MushroomBarrel />
       <AnthillBanana />
     </div>
-    <div className={`grid ${isBeanSeed}`}>
+    <div className={`grid ${isBeanSeed && beanInRotation}`}>
       <AnthillBean />
     </div>
     <div className="grid">
