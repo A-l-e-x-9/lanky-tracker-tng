@@ -39903,12 +39903,13 @@ const SpiderBoss = () => {
 };
 const TinyBananas$2 = () => {
   const isBeanSeed = useDonkStore(useShallow((state) => state.winCondition.theBean)) ? "foolish" : "";
+  const beanInRotation = useDonkStore(useShallow((state) => state.settings.poolBean)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(MushroomBarrel, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(AnthillBanana, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isBeanSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AnthillBean, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isBeanSeed && beanInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AnthillBean, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(SpiderBoss, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BeanCheck, {})
@@ -40667,13 +40668,14 @@ const OwlChecks = () => {
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   const isBeanSeed = useDonkStore(useShallow((state) => state.winCondition.theBean)) ? "foolish" : "";
+  const beanInRotation = useDonkStore(useShallow((state) => state.settings.poolBean)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(OwlRace, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(RabbitRace, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(AnthillBanana, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isBeanSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AnthillBean, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isBeanSeed && beanInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AnthillBean, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(OwlCrate, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$2, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(OwlEnemies, {}) })
