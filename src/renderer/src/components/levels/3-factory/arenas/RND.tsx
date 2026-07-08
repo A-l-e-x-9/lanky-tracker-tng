@@ -9,87 +9,45 @@ const canReachTesting = useFactoryTesting()
     <ArenaPool>
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: Near Snide's"
-        region="Testing Room"
+        name="Shuffled Battle Arena: Vanilla Arena (in the R&D Room)"
+        region="R&D Room"
+        canGetLogic={canReachVanillaArena.in}
+        canGetBreak={canReachVanillaArena.out}
+      />
+      <FactoryCheck
+        id={13000}
+        name="Shuffled Battle Arena: In Tiny's car race room"
+        region="R&D Room"
+        canGetLogic={canReachCar.in}
+        canGetBreak={canReachCar.out}
+      />
+      <FactoryCheck
+        id={13000}
+        name="Shuffled Battle Arena: Also in Tiny's car race room"
+        region="R&D Room"
+        canGetLogic={canReachCar.in}
+        canGetBreak={canReachCar.out}
+      />
+      <FactoryCheck
+        id={13000}
+        name="Shuffled Battle Arena: In front of DK's R&D level"
+        region="R&D Room"
         canGetLogic={canReachTesting.in}
         canGetBreak={canReachTesting.out}
       />
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: Near Snide's, hidden"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
+        name="Shuffled Battle Arena: Under the grate that doesn't have the vanilla Arena"
+        region="R&D Room"
+        canGetLogic={canReachVanillaArena.in}
+        canGetBreak={canReachVanillaArena.out}
       />
       <FactoryCheck
         id={13000}
-        name="Shuffled Battle Arena: Right hallway"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: At DK's number game"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Under the stairs to Tiny's dartboard"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Under Lanky's Testing Bonus Barrel"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Left of the entrance to Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Left of Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Right of Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Right of the entrance to Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Vanilla Warp 3, at Snide's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Vanilla Warp 5, at Funky's"
-        region="Testing Room"
-        canGetLogic={canReachTesting.in}
-        canGetBreak={canReachTesting.out}
+        name="Shuffled Battle Arena: Vanilla Warp 2, R&D-side"
+        region="R&D Room"
+        canGetLogic={canReachTesting.in && hasClimbing}
+        canGetBreak={canReachTesting.out && hasClimbing}
       />
     </ArenaPool>
   )
