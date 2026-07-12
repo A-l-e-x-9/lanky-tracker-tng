@@ -29720,7 +29720,8 @@ const ChunkyMedal$4 = () => {
   const inLogic = useChunkyMedalInLogic$4();
   const outLogic = useChunkyMedalOutLogic$4();
   const cbCount = useCbCount();
-  const halfMedal = Math.floor(cbCount / 2);
+  const halfMedalPercent = useHalfMedalPercent();
+  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -29811,7 +29812,8 @@ const DiddyMedal$4 = () => {
   const inLogic = useDiddyMedalInLogic$4();
   const outLogic = useDiddyMedalOutLogic$4();
   const cbCount = useCbCount();
-  const halfMedal = Math.floor(cbCount / 2);
+  const halfMedalPercent = useHalfMedalPercent();
+  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -29899,7 +29901,8 @@ const DkMedal$4 = () => {
   const inLogic = useDkMedalInLogic$4();
   const outLogic = useDkMedalOutLogic$4();
   const cbCount = useCbCount();
-  const halfMedal = Math.floor(cbCount / 2);
+  const halfMedalPercent = useHalfMedalPercent();
+  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -29996,7 +29999,8 @@ const LankyMedal$4 = () => {
   const inLogic = useLankyMedalInLogic$4();
   const outLogic = useLankyMedalOutLogic$4();
   const cbCount = useCbCount();
-  const halfMedal = Math.floor(cbCount / 2);
+  const halfMedalPercent = useHalfMedalPercent();
+  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -30097,7 +30101,8 @@ const TinyMedal$4 = () => {
   const inLogic = useTinyMedalInLogic$4();
   const outLogic = useTinyMedalOutLogic$4();
   const cbCount = useCbCount();
-  const halfMedal = Math.floor(cbCount / 2);
+  const halfMedalPercent = useHalfMedalPercent();
+  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
