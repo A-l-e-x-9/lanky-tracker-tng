@@ -1,5 +1,5 @@
 import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/hooks/factory/medals/dk'
-import { useCbCount } from '@renderer/hooks/settings'
+import { useCbCount, useHalfMedalPercent } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
 import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
@@ -7,7 +7,8 @@ const DkMedal: React.FC = () => {
   const inLogic = useDkMedalInLogic()
   const outLogic = useDkMedalOutLogic()
   const cbCount = useCbCount()
-  const halfMedal = Math.floor(cbCount / 2)
+  const halfMedalPercent = useHalfMedalPercent()
+  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
 
   return (
   <>
