@@ -52650,7 +52650,19 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "What locks Helm Door #1?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(HelmDoorSelector1, {}),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "What locks Helm Door #2?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(HelmDoorSelector2, {})
+              /* @__PURE__ */ jsxRuntimeExports.jsx(HelmDoorSelector2, {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "You get a Half-Medal at what percentage?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                CountSelector,
+                {
+                  imgUrl: halfMedalIcon,
+                  title: "Percentage of a full Medal you need for a Half-Medal",
+                  storeKey: "halfMedalCount",
+                  prefix: "settings",
+                  setCount: setSetting,
+                  maxValue: 100
+                }
+              )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Win Condition" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: `If "K. Rool's Challenge" is selected, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off. On the other hand, if "Kill the Wabbit" is selected, K. Rool is forced OFF.` }),
