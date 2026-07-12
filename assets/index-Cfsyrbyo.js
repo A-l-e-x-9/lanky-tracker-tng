@@ -42388,7 +42388,7 @@ const ChunkyMedal$1 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
         id: 6204,
@@ -42397,7 +42397,7 @@ const ChunkyMedal$1 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDiddyMedalCommonLogic$1 = () => {
@@ -42504,7 +42504,7 @@ const DiddyMedal$1 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
         id: 6201,
@@ -42513,7 +42513,7 @@ const DiddyMedal$1 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDkMedalCommonLogic$1 = () => {
@@ -42604,7 +42604,7 @@ const DkMedal$1 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
         id: 6200,
@@ -42613,7 +42613,7 @@ const DkMedal$1 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useLankyMedalCommonLogic$1 = () => {
@@ -42719,7 +42719,7 @@ const LankyMedal$1 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
         id: 6202,
@@ -42728,7 +42728,7 @@ const LankyMedal$1 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useTinyMedalCommonLogic$1 = () => {
@@ -42843,7 +42843,7 @@ const TinyMedal$1 = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
         id: 6203,
@@ -42852,7 +42852,7 @@ const TinyMedal$1 = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const ShopLocations$1 = () => {
@@ -49047,7 +49047,7 @@ const ChunkyMedal = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
         id: 7204,
@@ -49056,7 +49056,7 @@ const ChunkyMedal = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDiddyMedalCommonLogic = () => {
@@ -49154,7 +49154,7 @@ const DiddyMedal = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
         id: 7201,
@@ -49163,7 +49163,7 @@ const DiddyMedal = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useDkMedalCommonLogic = () => {
@@ -49247,7 +49247,7 @@ const DkMedal = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
         id: 7200,
@@ -49256,7 +49256,7 @@ const DkMedal = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useLankyMedalCommonLogic = () => {
@@ -49344,7 +49344,7 @@ const LankyMedal = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
         id: 7202,
@@ -49353,7 +49353,7 @@ const LankyMedal = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const useTinyMedalCommonLogic = () => {
@@ -49431,7 +49431,7 @@ const TinyMedal = () => {
         canGetBreak: outLogic >= cbCount
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       CastleCheck,
       {
         id: 7203,
@@ -49440,7 +49440,7 @@ const TinyMedal = () => {
         canGetLogic: inLogic >= halfMedal,
         canGetBreak: outLogic >= halfMedal
       }
-    )
+    ) })
   ] });
 };
 const Vanilla = () => {
