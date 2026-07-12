@@ -292,6 +292,15 @@ const GeneratorSettings: React.FC = () => {
               <HelmDoorSelector1 />
               <p>What locks Helm Door #2?</p>
               <HelmDoorSelector2 />
+              <p>You get a Half-Medal at what percentage?</p>
+              <CountSelector
+                imgUrl={halfMedalIcon}
+                title="Percentage of a full Medal you need for a Half-Medal"
+                storeKey="halfMedalCount"
+                prefix="settings"
+                setCount={setSetting}
+                maxValue={100}
+              />
             </>
             <h3>Win Condition</h3>
             <p className="full-grid">If "K. Rool's Challenge" is selected, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off. On the other hand, if "Kill the Wabbit" is selected, K. Rool is forced OFF.</p>
