@@ -1,6 +1,7 @@
 import { useLankyMedalInLogic, useLankyMedalOutLogic } from '@renderer/hooks/castle/medals/lanky'
 import { useCbCount } from '@renderer/hooks/settings'
 import CastleCheck from '../check'
+import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const LankyMedal: React.FC = () => {
   const inLogic = useLankyMedalInLogic()
@@ -17,6 +18,7 @@ const LankyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <HalfMedalPool>
     <CastleCheck
       id={7202}
       name="Lanky's Half-Medal"
@@ -24,6 +26,7 @@ const LankyMedal: React.FC = () => {
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />
+    </HalfMedalPool>
   </>
   )
 }

@@ -1,6 +1,7 @@
 import { useChunkyMedalInLogic, useChunkyMedalOutLogic } from '@renderer/hooks/castle/medals/chunky'
 import { useCbCount } from '@renderer/hooks/settings'
 import CastleCheck from '../check'
+import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const ChunkyMedal: React.FC = () => {
   const inLogic = useChunkyMedalInLogic()
@@ -17,6 +18,7 @@ const ChunkyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    <HalfMedalPool>
     <CastleCheck
       id={7204}
       name="Chunky's Half-Medal"
@@ -24,6 +26,7 @@ const ChunkyMedal: React.FC = () => {
       canGetLogic={inLogic >= halfMedal}
       canGetBreak={outLogic >= halfMedal}
     />
+    </HalfMedalPool>
   </>
   )
 }
