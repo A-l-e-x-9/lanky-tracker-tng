@@ -53,6 +53,7 @@ export const initialSettings: SettingState = {
     helmItemNum1: 4,
     helmItem2: 3,
     helmItemNum2: 2,
+    halfMedalCount: 50,
     shuffleDKPortals: true,
     shuffleLoadingZones: false
   }
