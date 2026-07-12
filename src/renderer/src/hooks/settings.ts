@@ -54,6 +54,7 @@ export const useProgressiveSlams = (): boolean =>
  * @returns the number of colored bananas to collect for a check.
  */
 export const useCbCount = (): number => useDonkStore(useShallow((state) => state.settings.cbCount))
+export const useHalfMedalPercent = (): number => useDonkStore(useShallow((state) => state.settings.halfMedalCount))
 
 /**
  * How many banana fairies do we require for the Banana Fairy Island (BFI) check?
