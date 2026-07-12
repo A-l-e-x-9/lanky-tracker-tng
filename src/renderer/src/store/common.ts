@@ -685,6 +685,8 @@ interface SettingCollection {
   helmItem2: CrownRange
   //How much of that item do you need?
   helmItemNum2: GoldBananaRange
+  //What percentage of a full Medal is a Half-Medal?
+  halfMedalCount: ColoredBananaRange
   //Are DK Portals shuffled?
   shuffleDKPortals: boolean
   //Is the dreaded Loading Zone Randomizer on?

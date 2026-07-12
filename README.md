@@ -9,7 +9,6 @@ The instructions on how to use this thing can be found in "instructions.html".
 As with the original, this tracker was written in JavaScript, primarily with an [electron-vite](https://electron-vite.org/) setup in addition to Facebook/the Meta Group's [React](https://reactjs.org/) and Microsoft's [TypeScript](https://www.typescriptlang.org/). Obviously, you need JavaScript in order to use it.
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
-- Implement the "Half Medal Percentage" feature. Right now, a Half Medal can only be quite literally half of the number of CB's you need for a full Medal, because until circa June 22, 2026, it wasn't customizable.
 - Recolor the pad and barrel icons to match the "color-coded Kong Pads/Barrels" option in the Randomizer.
 - Currently, the "Bonuses" and "K. Rool's Challenge" win conditions don't account for the Oil Drums in Hideout Helm, so if your current seed's win con is >43 Bonus Barrels, you're outta luck.
 - Right now, the B. Locker barriers available in the tracker can only accept bananas, so if you're playing a "Chaos B. Lockers" seed (where he often requires things other than bananas so that you can get into the level), you're out of luck. :(
