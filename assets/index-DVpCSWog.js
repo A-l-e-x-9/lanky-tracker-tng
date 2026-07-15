@@ -35775,8 +35775,8 @@ const useForestSpiderBoss = () => {
   const DKPortal1 = useBackMillPortal();
   const DKPortal2 = useFrontMillPortal();
   return {
-    in: day.in && punch && night.in && mini || dusk.in && punch || DKPortal1,
-    out: day.out && punch && night.out && mini || dusk.out && punch || DKPortal2 && mini
+    in: day.in && punch && night.in && mini || dusk.in && (punch || mini) || DKPortal1 && night.in,
+    out: day.out && punch && night.out && mini || dusk.out && (punch || mini) || DKPortal2 && mini && night.out
   };
 };
 const useForestMushroomTop = () => {
