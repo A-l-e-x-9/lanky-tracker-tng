@@ -26,11 +26,12 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
   const hoardValues = Object.values(hoard)
   const isFoolish = foolishValues.some((f) => f === region)
   const isHoard = hoardValues.some((f) => f === region)
-  const [isCoCoinCheck, isMedalCheck, isBossCheck, isKillTheWabbit, isBonusSeed, isKRoolsChallenge] = useDonkStore(useShallow((state) => [state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.bosses, state.winCondition.killTheWabbit, state.winCondition.bonuses, state.winCondition.kRoolChallenge]))
+  const [isCoCoinCheck, isMedalCheck, isBossCheck, isKillTheWabbit, isBonusSeed, isKRoolsChallenge, isKeyCheck] = useDonkStore(useShallow((state) => [state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.bosses, state.winCondition.killTheWabbit, state.winCondition.bonuses, state.winCondition.kRoolChallenge, state.winCondition.bossKeys]))
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals))
   const ninCoin = useDonkStore(useShallow((state) => state.settings.poolNintendoCoin))
   const rareCoin = useDonkStore(useShallow((state) => state.settings.poolRarewareCoin))
   const coCoinsInRotation = ninCoin || rareCoin
+  const keysInRotation = useDonkStore(useShallow((state) => state.settings.poolKeys))
   if (canGetBreak === undefined) {
     canGetBreak = canGetLogic
   }
@@ -48,7 +49,7 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
   if (isFoolish
   || (isCoCoinCheck && (props.id === 105 || props.id === 3005) && !coCoinsInRotation)
   || (isMedalCheck && props.region === 'Banana Medals' && !medalsInRotation)
-  || ((isBossCheck || isKRoolsChallenge) && props.region === 'Bosses')
+  || ((isBossCheck || isKRoolsChallenge || (isKeyCheck && !keysInRotation)) && props.region === 'Bosses')
   || (isKillTheWabbit && props.id === 6042)
   || ((isBonusSeed || isKRoolsChallenge) && (props.id === 10
     || props.id === 12

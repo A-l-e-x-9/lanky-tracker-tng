@@ -178,10 +178,13 @@ export const useShuffleColoredBananas = (): boolean =>
 
 /**
  * Are the boss keys in the rando pool?
- * @returns true if the keys are in the pool.
+ * @returns true if the keys are in the pool OR if the win con is "Keys" and Keys are NOT in the pool. (Doesn't currently work with the "Keys 3 and 8" and "Key 8 only" win cons; I'll have to do something special for those...)
  */
-export const usePoolKeys = (): boolean =>
-  useDonkStore(useShallow((state) => state.settings.poolKeys))
+export const usePoolKeys = (): boolean => {
+  const keysInRotation = useDonkStore(useShallow((state) => state.settings.poolKeys))
+  const keyWinCon = useDonkStore(useShallow((state) => state.winCondition.bossKeys))
+  return keysInRotation || (keyWinCon && !keysInRotation)
+}
 
 /**
  * Are the melon crates in the rando pool?
