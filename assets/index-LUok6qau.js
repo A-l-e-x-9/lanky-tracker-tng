@@ -11139,6 +11139,7 @@ const initialPortal = {
     tinyTempleIcePortal: false,
     tinyTemplePoolPortal: false,
     secondHalfPortal: false,
+    DK5DTPortal: false,
     chunky5DTPortal: false,
     llamaPortal: false
   },
@@ -23080,6 +23081,7 @@ const useTinyTempleFrontPortal = () => useDonkStore(useShallow((state) => state.
 const useTinyTempleIcePortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleIcePortal));
 const useTinyTemplePoolPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTemplePoolPortal));
 const useSecondHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal));
+const useDK5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.DK5DTPortal));
 const useChunky5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.chunky5DTPortal));
 const useLlamaPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal));
 const useSlamAztec = () => useSlamLevel("Angry Aztec");
@@ -23120,7 +23122,8 @@ const useAztecBack = () => {
   const DKPortal = useSecondHalfPortal();
   const DKPortal2 = useLlamaPortal();
   const DKPortal3 = useChunky5DTPortal();
-  const portal = DKPortal || DKPortal2 || DKPortal3;
+  const DKPortal4 = useDK5DTPortal();
+  const portal = DKPortal || DKPortal2 || DKPortal3 || DKPortal4;
   return {
     in: aztecFront.in && (backGateOpen || warpAll || hasClimbing && (vine || rocket) && musicSwitch) || portal,
     out: aztecFront.out && (backGateOpen || warpAll || musicSwitch && (diddy || tiny)) || portal
@@ -23939,6 +23942,7 @@ const Dk5Enemies = () => {
   const door = useAztec5DoorTemple();
   const coconut = useCoconut();
   const kaboomOrKlaptrap = useDefeatToughEnemy();
+  const DKPortal = useDK5DTPortal();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -23946,8 +23950,8 @@ const Dk5Enemies = () => {
         id: 2322,
         name: "DK 5DT Start Trap Enemy 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboomOrKlaptrap,
-        canGetBreak: door.out && coconut && kaboomOrKlaptrap
+        canGetLogic: (door.in && coconut || DKPortal) && kaboomOrKlaptrap,
+        canGetBreak: (door.out && coconut || DKPortal) && kaboomOrKlaptrap
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23956,8 +23960,8 @@ const Dk5Enemies = () => {
         id: 2323,
         name: "DK 5DT Start Trap Enemy 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboomOrKlaptrap,
-        canGetBreak: door.out && coconut && kaboomOrKlaptrap
+        canGetLogic: (door.in && coconut || DKPortal) && kaboomOrKlaptrap,
+        canGetBreak: (door.out && coconut || DKPortal) && kaboomOrKlaptrap
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -23966,8 +23970,8 @@ const Dk5Enemies = () => {
         id: 2324,
         name: "DK 5DT Start Trap Enemy 2",
         region: "5 Door Temple",
-        canGetLogic: door.in && coconut && kaboomOrKlaptrap,
-        canGetBreak: door.out && coconut && kaboomOrKlaptrap
+        canGetLogic: (door.in && coconut || DKPortal) && kaboomOrKlaptrap,
+        canGetBreak: (door.out && coconut || DKPortal) && kaboomOrKlaptrap
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -54930,6 +54934,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is past the gate requiring Guitar to open.",
                   storeKey: "secondHalfPortal",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In the first dead end of DK's 5-Door Temple room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in DK's 5DT room.",
+                  storeKey: "DK5DTPortal",
                   prefix: "shuffledAztecPortals",
                   updateItem: setAztecPortal
                 }
