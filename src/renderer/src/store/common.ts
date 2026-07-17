@@ -1194,6 +1194,7 @@ interface aztecPortals {
   tinyTempleIcePortal: boolean
   tinyTemplePoolPortal: boolean
   secondHalfPortal: boolean
+  DK5DTPortal: boolean
   chunky5DTPortal: boolean
   llamaPortal: boolean
 }

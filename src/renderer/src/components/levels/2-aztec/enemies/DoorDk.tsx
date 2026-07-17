@@ -1,5 +1,5 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { useAztec5DoorTemple } from '@renderer/hooks/aztec'
+import { useAztec5DoorTemple, useDK5DTPortal } from '@renderer/hooks/aztec'
 import { useDefeatToughEnemy } from '@renderer/hooks/enemies'
 import { useCoconut } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
@@ -8,28 +8,29 @@ const Dk5Enemies: React.FC = () => {
   const door = useAztec5DoorTemple()
   const coconut = useCoconut()
   const kaboomOrKlaptrap = useDefeatToughEnemy()
+  const DKPortal = useDK5DTPortal()
   return (
     <DropPool>
       <AztecCheck
         id={2322}
         name="DK 5DT Start Trap Enemy 0"
         region="5 Door Temple"
-        canGetLogic={door.in && coconut && kaboomOrKlaptrap}
-        canGetBreak={door.out && coconut && kaboomOrKlaptrap}
+        canGetLogic={((door.in && coconut) || DKPortal) && kaboomOrKlaptrap}
+        canGetBreak={((door.out && coconut) || DKPortal) && kaboomOrKlaptrap}
       />
       <AztecCheck
         id={2323}
         name="DK 5DT Start Trap Enemy 1"
         region="5 Door Temple"
-        canGetLogic={door.in && coconut && kaboomOrKlaptrap}
-        canGetBreak={door.out && coconut && kaboomOrKlaptrap}
+        canGetLogic={((door.in && coconut) || DKPortal) && kaboomOrKlaptrap}
+        canGetBreak={((door.out && coconut) || DKPortal) && kaboomOrKlaptrap}
       />
       <AztecCheck
         id={2324}
         name="DK 5DT Start Trap Enemy 2"
         region="5 Door Temple"
-        canGetLogic={door.in && coconut && kaboomOrKlaptrap}
-        canGetBreak={door.out && coconut && kaboomOrKlaptrap}
+        canGetLogic={((door.in && coconut) || DKPortal) && kaboomOrKlaptrap}
+        canGetBreak={((door.out && coconut) || DKPortal) && kaboomOrKlaptrap}
       />
       <AztecCheck
         id={2325}

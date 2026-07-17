@@ -158,6 +158,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledAztecPortals"
                 updateItem={setAztecPortal}
             />
+            <p>In the first dead end of DK's 5-Door Temple room</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in DK's 5DT room."
+                storeKey="DK5DTPortal"
+                prefix="shuffledAztecPortals"
+                updateItem={setAztecPortal}
+            />
             <p>In the second hallway of Chunky's 5-Door Temple room</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}
