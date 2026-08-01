@@ -30,7 +30,7 @@ switch (currentMonth) {
     getBody!.style.backgroundColor = '#404000' //Yellow background for summer
     break
   case 7: //August
-    getBody!.style.background = '#000028 url(./images/smas-smb3-doomship-bg.png) repeat-x bottom fixed'
+    getBody!.style.background = '#000028 url(./assets/images/smas-smb3-doomship-bg.png) repeat-x bottom fixed'
     getBody!.style.color = '#ffff00' //Stormy theme, also for summer
     break
   case 8: //September
