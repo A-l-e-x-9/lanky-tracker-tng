@@ -375,7 +375,7 @@ switch (currentMonth) {
     getBody.style.backgroundColor = "#404000";
     break;
   case 7:
-    getBody.style.background = "#000028 url(./src/assets/images/smas-smb3-doomship-bg.png) repeat-x bottom fixed";
+    getBody.style.background = "#000028 url(./images/smas-smb3-doomship-bg.png) repeat-x bottom fixed";
     getBody.style.color = "#ffff00";
     break;
   case 8:
