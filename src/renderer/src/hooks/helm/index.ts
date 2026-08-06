@@ -328,7 +328,7 @@ export const useWinCondition = (): boolean => {
     case 3: //Keys 3 and 8
       return hasKey3 && hasKey8
     case 4: //Kremling Kapture
-      return currentKapturedEnemyCount >= 38
+      return currentKapturedEnemyCount >= 42
     case 5: //Complete the DK Rap
       return tookItToTheFridge
     case 6: //K. Rool's Challenge
