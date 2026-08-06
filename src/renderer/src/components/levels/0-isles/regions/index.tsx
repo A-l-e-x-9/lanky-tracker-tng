@@ -62,8 +62,8 @@ return (
       </IslesMedalPool>
     </BananaMedalPool>
     <TrainingGroundsChecks />
-  </div>
     <IslesMainChecks />
+  </div>
     <IslesMainUpperChecks />
   <div className="grid">
     <DiddyAirspaceChecks />
