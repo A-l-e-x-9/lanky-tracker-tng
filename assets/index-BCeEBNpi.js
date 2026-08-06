@@ -16116,14 +16116,11 @@ const HelmLobbyChecks = () => {
   ] });
 };
 const IslesMainChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(JapesRock, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(PineappleCage, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(UnderCaves, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesRock, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(PineappleCage, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(UnderCaves, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainEnemies, {})
   ] });
 };
 const AztecLobbyTrombonePad = () => {
@@ -18449,9 +18446,9 @@ const IslesRegionChecks = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$7, {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$7, {})
       ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingGroundsChecks, {})
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TrainingGroundsChecks, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainChecks, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(IslesMainUpperChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyAirspaceChecks, {}),
