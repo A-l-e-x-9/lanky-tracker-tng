@@ -51268,6 +51268,38 @@ const KremKapture = () => {
         name: "Black Kop (slams you with a 10-second instakill Kroc)",
         canGetLogic: hasFairyCam
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -39,
+        name: "Currently unknown enemy",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -40,
+        name: "Currently unknown enemy",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -41,
+        name: "Currently unknown enemy",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -42,
+        name: "Currently unknown enemy",
+        canGetLogic: hasFairyCam
+      }
     )
   ] });
 };
