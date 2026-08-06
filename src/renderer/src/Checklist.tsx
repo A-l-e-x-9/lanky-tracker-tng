@@ -1,5 +1,6 @@
+import useDonkStore from '@renderer/store'
+import { useShallow } from 'zustand/react/shallow'
 import { Tabs, TabList, Tab, TabPanel } from 'react-tabs'
-
 import IsleChecks from './components/levels/0-isles'
 import JapesChecks from './components/levels/1-japes'
 import AztecChecks from './components/levels/2-aztec'
@@ -9,8 +10,10 @@ import ForestChecks from './components/levels/5-forest'
 import CavesChecks from './components/levels/6-caves'
 import CastleChecks from './components/levels/7-castle'
 import HelmChecks from './components/levels/8-helm'
+import KKChecks from './compontents/levels/9-krem-kapture'
 
 const Checklist: React.FC = () => {
+const kremKapture = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : 'lzr-shuffler'
   return (
     <article>
       <Tabs>
@@ -24,6 +27,7 @@ const Checklist: React.FC = () => {
           <Tab>Crystal Caves</Tab>
           <Tab>Creepy Castle</Tab>
           <Tab>Hideout Helm</Tab>
+          <Tab className={`${kremKapture}`}>Krem Kapture</Tab>
         </TabList>
         <TabPanel>
           <IsleChecks />
@@ -51,6 +55,9 @@ const Checklist: React.FC = () => {
         </TabPanel>
         <TabPanel>
           <HelmChecks />
+        </TabPanel>
+        <TabPanel className={`${kremKapture}`}>
+          <KKChecks />
         </TabPanel>
       </Tabs>
     </article>
