@@ -11712,7 +11712,7 @@ const useCurrentBonusCount = () => {
 };
 const useKremKaptureEnemyCount = () => {
   const [didCheck] = useDonkStore(useShallow((state) => [state.checks]));
-  return Number(didCheck[-38]) + Number(didCheck[-37]) + Number(didCheck[-36]) + Number(didCheck[-35]) + Number(didCheck[-34]) + Number(didCheck[-33]) + Number(didCheck[-32]) + Number(didCheck[-31]) + Number(didCheck[-30]) + Number(didCheck[-29]) + Number(didCheck[-28]) + Number(didCheck[-27]) + Number(didCheck[-26]) + Number(didCheck[-25]) + Number(didCheck[-24]) + Number(didCheck[-23]) + Number(didCheck[-22]) + Number(didCheck[-21]) + Number(didCheck[-20]) + Number(didCheck[-19]) + Number(didCheck[-18]) + Number(didCheck[-17]) + Number(didCheck[-16]) + Number(didCheck[-15]) + Number(didCheck[-14]) + Number(didCheck[-13]) + Number(didCheck[-12]) + Number(didCheck[-11]) + Number(didCheck[-10]) + Number(didCheck[-9]) + Number(didCheck[-8]) + Number(didCheck[-7]) + Number(didCheck[-6]) + Number(didCheck[-5]) + Number(didCheck[-4]) + Number(didCheck[-3]) + Number(didCheck[-2]) + Number(didCheck[-1]);
+  return +Number(didCheck[-42]) + Number(didCheck[-41]) + Number(didCheck[-40]) + Number(didCheck[-39]) + Number(didCheck[-38]) + Number(didCheck[-37]) + Number(didCheck[-36]) + Number(didCheck[-35]) + Number(didCheck[-34]) + Number(didCheck[-33]) + Number(didCheck[-32]) + Number(didCheck[-31]) + Number(didCheck[-30]) + Number(didCheck[-29]) + Number(didCheck[-28]) + Number(didCheck[-27]) + Number(didCheck[-26]) + Number(didCheck[-25]) + Number(didCheck[-24]) + Number(didCheck[-23]) + Number(didCheck[-22]) + Number(didCheck[-21]) + Number(didCheck[-20]) + Number(didCheck[-19]) + Number(didCheck[-18]) + Number(didCheck[-17]) + Number(didCheck[-16]) + Number(didCheck[-15]) + Number(didCheck[-14]) + Number(didCheck[-13]) + Number(didCheck[-12]) + Number(didCheck[-11]) + Number(didCheck[-10]) + Number(didCheck[-9]) + Number(didCheck[-8]) + Number(didCheck[-7]) + Number(didCheck[-6]) + Number(didCheck[-5]) + Number(didCheck[-4]) + Number(didCheck[-3]) + Number(didCheck[-2]) + Number(didCheck[-1]);
 };
 const useFastArcade = () => useDonkStore(useShallow((state) => state.fastChecks.factoryArcade));
 const useFastMermaid = () => useDonkStore(useShallow((state) => state.fastChecks.galleonMermaid));
@@ -50252,7 +50252,7 @@ const useWinCondition = () => {
     case 3:
       return hasKey3 && hasKey8;
     case 4:
-      return currentKapturedEnemyCount >= 38;
+      return currentKapturedEnemyCount >= 42;
     case 5:
       return tookItToTheFridge;
     case 6:
