@@ -9027,357 +9027,6 @@ Modal$2.default = Modal$1;
 })(lib, lib.exports);
 var libExports = lib.exports;
 const Modal = /* @__PURE__ */ getDefaultExportFromCjs(libExports);
-function makeTypeChecker(tabsRole) {
-  return (element) => !!element.type && element.type.tabsRole === tabsRole;
-}
-const isTab = makeTypeChecker("Tab");
-const isTabList = makeTypeChecker("TabList");
-const isTabPanel = makeTypeChecker("TabPanel");
-function isTabChild(child) {
-  return isTab(child) || isTabList(child) || isTabPanel(child);
-}
-function deepMap(children, callback) {
-  return reactExports.Children.map(children, (child) => {
-    if (child === null)
-      return null;
-    if (isTabChild(child)) {
-      return callback(child);
-    }
-    if (child.props && child.props.children && typeof child.props.children === "object") {
-      return reactExports.cloneElement(child, { ...child.props, children: deepMap(child.props.children, callback) });
-    }
-    return child;
-  });
-}
-function deepForEach(children, callback) {
-  return reactExports.Children.forEach(children, (child) => {
-    if (child === null)
-      return;
-    if (isTab(child) || isTabPanel(child)) {
-      callback(child);
-    } else if (child.props && child.props.children && typeof child.props.children === "object") {
-      if (isTabList(child))
-        callback(child);
-      deepForEach(child.props.children, callback);
-    }
-  });
-}
-function r$2(e2) {
-  var t2, f2, n2 = "";
-  if ("string" == typeof e2 || "number" == typeof e2)
-    n2 += e2;
-  else if ("object" == typeof e2)
-    if (Array.isArray(e2)) {
-      var o = e2.length;
-      for (t2 = 0; t2 < o; t2++)
-        e2[t2] && (f2 = r$2(e2[t2])) && (n2 && (n2 += " "), n2 += f2);
-    } else
-      for (f2 in e2)
-        e2[f2] && (n2 && (n2 += " "), n2 += f2);
-  return n2;
-}
-function clsx() {
-  for (var e2, t2, f2 = 0, n2 = "", o = arguments.length; f2 < o; f2++)
-    (e2 = arguments[f2]) && (t2 = r$2(e2)) && (n2 && (n2 += " "), n2 += t2);
-  return n2;
-}
-function getTabsCount(children) {
-  let tabCount = 0;
-  deepForEach(children, (child) => {
-    if (isTab(child))
-      tabCount++;
-  });
-  return tabCount;
-}
-function isNode(node) {
-  return node && "getAttribute" in node;
-}
-function isTabNode(node) {
-  return isNode(node) && node.getAttribute("data-rttab");
-}
-function isTabDisabled(node) {
-  return isNode(node) && node.getAttribute("aria-disabled") === "true";
-}
-let canUseActiveElement;
-function determineCanUseActiveElement(environment) {
-  const env = environment || (typeof window !== "undefined" ? window : void 0);
-  try {
-    canUseActiveElement = !!(typeof env !== "undefined" && env.document && env.document.activeElement);
-  } catch (e2) {
-    canUseActiveElement = false;
-  }
-}
-const defaultProps$4 = { className: "react-tabs", focus: false };
-const UncontrolledTabs = (props) => {
-  let tabNodes = reactExports.useRef([]);
-  let tabIds = reactExports.useRef([]);
-  const ref = reactExports.useRef();
-  function setSelected(index, event) {
-    if (index < 0 || index >= getTabsCount$1())
-      return;
-    const { onSelect: onSelect2, selectedIndex: selectedIndex2 } = props;
-    onSelect2(index, selectedIndex2, event);
-  }
-  function getNextTab(index) {
-    const count = getTabsCount$1();
-    for (let i = index + 1; i < count; i++) {
-      if (!isTabDisabled(getTab(i))) {
-        return i;
-      }
-    }
-    for (let i = 0; i < index; i++) {
-      if (!isTabDisabled(getTab(i))) {
-        return i;
-      }
-    }
-    return index;
-  }
-  function getPrevTab(index) {
-    let i = index;
-    while (i--) {
-      if (!isTabDisabled(getTab(i))) {
-        return i;
-      }
-    }
-    i = getTabsCount$1();
-    while (i-- > index) {
-      if (!isTabDisabled(getTab(i))) {
-        return i;
-      }
-    }
-    return index;
-  }
-  function getFirstTab() {
-    const count = getTabsCount$1();
-    for (let i = 0; i < count; i++) {
-      if (!isTabDisabled(getTab(i))) {
-        return i;
-      }
-    }
-    return null;
-  }
-  function getLastTab() {
-    let i = getTabsCount$1();
-    while (i--) {
-      if (!isTabDisabled(getTab(i))) {
-        return i;
-      }
-    }
-    return null;
-  }
-  function getTabsCount$1() {
-    const { children: children2 } = props;
-    return getTabsCount(children2);
-  }
-  function getTab(index) {
-    return tabNodes.current[`tabs-${index}`];
-  }
-  function getChildren() {
-    let index = 0;
-    const { children: children2, disabledTabClassName: disabledTabClassName2, focus: focus2, forceRenderTabPanel: forceRenderTabPanel2, selectedIndex: selectedIndex2, selectedTabClassName: selectedTabClassName2, selectedTabPanelClassName: selectedTabPanelClassName2, environment: environment2 } = props;
-    tabIds.current = tabIds.current || [];
-    let diff = tabIds.current.length - getTabsCount$1();
-    const id2 = reactExports.useId();
-    while (diff++ < 0) {
-      tabIds.current.push(`${id2}${tabIds.current.length}`);
-    }
-    return deepMap(children2, (child) => {
-      let result = child;
-      if (isTabList(child)) {
-        let listIndex = 0;
-        let wasTabFocused = false;
-        if (canUseActiveElement == null) {
-          determineCanUseActiveElement(environment2);
-        }
-        const env = environment2 || (typeof window !== "undefined" ? window : void 0);
-        if (canUseActiveElement && env) {
-          wasTabFocused = React.Children.toArray(child.props.children).filter(isTab).some((tab, i) => env.document.activeElement === getTab(i));
-        }
-        result = reactExports.cloneElement(child, { children: deepMap(child.props.children, (tab) => {
-          const key = `tabs-${listIndex}`;
-          const selected = selectedIndex2 === listIndex;
-          const props2 = { tabRef: (node) => {
-            tabNodes.current[key] = node;
-          }, id: tabIds.current[listIndex], selected, focus: selected && (focus2 || wasTabFocused) };
-          if (selectedTabClassName2)
-            props2.selectedClassName = selectedTabClassName2;
-          if (disabledTabClassName2)
-            props2.disabledClassName = disabledTabClassName2;
-          listIndex++;
-          return reactExports.cloneElement(tab, props2);
-        }) });
-      } else if (isTabPanel(child)) {
-        const props2 = { id: tabIds.current[index], selected: selectedIndex2 === index };
-        if (forceRenderTabPanel2)
-          props2.forceRender = forceRenderTabPanel2;
-        if (selectedTabPanelClassName2)
-          props2.selectedClassName = selectedTabPanelClassName2;
-        index++;
-        result = reactExports.cloneElement(child, props2);
-      }
-      return result;
-    });
-  }
-  function handleKeyDown(e2) {
-    const { direction, disableUpDownKeys: disableUpDownKeys2, disableLeftRightKeys: disableLeftRightKeys2 } = props;
-    if (isTabFromContainer(e2.target)) {
-      let { selectedIndex: index } = props;
-      let preventDefault = false;
-      let useSelectedIndex = false;
-      if (e2.code === "Space" || e2.keyCode === 32 || e2.code === "Enter" || e2.keyCode === 13) {
-        preventDefault = true;
-        useSelectedIndex = false;
-        handleClick(e2);
-      }
-      if (!disableLeftRightKeys2 && (e2.keyCode === 37 || e2.code === "ArrowLeft") || !disableUpDownKeys2 && (e2.keyCode === 38 || e2.code === "ArrowUp")) {
-        if (direction === "rtl") {
-          index = getNextTab(index);
-        } else {
-          index = getPrevTab(index);
-        }
-        preventDefault = true;
-        useSelectedIndex = true;
-      } else if (!disableLeftRightKeys2 && (e2.keyCode === 39 || e2.code === "ArrowRight") || !disableUpDownKeys2 && (e2.keyCode === 40 || e2.code === "ArrowDown")) {
-        if (direction === "rtl") {
-          index = getPrevTab(index);
-        } else {
-          index = getNextTab(index);
-        }
-        preventDefault = true;
-        useSelectedIndex = true;
-      } else if (e2.keyCode === 35 || e2.code === "End") {
-        index = getLastTab();
-        preventDefault = true;
-        useSelectedIndex = true;
-      } else if (e2.keyCode === 36 || e2.code === "Home") {
-        index = getFirstTab();
-        preventDefault = true;
-        useSelectedIndex = true;
-      }
-      if (preventDefault) {
-        e2.preventDefault();
-      }
-      if (useSelectedIndex) {
-        setSelected(index, e2);
-      }
-    }
-  }
-  function handleClick(e2) {
-    let node = e2.target;
-    do {
-      if (isTabFromContainer(node)) {
-        if (isTabDisabled(node)) {
-          return;
-        }
-        const index = [].slice.call(node.parentNode.children).filter(isTabNode).indexOf(node);
-        setSelected(index, e2);
-        return;
-      }
-    } while ((node = node.parentNode) != null);
-  }
-  function isTabFromContainer(node) {
-    if (!isTabNode(node)) {
-      return false;
-    }
-    let nodeAncestor = node.parentElement;
-    do {
-      if (nodeAncestor === ref.current)
-        return true;
-      if (nodeAncestor.getAttribute("data-rttabs"))
-        break;
-      nodeAncestor = nodeAncestor.parentElement;
-    } while (nodeAncestor);
-    return false;
-  }
-  const { children, className, disabledTabClassName, domRef, focus, forceRenderTabPanel, onSelect, selectedIndex, selectedTabClassName, selectedTabPanelClassName, environment, disableUpDownKeys, disableLeftRightKeys, ...attributes } = { ...defaultProps$4, ...props };
-  return React.createElement("div", Object.assign({}, attributes, { className: clsx(className), onClick: handleClick, onKeyDown: handleKeyDown, ref: (node) => {
-    ref.current = node;
-    if (domRef)
-      domRef(node);
-  }, "data-rttabs": true }), getChildren());
-};
-UncontrolledTabs.propTypes = {};
-const MODE_CONTROLLED = 0;
-const MODE_UNCONTROLLED = 1;
-const defaultProps$3 = { defaultFocus: false, focusTabOnClick: true, forceRenderTabPanel: false, selectedIndex: null, defaultIndex: null, environment: null, disableUpDownKeys: false, disableLeftRightKeys: false };
-const getModeFromProps = (props) => {
-  return props.selectedIndex === null ? MODE_UNCONTROLLED : MODE_CONTROLLED;
-};
-const Tabs = (props) => {
-  const { children, defaultFocus, defaultIndex, focusTabOnClick, onSelect, ...attributes } = { ...defaultProps$3, ...props };
-  const [focus, setFocus] = reactExports.useState(defaultFocus);
-  const [mode] = reactExports.useState(getModeFromProps(attributes));
-  const [selectedIndex, setSelectedIndex] = reactExports.useState(mode === MODE_UNCONTROLLED ? defaultIndex || 0 : null);
-  reactExports.useEffect(() => {
-    setFocus(false);
-  }, []);
-  if (mode === MODE_UNCONTROLLED) {
-    const tabsCount = getTabsCount(children);
-    reactExports.useEffect(() => {
-      if (selectedIndex != null) {
-        const maxTabIndex = Math.max(0, tabsCount - 1);
-        setSelectedIndex(Math.min(selectedIndex, maxTabIndex));
-      }
-    }, [tabsCount]);
-  }
-  const handleSelected = (index, last, event) => {
-    if (typeof onSelect === "function") {
-      if (onSelect(index, last, event) === false)
-        return;
-    }
-    if (focusTabOnClick) {
-      setFocus(true);
-    }
-    if (mode === MODE_UNCONTROLLED) {
-      setSelectedIndex(index);
-    }
-  };
-  let subProps = { ...props, ...attributes };
-  subProps.focus = focus;
-  subProps.onSelect = handleSelected;
-  if (selectedIndex != null) {
-    subProps.selectedIndex = selectedIndex;
-  }
-  delete subProps.defaultFocus;
-  delete subProps.defaultIndex;
-  delete subProps.focusTabOnClick;
-  return React.createElement(UncontrolledTabs, subProps, children);
-};
-Tabs.propTypes = {};
-Tabs.tabsRole = "Tabs";
-const defaultProps$2 = { className: "react-tabs__tab-list" };
-const TabList = (props) => {
-  const { children, className, ...attributes } = { ...defaultProps$2, ...props };
-  return React.createElement("ul", Object.assign({}, attributes, { className: clsx(className), role: "tablist" }), children);
-};
-TabList.tabsRole = "TabList";
-TabList.propTypes = {};
-const DEFAULT_CLASS$1 = "react-tabs__tab";
-const defaultProps$1 = { className: DEFAULT_CLASS$1, disabledClassName: `${DEFAULT_CLASS$1}--disabled`, focus: false, id: null, selected: false, selectedClassName: `${DEFAULT_CLASS$1}--selected` };
-const Tab = (props) => {
-  let nodeRef = reactExports.useRef();
-  const { children, className, disabled, disabledClassName, focus, id: id2, selected, selectedClassName, tabIndex, tabRef, ...attributes } = { ...defaultProps$1, ...props };
-  reactExports.useEffect(() => {
-    if (selected && focus) {
-      nodeRef.current.focus();
-    }
-  }, [selected, focus]);
-  return React.createElement("li", Object.assign({}, attributes, { className: clsx(className, { [selectedClassName]: selected, [disabledClassName]: disabled }), ref: (node) => {
-    nodeRef.current = node;
-    if (tabRef)
-      tabRef(node);
-  }, role: "tab", id: `tab${id2}`, "aria-selected": selected ? "true" : "false", "aria-disabled": disabled ? "true" : "false", "aria-controls": `panel${id2}`, tabIndex: tabIndex || (selected ? "0" : null), "data-rttab": true }), children);
-};
-Tab.propTypes = {};
-Tab.tabsRole = "Tab";
-const DEFAULT_CLASS = "react-tabs__tab-panel";
-const defaultProps = { className: DEFAULT_CLASS, forceRender: false, selectedClassName: `${DEFAULT_CLASS}--selected` };
-const TabPanel = (props) => {
-  const { children, className, forceRender, id: id2, selected, selectedClassName, ...attributes } = { ...defaultProps, ...props };
-  return React.createElement("div", Object.assign({}, attributes, { className: clsx(className, { [selectedClassName]: selected }), role: "tabpanel", id: `panel${id2}`, "aria-labelledby": `tab${id2}` }), forceRender || selected ? children : null);
-};
-TabPanel.tabsRole = "TabPanel";
-TabPanel.propTypes = {};
 var define_import_meta_env_default$2 = { BASE_URL: "./", MODE: "production", DEV: false, PROD: true, SSR: false };
 const createStoreImpl = (createState) => {
   let state;
@@ -9432,18 +9081,18 @@ function q$1(a, b) {
   n$1(function() {
     c.value = d;
     c.getSnapshot = b;
-    r$1(c) && g({ inst: c });
+    r$2(c) && g({ inst: c });
   }, [a, d, b]);
   m(function() {
-    r$1(c) && g({ inst: c });
+    r$2(c) && g({ inst: c });
     return a(function() {
-      r$1(c) && g({ inst: c });
+      r$2(c) && g({ inst: c });
     });
   }, [a]);
   p$1(d);
   return d;
 }
-function r$1(a) {
+function r$2(a) {
   var b = a.getSnapshot;
   a = a.value;
   try {
@@ -9475,7 +9124,7 @@ var h = reactExports, n = shimExports;
 function p(a, b) {
   return a === b && (0 !== a || 1 / a === 1 / b) || a !== a && b !== b;
 }
-var q = "function" === typeof Object.is ? Object.is : p, r = n.useSyncExternalStore, t = h.useRef, u = h.useEffect, v = h.useMemo, w = h.useDebugValue;
+var q = "function" === typeof Object.is ? Object.is : p, r$1 = n.useSyncExternalStore, t = h.useRef, u = h.useEffect, v = h.useMemo, w = h.useDebugValue;
 withSelector_production_min.useSyncExternalStoreWithSelector = function(a, b, e2, l9, g) {
   var c = t(null);
   if (null === c.current) {
@@ -9512,7 +9161,7 @@ withSelector_production_min.useSyncExternalStoreWithSelector = function(a, b, e2
       return a2(m2());
     }];
   }, [b, e2, l9, g]);
-  var d = r(a, c[0], c[1]);
+  var d = r$1(a, c[0], c[1]);
   u(function() {
     f2.hasValue = true;
     f2.value = d;
@@ -11552,6 +11201,357 @@ function useShallow(selector) {
     return shallow(prev.current, next) ? prev.current : prev.current = next;
   };
 }
+function makeTypeChecker(tabsRole) {
+  return (element) => !!element.type && element.type.tabsRole === tabsRole;
+}
+const isTab = makeTypeChecker("Tab");
+const isTabList = makeTypeChecker("TabList");
+const isTabPanel = makeTypeChecker("TabPanel");
+function isTabChild(child) {
+  return isTab(child) || isTabList(child) || isTabPanel(child);
+}
+function deepMap(children, callback) {
+  return reactExports.Children.map(children, (child) => {
+    if (child === null)
+      return null;
+    if (isTabChild(child)) {
+      return callback(child);
+    }
+    if (child.props && child.props.children && typeof child.props.children === "object") {
+      return reactExports.cloneElement(child, { ...child.props, children: deepMap(child.props.children, callback) });
+    }
+    return child;
+  });
+}
+function deepForEach(children, callback) {
+  return reactExports.Children.forEach(children, (child) => {
+    if (child === null)
+      return;
+    if (isTab(child) || isTabPanel(child)) {
+      callback(child);
+    } else if (child.props && child.props.children && typeof child.props.children === "object") {
+      if (isTabList(child))
+        callback(child);
+      deepForEach(child.props.children, callback);
+    }
+  });
+}
+function r(e2) {
+  var t2, f2, n2 = "";
+  if ("string" == typeof e2 || "number" == typeof e2)
+    n2 += e2;
+  else if ("object" == typeof e2)
+    if (Array.isArray(e2)) {
+      var o = e2.length;
+      for (t2 = 0; t2 < o; t2++)
+        e2[t2] && (f2 = r(e2[t2])) && (n2 && (n2 += " "), n2 += f2);
+    } else
+      for (f2 in e2)
+        e2[f2] && (n2 && (n2 += " "), n2 += f2);
+  return n2;
+}
+function clsx() {
+  for (var e2, t2, f2 = 0, n2 = "", o = arguments.length; f2 < o; f2++)
+    (e2 = arguments[f2]) && (t2 = r(e2)) && (n2 && (n2 += " "), n2 += t2);
+  return n2;
+}
+function getTabsCount(children) {
+  let tabCount = 0;
+  deepForEach(children, (child) => {
+    if (isTab(child))
+      tabCount++;
+  });
+  return tabCount;
+}
+function isNode(node) {
+  return node && "getAttribute" in node;
+}
+function isTabNode(node) {
+  return isNode(node) && node.getAttribute("data-rttab");
+}
+function isTabDisabled(node) {
+  return isNode(node) && node.getAttribute("aria-disabled") === "true";
+}
+let canUseActiveElement;
+function determineCanUseActiveElement(environment) {
+  const env = environment || (typeof window !== "undefined" ? window : void 0);
+  try {
+    canUseActiveElement = !!(typeof env !== "undefined" && env.document && env.document.activeElement);
+  } catch (e2) {
+    canUseActiveElement = false;
+  }
+}
+const defaultProps$4 = { className: "react-tabs", focus: false };
+const UncontrolledTabs = (props) => {
+  let tabNodes = reactExports.useRef([]);
+  let tabIds = reactExports.useRef([]);
+  const ref = reactExports.useRef();
+  function setSelected(index, event) {
+    if (index < 0 || index >= getTabsCount$1())
+      return;
+    const { onSelect: onSelect2, selectedIndex: selectedIndex2 } = props;
+    onSelect2(index, selectedIndex2, event);
+  }
+  function getNextTab(index) {
+    const count = getTabsCount$1();
+    for (let i = index + 1; i < count; i++) {
+      if (!isTabDisabled(getTab(i))) {
+        return i;
+      }
+    }
+    for (let i = 0; i < index; i++) {
+      if (!isTabDisabled(getTab(i))) {
+        return i;
+      }
+    }
+    return index;
+  }
+  function getPrevTab(index) {
+    let i = index;
+    while (i--) {
+      if (!isTabDisabled(getTab(i))) {
+        return i;
+      }
+    }
+    i = getTabsCount$1();
+    while (i-- > index) {
+      if (!isTabDisabled(getTab(i))) {
+        return i;
+      }
+    }
+    return index;
+  }
+  function getFirstTab() {
+    const count = getTabsCount$1();
+    for (let i = 0; i < count; i++) {
+      if (!isTabDisabled(getTab(i))) {
+        return i;
+      }
+    }
+    return null;
+  }
+  function getLastTab() {
+    let i = getTabsCount$1();
+    while (i--) {
+      if (!isTabDisabled(getTab(i))) {
+        return i;
+      }
+    }
+    return null;
+  }
+  function getTabsCount$1() {
+    const { children: children2 } = props;
+    return getTabsCount(children2);
+  }
+  function getTab(index) {
+    return tabNodes.current[`tabs-${index}`];
+  }
+  function getChildren() {
+    let index = 0;
+    const { children: children2, disabledTabClassName: disabledTabClassName2, focus: focus2, forceRenderTabPanel: forceRenderTabPanel2, selectedIndex: selectedIndex2, selectedTabClassName: selectedTabClassName2, selectedTabPanelClassName: selectedTabPanelClassName2, environment: environment2 } = props;
+    tabIds.current = tabIds.current || [];
+    let diff = tabIds.current.length - getTabsCount$1();
+    const id2 = reactExports.useId();
+    while (diff++ < 0) {
+      tabIds.current.push(`${id2}${tabIds.current.length}`);
+    }
+    return deepMap(children2, (child) => {
+      let result = child;
+      if (isTabList(child)) {
+        let listIndex = 0;
+        let wasTabFocused = false;
+        if (canUseActiveElement == null) {
+          determineCanUseActiveElement(environment2);
+        }
+        const env = environment2 || (typeof window !== "undefined" ? window : void 0);
+        if (canUseActiveElement && env) {
+          wasTabFocused = React.Children.toArray(child.props.children).filter(isTab).some((tab, i) => env.document.activeElement === getTab(i));
+        }
+        result = reactExports.cloneElement(child, { children: deepMap(child.props.children, (tab) => {
+          const key = `tabs-${listIndex}`;
+          const selected = selectedIndex2 === listIndex;
+          const props2 = { tabRef: (node) => {
+            tabNodes.current[key] = node;
+          }, id: tabIds.current[listIndex], selected, focus: selected && (focus2 || wasTabFocused) };
+          if (selectedTabClassName2)
+            props2.selectedClassName = selectedTabClassName2;
+          if (disabledTabClassName2)
+            props2.disabledClassName = disabledTabClassName2;
+          listIndex++;
+          return reactExports.cloneElement(tab, props2);
+        }) });
+      } else if (isTabPanel(child)) {
+        const props2 = { id: tabIds.current[index], selected: selectedIndex2 === index };
+        if (forceRenderTabPanel2)
+          props2.forceRender = forceRenderTabPanel2;
+        if (selectedTabPanelClassName2)
+          props2.selectedClassName = selectedTabPanelClassName2;
+        index++;
+        result = reactExports.cloneElement(child, props2);
+      }
+      return result;
+    });
+  }
+  function handleKeyDown(e2) {
+    const { direction, disableUpDownKeys: disableUpDownKeys2, disableLeftRightKeys: disableLeftRightKeys2 } = props;
+    if (isTabFromContainer(e2.target)) {
+      let { selectedIndex: index } = props;
+      let preventDefault = false;
+      let useSelectedIndex = false;
+      if (e2.code === "Space" || e2.keyCode === 32 || e2.code === "Enter" || e2.keyCode === 13) {
+        preventDefault = true;
+        useSelectedIndex = false;
+        handleClick(e2);
+      }
+      if (!disableLeftRightKeys2 && (e2.keyCode === 37 || e2.code === "ArrowLeft") || !disableUpDownKeys2 && (e2.keyCode === 38 || e2.code === "ArrowUp")) {
+        if (direction === "rtl") {
+          index = getNextTab(index);
+        } else {
+          index = getPrevTab(index);
+        }
+        preventDefault = true;
+        useSelectedIndex = true;
+      } else if (!disableLeftRightKeys2 && (e2.keyCode === 39 || e2.code === "ArrowRight") || !disableUpDownKeys2 && (e2.keyCode === 40 || e2.code === "ArrowDown")) {
+        if (direction === "rtl") {
+          index = getPrevTab(index);
+        } else {
+          index = getNextTab(index);
+        }
+        preventDefault = true;
+        useSelectedIndex = true;
+      } else if (e2.keyCode === 35 || e2.code === "End") {
+        index = getLastTab();
+        preventDefault = true;
+        useSelectedIndex = true;
+      } else if (e2.keyCode === 36 || e2.code === "Home") {
+        index = getFirstTab();
+        preventDefault = true;
+        useSelectedIndex = true;
+      }
+      if (preventDefault) {
+        e2.preventDefault();
+      }
+      if (useSelectedIndex) {
+        setSelected(index, e2);
+      }
+    }
+  }
+  function handleClick(e2) {
+    let node = e2.target;
+    do {
+      if (isTabFromContainer(node)) {
+        if (isTabDisabled(node)) {
+          return;
+        }
+        const index = [].slice.call(node.parentNode.children).filter(isTabNode).indexOf(node);
+        setSelected(index, e2);
+        return;
+      }
+    } while ((node = node.parentNode) != null);
+  }
+  function isTabFromContainer(node) {
+    if (!isTabNode(node)) {
+      return false;
+    }
+    let nodeAncestor = node.parentElement;
+    do {
+      if (nodeAncestor === ref.current)
+        return true;
+      if (nodeAncestor.getAttribute("data-rttabs"))
+        break;
+      nodeAncestor = nodeAncestor.parentElement;
+    } while (nodeAncestor);
+    return false;
+  }
+  const { children, className, disabledTabClassName, domRef, focus, forceRenderTabPanel, onSelect, selectedIndex, selectedTabClassName, selectedTabPanelClassName, environment, disableUpDownKeys, disableLeftRightKeys, ...attributes } = { ...defaultProps$4, ...props };
+  return React.createElement("div", Object.assign({}, attributes, { className: clsx(className), onClick: handleClick, onKeyDown: handleKeyDown, ref: (node) => {
+    ref.current = node;
+    if (domRef)
+      domRef(node);
+  }, "data-rttabs": true }), getChildren());
+};
+UncontrolledTabs.propTypes = {};
+const MODE_CONTROLLED = 0;
+const MODE_UNCONTROLLED = 1;
+const defaultProps$3 = { defaultFocus: false, focusTabOnClick: true, forceRenderTabPanel: false, selectedIndex: null, defaultIndex: null, environment: null, disableUpDownKeys: false, disableLeftRightKeys: false };
+const getModeFromProps = (props) => {
+  return props.selectedIndex === null ? MODE_UNCONTROLLED : MODE_CONTROLLED;
+};
+const Tabs = (props) => {
+  const { children, defaultFocus, defaultIndex, focusTabOnClick, onSelect, ...attributes } = { ...defaultProps$3, ...props };
+  const [focus, setFocus] = reactExports.useState(defaultFocus);
+  const [mode] = reactExports.useState(getModeFromProps(attributes));
+  const [selectedIndex, setSelectedIndex] = reactExports.useState(mode === MODE_UNCONTROLLED ? defaultIndex || 0 : null);
+  reactExports.useEffect(() => {
+    setFocus(false);
+  }, []);
+  if (mode === MODE_UNCONTROLLED) {
+    const tabsCount = getTabsCount(children);
+    reactExports.useEffect(() => {
+      if (selectedIndex != null) {
+        const maxTabIndex = Math.max(0, tabsCount - 1);
+        setSelectedIndex(Math.min(selectedIndex, maxTabIndex));
+      }
+    }, [tabsCount]);
+  }
+  const handleSelected = (index, last, event) => {
+    if (typeof onSelect === "function") {
+      if (onSelect(index, last, event) === false)
+        return;
+    }
+    if (focusTabOnClick) {
+      setFocus(true);
+    }
+    if (mode === MODE_UNCONTROLLED) {
+      setSelectedIndex(index);
+    }
+  };
+  let subProps = { ...props, ...attributes };
+  subProps.focus = focus;
+  subProps.onSelect = handleSelected;
+  if (selectedIndex != null) {
+    subProps.selectedIndex = selectedIndex;
+  }
+  delete subProps.defaultFocus;
+  delete subProps.defaultIndex;
+  delete subProps.focusTabOnClick;
+  return React.createElement(UncontrolledTabs, subProps, children);
+};
+Tabs.propTypes = {};
+Tabs.tabsRole = "Tabs";
+const defaultProps$2 = { className: "react-tabs__tab-list" };
+const TabList = (props) => {
+  const { children, className, ...attributes } = { ...defaultProps$2, ...props };
+  return React.createElement("ul", Object.assign({}, attributes, { className: clsx(className), role: "tablist" }), children);
+};
+TabList.tabsRole = "TabList";
+TabList.propTypes = {};
+const DEFAULT_CLASS$1 = "react-tabs__tab";
+const defaultProps$1 = { className: DEFAULT_CLASS$1, disabledClassName: `${DEFAULT_CLASS$1}--disabled`, focus: false, id: null, selected: false, selectedClassName: `${DEFAULT_CLASS$1}--selected` };
+const Tab = (props) => {
+  let nodeRef = reactExports.useRef();
+  const { children, className, disabled, disabledClassName, focus, id: id2, selected, selectedClassName, tabIndex, tabRef, ...attributes } = { ...defaultProps$1, ...props };
+  reactExports.useEffect(() => {
+    if (selected && focus) {
+      nodeRef.current.focus();
+    }
+  }, [selected, focus]);
+  return React.createElement("li", Object.assign({}, attributes, { className: clsx(className, { [selectedClassName]: selected, [disabledClassName]: disabled }), ref: (node) => {
+    nodeRef.current = node;
+    if (tabRef)
+      tabRef(node);
+  }, role: "tab", id: `tab${id2}`, "aria-selected": selected ? "true" : "false", "aria-disabled": disabled ? "true" : "false", "aria-controls": `panel${id2}`, tabIndex: tabIndex || (selected ? "0" : null), "data-rttab": true }), children);
+};
+Tab.propTypes = {};
+Tab.tabsRole = "Tab";
+const DEFAULT_CLASS = "react-tabs__tab-panel";
+const defaultProps = { className: DEFAULT_CLASS, forceRender: false, selectedClassName: `${DEFAULT_CLASS}--selected` };
+const TabPanel = (props) => {
+  const { children, className, forceRender, id: id2, selected, selectedClassName, ...attributes } = { ...defaultProps, ...props };
+  return React.createElement("div", Object.assign({}, attributes, { className: clsx(className, { [selectedClassName]: selected }), role: "tabpanel", id: `panel${id2}`, "aria-labelledby": `tab${id2}` }), forceRender || selected ? children : null);
+};
+TabPanel.tabsRole = "TabPanel";
+TabPanel.propTypes = {};
 const useBalancedRoolPhase = () => useDonkStore(useShallow((state) => state.settings.balancedRoolPhases));
 const useForestTime = () => useDonkStore(useShallow((state) => state.settings.forestTime));
 const useGalleonTideStartHigh = () => useDonkStore(useShallow((state) => state.settings.galleonHighTide));
@@ -50938,7 +50938,37 @@ const HelmChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies, {}) })
   ] });
 };
+const KKCheck = (props) => {
+  const checks = useDonkStore(useShallow((state) => state.checks));
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    ItemCheck,
+    {
+      id: props.id,
+      name: props.name,
+      level: "Krem Kapture",
+      region: "",
+      canGetLogic: props.canGetLogic,
+      done: checks[props.id]
+    }
+  ) });
+};
+const KremKapture = () => {
+  const hasFairyCam = useCamera();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    KKCheck,
+    {
+      id: -1,
+      name: "Gnawty",
+      canGetLogic: hasFairyCam
+    }
+  ) });
+};
+const KKChecks = () => {
+  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KremKapture, {}) });
+};
 const Checklist = () => {
+  const kremKapture = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "lzr-shuffler";
   return /* @__PURE__ */ jsxRuntimeExports.jsx("article", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Tabs, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(TabList, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "DK Isles" }),
@@ -50949,7 +50979,8 @@ const Checklist = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Fungi Forest" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Crystal Caves" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Creepy Castle" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Hideout Helm" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "Hideout Helm" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { className: `${kremKapture}`, children: "Krem Kapture" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TabPanel, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(IsleChecks, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TabPanel, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(JapesChecks, {}) }),
@@ -50959,7 +50990,8 @@ const Checklist = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(TabPanel, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ForestChecks, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TabPanel, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CavesChecks, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TabPanel, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CastleChecks, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TabPanel, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(HelmChecks, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TabPanel, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(HelmChecks, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TabPanel, { className: `${kremKapture}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KKChecks, {}) })
   ] }) });
 };
 const CountSelector = (props) => {
