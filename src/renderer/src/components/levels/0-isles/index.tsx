@@ -41,7 +41,7 @@ return (
     <TinyBananas />
     <ChunkyBananas />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <KasplatLocations />
   </div>
   <div className="grid">

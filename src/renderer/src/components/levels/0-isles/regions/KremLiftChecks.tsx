@@ -1,5 +1,3 @@
-import useDonkStore from '@renderer/store'
-import { useShallow } from 'zustand/react/shallow'
 import KremLiftEnemies from '../enemies/KremLift'
 import CoconutCage from '../gold-bananas/dk/CoconutCage'
 
