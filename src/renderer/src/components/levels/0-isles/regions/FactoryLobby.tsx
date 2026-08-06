@@ -15,7 +15,6 @@ import FactoryLobbyDirt from '../dirt/FactoryLobby'
 import FactoryLobbyKasplats from '../kasplats/FactoryLobby'
 
 const FactoryLobbyChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -33,21 +32,19 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <FactoryLobbyFairy />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <TinyKasplat />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
-    <FactoryLobbyEnemies />
-  </div>
   <div className="grid">
-  <FactoryLobbyArenas />
-  <FactoryLobbyCrates />
-  <FactoryLobbyDirt />
+    <FactoryLobbyEnemies />
+    <FactoryLobbyArenas />
+    <FactoryLobbyCrates />
+    <FactoryLobbyDirt />
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <FactoryLobbyFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <FactoryLobbyKasplats />
   </div>
   </>

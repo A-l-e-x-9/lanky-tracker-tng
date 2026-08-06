@@ -16,7 +16,6 @@ import CavesLobbyFairies from '../fairies/CavesLobby'
 import CavesLobbyKasplats from '../kasplats/CavesLobby'
 
 const CavesLobbyChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -33,7 +32,7 @@ return (
     <CavesLobbyTiny />
     <CavesLobbyChunky />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <LankyKasplat />
   </div>
   <div className="grid">
@@ -44,7 +43,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <CavesLobbyFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <CavesLobbyKasplats />
   </div>
   </>

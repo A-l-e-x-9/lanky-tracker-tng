@@ -44,7 +44,6 @@ import OuterFairies from '../fairies/OuterRim'
 import OuterKasplats from '../kasplats/OuterRim'
 
 const IslesRegionChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -63,9 +62,7 @@ return (
     </BananaMedalPool>
     <TrainingGroundsChecks />
     <IslesMainChecks />
-  </div>
     <IslesMainUpperChecks />
-  <div className="grid">
     <DiddyAirspaceChecks />
     <DKIslandArenas />
     <DKIslandCrates />
@@ -74,15 +71,13 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <DKIslandFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <DKIslandKasplats />
   </div>
   <div className="grid">
     <PrisonChecks />
-  </div>
     <KremBaseChecks />
     <KremLiftChecks />
-  <div className="grid">
     <SnideRoomChecks />
   </div>
     <KremTopChecks />
@@ -94,7 +89,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <KremIslandFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <KremIslandKasplats />
   </div>
     <OuterIslesChecks />
@@ -106,7 +101,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <OuterFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <OuterKasplats />
   </div>
     <JapesLobbyChecks />

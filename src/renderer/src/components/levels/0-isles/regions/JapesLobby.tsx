@@ -14,7 +14,6 @@ import JapesLobbyDirt from '../dirt/JapesLobby'
 import JapesLobbyKasplats from '../kasplats/JapesLobby'
 
 const JapesLobbyChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
@@ -28,15 +27,13 @@ return (
     <JapesLobbyTiny />
     <JapesLobbyChunky />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
-    <JapesLobbyEnemies />
-  </div>
   <div className="grid">
+    <JapesLobbyEnemies />
     <JapesLobbyArenas />
     <JapesLobbyCrates />
     <JapesLobbyDirt />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <JapesLobbyKasplats />
   </div>
   </>

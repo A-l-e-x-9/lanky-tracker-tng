@@ -13,7 +13,6 @@ import GalleonLobbyDirt from '../dirt/GalleonLobby'
 import GalleonLobbyKasplats from '../kasplats/GalleonLobby'
 
 const GalleonLobbyChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
@@ -26,7 +25,7 @@ return (
     <GalleonLobbyTiny />
     <GalleonLobbyChunky />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ChunkyKasplat />
   </div>
   <div className="grid">
@@ -34,7 +33,7 @@ return (
     <GalleonLobbyCrates />
     <GalleonLobbyDirt />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <GalleonLobbyKasplats />
   </div>
   </>
