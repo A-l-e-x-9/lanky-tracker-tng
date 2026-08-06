@@ -32,7 +32,7 @@ import {
 } from '../kongs'
 import { useHelmStartPosition, useHelmItem1, useHelmItemNum1, useHelmItem2, useHelmItemNum2, useKRoolItem, useKRoolItemNum } from '../settings'
 import { LogicBool } from '../world'
-import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentCoCoinCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useBean, useCurrentPearlCount, useCurrentBossCount, useCurrentBonusCount } from '../consumables'
+import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentCoCoinCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useBean, useCurrentPearlCount, useCurrentBossCount, useCurrentBonusCount, useKremKaptureEnemyCount } from '../consumables'
 
 /**
  * Can we play in Hideout Helm?
@@ -318,6 +318,7 @@ export const useWinCondition = (): boolean => {
   const currentBossCount = useCurrentBossCount()
   const currentBonusCount = useCurrentBonusCount()
   const tookItToTheFridge = useTheFridge()
+  const currentKapturedEnemyCount = useKremKaptureEnemyCount()
   
   switch (itemNeeded) {
     case 1: //keys
@@ -327,7 +328,7 @@ export const useWinCondition = (): boolean => {
     case 3: //Keys 3 and 8
       return hasKey3 && hasKey8
     case 4: //Kremling Kapture
-      return true //stuff needed to satisfy this win con TBD...
+      return currentKapturedEnemyCount >= 38
     case 5: //Complete the DK Rap
       return tookItToTheFridge
     case 6: //K. Rool's Challenge
