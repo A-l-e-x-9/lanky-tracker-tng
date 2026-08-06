@@ -50948,20 +50948,323 @@ const KKCheck = (props) => {
       level: "Krem Kapture",
       region: "",
       canGetLogic: props.canGetLogic,
+      canGetBreak: props.canGetBreak,
       done: checks[props.id]
     }
   ) });
 };
 const KremKapture = () => {
   const hasFairyCam = useCamera();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    KKCheck,
-    {
-      id: -1,
-      name: "Gnawty",
-      canGetLogic: hasFairyCam
-    }
-  ) });
+  const hasDiving = useDive();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -1,
+        name: "Gnawty",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -2,
+        name: "Gold Gnawty",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -3,
+        name: "Kritter",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -4,
+        name: "Stinging Zinger",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -5,
+        name: "Orange-Throwing Zinger",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -6,
+        name: "Green Klaptrap",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -7,
+        name: "Red Klaptrap",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -8,
+        name: "Purple Klaptrap",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -9,
+        name: "Klump",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -10,
+        name: "Klobber",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -11,
+        name: "Kaboom",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -12,
+        name: "Puftup",
+        canGetLogic: hasFairyCam && hasDiving.in,
+        canGetBreak: hasFairyCam && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -13,
+        name: "Shuri",
+        canGetLogic: hasFairyCam && hasDiving.in,
+        canGetBreak: hasFairyCam && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -14,
+        name: 'Scubi/"Gimpfish"',
+        canGetLogic: hasFairyCam && hasDiving.in,
+        canGetBreak: hasFairyCam && hasDiving.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -15,
+        name: "Mecha-Zinger",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -16,
+        name: "Mecha-Kritter",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -17,
+        name: "Domino",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -18,
+        name: "Red Dice",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -19,
+        name: "Green Dice",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -20,
+        name: "Wooden plank/ruler",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -21,
+        name: "Kosha",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -22,
+        name: "Spider",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -23,
+        name: "Purple Bat",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -24,
+        name: "Big Bug Bash Fly",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -25,
+        name: "Mushroom Kritter",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -26,
+        name: "Kritter Skeleton",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -27,
+        name: "Flame from that damn Chunky 5-Door Igloo check with the wabbit",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -28,
+        name: "&quot:&quot:&quot:&quot:&quot:&quot:&quot:&quot:&quot:&quot:Ghost&quot:&quot:&quot:&quot:&quot:&quot:&quot:&quot:&quot:&quot: Kritter in a sheet",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -29,
+        name: "DK's blonde Kasplat",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -30,
+        name: "Diddy's ginger Kasplat",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -31,
+        name: "Lanky's blue-haired Kasplat",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -32,
+        name: "Tiny's purple-haired Kasplat",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -33,
+        name: "Chunky's green-haired Kasplat",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -34,
+        name: "White Kop (the classic)",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -35,
+        name: "Orange Kop (disables Tag Anywhere)",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -36,
+        name: "Green Kop (disables the Z Button)",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -37,
+        name: "Blue Kop (disables the A Button)",
+        canGetLogic: hasFairyCam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      KKCheck,
+      {
+        id: -38,
+        name: "Black Kop (slams you with a 10-second instakill Kroc)",
+        canGetLogic: hasFairyCam
+      }
+    )
+  ] });
 };
 const KKChecks = () => {
   const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
