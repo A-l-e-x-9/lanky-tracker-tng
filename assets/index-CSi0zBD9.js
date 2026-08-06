@@ -51180,7 +51180,7 @@ const KremKapture = () => {
       KKCheck,
       {
         id: -28,
-        name: "&quot:&quot:&quot:&quot:&quot:&quot:&quot:&quot:&quot:&quot:Ghost&quot:&quot:&quot:&quot:&quot:&quot:&quot:&quot:&quot:&quot: Kritter in a sheet",
+        name: '""""""""""Ghost"""""""""" Kritter in a sheet',
         canGetLogic: hasFairyCam
       }
     ),
