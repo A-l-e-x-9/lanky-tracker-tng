@@ -12,6 +12,7 @@ const KKCheck: React.FC<LevelCheckProps> = (props) => {
         level="Krem Kapture"
         region=""
         canGetLogic={props.canGetLogic}
+        canGetBreak={props.canGetBreak}
         done={checks[props.id]}
       />
     </>

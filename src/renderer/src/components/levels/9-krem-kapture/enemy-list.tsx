@@ -64,17 +64,20 @@ const KremKapture: React.FC = () => {
       <KKCheck
         id={-12}
         name="Puftup"
-        canGetLogic={hasFairyCam && hasDiving}
+        canGetLogic={hasFairyCam && hasDiving.in}
+        canGetBreak={hasFairyCam && hasDiving.out}
       />
       <KKCheck
         id={-13}
         name="Shuri"
-        canGetLogic={hasFairyCam && hasDiving}
+        canGetLogic={hasFairyCam && hasDiving.in}
+        canGetBreak={hasFairyCam && hasDiving.out}
       />
       <KKCheck
         id={-14}
         name="Scubi/&quot;Gimpfish&quot;"
-        canGetLogic={hasFairyCam && hasDiving}
+        canGetLogic={hasFairyCam && hasDiving.in}
+        canGetBreak={hasFairyCam && hasDiving.out}
       />
       <KKCheck
         id={-15}
