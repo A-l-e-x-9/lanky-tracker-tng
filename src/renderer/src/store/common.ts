@@ -785,6 +785,7 @@ export type Level =
   | 'Crystal Caves'
   | 'Creepy Castle'
   | 'Hideout Helm'
+  | 'Krem Kapture'
 
 export type Boss =
   | ''
@@ -844,7 +845,7 @@ export const SelectableRegions = [
   'Castle Dungeon',
   'Various Castle Rooms',
   'Hideout Helm',
-  'Bosses'
+  'Bosses',
 ] as const
 
 export type SelectableRegionValues = (typeof SelectableRegions)[number]
