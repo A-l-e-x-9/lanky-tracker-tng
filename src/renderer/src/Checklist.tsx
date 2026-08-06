@@ -10,7 +10,7 @@ import ForestChecks from './components/levels/5-forest'
 import CavesChecks from './components/levels/6-caves'
 import CastleChecks from './components/levels/7-castle'
 import HelmChecks from './components/levels/8-helm'
-import KKChecks from './compontents/levels/9-krem-kapture'
+import KKChecks from './components/levels/9-krem-kapture'
 
 const Checklist: React.FC = () => {
 const kremKapture = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : 'lzr-shuffler'
