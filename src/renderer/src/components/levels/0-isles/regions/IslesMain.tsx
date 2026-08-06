@@ -4,14 +4,13 @@ import PineappleCage from '../gold-bananas/chunky/PineappleCage'
 import JapesRock from '../gold-bananas/dk/JapesRock'
 
 const IslesMainChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
   return (
   <>
-      <JapesRock />
-      <PineappleCage />
-      <UnderCaves />
-      <IslesMainEnemies />
-    </>
+    <JapesRock />
+    <PineappleCage />
+    <UnderCaves />
+    <IslesMainEnemies />
+  </>
   )
 }
 
