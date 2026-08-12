@@ -27,8 +27,7 @@ const Shuffled: React.FC = () => {
         id={50015}
         name="Shuffled Kasplat: Behind Helm Lobby"
         region="K. Rool's Island"
-        canGetLogic={canReachHelmLobby.in}
-        canGetBreak={canReachHelmLobby.out}
+        canGetLogic={canReachHelmLobby}
       />
       <IslesCheck
         id={50016}
