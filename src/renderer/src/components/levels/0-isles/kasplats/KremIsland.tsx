@@ -1,11 +1,11 @@
 import IslesCheck from '../check'
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { usePlayLobby, useCheckLankyPrison } from '@renderer/hooks/isles'
+import { usePlayLobby, useCheckLankyPrison, useIslesKremTop } from '@renderer/hooks/isles'
 
 const Shuffled: React.FC = () => {
   const canReachFactoryLobby = usePlayLobby('Frantic Factory')
-  const canReachHelmLobby = usePlayLobby('Hideout Helm')
+  const canReachHelmLobby = useIslesKremTop()
   const canDoSprintGB = useCheckLankyPrison()
     return (
     <KasplatPool>
