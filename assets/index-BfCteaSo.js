@@ -32326,8 +32326,8 @@ const Shuffled$n = () => {
         id: 53009,
         name: "Shuffled Kasplat: A step up in the Prod Room",
         region: "Prod Room",
-        canGetLogic: canDoTinyProd.in || prodRoomOn.in || hasAllBananaports,
-        canGetBreak: canDoTinyProd.out || prodRoomOn.out
+        canGetLogic: isBreathing.in && (canDoTinyProd.in || prodRoomOn.in || hasAllBananaports),
+        canGetBreak: isBreathing.out && (canDoTinyProd.out || prodRoomOn.out)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
