@@ -17934,7 +17934,7 @@ const Shuffled$1F = () => {
 const KremIslandFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1F, {}) : null;
 const Shuffled$1E = () => {
   const canReachFactoryLobby = usePlayLobby("Frantic Factory");
-  const canReachHelmLobby = usePlayLobby("Hideout Helm");
+  const canReachHelmLobby = useIslesKremTop();
   const canDoSprintGB = useCheckLankyPrison();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17963,8 +17963,7 @@ const Shuffled$1E = () => {
         id: 50015,
         name: "Shuffled Kasplat: Behind Helm Lobby",
         region: "K. Rool's Island",
-        canGetLogic: canReachHelmLobby.in,
-        canGetBreak: canReachHelmLobby.out
+        canGetLogic: canReachHelmLobby
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
