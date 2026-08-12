@@ -41,8 +41,8 @@ const prodRoomOn = useFactoryProductionEnabled()
         id={53009}
         name="Shuffled Kasplat: A step up in the Prod Room"
         region="Prod Room"
-        canGetLogic={canDoTinyProd.in || prodRoomOn.in || hasAllBananaports}
-        canGetBreak={canDoTinyProd.out || prodRoomOn.out}
+        canGetLogic={isBreathing.in && (canDoTinyProd.in || prodRoomOn.in || hasAllBananaports)}
+        canGetBreak={isBreathing.out && (canDoTinyProd.out || prodRoomOn.out)}
       />
       <FactoryCheck
         id={53014}
