@@ -32289,6 +32289,7 @@ const Shuffled$q = () => {
   const isHinaKagiyama = useTwirl();
   const hasDK = useDk();
   const prodRoomOn = useFactoryProductionEnabled();
+  const hasPortal = useCrusherPortal();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
@@ -32336,8 +32337,8 @@ const Shuffled$q = () => {
         id: 53014,
         name: "Shuffled Kasplat: In the crusher",
         region: "Prod Room",
-        canGetLogic: prodRoomOn.in,
-        canGetBreak: prodRoomOn.out
+        canGetLogic: prodRoomOn.in || hasPortal,
+        canGetBreak: prodRoomOn.out || hasPortal
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -33795,9 +33796,20 @@ const CavernsChecks = () => {
   ] });
 };
 const Shuffled$p = () => {
+  const lankyVanillaKasplat = useCannonKasplat();
   const tinyVanillaKasplat = useVineKasplat();
   const isBreathing = useGeneralThing$6();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 54002,
+        name: "Shuffled Kasplat: Lanky's Vanilla Location (the cannon game room)",
+        region: "Galleon Caves",
+        canGetLogic: lankyVanillaKasplat.in,
+        canGetBreak: lankyVanillaKasplat.out
+      }
+    ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
@@ -35535,7 +35547,6 @@ const ShuffledFairies$4 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntime
 const Shuffled$i = () => {
   const DKVanillaKasplat = useDiddyGoldGb();
   const diddyVanillaKasplat = useKevin();
-  const lankyVanillaKasplat = useCannonKasplat();
   const isBreathing = useGeneralThing$6();
   const canGoInLighthouse = useGalleonLighthouseInside();
   const mechfishAgenda = useDiddyMechGb();
@@ -35562,16 +35573,6 @@ const Shuffled$i = () => {
         region: "Lighthouse Area",
         canGetLogic: diddyVanillaKasplat.in,
         canGetBreak: diddyVanillaKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 54002,
-        name: "Shuffled Kasplat: Lanky's Vanilla Location (the cannon game room)",
-        region: "Galleon Caves",
-        canGetLogic: lankyVanillaKasplat.in,
-        canGetBreak: lankyVanillaKasplat.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
