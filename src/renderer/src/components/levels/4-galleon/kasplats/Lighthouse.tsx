@@ -1,14 +1,10 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGalleonLighthousePlatform, useChunkySeasickGb } from '@renderer/hooks/galleon'
+import { useGalleonLighthousePlatform } from '@renderer/hooks/galleon'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useClimbing, usePunch } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const canReachLighthouseBase = useGalleonLighthousePlatform()
-const canDoChunkyShip = useChunkySeasickGb()
-const hasClimbing = useClimbing()
-const hasPrimatePunch = usePunch()
   return (
     <KasplatPool>
       <GalleonCheck
