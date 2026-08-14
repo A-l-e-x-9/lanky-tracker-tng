@@ -32,13 +32,6 @@ const hasPrimatePunch = usePunch()
         canGetBreak={diddyVanillaKasplat.out}
       />
       <GalleonCheck
-        id={54002}
-        name="Shuffled Kasplat: Lanky's Vanilla Location (the cannon game room)"
-        region="Galleon Caves"
-        canGetLogic={lankyVanillaKasplat.in}
-        canGetBreak={lankyVanillaKasplat.out}
-      />
-      <GalleonCheck
         id={54006}
         name="Shuffled Kasplat: At the vanilla Battle Arena"
         region="Galleon Caves"

@@ -9,6 +9,13 @@ const isBreathing = useGeneralThing()
   return (
     <KasplatPool>
       <GalleonCheck
+        id={54002}
+        name="Shuffled Kasplat: Lanky's Vanilla Location (the cannon game room)"
+        region="Galleon Caves"
+        canGetLogic={lankyVanillaKasplat.in}
+        canGetBreak={lankyVanillaKasplat.out}
+      />
+      <GalleonCheck
         id={54003}
         name="Shuffled Kasplat: Tiny's Vanilla Location (near vanilla warp 3 in the cave)"
         region="Galleon Caves"

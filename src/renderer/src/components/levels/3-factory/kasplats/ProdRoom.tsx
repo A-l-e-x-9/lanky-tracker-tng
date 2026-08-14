@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useShuffleKasplats, useBananaportAll } from '@renderer/hooks/settings'
 import FactoryCheck from '../check'
-import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
+import { useGeneralThing, useProductionTopKasplat, useProductionBaseKasplat, useFactoryProductionEnabled, useFactoryProductionTop, useCrusherPortal } from '@renderer/hooks/factory'
 import { useClimbing, useDk, useTwirl } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
@@ -14,6 +14,7 @@ const hasAllBananaports = useBananaportAll()
 const isHinaKagiyama = useTwirl()
 const hasDK = useDk()
 const prodRoomOn = useFactoryProductionEnabled()
+const hasPortal = useCrusherPortal()
   return (
     <KasplatPool>
       <FactoryCheck
@@ -48,8 +49,8 @@ const prodRoomOn = useFactoryProductionEnabled()
         id={53014}
         name="Shuffled Kasplat: In the crusher"
         region="Prod Room"
-        canGetLogic={prodRoomOn.in}
-        canGetBreak={prodRoomOn.out}
+        canGetLogic={prodRoomOn.in || hasPortal}
+        canGetBreak={prodRoomOn.out || hasPortal}
       />
       <FactoryCheck
         id={53015}
