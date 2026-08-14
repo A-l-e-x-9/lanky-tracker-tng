@@ -9,8 +9,11 @@ import LankyMedal from '../medals/LankyMedal'
 import TinyMedal from '../medals/TinyMedal'
 import ShopLocations from '../shops'
 import CavernsChecks from './Caverns'
+import CavernKasplats from '../kasplats/Caverns'
 import LighthouseChecks from './Lighthouse'
+import LighthouseKasplats from '../kasplats/Lighthouse'
 import OutskirtsChecks from './Outskirts'
+import OutskirtKasplats from '../kasplats/Outskirts'
 import FiveShipChecks from './Ship'
 import TreasureChecks from './Treasure'
 import ShuffledArenas from '../arenas/Shuffled'
@@ -20,7 +23,6 @@ import ShuffledFairies from '../fairies/Shuffled'
 import ShuffledKasplats from '../kasplats/Shuffled'
 
 const GalleonRegionChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -37,8 +39,17 @@ return (
       </BananaMedalPool>
     </div>
       <CavernsChecks />
+    <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+      <CavernKasplats />
+    </div>
       <LighthouseChecks />
+    <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+      <LighthouseKasplats />
+    </div>
       <OutskirtsChecks />
+    <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+      <OutskirtKasplats />
+    </div>
       <TreasureChecks />
       <FiveShipChecks />
     <div className="grid">
@@ -51,7 +62,7 @@ return (
     <div className={`grid ${isFairySeed && fairiesInRotation}`}>
       <ShuffledFairies />
     </div>
-    <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
       <ShuffledKasplats />
     </div>
   </>

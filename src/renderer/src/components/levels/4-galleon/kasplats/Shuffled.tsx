@@ -29,7 +29,7 @@ const hasPrimatePunch = usePunch()
       />
       <GalleonCheck
         id={54001}
-        name="Shuffled Kasplat: Diddy's Vanilla Location (Lighthouse alcove)"
+        name="Shuffled Kasplat: Diddy's Vanilla Location (Kevin)"
         region="Lighthouse Area"
         canGetLogic={diddyVanillaKasplat.in}
         canGetBreak={diddyVanillaKasplat.out}
@@ -42,39 +42,11 @@ const hasPrimatePunch = usePunch()
         canGetBreak={lankyVanillaKasplat.out}
       />
       <GalleonCheck
-        id={54003}
-        name="Shuffled Kasplat: Tiny's Vanilla Location (near vanilla warp 3 in the cave)"
-        region="Galleon Caves"
-        canGetLogic={tinyVanillaKasplat.in}
-        canGetBreak={tinyVanillaKasplat.out}
-      />
-      <GalleonCheck
-        id={54004}
-        name="Shuffled Kasplat: Chunky's Vanilla Location (the &quot;cactus&quot;)"
-        region="Shipyard Outskirts"
-        canGetLogic={chunkyVanillaKasplat.in}
-        canGetBreak={chunkyVanillaKasplat.out}
-      />
-      <GalleonCheck
-        id={54005}
-        name="Shuffled Kasplat: Base of the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseBase.in}
-        canGetBreak={canReachLighthouseBase.out}
-      />
-      <GalleonCheck
         id={54006}
         name="Shuffled Kasplat: At the vanilla Battle Arena"
         region="Galleon Caves"
         canGetLogic={isBreathing.in && hasPrimatePunch}
         canGetBreak={isBreathing.out && hasPrimatePunch}
-      />
-      <GalleonCheck
-        id={54007}
-        name="Shuffled Kasplat: In front of Cranky's"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
       />
       <GalleonCheck
         id={54008}
@@ -105,32 +77,11 @@ const hasPrimatePunch = usePunch()
         canGetBreak={canDoChunkyShip.out}
       />
       <GalleonCheck
-        id={54012}
-        name="Shuffled Kasplat: Just above the cave to Chunky's chests"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={54013}
-        name="Shuffled Kasplat: At the vanilla level start"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
         id={54014}
         name="Shuffled Kasplat: In Chunky's right chest"
         region="Galleon Caves"
         canGetLogic={isBreathing.in && hasPrimatePunch}
         canGetBreak={isBreathing.out && hasPrimatePunch}
-      />
-      <GalleonCheck
-        id={54015}
-        name="Shuffled Kasplat: Also on the &quot;cactus&quot;"
-        region="Shipyard Outskirts"
-        canGetLogic={chunkyVanillaKasplat.in}
-        canGetBreak={chunkyVanillaKasplat.out}
       />
     </KasplatPool>
   )
