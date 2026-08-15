@@ -6,7 +6,6 @@ import DiddyBallroom from '../gold-bananas/diddy/Ballroom'
 import TinyRace from '../gold-bananas/tiny/Race'
 
 const BallroomChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
