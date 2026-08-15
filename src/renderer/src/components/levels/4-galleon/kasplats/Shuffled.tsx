@@ -3,6 +3,7 @@ import { useGeneralThing, useDiddyGoldGb, useKevin, useChunkySeasickGb, useGalle
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useClimbing, usePunch } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
+import CavernKasplats from './Caverns'
 
 const Shuffled: React.FC = () => {
 const DKVanillaKasplat = useDiddyGoldGb()
@@ -16,6 +17,7 @@ const hasClimbing = useClimbing()
 const hasPrimatePunch = usePunch()
   return (
     <KasplatPool>
+      <CavernKasplats />
       <GalleonCheck
         id={54000}
         name="Shuffled Kasplat: DK's Vanilla Location (on Diddy's gold pile)"
@@ -29,13 +31,6 @@ const hasPrimatePunch = usePunch()
         region="Lighthouse Area"
         canGetLogic={diddyVanillaKasplat.in}
         canGetBreak={diddyVanillaKasplat.out}
-      />
-      <GalleonCheck
-        id={54006}
-        name="Shuffled Kasplat: At the vanilla Battle Arena"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in && hasPrimatePunch}
-        canGetBreak={isBreathing.out && hasPrimatePunch}
       />
       <GalleonCheck
         id={54008}
@@ -64,13 +59,6 @@ const hasPrimatePunch = usePunch()
         region="Lighthouse Area"
         canGetLogic={canDoChunkyShip.in}
         canGetBreak={canDoChunkyShip.out}
-      />
-      <GalleonCheck
-        id={54014}
-        name="Shuffled Kasplat: In Chunky's right chest"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in && hasPrimatePunch}
-        canGetBreak={isBreathing.out && hasPrimatePunch}
       />
     </KasplatPool>
   )

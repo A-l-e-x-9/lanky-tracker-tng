@@ -24,6 +24,13 @@ const isBreathing = useGeneralThing()
         canGetBreak={tinyVanillaKasplat.out}
       />
       <GalleonCheck
+        id={54006}
+        name="Shuffled Kasplat: At the vanilla Battle Arena"
+        region="Galleon Caves"
+        canGetLogic={isBreathing.in && hasPrimatePunch}
+        canGetBreak={isBreathing.out && hasPrimatePunch}
+      />
+      <GalleonCheck
         id={54007}
         name="Shuffled Kasplat: In front of Cranky's"
         region="Galleon Caves"
@@ -43,6 +50,13 @@ const isBreathing = useGeneralThing()
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
+      />
+      <GalleonCheck
+        id={54014}
+        name="Shuffled Kasplat: In Chunky's right chest"
+        region="Galleon Caves"
+        canGetLogic={isBreathing.in && hasPrimatePunch}
+        canGetBreak={isBreathing.out && hasPrimatePunch}
       />
     </KasplatPool>
   )
