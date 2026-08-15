@@ -11,11 +11,9 @@ const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairie
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
   <>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className="grid">
     <BallroomEnemies />
     <DiddyBallroom />
-  </div>
-  <div className="grid">
     <TinyRace />
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>

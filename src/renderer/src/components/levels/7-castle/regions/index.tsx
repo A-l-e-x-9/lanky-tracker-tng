@@ -40,9 +40,19 @@ return (
   </div>
     <TreeChecks />
     <SurroundingsChecks />
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <CastleMainKasplats />
+  </div>
+  <div className="grid">
     <MuseumChecks />
+  </div>
     <BallroomChecks />
+  <div className="grid">
     <RoomsChecks />
+  </div>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <RoomKasplats />
+  </div>
     <UndergroundChecks />
   <div className="grid">
     <ShopLocations />
@@ -54,7 +64,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ShuffledFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ShuffledKasplats />
   </div>
 </>
