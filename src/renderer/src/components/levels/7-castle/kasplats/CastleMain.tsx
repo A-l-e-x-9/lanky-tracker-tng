@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, usePathKasplat, useSlamCastle } from '@renderer/hooks/castle'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useAnyGun, useAnyMusic, useDive, useLanky, useRocket, useClimbing, useOrange } from '@renderer/hooks/kongs'
+import { useAnyGun, useAnyMusic, useDive, useLanky, useRocket, useOrange } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -13,7 +13,6 @@ const hasDiving = useDive()
 const hasSlam = useSlamCastle()
 const hasLanky = useLanky()
 const hasJetbarrel = useRocket()
-const hasClimbing = useClimbing()
 const hasOranges = useOrange()
   return (
     <KasplatPool>
