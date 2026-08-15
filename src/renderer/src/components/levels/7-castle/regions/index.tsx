@@ -19,6 +19,8 @@ import ShuffledCrates from '../crates/Shuffled'
 import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 import ShuffledKasplats from '../kasplats/Shuffled'
+import CastleMainKasplats from '../kasplats/CastleMain'
+import RoomKasplats from '../kasplats/Rooms'
 
 const CastleRegionChecks: React.FC = () => {
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''

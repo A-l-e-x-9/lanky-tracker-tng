@@ -14,6 +14,7 @@ import TinyMausoleum from '../gold-bananas/tiny/Mausoleum'
 import ChunkyKasplat from '../kasplats/Chunky'
 import DiddyKasplat from '../kasplats/Diddy'
 import UpperCaveEnemies from '../enemies/UpperCave'
+import DungeonKasplats from '../kasplats/Dungeon'
 
 const UndergroundChecks: React.FC = () => {
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''

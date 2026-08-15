@@ -1,7 +1,7 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, useTreeKasplat, useMausoleumKasplat, useLonelyKasplat, useSlamCastle, useOpenCrypt } from '@renderer/hooks/castle'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useMonkeyport, useDiddy, useLanky, usePunch, useCoconut, useDk, useRocket, useClimbing, useOrange } from '@renderer/hooks/kongs'
+import { useMonkeyport, useDiddy, useCoconut, useDk, useClimbing } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 import DungeonKasplats from './Dungeon'
 
@@ -13,14 +13,10 @@ const isBreathing = useGeneralThing()
 const hasSlam = useSlamCastle()
 const hasMonkeyport = useMonkeyport()
 const hasDiddy = useDiddy()
-const hasLanky = useLanky()
-const hasPrimatePunch = usePunch()
 const hasCoconuts = useCoconut()
 const cryptPreOpened = useOpenCrypt()
 const hasDK = useDk()
-const hasJetbarrel = useRocket()
 const hasClimbing = useClimbing()
-const hasOranges = useOrange()
   return (
     <KasplatPool>
       <DungeonKasplats />
