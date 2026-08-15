@@ -27,6 +27,13 @@ const hasClimbing = useClimbing()
 const hasOranges = useOrange()
   return (
     <KasplatPool>
+      <CastleCheck
+        id={57008}
+        name="Shuffled Kasplat: Inside Diddy's Ballroom"
+        region="Various Castle Rooms"
+        canGetLogic={isBreathing.in && hasDiddy && hasSlam}
+        canGetBreak={isBreathing.out && hasDiddy && hasSlam}
+      />
     </KasplatPool>
   )
 }
