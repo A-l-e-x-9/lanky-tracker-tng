@@ -1,12 +1,10 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useTreeKasplat, useMausoleumKasplat, usePathKasplat, useLonelyKasplat, useDungeonKasplat, useSlamCastle, useOpenCrypt } from '@renderer/hooks/castle'
+import { useGeneralThing, usePathKasplat, useLonelyKasplat, useDungeonKasplat, useSlamCastle, useOpenCrypt } from '@renderer/hooks/castle'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useAnyGun, useAnyMusic, useDive, useMonkeyport, useDiddy, useLanky, usePunch, useCoconut, useDk, useRocket, useClimbing, useOrange } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const Shuffled: React.FC = () => {
-const DKVanillaKasplat = useTreeKasplat()
-const diddyVanillaKasplat = useMausoleumKasplat()
 const lankyVanillaKasplat = usePathKasplat()
 const tinyVanillaKasplat = useLonelyKasplat()
 const chunkyVanillaKasplat = useDungeonKasplat()
