@@ -33799,6 +33799,7 @@ const Shuffled$p = () => {
   const lankyVanillaKasplat = useCannonKasplat();
   const tinyVanillaKasplat = useVineKasplat();
   const isBreathing = useGeneralThing$6();
+  const hasPrimatePunch = usePunch();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
@@ -33818,6 +33819,16 @@ const Shuffled$p = () => {
         region: "Galleon Caves",
         canGetLogic: tinyVanillaKasplat.in,
         canGetBreak: tinyVanillaKasplat.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 54006,
+        name: "Shuffled Kasplat: At the vanilla Battle Arena",
+        region: "Galleon Caves",
+        canGetLogic: isBreathing.in && hasPrimatePunch,
+        canGetBreak: isBreathing.out && hasPrimatePunch
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -33848,6 +33859,16 @@ const Shuffled$p = () => {
         region: "Galleon Caves",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 54014,
+        name: "Shuffled Kasplat: In Chunky's right chest",
+        region: "Galleon Caves",
+        canGetLogic: isBreathing.in && hasPrimatePunch,
+        canGetBreak: isBreathing.out && hasPrimatePunch
       }
     )
   ] });
@@ -35547,14 +35568,13 @@ const ShuffledFairies$4 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntime
 const Shuffled$i = () => {
   const DKVanillaKasplat = useDiddyGoldGb();
   const diddyVanillaKasplat = useKevin();
-  const isBreathing = useGeneralThing$6();
   const canGoInLighthouse = useGalleonLighthouseInside();
   const mechfishAgenda = useDiddyMechGb();
   const canDoLankyGoldTower = useLankyGoldGb();
   const canDoChunkyShip = useChunkySeasickGb();
   const hasClimbing = useClimbing();
-  const hasPrimatePunch = usePunch();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CavernKasplats, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
@@ -35573,16 +35593,6 @@ const Shuffled$i = () => {
         region: "Lighthouse Area",
         canGetLogic: diddyVanillaKasplat.in,
         canGetBreak: diddyVanillaKasplat.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 54006,
-        name: "Shuffled Kasplat: At the vanilla Battle Arena",
-        region: "Galleon Caves",
-        canGetLogic: isBreathing.in && hasPrimatePunch,
-        canGetBreak: isBreathing.out && hasPrimatePunch
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -35623,16 +35633,6 @@ const Shuffled$i = () => {
         region: "Lighthouse Area",
         canGetLogic: canDoChunkyShip.in,
         canGetBreak: canDoChunkyShip.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 54014,
-        name: "Shuffled Kasplat: In Chunky's right chest",
-        region: "Galleon Caves",
-        canGetLogic: isBreathing.in && hasPrimatePunch,
-        canGetBreak: isBreathing.out && hasPrimatePunch
       }
     )
   ] });
