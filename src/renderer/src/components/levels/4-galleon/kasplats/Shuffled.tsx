@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useDiddyGoldGb, useKevin, useChunkySeasickGb, useGalleonLighthouseInside, useDiddyMechGb, useLankyGoldGb } from '@renderer/hooks/galleon'
+import { useDiddyGoldGb, useKevin, useChunkySeasickGb, useGalleonLighthouseInside, useDiddyMechGb, useLankyGoldGb } from '@renderer/hooks/galleon'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useClimbing, usePunch } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
@@ -8,13 +8,11 @@ import CavernKasplats from './Caverns'
 const Shuffled: React.FC = () => {
 const DKVanillaKasplat = useDiddyGoldGb()
 const diddyVanillaKasplat = useKevin()
-const isBreathing = useGeneralThing()
 const canGoInLighthouse = useGalleonLighthouseInside()
 const mechfishAgenda = useDiddyMechGb()
 const canDoLankyGoldTower = useLankyGoldGb()
 const canDoChunkyShip = useChunkySeasickGb()
 const hasClimbing = useClimbing()
-const hasPrimatePunch = usePunch()
   return (
     <KasplatPool>
       <CavernKasplats />

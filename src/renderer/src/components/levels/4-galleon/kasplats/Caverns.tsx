@@ -2,11 +2,13 @@ import KasplatPool from '@renderer/components/pools/Kasplats'
 import { useGeneralThing, useVineKasplat, useCannonKasplat } from '@renderer/hooks/galleon'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
+import { usePunch } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const lankyVanillaKasplat = useCannonKasplat()
 const tinyVanillaKasplat = useVineKasplat()
 const isBreathing = useGeneralThing()
+const hasPrimatePunch = usePunch()
   return (
     <KasplatPool>
       <GalleonCheck
