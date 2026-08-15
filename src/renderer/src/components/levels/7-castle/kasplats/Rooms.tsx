@@ -1,18 +1,13 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGeneralThing, useSlamCastle, useOpenCrypt } from '@renderer/hooks/castle'
+import { useGeneralThing, useSlamCastle } from '@renderer/hooks/castle'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
-import { useDiddy, useDk, useRocket, useClimbing, useOrange } from '@renderer/hooks/kongs'
+import { useDiddy } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
 const hasSlam = useSlamCastle()
 const hasDiddy = useDiddy()
-const cryptPreOpened = useOpenCrypt()
-const hasDK = useDk()
-const hasJetbarrel = useRocket()
-const hasClimbing = useClimbing()
-const hasOranges = useOrange()
   return (
     <KasplatPool>
       <CastleCheck
