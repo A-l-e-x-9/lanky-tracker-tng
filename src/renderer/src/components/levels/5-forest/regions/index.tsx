@@ -49,7 +49,9 @@ return (
     <CenterFairies />
   </div>
     <MillsChecks />
+  <div className="grid">
     <MillsArenas />
+  </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <MillsFairies />
   </div>
@@ -57,7 +59,9 @@ return (
     <BeanstalkChecks />
   </div>
     <MushExteriorChecks />
+  <div className="grid">
     <MushExteriorArenas />
+  </div>
     <MushInteriorChecks />
     <MushInteriorArenas />
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
