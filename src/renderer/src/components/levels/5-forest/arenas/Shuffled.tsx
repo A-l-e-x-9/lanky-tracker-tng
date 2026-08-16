@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight, useForestMushroomRoof, useForestOwl, useForestMushroomTop, useTinyAntGb, useSlamForest, useForestBarn, useForestSpiderBoss, useLankyMushGb } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useTwirl, useClimbing, useRocket, useChunky, useBalloon, useDiddy, usePunch, useDk } from '@renderer/hooks/kongs'
+import { useTwirl, useClimbing, useRocket, useChunky, useDiddy, usePunch, useDk } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 import CenterArenas from './Center'
 
@@ -17,7 +17,6 @@ const hasJetbarrel = useRocket()
 const hasChunky = useChunky()
 const canReachTopOfShroom = useForestMushroomRoof()
 const canReachArea4 = useForestOwl()
-const hasBalloon = useBalloon()
 const canGetNearTopOfShroom = useForestMushroomTop()
 const canReachStump = useTinyAntGb()
 const hasDiddy = useDiddy()
