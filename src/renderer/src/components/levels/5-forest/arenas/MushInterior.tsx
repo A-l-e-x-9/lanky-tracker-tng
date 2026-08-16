@@ -1,10 +1,14 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing } from '@renderer/hooks/forest'
+import { useGeneralThing, useForestMushroomTop } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import ForestCheck from '../check'
+import { useTwirl, useDk } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
+const canGetNearTopOfShroom = useForestMushroomTop()
+const isHinaKagiyama = useTwirl()
+const hasDK = useDk()
   return (
     <ArenaPool>
       <ForestCheck
