@@ -41038,7 +41038,7 @@ const ForestRegionChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(MushExteriorChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MushExteriorArenas, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(MushInteriorChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(MushInteriorArenas, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MushInteriorArenas, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(MillsFairies$1, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(OwlChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
