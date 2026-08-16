@@ -34,27 +34,6 @@ const Shuffled: React.FC = () => {
         canGetBreak={vanillaFairy1.out}
       />
       <ForestCheck
-        id={45001}
-        name="Shuffled Fairy: Vanilla Location #2 (Diddy's dark room)"
-        region="Forest Area 1"
-        canGetLogic={vanillaFairy2.in}
-        canGetBreak={vanillaFairy2.out}
-      />
-      <ForestCheck
-        id={45002}
-        name="Shuffled Fairy: Above Area 1's tunnel, clock-side"
-        region="Forest Central Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <ForestCheck
-        id={45003}
-        name="Shuffled Fairy: At the clock"
-        region="Forest Central Area"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <ForestCheck
         id={45004}
         name="Shuffled Fairy: Top of Chunky's minecart entrance"
         region="Forest Central Area"
@@ -62,46 +41,11 @@ const Shuffled: React.FC = () => {
         canGetBreak={isBreathing.out}
       />
       <ForestCheck
-        id={45005}
-        name="Shuffled Fairy: Above the main mill"
-        region="Forest Area 1"
-        canGetLogic={isInStage.in && (hasBalloon || hasClimbing) && hasCam}
-        canGetBreak={isBreathing.out}
-      />
-      <ForestCheck
-        id={45006}
-        name="Shuffled Fairy: Troff 'n' Scoff portal behind Thornvine"
-        region="Forest Area 1"
-        canGetLogic={(isNight.in || isDusk.in) && isBreathing.in}
-        canGetBreak={(isNight.out || isDusk.out) && isBreathing.out}
-      />
-      <ForestCheck
-        id={45007}
-        name="Shuffled Fairy: Above Thornvine path"
-        region="Forest Area 1"
-        canGetLogic={(isNight.in || isDusk.in) && isBreathing.in}
-        canGetBreak={(isNight.out || isDusk.out) && isBreathing.out}
-      />
-      <ForestCheck
         id={45008}
         name="Shuffled Fairy: In the winch room"
         region="Forest Area 1"
         canGetLogic={isInStage.in && (isNight.in || isDusk.in) && hasClimbing && hasSlam && hasCam}
         canGetBreak={isInStage.out && (isNight.out || isDusk.out) && hasClimbing && hasSlam && hasCam}
-      />
-      <ForestCheck
-        id={45009}
-        name="Shuffled Fairy: In the front mill room"
-        region="Forest Area 1"
-        canGetLogic={(isDay.in || isDusk.in) && isBreathing.in}
-        canGetBreak={(isDay.out || isDusk.out) && isBreathing.out}
-      />
-      <ForestCheck
-        id={45010}
-        name="Shuffled Fairy: In Lanky's attic"
-        region="Forest Area 1"
-        canGetLogic={isInStage.in && (hasBalloon || hasClimbing) && (isNight.in || isDusk.in) && hasCam}
-        canGetBreak={isInStage.out && (hasBalloon || hasClimbing) && (isNight.out || isDusk.out) && hasCam}
       />
       <ForestCheck
         id={45011}
@@ -137,13 +81,6 @@ const Shuffled: React.FC = () => {
         region="Forest Area 3"
         canGetLogic={canReachShroomRoof.in && hasCam}
         canGetBreak={canReachShroomRoof.out && hasCam}
-      />
-      <ForestCheck
-        id={45016}
-        name="Shuffled Fairy: Lower area"
-        region="Inside the Giant Mushroom"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
       />
       <ForestCheck
         id={45017}

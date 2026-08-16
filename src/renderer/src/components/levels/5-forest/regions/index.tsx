@@ -10,10 +10,17 @@ import LankyMedal from '../medals/LankyMedal'
 import TinyMedal from '../medals/TinyMedal'
 import ShopLocations from '../shops'
 import CenterChecks from './Center'
+import CenterArenas from '../arenas/Center'
+import CenterFairies from '../fairies/Center'
 import MushExteriorChecks from './MushExterior'
+import MushExteriorArenas from '../arenas/MushExterior'
 import MushInteriorChecks from './MushInterior'
+import MushInteriorArenas from '../arenas/MushInterior'
+import MushInteriorFairies from '../fairies/MushInterior'
 import OwlChecks from './Owl'
 import MillsChecks from './Mills'
+import MillsArenas from '../arenas/Mills'
+import MillsFairies from '../fairies/Mills'
 import ShuffledArenas from '../arenas/Shuffled'
 import ShuffledCrates from '../crates/Shuffled'
 import ShuffledDirt from '../dirt/Shuffled'
@@ -21,7 +28,6 @@ import ShuffledFairies from '../fairies/Shuffled'
 import ShuffledKasplats from '../kasplats/Shuffled'
 
 const ForestRegionChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -36,12 +42,27 @@ return (
       <TinyMedal />
       <ChunkyMedal />
     </BananaMedalPool>
-  </div>
     <CenterChecks />
+    <CenterArenas />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <CenterFairies />
+  </div>
     <MillsChecks />
+    <MillsArenas />
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <MillsFairies />
+  </div>
+  <div className="grid">
     <BeanstalkChecks />
+  </div>
     <MushExteriorChecks />
+    <MushExteriorArenas />
     <MushInteriorChecks />
+    <MushInteriorArenas />
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <MushInteriorFairies />
+  </div>
     <OwlChecks />
   <div className="grid">
     <ShopLocations />
