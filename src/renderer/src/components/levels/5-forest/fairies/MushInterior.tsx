@@ -1,11 +1,10 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useForestOwl, useTinyAntGb } from '@renderer/hooks/forest'
+import { useGeneralFairy } from '@renderer/hooks/forest'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
   const isBreathing = useGeneralFairy()
-  const canReachTreeStump = useTinyAntGb()
   return (
     <FairyPool>
       <ForestCheck
