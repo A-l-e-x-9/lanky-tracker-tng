@@ -35,6 +35,27 @@ const isBreathing = useGeneralThing()
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
+      <ForestCheck
+        id={15000}
+        name="Shuffled Battle Arena: At the ladder to DK's Baboon Blast pad"
+        region="Forest Area 3"
+        canGetLogic={isBreathing.in && (hasClimbing || hasJetbarrel)}
+        canGetBreak={isBreathing.out && (hasChunky || isHinaKagiyama)}
+      />
+      <ForestCheck
+        id={15000}
+        name="Shuffled Battle Arena: Top of the Giant Mushroom"
+        region="Forest Area 3"
+        canGetLogic={canReachTopOfShroom.in}
+        canGetBreak={canReachTopOfShroom.out}
+      />
+      <ForestCheck
+        id={15000}
+        name="Shuffled Battle Arena: Vanilla Warp 5, top of the Giant Mushroom"
+        region="Forest Area 3"
+        canGetLogic={canGetNearTopOfShroom.in}
+        canGetBreak={canGetNearTopOfShroom.out}
+      />
     </ArenaPool>
   )
 }

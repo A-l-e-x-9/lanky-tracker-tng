@@ -87,13 +87,6 @@ const canReachLankysShroomTopGBs = useLankyMushGb()
       />
       <ForestCheck
         id={15000}
-        name="Shuffled Battle Arena: At the ladder to DK's Baboon Blast pad"
-        region="Forest Area 3"
-        canGetLogic={isBreathing.in && (hasClimbing || hasJetbarrel)}
-        canGetBreak={isBreathing.out && (hasChunky || isHinaKagiyama)}
-      />
-      <ForestCheck
-        id={15000}
         name="Shuffled Battle Arena: Near DK's Baboon Blast pad"
         region="Forest Area 3"
         canGetLogic={isBreathing.in && hasClimbing}
@@ -105,13 +98,6 @@ const canReachLankysShroomTopGBs = useLankyMushGb()
         region="Forest Area 3"
         canGetLogic={isBreathing.in && hasClimbing}
         canGetBreak={isBreathing.out && hasJetbarrel}
-      />
-      <ForestCheck
-        id={15000}
-        name="Shuffled Battle Arena: Top of the Giant Mushroom"
-        region="Forest Area 3"
-        canGetLogic={canReachTopOfShroom.in}
-        canGetBreak={canReachTopOfShroom.out}
       />
       <ForestCheck
         id={15000}
@@ -185,13 +171,6 @@ const canReachLankysShroomTopGBs = useLankyMushGb()
       />
       <ForestCheck
         id={15000}
-        name="Shuffled Battle Arena: Vanilla Warp 5, top of the Giant Mushroom"
-        region="Forest Area 3"
-        canGetLogic={canGetNearTopOfShroom.in}
-        canGetBreak={canGetNearTopOfShroom.out}
-      />
-      <ForestCheck
-        id={15000}
         name="Shuffled Battle Arena: Inside the tree stump"
         region="Forest Area 4"
         canGetLogic={canReachStump.in}
@@ -238,48 +217,6 @@ const canReachLankysShroomTopGBs = useLankyMushGb()
         region="Forest Area 1"
         canGetLogic={isBreathing.in && isDay.in && hasPrimatePunch}
         canGetBreak={isBreathing.out && canReachSpiderBoss.out}
-      />
-      <ForestCheck
-        id={15000}
-        name="Shuffled Battle Arena: Near the vines to the Night Door"
-        region="Inside the Giant Mushroom"
-        canGetLogic={canGetNearTopOfShroom.in}
-        canGetBreak={canGetNearTopOfShroom.out}
-      />
-      <ForestCheck
-        id={15000}
-        name="Shuffled Battle Arena: At the second Check of Legends Barrel Cannon"
-        region="Inside the Giant Mushroom"
-        canGetLogic={canGetNearTopOfShroom.in && isHinaKagiyama}
-        canGetBreak={canGetNearTopOfShroom.out && hasDK}
-      />
-      <ForestCheck
-        id={15000}
-        name="Shuffled Battle Arena: At the third Check of Legends Barrel Cannon"
-        region="Inside the Giant Mushroom"
-        canGetLogic={canGetNearTopOfShroom.in}
-        canGetBreak={canGetNearTopOfShroom.out}
-      />
-      <ForestCheck
-        id={15000}
-        name="Shuffled Battle Arena: At top viney platform"
-        region="Inside the Giant Mushroom"
-        canGetLogic={canGetNearTopOfShroom.in}
-        canGetBreak={canGetNearTopOfShroom.out}
-      />
-      <ForestCheck
-        id={15000}
-        name="Shuffled Battle Arena: Back of Lanky's Zinger room"
-        region="Inside the Giant Mushroom"
-        canGetLogic={canReachLankysShroomTopGBs.in}
-        canGetBreak={canReachLankysShroomTopGBs.out}
-      />
-      <ForestCheck
-        id={15000}
-        name="Shuffled Battle Arena: Back of Lanky's mushroom slam room"
-        region="Inside the Giant Mushroom"
-        canGetLogic={canReachLankysShroomTopGBs.in}
-        canGetBreak={canReachLankysShroomTopGBs.out}
       />
       <ForestCheck
         id={15000}

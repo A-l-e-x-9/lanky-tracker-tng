@@ -14,6 +14,7 @@ import CenterArenas from '../arenas/Center'
 import CenterFairies from '../fairies/Center'
 import MushExteriorChecks from './MushExterior'
 import MushExteriorArenas from '../arenas/MushExterior'
+import MushExteriorFairies from '../fairies/MushExterior'
 import MushInteriorChecks from './MushInterior'
 import MushInteriorArenas from '../arenas/MushInterior'
 import MushInteriorFairies from '../fairies/MushInterior'
@@ -61,6 +62,9 @@ return (
     <MushExteriorChecks />
   <div className="grid">
     <MushExteriorArenas />
+  </div>
+  <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+    <MushExteriorFairies />
   </div>
     <MushInteriorChecks />
   <div className="grid">

@@ -28,6 +28,48 @@ const isBreathing = useGeneralThing()
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
+      <ForestCheck
+        id={15000}
+        name="Shuffled Battle Arena: Near the vines to the Night Door"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canGetNearTopOfShroom.in}
+        canGetBreak={canGetNearTopOfShroom.out}
+      />
+      <ForestCheck
+        id={15000}
+        name="Shuffled Battle Arena: At the second Check of Legends Barrel Cannon"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canGetNearTopOfShroom.in && isHinaKagiyama}
+        canGetBreak={canGetNearTopOfShroom.out && hasDK}
+      />
+      <ForestCheck
+        id={15000}
+        name="Shuffled Battle Arena: At the third Check of Legends Barrel Cannon"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canGetNearTopOfShroom.in}
+        canGetBreak={canGetNearTopOfShroom.out}
+      />
+      <ForestCheck
+        id={15000}
+        name="Shuffled Battle Arena: At top viney platform"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canGetNearTopOfShroom.in}
+        canGetBreak={canGetNearTopOfShroom.out}
+      />
+      <ForestCheck
+        id={15000}
+        name="Shuffled Battle Arena: Back of Lanky's Zinger room"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canReachLankysShroomTopGBs.in}
+        canGetBreak={canReachLankysShroomTopGBs.out}
+      />
+      <ForestCheck
+        id={15000}
+        name="Shuffled Battle Arena: Back of Lanky's mushroom slam room"
+        region="Inside the Giant Mushroom"
+        canGetLogic={canReachLankysShroomTopGBs.in}
+        canGetBreak={canReachLankysShroomTopGBs.out}
+      />
     </ArenaPool>
   )
 }
