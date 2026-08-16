@@ -63,7 +63,9 @@ return (
     <MushExteriorArenas />
   </div>
     <MushInteriorChecks />
+  <div className="grid">
     <MushInteriorArenas />
+  </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <MushInteriorFairies />
   </div>
