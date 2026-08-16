@@ -1,21 +1,10 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useForestMushroomTop, useTinyAntGb, useSlamForest, useForestBarn, useForestSpiderBoss, useLankyMushGb } from '@renderer/hooks/forest'
+import { useGeneralThing } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useBalloon, useDiddy, usePunch, useDk } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
-const hasBalloon = useBalloon()
-const canGetNearTopOfShroom = useForestMushroomTop()
-const canReachStump = useTinyAntGb()
-const hasDiddy = useDiddy()
-const hasSlam = useSlamForest()
-const canGetInThornvine = useForestBarn()
-const canReachSpiderBoss = useForestSpiderBoss()
-const hasPrimatePunch = usePunch()
-const hasDK = useDk()
-const canReachLankysShroomTopGBs = useLankyMushGb()
   return (
     <ArenaPool>
       <ForestCheck
