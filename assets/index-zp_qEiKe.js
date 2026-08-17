@@ -36300,23 +36300,14 @@ const Shuffled$s = () => {
 const CenterArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$s, {}) : null;
 const Shuffled$r = () => {
   const isBreathing = useGeneralThing$2();
-  const canReachVanillaArena = useArena$1();
-  const canPlantBean = useForestBean();
-  const isDay = useForestDay();
-  const isNight = useForestNight();
   const hasClimbing = useClimbing();
   const hasJetbarrel = useRocket();
   const hasChunky = useChunky();
-  const canReachArea4 = useForestOwl();
+  const isHinaKagiyama = useTwirl();
+  const canReachTopOfShroom = useForestMushroomRoof();
   const canGetNearTopOfShroom = useForestMushroomTop();
-  const canReachStump = useTinyAntGb();
-  const hasDiddy = useDiddy();
-  const hasSlam = useSlamForest();
-  const canGetInThornvine = useForestBarn();
-  const canReachSpiderBoss = useForestSpiderBoss();
-  const hasPrimatePunch = usePunch();
+  const canReachVanillaArena = useArena$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(CenterArenas, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
@@ -36327,6 +36318,116 @@ const Shuffled$r = () => {
         canGetBreak: canReachVanillaArena.out
       }
     ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 15e3,
+        name: "Shuffled Battle Arena: Near the Giant Mushroom",
+        region: "Forest Area 3",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 15e3,
+        name: "Shuffled Battle Arena: Near the yellow tunnel",
+        region: "Forest Area 3",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 15e3,
+        name: "Shuffled Battle Arena: Vanilla Warp 3, bottom of the Giant Mushroom",
+        region: "Forest Area 3",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 15e3,
+        name: "Shuffled Battle Arena: Vanilla Warp 5, bottom of the Giant Mushroom",
+        region: "Forest Area 3",
+        canGetLogic: isBreathing.in,
+        canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 15e3,
+        name: "Shuffled Battle Arena: At the ladder to DK's Baboon Blast pad",
+        region: "Forest Area 3",
+        canGetLogic: isBreathing.in && (hasClimbing || hasJetbarrel),
+        canGetBreak: isBreathing.out && (hasChunky || isHinaKagiyama)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 15e3,
+        name: "Shuffled Battle Arena: Near DK's Baboon Blast pad",
+        region: "Forest Area 3",
+        canGetLogic: isBreathing.in && hasClimbing,
+        canGetBreak: isBreathing.out && hasJetbarrel
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 15e3,
+        name: "Shuffled Battle Arena: Above ladder past DK's Baboon Blast pad",
+        region: "Forest Area 3",
+        canGetLogic: isBreathing.in && hasClimbing,
+        canGetBreak: isBreathing.out && hasJetbarrel
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 15e3,
+        name: "Shuffled Battle Arena: Top of the Giant Mushroom",
+        region: "Forest Area 3",
+        canGetLogic: canReachTopOfShroom.in,
+        canGetBreak: canReachTopOfShroom.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 15e3,
+        name: "Shuffled Battle Arena: Vanilla Warp 5, top of the Giant Mushroom",
+        region: "Forest Area 3",
+        canGetLogic: canGetNearTopOfShroom.in,
+        canGetBreak: canGetNearTopOfShroom.out
+      }
+    )
+  ] });
+};
+const MushExteriorArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$r, {}) : null;
+const Shuffled$q = () => {
+  const isBreathing = useGeneralThing$2();
+  const canPlantBean = useForestBean();
+  const isDay = useForestDay();
+  const isNight = useForestNight();
+  const hasJetbarrel = useRocket();
+  const hasChunky = useChunky();
+  const canReachArea4 = useForestOwl();
+  const canGetNearTopOfShroom = useForestMushroomTop();
+  const canReachStump = useTinyAntGb();
+  const hasSlam = useSlamForest();
+  const canGetInThornvine = useForestBarn();
+  const canReachSpiderBoss = useForestSpiderBoss();
+  const hasPrimatePunch = usePunch();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CenterArenas, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(MushExteriorArenas, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
@@ -36395,26 +36496,6 @@ const Shuffled$r = () => {
         region: "Forest Area 2",
         canGetLogic: canPlantBean.in,
         canGetBreak: canPlantBean.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 15e3,
-        name: "Shuffled Battle Arena: Near DK's Baboon Blast pad",
-        region: "Forest Area 3",
-        canGetLogic: isBreathing.in && hasClimbing,
-        canGetBreak: isBreathing.out && hasJetbarrel
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 15e3,
-        name: "Shuffled Battle Arena: Above ladder past DK's Baboon Blast pad",
-        region: "Forest Area 3",
-        canGetLogic: isBreathing.in && hasClimbing,
-        canGetBreak: isBreathing.out && hasJetbarrel
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -36531,16 +36612,6 @@ const Shuffled$r = () => {
       ForestCheck,
       {
         id: 15e3,
-        name: "Shuffled Battle Arena: Back of the winch room",
-        region: "Forest Area 1",
-        canGetLogic: isBreathing.in && hasClimbing && hasDiddy && hasSlam && isNight.in,
-        canGetBreak: isBreathing.out && hasClimbing && hasDiddy && hasSlam && isNight.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 15e3,
         name: "Shuffled Battle Arena: Inside Thornvine, entrance",
         region: "Forest Area 1",
         canGetLogic: canGetInThornvine.in,
@@ -36619,7 +36690,7 @@ const Shuffled$r = () => {
     )
   ] });
 };
-const ShuffledArenas$3 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$r, {}) : null;
+const ShuffledArenas$3 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$q, {}) : null;
 const BossCheck$3 = () => {
   const inStage = usePlayForest();
   const anyKong = useAnyKong();
@@ -36693,7 +36764,7 @@ const CrateLocations$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(BarnOutsideCrate, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BarnInsideCrate, {})
 ] });
-const Shuffled$q = () => {
+const Shuffled$p = () => {
   const isBreathing = useGeneralThing$2();
   const canReachVanillaArena = useArena$1();
   const canPlantBean = useForestBean();
@@ -37458,7 +37529,7 @@ const Shuffled$q = () => {
     )
   ] });
 };
-const ShuffledCrates$3 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$q, {}) : null;
+const ShuffledCrates$3 = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : null;
 const BeanstalkDirt = () => {
   const canDo = useBeanDirt();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -37489,7 +37560,7 @@ const DirtLocations = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExp
   /* @__PURE__ */ jsxRuntimeExports.jsx(BeanstalkDirt, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(MillsGrassDirt, {})
 ] });
-const Shuffled$p = () => {
+const Shuffled$o = () => {
   const isBreathing = useGeneralDirt$2();
   const hasShockwave = useShockwave();
   const canReachVanillaArena = useArena$1();
@@ -38266,7 +38337,7 @@ const Shuffled$p = () => {
     )
   ] });
 };
-const ShuffledDirt$2 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : null;
+const ShuffledDirt$2 = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$o, {}) : null;
 const CenterEnemies = () => {
   const inStage = usePlayForest();
   const zinger = useDefeatZinger();
@@ -38922,7 +38993,7 @@ const FairyLocations$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(RaftersFairy, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(BarnFairy, {})
 ] });
-const Shuffled$o = () => {
+const Shuffled$n = () => {
   const isBreathing = useGeneralFairy$2();
   const isInStage = usePlayForest();
   const hasJetbarrel = useRocket();
@@ -38962,8 +39033,8 @@ const Shuffled$o = () => {
     )
   ] });
 };
-const CenterFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$o, {}) : null;
-const Shuffled$n = () => {
+const CenterFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {}) : null;
+const Shuffled$m = () => {
   const isBreathing = useGeneralFairy$2();
   const canReachShroomTop = useForestMushroomTop();
   const hasCam = useCamera();
@@ -38990,17 +39061,11 @@ const Shuffled$n = () => {
     )
   ] });
 };
-const MillsFairies$1 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$n, {}) : null;
-const Shuffled$m = () => {
+const MillsFairies$1 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$m, {}) : null;
+const Shuffled$l = () => {
   const hasCam = useCamera();
   const vanillaFairy1 = useBarnFairy();
-  const isInStage = usePlayForest();
-  const hasClimbing = useClimbing();
-  const isNight = useForestNight();
-  const isDusk = useForestDusk();
-  const hasSlam = useSlamForest();
   const canReachSpiderBoss = useForestSpiderBoss();
-  const canReachArena = useArena$1();
   const canReachArea4 = useForestOwl();
   const canReachTreeStump = useTinyAntGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
@@ -39014,16 +39079,6 @@ const Shuffled$m = () => {
         region: "Forest Area 1",
         canGetLogic: vanillaFairy1.in,
         canGetBreak: vanillaFairy1.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 45008,
-        name: "Shuffled Fairy: In the winch room",
-        region: "Forest Area 1",
-        canGetLogic: isInStage.in && (isNight.in || isDusk.in) && hasClimbing && hasSlam && hasCam,
-        canGetBreak: isInStage.out && (isNight.out || isDusk.out) && hasClimbing && hasSlam && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -39044,16 +39099,6 @@ const Shuffled$m = () => {
         region: "Forest Area 1",
         canGetLogic: canReachSpiderBoss.in && hasCam,
         canGetBreak: canReachSpiderBoss.out && hasCam
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 45014,
-        name: "Shuffled Fairy: At the Battle Arena",
-        region: "Forest Area 3",
-        canGetLogic: canReachArena.in && hasCam,
-        canGetBreak: canReachArena.out && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -39098,7 +39143,7 @@ const Shuffled$m = () => {
     )
   ] });
 };
-const ShuffledFairies$3 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$m, {}) : null;
+const ShuffledFairies$3 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
 const ChunkyApple = () => {
   const canDo = useChunkyAppleGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -40156,94 +40201,13 @@ const MushExteriorChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MushExteriorEnemies, {}) })
   ] });
 };
-const Shuffled$l = () => {
-  const isBreathing = useGeneralThing$2();
-  const hasClimbing = useClimbing();
-  const hasJetbarrel = useRocket();
-  const hasChunky = useChunky();
-  const isHinaKagiyama = useTwirl();
-  const canReachTopOfShroom = useForestMushroomRoof();
-  const canGetNearTopOfShroom = useForestMushroomTop();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 15e3,
-        name: "Shuffled Battle Arena: Near the Giant Mushroom",
-        region: "Forest Area 3",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 15e3,
-        name: "Shuffled Battle Arena: Near the yellow tunnel",
-        region: "Forest Area 3",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 15e3,
-        name: "Shuffled Battle Arena: Vanilla Warp 3, bottom of the Giant Mushroom",
-        region: "Forest Area 3",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 15e3,
-        name: "Shuffled Battle Arena: Vanilla Warp 5, bottom of the Giant Mushroom",
-        region: "Forest Area 3",
-        canGetLogic: isBreathing.in,
-        canGetBreak: isBreathing.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 15e3,
-        name: "Shuffled Battle Arena: At the ladder to DK's Baboon Blast pad",
-        region: "Forest Area 3",
-        canGetLogic: isBreathing.in && (hasClimbing || hasJetbarrel),
-        canGetBreak: isBreathing.out && (hasChunky || isHinaKagiyama)
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 15e3,
-        name: "Shuffled Battle Arena: Top of the Giant Mushroom",
-        region: "Forest Area 3",
-        canGetLogic: canReachTopOfShroom.in,
-        canGetBreak: canReachTopOfShroom.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ForestCheck,
-      {
-        id: 15e3,
-        name: "Shuffled Battle Arena: Vanilla Warp 5, top of the Giant Mushroom",
-        region: "Forest Area 3",
-        canGetLogic: canGetNearTopOfShroom.in,
-        canGetBreak: canGetNearTopOfShroom.out
-      }
-    )
-  ] });
-};
-const MushExteriorArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$l, {}) : null;
 const Shuffled$k = () => {
   const hasCam = useCamera();
   const isBreathing = useGeneralFairy$2();
   const hasJetbarrel = useRocket();
   const hasClimbing = useClimbing();
   const canReachShroomRoof = useForestMushroomRoof();
+  const canReachArena = useArena$1();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
@@ -40253,6 +40217,16 @@ const Shuffled$k = () => {
         region: "Forest Area 3",
         canGetLogic: (hasClimbing || hasJetbarrel) && isBreathing.in,
         canGetBreak: (hasClimbing || hasJetbarrel) && isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45014,
+        name: "Shuffled Fairy: At the Battle Arena",
+        region: "Forest Area 3",
+        canGetLogic: canReachArena.in && hasCam,
+        canGetBreak: canReachArena.out && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -40479,6 +40453,8 @@ const Shuffled$i = () => {
   const hasClimbing = useClimbing();
   const hasBalloon = useBalloon();
   const canReachSpiderBoss = useForestSpiderBoss();
+  const hasDiddy = useDiddy();
+  const hasSlam = useSlamForest();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
@@ -40719,6 +40695,16 @@ const Shuffled$i = () => {
         canGetLogic: isBreathing.in && (hasClimbing || hasBalloon) && isNight.in,
         canGetBreak: isBreathing.out && (hasClimbing || hasBalloon) && isNight.out
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 15e3,
+        name: "Shuffled Battle Arena: Back of the winch room",
+        region: "Forest Area 1",
+        canGetLogic: isBreathing.in && hasClimbing && hasDiddy && hasSlam && isNight.in,
+        canGetBreak: isBreathing.out && hasClimbing && hasDiddy && hasSlam && isNight.out
+      }
     )
   ] });
 };
@@ -40733,6 +40719,7 @@ const Shuffled$h = () => {
   const isDay = useForestDay();
   const isNight = useForestNight();
   const isDusk = useForestDusk();
+  const hasSlam = useSlamForest();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(FairyPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
@@ -40772,6 +40759,16 @@ const Shuffled$h = () => {
         region: "Forest Area 1",
         canGetLogic: (isNight.in || isDusk.in) && isBreathing.in,
         canGetBreak: (isNight.out || isDusk.out) && isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 45008,
+        name: "Shuffled Fairy: In the winch room",
+        region: "Forest Area 1",
+        canGetLogic: isInStage.in && (isNight.in || isDusk.in) && hasClimbing && hasSlam && hasCam,
+        canGetBreak: isInStage.out && (isNight.out || isDusk.out) && hasClimbing && hasSlam && hasCam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
