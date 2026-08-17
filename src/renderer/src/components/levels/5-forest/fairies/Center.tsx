@@ -2,7 +2,7 @@ import FairyPool from '@renderer/components/pools/Fairies'
 import { useGeneralFairy, usePlayForest } from '@renderer/hooks/forest'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import ForestCheck from '../check'
-import { useRocket, useClimbing, useVine } from '@renderer/hooks/kongs'
+import { useRocket, useClimbing, useVine, useCamera } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
   const isBreathing = useGeneralFairy()

@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useForestSpiderBoss, useArena, useForestMushroomRoof, useForestMushroomTop, useForestOwl, useTinyAntGb } from '@renderer/hooks/forest'
+import { useGeneralFairy, useForestMushroomRoof } from '@renderer/hooks/forest'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useCamera, useRocket, useClimbing } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
@@ -9,12 +9,7 @@ const Shuffled: React.FC = () => {
   const isBreathing = useGeneralFairy()
   const hasJetbarrel = useRocket()
   const hasClimbing = useClimbing()
-  const canReachSpiderBoss = useForestSpiderBoss()
-  const canReachArena = useArena()
   const canReachShroomRoof = useForestMushroomRoof()
-  const canReachShroomTop = useForestMushroomTop()
-  const canReachArea4 = useForestOwl()
-  const canReachTreeStump = useTinyAntGb()
   return (
     <FairyPool>
       <ForestCheck

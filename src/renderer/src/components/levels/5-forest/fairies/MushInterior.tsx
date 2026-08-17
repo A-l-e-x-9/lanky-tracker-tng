@@ -1,10 +1,13 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy } from '@renderer/hooks/forest'
+import { useGeneralFairy, useForestMushroomTop } from '@renderer/hooks/forest'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import ForestCheck from '../check'
+import { useCamera } '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
   const isBreathing = useGeneralFairy()
+  const canReachShroomTop = useForestMushroomTop()
+  const hasCam = useCamera()
   return (
     <FairyPool>
       <ForestCheck
