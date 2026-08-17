@@ -1,21 +1,14 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy, useBarnFairy, usePlayForest, useForestNight, useForestDusk, useSlamForest, useForestSpiderBoss, useArena, useForestMushroomRoof, useForestMushroomTop, useForestOwl, useTinyAntGb } from '@renderer/hooks/forest'
+import { useGeneralFairy, useForestSpiderBoss, useArena, useForestMushroomRoof, useForestMushroomTop, useForestOwl, useTinyAntGb } from '@renderer/hooks/forest'
 import { useShuffleFairies } from '@renderer/hooks/settings'
-import { useCamera, useRocket, useClimbing, useVine } from '@renderer/hooks/kongs'
+import { useCamera, useRocket, useClimbing } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
-import CenterFairies from './Center'
 
 const Shuffled: React.FC = () => {
   const hasCam = useCamera()
   const isBreathing = useGeneralFairy()
-  const vanillaFairy1 = useBarnFairy()
-  const isInStage = usePlayForest()
   const hasJetbarrel = useRocket()
   const hasClimbing = useClimbing()
-  const hasVines = useVine()
-  const isNight = useForestNight()
-  const isDusk = useForestDusk()
-  const hasSlam = useSlamForest()
   const canReachSpiderBoss = useForestSpiderBoss()
   const canReachArena = useArena()
   const canReachShroomRoof = useForestMushroomRoof()
