@@ -16,6 +16,13 @@ const canGetNearTopOfShroom = useForestMushroomTop()
     <ArenaPool>
       <ForestCheck
         id={15000}
+        name="Shuffled Battle Arena: Vanilla Arena (at the top of the Giant Mushroom)"
+        region="Forest Area 3"
+        canGetLogic={canReachVanillaArena.in}
+        canGetBreak={canReachVanillaArena.out}
+      />
+      <ForestCheck
+        id={15000}
         name="Shuffled Battle Arena: Near the Giant Mushroom"
         region="Forest Area 3"
         canGetLogic={isBreathing.in}
@@ -48,6 +55,20 @@ const canGetNearTopOfShroom = useForestMushroomTop()
         region="Forest Area 3"
         canGetLogic={isBreathing.in && (hasClimbing || hasJetbarrel)}
         canGetBreak={isBreathing.out && (hasChunky || isHinaKagiyama)}
+      />
+      <ForestCheck
+        id={15000}
+        name="Shuffled Battle Arena: Near DK's Baboon Blast pad"
+        region="Forest Area 3"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out && hasJetbarrel}
+      />
+      <ForestCheck
+        id={15000}
+        name="Shuffled Battle Arena: Above ladder past DK's Baboon Blast pad"
+        region="Forest Area 3"
+        canGetLogic={isBreathing.in && hasClimbing}
+        canGetBreak={isBreathing.out && hasJetbarrel}
       />
       <ForestCheck
         id={15000}

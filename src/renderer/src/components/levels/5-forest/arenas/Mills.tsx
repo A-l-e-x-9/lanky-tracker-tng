@@ -182,6 +182,13 @@ const canReachSpiderBoss = useForestSpiderBoss()
         canGetLogic={isBreathing.in && (hasClimbing || hasBalloon) && isNight.in}
         canGetBreak={isBreathing.out && (hasClimbing || hasBalloon) && isNight.out}
       />
+      <ForestCheck
+        id={15000}
+        name="Shuffled Battle Arena: Back of the winch room"
+        region="Forest Area 1"
+        canGetLogic={isBreathing.in && hasClimbing && hasDiddy && hasSlam && isNight.in}
+        canGetBreak={isBreathing.out && hasClimbing && hasDiddy && hasSlam && isNight.out}
+      />
     </ArenaPool>
   )
 }

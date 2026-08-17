@@ -30,13 +30,6 @@ const Shuffled: React.FC = () => {
         canGetBreak={vanillaFairy1.out}
       />
       <ForestCheck
-        id={45008}
-        name="Shuffled Fairy: In the winch room"
-        region="Forest Area 1"
-        canGetLogic={isInStage.in && (isNight.in || isDusk.in) && hasClimbing && hasSlam && hasCam}
-        canGetBreak={isInStage.out && (isNight.out || isDusk.out) && hasClimbing && hasSlam && hasCam}
-      />
-      <ForestCheck
         id={45011}
         name="Shuffled Fairy: In the back mill room"
         region="Forest Area 1"
@@ -49,13 +42,6 @@ const Shuffled: React.FC = () => {
         region="Forest Area 1"
         canGetLogic={canReachSpiderBoss.in && hasCam}
         canGetBreak={canReachSpiderBoss.out && hasCam}
-      />
-      <ForestCheck
-        id={45014}
-        name="Shuffled Fairy: At the Battle Arena"
-        region="Forest Area 3"
-        canGetLogic={canReachArena.in && hasCam}
-        canGetBreak={canReachArena.out && hasCam}
       />
       <ForestCheck
         id={45018}

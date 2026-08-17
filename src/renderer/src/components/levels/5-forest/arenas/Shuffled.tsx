@@ -4,6 +4,7 @@ import { useShuffledArenas } from '@renderer/hooks/settings'
 import { useClimbing, useRocket, useChunky, useDiddy, usePunch } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 import CenterArenas from './Center'
+import MushExteriorArenas from './MushExterior'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -25,13 +26,7 @@ const hasPrimatePunch = usePunch()
   return (
     <ArenaPool>
       <CenterArenas />
-      <ForestCheck
-        id={15000}
-        name="Shuffled Battle Arena: Vanilla Arena (at the top of the Giant Mushroom)"
-        region="Forest Area 3"
-        canGetLogic={canReachVanillaArena.in}
-        canGetBreak={canReachVanillaArena.out}
-      />
+      <MushExteriorArenas />
       <ForestCheck
         id={15000}
         name="Shuffled Battle Arena: In front of where The Bean™ is planted"
@@ -80,20 +75,6 @@ const hasPrimatePunch = usePunch()
         region="Forest Area 2"
         canGetLogic={canPlantBean.in}
         canGetBreak={canPlantBean.out}
-      />
-      <ForestCheck
-        id={15000}
-        name="Shuffled Battle Arena: Near DK's Baboon Blast pad"
-        region="Forest Area 3"
-        canGetLogic={isBreathing.in && hasClimbing}
-        canGetBreak={isBreathing.out && hasJetbarrel}
-      />
-      <ForestCheck
-        id={15000}
-        name="Shuffled Battle Arena: Above ladder past DK's Baboon Blast pad"
-        region="Forest Area 3"
-        canGetLogic={isBreathing.in && hasClimbing}
-        canGetBreak={isBreathing.out && hasJetbarrel}
       />
       <ForestCheck
         id={15000}
@@ -171,13 +152,6 @@ const hasPrimatePunch = usePunch()
         region="Forest Area 4"
         canGetLogic={canReachStump.in}
         canGetBreak={canReachStump.out}
-      />
-      <ForestCheck
-        id={15000}
-        name="Shuffled Battle Arena: Back of the winch room"
-        region="Forest Area 1"
-        canGetLogic={isBreathing.in && hasClimbing && hasDiddy && hasSlam && isNight.in}
-        canGetBreak={isBreathing.out && hasClimbing && hasDiddy && hasSlam && isNight.out}
       />
       <ForestCheck
         id={15000}

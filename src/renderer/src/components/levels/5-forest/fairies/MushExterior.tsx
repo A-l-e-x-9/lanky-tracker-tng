@@ -20,6 +20,13 @@ const Shuffled: React.FC = () => {
         canGetBreak={(hasClimbing || hasJetbarrel) && isBreathing.out}
       />
       <ForestCheck
+        id={45014}
+        name="Shuffled Fairy: At the Battle Arena"
+        region="Forest Area 3"
+        canGetLogic={canReachArena.in && hasCam}
+        canGetBreak={canReachArena.out && hasCam}
+      />
+      <ForestCheck
         id={45015}
         name="Shuffled Fairy: At the top of the mushroom"
         region="Forest Area 3"

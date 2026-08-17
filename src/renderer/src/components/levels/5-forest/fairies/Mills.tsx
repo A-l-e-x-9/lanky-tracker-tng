@@ -45,6 +45,13 @@ const Shuffled: React.FC = () => {
         canGetBreak={(isNight.out || isDusk.out) && isBreathing.out}
       />
       <ForestCheck
+        id={45008}
+        name="Shuffled Fairy: In the winch room"
+        region="Forest Area 1"
+        canGetLogic={isInStage.in && (isNight.in || isDusk.in) && hasClimbing && hasSlam && hasCam}
+        canGetBreak={isInStage.out && (isNight.out || isDusk.out) && hasClimbing && hasSlam && hasCam}
+      />
+      <ForestCheck
         id={45009}
         name="Shuffled Fairy: In the front mill room"
         region="Forest Area 1"
