@@ -40,7 +40,9 @@ return (
   <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ChunkyKasplat />
   </div>
+  <div className="grid">
     <UpperCaveEnemies />
+  </div>
   <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <DungeonKasplats />
   </div>
