@@ -1,10 +1,13 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy } from '@renderer/hooks/forest'
+import { useGeneralFairy, usePlayForest } from '@renderer/hooks/forest'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import ForestCheck from '../check'
+import { useRocket } from '@renderer/hooks/kongs'
 
 const Shuffled: React.FC = () => {
   const isBreathing = useGeneralFairy()
+  const isInStage = usePlayForest()
+  const hasJetbarrel = useRocket()
   return (
     <FairyPool>
       <ForestCheck

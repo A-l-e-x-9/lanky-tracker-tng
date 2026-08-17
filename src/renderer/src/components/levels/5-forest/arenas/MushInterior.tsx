@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useForestMushroomTop } from '@renderer/hooks/forest'
+import { useGeneralThing, useForestMushroomTop, useLankyMushGb } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import ForestCheck from '../check'
 import { useTwirl, useDk } from '@renderer/hooks/kongs'
@@ -9,6 +9,7 @@ const isBreathing = useGeneralThing()
 const canGetNearTopOfShroom = useForestMushroomTop()
 const isHinaKagiyama = useTwirl()
 const hasDK = useDk()
+const canReachLankysShroomTopGBs = useLankyMushGb()
   return (
     <ArenaPool>
       <ForestCheck
