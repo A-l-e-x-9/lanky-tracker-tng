@@ -1,6 +1,6 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatZinger } from '@renderer/hooks/enemies'
-import { usePlayJapes, useJapesMine } from '@renderer/hooks/japes'
+import { usePlayJapes, useMtnCrate } from '@renderer/hooks/japes'
 import { useAnyKong } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
@@ -8,7 +8,7 @@ const JapesMainEnemies: React.FC = () => {
   const anyKong = useAnyKong()
   const inStage = usePlayJapes()
   const zinger = useDefeatZinger()
-  const canReachMtn = useJapesMine()
+  const canReachMtn = useMtnCrate()
   return (
     <DropPool>
       <JapesCheck
@@ -36,8 +36,8 @@ const JapesMainEnemies: React.FC = () => {
         id={1317}
         name="Enemy at Diddy's Mountain"
         region="Japes Hillside"
-        canGetLogic={inStage.in && zinger.in && ((hasClimbing || hasBananaports || DKPortal) || DKPortal2)}
-        canGetBreak={inStage.out && zinger.out && hasOStand}
+        canGetLogic={inStage.in && canReachMtn.in && zinger.in}
+        canGetBreak={inStage.out && canReachMtn.out && zinger.out}
       />
     </DropPool>
   )
