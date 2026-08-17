@@ -1,19 +1,14 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useSlamCastle, useOpenCrypt } from '@renderer/hooks/castle'
+import { useGeneralThing, useSlamCastle } from '@renderer/hooks/castle'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useDk, useGrape, useStrong, useChunky, useMini, useBlast } from '@renderer/hooks/kongs'
+import { useDk, useStrong } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
 const hasSlam = useSlamCastle()
 const hasDK = useDk()
-const cryptPreOpened = useOpenCrypt()
-const hasGrapes = useGrape()
 const hasStrongKong = useStrong()
-const hasChunky = useChunky()
-const hasMini = useMini()
-const hasBlast = useBlast()
   return (
     <ArenaPool>
       <CastleCheck
