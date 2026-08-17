@@ -49698,7 +49698,7 @@ const UndergroundChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyDungeon, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(UpperCaveEnemies, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(UpperCaveEnemies, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DungeonKasplats, {}) })
   ] });
 };
