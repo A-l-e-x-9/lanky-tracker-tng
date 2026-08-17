@@ -11,6 +11,7 @@ import ShopLocations from '../shops'
 import BallroomChecks from './Ballroom'
 import MuseumChecks from './Museum'
 import RoomsChecks from './Rooms'
+import RoomArenas from '../arenas/Rooms'
 import SurroundingsChecks from './Surroundings'
 import TreeChecks from './Tree'
 import UndergroundChecks from './Underground'
@@ -50,6 +51,7 @@ return (
     <BallroomChecks />
   <div className="grid">
     <RoomsChecks />
+    <RoomArenas />
   </div>
   <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <RoomKasplats />

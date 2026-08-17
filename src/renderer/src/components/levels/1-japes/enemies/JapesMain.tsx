@@ -36,8 +36,8 @@ const JapesMainEnemies: React.FC = () => {
         id={1317}
         name="Enemy at Diddy's Mountain"
         region="Japes Hillside"
-        canGetLogic={inStage.in && canReachMtn.in && zinger.in}
-        canGetBreak={inStage.out && canReachMtn.out && zinger.out}
+        canGetLogic={inStage.in && zinger.in && ((hasClimbing || hasBananaports || DKPortal) || DKPortal2)}
+        canGetBreak={inStage.out && zinger.out && hasOStand}
       />
     </DropPool>
   )

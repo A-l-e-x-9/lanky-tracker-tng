@@ -443,13 +443,6 @@ const hasBlast = useBlast()
         canGetBreak={isBreathing.out}
       />
       <CastleCheck
-        id={17061}
-        name="Shuffled Battle Arena: In the flying book area of DK's library"
-        region="Various Castle Rooms"
-        canGetLogic={hasDK && hasSlam && hasStrongKong}
-        canGetBreak={hasDK && hasSlam}
-      />
-      <CastleCheck
         id={17062}
         name="Shuffled Battle Arena: Near Tiny's race entrance"
         region="Various Castle Rooms"
