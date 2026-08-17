@@ -1,3 +1,3 @@
-import CabinArena from './Cabin'
+import CabinArena from './DKRotatingCabin'
 
 export default <CabinArena />

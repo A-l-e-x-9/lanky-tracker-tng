@@ -1,6 +1,6 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import CabinArena from '../arenas/Cabin'
+import CabinArena from '../arenas/DKRotatingCabin'
 import CabinsEnemies from '../enemies/Cabins'
 import CabinFairy from '../fairies/Cabin'
 import ChunkyCabin from '../gold-bananas/chunky/Cabin'
