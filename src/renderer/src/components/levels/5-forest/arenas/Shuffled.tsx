@@ -1,24 +1,21 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useForestBean, useForestDay, useForestNight, useForestOwl, useForestMushroomTop, useTinyAntGb, useSlamForest, useForestBarn, useForestSpiderBoss } from '@renderer/hooks/forest'
+import { useGeneralThing, useForestBean, useForestDay, useForestNight, useForestOwl, useForestMushroomTop, useTinyAntGb, useSlamForest, useForestBarn, useForestSpiderBoss } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useClimbing, useRocket, useChunky, useDiddy, usePunch } from '@renderer/hooks/kongs'
+import { useRocket, useChunky, usePunch } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 import CenterArenas from './Center'
 import MushExteriorArenas from './MushExterior'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
-const canReachVanillaArena = useArena()
 const canPlantBean = useForestBean()
 const isDay = useForestDay()
 const isNight = useForestNight()
-const hasClimbing = useClimbing()
 const hasJetbarrel = useRocket()
 const hasChunky = useChunky()
 const canReachArea4 = useForestOwl()
 const canGetNearTopOfShroom = useForestMushroomTop()
 const canReachStump = useTinyAntGb()
-const hasDiddy = useDiddy()
 const hasSlam = useSlamForest()
 const canGetInThornvine = useForestBarn()
 const canReachSpiderBoss = useForestSpiderBoss()

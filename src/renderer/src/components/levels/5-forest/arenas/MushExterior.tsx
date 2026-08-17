@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useForestMushroomRoof, useForestMushroomTop } from '@renderer/hooks/forest'
+import { useGeneralThing, useForestMushroomRoof, useForestMushroomTop, useArena } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import ForestCheck from '../check'
 import { useClimbing, useRocket, useChunky, useTwirl } from '@renderer/hooks/kongs'
@@ -12,6 +12,7 @@ const hasChunky = useChunky()
 const isHinaKagiyama = useTwirl()
 const canReachTopOfShroom = useForestMushroomRoof()
 const canGetNearTopOfShroom = useForestMushroomTop()
+const canReachVanillaArena = useArena()
   return (
     <ArenaPool>
       <ForestCheck

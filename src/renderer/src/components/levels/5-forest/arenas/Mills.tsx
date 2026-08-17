@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useForestDay, useForestNight, useForestSpiderBoss } from '@renderer/hooks/forest'
+import { useGeneralThing, useForestDay, useForestNight, useForestSpiderBoss, useSlamForest } from '@renderer/hooks/forest'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useTwirl, useClimbing, useBalloon } from '@renderer/hooks/kongs'
+import { useTwirl, useClimbing, useBalloon, useDiddy } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -12,6 +12,8 @@ const isHinaKagiyama = useTwirl()
 const hasClimbing = useClimbing()
 const hasBalloon = useBalloon()
 const canReachSpiderBoss = useForestSpiderBoss()
+const hasDiddy = useDiddy()
+const hasSlam = useSlamForest()
   return (
     <ArenaPool>
       <ForestCheck
