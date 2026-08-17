@@ -13,7 +13,6 @@ import MonkeyportIgloo from '../gold-bananas/tiny/Port'
 import ChunkyKasplat from '../kasplats/Chunky'
 
 const IglooChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -23,28 +22,22 @@ return (
   <div className="grid">
     <DkIgloo />
     <DiddyIgloo />
-  </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
     <LankyIgloo />
-  </div>
-  <div className="grid">
     <TinyIgloo />
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <IglooFairy />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
-    <ChunkyIgloo />
-  </div>
   <div className="grid">
+    <ChunkyIgloo />
     <MonkeyportIgloo />
     <TransparentIgloo />
     <KoshaDirt />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ChunkyKasplat />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className="grid">
     <IglooEnemies />
   </div>
   </>

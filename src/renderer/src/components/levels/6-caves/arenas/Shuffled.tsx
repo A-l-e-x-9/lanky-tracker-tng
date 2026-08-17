@@ -131,13 +131,6 @@ const hasTrombone = useTrombone()
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16016}
-        name="Shuffled Battle Arena: On top of the Ice Castle"
-        region="Crystal Caves Main"
-        canGetLogic={hasBalloon}
-        canGetBreak={canHighGrab}
-      />
-      <CavesCheck
         id={16017}
         name="Shuffled Battle Arena: Near the small boulder"
         region="Crystal Caves Main"
@@ -331,12 +324,6 @@ const hasTrombone = useTrombone()
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16045}
-        name="Shuffled Battle Arena: Vanilla Warp 3 from Tiny's Mini room"
-        region="Crystal Caves Main"
-        canGetLogic={didCheck[6030]}
-      />
-      <CavesCheck
         id={16046}
         name="Shuffled Battle Arena: Vanilla Warp 4 on spire near Cranky's"
         region="Crystal Caves Main"
@@ -386,12 +373,6 @@ const hasTrombone = useTrombone()
         canGetBreak={canReachIgloo.out && hasSax}
       />
       <CavesCheck
-        id={16054}
-        name="Shuffled Battle Arena: Opposite DK's 5DC room entrance"
-        region="Caves Cabins"
-        canGetLogic={hasBongoes}
-      />
-      <CavesCheck
         id={16056}
         name="Shuffled Battle Arena: Inside Tiny's 5DC room"
         region="Caves Cabins"
@@ -402,13 +383,6 @@ const hasTrombone = useTrombone()
         name="Shuffled Battle Arena: Inside Diddy's upper 5DC room"
         region="Caves Cabins"
         canGetLogic={hasGuitar}
-      />
-      <CavesCheck
-        id={16058}
-        name="Shuffled Battle Arena: Called to the carpet of Lanky's cabin"
-        region="Caves Cabins"
-        canGetLogic={hasBalloon && hasTrombone}
-        canGetBreak={hasJetbarrel && hasTrombone}
       />
       <CavesCheck
         id={16059}
