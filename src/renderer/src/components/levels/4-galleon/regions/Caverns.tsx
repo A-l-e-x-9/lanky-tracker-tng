@@ -1,6 +1,6 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import CavernArena from '../arenas/Cavern'
+import CavernArena from '../arenas/VanillaUnderCranky'
 import CavernsEnemies from '../enemies/Caverns'
 import ChestFairy from '../fairies/Chest'
 import CannonGame from '../gold-bananas/chunky/Cannon'

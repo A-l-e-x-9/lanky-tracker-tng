@@ -1,3 +1,3 @@
-import CavernArena from './Cavern'
+import CavernArena from './VanillaUnderCranky'
 
 export default <CavernArena />
