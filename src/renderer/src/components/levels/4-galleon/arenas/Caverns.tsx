@@ -1,22 +1,12 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform, useKevin, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb, useGalleonSeasickShip } from '@renderer/hooks/galleon'
+import { useGeneralThing, useGalleonCavernTop } from '@renderer/hooks/galleon'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { usePunch, useClimbing } from '@renderer/hooks/kongs'
+import { useClimbing } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
-const canReachVanillaArena = useArena()
-const canReachLighthouse = useGalleonLighthouseInside()
-const canReachCannonGame = useGalleonCannon()
 const canReachTinysKasplat = useGalleonCavernTop()
-const canReachLighthouseOuter = useGalleonLighthousePlatform()
-const canReachKevin = useKevin()
-const canReachLankyGold = useLankyGoldGb()
-const canReachShipyard = useGalleonOutskirts()
-const canReachDiddyGold = useDiddyGoldGb()
-const canReachChunkyShip = useGalleonSeasickShip()
-const hasPrimatePunch = usePunch()
 const hasClimbing = useClimbing()
   return (
     <ArenaPool>
