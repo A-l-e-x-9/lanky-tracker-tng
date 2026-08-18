@@ -1,16 +1,10 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useLankyIglooGb, useLankyCastleGb } from '@renderer/hooks/caves'
+import { useGeneralThing } from '@renderer/hooks/caves'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useBongos, useSax, useGuitar } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
-const hasBongoes = useBongos()
-const canDoLanky5DI = useLankyIglooGb()
-const hasSax = useSax()
-const hasGuitar = useGuitar()
-const canDoIceCastle = useLankyCastleGb()
   return (
     <ArenaPool>
       <CavesCheck
