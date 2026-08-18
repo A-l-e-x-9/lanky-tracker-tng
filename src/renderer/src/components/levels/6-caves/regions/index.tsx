@@ -11,6 +11,7 @@ import ShopLocations from '../shops'
 import MainChecks from './Main'
 import MainArenas from '../arenas/Main'
 import IglooChecks from './Igloo'
+import IglooArenas from '../arenas/Igloo'
 import CabinsChecks from './Cabins'
 import CabinArenas from '../arenas/Cabins'
 import ShuffledArenas from '../arenas/Shuffled'
@@ -40,6 +41,9 @@ return (
     <MainArenas />
   </div>
     <IglooChecks />
+  <div className="grid">
+    <IglooArenas />
+  </div>
     <CabinsChecks />
   <div className="grid">
     <CabinArenas />
