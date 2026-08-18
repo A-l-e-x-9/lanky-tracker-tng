@@ -8,21 +8,21 @@ const isBreathing = useGeneralThing()
   return (
     <ArenaPool>
       <CavesCheck
-        id={16006}
+        id={16000}
         name="Shuffled Battle Arena: Under igloo area's Tag Barrel"
         region="Caves Igloo"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16041}
+        id={16000}
         name="Shuffled Battle Arena: Vanilla Warp 1 at igloos"
         region="Caves Igloo"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16044}
+        id={16000}
         name="Shuffled Battle Arena: Vanilla Warp 3 at igloos"
         region="Caves Igloo"
         canGetLogic={isBreathing.in}

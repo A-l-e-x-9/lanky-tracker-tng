@@ -30,126 +30,126 @@ const canDoIceCastle = useLankyCastleGb()
         canGetBreak={canDoShrinkGB.out}
       />
       <CavesCheck
-        id={16009}
+        id={16000}
         name="Shuffled Battle Arena: Near ice wall to big boulder"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16011}
+        id={16000}
         name="Shuffled Battle Arena: In front of Cranky's"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16012}
+        id={16000}
         name="Shuffled Battle Arena: A yellow rock below the Ice Castle"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16013}
+        id={16000}
         name="Shuffled Battle Arena: A blue rock below the Ice Castle"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16014}
+        id={16000}
         name="Shuffled Battle Arena: Tag Barrel at the Ice Castle"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16015}
+        id={16000}
         name="Shuffled Battle Arena: Near the Ice Castle"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16017}
+        id={16000}
         name="Shuffled Battle Arena: Near the small boulder"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16018}
+        id={16000}
         name="Shuffled Battle Arena: Near ice wall to Snide's"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16021}
+        id={16000}
         name="Shuffled Battle Arena: Near vanilla level entrance"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16022}
+        id={16000}
         name="Shuffled Battle Arena: Near starting Gorilla Gone room"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16024}
+        id={16000}
         name="Shuffled Battle Arena: Near Lanky's Kasplat"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16025}
+        id={16000}
         name="Shuffled Battle Arena: Near Funky's"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16026}
+        id={16000}
         name="Shuffled Battle Arena: Near Funky's, under Jetbarrel"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16040}
+        id={16000}
         name="Shuffled Battle Arena: Vanilla Warp 1 at level start"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16042}
+        id={16000}
         name="Shuffled Battle Arena: Vanilla Warp 2 at level start"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16046}
+        id={16000}
         name="Shuffled Battle Arena: Vanilla Warp 4 on spire near Cranky's"
         region="Crystal Caves Main"
         canGetLogic={isBreathing.in && (hasDK || hasJetbarrel || isHinaKagiyama)}
         canGetBreak={isBreathing.out && (hasDK || hasJetbarrel || isHinaKagiyama)}
       />
       <CavesCheck
-        id={16059}
+        id={16000}
         name="Shuffled Battle Arena: Ice Castle, left"
         region="Crystal Caves Main"
         canGetLogic={canDoIceCastle.in}
         canGetBreak={canDoIceCastle.out}
       />
       <CavesCheck
-        id={16060}
+        id={16000}
         name="Shuffled Battle Arena: Ice Castle, right"
         region="Crystal Caves Main"
         canGetLogic={canDoIceCastle.in}

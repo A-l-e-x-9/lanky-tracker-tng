@@ -35,98 +35,98 @@ const canReachVanillaArena = useDkRotateGb()
         canGetBreak={isBreathing.out && hasJetbarrel && hasTrombone}
       />
       <CavesCheck
-        id={16028}
+        id={16000}
         name="Shuffled Battle Arena: Near the headphones"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16029}
+        id={16000}
         name="Shuffled Battle Arena: Ledge near headphones"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16030}
+        id={16000}
         name="Shuffled Battle Arena: Near Lanky's cabin"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16031}
+        id={16000}
         name="Shuffled Battle Arena: Left of the rotating cabin"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16032}
+        id={16000}
         name="Shuffled Battle Arena: Next to the rotating cabin"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16033}
+        id={16000}
         name="Shuffled Battle Arena: Right of the rotating cabin"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16034}
+        id={16000}
         name="Shuffled Battle Arena: Cabin Kasplat pillar"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16035}
+        id={16000}
         name="Shuffled Battle Arena: Near cabin area Jetbarrel"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16036}
+        id={16000}
         name="Shuffled Battle Arena: Near Tiny's 5DC room"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16037}
+        id={16000}
         name="Shuffled Battle Arena: Near 5DC Tag Barrel"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16038}
+        id={16000}
         name="Shuffled Battle Arena: Near Diddy's upper 5DC room"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16039}
+        id={16000}
         name="Shuffled Battle Arena: Also near Diddy's upper 5DC room, closer to door"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16043}
+        id={16000}
         name="Shuffled Battle Arena: Vanilla Warp 2 at DK's rotating cabin"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
-        id={16048}
+        id={16000}
         name="Shuffled Battle Arena: Vanilla Warp 5 at 5DC"
         region="Caves Cabins"
         canGetLogic={isBreathing.in}
