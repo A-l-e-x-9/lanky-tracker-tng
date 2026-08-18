@@ -56,104 +56,6 @@ const hasClimbing = useClimbing()
         canGetBreak={canReachCannonGame.out}
       />
       <GalleonCheck
-        id={14006}
-        name="Shuffled Battle Arena: 4-way tunnel intersection"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={14007}
-        name="Shuffled Battle Arena: Tunnel to Chunky's chests, far"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={14008}
-        name="Shuffled Battle Arena: Tunnel to Chunky's chests, close"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={14009}
-        name="Shuffled Battle Arena: Tunnel to Chunky's chests, alcove"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={14010}
-        name="Shuffled Battle Arena: At Chunky's chests"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={14011}
-        name="Shuffled Battle Arena: Behind Chunky's GB chest"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={14012}
-        name="Shuffled Battle Arena: Behind the cannon wreck"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={14014}
-        name="Shuffled Battle Arena: Left of Cranky's"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={14015}
-        name="Shuffled Battle Arena: In front of Cranky's"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={14016}
-        name="Shuffled Battle Arena: Near vanilla Warp 3 in the cave"
-        region="Galleon Caves"
-        canGetLogic={canReachTinysKasplat.in}
-        canGetBreak={canReachTinysKasplat.out}
-      />
-      <GalleonCheck
-        id={14017}
-        name="Shuffled Battle Arena: Near Diddy's barrel on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
-      />
-      <GalleonCheck
-        id={14018}
-        name="Shuffled Battle Arena: Near DK's pad on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
-      />
-      <GalleonCheck
-        id={14019}
-        name="Shuffled Battle Arena: Next to the ladder on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
-      />
-      <GalleonCheck
-        id={14023}
-        name="Shuffled Battle Arena: Underneath Diddy's barrel on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
-      />
-      <GalleonCheck
         id={14024}
         name="Shuffled Battle Arena: Kevin's platform"
         region="Lighthouse Area"
@@ -168,46 +70,11 @@ const hasClimbing = useClimbing()
         canGetBreak={canReachLankyGold.out}
       />
       <GalleonCheck
-        id={14032}
-        name="Shuffled Battle Arena: Vanilla Warp 1, in the cave"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={14033}
-        name="Shuffled Battle Arena: Vanilla Warp 1, on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
-      />
-      <GalleonCheck
-        id={14034}
-        name="Shuffled Battle Arena: Vanilla Warp 2, in the cave"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
         id={14035}
         name="Shuffled Battle Arena: Vanilla Warp 2, near the 2DS"
         region="Shipyard Outskirts"
         canGetLogic={canReachShipyard.in}
         canGetBreak={canReachShipyard.out}
-      />
-      <GalleonCheck
-        id={14036}
-        name="Shuffled Battle Arena: Vanilla Warp 3, in the cave"
-        region="Galleon Caves"
-        canGetLogic={canReachTinysKasplat.in}
-        canGetBreak={canReachTinysKasplat.out}
-      />
-      <GalleonCheck
-        id={14037}
-        name="Shuffled Battle Arena: Vanilla Warp 3, at Snide's"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
       />
       <GalleonCheck
         id={14038}
@@ -224,46 +91,11 @@ const hasClimbing = useClimbing()
         canGetBreak={canReachDiddyGold.out}
       />
       <GalleonCheck
-        id={14040}
-        name="Shuffled Battle Arena: Vanilla Warp 5, on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in}
-        canGetBreak={canReachLighthouseOuter.out}
-      />
-      <GalleonCheck
         id={14041}
         name="Shuffled Battle Arena: Vanilla Warp 5, in the shipyard"
         region="Shipyard Outskirts"
         canGetLogic={canReachShipyard.in}
         canGetBreak={canReachShipyard.out}
-      />
-      <GalleonCheck
-        id={14042}
-        name="Shuffled Battle Arena: Left of Chunky's ship exit"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in}
-        canGetBreak={canReachChunkyShip.out}
-      />
-      <GalleonCheck
-        id={14043}
-        name="Shuffled Battle Arena: In front of Chunky's ship exit"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in}
-        canGetBreak={canReachChunkyShip.out}
-      />
-      <GalleonCheck
-        id={14044}
-        name="Shuffled Battle Arena: Right of Chunky's ship exit"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in}
-        canGetBreak={canReachChunkyShip.out}
-      />
-      <GalleonCheck
-        id={14045}
-        name="Shuffled Battle Arena: In the corner of Chunky's ship"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in}
-        canGetBreak={canReachChunkyShip.out}
       />
       <GalleonCheck
         id={14046}

@@ -9,8 +9,10 @@ import LankyMedal from '../medals/LankyMedal'
 import TinyMedal from '../medals/TinyMedal'
 import ShopLocations from '../shops'
 import CavernsChecks from './Caverns'
+import CavernArenas from '../arenas/Caverns'
 import CavernKasplats from '../kasplats/Caverns'
 import LighthouseChecks from './Lighthouse'
+import LighthouseArenas from '../arenas/Lighthouse'
 import LighthouseKasplats from '../kasplats/Lighthouse'
 import OutskirtsChecks from './Outskirts'
 import OutskirtKasplats from '../kasplats/Outskirts'
@@ -39,10 +41,16 @@ return (
       </BananaMedalPool>
     </div>
       <CavernsChecks />
+    <div className="grid">
+      <CavernArenas />
+    </div>
     <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
       <CavernKasplats />
     </div>
       <LighthouseChecks />
+    <div className="grid">
+      <LighthouseArenas />
+    </div>
     <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
       <LighthouseKasplats />
     </div>
