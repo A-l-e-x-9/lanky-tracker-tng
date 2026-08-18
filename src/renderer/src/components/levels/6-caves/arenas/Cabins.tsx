@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing } from '@renderer/hooks/caves'
+import { useGeneralThing, useDkRotateGb } from '@renderer/hooks/caves'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import { useRocket, useBalloon, useBongos, useTrombone } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
@@ -10,6 +10,7 @@ const hasJetbarrel = useRocket()
 const hasBalloon = useBalloon()
 const hasBongoes = useBongos()
 const hasTrombone = useTrombone()
+const canReachVanillaArena = useDkRotateGb()
   return (
     <ArenaPool>
       <CavesCheck

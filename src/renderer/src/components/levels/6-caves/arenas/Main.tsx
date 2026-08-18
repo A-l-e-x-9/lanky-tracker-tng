@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useTinyCaveGb } from '@renderer/hooks/caves'
+import { useGeneralThing, useTinyCaveGb, useLankyCastleGb } from '@renderer/hooks/caves'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useBalloon, useHighGrab } from '@renderer/hooks/kongs'
+import { useBalloon, useHighGrab, useDk, useRocket, useTwirl } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -9,6 +9,10 @@ const isBreathing = useGeneralThing()
 const canDoShrinkGB = useTinyCaveGb()
 const hasBalloon = useBalloon()
 const canHighGrab = useHighGrab()
+const hasDK = useDk()
+const hasJetbarrel = useRocket()
+const isHinaKagiyama = useTwirl()
+const canDoIceCastle = useLankyCastleGb()
   return (
     <ArenaPool>
       <CavesCheck
