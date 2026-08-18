@@ -1,12 +1,10 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useDkRotateGb, useChunkyClearGb, useTinyPortGb, useTinyCaveGb, useIceWalls, useCavesMiniFunky, useCavesPillar, useCavesIgloo, useLankyIglooGb, useLankyCastleGb } from '@renderer/hooks/caves'
+import { useChunkyClearGb, useTinyPortGb, useTinyCaveGb, useIceWalls, useCavesMiniFunky, useCavesPillar, useCavesIgloo, useLankyIglooGb } from '@renderer/hooks/caves'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useMonkeyport, useRocket, useTwirl, usePunch, useChunky, useBarrel, useDk, useBongos, useSax, useGuitar } from '@renderer/hooks/kongs'
+import { useMonkeyport, useRocket, useTwirl, usePunch, useChunky, useBarrel, useBongos, useSax, useGuitar } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {
-const isBreathing = useGeneralThing()
-const canReachVanillaArena = useDkRotateGb()
 const canDoKoshaGB = useChunkyClearGb()
 const hasMonkeyport = useMonkeyport()
 const canDoTinyIglooGB = useTinyPortGb()
@@ -18,14 +16,12 @@ const canGetPastIceWalls = useIceWalls()
 const hasChunky = useChunky()
 const hasBarrels = useBarrel()
 const canReachWarp4 = useCavesMiniFunky()
-const hasDK = useDk()
 const canDoLankyKasplat = useCavesPillar()
 const canReachIgloo = useCavesIgloo()
 const hasBongoes = useBongos()
 const canDoLanky5DI = useLankyIglooGb()
 const hasSax = useSax()
 const hasGuitar = useGuitar()
-const canDoIceCastle = useLankyCastleGb()
   return (
     <ArenaPool>
       <CavesCheck
