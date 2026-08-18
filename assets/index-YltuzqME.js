@@ -43105,7 +43105,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16009,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near ice wall to big boulder",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43115,7 +43115,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16011,
+        id: 16e3,
         name: "Shuffled Battle Arena: In front of Cranky's",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43125,7 +43125,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16012,
+        id: 16e3,
         name: "Shuffled Battle Arena: A yellow rock below the Ice Castle",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43135,7 +43135,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16013,
+        id: 16e3,
         name: "Shuffled Battle Arena: A blue rock below the Ice Castle",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43145,7 +43145,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16014,
+        id: 16e3,
         name: "Shuffled Battle Arena: Tag Barrel at the Ice Castle",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43155,7 +43155,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16015,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near the Ice Castle",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43165,7 +43165,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16017,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near the small boulder",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43175,7 +43175,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16018,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near ice wall to Snide's",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43185,7 +43185,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16021,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near vanilla level entrance",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43195,7 +43195,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16022,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near starting Gorilla Gone room",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43205,7 +43205,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16024,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near Lanky's Kasplat",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43215,7 +43215,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16025,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near Funky's",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43225,7 +43225,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16026,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near Funky's, under Jetbarrel",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43235,7 +43235,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16040,
+        id: 16e3,
         name: "Shuffled Battle Arena: Vanilla Warp 1 at level start",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43245,7 +43245,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16042,
+        id: 16e3,
         name: "Shuffled Battle Arena: Vanilla Warp 2 at level start",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
@@ -43255,7 +43255,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16046,
+        id: 16e3,
         name: "Shuffled Battle Arena: Vanilla Warp 4 on spire near Cranky's",
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in && (hasDK || hasJetbarrel || isHinaKagiyama),
@@ -43265,7 +43265,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16059,
+        id: 16e3,
         name: "Shuffled Battle Arena: Ice Castle, left",
         region: "Crystal Caves Main",
         canGetLogic: canDoIceCastle.in,
@@ -43275,7 +43275,7 @@ const Shuffled$i = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16060,
+        id: 16e3,
         name: "Shuffled Battle Arena: Ice Castle, right",
         region: "Crystal Caves Main",
         canGetLogic: canDoIceCastle.in,
@@ -43314,7 +43314,7 @@ const Shuffled$h = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16006,
+        id: 16e3,
         name: "Shuffled Battle Arena: Under igloo area's Tag Barrel",
         region: "Caves Igloo",
         canGetLogic: isBreathing.in,
@@ -43324,7 +43324,7 @@ const Shuffled$h = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16041,
+        id: 16e3,
         name: "Shuffled Battle Arena: Vanilla Warp 1 at igloos",
         region: "Caves Igloo",
         canGetLogic: isBreathing.in,
@@ -43334,7 +43334,7 @@ const Shuffled$h = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16044,
+        id: 16e3,
         name: "Shuffled Battle Arena: Vanilla Warp 3 at igloos",
         region: "Caves Igloo",
         canGetLogic: isBreathing.in,
@@ -43408,7 +43408,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16028,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near the headphones",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43418,7 +43418,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16029,
+        id: 16e3,
         name: "Shuffled Battle Arena: Ledge near headphones",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43428,7 +43428,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16030,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near Lanky's cabin",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43438,7 +43438,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16031,
+        id: 16e3,
         name: "Shuffled Battle Arena: Left of the rotating cabin",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43448,7 +43448,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16032,
+        id: 16e3,
         name: "Shuffled Battle Arena: Next to the rotating cabin",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43458,7 +43458,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16033,
+        id: 16e3,
         name: "Shuffled Battle Arena: Right of the rotating cabin",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43468,7 +43468,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16034,
+        id: 16e3,
         name: "Shuffled Battle Arena: Cabin Kasplat pillar",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43478,7 +43478,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16035,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near cabin area Jetbarrel",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43488,7 +43488,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16036,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near Tiny's 5DC room",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43498,7 +43498,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16037,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near 5DC Tag Barrel",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43508,7 +43508,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16038,
+        id: 16e3,
         name: "Shuffled Battle Arena: Near Diddy's upper 5DC room",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43518,7 +43518,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16039,
+        id: 16e3,
         name: "Shuffled Battle Arena: Also near Diddy's upper 5DC room, closer to door",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43528,7 +43528,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16043,
+        id: 16e3,
         name: "Shuffled Battle Arena: Vanilla Warp 2 at DK's rotating cabin",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
@@ -43538,7 +43538,7 @@ const Shuffled$g = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 16048,
+        id: 16e3,
         name: "Shuffled Battle Arena: Vanilla Warp 5 at 5DC",
         region: "Caves Cabins",
         canGetLogic: isBreathing.in,
