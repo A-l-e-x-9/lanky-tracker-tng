@@ -10835,6 +10835,7 @@ const initialPortal = {
     treeChunkyPortal: false,
     cryptOutsidePortal: false,
     DKCryptPortal: false,
+    diddyCryptPortal: false,
     chunkyCryptPortal: false,
     mausoleumPortal: false,
     museumPortal: false,
@@ -45250,6 +45251,7 @@ const useTreePortal = () => useDonkStore(useShallow((state) => state.shuffledCas
 const useTreeChunkyPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.treeChunkyPortal));
 const useCryptOutsidePortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.cryptOutsidePortal));
 const useDKCryptPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.DKCryptPortal));
+const useDiddyCryptPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.diddyCryptPortal));
 const useChunkyCryptPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.chunkyCryptPortal));
 const useMausoleumPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.mausoleumPortal));
 const useMuseumPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.museumPortal));
@@ -45259,9 +45261,10 @@ const useWindTunnelPortal = () => useDonkStore(useShallow((state) => state.shuff
 const useReachCastleFromCrypt = () => {
   const main = useCryptOutsidePortal();
   const DKCrypt = useDKCryptPortal();
+  const diddyCrypt = useDiddyCryptPortal();
   const chunkyCrypt = useChunkyCryptPortal();
   const mausoleum = useMausoleumPortal();
-  const DKPortal = main || DKCrypt || chunkyCrypt || mausoleum;
+  const DKPortal = main || DKCrypt || diddyCrypt || chunkyCrypt || mausoleum;
   const hasClimbing = useClimbing();
   const highGrab = useHighGrab();
   if (DKPortal) {
@@ -45366,9 +45369,10 @@ const useDiddyCryptGb = () => {
   const hasClimbing = useClimbing();
   const canEnter = usePlayCastle();
   const DKPortal = useCryptOutsidePortal();
+  const DKPortal2 = useDiddyCryptPortal();
   return {
-    in: (canEnter.in && hasClimbing || DKPortal) && (peanut || cryptPreOpened) && charge,
-    out: canEnter.out && (peanut || cryptPreOpened) && charge
+    in: (canEnter.in && hasClimbing || DKPortal) && (peanut || cryptPreOpened || DKPortal2) && charge,
+    out: canEnter.out && (peanut || cryptPreOpened || DKPortal2) && charge
   };
 };
 const useDiddyDungeonGb = () => {
@@ -55832,6 +55836,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is near the entrance to DK's minecart game.",
                   storeKey: "DKCryptPortal",
+                  prefix: "shuffledCastlePortals",
+                  updateItem: setCastlePortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Diddy's Crypt room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at Diddy's Chimpy Charge-locked sarcophagus.",
+                  storeKey: "diddyCryptPortal",
                   prefix: "shuffledCastlePortals",
                   updateItem: setCastlePortal
                 }
