@@ -67,6 +67,7 @@ export const initialPortal: PortalState = {
     treeChunkyPortal: false,
     cryptOutsidePortal: false,
     DKCryptPortal: false,
+    diddyCryptPortal: false,
     chunkyCryptPortal: false,
     mausoleumPortal: false,
     museumPortal: false,

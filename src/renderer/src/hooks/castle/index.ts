@@ -72,6 +72,9 @@ export const useCryptOutsidePortal = (): boolean =>
 //Is the DK Portal in DK's Crypt room?
 export const useDKCryptPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.DKCryptPortal))
+//Is the DK Portal in Diddy's Crypt room?
+export const useDiddyCryptPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledCastlePortals.diddyCryptPortal))
 //Is the DK Portal in Chunky's Crypt room?
 export const useChunkyCryptPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledCastlePortals.chunkyCryptPortal))
@@ -96,9 +99,10 @@ export const useWindTunnelPortal = (): boolean =>
 export const useReachCastleFromCrypt = (): LogicBool => {
   const main = useCryptOutsidePortal()
   const DKCrypt = useDKCryptPortal()
+  const diddyCrypt = useDiddyCryptPortal()
   const chunkyCrypt = useChunkyCryptPortal()
   const mausoleum = useMausoleumPortal()
-  const DKPortal = main || DKCrypt || chunkyCrypt || mausoleum
+  const DKPortal = main || DKCrypt || diddyCrypt || chunkyCrypt || mausoleum
   const hasClimbing = useClimbing()
   const highGrab = useHighGrab()
   if (DKPortal) {
@@ -219,9 +223,10 @@ export const useDiddyCryptGb = (): LogicBool => {
   const hasClimbing = useClimbing()
   const canEnter = usePlayCastle()
   const DKPortal = useCryptOutsidePortal()
+  const DKPortal2 = useDiddyCryptPortal()
   return {
-    in: ((canEnter.in && hasClimbing) || DKPortal) && (peanut || cryptPreOpened) && charge,
-    out: canEnter.out && (peanut || cryptPreOpened) && charge
+    in: ((canEnter.in && hasClimbing) || DKPortal) && (peanut || cryptPreOpened || DKPortal2) && charge,
+    out: canEnter.out && (peanut || cryptPreOpened || DKPortal2) && charge
   }
 }
 
