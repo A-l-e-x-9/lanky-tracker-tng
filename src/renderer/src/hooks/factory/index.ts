@@ -1,7 +1,7 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import { useFastArcade } from '../fast-checks'
-import { usePlayLevel, useSlamLevel } from '../isles'
+import { usePlayLevel, useSlamLevel, useTroffAndScoff } from '../isles'
 import {
   useAnyKong,
   useBalloon,
@@ -46,6 +46,9 @@ export const usePlayFactory = (): LogicBool => {
     out: canEnter.out
   }
 }
+
+//Alex addition: Number of CB's needed to get by Troff 'n' Scoff for this level
+export const useFactoryTroffAndScoff = (): number => useTroffAndScoff('Frantic Factory')
 
 /*Alex addition: shuffled DK Portals*/
 //Is the DK Portal in the R&D area?

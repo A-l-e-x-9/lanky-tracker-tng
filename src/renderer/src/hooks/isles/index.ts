@@ -543,6 +543,39 @@ export const useSlamLevel = (level: Level): boolean => {
   }
 }
 
+//An Alex addition to help implement Troff 'n' Scoff checks into this tracker:
+export const useTroffAndScoff = (level: Level): number => {
+  const [level1, level2, level3, level4, level5, level6, level7, level8] = useDonkStore(useShallow((state) => [state.level1, state.level2, state.level3, state.level4, state.level5, state.level6, state.level7, state.level8]))
+  const [troffAndScoff1, troffAndScoff2, troffAndScoff3, troffAndScoff4, troffAndScoff5, troffAndScoff6, troffAndScoff7, troffAndScoff8] = useDonkStore(useShallow((state) => [state.troffAndScoff.troffAndSCoff1, state.troffAndScoff.troffAndSCoff2, state.troffAndScoff.troffAndSCoff3, state.troffAndScoff.troffAndSCoff4, state.troffAndScoff.troffAndSCoff5, state.troffAndScoff.troffAndSCoff6, state.troffAndScoff.troffAndSCoff7, state.troffAndScoff.troffAndSCoff8]))
+
+  if (level1 === level) {
+    return troffAndScoff1
+  }
+  if (level2 === level) {
+    return troffAndScoff2
+  }
+  if (level3 === level) {
+    return troffAndScoff3
+  }
+  if (level4 === level) {
+    return troffAndScoff4
+  }
+  if (level5 === level) {
+    return troffAndScoff5
+  }
+  if (level6 === level) {
+    return troffAndScoff6
+  }
+  if (level7 === level) {
+    return troffAndScoff7
+  }
+  if (level8 === level) {
+    return troffAndScoff8
+  }
+
+  return 0
+}
+
 /**
  * Can we control someone to get the first check in the game?
  * @returns true if we can get the first check in the game.
