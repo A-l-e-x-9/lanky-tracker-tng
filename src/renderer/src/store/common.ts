@@ -1213,6 +1213,7 @@ interface galleonPortals {
   vanilla: boolean
   tinyKasplatPortal: boolean
   lighthousePortal: boolean
+  whompsFortressPortal: boolean
   chunkyShipPortal: boolean
 }
 interface forestPortals {

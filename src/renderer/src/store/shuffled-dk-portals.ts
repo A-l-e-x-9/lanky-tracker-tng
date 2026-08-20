@@ -38,6 +38,7 @@ export const initialPortal: PortalState = {
     vanilla: true,
     tinyKasplatPortal: false,
     lighthousePortal: false,
+    whompsFortressPortal: false,
     chunkyShipPortal: false
   },
   shuffledForestPortals: {

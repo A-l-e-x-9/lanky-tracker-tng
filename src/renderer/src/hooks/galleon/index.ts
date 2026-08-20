@@ -60,6 +60,9 @@ export const useTinyKasplatPortal = (): boolean =>
 //Is the DK Portal inside the Lighthouse?
 export const usePortalInLighthouse = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledGalleonPortals.lighthousePortal))
+//Is the DK Portal one level up in the Lighthouse?
+export const useWhompsFortressPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledGalleonPortals.whompsFortressPortal))
 //Is the DK Portal inside Chunky's ship?
 export const useChunkyShipPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledGalleonPortals.chunkyShipPortal))
@@ -74,7 +77,9 @@ export const useGalleonLighthouseArea = (): LogicBool => {
   const target = useSwitchsanityGun('galleonLighthouse', 0)
   const removeBarriers = useDonkStore(useShallow((state) => state.removeBarriers))
 //  const DKPortal1 = useLighthousePortal()
-  const DKPortal2 = usePortalInLighthouse()
+  const lighthouseBottom = usePortalInLighthouse()
+  const whompsFortress = useWhompsFortressPortal()
+  const DKPortal2 = lighthouseBottom || whompsFortress
   const DKPortal3 = useChunkyShipPortal()
   return {
     in: inStage.in && (target || removeBarriers.galleonLighthouse || DKPortal2 || DKPortal3),
@@ -150,7 +155,9 @@ export const useGalleonLighthouseInside = (): LogicBool => {
   const dk = useDk()
   const hasClimbing = useClimbing()
   const hasJetbarrel = useRocket()
-  const DKPortal = usePortalInLighthouse()
+  const lighthouseBottom = usePortalInLighthouse()
+  const lighthouseTop = useWhompsFortressPortal()
+  const DKPortal = lighthouseBottom || lighthouseTop
   return {
     in: (lighthousePlatform.in && canSlam && dk && hasClimbing) || DKPortal,
     out: (lighthousePlatform.out && canSlam && dk && (hasClimbing || hasJetbarrel)) || DKPortal
@@ -254,9 +261,10 @@ export const useDkLighthouseGb = (): LogicBool => {
   const inside = useGalleonLighthouseInside()
   const seasick = useDonkStore(useShallow((state) => state.removeBarriers.galleonSeasick))
   const hasClimbing = useClimbing()
+  const DKPortal = useWhompsFortressPortal()
   return {
-    in: inside.in && hasClimbing && (seasick || grab),
-    out: inside.out && hasClimbing && (seasick || grab)
+    in: inside.in && (hasClimbing || DKPortal) && (seasick || grab),
+    out: inside.out && (hasClimbing || DKPortal) && (seasick || grab)
   }
 }
 
