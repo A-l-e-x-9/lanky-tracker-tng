@@ -17,7 +17,7 @@ import bLocker from '../../assets/images/GB.png'
 import coloredNanners from '../../assets/images/settings/rainbow_bananas.png'
 
 const LevelTable = (): JSX.Element => {
-  const [setBLocker] = useDonkStore(useShallow((state) => [state.setBLocker]))
+  const [setBLocker, setTroffAndScoff] = useDonkStore(useShallow((state) => [state.setBLocker, state.setTroffAndScoff]))
   const key3And8Seed = useDonkStore(useShallow((state) => state.winCondition.key3And8)) ? 'all-bosses' : ''
   const key8Seed = useDonkStore(useShallow((state) => state.winCondition.key8)) ? 'all-bosses' : ''
   return (
