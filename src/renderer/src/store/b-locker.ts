@@ -41,6 +41,20 @@ const BLockerSlice: StateCreator<AllSlice, [], [], bLockerSlice> = (set) => {
         }
         return state
       })
+    },
+    setTroffAndScoff: (id, val): void => {
+      set((state) => {
+        const target: Record<string, number> = {}
+        target[id] = val
+        state = {
+          ...state,
+          troffAndScoff: {
+            ...state.troffAndScoff,
+            ...target
+          }
+        }
+        return state
+      })
     }
   }
 }
