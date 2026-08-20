@@ -12936,6 +12936,35 @@ const useSlamLevel = (level) => {
     }
   }
 };
+const useTroffAndScoff = (level) => {
+  const [level1, level2, level3, level4, level5, level6, level7, level8] = useDonkStore(useShallow((state) => [state.level1, state.level2, state.level3, state.level4, state.level5, state.level6, state.level7, state.level8]));
+  const [troffAndScoff1, troffAndScoff2, troffAndScoff3, troffAndScoff4, troffAndScoff5, troffAndScoff6, troffAndScoff7, troffAndScoff8] = useDonkStore(useShallow((state) => [state.troffAndScoff.troffAndScoff1, state.troffAndScoff.troffAndScoff2, state.troffAndScoff.troffAndScoff3, state.troffAndScoff.troffAndScoff4, state.troffAndScoff.troffAndScoff5, state.troffAndScoff.troffAndScoff6, state.troffAndScoff.troffAndScoff7, state.troffAndScoff.troffAndScoff8]));
+  if (level1 === level) {
+    return troffAndScoff1;
+  }
+  if (level2 === level) {
+    return troffAndScoff2;
+  }
+  if (level3 === level) {
+    return troffAndScoff3;
+  }
+  if (level4 === level) {
+    return troffAndScoff4;
+  }
+  if (level5 === level) {
+    return troffAndScoff5;
+  }
+  if (level6 === level) {
+    return troffAndScoff6;
+  }
+  if (level7 === level) {
+    return troffAndScoff7;
+  }
+  if (level8 === level) {
+    return troffAndScoff8;
+  }
+  return 0;
+};
 const useCheckDkJapesRock = () => useAnyKong();
 const useCheckDkCoconutCage = () => {
   const coconut = useCoconut();
@@ -28515,6 +28544,7 @@ const usePlayFactory = () => {
     out: canEnter.out
   };
 };
+const useFactoryTroffAndScoff = () => useTroffAndScoff("Frantic Factory");
 const useRAndDPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.portalInRAndD));
 const useStoragePortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.storagePortal));
 const usePowerHutPortal = () => useDonkStore(useShallow((state) => state.shuffledFactoryPortals.powerHutPortal));
@@ -28935,17 +28965,379 @@ const RNDArena = () => {
     }
   ) }) });
 };
+const useDkMedalCommonLogic$4 = () => {
+  const testing = useFactoryTesting();
+  const coconut = useCoconut();
+  const blast = useBlast();
+  let bananas = 15;
+  if (blast) {
+    bananas += 20;
+  }
+  if (coconut) {
+    bananas += 10;
+  }
+  if (testing.in || testing.out) {
+    bananas += 5;
+    if (coconut) {
+      bananas += 35;
+    }
+  }
+  return bananas;
+};
+const useDkMedalInLogic$4 = () => {
+  const inStage = usePlayFactory();
+  const production = useFactoryProductionEnabled();
+  const kong = useDk();
+  const strong = useStrong();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useDkMedalCommonLogic$4();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (production.in && strong) {
+    bananas += 15;
+  }
+  return bananas;
+};
+const useDkMedalOutLogic$4 = () => {
+  const inStage = usePlayFactory();
+  const production = useFactoryProductionEnabled();
+  const kong = useDk();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useDkMedalCommonLogic$4();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (production.out) {
+    bananas += 15;
+  }
+  return bananas;
+};
+const useDiddyMedalCommonLogic$4 = () => {
+  const testing = useFactoryTesting();
+  const production = useFactoryProductionEnabled();
+  const gun = usePeanut();
+  const music = useGuitar();
+  const climbing = useClimbing();
+  let bananas = 12;
+  if (climbing) {
+    bananas += 10;
+  }
+  if ((production.in || production.out) && climbing) {
+    bananas += 15;
+  }
+  if (testing.in || testing.out) {
+    bananas += 13;
+    if (music && gun) {
+      bananas += 30;
+    }
+  }
+  return bananas;
+};
+const useDiddyMedalInLogic$4 = () => {
+  const inStage = usePlayFactory();
+  const testing = useFactoryTesting();
+  const kong = useDiddy();
+  const pad = useSpring();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useDiddyMedalCommonLogic$4();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (testing.in && pad) {
+    bananas += 20;
+  }
+  return bananas;
+};
+const useDiddyMedalOutLogic$4 = () => {
+  const inStage = usePlayFactory();
+  const testing = useFactoryTesting();
+  const kong = useDiddy();
+  const highGrab = useHighGrab();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useDiddyMedalCommonLogic$4();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (testing.out && highGrab) {
+    bananas += 20;
+  }
+  return bananas;
+};
+const useLankyMedalCommonLogic$4 = () => {
+  const testing = useFactoryTesting();
+  const production = useFactoryProductionEnabled();
+  const prodTop = useFactoryProductionTop();
+  const gun = useGrape();
+  const music = useTrombone();
+  let bananas = 5;
+  if (testing.in || testing.out) {
+    bananas += 15;
+    if (gun && music) {
+      bananas += 10;
+    }
+  }
+  if (prodTop.in || prodTop.out) {
+    bananas += 15;
+  }
+  if (production.in || production.out) {
+    bananas += 20;
+  }
+  return bananas;
+};
+const useLankyMedalInLogic$4 = () => {
+  const inStage = usePlayFactory();
+  const production = useFactoryProductionEnabled();
+  const kong = useLanky();
+  const move = useStand();
+  const shuffleBananas = useShuffleColoredBananas();
+  const canReachFoyerFromStorage = useFoyerFromStorage();
+  let bananas = useLankyMedalCommonLogic$4();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (move) {
+    bananas += 5;
+    if (production.in) {
+      bananas += 25;
+    }
+  }
+  if (canReachFoyerFromStorage.in) {
+    bananas += 5;
+  }
+  return bananas;
+};
+const useLankyMedalOutLogic$4 = () => {
+  const inStage = usePlayFactory();
+  const kong = useLanky();
+  const shuffleBananas = useShuffleColoredBananas();
+  const canReachFoyerFromStorage = useFoyerFromStorage();
+  let bananas = useLankyMedalCommonLogic$4();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (canReachFoyerFromStorage.out) {
+    bananas += 5;
+  }
+  return bananas + 30;
+};
+const useTinyMedalCommonLogic$4 = () => {
+  const testing = useFactoryTesting();
+  const prodTop = useFactoryProductionTop();
+  const gun = useFeather();
+  const crystal = useMini();
+  const hasClimbing = useClimbing();
+  const canReachHatch = useFoyerFromStorage();
+  let banana = 0;
+  if (canReachHatch) {
+    banana += 10;
+  }
+  if (hasClimbing) {
+    banana += 5;
+  }
+  if (testing.in || testing.out) {
+    banana += 25;
+    if (crystal) {
+      banana += 5;
+    }
+    if (gun) {
+      banana += 20;
+    }
+  }
+  if (gun) {
+    banana += 10;
+  }
+  if (prodTop.in || prodTop.out) {
+    banana += 20;
+  }
+  return banana;
+};
+const useTinyMedalInLogic$4 = () => {
+  const inStage = usePlayFactory();
+  const prodTop = useFactoryProductionTop();
+  const kong = useTiny();
+  const move = useTwirl();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useTinyMedalCommonLogic$4();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (prodTop.in && move) {
+    bananas += 5;
+  }
+  return bananas;
+};
+const useTinyMedalOutLogic$4 = () => {
+  const inStage = usePlayFactory();
+  const prodTop = useFactoryProductionTop();
+  const kong = useTiny();
+  const dk2 = useDk();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useTinyMedalCommonLogic$4();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (prodTop.out && dk2) {
+    bananas += 5;
+  }
+  return bananas;
+};
+const useChunkyMedalInLogic$4 = () => {
+  const inStage = usePlayFactory();
+  const testing = useFactoryTesting();
+  const prodTop = useFactoryProductionTop();
+  const kong = useChunky();
+  const gun = usePineapple();
+  const music = useTriangle();
+  const move = usePunch();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 20;
+  if (gun) {
+    bananas += 10;
+  }
+  if (move) {
+    bananas += 15;
+  }
+  if (testing.in) {
+    bananas += 5;
+    if (gun) {
+      bananas += 10;
+    }
+    if (music && move) {
+      bananas += 10;
+      if (gun) {
+        bananas += 10;
+      }
+    }
+  }
+  if (prodTop.in) {
+    bananas += 20;
+  }
+  return bananas;
+};
+const useChunkyMedalOutLogic$4 = () => {
+  const inStage = usePlayFactory();
+  const testing = useFactoryTesting();
+  const prodTop = useFactoryProductionTop();
+  const kong = useChunky();
+  const gun = usePineapple();
+  const music = useTriangle();
+  const move = usePunch();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 20;
+  if (gun) {
+    bananas += 10;
+  }
+  if (move) {
+    bananas += 15;
+  }
+  if (testing.out) {
+    bananas += 5;
+    if (gun) {
+      bananas += 10;
+    }
+    if (music && move) {
+      bananas += 10;
+      if (gun) {
+        bananas += 10;
+      }
+    }
+  }
+  if (prodTop.out) {
+    bananas += 20;
+  }
+  return bananas;
+};
 const BossCheck$5 = () => {
   const inStage = usePlayFactory();
   const anyKong = useAnyKong();
+  const DKCurrentCBsIn = useDkMedalInLogic$4();
+  const DKCurrentCBsOut = useDkMedalOutLogic$4();
+  const diddyCurrentCBsIn = useDiddyMedalInLogic$4();
+  const diddyCurrentCBsOut = useDiddyMedalOutLogic$4();
+  const lankyCurrentCBsIn = useLankyMedalInLogic$4();
+  const lankyCurrentCBsOut = useLankyMedalOutLogic$4();
+  const tinyCurrentCBsIn = useTinyMedalInLogic$4();
+  const tinyCurrentCBsOut = useTinyMedalOutLogic$4();
+  const chunkyCurrentCBsIn = useChunkyMedalInLogic$4();
+  const chunkyCurrentCBsOut = useChunkyMedalOutLogic$4();
+  const currentCBCountIn = DKCurrentCBsIn + diddyCurrentCBsIn + lankyCurrentCBsIn + tinyCurrentCBsIn + chunkyCurrentCBsIn;
+  const currentCBCountOut = DKCurrentCBsOut + diddyCurrentCBsOut + lankyCurrentCBsOut + tinyCurrentCBsOut + chunkyCurrentCBsOut;
+  const troffAndScoff = useFactoryTroffAndScoff();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BossPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     FactoryCheck,
     {
       id: 3105,
       name: "Factory Boss",
       region: "Bosses",
-      canGetLogic: inStage.in && anyKong,
-      canGetBreak: inStage.out && anyKong
+      canGetLogic: inStage.in && anyKong && currentCBCountIn >= troffAndScoff,
+      canGetBreak: inStage.out && anyKong && currentCBCountOut >= troffAndScoff
     }
   ) });
 };
@@ -29658,90 +30050,6 @@ const KasplatLocations$4 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$4, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$4, {})
 ] });
-const useChunkyMedalInLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const testing = useFactoryTesting();
-  const prodTop = useFactoryProductionTop();
-  const kong = useChunky();
-  const gun = usePineapple();
-  const music = useTriangle();
-  const move = usePunch();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 20;
-  if (gun) {
-    bananas += 10;
-  }
-  if (move) {
-    bananas += 15;
-  }
-  if (testing.in) {
-    bananas += 5;
-    if (gun) {
-      bananas += 10;
-    }
-    if (music && move) {
-      bananas += 10;
-      if (gun) {
-        bananas += 10;
-      }
-    }
-  }
-  if (prodTop.in) {
-    bananas += 20;
-  }
-  return bananas;
-};
-const useChunkyMedalOutLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const testing = useFactoryTesting();
-  const prodTop = useFactoryProductionTop();
-  const kong = useChunky();
-  const gun = usePineapple();
-  const music = useTriangle();
-  const move = usePunch();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 20;
-  if (gun) {
-    bananas += 10;
-  }
-  if (move) {
-    bananas += 15;
-  }
-  if (testing.out) {
-    bananas += 5;
-    if (gun) {
-      bananas += 10;
-    }
-    if (music && move) {
-      bananas += 10;
-      if (gun) {
-        bananas += 10;
-      }
-    }
-  }
-  if (prodTop.out) {
-    bananas += 20;
-  }
-  return bananas;
-};
 const ChunkyMedal$4 = () => {
   const inLogic = useChunkyMedalInLogic$4();
   const outLogic = useChunkyMedalOutLogic$4();
@@ -29770,69 +30078,6 @@ const ChunkyMedal$4 = () => {
       }
     ) })
   ] });
-};
-const useDiddyMedalCommonLogic$4 = () => {
-  const testing = useFactoryTesting();
-  const production = useFactoryProductionEnabled();
-  const gun = usePeanut();
-  const music = useGuitar();
-  const climbing = useClimbing();
-  let bananas = 12;
-  if (climbing) {
-    bananas += 10;
-  }
-  if ((production.in || production.out) && climbing) {
-    bananas += 15;
-  }
-  if (testing.in || testing.out) {
-    bananas += 13;
-    if (music && gun) {
-      bananas += 30;
-    }
-  }
-  return bananas;
-};
-const useDiddyMedalInLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const testing = useFactoryTesting();
-  const kong = useDiddy();
-  const pad = useSpring();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDiddyMedalCommonLogic$4();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (testing.in && pad) {
-    bananas += 20;
-  }
-  return bananas;
-};
-const useDiddyMedalOutLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const testing = useFactoryTesting();
-  const kong = useDiddy();
-  const highGrab = useHighGrab();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDiddyMedalCommonLogic$4();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (testing.out && highGrab) {
-    bananas += 20;
-  }
-  return bananas;
 };
 const DiddyMedal$4 = () => {
   const inLogic = useDiddyMedalInLogic$4();
@@ -29863,66 +30108,6 @@ const DiddyMedal$4 = () => {
     ) })
   ] });
 };
-const useDkMedalCommonLogic$4 = () => {
-  const testing = useFactoryTesting();
-  const coconut = useCoconut();
-  const blast = useBlast();
-  let bananas = 15;
-  if (blast) {
-    bananas += 20;
-  }
-  if (coconut) {
-    bananas += 10;
-  }
-  if (testing.in || testing.out) {
-    bananas += 5;
-    if (coconut) {
-      bananas += 35;
-    }
-  }
-  return bananas;
-};
-const useDkMedalInLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const production = useFactoryProductionEnabled();
-  const kong = useDk();
-  const strong = useStrong();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDkMedalCommonLogic$4();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (production.in && strong) {
-    bananas += 15;
-  }
-  return bananas;
-};
-const useDkMedalOutLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const production = useFactoryProductionEnabled();
-  const kong = useDk();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDkMedalCommonLogic$4();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (production.out) {
-    bananas += 15;
-  }
-  return bananas;
-};
 const DkMedal$4 = () => {
   const inLogic = useDkMedalInLogic$4();
   const outLogic = useDkMedalOutLogic$4();
@@ -29952,75 +30137,6 @@ const DkMedal$4 = () => {
     ) })
   ] });
 };
-const useLankyMedalCommonLogic$4 = () => {
-  const testing = useFactoryTesting();
-  const production = useFactoryProductionEnabled();
-  const prodTop = useFactoryProductionTop();
-  const gun = useGrape();
-  const music = useTrombone();
-  let bananas = 5;
-  if (testing.in || testing.out) {
-    bananas += 15;
-    if (gun && music) {
-      bananas += 10;
-    }
-  }
-  if (prodTop.in || prodTop.out) {
-    bananas += 15;
-  }
-  if (production.in || production.out) {
-    bananas += 20;
-  }
-  return bananas;
-};
-const useLankyMedalInLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const production = useFactoryProductionEnabled();
-  const kong = useLanky();
-  const move = useStand();
-  const shuffleBananas = useShuffleColoredBananas();
-  const canReachFoyerFromStorage = useFoyerFromStorage();
-  let bananas = useLankyMedalCommonLogic$4();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (move) {
-    bananas += 5;
-    if (production.in) {
-      bananas += 25;
-    }
-  }
-  if (canReachFoyerFromStorage.in) {
-    bananas += 5;
-  }
-  return bananas;
-};
-const useLankyMedalOutLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const kong = useLanky();
-  const shuffleBananas = useShuffleColoredBananas();
-  const canReachFoyerFromStorage = useFoyerFromStorage();
-  let bananas = useLankyMedalCommonLogic$4();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (canReachFoyerFromStorage.out) {
-    bananas += 5;
-  }
-  return bananas + 30;
-};
 const LankyMedal$4 = () => {
   const inLogic = useLankyMedalInLogic$4();
   const outLogic = useLankyMedalOutLogic$4();
@@ -30049,79 +30165,6 @@ const LankyMedal$4 = () => {
       }
     ) })
   ] });
-};
-const useTinyMedalCommonLogic$4 = () => {
-  const testing = useFactoryTesting();
-  const prodTop = useFactoryProductionTop();
-  const gun = useFeather();
-  const crystal = useMini();
-  const hasClimbing = useClimbing();
-  const canReachHatch = useFoyerFromStorage();
-  let banana = 0;
-  if (canReachHatch) {
-    banana += 10;
-  }
-  if (hasClimbing) {
-    banana += 5;
-  }
-  if (testing.in || testing.out) {
-    banana += 25;
-    if (crystal) {
-      banana += 5;
-    }
-    if (gun) {
-      banana += 20;
-    }
-  }
-  if (gun) {
-    banana += 10;
-  }
-  if (prodTop.in || prodTop.out) {
-    banana += 20;
-  }
-  return banana;
-};
-const useTinyMedalInLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const prodTop = useFactoryProductionTop();
-  const kong = useTiny();
-  const move = useTwirl();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useTinyMedalCommonLogic$4();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (prodTop.in && move) {
-    bananas += 5;
-  }
-  return bananas;
-};
-const useTinyMedalOutLogic$4 = () => {
-  const inStage = usePlayFactory();
-  const prodTop = useFactoryProductionTop();
-  const kong = useTiny();
-  const dk2 = useDk();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useTinyMedalCommonLogic$4();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (prodTop.out && dk2) {
-    bananas += 5;
-  }
-  return bananas;
 };
 const TinyMedal$4 = () => {
   const inLogic = useTinyMedalInLogic$4();
@@ -52566,7 +52609,7 @@ const LevelTable = () => {
   const key3And8Seed = useDonkStore(useShallow((state) => state.winCondition.key3And8)) ? "all-bosses" : "";
   const key8Seed = useDonkStore(useShallow((state) => state.winCondition.key8)) ? "all-bosses" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level-section", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Level Order, Keys, and B. Locker Requirements" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Level Order, Keys, B. Locker, and Troff 'n' Scoff Requirements" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level-list", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level1", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l1, height: 24 }),
