@@ -14,6 +14,7 @@ import l6 from '../../assets/images/6.png'
 import l7 from '../../assets/images/7.png'
 import l8 from '../../assets/images/8.png'
 import bLocker from '../../assets/images/GB.png'
+import coloredNanners from '../../assets/images/settings/rainbow_bananas.png'
 
 const LevelTable = (): JSX.Element => {
   const [setBLocker] = useDonkStore(useShallow((state) => [state.setBLocker]))
@@ -38,7 +39,7 @@ const LevelTable = (): JSX.Element => {
           <CountSelector
             storeKey="troffAndScoff1"
             title="CB's required to access Boss 1"
-            imgUrl={madJack}
+            imgUrl={coloredNanners}
             prefix="troffAndScoff"
             setCount={setTroffAndScoff}
             maxValue={500}
@@ -59,7 +60,7 @@ const LevelTable = (): JSX.Element => {
           <CountSelector
             storeKey="troffAndScoff2"
             title="CB's required to access Boss 2"
-            imgUrl={madJack}
+            imgUrl={coloredNanners}
             prefix="troffAndScoff"
             setCount={setTroffAndScoff}
             maxValue={500}
@@ -80,7 +81,7 @@ const LevelTable = (): JSX.Element => {
           <CountSelector
             storeKey="troffAndScoff3"
             title="CB's required to access Boss 3"
-            imgUrl={madJack}
+            imgUrl={coloredNanners}
             prefix="troffAndScoff"
             setCount={setTroffAndScoff}
             maxValue={500}
@@ -101,7 +102,7 @@ const LevelTable = (): JSX.Element => {
           <CountSelector
             storeKey="troffAndScoff4"
             title="CB's required to access Boss 4"
-            imgUrl={madJack}
+            imgUrl={coloredNanners}
             prefix="troffAndScoff"
             setCount={setTroffAndScoff}
             maxValue={500}
@@ -122,7 +123,7 @@ const LevelTable = (): JSX.Element => {
           <CountSelector
             storeKey="troffAndScoff5"
             title="CB's required to access Boss 5"
-            imgUrl={madJack}
+            imgUrl={coloredNanners}
             prefix="troffAndScoff"
             setCount={setTroffAndScoff}
             maxValue={500}
@@ -143,7 +144,7 @@ const LevelTable = (): JSX.Element => {
           <CountSelector
             storeKey="troffAndScoff6"
             title="CB's required to access Boss 6"
-            imgUrl={madJack}
+            imgUrl={coloredNanners}
             prefix="troffAndScoff"
             setCount={setTroffAndScoff}
             maxValue={500}
@@ -164,7 +165,7 @@ const LevelTable = (): JSX.Element => {
           <CountSelector
             storeKey="troffAndScoff7"
             title="CB's required to access Boss 7"
-            imgUrl={madJack}
+            imgUrl={coloredNanners}
             prefix="troffAndScoff"
             setCount={setTroffAndScoff}
             maxValue={500}
@@ -185,7 +186,7 @@ const LevelTable = (): JSX.Element => {
           <CountSelector
             storeKey="troffAndScoff8"
             title="CB's required to access Boss 8"
-            imgUrl={madJack}
+            imgUrl={coloredNanners}
             prefix="troffAndScoff"
             setCount={setTroffAndScoff}
             maxValue={500}
