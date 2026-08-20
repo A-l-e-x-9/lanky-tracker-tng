@@ -11,6 +11,16 @@ export const initialBLocker: bLockerState = {
     bLocker6: 65,
     bLocker7: 80,
     bLocker8: 100
+  },
+  troffAndScoff: {
+    troffAndScoff1: 60,
+    troffAndScoff2: 120,
+    troffAndScoff3: 200,
+    troffAndScoff4: 250,
+    troffAndScoff5: 300,
+    troffAndScoff6: 350,
+    troffAndScoff7: 400,
+    troffAndScoff8: 500
   }
 }
 

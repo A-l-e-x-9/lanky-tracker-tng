@@ -17,6 +17,7 @@ export type SlamRange = IntRange<0, 4>
 export type BananaportRange = IntRange<0, 3>
 export type KongRange = IntRange<0, 5>
 export type RoolRange = IntRange<0, 13>
+export type TroffAndScoffRange = IntRange<0, 501>
 
 export const nameof = <T>(name: Extract<keyof T, string>): string => name
 
@@ -913,14 +914,14 @@ interface bLockerCollection {
 }
 
 interface troffAndScoffCollection {
-  troffAndScoff1: ColoredBananaRange
-  troffAndScoff2: ColoredBananaRange
-  troffAndScoff3: ColoredBananaRange
-  troffAndScoff4: ColoredBananaRange
-  troffAndScoff5: ColoredBananaRange
-  troffAndScoff6: ColoredBananaRange
-  troffAndScoff7: ColoredBananaRange
-  troffAndScoff8: ColoredBananaRange
+  troffAndScoff1: TroffAndScoffRange
+  troffAndScoff2: TroffAndScoffRange
+  troffAndScoff3: TroffAndScoffRange
+  troffAndScoff4: TroffAndScoffRange
+  troffAndScoff5: TroffAndScoffRange
+  troffAndScoff6: TroffAndScoffRange
+  troffAndScoff7: TroffAndScoffRange
+  troffAndScoff8: TroffAndScoffRange
 }
 
 export interface bLockerState {
