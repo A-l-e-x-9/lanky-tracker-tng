@@ -55,6 +55,7 @@ import unknownIcon from '../../assets/images/unknown-small.png'
 import kasplatIcon from '../../assets/images/settings/kasplat.png'
 import DKPortalIcon from '../../assets/images/dk-portal.png'
 import LZRIcon from '../../assets/images/settings/butwherewasthekasplat.png'
+import bLocker from '../../assets/images/b-locker.png'
 
 const customStyles: Modal.Styles = {
   content: {
