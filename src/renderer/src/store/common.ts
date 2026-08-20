@@ -900,7 +900,7 @@ interface BossActions {
 
 export type BossSlice = BossState & BossActions
 
-//#region B. Lockers
+//#region B. Lockers and Troff 'n' Scoff
 interface bLockerCollection {
   bLocker1: GoldBananaRange
   bLocker2: GoldBananaRange
@@ -912,12 +912,25 @@ interface bLockerCollection {
   bLocker8: GoldBananaRange
 }
 
+interface troffAndScoffCollection {
+  troffAndScoff1: ColoredBananaRange
+  troffAndScoff2: ColoredBananaRange
+  troffAndScoff3: ColoredBananaRange
+  troffAndScoff4: ColoredBananaRange
+  troffAndScoff5: ColoredBananaRange
+  troffAndScoff6: ColoredBananaRange
+  troffAndScoff7: ColoredBananaRange
+  troffAndScoff8: ColoredBananaRange
+}
+
 export interface bLockerState {
   bLocker: bLockerCollection
+  troffAndScoff: troffAndScoffCollection
 }
 
 interface bLockerActions {
   setBLocker: (id: string, val: number) => void
+  setTroffAndScoff: (id: string, val: number) => void
 }
 
 export type bLockerSlice = bLockerState & bLockerActions
