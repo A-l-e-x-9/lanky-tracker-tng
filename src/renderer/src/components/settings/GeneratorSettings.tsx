@@ -544,6 +544,22 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
+              <p>Is "Chaos B. Lockers" on?</p>
+              <SimpleIcon
+                imgUrl={bLocker}
+                title="Turn this on if your seed requires things other than Bananas to enter a level."
+                storeKey="chaosBLocker"
+                prefix="settings"
+                updateItem={setSetting}
+              />
+              <p>Are Wrinkly Kong's doors locked?</p>
+              <SimpleIcon
+                imgUrl={wrinkly}
+                title="Turn this on if you've locked Wrinkly's doors with an item."
+                storeKey="lockedWrinklyDoors"
+                prefix="settings"
+                updateItem={setSetting}
+              />
             </>
             <h3>Location Shuffle Settings</h3>
             <>

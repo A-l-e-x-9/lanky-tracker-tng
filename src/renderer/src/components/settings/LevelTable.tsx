@@ -35,6 +35,14 @@ const LevelTable = (): JSX.Element => {
             setCount={setBLocker}
             maxValue={201}
           />
+          <CountSelector
+            storeKey="troffAndScoff1"
+            title="CB's required to access Boss 1"
+            imgUrl={madJack}
+            prefix="troffAndScoff"
+            setCount={setTroffAndScoff}
+            maxValue={500}
+          />
         </section>
         <section className="level2">
           <img src={l2} height={24} />
@@ -47,6 +55,14 @@ const LevelTable = (): JSX.Element => {
             prefix="bLocker"
             setCount={setBLocker}
             maxValue={201}
+          />
+          <CountSelector
+            storeKey="troffAndScoff2"
+            title="CB's required to access Boss 2"
+            imgUrl={madJack}
+            prefix="troffAndScoff"
+            setCount={setTroffAndScoff}
+            maxValue={500}
           />
         </section>
         <section className={`level3 ${key3And8Seed}`}>
@@ -61,6 +77,14 @@ const LevelTable = (): JSX.Element => {
             setCount={setBLocker}
             maxValue={201}
           />
+          <CountSelector
+            storeKey="troffAndScoff3"
+            title="CB's required to access Boss 3"
+            imgUrl={madJack}
+            prefix="troffAndScoff"
+            setCount={setTroffAndScoff}
+            maxValue={500}
+          />
         </section>
         <section className="level4">
           <img src={l4} height={24} />
@@ -73,6 +97,14 @@ const LevelTable = (): JSX.Element => {
             prefix="bLocker"
             setCount={setBLocker}
             maxValue={201}
+          />
+          <CountSelector
+            storeKey="troffAndScoff4"
+            title="CB's required to access Boss 4"
+            imgUrl={madJack}
+            prefix="troffAndScoff"
+            setCount={setTroffAndScoff}
+            maxValue={500}
           />
         </section>
         <section className="level5">
@@ -87,6 +119,14 @@ const LevelTable = (): JSX.Element => {
             setCount={setBLocker}
             maxValue={201}
           />
+          <CountSelector
+            storeKey="troffAndScoff5"
+            title="CB's required to access Boss 5"
+            imgUrl={madJack}
+            prefix="troffAndScoff"
+            setCount={setTroffAndScoff}
+            maxValue={500}
+          />
         </section>
         <section className="level6">
           <img src={l6} height={24} />
@@ -99,6 +139,14 @@ const LevelTable = (): JSX.Element => {
             prefix="bLocker"
             setCount={setBLocker}
             maxValue={201}
+          />
+          <CountSelector
+            storeKey="troffAndScoff6"
+            title="CB's required to access Boss 6"
+            imgUrl={madJack}
+            prefix="troffAndScoff"
+            setCount={setTroffAndScoff}
+            maxValue={500}
           />
         </section>
         <section className="level7">
@@ -113,6 +161,14 @@ const LevelTable = (): JSX.Element => {
             setCount={setBLocker}
             maxValue={201}
           />
+          <CountSelector
+            storeKey="troffAndScoff7"
+            title="CB's required to access Boss 7"
+            imgUrl={madJack}
+            prefix="troffAndScoff"
+            setCount={setTroffAndScoff}
+            maxValue={500}
+          />
         </section>
         <section className={`level8 ${key3And8Seed || key8Seed}`}>
           <img src={l8} height={24} />
@@ -125,6 +181,14 @@ const LevelTable = (): JSX.Element => {
             prefix="bLocker"
             setCount={setBLocker}
             maxValue={201}
+          />
+          <CountSelector
+            storeKey="troffAndScoff8"
+            title="CB's required to access Boss 8"
+            imgUrl={madJack}
+            prefix="troffAndScoff"
+            setCount={setTroffAndScoff}
+            maxValue={500}
           />
         </section>
       </section>
