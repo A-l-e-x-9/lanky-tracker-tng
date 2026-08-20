@@ -9592,6 +9592,16 @@ const initialBLocker = {
     bLocker6: 65,
     bLocker7: 80,
     bLocker8: 100
+  },
+  troffAndScoff: {
+    troffAndScoff1: 60,
+    troffAndScoff2: 120,
+    troffAndScoff3: 200,
+    troffAndScoff4: 250,
+    troffAndScoff5: 300,
+    troffAndScoff6: 350,
+    troffAndScoff7: 400,
+    troffAndScoff8: 500
   }
 };
 const BLockerSlice = (set) => {
@@ -9606,6 +9616,20 @@ const BLockerSlice = (set) => {
           ...state,
           bLocker: {
             ...state.bLocker,
+            ...target
+          }
+        };
+        return state;
+      });
+    },
+    setTroffAndScoff: (id2, val) => {
+      set((state) => {
+        const target = {};
+        target[id2] = val;
+        state = {
+          ...state,
+          troffAndScoff: {
+            ...state.troffAndScoff,
             ...target
           }
         };
@@ -52536,8 +52560,9 @@ const LevelSelector = ({ storeKey }) => {
   ) });
 };
 const l8 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAVCAMAAABBhy+7AAAApVBMVEUAAAD//wAgICCkAQD/zQDNAQD/pAD/AACDAAD/ewD2AADeAAC9AAC0AACcAACUAACLAAB5AAD/KSlBCgr/9gD/vQDuewD/KwDuAADVAABnAAD/7gD/3gD/1QD/mADmKQD/GADmAADFAACsAAAYICApEBBKCAj/rADmlADegwD2ewDeewD/YgDeYgD/WgDeWgDuUgDNSgD/OQDNKQDmIAD2GABaAACHb7TVAAAAAXRSTlMAQObYZgAAALxJREFUGNM9jVcSwjAMRBU7xiakd0JP6L3f/2hoMx7eh1ZPY0vUk6Zap2Tx9PJ5rWpPQ+rxeZo7zGzpsY52jmXyWdHoje4hZ1znivwhpytlyZF3JI+cg3F7xzSgOMDjSrtcy5CyEE2PGzUkfGU9Xygc4l2Wig8pNJK/YCO1Q2QXvzDluwOokguoT8EB6dX9hoCMdMAU5SRpG10mdvE+MiS+cVjOi6K4RXEiiETWGJMkiWkyNnaxWQsAA+JvPw9bCvmDA2SDAAAAAElFTkSuQmCC";
+const coloredNanners = "" + new URL("rainbow_bananas-Ca-MVT_I.png", import.meta.url).href;
 const LevelTable = () => {
-  const [setBLocker] = useDonkStore(useShallow((state) => [state.setBLocker]));
+  const [setBLocker, setTroffAndScoff] = useDonkStore(useShallow((state) => [state.setBLocker, state.setTroffAndScoff]));
   const key3And8Seed = useDonkStore(useShallow((state) => state.winCondition.key3And8)) ? "all-bosses" : "";
   const key8Seed = useDonkStore(useShallow((state) => state.winCondition.key8)) ? "all-bosses" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level-section", children: [
@@ -52557,6 +52582,17 @@ const LevelTable = () => {
             setCount: setBLocker,
             maxValue: 201
           }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          CountSelector,
+          {
+            storeKey: "troffAndScoff1",
+            title: "CB's required to access Boss 1",
+            imgUrl: coloredNanners,
+            prefix: "troffAndScoff",
+            setCount: setTroffAndScoff,
+            maxValue: 500
+          }
         )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level2", children: [
@@ -52572,6 +52608,17 @@ const LevelTable = () => {
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          CountSelector,
+          {
+            storeKey: "troffAndScoff2",
+            title: "CB's required to access Boss 2",
+            imgUrl: coloredNanners,
+            prefix: "troffAndScoff",
+            setCount: setTroffAndScoff,
+            maxValue: 500
           }
         )
       ] }),
@@ -52589,6 +52636,17 @@ const LevelTable = () => {
             setCount: setBLocker,
             maxValue: 201
           }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          CountSelector,
+          {
+            storeKey: "troffAndScoff3",
+            title: "CB's required to access Boss 3",
+            imgUrl: coloredNanners,
+            prefix: "troffAndScoff",
+            setCount: setTroffAndScoff,
+            maxValue: 500
+          }
         )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level4", children: [
@@ -52604,6 +52662,17 @@ const LevelTable = () => {
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          CountSelector,
+          {
+            storeKey: "troffAndScoff4",
+            title: "CB's required to access Boss 4",
+            imgUrl: coloredNanners,
+            prefix: "troffAndScoff",
+            setCount: setTroffAndScoff,
+            maxValue: 500
           }
         )
       ] }),
@@ -52621,6 +52690,17 @@ const LevelTable = () => {
             setCount: setBLocker,
             maxValue: 201
           }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          CountSelector,
+          {
+            storeKey: "troffAndScoff5",
+            title: "CB's required to access Boss 5",
+            imgUrl: coloredNanners,
+            prefix: "troffAndScoff",
+            setCount: setTroffAndScoff,
+            maxValue: 500
+          }
         )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level6", children: [
@@ -52636,6 +52716,17 @@ const LevelTable = () => {
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          CountSelector,
+          {
+            storeKey: "troffAndScoff6",
+            title: "CB's required to access Boss 6",
+            imgUrl: coloredNanners,
+            prefix: "troffAndScoff",
+            setCount: setTroffAndScoff,
+            maxValue: 500
           }
         )
       ] }),
@@ -52653,6 +52744,17 @@ const LevelTable = () => {
             setCount: setBLocker,
             maxValue: 201
           }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          CountSelector,
+          {
+            storeKey: "troffAndScoff7",
+            title: "CB's required to access Boss 7",
+            imgUrl: coloredNanners,
+            prefix: "troffAndScoff",
+            setCount: setTroffAndScoff,
+            maxValue: 500
+          }
         )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `level8 ${key3And8Seed || key8Seed}`, children: [
@@ -52668,6 +52770,17 @@ const LevelTable = () => {
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          CountSelector,
+          {
+            storeKey: "troffAndScoff8",
+            title: "CB's required to access Boss 8",
+            imgUrl: coloredNanners,
+            prefix: "troffAndScoff",
+            setCount: setTroffAndScoff,
+            maxValue: 500
           }
         )
       ] })
@@ -52886,6 +52999,7 @@ const koshaHead = "" + new URL("kosha-DktGkC11.png", import.meta.url).href;
 const kasplatIcon = "" + new URL("kasplat-C3MHLT8N.png", import.meta.url).href;
 const dkPortalIcon = "" + new URL("dk-portal-DhmhLo9q.png", import.meta.url).href;
 const LZRIcon = "" + new URL("butwherewasthekasplat-D62HdKcb.png", import.meta.url).href;
+const bLocker = "" + new URL("b-locker-4HJOwKEa.png", import.meta.url).href;
 const customStyles$4 = {
   content: {
     backgroundColor: "#002040",
@@ -53524,6 +53638,28 @@ const GeneratorSettings = () => {
                   imgUrl: koshaHead,
                   title: "Causes checks involving the main Crystal Caves area to turn yellow to indicate that you are under threat from rockfall. Checks that are still green are in the safe zones. You should also use this if you're playing the vanilla game or a seed for which you didn't turn the Calm Caves option on under the Quality of Life section, but turn it off once you've killed the giant Kosha.",
                   storeKey: "angyKosha",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: 'Is "Chaos B. Lockers" on?' }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: bLocker,
+                  title: "Turn this on if your seed requires things other than Bananas to enter a level.",
+                  storeKey: "chaosBLocker",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Are Wrinkly Kong's doors locked?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: wrinkly,
+                  title: "Turn this on if you've locked Wrinkly's doors with an item.",
+                  storeKey: "lockedWrinklyDoors",
                   prefix: "settings",
                   updateItem: setSetting
                 }
