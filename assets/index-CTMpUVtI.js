@@ -10806,6 +10806,7 @@ const initialPortal = {
     vanilla: true,
     tinyKasplatPortal: false,
     lighthousePortal: false,
+    whompsFortressPortal: false,
     chunkyShipPortal: false
   },
   shuffledForestPortals: {
@@ -12070,12 +12071,15 @@ const usePlayGalleon = () => {
 const useSlamGalleon = () => useSlamLevel("Gloomy Galleon");
 const useTinyKasplatPortal = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.tinyKasplatPortal));
 const usePortalInLighthouse = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.lighthousePortal));
+const useWhompsFortressPortal = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.whompsFortressPortal));
 const useChunkyShipPortal = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.chunkyShipPortal));
 const useGalleonLighthouseArea = () => {
   const inStage = usePlayGalleon();
   const target = useSwitchsanityGun("galleonLighthouse", 0);
   const removeBarriers = useDonkStore(useShallow((state) => state.removeBarriers));
-  const DKPortal2 = usePortalInLighthouse();
+  const lighthouseBottom = usePortalInLighthouse();
+  const whompsFortress = useWhompsFortressPortal();
+  const DKPortal2 = lighthouseBottom || whompsFortress;
   const DKPortal3 = useChunkyShipPortal();
   return {
     in: inStage.in && (target || removeBarriers.galleonLighthouse || DKPortal2 || DKPortal3),
@@ -12131,7 +12135,9 @@ const useGalleonLighthouseInside = () => {
   const dk2 = useDk();
   const hasClimbing = useClimbing();
   const hasJetbarrel = useRocket();
-  const DKPortal = usePortalInLighthouse();
+  const lighthouseBottom = usePortalInLighthouse();
+  const lighthouseTop = useWhompsFortressPortal();
+  const DKPortal = lighthouseBottom || lighthouseTop;
   return {
     in: lighthousePlatform.in && canSlam && dk2 && hasClimbing || DKPortal,
     out: lighthousePlatform.out && canSlam && dk2 && (hasClimbing || hasJetbarrel) || DKPortal
@@ -12199,9 +12205,10 @@ const useDkLighthouseGb = () => {
   const inside = useGalleonLighthouseInside();
   const seasick = useDonkStore(useShallow((state) => state.removeBarriers.galleonSeasick));
   const hasClimbing = useClimbing();
+  const DKPortal = useWhompsFortressPortal();
   return {
-    in: inside.in && hasClimbing && (seasick || grab),
-    out: inside.out && hasClimbing && (seasick || grab)
+    in: inside.in && (hasClimbing || DKPortal) && (seasick || grab),
+    out: inside.out && (hasClimbing || DKPortal) && (seasick || grab)
   };
 };
 const useDiddyLighthouseGb = () => {
@@ -55574,6 +55581,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is at the bottom of the Lighthouse itself.",
                   storeKey: "lighthousePortal",
+                  prefix: "shuffledGalleonPortals",
+                  updateItem: setGalleonPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Inside the Lighthouse, one level up" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in the Lighthouse itself, at the Whomp's Fortress ripoff area.",
+                  storeKey: "whompsFortressPortal",
                   prefix: "shuffledGalleonPortals",
                   updateItem: setGalleonPortal
                 }
