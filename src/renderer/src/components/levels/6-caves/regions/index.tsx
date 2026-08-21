@@ -10,10 +10,12 @@ import TinyMedal from '../medals/TinyMedal'
 import ShopLocations from '../shops'
 import MainChecks from './Main'
 import MainArenas from '../arenas/Main'
+import MainCrates from '../crates/Main'
 import IglooChecks from './Igloo'
 import IglooArenas from '../arenas/Igloo'
 import CabinsChecks from './Cabins'
 import CabinArenas from '../arenas/Cabins'
+import CabinCrates from '../crates/Cabins'
 import ShuffledArenas from '../arenas/Shuffled'
 import ShuffledCrates from '../crates/Shuffled'
 import ShuffledDirt from '../dirt/Shuffled'
@@ -39,6 +41,7 @@ return (
     <MainChecks />
   <div className="grid">
     <MainArenas />
+    <MainCrates />
   </div>
     <IglooChecks />
   <div className="grid">
@@ -47,6 +50,7 @@ return (
     <CabinsChecks />
   <div className="grid">
     <CabinArenas />
+    <CabinCrates />
     <ShopLocations />
     <BossCheck />
     <ShuffledArenas />

@@ -273,36 +273,6 @@ const hasBlast = useBlast()
         canGetBreak={isBreathing.out}
       />
       <CastleCheck
-        id={27035}
-        name="Shuffled Melon Crate: Near left ballroom candle"
-        region="Various Castle Rooms"
-        canGetLogic={hasDiddy && hasSlam}
-      />
-      <CastleCheck
-        id={27036}
-        name="Shuffled Melon Crate: Near right ballroom candle"
-        region="Various Castle Rooms"
-        canGetLogic={hasDiddy && hasSlam}
-      />
-      <CastleCheck
-        id={27037}
-        name="Shuffled Melon Crate: Ballroom back left"
-        region="Various Castle Rooms"
-        canGetLogic={hasDiddy && hasSlam}
-      />
-      <CastleCheck
-        id={27038}
-        name="Shuffled Melon Crate: Ballroom back right"
-        region="Various Castle Rooms"
-        canGetLogic={hasDiddy && hasSlam}
-      />
-      <CastleCheck
-        id={27039}
-        name="Shuffled Melon Crate: In DK's face puzzle room"
-        region="Castle Dungeon"
-        canGetLogic={hasDK && hasSlam}
-      />
-      <CastleCheck
         id={27040}
         name="Shuffled Melon Crate: Near the Diddy switch in the dungeon"
         region="Castle Dungeon"
@@ -439,19 +409,6 @@ const hasBlast = useBlast()
         region="Castle Dungeon"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
-      />
-      <CastleCheck
-        id={27060}
-        name="Shuffled Melon Crate: In the enemy gauntlet area of DK's library"
-        region="Various Castle Rooms"
-        canGetLogic={hasDK && hasSlam}
-      />
-      <CastleCheck
-        id={27061}
-        name="Shuffled Melon Crate: In the flying book area of DK's library"
-        region="Various Castle Rooms"
-        canGetLogic={hasDK && hasSlam && hasStrongKong}
-        canGetBreak={hasDK && hasSlam}
       />
       <CastleCheck
         id={27062}

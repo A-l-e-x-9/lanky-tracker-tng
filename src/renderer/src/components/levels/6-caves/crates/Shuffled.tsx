@@ -314,12 +314,6 @@ const hasTriangle = useTriangle()
         canGetLogic={didCheck[6030]}
       />
       <CavesCheck
-        id={26046}
-        name="Shuffled Melon Crate: Vanilla Warp 4 on spire near Cranky's"
-        region="Crystal Caves Main"
-        canGetLogic={hasDK || hasJetbarrel || isHinaKagiyama}
-      />
-      <CavesCheck
         id={26047}
         name="Shuffled Melon Crate: Vanilla Warp 4, near Funky's"
         region="Crystal Caves Main"
@@ -369,12 +363,6 @@ const hasTriangle = useTriangle()
         canGetBreak={canReachIgloo.out && hasSax}
       />
       <CavesCheck
-        id={26054}
-        name="Shuffled Melon Crate: Opposite DK's 5DC room entrance"
-        region="Caves Cabins"
-        canGetLogic={hasBongoes}
-      />
-      <CavesCheck
         id={26055}
         name="Shuffled Melon Crate: In the back left corner of Chunky's 5DC room"
         region="Caves Cabins"
@@ -386,12 +374,6 @@ const hasTriangle = useTriangle()
         name="Shuffled Melon Crate: Inside Tiny's 5DC room"
         region="Caves Cabins"
         canGetLogic={hasSax}
-      />
-      <CavesCheck
-        id={26057}
-        name="Shuffled Melon Crate: Inside Diddy's upper 5DC room"
-        region="Caves Cabins"
-        canGetLogic={hasGuitar}
       />
       <CavesCheck
         id={26058}

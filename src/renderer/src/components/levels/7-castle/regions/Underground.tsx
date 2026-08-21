@@ -14,6 +14,7 @@ import TinyMausoleum from '../gold-bananas/tiny/Mausoleum'
 import ChunkyKasplat from '../kasplats/Chunky'
 import DiddyKasplat from '../kasplats/Diddy'
 import UpperCaveEnemies from '../enemies/UpperCave'
+import DungeonCrates from '../crates/Dungeon'
 import DungeonKasplats from '../kasplats/Dungeon'
 
 const UndergroundChecks: React.FC = () => {
@@ -42,6 +43,7 @@ return (
   </div>
   <div className="grid">
     <UpperCaveEnemies />
+    <DungeonCrates />
   </div>
   <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <DungeonKasplats />
