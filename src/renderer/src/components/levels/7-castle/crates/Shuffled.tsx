@@ -1,14 +1,12 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useGeneralThing, useLankyGreenhouseGb, useSlamCastle, useOpenCrypt } from '@renderer/hooks/castle'
+import { useGeneralThing, useSlamCastle, useOpenCrypt } from '@renderer/hooks/castle'
 import { useShuffleCrates } from '@renderer/hooks/settings'
-import { useClimbing, useRocket, useDiddy, useDk, usePunch, useCoconut, usePeanut, usePineapple, useGrape, useFeather, useSprint, useMonkeyport, useChunky, useMini, useBlast } from '@renderer/hooks/kongs'
+import { useClimbing, useDiddy, useDk, usePunch, useCoconut, usePeanut, usePineapple, useGrape, useFeather, useSprint, useMonkeyport, useChunky, useMini, useBlast } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
-const canDoGreenhouse = useLankyGreenhouseGb()
 const hasClimbing = useClimbing()
-const hasJetbarrel = useRocket()
 const hasDiddy = useDiddy()
 const hasSlam = useSlamCastle()
 const hasDK = useDk()
