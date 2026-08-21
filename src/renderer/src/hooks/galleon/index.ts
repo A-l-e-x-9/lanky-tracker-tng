@@ -53,6 +53,9 @@ export const usePlayGalleon = (): LogicBool => {
  */
 export const useSlamGalleon = (): boolean => useSlamLevel('Gloomy Galleon')
 
+//Alex addition: Number of CB's needed to get by Troff 'n' Scoff for this level
+export const useGalleonTroffAndScoff = (): number => useTroffAndScoff('Gloomy Galleon')
+
 /*Alex addition: shuffled DK Portals*/
 //Is the DK Portal near Tiny's vanilla Kasplat?
 export const useTinyKasplatPortal = (): boolean =>
