@@ -12093,6 +12093,7 @@ const usePlayGalleon = () => {
   };
 };
 const useSlamGalleon = () => useSlamLevel("Gloomy Galleon");
+const useGalleonTroffAndScoff = () => useTroffAndScoff("Gloomy Galleon");
 const useTinyKasplatPortal = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.tinyKasplatPortal));
 const usePortalInLighthouse = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.lighthousePortal));
 const useWhompsFortressPortal = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.whompsFortressPortal));
@@ -32622,19 +32623,470 @@ const CavernArena = () => {
     }
   ) }) });
 };
+const useDkMedalCommonLogic$3 = () => {
+  const outskirts = useGalleonOutskirts();
+  const lighthouseArea = useGalleonLighthouseArea();
+  const gun = useCoconut();
+  const music = useBongos();
+  const dive = useDive();
+  const lanky = useLanky();
+  let bananas = 0;
+  if (gun) {
+    bananas += 10;
+  }
+  if (outskirts.in || outskirts.out) {
+    bananas += 15;
+    if (music) {
+      bananas += 10;
+    }
+  }
+  if ((lighthouseArea.in || lighthouseArea.out) && (dive.in || dive.out) && lanky) {
+    bananas += 10;
+  }
+  return bananas;
+};
+const useDkMedalInLogic$3 = () => {
+  const inStage = usePlayGalleon();
+  const canSlam = useSlamGalleon();
+  const lighthousePlatform = useGalleonLighthousePlatform();
+  const kong = useDk();
+  const gun = useCoconut();
+  const pad = useBlast();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useDkMedalCommonLogic$3();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (lighthousePlatform.in) {
+    if (gun) {
+      bananas += 10;
+    }
+    if (pad) {
+      bananas += 15;
+    }
+    if (canSlam) {
+      bananas += 20;
+      if (gun) {
+        bananas += 10;
+      }
+    }
+  }
+  return bananas;
+};
+const useDkMedalOutLogic$3 = () => {
+  const inStage = usePlayGalleon();
+  const canSlam = useSlamGalleon();
+  const lighthousePlatform = useGalleonLighthousePlatform();
+  const kong = useDk();
+  const gun = useCoconut();
+  const pad = useBlast();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useDkMedalCommonLogic$3();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (lighthousePlatform.out) {
+    if (gun) {
+      bananas += 10;
+    }
+    if (pad) {
+      bananas += 15;
+    }
+    if (canSlam) {
+      bananas += 20;
+      if (gun) {
+        bananas += 10;
+      }
+    }
+  }
+  return bananas;
+};
+const useDiddyMedalCommonLogic$3 = () => {
+  const outskirts = useGalleonOutskirts();
+  const gun = usePeanut();
+  const music = useGuitar();
+  const dive = useDive();
+  let bananas = 10;
+  if (outskirts.in || outskirts.out) {
+    if (gun) {
+      bananas += 10;
+    }
+    if (dive.in || dive.out) {
+      bananas += 36;
+      if (music) {
+        bananas += 14;
+      }
+    }
+  }
+  return bananas;
+};
+const useDiddyMedalInLogic$3 = () => {
+  const inStage = usePlayGalleon();
+  const lighthousePlatform = useGalleonLighthousePlatform();
+  const treasureRoom = useGalleonTreasureRoom();
+  const kong = useDiddy();
+  const gun = usePeanut();
+  const crystal = useRocket();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useDiddyMedalCommonLogic$3();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (treasureRoom.in && gun) {
+    bananas += 10;
+  }
+  if (lighthousePlatform.in) {
+    if (gun) {
+      bananas += 10;
+    }
+    if (crystal) {
+      bananas += 10;
+    }
+  }
+  return bananas;
+};
+const useDiddyMedalOutLogic$3 = () => {
+  const inStage = usePlayGalleon();
+  const lighthousePlatform = useGalleonLighthousePlatform();
+  const treasureRoom = useGalleonTreasureRoom();
+  const kong = useDiddy();
+  const gun = usePeanut();
+  const crystal = useRocket();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useDiddyMedalCommonLogic$3();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (treasureRoom.out && gun) {
+    bananas += 10;
+  }
+  if (lighthousePlatform.out) {
+    if (gun) {
+      bananas += 10;
+    }
+    if (crystal) {
+      bananas += 10;
+    }
+  }
+  return bananas;
+};
+const useLankyMedalCommonLogic$3 = () => {
+  const canSlam = useSlamGalleon();
+  const outskirts = useGalleonOutskirts();
+  const lighthouseArea = useGalleonLighthouseArea();
+  const chunkyPunch = usePunch();
+  const gun = useGrape();
+  const music = useTrombone();
+  const dive = useDive();
+  let bananas = 5;
+  if (chunkyPunch && gun) {
+    bananas += 20;
+  }
+  if ((lighthouseArea.in || lighthouseArea.out) && (dive.in || dive.out)) {
+    bananas += 25;
+  }
+  if (outskirts.in || outskirts.out) {
+    bananas += 5;
+    if (gun) {
+      bananas += 10;
+    }
+    if (dive.in || dive.out) {
+      bananas += 5;
+      if (canSlam) {
+        bananas += 10;
+      }
+      if (music) {
+        bananas += 15;
+      }
+    }
+  }
+  return bananas;
+};
+const useLankyMedalInLogic$3 = () => {
+  const inStage = usePlayGalleon();
+  const treasureRoom = useGalleonTreasureRoom();
+  const highTide = useGalleonHighTide();
+  const kong = useLanky();
+  const pad = useBalloon();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useLankyMedalCommonLogic$3();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (treasureRoom.in && highTide.in) {
+    bananas += 1;
+    if (pad) {
+      bananas += 4;
+    }
+  }
+  return bananas;
+};
+const useLankyMedalOutLogic$3 = () => {
+  const inStage = usePlayGalleon();
+  const treasureRoom = useGalleonTreasureRoom();
+  const highGrab = useHighGrab();
+  const kong = useLanky();
+  const diddy = useDiddy();
+  const spring = useSpring();
+  const tiny = useTiny();
+  const twirl = useTwirl();
+  const shuffleBananas = useShuffleColoredBananas();
+  let currBreak = useLankyMedalCommonLogic$3() + 1;
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (treasureRoom.out && (highGrab || diddy && spring && tiny && twirl)) {
+    currBreak += 4;
+  }
+  return currBreak;
+};
+const useTinyMedalCommonLogic$3 = () => {
+  const canSlam = useSlamGalleon();
+  const outskirts = useGalleonOutskirts();
+  const lighthouseArea = useGalleonLighthouseArea();
+  const cannon = useGalleonCannon();
+  const highTide = useGalleonHighTide();
+  const lowTide = useGalleonLowTide();
+  const gun = useFeather();
+  const music = useSax();
+  const dive = useDive();
+  let bananas = 9;
+  if ((lighthouseArea.in || lighthouseArea.out) && (highTide.in || highTide.out)) {
+    bananas += 5;
+    if (gun) {
+      bananas += 10;
+    }
+  }
+  if ((lighthouseArea.in || lighthouseArea.out) && (lowTide.in || lowTide.out) && gun) {
+    bananas += 10;
+  }
+  if ((cannon.in || cannon.out) && (highTide.in || highTide.out)) {
+    bananas += 15;
+  }
+  if ((outskirts.in || outskirts.out) && (dive.in || dive.out)) {
+    if (music) {
+      bananas += 18;
+    }
+    if (canSlam) {
+      bananas += 10;
+    }
+  }
+  return bananas;
+};
+const useTinyMedalInLogic$3 = () => {
+  const inStage = usePlayGalleon();
+  const treasureRoom = useGalleonTreasureRoom();
+  const cavernTop = useGalleonCavernTop();
+  const kong = useTiny();
+  const gun = useFeather();
+  const crystal = useMini();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useTinyMedalCommonLogic$3();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (cavernTop.in) {
+    bananas += 8;
+  }
+  if (treasureRoom.in) {
+    if (gun) {
+      bananas += 10;
+    }
+    if (crystal) {
+      bananas += 5;
+    }
+  }
+  return bananas;
+};
+const useTinyMedalOutLogic$3 = () => {
+  const inStage = usePlayGalleon();
+  const treasureRoom = useGalleonTreasureRoom();
+  const cavernTop = useGalleonCavernTop();
+  const kong = useTiny();
+  const gun = useFeather();
+  const crystal = useMini();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useTinyMedalCommonLogic$3();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (cavernTop.out) {
+    bananas += 8;
+  }
+  if (treasureRoom.out) {
+    if (gun) {
+      bananas += 10;
+    }
+    if (crystal) {
+      bananas += 5;
+    }
+  }
+  return bananas;
+};
+const useChunkyMedalCommonLogic$1 = () => {
+  const outskirts = useGalleonOutskirts();
+  const lighthouseArea = useGalleonLighthouseArea();
+  const highTide = useGalleonHighTide();
+  const gun = usePineapple();
+  const dive = useDive();
+  let bananas = 12;
+  if (lighthouseArea.in && dive.in || lighthouseArea.out && dive.out) {
+    bananas += 10;
+  }
+  if (outskirts.in || outskirts.out) {
+    if (gun) {
+      bananas += 20;
+    }
+    if (dive.in || dive.out) {
+      bananas += 15;
+    }
+    if (highTide.in || highTide.out) {
+      bananas += 5;
+    }
+  }
+  return bananas;
+};
+const useChunkyMedalInLogic$3 = () => {
+  const inStage = usePlayGalleon();
+  const cannon = useGalleonCannon();
+  const highTide = useGalleonHighTide();
+  const seasick = useGalleonSeasickShip();
+  const cavernTop = useGalleonCavernTop();
+  const slam = useSlam();
+  const kong = useChunky();
+  const move = usePunch();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useChunkyMedalCommonLogic$1();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (cavernTop.in) {
+    bananas += 3;
+  }
+  if (cannon.in && highTide.in) {
+    bananas += 10;
+  }
+  if (seasick.in && slam) {
+    bananas += 20;
+    if (move) {
+      bananas += 5;
+    }
+  }
+  return bananas;
+};
+const useChunkyMedalOutLogic$3 = () => {
+  const inStage = usePlayGalleon();
+  const cannon = useGalleonCannon();
+  const seasick = useGalleonSeasickShip();
+  const cavernTop = useGalleonCavernTop();
+  const slam = useSlam();
+  const kong = useChunky();
+  const move = usePunch();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useChunkyMedalCommonLogic$1();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (cavernTop.out) {
+    bananas += 3;
+  }
+  if (cannon.out) {
+    bananas += 10;
+  }
+  if (seasick.out && slam) {
+    bananas += 20;
+    if (move) {
+      bananas += 5;
+    }
+  }
+  return bananas;
+};
 const BossCheck$4 = () => {
   const lighthouseArea = useGalleonLighthouseArea();
   const outskirts = useGalleonOutskirts();
   const top = useGalleonCavernTop();
   const dive = useDive();
+  const DKCurrentCBsIn = useDkMedalInLogic$3();
+  const DKCurrentCBsOut = useDkMedalOutLogic$3();
+  const diddyCurrentCBsIn = useDiddyMedalInLogic$3();
+  const diddyCurrentCBsOut = useDiddyMedalOutLogic$3();
+  const lankyCurrentCBsIn = useLankyMedalInLogic$3();
+  const lankyCurrentCBsOut = useLankyMedalOutLogic$3();
+  const tinyCurrentCBsIn = useTinyMedalInLogic$3();
+  const tinyCurrentCBsOut = useTinyMedalOutLogic$3();
+  const chunkyCurrentCBsIn = useChunkyMedalInLogic$3();
+  const chunkyCurrentCBsOut = useChunkyMedalOutLogic$3();
+  const currentCBCountIn = DKCurrentCBsIn + diddyCurrentCBsIn + lankyCurrentCBsIn + tinyCurrentCBsIn + chunkyCurrentCBsIn;
+  const currentCBCountOut = DKCurrentCBsOut + diddyCurrentCBsOut + lankyCurrentCBsOut + tinyCurrentCBsOut + chunkyCurrentCBsOut;
+  const troffAndScoff = useGalleonTroffAndScoff();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BossPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     GalleonCheck,
     {
       id: 4105,
       name: "Galleon Boss",
       region: "Bosses",
-      canGetLogic: top.in || dive.in && (lighthouseArea.in || outskirts.in),
-      canGetBreak: top.out
+      canGetLogic: currentCBCountIn >= troffAndScoff && top.in || dive.in && (lighthouseArea.in || outskirts.in),
+      canGetBreak: currentCBCountOut >= troffAndScoff && top.out
     }
   ) });
 };
@@ -33219,96 +33671,6 @@ const KasplatLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$3, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$3, {})
 ] });
-const useChunkyMedalCommonLogic$1 = () => {
-  const outskirts = useGalleonOutskirts();
-  const lighthouseArea = useGalleonLighthouseArea();
-  const highTide = useGalleonHighTide();
-  const gun = usePineapple();
-  const dive = useDive();
-  let bananas = 12;
-  if (lighthouseArea.in && dive.in || lighthouseArea.out && dive.out) {
-    bananas += 10;
-  }
-  if (outskirts.in || outskirts.out) {
-    if (gun) {
-      bananas += 20;
-    }
-    if (dive.in || dive.out) {
-      bananas += 15;
-    }
-    if (highTide.in || highTide.out) {
-      bananas += 5;
-    }
-  }
-  return bananas;
-};
-const useChunkyMedalInLogic$3 = () => {
-  const inStage = usePlayGalleon();
-  const cannon = useGalleonCannon();
-  const highTide = useGalleonHighTide();
-  const seasick = useGalleonSeasickShip();
-  const cavernTop = useGalleonCavernTop();
-  const slam = useSlam();
-  const kong = useChunky();
-  const move = usePunch();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useChunkyMedalCommonLogic$1();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (cavernTop.in) {
-    bananas += 3;
-  }
-  if (cannon.in && highTide.in) {
-    bananas += 10;
-  }
-  if (seasick.in && slam) {
-    bananas += 20;
-    if (move) {
-      bananas += 5;
-    }
-  }
-  return bananas;
-};
-const useChunkyMedalOutLogic$3 = () => {
-  const inStage = usePlayGalleon();
-  const cannon = useGalleonCannon();
-  const seasick = useGalleonSeasickShip();
-  const cavernTop = useGalleonCavernTop();
-  const slam = useSlam();
-  const kong = useChunky();
-  const move = usePunch();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useChunkyMedalCommonLogic$1();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (cavernTop.out) {
-    bananas += 3;
-  }
-  if (cannon.out) {
-    bananas += 10;
-  }
-  if (seasick.out && slam) {
-    bananas += 20;
-    if (move) {
-      bananas += 5;
-    }
-  }
-  return bananas;
-};
 const ChunkyMedal$3 = () => {
   const inLogic = useChunkyMedalInLogic$3();
   const outLogic = useChunkyMedalOutLogic$3();
@@ -33337,87 +33699,6 @@ const ChunkyMedal$3 = () => {
       }
     ) })
   ] });
-};
-const useDiddyMedalCommonLogic$3 = () => {
-  const outskirts = useGalleonOutskirts();
-  const gun = usePeanut();
-  const music = useGuitar();
-  const dive = useDive();
-  let bananas = 10;
-  if (outskirts.in || outskirts.out) {
-    if (gun) {
-      bananas += 10;
-    }
-    if (dive.in || dive.out) {
-      bananas += 36;
-      if (music) {
-        bananas += 14;
-      }
-    }
-  }
-  return bananas;
-};
-const useDiddyMedalInLogic$3 = () => {
-  const inStage = usePlayGalleon();
-  const lighthousePlatform = useGalleonLighthousePlatform();
-  const treasureRoom = useGalleonTreasureRoom();
-  const kong = useDiddy();
-  const gun = usePeanut();
-  const crystal = useRocket();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDiddyMedalCommonLogic$3();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (treasureRoom.in && gun) {
-    bananas += 10;
-  }
-  if (lighthousePlatform.in) {
-    if (gun) {
-      bananas += 10;
-    }
-    if (crystal) {
-      bananas += 10;
-    }
-  }
-  return bananas;
-};
-const useDiddyMedalOutLogic$3 = () => {
-  const inStage = usePlayGalleon();
-  const lighthousePlatform = useGalleonLighthousePlatform();
-  const treasureRoom = useGalleonTreasureRoom();
-  const kong = useDiddy();
-  const gun = usePeanut();
-  const crystal = useRocket();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDiddyMedalCommonLogic$3();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (treasureRoom.out && gun) {
-    bananas += 10;
-  }
-  if (lighthousePlatform.out) {
-    if (gun) {
-      bananas += 10;
-    }
-    if (crystal) {
-      bananas += 10;
-    }
-  }
-  return bananas;
 };
 const DiddyMedal$3 = () => {
   const inLogic = useDiddyMedalInLogic$3();
@@ -33448,96 +33729,6 @@ const DiddyMedal$3 = () => {
     ) })
   ] });
 };
-const useDkMedalCommonLogic$3 = () => {
-  const outskirts = useGalleonOutskirts();
-  const lighthouseArea = useGalleonLighthouseArea();
-  const gun = useCoconut();
-  const music = useBongos();
-  const dive = useDive();
-  const lanky = useLanky();
-  let bananas = 0;
-  if (gun) {
-    bananas += 10;
-  }
-  if (outskirts.in || outskirts.out) {
-    bananas += 15;
-    if (music) {
-      bananas += 10;
-    }
-  }
-  if ((lighthouseArea.in || lighthouseArea.out) && (dive.in || dive.out) && lanky) {
-    bananas += 10;
-  }
-  return bananas;
-};
-const useDkMedalInLogic$3 = () => {
-  const inStage = usePlayGalleon();
-  const canSlam = useSlamGalleon();
-  const lighthousePlatform = useGalleonLighthousePlatform();
-  const kong = useDk();
-  const gun = useCoconut();
-  const pad = useBlast();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDkMedalCommonLogic$3();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (lighthousePlatform.in) {
-    if (gun) {
-      bananas += 10;
-    }
-    if (pad) {
-      bananas += 15;
-    }
-    if (canSlam) {
-      bananas += 20;
-      if (gun) {
-        bananas += 10;
-      }
-    }
-  }
-  return bananas;
-};
-const useDkMedalOutLogic$3 = () => {
-  const inStage = usePlayGalleon();
-  const canSlam = useSlamGalleon();
-  const lighthousePlatform = useGalleonLighthousePlatform();
-  const kong = useDk();
-  const gun = useCoconut();
-  const pad = useBlast();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDkMedalCommonLogic$3();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (lighthousePlatform.out) {
-    if (gun) {
-      bananas += 10;
-    }
-    if (pad) {
-      bananas += 15;
-    }
-    if (canSlam) {
-      bananas += 20;
-      if (gun) {
-        bananas += 10;
-      }
-    }
-  }
-  return bananas;
-};
 const DkMedal$3 = () => {
   const inLogic = useDkMedalInLogic$3();
   const outLogic = useDkMedalOutLogic$3();
@@ -33567,88 +33758,6 @@ const DkMedal$3 = () => {
     ) })
   ] });
 };
-const useLankyMedalCommonLogic$3 = () => {
-  const canSlam = useSlamGalleon();
-  const outskirts = useGalleonOutskirts();
-  const lighthouseArea = useGalleonLighthouseArea();
-  const chunkyPunch = usePunch();
-  const gun = useGrape();
-  const music = useTrombone();
-  const dive = useDive();
-  let bananas = 5;
-  if (chunkyPunch && gun) {
-    bananas += 20;
-  }
-  if ((lighthouseArea.in || lighthouseArea.out) && (dive.in || dive.out)) {
-    bananas += 25;
-  }
-  if (outskirts.in || outskirts.out) {
-    bananas += 5;
-    if (gun) {
-      bananas += 10;
-    }
-    if (dive.in || dive.out) {
-      bananas += 5;
-      if (canSlam) {
-        bananas += 10;
-      }
-      if (music) {
-        bananas += 15;
-      }
-    }
-  }
-  return bananas;
-};
-const useLankyMedalInLogic$3 = () => {
-  const inStage = usePlayGalleon();
-  const treasureRoom = useGalleonTreasureRoom();
-  const highTide = useGalleonHighTide();
-  const kong = useLanky();
-  const pad = useBalloon();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useLankyMedalCommonLogic$3();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (treasureRoom.in && highTide.in) {
-    bananas += 1;
-    if (pad) {
-      bananas += 4;
-    }
-  }
-  return bananas;
-};
-const useLankyMedalOutLogic$3 = () => {
-  const inStage = usePlayGalleon();
-  const treasureRoom = useGalleonTreasureRoom();
-  const highGrab = useHighGrab();
-  const kong = useLanky();
-  const diddy = useDiddy();
-  const spring = useSpring();
-  const tiny = useTiny();
-  const twirl = useTwirl();
-  const shuffleBananas = useShuffleColoredBananas();
-  let currBreak = useLankyMedalCommonLogic$3() + 1;
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (treasureRoom.out && (highGrab || diddy && spring && tiny && twirl)) {
-    currBreak += 4;
-  }
-  return currBreak;
-};
 const LankyMedal$3 = () => {
   const inLogic = useLankyMedalInLogic$3();
   const outLogic = useLankyMedalOutLogic$3();
@@ -33677,101 +33786,6 @@ const LankyMedal$3 = () => {
       }
     ) })
   ] });
-};
-const useTinyMedalCommonLogic$3 = () => {
-  const canSlam = useSlamGalleon();
-  const outskirts = useGalleonOutskirts();
-  const lighthouseArea = useGalleonLighthouseArea();
-  const cannon = useGalleonCannon();
-  const highTide = useGalleonHighTide();
-  const lowTide = useGalleonLowTide();
-  const gun = useFeather();
-  const music = useSax();
-  const dive = useDive();
-  let bananas = 9;
-  if ((lighthouseArea.in || lighthouseArea.out) && (highTide.in || highTide.out)) {
-    bananas += 5;
-    if (gun) {
-      bananas += 10;
-    }
-  }
-  if ((lighthouseArea.in || lighthouseArea.out) && (lowTide.in || lowTide.out) && gun) {
-    bananas += 10;
-  }
-  if ((cannon.in || cannon.out) && (highTide.in || highTide.out)) {
-    bananas += 15;
-  }
-  if ((outskirts.in || outskirts.out) && (dive.in || dive.out)) {
-    if (music) {
-      bananas += 18;
-    }
-    if (canSlam) {
-      bananas += 10;
-    }
-  }
-  return bananas;
-};
-const useTinyMedalInLogic$3 = () => {
-  const inStage = usePlayGalleon();
-  const treasureRoom = useGalleonTreasureRoom();
-  const cavernTop = useGalleonCavernTop();
-  const kong = useTiny();
-  const gun = useFeather();
-  const crystal = useMini();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useTinyMedalCommonLogic$3();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (cavernTop.in) {
-    bananas += 8;
-  }
-  if (treasureRoom.in) {
-    if (gun) {
-      bananas += 10;
-    }
-    if (crystal) {
-      bananas += 5;
-    }
-  }
-  return bananas;
-};
-const useTinyMedalOutLogic$3 = () => {
-  const inStage = usePlayGalleon();
-  const treasureRoom = useGalleonTreasureRoom();
-  const cavernTop = useGalleonCavernTop();
-  const kong = useTiny();
-  const gun = useFeather();
-  const crystal = useMini();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useTinyMedalCommonLogic$3();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (cavernTop.out) {
-    bananas += 8;
-  }
-  if (treasureRoom.out) {
-    if (gun) {
-      bananas += 10;
-    }
-    if (crystal) {
-      bananas += 5;
-    }
-  }
-  return bananas;
 };
 const TinyMedal$3 = () => {
   const inLogic = useTinyMedalInLogic$3();
