@@ -2,7 +2,7 @@ import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import { useCurrentPearlCount } from '../consumables'
 import { useFastMermaid } from '../fast-checks'
-import { usePlayLevel, useSlamLevel } from '../isles'
+import { usePlayLevel, useSlamLevel, useTroffAndScoff } from '../isles'
 import {
   useAnyKong,
   useAnyGun,
