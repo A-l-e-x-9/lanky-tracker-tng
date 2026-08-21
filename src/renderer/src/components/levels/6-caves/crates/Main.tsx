@@ -1,5 +1,3 @@
-import useDonkStore from '@renderer/store'
-import { useShallow } from 'zustand/react/shallow'
 import CratePool from '@renderer/components/pools/Crates'
 import { useGeneralThing } from '@renderer/hooks/caves'
 import { useShuffleCrates } from '@renderer/hooks/settings'

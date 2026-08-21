@@ -53,6 +53,7 @@ return (
   <div className="grid">
     <RoomsChecks />
     <RoomArenas />
+    <RoomCrates />
   </div>
   <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <RoomKasplats />
