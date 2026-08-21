@@ -1,7 +1,7 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
 import { useGeneralThing, useSlamCastle } from '@renderer/hooks/castle'
 import { useShuffledArenas } from '@renderer/hooks/settings'
-import { useDk, useStrong } from '@renderer/hooks/kongs'
+import { useDk, useStrong, useChunky } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -9,6 +9,7 @@ const isBreathing = useGeneralThing()
 const hasSlam = useSlamCastle()
 const hasDK = useDk()
 const hasStrongKong = useStrong()
+const hasChunky = useChunky()
   return (
     <ArenaPool>
       <CastleCheck
