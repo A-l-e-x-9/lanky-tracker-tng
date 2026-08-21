@@ -18,6 +18,13 @@ const hasStrongKong = useStrong()
         canGetLogic={isBreathing.in && hasDK && hasSlam && hasStrongKong}
         canGetBreak={isBreathing.out && hasDK && hasSlam}
       />
+      <CastleCheck
+        id={17000}
+        name="Shuffled Battle Arena: Main museum room"
+        region="Various Castle Rooms"
+        canGetLogic={isBreathing.in && hasChunky && hasSlam}
+        canGetBreak={isBreathing.out && hasChunky && hasSlam}
+      />
     </ArenaPool>
   )
 }

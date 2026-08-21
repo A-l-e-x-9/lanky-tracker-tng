@@ -472,12 +472,6 @@ const hasBlast = useBlast()
         canGetLogic={hasDiddy && hasSlam && hasMonkeyport}
       />
       <CastleCheck
-        id={17067}
-        name="Shuffled Battle Arena: Main museum room"
-        region="Various Castle Rooms"
-        canGetLogic={hasChunky && hasSlam}
-      />
-      <CastleCheck
         id={17068}
         name="Shuffled Battle Arena: Inside the trash can"
         region="Creepy Castle Main"
