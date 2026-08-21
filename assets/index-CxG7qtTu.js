@@ -23123,6 +23123,7 @@ const usePlayAztec = () => {
     out: canEnter.out
   };
 };
+const useAztecTroffAndScoff = () => useTroffAndScoff("Angry Aztec");
 const useTinyTempleFrontPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleFrontPortal));
 const useTinyTempleIcePortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleIcePortal));
 const useTinyTemplePoolPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTemplePoolPortal));
@@ -23615,17 +23616,511 @@ const VultureArena = () => {
     }
   ) }) });
 };
+const useDkMedalInLogic$5 = () => {
+  const inStage = useAztecFront();
+  const kasplat = useAztecFrontKasplat();
+  const aztecBack = useAztecBack();
+  const llamaTemple = useAztecLlamaTemple();
+  const backTunnel = useAztecBackTunnel();
+  const kong = useDk();
+  const gun = useCoconut();
+  const crystal = useStrong();
+  const hasClimb = useClimbing();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 0;
+  if (inStage.in) {
+    bananas += 3;
+    if (hasClimb) {
+      bananas += 15;
+    }
+    if (kasplat.in) {
+      bananas += 10;
+    }
+    if (aztecBack.in) {
+      bananas += 7;
+      if (gun) {
+        bananas += 30;
+      }
+      if (llamaTemple.in) {
+        bananas += 15;
+        if (backTunnel.in && crystal) {
+          bananas += 20;
+        }
+      }
+    }
+  }
+  return bananas;
+};
+const useDkMedalOutLogic$5 = () => {
+  const inStage = useAztecFront();
+  const kasplat = useAztecFrontKasplat();
+  const aztecBack = useAztecBack();
+  const llamaTemple = useAztecLlamaTemple();
+  const backTunnel = useAztecBackTunnel();
+  const kong = useDk();
+  const gun = useCoconut();
+  const hasClimb = useClimbing();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 0;
+  if (inStage.out) {
+    bananas += 3;
+    if (hasClimb) {
+      bananas += 15;
+    }
+    if (kasplat.out) {
+      bananas += 10;
+    }
+    if (aztecBack.out) {
+      bananas += 7;
+      if (gun) {
+        bananas += 30;
+      }
+      if (llamaTemple.out) {
+        bananas += 15;
+        if (backTunnel.out) {
+          bananas += 20;
+        }
+      }
+    }
+  }
+  return bananas;
+};
+const useDiddyMedalInLogic$5 = () => {
+  const inStage = useAztecFront();
+  const tinyTemple = useAztecTinyTemple();
+  const iceMelted = useTinyTempleIce();
+  const aztecBack = useAztecBack();
+  const doorTemple = useAztec5DoorTemple();
+  const backTunnel = useAztecBackTunnel();
+  const canSlam = useSlamAztec();
+  const kong = useDiddy();
+  const gun = usePeanut();
+  const crystal = useRocket();
+  const dive = useDive();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 0;
+  if (inStage.in) {
+    bananas += 5;
+    if (gun) {
+      bananas += 10;
+    }
+    if (tinyTemple.in) {
+      if (canSlam) {
+        bananas += 3;
+        if (gun) {
+          bananas += 15;
+        }
+      }
+      if (iceMelted.in && dive.in) {
+        bananas += 7;
+      }
+    }
+    if (aztecBack.in) {
+      bananas += 30;
+      if (crystal) {
+        bananas += 10;
+      }
+      if (doorTemple.in && gun) {
+        bananas += 10;
+      }
+      if (backTunnel.in && gun) {
+        bananas += 10;
+      }
+    }
+  }
+  return bananas;
+};
+const useDiddyMedalOutLogic$5 = () => {
+  const inStage = useAztecFront();
+  const tinyTemple = useAztecTinyTemple();
+  const iceMelted = useTinyTempleIce();
+  const aztecBack = useAztecBack();
+  const doorTemple = useAztec5DoorTemple();
+  const backTunnel = useAztecBackTunnel();
+  const canSlam = useSlamAztec();
+  const kong = useDiddy();
+  const gun = usePeanut();
+  const crystal = useRocket();
+  const dive = useDive();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 0;
+  if (inStage.out) {
+    bananas += 5;
+    if (gun) {
+      bananas += 10;
+    }
+    if (tinyTemple.out) {
+      if (canSlam) {
+        bananas += 8;
+        if (gun) {
+          bananas += 10;
+        }
+      }
+      if (iceMelted.out && dive.out) {
+        bananas += 7;
+      }
+    }
+    if (aztecBack.out) {
+      bananas += 30;
+      if (crystal) {
+        bananas += 10;
+      }
+      if (doorTemple.out && gun) {
+        bananas += 10;
+      }
+      if (backTunnel.out && gun) {
+        bananas += 10;
+      }
+    }
+  }
+  return bananas;
+};
+const useLankyMedalInLogic$5 = () => {
+  const inStage = useAztecFront();
+  const tinyTemple = useAztecTinyTemple();
+  const iceMelted = useTinyTempleIce();
+  const aztecBack = useAztecBack();
+  const llamaTemple = useAztecLlamaTemple();
+  const doorTemple = useAztec5DoorTemple();
+  const anyMusic = useFreeLankySwitch();
+  const kong = useLanky();
+  const gun = useGrape();
+  const vine = useVine();
+  const dive = useDive();
+  const hasClimb = useClimbing();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 0;
+  if (inStage.in) {
+    bananas += 5;
+    if (tinyTemple.in && iceMelted.in && dive.in) {
+      bananas += 14;
+    }
+    if (aztecBack.in) {
+      bananas += 15;
+      if (hasClimb) {
+        bananas += 20;
+      }
+      if (doorTemple.in && gun) {
+        bananas += 10;
+      }
+      if (llamaTemple.in) {
+        bananas += 11;
+        if (gun && vine) {
+          bananas += 5;
+        }
+        if (anyMusic.in && dive.in && gun) {
+          bananas += 20;
+        }
+      }
+    }
+  }
+  return bananas;
+};
+const useLankyMedalOutLogic$5 = () => {
+  const inStage = useAztecFront();
+  const tinyTemple = useAztecTinyTemple();
+  const iceMelted = useTinyTempleIce();
+  const aztecBack = useAztecBack();
+  const llamaTemple = useAztecLlamaTemple();
+  const doorTemple = useAztec5DoorTemple();
+  const anyMusic = useFreeLankySwitch();
+  const kong = useLanky();
+  const gun = useGrape();
+  const vine = useVine();
+  const dive = useDive();
+  const hasClimb = useClimbing();
+  const hasJetbarrel = useRocket();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 0;
+  if (inStage.out) {
+    bananas += 5;
+    if (tinyTemple.out && iceMelted.out && dive.out) {
+      bananas += 14;
+    }
+    if (aztecBack.out) {
+      bananas += 15;
+      if (hasClimb || hasJetbarrel) {
+        bananas += 20;
+      }
+      if (doorTemple.out && gun) {
+        bananas += 10;
+      }
+      if (llamaTemple.out) {
+        bananas += 11;
+        if (gun && vine) {
+          bananas += 5;
+        }
+        if (anyMusic.out && dive.out && gun) {
+          bananas += 20;
+        }
+      }
+    }
+  }
+  return bananas;
+};
+const useTinyMedalInLogic$5 = () => {
+  const inStage = useAztecFront();
+  const aztecBack = useAztecBack();
+  const tinyTemple = useAztecTinyTemple();
+  const iceMelted = useTinyTempleIce();
+  const llamaTemple = useAztecLlamaTemple();
+  const lava = useAztecLlamaLava();
+  const canSlam = useSlamAztec();
+  const kong = useTiny();
+  const gun = useFeather();
+  const crystal = useMini();
+  const move = useTwirl();
+  const dive = useDive();
+  const hasClimb = useClimbing();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 0;
+  if (inStage.in) {
+    if (tinyTemple.in && iceMelted.in && dive.in) {
+      if (gun) {
+        bananas += 20;
+      }
+      if (crystal) {
+        bananas += 5;
+      }
+    }
+    if (aztecBack.in) {
+      bananas += 30;
+      if (hasClimb) {
+        bananas += 20;
+      }
+    }
+    if (llamaTemple.in) {
+      bananas += 3;
+      if (gun) {
+        bananas += 10;
+      }
+      if (lava.in) {
+        bananas += 2;
+        if (move || canSlam) {
+          bananas += 10;
+        }
+      }
+    }
+  }
+  return bananas;
+};
+const useTinyMedalOutLogic$5 = () => {
+  const inStage = useAztecFront();
+  const aztecBack = useAztecBack();
+  const iceMelted = useTinyTempleIce();
+  const tinyTemple = useAztecTinyTemple();
+  const llamaTemple = useAztecLlamaTemple();
+  const lava = useAztecLlamaLava();
+  const kong = useTiny();
+  const gun = useFeather();
+  const crystal = useMini();
+  const dive = useDive();
+  const kuruKuru = useTwirl();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 0;
+  if (inStage.out) {
+    if (tinyTemple.out && iceMelted.out && dive.out) {
+      if (gun) {
+        bananas += 20;
+      }
+      if (crystal) {
+        bananas += 5;
+      }
+    }
+    if (aztecBack.out) {
+      bananas += 40;
+      if (kuruKuru) {
+        bananas += 10;
+      }
+    }
+    if (llamaTemple.out) {
+      bananas += 3;
+      if (gun) {
+        bananas += 10;
+      }
+      if (lava.out) {
+        bananas += 12;
+      }
+    }
+  }
+  return bananas;
+};
+const useChunkyMedalInLogic$5 = () => {
+  const inStage = useAztecFront();
+  const tinyTemple = useAztecTinyTemple();
+  const iceMelted = useTinyTempleIce();
+  const aztecBack = useAztecBack();
+  const doorTemple = useAztec5DoorTemple();
+  const kong = useChunky();
+  const gun = usePineapple();
+  const dive = useDive();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 0;
+  if (inStage.in) {
+    bananas += 5;
+    if (gun) {
+      bananas += 20;
+    }
+    if (tinyTemple.in) {
+      bananas += 29;
+      if (gun && iceMelted && dive) {
+        bananas += 10;
+      }
+    }
+    if (aztecBack.in) {
+      bananas += 16;
+      if (doorTemple.in && gun) {
+        bananas += 20;
+      }
+    }
+  }
+  return bananas;
+};
+const useChunkyMedalOutLogic$5 = () => {
+  const inStage = useAztecFront();
+  const tinyTemple = useAztecTinyTemple();
+  const aztecBack = useAztecBack();
+  const doorTemple = useAztec5DoorTemple();
+  const kong = useChunky();
+  const pineapple = usePineapple();
+  const dive = useDive();
+  const iceMelted = useTinyTempleIce();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 0;
+  if (inStage.out) {
+    bananas += 5;
+    if (pineapple) {
+      bananas += 20;
+    }
+    if (tinyTemple.out) {
+      bananas += 29;
+      if (pineapple && iceMelted && dive) {
+        bananas += 10;
+      }
+    }
+    if (aztecBack.out) {
+      bananas += 16;
+      if (doorTemple.out && pineapple) {
+        bananas += 20;
+      }
+    }
+  }
+  return bananas;
+};
 const BossCheck$6 = () => {
   const aztecFront = useAztecFront();
   const anyKong = useAnyKong();
+  const DKCurrentCBsIn = useDkMedalInLogic$5();
+  const DKCurrentCBsOut = useDkMedalOutLogic$5();
+  const diddyCurrentCBsIn = useDiddyMedalInLogic$5();
+  const diddyCurrentCBsOut = useDiddyMedalOutLogic$5();
+  const lankyCurrentCBsIn = useLankyMedalInLogic$5();
+  const lankyCurrentCBsOut = useLankyMedalOutLogic$5();
+  const tinyCurrentCBsIn = useTinyMedalInLogic$5();
+  const tinyCurrentCBsOut = useTinyMedalOutLogic$5();
+  const chunkyCurrentCBsIn = useChunkyMedalInLogic$5();
+  const chunkyCurrentCBsOut = useChunkyMedalOutLogic$5();
+  const currentCBCountIn = DKCurrentCBsIn + diddyCurrentCBsIn + lankyCurrentCBsIn + tinyCurrentCBsIn + chunkyCurrentCBsIn;
+  const currentCBCountOut = DKCurrentCBsOut + diddyCurrentCBsOut + lankyCurrentCBsOut + tinyCurrentCBsOut + chunkyCurrentCBsOut;
+  const troffAndScoff = useAztecTroffAndScoff();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BossPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2105,
       name: "Aztec Boss",
       region: "Bosses",
-      canGetLogic: aztecFront.in && anyKong,
-      canGetBreak: aztecFront.out && anyKong
+      canGetLogic: aztecFront.in && anyKong && currentCBCountIn >= troffAndScoff,
+      canGetBreak: aztecFront.out && anyKong && currentCBCountOut >= troffAndScoff
     }
   ) });
 };
@@ -24934,86 +25429,6 @@ const KasplatLocations$5 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$5, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$5, {})
 ] });
-const useChunkyMedalInLogic$5 = () => {
-  const inStage = useAztecFront();
-  const tinyTemple = useAztecTinyTemple();
-  const iceMelted = useTinyTempleIce();
-  const aztecBack = useAztecBack();
-  const doorTemple = useAztec5DoorTemple();
-  const kong = useChunky();
-  const gun = usePineapple();
-  const dive = useDive();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 0;
-  if (inStage.in) {
-    bananas += 5;
-    if (gun) {
-      bananas += 20;
-    }
-    if (tinyTemple.in) {
-      bananas += 29;
-      if (gun && iceMelted && dive) {
-        bananas += 10;
-      }
-    }
-    if (aztecBack.in) {
-      bananas += 16;
-      if (doorTemple.in && gun) {
-        bananas += 20;
-      }
-    }
-  }
-  return bananas;
-};
-const useChunkyMedalOutLogic$5 = () => {
-  const inStage = useAztecFront();
-  const tinyTemple = useAztecTinyTemple();
-  const aztecBack = useAztecBack();
-  const doorTemple = useAztec5DoorTemple();
-  const kong = useChunky();
-  const pineapple = usePineapple();
-  const dive = useDive();
-  const iceMelted = useTinyTempleIce();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 0;
-  if (inStage.out) {
-    bananas += 5;
-    if (pineapple) {
-      bananas += 20;
-    }
-    if (tinyTemple.out) {
-      bananas += 29;
-      if (pineapple && iceMelted && dive) {
-        bananas += 10;
-      }
-    }
-    if (aztecBack.out) {
-      bananas += 16;
-      if (doorTemple.out && pineapple) {
-        bananas += 20;
-      }
-    }
-  }
-  return bananas;
-};
 const ChunkyMedal$5 = () => {
   const inLogic = useChunkyMedalInLogic$5();
   const outLogic = useChunkyMedalOutLogic$5();
@@ -25042,114 +25457,6 @@ const ChunkyMedal$5 = () => {
       }
     ) })
   ] });
-};
-const useDiddyMedalInLogic$5 = () => {
-  const inStage = useAztecFront();
-  const tinyTemple = useAztecTinyTemple();
-  const iceMelted = useTinyTempleIce();
-  const aztecBack = useAztecBack();
-  const doorTemple = useAztec5DoorTemple();
-  const backTunnel = useAztecBackTunnel();
-  const canSlam = useSlamAztec();
-  const kong = useDiddy();
-  const gun = usePeanut();
-  const crystal = useRocket();
-  const dive = useDive();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 0;
-  if (inStage.in) {
-    bananas += 5;
-    if (gun) {
-      bananas += 10;
-    }
-    if (tinyTemple.in) {
-      if (canSlam) {
-        bananas += 3;
-        if (gun) {
-          bananas += 15;
-        }
-      }
-      if (iceMelted.in && dive.in) {
-        bananas += 7;
-      }
-    }
-    if (aztecBack.in) {
-      bananas += 30;
-      if (crystal) {
-        bananas += 10;
-      }
-      if (doorTemple.in && gun) {
-        bananas += 10;
-      }
-      if (backTunnel.in && gun) {
-        bananas += 10;
-      }
-    }
-  }
-  return bananas;
-};
-const useDiddyMedalOutLogic$5 = () => {
-  const inStage = useAztecFront();
-  const tinyTemple = useAztecTinyTemple();
-  const iceMelted = useTinyTempleIce();
-  const aztecBack = useAztecBack();
-  const doorTemple = useAztec5DoorTemple();
-  const backTunnel = useAztecBackTunnel();
-  const canSlam = useSlamAztec();
-  const kong = useDiddy();
-  const gun = usePeanut();
-  const crystal = useRocket();
-  const dive = useDive();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 0;
-  if (inStage.out) {
-    bananas += 5;
-    if (gun) {
-      bananas += 10;
-    }
-    if (tinyTemple.out) {
-      if (canSlam) {
-        bananas += 8;
-        if (gun) {
-          bananas += 10;
-        }
-      }
-      if (iceMelted.out && dive.out) {
-        bananas += 7;
-      }
-    }
-    if (aztecBack.out) {
-      bananas += 30;
-      if (crystal) {
-        bananas += 10;
-      }
-      if (doorTemple.out && gun) {
-        bananas += 10;
-      }
-      if (backTunnel.out && gun) {
-        bananas += 10;
-      }
-    }
-  }
-  return bananas;
 };
 const DiddyMedal$5 = () => {
   const inLogic = useDiddyMedalInLogic$5();
@@ -25180,93 +25487,6 @@ const DiddyMedal$5 = () => {
     ) })
   ] });
 };
-const useDkMedalInLogic$5 = () => {
-  const inStage = useAztecFront();
-  const kasplat = useAztecFrontKasplat();
-  const aztecBack = useAztecBack();
-  const llamaTemple = useAztecLlamaTemple();
-  const backTunnel = useAztecBackTunnel();
-  const kong = useDk();
-  const gun = useCoconut();
-  const crystal = useStrong();
-  const hasClimb = useClimbing();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 0;
-  if (inStage.in) {
-    bananas += 3;
-    if (hasClimb) {
-      bananas += 15;
-    }
-    if (kasplat.in) {
-      bananas += 10;
-    }
-    if (aztecBack.in) {
-      bananas += 7;
-      if (gun) {
-        bananas += 30;
-      }
-      if (llamaTemple.in) {
-        bananas += 15;
-        if (backTunnel.in && crystal) {
-          bananas += 20;
-        }
-      }
-    }
-  }
-  return bananas;
-};
-const useDkMedalOutLogic$5 = () => {
-  const inStage = useAztecFront();
-  const kasplat = useAztecFrontKasplat();
-  const aztecBack = useAztecBack();
-  const llamaTemple = useAztecLlamaTemple();
-  const backTunnel = useAztecBackTunnel();
-  const kong = useDk();
-  const gun = useCoconut();
-  const hasClimb = useClimbing();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 0;
-  if (inStage.out) {
-    bananas += 3;
-    if (hasClimb) {
-      bananas += 15;
-    }
-    if (kasplat.out) {
-      bananas += 10;
-    }
-    if (aztecBack.out) {
-      bananas += 7;
-      if (gun) {
-        bananas += 30;
-      }
-      if (llamaTemple.out) {
-        bananas += 15;
-        if (backTunnel.out) {
-          bananas += 20;
-        }
-      }
-    }
-  }
-  return bananas;
-};
 const DkMedal$5 = () => {
   const inLogic = useDkMedalInLogic$5();
   const outLogic = useDkMedalOutLogic$5();
@@ -25296,107 +25516,6 @@ const DkMedal$5 = () => {
     ) })
   ] });
 };
-const useLankyMedalInLogic$5 = () => {
-  const inStage = useAztecFront();
-  const tinyTemple = useAztecTinyTemple();
-  const iceMelted = useTinyTempleIce();
-  const aztecBack = useAztecBack();
-  const llamaTemple = useAztecLlamaTemple();
-  const doorTemple = useAztec5DoorTemple();
-  const anyMusic = useFreeLankySwitch();
-  const kong = useLanky();
-  const gun = useGrape();
-  const vine = useVine();
-  const dive = useDive();
-  const hasClimb = useClimbing();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 0;
-  if (inStage.in) {
-    bananas += 5;
-    if (tinyTemple.in && iceMelted.in && dive.in) {
-      bananas += 14;
-    }
-    if (aztecBack.in) {
-      bananas += 15;
-      if (hasClimb) {
-        bananas += 20;
-      }
-      if (doorTemple.in && gun) {
-        bananas += 10;
-      }
-      if (llamaTemple.in) {
-        bananas += 11;
-        if (gun && vine) {
-          bananas += 5;
-        }
-        if (anyMusic.in && dive.in && gun) {
-          bananas += 20;
-        }
-      }
-    }
-  }
-  return bananas;
-};
-const useLankyMedalOutLogic$5 = () => {
-  const inStage = useAztecFront();
-  const tinyTemple = useAztecTinyTemple();
-  const iceMelted = useTinyTempleIce();
-  const aztecBack = useAztecBack();
-  const llamaTemple = useAztecLlamaTemple();
-  const doorTemple = useAztec5DoorTemple();
-  const anyMusic = useFreeLankySwitch();
-  const kong = useLanky();
-  const gun = useGrape();
-  const vine = useVine();
-  const dive = useDive();
-  const hasClimb = useClimbing();
-  const hasJetbarrel = useRocket();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 0;
-  if (inStage.out) {
-    bananas += 5;
-    if (tinyTemple.out && iceMelted.out && dive.out) {
-      bananas += 14;
-    }
-    if (aztecBack.out) {
-      bananas += 15;
-      if (hasClimb || hasJetbarrel) {
-        bananas += 20;
-      }
-      if (doorTemple.out && gun) {
-        bananas += 10;
-      }
-      if (llamaTemple.out) {
-        bananas += 11;
-        if (gun && vine) {
-          bananas += 5;
-        }
-        if (anyMusic.out && dive.out && gun) {
-          bananas += 20;
-        }
-      }
-    }
-  }
-  return bananas;
-};
 const LankyMedal$5 = () => {
   const inLogic = useLankyMedalInLogic$5();
   const outLogic = useLankyMedalOutLogic$5();
@@ -25425,111 +25544,6 @@ const LankyMedal$5 = () => {
       }
     ) })
   ] });
-};
-const useTinyMedalInLogic$5 = () => {
-  const inStage = useAztecFront();
-  const aztecBack = useAztecBack();
-  const tinyTemple = useAztecTinyTemple();
-  const iceMelted = useTinyTempleIce();
-  const llamaTemple = useAztecLlamaTemple();
-  const lava = useAztecLlamaLava();
-  const canSlam = useSlamAztec();
-  const kong = useTiny();
-  const gun = useFeather();
-  const crystal = useMini();
-  const move = useTwirl();
-  const dive = useDive();
-  const hasClimb = useClimbing();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 0;
-  if (inStage.in) {
-    if (tinyTemple.in && iceMelted.in && dive.in) {
-      if (gun) {
-        bananas += 20;
-      }
-      if (crystal) {
-        bananas += 5;
-      }
-    }
-    if (aztecBack.in) {
-      bananas += 30;
-      if (hasClimb) {
-        bananas += 20;
-      }
-    }
-    if (llamaTemple.in) {
-      bananas += 3;
-      if (gun) {
-        bananas += 10;
-      }
-      if (lava.in) {
-        bananas += 2;
-        if (move || canSlam) {
-          bananas += 10;
-        }
-      }
-    }
-  }
-  return bananas;
-};
-const useTinyMedalOutLogic$5 = () => {
-  const inStage = useAztecFront();
-  const aztecBack = useAztecBack();
-  const iceMelted = useTinyTempleIce();
-  const tinyTemple = useAztecTinyTemple();
-  const llamaTemple = useAztecLlamaTemple();
-  const lava = useAztecLlamaLava();
-  const kong = useTiny();
-  const gun = useFeather();
-  const crystal = useMini();
-  const dive = useDive();
-  const kuruKuru = useTwirl();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 0;
-  if (inStage.out) {
-    if (tinyTemple.out && iceMelted.out && dive.out) {
-      if (gun) {
-        bananas += 20;
-      }
-      if (crystal) {
-        bananas += 5;
-      }
-    }
-    if (aztecBack.out) {
-      bananas += 40;
-      if (kuruKuru) {
-        bananas += 10;
-      }
-    }
-    if (llamaTemple.out) {
-      bananas += 3;
-      if (gun) {
-        bananas += 10;
-      }
-      if (lava.out) {
-        bananas += 12;
-      }
-    }
-  }
-  return bananas;
 };
 const TinyMedal$5 = () => {
   const inLogic = useTinyMedalInLogic$5();
