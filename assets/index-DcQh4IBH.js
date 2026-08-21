@@ -46353,7 +46353,6 @@ const Shuffled$b = () => {
   const hasFeathers = useFeather();
   const hasSprint = useSprint();
   const hasMonkeyport = useMonkeyport();
-  const hasChunky = useChunky();
   const hasMini = useMini();
   const hasBlast = useBlast();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
@@ -46994,15 +46993,6 @@ const Shuffled$b = () => {
         name: "Shuffled Battle Arena: Back left of the infamous museum pillar",
         region: "Various Castle Rooms",
         canGetLogic: hasDiddy && hasSlam && hasMonkeyport
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CastleCheck,
-      {
-        id: 17067,
-        name: "Shuffled Battle Arena: Main museum room",
-        region: "Various Castle Rooms",
-        canGetLogic: hasChunky && hasSlam
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -49695,16 +49685,29 @@ const Shuffled$5 = () => {
   const hasSlam = useSlamCastle();
   const hasDK = useDk();
   const hasStrongKong = useStrong();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CastleCheck,
-    {
-      id: 17e3,
-      name: "Shuffled Battle Arena: In the flying book area of DK's library",
-      region: "Various Castle Rooms",
-      canGetLogic: isBreathing.in && hasDK && hasSlam && hasStrongKong,
-      canGetBreak: isBreathing.out && hasDK && hasSlam
-    }
-  ) });
+  const hasChunky = useChunky();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 17e3,
+        name: "Shuffled Battle Arena: In the flying book area of DK's library",
+        region: "Various Castle Rooms",
+        canGetLogic: isBreathing.in && hasDK && hasSlam && hasStrongKong,
+        canGetBreak: isBreathing.out && hasDK && hasSlam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CastleCheck,
+      {
+        id: 17e3,
+        name: "Shuffled Battle Arena: Main museum room",
+        region: "Various Castle Rooms",
+        canGetLogic: isBreathing.in && hasChunky && hasSlam,
+        canGetBreak: isBreathing.out && hasChunky && hasSlam
+      }
+    )
+  ] });
 };
 const RoomArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$5, {}) : null;
 const SurroundingsChecks = () => {
