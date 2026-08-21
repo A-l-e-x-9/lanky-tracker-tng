@@ -17,6 +17,27 @@ const hasDK = useDk()
         canGetLogic={isBreathing.in && hasDK && hasSlam}
         canGetBreak={isBreathing.out && hasDK && hasSlam}
       />
+      <CastleCheck
+        id={27040}
+        name="Shuffled Melon Crate: Near the Diddy switch in the dungeon"
+        region="Castle Dungeon"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={27058}
+        name="Shuffled Melon Crate: Near the upper cave's pit"
+        region="Castle Dungeon"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
+      <CastleCheck
+        id={27059}
+        name="Shuffled Melon Crate: Near Candy's"
+        region="Castle Dungeon"
+        canGetLogic={isBreathing.in}
+        canGetBreak={isBreathing.out}
+      />
     </CratePool>
   )
 }
