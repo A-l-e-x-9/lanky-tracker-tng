@@ -17,6 +17,20 @@ const hasDiddy = useDiddy()
         canGetLogic={isBreathing.in && hasDiddy && hasSlam}
         canGetBreak={isBreathing.out && hasDiddy && hasSlam}
       />
+      <CastleCheck
+        id={57014}
+        name="Shuffled Kasplat: At the useless pedestal in the Museum"
+        region="Various Castle Rooms"
+        canGetLogic={isBreathing.in && hasDiddy && hasSlam && hasMonkeyport}
+        canGetBreak={isBreathing.out && hasDiddy && hasSlam && hasMonkeyport}
+      />
+      <CastleCheck
+        id={57017}
+        name="Shuffled Kasplat: In DK's library"
+        region="Various Castle Rooms"
+        canGetLogic={isBreathing.in && hasDK && hasSlam}
+        canGetBreak={isBreathing.out && hasDK && hasSlam}
+      />
     </KasplatPool>
   )
 }

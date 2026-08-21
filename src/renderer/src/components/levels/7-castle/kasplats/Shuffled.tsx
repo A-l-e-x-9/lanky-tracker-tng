@@ -4,6 +4,7 @@ import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useMonkeyport, useDiddy, useCoconut, useDk, useClimbing } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 import DungeonKasplats from './Dungeon'
+import RoomKasplats from './Rooms'
 
 const Shuffled: React.FC = () => {
 const DKVanillaKasplat = useTreeKasplat()
@@ -20,6 +21,7 @@ const hasClimbing = useClimbing()
   return (
     <KasplatPool>
       <DungeonKasplats />
+      <RoomKasplats />
       <CastleCheck
         id={57000}
         name="Shuffled Kasplat: DK's Vanilla Location (in the tree)"
@@ -56,25 +58,11 @@ const hasClimbing = useClimbing()
         canGetBreak={isBreathing.out}
       />
       <CastleCheck
-        id={57014}
-        name="Shuffled Kasplat: At the useless pedestal in the Museum"
-        region="Various Castle Rooms"
-        canGetLogic={isBreathing.in && hasDiddy && hasSlam && hasMonkeyport}
-        canGetBreak={isBreathing.out && hasDiddy && hasSlam && hasMonkeyport}
-      />
-      <CastleCheck
         id={57016}
         name="Shuffled Kasplat: Outside DK's minecart game"
         region="Castle Crypt"
         canGetLogic={isBreathing.in && (hasCoconuts || cryptPreOpened) && hasClimbing}
         canGetBreak={isBreathing.out && (hasCoconuts || cryptPreOpened)}
-      />
-      <CastleCheck
-        id={57017}
-        name="Shuffled Kasplat: In DK's library"
-        region="Various Castle Rooms"
-        canGetLogic={isBreathing.in && hasDK && hasSlam}
-        canGetBreak={isBreathing.out && hasDK && hasSlam}
       />
     </KasplatPool>
   )

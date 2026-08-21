@@ -11,11 +11,15 @@ import ShopLocations from '../shops'
 import MainChecks from './Main'
 import MainArenas from '../arenas/Main'
 import MainCrates from '../crates/Main'
+import MainKasplats from '../kasplats/Main'
 import IglooChecks from './Igloo'
 import IglooArenas from '../arenas/Igloo'
+import IglooCrates from '../crates/Igloo'
+import IglooKasplats from '../kasplats/Igloo'
 import CabinsChecks from './Cabins'
 import CabinArenas from '../arenas/Cabins'
 import CabinCrates from '../crates/Cabins'
+import CabinKasplats from '../kasplats/Cabins'
 import ShuffledArenas from '../arenas/Shuffled'
 import ShuffledCrates from '../crates/Shuffled'
 import ShuffledDirt from '../dirt/Shuffled'
@@ -43,14 +47,26 @@ return (
     <MainArenas />
     <MainCrates />
   </div>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <MainKasplats />
+  </div>
     <IglooChecks />
   <div className="grid">
     <IglooArenas />
+    <IglooCrates />
+  </div>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <IglooKasplats />
   </div>
     <CabinsChecks />
   <div className="grid">
     <CabinArenas />
     <CabinCrates />
+  </div>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+    <CabinKasplats />
+  </div>
+  <div className="grid">
     <ShopLocations />
     <BossCheck />
     <ShuffledArenas />

@@ -1,6 +1,6 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import { usePlayLevel, useSlamLevel } from '../isles'
+import { usePlayLevel, useSlamLevel, useTroffAndScoff } from '../isles'
 import {
   useAnyGun,
   useAnyKong,
@@ -56,6 +56,9 @@ export const usePlayCaves = (): LogicBool => {
  * @returns true if we can slam switches in Crystal Caves.
  */
 export const useSlamCaves = (): boolean => useSlamLevel('Crystal Caves')
+
+//Alex addition: Number of CB's needed to get by Troff 'n' Scoff for this level
+export const useCavesTroffAndScoff = (): number => useTroffAndScoff('Crystal Caves')
 
 /*Alex addition: shuffled DK Portals*/
 //Is the DK Portal where the refrigerator in DK's Treehouse from beta footage led to?

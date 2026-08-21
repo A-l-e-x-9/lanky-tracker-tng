@@ -54,6 +54,36 @@ const hasStrongKong = useStrong()
         canGetLogic={isBreathing.in && hasDK && hasSlam && hasStrongKong}
         canGetBreak={isBreathing.out && hasDK && hasSlam}
       />
+      <CastleCheck
+        id={27062}
+        name="Shuffled Melon Crate: Near Tiny's race entrance"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam && hasMonkeyport}
+      />
+      <CastleCheck
+        id={27063}
+        name="Shuffled Melon Crate: In front of the infamous museum pillar"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam && hasMonkeyport}
+      />
+      <CastleCheck
+        id={27064}
+        name="Shuffled Melon Crate: Back right of the infamous museum pillar"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam && hasMonkeyport}
+      />
+      <CastleCheck
+        id={27065}
+        name="Shuffled Melon Crate: Behind the infamous museum pillar"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam && hasMonkeyport}
+      />
+      <CastleCheck
+        id={27066}
+        name="Shuffled Melon Crate: Back left of the infamous museum pillar"
+        region="Various Castle Rooms"
+        canGetLogic={hasDiddy && hasSlam && hasMonkeyport}
+      />
     </CratePool>
   )
 }
