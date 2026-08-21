@@ -1,11 +1,12 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGalleonLighthousePlatform, useGalleonSeasickShip } from '@renderer/hooks/galleon'
+import { useGalleonLighthousePlatform, useGalleonSeasickShip, useKevin } from '@renderer/hooks/galleon'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const canReachLighthouseOuter = useGalleonLighthousePlatform()
 const canReachChunkyShip = useGalleonSeasickShip()
+const canReachKevin = useKevin()
   return (
     <ArenaPool>
       <GalleonCheck

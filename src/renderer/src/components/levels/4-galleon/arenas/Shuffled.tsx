@@ -1,5 +1,5 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useArena, useGalleonLighthouseInside, useGalleonCannon, useKevin, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb, useGalleonSeasickShip } from '@renderer/hooks/galleon'
+import { useArena, useGalleonLighthouseInside, useGalleonCannon, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb, useGalleonSeasickShip } from '@renderer/hooks/galleon'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import { usePunch, useClimbing } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
@@ -8,7 +8,6 @@ const Shuffled: React.FC = () => {
 const canReachVanillaArena = useArena()
 const canReachLighthouse = useGalleonLighthouseInside()
 const canReachCannonGame = useGalleonCannon()
-const canReachKevin = useKevin()
 const canReachLankyGold = useLankyGoldGb()
 const canReachShipyard = useGalleonOutskirts()
 const canReachDiddyGold = useDiddyGoldGb()
