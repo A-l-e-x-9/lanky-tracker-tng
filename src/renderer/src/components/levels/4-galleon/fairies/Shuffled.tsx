@@ -37,34 +37,6 @@ const Shuffled: React.FC = () => {
         canGetBreak={vanillaFairy2.out}
       />
       <GalleonCheck
-        id={44002}
-        name="Shuffled Fairy: At the button that opens Tiny's 2DS room"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={44003}
-        name="Shuffled Fairy: 4-way intersection of tunnels"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={44004}
-        name="Shuffled Fairy: Under platforms near Cranky's"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
-        id={44005}
-        name="Shuffled Fairy: Path to Chunky's chests"
-        region="Galleon Caves"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <GalleonCheck
         id={44006}
         name="Shuffled Fairy: Underwater between 5DS and 2DS"
         region="Shipyard Outskirts"
@@ -84,20 +56,6 @@ const Shuffled: React.FC = () => {
         region="Shipyard Outskirts"
         canGetLogic={canReachOutskirts.in && hasCam}
         canGetBreak={canReachOutskirts.out && hasCam}
-      />
-      <GalleonCheck
-        id={44009}
-        name="Shuffled Fairy: At the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in && hasCam}
-        canGetBreak={canReachLighthouse.out && hasCam}
-      />
-      <GalleonCheck
-        id={44010}
-        name="Shuffled Fairy: Puking in Chunky's ship"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasCam}
-        canGetBreak={canReachChunkyShip.out && hasCam}
       />
       <GalleonCheck
         id={44011}

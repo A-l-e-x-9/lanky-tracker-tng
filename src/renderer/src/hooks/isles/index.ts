@@ -544,6 +544,7 @@ export const useSlamLevel = (level: Level): boolean => {
 }
 
 //An Alex addition to help implement Troff 'n' Scoff checks into this tracker:
+//I implemented all eight levels, but in reality, you only need seven...Helm has no boss, and Isles's boss, K. Rool, does not use a T&S portal.
 export const useTroffAndScoff = (level: Level): number => {
   const [level1, level2, level3, level4, level5, level6, level7, level8] = useDonkStore(useShallow((state) => [state.level1, state.level2, state.level3, state.level4, state.level5, state.level6, state.level7, state.level8]))
   const [troffAndScoff1, troffAndScoff2, troffAndScoff3, troffAndScoff4, troffAndScoff5, troffAndScoff6, troffAndScoff7, troffAndScoff8] = useDonkStore(useShallow((state) => [state.troffAndScoff.troffAndScoff1, state.troffAndScoff.troffAndScoff2, state.troffAndScoff.troffAndScoff3, state.troffAndScoff.troffAndScoff4, state.troffAndScoff.troffAndScoff5, state.troffAndScoff.troffAndScoff6, state.troffAndScoff.troffAndScoff7, state.troffAndScoff.troffAndScoff8]))

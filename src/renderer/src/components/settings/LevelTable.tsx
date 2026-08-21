@@ -22,7 +22,7 @@ const LevelTable = (): JSX.Element => {
   const key8Seed = useDonkStore(useShallow((state) => state.winCondition.key8)) ? 'all-bosses' : ''
   return (
     <section className="level-section">
-    <h3>Level Order, Keys, B. Locker, and Troff 'n' Scoff Requirements</h3>
+    <h3>Level Order, Keys, B. Lockers, and Troff 'n' Scoffs</h3>
       <section className="level-list">
         <section className="level1">
           <img src={l1} height={24} />

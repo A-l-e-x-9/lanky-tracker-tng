@@ -10,9 +10,11 @@ import TinyMedal from '../medals/TinyMedal'
 import ShopLocations from '../shops'
 import CavernsChecks from './Caverns'
 import CavernArenas from '../arenas/Caverns'
+import CavernFairies from '../fairies/Caverns'
 import CavernKasplats from '../kasplats/Caverns'
 import LighthouseChecks from './Lighthouse'
 import LighthouseArenas from '../arenas/Lighthouse'
+import LighthouseFairies from '../fairies/Lighthouse'
 import LighthouseKasplats from '../kasplats/Lighthouse'
 import OutskirtsChecks from './Outskirts'
 import OutskirtKasplats from '../kasplats/Outskirts'
@@ -44,12 +46,18 @@ return (
     <div className="grid">
       <CavernArenas />
     </div>
+    <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+      <CavernFairies />
+    </div>
     <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
       <CavernKasplats />
     </div>
       <LighthouseChecks />
     <div className="grid">
       <LighthouseArenas />
+    </div>
+    <div className={`grid ${isFairySeed && fairiesInRotation}`}>
+      <LighthouseFairies />
     </div>
     <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
       <LighthouseKasplats />

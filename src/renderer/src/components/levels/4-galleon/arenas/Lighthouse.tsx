@@ -85,6 +85,13 @@ const canReachChunkyShip = useGalleonSeasickShip()
         canGetLogic={canReachChunkyShip.in}
         canGetBreak={canReachChunkyShip.out}
       />
+      <GalleonCheck
+        id={14000}
+        name="Shuffled Battle Arena: Kevin's platform"
+        region="Lighthouse Area"
+        canGetLogic={canReachKevin.in}
+        canGetBreak={canReachKevin.out}
+      />
     </ArenaPool>
   )
 }

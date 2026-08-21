@@ -53,13 +53,6 @@ const hasClimbing = useClimbing()
         canGetBreak={canReachCannonGame.out}
       />
       <GalleonCheck
-        id={14024}
-        name="Shuffled Battle Arena: Kevin's platform"
-        region="Lighthouse Area"
-        canGetLogic={canReachKevin.in}
-        canGetBreak={canReachKevin.out}
-      />
-      <GalleonCheck
         id={14030}
         name="Shuffled Battle Arena: Top of Lanky's gold tower"
         region="Treasure Room"
