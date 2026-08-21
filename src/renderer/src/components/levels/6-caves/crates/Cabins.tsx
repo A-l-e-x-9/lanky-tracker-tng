@@ -1,13 +1,15 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useGeneralThing } from '@renderer/hooks/caves'
+import { useGeneralThing, useDkRotateGb } from '@renderer/hooks/caves'
 import { useShuffleCrates } from '@renderer/hooks/settings'
-import { useBongos, useGuitar } from '@renderer/hooks/kongs'
+import { useBongos, useGuitar, useSax } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
 const hasBongoes = useBongos()
 const hasGuitar = useGuitar()
+const canReachVanillaArena = useDkRotateGb()
+const hasSax = useSax()
   return (
     <CratePool>
       <CavesCheck
