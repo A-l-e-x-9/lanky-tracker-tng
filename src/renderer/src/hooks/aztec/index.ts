@@ -1,6 +1,6 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import { usePlayLevel, useSlamLevel } from '../isles'
+import { usePlayLevel, useSlamLevel, useTroffAndScoff } from '../isles'
 import {
   useAnyKong,
   useBarrel,
@@ -54,6 +54,9 @@ export const usePlayAztec = (): LogicBool => {
     out: canEnter.out
   }
 }
+
+//Alex addition: Number of CB's needed to get by Troff 'n' Scoff for this level
+export const useAztecTroffAndScoff = (): number => useTroffAndScoff('Angry Aztec')
 
 /*Alex addition: shuffled DK Portals*/
 //Is the DK Portal past the two quicksand pits blocking the first half of the level?
