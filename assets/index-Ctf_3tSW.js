@@ -45383,6 +45383,7 @@ const usePlayCastle = () => {
   };
 };
 const useSlamCastle = () => useSlamLevel("Creepy Castle");
+const useCastleTroffAndScoff = () => useTroffAndScoff("Creepy Castle");
 const useTreePortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.treePortal));
 const useTreeChunkyPortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.treeChunkyPortal));
 const useCryptOutsidePortal = () => useDonkStore(useShallow((state) => state.shuffledCastlePortals.cryptOutsidePortal));
@@ -45790,17 +45791,378 @@ const GreenhouseArena = () => /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, {
     canGetLogic: useArena()
   }
 ) }) });
+const useDkMedalCommonLogic = () => {
+  const tree = useCastleTree();
+  const gun = useCoconut();
+  let bananas = 50;
+  if ((tree.in || tree.out) && gun) {
+    bananas += 15;
+  }
+  return bananas;
+};
+const useDkMedalInLogic = () => {
+  const inStage = usePlayCastle();
+  const canSlam = useSlamCastle();
+  const kong = useDk();
+  const gun = useCoconut();
+  const crystal = useStrong();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useDkMedalCommonLogic();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (canSlam) {
+    bananas += 10;
+    if (crystal) {
+      bananas += 10;
+    }
+  }
+  if (gun) {
+    bananas += 15;
+  }
+  return bananas;
+};
+const useDkMedalOutLogic = () => {
+  const inStage = usePlayCastle();
+  const canSlam = useSlamCastle();
+  const peanut = usePeanut();
+  const pineapple = usePineapple();
+  const kong = useDk();
+  const gun = useCoconut();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useDkMedalCommonLogic();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (canSlam) {
+    bananas += 20;
+  }
+  if (gun) {
+    bananas += 15;
+  } else if (peanut || pineapple) {
+    bananas += 5;
+  }
+  return bananas;
+};
+const useDiddyMedalCommonLogic = () => {
+  const canSlam = useSlamCastle();
+  const punch = usePunch();
+  const gun = usePeanut();
+  const crystal = useRocket();
+  let bananas = 0;
+  if (crystal) {
+    bananas += 5;
+  }
+  if (gun) {
+    bananas += 20;
+  }
+  if (punch) {
+    bananas += 20;
+  }
+  if (canSlam) {
+    if (crystal) {
+      bananas += 15;
+    }
+    if (gun) {
+      bananas += 20;
+    }
+  }
+  return bananas;
+};
+const useDiddyMedalInLogic = () => {
+  const inStage = usePlayCastle();
+  const kong = useDiddy();
+  const gun = usePeanut();
+  const move = useCharge();
+  const crystal = useRocket();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useDiddyMedalCommonLogic();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (crystal) {
+    bananas += 5;
+  }
+  if (gun) {
+    bananas += 5;
+    if (gun && move) {
+      bananas += 10;
+    }
+  }
+  return bananas;
+};
+const useDiddyMedalOutLogic = () => {
+  const inStage = usePlayCastle();
+  const coconut = useCoconut();
+  const pineapple = usePineapple();
+  const kong = useDiddy();
+  const gun = usePeanut();
+  const move = useCharge();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useDiddyMedalCommonLogic() + 5;
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (coconut || pineapple) {
+    bananas += 5;
+    if (gun && move) {
+      bananas += 10;
+    }
+  }
+  return bananas;
+};
+const useLankyMedalCommonLogic = () => {
+  const canSlam = useSlamCastle();
+  const gun = useGrape();
+  let bananas = 30;
+  if (canSlam) {
+    bananas += 30;
+    if (gun) {
+      bananas += 20;
+    }
+  }
+  return bananas;
+};
+const useLankyMedalInLogic = () => {
+  const inStage = usePlayCastle();
+  const canSlam = useSlamCastle();
+  const kong = useLanky();
+  const gun = useGrape();
+  const music = useTrombone();
+  const crystal = useSprint();
+  const pad = useBalloon();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useLankyMedalCommonLogic();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (gun && crystal) {
+    bananas += 10;
+  }
+  if (canSlam && gun && music && pad) {
+    bananas += 10;
+  }
+  return bananas;
+};
+const useLankyMedalOutLogic = () => {
+  const inStage = usePlayCastle();
+  const canSlam = useSlamCastle();
+  const kong = useLanky();
+  const gun = useGrape();
+  const music = useTrombone();
+  const crystal = useSprint();
+  const pad = useBalloon();
+  const dk2 = useDk();
+  const diddy = useDiddy();
+  const twirl = useTwirl();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useLankyMedalCommonLogic();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (gun && (crystal || dk2 || diddy)) {
+    bananas += 10;
+  }
+  if (canSlam && gun && (music && pad || twirl)) {
+    bananas += 10;
+  }
+  return bananas;
+};
+const useTinyMedalCommonLogic = () => {
+  const canSlam = useSlamCastle();
+  const gun = useFeather();
+  const crystal = useMini();
+  const pad = useMonkeyport();
+  const diddy = useDiddy();
+  let bananas = 50;
+  if (crystal) {
+    bananas += 5;
+  }
+  if (gun) {
+    bananas += 10;
+  }
+  if (diddy && canSlam) {
+    bananas += 5;
+    if (pad) {
+      bananas += 15;
+      if (gun) {
+        bananas += 10;
+      }
+    }
+  }
+  return bananas;
+};
+const useTinyMedalInLogic = () => {
+  const inStage = usePlayCastle();
+  const kong = useTiny();
+  const gun = useFeather();
+  const shuffleBananas = useShuffleColoredBananas();
+  const bananas = useTinyMedalCommonLogic();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  return gun ? bananas + 5 : bananas;
+};
+const useTinyMedalOutLogic = () => {
+  const inStage = usePlayCastle();
+  const kong = useTiny();
+  const gun = useFeather();
+  const grape = useGrape();
+  const shuffleBananas = useShuffleColoredBananas();
+  const bananas = useTinyMedalCommonLogic();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  return gun || grape ? bananas + 5 : bananas;
+};
+const useChunkyMedalInLogic = () => {
+  const inStage = usePlayCastle();
+  const canSlam = useSlamCastle();
+  const tree = useCastleTree();
+  const boulderTech = useBoulderTech();
+  const kong = useChunky();
+  const gun = usePineapple();
+  const move = usePunch();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 30;
+  if (tree.in) {
+    bananas += 5;
+    if (move && gun) {
+      bananas += 10;
+    }
+  }
+  if (gun && move) {
+    bananas += 40;
+  }
+  if (canSlam) {
+    if (gun) {
+      bananas += 10;
+    }
+    if (move && boulderTech) {
+      bananas += 5;
+    }
+  }
+  return bananas;
+};
+const useChunkyMedalOutLogic = () => {
+  const inStage = usePlayCastle();
+  const canSlam = useSlamCastle();
+  const tree = useCastleTree();
+  const boulderTech = useBoulderTech();
+  const kong = useChunky();
+  const gun = usePineapple();
+  const move = usePunch();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 30;
+  if (tree.out) {
+    bananas += 5;
+    if (move && gun) {
+      bananas += 10;
+    }
+  }
+  if (gun && move) {
+    bananas += 40;
+  }
+  if (canSlam) {
+    if (gun) {
+      bananas += 10;
+    }
+    if (move && boulderTech) {
+      bananas += 5;
+    }
+  }
+  return bananas;
+};
 const BossCheck$1 = () => {
   const inStage = usePlayCastle();
   const anyKong = useAnyKong();
+  const DKCurrentCBsIn = useDkMedalInLogic();
+  const DKCurrentCBsOut = useDkMedalOutLogic();
+  const diddyCurrentCBsIn = useDiddyMedalInLogic();
+  const diddyCurrentCBsOut = useDiddyMedalOutLogic();
+  const lankyCurrentCBsIn = useLankyMedalInLogic();
+  const lankyCurrentCBsOut = useLankyMedalOutLogic();
+  const tinyCurrentCBsIn = useTinyMedalInLogic();
+  const tinyCurrentCBsOut = useTinyMedalOutLogic();
+  const chunkyCurrentCBsIn = useChunkyMedalInLogic();
+  const chunkyCurrentCBsOut = useChunkyMedalOutLogic();
+  const currentCBCountIn = DKCurrentCBsIn + diddyCurrentCBsIn + lankyCurrentCBsIn + tinyCurrentCBsIn + chunkyCurrentCBsIn;
+  const currentCBCountOut = DKCurrentCBsOut + diddyCurrentCBsOut + lankyCurrentCBsOut + tinyCurrentCBsOut + chunkyCurrentCBsOut;
+  const troffAndScoff = useCastleTroffAndScoff();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BossPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     CastleCheck,
     {
       id: 7105,
       name: "Castle Boss",
       region: "Bosses",
-      canGetLogic: inStage.in && anyKong,
-      canGetBreak: inStage.out && anyKong
+      canGetLogic: inStage.in && anyKong && currentCBCountIn >= troffAndScoff,
+      canGetBreak: inStage.out && anyKong && currentCBCountOut >= troffAndScoff
     }
   ) });
 };
@@ -49071,82 +49433,6 @@ const KasplatLocations = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat, {})
 ] });
-const useChunkyMedalInLogic = () => {
-  const inStage = usePlayCastle();
-  const canSlam = useSlamCastle();
-  const tree = useCastleTree();
-  const boulderTech = useBoulderTech();
-  const kong = useChunky();
-  const gun = usePineapple();
-  const move = usePunch();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 30;
-  if (tree.in) {
-    bananas += 5;
-    if (move && gun) {
-      bananas += 10;
-    }
-  }
-  if (gun && move) {
-    bananas += 40;
-  }
-  if (canSlam) {
-    if (gun) {
-      bananas += 10;
-    }
-    if (move && boulderTech) {
-      bananas += 5;
-    }
-  }
-  return bananas;
-};
-const useChunkyMedalOutLogic = () => {
-  const inStage = usePlayCastle();
-  const canSlam = useSlamCastle();
-  const tree = useCastleTree();
-  const boulderTech = useBoulderTech();
-  const kong = useChunky();
-  const gun = usePineapple();
-  const move = usePunch();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 30;
-  if (tree.out) {
-    bananas += 5;
-    if (move && gun) {
-      bananas += 10;
-    }
-  }
-  if (gun && move) {
-    bananas += 40;
-  }
-  if (canSlam) {
-    if (gun) {
-      bananas += 10;
-    }
-    if (move && boulderTech) {
-      bananas += 5;
-    }
-  }
-  return bananas;
-};
 const ChunkyMedal = () => {
   const inLogic = useChunkyMedalInLogic();
   const outLogic = useChunkyMedalOutLogic();
@@ -49175,85 +49461,6 @@ const ChunkyMedal = () => {
       }
     ) })
   ] });
-};
-const useDiddyMedalCommonLogic = () => {
-  const canSlam = useSlamCastle();
-  const punch = usePunch();
-  const gun = usePeanut();
-  const crystal = useRocket();
-  let bananas = 0;
-  if (crystal) {
-    bananas += 5;
-  }
-  if (gun) {
-    bananas += 20;
-  }
-  if (punch) {
-    bananas += 20;
-  }
-  if (canSlam) {
-    if (crystal) {
-      bananas += 15;
-    }
-    if (gun) {
-      bananas += 20;
-    }
-  }
-  return bananas;
-};
-const useDiddyMedalInLogic = () => {
-  const inStage = usePlayCastle();
-  const kong = useDiddy();
-  const gun = usePeanut();
-  const move = useCharge();
-  const crystal = useRocket();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDiddyMedalCommonLogic();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (crystal) {
-    bananas += 5;
-  }
-  if (gun) {
-    bananas += 5;
-    if (gun && move) {
-      bananas += 10;
-    }
-  }
-  return bananas;
-};
-const useDiddyMedalOutLogic = () => {
-  const inStage = usePlayCastle();
-  const coconut = useCoconut();
-  const pineapple = usePineapple();
-  const kong = useDiddy();
-  const gun = usePeanut();
-  const move = useCharge();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDiddyMedalCommonLogic() + 5;
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (coconut || pineapple) {
-    bananas += 5;
-    if (gun && move) {
-      bananas += 10;
-    }
-  }
-  return bananas;
 };
 const DiddyMedal = () => {
   const inLogic = useDiddyMedalInLogic();
@@ -49284,71 +49491,6 @@ const DiddyMedal = () => {
     ) })
   ] });
 };
-const useDkMedalCommonLogic = () => {
-  const tree = useCastleTree();
-  const gun = useCoconut();
-  let bananas = 50;
-  if ((tree.in || tree.out) && gun) {
-    bananas += 15;
-  }
-  return bananas;
-};
-const useDkMedalInLogic = () => {
-  const inStage = usePlayCastle();
-  const canSlam = useSlamCastle();
-  const kong = useDk();
-  const gun = useCoconut();
-  const crystal = useStrong();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDkMedalCommonLogic();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (canSlam) {
-    bananas += 10;
-    if (crystal) {
-      bananas += 10;
-    }
-  }
-  if (gun) {
-    bananas += 15;
-  }
-  return bananas;
-};
-const useDkMedalOutLogic = () => {
-  const inStage = usePlayCastle();
-  const canSlam = useSlamCastle();
-  const peanut = usePeanut();
-  const pineapple = usePineapple();
-  const kong = useDk();
-  const gun = useCoconut();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useDkMedalCommonLogic();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (canSlam) {
-    bananas += 20;
-  }
-  if (gun) {
-    bananas += 15;
-  } else if (peanut || pineapple) {
-    bananas += 5;
-  }
-  return bananas;
-};
 const DkMedal = () => {
   const inLogic = useDkMedalInLogic();
   const outLogic = useDkMedalOutLogic();
@@ -49378,75 +49520,6 @@ const DkMedal = () => {
     ) })
   ] });
 };
-const useLankyMedalCommonLogic = () => {
-  const canSlam = useSlamCastle();
-  const gun = useGrape();
-  let bananas = 30;
-  if (canSlam) {
-    bananas += 30;
-    if (gun) {
-      bananas += 20;
-    }
-  }
-  return bananas;
-};
-const useLankyMedalInLogic = () => {
-  const inStage = usePlayCastle();
-  const canSlam = useSlamCastle();
-  const kong = useLanky();
-  const gun = useGrape();
-  const music = useTrombone();
-  const crystal = useSprint();
-  const pad = useBalloon();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useLankyMedalCommonLogic();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (gun && crystal) {
-    bananas += 10;
-  }
-  if (canSlam && gun && music && pad) {
-    bananas += 10;
-  }
-  return bananas;
-};
-const useLankyMedalOutLogic = () => {
-  const inStage = usePlayCastle();
-  const canSlam = useSlamCastle();
-  const kong = useLanky();
-  const gun = useGrape();
-  const music = useTrombone();
-  const crystal = useSprint();
-  const pad = useBalloon();
-  const dk2 = useDk();
-  const diddy = useDiddy();
-  const twirl = useTwirl();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useLankyMedalCommonLogic();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (gun && (crystal || dk2 || diddy)) {
-    bananas += 10;
-  }
-  if (canSlam && gun && (music && pad || twirl)) {
-    bananas += 10;
-  }
-  return bananas;
-};
 const LankyMedal = () => {
   const inLogic = useLankyMedalInLogic();
   const outLogic = useLankyMedalOutLogic();
@@ -49475,65 +49548,6 @@ const LankyMedal = () => {
       }
     ) })
   ] });
-};
-const useTinyMedalCommonLogic = () => {
-  const canSlam = useSlamCastle();
-  const gun = useFeather();
-  const crystal = useMini();
-  const pad = useMonkeyport();
-  const diddy = useDiddy();
-  let bananas = 50;
-  if (crystal) {
-    bananas += 5;
-  }
-  if (gun) {
-    bananas += 10;
-  }
-  if (diddy && canSlam) {
-    bananas += 5;
-    if (pad) {
-      bananas += 15;
-      if (gun) {
-        bananas += 10;
-      }
-    }
-  }
-  return bananas;
-};
-const useTinyMedalInLogic = () => {
-  const inStage = usePlayCastle();
-  const kong = useTiny();
-  const gun = useFeather();
-  const shuffleBananas = useShuffleColoredBananas();
-  const bananas = useTinyMedalCommonLogic();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  return gun ? bananas + 5 : bananas;
-};
-const useTinyMedalOutLogic = () => {
-  const inStage = usePlayCastle();
-  const kong = useTiny();
-  const gun = useFeather();
-  const grape = useGrape();
-  const shuffleBananas = useShuffleColoredBananas();
-  const bananas = useTinyMedalCommonLogic();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  return gun || grape ? bananas + 5 : bananas;
 };
 const TinyMedal = () => {
   const inLogic = useTinyMedalInLogic();
