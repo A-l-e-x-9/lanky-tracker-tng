@@ -1,37 +1,15 @@
-import useDonkStore from '@renderer/store'
-import { useShallow } from 'zustand/react/shallow'
 import CratePool from '@renderer/components/pools/Crates'
-import { useGeneralThing, useDkRotateGb, useChunkyClearGb, useTinyPortGb, useTinyCaveGb, useIceWalls, useCavesMiniFunky, useCavesPillar, useCavesIgloo, useLankyIglooGb, useLankyCastleGb, useChunkyCabinGb } from '@renderer/hooks/caves'
+import { useGeneralThing, useCavesIgloo } from '@renderer/hooks/caves'
 import { useShuffleCrates } from '@renderer/hooks/settings'
-import { useMonkeyport, useRocket, usePunch, useBalloon, useHighGrab, useChunky, useBarrel, useBongos, useSax, useGuitar, useTrombone, useTriangle } from '@renderer/hooks/kongs'
+import { useBongos, useSax, useGuitar } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
-const canReachVanillaArena = useDkRotateGb()
-const canDoKoshaGB = useChunkyClearGb()
-const hasMonkeyport = useMonkeyport()
-const canDoTinyIglooGB = useTinyPortGb()
-const hasJetbarrel = useRocket()
-const canDoShrinkGB = useTinyCaveGb()
-const hasPunch = usePunch()
-const canGetPastIceWalls = useIceWalls()
-const hasBalloon = useBalloon()
-const canHighGrab = useHighGrab()
-const hasChunky = useChunky()
-const hasBarrels = useBarrel()
-const canReachWarp4 = useCavesMiniFunky()
-const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
-const canDoLankyKasplat = useCavesPillar()
 const canReachIgloo = useCavesIgloo()
 const hasBongoes = useBongos()
-const canDoLanky5DI = useLankyIglooGb()
 const hasSax = useSax()
 const hasGuitar = useGuitar()
-const canDoIceCastle = useLankyCastleGb()
-const hasTrombone = useTrombone()
-const canDoChunky5DC = useChunkyCabinGb()
-const hasTriangle = useTriangle()
   return (
     <CratePool>
       <CavesCheck
