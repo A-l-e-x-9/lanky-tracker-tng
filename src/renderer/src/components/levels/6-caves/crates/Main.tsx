@@ -1,5 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useGeneralThing } from '@renderer/hooks/caves'
+import { useGeneralThing, useCavesPillar, useLankyCastleGb } from '@renderer/hooks/caves'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useRocket, useTwirl, useDk } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
@@ -9,6 +9,8 @@ const isBreathing = useGeneralThing()
 const hasJetbarrel = useRocket()
 const isHinaKagiyama = useTwirl()
 const hasDK = useDk()
+const canDoLankyKasplat = useCavesPillar()
+const canDoIceCastle = useLankyCastleGb()
   return (
     <CratePool>
       <CavesCheck
