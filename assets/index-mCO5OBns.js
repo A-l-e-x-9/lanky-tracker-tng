@@ -10039,7 +10039,8 @@ const initialSettings = {
     helmItemNum2: 2,
     halfMedalCount: 50,
     shuffleDKPortals: true,
-    shuffleLoadingZones: false
+    shuffleLoadingZones: false,
+    lockedWrinklyDoors: false
   }
 };
 const settingSlice = (set) => {
@@ -53205,7 +53206,7 @@ const kasplatIcon = "" + new URL("kasplat-C3MHLT8N.png", import.meta.url).href;
 const dkPortalIcon = "" + new URL("dk-portal-DhmhLo9q.png", import.meta.url).href;
 const LZRIcon = "" + new URL("butwherewasthekasplat-D62HdKcb.png", import.meta.url).href;
 const bLocker = "" + new URL("b-locker-4HJOwKEa.png", import.meta.url).href;
-const customStyles$4 = {
+const customStyles$5 = {
   content: {
     backgroundColor: "#002040",
     color: "#ffffff"
@@ -53228,7 +53229,7 @@ const GeneratorSettings = () => {
         isOpen,
         onRequestClose: closeModal,
         contentLabel: "Generator Settings",
-        style: customStyles$4,
+        style: customStyles$5,
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Tracker Settings" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
@@ -54216,7 +54217,7 @@ const GeneratorSettings = () => {
     )
   ] });
 };
-const customStyles$3 = {
+const customStyles$4 = {
   content: {
     backgroundColor: "#400020",
     color: "#ffffff"
@@ -54238,7 +54239,7 @@ const ShuffledShops = () => {
         isOpen,
         onRequestClose: closeModal,
         contentLabel: "Shop Shuffler",
-        style: customStyles$3,
+        style: customStyles$4,
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Shop Shuffler" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "pool", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -55308,13 +55309,13 @@ const ShuffledShops = () => {
     )
   ] });
 };
-const customStyles$2 = {
+const customStyles$3 = {
   content: {
     backgroundColor: "#404000",
     color: "#ffffff"
   }
 };
-const SlamShuffler = () => {
+const SlamShuffler$1 = () => {
   const [isOpen, setOpen] = reactExports.useState(false);
   const [setJapesSlam, setAztecSlam, setFactorySlam, setGalleonSlam, setForestSlam, setCavesSlam, setCastleSlam] = useDonkStore(
     useShallow((state) => [state.setJapesSlam, state.setAztecSlam, state.setFactorySlam, state.setGalleonSlam, state.setForestSlam, state.setCavesSlam, state.setCastleSlam])
@@ -55331,7 +55332,7 @@ const SlamShuffler = () => {
         isOpen,
         onRequestClose: closeModal,
         contentLabel: "Progressive Slam Settings",
-        style: customStyles$2,
+        style: customStyles$3,
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Progressive Slam Shuffler" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
@@ -55572,7 +55573,7 @@ const SlamShuffler = () => {
     )
   ] });
 };
-const customStyles$1 = {
+const customStyles$2 = {
   content: {
     backgroundColor: "#200040",
     color: "#ffffff"
@@ -55592,7 +55593,7 @@ const ShuffledDKPortals = () => {
         isOpen,
         onRequestClose: closeModal,
         contentLabel: "DK Portal Shuffler",
-        style: customStyles$1,
+        style: customStyles$2,
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "DK Portal Shuffler" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
@@ -56283,7 +56284,7 @@ const ShuffledDKPortals = () => {
     )
   ] });
 };
-const customStyles = {
+const customStyles$1 = {
   content: {
     backgroundColor: "#004000",
     color: "#ffffff"
@@ -56302,12 +56303,70 @@ const LoadingZoneRandomizer = () => {
         isOpen,
         onRequestClose: closeModal,
         contentLabel: "LZR Settings",
-        style: customStyles,
+        style: customStyles$1,
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Loading Zone Randomizer" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: "Coming Soon™." }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: `And by "soon", I mean "when Satoru Iwata comes back to Nintendo". I absolutely HATE LZR, so this will probably be the last thing I ever do along with shuffling the colored bananas. =_=; If YOU have a solution, why don't you edit this damn thing yourself and make a pull request? -Alex` })
+          ] })
+        ] })
+      }
+    )
+  ] });
+};
+const customStyles = {
+  content: {
+    backgroundColor: "#000000",
+    color: "#ffffff"
+  }
+};
+const SlamShuffler = () => {
+  const [isOpen, setOpen] = reactExports.useState(false);
+  const openModal = () => setOpen(true);
+  const closeModal = () => setOpen(false);
+  const wrinklyDoorShuffler = useDonkStore(useShallow((state) => state.settings.lockedWrinklyDoors)) ? "" : "locked-wrinkly";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `${wrinklyDoorShuffler}`, onClick: openModal, title: "Click to open Wrinkly door settings.", children: "⚙️" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Modal,
+      {
+        isOpen,
+        onRequestClose: closeModal,
+        contentLabel: "Wrinkly Door Settings",
+        style: customStyles,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Wrinkly Door Settings" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "WARNING:" }),
+            ` For some incredibly bizarre-ass reason, whenever Wrinkly doors are in the rotation, passing by a locked Wrinkly door won't cause her to say "I will not reveal my secret until X items" like she would when they are out, thus completely killing the purpose of this tool. Even worse, your spoiler log will only tell you the maximum amount of an item you need, not the amount for each level. I might make it in the future so that you only need to put in the max amount, and this tracker will determine the rest by multiplying by sevenths, but that's hard. In the meantime, please go `,
+            /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/2dos/DK64-Randomizer/issues", children: "yell at 2Dos to fix this Randomizer issue" }),
+            " if he hasn't already."
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Also, assuming it even needs to, this tool currently doesn't account for shuffled Wrinkly/Troff 'n' Scoff Doors or Progressive Hints, because Alex hates those settings and wants them to die." }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "What item locks Wrinkly Kong's doors for your current seed?" }),
+            "//put selector like the one for the Helm doors here",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the indicated item for Japes:" }),
+            " //put CountSelector here",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the indicated item for Aztec:" }),
+            " //put CountSelector here",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the indicated item for Factory:" }),
+            " //put CountSelector here",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the indicated item for Galleon:" }),
+            " //put CountSelector here",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the indicated item for Forest:" }),
+            " //put CountSelector here",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the indicated item for Caves:" }),
+            " //put CountSelector here",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the indicated item for Castle:" }),
+            " //put CountSelector here",
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+              'Are you playing the original game or a seed with "Kongless Hint Doors" off?',
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              "Enabling this will also make the doors Kong-locked."
+            ] }),
+            " //put checkbox here"
           ] })
         ] })
       }
@@ -56366,6 +56425,7 @@ const RuntimeSettings = () => {
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? "" : "portal-shuffler";
   const lzrShuffler = useDonkStore(useShallow((state) => state.settings.shuffleLoadingZones)) ? "" : "lzr-shuffler";
   const slamShuffler = useDonkStore(useShallow((state) => state.settings.progressiveSlams)) ? "" : "slam-shuffler";
+  const wrinklyDoorShuffler = useDonkStore(useShallow((state) => state.settings.lockedWrinklyDoors)) ? "" : "locked-wrinkly";
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "runtime-settings", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Settings" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(GeneratorSettings, {}),
@@ -56376,11 +56436,13 @@ const RuntimeSettings = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `${shopShuffler}`, children: "Shuffled Shops:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledShops, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `${slamShuffler}`, children: "Progressive Slams:" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(SlamShuffler, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(SlamShuffler$1, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `${portalShuffler}`, children: "Shuffled DK Portals:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDKPortals, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `${lzrShuffler}`, children: "Loading Zone Randomizer:" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(LoadingZoneRandomizer, {})
+    /* @__PURE__ */ jsxRuntimeExports.jsx(LoadingZoneRandomizer, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `${wrinklyDoorShuffler}`, children: "Wrinkly Doors:" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(SlamShuffler, {})
   ] }) });
 };
 const SwitchsanitySwitch = (props) => {
