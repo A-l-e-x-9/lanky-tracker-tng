@@ -17,8 +17,8 @@ const LoadingZoneRandomizer: React.FC = () => {
   const lzrShuffler = useDonkStore(useShallow((state) => state.settings.shuffleLoadingZones)) ? '' : 'lzr-shuffler'
 
   return (
-    <span>
-      <span className={`${lzrShuffler}`} onClick={openModal} title="Click to open the Loading Zone Randomizer.">
+    <span className={`${lzrShuffler}`}>
+      <span onClick={openModal} title="Click to open the Loading Zone Randomizer.">
         ⚙️
       </span>
       <Modal
