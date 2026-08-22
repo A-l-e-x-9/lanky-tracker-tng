@@ -91,7 +91,7 @@ const RuntimeSettings: React.FC = () => {
         <ShuffledDKPortals />
         <p className={`${lzrShuffler}`}>Loading Zone Randomizer:</p>
         <LoadingZoneRandomizer />
-        <p className={`${wrinklyDoorShuffler}`}>Wrinkly Doors: </p>
+        <p className={`${wrinklyDoorShuffler}`}>Wrinkly Doors:</p>
         <LockedWrinklyDoors />
       </div>
     </section>
