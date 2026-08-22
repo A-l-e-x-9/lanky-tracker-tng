@@ -1,6 +1,6 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import { usePlayLevel, useSlamLevel } from '../isles'
+import { usePlayLevel, useSlamLevel, useTroffAndScoff } from '../isles'
 import {
   useAnyGun,
   useAnyKong,
@@ -50,6 +50,9 @@ export const usePlayJapes = (): LogicBool => {
  * @returns true if we can slam switches in Jungle Japes.
  */
 export const useSlamJapes = (): boolean => useSlamLevel('Jungle Japes')
+
+//Alex addition: Number of CB's needed to get by Troff 'n' Scoff for this level
+export const useJapesTroffAndScoff = (): number => useTroffAndScoff('Jungle Japes')
 
 /*Alex addition: shuffled DK Portals*/
 //Is the DK Portal near Diddy's vanilla prison?
