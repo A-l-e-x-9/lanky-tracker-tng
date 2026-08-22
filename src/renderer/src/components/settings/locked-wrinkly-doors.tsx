@@ -42,7 +42,7 @@ const SlamShuffler: React.FC = () => {
           <p>Number of the indicated item for Forest:</p> //put CountSelector here
           <p>Number of the indicated item for Caves:</p> //put CountSelector here
           <p>Number of the indicated item for Castle:</p> //put CountSelector here
-          <hr /> //<---Imagine still having to use XHTML-style tags in 2026. Why did the TypeScript makers design their code this way? -_-;;;
+          <hr />
           <p>Are you playing the original game or a seed with "Kongless Hint Doors" off?<br />
           Enabling this will also make the doors Kong-locked.</p> //put checkbox here
           </section>
