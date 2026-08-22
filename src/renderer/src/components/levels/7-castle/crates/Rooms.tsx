@@ -1,7 +1,7 @@
 import CratePool from '@renderer/components/pools/Crates'
 import { useGeneralThing, useSlamCastle } from '@renderer/hooks/castle'
 import { useShuffleCrates } from '@renderer/hooks/settings'
-import { useDiddy, useDk, useStrong. useMonkeyport } from '@renderer/hooks/kongs'
+import { useDiddy, useDk, useStrong, useMonkeyport } from '@renderer/hooks/kongs'
 import CastleCheck from '../check'
 
 const Shuffled: React.FC = () => {
