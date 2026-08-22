@@ -18760,6 +18760,7 @@ const usePlayJapes = () => {
   };
 };
 const useSlamJapes = () => useSlamLevel("Jungle Japes");
+const useJapesTroffAndScoff = () => useTroffAndScoff("Jungle Japes");
 const usePortalNearDiddy = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy));
 const useOutsidePaintingPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.outsidePaintingPortal));
 const useStormyPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal));
@@ -19225,6 +19226,422 @@ const FunkyArena = () => {
   ) }) });
 };
 const BossPool = ({ children }) => usePoolKeys() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const useDkMedalInLogic$6 = () => {
+  const inStage = usePlayJapes();
+  const haveRambiCage = useJapesRambi();
+  const kongGates = useJapesKongGates();
+  const kong = useDk();
+  const vine = useVine();
+  const pad = useBlast();
+  const gun = useCoconut();
+  const climbing = useClimbing();
+  const bananaports = useBananaportAll();
+  const shuffleBananas = useShuffleColoredBananas();
+  const DKPortal = usePortalNearDiddy();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 5;
+  if (climbing) {
+    bananas += 15;
+  }
+  if (climbing || bananaports || DKPortal) {
+    bananas += 16;
+  }
+  if (vine && climbing) {
+    bananas += 5;
+  }
+  if (gun) {
+    bananas += 20;
+  }
+  if (vine && climbing && pad) {
+    bananas += 10;
+  }
+  if (kongGates.in) {
+    bananas += 9;
+    if (gun) {
+      bananas += 10;
+    }
+    if (haveRambiCage.in) {
+      bananas += 10;
+    }
+  }
+  return bananas;
+};
+const useDkMedalOutLogic$6 = () => {
+  const inStage = usePlayJapes();
+  const haveRambiCage = useJapesRambi();
+  const kongGates = useJapesKongGates();
+  const kong = useDk();
+  const vine = useVine();
+  const pad = useBlast();
+  const gun = useCoconut();
+  const climbing = useClimbing();
+  const bananaports = useBananaportAll();
+  const shuffleBananas = useShuffleColoredBananas();
+  const DKPortal = usePortalNearDiddy();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 5;
+  if (climbing) {
+    bananas += 15;
+  }
+  if (climbing || bananaports || DKPortal) {
+    bananas += 16;
+  }
+  if (vine && climbing) {
+    bananas += 5;
+  }
+  if (gun) {
+    bananas += 20;
+  }
+  if (vine && climbing && pad) {
+    bananas += 10;
+  }
+  if (kongGates.out) {
+    bananas += 9;
+    if (gun) {
+      bananas += 10;
+    }
+    if (haveRambiCage.out) {
+      bananas += 10;
+    }
+  }
+  return bananas;
+};
+const useDiddyMedalCommonLogic$5 = () => {
+  const haveRambiCage = useJapesRambi();
+  const sideArea = useJapesSideArea();
+  const canSlam = useSlamJapes();
+  const gun = usePeanut();
+  const dive = useDive();
+  const kongGates = useJapesKongGates();
+  const climbing = useClimbing();
+  const bananaport = useBananaportAll();
+  const DKPortal = usePortalNearDiddy();
+  let bananas = 5;
+  if (climbing) {
+    bananas += 20;
+  }
+  if (climbing || bananaport || DKPortal) {
+    bananas += 7;
+  }
+  if (dive.in || dive.out) {
+    bananas += 10;
+  }
+  if ((sideArea.in || sideArea.out) && gun) {
+    bananas += 10;
+  }
+  if (gun && (climbing || bananaport || DKPortal)) {
+    bananas += 20;
+    if (canSlam) {
+      bananas += 15;
+    }
+  }
+  if (kongGates.in || kongGates.out) {
+    bananas += 3;
+    if (haveRambiCage.in || haveRambiCage.out) {
+      bananas += 5;
+    }
+  }
+  return bananas;
+};
+const useDiddyMedalInLogic$6 = () => {
+  const inStage = usePlayJapes();
+  const canSlam = useSlamJapes();
+  const kong = useDiddy();
+  const gun = usePeanut();
+  const move = useCharge();
+  const shuffleBananas = useShuffleColoredBananas();
+  const climbing = useClimbing();
+  const bananaport = useBananaportAll();
+  const DKPortal = usePortalNearDiddy();
+  let bananas = useDiddyMedalCommonLogic$5();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if ((climbing || bananaport || DKPortal) && gun && canSlam && move) {
+    bananas += 5;
+  }
+  return bananas;
+};
+const useDiddyMedalOutLogic$6 = () => {
+  const inStage = usePlayJapes();
+  const kong = useDiddy();
+  const gun = usePeanut();
+  const highGrab = useHighGrab();
+  const shuffleBananas = useShuffleColoredBananas();
+  const climbing = useClimbing();
+  const bananaport = useBananaportAll();
+  const DKPortal = usePortalNearDiddy();
+  let bananas = useDiddyMedalCommonLogic$5();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if ((climbing || bananaport || DKPortal) && gun && highGrab) {
+    bananas += 5;
+  }
+  return bananas;
+};
+const useLankyMedalCommonLogic$5 = () => {
+  const haveRambiCage = useJapesRambi();
+  const kongGates = useJapesKongGates();
+  const sideArea = useJapesSideArea();
+  const dive = useDive();
+  const gun = useGrape();
+  const climbing = useClimbing();
+  let bananas = 5;
+  if (climbing) {
+    bananas += 5;
+  }
+  if (dive.in || dive.out) {
+    bananas += 5;
+  }
+  if ((sideArea.in || sideArea.out) && gun) {
+    bananas += 5;
+  }
+  if (kongGates.in || kongGates.out) {
+    bananas += 6;
+    if (gun) {
+      bananas += 20;
+    }
+    if (haveRambiCage.in || haveRambiCage.out) {
+      bananas += 10;
+    }
+  }
+  return bananas;
+};
+const useLankyMedalInLogic$6 = () => {
+  const inStage = usePlayJapes();
+  const kongGates = useJapesKongGates();
+  const japesPaintingOutside = useJapesPaintingOutside();
+  const japesPaintingInside = useJapesPainting();
+  const kong = useLanky();
+  const gun = useGrape();
+  const move = useStand();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useLankyMedalCommonLogic$5();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (japesPaintingOutside.in) {
+    bananas += 3;
+    if (japesPaintingInside.in) {
+      bananas += 20;
+      if (gun) {
+        bananas += 10;
+      }
+    }
+  }
+  if (kongGates.in && move) {
+    bananas += 11;
+  }
+  return bananas;
+};
+const useLankyMedalOutLogic$6 = () => {
+  const inStage = usePlayJapes();
+  const kongGates = useJapesKongGates();
+  const japesPaintingOutside = useJapesPaintingOutside();
+  const japesPaintingInside = useJapesPainting();
+  const kong = useLanky();
+  const gun = useGrape();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useLankyMedalCommonLogic$5();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (japesPaintingOutside.out) {
+    bananas += 3;
+    if (japesPaintingInside.out) {
+      bananas += 20;
+      if (gun) {
+        bananas += 10;
+      }
+    }
+  }
+  if (kongGates.out) {
+    bananas += 11;
+  }
+  return bananas;
+};
+const useTinyMedalInLogic$6 = () => {
+  const inStage = usePlayJapes();
+  const hiveGate = useJapesHive();
+  const sideArea = useJapesSideArea();
+  const canSlam = useSlamJapes();
+  const haveRambiCage = useJapesRambi();
+  const kongGates = useJapesKongGates();
+  const kong = useTiny();
+  const gun = useFeather();
+  const mini = useMini();
+  const climbing = useClimbing();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let currLogic = 5;
+  if (sideArea.in && gun) {
+    currLogic += 5;
+  }
+  if (hiveGate.in) {
+    currLogic += 5;
+    if (mini) {
+      currLogic += 30;
+      if (canSlam) {
+        currLogic += 8;
+      }
+      if (gun) {
+        currLogic += 10;
+      }
+    }
+  }
+  if (kongGates.in) {
+    currLogic += 2;
+    if (climbing) {
+      currLogic += 5;
+    }
+    if (gun) {
+      currLogic += 10;
+    }
+    if (haveRambiCage.in) {
+      currLogic += 10;
+      if (gun) {
+        currLogic += 10;
+      }
+    }
+  }
+  return currLogic;
+};
+const useTinyMedalOutLogic$6 = () => useTinyMedalInLogic$6();
+const useChunkyMedalCommonLogic$2 = () => {
+  const inStage = usePlayJapes();
+  const haveRambiCage = useJapesRambi();
+  const underground = useJapesUnderground();
+  const kong = useChunky();
+  const barrel = useBarrel();
+  const gun = usePineapple();
+  const kongGates = useJapesKongGates();
+  const climbing = useClimbing();
+  const bananaport = useBananaportAll();
+  const shuffleBananas = useShuffleColoredBananas();
+  if (!inStage.in || !inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  let bananas = 5;
+  if (climbing || bananaport) {
+    bananas += 10;
+  }
+  if (underground.in || underground.out) {
+    bananas += 15;
+  }
+  if (kongGates.in || kongGates.out) {
+    bananas += 10;
+    if (climbing) {
+      bananas += 5;
+    }
+    if (haveRambiCage.in || haveRambiCage.out) {
+      if (gun) {
+        bananas += 30;
+      }
+      if (barrel) {
+        bananas += 5;
+      }
+    }
+  }
+  return bananas;
+};
+const useChunkyMedalInLogic$6 = () => {
+  const inStage = usePlayJapes();
+  const kong = useChunky();
+  const hiveGate = useJapesHive();
+  const crystal = useHunky();
+  const shuffleBananas = useShuffleColoredBananas();
+  const climbing = useClimbing();
+  let bananas = useChunkyMedalCommonLogic$2();
+  if (!inStage.in) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (hiveGate.in && crystal && climbing) {
+    bananas += 20;
+  }
+  return bananas;
+};
+const useChunkyMedalOutLogic$6 = () => {
+  const inStage = usePlayJapes();
+  const kong = useChunky();
+  const hiveGate = useJapesHive();
+  const crystal = useHunky();
+  const shuffleBananas = useShuffleColoredBananas();
+  let bananas = useChunkyMedalCommonLogic$2();
+  if (!inStage.out) {
+    return 0;
+  }
+  if (!kong) {
+    return 0;
+  }
+  if (shuffleBananas) {
+    return 100;
+  }
+  if (hiveGate.out && crystal) {
+    bananas += 20;
+  }
+  return bananas;
+};
 const BossCheck$7 = () => {
   const inStage = usePlayJapes();
   const anyKong = useAnyKong();
@@ -19232,14 +19649,27 @@ const BossCheck$7 = () => {
   const climbing = useClimbing();
   const japesRambi = useJapesRambi();
   const japesSide = useJapesSideArea();
+  const DKCurrentCBsIn = useDkMedalInLogic$6();
+  const DKCurrentCBsOut = useDkMedalOutLogic$6();
+  const diddyCurrentCBsIn = useDiddyMedalInLogic$6();
+  const diddyCurrentCBsOut = useDiddyMedalOutLogic$6();
+  const lankyCurrentCBsIn = useLankyMedalInLogic$6();
+  const lankyCurrentCBsOut = useLankyMedalOutLogic$6();
+  const tinyCurrentCBsIn = useTinyMedalInLogic$6();
+  const tinyCurrentCBsOut = useTinyMedalOutLogic$6();
+  const chunkyCurrentCBsIn = useChunkyMedalInLogic$6();
+  const chunkyCurrentCBsOut = useChunkyMedalOutLogic$6();
+  const currentCBCountIn = DKCurrentCBsIn + diddyCurrentCBsIn + lankyCurrentCBsIn + tinyCurrentCBsIn + chunkyCurrentCBsIn;
+  const currentCBCountOut = DKCurrentCBsOut + diddyCurrentCBsOut + lankyCurrentCBsOut + tinyCurrentCBsOut + chunkyCurrentCBsOut;
+  const troffAndScoff = useJapesTroffAndScoff();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BossPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     JapesCheck,
     {
       id: 1105,
       name: "Japes Boss",
       region: "Bosses",
-      canGetLogic: inStage.in && anyKong && (vine && climbing || japesSide.in || japesRambi.in),
-      canGetBreak: inStage.out && anyKong
+      canGetLogic: inStage.in && anyKong && (vine && climbing || japesSide.in || japesRambi.in) && currentCBCountIn >= troffAndScoff,
+      canGetBreak: inStage.out && anyKong && currentCBCountOut >= troffAndScoff
     }
   ) });
 };
@@ -20154,92 +20584,6 @@ const KasplatLocations$6 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$6, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$6, {})
 ] });
-const useChunkyMedalCommonLogic$2 = () => {
-  const inStage = usePlayJapes();
-  const haveRambiCage = useJapesRambi();
-  const underground = useJapesUnderground();
-  const kong = useChunky();
-  const barrel = useBarrel();
-  const gun = usePineapple();
-  const kongGates = useJapesKongGates();
-  const climbing = useClimbing();
-  const bananaport = useBananaportAll();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.in || !inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 5;
-  if (climbing || bananaport) {
-    bananas += 10;
-  }
-  if (underground.in || underground.out) {
-    bananas += 15;
-  }
-  if (kongGates.in || kongGates.out) {
-    bananas += 10;
-    if (climbing) {
-      bananas += 5;
-    }
-    if (haveRambiCage.in || haveRambiCage.out) {
-      if (gun) {
-        bananas += 30;
-      }
-      if (barrel) {
-        bananas += 5;
-      }
-    }
-  }
-  return bananas;
-};
-const useChunkyMedalInLogic$6 = () => {
-  const inStage = usePlayJapes();
-  const kong = useChunky();
-  const hiveGate = useJapesHive();
-  const crystal = useHunky();
-  const shuffleBananas = useShuffleColoredBananas();
-  const climbing = useClimbing();
-  let bananas = useChunkyMedalCommonLogic$2();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (hiveGate.in && crystal && climbing) {
-    bananas += 20;
-  }
-  return bananas;
-};
-const useChunkyMedalOutLogic$6 = () => {
-  const inStage = usePlayJapes();
-  const kong = useChunky();
-  const hiveGate = useJapesHive();
-  const crystal = useHunky();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useChunkyMedalCommonLogic$2();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (hiveGate.out && crystal) {
-    bananas += 20;
-  }
-  return bananas;
-};
 const ChunkyMedal$6 = () => {
   const inLogic = useChunkyMedalInLogic$6();
   const outLogic = useChunkyMedalOutLogic$6();
@@ -20268,92 +20612,6 @@ const ChunkyMedal$6 = () => {
       }
     ) })
   ] });
-};
-const useDiddyMedalCommonLogic$5 = () => {
-  const haveRambiCage = useJapesRambi();
-  const sideArea = useJapesSideArea();
-  const canSlam = useSlamJapes();
-  const gun = usePeanut();
-  const dive = useDive();
-  const kongGates = useJapesKongGates();
-  const climbing = useClimbing();
-  const bananaport = useBananaportAll();
-  const DKPortal = usePortalNearDiddy();
-  let bananas = 5;
-  if (climbing) {
-    bananas += 20;
-  }
-  if (climbing || bananaport || DKPortal) {
-    bananas += 7;
-  }
-  if (dive.in || dive.out) {
-    bananas += 10;
-  }
-  if ((sideArea.in || sideArea.out) && gun) {
-    bananas += 10;
-  }
-  if (gun && (climbing || bananaport || DKPortal)) {
-    bananas += 20;
-    if (canSlam) {
-      bananas += 15;
-    }
-  }
-  if (kongGates.in || kongGates.out) {
-    bananas += 3;
-    if (haveRambiCage.in || haveRambiCage.out) {
-      bananas += 5;
-    }
-  }
-  return bananas;
-};
-const useDiddyMedalInLogic$6 = () => {
-  const inStage = usePlayJapes();
-  const canSlam = useSlamJapes();
-  const kong = useDiddy();
-  const gun = usePeanut();
-  const move = useCharge();
-  const shuffleBananas = useShuffleColoredBananas();
-  const climbing = useClimbing();
-  const bananaport = useBananaportAll();
-  const DKPortal = usePortalNearDiddy();
-  let bananas = useDiddyMedalCommonLogic$5();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if ((climbing || bananaport || DKPortal) && gun && canSlam && move) {
-    bananas += 5;
-  }
-  return bananas;
-};
-const useDiddyMedalOutLogic$6 = () => {
-  const inStage = usePlayJapes();
-  const kong = useDiddy();
-  const gun = usePeanut();
-  const highGrab = useHighGrab();
-  const shuffleBananas = useShuffleColoredBananas();
-  const climbing = useClimbing();
-  const bananaport = useBananaportAll();
-  const DKPortal = usePortalNearDiddy();
-  let bananas = useDiddyMedalCommonLogic$5();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if ((climbing || bananaport || DKPortal) && gun && highGrab) {
-    bananas += 5;
-  }
-  return bananas;
 };
 const DiddyMedal$6 = () => {
   const inLogic = useDiddyMedalInLogic$6();
@@ -20384,102 +20642,6 @@ const DiddyMedal$6 = () => {
     ) })
   ] });
 };
-const useDkMedalInLogic$6 = () => {
-  const inStage = usePlayJapes();
-  const haveRambiCage = useJapesRambi();
-  const kongGates = useJapesKongGates();
-  const kong = useDk();
-  const vine = useVine();
-  const pad = useBlast();
-  const gun = useCoconut();
-  const climbing = useClimbing();
-  const bananaports = useBananaportAll();
-  const shuffleBananas = useShuffleColoredBananas();
-  const DKPortal = usePortalNearDiddy();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 5;
-  if (climbing) {
-    bananas += 15;
-  }
-  if (climbing || bananaports || DKPortal) {
-    bananas += 16;
-  }
-  if (vine && climbing) {
-    bananas += 5;
-  }
-  if (gun) {
-    bananas += 20;
-  }
-  if (vine && climbing && pad) {
-    bananas += 10;
-  }
-  if (kongGates.in) {
-    bananas += 9;
-    if (gun) {
-      bananas += 10;
-    }
-    if (haveRambiCage.in) {
-      bananas += 10;
-    }
-  }
-  return bananas;
-};
-const useDkMedalOutLogic$6 = () => {
-  const inStage = usePlayJapes();
-  const haveRambiCage = useJapesRambi();
-  const kongGates = useJapesKongGates();
-  const kong = useDk();
-  const vine = useVine();
-  const pad = useBlast();
-  const gun = useCoconut();
-  const climbing = useClimbing();
-  const bananaports = useBananaportAll();
-  const shuffleBananas = useShuffleColoredBananas();
-  const DKPortal = usePortalNearDiddy();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let bananas = 5;
-  if (climbing) {
-    bananas += 15;
-  }
-  if (climbing || bananaports || DKPortal) {
-    bananas += 16;
-  }
-  if (vine && climbing) {
-    bananas += 5;
-  }
-  if (gun) {
-    bananas += 20;
-  }
-  if (vine && climbing && pad) {
-    bananas += 10;
-  }
-  if (kongGates.out) {
-    bananas += 9;
-    if (gun) {
-      bananas += 10;
-    }
-    if (haveRambiCage.out) {
-      bananas += 10;
-    }
-  }
-  return bananas;
-};
 const DkMedal$6 = () => {
   const inLogic = useDkMedalInLogic$6();
   const outLogic = useDkMedalOutLogic$6();
@@ -20508,99 +20670,6 @@ const DkMedal$6 = () => {
       }
     ) })
   ] });
-};
-const useLankyMedalCommonLogic$5 = () => {
-  const haveRambiCage = useJapesRambi();
-  const kongGates = useJapesKongGates();
-  const sideArea = useJapesSideArea();
-  const dive = useDive();
-  const gun = useGrape();
-  const climbing = useClimbing();
-  let bananas = 5;
-  if (climbing) {
-    bananas += 5;
-  }
-  if (dive.in || dive.out) {
-    bananas += 5;
-  }
-  if ((sideArea.in || sideArea.out) && gun) {
-    bananas += 5;
-  }
-  if (kongGates.in || kongGates.out) {
-    bananas += 6;
-    if (gun) {
-      bananas += 20;
-    }
-    if (haveRambiCage.in || haveRambiCage.out) {
-      bananas += 10;
-    }
-  }
-  return bananas;
-};
-const useLankyMedalInLogic$6 = () => {
-  const inStage = usePlayJapes();
-  const kongGates = useJapesKongGates();
-  const japesPaintingOutside = useJapesPaintingOutside();
-  const japesPaintingInside = useJapesPainting();
-  const kong = useLanky();
-  const gun = useGrape();
-  const move = useStand();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useLankyMedalCommonLogic$5();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (japesPaintingOutside.in) {
-    bananas += 3;
-    if (japesPaintingInside.in) {
-      bananas += 20;
-      if (gun) {
-        bananas += 10;
-      }
-    }
-  }
-  if (kongGates.in && move) {
-    bananas += 11;
-  }
-  return bananas;
-};
-const useLankyMedalOutLogic$6 = () => {
-  const inStage = usePlayJapes();
-  const kongGates = useJapesKongGates();
-  const japesPaintingOutside = useJapesPaintingOutside();
-  const japesPaintingInside = useJapesPainting();
-  const kong = useLanky();
-  const gun = useGrape();
-  const shuffleBananas = useShuffleColoredBananas();
-  let bananas = useLankyMedalCommonLogic$5();
-  if (!inStage.out) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  if (japesPaintingOutside.out) {
-    bananas += 3;
-    if (japesPaintingInside.out) {
-      bananas += 20;
-      if (gun) {
-        bananas += 10;
-      }
-    }
-  }
-  if (kongGates.out) {
-    bananas += 11;
-  }
-  return bananas;
 };
 const LankyMedal$6 = () => {
   const inLogic = useLankyMedalInLogic$6();
@@ -20631,61 +20700,6 @@ const LankyMedal$6 = () => {
     ) })
   ] });
 };
-const useTinyMedalInLogic$6 = () => {
-  const inStage = usePlayJapes();
-  const hiveGate = useJapesHive();
-  const sideArea = useJapesSideArea();
-  const canSlam = useSlamJapes();
-  const haveRambiCage = useJapesRambi();
-  const kongGates = useJapesKongGates();
-  const kong = useTiny();
-  const gun = useFeather();
-  const mini = useMini();
-  const climbing = useClimbing();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!inStage.in) {
-    return 0;
-  }
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  let currLogic = 5;
-  if (sideArea.in && gun) {
-    currLogic += 5;
-  }
-  if (hiveGate.in) {
-    currLogic += 5;
-    if (mini) {
-      currLogic += 30;
-      if (canSlam) {
-        currLogic += 8;
-      }
-      if (gun) {
-        currLogic += 10;
-      }
-    }
-  }
-  if (kongGates.in) {
-    currLogic += 2;
-    if (climbing) {
-      currLogic += 5;
-    }
-    if (gun) {
-      currLogic += 10;
-    }
-    if (haveRambiCage.in) {
-      currLogic += 10;
-      if (gun) {
-        currLogic += 10;
-      }
-    }
-  }
-  return currLogic;
-};
-const useTinyMedalOutLogic$6 = () => useTinyMedalInLogic$6();
 const TinyMedal$6 = () => {
   const inLogic = useTinyMedalInLogic$6();
   const outLogic = useTinyMedalOutLogic$6();
@@ -56347,6 +56361,7 @@ const SlamShuffler = () => {
           /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "What item locks Wrinkly Kong's doors for your current seed?" }),
             "//put selector like the one for the Helm doors here",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("hr", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the indicated item for Japes:" }),
             " //put CountSelector here",
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the indicated item for Aztec:" }),
@@ -56361,6 +56376,7 @@ const SlamShuffler = () => {
             " //put CountSelector here",
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the indicated item for Castle:" }),
             " //put CountSelector here",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("hr", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
               'Are you playing the original game or a seed with "Kongless Hint Doors" off?',
               /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
