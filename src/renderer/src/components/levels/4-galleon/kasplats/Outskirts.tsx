@@ -15,6 +15,13 @@ const chunkyVanillaKasplat = useCactusKasplat()
         canGetBreak={chunkyVanillaKasplat.out}
       />
       <GalleonCheck
+        id={54009}
+        name="Shuffled Kasplat: Inside the Mechfish"
+        region="Shipyard Outskirts"
+        canGetLogic={mechfishAgenda.in}
+        canGetBreak={mechfishAgenda.out}
+      />
+      <GalleonCheck
         id={54015}
         name="Shuffled Kasplat: Also on the &quot;cactus&quot;"
         region="Shipyard Outskirts"

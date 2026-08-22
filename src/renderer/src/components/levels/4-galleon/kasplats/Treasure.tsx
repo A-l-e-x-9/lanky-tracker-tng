@@ -16,32 +16,16 @@ const canDoChunkyShip = useChunkySeasickGb()
 const hasClimbing = useClimbing()
   return (
     <KasplatPool>
-      <CavernKasplats />
-      <OutskirtKasplats />
       <GalleonCheck
-        id={54000}
-        name="Shuffled Kasplat: DK's Vanilla Location (on Diddy's gold pile)"
+        id={54010}
+        name="Shuffled Kasplat: On Lanky's gold tower"
         region="Treasure Room"
-        canGetLogic={DKVanillaKasplat.in}
-        canGetBreak={DKVanillaKasplat.out}
-      />
-      <GalleonCheck
-        id={54008}
-        name="Shuffled Kasplat: Top of the Whomp's Fortress ripoff area"
-        region="Lighthouse Area"
-        canGetLogic={canGoInLighthouse.in && hasClimbing}
-        canGetBreak={canGoInLighthouse.out && hasClimbing}
-      />
-      <GalleonCheck
-        id={54011}
-        name="Shuffled Kasplat: Inside Chunky's ship"
-        region="Lighthouse Area"
-        canGetLogic={canDoChunkyShip.in}
-        canGetBreak={canDoChunkyShip.out}
+        canGetLogic={canDoLankyGoldTower.in}
+        canGetBreak={canDoLankyGoldTower.out}
       />
     </KasplatPool>
   )
 }
 
-const ShuffledKasplats: React.FC = () => (useShuffleKasplats() ? <Shuffled /> : null)
-export default ShuffledKasplats
+const TreasureKasplats: React.FC = () => (useShuffleKasplats() ? <Shuffled /> : null)
+export default TreasureKasplats

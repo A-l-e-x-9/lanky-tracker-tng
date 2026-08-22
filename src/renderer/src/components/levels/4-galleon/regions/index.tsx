@@ -10,16 +10,21 @@ import TinyMedal from '../medals/TinyMedal'
 import ShopLocations from '../shops'
 import CavernsChecks from './Caverns'
 import CavernArenas from '../arenas/Caverns'
+import CavernCrates from '../crates/Caverns'
 import CavernFairies from '../fairies/Caverns'
 import CavernKasplats from '../kasplats/Caverns'
 import LighthouseChecks from './Lighthouse'
 import LighthouseArenas from '../arenas/Lighthouse'
+import LighthouseCrates from '../crates/Lighthouse'
 import LighthouseFairies from '../fairies/Lighthouse'
 import LighthouseKasplats from '../kasplats/Lighthouse'
 import OutskirtsChecks from './Outskirts'
+import OutskirtCrates from '../crates/Outskirts'
 import OutskirtKasplats from '../kasplats/Outskirts'
 import FiveShipChecks from './Ship'
 import TreasureChecks from './Treasure'
+import TreasureCrates from '../crates/Treasure'
+import TreasureKasplats from '../kasplats/Treasure'
 import ShuffledArenas from '../arenas/Shuffled'
 import ShuffledCrates from '../crates/Shuffled'
 import ShuffledDirt from '../dirt/Shuffled'
@@ -45,6 +50,7 @@ return (
       <CavernsChecks />
     <div className="grid">
       <CavernArenas />
+      <CavernCrates />
     </div>
     <div className={`grid ${isFairySeed && fairiesInRotation}`}>
       <CavernFairies />
@@ -55,6 +61,7 @@ return (
       <LighthouseChecks />
     <div className="grid">
       <LighthouseArenas />
+      <LighthouseCrates />
     </div>
     <div className={`grid ${isFairySeed && fairiesInRotation}`}>
       <LighthouseFairies />
@@ -63,10 +70,19 @@ return (
       <LighthouseKasplats />
     </div>
       <OutskirtsChecks />
+    <div className="grid">
+      <OutskirtCrates />
+    </div>
     <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
       <OutskirtKasplats />
     </div>
       <TreasureChecks />
+    <div className="grid">
+      <TreasureCrates />
+    </div>
+    <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+      <TreasureKasplats />
+    </div>
       <FiveShipChecks />
     <div className="grid">
       <ShopLocations />

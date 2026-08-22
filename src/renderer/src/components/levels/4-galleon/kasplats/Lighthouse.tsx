@@ -8,6 +8,13 @@ const canReachLighthouseBase = useGalleonLighthousePlatform()
   return (
     <KasplatPool>
       <GalleonCheck
+        id={54001}
+        name="Shuffled Kasplat: Diddy's Vanilla Location (Kevin)"
+        region="Lighthouse Area"
+        canGetLogic={diddyVanillaKasplat.in}
+        canGetBreak={diddyVanillaKasplat.out}
+      />
+      <GalleonCheck
         id={54005}
         name="Shuffled Kasplat: Base of the Lighthouse"
         region="Lighthouse Area"
