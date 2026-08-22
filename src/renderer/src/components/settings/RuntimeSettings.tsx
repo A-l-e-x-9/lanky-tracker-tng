@@ -8,6 +8,7 @@ import ShuffledShops from './ShuffledShops'
 import SlamShuffler from './ProgressiveSlams'
 import ShuffledDKPortals from './ShuffledDKPortals'
 import LoadingZoneRandomizer from './LZR'
+import LockedWrinklyDoors from './locked-wrinkly-doors'
 
 const timeToString = (time: BananaportRange): string => {
   switch (time) {
@@ -67,6 +68,7 @@ const RuntimeSettings: React.FC = () => {
   const portalShuffler = useDonkStore(useShallow((state) => state.settings.shuffleDKPortals)) ? '' : 'portal-shuffler'
   const lzrShuffler = useDonkStore(useShallow((state) => state.settings.shuffleLoadingZones)) ? '' : 'lzr-shuffler'
   const slamShuffler = useDonkStore(useShallow((state) => state.settings.progressiveSlams)) ? '' : 'slam-shuffler'
+  const wrinklyDoorShuffler = useDonkStore(useShallow((state) => state.settings.lockedWrinklyDoors)) ? '' : 'locked-wrinkly'
 
   return (
     <section className="runtime-settings">
@@ -89,6 +91,8 @@ const RuntimeSettings: React.FC = () => {
         <ShuffledDKPortals />
         <p className={`${lzrShuffler}`}>Loading Zone Randomizer:</p>
         <LoadingZoneRandomizer />
+        <p className={`${wrinklyDoorShuffler}`}>Wrinkly Doors: </p>
+        <LockedWrinklyDoors />
       </div>
     </section>
   )
