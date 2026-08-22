@@ -692,6 +692,8 @@ interface SettingCollection {
   shuffleDKPortals: boolean
   //Is the dreaded Loading Zone Randomizer on?
   shuffleLoadingZones: boolean
+  //Are Wrinkly Kong's doors locked by some item for your seed?
+  lockedWrinklyDoors: boolean
 }
 
 export interface SettingState {
