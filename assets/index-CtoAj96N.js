@@ -56295,8 +56295,8 @@ const LoadingZoneRandomizer = () => {
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
   const lzrShuffler = useDonkStore(useShallow((state) => state.settings.shuffleLoadingZones)) ? "" : "lzr-shuffler";
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `${lzrShuffler}`, onClick: openModal, title: "Click to open the Loading Zone Randomizer.", children: "⚙️" }),
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${lzrShuffler}`, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { onClick: openModal, title: "Click to open the Loading Zone Randomizer.", children: "⚙️" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       Modal,
       {
