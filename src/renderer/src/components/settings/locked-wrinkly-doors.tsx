@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Modal from 'react-modal'
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
-import SimpleRadioIcon from './SimpleRadioIcon'
 
 const customStyles: Modal.Styles = {
   content: {
