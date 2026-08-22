@@ -33100,7 +33100,7 @@ const BossCheck$4 = () => {
       id: 4105,
       name: "Galleon Boss",
       region: "Bosses",
-      canGetLogic: currentCBCountIn >= troffAndScoff && top.in || dive.in && (lighthouseArea.in || outskirts.in),
+      canGetLogic: currentCBCountIn >= troffAndScoff && (top.in || dive.in && (lighthouseArea.in || outskirts.in)),
       canGetBreak: currentCBCountOut >= troffAndScoff && top.out
     }
   ) });
