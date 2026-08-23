@@ -1,7 +1,7 @@
 import CratePool from '@renderer/components/pools/Crates'
 import { useGalleonLighthousePlatform, useGalleonSeasickShip } from '@renderer/hooks/galleon'
 import { useShuffleCrates } from '@renderer/hooks/settings'
-import { useDive, useLanky } from '@renderer/hooks/kongs'
+import { useDive, useLanky, usePunch } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
@@ -9,6 +9,7 @@ const canReachLighthouseOuter = useGalleonLighthousePlatform()
 const canReachChunkyShip = useGalleonSeasickShip()
 const hasDiving = useDive()
 const hasLanky = useLanky()
+const hasPrimatePunch = usePunch()
   return (
     <CratePool>
       <GalleonCheck
