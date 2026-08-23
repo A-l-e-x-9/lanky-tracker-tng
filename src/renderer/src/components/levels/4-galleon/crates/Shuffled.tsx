@@ -1,7 +1,7 @@
 import CratePool from '@renderer/components/pools/Crates'
 import { useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonSeasickShip, useLanky2DoorShipGb } from '@renderer/hooks/galleon'
 import { useShuffleCrates } from '@renderer/hooks/settings'
-import { usePunch, useClimbing, useOrange } from '@renderer/hooks/kongs'
+import { usePunch, useClimbing } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 import TreasureCrates from './Treasure'
 
@@ -13,7 +13,6 @@ const canReachChunkyShip = useGalleonSeasickShip()
 const hasPrimatePunch = usePunch()
 const hasClimbing = useClimbing()
 const canReachLankys2DS = useLanky2DoorShipGb()
-const hasOranges = useOrange()
   return (
     <CratePool>
       <TreasureCrates />
