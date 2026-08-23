@@ -34053,7 +34053,18 @@ const CavernArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExpor
 const Shuffled$V = () => {
   const isBreathing = useGeneralThing$6();
   const canReachTinysKasplat = useGalleonCavernTop();
+  const canReachVanillaArena = useArena$5();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 24e3,
+        name: "Shuffled Melon Crate: Under Cranky's",
+        region: "Galleon Caves",
+        canGetLogic: canReachVanillaArena.in,
+        canGetBreak: canReachVanillaArena.out
+      }
+    ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
@@ -34461,6 +34472,7 @@ const Shuffled$R = () => {
   const canReachChunkyShip = useGalleonSeasickShip();
   const hasDiving = useDive();
   const hasLanky = useLanky();
+  const hasPrimatePunch = usePunch();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
@@ -34611,6 +34623,26 @@ const Shuffled$R = () => {
         canGetLogic: canReachChunkyShip.in,
         canGetBreak: canReachChunkyShip.out
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 24046,
+        name: "Shuffled Melon Crate: Behind the pyramid of non-spinning barrels",
+        region: "Lighthouse Area",
+        canGetLogic: canReachChunkyShip.in && hasPrimatePunch,
+        canGetBreak: canReachChunkyShip.out && hasPrimatePunch
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 24047,
+        name: "Shuffled Melon Crate: Behind the spinning barrels",
+        region: "Lighthouse Area",
+        canGetLogic: canReachChunkyShip.in && hasPrimatePunch,
+        canGetBreak: canReachChunkyShip.out && hasPrimatePunch
+      }
     )
   ] });
 };
@@ -34646,6 +34678,7 @@ const LighthouseFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntime
 const Shuffled$P = () => {
   const canReachLighthouseBase = useGalleonLighthousePlatform();
   const diddyVanillaKasplat = useKevin();
+  const canDoChunkyShip = useChunkySeasickGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
@@ -34665,6 +34698,16 @@ const Shuffled$P = () => {
         region: "Lighthouse Area",
         canGetLogic: canReachLighthouseBase.in,
         canGetBreak: canReachLighthouseBase.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 54011,
+        name: "Shuffled Kasplat: Inside Chunky's ship",
+        region: "Lighthouse Area",
+        canGetLogic: canDoChunkyShip.in,
+        canGetBreak: canDoChunkyShip.out
       }
     )
   ] });
@@ -35070,25 +35113,12 @@ const Shuffled$K = () => {
 };
 const ShuffledArenas$4 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$K, {}) : null;
 const Shuffled$J = () => {
-  const canReachVanillaArena = useArena$5();
   const canReachLighthouse = useGalleonLighthouseInside();
   const canReachCannonGame = useGalleonCannon();
-  const canReachChunkyShip = useGalleonSeasickShip();
-  const hasPrimatePunch = usePunch();
   const hasClimbing = useClimbing();
   const canReachLankys2DS = useLanky2DoorShipGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(TreasureCrates, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 24e3,
-        name: "Shuffled Melon Crate: Under Cranky's",
-        region: "Galleon Caves",
-        canGetLogic: canReachVanillaArena.in,
-        canGetBreak: canReachVanillaArena.out
-      }
-    ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
       {
@@ -35137,26 +35167,6 @@ const Shuffled$J = () => {
         region: "Shipyard Outskirts",
         canGetLogic: canReachLankys2DS.in,
         canGetBreak: canReachLankys2DS.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 24046,
-        name: "Shuffled Melon Crate: Behind the pyramid of non-spinning barrels",
-        region: "Lighthouse Area",
-        canGetLogic: canReachChunkyShip.in && hasPrimatePunch,
-        canGetBreak: canReachChunkyShip.out && hasPrimatePunch
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 24047,
-        name: "Shuffled Melon Crate: Behind the spinning barrels",
-        region: "Lighthouse Area",
-        canGetLogic: canReachChunkyShip.in && hasPrimatePunch,
-        canGetBreak: canReachChunkyShip.out && hasPrimatePunch
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -35773,7 +35783,6 @@ const ShuffledFairies$4 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntime
 const Shuffled$G = () => {
   const DKVanillaKasplat = useDiddyGoldGb();
   const canGoInLighthouse = useGalleonLighthouseInside();
-  const canDoChunkyShip = useChunkySeasickGb();
   const hasClimbing = useClimbing();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(KasplatPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(CavernKasplats, {}),
@@ -35796,16 +35805,6 @@ const Shuffled$G = () => {
         region: "Lighthouse Area",
         canGetLogic: canGoInLighthouse.in && hasClimbing,
         canGetBreak: canGoInLighthouse.out && hasClimbing
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GalleonCheck,
-      {
-        id: 54011,
-        name: "Shuffled Kasplat: Inside Chunky's ship",
-        region: "Lighthouse Area",
-        canGetLogic: canDoChunkyShip.in,
-        canGetBreak: canDoChunkyShip.out
       }
     )
   ] });
