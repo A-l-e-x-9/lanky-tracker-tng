@@ -1239,6 +1239,7 @@ interface forestPortals {
   backMillPortal: boolean
   thornvineTopPortal: boolean
   area2Portal: boolean
+  shroomLevel2Portal: boolean
   shroomTopPortal: boolean
   lankyShroomTopPortal: boolean
   area4Portal: boolean

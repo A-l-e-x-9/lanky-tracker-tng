@@ -78,6 +78,9 @@ export const useThornvineTopPortal = (): boolean =>
 //Is the DK Portal in Area 2?
 export const useArea2Portal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledForestPortals.area2Portal))
+//Is the DK Portal at the second vine floor in the Giant Mushroom?
+export const useShroomLevel2Portal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledForestPortals.shroomLevel2Portal))
 //Is the DK Portal at the top of the Giant Mushroom?
 export const useShroomTopPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledForestPortals.shroomTopPortal))
@@ -295,13 +298,10 @@ export const useChunkyMillGb = (): LogicBool => {
 
 export const useDiddyTopGb = (): LogicBool => {
   const inStage = usePlayForest()
-  const rocket = useRocket()
-  const diddy = useDiddy()
-  const tiny = useTiny()
-  const stand = useStand()
+  const canReachShroomRoof = useForestMushroomRoof()
   return {
-    in: inStage.in && rocket,
-    out: inStage.out && (diddy || tiny) && (tiny || stand)
+    in: inStage.in && canReachShroomRoof.in,
+    out: inStage.out && canReachShroomRoof.out
   }
 }
 
@@ -348,8 +348,9 @@ export const useDiddyRaftersGb = (): LogicBool => {
  */
 export const useDkBlastGb = (): LogicBool => {
   const inStage = useForestMushroomTop()
+  const DKPortal = useShroomLevel2Portal()
   return {
-    in: useBlast() && inStage.in,
+    in: useBlast() && (inStage.in || DKPortal),
     out: useBlast() && inStage.out
   }
 }
@@ -583,9 +584,13 @@ export const useOwlKasplat = (): LogicBool => {
 export const useNightKasplat = (): LogicBool => {
   const inStage = useForestMushroomTop()
   const anyKong = useAnyKong()
+  const DKPortal = useShroomLevel2Portal()
+  const hasVines = useVine()
+  const isNight = useForestNight()
+  const isDusk = useForestDusk()
   return {
-    in: inStage.in && anyKong,
-    out: inStage.out && anyKong
+    in: (inStage.in || (DKPortal && hasVines && (isNight || isDusk))) && anyKong,
+    out: (inStage.out || DKPortal) && anyKong
   }
 }
 
@@ -598,8 +603,9 @@ export const useMushInteriorKasplat = (): LogicBool => {
   const hasChunky = useChunky()
   const hasTiny = useTiny()
   const hasDiddy = useDiddy()
+  const DKPortal = useShroomLevel2Portal()
   return {
-    in: inStage.in && hasClimbing,
+    in: inStage.in && (hasClimbing || DKPortal),
     out: inStage.out && ((hasJetbarrel || hasAllBananaports) || ((isHinaKagiyama || hasChunky) && (hasTiny || hasDiddy)))
   }
 }
@@ -611,8 +617,9 @@ export const useMushExteriorKasplat = (): LogicBool => {
   const hasAllBananaports = useBananaportAll()
   const isHinaKagiyama = useTwirl()
   const hasChunky = useChunky()
+  const DKPortal = useShroomLevel2Portal()
   return {
-    in: inStage.in && hasClimbing,
+    in: inStage.in && (hasClimbing || DKPortal),
     out: inStage.out && ((hasJetbarrel || hasAllBananaports) || (isHinaKagiyama || hasChunky))
   }
 }

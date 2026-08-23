@@ -48,6 +48,7 @@ export const initialPortal: PortalState = {
     backMillPortal: false,
     thornvineTopPortal: false,
     area2Portal: false,
+    shroomLevel2Portal: false,
     shroomTopPortal: false,
     lankyShroomTopPortal: false,
     area4Portal: false

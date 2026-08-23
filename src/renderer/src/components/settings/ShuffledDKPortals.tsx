@@ -343,6 +343,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledForestPortals"
                 updateItem={setForestPortal}
             />
+            <p>Second vine floor of the Giant Mushroom</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is at the second vine floor of the Giant Mushroom, above the Night Door."
+                storeKey="shroomLevel2Portal"
+                prefix="shuffledForestPortals"
+                updateItem={setForestPortal}
+            />
             <p>Top of the Giant Mushroom</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}
