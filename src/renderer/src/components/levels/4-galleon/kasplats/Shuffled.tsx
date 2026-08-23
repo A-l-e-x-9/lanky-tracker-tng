@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useDiddyGoldGb, useChunkySeasickGb, useGalleonLighthouseInside, useDiddyMechGb } from '@renderer/hooks/galleon'
+import { useDiddyGoldGb, useChunkySeasickGb, useGalleonLighthouseInside } from '@renderer/hooks/galleon'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useClimbing } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
