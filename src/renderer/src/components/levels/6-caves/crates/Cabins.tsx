@@ -118,6 +118,13 @@ const hasSax = useSax()
         canGetBreak={isBreathing.out && hasBongoes}
       />
       <CavesCheck
+        id={26055}
+        name="Shuffled Melon Crate: In the back left corner of Chunky's 5DC room"
+        region="Caves Cabins"
+        canGetLogic={canDoChunky5DC.in}
+        canGetBreak={hasTriangle}
+      />
+      <CavesCheck
         id={26056}
         name="Shuffled Melon Crate: Inside Tiny's 5DC room"
         region="Caves Cabins"
@@ -129,6 +136,13 @@ const hasSax = useSax()
         region="Caves Cabins"
         canGetLogic={isBreathing.in && hasGuitar}
         canGetBreak={isBreathing.out && hasGuitar}
+      />
+      <CavesCheck
+        id={26058}
+        name="Shuffled Melon Crate: Called to the carpet of Lanky's cabin"
+        region="Caves Cabins"
+        canGetLogic={hasBalloon && hasTrombone}
+        canGetBreak={hasJetbarrel && hasTrombone}
       />
     </CratePool>
   )

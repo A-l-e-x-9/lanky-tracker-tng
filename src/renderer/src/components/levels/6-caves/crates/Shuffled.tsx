@@ -5,6 +5,7 @@ import { useGeneralThing, useChunkyClearGb, useTinyPortGb, useTinyCaveGb, useIce
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useMonkeyport, useRocket, usePunch, useBalloon, useHighGrab, useChunky, useBarrel, useTrombone, useTriangle } from '@renderer/hooks/kongs'
 import CavesCheck from '../check'
+import CabinCrates from './Cabins'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
@@ -63,13 +64,6 @@ const hasTriangle = useTriangle()
         canGetBreak={isBreathing.out && (hasPunch || canGetPastIceWalls)}
       />
       <CavesCheck
-        id={26016}
-        name="Shuffled Melon Crate: On top of the Ice Castle"
-        region="Crystal Caves Main"
-        canGetLogic={hasBalloon}
-        canGetBreak={canHighGrab}
-      />
-      <CavesCheck
         id={26019}
         name="Shuffled Melon Crate: Near Snide's"
         region="Crystal Caves Main"
@@ -100,27 +94,6 @@ const hasTriangle = useTriangle()
         region="Crystal Caves Main"
         canGetLogic={canReachWarp4.in}
         canGetBreak={canReachWarp4.out}
-      />
-      <CavesCheck
-        id={26052}
-        name="Shuffled Melon Crate: A high platform in Lanky's 5DI room"
-        region="Caves Igloo"
-        canGetLogic={canDoLanky5DI.in}
-        canGetBreak={canDoLanky5DI.out}
-      />
-      <CavesCheck
-        id={26055}
-        name="Shuffled Melon Crate: In the back left corner of Chunky's 5DC room"
-        region="Caves Cabins"
-        canGetLogic={canDoChunky5DC.in}
-        canGetBreak={hasTriangle}
-      />
-      <CavesCheck
-        id={26058}
-        name="Shuffled Melon Crate: Called to the carpet of Lanky's cabin"
-        region="Caves Cabins"
-        canGetLogic={hasBalloon && hasTrombone}
-        canGetBreak={hasJetbarrel && hasTrombone}
       />
     </CratePool>
   )

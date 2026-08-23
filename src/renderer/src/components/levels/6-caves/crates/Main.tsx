@@ -49,6 +49,13 @@ const canDoIceCastle = useLankyCastleGb()
         canGetBreak={isBreathing.out}
       />
       <CavesCheck
+        id={26016}
+        name="Shuffled Melon Crate: On top of the Ice Castle"
+        region="Crystal Caves Main"
+        canGetLogic={hasBalloon}
+        canGetBreak={canHighGrab}
+      />
+      <CavesCheck
         id={26017}
         name="Shuffled Melon Crate: Near the small boulder"
         region="Crystal Caves Main"

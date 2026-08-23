@@ -48,6 +48,13 @@ const hasGuitar = useGuitar()
         canGetBreak={canReachIgloo.out && hasGuitar}
       />
       <CavesCheck
+        id={26052}
+        name="Shuffled Melon Crate: A high platform in Lanky's 5DI room"
+        region="Caves Igloo"
+        canGetLogic={canDoLanky5DI.in}
+        canGetBreak={canDoLanky5DI.out}
+      />
+      <CavesCheck
         id={26053}
         name="Shuffled Melon Crate: Opposite Tiny's 5DI room entrance"
         region="Caves Igloo"
