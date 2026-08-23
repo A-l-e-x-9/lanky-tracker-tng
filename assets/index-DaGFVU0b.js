@@ -43492,6 +43492,8 @@ const Shuffled$q = () => {
   const hasDK = useDk();
   const canDoLankyKasplat = useCavesPillar();
   const canDoIceCastle = useLankyCastleGb();
+  const hasBalloon = useBalloon();
+  const canHighGrab = useHighGrab();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
@@ -43541,6 +43543,16 @@ const Shuffled$q = () => {
         region: "Crystal Caves Main",
         canGetLogic: isBreathing.in,
         canGetBreak: isBreathing.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 26016,
+        name: "Shuffled Melon Crate: On top of the Ice Castle",
+        region: "Crystal Caves Main",
+        canGetLogic: hasBalloon,
+        canGetBreak: canHighGrab
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -43812,6 +43824,7 @@ const Shuffled$n = () => {
   const hasBongoes = useBongos();
   const hasSax = useSax();
   const hasGuitar = useGuitar();
+  const canDoLanky5DI = useLankyIglooGb();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
@@ -43861,6 +43874,16 @@ const Shuffled$n = () => {
         region: "Caves Igloo",
         canGetLogic: canReachIgloo.in && hasGuitar,
         canGetBreak: canReachIgloo.out && hasGuitar
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 26052,
+        name: "Shuffled Melon Crate: A high platform in Lanky's 5DI room",
+        region: "Caves Igloo",
+        canGetLogic: canDoLanky5DI.in,
+        canGetBreak: canDoLanky5DI.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -44114,6 +44137,11 @@ const Shuffled$k = () => {
   const hasGuitar = useGuitar();
   const canReachVanillaArena = useDkRotateGb();
   const hasSax = useSax();
+  const canDoChunky5DC = useChunkyCabinGb();
+  const hasTriangle = useTriangle();
+  const hasBalloon = useBalloon();
+  const hasTrombone = useTrombone();
+  const hasJetbarrel = useRocket();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
@@ -44268,6 +44296,16 @@ const Shuffled$k = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
+        id: 26055,
+        name: "Shuffled Melon Crate: In the back left corner of Chunky's 5DC room",
+        region: "Caves Cabins",
+        canGetLogic: canDoChunky5DC.in,
+        canGetBreak: hasTriangle
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
         id: 26056,
         name: "Shuffled Melon Crate: Inside Tiny's 5DC room",
         region: "Caves Cabins",
@@ -44282,6 +44320,16 @@ const Shuffled$k = () => {
         region: "Caves Cabins",
         canGetLogic: isBreathing.in && hasGuitar,
         canGetBreak: isBreathing.out && hasGuitar
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CavesCheck,
+      {
+        id: 26058,
+        name: "Shuffled Melon Crate: Called to the carpet of Lanky's cabin",
+        region: "Caves Cabins",
+        canGetLogic: hasBalloon && hasTrombone,
+        canGetBreak: hasJetbarrel && hasTrombone
       }
     )
   ] });
@@ -44525,21 +44573,15 @@ const Shuffled$h = () => {
   const canDoKoshaGB = useChunkyClearGb();
   const hasMonkeyport = useMonkeyport();
   const canDoTinyIglooGB = useTinyPortGb();
-  const hasJetbarrel = useRocket();
   const canDoShrinkGB = useTinyCaveGb();
   const hasPunch = usePunch();
   const canGetPastIceWalls = useIceWalls();
-  const hasBalloon = useBalloon();
-  const canHighGrab = useHighGrab();
   const hasChunky = useChunky();
   const hasBarrels = useBarrel();
   const canReachWarp4 = useCavesMiniFunky();
   const [didCheck] = useDonkStore(useShallow((state) => [state.checks]));
-  const canDoLanky5DI = useLankyIglooGb();
-  const hasTrombone = useTrombone();
-  const canDoChunky5DC = useChunkyCabinGb();
-  const hasTriangle = useTriangle();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CratePool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CabinCrates, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
@@ -44593,16 +44635,6 @@ const Shuffled$h = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
-        id: 26016,
-        name: "Shuffled Melon Crate: On top of the Ice Castle",
-        region: "Crystal Caves Main",
-        canGetLogic: hasBalloon,
-        canGetBreak: canHighGrab
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
         id: 26019,
         name: "Shuffled Melon Crate: Near Snide's",
         region: "Crystal Caves Main",
@@ -44645,36 +44677,6 @@ const Shuffled$h = () => {
         region: "Crystal Caves Main",
         canGetLogic: canReachWarp4.in,
         canGetBreak: canReachWarp4.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 26052,
-        name: "Shuffled Melon Crate: A high platform in Lanky's 5DI room",
-        region: "Caves Igloo",
-        canGetLogic: canDoLanky5DI.in,
-        canGetBreak: canDoLanky5DI.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 26055,
-        name: "Shuffled Melon Crate: In the back left corner of Chunky's 5DC room",
-        region: "Caves Cabins",
-        canGetLogic: canDoChunky5DC.in,
-        canGetBreak: hasTriangle
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CavesCheck,
-      {
-        id: 26058,
-        name: "Shuffled Melon Crate: Called to the carpet of Lanky's cabin",
-        region: "Caves Cabins",
-        canGetLogic: hasBalloon && hasTrombone,
-        canGetBreak: hasJetbarrel && hasTrombone
       }
     )
   ] });
