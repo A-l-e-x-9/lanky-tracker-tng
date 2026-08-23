@@ -1,10 +1,11 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGalleonLighthousePlatform } from '@renderer/hooks/galleon'
+import { useGalleonLighthousePlatform, useKevin } from '@renderer/hooks/galleon'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const canReachLighthouseBase = useGalleonLighthousePlatform()
+const diddyVanillaKasplat = useKevin()
   return (
     <KasplatPool>
       <GalleonCheck

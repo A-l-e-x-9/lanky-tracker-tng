@@ -1,10 +1,11 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useCactusKasplat } from '@renderer/hooks/galleon'
+import { useCactusKasplat, useDiddyMechGb } from '@renderer/hooks/galleon'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const chunkyVanillaKasplat = useCactusKasplat()
+const mechfishAgenda = useDiddyMechGb()
   return (
     <KasplatPool>
       <GalleonCheck
