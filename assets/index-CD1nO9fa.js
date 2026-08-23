@@ -10841,6 +10841,7 @@ const initialPortal = {
     backMillPortal: false,
     thornvineTopPortal: false,
     area2Portal: false,
+    shroomLevel2Portal: false,
     shroomTopPortal: false,
     lankyShroomTopPortal: false,
     area4Portal: false
@@ -35911,6 +35912,7 @@ const useFrontMillPortal = () => useDonkStore(useShallow((state) => state.shuffl
 const useBackMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.backMillPortal));
 const useThornvineTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.thornvineTopPortal));
 const useArea2Portal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.area2Portal));
+const useShroomLevel2Portal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.shroomLevel2Portal));
 const useShroomTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.shroomTopPortal));
 const useLankyShroomTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.lankyShroomTopPortal));
 const useArea4Portal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.area4Portal));
@@ -36068,13 +36070,10 @@ const useChunkyMillGb = () => {
 };
 const useDiddyTopGb$1 = () => {
   const inStage = usePlayForest();
-  const rocket = useRocket();
-  const diddy = useDiddy();
-  const tiny = useTiny();
-  const stand = useStand();
+  const canReachShroomRoof = useForestMushroomRoof();
   return {
-    in: inStage.in && rocket,
-    out: inStage.out && (diddy || tiny) && (tiny || stand)
+    in: inStage.in && canReachShroomRoof.in,
+    out: inStage.out && canReachShroomRoof.out
   };
 };
 const useDiddyOwlGb = () => {
@@ -36113,8 +36112,9 @@ const useDiddyRaftersGb = () => {
 };
 const useDkBlastGb$1 = () => {
   const inStage = useForestMushroomTop();
+  const DKPortal = useShroomLevel2Portal();
   return {
-    in: useBlast() && inStage.in,
+    in: useBlast() && (inStage.in || DKPortal),
     out: useBlast() && inStage.out
   };
 };
@@ -36315,9 +36315,13 @@ const useOwlKasplat = () => {
 const useNightKasplat = () => {
   const inStage = useForestMushroomTop();
   const anyKong = useAnyKong();
+  const DKPortal = useShroomLevel2Portal();
+  const hasVines = useVine();
+  const isNight = useForestNight();
+  const isDusk = useForestDusk();
   return {
-    in: inStage.in && anyKong,
-    out: inStage.out && anyKong
+    in: (inStage.in || DKPortal && hasVines && (isNight || isDusk)) && anyKong,
+    out: (inStage.out || DKPortal) && anyKong
   };
 };
 const useMushInteriorKasplat = () => {
@@ -36329,8 +36333,9 @@ const useMushInteriorKasplat = () => {
   const hasChunky = useChunky();
   const hasTiny = useTiny();
   const hasDiddy = useDiddy();
+  const DKPortal = useShroomLevel2Portal();
   return {
-    in: inStage.in && hasClimbing,
+    in: inStage.in && (hasClimbing || DKPortal),
     out: inStage.out && (hasJetbarrel || hasAllBananaports || (isHinaKagiyama || hasChunky) && (hasTiny || hasDiddy))
   };
 };
@@ -36341,8 +36346,9 @@ const useMushExteriorKasplat = () => {
   const hasAllBananaports = useBananaportAll();
   const isHinaKagiyama = useTwirl();
   const hasChunky = useChunky();
+  const DKPortal = useShroomLevel2Portal();
   return {
-    in: inStage.in && hasClimbing,
+    in: inStage.in && (hasClimbing || DKPortal),
     out: inStage.out && (hasJetbarrel || hasAllBananaports || (isHinaKagiyama || hasChunky))
   };
 };
@@ -56070,6 +56076,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is anywhere in the area where The Bean™ is planted.",
                   storeKey: "area2Portal",
+                  prefix: "shuffledForestPortals",
+                  updateItem: setForestPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Second vine floor of the Giant Mushroom" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at the second vine floor of the Giant Mushroom, above the Night Door.",
+                  storeKey: "shroomLevel2Portal",
                   prefix: "shuffledForestPortals",
                   updateItem: setForestPortal
                 }
