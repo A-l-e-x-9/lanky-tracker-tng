@@ -1,11 +1,12 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useGalleonLighthousePlatform, useKevin } from '@renderer/hooks/galleon'
+import { useGalleonLighthousePlatform, useKevin, useChunkySeasickGb } from '@renderer/hooks/galleon'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const canReachLighthouseBase = useGalleonLighthousePlatform()
 const diddyVanillaKasplat = useKevin()
+const canDoChunkyShip = useChunkySeasickGb()
   return (
     <KasplatPool>
       <GalleonCheck
@@ -21,6 +22,13 @@ const diddyVanillaKasplat = useKevin()
         region="Lighthouse Area"
         canGetLogic={canReachLighthouseBase.in}
         canGetBreak={canReachLighthouseBase.out}
+      />
+      <GalleonCheck
+        id={54011}
+        name="Shuffled Kasplat: Inside Chunky's ship"
+        region="Lighthouse Area"
+        canGetLogic={canDoChunkyShip.in}
+        canGetBreak={canDoChunkyShip.out}
       />
     </KasplatPool>
   )

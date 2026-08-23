@@ -17,13 +17,6 @@ const canReachLankys2DS = useLanky2DoorShipGb()
     <CratePool>
       <TreasureCrates />
       <GalleonCheck
-        id={24000}
-        name="Shuffled Melon Crate: Under Cranky's"
-        region="Galleon Caves"
-        canGetLogic={canReachVanillaArena.in}
-        canGetBreak={canReachVanillaArena.out}
-      />
-      <GalleonCheck
         id={24001}
         name="Shuffled Melon Crate: Bottom of the Lighthouse"
         region="Lighthouse Area"
@@ -57,20 +50,6 @@ const canReachLankys2DS = useLanky2DoorShipGb()
         region="Shipyard Outskirts"
         canGetLogic={canReachLankys2DS.in}
         canGetBreak={canReachLankys2DS.out}
-      />
-      <GalleonCheck
-        id={24046}
-        name="Shuffled Melon Crate: Behind the pyramid of non-spinning barrels"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasPrimatePunch}
-        canGetBreak={canReachChunkyShip.out && hasPrimatePunch}
-      />
-      <GalleonCheck
-        id={24047}
-        name="Shuffled Melon Crate: Behind the spinning barrels"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasPrimatePunch}
-        canGetBreak={canReachChunkyShip.out && hasPrimatePunch}
       />
       <GalleonCheck
         id={24048}

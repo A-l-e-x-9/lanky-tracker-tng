@@ -1,13 +1,21 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useGeneralThing, useGalleonCavernTop } from '@renderer/hooks/galleon'
+import { useGeneralThing, useGalleonCavernTop, useArena } from '@renderer/hooks/galleon'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
 const canReachTinysKasplat = useGalleonCavernTop()
+const canReachVanillaArena = useArena()
   return (
     <CratePool>
+      <GalleonCheck
+        id={24000}
+        name="Shuffled Melon Crate: Under Cranky's"
+        region="Galleon Caves"
+        canGetLogic={canReachVanillaArena.in}
+        canGetBreak={canReachVanillaArena.out}
+      />
       <GalleonCheck
         id={24006}
         name="Shuffled Melon Crate: 4-way tunnel intersection"

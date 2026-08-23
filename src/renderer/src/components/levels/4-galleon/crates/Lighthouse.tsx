@@ -116,6 +116,20 @@ const hasLanky = useLanky()
         canGetLogic={canReachChunkyShip.in}
         canGetBreak={canReachChunkyShip.out}
       />
+      <GalleonCheck
+        id={24046}
+        name="Shuffled Melon Crate: Behind the pyramid of non-spinning barrels"
+        region="Lighthouse Area"
+        canGetLogic={canReachChunkyShip.in && hasPrimatePunch}
+        canGetBreak={canReachChunkyShip.out && hasPrimatePunch}
+      />
+      <GalleonCheck
+        id={24047}
+        name="Shuffled Melon Crate: Behind the spinning barrels"
+        region="Lighthouse Area"
+        canGetLogic={canReachChunkyShip.in && hasPrimatePunch}
+        canGetBreak={canReachChunkyShip.out && hasPrimatePunch}
+      />
     </CratePool>
   )
 }

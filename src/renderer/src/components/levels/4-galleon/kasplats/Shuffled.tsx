@@ -1,5 +1,5 @@
 import KasplatPool from '@renderer/components/pools/Kasplats'
-import { useDiddyGoldGb, useChunkySeasickGb, useGalleonLighthouseInside } from '@renderer/hooks/galleon'
+import { useDiddyGoldGb, useGalleonLighthouseInside } from '@renderer/hooks/galleon'
 import { useShuffleKasplats } from '@renderer/hooks/settings'
 import { useClimbing } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
@@ -9,7 +9,6 @@ import OutskirtKasplats from './Outskirts'
 const Shuffled: React.FC = () => {
 const DKVanillaKasplat = useDiddyGoldGb()
 const canGoInLighthouse = useGalleonLighthouseInside()
-const canDoChunkyShip = useChunkySeasickGb()
 const hasClimbing = useClimbing()
   return (
     <KasplatPool>
@@ -28,13 +27,6 @@ const hasClimbing = useClimbing()
         region="Lighthouse Area"
         canGetLogic={canGoInLighthouse.in && hasClimbing}
         canGetBreak={canGoInLighthouse.out && hasClimbing}
-      />
-      <GalleonCheck
-        id={54011}
-        name="Shuffled Kasplat: Inside Chunky's ship"
-        region="Lighthouse Area"
-        canGetLogic={canDoChunkyShip.in}
-        canGetBreak={canDoChunkyShip.out}
       />
     </KasplatPool>
   )
