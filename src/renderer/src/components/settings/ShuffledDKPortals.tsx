@@ -362,7 +362,7 @@ const ShuffledDKPortals: React.FC = () => {
             <p>In either of Lanky's mushroom top rooms</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}
-                title="The DK Portal is in Lanky's Zinger or colored mushroom slam room."
+                title="The DK Portal is in Lanky's Zinger or colored mushroom slam room. (TO DO: Split this into two?)"
                 storeKey="lankyShroomTopPortal"
                 prefix="shuffledForestPortals"
                 updateItem={setForestPortal}
