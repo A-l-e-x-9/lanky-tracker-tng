@@ -25,8 +25,8 @@ const useLankyMedalCommonLogic = (): number => {
   if (prodTop.in || prodTop.out) {
     bananas += 15
   }
-  if (production.in || production.out) {
-    bananas += 20
+  if ((production.in || production.out) && gun) {
+    bananas += 20 //balloons in the Crusher and around the Prod Room's Troff 'n' Scoff
   }
 
   return bananas
