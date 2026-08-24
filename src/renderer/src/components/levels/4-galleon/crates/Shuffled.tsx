@@ -1,5 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useGalleonLighthouseInside, useGalleonCannon, useLanky2DoorShipGb } from '@renderer/hooks/galleon'
+import { useGalleonLighthouseInside, useLanky2DoorShipGb } from '@renderer/hooks/galleon'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useClimbing } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
@@ -8,7 +8,6 @@ import TreasureCrates from './Treasure'
 
 const Shuffled: React.FC = () => {
 const canReachLighthouse = useGalleonLighthouseInside()
-const canReachCannonGame = useGalleonCannon()
 const hasClimbing = useClimbing()
 const canReachLankys2DS = useLanky2DoorShipGb()
   return (
