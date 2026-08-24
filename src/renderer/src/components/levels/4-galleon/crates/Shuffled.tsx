@@ -3,6 +3,7 @@ import { useGalleonLighthouseInside, useGalleonCannon, useLanky2DoorShipGb } fro
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useClimbing } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
+import CavernCrates from './Caverns'
 import TreasureCrates from './Treasure'
 
 const Shuffled: React.FC = () => {
@@ -12,6 +13,7 @@ const hasClimbing = useClimbing()
 const canReachLankys2DS = useLanky2DoorShipGb()
   return (
     <CratePool>
+      <CavernCrates />
       <TreasureCrates />
       <GalleonCheck
         id={24001}
@@ -19,27 +21,6 @@ const canReachLankys2DS = useLanky2DoorShipGb()
         region="Lighthouse Area"
         canGetLogic={canReachLighthouse.in}
         canGetBreak={canReachLighthouse.out}
-      />
-      <GalleonCheck
-        id={24003}
-        name="Shuffled Melon Crate: In front of the cannonball"
-        region="Galleon Caves"
-        canGetLogic={canReachCannonGame.in}
-        canGetBreak={canReachCannonGame.out}
-      />
-      <GalleonCheck
-        id={24004}
-        name="Shuffled Melon Crate: Behind the cannonball"
-        region="Galleon Caves"
-        canGetLogic={canReachCannonGame.in}
-        canGetBreak={canReachCannonGame.out}
-      />
-      <GalleonCheck
-        id={24005}
-        name="Shuffled Melon Crate: Next to the cannon"
-        region="Galleon Caves"
-        canGetLogic={canReachCannonGame.in}
-        canGetBreak={canReachCannonGame.out}
       />
       <GalleonCheck
         id={24013}

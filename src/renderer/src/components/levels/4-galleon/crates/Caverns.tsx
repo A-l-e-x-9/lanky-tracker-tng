@@ -17,6 +17,27 @@ const canReachVanillaArena = useArena()
         canGetBreak={canReachVanillaArena.out}
       />
       <GalleonCheck
+        id={24003}
+        name="Shuffled Melon Crate: In front of the cannonball"
+        region="Galleon Caves"
+        canGetLogic={canReachCannonGame.in}
+        canGetBreak={canReachCannonGame.out}
+      />
+      <GalleonCheck
+        id={24004}
+        name="Shuffled Melon Crate: Behind the cannonball"
+        region="Galleon Caves"
+        canGetLogic={canReachCannonGame.in}
+        canGetBreak={canReachCannonGame.out}
+      />
+      <GalleonCheck
+        id={24005}
+        name="Shuffled Melon Crate: Next to the cannon"
+        region="Galleon Caves"
+        canGetLogic={canReachCannonGame.in}
+        canGetBreak={canReachCannonGame.out}
+      />
+      <GalleonCheck
         id={24006}
         name="Shuffled Melon Crate: 4-way tunnel intersection"
         region="Galleon Caves"
