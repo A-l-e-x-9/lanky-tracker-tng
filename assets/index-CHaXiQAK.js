@@ -32640,23 +32640,9 @@ const CavernArena = () => {
   ) }) });
 };
 const useDkMedalCommonLogic$3 = () => {
-  const outskirts = useGalleonOutskirts();
-  const lighthouseArea = useGalleonLighthouseArea();
   const gun = useCoconut();
-  const music = useBongos();
-  const dive = useDive();
-  const lanky = useLanky();
   let bananas = 0;
   if (gun) {
-    bananas += 10;
-  }
-  if (outskirts.in || outskirts.out) {
-    bananas += 15;
-    if (music) {
-      bananas += 10;
-    }
-  }
-  if ((lighthouseArea.in || lighthouseArea.out) && (dive.in || dive.out) && lanky) {
     bananas += 10;
   }
   return bananas;
@@ -32669,6 +32655,10 @@ const useDkMedalInLogic$3 = () => {
   const gun = useCoconut();
   const pad = useBlast();
   const shuffleBananas = useShuffleColoredBananas();
+  const outskirts = useGalleonOutskirts();
+  const dive = useDive();
+  const lanky = useLanky();
+  const music = useBongos();
   let bananas = useDkMedalCommonLogic$3();
   if (!inStage.in) {
     return 0;
@@ -32692,6 +32682,15 @@ const useDkMedalInLogic$3 = () => {
         bananas += 10;
       }
     }
+    if (dive.in && lanky) {
+      bananas += 10;
+    }
+  }
+  if (outskirts.in && dive.in) {
+    bananas += 15;
+    if (music) {
+      bananas += 10;
+    }
   }
   return bananas;
 };
@@ -32703,6 +32702,10 @@ const useDkMedalOutLogic$3 = () => {
   const gun = useCoconut();
   const pad = useBlast();
   const shuffleBananas = useShuffleColoredBananas();
+  const outskirts = useGalleonOutskirts();
+  const dive = useDive();
+  const lanky = useLanky();
+  const music = useBongos();
   let bananas = useDkMedalCommonLogic$3();
   if (!inStage.out) {
     return 0;
@@ -32725,6 +32728,15 @@ const useDkMedalOutLogic$3 = () => {
       if (gun) {
         bananas += 10;
       }
+    }
+    if (dive.out && lanky) {
+      bananas += 10;
+    }
+  }
+  if (outskirts.out && dive.out) {
+    bananas += 15;
+    if (music) {
+      bananas += 10;
     }
   }
   return bananas;
@@ -56108,7 +56120,7 @@ const ShuffledDKPortals = () => {
                 SimpleRadioIcon,
                 {
                   imgUrl: dkPortalIcon,
-                  title: "The DK Portal is in Lanky's Zinger or colored mushroom slam room.",
+                  title: "The DK Portal is in Lanky's Zinger or colored mushroom slam room. (TO DO: Split this into two?)",
                   storeKey: "lankyShroomTopPortal",
                   prefix: "shuffledForestPortals",
                   updateItem: setForestPortal
