@@ -1,7 +1,6 @@
 import { useBlast, useBongos, useCoconut, useDive, useDk, useLanky } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
-  useGalleonLighthouseArea,
   useGalleonLighthousePlatform,
   useGalleonOutskirts,
   usePlayGalleon,
@@ -29,6 +28,8 @@ export const useDkMedalInLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   const outskirts = useGalleonOutskirts()
   const dive = useDive()
+  const lanky = useLanky()
+  const music = useBongos()
   let bananas = useDkMedalCommonLogic()
 
   if (!inStage.in) {
@@ -79,6 +80,8 @@ export const useDkMedalOutLogic = (): number => {
   const shuffleBananas = useShuffleColoredBananas()
   const outskirts = useGalleonOutskirts()
   const dive = useDive()
+  const lanky = useLanky()
+  const music = useBongos()
   let bananas = useDkMedalCommonLogic()
 
   if (!inStage.out) {
