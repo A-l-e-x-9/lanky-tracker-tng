@@ -29135,7 +29135,7 @@ const useLankyMedalCommonLogic$4 = () => {
   if (prodTop.in || prodTop.out) {
     bananas += 15;
   }
-  if (production.in || production.out) {
+  if ((production.in || production.out) && gun) {
     bananas += 20;
   }
   return bananas;
