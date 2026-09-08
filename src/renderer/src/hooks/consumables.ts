@@ -1,6 +1,10 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import { useDkMedalInLogic as islesDK } from '@renderer/hooks/isles/medals/dk'
+import { useDiddyMedalInLogic as islesDiddy } from '@renderer/hooks/isles/medals/diddy'
+import { useLankyMedalInLogic as islesLanky } from '@renderer/hooks/isles/medals/lanky'
+import { useTinyMedalInLogic as islesTiny } from '@renderer/hooks/isles/medals/tiny'
+import { useChunkyMedalInLogic as islesChunky } from '@renderer/hooks/isles/medals/chunky'
 
 /**
  * How many banana medals do we actually have?
