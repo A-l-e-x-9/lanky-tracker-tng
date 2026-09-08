@@ -5,6 +5,41 @@ import { useDiddyMedalInLogic as islesDiddy } from '@renderer/hooks/isles/medals
 import { useLankyMedalInLogic as islesLanky } from '@renderer/hooks/isles/medals/lanky'
 import { useTinyMedalInLogic as islesTiny } from '@renderer/hooks/isles/medals/tiny'
 import { useChunkyMedalInLogic as islesChunky } from '@renderer/hooks/isles/medals/chunky'
+import { useDkMedalInLogic as japesDK } from '@renderer/hooks/japes/medals/dk'
+import { useDiddyMedalInLogic as japesDiddy } from '@renderer/hooks/japes/medals/diddy'
+import { useLankyMedalInLogic as japesLanky } from '@renderer/hooks/japes/medals/lanky'
+import { useTinyMedalInLogic as japesTiny } from '@renderer/hooks/japes/medals/tiny'
+import { useChunkyMedalInLogic as japesChunky } from '@renderer/hooks/japes/medals/chunky'
+import { useDkMedalInLogic as aztecDK } from '@renderer/hooks/aztec/medals/dk'
+import { useDiddyMedalInLogic as aztecDiddy } from '@renderer/hooks/aztec/medals/diddy'
+import { useLankyMedalInLogic as aztecLanky } from '@renderer/hooks/aztec/medals/lanky'
+import { useTinyMedalInLogic as aztecTiny } from '@renderer/hooks/aztec/medals/tiny'
+import { useChunkyMedalInLogic as aztecChunky } from '@renderer/hooks/aztec/medals/chunky'
+import { useDkMedalInLogic as factoryDK } from '@renderer/hooks/factory/medals/dk'
+import { useDiddyMedalInLogic as factoryDiddy } from '@renderer/hooks/factory/medals/diddy'
+import { useLankyMedalInLogic as factoryLanky } from '@renderer/hooks/factory/medals/lanky'
+import { useTinyMedalInLogic as factoryTiny } from '@renderer/hooks/factory/medals/tiny'
+import { useChunkyMedalInLogic as factoryChunky } from '@renderer/hooks/factory/medals/chunky'
+import { useDkMedalInLogic as galleonDK } from '@renderer/hooks/galleon/medals/dk'
+import { useDiddyMedalInLogic as galleonDiddy } from '@renderer/hooks/galleon/medals/diddy'
+import { useLankyMedalInLogic as galleonLanky } from '@renderer/hooks/galleon/medals/lanky'
+import { useTinyMedalInLogic as galleonTiny } from '@renderer/hooks/galleon/medals/tiny'
+import { useChunkyMedalInLogic as galleonChunky } from '@renderer/hooks/galleon/medals/chunky'
+import { useDkMedalInLogic as forestDK } from '@renderer/hooks/forest/medals/dk'
+import { useDiddyMedalInLogic as forestDiddy } from '@renderer/hooks/forest/medals/diddy'
+import { useLankyMedalInLogic as forestLanky } from '@renderer/hooks/forest/medals/lanky'
+import { useTinyMedalInLogic as forestTiny } from '@renderer/hooks/forest/medals/tiny'
+import { useChunkyMedalInLogic as forestChunky } from '@renderer/hooks/forest/medals/chunky'
+import { useDkMedalInLogic as cavesDK } from '@renderer/hooks/caves/medals/dk'
+import { useDiddyMedalInLogic as cavesDiddy } from '@renderer/hooks/caves/medals/diddy'
+import { useLankyMedalInLogic as cavesLanky } from '@renderer/hooks/caves/medals/lanky'
+import { useTinyMedalInLogic as cavesTiny } from '@renderer/hooks/caves/medals/tiny'
+import { useChunkyMedalInLogic as cavesChunky } from '@renderer/hooks/caves/medals/chunky'
+import { useDkMedalInLogic as castleDK } from '@renderer/hooks/castle/medals/dk'
+import { useDiddyMedalInLogic as castleDiddy } from '@renderer/hooks/castle/medals/diddy'
+import { useLankyMedalInLogic as castleLanky } from '@renderer/hooks/castle/medals/lanky'
+import { useTinyMedalInLogic as castleTiny } from '@renderer/hooks/castle/medals/tiny'
+import { useChunkyMedalInLogic as castleChunky } from '@renderer/hooks/castle/medals/chunky'
 
 /**
  * How many banana medals do we actually have?
@@ -68,5 +103,12 @@ return + Number(didCheck[-42]) + Number(didCheck[-41]) + Number(didCheck[-40]) +
 
 export const useCurrentCBCount = (): number => {
   const islesCBs = islesDK() + islesDiddy() + islesLanky() + islesTiny() + islesChunky()
+  const japesCBs = japesDK() + japesDiddy() + japesLanky() + japesTiny() + japesChunky()
+  const aztecCBs = aztecDK() + aztecDiddy() + aztecLanky() + aztecTiny() + aztecChunky()
+  const factoryCBs = factoryDK() + factoryDiddy() + factoryLanky() + factoryTiny() + factoryChunky()
+  const galleonCBs = galleonDK() + galleonDiddy() + galleonLanky() + galleonTiny() + galleonChunky()
+  const forestCBs = forestDK() + forestDiddy() + forestLanky() + forestTiny() + forestChunky()
+  const cavesCBs = cavesDK() + cavesDiddy() + cavesLanky() + cavesTiny() + cavesChunky()
+  const castleCBs = castleDK() + castleDiddy() + castleLanky() + castleTiny() + castleChunky()
   return islesCBs + japesCBs + aztecCBs + factoryCBs + galleonCBs + forestCBs + cavesCBs + castleCBs
 }
