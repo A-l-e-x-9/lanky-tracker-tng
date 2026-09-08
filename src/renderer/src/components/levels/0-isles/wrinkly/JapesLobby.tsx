@@ -128,7 +128,7 @@ if (!locked && !kongLocked) {
         />
     </WrinklyPool>
   )
-  } else if (locked && kongLocked) {
+  } else {
   return (
     <WrinklyPool>
         <IslesCheck
