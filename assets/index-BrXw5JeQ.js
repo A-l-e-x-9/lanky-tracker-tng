@@ -16173,6 +16173,11 @@ const JapesLobby$1 = () => {
 const JapesLobby = () => {
   const canDo = useJapesLobbyGeneric();
   const [locked, kongLocked] = useDonkStore(useShallow((state) => [state.settings.lockedWrinklyDoors, state.ui.konglessHintDoorsOff]));
+  const hasDK = useDk();
+  const hasDiddy = useDiddy();
+  const hasLanky = useLanky();
+  const hasTiny = useTiny();
+  const hasChunky = useChunky();
   if (!locked && !kongLocked) {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16287,8 +16292,8 @@ const JapesLobby = () => {
           id: 65,
           name: "Wrinkly Door: Japes DK",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && hasDK,
+          canGetBreak: canDo.out && hasDK
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16297,8 +16302,8 @@ const JapesLobby = () => {
           id: 64,
           name: "Wrinkly Door: Japes Diddy",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && hasDiddy,
+          canGetBreak: canDo.out && hasDiddy
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16307,8 +16312,8 @@ const JapesLobby = () => {
           id: 66,
           name: "Wrinkly Door: Japes Lanky",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && hasLanky,
+          canGetBreak: canDo.out && hasLanky
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16317,8 +16322,8 @@ const JapesLobby = () => {
           id: 67,
           name: "Wrinkly Door: Japes Tiny",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && hasTiny,
+          canGetBreak: canDo.out && hasTiny
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16327,8 +16332,8 @@ const JapesLobby = () => {
           id: 63,
           name: "Wrinkly Door: Japes Chunky",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && hasChunky,
+          canGetBreak: canDo.out && hasChunky
         }
       )
     ] });
@@ -16340,8 +16345,8 @@ const JapesLobby = () => {
           id: 65,
           name: "Wrinkly Door: Japes DK",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && hasDK,
+          canGetBreak: canDo.out && hasDK
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16350,8 +16355,8 @@ const JapesLobby = () => {
           id: 64,
           name: "Wrinkly Door: Japes Diddy",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && hasDiddy,
+          canGetBreak: canDo.out && hasDiddy
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16360,8 +16365,8 @@ const JapesLobby = () => {
           id: 66,
           name: "Wrinkly Door: Japes Lanky",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && hasLanky,
+          canGetBreak: canDo.out && hasLanky
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16370,8 +16375,8 @@ const JapesLobby = () => {
           id: 67,
           name: "Wrinkly Door: Japes Tiny",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && hasTiny,
+          canGetBreak: canDo.out && hasTiny
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16380,8 +16385,8 @@ const JapesLobby = () => {
           id: 63,
           name: "Wrinkly Door: Japes Chunky",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && hasChunky,
+          canGetBreak: canDo.out && hasChunky
         }
       )
     ] });
