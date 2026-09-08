@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
-import useWrinklyDoorItem from '@renderer/hooks/settings'
+import { useWrinklyDoorItem } from '@renderer/hooks/settings'
 import WrinklyPool from '@renderer/components/pools/WrinklyDoors'
 import { useJapesLobbyGeneric } from '@renderer/hooks/isles'
 import IslesCheck from '../check'
