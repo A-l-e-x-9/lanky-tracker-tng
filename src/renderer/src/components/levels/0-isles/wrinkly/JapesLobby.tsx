@@ -4,7 +4,7 @@ import WrinklyPool from '@renderer/components/pools/WrinklyDoors'
 import { useJapesLobbyGeneric } from '@renderer/hooks/isles'
 import { useDk, useDiddy, useLanky, useTiny, useChunky } from '@renderer/hooks/kongs'
 import { useWrinklyDoorItem } from '@renderer/hooks/settings'
-import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useCurrentPearlCount, useCurrentCBCount } from '@renderer/hooks/consumables'
+import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useCurrentPearlCount } from '@renderer/hooks/consumables'
 import IslesCheck from '../check'
 
 /*Since Version 4 of the DK64 Randomizer, you can have major rewards in Wrinkly Kong's hint doors (and hints on checks).*/
