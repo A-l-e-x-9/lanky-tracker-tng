@@ -4,11 +4,7 @@ import FactoryLobbyEnemies from '../enemies/FactoryLobby'
 import FactoryLobbyFairy, { FactoryLobbyFairies } from '../fairies/FactoryLobby'
 import BongosPad from '../gold-bananas/dk/BongosPad'
 import TinyKasplat from '../kasplats/Tiny'
-import FactoryLobbyDK from '../wrinkly/FactoryLobbyDK'
-import FactoryLobbyDiddy from '../wrinkly/FactoryLobbyDiddy'
-import FactoryLobbyLanky from '../wrinkly/FactoryLobbyLanky'
-import FactoryLobbyTiny from '../wrinkly/FactoryLobbyTiny'
-import FactoryLobbyChunky from '../wrinkly/FactoryLobbyChunky'
+import FactoryWrinkly from '../wrinkly/FactoryLobby'
 import FactoryLobbyArenas from '../arenas/FactoryLobby'
 import FactoryLobbyCrates from '../crates/FactoryLobby'
 import FactoryLobbyDirt from '../dirt/FactoryLobby'
@@ -23,11 +19,7 @@ return (
   <>
   <div className="grid">
     <BongosPad />
-    <FactoryLobbyDK />
-    <FactoryLobbyDiddy />
-    <FactoryLobbyLanky />
-    <FactoryLobbyTiny />
-    <FactoryLobbyChunky />
+    <FactoryWrinkly />
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <FactoryLobbyFairy />

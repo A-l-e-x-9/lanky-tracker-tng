@@ -2,11 +2,7 @@ import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import GalleonSwim from '../gold-bananas/tiny/GalleonSwim'
 import ChunkyKasplat from '../kasplats/Chunky'
-import GalleonLobbyDK from '../wrinkly/GalleonLobbyDK'
-import GalleonLobbyDiddy from '../wrinkly/GalleonLobbyDiddy'
-import GalleonLobbyLanky from '../wrinkly/GalleonLobbyLanky'
-import GalleonLobbyTiny from '../wrinkly/GalleonLobbyTiny'
-import GalleonLobbyChunky from '../wrinkly/GalleonLobbyChunky'
+import GalleonWrinkly from '../wrinkly/GalleonLobby'
 import GalleonLobbyArenas from '../arenas/GalleonLobby'
 import GalleonLobbyCrates from '../crates/GalleonLobby'
 import GalleonLobbyDirt from '../dirt/GalleonLobby'
@@ -19,11 +15,7 @@ return (
   <>
   <div className="grid">
     <GalleonSwim />
-    <GalleonLobbyDK />
-    <GalleonLobbyDiddy />
-    <GalleonLobbyLanky />
-    <GalleonLobbyTiny />
-    <GalleonLobbyChunky />
+    <GalleonWrinkly />
   </div>
   <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ChunkyKasplat />

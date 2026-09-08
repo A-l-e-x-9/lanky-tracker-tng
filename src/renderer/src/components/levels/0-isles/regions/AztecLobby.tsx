@@ -1,11 +1,7 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import AztecBarrel from '../gold-bananas/tiny/AztecBarrel'
-import AztecLobbyDK from '../wrinkly/AztecLobbyDK'
-import AztecLobbyDiddy from '../wrinkly/AztecLobbyDiddy'
-import AztecLobbyLanky from '../wrinkly/AztecLobbyLanky'
-import AztecLobbyTiny from '../wrinkly/AztecLobbyTiny'
-import AztecLobbyChunky from '../wrinkly/AztecLobbyChunky'
+import AztecWrinkly from '../wrinkly/AztecLobby'
 import AztecLobbyArenas from '../arenas/AztecLobby'
 import AztecLobbyCrates from '../crates/AztecLobby'
 import AztecLobbyDirt from '../dirt/AztecLobby'
@@ -21,11 +17,7 @@ return (
 <>
   <div className="grid">
   <AztecBarrel />
-  <AztecLobbyDK />
-  <AztecLobbyDiddy />
-  <AztecLobbyLanky />
-  <AztecLobbyTiny />
-  <AztecLobbyChunky />
+  <AztecWrinkly />
   <AztecLobbyArenas />
   <AztecLobbyCrates />
   <AztecLobbyDirt />

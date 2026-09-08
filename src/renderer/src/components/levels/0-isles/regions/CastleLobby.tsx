@@ -5,11 +5,7 @@ import CastleLobbyEnemies from '../enemies/CastleLobby'
 import CastleBarrel from '../gold-bananas/lanky/CastleBarrel'
 import DiddyKasplat from '../kasplats/Diddy'
 import CastleLobbyBoulder from '../boulders/CastleLobby'
-import CastleLobbyDK from '../wrinkly/CastleLobbyDK'
-import CastleLobbyDiddy from '../wrinkly/CastleLobbyDiddy'
-import CastleLobbyLanky from '../wrinkly/CastleLobbyLanky'
-import CastleLobbyTiny from '../wrinkly/CastleLobbyTiny'
-import CastleLobbyChunky from '../wrinkly/CastleLobbyChunky'
+import CastleWrinkly from '../wrinkly/CastleLobby'
 import CastleLobbyArenas from '../arenas/CastleLobby'
 import CastleLobbyCrates from '../crates/CastleLobby'
 import CastleLobbyFairies from '../fairies/CastleLobby'
@@ -26,11 +22,7 @@ return (
     <CastleBarrel />
     <CastleLobby />
     <CastleLobbyBoulder />
-    <CastleLobbyDK />
-    <CastleLobbyDiddy />
-    <CastleLobbyLanky />
-    <CastleLobbyTiny />
-    <CastleLobbyChunky />
+    <CastleWrinkly />
   </div>
   <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
      <DiddyKasplat />

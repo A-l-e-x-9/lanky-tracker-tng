@@ -3,11 +3,7 @@ import { useShallow } from 'zustand/react/shallow'
 import JapesLobbyEnemies from '../enemies/JapesLobby'
 import JapesLobbyBoulder from '../boulders/JapesLobby'
 import TrombonePad from '../gold-bananas/lanky/TrombonePad'
-import JapesLobbyDK from '../wrinkly/JapesLobbyDK'
-import JapesLobbyDiddy from '../wrinkly/JapesLobbyDiddy'
-import JapesLobbyLanky from '../wrinkly/JapesLobbyLanky'
-import JapesLobbyTiny from '../wrinkly/JapesLobbyTiny'
-import JapesLobbyChunky from '../wrinkly/JapesLobbyChunky'
+import JapesWrinkly from '../wrinkly/JapesLobby'
 import JapesLobbyArenas from '../arenas/JapesLobby'
 import JapesLobbyCrates from '../crates/JapesLobby'
 import JapesLobbyDirt from '../dirt/JapesLobby'
@@ -21,11 +17,7 @@ return (
   <div className="grid">
     <JapesLobbyBoulder />
     <TrombonePad />
-    <JapesLobbyDK />
-    <JapesLobbyDiddy />
-    <JapesLobbyLanky />
-    <JapesLobbyTiny />
-    <JapesLobbyChunky />
+    <JapesWrinkly />
   </div>
   <div className="grid">
     <JapesLobbyEnemies />

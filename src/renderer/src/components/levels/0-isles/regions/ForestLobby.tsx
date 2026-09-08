@@ -2,11 +2,7 @@ import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import GoneArena from '../arenas/Gone'
 import ForestLobbyFairy, { ForestLobbyFairies } from '../fairies/ForestLobby'
-import ForestLobbyDK from '../wrinkly/ForestLobbyDK'
-import ForestLobbyDiddy from '../wrinkly/ForestLobbyDiddy'
-import ForestLobbyLanky from '../wrinkly/ForestLobbyLanky'
-import ForestLobbyTiny from '../wrinkly/ForestLobbyTiny'
-import ForestLobbyChunky from '../wrinkly/ForestLobbyChunky'
+import ForestWrinkly from '../wrinkly/ForestLobby'
 import ForestLobbyArenas from '../arenas/ForestLobby'
 import ForestLobbyCrates from '../crates/ForestLobby'
 import ForestLobbyDirt from '../dirt/ForestLobby'
@@ -18,11 +14,7 @@ return (
   <>
   <div className="grid">
     <GoneArena />
-    <ForestLobbyDK />
-    <ForestLobbyDiddy />
-    <ForestLobbyLanky />
-    <ForestLobbyTiny />
-    <ForestLobbyChunky />
+    <ForestWrinkly />
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ForestLobbyFairy />

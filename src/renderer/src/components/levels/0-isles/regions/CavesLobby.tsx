@@ -3,11 +3,7 @@ import { useShallow } from 'zustand/react/shallow'
 import GuitarPad from '../gold-bananas/diddy/GuitarPad'
 import CavesLava from '../gold-bananas/dk/CavesLava'
 import LankyKasplat from '../kasplats/Lanky'
-import CavesLobbyDK from '../wrinkly/CavesLobbyDK'
-import CavesLobbyDiddy from '../wrinkly/CavesLobbyDiddy'
-import CavesLobbyLanky from '../wrinkly/CavesLobbyLanky'
-import CavesLobbyTiny from '../wrinkly/CavesLobbyTiny'
-import CavesLobbyChunky from '../wrinkly/CavesLobbyChunky'
+import CavesWrinkly from '../wrinkly/CavesLobby'
 import CavesLobbyBoulder from '../boulders/CavesLobby'
 import CavesLobbyArenas from '../arenas/CavesLobby'
 import CavesLobbyCrates from '../crates/CavesLobby'
@@ -26,11 +22,7 @@ return (
     <CavesLava />
     <GuitarPad />
     <CavesLobbyBoulder />
-    <CavesLobbyDK />
-    <CavesLobbyDiddy />
-    <CavesLobbyLanky />
-    <CavesLobbyTiny />
-    <CavesLobbyChunky />
+    <CavesWrinkly />
   </div>
   <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <LankyKasplat />
