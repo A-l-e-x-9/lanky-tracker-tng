@@ -57,7 +57,7 @@ const SlamShuffler: React.FC = () => {
           <WrinklyDoorSelector />
           <p></p>
           <p></p>
-          <hr class="full-grid" style={{ margin: `10px 0px` }} />
+          <hr className="full-grid" style={{ margin: `10px 0px` }} />
           <p>Number of the item needed for Japes:</p>
           <CountSelector
             imgUrl={wrinklyDoorItemToIcon(wrinklyDoorItem)}
@@ -125,7 +125,7 @@ const SlamShuffler: React.FC = () => {
           />
           <p></p>
           <p></p>
-          <hr class="full-grid" style={{ margin: `10px 0px` }} />
+          <hr className="full-grid" style={{ margin: `10px 0px` }} />
           <p>Are you playing the original game or a seed with "Kongless Hint Doors" off?<br />
           Enabling this will also make the doors Kong-locked.</p>
           <CheckIcon storeKey="konglessHintDoorsOff" prefix="ui" updateItem={setUi} />
