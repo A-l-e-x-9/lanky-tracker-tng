@@ -36,20 +36,25 @@ switch (doorItem) {
     let currentItemCount = useCurrentKeyCount()
     break
   }
-  case 4:
-    const currentItemCount = useCurrentBananaMedalCount()
+  case 4: {
+    let currentItemCount = useCurrentBananaMedalCount()
+    break
+  }
   case 5: {
     let currentItemCount = useCurrentFairyCount()
     break
   }
-  case 6:
-    const currentItemCount = useCurrentRainbowCoinCount()
+  case 6: {
+    let currentItemCount = useCurrentRainbowCoinCount()
+    break
+  }
   case 7: {
     let currentItemCount = useCurrentPearlCount()
     break
   }
-  case 8:
+  case 8: {
     const currentItemCount = 0 //I currently don't know of a good way to deal with CB's since I would have to deal with 40 checks that have five names shared among them!!! (eight "useDkMedalInLogic"s, eight "useDiddyMedalInLogic"s, and so on) >_<
+  }
 }
 
 if (!locked && !kongLocked) {
