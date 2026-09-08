@@ -18,7 +18,7 @@ export type BananaportRange = IntRange<0, 3>
 export type KongRange = IntRange<0, 5>
 export type RoolRange = IntRange<0, 13>
 type TroffAndScoffRange = IntRange<0, 501>
-type UltimateColoredBananaRange = IntRange<0, 3501>
+//type UltimateColoredBananaRange = IntRange<0, 3501>
 
 export const nameof = <T>(name: Extract<keyof T, string>): string => name
 
@@ -1359,13 +1359,13 @@ export type SlamSlice = SlamState & SlamActions
 
 //Begin locked Wrinkly Kong doors region.
 interface WrinklyDoorCollection {
-  jungleJapes: UltimateColoredBananaRange
-  angryAztec: UltimateColoredBananaRange
-  franticFactory: UltimateColoredBananaRange
-  gloomyGalleon: UltimateColoredBananaRange
-  fungiForest: UltimateColoredBananaRange
-  crystalCaves: UltimateColoredBananaRange
-  creepyCastle: UltimateColoredBananaRange
+  jungleJapes: TroffAndScoffRange
+  angryAztec: TroffAndScoffRange
+  franticFactory: TroffAndScoffRange
+  gloomyGalleon: TroffAndScoffRange
+  fungiForest: TroffAndScoffRange
+  crystalCaves: TroffAndScoffRange
+  creepyCastle: TroffAndScoffRange
 }
 
 export interface WrinklyDoorState {
