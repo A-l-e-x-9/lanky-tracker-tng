@@ -28,18 +28,26 @@ switch (doorItem) {
     let currentItemCount = useCurrentBlueprintCount()
     break
   }
-  case 2:
-    const currentItemCount = useCurrentCrownCount()
-  case 3:
-    const currentItemCount = useCurrentKeyCount()
+  case 2: {
+    let currentItemCount = useCurrentCrownCount()
+    break
+  }
+  case 3: {
+    let currentItemCount = useCurrentKeyCount()
+    break
+  }
   case 4:
     const currentItemCount = useCurrentBananaMedalCount()
-  case 5:
-    const currentItemCount = useCurrentFairyCount()
+  case 5: {
+    let currentItemCount = useCurrentFairyCount()
+    break
+  }
   case 6:
     const currentItemCount = useCurrentRainbowCoinCount()
-  case 7:
-    const currentItemCount = useCurrentPearlCount()
+  case 7: {
+    let currentItemCount = useCurrentPearlCount()
+    break
+  }
   case 8:
     const currentItemCount = 0 //I currently don't know of a good way to deal with CB's since I would have to deal with 40 checks that have five names shared among them!!! (eight "useDkMedalInLogic"s, eight "useDiddyMedalInLogic"s, and so on) >_<
 }
