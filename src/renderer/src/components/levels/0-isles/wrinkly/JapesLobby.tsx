@@ -20,10 +20,12 @@ const hasChunky = useChunky()
 const doorItem = useWrinklyDoorItem()
 
 switch (doorItem) {
-  default:
+  default: {
     let currentItemCount = useCurrentGBCount()
+    break
+    }
   case 1:
-    let currentItemCount = useCurrentBlueprintCount()
+    const currentItemCount = useCurrentBlueprintCount()
   case 2:
     const currentItemCount = useCurrentCrownCount()
   case 3:
