@@ -25,6 +25,7 @@ switch (doorItem) {
     break
   case 1:
     const currentItemCount = useCurrentBlueprintCount()
+    break
   case 2:
     const currentItemCount = useCurrentCrownCount()
   case 3:
