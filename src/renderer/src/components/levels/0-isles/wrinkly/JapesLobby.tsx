@@ -22,6 +22,7 @@ const doorItem = useWrinklyDoorItem()
 switch (doorItem) {
   default:
     const currentItemCount = useCurrentGBCount()
+    break
   case 1:
     const currentItemCount = useCurrentBlueprintCount()
   case 2:
@@ -37,7 +38,7 @@ switch (doorItem) {
   case 7:
     const currentItemCount = useCurrentPearlCount()
   case 8:
-    const currentItemCount = useCurrentCBCount()
+    const currentItemCount = 0 //I currently don't know of a good way to deal with CB's since I would have to deal with 40 checks that have five names shared among them!!! (eight "useDkMedalInLogic"s, eight "useDiddyMedalInLogic"s, and so on) >_<
 }
 
 if (!locked && !kongLocked) {
