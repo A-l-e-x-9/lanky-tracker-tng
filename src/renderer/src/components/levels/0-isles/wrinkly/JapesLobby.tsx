@@ -19,42 +19,51 @@ const hasTiny = useTiny()
 const hasChunky = useChunky()
 const doorItem = useWrinklyDoorItem()
 let currentItemCount = 0
+const currentGBs = useCurrentGBCount()
+const currentBPs = useCurrentBlueprintCount()
+const currentCrowns = useCurrentCrownCount()
+const currentKeys = useCurrentKeyCount()
+const currentMedals = useCurrentBananaMedalCount()
+const currentFairies = useCurrentFairyCount()
+const currentRainbowCoins = useCurrentRainbowCoinCount()
+const currentPearls = useCurrentPearlCount()
+const currentCBs = useCurrentCBCount()
 
 switch (doorItem) {
-  default: {
-    currentItemCount = useCurrentGBCount()
-    break
-  }
   case 1: {
-    currentItemCount = useCurrentBlueprintCount()
+    currentItemCount = currentBPs
     break
   }
   case 2: {
-    currentItemCount = useCurrentCrownCount()
+    currentItemCount = currentCrowns
     break
   }
   case 3: {
-    currentItemCount = useCurrentKeyCount()
+    currentItemCount = currentKeys
     break
   }
   case 4: {
-    currentItemCount = useCurrentBananaMedalCount()
+    currentItemCount = currentMedals
     break
   }
   case 5: {
-    currentItemCount = useCurrentFairyCount()
+    currentItemCount = currentFairies
     break
   }
   case 6: {
-    currentItemCount = useCurrentRainbowCoinCount()
+    currentItemCount = currentRainbowCoins
     break
   }
   case 7: {
-    currentItemCount = useCurrentPearlCount()
+    currentItemCount = currentPearls
     break
   }
   case 8: {
-    currentItemCount = useCurrentCBCount()
+    currentItemCount = currentCBs
+    break
+  }
+  default: {
+    currentItemCount = currentGBs
   }
 }
 
