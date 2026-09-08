@@ -23,9 +23,11 @@ switch (doorItem) {
   default: {
     let currentItemCount = useCurrentGBCount()
     break
-    }
-  case 1:
-    const currentItemCount = useCurrentBlueprintCount()
+  }
+  case 1: {
+    let currentItemCount = useCurrentBlueprintCount()
+    break
+  }
   case 2:
     const currentItemCount = useCurrentCrownCount()
   case 3:
