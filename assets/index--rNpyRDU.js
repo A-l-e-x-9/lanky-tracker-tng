@@ -16173,11 +16173,47 @@ const JapesLobby$1 = () => {
 const JapesLobby = () => {
   const canDo = useJapesLobbyGeneric();
   const [locked, kongLocked] = useDonkStore(useShallow((state) => [state.settings.lockedWrinklyDoors, state.ui.konglessHintDoorsOff]));
+  const doorItemCount = useDonkStore(useShallow((state) => state.wrinklyDoors.jungleJapes));
   const hasDK = useDk();
   const hasDiddy = useDiddy();
   const hasLanky = useLanky();
   const hasTiny = useTiny();
   const hasChunky = useChunky();
+  const doorItem = useWrinklyDoorItem();
+  let currentItemCount = 0;
+  switch (doorItem) {
+    default: {
+      currentItemCount = useCurrentGBCount();
+      break;
+    }
+    case 1: {
+      currentItemCount = useCurrentBlueprintCount();
+      break;
+    }
+    case 2: {
+      currentItemCount = useCurrentCrownCount();
+      break;
+    }
+    case 3: {
+      currentItemCount = useCurrentKeyCount();
+      break;
+    }
+    case 4: {
+      currentItemCount = useCurrentBananaMedalCount();
+      break;
+    }
+    case 5: {
+      currentItemCount = useCurrentFairyCount();
+      break;
+    }
+    case 6: {
+      currentItemCount = useCurrentRainbowCoinCount();
+      break;
+    }
+    case 7: {
+      currentItemCount = useCurrentPearlCount();
+    }
+  }
   if (!locked && !kongLocked) {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16239,8 +16275,8 @@ const JapesLobby = () => {
           id: 65,
           name: "Wrinkly Door: Japes DK",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16249,8 +16285,8 @@ const JapesLobby = () => {
           id: 64,
           name: "Wrinkly Door: Japes Diddy",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16259,8 +16295,8 @@ const JapesLobby = () => {
           id: 66,
           name: "Wrinkly Door: Japes Lanky",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16269,8 +16305,8 @@ const JapesLobby = () => {
           id: 67,
           name: "Wrinkly Door: Japes Tiny",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16279,8 +16315,8 @@ const JapesLobby = () => {
           id: 63,
           name: "Wrinkly Door: Japes Chunky",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in,
-          canGetBreak: canDo.out
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
         }
       )
     ] });
@@ -16345,8 +16381,8 @@ const JapesLobby = () => {
           id: 65,
           name: "Wrinkly Door: Japes DK",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in && hasDK,
-          canGetBreak: canDo.out && hasDK
+          canGetLogic: canDo.in && hasDK && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasDK && currentItemCount >= doorItemCount
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16355,8 +16391,8 @@ const JapesLobby = () => {
           id: 64,
           name: "Wrinkly Door: Japes Diddy",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in && hasDiddy,
-          canGetBreak: canDo.out && hasDiddy
+          canGetLogic: canDo.in && hasDiddy && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasDiddy && currentItemCount >= doorItemCount
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16365,8 +16401,8 @@ const JapesLobby = () => {
           id: 66,
           name: "Wrinkly Door: Japes Lanky",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in && hasLanky,
-          canGetBreak: canDo.out && hasLanky
+          canGetLogic: canDo.in && hasLanky && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasLanky && currentItemCount >= doorItemCount
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16375,8 +16411,8 @@ const JapesLobby = () => {
           id: 67,
           name: "Wrinkly Door: Japes Tiny",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in && hasTiny,
-          canGetBreak: canDo.out && hasTiny
+          canGetLogic: canDo.in && hasTiny && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasTiny && currentItemCount >= doorItemCount
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16385,8 +16421,8 @@ const JapesLobby = () => {
           id: 63,
           name: "Wrinkly Door: Japes Chunky",
           region: "Japes-Forest Lobbies",
-          canGetLogic: canDo.in && hasChunky,
-          canGetBreak: canDo.out && hasChunky
+          canGetLogic: canDo.in && hasChunky && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasChunky && currentItemCount >= doorItemCount
         }
       )
     ] });
