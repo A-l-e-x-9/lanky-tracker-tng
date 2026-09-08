@@ -134,7 +134,6 @@ if (!locked && !kongLocked) {
         />
     </WrinklyPool>
   )
-  }
   } else if (!locked && kongLocked) {
   return (
     <WrinklyPool>
@@ -175,7 +174,6 @@ if (!locked && !kongLocked) {
         />
     </WrinklyPool>
   )
-  }
   } else {
   return (
     <WrinklyPool>
