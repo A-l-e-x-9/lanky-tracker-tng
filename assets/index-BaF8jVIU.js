@@ -20229,60 +20229,268 @@ const ShopLocations$7 = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$7, {}) });
 };
 const WrinklyPool = ({ children }) => usePoolWrinkly() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const AztecLobbyDK = () => {
+const AztecLobby = () => {
   const canDo = useAztecLobbyGeneric();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 16,
-        name: "Aztec Lobby DK",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 15,
-        name: "Aztec Lobby Diddy",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 17,
-        name: "Aztec Lobby Lanky",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 18,
-        name: "Aztec Lobby Tiny",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 14,
-        name: "Aztec Lobby Chunky",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    )
-  ] });
+  const chunkyDoor = useAztecLobbyChunky();
+  const [locked, kongLocked] = useDonkStore(useShallow((state) => [state.settings.lockedWrinklyDoors, state.ui.konglessHintDoorsOff]));
+  const doorItemCount = useDonkStore(useShallow((state) => state.wrinklyDoors.jungleJapes));
+  const hasDK = useDk();
+  const hasDiddy = useDiddy();
+  const hasLanky = useLanky();
+  const hasTiny = useTiny();
+  const hasChunky = useChunky();
+  const doorItem = useWrinklyDoorItem();
+  let currentItemCount = 0;
+  switch (doorItem) {
+    default: {
+      currentItemCount = useCurrentGBCount();
+      break;
+    }
+    case 1: {
+      currentItemCount = useCurrentBlueprintCount();
+      break;
+    }
+    case 2: {
+      currentItemCount = useCurrentCrownCount();
+      break;
+    }
+    case 3: {
+      currentItemCount = useCurrentKeyCount();
+      break;
+    }
+    case 4: {
+      currentItemCount = useCurrentBananaMedalCount();
+      break;
+    }
+    case 5: {
+      currentItemCount = useCurrentFairyCount();
+      break;
+    }
+    case 6: {
+      currentItemCount = useCurrentRainbowCoinCount();
+      break;
+    }
+    case 7: {
+      currentItemCount = useCurrentPearlCount();
+      break;
+    }
+    case 8: {
+      currentItemCount = useCurrentCBCount();
+    }
+  }
+  if (!locked && !kongLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 16,
+          name: "Wrinkly Door: Aztec DK",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 15,
+          name: "Wrinkly Door: Aztec Diddy",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 17,
+          name: "Wrinkly Door: Aztec Lanky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 18,
+          name: "Wrinkly Door: Aztec Tiny",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 14,
+          name: "Wrinkly Door: Aztec Chunky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: chunkyDoor.in,
+          canGetBreak: chunkyDoor.out
+        }
+      )
+    ] });
+  } else if (locked && !kongLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 16,
+          name: "Wrinkly Door: Aztec DK",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 15,
+          name: "Wrinkly Door: Aztec Diddy",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 17,
+          name: "Wrinkly Door: Aztec Lanky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 18,
+          name: "Wrinkly Door: Aztec Tiny",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 14,
+          name: "Wrinkly Door: Aztec Chunky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: chunkyDoor.in && currentItemCount >= doorItemCount,
+          canGetBreak: chunkyDoor.out && currentItemCount >= doorItemCount
+        }
+      )
+    ] });
+  } else if (!locked && kongLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 16,
+          name: "Wrinkly Door: Aztec DK",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasDK,
+          canGetBreak: canDo.out && hasDK
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 15,
+          name: "Wrinkly Door: Aztec Diddy",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasDiddy,
+          canGetBreak: canDo.out && hasDiddy
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 17,
+          name: "Wrinkly Door: Aztec Lanky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasLanky,
+          canGetBreak: canDo.out && hasLanky
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 18,
+          name: "Wrinkly Door: Aztec Tiny",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasTiny,
+          canGetBreak: canDo.out && hasTiny
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 14,
+          name: "Wrinkly Door: Aztec Chunky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: chunkyDoor.in && hasChunky,
+          canGetBreak: chunkyDoor.out && hasChunky
+        }
+      )
+    ] });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 16,
+          name: "Wrinkly Door: Aztec DK",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasDK && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasDK && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 15,
+          name: "Wrinkly Door: Aztec Diddy",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasDiddy && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasDiddy && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 17,
+          name: "Wrinkly Door: Aztec Lanky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasLanky && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasLanky && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 18,
+          name: "Wrinkly Door: Aztec Tiny",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasTiny && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasTiny && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 14,
+          name: "Wrinkly Door: Aztec Chunky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: chunkyDoor.in && hasChunky && currentItemCount >= doorItemCount,
+          canGetBreak: chunkyDoor.out && hasChunky && currentItemCount >= doorItemCount
+        }
+      )
+    ] });
+  }
 };
 const Shuffled$2S = () => {
   const canGetInAztecLobby = usePlayLobby("Angry Aztec");
@@ -20434,7 +20642,7 @@ const AztecLobbyChecks = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(AztecBarrel, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyDK, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobby, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyArenas, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyCrates, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyDirt, {})
@@ -24218,7 +24426,7 @@ const BoulderLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
 ] });
 const WrinklyDoors = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobby, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyDK, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobby, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyDK, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobbyDK, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyDK, {}),
