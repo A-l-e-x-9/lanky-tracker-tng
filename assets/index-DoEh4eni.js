@@ -51768,31 +51768,111 @@ const CountSelector = (props) => {
   const clamp2 = (num2) => Math.min(Math.max(num2, 0), maxValue);
   const nextCount = (num2) => clamp2(num2 + 1);
   const prevCount = (num2) => clamp2(num2 - 1);
-  const handleNextLevel = () => {
-    props.setCount(storeKey, nextCount(num));
-  };
+  const [editing, setEditing] = reactExports.useState(false);
+  const [inputVal, setInputVal] = reactExports.useState(String(num));
+  const prevValRef = reactExports.useRef(num);
+  const inputRef = reactExports.useRef(null);
+  const clickTimeoutRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    if (!editing)
+      setInputVal(String(num));
+  }, [num, editing]);
+  reactExports.useEffect(() => {
+    if (editing && inputRef.current)
+      inputRef.current.focus();
+  }, [editing]);
   const handlePrevLevel = (e2) => {
     e2.preventDefault();
+    if (editing)
+      return;
     props.setCount(storeKey, prevCount(num));
   };
   const handleWheel = (e2) => {
+    if (editing)
+      return;
     if (e2.deltaY >= 0) {
       props.setCount(storeKey, nextCount(num));
     } else {
       props.setCount(storeKey, prevCount(num));
     }
   };
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+  const handleClick = () => {
+    if (editing)
+      return;
+    if (clickTimeoutRef.current) {
+      window.clearTimeout(clickTimeoutRef.current);
+      clickTimeoutRef.current = null;
+    }
+    clickTimeoutRef.current = window.setTimeout(() => {
+      props.setCount(storeKey, nextCount(num));
+      clickTimeoutRef.current = null;
+    }, 200);
+  };
+  const handleDoubleClick = () => {
+    if (clickTimeoutRef.current) {
+      window.clearTimeout(clickTimeoutRef.current);
+      clickTimeoutRef.current = null;
+    }
+    prevValRef.current = num;
+    setInputVal(String(num));
+    setEditing(true);
+  };
+  const commitEdit = () => {
+    const parsed = parseInt(inputVal, 10);
+    if (!isNaN(parsed) && parsed >= 0 && parsed <= maxValue) {
+      props.setCount(storeKey, parsed);
+    } else {
+      props.setCount(storeKey, prevValRef.current);
+      setInputVal(String(prevValRef.current));
+    }
+    setEditing(false);
+  };
+  const cancelEdit = () => {
+    setInputVal(String(prevValRef.current));
+    setEditing(false);
+  };
+  const handleInputKeyDown = (e2) => {
+    if (e2.key === "Enter") {
+      commitEdit();
+    } else if (e2.key === "Escape") {
+      cancelEdit();
+    }
+  };
+  const handleInputChange = (val) => {
+    if (val === "" || /^\d+$/.test(val)) {
+      if (/^0\d+/.test(val)) {
+        setInputVal(String(parseInt(val, 10)));
+      } else {
+        setInputVal(val);
+      }
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
       className: `count-icon ${props.prefix}-${props.storeKey} ${bananaSeed} ${bpSeed} ${medalSeed} ${crownSeed} ${fairySeed} ${rainbowCoinSeed} ${pearlSeed}`,
-      onClick: handleNextLevel,
+      onClick: handleClick,
+      onDoubleClick: handleDoubleClick,
       onContextMenu: handlePrevLevel,
       onWheel: handleWheel,
-      children: [
+      children: editing ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "input",
+        {
+          ref: inputRef,
+          type: "text",
+          inputMode: "numeric",
+          pattern: "\\\\d*",
+          value: inputVal,
+          onChange: (e2) => handleInputChange(e2.target.value),
+          onKeyDown: handleInputKeyDown,
+          onBlur: commitEdit,
+          style: { width: `${Math.max(2, String(maxValue).length + 1)}ch` },
+          title: props.title
+        }
+      ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { height: 24, alt: props.title, title: props.title, src: imgUrl, style: { filter: `grayscale(${num != 0 ? "0" : "1"})` } }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: num })
-      ]
+      ] })
     }
   );
 };
