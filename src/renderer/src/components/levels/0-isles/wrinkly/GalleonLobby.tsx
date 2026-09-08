@@ -10,35 +10,35 @@ const canDo = useGalleonLobbyGeneric()
         <IslesCheck
           id={60}
           name="Galleon Lobby DK"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={59}
           name="Galleon Lobby Diddy"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={61}
           name="Galleon Lobby Lanky"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={62}
           name="Galleon Lobby Tiny"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={58}
           name="Galleon Lobby Chunky"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />

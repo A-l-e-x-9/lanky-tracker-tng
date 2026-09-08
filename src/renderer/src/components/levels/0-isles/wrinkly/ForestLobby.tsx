@@ -10,35 +10,35 @@ const canDo = useForestLobbyGeneric()
         <IslesCheck
           id={55}
           name="Forest Lobby DK"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={49}
           name="Forest Lobby Diddy"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={56}
           name="Forest Lobby Lanky"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={57}
           name="Forest Lobby Tiny"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={46}
           name="Forest Lobby Chunky"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />

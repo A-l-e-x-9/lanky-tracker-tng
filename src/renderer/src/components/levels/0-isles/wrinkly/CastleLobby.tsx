@@ -10,35 +10,35 @@ const canDo = useCastleLobbyGeneric()
         <IslesCheck
           id={25}
           name="Castle Lobby DK"
-          region="Wrinkly Kong Doors"
+          region="Caves-Helm Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={24}
           name="Castle Lobby Diddy"
-          region="Wrinkly Kong Doors"
+          region="Caves-Helm Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={26}
           name="Castle Lobby Lanky"
-          region="Wrinkly Kong Doors"
+          region="Caves-Helm Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={27}
           name="Castle Lobby Tiny"
-          region="Wrinkly Kong Doors"
+          region="Caves-Helm Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={19}
           name="Castle Lobby Chunky"
-          region="Wrinkly Kong Doors"
+          region="Caves-Helm Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />

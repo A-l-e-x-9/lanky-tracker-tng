@@ -12,35 +12,35 @@ const check = useRocket()
         <IslesCheck
           id={34}
           name="Caves Lobby DK"
-          region="Wrinkly Kong Doors"
+          region="Caves-Helm Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={29}
           name="Caves Lobby Diddy"
-          region="Wrinkly Kong Doors"
-          canGetLogic={check.in}
-          canGetBreak={check.out}
+          region="Caves-Helm Lobbies"
+          canGetLogic={canDo.in && check}
+          canGetBreak={canDo.out && check}
         />
         <IslesCheck
           id={35}
           name="Caves Lobby Lanky"
-          region="Wrinkly Kong Doors"
+          region="Caves-Helm Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={36}
           name="Caves Lobby Tiny"
-          region="Wrinkly Kong Doors"
+          region="Caves-Helm Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={28}
           name="Caves Lobby Chunky"
-          region="Wrinkly Kong Doors"
+          region="Caves-Helm Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />

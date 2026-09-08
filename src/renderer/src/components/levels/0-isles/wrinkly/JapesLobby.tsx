@@ -10,35 +10,35 @@ const canDo = useJapesLobbyGeneric()
         <IslesCheck
           id={65}
           name="Japes Lobby DK"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={64}
           name="Japes Lobby Diddy"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={66}
           name="Japes Lobby Lanky"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={67}
           name="Japes Lobby Tiny"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={63}
           name="Japes Lobby Chunky"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />

@@ -10,35 +10,35 @@ const canDo = useAztecLobbyGeneric()
         <IslesCheck
           id={16}
           name="Aztec Lobby DK"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={15}
           name="Aztec Lobby Diddy"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={17}
           name="Aztec Lobby Lanky"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={18}
           name="Aztec Lobby Tiny"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={14}
           name="Aztec Lobby Chunky"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />

@@ -818,7 +818,6 @@ export const SelectableRegions = [
   'Japes-Forest Lobbies',
   'Caves-Helm Lobbies',
   'Banana Medals',
-  'Wrinkly Kong Doors',
   'Japes Lowlands',
   'Japes Hillside',
   'Japes Caves and Mines',

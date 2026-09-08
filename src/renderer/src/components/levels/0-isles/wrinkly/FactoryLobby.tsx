@@ -11,35 +11,35 @@ const check = useFactoryLobbyUpper()
         <IslesCheck
           id={39}
           name="Factory Lobby DK"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={38}
           name="Factory Lobby Diddy"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={check.in}
           canGetBreak={check.out}
         />
         <IslesCheck
           id={44}
           name="Factory Lobby Lanky"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={check.in}
           canGetBreak={check.out}
         />
         <IslesCheck
           id={45}
           name="Factory Lobby Tiny"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={check.in}
           canGetBreak={check.out}
         />
         <IslesCheck
           id={37}
           name="Factory Lobby Chunky"
-          region="Wrinkly Kong Doors"
+          region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
