@@ -4,7 +4,7 @@ import WrinklyPool from '@renderer/components/pools/WrinklyDoors'
 import { useJapesLobbyGeneric } from '@renderer/hooks/isles'
 import { useDk, useDiddy, useLanky, useTiny, useChunky } from '@renderer/hooks/kongs'
 import { useWrinklyDoorItem } from '@renderer/hooks/settings'
-import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useCurrentPearlCount } from '@renderer/hooks/consumables'
+import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useCurrentPearlCount, useCurrentCBCount } from '@renderer/hooks/consumables'
 import IslesCheck from '../check'
 
 /*Since Version 4 of the DK64 Randomizer, you can have major rewards in Wrinkly Kong's hint doors (and hints on checks).*/
@@ -51,11 +51,11 @@ switch (doorItem) {
   }
   case 7: {
     currentItemCount = useCurrentPearlCount()
-/*    break*/
+    break
   }
-/*  case 8: {
-    const currentItemCount = 0 //I currently don't know of a good way to deal with CB's since I would have to deal with 40 checks that have five names shared among them!!! (eight "useDkMedalInLogic"s, eight "useDiddyMedalInLogic"s, and so on) >_<
-  }*/
+  case 8: {
+    currentItemCount = useCurrentCBCount()
+  }
 }
 
 if (!locked && !kongLocked) {
