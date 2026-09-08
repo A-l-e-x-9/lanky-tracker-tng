@@ -21,11 +21,9 @@ const doorItem = useWrinklyDoorItem()
 
 switch (doorItem) {
   default:
-    const currentItemCount = useCurrentGBCount()
-    break
+    let currentItemCount = useCurrentGBCount()
   case 1:
-    const currentItemCount = useCurrentBlueprintCount()
-    break
+    let currentItemCount = useCurrentBlueprintCount()
   case 2:
     const currentItemCount = useCurrentCrownCount()
   case 3:
