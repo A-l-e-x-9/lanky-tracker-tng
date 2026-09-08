@@ -18,6 +18,7 @@ export type BananaportRange = IntRange<0, 3>
 export type KongRange = IntRange<0, 5>
 export type RoolRange = IntRange<0, 13>
 export type TroffAndScoffRange = IntRange<0, 501>
+export type UltimateColoredBananaRange = IntRange<0, 3501>
 
 export const nameof = <T>(name: Extract<keyof T, string>): string => name
 
@@ -694,6 +695,8 @@ interface SettingCollection {
   shuffleLoadingZones: boolean
   //Are Wrinkly Kong's doors locked by some item for your seed?
   lockedWrinklyDoors: boolean
+  //What item locks them?
+  wrinklyDoorItem: BlueprintRange
 }
 
 export interface SettingState {
@@ -762,7 +765,9 @@ export interface UiCollection {
   hideRed: boolean,
   hideYellow: boolean,
   hideKRool: boolean,
-  itemCountModifier: boolean
+  itemCountModifier: boolean,
+  konglessHintDoorsOff: boolean,
+  fungiLobbyOptionOff: boolean
 }
 
 export interface UiState {
@@ -1352,6 +1357,28 @@ interface SlamActions {
 export type SlamSlice = SlamState & SlamActions
 //#endregion
 
+//Begin locked Wrinkly Kong doors region.
+interface WrinklyDoorCollection {
+  jungleJapes: UltimateColoredBananaRange
+  angryAztec: UltimateColoredBananaRange
+  franticFactory: UltimateColoredBananaRange
+  gloomyGalleon: UltimateColoredBananaRange
+  fungiForest: UltimateColoredBananaRange
+  crystalCaves: UltimateColoredBananaRange
+  creepyCastle: UltimateColoredBananaRange
+}
+
+export interface WrinklyDoorState {
+  wrinklyDoors: WrinklyDoorCollection
+}
+
+interface WrinklyDoorActions {
+  setWrinklyDoorCount: (id: string, val: number) => void
+}
+
+export type WrinklyDoorSlice = WrinklyDoorState & WrinklyDoorActions
+//#endregion
+
 export type AllSlice = CheckSlice &
   MoveSlice &
   ConsumablesSlice &
@@ -1369,7 +1396,8 @@ export type AllSlice = CheckSlice &
   WinConSlice &
   ShopSlice &
   PortalSlice &
-  SlamSlice
+  SlamSlice &
+  WrinklyDoorSlice
 
 export const donkResetFns = new Set<() => void>()
 

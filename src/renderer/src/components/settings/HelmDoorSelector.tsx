@@ -2,7 +2,7 @@ import { MouseEvent, WheelEvent } from 'react'
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
 import CountSelector from './CountSelector'
-import { useHelmItem1, useHelmItem2 } from '@renderer/hooks/settings'
+import { useHelmItem1, useHelmItem2, useWrinklyDoorItem } from '@renderer/hooks/settings'
 import alreadyOpenedIcon from '../../assets/images/unknown-small.png'
 import gbIcon from '../../assets/images/GB.png'
 import blueprintIcon from '../../assets/images/lanky_bp.png'
@@ -14,16 +14,21 @@ import fairyIcon from '../../assets/images/fairy.png'
 import rainbowCoinIcon from '../../assets/images/rainbowcoin.png'
 import beanIcon from '../../assets/images/bean.png'
 import pearlIcon from '../../assets/images/pearl.png'
+import cbIcon from '../../assets/images/settings/rainbow_bananas.png'
 
 const itemToIcon = (num): string => {
   return num == 1 ? gbIcon : num == 2 ? blueprintIcon : num == 3 ? coCoinIcon : num == 4 ? keyIcon : num == 5 ? medalIcon : num == 6 ? crownIcon : num == 7 ? fairyIcon : num == 8 ? rainbowCoinIcon : num == 9 ? beanIcon : num == 10 ? pearlIcon : alreadyOpenedIcon
 }
+const wrinklyDoorItemToIcon = (num): string => {
+  return num == 1 ? blueprintIcon : num == 2 ? crownIcon : num == 3 ? keyIcon : num == 4 ? medalIcon : num == 5 ? fairyIcon : num == 6 ? rainbowCoinIcon : num == 7 ? pearlIcon : num == 8 ? cbIcon : gbIcon
+}
 
 const clamp = (num: number): number => Math.min(Math.max(num, 0), 10)
-
+const wrinklyClamp = (num: number): number => Math.min(Math.max(num, 0), 8)
 const nextItem = (num: number): number => clamp(num + 1)
-
+const nextWrinklyItem = (num: number): number => wrinklyClamp(num + 1)
 const prevItem = (num: number): number => clamp(num - 1)
+const prevWrinklyItem = (num: number): number => wrinklyClamp(num - 1)
 
 export const HelmDoorSelector1: React.FC = () => {
   const helmItem1 = useHelmItem1()
@@ -113,6 +118,42 @@ export const HelmDoorSelector2: React.FC = () => {
         setCount={setSetting}
         maxValue={helmItem2 == 1 ? (capRemoved ? 255 : 201) : helmItem2 == 2 ? 40 : helmItem2 == 3 ? 2 : helmItem2 == 4 ? 8 : helmItem2 == 5 ? (capRemoved ? 255 : 40) : helmItem2 == 6 ? (capRemoved ? 255 : 10) : helmItem2 == 7 ? (capRemoved ? 255 : 20) : helmItem2 == 8 ? (capRemoved ? 255 : 16) : helmItem2 == 9 ? 1 : helmItem2 == 10 ? (capRemoved ? 255 : 5) : 0}
 
+      />
+    </div>
+  )
+}
+
+export const WrinklyDoorSelector: React.FC = () => {
+  const wrinklyDoorItem = useWrinklyDoorItem()
+  const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]))
+
+  const handleNextItem = (): void => {
+    setSetting('wrinklyDoorItem', nextWrinklyItem(wrinklyDoorItem))
+  }
+
+  const handlePrevItem = (e: MouseEvent<HTMLImageElement>): void => {
+    e.preventDefault()
+    setSetting('wrinklyDoorItem', prevWrinklyItem(wrinklyDoorItem))
+  }
+
+  const handleWheel = (e: WheelEvent<HTMLImageElement>): void => {
+    if (e.deltaY >= 0) {
+      setSetting('wrinklyDoorItem', nextWrinklyItem(wrinklyDoorItem))
+    } else {
+      setSetting('wrinklyDoorItem', prevWrinklyItem(wrinklyDoorItem))
+    }
+  }
+
+  return (
+    <div>
+      <img
+        className="simple-icon"
+        height={24}
+        title={wrinklyDoorItem == 1 ? 'Blueprints' : wrinklyDoorItem == 2 ? 'Battle Arena Crowns' : wrinklyDoorItem == 3 ? 'Keys' : wrinklyDoorItem == 4 ? 'Banana Medals' : wrinklyDoorItem == 5 ? 'Banana Fairies' : wrinklyDoorItem == 6 ? 'Rainbow Coins' : wrinklyDoorItem == 7 ? 'Pearls' : wrinklyDoorItem == 8 ? 'Colored Bananas' : 'Golden Bananas'}
+        src={wrinklyDoorItemToIcon(wrinklyDoorItem)}
+        onClick={handleNextItem}
+        onContextMenu={handlePrevItem}
+        onWheel={handleWheel}
       />
     </div>
   )

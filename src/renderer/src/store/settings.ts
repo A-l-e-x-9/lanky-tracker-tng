@@ -56,7 +56,8 @@ export const initialSettings: SettingState = {
     halfMedalCount: 50,
     shuffleDKPortals: true,
     shuffleLoadingZones: false,
-    lockedWrinklyDoors: false
+    lockedWrinklyDoors: false,
+    wrinklyDoorItem: 0
   }
 }
 

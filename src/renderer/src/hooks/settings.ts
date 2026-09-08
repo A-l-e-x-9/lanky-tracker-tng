@@ -305,6 +305,9 @@ export const useHelmItem1 = (): number =>
 
 export const useHelmItem2 = (): number =>
   useDonkStore(useShallow((state) => state.settings.helmItem2))
+  
+export const useWrinklyDoorItem = (): number =>
+  useDonkStore(useShallow((state) => state.settings.wrinklyDoorItem))
 
 export const useKRoolItem = (): number => {
 const currentWinCon = useDonkStore(useShallow((state) => state.winCondition))

@@ -9,8 +9,7 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
 - Recolor the pad and barrel icons to match the "color-coded Kong Pads/Barrels" option in the Randomizer.
 - Currently, the "Bonuses" and "K. Rool's Challenge" win conditions don't account for the Oil Drums in Hideout Helm, so if your current seed's win con is >43 Bonus Barrels, you're outta luck.
-- Make it so that you can just type how many bananas, etc., you have in the "count" selectors (such as "Colored bananas needed for medal" in Settings) so you don't have to click so much.
-- Similarly, make it so that for the shuffled Arenas, Crates, Dirts, Fairies, and eventually Kasplats and Colored Bananas, there's only one or two checks each, and you can use a drop-down list or something to choose where they are.
+- Make it so that for the shuffled Arenas, Crates, Dirts, Fairies, and eventually Kasplats and Colored Bananas, there's only one or two checks each, and you can use a drop-down list or something to choose where they are.
 - Make the left side of the tracker sticky...either Alex really sucks at using the "position: sticky;" CSS command, or something else about the tracker's design is stopping it from being sticky.
 - Alex took out the "Region Hints" section of the original Tracker because he thought it was poorly done. Reimplement it?
 - Need an easy way to reset the tracker if need be. (Currently, in Firefox, you have to do it by right-clicking, go to "Inspect", click the "Storage" tab, then on "Local Storage", then on the website's name, and deleting the "donk-storage" entry.)
