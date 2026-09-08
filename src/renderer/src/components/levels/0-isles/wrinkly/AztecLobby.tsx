@@ -1,43 +1,43 @@
 import WrinklyPool from '@renderer/components/pools/WrinklyDoors'
-import { useJapesLobbyGeneric } from '@renderer/hooks/isles'
+import { useAztecLobbyGeneric } from '@renderer/hooks/isles'
 import IslesCheck from '../check'
 
 /*Since Version 4 of the DK64 Randomizer, you can have major rewards in Wrinkly Kong's hint doors (and hints on checks).*/
-const JapesLobby: React.FC = () => {
-const canDo = useJapesLobbyGeneric()
+const AztecLobbyDK: React.FC = () => {
+const canDo = useAztecLobbyGeneric()
   return (
     <WrinklyPool>
         <IslesCheck
-          id={65}
-          name="Japes Lobby DK"
+          id={16}
+          name="Aztec Lobby DK"
           region="Wrinkly Kong Doors"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
-          id={64}
-          name="Japes Lobby Diddy"
+          id={15}
+          name="Aztec Lobby Diddy"
           region="Wrinkly Kong Doors"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
-          id={66}
-          name="Japes Lobby Lanky"
+          id={17}
+          name="Aztec Lobby Lanky"
           region="Wrinkly Kong Doors"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
-          id={67}
-          name="Japes Lobby Tiny"
+          id={18}
+          name="Aztec Lobby Tiny"
           region="Wrinkly Kong Doors"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
-          id={63}
-          name="Japes Lobby Chunky"
+          id={14}
+          name="Aztec Lobby Chunky"
           region="Wrinkly Kong Doors"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
@@ -46,4 +46,4 @@ const canDo = useJapesLobbyGeneric()
   )
 }
 
-export default JapesLobby
+export default AztecLobbyDK
