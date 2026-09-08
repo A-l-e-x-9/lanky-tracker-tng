@@ -67,6 +67,6 @@ return + Number(didCheck[-42]) + Number(didCheck[-41]) + Number(didCheck[-40]) +
 }
 
 export const useCurrentCBCount = (): number => {
-  const islesCBs = islesDK + islesDiddy + islesLanky + islesTiny + islesChunky
+  const islesCBs = islesDK() + islesDiddy() + islesLanky() + islesTiny() + islesChunky()
   return islesCBs + japesCBs + aztecCBs + factoryCBs + galleonCBs + forestCBs + cavesCBs + castleCBs
 }
