@@ -8,10 +8,10 @@ import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentKeyCount, useCur
 import IslesCheck from '../check'
 
 /*Since Version 4 of the DK64 Randomizer, you can have major rewards in Wrinkly Kong's hint doors (and hints on checks).*/
-const ForestLobbyDK: React.FC = () => {
+const ForestLobby: React.FC = () => {
 const canDo = useForestLobbyGeneric()
 const [locked, kongLocked, grabLocked] = useDonkStore(useShallow((state) => [state.settings.lockedWrinklyDoors, state.ui.konglessHintDoorsOff, state.ui.fungiLobbyOptionOff]))
-const doorItemCount = useDonkStore(useShallow((state) => state.wrinklyDoors.gloomyGalleon))
+const doorItemCount = useDonkStore(useShallow((state) => state.wrinklyDoors.fungiForest))
 const hasDK = useDk()
 const hasDiddy = useDiddy()
 const hasLanky = useLanky()
@@ -73,41 +73,80 @@ if (!locked && !kongLocked && !grabLocked) {
     <WrinklyPool>
         <IslesCheck
           id={55}
-          name="Forest Lobby DK"
+          name="Wrinkly Door: Forest DK"
           region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={49}
-          name="Forest Lobby Diddy"
+          name="Wrinkly Door: Forest Diddy"
           region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={56}
-          name="Forest Lobby Lanky"
+          name="Wrinkly Door: Forest Lanky"
           region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={57}
-          name="Forest Lobby Tiny"
+          name="Wrinkly Door: Forest Tiny"
           region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
         <IslesCheck
           id={46}
-          name="Forest Lobby Chunky"
+          name="Wrinkly Door: Forest Chunky"
           region="Japes-Forest Lobbies"
           canGetLogic={canDo.in}
           canGetBreak={canDo.out}
         />
     </WrinklyPool>
+  )} else if (locked && !kongLocked && !grabLocked) {
+  return (
+    <WrinklyPool>
+        <IslesCheck
+          id={55}
+          name="Wrinkly Door: Forest DK"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount)}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount)}
+        />
+        <IslesCheck
+          id={49}
+          name="Wrinkly Door: Forest Diddy"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount)}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount)}
+        />
+        <IslesCheck
+          id={56}
+          name="Wrinkly Door: Forest Lanky"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount)}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount)}
+        />
+        <IslesCheck
+          id={57}
+          name="Wrinkly Door: Forest Tiny"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount)}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount)}
+        />
+        <IslesCheck
+          id={46}
+          name="Wrinkly Door: Forest Chunky"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount)}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount)}
+        />
+    </WrinklyPool>
   )}
 }
 
-export default ForestLobbyDK
+export default ForestLobby
