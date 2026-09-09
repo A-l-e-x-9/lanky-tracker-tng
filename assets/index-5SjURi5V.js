@@ -21606,60 +21606,489 @@ const FactoryLobbyChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyKasplats, {}) })
   ] });
 };
-const ForestLobbyDK = () => {
+const ForestLobby = () => {
   const canDo = useForestLobbyGeneric();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 55,
-        name: "Forest Lobby DK",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 49,
-        name: "Forest Lobby Diddy",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 56,
-        name: "Forest Lobby Lanky",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 57,
-        name: "Forest Lobby Tiny",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 46,
-        name: "Forest Lobby Chunky",
-        region: "Japes-Forest Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    )
-  ] });
+  const [locked, kongLocked, grabLocked] = useDonkStore(useShallow((state) => [state.settings.lockedWrinklyDoors, state.ui.konglessHintDoorsOff, state.ui.fungiLobbyOptionOff]));
+  const doorItemCount = useDonkStore(useShallow((state) => state.wrinklyDoors.fungiForest));
+  const hasDK = useDk();
+  const hasDiddy = useDiddy();
+  const hasLanky = useLanky();
+  const hasTiny = useTiny();
+  const hasChunky = useChunky();
+  const doorItem = useWrinklyDoorItem();
+  let currentItemCount = 0;
+  const currentGBs = useCurrentGBCount();
+  const currentBPs = useCurrentBlueprintCount();
+  const currentCrowns = useCurrentCrownCount();
+  const currentKeys = useCurrentKeyCount();
+  const currentMedals = useCurrentBananaMedalCount();
+  const currentFairies = useCurrentFairyCount();
+  const currentRainbowCoins = useCurrentRainbowCoinCount();
+  const currentPearls = useCurrentPearlCount();
+  const currentCBs = useCurrentCBCount();
+  const hasGrab = useGrab();
+  switch (doorItem) {
+    case 1: {
+      currentItemCount = currentBPs;
+      break;
+    }
+    case 2: {
+      currentItemCount = currentCrowns;
+      break;
+    }
+    case 3: {
+      currentItemCount = currentKeys;
+      break;
+    }
+    case 4: {
+      currentItemCount = currentMedals;
+      break;
+    }
+    case 5: {
+      currentItemCount = currentFairies;
+      break;
+    }
+    case 6: {
+      currentItemCount = currentRainbowCoins;
+      break;
+    }
+    case 7: {
+      currentItemCount = currentPearls;
+      break;
+    }
+    case 8: {
+      currentItemCount = currentCBs;
+      break;
+    }
+    default: {
+      currentItemCount = currentGBs;
+    }
+  }
+  if (!locked && !kongLocked && !grabLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 55,
+          name: "Wrinkly Door: Forest DK",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 49,
+          name: "Wrinkly Door: Forest Diddy",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 56,
+          name: "Wrinkly Door: Forest Lanky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 57,
+          name: "Wrinkly Door: Forest Tiny",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 46,
+          name: "Wrinkly Door: Forest Chunky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      )
+    ] });
+  } else if (locked && !kongLocked && !grabLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 55,
+          name: "Wrinkly Door: Forest DK",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 49,
+          name: "Wrinkly Door: Forest Diddy",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 56,
+          name: "Wrinkly Door: Forest Lanky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 57,
+          name: "Wrinkly Door: Forest Tiny",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 46,
+          name: "Wrinkly Door: Forest Chunky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      )
+    ] });
+  } else if (!locked && kongLocked && !grabLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 55,
+          name: "Wrinkly Door: Forest DK",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasDK,
+          canGetBreak: canDo.out && hasDK
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 49,
+          name: "Wrinkly Door: Forest Diddy",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasDiddy,
+          canGetBreak: canDo.out && hasDiddy
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 56,
+          name: "Wrinkly Door: Forest Lanky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasLanky,
+          canGetBreak: canDo.out && hasLanky
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 57,
+          name: "Wrinkly Door: Forest Tiny",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasTiny,
+          canGetBreak: canDo.out && hasTiny
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 46,
+          name: "Wrinkly Door: Forest Chunky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasChunky,
+          canGetBreak: canDo.out && hasChunky
+        }
+      )
+    ] });
+  } else if (!locked && !kongLocked && grabLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 55,
+          name: "Wrinkly Door: Forest DK",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 49,
+          name: "Wrinkly Door: Forest Diddy",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasGrab,
+          canGetBreak: canDo.out && hasGrab
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 56,
+          name: "Wrinkly Door: Forest Lanky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasGrab,
+          canGetBreak: canDo.out && hasGrab
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 57,
+          name: "Wrinkly Door: Forest Tiny",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasGrab,
+          canGetBreak: canDo.out && hasGrab
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 46,
+          name: "Wrinkly Door: Forest Chunky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasGrab,
+          canGetBreak: canDo.out && hasGrab
+        }
+      )
+    ] });
+  } else if (locked && kongLocked && !grabLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 55,
+          name: "Wrinkly Door: Forest DK",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount && hasDK,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount && hasDK
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 49,
+          name: "Wrinkly Door: Forest Diddy",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount && hasDiddy,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount && hasDiddy
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 56,
+          name: "Wrinkly Door: Forest Lanky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount && hasLanky,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount && hasLanky
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 57,
+          name: "Wrinkly Door: Forest Tiny",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount && hasTiny,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount && hasTiny
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 46,
+          name: "Wrinkly Door: Forest Chunky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount && hasChunky,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount && hasChunky
+        }
+      )
+    ] });
+  } else if (locked && !kongLocked && grabLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 55,
+          name: "Wrinkly Door: Forest DK",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 49,
+          name: "Wrinkly Door: Forest Diddy",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount && hasGrab,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount && hasGrab
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 56,
+          name: "Wrinkly Door: Forest Lanky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount && hasGrab,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount && hasGrab
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 57,
+          name: "Wrinkly Door: Forest Tiny",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount && hasGrab,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount && hasGrab
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 46,
+          name: "Wrinkly Door: Forest Chunky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount && hasGrab,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount && hasGrab
+        }
+      )
+    ] });
+  } else if (!locked && kongLocked && grabLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 55,
+          name: "Wrinkly Door: Forest DK",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasDK,
+          canGetBreak: canDo.out && hasDK
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 49,
+          name: "Wrinkly Door: Forest Diddy",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasDiddy && hasGrab,
+          canGetBreak: canDo.out && hasDiddy && hasGrab
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 56,
+          name: "Wrinkly Door: Forest Lanky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasLanky && hasGrab,
+          canGetBreak: canDo.out && hasLanky && hasGrab
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 57,
+          name: "Wrinkly Door: Forest Tiny",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasTiny && hasGrab,
+          canGetBreak: canDo.out && hasTiny && hasGrab
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 46,
+          name: "Wrinkly Door: Forest Chunky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasChunky && hasGrab,
+          canGetBreak: canDo.out && hasChunky && hasGrab
+        }
+      )
+    ] });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 55,
+          name: "Wrinkly Door: Forest DK",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasDK && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasDK && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 49,
+          name: "Wrinkly Door: Forest Diddy",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasDiddy && hasGrab && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasDiddy && hasGrab && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 56,
+          name: "Wrinkly Door: Forest Lanky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasLanky && hasGrab && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasLanky && hasGrab && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 57,
+          name: "Wrinkly Door: Forest Tiny",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasTiny && hasGrab && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasTiny && hasGrab && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 46,
+          name: "Wrinkly Door: Forest Chunky",
+          region: "Japes-Forest Lobbies",
+          canGetLogic: canDo.in && hasChunky && hasGrab && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasChunky && hasGrab && currentItemCount >= doorItemCount
+        }
+      )
+    ] });
+  }
 };
 const Shuffled$2A = () => {
   const canDoIslesArena2 = useForestArena();
@@ -21735,7 +22164,7 @@ const ForestLobbyChecks = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(GoneArena, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyDK, {})
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobby, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyFairy, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -24879,7 +25308,7 @@ const WrinklyDoors = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExpo
   /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobby, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryLobbyDK, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobby, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobbyDK, {}),
+  /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobby, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobbyDK, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyDK, {})
 ] });
