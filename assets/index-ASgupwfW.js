@@ -15813,8 +15813,9 @@ const useChunkyMillGb = () => {
 const useDiddyTopGb$1 = () => {
   const inStage = usePlayForest();
   const canReachShroomRoof = useForestMushroomRoof();
+  const hasJetbarrel = useRocket();
   return {
-    in: inStage.in && canReachShroomRoof.in,
+    in: inStage.in && canReachShroomRoof.in && hasJetbarrel,
     out: inStage.out && canReachShroomRoof.out
   };
 };
