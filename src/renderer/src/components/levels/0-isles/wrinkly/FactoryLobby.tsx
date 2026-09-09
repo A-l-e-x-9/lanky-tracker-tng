@@ -12,7 +12,7 @@ const FactoryLobbyDK: React.FC = () => {
 const canDo = useFactoryLobbyLower()
 const check = useFactoryLobbyUpper()
 const [locked, kongLocked] = useDonkStore(useShallow((state) => [state.settings.lockedWrinklyDoors, state.ui.konglessHintDoorsOff]))
-const doorItemCount = useDonkStore(useShallow((state) => state.wrinklyDoors.jungleJapes))
+const doorItemCount = useDonkStore(useShallow((state) => state.wrinklyDoors.franticFactory))
 const hasDK = useDk()
 const hasDiddy = useDiddy()
 const hasLanky = useLanky()

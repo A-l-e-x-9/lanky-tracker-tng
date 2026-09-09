@@ -12,7 +12,7 @@ const AztecLobby: React.FC = () => {
 const canDo = useAztecLobbyGeneric()
 const chunkyDoor = useAztecLobbyChunky()
 const [locked, kongLocked] = useDonkStore(useShallow((state) => [state.settings.lockedWrinklyDoors, state.ui.konglessHintDoorsOff]))
-const doorItemCount = useDonkStore(useShallow((state) => state.wrinklyDoors.jungleJapes))
+const doorItemCount = useDonkStore(useShallow((state) => state.wrinklyDoors.angryAztec))
 const hasDK = useDk()
 const hasDiddy = useDiddy()
 const hasLanky = useLanky()
