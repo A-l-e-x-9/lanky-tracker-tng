@@ -185,6 +185,201 @@ if (!locked && !kongLocked && !grabLocked) {
           canGetBreak={canDo.out && hasChunky}
         />
     </WrinklyPool>
+  )} else if (!locked && !kongLocked && grabLocked) {
+  return (
+    <WrinklyPool>
+        <IslesCheck
+          id={55}
+          name="Wrinkly Door: Forest DK"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in}
+          canGetBreak={canDo.out}
+        />
+        <IslesCheck
+          id={49}
+          name="Wrinkly Door: Forest Diddy"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasGrab}
+          canGetBreak={canDo.out && hasGrab}
+        />
+        <IslesCheck
+          id={56}
+          name="Wrinkly Door: Forest Lanky"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasGrab}
+          canGetBreak={canDo.out && hasGrab}
+        />
+        <IslesCheck
+          id={57}
+          name="Wrinkly Door: Forest Tiny"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasGrab}
+          canGetBreak={canDo.out && hasGrab}
+        />
+        <IslesCheck
+          id={46}
+          name="Wrinkly Door: Forest Chunky"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasGrab}
+          canGetBreak={canDo.out && hasGrab}
+        />
+    </WrinklyPool>
+  )} else if (locked && kongLocked && !grabLocked) {
+  return (
+    <WrinklyPool>
+        <IslesCheck
+          id={55}
+          name="Wrinkly Door: Forest DK"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount) && hasDK}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount) && hasDK}
+        />
+        <IslesCheck
+          id={49}
+          name="Wrinkly Door: Forest Diddy"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount) && hasDiddy}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount) && hasDiddy}
+        />
+        <IslesCheck
+          id={56}
+          name="Wrinkly Door: Forest Lanky"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount) && hasLanky}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount) && hasLanky}
+        />
+        <IslesCheck
+          id={57}
+          name="Wrinkly Door: Forest Tiny"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount) && hasTiny}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount) && hasTiny}
+        />
+        <IslesCheck
+          id={46}
+          name="Wrinkly Door: Forest Chunky"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount) && hasChunky}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount) && hasChunky}
+        />
+    </WrinklyPool>
+  )} else if (locked && !kongLocked && grabLocked) {
+  return (
+    <WrinklyPool>
+        <IslesCheck
+          id={55}
+          name="Wrinkly Door: Forest DK"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount)}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount)}
+        />
+        <IslesCheck
+          id={49}
+          name="Wrinkly Door: Forest Diddy"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount) && hasGrab}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount) && hasGrab}
+        />
+        <IslesCheck
+          id={56}
+          name="Wrinkly Door: Forest Lanky"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount) && hasGrab}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount) && hasGrab}
+        />
+        <IslesCheck
+          id={57}
+          name="Wrinkly Door: Forest Tiny"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount) && hasGrab}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount) && hasGrab}
+        />
+        <IslesCheck
+          id={46}
+          name="Wrinkly Door: Forest Chunky"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount) && hasGrab}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount) && hasGrab}
+        />
+    </WrinklyPool>
+  )} else if (!locked && kongLocked && grabLocked) {
+  return (
+    <WrinklyPool>
+        <IslesCheck
+          id={55}
+          name="Wrinkly Door: Forest DK"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasDK}
+          canGetBreak={canDo.out && hasDK}
+        />
+        <IslesCheck
+          id={49}
+          name="Wrinkly Door: Forest Diddy"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasDiddy && hasGrab}
+          canGetBreak={canDo.out && hasDiddy && hasGrab}
+        />
+        <IslesCheck
+          id={56}
+          name="Wrinkly Door: Forest Lanky"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasLanky && hasGrab}
+          canGetBreak={canDo.out && hasLanky && hasGrab}
+        />
+        <IslesCheck
+          id={57}
+          name="Wrinkly Door: Forest Tiny"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasTiny && hasGrab}
+          canGetBreak={canDo.out && hasTiny && hasGrab}
+        />
+        <IslesCheck
+          id={46}
+          name="Wrinkly Door: Forest Chunky"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasChunky && hasGrab}
+          canGetBreak={canDo.out && hasChunky && hasGrab}
+        />
+    </WrinklyPool>
+  )} else {
+  return (
+    <WrinklyPool>
+        <IslesCheck
+          id={55}
+          name="Wrinkly Door: Forest DK"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasDK && (currentItemCount >= doorItemCount)}
+          canGetBreak={canDo.out && hasDK && (currentItemCount >= doorItemCount)}
+        />
+        <IslesCheck
+          id={49}
+          name="Wrinkly Door: Forest Diddy"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasDiddy && hasGrab && (currentItemCount >= doorItemCount)}
+          canGetBreak={canDo.out && hasDiddy && hasGrab && (currentItemCount >= doorItemCount)}
+        />
+        <IslesCheck
+          id={56}
+          name="Wrinkly Door: Forest Lanky"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasLanky && hasGrab && (currentItemCount >= doorItemCount)}
+          canGetBreak={canDo.out && hasLanky && hasGrab && (currentItemCount >= doorItemCount)}
+        />
+        <IslesCheck
+          id={57}
+          name="Wrinkly Door: Forest Tiny"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasTiny && hasGrab && (currentItemCount >= doorItemCount)}
+          canGetBreak={canDo.out && hasTiny && hasGrab && (currentItemCount >= doorItemCount)}
+        />
+        <IslesCheck
+          id={46}
+          name="Wrinkly Door: Forest Chunky"
+          region="Japes-Forest Lobbies"
+          canGetLogic={canDo.in && hasChunky && hasGrab && (currentItemCount >= doorItemCount)}
+          canGetBreak={canDo.out && hasChunky && hasGrab && (currentItemCount >= doorItemCount)}
+        />
+    </WrinklyPool>
   )}
 }
 
