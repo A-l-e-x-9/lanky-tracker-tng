@@ -1089,7 +1089,7 @@ export const useCavesLobbyDiddy = (): LogicBool => {
   const highGrab = useHighGrab()
   return {
     in: canEnterCaves.in && hasJetbarrel,
-    out: (canEnterCaves.in || canEnterCaves.out) && boulderTech && hasTiny && hasTwirl && highGrab
+    out: canEnterCaves.out && boulderTech && hasTiny && hasTwirl && highGrab
   }
 }
 
