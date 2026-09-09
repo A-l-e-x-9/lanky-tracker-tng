@@ -19189,7 +19189,7 @@ const CabinIsleDirt = () => /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPoo
     canGetLogic: useIslandDirt()
   }
 ) }) });
-const CastleLobby$1 = () => {
+const CastleLobby$2 = () => {
   const castle = useCastleDirt();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
@@ -19303,7 +19303,7 @@ const DirtLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeE
   /* @__PURE__ */ jsxRuntimeExports.jsx(UnderCaves, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(AztecRoof, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CabinIsleDirt, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobby$1, {})
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobby$2, {})
 ] });
 const DropPool = ({ children }) => usePoolDrops() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const useDefeatZinger = () => {
@@ -20673,7 +20673,7 @@ const AztecLobbyChecks = () => {
   ] });
 };
 const BoulderPool = ({ children }) => usePoolBoulders() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const CastleLobby = () => {
+const CastleLobby$1 = () => {
   const canDo = useCastleLobby();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     IslesCheck,
@@ -20686,60 +20686,276 @@ const CastleLobby = () => {
     }
   ) });
 };
-const CastleLobbyDK = () => {
+const CastleLobby = () => {
   const canDo = useCastleLobbyGeneric();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 25,
-        name: "Castle Lobby DK",
-        region: "Caves-Helm Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 24,
-        name: "Castle Lobby Diddy",
-        region: "Caves-Helm Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 26,
-        name: "Castle Lobby Lanky",
-        region: "Caves-Helm Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 27,
-        name: "Castle Lobby Tiny",
-        region: "Caves-Helm Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IslesCheck,
-      {
-        id: 19,
-        name: "Castle Lobby Chunky",
-        region: "Caves-Helm Lobbies",
-        canGetLogic: canDo.in,
-        canGetBreak: canDo.out
-      }
-    )
-  ] });
+  const [locked, kongLocked] = useDonkStore(useShallow((state) => [state.settings.lockedWrinklyDoors, state.ui.konglessHintDoorsOff]));
+  const doorItemCount = useDonkStore(useShallow((state) => state.wrinklyDoors.creepyCastle));
+  const hasDK = useDk();
+  const hasDiddy = useDiddy();
+  const hasLanky = useLanky();
+  const hasTiny = useTiny();
+  const hasChunky = useChunky();
+  const doorItem = useWrinklyDoorItem();
+  let currentItemCount = 0;
+  const currentGBs = useCurrentGBCount();
+  const currentBPs = useCurrentBlueprintCount();
+  const currentCrowns = useCurrentCrownCount();
+  const currentKeys = useCurrentKeyCount();
+  const currentMedals = useCurrentBananaMedalCount();
+  const currentFairies = useCurrentFairyCount();
+  const currentRainbowCoins = useCurrentRainbowCoinCount();
+  const currentPearls = useCurrentPearlCount();
+  const currentCBs = useCurrentCBCount();
+  switch (doorItem) {
+    case 1: {
+      currentItemCount = currentBPs;
+      break;
+    }
+    case 2: {
+      currentItemCount = currentCrowns;
+      break;
+    }
+    case 3: {
+      currentItemCount = currentKeys;
+      break;
+    }
+    case 4: {
+      currentItemCount = currentMedals;
+      break;
+    }
+    case 5: {
+      currentItemCount = currentFairies;
+      break;
+    }
+    case 6: {
+      currentItemCount = currentRainbowCoins;
+      break;
+    }
+    case 7: {
+      currentItemCount = currentPearls;
+      break;
+    }
+    case 8: {
+      currentItemCount = currentCBs;
+      break;
+    }
+    default: {
+      currentItemCount = currentGBs;
+    }
+  }
+  if (!locked && !kongLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 25,
+          name: "Wrinkly Door: Castle DK",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 24,
+          name: "Wrinkly Door: Castle Diddy",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 26,
+          name: "Wrinkly Door: Castle Lanky",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 27,
+          name: "Wrinkly Door: Castle Tiny",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 19,
+          name: "Wrinkly Door: Castle Chunky",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in,
+          canGetBreak: canDo.out
+        }
+      )
+    ] });
+  } else if (locked && !kongLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 25,
+          name: "Wrinkly Door: Castle DK",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 24,
+          name: "Wrinkly Door: Castle Diddy",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 26,
+          name: "Wrinkly Door: Castle Lanky",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 27,
+          name: "Wrinkly Door: Castle Tiny",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 19,
+          name: "Wrinkly Door: Castle Chunky",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && currentItemCount >= doorItemCount
+        }
+      )
+    ] });
+  } else if (!locked && kongLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 25,
+          name: "Wrinkly Door: Castle DK",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && hasDK,
+          canGetBreak: canDo.out && hasDK
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 24,
+          name: "Wrinkly Door: Castle Diddy",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && hasDiddy,
+          canGetBreak: canDo.out && hasDiddy
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 26,
+          name: "Wrinkly Door: Castle Lanky",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && hasLanky,
+          canGetBreak: canDo.out && hasLanky
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 27,
+          name: "Wrinkly Door: Castle Tiny",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && hasTiny,
+          canGetBreak: canDo.out && hasTiny
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 19,
+          name: "Wrinkly Door: Castle Chunky",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && hasChunky,
+          canGetBreak: canDo.out && hasChunky
+        }
+      )
+    ] });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(WrinklyPool, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 25,
+          name: "Wrinkly Door: Castle DK",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && hasDK && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasDK && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 24,
+          name: "Wrinkly Door: Castle Diddy",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && hasDiddy && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasDiddy && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 26,
+          name: "Wrinkly Door: Castle Lanky",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && hasLanky && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasLanky && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 27,
+          name: "Wrinkly Door: Castle Tiny",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && hasTiny && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasTiny && currentItemCount >= doorItemCount
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IslesCheck,
+        {
+          id: 19,
+          name: "Wrinkly Door: Castle Chunky",
+          region: "Caves-Helm Lobbies",
+          canGetLogic: canDo.in && hasChunky && currentItemCount >= doorItemCount,
+          canGetBreak: canDo.out && hasChunky && currentItemCount >= doorItemCount
+        }
+      )
+    ] });
+  }
 };
 const Shuffled$2N = () => {
   const isBreathing = useAnyKong();
@@ -20880,9 +21096,9 @@ const CastleLobbyChecks = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CastleBarrel, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobby$2, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobby$1, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobby, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyDK, {})
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobby, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$7, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -25529,7 +25745,7 @@ const BoulderLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(AztecLobbyTrianglePad, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobby$1, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobby, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobby, {})
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobby$1, {})
 ] });
 const WrinklyDoors = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
   /* @__PURE__ */ jsxRuntimeExports.jsx(JapesLobby, {}),
@@ -25538,7 +25754,7 @@ const WrinklyDoors = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExpo
   /* @__PURE__ */ jsxRuntimeExports.jsx(GalleonLobby, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(ForestLobby, {}),
   /* @__PURE__ */ jsxRuntimeExports.jsx(CavesLobby$1, {}),
-  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobbyDK, {})
+  /* @__PURE__ */ jsxRuntimeExports.jsx(CastleLobby, {})
 ] });
 const JapesForestArenas = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
