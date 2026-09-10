@@ -54,20 +54,6 @@ const ShuffledFairies: React.FC = () => {
         canGetBreak={canReachOutskirts.out && hasCam}
       />
       <GalleonCheck
-        id={44011}
-        name="Shuffled Fairy: Top of the inside of DK's lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canGoInLighthouse.in && hasClimbing && hasCam}
-        canGetBreak={canGoInLighthouse.out && hasClimbing && hasCam}
-      />
-      <GalleonCheck
-        id={44012}
-        name="Shuffled Fairy: Inside the Mermaid's house"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in && hasDiving.in && hasMiniMonkey && hasCam}
-        canGetBreak={canReachLighthouse.out && hasDiving.out && hasMiniMonkey && hasCam}
-      />
-      <GalleonCheck
         id={44013}
         name="Shuffled Fairy: In Lanky's 5DS room"
         region="5 Door Ship"

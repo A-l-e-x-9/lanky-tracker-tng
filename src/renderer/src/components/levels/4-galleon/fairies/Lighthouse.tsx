@@ -24,6 +24,20 @@ const Shuffled: React.FC = () => {
         canGetLogic={canReachChunkyShip.in && hasCam}
         canGetBreak={canReachChunkyShip.out && hasCam}
       />
+      <GalleonCheck
+        id={44011}
+        name="Shuffled Fairy: Top of the inside of DK's lighthouse"
+        region="Lighthouse Area"
+        canGetLogic={canGoInLighthouse.in && hasClimbing && hasCam}
+        canGetBreak={canGoInLighthouse.out && hasClimbing && hasCam}
+      />
+      <GalleonCheck
+        id={44012}
+        name="Shuffled Fairy: Inside the Mermaid's house"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouse.in && hasDiving.in && hasMiniMonkey && hasCam}
+        canGetBreak={canReachLighthouse.out && hasDiving.out && hasMiniMonkey && hasCam}
+      />
     </FairyPool>
   )
 }
