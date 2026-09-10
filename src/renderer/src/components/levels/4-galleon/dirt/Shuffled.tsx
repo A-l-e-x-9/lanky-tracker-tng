@@ -22,6 +22,10 @@ const hasPrimatePunch = usePunch()
 const hasClimbing = useClimbing()
   return (
     <RainbowCoinPool>
+      <CavernDirt />
+      <LighthouseDirt />
+      <OutskirtDirt />
+      <TreasureDirt />
       <GalleonCheck
         id={34000}
         name="Shuffled Dirt Patch: Under Cranky's"
