@@ -12,20 +12,6 @@ const ShuffledArenas: React.FC = () => {
       <LighthouseArenas />
       <OutskirtArenas />
       <TreasureArenas />
-      <GalleonCheck
-        id={14030}
-        name="Shuffled Battle Arena: Top of Lanky's gold tower"
-        region="Treasure Room"
-        canGetLogic={canReachLankyGold.in}
-        canGetBreak={canReachLankyGold.out}
-      />
-      <GalleonCheck
-        id={14039}
-        name="Shuffled Battle Arena: Vanilla Warp 4, on Diddy's gold tower"
-        region="Treasure Room"
-        canGetLogic={canReachDiddyGold.in}
-        canGetBreak={canReachDiddyGold.out}
-      />
     </ArenaPool>
   )
 }
