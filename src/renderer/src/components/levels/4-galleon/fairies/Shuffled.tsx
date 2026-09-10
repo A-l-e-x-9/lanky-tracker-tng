@@ -2,11 +2,11 @@ import FairyPool from '@renderer/components/pools/Fairies'
 import CavernFairies from './Caverns'
 import LighthouseFairies from './Lighthouse'
 import OutskirtFairies from './Outskirts'
+import ShipFairies from './5DoorShip'
 import TreasureFairies from './Treasure'
 
 const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
-  const vanillaFairy1 = useChestFairy()
   const vanillaFairy2 = useShipFairy()
   const canReachOutskirts = useGalleonOutskirts()
   const canReachLighthouse = useGalleonLighthouseArea()
@@ -23,14 +23,8 @@ const ShuffledFairies: React.FC = () => {
       <CavernFairies />
       <LighthouseFairies />
       <OutskirtFairies />
+      <ShipFairies />
       <TreasureFairies />
-      <GalleonCheck
-        id={44000}
-        name="Shuffled Fairy: Vanilla Location #1 (in Chunky's Punch chest)"
-        region="Galleon Caves"
-        canGetLogic={vanillaFairy1.in}
-        canGetBreak={vanillaFairy1.out}
-      />
       <GalleonCheck
         id={44001}
         name="Shuffled Fairy: Vanilla Location #2 (Tiny's 5DS room)"

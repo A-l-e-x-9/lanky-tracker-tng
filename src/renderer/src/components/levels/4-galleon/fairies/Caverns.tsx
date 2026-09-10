@@ -1,12 +1,20 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGeneralFairy } from '@renderer/hooks/galleon'
+import { useGeneralFairy, useChestFairy } from '@renderer/hooks/galleon'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
+  const vanillaFairy1 = useChestFairy()
   const isBreathing = useGeneralFairy()
   return (
     <FairyPool>
+      <GalleonCheck
+        id={44000}
+        name="Shuffled Fairy: Vanilla Location #1 (in Chunky's Punch chest)"
+        region="Galleon Caves"
+        canGetLogic={vanillaFairy1.in}
+        canGetBreak={vanillaFairy1.out}
+      />
       <GalleonCheck
         id={44002}
         name="Shuffled Fairy: At the button that opens Tiny's 2DS room"
