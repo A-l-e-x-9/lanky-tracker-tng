@@ -10,6 +10,13 @@ const canReachTinysKasplat = useGalleonCavernTop()
     <ArenaPool>
       <GalleonCheck
         id={14000}
+        name="Shuffled Battle Arena: Vanilla Arena (under Cranky)"
+        region="Galleon Caves"
+        canGetLogic={canReachVanillaArena.in}
+        canGetBreak={canReachVanillaArena.out}
+      />
+      <GalleonCheck
+        id={14000}
         name="Shuffled Battle Arena: 4-way tunnel intersection"
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
@@ -70,6 +77,27 @@ const canReachTinysKasplat = useGalleonCavernTop()
         region="Galleon Caves"
         canGetLogic={isBreathing.in}
         canGetBreak={isBreathing.out}
+      />
+      <GalleonCheck
+        id={14000}
+        name="Shuffled Battle Arena: In front of the cannonball"
+        region="Galleon Caves"
+        canGetLogic={canReachCannonGame.in}
+        canGetBreak={canReachCannonGame.out}
+      />
+      <GalleonCheck
+        id={14000}
+        name="Shuffled Battle Arena: Behind the cannonball"
+        region="Galleon Caves"
+        canGetLogic={canReachCannonGame.in}
+        canGetBreak={canReachCannonGame.out}
+      />
+      <GalleonCheck
+        id={14000}
+        name="Shuffled Battle Arena: Next to the cannon"
+        region="Galleon Caves"
+        canGetLogic={canReachCannonGame.in}
+        canGetBreak={canReachCannonGame.out}
       />
       <GalleonCheck
         id={14000}

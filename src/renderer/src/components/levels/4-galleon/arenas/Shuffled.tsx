@@ -1,55 +1,23 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useArena, useGalleonLighthouseInside, useGalleonCannon, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb, useGalleonSeasickShip } from '@renderer/hooks/galleon'
-import { useShuffledArenas } from '@renderer/hooks/settings'
-import { usePunch, useClimbing } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
+import CavernArenas from '../arenas/Caverns'
+import LighthouseArenas from '../arenas/Lighthouse'
+import OutskirtArenas from '../arenas/Outskirts'
+import TreasureArenas from '../arenas/Treasure'
 
-const Shuffled: React.FC = () => {
-const canReachVanillaArena = useArena()
-const canReachLighthouse = useGalleonLighthouseInside()
-const canReachCannonGame = useGalleonCannon()
-const canReachLankyGold = useLankyGoldGb()
-const canReachShipyard = useGalleonOutskirts()
-const canReachDiddyGold = useDiddyGoldGb()
-const canReachChunkyShip = useGalleonSeasickShip()
-const hasPrimatePunch = usePunch()
-const hasClimbing = useClimbing()
+const ShuffledArenas: React.FC = () => {
   return (
     <ArenaPool>
-      <GalleonCheck
-        id={14000}
-        name="Shuffled Battle Arena: Vanilla Arena (under Cranky)"
-        region="Galleon Caves"
-        canGetLogic={canReachVanillaArena.in}
-        canGetBreak={canReachVanillaArena.out}
-      />
+      <CavernArenas />
+      <LighthouseArenas />
+      <OutskirtArenas />
+      <TreasureArenas />
       <GalleonCheck
         id={14001}
         name="Shuffled Battle Arena: Bottom of the Lighthouse"
         region="Lighthouse Area"
         canGetLogic={canReachLighthouse.in}
         canGetBreak={canReachLighthouse.out}
-      />
-      <GalleonCheck
-        id={14003}
-        name="Shuffled Battle Arena: In front of the cannonball"
-        region="Galleon Caves"
-        canGetLogic={canReachCannonGame.in}
-        canGetBreak={canReachCannonGame.out}
-      />
-      <GalleonCheck
-        id={14004}
-        name="Shuffled Battle Arena: Behind the cannonball"
-        region="Galleon Caves"
-        canGetLogic={canReachCannonGame.in}
-        canGetBreak={canReachCannonGame.out}
-      />
-      <GalleonCheck
-        id={14005}
-        name="Shuffled Battle Arena: Next to the cannon"
-        region="Galleon Caves"
-        canGetLogic={canReachCannonGame.in}
-        canGetBreak={canReachCannonGame.out}
       />
       <GalleonCheck
         id={14030}
@@ -132,5 +100,4 @@ const hasClimbing = useClimbing()
   )
 }
 
-const ShuffledArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
 export default ShuffledArenas
