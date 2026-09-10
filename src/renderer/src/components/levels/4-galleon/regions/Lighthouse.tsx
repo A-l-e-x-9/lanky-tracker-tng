@@ -1,6 +1,6 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import LighthouseDirt from '../dirt/Lighthouse'
+import VanillaLighthouseDirt from '../dirt/VanillaLighthouse'
 import LighthouseEnemies from '../enemies/Lighthouse'
 import SeasickShip from '../gold-bananas/chunky/Seasick'
 import DiddyLighthouse from '../gold-bananas/diddy/Lighthouse'
@@ -16,11 +16,11 @@ return (
   <>
   <div className="grid">
     <DkLighthouse />
+    <VanillaLighthouseDirt />
     <DiddyLighthouse />
     <EnguardeChest />
     <MermaidReward />
     <SeasickShip />
-    <LighthouseDirt />
   </div>
     <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <DiddyKasplat />

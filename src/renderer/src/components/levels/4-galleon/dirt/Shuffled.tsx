@@ -29,25 +29,11 @@ const hasClimbing = useClimbing()
         canGetBreak={canReachLankyGold.out && hasShockwave}
       />
       <GalleonCheck
-        id={34033}
-        name="Shuffled Dirt Patch: Vanilla Warp 1, on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
-        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
-      />
-      <GalleonCheck
         id={34035}
         name="Shuffled Dirt Patch: Vanilla Warp 2, near the 2DS"
         region="Shipyard Outskirts"
         canGetLogic={canReachShipyard.in && hasShockwave}
         canGetBreak={canReachShipyard.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34037}
-        name="Shuffled Dirt Patch: Vanilla Warp 3, at Snide's"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
-        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
       />
       <GalleonCheck
         id={34038}
@@ -64,88 +50,11 @@ const hasClimbing = useClimbing()
         canGetBreak={canReachDiddyGold.out && hasShockwave}
       />
       <GalleonCheck
-        id={34040}
-        name="Shuffled Dirt Patch: Vanilla Warp 5, on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
-        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
-      />
-      <GalleonCheck
         id={34041}
         name="Shuffled Dirt Patch: Vanilla Warp 5, in the shipyard"
         region="Shipyard Outskirts"
         canGetLogic={canReachShipyard.in && hasShockwave}
         canGetBreak={canReachShipyard.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34042}
-        name="Shuffled Dirt Patch: Left of Chunky's ship exit"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasShockwave}
-        canGetBreak={canReachChunkyShip.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34043}
-        name="Shuffled Dirt Patch: In front of Chunky's ship exit"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasShockwave}
-        canGetBreak={canReachChunkyShip.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34044}
-        name="Shuffled Dirt Patch: Right of Chunky's ship exit"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasShockwave}
-        canGetBreak={canReachChunkyShip.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34045}
-        name="Shuffled Dirt Patch: In the corner of Chunky's ship"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasShockwave}
-        canGetBreak={canReachChunkyShip.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34046}
-        name="Shuffled Dirt Patch: Behind the pyramid of non-spinning barrels"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasPrimatePunch && hasShockwave}
-        canGetBreak={canReachChunkyShip.out && hasPrimatePunch && hasShockwave}
-      />
-      <GalleonCheck
-        id={34047}
-        name="Shuffled Dirt Patch: Behind the spinning barrels"
-        region="Lighthouse Area"
-        canGetLogic={canReachChunkyShip.in && hasPrimatePunch && hasShockwave}
-        canGetBreak={canReachChunkyShip.out && hasPrimatePunch && hasShockwave}
-      />
-      <GalleonCheck
-        id={34048}
-        name="Shuffled Dirt Patch: Bottom left of the lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in && hasShockwave}
-        canGetBreak={canReachLighthouse.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34049}
-        name="Shuffled Dirt Patch: Back right of the lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in && hasShockwave}
-        canGetBreak={canReachLighthouse.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34050}
-        name="Shuffled Dirt Patch: Bottom back of the Whomp's Fortress ripoff area"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in && hasClimbing && hasShockwave}
-        canGetBreak={canReachLighthouse.out && hasClimbing && hasShockwave}
-      />
-      <GalleonCheck
-        id={34051}
-        name="Shuffled Dirt Patch: Top of the Whomp's Fortress ripoff area"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouse.in && hasClimbing && hasShockwave}
-        canGetBreak={canReachLighthouse.out && hasClimbing && hasShockwave}
       />
     </RainbowCoinPool>
   )

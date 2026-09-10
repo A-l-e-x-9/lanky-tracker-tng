@@ -3,7 +3,7 @@ import { useGeneralDirt, useArena, useGalleonCannon, useGalleonCavernTop } from 
 import { useShockwave } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
-const CavernDirt: React.FC = () => {
+const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
 const canReachVanillaArena = useArena()
 const hasShockwave = useShockwave()
@@ -134,4 +134,5 @@ const canReachTinysKasplat = useGalleonCavernTop()
   )
 }
 
+const CavernDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
 export default CavernDirt
