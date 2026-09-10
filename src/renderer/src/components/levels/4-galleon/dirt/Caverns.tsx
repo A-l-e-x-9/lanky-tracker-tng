@@ -1,5 +1,5 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useArena, useGalleonCannon } from '@renderer/hooks/galleon'
+import { useGeneralDirt, useArena, useGalleonCannon, useGalleonCavernTop } from '@renderer/hooks/galleon'
 import { useShockwave } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
@@ -8,6 +8,7 @@ const isBreathing = useGeneralDirt()
 const canReachVanillaArena = useArena()
 const hasShockwave = useShockwave()
 const canReachCannonGame = useGalleonCannon()
+const canReachTinysKasplat = useGalleonCavernTop()
   return (
     <RainbowCoinPool>
       <GalleonCheck

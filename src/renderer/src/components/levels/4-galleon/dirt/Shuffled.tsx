@@ -7,7 +7,6 @@ import TreasureDirt from './Treasure'
 const ShuffledDirt: React.FC = () => {
 const canDoVanillaDirt = useLighthouseDirt()
 const canReachLighthouse = useGalleonLighthouseInside()
-const canReachTinysKasplat = useGalleonCavernTop()
 const canReachLighthouseOuter = useGalleonLighthousePlatform()
 const canReachKevin = useKevin()
 const canReachLankyGold = useLankyGoldGb()
@@ -22,55 +21,6 @@ const hasClimbing = useClimbing()
       <LighthouseDirt />
       <OutskirtDirt />
       <TreasureDirt />
-      <GalleonCheck
-        id={34001}
-        name="Shuffled Dirt Patch: Vanilla Dirt (bottom of the Lighthouse)"
-        region="Lighthouse Area"
-        canGetLogic={canDoVanillaDirt.in}
-        canGetBreak={canDoVanillaDirt.out}
-      />
-      <GalleonCheck
-        id={34017}
-        name="Shuffled Dirt Patch: Near Diddy's barrel on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
-        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34018}
-        name="Shuffled Dirt Patch: Near DK's pad on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
-        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34019}
-        name="Shuffled Dirt Patch: Next to the ladder on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
-        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34023}
-        name="Shuffled Dirt Patch: Underneath Diddy's barrel on the Lighthouse"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
-        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34024}
-        name="Shuffled Dirt Patch: Kevin's platform"
-        region="Lighthouse Area"
-        canGetLogic={canReachKevin.in && hasShockwave}
-        canGetBreak={canReachKevin.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34025}
-        name="Shuffled Dirt Patch: Behind Snide's"
-        region="Lighthouse Area"
-        canGetLogic={canReachLighthouseOuter.in && hasShockwave}
-        canGetBreak={canReachLighthouseOuter.out && hasShockwave}
-      />
       <GalleonCheck
         id={34030}
         name="Shuffled Dirt Patch: Top of Lanky's gold tower"
