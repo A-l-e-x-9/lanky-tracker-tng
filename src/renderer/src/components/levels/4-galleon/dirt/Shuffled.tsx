@@ -1,8 +1,8 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useGeneralDirt, useArena, useGalleonLighthouseInside, useGalleonCannon, useGalleonCavernTop, useGalleonLighthousePlatform, useKevin, useLankyGoldGb, useGalleonOutskirts, useDiddyGoldGb, useGalleonSeasickShip, useLighthouseDirt } from '@renderer/hooks/galleon'
-import { useShuffleDirt } from '@renderer/hooks/settings'
-import { useShockwave, usePunch, useClimbing } from '@renderer/hooks/kongs'
-import GalleonCheck from '../check'
+import CavernDirt from './Caverns'
+import LighthouseDirt from './Lighthouse'
+import OutskirtDirt from './Outskirts'
+import TreasureDirt from './Treasure'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralDirt()
@@ -320,5 +320,4 @@ const hasClimbing = useClimbing()
   )
 }
 
-const ShuffledDirt: React.FC = () => (useShuffleDirt() ? <Shuffled /> : null)
 export default ShuffledDirt
