@@ -1,11 +1,13 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import { useGeneralThing, useGalleonCavernTop } from '@renderer/hooks/galleon'
+import { useGeneralThing, useGalleonCavernTop, useArena, useGalleonCannon } from '@renderer/hooks/galleon'
 import { useShuffledArenas } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const isBreathing = useGeneralThing()
 const canReachTinysKasplat = useGalleonCavernTop()
+const canReachVanillaArena = useArena()
+const canReachCannonGame = useGalleonCannon()
   return (
     <ArenaPool>
       <GalleonCheck
