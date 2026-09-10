@@ -1,6 +1,7 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import { useGeneralDirt, useArena, useGalleonCannon, useGalleonCavernTop } from '@renderer/hooks/galleon'
 import { useShockwave } from '@renderer/hooks/kongs'
+import { useShuffleDirt } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
