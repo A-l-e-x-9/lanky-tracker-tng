@@ -1,5 +1,5 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import { useLighthouseDirt, useGalleonLighthousePlatform } from '@renderer/hooks/galleon'
+import { useLighthouseDirt, useGalleonLighthousePlatform, useKevin, canReachChunkyShip } from '@renderer/hooks/galleon'
 import { useShockwave } from '@renderer/hooks/kongs'
 import { useShuffleDirt } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
@@ -8,6 +8,8 @@ const Shuffled: React.FC = () => {
 const canDoVanillaDirt = useLighthouseDirt()
 const canReachLighthouseOuter = useGalleonLighthousePlatform()
 const hasShockwave = useShockwave()
+const canReachKevin = useKevin()
+const canReachChunkyShip = useGalleonSeasickShip()
   return (
     <RainbowCoinPool>
       <GalleonCheck

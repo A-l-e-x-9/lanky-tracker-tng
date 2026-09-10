@@ -6,11 +6,9 @@ import TreasureDirt from './Treasure'
 
 const ShuffledDirt: React.FC = () => {
 const canReachLighthouse = useGalleonLighthouseInside()
-const canReachKevin = useKevin()
 const canReachLankyGold = useLankyGoldGb()
 const canReachShipyard = useGalleonOutskirts()
 const canReachDiddyGold = useDiddyGoldGb()
-const canReachChunkyShip = useGalleonSeasickShip()
 const hasPrimatePunch = usePunch()
 const hasClimbing = useClimbing()
   return (
