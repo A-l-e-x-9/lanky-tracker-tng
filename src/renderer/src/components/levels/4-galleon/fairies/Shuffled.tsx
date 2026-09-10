@@ -1,10 +1,10 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useChestFairy, useShipFairy, useGalleonOutskirts, useGalleonLighthouseArea, useGalleonLighthouseInside, useLanky5DoorShipGb, useTiny2DoorShipGb, useTinySubGb, useTinyClams } from '@renderer/hooks/galleon'
-import { useShuffleFairies } from '@renderer/hooks/settings'
-import { useCamera, useDive, useClimbing, useMini } from '@renderer/hooks/kongs'
-import GalleonCheck from '../check'
+import CavernFairies from './Caverns'
+import LighthouseFairies from './Lighthouse'
+import OutskirtFairies from './Outskirts'
+import TreasureFairies from './Treasure'
 
-const Shuffled: React.FC = () => {
+const ShuffledFairies: React.FC = () => {
   const hasCam = useCamera()
   const vanillaFairy1 = useChestFairy()
   const vanillaFairy2 = useShipFairy()
@@ -20,6 +20,10 @@ const Shuffled: React.FC = () => {
   const canReachHypeChest = useTinyClams()
   return (
     <FairyPool>
+      <CavernFairies />
+      <LighthouseFairies />
+      <OutskirtFairies />
+      <TreasureFairies />
       <GalleonCheck
         id={44000}
         name="Shuffled Fairy: Vanilla Location #1 (in Chunky's Punch chest)"
@@ -101,5 +105,4 @@ const Shuffled: React.FC = () => {
   )
 }
 
-const ShuffledFairies: React.FC = () => (useShuffleFairies() ? <Shuffled /> : null)
 export default ShuffledFairies
