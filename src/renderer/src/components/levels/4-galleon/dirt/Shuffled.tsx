@@ -6,11 +6,8 @@ import TreasureDirt from './Treasure'
 
 const ShuffledDirt: React.FC = () => {
 const isBreathing = useGeneralDirt()
-const hasShockwave = useShockwave()
 const canDoVanillaDirt = useLighthouseDirt()
-const canReachVanillaArena = useArena()
 const canReachLighthouse = useGalleonLighthouseInside()
-const canReachCannonGame = useGalleonCannon()
 const canReachTinysKasplat = useGalleonCavernTop()
 const canReachLighthouseOuter = useGalleonLighthousePlatform()
 const canReachKevin = useKevin()

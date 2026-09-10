@@ -1,8 +1,12 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
-import {  } from '@renderer/hooks/galleon'
+import { useArena, useGalleonCannon } from '@renderer/hooks/galleon'
+import { useShockwave } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
 const CavernDirt: React.FC = () => {
+const canReachVanillaArena = useArena()
+const hasShockwave = useShockwave()
+const canReachCannonGame = useGalleonCannon()
   return (
     <RainbowCoinPool>
       <GalleonCheck
