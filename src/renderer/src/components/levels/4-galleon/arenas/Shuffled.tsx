@@ -1,5 +1,4 @@
 import ArenaPool from '@renderer/components/pools/Arenas'
-import GalleonCheck from '../check'
 import CavernArenas from '../arenas/Caverns'
 import LighthouseArenas from '../arenas/Lighthouse'
 import OutskirtArenas from '../arenas/Outskirts'
