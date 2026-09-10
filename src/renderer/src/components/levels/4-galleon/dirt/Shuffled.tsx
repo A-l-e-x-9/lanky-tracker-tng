@@ -9,7 +9,6 @@ const canReachLighthouse = useGalleonLighthouseInside()
 const canReachLankyGold = useLankyGoldGb()
 const canReachShipyard = useGalleonOutskirts()
 const canReachDiddyGold = useDiddyGoldGb()
-const hasPrimatePunch = usePunch()
 const hasClimbing = useClimbing()
   return (
     <RainbowCoinPool>
