@@ -1,5 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useGalleonLighthousePlatform, useGalleonSeasickShip } from '@renderer/hooks/galleon'
+import { useGalleonLighthousePlatform, useGalleonSeasickShip, useGalleonLighthouseInside } from '@renderer/hooks/galleon'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useDive, useLanky, usePunch, useClimbing } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
