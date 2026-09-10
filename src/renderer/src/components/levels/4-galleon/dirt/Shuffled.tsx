@@ -5,11 +5,9 @@ import OutskirtDirt from './Outskirts'
 import TreasureDirt from './Treasure'
 
 const ShuffledDirt: React.FC = () => {
-const canReachLighthouse = useGalleonLighthouseInside()
 const canReachLankyGold = useLankyGoldGb()
 const canReachShipyard = useGalleonOutskirts()
 const canReachDiddyGold = useDiddyGoldGb()
-const hasClimbing = useClimbing()
   return (
     <RainbowCoinPool>
       <CavernDirt />
