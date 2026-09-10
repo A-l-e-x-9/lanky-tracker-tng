@@ -6,7 +6,6 @@ import TreasureDirt from './Treasure'
 
 const ShuffledDirt: React.FC = () => {
 const canReachLankyGold = useLankyGoldGb()
-const canReachShipyard = useGalleonOutskirts()
 const canReachDiddyGold = useDiddyGoldGb()
   return (
     <RainbowCoinPool>
@@ -22,32 +21,11 @@ const canReachDiddyGold = useDiddyGoldGb()
         canGetBreak={canReachLankyGold.out && hasShockwave}
       />
       <GalleonCheck
-        id={34035}
-        name="Shuffled Dirt Patch: Vanilla Warp 2, near the 2DS"
-        region="Shipyard Outskirts"
-        canGetLogic={canReachShipyard.in && hasShockwave}
-        canGetBreak={canReachShipyard.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34038}
-        name="Shuffled Dirt Patch: Vanilla Warp 4, in the shipyard"
-        region="Shipyard Outskirts"
-        canGetLogic={canReachShipyard.in && hasShockwave}
-        canGetBreak={canReachShipyard.out && hasShockwave}
-      />
-      <GalleonCheck
         id={34039}
         name="Shuffled Dirt Patch: Vanilla Warp 4, on Diddy's gold tower"
         region="Treasure Room"
         canGetLogic={canReachDiddyGold.in && hasShockwave}
         canGetBreak={canReachDiddyGold.out && hasShockwave}
-      />
-      <GalleonCheck
-        id={34041}
-        name="Shuffled Dirt Patch: Vanilla Warp 5, in the shipyard"
-        region="Shipyard Outskirts"
-        canGetLogic={canReachShipyard.in && hasShockwave}
-        canGetBreak={canReachShipyard.out && hasShockwave}
       />
     </RainbowCoinPool>
   )
