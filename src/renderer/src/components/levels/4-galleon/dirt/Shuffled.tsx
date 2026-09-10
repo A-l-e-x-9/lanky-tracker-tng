@@ -5,7 +5,6 @@ import OutskirtDirt from './Outskirts'
 import TreasureDirt from './Treasure'
 
 const ShuffledDirt: React.FC = () => {
-const isBreathing = useGeneralDirt()
 const canDoVanillaDirt = useLighthouseDirt()
 const canReachLighthouse = useGalleonLighthouseInside()
 const canReachTinysKasplat = useGalleonCavernTop()
