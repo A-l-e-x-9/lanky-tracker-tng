@@ -1,5 +1,5 @@
 import CratePool from '@renderer/components/pools/Crates'
-import { useGalleonOutskirts } from '@renderer/hooks/galleon'
+import { useGalleonOutskirts, useLanky2DoorShipGb } from '@renderer/hooks/galleon'
 import { useShuffleCrates } from '@renderer/hooks/settings'
 import { useDive, useLanky } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
@@ -8,6 +8,7 @@ const Shuffled: React.FC = () => {
 const canReachShipyard = useGalleonOutskirts()
 const hasDiving = useDive()
 const hasLanky = useLanky()
+const canReachLankys2DS = useLanky2DoorShipGb()
   return (
     <CratePool>
       <GalleonCheck
@@ -16,6 +17,13 @@ const hasLanky = useLanky()
         region="Shipyard Outskirts"
         canGetLogic={canReachShipyard.in}
         canGetBreak={canReachShipyard.out}
+      />
+      <GalleonCheck
+        id={24013}
+        name="Shuffled Melon Crate: In a chest in Lanky's 2DS"
+        region="Shipyard Outskirts"
+        canGetLogic={canReachLankys2DS.in}
+        canGetBreak={canReachLankys2DS.out}
       />
       <GalleonCheck
         id={24026}

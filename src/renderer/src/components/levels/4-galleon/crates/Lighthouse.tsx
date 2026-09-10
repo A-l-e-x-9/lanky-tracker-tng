@@ -1,17 +1,26 @@
 import CratePool from '@renderer/components/pools/Crates'
 import { useGalleonLighthousePlatform, useGalleonSeasickShip } from '@renderer/hooks/galleon'
 import { useShuffleCrates } from '@renderer/hooks/settings'
-import { useDive, useLanky, usePunch } from '@renderer/hooks/kongs'
+import { useDive, useLanky, usePunch, useClimbing } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
 const Shuffled: React.FC = () => {
 const canReachLighthouseOuter = useGalleonLighthousePlatform()
+const canReachLighthouse = useGalleonLighthouseInside()
 const canReachChunkyShip = useGalleonSeasickShip()
 const hasDiving = useDive()
 const hasLanky = useLanky()
 const hasPrimatePunch = usePunch()
+const hasClimbing = useClimbing()
   return (
     <CratePool>
+      <GalleonCheck
+        id={24001}
+        name="Shuffled Melon Crate: Bottom of the Lighthouse"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouse.in}
+        canGetBreak={canReachLighthouse.out}
+      />
       <GalleonCheck
         id={24017}
         name="Shuffled Melon Crate: Near Diddy's barrel on the Lighthouse"
@@ -130,6 +139,34 @@ const hasPrimatePunch = usePunch()
         region="Lighthouse Area"
         canGetLogic={canReachChunkyShip.in && hasPrimatePunch}
         canGetBreak={canReachChunkyShip.out && hasPrimatePunch}
+      />
+      <GalleonCheck
+        id={24048}
+        name="Shuffled Melon Crate: Bottom left of the lighthouse"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouse.in}
+        canGetBreak={canReachLighthouse.out}
+      />
+      <GalleonCheck
+        id={24049}
+        name="Shuffled Melon Crate: Back right of the lighthouse"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouse.in}
+        canGetBreak={canReachLighthouse.out}
+      />
+      <GalleonCheck
+        id={24050}
+        name="Shuffled Melon Crate: Bottom back of the Whomp's Fortress ripoff area"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouse.in && hasClimbing}
+        canGetBreak={canReachLighthouse.out && hasClimbing}
+      />
+      <GalleonCheck
+        id={24051}
+        name="Shuffled Melon Crate: Top of the Whomp's Fortress ripoff area"
+        region="Lighthouse Area"
+        canGetLogic={canReachLighthouse.in && hasClimbing}
+        canGetBreak={canReachLighthouse.out && hasClimbing}
       />
     </CratePool>
   )
