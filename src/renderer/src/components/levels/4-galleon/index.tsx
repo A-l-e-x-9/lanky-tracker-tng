@@ -48,7 +48,7 @@ return (
   </div>
   <div className="grid">
     <CactusCrate />
-    <LighthouseDirt />
+    <VanillaLighthouseDirt />
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <FairyLocations />
