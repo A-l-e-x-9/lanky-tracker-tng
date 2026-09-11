@@ -53800,10 +53800,16 @@ const funkyIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAA7CAMAAAD
 const anyInstIcon = "" + new URL("candy-tHELuTmd.png", import.meta.url).href;
 const snideIcon = "data:image/png;base64,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";
 const MoveTable = () => {
-  const [setMove, setConsumable] = useDonkStore(
-    useShallow((state) => [state.setMove, state.setConsumable])
-  );
+  const [setMove, setConsumable] = useDonkStore(useShallow((state) => [state.setMove, state.setConsumable]));
   const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier));
+  const [bpWinCondition, kRoolWinCondition] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge]));
+  const bpSeed = bpWinCondition || kRoolWinCondition ? "all-bosses" : "";
+  const dkBP = useDonkStore(useShallow((state) => state.consumables.dkBp));
+  const diddyBP = useDonkStore(useShallow((state) => state.consumables.diddyBp));
+  const lankyBP = useDonkStore(useShallow((state) => state.consumables.lankyBp));
+  const tinyBP = useDonkStore(useShallow((state) => state.consumables.tinyBp));
+  const chunkyBP = useDonkStore(useShallow((state) => state.consumables.chunkyBp));
+  const bpTotal = dkBP + diddyBP + lankyBP + tinyBP + chunkyBP;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "move-section", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Moves, Kongs, and Major Collectibles" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "move-table", children: [
@@ -54029,7 +54035,12 @@ const MoveTable = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "funky", title: "New Funky Mode!", imgUrl: funkyIcon, prefix: "moves", updateItem: setMove }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "candy", title: "Candy Kong", imgUrl: anyInstIcon, prefix: "moves", updateItem: setMove }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "snide", title: "Snide", imgUrl: snideIcon, prefix: "moves", updateItem: setMove }),
-      "  //icon showing total number of Blueprints coming soon  "
+      " ",
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `count-icon ${bpSeed}`, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { height: 24, alt: "Total number of Blueprints", title: "Total number of Blueprints", src: blueprintIcon, style: { filter: `grayscale(${bpTotal != 0 ? "0" : "1"})` } }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: bpTotal })
+      ] }),
+      " "
     ] })
   ] });
 };
