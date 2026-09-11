@@ -73,6 +73,8 @@ const MoveTable = (): JSX.Element => {
     useShallow((state) => [state.setMove, state.setConsumable])
   )
   const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier))
+  const [DKBlueprints, diddyBlueprints, lankyBlueprints, tinyBlueprints, chunkyBlueprints] = useDonkStore(useShallow((state) => [state.consumables.dkBp, state.consumables.diddyBp, state.consumables.lankyBp, state.consumables.tinyBp, state.consumables.chunkyBp]))  
+  const totalBlueprints = DKBlueprints + diddyBlueprints + lankyBlueprints + tinyBlueprints + chunkyBlueprints
   return (
   <section className="move-section">
     <h3>Moves, Kongs, and Major Collectibles</h3>
