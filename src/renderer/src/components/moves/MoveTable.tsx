@@ -69,10 +69,16 @@ import candyIcon from '../../assets/images/candy.png'
 import snideIcon from '../../assets/images/snide.png'
 
 const MoveTable = (): JSX.Element => {
-  const [setMove, setConsumable] = useDonkStore(
-    useShallow((state) => [state.setMove, state.setConsumable])
-  )
+  const [setMove, setConsumable] = useDonkStore(useShallow((state) => [state.setMove, state.setConsumable]))
   const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier))
+  const [bpWinCondition, kRoolWinCondition] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge]))
+  const bpSeed = (bpWinCondition || kRoolWinCondition) ? 'all-bosses' : ''
+  const dkBP = useDonkStore(useShallow((state) => state.consumables.dkBp))
+  const diddyBP = useDonkStore(useShallow((state) => state.consumables.diddyBp))
+  const lankyBP = useDonkStore(useShallow((state) => state.consumables.lankyBp))
+  const tinyBP = useDonkStore(useShallow((state) => state.consumables.tinyBp))
+  const chunkyBP = useDonkStore(useShallow((state) => state.consumables.chunkyBp))
+  const bpTotal = dkBP + diddyBP + lankyBP + tinyBP + chunkyBP
   return (
   <section className="move-section">
     <h3>Moves, Kongs, and Major Collectibles</h3>
@@ -252,7 +258,10 @@ const MoveTable = (): JSX.Element => {
       <SimpleIcon storeKey="candy" title="Candy Kong" imgUrl={candyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="snide" title="Snide" imgUrl={snideIcon} prefix="moves" updateItem={setMove} />
       &nbsp;
-      //icon showing total number of Blueprints coming soon
+      <div className={`count-icon ${bpSeed}`}>
+          <img height={24} alt="Total number of Blueprints" title="Total number of Blueprints" src={lankyBpIcon} style={{ filter: `grayscale(${bpTotal != 0 ? '0' : '1'})` }} />
+          <span>{bpTotal}</span>
+      </div>
       &nbsp;
     </section>
   </section>
