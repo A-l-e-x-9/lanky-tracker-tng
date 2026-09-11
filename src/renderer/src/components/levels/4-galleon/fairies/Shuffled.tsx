@@ -6,7 +6,6 @@ import ShipFairies from './5DoorShip'
 import TreasureFairies from './Treasure'
 
 const ShuffledFairies: React.FC = () => {
-  const canReachHypeChest = useTinyClams()
   return (
     <FairyPool>
       <CavernFairies />
@@ -14,13 +13,6 @@ const ShuffledFairies: React.FC = () => {
       <OutskirtFairies />
       <ShipFairies />
       <TreasureFairies />
-      <GalleonCheck
-        id={44016}
-        name="Shuffled Fairy: In the Hype Chest"
-        region="Treasure Room"
-        canGetLogic={canReachHypeChest.in && hasCam}
-        canGetBreak={canReachHypeChest.out && hasCam}
-      />
     </FairyPool>
   )
 }
