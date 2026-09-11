@@ -1,5 +1,5 @@
 import FairyPool from '@renderer/components/pools/Fairies'
-import { useGalleonOutskirts } from '@renderer/hooks/galleon'
+import { useGalleonOutskirts, useTiny2DoorShipGb, useTinySubGb } from '@renderer/hooks/galleon'
 import { useShuffleFairies } from '@renderer/hooks/settings'
 import { useDive, useCamera } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
@@ -8,6 +8,8 @@ const Shuffled: React.FC = () => {
 const canReachOutskirts = useGalleonOutskirts()
 const hasDiving = useDive()
 const hasCam = useCamera()
+const canReachTiny2DS = useTiny2DoorShipGb()
+const canReachSub = useTinySubGb()
   return (
     <FairyPool>
       <GalleonCheck
