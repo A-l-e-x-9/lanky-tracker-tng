@@ -54031,7 +54031,8 @@ const MoveTable = () => {
       " ",
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "candy", title: "Candy Kong", imgUrl: anyInstIcon, prefix: "moves", updateItem: setMove }),
       " ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "snide", title: "Snide", imgUrl: snideIcon, prefix: "moves", updateItem: setMove })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "snide", title: "Snide", imgUrl: snideIcon, prefix: "moves", updateItem: setMove }),
+      " "
     ] })
   ] });
 };
