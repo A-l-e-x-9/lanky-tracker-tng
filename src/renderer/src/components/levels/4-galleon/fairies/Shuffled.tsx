@@ -6,9 +6,7 @@ import ShipFairies from './5DoorShip'
 import TreasureFairies from './Treasure'
 
 const ShuffledFairies: React.FC = () => {
-  const hasCam = useCamera()
   const vanillaFairy2 = useShipFairy()
-  const canReachOutskirts = useGalleonOutskirts()
   const canReachLighthouse = useGalleonLighthouseArea()
   const canReachLanky5DS = useLanky5DoorShipGb()
   const canReachTiny2DS = useTiny2DoorShipGb()
