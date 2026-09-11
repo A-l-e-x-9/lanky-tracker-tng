@@ -258,9 +258,9 @@ const MoveTable = (): JSX.Element => {
       <SimpleIcon storeKey="candy" title="Candy Kong" imgUrl={candyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="snide" title="Snide" imgUrl={snideIcon} prefix="moves" updateItem={setMove} />
       &nbsp;
-      <div className={`count-icon ${bpSeed}`}>
+      <div className={`count-icon ${bpSeed}`} style={{ cursor: `not-allowed` }}>
           <img height={24} alt="Total number of Blueprints" title="Total number of Blueprints" src={lankyBpIcon} style={{ filter: `grayscale(${bpTotal != 0 ? '0' : '1'})` }} />
-          <span>{bpTotal}</span>
+          <span style={{ color: `#ff0000`, fontSize: `18px` }}>{bpTotal}</span>
       </div>
       &nbsp;
     </section>
