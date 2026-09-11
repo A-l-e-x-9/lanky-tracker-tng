@@ -73,8 +73,6 @@ const MoveTable = (): JSX.Element => {
     useShallow((state) => [state.setMove, state.setConsumable])
   )
   const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier))
-  const [DKBlueprints, diddyBlueprints, lankyBlueprints, tinyBlueprints, chunkyBlueprints] = useDonkStore(useShallow((state) => [state.consumables.dkBp, state.consumables.diddyBp, state.consumables.lankyBp, state.consumables.tinyBp, state.consumables.chunkyBp]))  
-  const totalBlueprints = DKBlueprints + diddyBlueprints + lankyBlueprints + tinyBlueprints + chunkyBlueprints
   return (
   <section className="move-section">
     <h3>Moves, Kongs, and Major Collectibles</h3>
@@ -250,18 +248,13 @@ const MoveTable = (): JSX.Element => {
       />
       &nbsp;
       <SimpleIcon storeKey="cranky" title="Cranky Kong" imgUrl={crankyIcon} prefix="moves" updateItem={setMove} />
+      &nbsp;
       <SimpleIcon storeKey="funky" title="New Funky Mode!" imgUrl={funkyIcon} prefix="moves" updateItem={setMove} />
+      &nbsp;
       <SimpleIcon storeKey="candy" title="Candy Kong" imgUrl={candyIcon} prefix="moves" updateItem={setMove} />
+      &nbsp;
       <SimpleIcon storeKey="snide" title="Snide" imgUrl={snideIcon} prefix="moves" updateItem={setMove} />
       &nbsp;
-      <CountSelector
-        storeKey="totalBp"
-        title="Total Blueprints"
-        imgUrl={lankyBpIcon}
-        prefix="consumables"
-        setCount={totalBlueprints}
-        maxValue={40}
-      />
     </section>
   </section>
   )
