@@ -248,12 +248,11 @@ const MoveTable = (): JSX.Element => {
       />
       &nbsp;
       <SimpleIcon storeKey="cranky" title="Cranky Kong" imgUrl={crankyIcon} prefix="moves" updateItem={setMove} />
-      &nbsp;
       <SimpleIcon storeKey="funky" title="New Funky Mode!" imgUrl={funkyIcon} prefix="moves" updateItem={setMove} />
-      &nbsp;
       <SimpleIcon storeKey="candy" title="Candy Kong" imgUrl={candyIcon} prefix="moves" updateItem={setMove} />
-      &nbsp;
       <SimpleIcon storeKey="snide" title="Snide" imgUrl={snideIcon} prefix="moves" updateItem={setMove} />
+      &nbsp;
+      //icon showing total number of Blueprints coming soon
       &nbsp;
     </section>
   </section>
