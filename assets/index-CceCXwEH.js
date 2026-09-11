@@ -54036,9 +54036,9 @@ const MoveTable = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "candy", title: "Candy Kong", imgUrl: anyInstIcon, prefix: "moves", updateItem: setMove }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "snide", title: "Snide", imgUrl: snideIcon, prefix: "moves", updateItem: setMove }),
       " ",
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `count-icon ${bpSeed}`, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `count-icon ${bpSeed}`, style: { cursor: `not-allowed` }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { height: 24, alt: "Total number of Blueprints", title: "Total number of Blueprints", src: blueprintIcon, style: { filter: `grayscale(${bpTotal != 0 ? "0" : "1"})` } }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: bpTotal })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: `#ff0000`, fontSize: `18px` }, children: bpTotal })
       ] }),
       " "
     ] })
