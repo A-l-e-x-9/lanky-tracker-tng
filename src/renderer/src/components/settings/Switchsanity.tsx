@@ -26,7 +26,7 @@ import tinyKongIcon from '../../assets/images/tiny.png'
 import tinyGunIcon from '../../assets/images/tiny_gun.png'
 import tinyMusicIcon from '../../assets/images/tiny_inst.png'
 import tinyPadIcon from '../../assets/images/tinypad.png'
-import anyGunIcon from '../../assets/images/settings/hard_shoot.png'
+import anyGunIcon from '../../assets/images/hard_shoot.png'
 import anyInstIcon from '../../assets/images/candy.png'
 
 const allKong = [dkKongIcon, diddyKongIcon, lankyKongIcon, tinyKongIcon, chunkyKongIcon]
