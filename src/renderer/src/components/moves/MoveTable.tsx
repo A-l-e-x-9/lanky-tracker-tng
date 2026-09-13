@@ -57,7 +57,6 @@ import tinyMoveIcon from '../../assets/images/tiny_move.png'
 import tinyBarrelIcon from '../../assets/images/tinybarrel.png'
 import tinyPadIcon from '../../assets/images/tinypad.png'
 import vineIcon from '../../assets/images/vine.png'
-import vineClimbBoth from '../../assets/images/vine-climb-both.png'
 import dkBpIcon from '../../assets/images/dk_bp.png'
 import diddyBpIcon from '../../assets/images/diddy_bp.png'
 import lankyBpIcon from '../../assets/images/lanky_bp.png'
@@ -196,13 +195,10 @@ const MoveTable = (): JSX.Element => {
         setCount={setConsumable}
         maxValue={8}
       />
-      <DoubleIcon
-        storeLeft="vine"
-        storeRight="climbing"
-        title="Vines and Climbing"
-        imgBoth={vineClimbBoth}
-        imgLeft={vineIcon}
-        imgRight={climbingIcon}
+      <SimpleIcon
+        storeKey="vine"
+        title="Vines"
+        imgUrl={vineIcon}
         prefix="moves"
         setItem={setMove}
       />
@@ -262,6 +258,13 @@ const MoveTable = (): JSX.Element => {
           <img height={24} alt="Total number of Blueprints" title="Total number of Blueprints" src={lankyBpIcon} style={{ filter: `grayscale(${bpTotal != 0 ? '0' : '1'})` }} />
           <span style={{ color: `#ff0000`, fontSize: `18px` }}>{bpTotal}</span>
       </div>
+      <SimpleIcon
+        storeKey="climbing"
+        title="Climbing"
+        imgUrl={climbingIcon}
+        prefix="moves"
+        setItem={setMove}
+      />
       &nbsp;
     </section>
   </section>
