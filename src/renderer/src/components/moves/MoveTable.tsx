@@ -234,11 +234,11 @@ const MoveTable = (): JSX.Element => {
         setCount={setConsumable}
         maxValue={capRemoved ? 255 : 20}
       />
+      &nbsp;
       <SimpleIcon storeKey="cranky" title="Cranky Kong" imgUrl={crankyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="funky" title="New Funky Mode!" imgUrl={funkyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="candy" title="Candy Kong" imgUrl={candyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="snide" title="Snide" imgUrl={snideIcon} prefix="moves" updateItem={setMove} />
-      &nbsp;
       <SimpleIcon
         storeKey="camera"
         title="Fairy Cam"
