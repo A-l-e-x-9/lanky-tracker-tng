@@ -200,7 +200,7 @@ const MoveTable = (): JSX.Element => {
         title="Vines"
         imgUrl={vineIcon}
         prefix="moves"
-        setItem={setMove}
+        updateItem={setMove}
       />
       <SimpleIcon
         storeKey="bean"
@@ -263,7 +263,7 @@ const MoveTable = (): JSX.Element => {
         title="Climbing"
         imgUrl={climbingIcon}
         prefix="moves"
-        setItem={setMove}
+        updateItem={setMove}
       />
       &nbsp;
     </section>
