@@ -14,7 +14,7 @@ import l6 from '../../assets/images/6.png'
 import l7 from '../../assets/images/7.png'
 import l8 from '../../assets/images/8.png'
 import bLocker from '../../assets/images/GB.png'
-import coloredNanners from '../../assets/images/settings/rainbow_bananas.png'
+import coloredNanners from '../../assets/images/rainbow_bananas.png'
 
 const LevelTable = (): JSX.Element => {
   const [setBLocker, setTroffAndScoff] = useDonkStore(useShallow((state) => [state.setBLocker, state.setTroffAndScoff]))
