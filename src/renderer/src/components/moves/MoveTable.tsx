@@ -3,7 +3,6 @@ import { useShallow } from 'zustand/react/shallow'
 
 import CountSelector from '../settings/CountSelector'
 import SimpleIcon from '../settings/SimpleIcon'
-import DoubleIcon from './DoubleIcon'
 import { SlamSelector } from './SlamSelector'
 
 import goldBananaIcon from '../../assets/images/GB.png'
@@ -159,7 +158,7 @@ const MoveTable = (): JSX.Element => {
         title="Sniper Scope"
         imgUrl={sniper}
         prefix="moves"
-        UpdateItem={setMove}
+        updateItem={setMove}
       />
       <CountSelector
         storeKey="bananaMedals"
