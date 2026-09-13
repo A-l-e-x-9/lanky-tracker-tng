@@ -5,8 +5,8 @@ import { useBananaport } from '@renderer/hooks/settings'
 import useDonkStore from '@renderer/store'
 import { BananaportRange } from '@renderer/store/common'
 
-import portFullIcon from '../../assets/images/settings/bananaport.png'
-import portHalfIcon from '../../assets/images/settings/bananaport_isles.png'
+import portFullIcon from '../../assets/images/bananaport.png'
+import portHalfIcon from '../../assets/images/bananaport_isles.png'
 
 const portToIcon = (num: BananaportRange): string => {
   return num == 1 ? portHalfIcon : portFullIcon
