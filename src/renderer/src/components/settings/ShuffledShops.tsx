@@ -6,7 +6,7 @@ import SimpleIcon from './SimpleIcon'
 import SimpleRadioIcon from './SimpleRadioIcon'
 import crankyIcon from '../../assets/images/cranky.png'
 import unknownIcon from '../../assets/images/unknown-small.png'
-import funkyIcon from '../../assets/images/settings/funky.png'
+import funkyIcon from '../../assets/images/funky.png'
 import snideIcon from '../../assets/images/snide.png'
 import candyIcon from '../../assets/images/candy.png'
 
