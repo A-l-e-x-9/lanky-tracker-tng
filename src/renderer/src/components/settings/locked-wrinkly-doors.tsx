@@ -10,11 +10,11 @@ import gbIcon from '../../assets/images/GB.png'
 import blueprintIcon from '../../assets/images/lanky_bp.png'
 import crownIcon from '../../assets/images/crown.png'
 import keyIcon from '../../assets/images/key.png'
-import medalIcon from '../../assets/images/settings/bananamedal.gif'
+import medalIcon from '../../assets/images/bananamedal.gif'
 import fairyIcon from '../../assets/images/fairy.png'
 import rainbowCoinIcon from '../../assets/images/rainbowcoin.png'
 import pearlIcon from '../../assets/images/pearl.png'
-import cbIcon from '../../assets/images/settings/rainbow_bananas.png'
+import cbIcon from '../../assets/images/rainbow_bananas.png'
 
 const customStyles: Modal.Styles = {
   content: {
