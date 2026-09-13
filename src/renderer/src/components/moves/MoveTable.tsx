@@ -32,21 +32,18 @@ import dkMoveIcon from '../../assets/images/dk_move.png'
 import dkBarrelIcon from '../../assets/images/dkbarrel.png'
 import dkPadIcon from '../../assets/images/dkpad.png'
 import fairyIcon from '../../assets/images/fairy.png'
-import filmWaveBoth from '../../assets/images/filmwave.png'
-import filmWaveLeft from '../../assets/images/filmwave1.png'
-import filmWaveRight from '../../assets/images/filmwave2.png'
-import homeScopeBoth from '../../assets/images/homingscope.png'
-import homeScopeLeft from '../../assets/images/homingscope1.png'
-import homeScopeRight from '../../assets/images/homingscope2.png'
+import film from '../../assets/images/filmwave1.png'
+import shockwave from '../../assets/images/filmwave2.png'
+import homingAmmo from '../../assets/images/homingscope1.png'
+import sniper from '../../assets/images/homingscope2.png'
 import lankyIcon from '../../assets/images/lanky.png'
 import lankyGunIcon from '../../assets/images/lanky_gun.png'
 import lankyInstIcon from '../../assets/images/lanky_inst.png'
 import lankyMoveIcon from '../../assets/images/lanky_move.png'
 import lankyBarrelIcon from '../../assets/images/lankybarrel.png'
 import lankyPadIcon from '../../assets/images/lankypad.png'
-import companyCoinBoth from '../../assets/images/n64rw_coin.png'
-import companyCoinRight from '../../assets/images/n64rw_coin_n64bw.png'
-import companyCoinLeft from '../../assets/images/n64rw_coin_rwbw.png'
+import rarewareCoin from '../../assets/images/n64rw_coin_n64bw.png'
+import nintendoCoin from '../../assets/images/n64rw_coin_rwbw.png'
 import orangeIcon from '../../assets/images/orange.png'
 import pearlIcon from '../../assets/images/pearl.png'
 import rainbowCoinICon from '../../assets/images/rainbowcoin.png'
@@ -97,23 +94,20 @@ const MoveTable = (): JSX.Element => {
         maxValue={8}
       />
       <SlamSelector />
-      <DoubleIcon
-        storeLeft="camera"
-        storeRight="shockwave"
-        title="Fairy Cam and Shockwave"
-        imgBoth={filmWaveBoth}
-        imgLeft={filmWaveLeft}
-        imgRight={filmWaveRight}
+      <SimpleIcon
+        storeKey="shockwave"
+        title="Shockwave"
+        imgUrl={shockwave}
         prefix="moves"
-        setItem={setMove}
+        updateItem={setMove}
       />
       <CountSelector
-        storeKey="crowns"
-        title="Battle Arena Crowns"
-        imgUrl={crownIcon}
+        storeKey="pearls"
+        title="Pearls"
+        imgUrl={pearlIcon}
         prefix="consumables"
         setCount={setConsumable}
-        maxValue={capRemoved ? 255 : 10}
+        maxValue={capRemoved ? 255 : 5}
       />
       <SimpleIcon storeKey="diddy" title="Diddy Kong" imgUrl={diddyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="peanut" title="Peanuts" imgUrl={diddyGunIcon} prefix="moves" updateItem={setMove} />
@@ -130,23 +124,20 @@ const MoveTable = (): JSX.Element => {
         maxValue={8}
       />
       <SimpleIcon storeKey="dive" title="Diving" imgUrl={diveIcon} prefix="moves" updateItem={setMove} />
-      <DoubleIcon
-        storeLeft="homing"
-        storeRight="sniper"
-        title="Homing Ammo and Sniper Scope"
-        imgBoth={homeScopeBoth}
-        imgLeft={homeScopeLeft}
-        imgRight={homeScopeRight}
+      <SimpleIcon
+        storeKey="homing"
+        title="Homing Ammo"
+        imgUrl={homingAmmo}
         prefix="moves"
-        setItem={setMove}
+        updateItem={setMove}
       />
       <CountSelector
-        storeKey="bananaMedals"
-        title="Banana Medals"
-        imgUrl={bananaMedalIcon}
+        storeKey="crowns"
+        title="Battle Arena Crowns"
+        imgUrl={crownIcon}
         prefix="consumables"
         setCount={setConsumable}
-        maxValue={capRemoved ? 255 : 40}
+        maxValue={capRemoved ? 255 : 10}
       />
       <SimpleIcon storeKey="lanky" title="Lanky Kong" imgUrl={lankyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="grape" title="Grapes" imgUrl={lankyGunIcon} prefix="moves" updateItem={setMove} />
@@ -163,23 +154,20 @@ const MoveTable = (): JSX.Element => {
         maxValue={8}
       />
       <SimpleIcon storeKey="orange" title="Oranges" imgUrl={orangeIcon} prefix="moves" updateItem={setMove} />
-      <DoubleIcon
-        title="Nintendo and Rareware Coins"
-        storeLeft="nintendoCoin"
-        storeRight="rareCoin"
-        imgBoth={companyCoinBoth}
-        imgLeft={companyCoinLeft}
-        imgRight={companyCoinRight}
-        prefix="consumables"
-        setItem={setConsumable}
+      <SimpleIcon
+        storeKey="sniper"
+        title="Sniper Scope"
+        imgUrl={sniper}
+        prefix="moves"
+        UpdateItem={setMove}
       />
       <CountSelector
-        title="Rainbow Coins"
-        storeKey="rainbowCoins"
-        imgUrl={rainbowCoinICon}
+        storeKey="bananaMedals"
+        title="Banana Medals"
+        imgUrl={bananaMedalIcon}
         prefix="consumables"
         setCount={setConsumable}
-        maxValue={capRemoved ? 255 : 16}
+        maxValue={capRemoved ? 255 : 40}
       />
       <SimpleIcon storeKey="tiny" title="Tiny Kong" imgUrl={tinyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="feather" title="Feathers" imgUrl={tinyGunIcon} prefix="moves" updateItem={setMove} />
@@ -203,19 +191,19 @@ const MoveTable = (): JSX.Element => {
         updateItem={setMove}
       />
       <SimpleIcon
-        storeKey="bean"
-        title="The Bean™!"
-        imgUrl={beanIcon}
+        title="Nintendo Coin"
+        storeKey="nintendoCoin"
+        imgUrl={nintendoCoin}
         prefix="consumables"
         updateItem={setConsumable}
       />
       <CountSelector
-        storeKey="fairies"
-        title="Banana Fairies"
-        imgUrl={fairyIcon}
+        title="Rainbow Coins"
+        storeKey="rainbowCoins"
+        imgUrl={rainbowCoinICon}
         prefix="consumables"
         setCount={setConsumable}
-        maxValue={capRemoved ? 255 : 20}
+        maxValue={capRemoved ? 255 : 16}
       />
       <SimpleIcon storeKey="chunky" title="Chunky Kong" imgUrl={chunkyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="pineapple" title="Pineapples" imgUrl={chunkyGunIcon} prefix="moves" updateItem={setMove} />
@@ -232,28 +220,33 @@ const MoveTable = (): JSX.Element => {
         maxValue={8}
       />
       <SimpleIcon storeKey="barrel" title="Barrel Throwing" imgUrl={barrelIcon} prefix="moves" updateItem={setMove} />
-      <CountSelector
-        storeKey="pearls"
-        title="Pearls"
-        imgUrl={pearlIcon}
+      <SimpleIcon
+        title="Rareware Coin"
+        storeKey="rareCoin"
+        imgUrl={rarewareCoin}
         prefix="consumables"
-        setCount={setConsumable}
-        maxValue={capRemoved ? 255 : 5}
+        updateItem={setConsumable}
       />
       <CountSelector
-        storeKey="goldBananas"
-        title="Golden Bananas"
-        imgUrl={goldBananaIcon}
+        storeKey="fairies"
+        title="Banana Fairies"
+        imgUrl={fairyIcon}
         prefix="consumables"
         setCount={setConsumable}
-        maxValue={capRemoved ? 255 : 201}
+        maxValue={capRemoved ? 255 : 20}
       />
-      &nbsp;
       <SimpleIcon storeKey="cranky" title="Cranky Kong" imgUrl={crankyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="funky" title="New Funky Mode!" imgUrl={funkyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="candy" title="Candy Kong" imgUrl={candyIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon storeKey="snide" title="Snide" imgUrl={snideIcon} prefix="moves" updateItem={setMove} />
       &nbsp;
+      <SimpleIcon
+        storeKey="camera"
+        title="Fairy Cam"
+        imgUrl={film}
+        prefix="moves"
+        updateItem={setMove}
+      />
       <div className={`count-icon ${bpSeed}`} style={{ cursor: `not-allowed` }}>
           <img height={24} alt="Total number of Blueprints" title="Total number of Blueprints" src={lankyBpIcon} style={{ filter: `grayscale(${bpTotal != 0 ? '0' : '1'})` }} />
           <span style={{ color: `#ff0000`, fontSize: `18px` }}>{bpTotal}</span>
@@ -265,7 +258,21 @@ const MoveTable = (): JSX.Element => {
         prefix="moves"
         updateItem={setMove}
       />
-      &nbsp;
+      <SimpleIcon
+        storeKey="bean"
+        title="The Bean™!"
+        imgUrl={beanIcon}
+        prefix="consumables"
+        updateItem={setConsumable}
+      />
+      <CountSelector
+        storeKey="goldBananas"
+        title="Golden Bananas"
+        imgUrl={goldBananaIcon}
+        prefix="consumables"
+        setCount={setConsumable}
+        maxValue={capRemoved ? 255 : 201}
+      />
     </section>
   </section>
   )
