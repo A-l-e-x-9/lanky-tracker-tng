@@ -14,7 +14,7 @@ import fairyIcon from '../../assets/images/fairy.png'
 import rainbowCoinIcon from '../../assets/images/rainbowcoin.png'
 import beanIcon from '../../assets/images/bean.png'
 import pearlIcon from '../../assets/images/pearl.png'
-import cbIcon from '../../assets/images/settings/rainbow_bananas.png'
+import cbIcon from '../../assets/images/rainbow_bananas.png'
 
 const itemToIcon = (num): string => {
   return num == 1 ? gbIcon : num == 2 ? blueprintIcon : num == 3 ? coCoinIcon : num == 4 ? keyIcon : num == 5 ? medalIcon : num == 6 ? crownIcon : num == 7 ? fairyIcon : num == 8 ? rainbowCoinIcon : num == 9 ? beanIcon : num == 10 ? pearlIcon : alreadyOpenedIcon
