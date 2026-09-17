@@ -53597,8 +53597,10 @@ const CountSelector = (props) => {
 const SimpleIcon = (props) => {
   const isDKRapSeed = (props.storeKey === "dk" || props.storeKey === "coconut" || props.storeKey === "strong" || props.storeKey === "diddy" || props.storeKey === "peanut" || props.storeKey === "guitar" || props.storeKey === "rocket" || props.storeKey === "lanky" || props.storeKey === "grape" || props.storeKey === "stand" || props.storeKey === "trombone" || props.storeKey === "balloon" || props.storeKey === "tiny" || props.storeKey === "twirl" || props.storeKey === "mini" || props.storeKey === "chunky" || props.storeKey === "pineapple" || props.storeKey === "orange" || props.storeKey === "barrel" || props.storeKey === "climbing" || props.storeKey === "cranky") && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? "all-bosses" : "";
   const beanSeed = props.storeKey === "bean" && useDonkStore(useShallow((state) => state.winCondition.theBean)) ? "all-bosses" : "";
+  const kremKapture = props.storeKey === "camera" && useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "all-bosses" : "";
+  const coCoinSeed = (props.storeKey === "nintendoCoin" || props.storeKey === "rareCoin") && useDonkStore(useShallow((state) => state.winCondition.companyCoins)) ? "all-bosses" : "";
   const value = useDonkStore((state) => state[props.prefix][props.storeKey]);
-  const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? "have" : "have-not"} ${props.className} ${isDKRapSeed} ${beanSeed}`;
+  const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? "have" : "have-not"} ${props.className} ${isDKRapSeed} ${beanSeed} ${kremKapture} ${coCoinSeed}`;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classes, onClick: () => props.updateItem(props.storeKey, !value), children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
@@ -55468,7 +55470,7 @@ const GeneratorSettings = () => {
                 SimpleRadioIcon,
                 {
                   imgUrl: fairyCamIcon,
-                  title: "Highlights all enemy checks with red text and the Camera's icon in a red background.",
+                  title: `Highlights the Camera's icon in a red background and adds a "Kremling Kapture" tab to the navigation bar at the top.`,
                   storeKey: "kremlingKapture",
                   prefix: "winCondition",
                   updateItem: setWinCondition
