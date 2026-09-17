@@ -333,7 +333,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Kremling Kapture</p>
               <SimpleRadioIcon
                 imgUrl={fairyCamIcon}
-                title="Highlights all enemy checks with red text and the Camera's icon in a red background."
+                title="Highlights the Camera's icon in a red background and adds a &quot;Kremling Kapture&quot; tab to the navigation bar at the top."
                 storeKey="kremlingKapture"
                 prefix="winCondition"
                 updateItem={setWinCondition}
