@@ -57231,8 +57231,8 @@ const SlamShuffler$1 = () => {
   const openModal = () => setOpen(true);
   const closeModal = () => setOpen(false);
   const slamShuffler = useDonkStore(useShallow((state) => state.settings.progressiveSlams)) ? "" : "slam-shuffler";
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `${slamShuffler}`, onClick: openModal, title: "Click to open the Progressive Slam Shuffler.", children: "⚙️" }),
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${slamShuffler}`, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { onClick: openModal, title: "Click to open the Progressive Slam Shuffler.", children: "⚙️" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       Modal,
       {
