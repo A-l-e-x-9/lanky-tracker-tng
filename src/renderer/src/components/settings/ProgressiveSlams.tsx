@@ -24,8 +24,8 @@ const SlamShuffler: React.FC = () => {
   const slamShuffler = useDonkStore(useShallow((state) => state.settings.progressiveSlams)) ? '' : 'slam-shuffler'
 
   return (
-    <span>
-      <span className={`${slamShuffler}`} onClick={openModal} title="Click to open the Progressive Slam Shuffler.">
+    <span className={`${slamShuffler}`}>
+      <span onClick={openModal} title="Click to open the Progressive Slam Shuffler.">
         ⚙️
       </span>
       <Modal
