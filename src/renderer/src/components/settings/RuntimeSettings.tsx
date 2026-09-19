@@ -76,11 +76,11 @@ const RuntimeSettings: React.FC = () => {
         <h4>Settings</h4>
         <GeneratorSettings />
         <p>Current Galleon Tide:</p>
-        <span onClick={() => setSetting('galleonHighTide', !galleonHighTide)}>
+        <span onClick={() => setSetting('galleonHighTide', !galleonHighTide)} title={galleonHighTide ? "High" : "Low"}>
           {galleonHighTide ? '🠱' : '🠳'}
         </span>
         <p>Current Forest Time:</p>
-        <span onClick={handleClick} onContextMenu={handleContextClick} onWheel={handleWheel}>
+        <span onClick={handleClick} onContextMenu={handleContextClick} onWheel={handleWheel} title={forestTime === 0 ? "Day" : forestTime === 1 ? "Night" : "Dusk"}>
           {timeToString(forestTime)}
         </span>
         <p className={`${shopShuffler}`}>Shuffled Shops:</p>
