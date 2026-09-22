@@ -76,11 +76,11 @@ const RuntimeSettings: React.FC = () => {
         <h4>Settings</h4>
         <GeneratorSettings />
         <p>Current Galleon Tide:</p>
-        <span onClick={() => setSetting('galleonHighTide', !galleonHighTide)} title={galleonHighTide ? "High" : "Low"}>
+        <span onClick={() => setSetting('galleonHighTide', !galleonHighTide)} title={galleonHighTide ? "High: The Cannon Game, Lighthouse, Seal Race, and Gold Towers are available, as is Snide's" : "Low: Diddy's, Lanky's, and Chunky's 5DS rooms can be reached, as can Kevin"}>
           {galleonHighTide ? '🠱' : '🠳'}
         </span>
         <p>Current Forest Time:</p>
-        <span onClick={handleClick} onContextMenu={handleContextClick} onWheel={handleWheel} title={forestTime === 0 ? "Day" : forestTime === 1 ? "Night" : "Dusk"}>
+        <span onClick={handleClick} onContextMenu={handleContextClick} onWheel={handleWheel} title={forestTime === 0 ? "Day: The Main Mill of Area 1 is available, as are Snide's and the Rabbit" : forestTime === 1 ? "Night: Area 1's smaller mill rooms and Thornvine Barn are open, as are Chunky's Kasplat and the Owl Race" : "Dusk: No time-specific barriers even exist"}>
           {timeToString(forestTime)}
         </span>
         <p className={`${shopShuffler}`}>Shuffled Shops:</p>

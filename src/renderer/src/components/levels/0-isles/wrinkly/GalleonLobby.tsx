@@ -141,8 +141,8 @@ if (!locked && !kongLocked) {
           id={58}
           name="Wrinkly Door: Galleon Chunky"
           region="Japes-Forest Lobbies"
-          canGetLogic={canDo.in}
-          canGetBreak={canDo.out}
+          canGetLogic={canDo.in && (currentItemCount >= doorItemCount)}
+          canGetBreak={canDo.out && (currentItemCount >= doorItemCount)}
         />
     </WrinklyPool>
   )} else if (!locked && kongLocked) {
