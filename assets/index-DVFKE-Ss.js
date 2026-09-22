@@ -15649,6 +15649,7 @@ const usePlayForest = () => {
   };
 };
 const useSlamForest = () => useSlamLevel("Fungi Forest");
+const useForestTroffAndScoff = () => useTroffAndScoff("Fungi Forest");
 const useMillTopPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.millTopPortal));
 const useFrontMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.frontMillPortal));
 const useBackMillPortal = () => useDonkStore(useShallow((state) => state.shuffledForestPortals.backMillPortal));
@@ -40646,14 +40647,27 @@ const ShuffledArenas$3 = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeE
 const BossCheck$3 = () => {
   const inStage = usePlayForest();
   const anyKong = useAnyKong();
+  const DKCurrentCBsIn = useDkMedalInLogic$2();
+  const DKCurrentCBsOut = useDkMedalOutLogic$2();
+  const diddyCurrentCBsIn = useDiddyMedalInLogic$2();
+  const diddyCurrentCBsOut = useDiddyMedalOutLogic$2();
+  const lankyCurrentCBsIn = useLankyMedalInLogic$2();
+  const lankyCurrentCBsOut = useLankyMedalOutLogic$2();
+  const tinyCurrentCBsIn = useTinyMedalInLogic$2();
+  const tinyCurrentCBsOut = useTinyMedalOutLogic$2();
+  const chunkyCurrentCBsIn = useChunkyMedalInLogic$2();
+  const chunkyCurrentCBsOut = useChunkyMedalOutLogic$2();
+  const currentCBCountIn = DKCurrentCBsIn + diddyCurrentCBsIn + lankyCurrentCBsIn + tinyCurrentCBsIn + chunkyCurrentCBsIn;
+  const currentCBCountOut = DKCurrentCBsOut + diddyCurrentCBsOut + lankyCurrentCBsOut + tinyCurrentCBsOut + chunkyCurrentCBsOut;
+  const troffAndScoff = useForestTroffAndScoff();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BossPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5105,
       name: "Forest Boss",
       region: "Bosses",
-      canGetLogic: inStage.in && anyKong,
-      canGetBreak: inStage.out && anyKong
+      canGetLogic: inStage.in && anyKong && currentCBCountIn >= troffAndScoff,
+      canGetBreak: inStage.out && anyKong && currentCBCountOut >= troffAndScoff
     }
   ) });
 };
