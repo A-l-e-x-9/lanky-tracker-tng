@@ -1,7 +1,7 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import { useBean } from '../consumables'
-import { usePlayLevel, useSlamLevel } from '../isles'
+import { usePlayLevel, useSlamLevel, useTroffAndScoff } from '../isles'
 import {
   useAllGun,
   useAnyGun,
@@ -61,6 +61,9 @@ export const usePlayForest = (): LogicBool => {
  * @returns true if we can slam switches in Fungi Forest.
  */
 export const useSlamForest = (): boolean => useSlamLevel('Fungi Forest')
+
+//Alex addition: Number of CB's needed to get by Troff 'n' Scoff for this level
+export const useForestTroffAndScoff = (): number => useTroffAndScoff('Fungi Forest')
 
 /*Alex addition: shuffled DK Portals*/
 //Is the DK Portal on top of the main mill in Area 1, near Lanky's attic?
