@@ -1218,6 +1218,7 @@ interface aztecPortals {
   DK5DTPortal: boolean
   chunky5DTPortal: boolean
   llamaPortal: boolean
+  quicksandTunnelPortal: boolean
 }
 interface factoryPortals {
   vanilla: boolean

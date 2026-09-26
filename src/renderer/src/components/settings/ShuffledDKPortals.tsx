@@ -182,6 +182,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledAztecPortals"
                 updateItem={setAztecPortal}
             />
+            <p>In the quicksand tunnel</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is inside the secret tunnel near Funky's"
+                storeKey="quicksandTunnelPortal"
+                prefix="shuffledAztecPortals"
+                updateItem={setAztecPortal}
+            />
             </>
             <h3>Frantic Factory</h3>
             <>

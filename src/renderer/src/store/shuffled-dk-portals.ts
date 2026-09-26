@@ -22,7 +22,8 @@ export const initialPortal: PortalState = {
     secondHalfPortal: false,
     DK5DTPortal: false,
     chunky5DTPortal: false,
-    llamaPortal: false
+    llamaPortal: false,
+    quicksandTunnelPortal: false
   },
   shuffledFactoryPortals: {
     vanilla: true,

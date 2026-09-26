@@ -83,6 +83,16 @@ export const useChunky5DTPortal = (): boolean =>
 //Is the DK Portal inside the Llama Temple?
 export const useLlamaPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal))
+//Is the DK Portal in the quicksand tunnel, and if so, can we get out of it to access the rest of the level?
+export const useQuicksandPortal = (): LogicBool => {
+  const hasPortal = useDonkStore(useShallow((state) => state.shuffledAztecPortals.quicksandTunnelPortal))
+  const hasStrongKong = useStrong()
+  const hasWarps = useBananaportAll()
+  return {
+    in: hasPortal && (hasStrongKong || hasWarps)
+    out: hasPortal
+  }
+}
 /*end shuffled DK Portals*/
 
 /**
@@ -149,10 +159,11 @@ export const useAztecBack = (): LogicBool => {
   const DKPortal2 = useLlamaPortal()
   const DKPortal3 = useChunky5DTPortal()
   const DKPortal4 = useDK5DTPortal()
-  const portal = DKPortal || DKPortal2 || DKPortal3 || DKPortal4
+  const DKPortal5 = useQuicksandPortal()
+  const portal = DKPortal || DKPortal2 || DKPortal3 || DKPortal4 || DKPortal5
   return {
-    in: (aztecFront.in && (backGateOpen || warpAll || (hasClimbing && (vine || rocket) && musicSwitch))) || portal,
-    out: (aztecFront.out && (backGateOpen || warpAll || (musicSwitch && (diddy || tiny)))) || portal
+    in: (aztecFront.in && (backGateOpen || warpAll || (hasClimbing && (vine || rocket) && musicSwitch))) || portal.in,
+    out: (aztecFront.out && (backGateOpen || warpAll || (musicSwitch && (diddy || tiny)))) || portal.out
   }
 }
 
@@ -238,9 +249,11 @@ export const useAztecBackTunnel = (): LogicBool => {
   const slamSwitch = useAztecLlamaTunnelSwitch()
   const front = useAztecFront()
   const warpAll = useBananaportAll()
+  const hasStrongKong = useStrong()
+  const DKPortal = useDonkStore(useShallow((state) => state.shuffledAztecPortals.quicksandTunnelPortal))
   return {
-    in: (front.in && warpAll) || (llama.in && slamSwitch && canSlam),
-    out: (front.out && warpAll) || (llama.out && slamSwitch && canSlam)
+    in: (front.in && warpAll) || (llama.in && slamSwitch && canSlam && hasStrongKong) || DKPortal,
+    out: (front.out && warpAll) || (llama.out && slamSwitch && canSlam) || DKPortal
   }
 }
 
@@ -255,7 +268,6 @@ export const useAztec5DoorTemple = (): LogicBool => {
   const canSlam = useSlamAztec()
   const peanut = usePeanut()
   const fiveDoor = useDonkStore(useShallow((state) => state.removeBarriers.aztec5DoorTemple))
-
   return {
     in: aztecBack.in && (fiveDoor || (rocket && canSlam && peanut)),
     out: aztecBack.out && (fiveDoor || (canSlam && peanut))
