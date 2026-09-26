@@ -162,8 +162,8 @@ export const useAztecBack = (): LogicBool => {
   const DKPortal5 = useQuicksandPortal()
   const portal = DKPortal || DKPortal2 || DKPortal3 || DKPortal4 || DKPortal5
   return {
-    in: (aztecFront.in && (backGateOpen || warpAll || (hasClimbing && (vine || rocket) && musicSwitch))) || portal.in,
-    out: (aztecFront.out && (backGateOpen || warpAll || (musicSwitch && (diddy || tiny)))) || portal.out
+    in: (aztecFront.in && (backGateOpen || warpAll || (hasClimbing && (vine || rocket) && musicSwitch))) || portal,
+    out: (aztecFront.out && (backGateOpen || warpAll || (musicSwitch && (diddy || tiny)))) || portal
   }
 }
 
