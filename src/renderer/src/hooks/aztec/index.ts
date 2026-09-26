@@ -89,7 +89,7 @@ export const useQuicksandPortal = (): LogicBool => {
   const hasStrongKong = useStrong()
   const hasWarps = useBananaportAll()
   return {
-    in: hasPortal && (hasStrongKong || hasWarps)
+    in: hasPortal && (hasStrongKong || hasWarps),
     out: hasPortal
   }
 }
