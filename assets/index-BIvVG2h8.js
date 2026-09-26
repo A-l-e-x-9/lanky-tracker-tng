@@ -10818,7 +10818,8 @@ const initialPortal = {
     secondHalfPortal: false,
     DK5DTPortal: false,
     chunky5DTPortal: false,
-    llamaPortal: false
+    llamaPortal: false,
+    quicksandTunnelPortal: false
   },
   shuffledFactoryPortals: {
     vanilla: true,
@@ -13113,7 +13114,8 @@ const useAztecBack = () => {
   const DKPortal2 = useLlamaPortal();
   const DKPortal3 = useChunky5DTPortal();
   const DKPortal4 = useDK5DTPortal();
-  const portal = DKPortal || DKPortal2 || DKPortal3 || DKPortal4;
+  const DKPortal5 = useDonkStore(useShallow((state) => state.shuffledAztecPortals.quicksandTunnelPortal));
+  const portal = DKPortal || DKPortal2 || DKPortal3 || DKPortal4 || DKPortal5;
   return {
     in: aztecFront.in && (backGateOpen || warpAll || hasClimbing && (vine || rocket) && musicSwitch) || portal,
     out: aztecFront.out && (backGateOpen || warpAll || musicSwitch && (diddy || tiny)) || portal
@@ -13178,9 +13180,11 @@ const useAztecBackTunnel = () => {
   const slamSwitch = useAztecLlamaTunnelSwitch();
   const front = useAztecFront();
   const warpAll = useBananaportAll();
+  const hasStrongKong = useStrong();
+  const DKPortal = useDonkStore(useShallow((state) => state.shuffledAztecPortals.quicksandTunnelPortal));
   return {
-    in: front.in && warpAll || llama.in && slamSwitch && canSlam,
-    out: front.out && warpAll || llama.out && slamSwitch && canSlam
+    in: front.in && warpAll || llama.in && slamSwitch && canSlam && hasStrongKong || DKPortal,
+    out: front.out && warpAll || llama.out && slamSwitch && canSlam || DKPortal
   };
 };
 const useAztec5DoorTemple = () => {
@@ -57717,6 +57721,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is inside the Llama Temple, except for any area further gated (the Lava Pedestals, Match Game, etc.).",
                   storeKey: "llamaPortal",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In the quicksand tunnel" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is inside the secret tunnel near Funky's",
+                  storeKey: "quicksandTunnelPortal",
                   prefix: "shuffledAztecPortals",
                   updateItem: setAztecPortal
                 }
