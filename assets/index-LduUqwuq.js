@@ -43584,9 +43584,12 @@ const ChunkyMedal$2 = () => {
   const outLogic = useChunkyMedalOutLogic$2();
   const cbCount = useCbCount();
   const halfMedalPercent = useHalfMedalPercent();
-  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
+  let halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
+  if (halfMedal < 1) {
+    halfMedal = 1;
+  }
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
         id: 5104,
@@ -43595,7 +43598,7 @@ const ChunkyMedal$2 = () => {
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
-    ),
+    ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
@@ -43613,9 +43616,12 @@ const DiddyMedal$2 = () => {
   const outLogic = useDiddyMedalOutLogic$2();
   const cbCount = useCbCount();
   const halfMedalPercent = useHalfMedalPercent();
-  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
+  let halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
+  if (halfMedal < 1) {
+    halfMedal = 1;
+  }
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
         id: 5101,
@@ -43624,7 +43630,7 @@ const DiddyMedal$2 = () => {
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
-    ),
+    ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
@@ -43642,9 +43648,12 @@ const DkMedal$2 = () => {
   const outLogic = useDkMedalOutLogic$2();
   const cbCount = useCbCount();
   const halfMedalPercent = useHalfMedalPercent();
-  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
+  let halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
+  if (halfMedal < 1) {
+    halfMedal = 1;
+  }
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
         id: 5100,
@@ -43653,7 +43662,7 @@ const DkMedal$2 = () => {
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
-    ),
+    ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
@@ -43671,9 +43680,12 @@ const LankyMedal$2 = () => {
   const outLogic = useLankyMedalOutLogic$2();
   const cbCount = useCbCount();
   const halfMedalPercent = useHalfMedalPercent();
-  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
+  let halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
+  if (halfMedal < 1) {
+    halfMedal = 1;
+  }
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
         id: 5102,
@@ -43682,7 +43694,7 @@ const LankyMedal$2 = () => {
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
-    ),
+    ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
@@ -43700,9 +43712,12 @@ const TinyMedal$2 = () => {
   const outLogic = useTinyMedalOutLogic$2();
   const cbCount = useCbCount();
   const halfMedalPercent = useHalfMedalPercent();
-  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
+  let halfMedal = Math.floor(cbCount * (halfMedalPercent / 100));
+  if (halfMedal < 1) {
+    halfMedal = 1;
+  }
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(BananaMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
         id: 5103,
@@ -43711,7 +43726,7 @@ const TinyMedal$2 = () => {
         canGetLogic: inLogic >= cbCount,
         canGetBreak: outLogic >= cbCount
       }
-    ),
+    ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(HalfMedalPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
       {
@@ -44641,13 +44656,11 @@ const ForestRegionChecks = () => {
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$2, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$2, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$2, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$2, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$2, {})
-      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$2, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$2, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$2, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$2, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$2, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CenterChecks, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CenterArenas, {})
     ] }),
@@ -44700,13 +44713,11 @@ const ClassicChecks$2 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations$2, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(MushroomArena, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(BananaMedalPool, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$2, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$2, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$2, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$2, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$2, {})
-      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$2, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$2, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$2, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$2, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$2, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderLocations$1, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$3, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$2, {}),
