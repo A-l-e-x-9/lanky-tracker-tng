@@ -1,7 +1,7 @@
 import { useTinyMedalInLogic, useTinyMedalOutLogic } from '@renderer/hooks/japes/medals/tiny'
 import { useCbCount, useHalfMedalPercent } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
-import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
+import BananaMedalPool, { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const TinyMedal: React.FC = () => {
   const inLogic = useTinyMedalInLogic()
@@ -9,9 +9,9 @@ const TinyMedal: React.FC = () => {
   const cbCount = useCbCount()
   const halfMedalPercent = useHalfMedalPercent()
   const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
-
   return (
   <>
+    <BananaMedalPool>
     <JapesCheck
       id={1103}
       name="Tiny's Medal"
@@ -19,6 +19,7 @@ const TinyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    </BananaMedalPool>
     <HalfMedalPool>
     <JapesCheck
       id={1203}

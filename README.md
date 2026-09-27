@@ -7,6 +7,8 @@ This is an updated version of a tracker originally written by Wolfman2000 and li
 As with the original, this tracker was written in JavaScript, primarily with an [electron-vite](https://electron-vite.org/) setup in addition to Facebook/the Meta Group's [React](https://reactjs.org/) and Microsoft's [TypeScript](https://www.typescriptlang.org/). Obviously, you need JavaScript in order to use it.
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
+- It's impossible for the "Half-Medal Percentage" to be 0 in the Randomizer, so must code a special instance of CountSelector that can only go as low as 1...
+- It's impossible for a Half-Medal to be zero bananas, so must change the medal checks to set a Half-Medal at 1 should the existing formula equal 0.
 - Recolor the pad and barrel icons to match the "color-coded Kong Pads/Barrels" option in the Randomizer.
 - Currently, the "Bonuses" and "K. Rool's Challenge" win conditions don't account for the Oil Drums in Hideout Helm, so if your current seed's win con is >43 Bonus Barrels, you're outta luck.
 - Make it so that for the shuffled Arenas, Crates, Dirts, Fairies, and eventually Kasplats and Colored Bananas, there's only one or two checks each, and you can use a drop-down list or something to choose where they are.
