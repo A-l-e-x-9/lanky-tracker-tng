@@ -8,7 +8,10 @@ const DiddyMedal: React.FC = (): JSX.Element => {
   const outLogic = useDiddyMedalOutLogic()
   const cbCount = useCbCount()
   const halfMedalPercent = useHalfMedalPercent()
-  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
+  let halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
+  if (halfMedal < 0) {
+    halfMedal = 1
+  }
   return (
   <>
     <BananaMedalPool>

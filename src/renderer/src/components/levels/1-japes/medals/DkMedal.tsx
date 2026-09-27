@@ -12,7 +12,10 @@ const DkMedal: React.FC = (): JSX.Element => {
   const outLogic = useDkMedalOutLogic()
   const cbCount = useCbCount()
   const halfMedalPercent = useHalfMedalPercent()
-  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
+  let halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
+  if (halfMedal < 0) {
+    halfMedal = 1
+  }
   return (
   <>
     <BananaMedalPool>
