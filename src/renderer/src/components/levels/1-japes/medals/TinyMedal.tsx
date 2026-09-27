@@ -9,7 +9,7 @@ const TinyMedal: React.FC = () => {
   const cbCount = useCbCount()
   const halfMedalPercent = useHalfMedalPercent()
   let halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
-  if (halfMedal < 0) {
+  if (halfMedal < 1) {
     halfMedal = 1
   }
   return (
