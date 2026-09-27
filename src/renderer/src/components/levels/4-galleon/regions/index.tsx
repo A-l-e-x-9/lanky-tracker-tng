@@ -1,6 +1,5 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import BananaMedalPool from '@renderer/components/pools/BananaMedals'
 import BossCheck from '../boss'
 import ChunkyMedal from '../medals/ChunkyMedal'
 import DiddyMedal from '../medals/DiddyMedal'
@@ -42,13 +41,11 @@ const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poo
 return (
   <>
     <div className="grid">
-      <BananaMedalPool>
-        <DkMedal />
-        <DiddyMedal />
-        <LankyMedal />
-        <TinyMedal />
-        <ChunkyMedal />
-      </BananaMedalPool>
+      <DkMedal />
+      <DiddyMedal />
+      <LankyMedal />
+      <TinyMedal />
+      <ChunkyMedal />
     </div>
       <CavernsChecks />
     <div className="grid">

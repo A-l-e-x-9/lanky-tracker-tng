@@ -4,17 +4,20 @@ import {
 } from '@renderer/hooks/galleon/medals/chunky'
 import { useCbCount, useHalfMedalPercent } from '@renderer/hooks/settings'
 import GalleonCheck from '../check'
-import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
+import BananaMedalPool, { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const ChunkyMedal: React.FC = () => {
   const inLogic = useChunkyMedalInLogic()
   const outLogic = useChunkyMedalOutLogic()
   const cbCount = useCbCount()
   const halfMedalPercent = useHalfMedalPercent()
-  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
-
+  let halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
+  if (halfMedal < 1) {
+    halfMedal = 1
+  }
   return (
   <>
+    <BananaMedalPool>
     <GalleonCheck
       id={4104}
       name="Chunky's Medal"
@@ -22,6 +25,7 @@ const ChunkyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    </BananaMedalPool>
     <HalfMedalPool>
     <GalleonCheck
       id={4204}
