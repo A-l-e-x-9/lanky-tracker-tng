@@ -1,7 +1,7 @@
 import { useLankyMedalInLogic, useLankyMedalOutLogic } from '@renderer/hooks/isles/medals/lanky'
 import { useCbCount, useHalfMedalPercent } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
-import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
+import BananaMedalPool, { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const LankyMedal: React.FC = (): JSX.Element => {
   const inLogic = useLankyMedalInLogic()
@@ -12,6 +12,7 @@ const LankyMedal: React.FC = (): JSX.Element => {
 
   return (
   <>
+    <BananaMedalPool>
     <IslesCheck
       id={102}
       name="Lanky's Medal"
@@ -19,6 +20,7 @@ const LankyMedal: React.FC = (): JSX.Element => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    </BananaMedalPool>
     <HalfMedalPool>
     <IslesCheck
       id={202}

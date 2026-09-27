@@ -1,7 +1,7 @@
 import { useChunkyMedalInLogic, useChunkyMedalOutLogic } from '@renderer/hooks/isles/medals/chunky'
 import { useCbCount, useHalfMedalPercent } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
-import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
+import BananaMedalPool, { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const ChunkyMedal: React.FC = () => {
   const inLogic = useChunkyMedalInLogic()
@@ -12,6 +12,7 @@ const ChunkyMedal: React.FC = () => {
 
   return (
   <>
+    <BananaMedalPool>
     <IslesCheck
       id={104}
       name="Chunky's Medal"
@@ -19,6 +20,7 @@ const ChunkyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    </BananaMedalPool>
     <HalfMedalPool>
     <IslesCheck
       id={204}

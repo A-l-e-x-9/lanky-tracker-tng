@@ -1,7 +1,7 @@
 import { useDkMedalInLogic, useDkMedalOutLogic } from '@renderer/hooks/isles/medals/dk'
 import { useCbCount, useHalfMedalPercent } from '@renderer/hooks/settings'
 import IslesCheck from '../check'
-import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
+import BananaMedalPool, { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const DkMedal: React.FC = (): JSX.Element => {
   const inLogic = useDkMedalInLogic()
@@ -12,6 +12,7 @@ const DkMedal: React.FC = (): JSX.Element => {
 
   return (
   <>
+    <BananaMedalPool>
     <IslesCheck
       id={100}
       name="DK's Medal"
@@ -19,6 +20,7 @@ const DkMedal: React.FC = (): JSX.Element => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    </BananaMedalPool>
     <HalfMedalPool>
     <IslesCheck
       id={200}
