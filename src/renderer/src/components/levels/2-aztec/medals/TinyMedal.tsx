@@ -1,17 +1,20 @@
 import { useTinyMedalInLogic, useTinyMedalOutLogic } from '@renderer/hooks/aztec/medals/tiny'
 import { useCbCount, useHalfMedalPercent } from '@renderer/hooks/settings'
 import AztecCheck from '../check'
-import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
+import BananaMedalPool, { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const TinyMedal: React.FC = () => {
   const inLogic = useTinyMedalInLogic()
   const outLogic = useTinyMedalOutLogic()
   const cbCount = useCbCount()
   const halfMedalPercent = useHalfMedalPercent()
-  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
-
+  let halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
+  if (halfMedal < 1) {
+    halfMedal = 1
+  }
   return (
   <>
+    <BananaMedalPool>
     <AztecCheck
       id={2103}
       name="Tiny's Medal"
@@ -19,6 +22,7 @@ const TinyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    </BananaMedalPool>
     <HalfMedalPool>
     <AztecCheck
       id={2203}
