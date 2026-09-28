@@ -1,6 +1,5 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
-import BananaMedalPool from '@renderer/components/pools/BananaMedals'
 import BossCheck from '../boss'
 import ChunkyMedal from '../medals/ChunkyMedal'
 import DiddyMedal from '../medals/DiddyMedal'
@@ -34,13 +33,11 @@ return (
 <>
   <p className="not-available"><strong>WARNING:</strong> If you don't have Climbing, any check in the Crypt area is yellow because you won't be able to get back up without killing your Kong, pause-exiting/re-entering, or abusing high-grabs on the gravestones.</p>
   <div className="grid">
-    <BananaMedalPool>
-      <DkMedal />
-      <DiddyMedal />
-      <LankyMedal />
-      <TinyMedal />
-      <ChunkyMedal />
-    </BananaMedalPool>
+    <DkMedal />
+    <DiddyMedal />
+    <LankyMedal />
+    <TinyMedal />
+    <ChunkyMedal />
   </div>
     <TreeChecks />
     <SurroundingsChecks />
