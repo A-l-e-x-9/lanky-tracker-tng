@@ -1,17 +1,20 @@
 import { useDiddyMedalInLogic, useDiddyMedalOutLogic } from '@renderer/hooks/caves/medals/diddy'
 import { useCbCount, useHalfMedalPercent } from '@renderer/hooks/settings'
 import CavesCheck from '../check'
-import { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
+import BananaMedalPool, { HalfMedalPool } from '@renderer/components/pools/BananaMedals'
 
 const DiddyMedal: React.FC = () => {
   const inLogic = useDiddyMedalInLogic()
   const outLogic = useDiddyMedalOutLogic()
   const cbCount = useCbCount()
   const halfMedalPercent = useHalfMedalPercent()
-  const halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
-
+  let halfMedal = Math.floor(cbCount * (halfMedalPercent / 100))
+  if (halfMedal < 1) {
+    halfMedal = 1
+  }
   return (
   <>
+    <BananaMedalPool>
     <CavesCheck
       id={6101}
       name="Diddy's Medal"
@@ -19,6 +22,7 @@ const DiddyMedal: React.FC = () => {
       canGetLogic={inLogic >= cbCount}
       canGetBreak={outLogic >= cbCount}
     />
+    </BananaMedalPool>
     <HalfMedalPool>
     <CavesCheck
       id={6201}
