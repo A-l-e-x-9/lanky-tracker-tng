@@ -1,5 +1,5 @@
 import DropPool from '@renderer/components/pools/Drops'
-import { useAztecLlamaTemple } from '@renderer/hooks/aztec'
+import { useAztecLlamaTemple, useMatchGame64Portal } from '@renderer/hooks/aztec'
 import { useDefeatToughEnemy } from '@renderer/hooks/enemies'
 import { useGrape } from '@renderer/hooks/kongs'
 import AztecCheck from '../check'
@@ -8,6 +8,7 @@ const LlamaTempleEnemies: React.FC = () => {
   const llama = useAztecLlamaTemple()
   const klaptrap = useDefeatToughEnemy()
   const hasGrapes = useGrape()
+  const DKPortal = useMatchGame64Portal()
   return (
     <DropPool>
       <AztecCheck
@@ -28,15 +29,15 @@ const LlamaTempleEnemies: React.FC = () => {
         id={2356}
         name="Enemy 0 in the Matching Room"
         region="Llama Temple"
-        canGetLogic={llama.in && hasGrapes}
-        canGetBreak={llama.out && hasGrapes}
+        canGetLogic={(llama.in && hasGrapes) || DKPortal}
+        canGetBreak={(llama.out && hasGrapes) || DKPortal}
       />
       <AztecCheck
         id={2357}
         name="Enemy 1 in the Matching Room"
         region="Llama Temple"
-        canGetLogic={llama.in && hasGrapes}
-        canGetBreak={llama.out && hasGrapes}
+        canGetLogic={(llama.in && hasGrapes) || DKPortal}
+        canGetBreak={(llama.out && hasGrapes) || DKPortal}
       />
       <AztecCheck
         id={2358}
