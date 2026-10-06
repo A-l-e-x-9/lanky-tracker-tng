@@ -1,6 +1,6 @@
 import DropPool from '@renderer/components/pools/Drops'
 import { useDefeatToughEnemy } from '@renderer/hooks/enemies'
-import { useGalleonLighthousePlatform, useSlamGalleon } from '@renderer/hooks/galleon'
+import { useGalleonLighthousePlatform, useSlamGalleon, usePortalInLighthouse, useWhompsFortressPortal } from '@renderer/hooks/galleon'
 import { useDk } from '@renderer/hooks/kongs'
 import GalleonCheck from '../check'
 
