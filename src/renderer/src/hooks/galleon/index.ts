@@ -250,8 +250,8 @@ export const useGalleonTreasureRoom = (): LogicBool => {
   const preOpened = useDonkStore(useShallow((state) => state.removeBarriers.galleonTreasureRoom))
   const warpAll = useBananaportAll()
   return {
-    in: (inStage.in && warpAll) || (outskirts.in && dive.in && (lanky || preOpened) && highTide.in),
-    out: outskirts.out && dive.out && (lanky || preOpened)
+    in: inStage.in && outskirts.in && (warpAll || (dive.in && (lanky || preOpened) && highTide.in)),
+    out: inStage.out && outskirts.out && (warpAll || (dive.out && (lanky || preOpened)))
   }
 }
 
@@ -547,7 +547,13 @@ export const useGeneralFairy = (): LogicBool => {
   }
 }
 
-export const useTreasureKasplat = (): LogicBool => useDiddyGoldGb()
+export const useTreasureKasplat = (): LogicBool {
+  const treasure = useGalleonTreasureRoom()
+  return {
+    in: treasure.in,
+    out: treasure.out
+  }
+}
 
 export const useKevin = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
