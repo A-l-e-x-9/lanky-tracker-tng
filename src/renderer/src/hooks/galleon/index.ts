@@ -160,9 +160,10 @@ export const useGalleonLighthouseInside = (): LogicBool => {
   const hasJetbarrel = useRocket()
   const lighthouseBottom = usePortalInLighthouse()
   const lighthouseTop = useWhompsFortressPortal()
+  const DKPortal = lighthouseBottom || lighthouseTop
   return {
-    in: (lighthousePlatform.in && canSlam && dk && hasClimbing) || lighthouseBottom || lighthouseTop,
-    out: (lighthousePlatform.out && canSlam && dk && (hasClimbing || hasJetbarrel)) || lighthouseBottom || lighthouseTop
+    in: (lighthousePlatform.in && canSlam && dk && hasClimbing) || DKPortal,
+    out: (lighthousePlatform.out && canSlam && dk && (hasClimbing || hasJetbarrel)) || DKPortal
   }
 }
 
