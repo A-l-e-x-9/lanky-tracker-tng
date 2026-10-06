@@ -547,7 +547,7 @@ export const useGeneralFairy = (): LogicBool => {
   }
 }
 
-export const useTreasureKasplat = (): LogicBool {
+export const useTreasureKasplat = (): LogicBool => {
   const treasure = useGalleonTreasureRoom()
   return {
     in: treasure.in,
