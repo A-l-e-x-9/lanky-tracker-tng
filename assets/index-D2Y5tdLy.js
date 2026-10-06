@@ -30124,6 +30124,7 @@ const LlamaTempleEnemies = () => {
   const llama = useAztecLlamaTemple();
   const klaptrap = useDefeatToughEnemy();
   const hasGrapes = useGrape();
+  const DKPortal = useMatchGame64Portal();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -30151,8 +30152,8 @@ const LlamaTempleEnemies = () => {
         id: 2356,
         name: "Enemy 0 in the Matching Room",
         region: "Llama Temple",
-        canGetLogic: llama.in && hasGrapes,
-        canGetBreak: llama.out && hasGrapes
+        canGetLogic: llama.in && hasGrapes || DKPortal,
+        canGetBreak: llama.out && hasGrapes || DKPortal
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30161,8 +30162,8 @@ const LlamaTempleEnemies = () => {
         id: 2357,
         name: "Enemy 1 in the Matching Room",
         region: "Llama Temple",
-        canGetLogic: llama.in && hasGrapes,
-        canGetBreak: llama.out && hasGrapes
+        canGetLogic: llama.in && hasGrapes || DKPortal,
+        canGetBreak: llama.out && hasGrapes || DKPortal
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
