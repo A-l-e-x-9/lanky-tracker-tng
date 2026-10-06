@@ -14845,9 +14845,10 @@ const useGalleonLighthouseInside = () => {
   const hasJetbarrel = useRocket();
   const lighthouseBottom = usePortalInLighthouse();
   const lighthouseTop = useWhompsFortressPortal();
+  const DKPortal = lighthouseBottom || lighthouseTop;
   return {
-    in: lighthousePlatform.in && canSlam && dk2 && hasClimbing || lighthouseBottom || lighthouseTop,
-    out: lighthousePlatform.out && canSlam && dk2 && (hasClimbing || hasJetbarrel) || lighthouseBottom || lighthouseTop
+    in: lighthousePlatform.in && canSlam && dk2 && hasClimbing || DKPortal,
+    out: lighthousePlatform.out && canSlam && dk2 && (hasClimbing || hasJetbarrel) || DKPortal
   };
 };
 const useGalleonSeasickShip = () => {
@@ -37426,10 +37427,12 @@ const CavernsEnemies = () => {
   ] });
 };
 const LighthouseEnemies = () => {
-  const lighthouse = useGalleonLighthouseInside();
+  const lighthouse = useGalleonLighthousePlatform();
   const klump = useDefeatToughEnemy();
   const dk2 = useDk();
   const canSlam = useSlamGalleon();
+  const DKPortal1 = usePortalInLighthouse();
+  const DKPortal2 = useWhompsFortressPortal();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       GalleonCheck,
@@ -37437,8 +37440,8 @@ const LighthouseEnemies = () => {
         id: 4307,
         name: "Enemy 0 Inside the Lighthouse",
         region: "Lighthouse Area",
-        canGetLogic: lighthouse.in && dk2 && canSlam && klump,
-        canGetBreak: lighthouse.out && dk2 && canSlam && klump
+        canGetLogic: (lighthouse.in && dk2 && canSlam || DKPortal1 || DKPortal2) && klump,
+        canGetBreak: (lighthouse.out && dk2 && canSlam || DKPortal1 || DKPortal2) && klump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -37447,8 +37450,8 @@ const LighthouseEnemies = () => {
         id: 4308,
         name: "Enemy 1 Inside the Lighthouse",
         region: "Lighthouse Area",
-        canGetLogic: lighthouse.in && dk2 && canSlam && klump,
-        canGetBreak: lighthouse.out && dk2 && canSlam && klump
+        canGetLogic: (lighthouse.in && dk2 && canSlam || DKPortal1 || DKPortal2) && klump,
+        canGetBreak: (lighthouse.out && dk2 && canSlam || DKPortal1 || DKPortal2) && klump
       }
     )
   ] });
