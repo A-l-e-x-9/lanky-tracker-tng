@@ -1211,6 +1211,7 @@ interface japesPortals {
 interface aztecPortals {
   vanilla: boolean
   firstHalfPortal: boolean
+  tinyTempleTopPortal: boolean
   tinyTempleFrontPortal: boolean
   tinyTempleIcePortal: boolean
   tinyTemplePoolPortal: boolean
@@ -1218,6 +1219,7 @@ interface aztecPortals {
   DK5DTPortal: boolean
   chunky5DTPortal: boolean
   llamaPortal: boolean
+  matchGame64Portal: boolean
   quicksandTunnelPortal: boolean
 }
 interface factoryPortals {

@@ -62,6 +62,9 @@ export const useAztecTroffAndScoff = (): number => useTroffAndScoff('Angry Aztec
 //Is the DK Portal past the two quicksand pits blocking the first half of the level?
 export const useFirstHalfPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.firstHalfPortal))
+//Is the DK Portal on top of the Tiny Temple, just below Diddy's Kasplat?
+export const useTinyTempleTopPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleTopPortal))
 //Is the DK Portal in the front portion of the Tiny Temple?
 export const useTinyTempleFrontPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleFrontPortal))
@@ -83,6 +86,9 @@ export const useChunky5DTPortal = (): boolean =>
 //Is the DK Portal inside the Llama Temple?
 export const useLlamaPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal))
+//Is the DK Portal being a piece of BLANK in the Llama Temple?
+export const useMatchGame64Portal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledAztecPortals.matchGame64Portal))
 //Is the DK Portal in the quicksand tunnel, and if so, can we get out of it to access the rest of the level?
 export const useQuicksandPortal = (): LogicBool => {
   const hasPortal = useDonkStore(useShallow((state) => state.shuffledAztecPortals.quicksandTunnelPortal))
@@ -219,9 +225,10 @@ export const useAztecLlamaTemple = (): LogicBool => {
   const entry = blast || barrier
   const properGun = llama1 || llama2 || llama3
   const DKPortal = useLlamaPortal()
+  const DKPortal2 = useMatchGame64Portal()
   return {
-    in: (aztecBack.in && entry && properGun) || DKPortal,
-    out: (aztecBack.out && entry && properGun) || DKPortal
+    in: (aztecBack.in && entry && properGun) || DKPortal || DKPortal2,
+    out: (aztecBack.out && entry && properGun) || DKPortal || DKPortal2
   }
 }
 
@@ -483,11 +490,12 @@ export const useLankySnakeGb = (): LogicBool => {
 
 export const useLankyMatchGb = (): LogicBool => {
   const llama = useAztecLlamaTemple()
+  const DKPortal = useMatchGame64Portal()
   const grape = useGrape()
   const canSlam = useSlamAztec()
   return {
-    in: llama.in && grape && canSlam,
-    out: llama.out && grape && canSlam
+    in: (llama.in || DKPortal) && grape && canSlam,
+    out: (llama.out || DKPortal) && grape && canSlam
   }
 }
 
@@ -528,7 +536,7 @@ export const useTinyLavaGb = (): LogicBool => {
   const kuruKuru = useTwirl()
   return {
     in: lava.in && tiny && canSlam,
-    out: (lava.in || lava.out) && kuruKuru
+    out: lava.out && kuruKuru
   }
 }
 
@@ -616,9 +624,11 @@ export const useOasisKasplat = (): LogicBool => {
   const thing = useAztecFront()
   const rocket = useRocket()
   const climbing = useClimbing()
+  const DKPortal = useTinyTempleTopPortal()
+  const oStand = useStand()
   return {
-    in: climbing && rocket && thing.in,
-    out: climbing && rocket && thing.out
+    in: (climbing && rocket && thing.in) || (DKPortal && oStand),
+    out: (climbing && rocket && thing.out) || DKPortal
   }
 }
 

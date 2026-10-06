@@ -16,6 +16,7 @@ export const initialPortal: PortalState = {
   shuffledAztecPortals: {
     vanilla: true,
     firstHalfPortal: false,
+    tinyTempleTopPortal: false,
     tinyTempleFrontPortal: false,
     tinyTempleIcePortal: false,
     tinyTemplePoolPortal: false,
@@ -23,6 +24,7 @@ export const initialPortal: PortalState = {
     DK5DTPortal: false,
     chunky5DTPortal: false,
     llamaPortal: false,
+    matchGame64Portal: false,
     quicksandTunnelPortal: false
   },
   shuffledFactoryPortals: {

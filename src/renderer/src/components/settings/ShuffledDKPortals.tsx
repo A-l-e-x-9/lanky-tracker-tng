@@ -126,6 +126,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledAztecPortals"
                 updateItem={setAztecPortal}
             />
+            <p>Just below Diddy's Kasplat</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is at the top of the Tiny Temple."
+                storeKey="tinyTempleTopPortal"
+                prefix="shuffledAztecPortals"
+                updateItem={setAztecPortal}
+            />            
             <p>Tiny Temple entrance</p>
             <SimpleRadioIcon
                 imgUrl={dkPortalIcon}
@@ -179,6 +187,14 @@ const ShuffledDKPortals: React.FC = () => {
                 imgUrl={dkPortalIcon}
                 title="The DK Portal is inside the Llama Temple, except for any area further gated (the Lava Pedestals, Match Game, etc.)."
                 storeKey="llamaPortal"
+                prefix="shuffledAztecPortals"
+                updateItem={setAztecPortal}
+            />
+            <p>In Gene Rayburn's dressing room</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in Lanky's matching game room."
+                storeKey="matchGame64Portal"
                 prefix="shuffledAztecPortals"
                 updateItem={setAztecPortal}
             />
