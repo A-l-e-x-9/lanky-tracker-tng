@@ -10812,6 +10812,7 @@ const initialPortal = {
   shuffledAztecPortals: {
     vanilla: true,
     firstHalfPortal: false,
+    tinyTempleTopPortal: false,
     tinyTempleFrontPortal: false,
     tinyTempleIcePortal: false,
     tinyTemplePoolPortal: false,
@@ -10819,6 +10820,7 @@ const initialPortal = {
     DK5DTPortal: false,
     chunky5DTPortal: false,
     llamaPortal: false,
+    matchGame64Portal: false,
     quicksandTunnelPortal: false
   },
   shuffledFactoryPortals: {
@@ -13068,6 +13070,7 @@ const usePlayAztec = () => {
   };
 };
 const useAztecTroffAndScoff = () => useTroffAndScoff("Angry Aztec");
+const useTinyTempleTopPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleTopPortal));
 const useTinyTempleFrontPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleFrontPortal));
 const useTinyTempleIcePortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTempleIcePortal));
 const useTinyTemplePoolPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTemplePoolPortal));
@@ -13075,6 +13078,7 @@ const useSecondHalfPortal = () => useDonkStore(useShallow((state) => state.shuff
 const useDK5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.DK5DTPortal));
 const useChunky5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.chunky5DTPortal));
 const useLlamaPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal));
+const useMatchGame64Portal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.matchGame64Portal));
 const useSlamAztec = () => useSlamLevel("Angry Aztec");
 const useAztecCoconutSwitch = () => useSwitchsanityGun("aztecBlueprint", 0);
 const useAztecGuitarSwitch = () => useSwitchsanityMusicPad("aztecBack", 1);
@@ -13160,9 +13164,10 @@ const useAztecLlamaTemple = () => {
   const entry = blast || barrier;
   const properGun = llama1 || llama2 || llama3;
   const DKPortal = useLlamaPortal();
+  const DKPortal2 = useMatchGame64Portal();
   return {
-    in: aztecBack.in && entry && properGun || DKPortal,
-    out: aztecBack.out && entry && properGun || DKPortal
+    in: aztecBack.in && entry && properGun || DKPortal || DKPortal2,
+    out: aztecBack.out && entry && properGun || DKPortal || DKPortal2
   };
 };
 const useAztecLlamaLava = () => {
@@ -13388,11 +13393,12 @@ const useLankySnakeGb = () => {
 };
 const useLankyMatchGb = () => {
   const llama = useAztecLlamaTemple();
+  const DKPortal = useMatchGame64Portal();
   const grape = useGrape();
   const canSlam = useSlamAztec();
   return {
-    in: llama.in && grape && canSlam,
-    out: llama.out && grape && canSlam
+    in: (llama.in || DKPortal) && grape && canSlam,
+    out: (llama.out || DKPortal) && grape && canSlam
   };
 };
 const useTinyKlaptrapGb = () => {
@@ -13429,7 +13435,7 @@ const useTinyLavaGb = () => {
   const kuruKuru = useTwirl();
   return {
     in: lava.in && tiny && canSlam,
-    out: (lava.in || lava.out) && kuruKuru
+    out: lava.out && kuruKuru
   };
 };
 const useGeneralThing$5 = () => {
@@ -13507,9 +13513,11 @@ const useOasisKasplat = () => {
   const thing = useAztecFront();
   const rocket = useRocket();
   const climbing = useClimbing();
+  const DKPortal = useTinyTempleTopPortal();
+  const oStand = useStand();
   return {
-    in: climbing && rocket && thing.in,
-    out: climbing && rocket && thing.out
+    in: climbing && rocket && thing.in || DKPortal && oStand,
+    out: climbing && rocket && thing.out || DKPortal
   };
 };
 const useLlamaLavaKasplat = () => {
@@ -57760,6 +57768,17 @@ const ShuffledDKPortals = () => {
                   updateItem: setAztecPortal
                 }
               ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Just below Diddy's Kasplat" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at the top of the Tiny Temple.",
+                  storeKey: "tinyTempleTopPortal",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Tiny Temple entrance" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleRadioIcon,
@@ -57833,6 +57852,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is inside the Llama Temple, except for any area further gated (the Lava Pedestals, Match Game, etc.).",
                   storeKey: "llamaPortal",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In Gene Rayburn's dressing room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Lanky's matching game room.",
+                  storeKey: "matchGame64Portal",
                   prefix: "shuffledAztecPortals",
                   updateItem: setAztecPortal
                 }
