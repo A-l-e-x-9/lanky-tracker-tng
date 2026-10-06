@@ -14904,8 +14904,8 @@ const useGalleonTreasureRoom = () => {
   const preOpened = useDonkStore(useShallow((state) => state.removeBarriers.galleonTreasureRoom));
   const warpAll = useBananaportAll();
   return {
-    in: inStage.in && warpAll || outskirts.in && dive.in && (lanky || preOpened) && highTide.in,
-    out: outskirts.out && dive.out && (lanky || preOpened)
+    in: inStage.in && outskirts.in && (warpAll || dive.in && (lanky || preOpened) && highTide.in),
+    out: inStage.out && outskirts.out && (warpAll || dive.out && (lanky || preOpened))
   };
 };
 const useDkLighthouseGb = () => {
@@ -15164,7 +15164,13 @@ const useGeneralFairy$4 = () => {
     out: useCamera() && thing.out
   };
 };
-const useTreasureKasplat = () => useDiddyGoldGb();
+const useTreasureKasplat = () => {
+  const treasure = useGalleonTreasureRoom();
+  return {
+    in: treasure.in,
+    out: treasure.out
+  };
+};
 const useKevin = () => {
   const lighthouse = useGalleonLighthouseArea();
   const lowWater = useGalleonLowTide();
