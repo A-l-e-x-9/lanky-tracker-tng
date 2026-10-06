@@ -14845,10 +14845,9 @@ const useGalleonLighthouseInside = () => {
   const hasJetbarrel = useRocket();
   const lighthouseBottom = usePortalInLighthouse();
   const lighthouseTop = useWhompsFortressPortal();
-  const DKPortal = lighthouseBottom || lighthouseTop;
   return {
-    in: lighthousePlatform.in && canSlam && dk2 && hasClimbing || DKPortal,
-    out: lighthousePlatform.out && canSlam && dk2 && (hasClimbing || hasJetbarrel) || DKPortal
+    in: lighthousePlatform.in && canSlam && dk2 && hasClimbing || lighthouseBottom || lighthouseTop,
+    out: lighthousePlatform.out && canSlam && dk2 && (hasClimbing || hasJetbarrel) || lighthouseBottom || lighthouseTop
   };
 };
 const useGalleonSeasickShip = () => {
