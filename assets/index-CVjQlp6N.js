@@ -37427,7 +37427,7 @@ const CavernsEnemies = () => {
   ] });
 };
 const LighthouseEnemies = () => {
-  const lighthouse = useGalleonLighthousePlatform();
+  const lighthouse = useGalleonLighthouseInside();
   const klump = useDefeatToughEnemy();
   const dk2 = useDk();
   const canSlam = useSlamGalleon();
