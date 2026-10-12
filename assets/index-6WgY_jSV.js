@@ -34704,14 +34704,15 @@ const DiddyKasplat$4 = () => {
 };
 const DkKasplat$4 = () => {
   const canDo = useProductionTopKasplat();
+  const DKPortal = useUpperProdPortal();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaKasplat, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     FactoryCheck,
     {
       id: 3050,
       name: "Kasplat at Upper Production Pipe",
       region: "Prod Room",
-      canGetLogic: canDo.in,
-      canGetBreak: canDo.out
+      canGetLogic: canDo.in || DKPortal,
+      canGetBreak: canDo.out || DKPortal
     }
   ) }) });
 };
