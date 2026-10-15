@@ -12028,28 +12028,15 @@ const useSnide = () => {
 };
 const useDkMedalInLogic$7 = () => {
   const kong = useDk();
-  const vine = useVine();
   const gun = useCoconut();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = 0;
-  if (kong && gun && vine || kong && shuffleBananas) {
+  if (kong && gun || kong && shuffleBananas) {
     bananas += 100;
   }
   return bananas;
 };
-const useDkMedalOutLogic$7 = () => {
-  const kong = useDk();
-  const vine = useVine();
-  const bananas = useDkMedalInLogic$7();
-  const shuffleBananas = useShuffleColoredBananas();
-  if (!kong) {
-    return 0;
-  }
-  if (shuffleBananas) {
-    return 100;
-  }
-  return vine ? bananas : bananas + 5;
-};
+const useDkMedalOutLogic$7 = () => useDkMedalInLogic$7();
 const useDiddyMedalInLogic$7 = () => {
   const kong = useDiddy();
   const gun = usePeanut();
