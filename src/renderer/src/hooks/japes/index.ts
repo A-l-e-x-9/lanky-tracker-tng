@@ -55,6 +55,9 @@ export const useSlamJapes = (): boolean => useSlamLevel('Jungle Japes')
 export const useJapesTroffAndScoff = (): number => useTroffAndScoff('Jungle Japes')
 
 /*Alex addition: shuffled DK Portals*/
+//Is the DK Portal behind DK's Barrel Blast pad?
+export const useBlastPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledJapesPortals.blastPortal))
 //Is the DK Portal near Diddy's vanilla prison?
 export const usePortalNearDiddy = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy))
@@ -397,9 +400,10 @@ export const useDkBlastGb = (): LogicBool => {
   const blast = useBlast()
   const vine = useVine()
   const climbing = useClimbing()
+  const DKPortal = useBlastPortal()
   return {
-    in: inStage.in && blast && vine && climbing,
-    out: inStage.out && blast && vine && climbing
+    in: inStage.in && blast && ((vine && climbing) || DKPortal),
+    out: inStage.out && blast && ((vine && climbing) || DKPortal)
   }
 }
 
