@@ -12198,6 +12198,7 @@ const usePlayJapes = () => {
 };
 const useSlamJapes = () => useSlamLevel("Jungle Japes");
 const useJapesTroffAndScoff = () => useTroffAndScoff("Jungle Japes");
+const useBlastPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.blastPortal));
 const usePortalNearDiddy = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.portalNearDiddy));
 const useOutsidePaintingPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.outsidePaintingPortal));
 const useStormyPortal = () => useDonkStore(useShallow((state) => state.shuffledJapesPortals.stormyPortal));
@@ -12446,9 +12447,10 @@ const useDkBlastGb$5 = () => {
   const blast = useBlast();
   const vine = useVine();
   const climbing = useClimbing();
+  const DKPortal = useBlastPortal();
   return {
-    in: inStage.in && blast && vine && climbing,
-    out: inStage.out && blast && vine && climbing
+    in: inStage.in && blast && (vine && climbing || DKPortal),
+    out: inStage.out && blast && (vine && climbing || DKPortal)
   };
 };
 const useLankyCagedGb = () => {
