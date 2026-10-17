@@ -10800,6 +10800,7 @@ const shopSlice = (set) => {
 const initialPortal = {
   shuffledJapesPortals: {
     vanilla: true,
+    blastPortal: false,
     portalNearDiddy: false,
     outsidePaintingPortal: false,
     stormyPortal: false,
