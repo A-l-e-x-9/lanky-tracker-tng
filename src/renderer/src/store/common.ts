@@ -1199,6 +1199,7 @@ export type ShopSlice = ShopState & ShopActions
 //Begin shuffled DK Portal region
 interface japesPortals {
   vanilla: boolean
+  blastPortal: boolean
   portalNearDiddy: boolean
   outsidePaintingPortal: boolean
   stormyPortal: boolean
