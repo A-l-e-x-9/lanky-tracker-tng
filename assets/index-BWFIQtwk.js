@@ -57644,6 +57644,17 @@ const ShuffledDKPortals = () => {
                   updateItem: setJapesPortal
                 }
               ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Behind the DK Pad" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is at DK's Barrel Blast location.",
+                  storeKey: "blastPortal",
+                  prefix: "shuffledJapesPortals",
+                  updateItem: setJapesPortal
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Near Diddy's prison" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleRadioIcon,
