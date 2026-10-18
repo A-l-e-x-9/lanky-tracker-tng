@@ -1,16 +1,18 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 import { useCanDeactivateHelm, useCanFightRool, useNotFightingKRool } from '@renderer/hooks/helm'
+import { useHelmStartPosition } from '@renderer/hooks/settings'
 import { EndingSelector, RoolSelector } from './EndingSelector'
 
 const Ending: React.FC = () => {
   const helmLogic = useCanDeactivateHelm()
   const roolLogic = useCanFightRool()
   const noKRoolFight = useNotFightingKRool()
+  const helmSkipAll = useHelmStartPosition()
   const isKRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))
   const isKillTheWabbit = useDonkStore(useShallow((state) => state.winCondition.killTheWabbit))
   
-if ((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) {
+if (((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) && useHelmStartPosition < 2) {
   return (
     <section className="ending">
       <div>
@@ -41,7 +43,7 @@ if ((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) {
       </section>
     </section>
   )
-} else {
+} else if (((!noKRoolFight || isKillTheWabbit) && !isKRoolsChallenge) && useHelmStartPosition < 2) {
   return (
     <section className="ending">
       <div>
@@ -57,6 +59,30 @@ if ((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) {
       </section>
     </section>
   )
+}
+} else if (((noKRoolFight && !isKillTheWabbit) || isKroolsChallenge) && useHelmStartPosition === 2) {
+  return (
+    <section className="ending">
+      <div className={isKRoolsChallenge ? 'all-bosses' : ''}>
+        <span>K. Rool</span>
+        <span
+          className={roolLogic.in ? 'available' : roolLogic.out ? 'logic-break' : 'not-available'}
+        >
+          ⬤
+        </span>
+      </div>
+      <section className={isKRoolsChallenge ? 'all-bosses' : ''}>
+        <RoolSelector roolRootKey="rool1" />
+        <RoolSelector roolRootKey="rool2" />
+        <RoolSelector roolRootKey="rool3" />
+        <RoolSelector roolRootKey="rool4" />
+        <RoolSelector roolRootKey="rool5" />
+      </section>
+    </section>
+  )
+} else {
+  <section className="ending shop-shuffler">
+  </section>
 }
 }
 
