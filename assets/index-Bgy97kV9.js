@@ -54593,9 +54593,10 @@ const Ending = () => {
   const helmLogic = useCanDeactivateHelm();
   const roolLogic = useCanFightRool();
   const noKRoolFight = useNotFightingKRool();
+  const helmSkipAll = useHelmStartPosition();
   const isKRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
   const isKillTheWabbit = useDonkStore(useShallow((state) => state.winCondition.killTheWabbit));
-  if (noKRoolFight && !isKillTheWabbit || isKRoolsChallenge) {
+  if ((noKRoolFight && !isKillTheWabbit || isKRoolsChallenge) && helmSkipAll < 2) {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "ending", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Helm" }),
@@ -54626,7 +54627,7 @@ const Ending = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool5" })
       ] })
     ] });
-  } else {
+  } else if ((!noKRoolFight || isKillTheWabbit) && !isKRoolsChallenge && helmSkipAll < 2) {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "ending", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Helm" }),
@@ -54640,6 +54641,28 @@ const Ending = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "helm5" })
       ] })
     ] });
+  } else if ((noKRoolFight && !isKillTheWabbit || isKRoolsChallenge) && helmSkipAll === 2) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "ending", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: isKRoolsChallenge ? "all-bosses" : "", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "K. Rool" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
+          {
+            className: roolLogic.in ? "available" : roolLogic.out ? "logic-break" : "not-available",
+            children: "⬤"
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: isKRoolsChallenge ? "all-bosses" : "", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool1" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool2" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool3" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool4" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool5" })
+      ] })
+    ] });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "ending shop-shuffler" });
   }
 };
 const keyIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAArCAMAAABVR7jJAAABIFBMVEUAAADvtQD3vQGUcwD/xgOMawCtewC9jACccwDOnADerQG1jAClewCEYwD/zgD3tQDWpQDGlABzWgCthAG1hABjSgCcewT/vQLnrQDepQDGnAC9lADOpQTnvQB7WgBjUgBaQgBSQgDvvQPWtQOtjAOlcwCUawCMYwB7YwBzUgBaSgD354jz1i3GpS3vxiW9nAn3zgTetQDOrQDWnADOlACchACcawCEawBrUgBKOQD353vvzlL33krnxkL/3jnezjHnxjHWvTHOrTG9nDHnxinexim9rSnOtSHOrSGtlBj3zhDvvRDWpRDvzgjevQjWvQj31gDvzgDWxgDntQDvrQDWrQC1lACcjAC9hAClhACUewCMcwCEWgB7UgBKQgBCMQBEKPlgAAAAAXRSTlMAQObYZgAAAbhJREFUOMuVkmdT8zAMgCU7iZ290zQdlC7astcLvHvvvTf//18gU2iPi/nAc5ecoyeSYsWwYPjowbMXzwu4Cn+4fu9JwXmxPWjDkuTt+uPuCShmE743uIz/fX03hQWryeHefGU6W4vKPBfCyflnULj3IzQajMUmIpqMidP80FMJ7984hmEwhk0SFYYSevk3ErtOyg2VEeI5IcXylK52HyYUj5ByvpZ0J5GkQ1hp9WFW0iNHhoQSFKygF3eoPyIcN3EuXBJuDCfeLtDb6K5E8xYhAhxlaxTsDCFHdGy8JFqt+qpRPID/EYbqq6haTNVa9s585z9Ahowx5JTVaiLDDVD0io8+bbjB+IyEBE9svbwYm7uzjQ0G4KtZ/mtvbC4G6n3qtGDsxlHE7ae3X8GSbtV596H7UzSdO5twlZ75fWpZBwegIRlLD3RMR2JNK5JR5mvFRF4jfEmz0wthasWRFGOtMG8JfiPhm1IvRlyK/alGFNKz3BT8pNaCW1ZZ7jtYGxgJRofVqdX6bcWBoZsvJ8GyTCO8KqBjr8uwAyPzu1rBXLusj4REEBhRXaT2l1/aX2u1Qc/xn+X6DMXqI21g/79ZAAAAAElFTkSuQmCC";
