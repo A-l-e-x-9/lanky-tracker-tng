@@ -59,7 +59,7 @@ if (((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) && helmSkipAll < 2
       </section>
     </section>
   )
-} else if (((noKRoolFight && !isKillTheWabbit) || isKroolsChallenge) && helmSkipAll === 2) {
+} else if (((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) && helmSkipAll === 2) {
   return (
     <section className="ending">
       <div className={isKRoolsChallenge ? 'all-bosses' : ''}>
@@ -80,8 +80,10 @@ if (((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) && helmSkipAll < 2
     </section>
   )
 } else {
-  <section className="ending shop-shuffler">
-  </section>
+  return (
+    <section className="ending shop-shuffler">
+    </section>
+  )
 }
 }
 
