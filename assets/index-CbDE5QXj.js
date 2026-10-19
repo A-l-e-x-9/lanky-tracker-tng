@@ -30642,15 +30642,15 @@ const FreeLlama = () => {
 };
 const QuicksandTunnel = () => {
   const tunnelGb = useDkTunnelGb();
-  const DKPortal = useQuicksandPortal();
+  const DKPortal = useDonkStore(useShallow((state) => state.shuffledAztecPortals.quicksandTunnelPortal));
   return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2002,
       name: "DK's Quicksand Tunnel Bonus Barrel",
       region: "Aztec Caves",
-      canGetLogic: tunnelGb.in || DKPortal.in,
-      canGetBreak: tunnelGb.out || DKPortal.out
+      canGetLogic: tunnelGb.in || DKPortal,
+      canGetBreak: tunnelGb.out || DKPortal
     }
   ) });
 };
