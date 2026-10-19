@@ -13935,7 +13935,7 @@ const useTinyMedalOutLogic$5 = () => {
   return bananas;
 };
 const useChunkyMedalInLogic$5 = () => {
-  const inStage = useAztecFront();
+  const inStage = usePlayAztec();
   const tinyTemple = useAztecTinyTemple();
   const iceMelted = useTinyTempleIce();
   const aztecBack = useAztecBack();
@@ -13975,7 +13975,7 @@ const useChunkyMedalInLogic$5 = () => {
   return bananas;
 };
 const useChunkyMedalOutLogic$5 = () => {
-  const inStage = useAztecFront();
+  const inStage = usePlayAztec();
   const tinyTemple = useAztecTinyTemple();
   const aztecBack = useAztecBack();
   const doorTemple = useAztec5DoorTemple();
