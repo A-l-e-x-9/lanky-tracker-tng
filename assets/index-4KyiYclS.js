@@ -13069,15 +13069,6 @@ const useDK5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAz
 const useChunky5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.chunky5DTPortal));
 const useLlamaPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal));
 const useMatchGame64Portal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.matchGame64Portal));
-const useQuicksandPortal = () => {
-  const hasPortal = useDonkStore(useShallow((state) => state.shuffledAztecPortals.quicksandTunnelPortal));
-  const hasStrongKong = useStrong();
-  const hasWarps = useBananaportAll();
-  return {
-    in: hasPortal && (hasStrongKong || hasWarps),
-    out: hasPortal
-  };
-};
 const useSlamAztec = () => useSlamLevel("Angry Aztec");
 const useAztecCoconutSwitch = () => useSwitchsanityGun("aztecBlueprint", 0);
 const useAztecGuitarSwitch = () => useSwitchsanityMusicPad("aztecBack", 1);
@@ -13117,11 +13108,10 @@ const useAztecBack = () => {
   const DKPortal2 = useLlamaPortal();
   const DKPortal3 = useChunky5DTPortal();
   const DKPortal4 = useDK5DTPortal();
-  const DKPortal5 = useQuicksandPortal();
   const portal = DKPortal || DKPortal2 || DKPortal3 || DKPortal4;
   return {
-    in: aztecFront.in && (backGateOpen || warpAll || hasClimbing && (vine || rocket) && musicSwitch) || (portal || DKPortal5.in),
-    out: aztecFront.out && (backGateOpen || warpAll || musicSwitch && (diddy || tiny)) || (portal || DKPortal5.out)
+    in: aztecFront.in && (backGateOpen || warpAll || hasClimbing && (vine || rocket) && musicSwitch) || portal,
+    out: aztecFront.out && (backGateOpen || warpAll || musicSwitch && (diddy || tiny)) || portal
   };
 };
 const useAztecTinyTemple = () => {
