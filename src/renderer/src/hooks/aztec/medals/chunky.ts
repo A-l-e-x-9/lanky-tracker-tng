@@ -1,9 +1,9 @@
 import { useChunky, useDive, usePineapple } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
-import { useAztec5DoorTemple, useAztecBack, usePlayAztec, useAztecTinyTemple, useTinyTempleIce } from '..'
+import { useAztec5DoorTemple, useAztecBack, useAztecFront, useAztecTinyTemple, useTinyTempleIce, useQuicksandPortal } from '..'
 
 export const useChunkyMedalInLogic = (): number => {
-  const inStage = usePlayAztec()
+  const inStage = useAztecFront()
   const tinyTemple = useAztecTinyTemple()
   const iceMelted = useTinyTempleIce()
   const aztecBack = useAztecBack()
@@ -12,11 +12,15 @@ export const useChunkyMedalInLogic = (): number => {
   const gun = usePineapple()
   const dive = useDive()
   const shuffleBananas = useShuffleColoredBananas()
+  const specialDKPortal = useQuicksandPortal()
 
   if (!inStage.in) {
     return 0
   }
   if (!kong) {
+    return 0
+  }
+  if (specialDKPortal.out) {
     return 0
   }
   if (shuffleBananas) {
@@ -47,7 +51,7 @@ export const useChunkyMedalInLogic = (): number => {
 }
 
 export const useChunkyMedalOutLogic = (): number => {
-  const inStage = usePlayAztec()
+  const inStage = useAztecFront()
   const tinyTemple = useAztecTinyTemple()
   const aztecBack = useAztecBack()
   const doorTemple = useAztec5DoorTemple()
