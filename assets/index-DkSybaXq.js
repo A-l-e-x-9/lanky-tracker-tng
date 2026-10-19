@@ -13069,6 +13069,15 @@ const useDK5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAz
 const useChunky5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.chunky5DTPortal));
 const useLlamaPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal));
 const useMatchGame64Portal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.matchGame64Portal));
+const useQuicksandPortal = () => {
+  const hasPortal = useDonkStore(useShallow((state) => state.shuffledAztecPortals.quicksandTunnelPortal));
+  const hasStrongKong = useStrong();
+  const hasWarps = useBananaportAll();
+  return {
+    in: hasPortal && (hasStrongKong || hasWarps),
+    out: hasPortal
+  };
+};
 const useSlamAztec = () => useSlamLevel("Angry Aztec");
 const useAztecCoconutSwitch = () => useSwitchsanityGun("aztecBlueprint", 0);
 const useAztecGuitarSwitch = () => useSwitchsanityMusicPad("aztecBack", 1);
@@ -13935,7 +13944,7 @@ const useTinyMedalOutLogic$5 = () => {
   return bananas;
 };
 const useChunkyMedalInLogic$5 = () => {
-  const inStage = usePlayAztec();
+  const inStage = useAztecFront();
   const tinyTemple = useAztecTinyTemple();
   const iceMelted = useTinyTempleIce();
   const aztecBack = useAztecBack();
@@ -13944,10 +13953,14 @@ const useChunkyMedalInLogic$5 = () => {
   const gun = usePineapple();
   const dive = useDive();
   const shuffleBananas = useShuffleColoredBananas();
+  const specialDKPortal = useQuicksandPortal();
   if (!inStage.in) {
     return 0;
   }
   if (!kong) {
+    return 0;
+  }
+  if (specialDKPortal.out) {
     return 0;
   }
   if (shuffleBananas) {
@@ -13975,7 +13988,7 @@ const useChunkyMedalInLogic$5 = () => {
   return bananas;
 };
 const useChunkyMedalOutLogic$5 = () => {
-  const inStage = usePlayAztec();
+  const inStage = useAztecFront();
   const tinyTemple = useAztecTinyTemple();
   const aztecBack = useAztecBack();
   const doorTemple = useAztec5DoorTemple();
