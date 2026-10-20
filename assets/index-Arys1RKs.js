@@ -29591,14 +29591,15 @@ const CrateLocations$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
 ] });
 const OasisDirt = () => {
   const thing = useGeneralDirt$6();
+  const canReachOasis = useAztecFront();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RainbowCoinPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaDirt, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     AztecCheck,
     {
       id: 2070,
       name: "Oasis Dirt",
       region: "Aztec Main Area",
-      canGetLogic: thing.in,
-      canGetBreak: thing.out
+      canGetLogic: thing.in && canReachOasis.in,
+      canGetBreak: thing.out && canReachOasis.out
     }
   ) }) });
 };
