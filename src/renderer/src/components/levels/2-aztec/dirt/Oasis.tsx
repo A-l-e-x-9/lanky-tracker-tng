@@ -1,11 +1,11 @@
 import RainbowCoinPool from '@renderer/components/pools/RainbowCoins'
 import VanillaDirt from '@renderer/components/pools/VanillaDirt'
-import { useGeneralDirt, useAztecFront } from '@renderer/hooks/aztec'
+import { useGeneralDirt, useQuicksandTunnelPortal } from '@renderer/hooks/aztec'
 import AztecCheck from '../check'
 
 const OasisDirt: React.FC = () => {
   const thing = useGeneralDirt()
-  const canReachOasis = useAztecFront()
+  const canReachOasis = useQuicksandTunnelPortal()
   return (
     <RainbowCoinPool>
       <VanillaDirt>
