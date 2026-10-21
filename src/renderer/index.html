@@ -6,7 +6,7 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
+      content="style-src 'self' 'unsafe-inline'; img-src 'self' data:"
     />
     <link rel="icon" href="./src/assets/lanky.ico">
   </head>
@@ -14,8 +14,120 @@
     <header id="header">
       <h1>Lanky Tracker!</h1>
       <h2>The Next Generation</h2>
+      <p id="tip">TIP: There's something wrong if you can read this after five seconds. Let Alex know! D:</p>
     </header>
     <div id="root"></div>
+    <script>
+      // 1. Array of tips to display
+      const tips = [
+          "TIP: Fungi Forest has mushrooms! (Also, if getting such Wrinkly hints bother you, then when building a seed in the Randomizer, you can select 'No Joke Hints' in the Quality of Life section, under Hints.)",
+          "TIP: Strong Kong being required to get DK's 5-Door Igloo banana is strictly a Randomizer creation. The original game expected you to do it without.",
+          "TIP: Tag Barrels heal you. This is why standard seeds don't disable them.",
+          "TIP: Evidently, the Zingers in the Hive Tunnel, Diddy's mine, and Chunky's vase room are ground yellowjackets...",
+          "TIP: Checks with a yellow light on them can be gotten 'out of logic'. Exactly what that means depends on what the check requires.",
+          "TIP: If you turn on 'Angry Caves', a regular-sized Kosha will appear in the room where the giant Kosha was in Caves.",
+          "TIP: Currently, this tracker does not account for shuffled Colored Bananas, so the 'Isles Banana Medals' setting may very well be a scam.",
+          "TIP: The podium in Chunky's museum room in Castle, across from Tiny's car race, was supposedly going to be relevant, but Rare had to cancel whatever it was to meet a deadline.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: You don't actually need to have water oscillation on to do certain tricks involving water.",
+/*          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point.",
+          "TIP: There was going to be a refrigerator in DK's house that would've led to what is now Chunky's Gorilla Gone room at the start of Caves. Banjo-Kazooie's Ice Key may have also been involved at some point."*/
+      ];
+
+      let currentTipIndex = Math.floor(Math.random() * tips.length);;
+      const bannerElement = document.getElementById('tip');
+      
+      // 3. Initialize the first tip immediately
+      bannerElement.textContent = tips[currentTipIndex];
+    </script>
     <script type="module" src="./src/main.tsx"></script>
     <noscript><h3>You must have JavaScript on in order to be able to use this.</h3>
     <p>Turn it on! If you're using NoScript for Firefox or something similar (as Alex has been doing since 2008), click the appropriate icons to temporarily or permanently allow the GitHub websites.</p></noscript>

@@ -10,13 +10,16 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {text-align: center; font-family: Optima LT Pro, Verdana, Tahoma, sans-serif; font-weight: bold;}
-header {background: #0080ff url('./tracker-bg.png') no-repeat top center; color: #000000; width: 100%; position: absolute; top: 0; left: 0; text-transform: lowercase; padding: 0px 100px;}
-header h1 {font-size: 5em; text-align: left;}
-header h2 {text-align: right;}
+header {background: #0080ff url('./tracker-bg.png') no-repeat top center; color: #000000; width: 100%; position: absolute; top: 0; left: 0; text-transform: lowercase;}
+header h1 {font-size: 5em; text-align: left; padding-left: 100px;}
+header h2 {text-align: right; padding-right: 100px;}
+header p {background-color: #000040; color: #ffffff; width: 100%; padding: 0px 100px;}
+#tip {transition: opacity 0.5s ease-in-out;}
+.fade-out {opacity: 0;}
 /*footer {position: fixed; bottom: 0; left: 0; max-width: 350px; border: 3px solid;}*/
 a {font-weight: bold;}
-a:link {color: #ff00ff;}
-a:visited {color: #800080;}
+a:link {color: #00ffff;}
+a:visited {color: #008080;}
 a:hover {color: #ffffff;}
 
 code {
@@ -252,8 +255,7 @@ main .grid {
   text-decoration: none;
 }
 
-.not-available
-{
+.not-available {
   color: #ff0000;
 }
 
@@ -274,7 +276,7 @@ main .grid {
 
 .full-grid {grid-column: span 6;}
 
-.react-tabs__tab--selected {background-color: #800040;}
+.react-tabs__tab--selected {background-color: #008040;}
 
 .font-changer h1, .font-changer h2, .font-changer h3, .font-changer h4, .font-changer h5, .font-changer h6 {font-family: Earthworm Jim;}
 
