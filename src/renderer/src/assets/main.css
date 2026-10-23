@@ -1,16 +1,13 @@
 @import './base.css';
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-image: url('./wavy-lines.svg');
   background-size: cover;
   background-position: right;
 }
 
 h1, h2, h3, h4, h5, h6 {text-align: center; font-family: Optima LT Pro, Verdana, Tahoma, sans-serif; font-weight: bold;}
-header {background: #0080ff url('./tracker-bg.png') no-repeat top center; color: #000000; width: 100%; position: absolute; top: 0; left: 0;}
+header {background: #0080ff url('./tracker-bg.png') no-repeat top center; color: #000000; width: 100%;}
 header h1 {font-size: 5em; text-align: left; padding-left: 100px; text-transform: lowercase;}
 header h2 {text-align: right; padding-right: 100px; text-transform: lowercase;}
 header p {background-color: #000040; color: #ffffff; width: 100%; padding: 0px 100px;}
@@ -47,7 +44,7 @@ code {
 }
 
 main {
-  padding-top: 167px;
+  padding-top: ;
   display: grid;
   gap: 1em;
   grid-template-columns: 1fr 3fr;
