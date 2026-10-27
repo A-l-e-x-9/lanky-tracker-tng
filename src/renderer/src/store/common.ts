@@ -698,6 +698,8 @@ interface SettingCollection {
   lockedWrinklyDoors: boolean
   //What item locks them?
   wrinklyDoorItem: BlueprintRange
+  //Is the time of day in Forest in the pool?
+  poolTime: boolean
 }
 
 export interface SettingState {
