@@ -192,6 +192,7 @@ interface MoveCollection {
   funky: boolean
   candy: boolean
   snide: boolean
+  cannons: boolean
 }
 
 export interface MoveState {

@@ -46,7 +46,8 @@ export const initialMoves: MoveState = {
     cranky: true,
     funky: true,
     candy: true,
-    snide: true
+    snide: true,
+    cannons: false
   }
 }
 
