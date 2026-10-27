@@ -62,6 +62,7 @@ import crankyIcon from '../../assets/images/cranky.png'
 import funkyIcon from '../../assets/images/funky.png'
 import candyIcon from '../../assets/images/candy.png'
 import snideIcon from '../../assets/images/snide.png'
+import barrelCannon from '../../assets/images/ground-cannon.png'
 
 const MoveTable = (): JSX.Element => {
   const [setMove, setConsumable] = useDonkStore(useShallow((state) => [state.setMove, state.setConsumable]))
