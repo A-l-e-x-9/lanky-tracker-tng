@@ -384,4 +384,5 @@ export const useSnide = (): boolean => {
 /*Starting in Season 6, you now need a potion to be able to use the various Barrel Cannons on the ground. Guess what this check does!*/
 export const useCannons = (): boolean => {
   const hasCannons = useDonkStore(useShallow((state) => state.moves.cannons))
+  return hasCannons
 }
