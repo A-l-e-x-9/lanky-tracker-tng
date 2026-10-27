@@ -7,14 +7,21 @@ This is an updated version of a tracker originally written by Wolfman2000 and li
 As with the original, this tracker was written in JavaScript, primarily with an [electron-vite](https://electron-vite.org/) setup in addition to Facebook/the Meta Group's [React](https://reactjs.org/) and Microsoft's [TypeScript](https://www.typescriptlang.org/). Obviously, you need JavaScript in order to use it.
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
-- It's impossible for the "Half-Medal Percentage" to be 0 in the Randomizer, so must code a special instance of CountSelector that can only go as low as 1...
+- Update the tracker to account for the following things added to the Randomizer on or around October 26, 2026:
+	- Cannons being a move (which Connor75 had asked for as early as the first seed he played with Climbing, possibly during Season 3)
+	- the Time of Day being an item
+	- """"""""""Breakable Containers"""""""""" (that evidently aren't Melon Crates or Boulders...) and Balloons being checks
+	- the Progressive Slam Shuffler possibly requiring no slam for a level
+	- more options for Switchsanity (basically amounting to everything Diddy can Chimpy Charge and Chunky can Primate Punch down being changeable now)
+	- the Free Trade Agreement expanding to include Colored Bananas
+	- _possibly_ Custom Arcade Minigames?
+	- the win conditions of "clear the Mechfish", "beat Round 2 of DK Arcade", "beat Jetpac", "beat the Toy Monster", "get the Returning the Banana Fairies reward", Barrel Blast courses, and the "Tasks" feature (which essentially allows you to have up to eight win cons)
 - Recolor the pad and barrel icons to match the "color-coded Kong Pads/Barrels" option in the Randomizer.
 - Currently, the "Bonuses" and "K. Rool's Challenge" win conditions don't account for the Oil Drums in Hideout Helm, so if your current seed's win con is >43 Bonus Barrels, you're outta luck.
 - Make it so that for the shuffled Arenas, Crates, Dirts, Fairies, and eventually Kasplats and Colored Bananas, there's only one or two checks each, and you can use a drop-down list or something to choose where they are.
 - Make the left side of the tracker sticky...either Alex really sucks at using the "position: sticky;" CSS command, or something else about the tracker's design is stopping it from being sticky.
 - Alex took out the "Region Hints" section of the original Tracker because he thought it was poorly done. Reimplement it?
 - Need an easy way to reset the tracker if need be. (Currently, in Firefox, you have to do it by right-clicking, go to "Inspect", click the "Storage" tab, then on "Local Storage", then on the website's name, and deleting the "donk-storage" entry.)
-- Proper instructions.
 
 ## Unlikely Features
 If you know the answer to any of these (or any of the above that Alex hasn't done yet), see the Development section below.
