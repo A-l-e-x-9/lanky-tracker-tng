@@ -10009,28 +10009,28 @@ const initialSettings = {
     poolRainbowCoins: true,
     poolCrowns: true,
     poolBananaMedals: true,
-    poolHalfMedals: true,
-    poolIslesMedals: true,
+    poolHalfMedals: false,
+    poolIslesMedals: false,
     shuffleArenas: false,
     poolToughBananas: true,
     poolMiniboss: true,
     poolBlueprints: true,
     shuffleKasplats: false,
     poolFairies: true,
-    poolCrates: true,
+    poolCrates: false,
     shuffleCrates: false,
     shuffleFairies: false,
     autoBonus: false,
     poolNintendoCoin: true,
     poolRarewareCoin: true,
-    poolDrops: true,
+    poolDrops: false,
     shuffleEnemies: true,
     hardShooting: false,
     openLobbies: false,
     balancedRoolPhases: true,
     chunkySlamLevel: 0,
-    poolWrinkly: true,
-    poolBoulders: true,
+    poolWrinkly: false,
+    poolBoulders: false,
     betaLankyPhase: false,
     waterIsLava: false,
     angyKosha: false,
@@ -10042,7 +10042,8 @@ const initialSettings = {
     shuffleDKPortals: true,
     shuffleLoadingZones: false,
     lockedWrinklyDoors: false,
-    wrinklyDoorItem: 0
+    wrinklyDoorItem: 0,
+    poolTime: false
   }
 };
 const settingSlice = (set) => {
@@ -11756,6 +11757,7 @@ const useKRoolItem = () => {
 const useHelmItemNum1 = () => useDonkStore(useShallow((state) => state.settings.helmItemNum1));
 const useHelmItemNum2 = () => useDonkStore(useShallow((state) => state.settings.helmItemNum2));
 const useKRoolItemNum = () => useDonkStore(useShallow((state) => state.winCondition.winConItemCount));
+const useForestTimeSwitches = () => useDonkStore(useShallow((state) => state.settings.poolTime));
 const BananaMedalPool = ({ children }) => usePoolBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const IslesMedalPool = ({ children }) => useIslesBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const HalfMedalPool = ({ children }) => useHalfMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -37763,6 +37765,7 @@ const LankyBananas$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
 ] });
 const PearlPool = ({ children }) => usePoolPearls() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const BeanPool = ({ children }) => useBean$1() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const TimePool = ({ children }) => useForestTimeSwitches() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const TreasureClams = () => {
   const clams = useTinyClams();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(PearlPool, { children: [
@@ -43838,10 +43841,42 @@ const Vanilla$2 = () => {
 const ShopLocations$2 = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$2, {}) });
 };
+const ForestTime = () => {
+  const inStage = usePlayForest();
+  const anyKong = useAnyKong();
+  const hasCannons = useCannons();
+  const hasJetbarrel = useRocket();
+  const hasClimbing = useClimbing();
+  const hasAGun = useAnyGun();
+  const hasOranges = useOrange();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(TimePool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5067,
+        name: "Daytime switch on the big clock",
+        region: "Forest Central Area",
+        canGetLogic: inStage.in && anyKong && (hasCannons || hasJetbarrel) && hasAGun,
+        canGetBreak: inStage.out && anyKong && hasClimbing && hasOranges
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 5069,
+        name: "Night switch on the big clock",
+        region: "Forest Central Area",
+        canGetLogic: inStage.in && anyKong && (hasCannons || hasJetbarrel) && hasAGun,
+        canGetBreak: inStage.out && anyKong && hasClimbing && hasOranges
+      }
+    )
+  ] });
+};
 const CenterChecks = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMinecart, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(CenterEnemies, {})
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CenterEnemies, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ForestTime, {})
   ] });
 };
 const MushExteriorChecks = () => {
@@ -44741,6 +44776,7 @@ const ClassicChecks$2 = () => {
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ForestTime, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas$2, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyBananas$2, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyBananas$2, {})
@@ -55310,6 +55346,7 @@ const kasplatIcon = "" + new URL("kasplat-C3MHLT8N.png", import.meta.url).href;
 const dkPortalIcon = "" + new URL("dk-portal-DhmhLo9q.png", import.meta.url).href;
 const LZRIcon = "" + new URL("butwherewasthekasplat-D62HdKcb.png", import.meta.url).href;
 const bLocker = "" + new URL("b-locker-4HJOwKEa.png", import.meta.url).href;
+const forestClockIcon = "" + new URL("forest-money-shot-KSdCXEVJ.png", import.meta.url).href;
 const customStyles$5 = {
   content: {
     backgroundColor: "#002040",
@@ -55566,6 +55603,17 @@ const GeneratorSettings = () => {
                   imgUrl: dropIcon,
                   title: "If Dropsanity is enabled for your seed, puts the enemies in the pool.",
                   storeKey: "poolDrops",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Forest's time-change switches" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: forestClockIcon,
+                  title: "Puts the time-change switches from Fungi Forest in the pool.",
+                  storeKey: "poolTime",
                   prefix: "settings",
                   updateItem: setSetting
                 }
