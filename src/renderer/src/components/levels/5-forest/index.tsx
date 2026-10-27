@@ -26,6 +26,7 @@ import ForestRegionChecks from './regions'
 import ForestShops from './shops'
 import BoulderLocations from './boulders'
 import ShuffledKasplats from './kasplats/Shuffled'
+import ForestTime from './time'
 
 const ClassicChecks: React.FC = () => {
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
@@ -35,6 +36,7 @@ const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poo
 return (
 <>
   <div className="grid">
+    <ForestTime />
     <DkBananas />
     <DiddyBananas />
     <LankyBananas />
