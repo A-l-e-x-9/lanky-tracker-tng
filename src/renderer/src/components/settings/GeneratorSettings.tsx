@@ -259,6 +259,14 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
+              <p>Forest's time-change switches</p>
+              <SimpleIcon
+                imgUrl={forestClockIcon}
+                title="Puts the time-change switches from Fungi Forest in the pool."
+                storeKey="poolTime"
+                prefix="settings"
+                updateItem={setSetting}
+              />
             </>
             <h3>Consumable Settings</h3>
             <>
