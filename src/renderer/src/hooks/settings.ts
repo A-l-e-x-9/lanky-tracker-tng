@@ -360,3 +360,6 @@ export const useHelmItemNum2 = (): number =>
 
 export const useKRoolItemNum = (): number =>
   useDonkStore(useShallow((state) => state.winCondition.winConItemCount))
+
+export const useForestTimeSwitches = (): boolean =>
+  useDonkStore(useShallow((state) => state.settings.poolTime))
