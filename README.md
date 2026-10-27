@@ -8,7 +8,7 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
 - Update the tracker to account for the following things added to the Randomizer on or around October 26, 2026:
-	- Cannons being a move (which Connor75 had asked for as early as the first seed he played with Climbing, possibly during Season 3)
+	- **NOW WORKING: Cannons being a move (Connor75, as early as the first seed he played with Climbing, possibly during Season 3, wanted Blast to serve this purpose...)**
 	- the Time of Day being an item
 	- """"""""""Breakable Containers"""""""""" (that evidently aren't Melon Crates or Boulders...) and Balloons being checks
 	- the Progressive Slam Shuffler possibly requiring no slam for a level
