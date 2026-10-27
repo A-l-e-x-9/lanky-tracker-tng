@@ -56,6 +56,7 @@ import kasplatIcon from '../../assets/images/kasplat.png'
 import DKPortalIcon from '../../assets/images/dk-portal.png'
 import LZRIcon from '../../assets/images/butwherewasthekasplat.png'
 import bLocker from '../../assets/images/b-locker.png'
+import forestClockIcon from '../../assets/image/forest-money-shot.png'
 
 const customStyles: Modal.Styles = {
   content: {
