@@ -9952,7 +9952,8 @@ const initialMoves = {
     cranky: true,
     funky: true,
     candy: true,
-    snide: true
+    snide: true,
+    cannons: false
   }
 };
 const moveSlice = (set) => {
@@ -12027,6 +12028,10 @@ const useSnide = () => {
   const shopkeep = useDonkStore(useShallow((state) => state.moves.snide));
   return shopkeep;
 };
+const useCannons = () => {
+  const hasCannons = useDonkStore(useShallow((state) => state.moves.cannons));
+  return hasCannons;
+};
 const useDkMedalInLogic$7 = () => {
   const kong = useDk();
   const gun = useCoconut();
@@ -12292,9 +12297,11 @@ const useJapesUnderground = () => {
   const boulderTech = useBoulderTech();
   const inStage = usePlayJapes();
   const DKPortal = useChunkyMinePortal();
+  const hasCannons = useCannons();
   return {
-    in: inStage.in && (boulderTech && slam || DKPortal),
-    out: inStage.out && (boulderTech && slam || DKPortal)
+    in: inStage.in && (boulderTech && slam || DKPortal) && hasCannons,
+    out: inStage.out && (boulderTech && slam || DKPortal) && hasCannons
+    //Unlike, say, the Tree Stump in Area 4 of Forest, I'm putting "hasCannons" on the out logic because if it's possible to get a DK Portal here in a Season 6 seed, you won't be able to get out by pause-exiting and will HAVE to have the Cannons move.
   };
 };
 const useChunkyBoulderGb = () => {
@@ -14882,9 +14889,10 @@ const useGalleonCavernTop = () => {
   const vine = useVine();
   const warpAll = useBananaportAll();
   const DKPortal = useTinyKasplatPortal();
+  const hasCannons = useCannons();
   return {
-    in: inStage.in && (vine || DKPortal || warpAll && (dive.in || rocket)),
-    out: (inStage.in || inStage.out) && seasick.out
+    in: inStage.in && (hasCannons && vine || DKPortal || warpAll && (dive.in || rocket)),
+    out: inStage.out && seasick.out
   };
 };
 const useGalleonCannon = () => {
@@ -14963,8 +14971,9 @@ const useChunkySeasickGb = () => {
   const wasLighthouseOn = useDonkStore(useShallow((state) => state.removeBarriers.galleonSeasick));
   const punch = usePunch();
   const slam = useSlam();
+  const hasCannon = useCannons();
   return {
-    in: lighthouse.in && (isLighthouseOn.in || wasLighthouseOn) && punch && slam,
+    in: lighthouse.in && (isLighthouseOn.in || wasLighthouseOn) && punch && slam && hasCannon,
     out: lighthouse.out && (isLighthouseOn.out || wasLighthouseOn) && punch && slam
   };
 };
@@ -15684,6 +15693,9 @@ const useForestDay = () => {
   const anyGun = useAnyGun();
   const orange = useOrange();
   const forestTime = useForestTime();
+  const hasCannons = useCannons();
+  const hasClimbing = useClimbing();
+  const hasJetbarrel = useRocket();
   if (forestTime != 1) {
     return {
       in: inStage.in,
@@ -15691,16 +15703,18 @@ const useForestDay = () => {
     };
   }
   return {
-    in: inStage.in && anyGun,
-    out: (inStage.in || inStage.out) && orange
+    in: inStage.in && (hasCannons || hasJetbarrel) && anyGun,
+    out: inStage.out && hasClimbing && orange
   };
 };
 const useForestNight = () => {
-  const anyGun = useAnyGun();
   const inStage = usePlayForest();
+  const anyGun = useAnyGun();
   const orange = useOrange();
   const forestTime = useForestTime();
-  const anyKong = useAnyKong();
+  const hasCannons = useCannons();
+  const hasClimbing = useClimbing();
+  const hasJetbarrel = useRocket();
   if (forestTime != 0) {
     return {
       in: inStage.in,
@@ -15708,8 +15722,8 @@ const useForestNight = () => {
     };
   }
   return {
-    in: anyGun && inStage.in,
-    out: anyKong && orange && (inStage.in || inStage.out)
+    in: inStage.in && (hasCannons || hasJetbarrel) && anyGun,
+    out: inStage.out && hasClimbing && orange
   };
 };
 const useForestDusk = () => {
@@ -15974,8 +15988,9 @@ const useTinyAntGb = () => {
   const owl = useForestOwl();
   const mini = useMini();
   const sax = useSax();
+  const cannon = useCannons();
   return {
-    in: owl.in && mini && sax,
+    in: owl.in && mini && sax && cannon,
     out: owl.out && mini && sax
   };
 };
@@ -18205,9 +18220,10 @@ const useCurrentCBCount = () => {
 const useIslesRocketSwitch = () => useSwitchsanityMusicPad("islesTrombone", 2);
 const useIslesFairySwitch = () => useSwitchsanityGun("islesForest", 3);
 const useIslesFungiIsland = () => {
+  const hasCannons = useCannons();
   const [key4] = useDonkStore(useShallow((state) => [state.key4]));
   const openLobbies = useOpenLobbies();
-  return key4 || openLobbies;
+  return (key4 || openLobbies) && hasCannons;
 };
 const useIslesCrossFungi = () => {
   const fungiIsland = useIslesFungiIsland();
@@ -18329,6 +18345,7 @@ const useIslesHelmEntryWithoutBananaports = () => {
 };
 const usePlayLevel = (level) => {
   const dive = useDive();
+  const hasCannons = useCannons();
   const openLobbies = useOpenLobbies();
   const [
     level1,
@@ -18425,8 +18442,8 @@ const usePlayLevel = (level) => {
   }
   if (level7 === level) {
     return {
-      in: currentGB >= bLocker7 && (openLobbies || key5),
-      out: currentGB >= bLocker7 && (openLobbies || key5)
+      in: currentGB >= bLocker7 && (openLobbies || key5) && hasCannons,
+      out: currentGB >= bLocker7 && (openLobbies || key5) && hasCannons
     };
   }
   if (level8 === level) {
@@ -18479,6 +18496,7 @@ const usePlayLobby = (level) => {
   const islesKremAscent = useIslesKremAscent();
   const islesFungiIsland = useIslesFungiIsland();
   const isBreathing = useAnyKong();
+  const hasCannons = useCannons();
   if (level1 === level) {
     return {
       in: isBreathing,
@@ -18517,8 +18535,8 @@ const usePlayLobby = (level) => {
   }
   if (level7 === level) {
     return {
-      in: openLobbies || key5,
-      out: openLobbies || key5
+      in: (openLobbies || key5) && hasCannons,
+      out: (openLobbies || key5) && hasCannons
     };
   }
   if (level8 === level) {
@@ -38106,6 +38124,7 @@ const Vanilla$3 = () => {
   const hasFunky = whatAFunky();
   const hasCandy = useCandy();
   const hasSnide = useSnide();
+  const hasCannons = useCannons();
   const [crankyFunky, crankyCandy, crankySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonCranky.galleonCrankyFunky, state.shuffledGalleonCranky.galleonCrankyCandy, state.shuffledGalleonCranky.galleonCrankySnide]));
   const [funkyCranky, funkySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonFunky.galleonFunkyCranky, state.shuffledGalleonFunky.galleonFunkySnide]));
   const [candyCranky, candySnide] = useDonkStore(useShallow((state) => [state.shuffledGalleonCandy.galleonCandyCranky, state.shuffledGalleonCandy.galleonCandySnide]));
@@ -38118,8 +38137,8 @@ const Vanilla$3 = () => {
         baseName: "Galleon Cranky",
         level: "Gloomy Galleon",
         region: crankyFunky || crankyCandy ? "Shipyard Outskirts" : crankySnide ? "Lighthouse Area" : "Galleon Caves",
-        inLogic: hasCranky && (crankyFunky || crankyCandy ? outskirts.in : crankySnide ? lighthouseArea.in && highTide.in : inStage.in),
-        outLogic: hasCranky && (crankyFunky || crankyCandy ? outskirts.out : crankySnide ? lighthouseArea.out : inStage.out)
+        inLogic: hasCranky && (crankyFunky || crankyCandy ? outskirts.in : crankySnide ? lighthouseArea.in && highTide.in : inStage.in && hasCannons),
+        outLogic: hasCranky && (crankyFunky || crankyCandy ? outskirts.out : crankySnide ? lighthouseArea.out : inStage.out && hasCannons)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -38129,8 +38148,8 @@ const Vanilla$3 = () => {
         baseName: "Galleon Funky",
         level: "Gloomy Galleon",
         region: funkyCranky ? "Galleon Caves" : funkySnide ? "Lighthouse Area" : "Shipyard Outskirts",
-        inLogic: hasFunky && (funkyCranky ? inStage.in : funkySnide ? lighthouseArea.in && highTide.in : outskirts.in),
-        outLogic: hasFunky && (funkyCranky ? inStage.out : funkySnide ? lighthouseArea.out : outskirts.out)
+        inLogic: hasFunky && (funkyCranky ? inStage.in && hasCannons : funkySnide ? lighthouseArea.in && highTide.in : outskirts.in),
+        outLogic: hasFunky && (funkyCranky ? inStage.out && hasCannons : funkySnide ? lighthouseArea.out : outskirts.out)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -38140,8 +38159,8 @@ const Vanilla$3 = () => {
         baseName: "Galleon Candy",
         level: "Gloomy Galleon",
         region: candyCranky ? "Galleon Caves" : candySnide ? "Lighthouse Area" : "Shipyard Outskirts",
-        inLogic: hasCandy && (candyCranky ? inStage.in : candySnide ? lighthouseArea.in && highTide.in : outskirts.in),
-        outLogic: hasCandy && (candyCranky ? inStage.out : candySnide ? lighthouseArea.out : outskirts.out)
+        inLogic: hasCandy && (candyCranky ? inStage.in && hasCannons : candySnide ? lighthouseArea.in && highTide.in : outskirts.in),
+        outLogic: hasCandy && (candyCranky ? inStage.out && hasCannons : candySnide ? lighthouseArea.out : outskirts.out)
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -38151,8 +38170,8 @@ const Vanilla$3 = () => {
         baseName: "Turn in Galleon Blueprint for",
         level: "Gloomy Galleon",
         region: snideCranky ? "Galleon Caves" : snideFunky || snideCandy ? "Shipyard Outskirts" : "Lighthouse Area",
-        inLogic: hasSnide && (snideCranky ? inStage.in : snideFunky || snideCandy ? outskirts.in : lighthouseArea.in && highTide.in),
-        outLogic: hasSnide && (snideCranky ? inStage.out : snideFunky || snideCandy ? outskirts.out : lighthouseArea.out)
+        inLogic: hasSnide && (snideCranky ? inStage.in && hasCannons : snideFunky || snideCandy ? outskirts.in : lighthouseArea.in && highTide.in),
+        outLogic: hasSnide && (snideCranky ? inStage.out && hasCannons : snideFunky || snideCandy ? outskirts.out : lighthouseArea.out)
       }
     )
   ] });
@@ -54133,7 +54152,7 @@ const MoveTable = () => {
         SimpleIcon,
         {
           storeKey: "cannons",
-          title: "Barrel Cannons",
+          title: "Cannons",
           imgUrl: barrelCannon,
           prefix: "moves",
           updateItem: setMove
