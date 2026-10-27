@@ -46,7 +46,8 @@ import {
   useTwirl,
   useVine,
   useClimbing,
-  useBarrel
+  useBarrel,
+  useCannons
 } from '../kongs'
 import {
   useAutoBonus,
@@ -77,9 +78,10 @@ export const useIslesFairySwitch = (): boolean => useSwitchsanityGun('islesFores
  * @returns true if we can reach the outer Fungi island.
  */
 export const useIslesFungiIsland = (): boolean => {
+  const hasCannons = useCannons()
   const [key4] = useDonkStore(useShallow((state) => [state.key4]))
   const openLobbies = useOpenLobbies()
-  return key4 || openLobbies
+  return (key4 || openLobbies) && hasCannons
 }
 
 /**
@@ -237,6 +239,7 @@ export const useIslesHelmEntryWithoutBananaports = (): boolean => {
 
 export const usePlayLevel = (level: Level): LogicBool => {
   const dive = useDive()
+  const hasCannons = useCannons()
   const openLobbies = useOpenLobbies()
   const [
     level1,
@@ -334,8 +337,8 @@ export const usePlayLevel = (level: Level): LogicBool => {
   }
   if (level7 === level) {
     return {
-      in: (currentGB >= bLocker7) && (openLobbies || key5),
-      out: (currentGB >= bLocker7) && (openLobbies || key5)
+      in: (currentGB >= bLocker7) && (openLobbies || key5) && hasCannons,
+      out: (currentGB >= bLocker7) && (openLobbies || key5) && hasCannons
     }
   }
   if (level8 === level) {
@@ -390,6 +393,7 @@ export const usePlayLobby = (level: Level): LogicBool => {
   const islesKremAscent = useIslesKremAscent()
   const islesFungiIsland = useIslesFungiIsland()
   const isBreathing = useAnyKong()
+  const hasCannons = useCannons()
   if (level1 === level) {
     return {
       in: isBreathing,
@@ -428,8 +432,8 @@ export const usePlayLobby = (level: Level): LogicBool => {
   }
   if (level7 === level) {
     return {
-      in: openLobbies || key5,
-      out: openLobbies || key5
+      in: (openLobbies || key5) && hasCannons,
+      out: (openLobbies || key5) && hasCannons
     }
   }
   if (level8 === level) {

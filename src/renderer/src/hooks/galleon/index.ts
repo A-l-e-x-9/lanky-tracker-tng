@@ -29,7 +29,8 @@ import {
   useTrombone,
   useTwirl,
   useVine,
-  useClimbing
+  useClimbing,
+  useCannons
 } from '../kongs'
 import { useBananaportAll, useGalleonTideStartHigh } from '../settings'
 import { LogicBool, useSwitchsanityGun } from '../world'
@@ -203,15 +204,18 @@ export const useGalleonCavernTop = (): LogicBool => {
   const vine = useVine()
   const warpAll = useBananaportAll()
   const DKPortal = useTinyKasplatPortal()
+  const hasCannons = useCannons()
   return {
-    in: inStage.in && (vine || DKPortal || (warpAll && (dive.in || rocket))),
-    out: (inStage.in || inStage.out) && seasick.out
+    in: inStage.in && ((hasCannons && vine) || DKPortal || (warpAll && (dive.in || rocket))),
+    out: inStage.out && seasick.out
   }
 }
 
 /**
  * Do we have access to the Cannon Game area in Galleon?
  * @returns true if we have access to the Cannon Game area in Galleon.
+ 
+ Alex addition: See if Cannons affects this check. I currently don't think it does...
  */
 export const useGalleonCannon = (): LogicBool => {
   const canPlay = usePlayGalleon()
@@ -308,8 +312,9 @@ export const useChunkySeasickGb = (): LogicBool => {
   const wasLighthouseOn = useDonkStore(useShallow((state) => state.removeBarriers.galleonSeasick))
   const punch = usePunch()
   const slam = useSlam()
+  const hasCannon = useCannons() //Can we use the Barrel Cannon to get back out (in), or must we pause-exit (out)?
   return {
-    in: lighthouse.in && (isLighthouseOn.in || wasLighthouseOn) && punch && slam,
+    in: lighthouse.in && (isLighthouseOn.in || wasLighthouseOn) && punch && slam && hasCannon,
     out: lighthouse.out && (isLighthouseOn.out || wasLighthouseOn) && punch && slam
   }
 }

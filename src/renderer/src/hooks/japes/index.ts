@@ -27,7 +27,8 @@ import {
   useTiny,
   useTwirl,
   useVine,
-  useClimbing
+  useClimbing,
+  useCannons
 } from '../kongs'
 import { useBananaportAll } from '../settings'
 import { LogicBool, useSwitchsanityGun } from '../world'
@@ -225,9 +226,10 @@ export const useJapesUnderground = (): LogicBool => {
   const boulderTech = useBoulderTech()
   const inStage = usePlayJapes()
   const DKPortal = useChunkyMinePortal()
+  const hasCannons = useCannons()
   return {
-    in: inStage.in && ((boulderTech && slam) || DKPortal),
-    out: inStage.out && ((boulderTech && slam) || DKPortal)
+    in: inStage.in && ((boulderTech && slam) || DKPortal) && hasCannons,
+    out: inStage.out && ((boulderTech && slam) || DKPortal) && hasCannons //Unlike, say, the Tree Stump in Area 4 of Forest, I'm putting "hasCannons" on the out logic because if it's possible to get a DK Portal here in a Season 6 seed, you won't be able to get out by pause-exiting and will HAVE to have the Cannons move.
   }
 }
 
@@ -335,6 +337,8 @@ export const useDiddyMinecartGb = (): LogicBool => {
  *
  * This location is likely not restricted to FTA.
  * @returns true if this item can be attained.
+ 
+ The more eagle-eyed among you might notice I left out a useCannons() check when updating for Season 6. This is because the Barrel Cannon in front of Lanky's caged GB on the Hillside is a total red herring, as are the ropes that lead up to it.
  */
 export const useDkFreebieGb = (): LogicBool => {
   const inStage = usePlayJapes()

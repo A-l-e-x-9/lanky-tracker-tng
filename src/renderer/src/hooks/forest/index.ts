@@ -38,7 +38,8 @@ import {
   useClimbing,
   useBarrel,
   useTwirl,
-  useBalloon
+  useBalloon,
+  useCannons
 } from '../kongs'
 import { useBananaportAll, useForestTime, useHardShooting, useAutoBonus } from '../settings'
 import { LogicBool, useSwitchsanityGun } from '../world'
@@ -104,6 +105,9 @@ export const useForestDay = (): LogicBool => {
   const anyGun = useAnyGun()
   const orange = useOrange()
   const forestTime = useForestTime()
+  const hasCannons = useCannons()
+  const hasClimbing = useClimbing()
+  const hasJetbarrel = useRocket()
   if (forestTime != 1) {
     return {
       in: inStage.in,
@@ -111,8 +115,8 @@ export const useForestDay = (): LogicBool => {
     }
   }
   return {
-    in: inStage.in && anyGun,
-    out: (inStage.in || inStage.out) && orange
+    in: inStage.in && (hasCannons || hasJetbarrel) && anyGun,
+    out: inStage.out && hasClimbing && orange
   }
 }
 
@@ -121,11 +125,13 @@ export const useForestDay = (): LogicBool => {
  * @returns true if we do.
  */
 export const useForestNight = (): LogicBool => {
-  const anyGun = useAnyGun()
   const inStage = usePlayForest()
+  const anyGun = useAnyGun()
   const orange = useOrange()
   const forestTime = useForestTime()
-  const anyKong = useAnyKong()
+  const hasCannons = useCannons()
+  const hasClimbing = useClimbing()
+  const hasJetbarrel = useRocket()
   if (forestTime != 0) {
     return {
       in: inStage.in,
@@ -133,8 +139,8 @@ export const useForestNight = (): LogicBool => {
     }
   }
   return {
-    in: anyGun && inStage.in,
-    out: anyKong && orange && (inStage.in || inStage.out)
+    in: inStage.in && (hasCannons || hasJetbarrel) && anyGun,
+    out: inStage.out && hasClimbing && orange
   }
 }
 
@@ -173,12 +179,6 @@ export const useForestSpiderBoss = (): LogicBool => {
 
 /**
  * Do we have access to the top of the mushroom in Forest?
- *
- * Due to recent logic changes, this is always possible.
- * However, the future may put restrictions on again.
- * @returns true (as long as we're in the stage). This is always possible.
- 
- Alex edit: Hi, I'm from the future! :D
  */
 export const useForestMushroomTop = (): LogicBool => {
   const inStage = usePlayForest() //the old version had just this check
@@ -472,8 +472,9 @@ export const useTinyAntGb = (): LogicBool => {
   const owl = useForestOwl()
   const mini = useMini()
   const sax = useSax()
+  const cannon = useCannons() //When you complete the tree stump gauntlet, a Barrel Cannon spawns to take you back out to Forest. Being able to use Cannons is in logic, while the seemingly-fandom-preferred way of dying or pause-exiting is out of logic unless you have LZR on and are deathwarping.
   return {
-    in: owl.in && mini && sax,
+    in: owl.in && mini && sax && cannon,
     out: owl.out && mini && sax
   }
 }

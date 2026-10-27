@@ -241,7 +241,7 @@ const MoveTable = (): JSX.Element => {
       <SimpleIcon storeKey="snide" title="Snide" imgUrl={snideIcon} prefix="moves" updateItem={setMove} />
       <SimpleIcon
         storeKey="cannons"
-        title="Barrel Cannons"
+        title="Cannons"
         imgUrl={barrelCannon}
         prefix="moves"
         updateItem={setMove}
