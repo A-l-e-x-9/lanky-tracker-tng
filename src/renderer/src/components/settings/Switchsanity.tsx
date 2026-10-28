@@ -38,6 +38,7 @@ const StandardSwitchsanitySelector: React.FC = () => {
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]))
   return (
     <>
+    <h4>Switchsanity</h4>
       <p>To free Diddy:</p>
       <SwitchsanitySwitch currValue={switches.freeDiddy} storeKey="freeDiddy" images={allGun} />
       <p>To free Lanky:</p>
@@ -147,7 +148,6 @@ const SwitchsanitySelector: React.FC = () => {
   const isSwitchsanity = useIsSwitchsanity()
   return (
     <section className="switchsanity-settings">
-      <h4>Switchsanity</h4>
       <section>
         {isSwitchsanity ? <StandardSwitchsanitySelector /> : null}
       </section>
