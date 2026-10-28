@@ -362,9 +362,10 @@ export const useDkBlastGb = (): LogicBool => {
 export const useDkMushGb = (): LogicBool => {
   const inStage = usePlayForest()
   const allGun = useAllGun()
+  const hasCannons = useCannons()
   return {
-    in: useSlamForest() && inStage.in && allGun,
-    out: useSlamForest() && inStage.out && allGun
+    in: useSlamForest() && inStage.in && allGun && hasCannons,
+    out: useSlamForest() && inStage.out && allGun && hasCannons
   }
 }
 

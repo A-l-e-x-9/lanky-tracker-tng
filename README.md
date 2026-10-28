@@ -8,8 +8,7 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
 - Update the tracker to account for the following things added to the Randomizer on or around October 26, 2026:
-	- **NOW WORKING: the Time of Day being an item**
-	- """"""""""Breakable Containers"""""""""" (that evidently aren't Melon Crates or Boulders...) and Balloons being checks
+	- **NOW WORKING: """"""""""Breakable Containers"""""""""" (that evidently aren't Melon Crates or Boulders...)** and Balloons being checks
 	- the Progressive Slam Shuffler possibly requiring no slam for a level
 	- more options for Switchsanity (basically amounting to everything Diddy can Chimpy Charge and Chunky can Primate Punch down being changeable now)
 	- the Free Trade Agreement expanding to include Colored Bananas
