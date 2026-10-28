@@ -15901,9 +15901,10 @@ const useDkBlastGb$1 = () => {
 const useDkMushGb = () => {
   const inStage = usePlayForest();
   const allGun2 = useAllGun();
+  const hasCannons = useCannons();
   return {
-    in: useSlamForest() && inStage.in && allGun2,
-    out: useSlamForest() && inStage.out && allGun2
+    in: useSlamForest() && inStage.in && allGun2 && hasCannons,
+    out: useSlamForest() && inStage.out && allGun2 && hasCannons
   };
 };
 const useDkMillGb = () => {
