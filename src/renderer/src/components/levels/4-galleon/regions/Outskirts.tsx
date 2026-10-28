@@ -8,6 +8,8 @@ import Lanky2Ship from '../gold-bananas/lanky/Switch'
 import TinySub from '../gold-bananas/tiny/Sub'
 import Tiny2Ship from '../gold-bananas/tiny/Switch'
 import ChunkyKasplat from '../kasplats/Chunky'
+import Chests5DS from '../breakable/Outskirts'
+import Chests2DS from '../breakable/Lanky2DSRoom'
 
 const OutskirtsChecks: React.FC = () => {
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
@@ -16,6 +18,7 @@ return (
   <>
   <div className="grid">
     <Lanky2Ship />
+    <Chests2DS />
     <Tiny2Ship />
     <FreeSeal />
     <SealRace />
@@ -25,6 +28,9 @@ return (
   </div>
   <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ChunkyKasplat />
+  </div>
+  <div className="grid">
+    <Chests5DS />
   </div>
   </>
 )

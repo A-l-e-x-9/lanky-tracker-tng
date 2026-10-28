@@ -7,6 +7,7 @@ import CannonGame from '../gold-bananas/chunky/Cannon'
 import GalleonChest from '../gold-bananas/chunky/Chest'
 import LankyKasplat from '../kasplats/Lanky'
 import TinyKasplat from '../kasplats/Tiny'
+import MiddleChest from '../breakable/Caves'
 
 const CavernsChecks: React.FC = () => {
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
@@ -18,6 +19,7 @@ return (
   <div className="grid">
     <CannonGame />
     <GalleonChest />
+    <MiddleChest />
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ChestFairy />

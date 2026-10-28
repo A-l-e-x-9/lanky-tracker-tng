@@ -5,9 +5,10 @@ import LighthouseEnemies from '../enemies/Lighthouse'
 import SeasickShip from '../gold-bananas/chunky/Seasick'
 import DiddyLighthouse from '../gold-bananas/diddy/Lighthouse'
 import DkLighthouse from '../gold-bananas/dk/Lighthouse'
-import EnguardeChest from '../gold-bananas/lanky/Chest'
+import { EnguardeChest as EnguardeBananaChest } from '../gold-bananas/lanky/Chest'
 import MermaidReward from '../gold-bananas/tiny/Mermaid'
 import DiddyKasplat from '../kasplats/Diddy'
+import EnguardeChests from '../breakable/Lighthouse'
 
 const LighthouseChecks: React.FC = () => {
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
@@ -18,7 +19,8 @@ return (
     <DkLighthouse />
     <VanillaLighthouseDirt />
     <DiddyLighthouse />
-    <EnguardeChest />
+    <EnguardeChests />
+    <EnguardeBananaChest />
     <MermaidReward />
     <SeasickShip />
   </div>

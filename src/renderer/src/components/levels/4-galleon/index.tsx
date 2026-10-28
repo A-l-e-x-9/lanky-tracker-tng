@@ -25,6 +25,10 @@ import ShuffledCrates from './crates/Shuffled'
 import ShuffledDirt from './dirt/Shuffled'
 import ShuffledFairies from './fairies/Shuffled'
 import ShuffledKasplats from './kasplats/Shuffled'
+import MiddleChest from './breakable/Caves'
+import EnguardeChests from './breakable/Lighthouse'
+import Chests5DS from './breakable/Outskirts'
+import Chests2DS from './breakable/Lanky2DSRoom'
 
 const ClassicChecks: React.FC = () => {
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
@@ -54,6 +58,10 @@ return (
   </div>
   <div className="grid">
     <CavernArena />
+    <MiddleChest />
+    <EnguardeChests />
+    <Chests5DS />
+    <Chests2DS />
     <DkMedal />
     <DiddyMedal />
     <LankyMedal />
