@@ -37398,7 +37398,7 @@ const GalleonCheck = (props) => {
     }
   ) });
 };
-const CavernArena$1 = () => {
+const CavernArena = () => {
   const canDo = useArena$2();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaArena, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     GalleonCheck,
@@ -38273,7 +38273,7 @@ const CavernsChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(MiddleChest, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChestFairy, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CavernArena$1, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CavernArena, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$3, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$3, {})
@@ -39822,18 +39822,50 @@ const Chests5DS = () => {
     )
   ] });
 };
-const CavernArena = () => {
-  const canDo = useArena$2();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ArenaPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(VanillaArena, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    GalleonCheck,
-    {
-      id: 4090,
-      name: "Battle Arena (under Cranky's)",
-      region: "Galleon Caves",
-      canGetLogic: canDo.in,
-      canGetBreak: canDo.out
-    }
-  ) }) });
+const Chests2DS = () => {
+  const canDo = useLanky2DoorShipGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(BreakablePool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 46710,
+        name: "Chest in Lanky's 2DS room blocking his path to his GB",
+        region: "Shipyard Outskirts",
+        canGetLogic: canDo.in,
+        canGetBreak: canDo.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 46711,
+        name: "Empty Lanky 2DS chest 0",
+        region: "Shipyard Outskirts",
+        canGetLogic: canDo.in,
+        canGetBreak: canDo.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 46712,
+        name: "Empty Lanky 2DS chest 1",
+        region: "Shipyard Outskirts",
+        canGetLogic: canDo.in,
+        canGetBreak: canDo.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GalleonCheck,
+      {
+        id: 46713,
+        name: "Empty Lanky 2DS chest 2",
+        region: "Shipyard Outskirts",
+        canGetLogic: canDo.in,
+        canGetBreak: canDo.out
+      }
+    )
+  ] });
 };
 const OutskirtsChecks = () => {
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
@@ -39841,7 +39873,7 @@ const OutskirtsChecks = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Lanky2Ship, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CavernArena, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Chests2DS, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Tiny2Ship, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(FreeSeal, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SealRace, {}),
@@ -40430,11 +40462,11 @@ const ClassicChecks$3 = () => {
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations$3, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CavernArena$1, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CavernArena, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(MiddleChest, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(EnguardeChests, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Chests5DS, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CavernArena, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Chests2DS, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$3, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$3, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$3, {}),
