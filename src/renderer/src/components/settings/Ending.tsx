@@ -10,9 +10,8 @@ const Ending: React.FC = () => {
   const noKRoolFight = useNotFightingKRool()
   const helmSkipAll = useHelmStartPosition()
   const isKRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))
-  const isKillTheWabbit = useDonkStore(useShallow((state) => state.winCondition.killTheWabbit))
   
-if (((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) && helmSkipAll < 2) {
+if ((noKRoolFight || isKRoolsChallenge) && helmSkipAll < 2) {
   return (
     <section className="ending">
       <div>
@@ -43,7 +42,7 @@ if (((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) && helmSkipAll < 2
       </section>
     </section>
   )
-} else if (((!noKRoolFight || isKillTheWabbit) && !isKRoolsChallenge) && helmSkipAll < 2) {
+} else if (!noKRoolFight && !isKRoolsChallenge && helmSkipAll < 2) {
   return (
     <section className="ending">
       <div>
@@ -59,7 +58,7 @@ if (((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) && helmSkipAll < 2
       </section>
     </section>
   )
-} else if (((noKRoolFight && !isKillTheWabbit) || isKRoolsChallenge) && helmSkipAll === 2) {
+} else if ((noKRoolFight || isKRoolsChallenge) && helmSkipAll === 2) {
   return (
     <section className="ending">
       <div className={isKRoolsChallenge ? 'all-bosses' : ''}>

@@ -321,7 +321,7 @@ const GeneratorSettings: React.FC = () => {
               />
             </>
             <h3>Win Condition</h3>
-            <p className="full-grid">If "K. Rool's Challenge" is selected, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off. On the other hand, if "Kill the Wabbit" is selected, K. Rool is forced OFF.</p>
+            <p className="full-grid">If "K. Rool's Challenge" is selected, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off.</p>
             <>
               <p>Keys</p>
               <SimpleRadioIcon
