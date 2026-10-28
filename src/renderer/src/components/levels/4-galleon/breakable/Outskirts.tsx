@@ -6,7 +6,7 @@ import GalleonCheck from '../check'
 const Chests5DS: React.FC = () => { //this SHOULD be called "5DSChests", but the language has some kind of hangup with starting these names with a number. Fuck me with a Mario pipe! <^>(-_-;)<^>
 const canReachShipyard = useGalleonOutskirts()
 const hasDiving = useDive()
-const canBecomeEnguarde = useLanky()
+const hasLanky = useLanky()
   return (
     <BreakablePool>
       <GalleonCheck
