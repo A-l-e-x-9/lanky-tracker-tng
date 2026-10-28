@@ -5,7 +5,7 @@ import LighthouseEnemies from '../enemies/Lighthouse'
 import SeasickShip from '../gold-bananas/chunky/Seasick'
 import DiddyLighthouse from '../gold-bananas/diddy/Lighthouse'
 import DkLighthouse from '../gold-bananas/dk/Lighthouse'
-import { EnguardeChest as EnguardeBananaChest } from '../gold-bananas/lanky/Chest'
+import EnguardeChest from '../gold-bananas/lanky/Chest'
 import MermaidReward from '../gold-bananas/tiny/Mermaid'
 import DiddyKasplat from '../kasplats/Diddy'
 import EnguardeChests from '../breakable/Lighthouse'
@@ -20,7 +20,7 @@ return (
     <VanillaLighthouseDirt />
     <DiddyLighthouse />
     <EnguardeChests />
-    <EnguardeBananaChest />
+    <EnguardeChest />
     <MermaidReward />
     <SeasickShip />
   </div>
