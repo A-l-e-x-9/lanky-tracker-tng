@@ -34,7 +34,7 @@ const allGun = [dkGunIcon, diddyGunIcon, lankyGunIcon, tinyGunIcon, chunkyGunIco
 const allMusic = [dkMusicIcon, diddyMusicIcon, lankyMusicIcon, tinyMusicIcon, chunkyMusicIcon, anyInstIcon]
 const freeTiny = [diddyMoveIcon, chunkyMoveIcon]
 
-const FreeKongSelector: React.FC = () => {
+const StandardSwitchsanitySelector: React.FC = () => {
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]))
   return (
     <>
@@ -44,14 +44,6 @@ const FreeKongSelector: React.FC = () => {
       <SwitchsanitySwitch currValue={switches.freeLanky} storeKey="freeLanky" images={allMusic} />
       <p>To free Tiny:</p>
       <SwitchsanitySwitch currValue={switches.freeTiny} storeKey="freeTiny" images={freeTiny} />
-    </>
-  )
-}
-
-const StandardSwitchsanitySelector: React.FC = () => {
-  const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]))
-  return (
-    <>
       <p>To activate the Diddy Barrel in Isles:</p>
       <SwitchsanitySwitch
         currValue={switches.islesTrombone}
@@ -157,7 +149,6 @@ const SwitchsanitySelector: React.FC = () => {
     <section className="switchsanity-settings">
       <h4>Switchsanity</h4>
       <section>
-        <FreeKongSelector />
         {isSwitchsanity ? <StandardSwitchsanitySelector /> : null}
       </section>
     </section>
