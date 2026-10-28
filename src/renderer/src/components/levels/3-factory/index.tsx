@@ -25,9 +25,9 @@ import ShuffledCrates from './crates/Shuffled'
 import ShuffledDirt from './dirt/Shuffled'
 import ShuffledFairies from './fairies/Shuffled'
 import ShuffledKasplats from './kasplats/Shuffled'
+import DarkRoomCrate from './dark-room-crate'
 
 const ClassicChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -41,12 +41,13 @@ return (
     <TinyBananas />
     <ChunkyBananas />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <KasplatLocations />
   </div>
   <div className="grid">
     <CrateLocations />
     <DarkRoomDirt />
+    <DarkRoomCrate />
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <FairyLocations />
@@ -60,13 +61,9 @@ return (
     <ChunkyMedal />
     <BossCheck />
     <FactoryShops />
-  </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
     <DropPool>
       <EnemyLocations />
     </DropPool>
-  </div>
-  <div className="grid">
     <ShuffledArenas />
     <ShuffledCrates />
     <ShuffledDirt />
@@ -74,7 +71,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ShuffledFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ShuffledKasplats />
   </div>
 </>
