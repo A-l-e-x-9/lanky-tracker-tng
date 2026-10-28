@@ -35086,8 +35086,22 @@ const RNDChecks = () => {
     ] })
   ] });
 };
+const DarkRoomCrate = () => {
+  const canReachDarkRoom = usePlayFactory();
+  const hasPunch = usePunch();
+  const hasSlam = useSlam();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BreakablePool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    FactoryCheck,
+    {
+      id: 36700,
+      name: "The ? crate in the Dark Room holding the switch to open the Dark Room GB",
+      region: "Storage and Arcade Area",
+      canGetLogic: canReachDarkRoom.in && hasPunch && hasSlam,
+      canGetBreak: canReachDarkRoom.out && hasPunch && hasSlam
+    }
+  ) });
+};
 const StorageChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -35099,13 +35113,14 @@ const StorageChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryBlast, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CandyCrate, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DarkRoomDirt, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DarkRoomCrate, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DarkRoom, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ArcadeBarrel, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyVent, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(NintendoCoin, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$4, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(StorageEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$4, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(StorageEnemies, {}) })
   ] });
 };
 const ProductionChecks = () => {
@@ -37327,7 +37342,6 @@ const ShuffledKasplats$4 = () => {
   ] });
 };
 const ClassicChecks$4 = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
@@ -37340,10 +37354,11 @@ const ClassicChecks$4 = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$4, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$4, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$4, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$4, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CrateLocations$2, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(DarkRoomDirt, {})
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DarkRoomDirt, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DarkRoomCrate, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations$4, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -37354,16 +37369,14 @@ const ClassicChecks$4 = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$4, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$4, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$5, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$4, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$5, {}) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$4, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$5, {}) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$5, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$5, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$4, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$5, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$4, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$4, {}) })
   ] });
 };
 const FactoryChecks = () => {
