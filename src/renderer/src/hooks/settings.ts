@@ -363,3 +363,6 @@ export const useKRoolItemNum = (): number =>
 
 export const useForestTimeSwitches = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.poolTime))
+
+export const usePoolBreakables = (): boolean =>
+  useDonkStore(useShallow((state) => state.settings.poolBreakable))

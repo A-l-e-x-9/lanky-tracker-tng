@@ -58,7 +58,8 @@ export const initialSettings: SettingState = {
     shuffleLoadingZones: false,
     lockedWrinklyDoors: false,
     wrinklyDoorItem: 0,
-    poolTime: false
+    poolTime: false,
+    poolBreakable: false
   }
 }
 

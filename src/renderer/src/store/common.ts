@@ -700,6 +700,8 @@ interface SettingCollection {
   wrinklyDoorItem: BlueprintRange
   //Is the time of day in Forest in the pool?
   poolTime: boolean
+  //Are the various miscellaneous breakable things in the pool?
+  poolBreakable: boolean
 }
 
 export interface SettingState {
