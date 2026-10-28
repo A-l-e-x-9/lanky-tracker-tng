@@ -39,6 +39,7 @@ const StandardSwitchsanitySelector: React.FC = () => {
   return (
     <>
     <h4>Switchsanity</h4>
+    <section>
       <p>To free Diddy:</p>
       <SwitchsanitySwitch currValue={switches.freeDiddy} storeKey="freeDiddy" images={allGun} />
       <p>To free Lanky:</p>
@@ -140,6 +141,7 @@ const StandardSwitchsanitySelector: React.FC = () => {
       <SwitchsanitySwitch currValue={switches.forestBean1} storeKey="forestBean1" images={allGun} />
       <p>Second switch to open Forest Area 2:</p>
       <SwitchsanitySwitch currValue={switches.forestBean2} storeKey="forestBean2" images={allGun} />
+    </section>
     </>
   )
 }
@@ -148,9 +150,7 @@ const SwitchsanitySelector: React.FC = () => {
   const isSwitchsanity = useIsSwitchsanity()
   return (
     <section className="switchsanity-settings">
-      <section>
-        {isSwitchsanity ? <StandardSwitchsanitySelector /> : null}
-      </section>
+      {isSwitchsanity ? <StandardSwitchsanitySelector /> : null}
     </section>
   )
 }
