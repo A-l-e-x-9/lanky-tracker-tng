@@ -25,6 +25,7 @@ import ShuffledCrates from './crates/Shuffled'
 import ShuffledDirt from './dirt/Shuffled'
 import ShuffledFairies from './fairies/Shuffled'
 import ShuffledKasplats from './kasplats/Shuffled'
+import RambiHuts from './breakables/RambiHuts'
 
 const ClassicChecks: React.FC = () => {
 const [isKremKaptureSeed, isFairySeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.kremlingKapture, state.winCondition.fairies, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
@@ -50,6 +51,7 @@ return (
   </div>
   <div className="grid">
     <FunkyArena />
+    <RambiHuts />
     <DkMedal />
     <DiddyMedal />
     <LankyMedal />

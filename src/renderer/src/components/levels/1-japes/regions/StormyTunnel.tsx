@@ -4,9 +4,9 @@ import StormyTunnelEnemies from '../enemies/StormyTunnel'
 import SlopeBarrel from '../gold-bananas/lanky/SlopeBarrel'
 import DiddyKasplat from '../kasplats/Diddy'
 import LankyKasplat from '../kasplats/Lanky'
+import RambiHuts from '../breakables/RambiHuts'
 
 const StormyTunnelChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
@@ -14,11 +14,12 @@ return (
   <div className="grid">
     <SlopeBarrel />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <DiddyKasplat />
     <LankyKasplat />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>  
+  <div className="grid">
+    <RambiHuts />
     <StormyTunnelEnemies />
   </div>
   </>

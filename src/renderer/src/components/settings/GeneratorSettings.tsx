@@ -268,6 +268,14 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
+              <p>Other breakable containers</p>
+              <SimpleIcon
+                imgUrl={chunkyIcon}
+                title="Puts breakable stuff in the pool that is neither a boulder or Melon Crate."
+                storeKey="poolBreakable"
+                prefix="settings"
+                updateItem={setSetting}
+              />
             </>
             <h3>Consumable Settings</h3>
             <>
