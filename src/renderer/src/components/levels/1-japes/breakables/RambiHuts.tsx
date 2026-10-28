@@ -8,28 +8,28 @@ const hasRambi = useJapesRambi()
   return (
     <BreakablePool>
       <JapesCheck
-        id="B10"
+        id={16700}
         name="DK's Rambi Hut"
         region="Stormy Area"
         canGetLogic={canReachStormyZone.in && hasRambi.in}
         canGetBreak={canReachStormyZone.out && hasRambi.out}
       />
       <JapesCheck
-        id="B11"
+        id={16701}
         name="Diddy's Rambi Hut"
         region="Stormy Area"
         canGetLogic={canReachStormyZone.in && hasRambi.in}
         canGetBreak={canReachStormyZone.out && hasRambi.out}
       />
       <JapesCheck
-        id="B12"
+        id={16702}
         name="Lanky's Rambi Hut"
         region="Stormy Area"
         canGetLogic={canReachStormyZone.in && hasRambi.in}
         canGetBreak={canReachStormyZone.out && hasRambi.out}
       />
       <JapesCheck
-        id="B13"
+        id={16703}
         name="Tiny's Rambi Hut"
         region="Stormy Area"
         canGetLogic={canReachStormyZone.in && hasRambi.in}
