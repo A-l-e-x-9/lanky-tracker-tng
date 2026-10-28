@@ -43462,7 +43462,7 @@ const Shuffled$y = () => {
 const ShuffledFairies$3 = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$y, {}) : null;
 const ChunkyApple = () => {
   const canDo = useChunkyAppleGb();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Miniboss, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     ForestCheck,
     {
       id: 5043,
@@ -43471,7 +43471,7 @@ const ChunkyApple = () => {
       canGetLogic: canDo.in,
       canGetBreak: canDo.out
     }
-  ) });
+  ) }) });
 };
 const ChunkyFace = () => {
   const canDo = useChunkyFaceGb();
