@@ -1,12 +1,12 @@
 import BreakablePool from '@renderer/components/pools/Breakable'
 import { usePlayFactory } from '@renderer/hooks/factory'
 import { usePunch, useSlam } from '@renderer/hooks/kongs'
-import FactoryCheck from '../../check'
+import FactoryCheck from './check'
 
 const DarkRoomCrate: React.FC = () => {
   const canReachDarkRoom = usePlayFactory()
   const hasPunch = usePunch()
-  const canSlam = useSlam() //Unlike the Dark Room GB check, any Slam works on this crate
+  const hasSlam = useSlam() //Unlike the Dark Room GB check, any Slam works on this crate
   return (
     <BreakablePool>
       <FactoryCheck
