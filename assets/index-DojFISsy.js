@@ -54741,8 +54741,7 @@ const Ending = () => {
   const noKRoolFight = useNotFightingKRool();
   const helmSkipAll = useHelmStartPosition();
   const isKRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
-  const isKillTheWabbit = useDonkStore(useShallow((state) => state.winCondition.killTheWabbit));
-  if ((noKRoolFight && !isKillTheWabbit || isKRoolsChallenge) && helmSkipAll < 2) {
+  if ((noKRoolFight || isKRoolsChallenge) && helmSkipAll < 2) {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "ending", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Helm" }),
@@ -54773,7 +54772,7 @@ const Ending = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx(RoolSelector, { roolRootKey: "rool5" })
       ] })
     ] });
-  } else if ((!noKRoolFight || isKillTheWabbit) && !isKRoolsChallenge && helmSkipAll < 2) {
+  } else if (!noKRoolFight && !isKRoolsChallenge && helmSkipAll < 2) {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "ending", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Helm" }),
@@ -54787,7 +54786,7 @@ const Ending = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx(EndingSelector, { rootKey: "helm5" })
       ] })
     ] });
-  } else if ((noKRoolFight && !isKillTheWabbit || isKRoolsChallenge) && helmSkipAll === 2) {
+  } else if ((noKRoolFight || isKRoolsChallenge) && helmSkipAll === 2) {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "ending", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: isKRoolsChallenge ? "all-bosses" : "", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "K. Rool" }),
@@ -55752,7 +55751,7 @@ const GeneratorSettings = () => {
               )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Win Condition" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: `If "K. Rool's Challenge" is selected, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off. On the other hand, if "Kill the Wabbit" is selected, K. Rool is forced OFF.` }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "full-grid", children: `If "K. Rool's Challenge" is selected, the "K. Rool" portion of this tracker will be forced on regardless of whether or not you turned it off.` }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Keys" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
