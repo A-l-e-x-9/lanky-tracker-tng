@@ -58797,7 +58797,7 @@ const allKong = [dkKongIcon, diddyKongIcon, lankyKongIcon, tinyKongIcon, chunkyK
 const allGun = [dkGunIcon, diddyGunIcon, lankyGunIcon, tinyGunIcon, chunkyGunIcon, anyGunIcon];
 const allMusic = [dkMusicIcon, diddyMusicIcon, lankyMusicIcon, tinyMusicIcon, chunkyMusicIcon, anyInstIcon];
 const freeTiny = [diddyMoveIcon, chunkyMoveIcon];
-const FreeKongSelector = () => {
+const StandardSwitchsanitySelector = () => {
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Diddy:" }),
@@ -58805,12 +58805,7 @@ const FreeKongSelector = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Lanky:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeLanky, storeKey: "freeLanky", images: allMusic }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Tiny:" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeTiny, storeKey: "freeTiny", images: freeTiny })
-  ] });
-};
-const StandardSwitchsanitySelector = () => {
-  const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]));
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeTiny, storeKey: "freeTiny", images: freeTiny }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To activate the Diddy Barrel in Isles:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       SwitchsanitySwitch,
@@ -58945,10 +58940,7 @@ const SwitchsanitySelector = () => {
   const isSwitchsanity = useIsSwitchsanity();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "switchsanity-settings", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Switchsanity" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FreeKongSelector, {}),
-      isSwitchsanity ? /* @__PURE__ */ jsxRuntimeExports.jsx(StandardSwitchsanitySelector, {}) : null
-    ] })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { children: isSwitchsanity ? /* @__PURE__ */ jsxRuntimeExports.jsx(StandardSwitchsanitySelector, {}) : null })
   ] });
 };
 const App = () => {
