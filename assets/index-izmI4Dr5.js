@@ -58800,6 +58800,7 @@ const freeTiny = [diddyMoveIcon, chunkyMoveIcon];
 const StandardSwitchsanitySelector = () => {
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Switchsanity" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Diddy:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeDiddy, storeKey: "freeDiddy", images: allGun }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Lanky:" }),
@@ -58938,10 +58939,7 @@ const StandardSwitchsanitySelector = () => {
 };
 const SwitchsanitySelector = () => {
   const isSwitchsanity = useIsSwitchsanity();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "switchsanity-settings", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Switchsanity" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { children: isSwitchsanity ? /* @__PURE__ */ jsxRuntimeExports.jsx(StandardSwitchsanitySelector, {}) : null })
-  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "switchsanity-settings", children: /* @__PURE__ */ jsxRuntimeExports.jsx("section", { children: isSwitchsanity ? /* @__PURE__ */ jsxRuntimeExports.jsx(StandardSwitchsanitySelector, {}) : null }) });
 };
 const App = () => {
   const isItOctober = currentMonth === 9 ? "font-changer" : "";
