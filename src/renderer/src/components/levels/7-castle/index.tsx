@@ -26,6 +26,7 @@ import TinyMedal from './medals/TinyMedal'
 import CastleRegionChecks from './regions'
 import CastleShops from './shops'
 import BoulderCheck from './boulder'
+import ShedBox from './shed-box'
 
 const ClassicChecks: React.FC = () => {
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
@@ -54,6 +55,7 @@ return (
   </div>
   <div className="grid">
     <GreenhouseArena />
+    <ShedBox />
     <DkMedal />
     <DiddyMedal />
     <LankyMedal />

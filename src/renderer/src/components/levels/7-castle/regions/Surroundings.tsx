@@ -9,6 +9,7 @@ import LankyGreenhouse from '../gold-bananas/lanky/Greenhouse'
 import TinyTrash from '../gold-bananas/tiny/Trash'
 import LankyKasplat from '../kasplats/Lanky'
 import TinyKasplat from '../kasplats/Tiny'
+import ShedBox from '../shed-box'
 
 const SurroundingsChecks: React.FC = () => {
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
@@ -20,6 +21,7 @@ return (
     <GreenhouseArena />
     <TinyTrash />
     <ChunkyShed />
+    <ShedBox />
     <CastleTop />
     <TopFloorDirt />
   </div>
