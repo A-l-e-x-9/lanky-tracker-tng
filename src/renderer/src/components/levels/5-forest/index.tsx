@@ -27,6 +27,7 @@ import ForestShops from './shops'
 import BoulderLocations from './boulders'
 import ShuffledKasplats from './kasplats/Shuffled'
 import ForestTime from './time'
+import Area1Boxes from './breakable/Area1'
 
 const ClassicChecks: React.FC = () => {
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
@@ -49,6 +50,7 @@ return (
     <KasplatLocations />
   </div>
   <div className="grid">
+    <Area1Boxes />
     <CrateLocations />
     <DirtLocations />
   </div>

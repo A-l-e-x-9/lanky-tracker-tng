@@ -26,6 +26,7 @@ import ShuffledCrates from '../crates/Shuffled'
 import ShuffledDirt from '../dirt/Shuffled'
 import ShuffledFairies from '../fairies/Shuffled'
 import ShuffledKasplats from '../kasplats/Shuffled'
+import Area1Boxes from '../breakable/Area1'
 
 const ForestRegionChecks: React.FC = () => {
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
@@ -49,6 +50,7 @@ return (
     <MillsChecks />
   <div className="grid">
     <MillsArenas />
+    <Area1Boxes />
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <MillsFairies />
