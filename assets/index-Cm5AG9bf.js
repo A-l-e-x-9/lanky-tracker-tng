@@ -51814,6 +51814,20 @@ const Shuffled$6 = () => {
   ] });
 };
 const RoomCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$6, {}) : null;
+const ShedBox = () => {
+  const isBreathing = usePlayCastle();
+  const canGetInShed = usePunch();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BreakablePool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    CastleCheck,
+    {
+      id: 76700,
+      name: "? Box holding the Gone pad in Chunky's shed",
+      region: "Creepy Castle Main",
+      canGetLogic: isBreathing.in && canGetInShed,
+      canGetBreak: isBreathing.out && canGetInShed
+    }
+  ) });
+};
 const SurroundingsChecks = () => {
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
@@ -51823,6 +51837,7 @@ const SurroundingsChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(GreenhouseArena, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyTrash, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyShed, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShedBox, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CastleTop, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TopFloorDirt, {})
     ] }),
@@ -52429,6 +52444,7 @@ const ClassicChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(GreenhouseArena, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShedBox, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal, {}),
