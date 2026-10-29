@@ -12,8 +12,8 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 	- the Progressive Slam Shuffler possibly requiring no slam for a level
 	- more options for Switchsanity (basically amounting to everything Diddy can Chimpy Charge and Chunky can Primate Punch down being changeable now)
 	- the Free Trade Agreement expanding to include Colored Bananas
-	- the win conditions of "clear the Mechfish", "beat Round 2 of DK Arcade", "beat Jetpac", "beat the Toy Monster", "get the Returning the Banana Fairies reward", Barrel Blast courses, and the "Tasks" feature (which essentially allows you to have up to eight win cons).
-- Because the timetable for implementing shuffled Colored Bananas is "when hell freezes over plus 69 years", only vanilla balloons are tracked if you play a Version 6 seed with Balloons in the rotation.
+	- the win conditions of "clear the Mechfish", "beat Round 2 of DK Arcade", "beat Jetpac", "beat the Toy Monster", "get the Returning the Banana Fairies reward", Barrel Blast courses, and the "Tasks" feature (to be dubbed "K. Rool's Kontracts" after [this comment in Ballaam's original proposal for Tasks](https://github.com/2dos/DK64-Randomizer/issues/3333#issuecomment-4637198143)) (which essentially allows you to have up to eight win cons).
+- Because the timetable for implementing shuffled Colored Bananas is "when hell freezes over plus 69 years", only vanilla balloons are tracked if you play a Season 6 seed with Balloons in the rotation.
 - Make it so that having Krem Kapture off doesn't mess up with navigating the tracker by keyboard. (•̀⤙•́)
 - Piggybacking off of CountSelector becoming an input field when you double click, convert some icon-based selectors (currently thinking it should be the level and boss selectors) to simpler dropdown list boxes?
 - A "Did Wrinkly declare Troff 'n' Scoffs foolish?" UI option to get rid of the "Bosses" section and maybe get rid of the boss checks in one go? (Would have to make it so that the "Bosses" win con can override this...)

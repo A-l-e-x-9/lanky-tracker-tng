@@ -702,6 +702,8 @@ interface SettingCollection {
   poolTime: boolean
   //Are the various miscellaneous breakable things in the pool?
   poolBreakable: boolean
+  //Are balloons in the pool?
+  poolBalloons: boolean
 }
 
 export interface SettingState {

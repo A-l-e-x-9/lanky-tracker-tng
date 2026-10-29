@@ -276,6 +276,14 @@ const GeneratorSettings: React.FC = () => {
                 prefix="settings"
                 updateItem={setSetting}
               />
+              <p>Balloons</p>
+              <SimpleIcon
+                imgUrl={balloonIcon}
+                title="Puts the balloons that give you 10 Colored Bananas when shot in the pool."
+                storeKey="poolBalloons"
+                prefix="settings"
+                updateItem={setSetting}
+              />
             </>
             <h3>Consumable Settings</h3>
             <>

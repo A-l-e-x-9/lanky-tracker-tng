@@ -366,3 +366,6 @@ export const useForestTimeSwitches = (): boolean =>
 
 export const usePoolBreakables = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.poolBreakable))
+
+export const usePoolBalloons = (): boolean =>
+  useDonkStore(useShallow((state) => state.settings.poolBalloons))
