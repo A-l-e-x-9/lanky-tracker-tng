@@ -15,7 +15,7 @@ const ShedBox: React.FC = () => {
         canGetLogic={isBreathing.in && canGetInShed}
         canGetBreak={isBreathing.out && canGetInShed}
       />
-    </BoulderPool>
+    </BreakablePool>
   )
 }
 
