@@ -10009,29 +10009,29 @@ const initialSettings = {
     poolRainbowCoins: true,
     poolCrowns: true,
     poolBananaMedals: true,
-    poolHalfMedals: false,
-    poolIslesMedals: false,
+    poolHalfMedals: true,
+    poolIslesMedals: true,
     shuffleArenas: false,
     poolToughBananas: true,
     poolMiniboss: true,
     poolBlueprints: true,
     shuffleKasplats: false,
     poolFairies: true,
-    poolCrates: false,
+    poolCrates: true,
     shuffleCrates: false,
     shuffleFairies: false,
     autoBonus: false,
     poolNintendoCoin: true,
     poolRarewareCoin: true,
-    poolDrops: false,
+    poolDrops: true,
     shuffleEnemies: true,
     hardShooting: false,
     openLobbies: false,
     balancedRoolPhases: true,
     chunkySlamLevel: 0,
-    poolWrinkly: false,
-    poolBoulders: false,
-    betaLankyPhase: false,
+    poolWrinkly: true,
+    poolBoulders: true,
+    betaLankyPhase: true,
     waterIsLava: false,
     angyKosha: false,
     helmItem1: 6,
@@ -10043,8 +10043,9 @@ const initialSettings = {
     shuffleLoadingZones: false,
     lockedWrinklyDoors: false,
     wrinklyDoorItem: 0,
-    poolTime: false,
-    poolBreakable: false
+    poolTime: true,
+    poolBreakable: true,
+    poolBalloons: true
   }
 };
 const settingSlice = (set) => {
@@ -55650,6 +55651,7 @@ const dkPortalIcon = "" + new URL("dk-portal-DhmhLo9q.png", import.meta.url).hre
 const LZRIcon = "" + new URL("butwherewasthekasplat-D62HdKcb.png", import.meta.url).href;
 const bLocker = "" + new URL("b-locker-4HJOwKEa.png", import.meta.url).href;
 const forestClockIcon = "" + new URL("forest-money-shot-KSdCXEVJ.png", import.meta.url).href;
+const balloonIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAA6BAMAAACpNt97AAAAMFBMVEX/AP9wAACIAABYAADQAABAAADoAACgAAAoAAD4AAD4GBj4UFAQAAC4AAD4ODj4wMCqYIoTAAAAAXRSTlMAQObYZgAAAVZJREFUeAFjAAFGBQYkYOKAxAlVK0DiBKbAmKwdoR1iUIUcER0dHUFTIBwgs7Fq9a4EEJuno1lUdt3uV25gVa3qQrqr//9eDpLqCC4Uql39///2IjBHt/zauv///5kAVXVEGF3JXLX//z9dkJbgDnPPWav/7xMpAHI6ZE4ElhfbPQy5AOJI2F5xm9610EyB4URosKhic+Z0S0WzAiDHWKiw1W2ye6iYAMOJYGMj9btu6hUncg2AHItG9btOSh3mSgwMR4ONDdVrXe7evVsE9AyQI1R7xeXu9VKgpSBO+d2714sEgD5oBnLUa8uLlAKAnBPGxoLqQLYwyG9njgKllJQUQ0GeO3Om1VhQUDHUABwEZ4DciI5gSOCAeGc6IqCcjp4zJ1obIEEFVAMEsBBtDQ0Fs6EKGxDBzgzECA6SBIexAZJMsACyOn7acRg+UMyh3FZUdSQYDgBNSX3tTq13igAAAABJRU5ErkJggg==";
 const customStyles$5 = {
   content: {
     backgroundColor: "#002040",
@@ -55928,6 +55930,17 @@ const GeneratorSettings = () => {
                   imgUrl: chunkyKongIcon,
                   title: "Puts breakable stuff in the pool that is neither a boulder or Melon Crate.",
                   storeKey: "poolBreakable",
+                  prefix: "settings",
+                  updateItem: setSetting
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Balloons" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleIcon,
+                {
+                  imgUrl: balloonIcon,
+                  title: "Puts the balloons that give you 10 Colored Bananas when shot in the pool.",
+                  storeKey: "poolBalloons",
                   prefix: "settings",
                   updateItem: setSetting
                 }
