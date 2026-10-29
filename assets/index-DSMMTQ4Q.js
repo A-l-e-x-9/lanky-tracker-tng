@@ -44960,6 +44960,56 @@ const Shuffled$t = () => {
   ] });
 };
 const ShuffledKasplats$2 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$t, {}) : null;
+const Area1Boxes = () => {
+  const canGetToThornvine = useForestBarn();
+  const isBreathing = usePlayForest();
+  const isDay = useForestDay();
+  const hasDKPortal = useFrontMillPortal();
+  const hasAnySlam = useSlam();
+  const canGetToBackMill = useForestSpiderBoss();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(BreakablePool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 56700,
+        name: "? Box in Thornvine Barn containing the switch needed to activate DK's Bonus Barrel",
+        region: "Forest Area 1",
+        canGetLogic: canGetToThornvine.in,
+        canGetBreak: canGetToThornvine.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 56701,
+        name: "? Box in Front Mill containing switch to the lever room",
+        region: "Forest Area 1",
+        canGetLogic: isBreathing.in && (isDay.in || hasDKPortal) && hasAnySlam,
+        canGetBreak: isBreathing.out && (isDay.out || hasDKPortal) && hasAnySlam
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 56702,
+        name: "? Crate in Back Mill containing the Triangle Pad",
+        region: "Forest Area 1",
+        canGetLogic: canGetToBackMill.in,
+        canGetBreak: canGetToBackMill.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ForestCheck,
+      {
+        id: 56703,
+        name: "? Crate in Back Mill blocking Tiny's secret night entrance",
+        region: "Forest Area 1",
+        canGetLogic: canGetToBackMill.in,
+        canGetBreak: canGetToBackMill.out
+      }
+    )
+  ] });
+};
 const ForestRegionChecks = () => {
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
@@ -44977,7 +45027,10 @@ const ForestRegionChecks = () => {
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(CenterFairies, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(MillsChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MillsArenas, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(MillsArenas, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Area1Boxes, {})
+    ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(MillsFairies, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(BeanstalkChecks, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(MushExteriorChecks, {}),
@@ -45019,6 +45072,7 @@ const ClassicChecks$2 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$2, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$2, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Area1Boxes, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CrateLocations$1, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DirtLocations, {})
     ] }),
