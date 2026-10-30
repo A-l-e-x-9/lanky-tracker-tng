@@ -8,7 +8,7 @@ const canReachStormyZone = useJapesKongGates()
 const hasRambi = useJapesRambi()
 const hasAGun = useAnyGun()
   return (
-    <ArenaPool>
+    <BalloonPool>
       <JapesCheck
         id={16904}
         name="DK balloon in front of Cranky"
@@ -65,7 +65,7 @@ const hasAGun = useAnyGun()
         canGetLogic={hasRambi.in && hasAGun}
         canGetBreak={hasRambi.out && hasAGun}
       />
-    </ArenaPool>
+    </BalloonPool>
   )
 }
 
