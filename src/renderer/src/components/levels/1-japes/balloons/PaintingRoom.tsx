@@ -1,23 +1,22 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import VanillaArena from '@renderer/components/pools/VanillaArena'
-import { useArena } from '@renderer/hooks/japes'
+import BalloonPool from '@renderer/components/pools/Balloons'
+import { useJapesPainting } from '@renderer/hooks/japes'
+import { useAnyGun } from '@renderer/hooks/kongs'
 import JapesCheck from '../check'
 
-const FunkyArena: React.FC = () => {
-const canDo = useArena()
+const LankyRoomBalloon: React.FC = () => {
+const canDo = useJapesPainting()
+const hasAGun = useAnyGun()
 return (
-  <ArenaPool>
-    <VanillaArena>
-      <JapesCheck
-        id={1090}
-        name="Japes Arena (Near Funky)"
-        region="Japes Hillside"
-        canGetLogic={canDo.in}
-        canGetBreak={canDo.out}
-      />
-    </VanillaArena>
-  </ArenaPool>
+  <BalloonPool>
+    <JapesCheck
+      id={16913}
+      name="Lanky balloon above the exit to his painting room"
+      region="Japes Caves and Mines"
+      canGetLogic={canDo.in && hasAGun}
+      canGetBreak={canDo.out && hasAGun}
+    />
+  </BalloonPool>
 )
 }
 
-export default FunkyArena
+export default LankyRoomBalloon

@@ -1,66 +1,22 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import { useShuffledArenas } from '@renderer/hooks/settings'
+import BalloonPool from '@renderer/components/pools/Balloons'
 import JapesCheck from '../check'
-import { useJapesHive, useTinyStumpGb, useTinyHiveGb } from '@renderer/hooks/japes'
+import { useTinyStumpGb } from '@renderer/hooks/japes'
+import { useAnyGun } from '@renderer/hooks/kongs'
 
-const Shuffled: React.FC = () => {
-const canReachHiveZone = useJapesHive()
+const TinyHiveBalloon: React.FC = () => {
 const canGetInHive = useTinyStumpGb()
-const canGetInHivePastRoom1 = useTinyHiveGb()
+const hasAGun = useAnyGun()
   return (
-    <ArenaPool>
+    <BalloonPool>
       <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: Under Chunky's barrel in the hive zone"
-        region="Hive Area"
-        canGetLogic={canReachHiveZone.in}
-        canGetBreak={canReachHiveZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: Near Tiny's stump"
-        region="Hive Area"
-        canGetLogic={canReachHiveZone.in}
-        canGetBreak={canReachHiveZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: Near one of Tiny's logs"
-        region="Hive Area"
-        canGetLogic={canReachHiveZone.in}
-        canGetBreak={canReachHiveZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: Vanilla Warp 5, hive area"
-        region="Hive Area"
-        canGetLogic={canReachHiveZone.in}
-        canGetBreak={canReachHiveZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: In the main room of Tiny's hive"
-        region="Hive Area"
-        canGetLogic={canGetInHive.in}
-        canGetBreak={canGetInHive.out}
-      />
-      <JapesCheck
-        id={11000}
+        id={16914}
         name="Shuffled Battle Arena: In the first room of Tiny's hive"
         region="Hive Area"
         canGetLogic={canGetInHive.in}
         canGetBreak={canGetInHive.out}
       />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: In the final room of Tiny's hive"
-        region="Hive Area"
-        canGetLogic={canGetInHivePastRoom1.in}
-        canGetBreak={canGetInHivePastRoom1.out}
-      />
     </ArenaPool>
   )
 }
 
-const HiveArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
-export default HiveArenas
+export default TinyHiveBalloon
