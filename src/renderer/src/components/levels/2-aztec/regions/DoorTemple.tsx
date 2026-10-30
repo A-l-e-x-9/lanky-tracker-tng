@@ -13,9 +13,9 @@ import DonkeyDoorTemple from '../gold-bananas/dk/Door'
 import LankyDoorTemple from '../gold-bananas/lanky/Door'
 import TinyDoorTemple from '../gold-bananas/tiny/Door'
 import ChunkyKasplat from '../kasplats/Chunky'
+import { Diddy5DTBalloon, Lanky5DTBalloon, Chunky5DTBalloons } from '../balloons/5DT'
 
 const DoorTempleChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -24,25 +24,28 @@ return (
   <>
   <div className="grid">
     <DonkeyDoorTemple />
+    <Dk5Enemies />
     <DiddyDoorTemple />
+    <Diddy5DTBalloon />
+    <Diddy5Enemies />
     <LankyDoorTemple />
+    <Lanky5DTBalloon />
+    <Lanky5Enemies />
     <TinyDoorTemple />
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <DoorFairy />
   </div>
   <div className="grid">
+    <Tiny5Enemies />
     <ChunkyDoorTemple />
+    <Chunky5DTBalloons />
     <TempleDirt />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ChunkyKasplat />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
-    <Dk5Enemies />
-    <Diddy5Enemies />
-    <Lanky5Enemies />
-    <Tiny5Enemies />
+  <div className="grid">
     <Chunky5Enemies />
   </div>
   </>

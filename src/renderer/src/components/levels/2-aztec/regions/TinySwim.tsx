@@ -6,21 +6,18 @@ import FreeTiny from '../gold-bananas/diddy/FreeTiny'
 import VultureShoot from '../gold-bananas/lanky/Vulture'
 import TinyKlaptrap from '../gold-bananas/tiny/Klaptrap'
 import TinyCage from '../gold-bananas/diddy/TinyCage'
+import TTBalloons from '../balloons/TinyTemple'
 
 const TinySwimChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 return (
   <>
-  <div className="grid">
     <TinyKlaptrap />
     <TinyCage />
     <FreeTiny />
     <VultureShoot />
     <VultureArena />
-  </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+    <TTBalloons />
     <TinySwimEnemies />
-  </div>
   </>
 )
 }

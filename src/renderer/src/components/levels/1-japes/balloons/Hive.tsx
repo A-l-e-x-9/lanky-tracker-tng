@@ -10,7 +10,7 @@ const hasAGun = useAnyGun()
     <BalloonPool>
       <JapesCheck
         id={16914}
-        name="Shuffled Battle Arena: In the first room of Tiny's hive"
+        name="Tiny balloon in the Hive's first room"
         region="Hive Area"
         canGetLogic={canGetInHive.in && hasAGun}
         canGetBreak={canGetInHive.out && hasAGun}

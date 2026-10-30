@@ -4,9 +4,9 @@ import OasisDirt from '../dirt/Oasis'
 import OasisEnemies from '../enemies/Oasis'
 import FreeLlama from '../gold-bananas/dk/FreeLlama'
 import DiddyKasplat from '../kasplats/Diddy'
+import OasisBalloons from '../balloons/Oasis'
 
 const OasisChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
@@ -15,10 +15,11 @@ return (
     <FreeLlama />
     <OasisDirt />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <DiddyKasplat />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className="grid">
+    <OasisBalloons />
     <OasisEnemies />
   </div>
   </>

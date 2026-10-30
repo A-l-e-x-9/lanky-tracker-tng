@@ -6,21 +6,18 @@ import TotemEnemies from '../enemies/Totem'
 import RamGongs from '../gold-bananas/diddy/Gong'
 import VultureRace from '../gold-bananas/diddy/Vulture'
 import BeetleRace from '../gold-bananas/tiny/Beetle'
+import TotemBalloons from '../balloons/Totem'
 
 const TotemChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 return (
   <>
-  <div className="grid">
     <RamGongs />
     <VultureRace />
     <BeetleRace />
     <LlamaOutsideCrate />
     <GongCrate />
-  </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+    <TotemBalloons />
     <TotemEnemies />
-  </div>
   </>
 )
 }

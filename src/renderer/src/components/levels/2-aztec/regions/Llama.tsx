@@ -9,9 +9,9 @@ import MatchGame from '../gold-bananas/lanky/Match'
 import LavaPedestal from '../gold-bananas/tiny/Lava'
 import LankyKasplat from '../kasplats/Lanky'
 import LankyCage from '../gold-bananas/dk/LankyCage'
+import LlamaBalloons from '../balloons/LlamaTemple'
 
 const LlamaTempleChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -22,6 +22,7 @@ return (
     <LankyCage />
     <FreeLanky />
     <LlamaBarrel />
+    <LlamaBalloons />
     <MatchGame />
     <LavaPedestal />
   </div>
@@ -31,10 +32,10 @@ return (
   <div className="grid">
     <LlamaInsideCrate />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <LankyKasplat />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className="grid">
     <LlamaTempleEnemies />
   </div>
   </>

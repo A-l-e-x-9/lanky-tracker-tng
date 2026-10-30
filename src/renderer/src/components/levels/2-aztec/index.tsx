@@ -26,9 +26,15 @@ import ShuffledCrates from './crates/Shuffled'
 import ShuffledDirt from './dirt/Shuffled'
 import ShuffledFairies from './fairies/Shuffled'
 import ShuffledKasplats from './kasplats/Shuffled'
+import FDTBalloons from './balloons/5DT'
+import LlamaBalloons from './balloons/LlamaTemple'
+import MiddleCaveBalloons from './balloons/MiddleCave'
+import OasisBalloons from './balloons/Oasis'
+import QSCaveBalloons from './balloons/QSCave'
+import TTBalloons from './balloons/TinyTemple'
+import TotemBalloons from './balloons/Totem'
 
 const ClassicChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -42,7 +48,7 @@ return (
     <TinyBananas />
     <ChunkyBananas />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <KasplatLocations />
   </div>
   <div className="grid">
@@ -54,6 +60,13 @@ return (
   </div>
   <div className="grid">
     <VultureArena />
+    <FDTBalloons />
+    <LlamaBalloons />
+    <MiddleCaveBalloons />
+    <OasisBalloons />
+    <QSCaveBalloons />
+    <TTBalloons />
+    <TotemBalloons />
     <DkMedal />
     <DiddyMedal />
     <LankyMedal />
@@ -62,13 +75,9 @@ return (
     <BoulderLocations />
     <BossCheck />
     <AztecShops />
-  </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
     <DropPool>
       <EnemyLocations />
     </DropPool>
-  </div>
-  <div className="grid">
     <ShuffledArenas />
     <ShuffledCrates />
     <ShuffledDirt />
@@ -76,7 +85,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ShuffledFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ShuffledKasplats />
   </div>
 </>

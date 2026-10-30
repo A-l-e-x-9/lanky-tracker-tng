@@ -41,9 +41,9 @@ import FDTCrates from '../crates/5DT'
 import FDTDirt from '../dirt/5DT'
 import FDTFairies from '../fairies/5DT'
 import FDTKasplats from '../kasplats/5DT'
+import QSCaveBalloons from '../balloons/QSCave'
 
 const AztecRegionChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -61,6 +61,7 @@ return (
     <ConnectorTunnelChecks />
   <div className="grid">
     <QuicksandTunnel />
+    <QSCaveBalloons />
     <CaveArenas />
     <CaveCrates />
     <CaveDirt />
@@ -68,12 +69,12 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <CaveFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <CaveKasplats />
   </div>
     <OasisChecks />
-    <TotemChecks />
   <div className="grid">
+    <TotemChecks />
     <AztecMainArenas />
     <AztecMainCrates />
     <AztecMainDirt />
@@ -81,12 +82,12 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <AztecMainFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <AztecMainKasplats />
   </div>
     <TinyStartChecks />
-    <TinySwimChecks />
   <div className="grid">
+    <TinySwimChecks />
     <TTArenas />
     <TTCrates />
     <TTDirt />
@@ -94,7 +95,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <TTFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <TTKasplats />
   </div>
     <DoorTempleChecks />
@@ -106,7 +107,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <FDTFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <FDTKasplats />
   </div>
     <LlamaTempleChecks />
@@ -118,7 +119,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <LlamaFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <LlamaKasplats />
   </div>
   <div className="grid">
