@@ -27176,7 +27176,7 @@ const TinyHiveBalloon = () => {
     JapesCheck,
     {
       id: 16914,
-      name: "Shuffled Battle Arena: In the first room of Tiny's hive",
+      name: "Tiny balloon in the Hive's first room",
       region: "Hive Area",
       canGetLogic: canGetInHive.in && hasAGun,
       canGetBreak: canGetInHive.out && hasAGun
@@ -31425,8 +31425,33 @@ const TunnelBoulder = () => {
     }
   ) });
 };
+const MiddleCaveBalloons = () => {
+  const hasAGun = useAnyGun();
+  const canReachAztecBack = useAztecBack();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(BalloonPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 26900,
+        name: "DK balloon to the left of Cranky's",
+        region: "Aztec Caves",
+        canGetLogic: canReachAztecBack.in && hasAGun,
+        canGetBreak: canReachAztecBack.out && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 26901,
+        name: "DK balloon to the right of Cranky's",
+        region: "Aztec Caves",
+        canGetLogic: canReachAztecBack.in && hasAGun,
+        canGetBreak: canReachAztecBack.out && hasAGun
+      }
+    )
+  ] });
+};
 const ConnectorTunnelChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -31434,12 +31459,72 @@ const ConnectorTunnelChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(TunnelBarrel, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TunnelBoulder, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$5, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ConnectorTunnelEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$5, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ConnectorTunnelEnemies, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(MiddleCaveBalloons, {})
+    ] })
+  ] });
+};
+const Diddy5DTBalloon = () => {
+  const canReachDiddy5DT = useDiddy5DoorGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BalloonPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    AztecCheck,
+    {
+      id: 26904,
+      name: "Diddy balloon opposite his GB in his 5DT room",
+      region: "5 Door Temple",
+      canGetLogic: canReachDiddy5DT.in,
+      canGetBreak: canReachDiddy5DT.out
+    }
+  ) });
+};
+const Lanky5DTBalloon = () => {
+  const canReachLanky5DT = useLanky5DoorGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BalloonPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    AztecCheck,
+    {
+      id: 26908,
+      name: "Lanky balloon in his 5DT room",
+      region: "5 Door Temple",
+      canGetLogic: canReachLanky5DT.in,
+      canGetBreak: canReachLanky5DT.out
+    }
+  ) });
+};
+const Chunky5DTBalloons = () => {
+  const canReachChunky5DT = useChunky5DoorGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(BalloonPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 26913,
+        name: "Chunky balloon in the left portion of his second hall",
+        region: "5 Door Temple",
+        canGetLogic: canReachChunky5DT.in,
+        canGetBreak: canReachChunky5DT.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 26914,
+        name: "Chunky balloon in the right portion of his second hall",
+        region: "5 Door Temple",
+        canGetLogic: canReachChunky5DT.in,
+        canGetBreak: canReachChunky5DT.out
+      }
+    )
+  ] });
+};
+const FDTBalloons = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(BalloonPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Diddy5DTBalloon, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Lanky5DTBalloon, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Chunky5DTBalloons, {})
   ] });
 };
 const DoorTempleChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
@@ -31447,27 +31532,64 @@ const DoorTempleChecks = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DonkeyDoorTemple, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Dk5Enemies, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyDoorTemple, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Diddy5DTBalloon, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Diddy5Enemies, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyDoorTemple, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Lanky5DTBalloon, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Lanky5Enemies, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyDoorTemple, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DoorFairy, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Tiny5Enemies, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyDoorTemple, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Chunky5DTBalloons, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TempleDirt, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$5, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Dk5Enemies, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Diddy5Enemies, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Lanky5Enemies, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Tiny5Enemies, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Chunky5Enemies, {})
-    ] })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$5, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Chunky5Enemies, {}) })
+  ] });
+};
+const LlamaBalloons = () => {
+  const canReachLankyJail = useDkFreeLankyGb();
+  const canReachLlamaTemple = useAztecLlamaTemple();
+  const hasAGun = useAnyGun();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(BalloonPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 26906,
+        name: "Lanky balloon 0 at his prison",
+        region: "Llama Temple",
+        canGetLogic: canReachLankyJail.in,
+        canGetBreak: canReachLankyJail.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 26907,
+        name: "Lanky balloon 1 at his prison",
+        region: "Llama Temple",
+        canGetLogic: canReachLankyJail.in,
+        canGetBreak: canReachLankyJail.out
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 26911,
+        name: "Tiny balloon over the Llama's swimming pool",
+        region: "5 Door Temple",
+        canGetLogic: canReachLlamaTemple.in && hasAGun,
+        canGetBreak: canReachLlamaTemple.out && hasAGun
+      }
+    )
   ] });
 };
 const LlamaTempleChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
@@ -31477,17 +31599,31 @@ const LlamaTempleChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(FreeLanky, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(FreeLanky$1, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaBarrel, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaBalloons, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(MatchGame, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LavaPedestal, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaFairy, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaInsideCrate, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$5, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaTempleEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$5, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaTempleEnemies, {}) })
   ] });
 };
+const OasisBalloons = () => {
+  const canReachAztecFront = useAztecFront();
+  const hasAGun = useAnyGun();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BalloonPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    AztecCheck,
+    {
+      id: 26903,
+      name: "Diddy balloon in front of the Tiny Temple",
+      region: "Aztec Main Area",
+      canGetLogic: canReachAztecFront.in && hasAGun,
+      canGetBreak: canReachAztecFront.out && hasAGun
+    }
+  ) });
+};
 const OasisChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -31495,8 +31631,11 @@ const OasisChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(FreeLlama, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(OasisDirt, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$5, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(OasisEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$5, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(OasisBalloons, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(OasisEnemies, {})
+    ] })
   ] });
 };
 const TinyStartChecks = () => {
@@ -31506,30 +31645,78 @@ const TinyStartChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(TinyStartEnemies, {})
   ] });
 };
-const TinySwimChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKlaptrap, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FreeTiny, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FreeTiny$1, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(VultureShoot, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(VultureArena, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TinySwimEnemies, {}) })
+const TTBalloons = () => {
+  const canReachTT = useAztecTinyTemple();
+  const TTIce = useTinyTempleIce();
+  const hasDiving = useDive();
+  const hasAGun = useAnyGun();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(BalloonPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 26909,
+        name: "Tiny balloon 0 in her prison room",
+        region: "Tiny Temple",
+        canGetLogic: canReachTT.in && TTIce && hasDiving.in && hasAGun,
+        canGetBreak: canReachTT.out && TTIce && hasDiving.out && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 26910,
+        name: "Tiny balloon 1 in her prison room",
+        region: "Tiny Temple",
+        canGetLogic: canReachTT.in && TTIce && hasDiving.in && hasAGun,
+        canGetBreak: canReachTT.out && TTIce && hasDiving.out && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      AztecCheck,
+      {
+        id: 26912,
+        name: "Chunky balloon in the Necky room",
+        region: "Tiny Temple",
+        canGetLogic: canReachTT.in && TTIce && hasDiving.in && hasAGun,
+        canGetBreak: canReachTT.out && TTIce && hasDiving.out && hasAGun
+      }
+    )
   ] });
 };
-const TotemChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+const TinySwimChecks = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(RamGongs, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(VultureRace, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(BeetleRace$1, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaOutsideCrate, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(GongCrate, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TotemEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKlaptrap, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FreeTiny, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FreeTiny$1, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(VultureShoot, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(VultureArena, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TTBalloons, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TinySwimEnemies, {})
+  ] });
+};
+const TotemBalloons = () => {
+  const hasAGun = useAnyGun();
+  const canReachAztecBack = useAztecBack();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BalloonPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    AztecCheck,
+    {
+      id: 26902,
+      name: "DK balloon behind the Llama Temple",
+      region: "Aztec Main Area",
+      canGetLogic: canReachAztecBack.in && hasAGun,
+      canGetBreak: canReachAztecBack.out && hasAGun
+    }
+  ) });
+};
+const TotemChecks = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(RamGongs, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(VultureRace, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(BeetleRace$1, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaOutsideCrate, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(GongCrate, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TotemBalloons, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TotemEnemies, {})
   ] });
 };
 const Shuffled$1M = () => {
@@ -34098,8 +34285,21 @@ const Shuffled$1o = () => {
   ] });
 };
 const FDTKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$1o, {}) : null;
+const QSCaveBalloons = () => {
+  const canReachQSTunnel = useAztecBackTunnel();
+  const hasAGun = useAnyGun();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BalloonPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    AztecCheck,
+    {
+      id: 26905,
+      name: "Diddy balloon in DK's quicksand cave",
+      region: "Aztec Caves",
+      canGetLogic: canReachQSTunnel.in && hasAGun,
+      canGetBreak: canReachQSTunnel.out && hasAGun
+    }
+  ) });
+};
 const AztecRegionChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
@@ -34116,30 +34316,31 @@ const AztecRegionChecks = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(ConnectorTunnelChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(QuicksandTunnel, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(QSCaveBalloons, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CaveArenas, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CaveCrates, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CaveDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(CaveFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(CaveKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(CaveKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(OasisChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TotemChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TotemChecks, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(AztecMainArenas, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(AztecMainCrates, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(AztecMainDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecMainFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecMainKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecMainKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TinyStartChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TinySwimChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TinySwimChecks, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TTArenas, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TTCrates, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TTDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TTFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TTKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TTKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(DoorTempleChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(FDTArenas, {}),
@@ -34147,7 +34348,7 @@ const AztecRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(FDTDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FDTFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FDTKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FDTKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaTempleChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaArenas, {}),
@@ -34155,7 +34356,7 @@ const AztecRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$5, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$6, {})
@@ -34215,7 +34416,6 @@ const ShuffledKasplats$5 = () => {
   ] });
 };
 const ClassicChecks$5 = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
@@ -34228,7 +34428,7 @@ const ClassicChecks$5 = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyBananas$5, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyBananas$5, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$5, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KasplatLocations$5, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CrateLocations$3, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DirtLocations$1, {})
@@ -34236,6 +34436,13 @@ const ClassicChecks$5 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations$5, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(VultureArena, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FDTBalloons, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LlamaBalloons, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(MiddleCaveBalloons, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(OasisBalloons, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(QSCaveBalloons, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TTBalloons, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TotemBalloons, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$5, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$5, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$5, {}),
@@ -34243,16 +34450,14 @@ const ClassicChecks$5 = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$5, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BoulderLocations$2, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$6, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$5, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$6, {}) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$5, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations$6, {}) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas$6, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates$6, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledDirt$5, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledFairies$6, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$5, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledKasplats$5, {}) })
   ] });
 };
 const AztecChecks = () => {
