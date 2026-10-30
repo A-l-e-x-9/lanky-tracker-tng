@@ -3,7 +3,7 @@ import AztecCheck from '../check'
 import { useChunky5DoorGb, useDiddy5DoorGb, useLanky5DoorGb } from '@renderer/hooks/aztec'
 
 export const Diddy5DTBalloon: React.FC = () => {
-const canReachDiddy5DT = useDiddy5DoorGb
+const canReachDiddy5DT = useDiddy5DoorGb()
   return (
     <BalloonPool>
       <AztecCheck
