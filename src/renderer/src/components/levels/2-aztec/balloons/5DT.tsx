@@ -9,7 +9,7 @@ const canReachDiddy5DT = useDiddy5DoorGb
       <AztecCheck
         id={26904}
         name="Diddy balloon opposite his GB in his 5DT room"
-        region="5-Door Temple"
+        region="5 Door Temple"
         canGetLogic={canReachDiddy5DT.in}
         canGetBreak={canReachDiddy5DT.out}
       />
