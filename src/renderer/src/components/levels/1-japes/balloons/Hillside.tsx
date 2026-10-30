@@ -1,28 +1,29 @@
 import BalloonPool from '@renderer/components/pools/Balloons'
 import { useBananaportAll } from '@renderer/hooks/settings'
 import JapesCheck from '../check'
-import { useArena, useJapesPaintingOutside, useGeneralThing, useMtnCrate, useDkFreebieGb, useJapesMine } from '@renderer/hooks/japes'
-import { useClimbing, useVine } from '@renderer/hooks/kongs'
+import { useJapesMine, useJapesHive } from '@renderer/hooks/japes'
+import { useAnyGun } from '@renderer/hooks/kongs'
 
 const HillsideBalloons: React.FC = () => {
-const canReachFunky = useArena()
-const canReachPaintingRoom = useJapesPaintingOutside()
-const isBreathing = useGeneralThing()
-const canDoVanillaCrate1 = useMtnCrate()
-const canReachDiddyCage = useDkFreebieGb()
 const canReachMtn = useJapesMine()
-const hasClimbing = useClimbing()
-const hasVines = useVine()
-const [didGB] = useDonkStore(useShallow((state) => [state.checks]))
+const canReachHive = useJapesHive()
 const hasAllBananaports = useBananaportAll()
+const hasAGun = useAnyGun()
   return (
     <BalloonPool>
       <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: Vanilla Arena (what a Funky's!)"
+        id={16902}
+        name="DK balloon in front of Snide"
         region="Japes Hillside"
-        canGetLogic={canReachFunky.in}
-        canGetBreak={canReachFunky.out}
+        canGetLogic={canReachMtn.in && hasAGun}
+        canGetBreak={canReachMtn.out && hasAGun}
+      />
+      <JapesCheck
+        id={16903}
+        name="Diddy balloon on top of his mine"
+        region="Japes Hillside"
+        canGetLogic={(canReachMtn.in || (canReachHive.in && hasAllBananaports)) && hasAGun} //You don't actually need to be on top of the mountain to get this one, but for "in logic", it helps. :D
+        canGetBreak={canReachMtn.out && hasAGun}
       />
     </BalloonPool>
   )
