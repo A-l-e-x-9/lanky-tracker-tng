@@ -24,7 +24,7 @@ const hasAllBananaports = useBananaportAll()
         canGetLogic={canReachFunky.in}
         canGetBreak={canReachFunky.out}
       />
-    </ArenaPool>
+    </BalloonPool>
   )
 }
 
