@@ -24,6 +24,13 @@ const hasAGun = useAnyGun()
         canGetLogic={canReachTT.in && TTIce && hasDiving.in && hasAGun}
         canGetBreak={canReachTT.out && TTIce && hasDiving.out && hasAGun}
       />
+      <AztecCheck
+        id={26912}
+        name="Chunky balloon in the Necky room"
+        region="Tiny Temple"
+        canGetLogic={canReachTT.in && TTIce && hasDiving.in && hasAGun}
+        canGetBreak={canReachTT.out && TTIce && hasDiving.out && hasAGun}
+      />
     </BalloonPool>
   )
 }

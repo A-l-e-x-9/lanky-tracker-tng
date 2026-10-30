@@ -33,8 +33,23 @@ const canReachLanky5DT = useLanky5DoorGb()
 }
 
 export const Chunky5DTBalloons: React.FC = () => {
+const canReachChunky5DT = useChunky5DoorGb()
   return (
     <BalloonPool>
+      <AztecCheck
+        id={26913}
+        name="Chunky balloon in the left portion of his second hall"
+        region="5 Door Temple"
+        canGetLogic={canReachChunky5DT.in}
+        canGetBreak={canReachChunky5DT.out}
+      />
+      <AztecCheck
+        id={26914}
+        name="Chunky balloon in the right portion of his second hall"
+        region="5 Door Temple"
+        canGetLogic={canReachChunky5DT.in}
+        canGetBreak={canReachChunky5DT.out}
+      />
     </BalloonPool>
   )
 }
