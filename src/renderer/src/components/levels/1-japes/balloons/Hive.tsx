@@ -15,7 +15,7 @@ const hasAGun = useAnyGun()
         canGetLogic={canGetInHive.in}
         canGetBreak={canGetInHive.out}
       />
-    </ArenaPool>
+    </BalloonPool>
   )
 }
 
