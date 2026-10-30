@@ -1,5 +1,3 @@
-import useDonkStore from '@renderer/store'
-import { useShallow } from 'zustand/react/shallow'
 import GongCrate from '../crates/Gongs'
 import LlamaOutsideCrate from '../crates/LlamaOutside'
 import TotemEnemies from '../enemies/Totem'

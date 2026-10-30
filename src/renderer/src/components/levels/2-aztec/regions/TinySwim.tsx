@@ -1,5 +1,3 @@
-import useDonkStore from '@renderer/store'
-import { useShallow } from 'zustand/react/shallow'
 import VultureArena from '../arenas/Vulture'
 import TinySwimEnemies from '../enemies/TinySwim'
 import FreeTiny from '../gold-bananas/diddy/FreeTiny'
