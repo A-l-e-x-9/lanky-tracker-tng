@@ -10,4 +10,4 @@ const OasisBalloons: React.FC = () => {
   )
 }
 
-export default AztecMainArenas
+export default AztecMainBalloons
