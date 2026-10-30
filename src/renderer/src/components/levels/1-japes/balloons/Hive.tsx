@@ -12,8 +12,8 @@ const hasAGun = useAnyGun()
         id={16914}
         name="Shuffled Battle Arena: In the first room of Tiny's hive"
         region="Hive Area"
-        canGetLogic={canGetInHive.in}
-        canGetBreak={canGetInHive.out}
+        canGetLogic={canGetInHive.in && hasAGun}
+        canGetBreak={canGetInHive.out && hasAGun}
       />
     </BalloonPool>
   )

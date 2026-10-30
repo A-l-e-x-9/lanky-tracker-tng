@@ -13,8 +13,8 @@ const hasASlam = useSlamJapes()
         id={16912}
         name="Diddy's balloon at the conveyor belts"
         region="Japes Caves and Mines"
-        canGetLogic={useJapesMine.in && hasPeanuts && hasASlam}
-        canGetBreak={useJapesMine.out && hasPeanuts && hasASlam}
+        canGetLogic={canReachMtn.in && hasPeanuts && hasASlam}
+        canGetBreak={canReachMtn.out && hasPeanuts && hasASlam}
       />
     </BalloonPool>
   )
