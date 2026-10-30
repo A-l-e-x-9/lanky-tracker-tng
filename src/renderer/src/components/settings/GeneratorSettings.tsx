@@ -280,7 +280,7 @@ const GeneratorSettings: React.FC = () => {
               <p>Balloons</p>
               <SimpleIcon
                 imgUrl={balloonIcon}
-                title="Puts the balloons that give you 10 Colored Bananas when shot in the pool."
+                title="Puts the balloons that give you 10 Colored Bananas when shot in the pool. WARNING: Currently only accounts for vanilla balloons."
                 storeKey="poolBalloons"
                 prefix="settings"
                 updateItem={setSetting}

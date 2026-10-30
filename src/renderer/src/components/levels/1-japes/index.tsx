@@ -26,6 +26,12 @@ import ShuffledDirt from './dirt/Shuffled'
 import ShuffledFairies from './fairies/Shuffled'
 import ShuffledKasplats from './kasplats/Shuffled'
 import RambiHuts from './breakables/RambiHuts'
+import HillsideBalloons from './balloons/Hillside'
+import TinyHiveBalloon from './balloons/Hive'
+import LowlandBalloons from './balloons/Lowlands'
+import DiddyConveyorBalloon from './balloons/Mine'
+import LankyRoomBalloon from './balloons/PaintingRoom'
+import StormyBalloons from './balloons/Stormy'
 
 const ClassicChecks: React.FC = () => {
 const [isKremKaptureSeed, isFairySeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.kremlingKapture, state.winCondition.fairies, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
@@ -57,6 +63,12 @@ return (
     <LankyMedal />
     <TinyMedal />
     <ChunkyMedal />
+    <LowlandBalloons />
+    <HillsideBalloons />
+    <StormyBalloons />
+    <DiddyConveyorBalloon />
+    <LankyRoomBalloon />
+    <TinyHiveBalloon />
     <BossCheck />
     <JapesShops />
   </div>
