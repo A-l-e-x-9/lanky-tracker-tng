@@ -1,10 +1,12 @@
 import BalloonPool from '@renderer/components/pools/Balloons'
 import AztecCheck from '../check'
 import { useAztecLlamaTemple, useDkFreeLankyGb } from '@renderer/hooks/aztec'
-//import { useGrape, useMini } from '@renderer/hooks/kongs'
+import { useAnyGun } from '@renderer/hooks/kongs'
 
 const LlamaBalloons: React.FC = () => {
 const canReachLankyJail = useDkFreeLankyGb()
+const canReachLlamaTemple = useAztecLlamaTemple()
+const hasAGun = useAnyGun()
   return (
     <BalloonPool>
       <AztecCheck
@@ -20,6 +22,13 @@ const canReachLankyJail = useDkFreeLankyGb()
         region="Llama Temple"
         canGetLogic={canReachLankyJail.in}
         canGetBreak={canReachLankyJail.out}
+      />
+      <AztecCheck
+        id={26911}
+        name="Tiny balloon over the Llama's swimming pool"
+        region="5 Door Temple"
+        canGetLogic={canReachLlamaTemple.in && hasAGun}
+        canGetBreak={canReachLlamaTemple.out && hasAGun}
       />
     </BalloonPool>
   )
