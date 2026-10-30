@@ -1,102 +1,72 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import { useShuffledArenas } from '@renderer/hooks/settings'
+import BalloonPool from '@renderer/components/pools/Balloons'
 import JapesCheck from '../check'
 import { useJapesKongGates, useJapesRambi } from '@renderer/hooks/japes'
-import { useStand } from '@renderer/hooks/kongs'
+import { useAnyGun } from '@renderer/hooks/kongs'
 
-const Shuffled: React.FC = () => {
+const StormyBalloons: React.FC = () => {
 const canReachStormyZone = useJapesKongGates()
-const hasOStand = useStand()
 const hasRambi = useJapesRambi()
+const hasAGun = useAnyGun()
   return (
     <ArenaPool>
       <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: Near the vine pit"
+        id={16904}
+        name="DK balloon in front of Cranky"
+        region="Stormy Area"
+        canGetLogic={canReachStormyZone.in && hasAGun}
+        canGetBreak={canReachStormyZone.out && hasAGun}
+      />
+      <JapesCheck
+        id={16905}
+        name="Lanky balloon over his Kasplat"
+        region="Stormy Area"
+        canGetLogic={canReachStormyZone.in && hasAGun}
+        canGetBreak={canReachStormyZone.out && hasAGun}
+      />
+      <JapesCheck
+        id={16906}
+        name="Lanky balloon by the hut blocking the switch to his timed cage GB"
+        region="Stormy Area"
+        canGetLogic={canReachStormyZone.in && hasAGun}
+        canGetBreak={canReachStormyZone.out && hasAGun}
+      />
+      <JapesCheck
+        id={16907}
+        name="Tiny balloon by the hut blocking the switch to her timed cage GB"
+        region="Stormy Area"
+        canGetLogic={canReachStormyZone.in && hasAGun}
+        canGetBreak={canReachStormyZone.out && hasAGun}
+      />
+      <JapesCheck
+        id={16908}
+        name="Tiny balloon by the Banana Fairy"
+        region="Stormy Area"
+        canGetLogic={hasRambi.in && hasAGun}
+        canGetBreak={hasRambi.out && hasAGun}
+      />
+      <JapesCheck
+        id={16909}
+        name="Chunky balloon 0 in the Rambi cave"
+        region="Stormy Area"
+        canGetLogic={hasRambi.in && hasAGun}
+        canGetBreak={hasRambi.out && hasAGun}
+      />
+      <JapesCheck
+        id={16910}
+        name="Chunky balloon 1 in the Rambi cave"
         region="Stormy Area"
         canGetLogic={canReachStormyZone.in}
         canGetBreak={canReachStormyZone.out}
       />
       <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: In the vine pit"
+        id={16911}
+        name="Chunky Balloon 2 in the Rambi cave"
         region="Stormy Area"
-        canGetLogic={canReachStormyZone.in}
-        canGetBreak={canReachStormyZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: On Lanky's &quot;useless&quot; slope"
-        region="Stormy Area"
-        canGetLogic={canReachStormyZone.in && hasOStand}
-        canGetBreak={canReachStormyZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: On the left of Lanky's &quot;useless&quot; slope"
-        region="Stormy Area"
-        canGetLogic={canReachStormyZone.in && hasOStand}
-        canGetBreak={canReachStormyZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: The Stormy Tunnel's 4-way intersection"
-        region="Stormy Area"
-        canGetLogic={canReachStormyZone.in}
-        canGetBreak={canReachStormyZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: The Banana Fairy's pool"
-        region="Stormy Area"
-        canGetLogic={hasRambi.in}
-        canGetBreak={hasRambi.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: Behind Lanky's Hut"
-        region="Stormy Area"
-        canGetLogic={canReachStormyZone.in}
-        canGetBreak={canReachStormyZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: Behind DK's hut"
-        region="Stormy Area"
-        canGetLogic={canReachStormyZone.in}
-        canGetBreak={canReachStormyZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: Near Rambi's cage"
-        region="Stormy Area"
-        canGetLogic={canReachStormyZone.in}
-        canGetBreak={canReachStormyZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: Behind Cranky's"
-        region="Stormy Area"
-        canGetLogic={canReachStormyZone.in}
-        canGetBreak={canReachStormyZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: Vanilla Warp 4, Stormy Tunnel entrance"
-        region="Stormy Area"
-        canGetLogic={canReachStormyZone.in}
-        canGetBreak={canReachStormyZone.out}
-      />
-      <JapesCheck
-        id={11000}
-        name="Shuffled Battle Arena: Vanilla Warp 4, in front of Cranky's"
-        region="Stormy Area"
-        canGetLogic={canReachStormyZone.in}
-        canGetBreak={canReachStormyZone.out}
+        canGetLogic={hasRambi.in && hasAGun}
+        canGetBreak={hasRambi.out && hasAGun}
       />
     </ArenaPool>
   )
 }
 
-const StormyArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
-export default StormyArenas
+export default StormyBalloons

@@ -16,8 +16,8 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 - Since the Kong you see on the main menu in S6 seeds can now apparently be a Kong other than DK (I got Lanky in my first such seed), make the title bar rotate to show a Kong other than Lanky every time you reload the page (but not with equal probability)? For example, it could sometimes say "DK Tracker: The OKAY! Generation", have DK in the middle, and have a yellow background instead of a blue one?
 - Because the timetable for implementing shuffled Colored Bananas is "when hell freezes over plus 69 years", only vanilla balloons are tracked if you play a Season 6 seed with Balloons in the rotation.
 - Make it so that having Krem Kapture off doesn't mess up with navigating the tracker by keyboard. (•̀⤙•́)
+- Make this thing remember the last level you were on instead of always defaulting to DK Isles when you reload it. (so annoying •̀⤙•́)
 - Piggybacking off of CountSelector becoming an input field when you double click, convert some icon-based selectors (currently thinking it should be the level and boss selectors) to simpler dropdown list boxes?
-- A "Did Wrinkly declare Troff 'n' Scoffs foolish?" UI option to get rid of the "Bosses" section and maybe get rid of the boss checks in one go? (Would have to make it so that the "Bosses" win con can override this...)
 - Recolor the pad and barrel icons to match the "color-coded Kong Pads/Barrels" option in the Randomizer.
 - Currently, the "Bonuses" and "K. Rool's Challenge" win conditions don't account for the Oil Drums in Hideout Helm, so if your current seed's win con is >43 Bonus Barrels, you're outta luck.
 - Make it so that for the shuffled Arenas, Crates, Dirts, Fairies, and eventually Kasplats and Colored Bananas, there's only one or two checks each, and you can use a drop-down list or something to choose where they are.
