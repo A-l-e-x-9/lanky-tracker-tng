@@ -19,4 +19,4 @@ const hasAGun = useAnyGun()
   )
 }
 
-export default RNDArenas
+export default RNDBalloons
