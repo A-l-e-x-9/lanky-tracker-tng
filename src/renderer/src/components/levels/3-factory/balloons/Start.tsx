@@ -1,72 +1,23 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import { useShuffledArenas } from '@renderer/hooks/settings'
+import BalloonPool from '@renderer/components/pools/Balloons'
 import FactoryCheck from '../check'
 import { useGeneralThing, useFoyerFromStorage } from '@renderer/hooks/factory'
+import { useAnyGun } from '@renderer/hooks/kongs'
 
-const Shuffled: React.FC = () => {
+const StartBalloons: React.FC = () => {
 const isBreathing = useGeneralThing()
 const canReach = useFoyerFromStorage()
+const hasAGun = useAnyGun()
   return (
-    <ArenaPool>
+    <BalloonPool>
       <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: On carpet at vanilla level start"
+        id={36912}
+        name="Chunky's balloon at the top of the hatch to Prod Room"
         region="Factory Start Area"
-        canGetLogic={isBreathing.in && canReach.in}
-        canGetBreak={isBreathing.out && canReach.out}
+        canGetLogic={isBreathing.in && canReach.in && hasAGun}
+        canGetBreak={isBreathing.out && canReach.out && hasAGun}
       />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Near carpet at vanilla level start"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in && canReach.in}
-        canGetBreak={isBreathing.out && canReach.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Clock-in room, left side"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in && canReach.in}
-        canGetBreak={isBreathing.out && canReach.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Clock-in room, right side"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in && canReach.in}
-        canGetBreak={isBreathing.out && canReach.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Top of the hatch"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in && canReach.in}
-        canGetBreak={isBreathing.out && canReach.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Vanilla Warp 1, level start"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in && canReach.in}
-        canGetBreak={isBreathing.out && canReach.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Vanilla Warp 2, level start"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in && canReach.in}
-        canGetBreak={isBreathing.out && canReach.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Vanilla Warp 3, in front of Snide's"
-        region="Factory Start Area"
-        canGetLogic={isBreathing.in && canReach.in}
-        canGetBreak={isBreathing.out && canReach.out}
-      />
-    </ArenaPool>
+    </BalloonPool>
   )
 }
 
-const StartArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
-export default StartArenas
+export default StartBalloons
