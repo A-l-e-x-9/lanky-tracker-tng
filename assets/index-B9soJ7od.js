@@ -10031,7 +10031,7 @@ const initialSettings = {
     chunkySlamLevel: 0,
     poolWrinkly: true,
     poolBoulders: true,
-    betaLankyPhase: true,
+    betaLankyPhase: false,
     waterIsLava: false,
     angyKosha: false,
     helmItem1: 6,
