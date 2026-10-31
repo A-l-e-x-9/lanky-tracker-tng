@@ -15,6 +15,20 @@ const hasAGun = useAnyGun()
         canGetLogic={canReachTesting.in && hasAGun}
         canGetBreak={canReachTesting.out && hasAGun}
       />
+      <FactoryCheck
+        id={36909}
+        name="Tiny's balloon at Snide's"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in && hasAGun}
+        canGetBreak={canReachTesting.out && hasAGun}
+      />
+      <FactoryCheck
+        id={36910}
+        name="Tiny's balloon at Funky's"
+        region="Testing Room"
+        canGetLogic={canReachTesting.in && hasAGun}
+        canGetBreak={canReachTesting.out && hasAGun}
+      />
     </BalloonPool>
   )
 }
