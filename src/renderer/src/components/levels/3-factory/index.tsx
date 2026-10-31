@@ -26,6 +26,7 @@ import ShuffledDirt from './dirt/Shuffled'
 import ShuffledFairies from './fairies/Shuffled'
 import ShuffledKasplats from './kasplats/Shuffled'
 import DarkRoomCrate from './dark-room-crate'
+import FactoryBalloons from './balloons'
 
 const ClassicChecks: React.FC = () => {
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
@@ -54,6 +55,7 @@ return (
   </div>
   <div className="grid">
     <RNDArena />
+    <FactoryBalloons />
     <DkMedal />
     <DiddyMedal />
     <LankyMedal />
