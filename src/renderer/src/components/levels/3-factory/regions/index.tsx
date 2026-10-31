@@ -37,9 +37,9 @@ import ProdRoomCrates from '../crates/ProdRoom'
 import ProdRoomDirt from '../dirt/ProdRoom'
 import ProdRoomFairies from '../fairies/ProdRoom'
 import ProdRoomKasplats from '../kasplats/ProdRoom'
+import StartBalloons from '../balloons/Start'
 
 const FactoryRegionChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -52,19 +52,16 @@ return (
     <LankyMedal />
     <TinyMedal />
     <ChunkyMedal />
-  </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
     <StartEnemies />
-  </div>
-  <div className="grid">
     <StartArenas />
+    <StartBalloons />
     <StartCrates />
     <StartDirt />
   </div>
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <StartFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <StartKasplats />
   </div>
     <TestingChecks />

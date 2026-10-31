@@ -14,6 +14,7 @@ import TinyVent from '../gold-bananas/tiny/Vent'
 import TinyKasplat from '../kasplats/Tiny'
 import ChunkyCage from '../gold-bananas/lanky/ChunkyCage'
 import DarkRoomCrate from '../dark-room-crate'
+import StarcadeBalloons from '../balloons/Starcade'
 
 const StorageChecks: React.FC = () => {
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
@@ -38,6 +39,7 @@ return (
     <TinyKasplat />
   </div>
   <div className="grid">
+    <StarcadeBalloons />
     <StorageEnemies />
   </div>
   </>

@@ -9,9 +9,9 @@ import NumberGame from '../gold-bananas/dk/Number'
 import TestingBarrel from '../gold-bananas/lanky/Testing'
 import TinyDartboard from '../gold-bananas/tiny/Dart'
 import ChunkyKasplat from '../kasplats/Chunky'
+import TestingBalloons from '../balloons/Testing'
 
 const TestingChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
 const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
@@ -35,10 +35,11 @@ return (
   <div className="grid">
     <NumberGame />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ChunkyKasplat />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className="grid">
+    <TestingBalloons />
     <TestingEnemies />
   </div>
   </>
