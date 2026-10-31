@@ -1,93 +1,30 @@
-import ArenaPool from '@renderer/components/pools/Arenas'
-import { useShuffledArenas, useBananaportAll } from '@renderer/hooks/settings'
+import BalloonPool from '@renderer/components/pools/Balloons'
 import FactoryCheck from '../check'
-import { useGeneralThing, useFactoryProductionEnabled, useFactoryProductionTop, useTinyProductionGb, useDkProdGb } from '@renderer/hooks/factory'
-import { useClimbing, useTwirl } from '@renderer/hooks/kongs'
+import { useFactoryProductionEnabled, useFactoryProductionTop } from '@renderer/hooks/factory'
+import { useAnyGun } from '@renderer/hooks/kongs'
 
-const Shuffled: React.FC = () => {
-const isBreathing = useGeneralThing()
-const hasClimbing = useClimbing()
+const ProdRoomBalloons: React.FC = () => {
 const prodRoomOn = useFactoryProductionEnabled()
-const hasAllBananaports = useBananaportAll()
 const upperProd = useFactoryProductionTop()
-const canDoTinyProd = useTinyProductionGb()
-const isHinaKagiyama = useTwirl()
-const canDoCrusher = useDkProdGb()
+const hasAGun = useAnyGun()
   return (
-    <ArenaPool>
+    <BalloonPool>
       <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Center of the hatch"
+        id={36907}
+        name="Lanky's balloon in DK's crusher"
         region="Prod Room"
-        canGetLogic={isBreathing.in && hasClimbing}
-        canGetBreak={isBreathing.out}
+        canGetLogic={prodRoomOn.in && hasAGun}
+        canGetBreak={prodRoomOn.out && hasAGun}
       />
       <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Bottom of the hatch"
+        id={36908}
+        name="Lanky's balloon at Prod Room's Troff 'n' Scoff portal"
         region="Prod Room"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
+        canGetLogic={upperProd.in && hasAGun}
+        canGetBreak={upperProd.out && hasAGun}
       />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: In the tunnel to the Prod Room"
-        region="Prod Room"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Prod Room lower area"
-        region="Prod Room"
-        canGetLogic={prodRoomOn.in || hasAllBananaports}
-        canGetBreak={prodRoomOn.out || hasAllBananaports}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Under conveyors to Tiny's Prod Room GB"
-        region="Prod Room"
-        canGetLogic={upperProd.in}
-        canGetBreak={upperProd.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: The platform past Tiny's Prod Room GB"
-        region="Prod Room"
-        canGetLogic={canDoTinyProd.in}
-        canGetBreak={canDoTinyProd.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: On a vent platform near the elevators"
-        region="Prod Room"
-        canGetLogic={upperProd.in && isHinaKagiyama}
-        canGetBreak={upperProd.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Vanilla Warp 4, bottom of the Prod Room"
-        region="Prod Room"
-        canGetLogic={isBreathing.in}
-        canGetBreak={isBreathing.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: Vanilla Warp 4, top of the Prod Room"
-        region="Prod Room"
-        canGetLogic={upperProd.in}
-        canGetBreak={upperProd.out}
-      />
-      <FactoryCheck
-        id={13000}
-        name="Shuffled Battle Arena: At the bend in the crusher's path"
-        region="Prod Room"
-        canGetLogic={canDoCrusher.in}
-        canGetBreak={canDoCrusher.out}
-      />
-    </ArenaPool>
+    </BalloonPool>
   )
 }
 
-const ProdRoomArenas: React.FC = () => (useShuffledArenas() ? <Shuffled /> : null)
-export default ProdRoomArenas
+export default ProdRoomBalloons

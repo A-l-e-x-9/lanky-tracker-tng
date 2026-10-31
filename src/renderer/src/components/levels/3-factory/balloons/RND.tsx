@@ -1,12 +1,13 @@
 import BalloonPool from '@renderer/components/pools/Balloons'
 import FactoryCheck from '../check'
 import { useFactoryTesting } from '@renderer/hooks/factory'
-import { useAnyGun, useGuitar } from '@renderer/hooks/kongs'
+import { useAnyGun, useGuitar, useTrombone } from '@renderer/hooks/kongs'
 
 const RNDBalloons: React.FC = () => {
 const canReachTesting = useFactoryTesting()
 const hasAGun = useAnyGun()
 const hasGuitar = useGuitar()
+const hasTrombone = useTrombone()
   return (
     <BalloonPool>
       <FactoryCheck
@@ -36,6 +37,13 @@ const hasGuitar = useGuitar()
         region="R&D Room"
         canGetLogic={canReachTesting.in && hasGuitar && hasAGun}
         canGetBreak={canReachTesting.out && hasGuitar && hasAGun}
+      />
+      <FactoryCheck
+        id={36906}
+        name="Lanky's balloon at that damn piano game"
+        region="R&D Room"
+        canGetLogic={canReachTesting.in && hasTrombone && hasAGun}
+        canGetBreak={canReachTesting.out && hasTrombone && hasAGun}
       />
     </BalloonPool>
   )
