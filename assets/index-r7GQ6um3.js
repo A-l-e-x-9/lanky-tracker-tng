@@ -35450,8 +35450,53 @@ const Vanilla$4 = () => {
 const ShopLocations$4 = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla$4, {}) });
 };
+const TestingBalloons = () => {
+  const canReachTesting = useFactoryTesting();
+  const hasAGun = useAnyGun();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36901,
+        name: "DK's balloon at his number game",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in && hasAGun,
+        canGetBreak: canReachTesting.out && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36909,
+        name: "Tiny's balloon at Snide's",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in && hasAGun,
+        canGetBreak: canReachTesting.out && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36910,
+        name: "Tiny's balloon at Funky's",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in && hasAGun,
+        canGetBreak: canReachTesting.out && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36913,
+        name: "Chunkys's balloon at the hatch above Snide's",
+        region: "Testing Room",
+        canGetLogic: canReachTesting.in && hasAGun,
+        canGetBreak: canReachTesting.out && hasAGun
+      }
+    )
+  ] });
+};
 const TestingChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
@@ -35466,24 +35511,96 @@ const TestingChecks = () => {
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(NumberFairy, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(NumberGame, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$4, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$4, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TestingBalloons, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TestingEnemies, {})
+    ] })
+  ] });
+};
+const RNDBalloons = () => {
+  const canReachTesting = useFactoryTesting();
+  const hasAGun = useAnyGun();
+  const hasGuitar = useGuitar();
+  const hasTrombone = useTrombone();
+  const canReachToyMonster = useChunkyKaijuGb();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(BalloonPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36902,
+        name: "DK's balloon at the hatch to his power hut",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasAGun,
+        canGetBreak: canReachTesting.out && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36903,
+        name: "Diddy's balloon 0 in his pincode room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasGuitar && hasAGun,
+        canGetBreak: canReachTesting.out && hasGuitar && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36904,
+        name: "Diddy's balloon 1 in his pincode room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasGuitar && hasAGun,
+        canGetBreak: canReachTesting.out && hasGuitar && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36905,
+        name: "Diddy's balloon 2 in his pincode room",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasGuitar && hasAGun,
+        canGetBreak: canReachTesting.out && hasGuitar && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36906,
+        name: "Lanky's balloon at that damn piano game",
+        region: "R&D Room",
+        canGetLogic: canReachTesting.in && hasTrombone && hasAGun,
+        canGetBreak: canReachTesting.out && hasTrombone && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36914,
+        name: "Chunky's balloon in the Toy Monster's room",
+        region: "R&D Room",
+        canGetLogic: canReachToyMonster.in && hasAGun,
+        canGetBreak: canReachToyMonster.out && hasAGun
+      }
+    )
   ] });
 };
 const RNDChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(PianoGame, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ChargeTest, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ToyMonster, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(RNDArena, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CarRace, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$4, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ChargeTest, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ToyMonster, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LankyKasplat$4, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(RNDBalloons, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(RNDEnemies, {})
     ] })
   ] });
@@ -35500,6 +35617,20 @@ const DarkRoomCrate = () => {
       region: "Storage and Arcade Area",
       canGetLogic: canReachDarkRoom.in && hasPunch && hasSlam,
       canGetBreak: canReachDarkRoom.out && hasPunch && hasSlam
+    }
+  ) });
+};
+const StarcadeBalloons = () => {
+  const hasAGun = useAnyGun();
+  const isBreathing = useGeneralThing$4();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BalloonPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    FactoryCheck,
+    {
+      id: 36900,
+      name: "DK's balloon at Cranky's and Candy's",
+      region: "Storage and Arcade Area",
+      canGetLogic: isBreathing.in && hasAGun,
+      canGetBreak: isBreathing.out && hasAGun
     }
   ) });
 };
@@ -35522,7 +35653,10 @@ const StorageChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(NintendoCoin, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$4, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(StorageEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(StarcadeBalloons, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(StorageEnemies, {})
+    ] })
   ] });
 };
 const ProductionChecks = () => {
@@ -37638,8 +37772,22 @@ const Shuffled$$ = () => {
   ] });
 };
 const ProdRoomKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$$, {}) : null;
+const StartBalloons = () => {
+  const isBreathing = useGeneralThing$4();
+  const canReach = useFoyerFromStorage();
+  const hasAGun = useAnyGun();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(BalloonPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    FactoryCheck,
+    {
+      id: 36912,
+      name: "Chunky's balloon at the top of the hatch to Prod Room",
+      region: "Factory Start Area",
+      canGetLogic: isBreathing.in && canReach.in && hasAGun,
+      canGetBreak: isBreathing.out && canReach.out && hasAGun
+    }
+  ) });
+};
 const FactoryRegionChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
@@ -37650,16 +37798,15 @@ const FactoryRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$4, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$4, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$4, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$4, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(StartEnemies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$4, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(StartEnemies, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(StartArenas, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(StartBalloons, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(StartCrates, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(StartDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(StartFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(StartKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(StartKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TestingChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(TestingArenas$1, {}),
@@ -37667,7 +37814,7 @@ const FactoryRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(TestingDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(TestingKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(RNDChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(TestingArenas, {}),
@@ -37675,7 +37822,7 @@ const FactoryRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(RNDDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RNDFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RNDKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RNDKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(StorageChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(StarcadeArenas, {}),
@@ -37683,7 +37830,7 @@ const FactoryRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(StarcadeDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(StarcadeFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(StarcadeKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(StarcadeKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(ProductionChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ProdRoomArenas, {}),
@@ -37691,7 +37838,7 @@ const FactoryRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(ProdRoomDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ProdRoomFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ProdRoomKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ProdRoomKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$4, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$5, {})
@@ -37743,6 +37890,53 @@ const ShuffledKasplats$4 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(ProdRoomKasplats, {})
   ] });
 };
+const ProdRoomBalloons = () => {
+  const prodRoomOn = useFactoryProductionEnabled();
+  const upperProd = useFactoryProductionTop();
+  const hasAGun = useAnyGun();
+  const isBreathing = useGeneralThing$4();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(BalloonPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36907,
+        name: "Lanky's balloon in DK's crusher",
+        region: "Prod Room",
+        canGetLogic: prodRoomOn.in && hasAGun,
+        canGetBreak: prodRoomOn.out && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36908,
+        name: "Lanky's balloon at Prod Room's Troff 'n' Scoff portal",
+        region: "Prod Room",
+        canGetLogic: upperProd.in && hasAGun,
+        canGetBreak: upperProd.out && hasAGun
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FactoryCheck,
+      {
+        id: 36911,
+        name: "Tiny's balloon at Middle Prod",
+        region: "Prod Room",
+        canGetLogic: isBreathing.in && hasAGun,
+        canGetBreak: isBreathing.out && hasAGun
+      }
+    )
+  ] });
+};
+const FactoryBalloons = () => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(BalloonPool, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(StartBalloons, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ProdRoomBalloons, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(StarcadeBalloons, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TestingBalloons, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(RNDBalloons, {})
+  ] });
+};
 const ClassicChecks$4 = () => {
   const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
   const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
@@ -37765,6 +37959,7 @@ const ClassicChecks$4 = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(FairyLocations$4, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(RNDArena, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FactoryBalloons, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DkMedal$4, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$4, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$4, {}),
