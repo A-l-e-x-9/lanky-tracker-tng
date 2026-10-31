@@ -73,7 +73,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <TestingFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <TestingKasplats />
   </div>
     <RNDChecks />
@@ -85,7 +85,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <RNDFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <RNDKasplats />
   </div>
     <StorageChecks />
@@ -97,7 +97,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <StarcadeFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <StarcadeKasplats />
   </div>
     <ProductionChecks />
@@ -109,7 +109,7 @@ return (
   <div className={`grid ${isFairySeed && fairiesInRotation}`}>
     <ProdRoomFairies />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <ProdRoomKasplats />
   </div>
   <div className="grid">
