@@ -509,22 +509,22 @@ const titleBar = document.getElementById("header");
 const characterNum = character[currentCharIndex];
 switch (characterNum) {
   case 6:
-    titleBar.innerHTML = "<header style='background: #c00000 url(seija-kijin.png) no-repeat top center; transform: rotate(180deg);'><h1>Seija Tracker</h1><h2>The Flipped Generation</h2><p id='tip'></p></header>";
+    titleBar.innerHTML = "<header style='background: #c00000 url(./assets/seija-kijin.png) no-repeat top center; transform: rotate(180deg);'><h1>Seija Tracker</h1><h2>The Flipped Generation</h2><p id='tip'></p></header>";
     break;
   case 5:
-    titleBar.innerHTML = "<header style='background: #804000 url(cranky.png) no-repeat top center;'><h1>Cranky Tracker</h1><h2>The First Generation</h2><p id='tip'></p></header>";
+    titleBar.innerHTML = "<header style='background: #804000 url(./assets/cranky.png) no-repeat top center;'><h1>Cranky Tracker</h1><h2>The First Generation</h2><p id='tip'></p></header>";
     break;
   case 4:
-    titleBar.innerHTML = "<header style='background: #00ff00 url(chunky.png) no-repeat top center;'><h1>Chunky Tracker</h1><h2>The Dead Generation</h2><p id='tip'></p></header>";
+    titleBar.innerHTML = "<header style='background: #00ff00 url(./assets/chunky.png) no-repeat top center;'><h1>Chunky Tracker</h1><h2>The Dead Generation</h2><p id='tip'></p></header>";
     break;
   case 3:
-    titleBar.innerHTML = "<header style='background: #ff00ff url(tiny.png) no-repeat top center;'><h1>Tiny Tracker</h1><h2>The Ponytail Generation</h2><p id='tip'></p></header>";
+    titleBar.innerHTML = "<header style='background: #ff00ff url(./assets/tiny.png) no-repeat top center;'><h1>Tiny Tracker</h1><h2>The Ponytail Generation</h2><p id='tip'></p></header>";
     break;
   case 2:
-    titleBar.innerHTML = "<header style='background: #ff0000 url(diddy.png) no-repeat top center;'><h1>Diddy Tracker</h1><h2>Next Generation's Kong Quest</h2><p id='tip'></p></header>";
+    titleBar.innerHTML = "<header style='background: #ff0000 url(./assets/diddy.png) no-repeat top center;'><h1>Diddy Tracker</h1><h2>Next Generation's Kong Quest</h2><p id='tip'></p></header>";
     break;
   case 1:
-    titleBar.innerHTML = "<header style='background: #ffff00 url(dk.png) no-repeat top center;'><h1>DK Tracker</h1><h2>The OKAY! Generation</h2><p id='tip'></p></header>";
+    titleBar.innerHTML = "<header style='background: #ffff00 url(./assets/dk.png) no-repeat top center;'><h1>DK Tracker</h1><h2>The OKAY! Generation</h2><p id='tip'></p></header>";
     break;
 }
 const tips = [
