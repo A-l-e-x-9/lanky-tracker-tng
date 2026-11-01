@@ -1,18 +1,16 @@
 @import './base.css';
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-image: url('./wavy-lines.svg');
   background-size: cover;
   background-position: right;
 }
 
 h1, h2, h3, h4, h5, h6 {text-align: center; font-family: Optima LT Pro, Verdana, Tahoma, sans-serif; font-weight: bold;}
-header {background: #0080ff url('./tracker-bg.png') no-repeat top center; color: #000000; width: 100%; position: absolute; top: 0; left: 0; text-transform: lowercase; padding: 0px 100px;}
-header h1 {font-size: 5em; text-align: left;}
-header h2 {text-align: right;}
+header {background: #0080ff url('./tracker-bg.png') no-repeat top center; color: #000000; width: 100%;}
+header h1 {font-size: 5em; text-align: left; padding-left: 100px; text-transform: lowercase;}
+header h2 {text-align: right; padding-right: 100px; text-transform: lowercase;}
+header p {background-color: #000040; color: #ffffff; width: 100%; padding: 0px 100px;}
 #dk {background: #ffff00 url('./dk.png') no-repeat top center;}
 #diddy {background: #ff0000 url('./diddy.png') no-repeat top center;}
 #tiny {background: #ff00ff url('./tiny.png') no-repeat top center;}
@@ -21,8 +19,8 @@ header h2 {text-align: right;}
 #seija {background: #c00000 url('./seija-kijin.png') no-repeat top center; transform: rotate(180deg);}
 /*footer {position: fixed; bottom: 0; left: 0; max-width: 350px; border: 3px solid;}*/
 a {font-weight: bold;}
-a:link {color: #ff00ff;}
-a:visited {color: #800080;}
+a:link {color: #00ffff;}
+a:visited {color: #008080;}
 a:hover {color: #ffffff;}
 
 code {
@@ -52,7 +50,6 @@ code {
 }
 
 main {
-  padding-top: 167px;
   display: grid;
   gap: 1em;
   grid-template-columns: 1fr 3fr;
@@ -101,7 +98,7 @@ main > article:last-child {
   justify-items: center;
 }
 .level-list > section {
-  grid-template-columns: 1fr 14ex 1fr 1fr;
+  grid-template-columns: 1fr 14ex 1fr 1fr 1fr;
 }
 .boss-list section {
   grid-template-columns: 1fr 14ex 1fr;
@@ -258,8 +255,7 @@ main .grid {
   text-decoration: none;
 }
 
-.not-available
-{
+.not-available {
   color: #ff0000;
 }
 
@@ -273,9 +269,9 @@ main .grid {
 
 .grid > .foolish, div.grid.foolish {
   color: red;
-  font-weight: bold;
 }
-.grid > .woth {
+
+.grid > :not(.checked).woth {
   color: gold;
 }
 

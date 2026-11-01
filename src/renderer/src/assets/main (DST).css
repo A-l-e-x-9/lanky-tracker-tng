@@ -11,6 +11,12 @@ header {background: #0080ff url('./tracker-bg.png') no-repeat top center; color:
 header h1 {font-size: 5em; text-align: left; padding-left: 100px; text-transform: lowercase;}
 header h2 {text-align: right; padding-right: 100px; text-transform: lowercase;}
 header p {background-color: #000040; color: #ffffff; width: 100%; padding: 0px 100px;}
+#dk {background: #ffff00 url('./dk.png') no-repeat top center;}
+#diddy {background: #ff0000 url('./diddy.png') no-repeat top center;}
+#tiny {background: #ff00ff url('./tiny.png') no-repeat top center;}
+#chunky {background: #00ff00 url('./chunky.png') no-repeat top center;}
+#cranky {background: #804000 url('./cranky.png') no-repeat top center;}
+#seija {background: #c00000 url('./seija-kijin.png') no-repeat top center; transform: rotate(180deg);}
 /*footer {position: fixed; bottom: 0; left: 0; max-width: 350px; border: 3px solid;}*/
 a {font-weight: bold;}
 a:link {color: #00ffff;}
@@ -264,6 +270,7 @@ main .grid {
 .grid > .foolish, div.grid.foolish {
   color: red;
 }
+
 .grid > :not(.checked).woth {
   color: gold;
 }
