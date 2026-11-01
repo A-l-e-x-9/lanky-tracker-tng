@@ -1,5 +1,6 @@
 import './assets/main.css'
 import './assets/month-changer'
+import './assets/title-bar-stuff'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
