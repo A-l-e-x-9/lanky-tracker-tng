@@ -359,7 +359,7 @@ switch (currentMonth) {
     break;
   case 2:
     {
-      getBody.style.backgroundColor = "#004000";
+      getBody.style.backgroundColor = "#00c000";
     }
     break;
   case 3:
@@ -391,7 +391,7 @@ switch (currentMonth) {
     break;
   case 10:
     {
-      getBody.style.backgroundColor = "#400000";
+      getBody.style.backgroundColor = "#c00000";
     }
     break;
   case 11:
@@ -35488,7 +35488,7 @@ const TestingBalloons = () => {
       FactoryCheck,
       {
         id: 36913,
-        name: "Chunkys's balloon at the hatch above Snide's",
+        name: "Chunky's balloon at the hatch above Snide's",
         region: "Testing Room",
         canGetLogic: canReachTesting.in && hasAGun,
         canGetBreak: canReachTesting.out && hasAGun
