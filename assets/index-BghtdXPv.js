@@ -35683,7 +35683,7 @@ const ShopLocations$4 = () => {
 const TestingBalloons = () => {
   const canReachTesting = useFactoryTesting();
   const hasAGun = useAnyGun();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ArenaPool, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(BalloonPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       FactoryCheck,
       {
