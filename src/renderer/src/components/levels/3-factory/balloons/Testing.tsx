@@ -1,4 +1,4 @@
-import BalloonPool from '@renderer/components/pools/Arenas'
+import BalloonPool from '@renderer/components/pools/Balloons'
 import FactoryCheck from '../check'
 import { useFactoryTesting } from '@renderer/hooks/factory'
 import { useAnyGun } from '@renderer/hooks/kongs'
