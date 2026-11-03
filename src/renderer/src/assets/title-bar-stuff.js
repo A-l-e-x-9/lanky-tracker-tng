@@ -105,25 +105,58 @@
 
       let currentCharIndex = Math.floor(Math.random() * character.length);
       const titleBar = document.getElementById('header');
+      const getBody = document.getElementById('lanky-tracker');
       const characterNum = character[currentCharIndex];
+      const isDST = false
       switch (characterNum) {
         case 6:
           titleBar.innerHTML = "<header id='seija'><h1>Seija Tracker</h1><h2>The Flipped Generation</h2><p id='tip'></p></header>"
+          getBody.style.color = "#ff0000"
+          if (isDST) {
+            getBody.style.backgroundColor = "#000000"
+          } else {
+            getBody.style.backgroundColor = "#000040"
+          }
           break
         case 5:
           titleBar.innerHTML = "<header id='cranky'><h1>Cranky Tracker</h1><h2>The First Generation</h2><p id='tip'></p></header>"
+          if (isDST) {
+            getBody.style.backgroundColor = "#402000"
+          } else {
+            getBody.style.backgroundColor = "#c06000"
+          }
           break
         case 4:
           titleBar.innerHTML = "<header id='chunky'><h1>Chunky Tracker</h1><h2>The Dead Generation</h2><p id='tip'></p></header>"
+          if (isDST) {
+            getBody.style.backgroundColor = "#004020"
+          } else {
+            getBody.style.backgroundColor = "#00c060"
+          }
           break
         case 3:
           titleBar.innerHTML = "<header id='tiny'><h1>Tiny Tracker</h1><h2>The Ponytail Generation</h2><p id='tip'></p></header>"
+          if (isDST) {
+            getBody.style.backgroundColor = "#400020"
+          } else {
+            getBody.style.backgroundColor = "#c00060"
+          }
           break
         case 2:
           titleBar.innerHTML = "<header id='diddy'><h1>Diddy Tracker</h1><h2>Next Generation's Kong Quest</h2><p id='tip'></p></header>"
+          if (isDST) {
+            getBody.style.backgroundColor = "#400000"
+          } else {
+            getBody.style.backgroundColor = "#c00000"
+          }
           break
         case 1:
           titleBar.innerHTML = "<header id='dk'><h1>DK Tracker</h1><h2>The OKAY! Generation</h2><p id='tip'></p></header>"
+          if (isDST) {
+            getBody.style.backgroundColor = "#404030"
+          } else {
+            getBody.style.backgroundColor = "#c0c060"
+          }
           break
         case 0:
         default: //If 0, do nothing and leave the page's title as "Lanky Tracker: The Next Generation", with Lanky's picture and a blue background.

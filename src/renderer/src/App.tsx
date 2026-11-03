@@ -12,7 +12,7 @@ const isItOctober = currentMonth === 9 ? 'font-changer' : ''
   return (
     <>
       <main>
-        <article className={isItOctober}>
+        <article>
           <MoveTable />
           <LevelTable />
           <Bosses />
