@@ -348,59 +348,59 @@ reactJsxRuntime_production_min.jsxs = q$2;
 var jsxRuntimeExports = jsxRuntime.exports;
 const currentDate = /* @__PURE__ */ new Date();
 const currentMonth = currentDate.getMonth();
-const getBody = document.getElementById("lanky-tracker");
+const getBody$1 = document.getElementById("lanky-tracker");
 const header = document.getElementById("header");
 switch (currentMonth) {
   case 0:
-    getBody.style.backgroundColor = "#ffffff";
+    getBody$1.style.backgroundColor = "#ffffff";
     break;
   case 1:
-    getBody.style.backgroundColor = "#ff80ff";
+    getBody$1.style.backgroundColor = "#ff80ff";
     break;
   case 2:
     {
-      getBody.style.backgroundColor = "#00c000";
+      getBody$1.style.backgroundColor = "#00c000";
     }
     break;
   case 3:
-    getBody.style.backgroundImage = "linear-gradient(135deg, #004040, #404000, #400020)";
+    getBody$1.style.backgroundImage = "linear-gradient(135deg, #004040, #404000, #400020)";
     break;
   case 4:
-    getBody.style.backgroundColor = "#404040";
+    getBody$1.style.backgroundColor = "#404040";
     break;
   case 5:
-    getBody.style.backgroundColor = "#002040";
+    getBody$1.style.backgroundColor = "#002040";
     break;
   case 6:
-    getBody.style.backgroundColor = "#404000";
+    getBody$1.style.backgroundColor = "#404000";
     break;
   case 7:
-    getBody.style.backgroundImage = "linear-gradient(135deg, #000000, #000040, #0080ff)";
-    getBody.style.color = "#ffff00";
+    getBody$1.style.backgroundImage = "linear-gradient(135deg, #000000, #000040, #0080ff)";
+    getBody$1.style.color = "#ffff00";
     break;
   case 8:
-    getBody.style.backgroundColor = "#402000";
+    getBody$1.style.backgroundColor = "#402000";
     break;
   case 9:
-    getBody.style.backgroundImage = "linear-gradient(135deg, #000000, #400000, #000000)";
-    getBody.style.color = "#ff8000";
-    getBody.style.fontFamily = "Croobie";
+    getBody$1.style.backgroundImage = "linear-gradient(135deg, #000000, #400000, #000000)";
+    getBody$1.style.color = "#ff8000";
+    getBody$1.style.fontFamily = "Croobie";
     header.style.backgroundColor = "#ff0000";
     header.querySelector("h1").style.fontFamily = "Ransom";
     header.querySelector("h2").style.fontFamily = "Ransom";
     break;
   case 10:
     {
-      getBody.style.backgroundColor = "#c00000";
+      getBody$1.style.backgroundColor = "#c00000";
     }
     break;
   case 11:
-    getBody.style.backgroundImage = "linear-gradient(135deg, #00c000, #ffffff, #c00000)";
+    getBody$1.style.backgroundImage = "linear-gradient(135deg, #00c000, #ffffff, #c00000)";
     break;
 }
 const currentDay = currentDate.getDate();
 if (currentMonth === 3 && currentDay === 1) {
-  getBody.style.transform = "rotate(180deg)";
+  getBody$1.style.transform = "rotate(180deg)";
 }
 const character = [
   0,
@@ -506,25 +506,45 @@ const character = [
 ];
 let currentCharIndex = Math.floor(Math.random() * character.length);
 const titleBar = document.getElementById("header");
+const getBody = document.getElementById("lanky-tracker");
 const characterNum = character[currentCharIndex];
 switch (characterNum) {
   case 6:
     titleBar.innerHTML = "<header id='seija'><h1>Seija Tracker</h1><h2>The Flipped Generation</h2><p id='tip'></p></header>";
+    getBody.style.color = "#ff0000";
+    {
+      getBody.style.backgroundColor = "#000040";
+    }
     break;
   case 5:
     titleBar.innerHTML = "<header id='cranky'><h1>Cranky Tracker</h1><h2>The First Generation</h2><p id='tip'></p></header>";
+    {
+      getBody.style.backgroundColor = "#c06000";
+    }
     break;
   case 4:
     titleBar.innerHTML = "<header id='chunky'><h1>Chunky Tracker</h1><h2>The Dead Generation</h2><p id='tip'></p></header>";
+    {
+      getBody.style.backgroundColor = "#00c060";
+    }
     break;
   case 3:
     titleBar.innerHTML = "<header id='tiny'><h1>Tiny Tracker</h1><h2>The Ponytail Generation</h2><p id='tip'></p></header>";
+    {
+      getBody.style.backgroundColor = "#c00060";
+    }
     break;
   case 2:
     titleBar.innerHTML = "<header id='diddy'><h1>Diddy Tracker</h1><h2>Next Generation's Kong Quest</h2><p id='tip'></p></header>";
+    {
+      getBody.style.backgroundColor = "#c00000";
+    }
     break;
   case 1:
     titleBar.innerHTML = "<header id='dk'><h1>DK Tracker</h1><h2>The OKAY! Generation</h2><p id='tip'></p></header>";
+    {
+      getBody.style.backgroundColor = "#c0c060";
+    }
     break;
 }
 const tips = [
