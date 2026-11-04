@@ -400,9 +400,10 @@ export const useDkBarnGb = (): LogicBool => {
   const climbing = useClimbing()
   const vine = useVine()
   const autoFinishBonuses = useAutoBonus()
+  const hasASlam = useSlamForest()
   return {
-    in: barn.in && (climbing && vine || autoFinishBonuses),
-    out: barn.out
+    in: barn.in && hasASlam && (climbing && vine || autoFinishBonuses),
+    out: barn.out && hasASlam
   }
 }
 
