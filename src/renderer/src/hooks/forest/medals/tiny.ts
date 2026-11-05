@@ -1,4 +1,4 @@
-import { useDive, useFeather, useMini, usePunch, useSax, useTiny, useClimbing } from '@renderer/hooks/kongs'
+import { useDive, useFeather, useMini, usePunch, useSax, useAnyKong, useClimbing } from '@renderer/hooks/kongs'
 import { useForestTime, useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useForestBean,
@@ -45,7 +45,7 @@ export const useTinyMedalInLogic = (): number => {
   const night = useForestNight()
   const owl = useForestOwl()
   const punch = usePunch()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const gun = useFeather()
   const music = useSax()
   const crystal = useMini()
@@ -89,7 +89,7 @@ export const useTinyMedalOutLogic = (): number => {
   const night = useForestNight()
   const owl = useForestOwl()
   const punch = usePunch()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const gun = useFeather()
   const crystal = useMini()
   const shuffleBananas = useShuffleColoredBananas()

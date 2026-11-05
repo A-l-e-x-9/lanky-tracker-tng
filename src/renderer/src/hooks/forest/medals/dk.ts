@@ -5,7 +5,7 @@ import {
   usePlayForest,
   useSlamForest
 } from '..'
-import { useAllGun, useBlast, useCoconut, useDk, useSlam, useStrong } from '../../kongs'
+import { useAllGun, useBlast, useCoconut, useAnyKong, useSlam, useStrong } from '../../kongs'
 import { useShuffleColoredBananas } from '../../settings'
 
 const useDkMedalCommonLogic = (): number => {
@@ -36,7 +36,7 @@ export const useDkMedalInLogic = (): number => {
   const day = useForestDay()
   const night = useForestNight()
   const slam = useSlam()
-  const kong = useDk()
+  const kong = useAnyKong()
   const gun = useCoconut()
   const crystal = useStrong()
   const shuffledBananas = useShuffleColoredBananas()
@@ -80,7 +80,7 @@ export const useDkMedalOutLogic = (): number => {
   const day = useForestDay()
   const night = useForestNight()
   const slam = useSlam()
-  const kong = useDk()
+  const kong = useAnyKong()
   const gun = useCoconut()
   const shuffledBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()

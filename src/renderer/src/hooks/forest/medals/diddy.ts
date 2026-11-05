@@ -1,5 +1,5 @@
 import {
-  useDiddy,
+  useAnyKong,
   useGuitar,
   useHighGrab,
   usePeanut,
@@ -39,7 +39,7 @@ export const useDiddyMedalInLogic = (): number => {
   const canSlam = useSlamForest()
   const day = useForestDay()
   const night = useForestNight()
-  const kong = useDiddy()
+  const kong = useAnyKong()
   const gun = usePeanut()
   const music = useGuitar()
   const pad = useSpring()
@@ -80,7 +80,7 @@ export const useDiddyMedalOutLogic = (): number => {
   const day = useForestDay()
   const night = useForestNight()
   const grab = useHighGrab()
-  const kong = useDiddy()
+  const kong = useAnyKong()
   const gun = usePeanut()
   const pad = useSpring()
   const shuffleBananas = useShuffleColoredBananas()

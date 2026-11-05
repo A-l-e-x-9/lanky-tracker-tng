@@ -1,4 +1,4 @@
-import { useGrape, useLanky, useRocket, useStand, useTiny } from '@renderer/hooks/kongs'
+import { useGrape, useAnyKong, useRocket, useStand, useTiny } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useForestMushroomTop,
@@ -32,7 +32,7 @@ export const useLankyMedalInLogic = (): number => {
   const canSlam = useSlamForest()
   const night = useForestNight()
   const top = useForestMushroomTop()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const move = useStand()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useLankyMedalCommonLogic()
@@ -64,7 +64,7 @@ export const useLankyMedalOutLogic = (): number => {
   const canSlam = useSlamForest()
   const night = useForestNight()
   const top = useForestMushroomTop()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const rocket = useRocket()
   const tiny = useTiny()
   const shuffleBananas = useShuffleColoredBananas()
