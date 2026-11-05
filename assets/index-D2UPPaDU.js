@@ -18106,7 +18106,7 @@ const useDkMedalCommonLogic = () => {
 const useDkMedalInLogic = () => {
   const inStage = usePlayCastle();
   const canSlam = useSlamCastle();
-  const kong = useDk();
+  const kong = useAnyKong();
   const gun = useCoconut();
   const crystal = useStrong();
   const shuffleBananas = useShuffleColoredBananas();
@@ -18136,7 +18136,7 @@ const useDkMedalOutLogic = () => {
   const canSlam = useSlamCastle();
   const peanut = usePeanut();
   const pineapple = usePineapple();
-  const kong = useDk();
+  const kong = useAnyKong();
   const gun = useCoconut();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic();
@@ -18186,7 +18186,7 @@ const useDiddyMedalCommonLogic = () => {
 };
 const useDiddyMedalInLogic = () => {
   const inStage = usePlayCastle();
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const gun = usePeanut();
   const move = useCharge();
   const crystal = useRocket();
@@ -18216,7 +18216,7 @@ const useDiddyMedalOutLogic = () => {
   const inStage = usePlayCastle();
   const coconut = useCoconut();
   const pineapple = usePineapple();
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const gun = usePeanut();
   const move = useCharge();
   const shuffleBananas = useShuffleColoredBananas();
@@ -18253,7 +18253,7 @@ const useLankyMedalCommonLogic = () => {
 const useLankyMedalInLogic = () => {
   const inStage = usePlayCastle();
   const canSlam = useSlamCastle();
-  const kong = useLanky();
+  const kong = useAnyKong();
   const gun = useGrape();
   const music = useTrombone();
   const crystal = useSprint();
@@ -18280,7 +18280,7 @@ const useLankyMedalInLogic = () => {
 const useLankyMedalOutLogic = () => {
   const inStage = usePlayCastle();
   const canSlam = useSlamCastle();
-  const kong = useLanky();
+  const kong = useAnyKong();
   const gun = useGrape();
   const music = useTrombone();
   const crystal = useSprint();
@@ -18333,7 +18333,7 @@ const useTinyMedalCommonLogic = () => {
 };
 const useTinyMedalInLogic = () => {
   const inStage = usePlayCastle();
-  const kong = useTiny();
+  const kong = useAnyKong();
   const gun = useFeather();
   const shuffleBananas = useShuffleColoredBananas();
   const bananas = useTinyMedalCommonLogic();
@@ -18350,7 +18350,7 @@ const useTinyMedalInLogic = () => {
 };
 const useTinyMedalOutLogic = () => {
   const inStage = usePlayCastle();
-  const kong = useTiny();
+  const kong = useAnyKong();
   const gun = useFeather();
   const grape = useGrape();
   const shuffleBananas = useShuffleColoredBananas();
@@ -18371,7 +18371,7 @@ const useChunkyMedalInLogic = () => {
   const canSlam = useSlamCastle();
   const tree = useCastleTree();
   const boulderTech = useBoulderTech();
-  const kong = useChunky();
+  const kong = useAnyKong();
   const gun = usePineapple();
   const move = usePunch();
   const shuffleBananas = useShuffleColoredBananas();
@@ -18409,7 +18409,7 @@ const useChunkyMedalOutLogic = () => {
   const canSlam = useSlamCastle();
   const tree = useCastleTree();
   const boulderTech = useBoulderTech();
-  const kong = useChunky();
+  const kong = useAnyKong();
   const gun = usePineapple();
   const move = usePunch();
   const shuffleBananas = useShuffleColoredBananas();
