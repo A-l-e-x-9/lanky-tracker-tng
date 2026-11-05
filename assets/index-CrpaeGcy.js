@@ -16438,7 +16438,7 @@ const useDkMedalInLogic$2 = () => {
   const day = useForestDay();
   const night = useForestNight();
   const slam = useSlam();
-  const kong = useDk();
+  const kong = useAnyKong();
   const gun = useCoconut();
   const crystal = useStrong();
   const shuffledBananas = useShuffleColoredBananas();
@@ -16477,7 +16477,7 @@ const useDkMedalOutLogic$2 = () => {
   const day = useForestDay();
   const night = useForestNight();
   const slam = useSlam();
-  const kong = useDk();
+  const kong = useAnyKong();
   const gun = useCoconut();
   const shuffledBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic$2();
@@ -16527,7 +16527,7 @@ const useDiddyMedalInLogic$2 = () => {
   const canSlam = useSlamForest();
   const day = useForestDay();
   const night = useForestNight();
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const gun = usePeanut();
   const music = useGuitar();
   const pad = useSpring();
@@ -16564,7 +16564,7 @@ const useDiddyMedalOutLogic$2 = () => {
   const day = useForestDay();
   const night = useForestNight();
   const grab = useHighGrab();
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const gun = usePeanut();
   const pad = useSpring();
   const shuffleBananas = useShuffleColoredBananas();
@@ -16612,7 +16612,7 @@ const useLankyMedalInLogic$2 = () => {
   const canSlam = useSlamForest();
   const night = useForestNight();
   const top = useForestMushroomTop();
-  const kong = useLanky();
+  const kong = useAnyKong();
   const move = useStand();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic$2();
@@ -16641,7 +16641,7 @@ const useLankyMedalOutLogic$2 = () => {
   const canSlam = useSlamForest();
   const night = useForestNight();
   const top = useForestMushroomTop();
-  const kong = useLanky();
+  const kong = useAnyKong();
   const rocket = useRocket();
   const tiny = useTiny();
   const shuffleBananas = useShuffleColoredBananas();
@@ -16700,7 +16700,7 @@ const useTinyMedalInLogic$2 = () => {
   const night = useForestNight();
   const owl = useForestOwl();
   const punch = usePunch();
-  const kong = useTiny();
+  const kong = useAnyKong();
   const gun = useFeather();
   const music = useSax();
   const crystal = useMini();
@@ -16739,7 +16739,7 @@ const useTinyMedalOutLogic$2 = () => {
   const night = useForestNight();
   const owl = useForestOwl();
   const punch = usePunch();
-  const kong = useTiny();
+  const kong = useAnyKong();
   const gun = useFeather();
   const crystal = useMini();
   const shuffleBananas = useShuffleColoredBananas();
@@ -16798,7 +16798,7 @@ const useChunkyMedalInLogic$2 = () => {
   const day = useForestDay();
   const night = useForestNight();
   const top = useForestMushroomTop();
-  const kong = useChunky();
+  const kong = useAnyKong();
   const move = usePunch();
   const vine = useVine();
   const shuffleBananas = useShuffleColoredBananas();
@@ -16825,7 +16825,7 @@ const useChunkyMedalOutLogic$2 = () => {
   const day = useForestDay();
   const night = useForestNight();
   const top = useForestMushroomTop();
-  const kong = useChunky();
+  const kong = useAnyKong();
   const move = usePunch();
   const vine = useVine();
   const shuffleBananas = useShuffleColoredBananas();
