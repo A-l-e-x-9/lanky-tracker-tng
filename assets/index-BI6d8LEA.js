@@ -17281,7 +17281,7 @@ const useDkMedalInLogic$1 = () => {
   const inStage = usePlayCaves();
   const angery = useAngryCaves();
   const igloo = useCavesIgloo();
-  const kong = useDk();
+  const kong = useAnyKong();
   const music = useBongos();
   const crystal = useStrong();
   const shuffleBananas = useShuffleColoredBananas();
@@ -17305,7 +17305,7 @@ const useDkMedalOutLogic$1 = () => {
   const inStage = usePlayCaves();
   const angery = useAngryCaves();
   const igloo = useCavesIgloo();
-  const kong = useDk();
+  const kong = useAnyKong();
   const music = useBongos();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic$1();
@@ -17345,7 +17345,7 @@ const useDiddyMedalInLogic$1 = () => {
   const inStage = usePlayCaves();
   const angery = useAngryCaves();
   const miniFunky = useCavesMiniFunky();
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const music = useGuitar();
   const crystal = useRocket();
   const pad = useSpring();
@@ -17382,7 +17382,7 @@ const useDiddyMedalOutLogic$1 = () => {
   const inStage = usePlayCaves();
   const angery = useAngryCaves();
   const miniFunky = useCavesMiniFunky();
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const music = useGuitar();
   const crystal = useRocket();
   const shuffleBananas = useShuffleColoredBananas();
@@ -17441,7 +17441,7 @@ const useLankyMedalInLogic$1 = () => {
   const canSlam = useSlamCaves();
   const igloo = useCavesIgloo();
   const pillar = useCavesPillar();
-  const kong = useLanky();
+  const kong = useAnyKong();
   const music = useTrombone();
   const pad = useBalloon();
   const shuffleBananas = useShuffleColoredBananas();
@@ -17474,7 +17474,7 @@ const useLankyMedalOutLogic$1 = () => {
   const igloo = useCavesIgloo();
   const pillar = useCavesPillar();
   const highGrab = useHighGrab();
-  const kong = useLanky();
+  const kong = useAnyKong();
   const music = useTrombone();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic$1();
@@ -17538,7 +17538,7 @@ const useTinyMedalInLogic$1 = () => {
   const inStage = usePlayCaves();
   const angery = useAngryCaves();
   const warpAll = useBananaportAll();
-  const kong = useTiny();
+  const kong = useAnyKong();
   const gun = useFeather();
   const move = useTwirl();
   const crystal = useMini();
@@ -17569,7 +17569,7 @@ const useTinyMedalOutLogic$1 = () => {
   const inStage = usePlayCaves();
   const angery = useAngryCaves();
   const warpAll = useBananaportAll();
-  const kong = useTiny();
+  const kong = useAnyKong();
   const gun = useFeather();
   const crystal = useMini();
   const pad = useMonkeyport();
@@ -17602,7 +17602,7 @@ const useChunkyMedalInLogic$1 = () => {
   const boulderTech = useBoulderTech();
   const slam = useSlam();
   const warpAll = useBananaportAll();
-  const kong = useChunky();
+  const kong = useAnyKong();
   const gun = usePineapple();
   const music = useTriangle();
   const move = usePunch();
@@ -17655,7 +17655,7 @@ const useChunkyMedalOutLogic$1 = () => {
   const boulderTech = useBoulderTech();
   const slam = useSlam();
   const warpAll = useBananaportAll();
-  const kong = useChunky();
+  const kong = useAnyKong();
   const gun = usePineapple();
   const music = useTriangle();
   const move = usePunch();
