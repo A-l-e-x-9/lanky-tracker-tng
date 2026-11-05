@@ -1,4 +1,4 @@
-import { useBlast, useBongos, useCoconut, useDive, useDk, useLanky } from '@renderer/hooks/kongs'
+import { useBlast, useBongos, useCoconut, useDive, useAnyKong, useLanky } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useGalleonLighthousePlatform,
@@ -22,7 +22,7 @@ export const useDkMedalInLogic = (): number => {
   const inStage = usePlayGalleon()
   const canSlam = useSlamGalleon()
   const lighthousePlatform = useGalleonLighthousePlatform()
-  const kong = useDk()
+  const kong = useAnyKong()
   const gun = useCoconut()
   const pad = useBlast()
   const shuffleBananas = useShuffleColoredBananas()
@@ -74,7 +74,7 @@ export const useDkMedalOutLogic = (): number => {
   const inStage = usePlayGalleon()
   const canSlam = useSlamGalleon()
   const lighthousePlatform = useGalleonLighthousePlatform()
-  const kong = useDk()
+  const kong = useAnyKong()
   const gun = useCoconut()
   const pad = useBlast()
   const shuffleBananas = useShuffleColoredBananas()

@@ -1,4 +1,4 @@
-import { useChunky, useDive, usePineapple, usePunch, useSlam } from '@renderer/hooks/kongs'
+import { useAnyKong, useDive, usePineapple, usePunch, useSlam } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useGalleonCannon,
@@ -42,7 +42,7 @@ export const useChunkyMedalInLogic = (): number => {
   const seasick = useGalleonSeasickShip()
   const cavernTop = useGalleonCavernTop()
   const slam = useSlam()
-  const kong = useChunky()
+  const kong = useAnyKong()
   const move = usePunch()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useChunkyMedalCommonLogic()
@@ -78,7 +78,7 @@ export const useChunkyMedalOutLogic = (): number => {
   const seasick = useGalleonSeasickShip()
   const cavernTop = useGalleonCavernTop()
   const slam = useSlam()
-  const kong = useChunky()
+  const kong = useAnyKong()
   const move = usePunch()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useChunkyMedalCommonLogic()

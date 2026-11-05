@@ -4,7 +4,7 @@ import {
   useDive,
   useGrape,
   useHighGrab,
-  useLanky,
+  useAnyKong,
   usePunch,
   useSpring,
   useTiny,
@@ -59,7 +59,7 @@ export const useLankyMedalInLogic = (): number => {
   const inStage = usePlayGalleon()
   const treasureRoom = useGalleonTreasureRoom()
   const highTide = useGalleonHighTide()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const pad = useBalloon()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useLankyMedalCommonLogic()
@@ -87,7 +87,7 @@ export const useLankyMedalOutLogic = (): number => {
   const inStage = usePlayGalleon()
   const treasureRoom = useGalleonTreasureRoom()
   const highGrab = useHighGrab()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const diddy = useDiddy()
   const spring = useSpring()
   const tiny = useTiny()

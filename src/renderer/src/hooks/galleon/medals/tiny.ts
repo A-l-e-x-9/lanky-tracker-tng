@@ -1,4 +1,4 @@
-import { useDive, useFeather, useMini, useSax, useTiny } from '@renderer/hooks/kongs'
+import { useDive, useFeather, useMini, useSax, useAnyKong } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useGalleonCannon,
@@ -52,7 +52,7 @@ export const useTinyMedalInLogic = (): number => {
   const inStage = usePlayGalleon()
   const treasureRoom = useGalleonTreasureRoom()
   const cavernTop = useGalleonCavernTop()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const gun = useFeather()
   const crystal = useMini()
   const shuffleBananas = useShuffleColoredBananas()
@@ -86,7 +86,7 @@ export const useTinyMedalOutLogic = (): number => {
   const inStage = usePlayGalleon()
   const treasureRoom = useGalleonTreasureRoom()
   const cavernTop = useGalleonCavernTop()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const gun = useFeather()
   const crystal = useMini()
   const shuffleBananas = useShuffleColoredBananas()
