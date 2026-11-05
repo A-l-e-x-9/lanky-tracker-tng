@@ -1,4 +1,4 @@
-import { useClimbing, useFeather, useMini, useTiny } from '@renderer/hooks/kongs'
+import { useClimbing, useFeather, useMini, useAnyKong } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useJapesHive,
@@ -16,7 +16,7 @@ export const useTinyMedalInLogic = (): number => {
   const canSlam = useSlamJapes()
   const haveRambiCage = useJapesRambi()
   const kongGates = useJapesKongGates()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const gun = useFeather()
   const mini = useMini()
   const climbing = useClimbing()

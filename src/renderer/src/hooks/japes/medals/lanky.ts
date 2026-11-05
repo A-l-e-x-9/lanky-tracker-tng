@@ -1,4 +1,4 @@
-import { useClimbing, useDive, useGrape, useLanky, useStand } from '@renderer/hooks/kongs'
+import { useClimbing, useDive, useGrape, useAnyKong, useStand } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useJapesKongGates,
@@ -46,7 +46,7 @@ export const useLankyMedalInLogic = (): number => {
   const kongGates = useJapesKongGates()
   const japesPaintingOutside = useJapesPaintingOutside()
   const japesPaintingInside = useJapesPainting()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const gun = useGrape()
   const move = useStand()
   const shuffleBananas = useShuffleColoredBananas()
@@ -84,7 +84,7 @@ export const useLankyMedalOutLogic = (): number => {
   const kongGates = useJapesKongGates()
   const japesPaintingOutside = useJapesPaintingOutside()
   const japesPaintingInside = useJapesPainting()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const gun = useGrape()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useLankyMedalCommonLogic()

@@ -1,4 +1,4 @@
-import { useBlast, useClimbing, useCoconut, useDk, useVine } from '@renderer/hooks/kongs'
+import { useBlast, useClimbing, useCoconut, useAnyKong, useVine } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas, useBananaportAll } from '@renderer/hooks/settings'
 import { useJapesKongGates, useJapesRambi, usePlayJapes, usePortalNearDiddy } from '..'
 
@@ -6,7 +6,7 @@ export const useDkMedalInLogic = (): number => {
   const inStage = usePlayJapes()
   const haveRambiCage = useJapesRambi()
   const kongGates = useJapesKongGates()
-  const kong = useDk()
+  const kong = useAnyKong()
   const vine = useVine()
   const pad = useBlast()
   const gun = useCoconut()
@@ -62,7 +62,7 @@ export const useDkMedalOutLogic = (): number => {
   const inStage = usePlayJapes()
   const haveRambiCage = useJapesRambi()
   const kongGates = useJapesKongGates()
-  const kong = useDk()
+  const kong = useAnyKong()
   const vine = useVine()
   const pad = useBlast()
   const gun = useCoconut()

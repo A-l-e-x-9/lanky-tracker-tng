@@ -1,4 +1,4 @@
-import { useBarrel, useChunky, useClimbing, useHunky, usePineapple } from '@renderer/hooks/kongs'
+import { useBarrel, useAnyKong, useClimbing, useHunky, usePineapple } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas, useBananaportAll } from '@renderer/hooks/settings'
 import {
   useJapesHive,
@@ -12,7 +12,7 @@ const useChunkyMedalCommonLogic = (): number => {
   const inStage = usePlayJapes()
   const haveRambiCage = useJapesRambi()
   const underground = useJapesUnderground()
-  const kong = useChunky()
+  const kong = useAnyKong()
   const barrel = useBarrel()
   const gun = usePineapple()
   const kongGates = useJapesKongGates()
@@ -58,7 +58,7 @@ const useChunkyMedalCommonLogic = (): number => {
 
 export const useChunkyMedalInLogic = (): number => {
   const inStage = usePlayJapes()
-  const kong = useChunky()
+  const kong = useAnyKong()
   const hiveGate = useJapesHive()
   const crystal = useHunky()
   const shuffleBananas = useShuffleColoredBananas()
@@ -84,7 +84,7 @@ export const useChunkyMedalInLogic = (): number => {
 
 export const useChunkyMedalOutLogic = (): number => {
   const inStage = usePlayJapes()
-  const kong = useChunky()
+  const kong = useAnyKong()
   const hiveGate = useJapesHive()
   const crystal = useHunky()
   const shuffleBananas = useShuffleColoredBananas()

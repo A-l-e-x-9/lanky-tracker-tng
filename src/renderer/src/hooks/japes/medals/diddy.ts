@@ -1,4 +1,4 @@
-import { useCharge, useClimbing, useDiddy, useDive, useHighGrab, usePeanut } from '@renderer/hooks/kongs'
+import { useCharge, useClimbing, useAnyKong, useDive, useHighGrab, usePeanut } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas, useBananaportAll } from '@renderer/hooks/settings'
 import { useJapesKongGates, useJapesRambi, useJapesSideArea, usePlayJapes, useSlamJapes, usePortalNearDiddy } from '..'
 
@@ -46,7 +46,7 @@ const useDiddyMedalCommonLogic = (): number => {
 export const useDiddyMedalInLogic = (): number => {
   const inStage = usePlayJapes()
   const canSlam = useSlamJapes()
-  const kong = useDiddy()
+  const kong = useAnyKong()
   const gun = usePeanut()
   const move = useCharge()
   const shuffleBananas = useShuffleColoredBananas()
@@ -74,7 +74,7 @@ export const useDiddyMedalInLogic = (): number => {
 
 export const useDiddyMedalOutLogic = (): number => {
   const inStage = usePlayJapes()
-  const kong = useDiddy()
+  const kong = useAnyKong()
   const gun = usePeanut()
   const highGrab = useHighGrab()
   const shuffleBananas = useShuffleColoredBananas()
