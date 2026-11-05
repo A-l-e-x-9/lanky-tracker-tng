@@ -14714,7 +14714,7 @@ const useDkMedalCommonLogic$4 = () => {
 const useDkMedalInLogic$4 = () => {
   const inStage = usePlayFactory();
   const production = useFactoryProductionEnabled();
-  const kong = useDk();
+  const kong = useAnyKong();
   const strong = useStrong();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic$4();
@@ -14735,7 +14735,7 @@ const useDkMedalInLogic$4 = () => {
 const useDkMedalOutLogic$4 = () => {
   const inStage = usePlayFactory();
   const production = useFactoryProductionEnabled();
-  const kong = useDk();
+  const kong = useAnyKong();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDkMedalCommonLogic$4();
   if (!inStage.out) {
@@ -14776,7 +14776,7 @@ const useDiddyMedalCommonLogic$4 = () => {
 const useDiddyMedalInLogic$4 = () => {
   const inStage = usePlayFactory();
   const testing = useFactoryTesting();
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const pad = useSpring();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDiddyMedalCommonLogic$4();
@@ -14797,7 +14797,7 @@ const useDiddyMedalInLogic$4 = () => {
 const useDiddyMedalOutLogic$4 = () => {
   const inStage = usePlayFactory();
   const testing = useFactoryTesting();
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const highGrab = useHighGrab();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useDiddyMedalCommonLogic$4();
@@ -14839,7 +14839,7 @@ const useLankyMedalCommonLogic$4 = () => {
 const useLankyMedalInLogic$4 = () => {
   const inStage = usePlayFactory();
   const production = useFactoryProductionEnabled();
-  const kong = useLanky();
+  const kong = useAnyKong();
   const move = useStand();
   const shuffleBananas = useShuffleColoredBananas();
   const canReachFoyerFromStorage = useFoyerFromStorage();
@@ -14866,7 +14866,7 @@ const useLankyMedalInLogic$4 = () => {
 };
 const useLankyMedalOutLogic$4 = () => {
   const inStage = usePlayFactory();
-  const kong = useLanky();
+  const kong = useAnyKong();
   const shuffleBananas = useShuffleColoredBananas();
   const canReachFoyerFromStorage = useFoyerFromStorage();
   let bananas = useLankyMedalCommonLogic$4();
@@ -14918,7 +14918,7 @@ const useTinyMedalCommonLogic$4 = () => {
 const useTinyMedalInLogic$4 = () => {
   const inStage = usePlayFactory();
   const prodTop = useFactoryProductionTop();
-  const kong = useTiny();
+  const kong = useAnyKong();
   const move = useTwirl();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useTinyMedalCommonLogic$4();
@@ -14939,7 +14939,7 @@ const useTinyMedalInLogic$4 = () => {
 const useTinyMedalOutLogic$4 = () => {
   const inStage = usePlayFactory();
   const prodTop = useFactoryProductionTop();
-  const kong = useTiny();
+  const kong = useAnyKong();
   const dk2 = useDk();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useTinyMedalCommonLogic$4();
@@ -14961,7 +14961,7 @@ const useChunkyMedalInLogic$4 = () => {
   const inStage = usePlayFactory();
   const testing = useFactoryTesting();
   const prodTop = useFactoryProductionTop();
-  const kong = useChunky();
+  const kong = useAnyKong();
   const gun = usePineapple();
   const music = useTriangle();
   const move = usePunch();
@@ -15003,7 +15003,7 @@ const useChunkyMedalOutLogic$4 = () => {
   const inStage = usePlayFactory();
   const testing = useFactoryTesting();
   const prodTop = useFactoryProductionTop();
-  const kong = useChunky();
+  const kong = useAnyKong();
   const gun = usePineapple();
   const music = useTriangle();
   const move = usePunch();
