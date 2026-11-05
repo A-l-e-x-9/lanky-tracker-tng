@@ -12289,7 +12289,7 @@ const useCannons = () => {
   return hasCannons;
 };
 const useDkMedalInLogic$7 = () => {
-  const kong = useDk();
+  const kong = useAnyKong();
   const gun = useCoconut();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = 0;
@@ -12300,7 +12300,7 @@ const useDkMedalInLogic$7 = () => {
 };
 const useDkMedalOutLogic$7 = () => useDkMedalInLogic$7();
 const useDiddyMedalInLogic$7 = () => {
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const gun = usePeanut();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = 0;
@@ -12310,7 +12310,7 @@ const useDiddyMedalInLogic$7 = () => {
   return bananas;
 };
 const useDiddyMedalOutLogic$7 = () => {
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const gun = usePeanut();
   const highGrab = useHighGrab();
   const shuffleBananas = useShuffleColoredBananas();
@@ -12327,7 +12327,7 @@ const useDiddyMedalOutLogic$7 = () => {
   return bananas;
 };
 const useLankyMedalInLogic$7 = () => {
-  const kong = useLanky();
+  const kong = useAnyKong();
   const gun = useGrape();
   const move = useStand();
   const shuffleBananas = useShuffleColoredBananas();
@@ -12338,7 +12338,7 @@ const useLankyMedalInLogic$7 = () => {
   return bananas;
 };
 const useLankyMedalOutLogic$7 = () => {
-  const kong = useLanky();
+  const kong = useAnyKong();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = 0;
   if (!kong) {
@@ -12350,7 +12350,7 @@ const useLankyMedalOutLogic$7 = () => {
   return bananas;
 };
 const useTinyMedalInLogic$7 = () => {
-  const kong = useTiny();
+  const kong = useAnyKong();
   const gun = useFeather();
   const mini = useMini();
   const shuffleBananas = useShuffleColoredBananas();
@@ -12362,7 +12362,7 @@ const useTinyMedalInLogic$7 = () => {
 };
 const useTinyMedalOutLogic$7 = () => useTinyMedalInLogic$7();
 const useChunkyMedalInLogic$7 = () => {
-  const kong = useChunky();
+  const kong = useAnyKong();
   const barrel = useBarrel();
   const crystal = useHunky();
   const gun = usePineapple();
@@ -15488,7 +15488,7 @@ const useDkMedalInLogic$3 = () => {
   const inStage = usePlayGalleon();
   const canSlam = useSlamGalleon();
   const lighthousePlatform = useGalleonLighthousePlatform();
-  const kong = useDk();
+  const kong = useAnyKong();
   const gun = useCoconut();
   const pad = useBlast();
   const shuffleBananas = useShuffleColoredBananas();
@@ -15535,7 +15535,7 @@ const useDkMedalOutLogic$3 = () => {
   const inStage = usePlayGalleon();
   const canSlam = useSlamGalleon();
   const lighthousePlatform = useGalleonLighthousePlatform();
-  const kong = useDk();
+  const kong = useAnyKong();
   const gun = useCoconut();
   const pad = useBlast();
   const shuffleBananas = useShuffleColoredBananas();
@@ -15601,7 +15601,7 @@ const useDiddyMedalInLogic$3 = () => {
   const inStage = usePlayGalleon();
   const lighthousePlatform = useGalleonLighthousePlatform();
   const treasureRoom = useGalleonTreasureRoom();
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const gun = usePeanut();
   const crystal = useRocket();
   const shuffleBananas = useShuffleColoredBananas();
@@ -15632,7 +15632,7 @@ const useDiddyMedalOutLogic$3 = () => {
   const inStage = usePlayGalleon();
   const lighthousePlatform = useGalleonLighthousePlatform();
   const treasureRoom = useGalleonTreasureRoom();
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const gun = usePeanut();
   const crystal = useRocket();
   const shuffleBananas = useShuffleColoredBananas();
@@ -15695,7 +15695,7 @@ const useLankyMedalInLogic$3 = () => {
   const inStage = usePlayGalleon();
   const treasureRoom = useGalleonTreasureRoom();
   const highTide = useGalleonHighTide();
-  const kong = useLanky();
+  const kong = useAnyKong();
   const pad = useBalloon();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useLankyMedalCommonLogic$3();
@@ -15720,7 +15720,7 @@ const useLankyMedalOutLogic$3 = () => {
   const inStage = usePlayGalleon();
   const treasureRoom = useGalleonTreasureRoom();
   const highGrab = useHighGrab();
-  const kong = useLanky();
+  const kong = useAnyKong();
   const diddy = useDiddy();
   const spring = useSpring();
   const tiny = useTiny();
@@ -15778,7 +15778,7 @@ const useTinyMedalInLogic$3 = () => {
   const inStage = usePlayGalleon();
   const treasureRoom = useGalleonTreasureRoom();
   const cavernTop = useGalleonCavernTop();
-  const kong = useTiny();
+  const kong = useAnyKong();
   const gun = useFeather();
   const crystal = useMini();
   const shuffleBananas = useShuffleColoredBananas();
@@ -15809,7 +15809,7 @@ const useTinyMedalOutLogic$3 = () => {
   const inStage = usePlayGalleon();
   const treasureRoom = useGalleonTreasureRoom();
   const cavernTop = useGalleonCavernTop();
-  const kong = useTiny();
+  const kong = useAnyKong();
   const gun = useFeather();
   const crystal = useMini();
   const shuffleBananas = useShuffleColoredBananas();
@@ -15866,7 +15866,7 @@ const useChunkyMedalInLogic$3 = () => {
   const seasick = useGalleonSeasickShip();
   const cavernTop = useGalleonCavernTop();
   const slam = useSlam();
-  const kong = useChunky();
+  const kong = useAnyKong();
   const move = usePunch();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useChunkyMedalCommonLogic$1();
@@ -15899,7 +15899,7 @@ const useChunkyMedalOutLogic$3 = () => {
   const seasick = useGalleonSeasickShip();
   const cavernTop = useGalleonCavernTop();
   const slam = useSlam();
-  const kong = useChunky();
+  const kong = useAnyKong();
   const move = usePunch();
   const shuffleBananas = useShuffleColoredBananas();
   let bananas = useChunkyMedalCommonLogic$1();
