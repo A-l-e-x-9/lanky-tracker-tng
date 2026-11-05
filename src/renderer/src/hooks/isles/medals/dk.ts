@@ -1,8 +1,8 @@
-import { useCoconut, useDk } from '@renderer/hooks/kongs'
+import { useCoconut, useAnyKong } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 
 export const useDkMedalInLogic = (): number => {
-  const kong = useDk()
+  const kong = useAnyKong()
   const gun = useCoconut()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = 0

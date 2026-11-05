@@ -1,8 +1,8 @@
-import { useFeather, useMini, useTiny } from '@renderer/hooks/kongs'
+import { useFeather, useMini, useAnyKong } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 
 export const useTinyMedalInLogic = (): number => {
-  const kong = useTiny()
+  const kong = useAnyKong()
   const gun = useFeather()
   const mini = useMini()
   const shuffleBananas = useShuffleColoredBananas()
