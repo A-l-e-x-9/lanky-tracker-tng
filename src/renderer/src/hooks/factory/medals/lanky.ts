@@ -1,4 +1,4 @@
-import { useGrape, useLanky, useStand, useTrombone } from '@renderer/hooks/kongs'
+import { useGrape, useAnyKong, useStand, useTrombone } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useFactoryProductionEnabled,
@@ -35,7 +35,7 @@ const useLankyMedalCommonLogic = (): number => {
 export const useLankyMedalInLogic = (): number => {
   const inStage = usePlayFactory()
   const production = useFactoryProductionEnabled()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const move = useStand()
   const shuffleBananas = useShuffleColoredBananas()
   const canReachFoyerFromStorage = useFoyerFromStorage()
@@ -67,7 +67,7 @@ export const useLankyMedalInLogic = (): number => {
 
 export const useLankyMedalOutLogic = (): number => {
   const inStage = usePlayFactory()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const shuffleBananas = useShuffleColoredBananas()
   const canReachFoyerFromStorage = useFoyerFromStorage()
   let bananas = useLankyMedalCommonLogic()

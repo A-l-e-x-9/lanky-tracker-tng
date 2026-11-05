@@ -1,4 +1,4 @@
-import { useChunky, usePineapple, usePunch, useTriangle } from '@renderer/hooks/kongs'
+import { useAnyKong, usePineapple, usePunch, useTriangle } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { useFactoryProductionTop, useFactoryTesting, usePlayFactory } from '..'
 
@@ -6,7 +6,7 @@ export const useChunkyMedalInLogic = (): number => {
   const inStage = usePlayFactory()
   const testing = useFactoryTesting()
   const prodTop = useFactoryProductionTop()
-  const kong = useChunky()
+  const kong = useAnyKong()
   const gun = usePineapple()
   const music = useTriangle()
   const move = usePunch()
@@ -52,7 +52,7 @@ export const useChunkyMedalOutLogic = (): number => {
   const inStage = usePlayFactory()
   const testing = useFactoryTesting()
   const prodTop = useFactoryProductionTop()
-  const kong = useChunky()
+  const kong = useAnyKong()
   const gun = usePineapple()
   const music = useTriangle()
   const move = usePunch()

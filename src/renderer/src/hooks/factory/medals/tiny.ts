@@ -1,4 +1,4 @@
-import { useDk, useFeather, useMini, useTiny, useTwirl, useClimbing } from '@renderer/hooks/kongs'
+import { useDk, useFeather, useMini, useAnyKong, useTwirl, useClimbing } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useFactoryProductionTop,
@@ -48,7 +48,7 @@ const useTinyMedalCommonLogic = (): number => {
 export const useTinyMedalInLogic = (): number => {
   const inStage = usePlayFactory()
   const prodTop = useFactoryProductionTop()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const move = useTwirl()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useTinyMedalCommonLogic()
@@ -73,7 +73,7 @@ export const useTinyMedalInLogic = (): number => {
 export const useTinyMedalOutLogic = (): number => {
   const inStage = usePlayFactory()
   const prodTop = useFactoryProductionTop()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const dk = useDk()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useTinyMedalCommonLogic()

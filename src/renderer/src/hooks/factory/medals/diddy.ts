@@ -1,4 +1,4 @@
-import { useDiddy, useGuitar, useHighGrab, usePeanut, useSpring, useClimbing } from '@renderer/hooks/kongs'
+import { useAnyKong, useGuitar, useHighGrab, usePeanut, useSpring, useClimbing } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { useFactoryProductionEnabled, useFactoryTesting, usePlayFactory } from '..'
 
@@ -29,7 +29,7 @@ const useDiddyMedalCommonLogic = (): number => {
 export const useDiddyMedalInLogic = (): number => {
   const inStage = usePlayFactory()
   const testing = useFactoryTesting()
-  const kong = useDiddy()
+  const kong = useAnyKong()
   const pad = useSpring()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDiddyMedalCommonLogic()
@@ -54,7 +54,7 @@ export const useDiddyMedalInLogic = (): number => {
 export const useDiddyMedalOutLogic = (): number => {
   const inStage = usePlayFactory()
   const testing = useFactoryTesting()
-  const kong = useDiddy()
+  const kong = useAnyKong()
   const highGrab = useHighGrab()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDiddyMedalCommonLogic()

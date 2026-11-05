@@ -1,4 +1,4 @@
-import { useBlast, useCoconut, useDk, useStrong } from '@renderer/hooks/kongs'
+import { useBlast, useCoconut, useAnyKong, useStrong } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { useFactoryProductionEnabled, useFactoryTesting, usePlayFactory } from '..'
 
@@ -27,7 +27,7 @@ const useDkMedalCommonLogic = (): number => {
 export const useDkMedalInLogic = (): number => {
   const inStage = usePlayFactory()
   const production = useFactoryProductionEnabled()
-  const kong = useDk()
+  const kong = useAnyKong()
   const strong = useStrong()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()
@@ -52,7 +52,7 @@ export const useDkMedalInLogic = (): number => {
 export const useDkMedalOutLogic = (): number => {
   const inStage = usePlayFactory()
   const production = useFactoryProductionEnabled()
-  const kong = useDk()
+  const kong = useAnyKong()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useDkMedalCommonLogic()
 
