@@ -1,6 +1,6 @@
 import {
   useBoulderTech,
-  useChunky,
+  useAnyKong,
   useGone,
   useHunky,
   useMini,
@@ -19,7 +19,7 @@ export const useChunkyMedalInLogic = (): number => {
   const boulderTech = useBoulderTech()
   const slam = useSlam()
   const warpAll = useBananaportAll()
-  const kong = useChunky()
+  const kong = useAnyKong()
   const gun = usePineapple()
   const music = useTriangle()
   const move = usePunch()
@@ -74,7 +74,7 @@ export const useChunkyMedalOutLogic = (): number => {
   const boulderTech = useBoulderTech()
   const slam = useSlam()
   const warpAll = useBananaportAll()
-  const kong = useChunky()
+  const kong = useAnyKong()
   const gun = usePineapple()
   const music = useTriangle()
   const move = usePunch()

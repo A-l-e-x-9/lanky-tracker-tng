@@ -1,4 +1,4 @@
-import { useDiddy, useGuitar, usePeanut, useRocket, useSpring } from '@renderer/hooks/kongs'
+import { useAnyKong, useGuitar, usePeanut, useRocket, useSpring } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas, useAngryCaves } from '@renderer/hooks/settings'
 import { useCavesIgloo, useCavesMiniFunky, usePlayCaves } from '..'
 
@@ -26,7 +26,7 @@ export const useDiddyMedalInLogic = (): number => {
   const inStage = usePlayCaves()
   const angery = useAngryCaves()
   const miniFunky = useCavesMiniFunky()
-  const kong = useDiddy()
+  const kong = useAnyKong()
   const music = useGuitar()
   const crystal = useRocket()
   const pad = useSpring()
@@ -66,7 +66,7 @@ export const useDiddyMedalOutLogic = (): number => {
   const inStage = usePlayCaves()
   const angery = useAngryCaves()
   const miniFunky = useCavesMiniFunky()
-  const kong = useDiddy()
+  const kong = useAnyKong()
   const music = useGuitar()
   const crystal = useRocket()
   const shuffleBananas = useShuffleColoredBananas()

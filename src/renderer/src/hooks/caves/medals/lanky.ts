@@ -1,4 +1,4 @@
-import { useBalloon, useGrape, useHighGrab, useLanky, useTrombone } from '@renderer/hooks/kongs'
+import { useBalloon, useGrape, useHighGrab, useAnyKong, useTrombone } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas, useAngryCaves } from '@renderer/hooks/settings'
 import { useCavesIgloo, useCavesPillar, usePlayCaves, useSlamCaves } from '..'
 
@@ -33,7 +33,7 @@ export const useLankyMedalInLogic = (): number => {
   const canSlam = useSlamCaves()
   const igloo = useCavesIgloo()
   const pillar = useCavesPillar()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const music = useTrombone()
   const pad = useBalloon()
   const shuffleBananas = useShuffleColoredBananas()
@@ -69,7 +69,7 @@ export const useLankyMedalOutLogic = (): number => {
   const igloo = useCavesIgloo()
   const pillar = useCavesPillar()
   const highGrab = useHighGrab()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const music = useTrombone()
   const shuffleBananas = useShuffleColoredBananas()
   let bananas = useLankyMedalCommonLogic()

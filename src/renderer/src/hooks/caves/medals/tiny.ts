@@ -6,7 +6,7 @@ import {
   useMonkeyport,
   usePunch,
   useSax,
-  useTiny,
+  useAnyKong,
   useTwirl
 } from '@renderer/hooks/kongs'
 import { useBananaportAll, useShuffleColoredBananas, useAngryCaves } from '@renderer/hooks/settings'
@@ -53,7 +53,7 @@ export const useTinyMedalInLogic = (): number => {
   const inStage = usePlayCaves()
   const angery = useAngryCaves()
   const warpAll = useBananaportAll()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const gun = useFeather()
   const move = useTwirl()
   const crystal = useMini()
@@ -86,7 +86,7 @@ export const useTinyMedalOutLogic = (): number => {
   const inStage = usePlayCaves()
   const angery = useAngryCaves()
   const warpAll = useBananaportAll()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const gun = useFeather()
   const crystal = useMini()
   const pad = useMonkeyport()
