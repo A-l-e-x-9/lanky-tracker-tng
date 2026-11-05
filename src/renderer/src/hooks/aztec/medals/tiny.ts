@@ -1,4 +1,4 @@
-import { useClimbing, useDive, useFeather, useMini, useTiny, useTwirl } from '@renderer/hooks/kongs'
+import { useClimbing, useDive, useFeather, useMini, useAnyKong, useTwirl } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useAztecBack,
@@ -18,7 +18,7 @@ export const useTinyMedalInLogic = (): number => {
   const llamaTemple = useAztecLlamaTemple()
   const lava = useAztecLlamaLava()
   const canSlam = useSlamAztec()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const gun = useFeather()
   const crystal = useMini()
   const move = useTwirl()
@@ -76,7 +76,7 @@ export const useTinyMedalOutLogic = (): number => {
   const tinyTemple = useAztecTinyTemple()
   const llamaTemple = useAztecLlamaTemple()
   const lava = useAztecLlamaLava()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const gun = useFeather()
   const crystal = useMini()
   const dive = useDive()

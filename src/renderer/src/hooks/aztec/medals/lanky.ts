@@ -1,4 +1,4 @@
-import { useClimbing, useDive, useGrape, useLanky, useRocket, useVine } from '@renderer/hooks/kongs'
+import { useClimbing, useDive, useGrape, useAnyKong, useRocket, useVine } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useAztec5DoorTemple,
@@ -18,7 +18,7 @@ export const useLankyMedalInLogic = (): number => {
   const llamaTemple = useAztecLlamaTemple()
   const doorTemple = useAztec5DoorTemple()
   const anyMusic = useFreeLankySwitch()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const gun = useGrape()
   const vine = useVine()
   const dive = useDive()
@@ -72,7 +72,7 @@ export const useLankyMedalOutLogic = (): number => {
   const llamaTemple = useAztecLlamaTemple()
   const doorTemple = useAztec5DoorTemple()
   const anyMusic = useFreeLankySwitch()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const gun = useGrape()
   const vine = useVine()
   const dive = useDive()

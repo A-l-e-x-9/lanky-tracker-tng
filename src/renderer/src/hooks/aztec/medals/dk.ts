@@ -1,4 +1,4 @@
-import { useCoconut, useClimbing, useDk, useStrong } from '@renderer/hooks/kongs'
+import { useCoconut, useClimbing, useAnyKong, useStrong } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useAztecBack,
@@ -14,7 +14,7 @@ export const useDkMedalInLogic = (): number => {
   const aztecBack = useAztecBack()
   const llamaTemple = useAztecLlamaTemple()
   const backTunnel = useAztecBackTunnel()
-  const kong = useDk()
+  const kong = useAnyKong()
   const gun = useCoconut()
   const crystal = useStrong()
   const hasClimb = useClimbing()
@@ -62,7 +62,7 @@ export const useDkMedalOutLogic = (): number => {
   const aztecBack = useAztecBack()
   const llamaTemple = useAztecLlamaTemple()
   const backTunnel = useAztecBackTunnel()
-  const kong = useDk()
+  const kong = useAnyKong()
   const gun = useCoconut()
   const hasClimb = useClimbing()
   const shuffleBananas = useShuffleColoredBananas()

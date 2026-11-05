@@ -1,4 +1,4 @@
-import { useDiddy, useDive, usePeanut, useRocket } from '@renderer/hooks/kongs'
+import { useAnyKong, useDive, usePeanut, useRocket } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import {
   useAztec5DoorTemple,
@@ -18,7 +18,7 @@ export const useDiddyMedalInLogic = (): number => {
   const doorTemple = useAztec5DoorTemple()
   const backTunnel = useAztecBackTunnel()
   const canSlam = useSlamAztec()
-  const kong = useDiddy()
+  const kong = useAnyKong()
   const gun = usePeanut()
   const crystal = useRocket()
   const dive = useDive()
@@ -76,7 +76,7 @@ export const useDiddyMedalOutLogic = (): number => {
   const doorTemple = useAztec5DoorTemple()
   const backTunnel = useAztecBackTunnel()
   const canSlam = useSlamAztec()
-  const kong = useDiddy()
+  const kong = useAnyKong()
   const gun = usePeanut()
   const crystal = useRocket()
   const dive = useDive()
