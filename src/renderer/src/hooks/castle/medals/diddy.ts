@@ -1,7 +1,7 @@
 import {
   useCharge,
   useCoconut,
-  useDiddy,
+  useAnyKong,
   usePeanut,
   usePineapple,
   usePunch,
@@ -39,7 +39,7 @@ const useDiddyMedalCommonLogic = (): number => {
 
 export const useDiddyMedalInLogic = (): number => {
   const inStage = usePlayCastle()
-  const kong = useDiddy()
+  const kong = useAnyKong()
   const gun = usePeanut()
   const move = useCharge()
   const crystal = useRocket()
@@ -72,7 +72,7 @@ export const useDiddyMedalOutLogic = (): number => {
   const inStage = usePlayCastle()
   const coconut = useCoconut()
   const pineapple = usePineapple()
-  const kong = useDiddy()
+  const kong = useAnyKong()
   const gun = usePeanut()
   const move = useCharge()
   const shuffleBananas = useShuffleColoredBananas()

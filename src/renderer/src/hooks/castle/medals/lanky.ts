@@ -3,7 +3,7 @@ import {
   useDiddy,
   useDk,
   useGrape,
-  useLanky,
+  useAnyKong,
   useSprint,
   useTrombone,
   useTwirl
@@ -28,7 +28,7 @@ const useLankyMedalCommonLogic = (): number => {
 export const useLankyMedalInLogic = (): number => {
   const inStage = usePlayCastle()
   const canSlam = useSlamCastle()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const gun = useGrape()
   const music = useTrombone()
   const crystal = useSprint()
@@ -58,7 +58,7 @@ export const useLankyMedalInLogic = (): number => {
 export const useLankyMedalOutLogic = (): number => {
   const inStage = usePlayCastle()
   const canSlam = useSlamCastle()
-  const kong = useLanky()
+  const kong = useAnyKong()
   const gun = useGrape()
   const music = useTrombone()
   const crystal = useSprint()

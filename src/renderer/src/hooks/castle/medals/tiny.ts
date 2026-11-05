@@ -4,7 +4,7 @@ import {
   useGrape,
   useMini,
   useMonkeyport,
-  useTiny
+  useAnyKong
 } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { usePlayCastle, useSlamCastle } from '..'
@@ -37,7 +37,7 @@ const useTinyMedalCommonLogic = (): number => {
 
 export const useTinyMedalInLogic = (): number => {
   const inStage = usePlayCastle()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const gun = useFeather()
   const shuffleBananas = useShuffleColoredBananas()
   const bananas = useTinyMedalCommonLogic()
@@ -57,7 +57,7 @@ export const useTinyMedalInLogic = (): number => {
 
 export const useTinyMedalOutLogic = (): number => {
   const inStage = usePlayCastle()
-  const kong = useTiny()
+  const kong = useAnyKong()
   const gun = useFeather()
   const grape = useGrape()
   const shuffleBananas = useShuffleColoredBananas()

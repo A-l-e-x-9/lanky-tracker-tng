@@ -1,4 +1,4 @@
-import { useBoulderTech, useChunky, usePineapple, usePunch } from '@renderer/hooks/kongs'
+import { useBoulderTech, useAnyKong, usePineapple, usePunch } from '@renderer/hooks/kongs'
 import { useShuffleColoredBananas } from '@renderer/hooks/settings'
 import { useCastleTree, usePlayCastle, useSlamCastle } from '..'
 
@@ -7,7 +7,7 @@ export const useChunkyMedalInLogic = (): number => {
   const canSlam = useSlamCastle()
   const tree = useCastleTree()
   const boulderTech = useBoulderTech()
-  const kong = useChunky()
+  const kong = useAnyKong()
   const gun = usePineapple()
   const move = usePunch()
   const shuffleBananas = useShuffleColoredBananas()
@@ -48,7 +48,7 @@ export const useChunkyMedalOutLogic = (): number => {
   const canSlam = useSlamCastle()
   const tree = useCastleTree()
   const boulderTech = useBoulderTech()
-  const kong = useChunky()
+  const kong = useAnyKong()
   const gun = usePineapple()
   const move = usePunch()
   const shuffleBananas = useShuffleColoredBananas()
