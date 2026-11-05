@@ -13811,7 +13811,7 @@ const useDkMedalInLogic$5 = () => {
   const aztecBack = useAztecBack();
   const llamaTemple = useAztecLlamaTemple();
   const backTunnel = useAztecBackTunnel();
-  const kong = useDk();
+  const kong = useAnyKong();
   const gun = useCoconut();
   const crystal = useStrong();
   const hasClimb = useClimbing();
@@ -13855,7 +13855,7 @@ const useDkMedalOutLogic$5 = () => {
   const aztecBack = useAztecBack();
   const llamaTemple = useAztecLlamaTemple();
   const backTunnel = useAztecBackTunnel();
-  const kong = useDk();
+  const kong = useAnyKong();
   const gun = useCoconut();
   const hasClimb = useClimbing();
   const shuffleBananas = useShuffleColoredBananas();
@@ -13900,7 +13900,7 @@ const useDiddyMedalInLogic$5 = () => {
   const doorTemple = useAztec5DoorTemple();
   const backTunnel = useAztecBackTunnel();
   const canSlam = useSlamAztec();
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const gun = usePeanut();
   const crystal = useRocket();
   const dive = useDive();
@@ -13954,7 +13954,7 @@ const useDiddyMedalOutLogic$5 = () => {
   const doorTemple = useAztec5DoorTemple();
   const backTunnel = useAztecBackTunnel();
   const canSlam = useSlamAztec();
-  const kong = useDiddy();
+  const kong = useAnyKong();
   const gun = usePeanut();
   const crystal = useRocket();
   const dive = useDive();
@@ -14008,7 +14008,7 @@ const useLankyMedalInLogic$5 = () => {
   const llamaTemple = useAztecLlamaTemple();
   const doorTemple = useAztec5DoorTemple();
   const anyMusic = useFreeLankySwitch();
-  const kong = useLanky();
+  const kong = useAnyKong();
   const gun = useGrape();
   const vine = useVine();
   const dive = useDive();
@@ -14058,7 +14058,7 @@ const useLankyMedalOutLogic$5 = () => {
   const llamaTemple = useAztecLlamaTemple();
   const doorTemple = useAztec5DoorTemple();
   const anyMusic = useFreeLankySwitch();
-  const kong = useLanky();
+  const kong = useAnyKong();
   const gun = useGrape();
   const vine = useVine();
   const dive = useDive();
@@ -14109,7 +14109,7 @@ const useTinyMedalInLogic$5 = () => {
   const llamaTemple = useAztecLlamaTemple();
   const lava = useAztecLlamaLava();
   const canSlam = useSlamAztec();
-  const kong = useTiny();
+  const kong = useAnyKong();
   const gun = useFeather();
   const crystal = useMini();
   const move = useTwirl();
@@ -14163,7 +14163,7 @@ const useTinyMedalOutLogic$5 = () => {
   const tinyTemple = useAztecTinyTemple();
   const llamaTemple = useAztecLlamaTemple();
   const lava = useAztecLlamaLava();
-  const kong = useTiny();
+  const kong = useAnyKong();
   const gun = useFeather();
   const crystal = useMini();
   const dive = useDive();
@@ -14212,7 +14212,7 @@ const useChunkyMedalInLogic$5 = () => {
   const iceMelted = useTinyTempleIce();
   const aztecBack = useAztecBack();
   const doorTemple = useAztec5DoorTemple();
-  const kong = useChunky();
+  const kong = useAnyKong();
   const gun = usePineapple();
   const dive = useDive();
   const shuffleBananas = useShuffleColoredBananas();
@@ -14255,7 +14255,7 @@ const useChunkyMedalOutLogic$5 = () => {
   const tinyTemple = useAztecTinyTemple();
   const aztecBack = useAztecBack();
   const doorTemple = useAztec5DoorTemple();
-  const kong = useChunky();
+  const kong = useAnyKong();
   const pineapple = usePineapple();
   const dive = useDive();
   const iceMelted = useTinyTempleIce();
