@@ -43562,6 +43562,7 @@ const MillsEnemies = () => {
   const punch = usePunch();
   const hasMiniMonkey = useMini();
   const hasClimbing = useClimbing();
+  const DKPortal = useThornvineTopPortal();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
@@ -43689,8 +43690,8 @@ const MillsEnemies = () => {
         id: 5316,
         name: "Enemy Inside Thornvine Barn",
         region: "Forest Area 1",
-        canGetLogic: night.in && strong && canSlam && klump,
-        canGetBreak: night.out && dk2 && canSlam && klump
+        canGetLogic: (night.in && strong && canSlam || DKPortal) && klump,
+        canGetBreak: (night.out && dk2 && canSlam || DKPortal) && klump
       }
     )
   ] });
