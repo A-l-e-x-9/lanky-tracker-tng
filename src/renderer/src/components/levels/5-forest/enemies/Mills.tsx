@@ -3,7 +3,7 @@ import {
   useDefeatToughEnemy,
   useDefeatZinger
 } from '@renderer/hooks/enemies'
-import { useForestDay, useForestNight, usePlayForest, useSlamForest } from '@renderer/hooks/forest'
+import { useForestDay, useForestNight, usePlayForest, useSlamForest, useThornvineTopPortal } from '@renderer/hooks/forest'
 import { useDiddy, useDk, usePunch, useStrong, useMini, useClimbing } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
@@ -20,6 +20,7 @@ const MillsEnemies: React.FC = () => {
   const punch = usePunch()
   const hasMiniMonkey = useMini()
   const hasClimbing = useClimbing()
+  const DKPortal = useThornvineTopPortal()
   return (
     <DropPool>
       <ForestCheck
@@ -110,8 +111,8 @@ const MillsEnemies: React.FC = () => {
         id={5316}
         name="Enemy Inside Thornvine Barn"
         region="Forest Area 1"
-        canGetLogic={night.in && strong && canSlam && klump}
-        canGetBreak={night.out && dk && canSlam && klump}
+        canGetLogic={((night.in && strong && canSlam) || DKPortal) && klump}
+        canGetBreak={((night.out && dk && canSlam) || DKPortal) && klump}
       />
     </DropPool>
   )
