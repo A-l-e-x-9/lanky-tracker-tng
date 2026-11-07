@@ -28,7 +28,6 @@ import fairyIcon from '../../assets/images/fairy.png'
 import keyIcon from '../../assets/images/key.png'
 import blueprintIcon from '../../assets/images/lanky_bp.png'
 import grapeIcon from '../../assets/images/lanky_gun.png'
-import companyCoinIcon from '../../assets/images/n64rw_coin.png'
 import nintendoCoinIcon from '../../assets/images/n64rw_coin_rwbw.png'
 import rarewareCoinIcon from '../../assets/images/n64rw_coin_n64bw.png'
 import pearlIcon from '../../assets/images/pearl.png'
@@ -49,9 +48,6 @@ import featherIcon from '../../assets/images/tiny_gun.png'
 import wrinkly from '../../assets/images/wrinkly.png'
 import diveIcon from '../../assets/images/diving.png'
 import koshaHead from '../../assets/images/kosha.png'
-import fairyCamIcon from '../../assets/images/film.png'
-import crankyIcon from '../../assets/images/cranky.png'
-import unknownIcon from '../../assets/images/unknown-small.png'
 import kasplatIcon from '../../assets/images/kasplat.png'
 import DKPortalIcon from '../../assets/images/dk-portal.png'
 import LZRIcon from '../../assets/images/butwherewasthekasplat.png'
@@ -74,7 +70,7 @@ const GeneratorSettings: React.FC = () => {
 
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
-  const [isKeySeed, isKey8Seed, isKey38Seed, isKremKaptureSeed, isRapSeed, isChallengeSeed, isWabbitSeed, isGBSeed, isBPSeed, isCoCoinSeed, isMedalSeed, isCrownSeed, isFairySeed, isRainbowSeed, isBeanSeed, isPearlSeed, isBossSeed, isBonusSeed] = useDonkStore(useShallow((state) => [state.winCondition.bossKeys, state.winCondition.key8, state.winCondition.key3And8, state.winCondition.kremlingKapture, state.winCondition.takeItToTheFridge, state.winCondition.kRoolChallenge, state.winCondition.killTheWabbit, state.winCondition.goldBananas, state.winCondition.blueprints, state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.crowns, state.winCondition.fairies, state.winCondition.rainbowCoins, state.winCondition.theBean, state.winCondition.pearls, state.winCondition.bosses, state.winCondition.bonuses]))
+  const [isWabbitSeed, isGBSeed, isBPSeed, isCoCoinSeed, isMedalSeed, isCrownSeed, isFairySeed, isRainbowSeed, isBeanSeed, isPearlSeed, isBossSeed, isBonusSeed] = useDonkStore(useShallow((state) => [state.winCondition.killTheWabbit, state.winCondition.goldBananas, state.winCondition.blueprints, state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.crowns, state.winCondition.fairies, state.winCondition.rainbowCoins, state.winCondition.theBean, state.winCondition.pearls, state.winCondition.bosses, state.winCondition.bonuses]))
   const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier))
 
   return (
@@ -350,7 +346,7 @@ const GeneratorSettings: React.FC = () => {
               />
               <p>Tasks</p>
               <SimpleRadioIcon
-                imgUrl={hardShootIcon}
+                imgUrl={DKPortalIcon}
                 title="Adds a &quot;K. Rool's Kontracts&quot; section to the left navbar. You can then select up to eight further win cons."
                 storeKey="kontracts"
                 prefix="winCondition"
