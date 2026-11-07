@@ -1309,36 +1309,43 @@ export type PortalSlice = PortalState & PortalActions
 
 //Begin shuffled Simian Slam region
 interface japesSlam {
+  noSlam: boolean
   greenSlam: boolean
   blueSlam: boolean
   redSlam: boolean
 }
 interface aztecSlam {
+  noSlam: boolean
   greenSlam: boolean
   blueSlam: boolean
   redSlam: boolean
 }
 interface factorySlam {
+  noSlam: boolean
   greenSlam: boolean
   blueSlam: boolean
   redSlam: boolean
 }
 interface galleonSlam {
+  noSlam: boolean
   greenSlam: boolean
   blueSlam: boolean
   redSlam: boolean
 }
 interface forestSlam {
+  noSlam: boolean
   greenSlam: boolean
   blueSlam: boolean
   redSlam: boolean
 }
 interface cavesSlam {
+  noSlam: boolean
   greenSlam: boolean
   blueSlam: boolean
   redSlam: boolean
 }
 interface castleSlam {
+  noSlam: boolean
   greenSlam: boolean
   blueSlam: boolean
   redSlam: boolean

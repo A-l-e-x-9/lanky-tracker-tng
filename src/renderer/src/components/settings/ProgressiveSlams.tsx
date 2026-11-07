@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Modal from 'react-modal'
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
+import noSlamIcon from '@renderer/assets/images/slam1-bw.png'
 import greenSlamIcon from '@renderer/assets/images/slam1.png'
 import blueSlamIcon from '@renderer/assets/images/slam2.png'
 import redSlamIcon from '@renderer/assets/images/slam3.png'
@@ -36,9 +37,17 @@ const SlamShuffler: React.FC = () => {
       >
         <section className="modal-settings">
         <h2>Progressive Slam Shuffler</h2>
+        <p>For any level that's set to "No Slam", you can simply step on Simian Slam switches to press them, à la <em>Banjo-Tooie</em>. You will still need the appropriate Kong, however.</p>
           <section className="pool">
             <p>Slam level for Jungle Japes:</p>
             <SimpleRadioIcon
+                imgUrl={noSlamIcon}
+                title="No slam"
+                storeKey="noSlam"
+                prefix="japesSlam"
+                updateItem={setJapesSlam}
+            />
+            <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
                 title="Simian Slam"
                 storeKey="greenSlam"
@@ -59,10 +68,16 @@ const SlamShuffler: React.FC = () => {
                 prefix="japesSlam"
                 updateItem={setJapesSlam}
             />
-            <p></p>
             <p></p>
             <p>Slam level for Angry Aztec:</p>
             <SimpleRadioIcon
+                imgUrl={noSlamIcon}
+                title="No slam"
+                storeKey="noSlam"
+                prefix="aztecSlam"
+                updateItem={setAztecSlam}
+            />
+            <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
                 title="Simian Slam"
                 storeKey="greenSlam"
@@ -83,10 +98,16 @@ const SlamShuffler: React.FC = () => {
                 prefix="aztecSlam"
                 updateItem={setAztecSlam}
             />
-            <p></p>
             <p></p>
             <p>Slam level for Frantic Factory:</p>
             <SimpleRadioIcon
+                imgUrl={noSlamIcon}
+                title="No slam"
+                storeKey="noSlam"
+                prefix="factorySlam"
+                updateItem={setFactorySlam}
+            />
+            <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
                 title="Simian Slam"
                 storeKey="greenSlam"
@@ -107,10 +128,16 @@ const SlamShuffler: React.FC = () => {
                 prefix="factorySlam"
                 updateItem={setFactorySlam}
             />
-            <p></p>
             <p></p>
             <p>Slam level for Gloomy Galleon (and the Chunky switch in its lobby):</p>
             <SimpleRadioIcon
+                imgUrl={noSlamIcon}
+                title="No slam"
+                storeKey="noSlam"
+                prefix="galleonSlam"
+                updateItem={setGalleonSlam}
+            />
+            <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
                 title="Simian Slam"
                 storeKey="greenSlam"
@@ -131,10 +158,16 @@ const SlamShuffler: React.FC = () => {
                 prefix="galleonSlam"
                 updateItem={setGalleonSlam}
             />
-            <p></p>
             <p></p>
             <p>Slam level for Fungi Forest:</p>
             <SimpleRadioIcon
+                imgUrl={noSlamIcon}
+                title="No slam"
+                storeKey="noSlam"
+                prefix="forestSlam"
+                updateItem={setForestSlam}
+            />
+            <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
                 title="Simian Slam"
                 storeKey="greenSlam"
@@ -155,10 +188,16 @@ const SlamShuffler: React.FC = () => {
                 prefix="forestSlam"
                 updateItem={setForestSlam}
             />
-            <p></p>
             <p></p>
             <p>Slam level for Crystal Caves:</p>
             <SimpleRadioIcon
+                imgUrl={noSlamIcon}
+                title="No slam"
+                storeKey="noSlam"
+                prefix="cavesSlam"
+                updateItem={setCavesSlam}
+            />
+            <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
                 title="Simian Slam"
                 storeKey="greenSlam"
@@ -179,10 +218,16 @@ const SlamShuffler: React.FC = () => {
                 prefix="cavesSlam"
                 updateItem={setCavesSlam}
             />
-            <p></p>
             <p></p>
             <p>Slam level for Creepy Castle:</p>
             <SimpleRadioIcon
+                imgUrl={noSlamIcon}
+                title="No slam"
+                storeKey="noSlam"
+                prefix="castleSlam"
+                updateItem={setCastleSlam}
+            />
+            <SimpleRadioIcon
                 imgUrl={greenSlamIcon}
                 title="Simian Slam"
                 storeKey="greenSlam"
@@ -203,7 +248,6 @@ const SlamShuffler: React.FC = () => {
                 prefix="castleSlam"
                 updateItem={setCastleSlam}
             />
-            <p></p>
             <p></p>
           </section>
         </section>

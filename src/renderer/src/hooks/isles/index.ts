@@ -34,6 +34,7 @@ import {
   useSax,
   useShockwave,
   useSlam,
+  useNoSlam,
   useSniper,
   useSpring,
   useSprint,
@@ -451,6 +452,7 @@ export const usePlayLobby = (level: Level): LogicBool => {
 
 export const useSlamLevel = (level: Level): boolean => {
   const canPlay = usePlayLevel(level)
+  const noSlam = useNoSlam()
   const slam = useSlam()
   const superSlam = useSuperSlam()
   const duperSlam = useSuperDuperSlam()
@@ -479,67 +481,81 @@ export const useSlamLevel = (level: Level): boolean => {
     switch (level) {
       case 'Jungle Japes':
         switch (true) {
+          case japesSlam.greenSlam:
+            return slam
           case japesSlam.blueSlam:
             return superSlam
           case japesSlam.redSlam:
             return duperSlam
           default:
-            return slam
+            return noSlam
         }
       case 'Angry Aztec':
         switch (true) {
+          case aztecSlam.greenSlam:
+            return slam
           case aztecSlam.blueSlam:
             return superSlam
           case aztecSlam.redSlam:
             return duperSlam
           default:
-            return slam
+            return noSlam
         }
       case 'Frantic Factory':
         switch (true) {
+          case factorySlam.greenSlam:
+            return slam
           case factorySlam.blueSlam:
             return superSlam
           case factorySlam.redSlam:
             return duperSlam
           default:
-            return slam
+            return noSlam
         }
       case 'Gloomy Galleon':
       case 'DK Isles':
         switch (true) {
+          case galleonSlam.greenSlam:
+            return slam
           case galleonSlam.blueSlam:
             return superSlam
           case galleonSlam.redSlam:
             return duperSlam
           default:
-            return slam
+            return noSlam
         }
       case 'Fungi Forest':
         switch (true) {
+          case forestSlam.greenSlam:
+            return slam
           case forestSlam.blueSlam:
             return superSlam
           case forestSlam.redSlam:
             return duperSlam
           default:
-            return slam
+            return noSlam
         }
       case 'Crystal Caves':
         switch (true) {
+          case cavesSlam.greenSlam:
+            return slam
           case cavesSlam.blueSlam:
             return superSlam
           case cavesSlam.redSlam:
             return duperSlam
           default:
-            return slam
+            return noSlam
         }
       case 'Creepy Castle':
         switch (true) {
+          case castleSlam.greenSlam:
+            return slam
           case castleSlam.blueSlam:
             return superSlam
           case castleSlam.redSlam:
             return duperSlam
           default:
-            return slam
+            return noSlam
         }
       default:
         return false

@@ -20,12 +20,14 @@ const slamToIcon = (num: number): string => {
 
 const slamName = (num: number): string => {
   switch (num) {
+    case 1:
+      return "Simian Slam"
     case 2:
       return "Super Simian Slam"
     case 3:
       return "Super Duper Simian Slam"
     default:
-      return "Simian Slam"
+      return "No slam"
   }
 }
 

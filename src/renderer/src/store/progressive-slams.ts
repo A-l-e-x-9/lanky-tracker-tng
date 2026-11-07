@@ -3,36 +3,43 @@ import { AllSlice, SlamSlice, SlamState, donkResetFns } from './common'
 
 export const initialSlam: SlamState = {
   japesSlam: {
+    noSlam: false,
     greenSlam: true,
     blueSlam: false,
     redSlam: false
   },
   aztecSlam: {
+    noSlam: false,
     greenSlam: true,
     blueSlam: false,
     redSlam: false
   },
   factorySlam: {
+    noSlam: false,
     greenSlam: true,
     blueSlam: false,
     redSlam: false
   },
   galleonSlam: {
+    noSlam: false,
     greenSlam: true,
     blueSlam: false,
     redSlam: false
   },
   forestSlam: {
+    noSlam: false,
     greenSlam: false,
     blueSlam: true,
     redSlam: false
   },
   cavesSlam: {
+    noSlam: false,
     greenSlam: false,
     blueSlam: true,
     redSlam: false
   },
   castleSlam: {
+    noSlam: false,
     greenSlam: false,
     blueSlam: false,
     redSlam: true

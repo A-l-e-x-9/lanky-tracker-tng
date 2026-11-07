@@ -279,6 +279,12 @@ export const useSlam = (): boolean => {
   return slam != 0
 }
 
+/*On the flipside, if this is a Season 6 seed and we set a level in the Progressive Slam Shuffler to "No Slam", do we not need a slam?*/
+export const useNoSlam = (): boolean => {
+  const slam = useDonkStore(useShallow((state) => state.moves.slam))
+  return slam === 0
+}
+
 /**
  * Can we do the super simian slam, pounding blue switches?
  * @returns true if we have the super simian slam.
