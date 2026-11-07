@@ -380,6 +380,12 @@ export interface SwitchsanitySwitches {
    * If all bananawarps are pre-activated, this check is pointless.
    */
   forestBean2: PearlRange
+  //New to Season 6: Who takes down the gongs in Aztec Lobby for a Bonus Barrel check there (irrelevant if Auto-Finish Bonuses is on)
+  islesAztecGongs: IntRange<0, 2>
+  //How about the left wall in Caves Lobby?
+  islesCavesLeft: IntRange<0, 2>  
+  //Or the right?
+  islesCavesRight: IntRange<0, 2>
 }
 
 export interface SwitchState {

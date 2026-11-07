@@ -636,12 +636,28 @@ export const useCheckDkMusicPad = (): LogicBool => {
 export const useCheckDkCavesLobby = (): LogicBool => {
   const playCaves = usePlayLobby('Crystal Caves')
   const punch = usePunch()
+  const hasCharge = useCharge()
   const strong = useStrong()
   const twirl = useTwirl()
-  const orange = useOrange()
-  return {
-    in: playCaves.in && punch && strong,
-    out: (playCaves.in || playCaves.out) && punch && (twirl || orange)
+  const orangeYourself = useOrange()
+  const switchsanity1 = useDonkStore(useShallow((state) => state.switchsanitySwitches.islesCavesLeft))
+  const switchsanity2 = useDonkStore(useShallow((state) => state.switchsanitySwitches.islesCavesRight))
+  switch (switchsanity1 && switchsanity2) {
+  case 0 && 0:
+    return {
+      in: playCaves.in && hasCharge && strong,
+      out: playCaves.out && hasCharge && (twirl || orangeYourself)
+    }
+  case 1 && 1:
+    return {
+      in: playCaves.in && punch && strong,
+      out: playCaves.out && punch && (twirl || orangeYourself)
+    }
+  default:
+    return {
+      in: playCaves.in && punch && hasCharge && strong,
+      out: playCaves.out && punch && hasCharge && (twirl || orangeYourself)
+    }
   }
 }
 
@@ -752,10 +768,20 @@ export const useCheckTinyAztecLobby = (): LogicBool => {
   const autoBonus = useAutoBonus()
   const twirl = useTwirl()
   const charge = useCharge()
+  const hasPunch = usePunch()
   const anyKong = useAnyKong()
-  return {
-    in: playAztec.in && ((anyKong && autoBonus) || (charge && twirl)),
-    out: (playAztec.in || playAztec.out) && ((anyKong && autoBonus) || charge)
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.islesAztecGongs))
+  switch (switchsanity) {
+  case 1:
+    return {
+      in: playAztec.in && ((anyKong && autoBonus) || (hasPunch && twirl)),
+      out: playAztec.out && ((anyKong && autoBonus) || charge)
+    }  
+  default:
+    return {
+      in: playAztec.in && ((anyKong && autoBonus) || (charge && twirl)),
+      out: playAztec.out && ((anyKong && autoBonus) || charge)
+    }
   }
 }
 
@@ -968,9 +994,19 @@ export const useCastleKasplat = (): LogicBool => {
 export const useCavesKasplat = (): LogicBool => {
   const playCaves = usePlayLobby('Crystal Caves')
   const punch = usePunch()
-  return {
-    in: playCaves.in && punch,
-    out: playCaves.out && punch
+  const hasCharge = useCharge()
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.islesCavesLeft))
+  switch (switchsanity) {
+  case 0:
+    return {
+        in: playCaves.in && hasCharge,
+        out: playCaves.out && hasCharge
+      }
+  default:
+    return {
+      in: playCaves.in && punch,
+      out: playCaves.out && punch
+    }
   }
 }
 
@@ -1017,9 +1053,19 @@ export const useCavesLobby = (): LogicBool => {
   const chunky = useChunky()
   const barrels = useBarrel()
   const punch = usePunch()
-  return {
-    in: canEnterCaves.in && chunky && barrels && punch,
-    out: canEnterCaves.out && chunky && barrels && punch
+  const hasCharge = useCharge()
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.islesCavesLeft))
+  switch (switchsanity) {
+  case 0:
+    return {
+      in: canEnterCaves.in && chunky && barrels && hasCharge,
+      out: canEnterCaves.out && chunky && barrels && hasCharge
+    }
+  default:
+    return {
+      in: canEnterCaves.in && chunky && barrels && punch,
+      out: canEnterCaves.out && chunky && barrels && punch
+    }
   }
 }
 
@@ -1103,13 +1149,9 @@ export const useCavesLobbyGeneric = (): LogicBool => {
 export const useCavesLobbyDiddy = (): LogicBool => {
   const canEnterCaves = usePlayLobby('Crystal Caves')
   const hasJetbarrel = useRocket()
-  const boulderTech = useBoulderTech()
-  const hasTiny = useTiny()
-  const hasTwirl = useTwirl()
-  const highGrab = useHighGrab()
   return {
     in: canEnterCaves.in && hasJetbarrel,
-    out: canEnterCaves.out && boulderTech && hasTiny && hasTwirl && highGrab
+    out: canEnterCaves.out && hasJetbarrel //There WAS a trick where you could grab the boulder in Chunky's left cave, put it near the level entrance, Ponytail Twirl with Tiny, then switch back to Chunky for the high grab, but it was questionable at best and I feel Season 6's Switchsanity changes to the punchable Caves Lobby walls have made it useless.
   }
 }
 

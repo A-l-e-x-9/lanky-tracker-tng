@@ -39,18 +39,19 @@ const StandardSwitchsanitySelector: React.FC = () => {
   return (
     <>
     <h4>Switchsanity</h4>
+    <h5>Isles</h5>
     <section>
-      <p>To free Diddy:</p>
-      <SwitchsanitySwitch currValue={switches.freeDiddy} storeKey="freeDiddy" images={allGun} />
-      <p>To free Lanky:</p>
-      <SwitchsanitySwitch currValue={switches.freeLanky} storeKey="freeLanky" images={allMusic} />
-      <p>To free Tiny:</p>
-      <SwitchsanitySwitch currValue={switches.freeTiny} storeKey="freeTiny" images={freeTiny} />
       <p>To activate the Diddy Barrel in Isles:</p>
       <SwitchsanitySwitch
         currValue={switches.islesTrombone}
         storeKey="islesTrombone"
         images={allMusic}
+      />
+      <p>To take down the gongs in Aztec Lobby (only relevant if Auto-Finish Bonus Barrels is off):</p>
+      <SwitchsanitySwitch
+        currValue={switches.islesAztecGongs}
+        storeKey="islesAztecGongs"
+        images={freeTiny}
       />
       <p>To get Chunky's hint in Aztec Lobby:</p>
       <SwitchsanitySwitch
@@ -60,6 +61,18 @@ const StandardSwitchsanitySelector: React.FC = () => {
       />
       <p>To get the infamous Forest Lobby fairy:</p>
       <SwitchsanitySwitch currValue={switches.islesForest} storeKey="islesForest" images={allGun} />
+      <p>To take down the wall with Lanky's Kasplat in Caves Lobby:</p>
+      <SwitchsanitySwitch
+        currValue={switches.islesCavesLeft}
+        storeKey="islesCavesLeft"
+        images={freeTiny}
+      />
+      <p>To take down the wall with the lava room in Caves Lobby:</p>
+      <SwitchsanitySwitch
+        currValue={switches.islesCavesRight}
+        storeKey="islesCavesRight"
+        images={freeTiny}
+      />
       <p>To reach the top of Krem Isle:</p>
       <SwitchsanitySwitch
         currValue={switches.islesMonkeyport}
@@ -81,6 +94,14 @@ const StandardSwitchsanitySelector: React.FC = () => {
           chunkyMusicIcon
         ]}
       />
+    </section>
+    <section>
+      <p>To free Diddy:</p>
+      <SwitchsanitySwitch currValue={switches.freeDiddy} storeKey="freeDiddy" images={allGun} />
+      <p>To free Lanky:</p>
+      <SwitchsanitySwitch currValue={switches.freeLanky} storeKey="freeLanky" images={allMusic} />
+      <p>To free Tiny:</p>
+      <SwitchsanitySwitch currValue={switches.freeTiny} storeKey="freeTiny" images={freeTiny} />
       <p>To open the Japes Hive Area:</p>
       <SwitchsanitySwitch currValue={switches.japesHive} storeKey="japesHive" images={allGun} />
       <p>To open the Japes Rambi Cage:</p>

@@ -9,7 +9,6 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
 - Update the tracker to account for the following things added to the Randomizer on or around October 26, 2026:
 	- **NOW WORKING: Balloons being checks**
-	- the Progressive Slam Shuffler possibly requiring no slam for a level
 	- more options for Switchsanity (basically amounting to everything Diddy can Chimpy Charge and Chunky can Primate Punch down being changeable now)
 	- the win conditions of "clear the Mechfish", "beat Round 2 of DK Arcade", "beat Jetpac", "beat the Toy Monster", "get the Returning the Banana Fairies reward", Barrel Blast courses, and the "Tasks" feature (to be dubbed "K. Rool's Kontracts" after [this comment in Ballaam's original proposal for Tasks](https://github.com/2dos/DK64-Randomizer/issues/3333#issuecomment-4637198143)) (which essentially allows you to have up to eight win cons).
 - Since the Kong you see on the main menu in S6 seeds can now apparently be a Kong other than DK (I got Lanky in my first such seed), make the title bar rotate to show a Kong other than Lanky every time you reload the page (but not with equal probability)? For example, it could sometimes say "DK Tracker: The OKAY! Generation", have DK in the middle, and have a yellow background instead of a blue one?

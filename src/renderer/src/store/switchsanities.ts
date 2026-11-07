@@ -26,7 +26,10 @@ export const initialSwitches: SwitchState = {
     galleonOutskirts: 1,
     forestBean1: 3,
     forestBean2: 4,
-    forestOwlTree: 2
+    forestOwlTree: 2,
+    islesAztecGongs: 0,
+    islesCavesLeft: 1,
+    islesCavesRight: 1
   }
 }
 
