@@ -70,7 +70,7 @@ const GeneratorSettings: React.FC = () => {
 
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
-  const [isWabbitSeed, isGBSeed, isBPSeed, isCoCoinSeed, isMedalSeed, isCrownSeed, isFairySeed, isRainbowSeed, isBeanSeed, isPearlSeed, isBossSeed, isBonusSeed] = useDonkStore(useShallow((state) => [state.winCondition.killTheWabbit, state.winCondition.goldBananas, state.winCondition.blueprints, state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.crowns, state.winCondition.fairies, state.winCondition.rainbowCoins, state.winCondition.theBean, state.winCondition.pearls, state.winCondition.bosses, state.winCondition.bonuses]))
+  const [isBossSeed, isBonusSeed] = useDonkStore(useShallow((state) => [state.winCondition.bosses, state.winCondition.bonuses]))
   const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier))
 
   return (
@@ -352,6 +352,8 @@ const GeneratorSettings: React.FC = () => {
                 prefix="winCondition"
                 updateItem={setWinCondition}
               />
+            <p></p>
+            <p></p>
             <p>Do you also have to fight K. Rool this seed?</p>
             <CheckIcon storeKey="hideKRool" prefix="ui" updateItem={setUi} />
             </>
