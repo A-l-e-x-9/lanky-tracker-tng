@@ -111,7 +111,14 @@ export const useIceWalls = (): boolean => {
 export const useCanAccessSnide = (): boolean => {
   const iceWalls = useIceWalls()
   const hasPunch = usePunch()
-  return iceWalls || hasPunch
+  const hasCharge = useCharge()
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.cavesSnide))
+  switch (switchsanity) {
+  case 0:
+    return iceWalls || hasCharge
+  default:
+    return iceWalls || hasPunch
+  }
 }
 
 /**
@@ -208,9 +215,19 @@ export const useChunkyGoneGb = (): LogicBool => {
   const wallsPrePunched = useIceWalls()
   const DKPortal = useGonePortal()
   const gone = useGone()
-  return {
-    in: inStage.in && (punch || wallsPrePunched || DKPortal) && gone,
-    out: inStage.out && (punch || wallsPrePunched || DKPortal) && gone
+  const hasCharge = useCharge()
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.cavesGone))
+  switch (switchsanity) {
+  case 0:
+    return {
+      in: inStage.in && (hasCharge || wallsPrePunched || DKPortal) && gone,
+      out: inStage.out && (hasCharge || wallsPrePunched || DKPortal) && gone
+    }
+  default:
+    return {
+      in: inStage.in && (punch || wallsPrePunched || DKPortal) && gone,
+      out: inStage.out && (punch || wallsPrePunched || DKPortal) && gone
+    }
   }
 }
 
@@ -222,9 +239,19 @@ export const useChunkyClearGb = (): LogicBool => {
   const boulder = useBoulderTech()
   const hunky = useHunky()
   const DKPortal = useBigRockPortal()
-  return {
-    in: inStage.in && !angery && (punch || wallsPrePunched || DKPortal) && boulder && hunky,
-    out: (inStage.out || angery) && (punch || wallsPrePunched) && boulder
+  const hasCharge = useCharge()
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.cavesBoulder))
+  switch (switchsanity) {
+  case 0:
+    return {
+      in: inStage.in && !angery && (hasCharge || wallsPrePunched || DKPortal) && boulder && hunky,
+      out: (inStage.out || angery) && (hasCharge || wallsPrePunched) && boulder
+    }
+  default:
+    return {
+      in: inStage.in && !angery && (punch || wallsPrePunched || DKPortal) && boulder && hunky,
+      out: (inStage.out || angery) && (punch || wallsPrePunched) && boulder
+    }
   }
 }
 
@@ -528,11 +555,21 @@ export const useOrin = (): LogicBool => {
   const otherStuff = useSatoriKomeiji()
   const canGetPastIceWalls = useIceWalls()
   const hasPunch = usePunch()
+  const hasCharge = useCharge()
   const hasHunky = useHunky()
   const hasBarrels = useBarrel()
   const DKPortal = useBigRockPortal()
-  return {
-    in: ((otherStuff.in && (hasPunch || canGetPastIceWalls)) || DKPortal) && hasHunky && hasBarrels,
-    out: ((otherStuff.out && (hasPunch || canGetPastIceWalls)) || DKPortal) && hasHunky && hasBarrels
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.cavesBoulder))
+  switch (switchsanity) {
+  case 0:
+    return {
+      in: ((otherStuff.in && (hasCharge || canGetPastIceWalls)) || DKPortal) && hasHunky && hasBarrels,
+      out: ((otherStuff.out && (hasCharge || canGetPastIceWalls)) || DKPortal) && hasHunky && hasBarrels
+    }
+  default:
+    return {
+      in: ((otherStuff.in && (hasPunch || canGetPastIceWalls)) || DKPortal) && hasHunky && hasBarrels,
+      out: ((otherStuff.out && (hasPunch || canGetPastIceWalls)) || DKPortal) && hasHunky && hasBarrels
+    }
   }
 }

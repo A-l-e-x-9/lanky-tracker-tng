@@ -392,6 +392,10 @@ export interface SwitchsanitySwitches {
   factoryDarkRoom: IntRange<0, 2>
   factoryArcade: IntRange<0, 2>
   factoryToyMonster: IntRange<0, 2>
+  //Who can take down the ice walls in Caves, assuming they weren't pre-shattered by the appropriate Fast Barrier setting?
+  cavesGone: IntRange<0, 2>
+  cavesSnide: IntRange<0, 2>
+  cavesBoulder: IntRange<0, 2>  
 }
 
 export interface SwitchState {

@@ -166,35 +166,60 @@ const StandardSwitchsanitySelector: React.FC = () => {
         images={freeTiny}
       />
     </section>
+    <h5>Galleon:</h5>
     <section>
-      <p>To open Galleon Lighthouse Area:</p>
+      <p>To open Lighthouse Area:</p>
       <SwitchsanitySwitch
         currValue={switches.galleonLighthouse}
         storeKey="galleonLighthouse"
         images={allGun}
       />
-      <p>To open Galleon Outskirts Area:</p>
+      <p>To open Outskirts Area:</p>
       <SwitchsanitySwitch
         currValue={switches.galleonOutskirts}
         storeKey="galleonOutskirts"
         images={allGun}
       />
-      <p>To reach Galleon Cannon Game:</p>
+      <p>To reach the Cannon Game:</p>
       <SwitchsanitySwitch
         currValue={switches.galleonCannon}
         storeKey="galleonCannon"
         images={allGun}
       />
-      <p>To reach Forest Area 4:</p>
+    </section>
+    <h5>Forest:</h5>
+    <section>
+      <p>First switch to open Area 2:</p>
+      <SwitchsanitySwitch currValue={switches.forestBean1} storeKey="forestBean1" images={allGun} />
+      <p>Second switch to open Area 2:</p>
+      <SwitchsanitySwitch currValue={switches.forestBean2} storeKey="forestBean2" images={allGun} />
+      <p>To reach Area 4:</p>
       <SwitchsanitySwitch
         currValue={switches.forestOwlTree}
         storeKey="forestOwlTree"
         images={allGun}
       />
-      <p>First switch to open Forest Area 2:</p>
-      <SwitchsanitySwitch currValue={switches.forestBean1} storeKey="forestBean1" images={allGun} />
-      <p>Second switch to open Forest Area 2:</p>
-      <SwitchsanitySwitch currValue={switches.forestBean2} storeKey="forestBean2" images={allGun} />
+    </section>
+    <h5>Caves:</h5>
+    <section>
+      <p>To reach the Gone room at the start:</p>
+      <SwitchsanitySwitch
+        currValue={switches.cavesGone}
+        storeKey="cavesGone"
+        images={freeTiny}
+      />
+      <p>To reach Snide's:</p>
+      <SwitchsanitySwitch
+        currValue={switches.cavesSnide}
+        storeKey="cavesSnide"
+        images={freeTiny}
+      />
+      <p>To reach the big boulder room:</p>
+      <SwitchsanitySwitch
+        currValue={switches.cavesBoulder}
+        storeKey="cavesBoulder"
+        images={freeTiny}
+      />
     </section>
     </>
   )
