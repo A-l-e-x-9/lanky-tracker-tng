@@ -11252,36 +11252,43 @@ const portalSlice = (set) => {
 };
 const initialSlam = {
   japesSlam: {
+    noSlam: false,
     greenSlam: true,
     blueSlam: false,
     redSlam: false
   },
   aztecSlam: {
+    noSlam: false,
     greenSlam: true,
     blueSlam: false,
     redSlam: false
   },
   factorySlam: {
+    noSlam: false,
     greenSlam: true,
     blueSlam: false,
     redSlam: false
   },
   galleonSlam: {
+    noSlam: false,
     greenSlam: true,
     blueSlam: false,
     redSlam: false
   },
   forestSlam: {
+    noSlam: false,
     greenSlam: false,
     blueSlam: true,
     redSlam: false
   },
   cavesSlam: {
+    noSlam: false,
     greenSlam: false,
     blueSlam: true,
     redSlam: false
   },
   castleSlam: {
+    noSlam: false,
     greenSlam: false,
     blueSlam: false,
     redSlam: true
@@ -12212,6 +12219,10 @@ const useGone = () => {
 const useSlam = () => {
   const slam = useDonkStore(useShallow((state) => state.moves.slam));
   return slam != 0;
+};
+const useNoSlam = () => {
+  const slam = useDonkStore(useShallow((state) => state.moves.slam));
+  return slam === 0;
 };
 const useSuperSlam = () => {
   const slam = useDonkStore(useShallow((state) => state.moves.slam));
@@ -18810,6 +18821,7 @@ const usePlayLobby = (level) => {
 };
 const useSlamLevel = (level) => {
   const canPlay = usePlayLevel(level);
+  const noSlam = useNoSlam();
   const slam = useSlam();
   const superSlam = useSuperSlam();
   const duperSlam = useSuperDuperSlam();
@@ -18836,67 +18848,81 @@ const useSlamLevel = (level) => {
     switch (level) {
       case "Jungle Japes":
         switch (true) {
+          case japesSlam.greenSlam:
+            return slam;
           case japesSlam.blueSlam:
             return superSlam;
           case japesSlam.redSlam:
             return duperSlam;
           default:
-            return slam;
+            return noSlam;
         }
       case "Angry Aztec":
         switch (true) {
+          case aztecSlam.greenSlam:
+            return slam;
           case aztecSlam.blueSlam:
             return superSlam;
           case aztecSlam.redSlam:
             return duperSlam;
           default:
-            return slam;
+            return noSlam;
         }
       case "Frantic Factory":
         switch (true) {
+          case factorySlam.greenSlam:
+            return slam;
           case factorySlam.blueSlam:
             return superSlam;
           case factorySlam.redSlam:
             return duperSlam;
           default:
-            return slam;
+            return noSlam;
         }
       case "Gloomy Galleon":
       case "DK Isles":
         switch (true) {
+          case galleonSlam.greenSlam:
+            return slam;
           case galleonSlam.blueSlam:
             return superSlam;
           case galleonSlam.redSlam:
             return duperSlam;
           default:
-            return slam;
+            return noSlam;
         }
       case "Fungi Forest":
         switch (true) {
+          case forestSlam.greenSlam:
+            return slam;
           case forestSlam.blueSlam:
             return superSlam;
           case forestSlam.redSlam:
             return duperSlam;
           default:
-            return slam;
+            return noSlam;
         }
       case "Crystal Caves":
         switch (true) {
+          case cavesSlam.greenSlam:
+            return slam;
           case cavesSlam.blueSlam:
             return superSlam;
           case cavesSlam.redSlam:
             return duperSlam;
           default:
-            return slam;
+            return noSlam;
         }
       case "Creepy Castle":
         switch (true) {
+          case castleSlam.greenSlam:
+            return slam;
           case castleSlam.blueSlam:
             return superSlam;
           case castleSlam.redSlam:
             return duperSlam;
           default:
-            return slam;
+            return noSlam;
         }
       default:
         return false;
@@ -54984,12 +55010,14 @@ const slamToIcon = (num) => {
 };
 const slamName = (num) => {
   switch (num) {
+    case 1:
+      return "Simian Slam";
     case 2:
       return "Super Simian Slam";
     case 3:
       return "Super Duper Simian Slam";
     default:
-      return "Simian Slam";
+      return "No slam";
   }
 };
 const clamp$3 = (num) => Math.min(Math.max(num, 0), 3);
@@ -58636,6 +58664,7 @@ const ShuffledShops = () => {
     )
   ] });
 };
+const noSlamIcon = "data:image/png;base64,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";
 const customStyles$3 = {
   content: {
     backgroundColor: "#404000",
@@ -58662,11 +58691,26 @@ const SlamShuffler$1 = () => {
         style: customStyles$3,
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "modal-settings", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Progressive Slam Shuffler" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+            `For any level that's set to "No Slam", you can simply step on Simian Slam switches to press them, à la `,
+            /* @__PURE__ */ jsxRuntimeExports.jsx("em", { children: "Banjo-Tooie" }),
+            ". You will still need the appropriate Kong, however."
+          ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "pool", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Jungle Japes:" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               SimpleRadioIcon,
               {
+                imgUrl: noSlamIcon,
+                title: "No slam",
+                storeKey: "noSlam",
+                prefix: "japesSlam",
+                updateItem: setJapesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
                 imgUrl: greenSlamIcon,
                 title: "Simian Slam",
                 storeKey: "greenSlam",
@@ -58694,12 +58738,21 @@ const SlamShuffler$1 = () => {
                 updateItem: setJapesSlam
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Angry Aztec:" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               SimpleRadioIcon,
               {
+                imgUrl: noSlamIcon,
+                title: "No slam",
+                storeKey: "noSlam",
+                prefix: "aztecSlam",
+                updateItem: setAztecSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
                 imgUrl: greenSlamIcon,
                 title: "Simian Slam",
                 storeKey: "greenSlam",
@@ -58727,12 +58780,21 @@ const SlamShuffler$1 = () => {
                 updateItem: setAztecSlam
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Frantic Factory:" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               SimpleRadioIcon,
               {
+                imgUrl: noSlamIcon,
+                title: "No slam",
+                storeKey: "noSlam",
+                prefix: "factorySlam",
+                updateItem: setFactorySlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
                 imgUrl: greenSlamIcon,
                 title: "Simian Slam",
                 storeKey: "greenSlam",
@@ -58760,12 +58822,21 @@ const SlamShuffler$1 = () => {
                 updateItem: setFactorySlam
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Gloomy Galleon (and the Chunky switch in its lobby):" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               SimpleRadioIcon,
               {
+                imgUrl: noSlamIcon,
+                title: "No slam",
+                storeKey: "noSlam",
+                prefix: "galleonSlam",
+                updateItem: setGalleonSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
                 imgUrl: greenSlamIcon,
                 title: "Simian Slam",
                 storeKey: "greenSlam",
@@ -58793,12 +58864,21 @@ const SlamShuffler$1 = () => {
                 updateItem: setGalleonSlam
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Fungi Forest:" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               SimpleRadioIcon,
               {
+                imgUrl: noSlamIcon,
+                title: "No slam",
+                storeKey: "noSlam",
+                prefix: "forestSlam",
+                updateItem: setForestSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
                 imgUrl: greenSlamIcon,
                 title: "Simian Slam",
                 storeKey: "greenSlam",
@@ -58826,12 +58906,21 @@ const SlamShuffler$1 = () => {
                 updateItem: setForestSlam
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Crystal Caves:" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               SimpleRadioIcon,
               {
+                imgUrl: noSlamIcon,
+                title: "No slam",
+                storeKey: "noSlam",
+                prefix: "cavesSlam",
+                updateItem: setCavesSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
                 imgUrl: greenSlamIcon,
                 title: "Simian Slam",
                 storeKey: "greenSlam",
@@ -58859,12 +58948,21 @@ const SlamShuffler$1 = () => {
                 updateItem: setCavesSlam
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Slam level for Creepy Castle:" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               SimpleRadioIcon,
               {
+                imgUrl: noSlamIcon,
+                title: "No slam",
+                storeKey: "noSlam",
+                prefix: "castleSlam",
+                updateItem: setCastleSlam
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SimpleRadioIcon,
+              {
                 imgUrl: greenSlamIcon,
                 title: "Simian Slam",
                 storeKey: "greenSlam",
@@ -58892,7 +58990,6 @@ const SlamShuffler$1 = () => {
                 updateItem: setCastleSlam
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", {})
           ] })
         ] })
