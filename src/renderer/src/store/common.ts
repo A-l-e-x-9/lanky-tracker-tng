@@ -388,6 +388,10 @@ export interface SwitchsanitySwitches {
   islesCavesRight: IntRange<0, 2>
   //Who can take down the gongs in Aztec itself, to reveal the stupid fucking beetle race?
   aztecGongs: IntRange<0, 2>
+  //Who can take down the various grates in Factory?
+  factoryDarkRoom: IntRange<0, 2>
+  factoryArcade: IntRange<0, 2>
+  factoryToyMonster: IntRange<0, 2>
 }
 
 export interface SwitchState {

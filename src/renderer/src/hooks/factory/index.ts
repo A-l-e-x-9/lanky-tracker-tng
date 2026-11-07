@@ -172,11 +172,21 @@ export const useChunkyKaijuGb = (): LogicBool => {
   const climbing = useClimbing()
   const highGrab = useHighGrab()
   const punch = usePunch()
+  const hasCharge = useCharge()
   const triangle = useTriangle()
   const hunky = useHunky()
-  return {
-    in: testing.in && climbing && punch && triangle && hunky,
-    out: testing.out && highGrab && punch && triangle && hunky
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.factoryToyMonster))
+  switch (switchsanity) {
+  case 0:
+    return {
+      in: testing.in && climbing && hasCharge && triangle && hunky,
+      out: testing.out && highGrab && hasCharge && triangle && hunky
+    }
+  default:
+    return {
+      in: testing.in && climbing && punch && triangle && hunky,
+      out: testing.out && highGrab && punch && triangle && hunky
+    }
   }
 }
 
@@ -186,9 +196,19 @@ export const useChunkyArcadeGb = (): LogicBool => {
   const hasBananaport = useBananaportAll()
   const DKPortal = useArcadePortal()
   const punch = usePunch()
-  return {
-    in: inStage.in && (hasClimbing || hasBananaport || DKPortal) && punch,
-    out: inStage.out && (hasClimbing || hasBananaport || DKPortal) && punch
+  const hasCharge = useCharge()
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.factoryToyMonster))
+  switch (switchsanity) {
+  case 0:
+    return {
+      in: inStage.in && (hasClimbing || hasBananaport || DKPortal) && hasCharge,
+      out: inStage.out && (hasClimbing || hasBananaport || DKPortal) && hasCharge
+    }
+  default:
+    return {
+      in: inStage.in && (hasClimbing || hasBananaport || DKPortal) && punch,
+      out: inStage.out && (hasClimbing || hasBananaport || DKPortal) && punch
+    }
   }
 }
 
@@ -196,9 +216,19 @@ export const useChunkyDarkGb = (): LogicBool => {
   const inStage = usePlayFactory()
   const hasPunch = usePunch()
   const canSlam = useSlamFactory()
-  return {
-    in: inStage.in && hasPunch && canSlam,
-    out: inStage.out && hasPunch && canSlam
+  const hasCharge = useCharge()
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.factoryToyMonster))
+  switch (switchsanity) {
+  case 0:
+    return {
+      in: inStage.in && hasCharge && canSlam,
+      out: inStage.out && hasCharge && canSlam
+    }
+  default:
+    return {
+      in: inStage.in && hasPunch && canSlam,
+      out: inStage.out && hasPunch && canSlam
+    }
   }
 }
 
@@ -455,9 +485,19 @@ export const useFactoryDirt = (): LogicBool => {
   const inStage = usePlayFactory()
   const shockwave = useShockwave()
   const punch = usePunch()
-  return {
-    in: inStage.in && punch && shockwave,
-    out: inStage.out && punch && shockwave
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.factoryToyMonster))
+  const hasCharge = useCharge()
+  switch (switchsanity) {
+  case 0:
+    return {
+      in: inStage.in && hasCharge && shockwave,
+      out: inStage.out && hasCharge && shockwave
+    }
+  default:
+    return {
+      in: inStage.in && punch && shockwave,
+      out: inStage.out && punch && shockwave
+    }
   }
 }
 

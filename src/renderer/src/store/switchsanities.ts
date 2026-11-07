@@ -30,7 +30,10 @@ export const initialSwitches: SwitchState = {
     islesAztecGongs: 0,
     islesCavesLeft: 1,
     islesCavesRight: 1,
-    aztecGongs: 0
+    aztecGongs: 0,
+    factoryDarkRoom: 1,
+    factoryArcade: 1,
+    factoryToyMonster: 1
   }
 }
 

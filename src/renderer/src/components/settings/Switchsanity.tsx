@@ -145,6 +145,27 @@ const StandardSwitchsanitySelector: React.FC = () => {
         images={allKong}
       />
     </section>
+    <h5>Factory:</h5>
+    <section>
+      <p>To reveal the Dark Room:</p>
+      <SwitchsanitySwitch
+        currValue={switches.factoryDarkRoom}
+        storeKey="factoryDarkRoom"
+        images={freeTiny}
+      />
+      <p>To reveal the Bonus Barrel near the arcade:</p>
+      <SwitchsanitySwitch
+        currValue={switches.factoryArcade}
+        storeKey="factoryArcade"
+        images={freeTiny}
+      />
+      <p>To reach the Toy Monster in R&D:</p>
+      <SwitchsanitySwitch
+        currValue={switches.factoryToyMonster}
+        storeKey="factoryToyMonster"
+        images={freeTiny}
+      />
+    </section>
     <section>
       <p>To open Galleon Lighthouse Area:</p>
       <SwitchsanitySwitch
