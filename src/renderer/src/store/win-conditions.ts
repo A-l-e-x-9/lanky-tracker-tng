@@ -3,26 +3,9 @@ import { AllSlice, WinConSlice, WinConState, donkResetFns } from './common'
 
 export const initialWinCon: WinConState = {
   winCondition: {
-    bossKeys: true,
-    key8: false,
     key3And8: false,
-    kremlingKapture: false,
-    takeItToTheFridge: false,
     kRoolChallenge: false,
-    killTheWabbit: false,
-    goldBananas: false,
-    blueprints: false,
-    companyCoins: false,
-    bananaMedals: false,
-    crowns: false,
-    fairies: false,
-    rainbowCoins: false,
-    theBean: false,
-    pearls: false,
-    bosses: false,
-    bonuses: false,
-    kontracts: false,
-    winConItemCount: 0
+    kontracts: true
   }
 }
 
@@ -32,23 +15,11 @@ const winConSlice: StateCreator<AllSlice, [], [], WinConSlice> = (set) => {
     ...initialWinCon,
     setWinCondition: (id, val): void => {
       set((state) => {
-        // If setting a numeric value (winConItemCount), just set it.
-        if (typeof val === 'number') {
-          return {
-            ...state,
-            winCondition: {
-              ...state.winCondition,
-              [id]: val
-            }
-          }
-        }
-
         // If we're setting a boolean to true, enforce radio semantics:
         // clear other boolean winCondition flags and set this one to true.
         if (val) {
-          const reset: Record<string, boolean | number> = {}
+          const reset: Record<string, boolean> = {}
           for (const k of Object.keys(state.winCondition)) {
-            if (k === 'winConItemCount') continue
             reset[k] = false
           }
           reset[id] = true

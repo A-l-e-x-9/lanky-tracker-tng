@@ -21,6 +21,7 @@ import shopSlice from './shuffled-shops'
 import portalSlice from './shuffled-dk-portals'
 import slamSlice from './progressive-slams'
 import wrinklyDoorSlice from './wrinkly-doors'
+import taskSlice from './tasks'
 
 const initializer: StateCreator<AllSlice, [['zustand/persist', unknown]], []> = (...d) => ({
   ...coreSlice(...d),
@@ -41,7 +42,8 @@ const initializer: StateCreator<AllSlice, [['zustand/persist', unknown]], []> = 
   ...shopSlice(...d),
   ...portalSlice(...d),
   ...slamSlice(...d),
-  ...wrinklyDoorSlice(...d)
+  ...wrinklyDoorSlice(...d),
+  ...taskSlice(...d)
 })
 
 /**

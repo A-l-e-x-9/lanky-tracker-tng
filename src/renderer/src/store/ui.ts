@@ -7,7 +7,6 @@ export const initialUi: UiState = {
     hideRed: false,
     hideYellow: false,
     hideKRool: true,
-    itemCountModifier: false,
     konglessHintDoorsOff: false,
     fungiLobbyOptionOff: false
   }

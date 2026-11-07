@@ -788,7 +788,6 @@ export interface UiCollection {
   hideRed: boolean,
   hideYellow: boolean,
   hideKRool: boolean,
-  itemCountModifier: boolean,
   konglessHintDoorsOff: boolean,
   fungiLobbyOptionOff: boolean
 }
@@ -804,6 +803,31 @@ interface UiActions {
 export type UiSlice = UiState & UiActions
 
 //#endregion
+
+export type Task =
+  |''
+  |'Keys'
+  |'Kremling Kapture'
+  |'Golden Bananas'
+  |'Blueprints'
+  |'Company Coins'
+  |'Medals'
+  |'Crowns'
+  |'Fairies'
+  |'Rainbow Coins'
+  |'The Bean™'
+  |'Pearls'
+  |'Bosses'
+  |'Bonus Levels'
+  |'Barrel Blast Courses'
+  |'Get Key 8 only'
+  |'Kill the Wabbit'
+  |'Complete the DK Rap'
+  |'Take Down the Mechfish Agenda'
+  |'Round 2 of DK Arcade'
+  |'Jetpac'
+  |'Defeat the Toy Monster'
+  |'Get the Rareware Banana'
 
 export type Level =
   | ''
@@ -968,26 +992,9 @@ export type bLockerSlice = bLockerState & bLockerActions
 
 //Begin win conditions region
 interface WinConCollection {
-  bossKeys: boolean
-  key8: boolean
   key3And8: boolean
-  kremlingKapture: boolean
-  takeItToTheFridge: boolean
   kRoolChallenge: boolean
-  killTheWabbit: boolean
-  goldBananas: boolean
-  blueprints: boolean
-  companyCoins: boolean
-  bananaMedals: boolean
-  crowns: boolean
-  fairies: boolean
-  rainbowCoins: boolean
-  theBean: boolean
-  pearls: boolean
-  bosses: boolean
-  bonuses: boolean
   kontracts: boolean
-  winConItemCount: GoldBananaRange
 }
 
 export interface WinConState {
@@ -996,10 +1003,47 @@ export interface WinConState {
 
 interface WinConActions {
   // Narrowed id type to keys of WinConCollection for better type safety.
-  setWinCondition: (id: string | number, val: boolean | number) => void
+  setWinCondition: (id: string | number, val: boolean) => void
 }
 
+
 export type WinConSlice = WinConState & WinConActions
+//#endregion
+
+//Begin K. Rool Kontracts region
+interface taskCollection {
+  task1: Task
+  task2: Task
+  task3: Task
+  task4: Task
+  task5: Task
+  task6: Task
+  task7: Task
+  task8: Task
+}
+
+interface taskCountCollection {
+  task1: TroffAndScoffRange
+  task2: TroffAndScoffRange
+  task3: TroffAndScoffRange
+  task4: TroffAndScoffRange
+  task5: TroffAndScoffRange
+  task6: TroffAndScoffRange
+  task7: TroffAndScoffRange
+  task8: TroffAndScoffRange
+}
+
+export interface TaskState {
+  task: taskCollection
+  taskCount: taskCountCollection
+}
+
+interface TaskActions {
+  setTask: (index: number, name: Task) => void
+  setTaskCount: (id: string, val: number) =>void
+}
+
+export type TaskSlice = TaskState & TaskActions
 //#endregion
 
 //Begin shuffled shop region
