@@ -29,7 +29,8 @@ export const initialSwitches: SwitchState = {
     forestOwlTree: 2,
     islesAztecGongs: 0,
     islesCavesLeft: 1,
-    islesCavesRight: 1
+    islesCavesRight: 1,
+    aztecGongs: 0
   }
 }
 

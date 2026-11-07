@@ -354,9 +354,19 @@ export const useDiddyGongGb = (): LogicBool => {
   const back = useAztecBack()
   const charge = useCharge()
   const rocket = useRocket()
-  return {
-    in: back.in && charge && rocket,
-    out: back.out && charge
+  const hasFalconPunch = usePunch()
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.aztecGongs))
+  switch (switchsanity) {
+  case 1:
+    return {
+      in: back.in && hasFalconPunch && rocket,
+      out: back.out && hasFalconPunch && rocket //Unfortunately, as far as I know, you can't do "the trick" (to get on top of the Gong Tower before it rises) with Chunky, only Diddy.
+    }
+  default:
+    return {
+      in: back.in && charge && rocket,
+      out: back.out && charge
+    }
   }
 }
 

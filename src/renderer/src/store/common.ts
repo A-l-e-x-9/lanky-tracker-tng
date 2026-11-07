@@ -386,6 +386,8 @@ export interface SwitchsanitySwitches {
   islesCavesLeft: IntRange<0, 2>  
   //Or the right?
   islesCavesRight: IntRange<0, 2>
+  //Who can take down the gongs in Aztec itself, to reveal the stupid fucking beetle race?
+  aztecGongs: IntRange<0, 2>
 }
 
 export interface SwitchState {

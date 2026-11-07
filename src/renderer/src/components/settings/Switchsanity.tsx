@@ -112,31 +112,40 @@ const StandardSwitchsanitySelector: React.FC = () => {
       <p>To open the Rambi Cage:</p>
       <SwitchsanitySwitch currValue={switches.japesRambi} storeKey="japesRambi" images={allGun} />
     </section>
+    <h5>Aztec:</h5>
     <section>
-      <p>To get Aztec Early Kasplat:</p>
+      <p>To get DK's Kasplat:</p>
       <SwitchsanitySwitch
         currValue={switches.aztecBlueprint}
         storeKey="aztecBlueprint"
         images={allGun}
       />
-      <p>To free Lanky:</p>
-      <SwitchsanitySwitch currValue={switches.freeLanky} storeKey="freeLanky" images={allMusic} />
       <p>To free Tiny:</p>
       <SwitchsanitySwitch currValue={switches.freeTiny} storeKey="freeTiny" images={freeTiny} />
-      <p>To get Aztec Back Access:</p>
+      <p>To gain access to the second half:</p>
       <SwitchsanitySwitch currValue={switches.aztecBack} storeKey="aztecBack" images={allMusic} />
-      <p>To enter Aztec Llama Temple 1:</p>
+      <p>To reveal the Gong Tower:</p>
+      <SwitchsanitySwitch
+        currValue={switches.aztecGongs}
+        storeKey="aztecGongs"
+        images={freeTiny}
+      />
+      <p>To enter Llama Temple 1:</p>
       <SwitchsanitySwitch currValue={switches.aztecLlama1} storeKey="aztecLlama1" images={allGun} />
-      <p>To enter Aztec Llama Temple 2:</p>
+      <p>To enter Llama Temple 2:</p>
       <SwitchsanitySwitch currValue={switches.aztecLlama2} storeKey="aztecLlama2" images={allGun} />
-      <p>To enter Aztec Llama Temple 3:</p>
+      <p>To enter Llama Temple 3:</p>
       <SwitchsanitySwitch currValue={switches.aztecLlama3} storeKey="aztecLlama3" images={allGun} />
-      <p>To open Aztec Quicksand Tunnel:</p>
+      <p>To free Lanky:</p>
+      <SwitchsanitySwitch currValue={switches.freeLanky} storeKey="freeLanky" images={allMusic} />
+      <p>To open the quicksand tunnel:</p>
       <SwitchsanitySwitch
         currValue={switches.aztecDeadEnd}
         storeKey="aztecDeadEnd"
         images={allKong}
       />
+    </section>
+    <section>
       <p>To open Galleon Lighthouse Area:</p>
       <SwitchsanitySwitch
         currValue={switches.galleonLighthouse}
