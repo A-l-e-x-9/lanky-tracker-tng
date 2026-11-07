@@ -9,10 +9,12 @@ import FactoryLobbyArenas from '../arenas/FactoryLobby'
 import FactoryLobbyCrates from '../crates/FactoryLobby'
 import FactoryLobbyDirt from '../dirt/FactoryLobby'
 import FactoryLobbyKasplats from '../kasplats/FactoryLobby'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const FactoryLobbyChecks: React.FC = () => {
-const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isFairySeed = useKRoolKontracts('Fairies') ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (

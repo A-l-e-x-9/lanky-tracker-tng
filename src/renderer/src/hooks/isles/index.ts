@@ -597,6 +597,37 @@ export const useTroffAndScoff = (level: Level): number => {
   return 0
 }
 
+/*Another Alex addition to implement the Tasks feature that debuted in Season 6.*/
+export const useKRoolKontracts = (task: Task): boolean => {
+  const [task1, task2, task3, task4, task5, task6, task7, task8] = useDonkStore(useShallow((state) => [state.task1, state.task2, state.task3, state.task4, state.task5, state.task6, state.task7, state.task8]))
+  if (task1 === task) {
+    return true
+  }
+  if (task2 === task) {
+    return true
+  }
+  if (task3 === task) {
+    return true
+  }
+  if (task4 === task) {
+    return true
+  }
+  if (task5 === task) {
+    return true
+  }
+  if (task6 === task) {
+    return true
+  }
+  if (task7 === task) {
+    return true
+  }
+  if (task8 === task) {
+    return true
+  } else {
+  return false
+  }
+}
+
 /**
  * Can we control someone to get the first check in the game?
  * @returns true if we can get the first check in the game.

@@ -11,9 +11,10 @@ import CavesChecks from './components/levels/6-caves'
 import CastleChecks from './components/levels/7-castle'
 import HelmChecks from './components/levels/8-helm'
 import KKChecks from './components/levels/9-krem-kapture'
+import { useKRoolKontracts } from './hooks/isles'
 
 const Checklist: React.FC = () => {
-const kremKapture = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : 'lzr-shuffler'
+const kremKapture = useKRoolKontracts('Kremling Kapture') ? 'foolish' : 'lzr-shuffler'
   return (
     <article>
       <Tabs>
