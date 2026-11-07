@@ -6,9 +6,11 @@ import HelmLobbyArenas from '../arenas/HelmLobby'
 import HelmLobbyCrates from '../crates/HelmLobby'
 import HelmLobbyDirt from '../dirt/HelmLobby'
 import HelmLobbyKasplats from '../kasplats/HelmLobby'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const HelmLobbyChecks: React.FC = () => {
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>

@@ -7,9 +7,11 @@ import GalleonLobbyArenas from '../arenas/GalleonLobby'
 import GalleonLobbyCrates from '../crates/GalleonLobby'
 import GalleonLobbyDirt from '../dirt/GalleonLobby'
 import GalleonLobbyKasplats from '../kasplats/GalleonLobby'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const GalleonLobbyChecks: React.FC = () => {
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>

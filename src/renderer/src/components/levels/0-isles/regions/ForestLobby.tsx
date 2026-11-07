@@ -6,9 +6,10 @@ import ForestWrinkly from '../wrinkly/ForestLobby'
 import ForestLobbyArenas from '../arenas/ForestLobby'
 import ForestLobbyCrates from '../crates/ForestLobby'
 import ForestLobbyDirt from '../dirt/ForestLobby'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const ForestLobbyChecks: React.FC = () => {
-const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const isFairySeed = useKRoolKontracts('Fairies') ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
   <>

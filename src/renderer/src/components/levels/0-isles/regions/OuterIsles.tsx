@@ -5,9 +5,10 @@ import SmallIslandFairy from '../fairies/SmallIsland'
 import PoundX from '../gold-bananas/chunky/PoundX'
 import FeatherCage from '../gold-bananas/tiny/FeatherCage'
 import ReturnFairies from '../gold-bananas/tiny/ReturnFairies'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const OuterIslesChecks: React.FC = () => {
-const isFairySeed = useDonkStore(useShallow((state) => [state.winCondition.fairies && !state.settings.poolFairies])) ? 'foolish' : ''
+const isFairySeed = useKRoolKontracts('Fairies') ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
   <>

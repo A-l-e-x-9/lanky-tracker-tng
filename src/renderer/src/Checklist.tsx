@@ -1,5 +1,3 @@
-import useDonkStore from '@renderer/store'
-import { useShallow } from 'zustand/react/shallow'
 import { Tabs, TabList, Tab, TabPanel } from 'react-tabs'
 import IsleChecks from './components/levels/0-isles'
 import JapesChecks from './components/levels/1-japes'
