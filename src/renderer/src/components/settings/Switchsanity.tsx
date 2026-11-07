@@ -112,6 +112,7 @@ const StandardSwitchsanitySelector: React.FC = () => {
       <p>To open the Rambi Cage:</p>
       <SwitchsanitySwitch currValue={switches.japesRambi} storeKey="japesRambi" images={allGun} />
     </section>
+    <section>
       <p>To get Aztec Early Kasplat:</p>
       <SwitchsanitySwitch
         currValue={switches.aztecBlueprint}
