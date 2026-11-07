@@ -10346,7 +10346,8 @@ const initialSwitches = {
     forestOwlTree: 2,
     islesAztecGongs: 0,
     islesCavesLeft: 1,
-    islesCavesRight: 1
+    islesCavesRight: 1,
+    aztecGongs: 0
   }
 };
 const switchSlice = (set) => {
@@ -13545,10 +13546,21 @@ const useDiddyGongGb = () => {
   const back = useAztecBack();
   const charge = useCharge();
   const rocket = useRocket();
-  return {
-    in: back.in && charge && rocket,
-    out: back.out && charge
-  };
+  const hasFalconPunch = usePunch();
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.aztecGongs));
+  switch (switchsanity) {
+    case 1:
+      return {
+        in: back.in && hasFalconPunch && rocket,
+        out: back.out && hasFalconPunch && rocket
+        //Unfortunately, as far as I know, you can't do "the trick" (to get on top of the Gong Tower before it rises) with Chunky, only Diddy.
+      };
+    default:
+      return {
+        in: back.in && charge && rocket,
+        out: back.out && charge
+      };
+  }
 };
 const useDiddyVultureGb = () => {
   const back = useAztecBack();
@@ -60215,8 +60227,9 @@ const StandardSwitchsanitySelector = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the Rambi Cage:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.japesRambi, storeKey: "japesRambi", images: allGun })
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h5", { children: "Aztec:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To get Aztec Early Kasplat:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To get DK's Kasplat:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         SwitchsanitySwitch,
         {
@@ -60225,19 +60238,28 @@ const StandardSwitchsanitySelector = () => {
           images: allGun
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Lanky:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeLanky, storeKey: "freeLanky", images: allMusic }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Tiny:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeTiny, storeKey: "freeTiny", images: freeTiny }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To get Aztec Back Access:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To gain access to the second half:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.aztecBack, storeKey: "aztecBack", images: allMusic }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To enter Aztec Llama Temple 1:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To reveal the Gong Tower:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        SwitchsanitySwitch,
+        {
+          currValue: switches.aztecGongs,
+          storeKey: "aztecGongs",
+          images: freeTiny
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To enter Llama Temple 1:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.aztecLlama1, storeKey: "aztecLlama1", images: allGun }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To enter Aztec Llama Temple 2:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To enter Llama Temple 2:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.aztecLlama2, storeKey: "aztecLlama2", images: allGun }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To enter Aztec Llama Temple 3:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To enter Llama Temple 3:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.aztecLlama3, storeKey: "aztecLlama3", images: allGun }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open Aztec Quicksand Tunnel:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Lanky:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeLanky, storeKey: "freeLanky", images: allMusic }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the quicksand tunnel:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         SwitchsanitySwitch,
         {
@@ -60245,7 +60267,9 @@ const StandardSwitchsanitySelector = () => {
           storeKey: "aztecDeadEnd",
           images: allKong
         }
-      ),
+      )
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open Galleon Lighthouse Area:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         SwitchsanitySwitch,
