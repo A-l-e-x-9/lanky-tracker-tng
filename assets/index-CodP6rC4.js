@@ -10350,7 +10350,10 @@ const initialSwitches = {
     aztecGongs: 0,
     factoryDarkRoom: 1,
     factoryArcade: 1,
-    factoryToyMonster: 1
+    factoryToyMonster: 1,
+    cavesGone: 1,
+    cavesSnide: 1,
+    cavesBoulder: 1
   }
 };
 const switchSlice = (set) => {
@@ -16951,7 +16954,14 @@ const useIceWalls = () => {
 const useCanAccessSnide = () => {
   const iceWalls = useIceWalls();
   const hasPunch = usePunch();
-  return iceWalls || hasPunch;
+  const hasCharge = useCharge();
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.cavesSnide));
+  switch (switchsanity) {
+    case 0:
+      return iceWalls || hasCharge;
+    default:
+      return iceWalls || hasPunch;
+  }
 };
 const useCavesMiniFunky = () => {
   const inStage = usePlayCaves();
@@ -17030,10 +17040,20 @@ const useChunkyGoneGb = () => {
   const wallsPrePunched = useIceWalls();
   const DKPortal = useGonePortal();
   const gone = useGone();
-  return {
-    in: inStage.in && (punch || wallsPrePunched || DKPortal) && gone,
-    out: inStage.out && (punch || wallsPrePunched || DKPortal) && gone
-  };
+  const hasCharge = useCharge();
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.cavesGone));
+  switch (switchsanity) {
+    case 0:
+      return {
+        in: inStage.in && (hasCharge || wallsPrePunched || DKPortal) && gone,
+        out: inStage.out && (hasCharge || wallsPrePunched || DKPortal) && gone
+      };
+    default:
+      return {
+        in: inStage.in && (punch || wallsPrePunched || DKPortal) && gone,
+        out: inStage.out && (punch || wallsPrePunched || DKPortal) && gone
+      };
+  }
 };
 const useChunkyClearGb = () => {
   const inStage = usePlayCaves();
@@ -17043,10 +17063,20 @@ const useChunkyClearGb = () => {
   const boulder = useBoulderTech();
   const hunky = useHunky();
   const DKPortal = useBigRockPortal();
-  return {
-    in: inStage.in && !angery && (punch || wallsPrePunched || DKPortal) && boulder && hunky,
-    out: (inStage.out || angery) && (punch || wallsPrePunched) && boulder
-  };
+  const hasCharge = useCharge();
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.cavesBoulder));
+  switch (switchsanity) {
+    case 0:
+      return {
+        in: inStage.in && !angery && (hasCharge || wallsPrePunched || DKPortal) && boulder && hunky,
+        out: (inStage.out || angery) && (hasCharge || wallsPrePunched) && boulder
+      };
+    default:
+      return {
+        in: inStage.in && !angery && (punch || wallsPrePunched || DKPortal) && boulder && hunky,
+        out: (inStage.out || angery) && (punch || wallsPrePunched) && boulder
+      };
+  }
 };
 const useChunkyIglooGb = () => {
   const igloo = useCavesIgloo();
@@ -17313,13 +17343,23 @@ const useOrin = () => {
   const otherStuff = useSatoriKomeiji();
   const canGetPastIceWalls = useIceWalls();
   const hasPunch = usePunch();
+  const hasCharge = useCharge();
   const hasHunky = useHunky();
   const hasBarrels = useBarrel();
   const DKPortal = useBigRockPortal();
-  return {
-    in: (otherStuff.in && (hasPunch || canGetPastIceWalls) || DKPortal) && hasHunky && hasBarrels,
-    out: (otherStuff.out && (hasPunch || canGetPastIceWalls) || DKPortal) && hasHunky && hasBarrels
-  };
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.cavesBoulder));
+  switch (switchsanity) {
+    case 0:
+      return {
+        in: (otherStuff.in && (hasCharge || canGetPastIceWalls) || DKPortal) && hasHunky && hasBarrels,
+        out: (otherStuff.out && (hasCharge || canGetPastIceWalls) || DKPortal) && hasHunky && hasBarrels
+      };
+    default:
+      return {
+        in: (otherStuff.in && (hasPunch || canGetPastIceWalls) || DKPortal) && hasHunky && hasBarrels,
+        out: (otherStuff.out && (hasPunch || canGetPastIceWalls) || DKPortal) && hasHunky && hasBarrels
+      };
+  }
 };
 const useDkMedalCommonLogic$1 = () => {
   const igloo = useCavesIgloo();
@@ -60342,8 +60382,9 @@ const StandardSwitchsanitySelector = () => {
         }
       )
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h5", { children: "Galleon:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open Galleon Lighthouse Area:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open Lighthouse Area:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         SwitchsanitySwitch,
         {
@@ -60352,7 +60393,7 @@ const StandardSwitchsanitySelector = () => {
           images: allGun
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open Galleon Outskirts Area:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open Outskirts Area:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         SwitchsanitySwitch,
         {
@@ -60361,7 +60402,7 @@ const StandardSwitchsanitySelector = () => {
           images: allGun
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To reach Galleon Cannon Game:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To reach the Cannon Game:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         SwitchsanitySwitch,
         {
@@ -60369,8 +60410,15 @@ const StandardSwitchsanitySelector = () => {
           storeKey: "galleonCannon",
           images: allGun
         }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To reach Forest Area 4:" }),
+      )
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h5", { children: "Forest:" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "First switch to open Area 2:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.forestBean1, storeKey: "forestBean1", images: allGun }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Second switch to open Area 2:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.forestBean2, storeKey: "forestBean2", images: allGun }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To reach Area 4:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         SwitchsanitySwitch,
         {
@@ -60378,11 +60426,37 @@ const StandardSwitchsanitySelector = () => {
           storeKey: "forestOwlTree",
           images: allGun
         }
+      )
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h5", { children: "Caves:" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To reach the Gone room at the start:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        SwitchsanitySwitch,
+        {
+          currValue: switches.cavesGone,
+          storeKey: "cavesGone",
+          images: freeTiny
+        }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "First switch to open Forest Area 2:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.forestBean1, storeKey: "forestBean1", images: allGun }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Second switch to open Forest Area 2:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.forestBean2, storeKey: "forestBean2", images: allGun })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To reach Snide's:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        SwitchsanitySwitch,
+        {
+          currValue: switches.cavesSnide,
+          storeKey: "cavesSnide",
+          images: freeTiny
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To reach the big boulder room:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        SwitchsanitySwitch,
+        {
+          currValue: switches.cavesBoulder,
+          storeKey: "cavesBoulder",
+          images: freeTiny
+        }
+      )
     ] })
   ] });
 };
