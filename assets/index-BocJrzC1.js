@@ -10343,7 +10343,10 @@ const initialSwitches = {
     galleonOutskirts: 1,
     forestBean1: 3,
     forestBean2: 4,
-    forestOwlTree: 2
+    forestOwlTree: 2,
+    islesAztecGongs: 0,
+    islesCavesLeft: 1,
+    islesCavesRight: 1
   }
 };
 const switchSlice = (set) => {
@@ -18978,13 +18981,29 @@ const useCheckDkMusicPad = () => {
 const useCheckDkCavesLobby = () => {
   const playCaves = usePlayLobby("Crystal Caves");
   const punch = usePunch();
+  const hasCharge = useCharge();
   const strong = useStrong();
   const twirl = useTwirl();
-  const orange = useOrange();
-  return {
-    in: playCaves.in && punch && strong,
-    out: (playCaves.in || playCaves.out) && punch && (twirl || orange)
-  };
+  const orangeYourself = useOrange();
+  const switchsanity1 = useDonkStore(useShallow((state) => state.switchsanitySwitches.islesCavesLeft));
+  const switchsanity2 = useDonkStore(useShallow((state) => state.switchsanitySwitches.islesCavesRight));
+  switch (switchsanity1 && switchsanity2) {
+    case 0:
+      return {
+        in: playCaves.in && hasCharge && strong,
+        out: playCaves.out && hasCharge && (twirl || orangeYourself)
+      };
+    case 1:
+      return {
+        in: playCaves.in && punch && strong,
+        out: playCaves.out && punch && (twirl || orangeYourself)
+      };
+    default:
+      return {
+        in: playCaves.in && punch && hasCharge && strong,
+        out: playCaves.out && punch && hasCharge && (twirl || orangeYourself)
+      };
+  }
 };
 const useCheckDiddySnide = () => {
   const kremAscent = useIslesKremAscent();
@@ -19070,11 +19089,21 @@ const useCheckTinyAztecLobby = () => {
   const autoBonus = useAutoBonus();
   const twirl = useTwirl();
   const charge = useCharge();
+  const hasPunch = usePunch();
   const anyKong = useAnyKong();
-  return {
-    in: playAztec.in && (anyKong && autoBonus || charge && twirl),
-    out: (playAztec.in || playAztec.out) && (anyKong && autoBonus || charge)
-  };
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.islesAztecGongs));
+  switch (switchsanity) {
+    case 1:
+      return {
+        in: playAztec.in && (anyKong && autoBonus || hasPunch && twirl),
+        out: playAztec.out && (anyKong && autoBonus || charge)
+      };
+    default:
+      return {
+        in: playAztec.in && (anyKong && autoBonus || charge && twirl),
+        out: playAztec.out && (anyKong && autoBonus || charge)
+      };
+  }
 };
 const useGalleonLobbySlam = () => {
   const progSlam = useSlamGalleon();
@@ -19248,10 +19277,20 @@ const useCastleKasplat = () => {
 const useCavesKasplat = () => {
   const playCaves = usePlayLobby("Crystal Caves");
   const punch = usePunch();
-  return {
-    in: playCaves.in && punch,
-    out: playCaves.out && punch
-  };
+  const hasCharge = useCharge();
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.islesCavesLeft));
+  switch (switchsanity) {
+    case 0:
+      return {
+        in: playCaves.in && hasCharge,
+        out: playCaves.out && hasCharge
+      };
+    default:
+      return {
+        in: playCaves.in && punch,
+        out: playCaves.out && punch
+      };
+  }
 };
 const useFactoryKasplat = () => {
   const playFactory = usePlayLobby("Frantic Factory");
@@ -19292,10 +19331,20 @@ const useCavesLobby = () => {
   const chunky = useChunky();
   const barrels = useBarrel();
   const punch = usePunch();
-  return {
-    in: canEnterCaves.in && chunky && barrels && punch,
-    out: canEnterCaves.out && chunky && barrels && punch
-  };
+  const hasCharge = useCharge();
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.islesCavesLeft));
+  switch (switchsanity) {
+    case 0:
+      return {
+        in: canEnterCaves.in && chunky && barrels && hasCharge,
+        out: canEnterCaves.out && chunky && barrels && hasCharge
+      };
+    default:
+      return {
+        in: canEnterCaves.in && chunky && barrels && punch,
+        out: canEnterCaves.out && chunky && barrels && punch
+      };
+  }
 };
 const useJapesLobby = () => {
   const canEnterJapes = usePlayLobby("Jungle Japes");
@@ -19368,13 +19417,10 @@ const useCavesLobbyGeneric = () => {
 const useCavesLobbyDiddy = () => {
   const canEnterCaves = usePlayLobby("Crystal Caves");
   const hasJetbarrel = useRocket();
-  const boulderTech = useBoulderTech();
-  const hasTiny = useTiny();
-  const hasTwirl = useTwirl();
-  const highGrab = useHighGrab();
   return {
     in: canEnterCaves.in && hasJetbarrel,
-    out: canEnterCaves.out && boulderTech && hasTiny && hasTwirl && highGrab
+    out: canEnterCaves.out && hasJetbarrel
+    //There WAS a trick where you could grab the boulder in Chunky's left cave, put it near the level entrance, Ponytail Twirl with Tiny, then switch back to Chunky for the high grab, but it was questionable at best and I feel Season 6's Switchsanity changes to the punchable Caves Lobby walls have made it useless.
   };
 };
 const useCastleLobbyGeneric = () => {
@@ -60072,13 +60118,8 @@ const StandardSwitchsanitySelector = () => {
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Switchsanity" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h5", { children: "Isles" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Diddy:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeDiddy, storeKey: "freeDiddy", images: allGun }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Lanky:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeLanky, storeKey: "freeLanky", images: allMusic }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Tiny:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeTiny, storeKey: "freeTiny", images: freeTiny }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To activate the Diddy Barrel in Isles:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         SwitchsanitySwitch,
@@ -60086,6 +60127,15 @@ const StandardSwitchsanitySelector = () => {
           currValue: switches.islesTrombone,
           storeKey: "islesTrombone",
           images: allMusic
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To take down the gongs in Aztec Lobby (only relevant if Auto-Finish Bonus Barrels is off):" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        SwitchsanitySwitch,
+        {
+          currValue: switches.islesAztecGongs,
+          storeKey: "islesAztecGongs",
+          images: freeTiny
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To get Chunky's hint in Aztec Lobby:" }),
@@ -60099,6 +60149,24 @@ const StandardSwitchsanitySelector = () => {
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To get the infamous Forest Lobby fairy:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.islesForest, storeKey: "islesForest", images: allGun }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To take down the wall with Lanky's Kasplat in Caves Lobby:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        SwitchsanitySwitch,
+        {
+          currValue: switches.islesCavesLeft,
+          storeKey: "islesCavesLeft",
+          images: freeTiny
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To take down the wall with the lava room in Caves Lobby:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        SwitchsanitySwitch,
+        {
+          currValue: switches.islesCavesRight,
+          storeKey: "islesCavesRight",
+          images: freeTiny
+        }
+      ),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To reach the top of Krem Isle:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         SwitchsanitySwitch,
@@ -60125,7 +60193,15 @@ const StandardSwitchsanitySelector = () => {
             chunkyMusicIcon
           ]
         }
-      ),
+      )
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Diddy:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeDiddy, storeKey: "freeDiddy", images: allGun }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Lanky:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeLanky, storeKey: "freeLanky", images: allMusic }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Tiny:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeTiny, storeKey: "freeTiny", images: freeTiny }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the Japes Hive Area:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.japesHive, storeKey: "japesHive", images: allGun }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the Japes Rambi Cage:" }),
