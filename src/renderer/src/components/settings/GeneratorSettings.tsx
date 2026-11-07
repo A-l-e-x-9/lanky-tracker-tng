@@ -70,9 +70,6 @@ const GeneratorSettings: React.FC = () => {
 
   const openModal = (): void => setOpen(true)
   const closeModal = (): void => setOpen(false)
-  const [isBossSeed, isBonusSeed] = useDonkStore(useShallow((state) => [state.winCondition.bosses, state.winCondition.bonuses]))
-  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier))
-
   return (
     <span>
       <span onClick={openModal} title="Generator Settings">
