@@ -60118,7 +60118,7 @@ const StandardSwitchsanitySelector = () => {
   const [switches] = useDonkStore(useShallow((state) => [state.switchsanitySwitches]));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Switchsanity" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h5", { children: "Isles" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h5", { children: "Isles:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To activate the Diddy Barrel in Isles:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -60195,18 +60195,13 @@ const StandardSwitchsanitySelector = () => {
         }
       )
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h5", { children: "Japes:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open Diddy's early tunnel:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.japesSide, storeKey: "japesSide", images: allGun }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Diddy:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeDiddy, storeKey: "freeDiddy", images: allGun }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Lanky:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeLanky, storeKey: "freeLanky", images: allMusic }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Tiny:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeTiny, storeKey: "freeTiny", images: freeTiny }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the Japes Hive Area:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.japesHive, storeKey: "japesHive", images: allGun }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the Japes Rambi Cage:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.japesRambi, storeKey: "japesRambi", images: allGun }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the Japes Painting Room:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the Painting Room:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         SwitchsanitySwitch,
         {
@@ -60215,8 +60210,12 @@ const StandardSwitchsanitySelector = () => {
           images: allGun
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open Diddy's early tunnel in Japes:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.japesSide, storeKey: "japesSide", images: allGun }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the Hive Area:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.japesHive, storeKey: "japesHive", images: allGun }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To open the Rambi Cage:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.japesRambi, storeKey: "japesRambi", images: allGun })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To get Aztec Early Kasplat:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         SwitchsanitySwitch,
@@ -60226,6 +60225,10 @@ const StandardSwitchsanitySelector = () => {
           images: allGun
         }
       ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Lanky:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeLanky, storeKey: "freeLanky", images: allMusic }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To free Tiny:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.freeTiny, storeKey: "freeTiny", images: freeTiny }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To get Aztec Back Access:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SwitchsanitySwitch, { currValue: switches.aztecBack, storeKey: "aztecBack", images: allMusic }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To enter Aztec Llama Temple 1:" }),
