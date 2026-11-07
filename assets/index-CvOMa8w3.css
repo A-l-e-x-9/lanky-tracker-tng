@@ -303,7 +303,6 @@ main > article:last-child {
 .switchsanity-settings > section {
   display: grid;
   grid-template-columns: 7fr 1fr;
-  height: 27vh;
 }
 
 .switchsanity-settings > section > img {

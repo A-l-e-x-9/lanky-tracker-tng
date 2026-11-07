@@ -10347,7 +10347,10 @@ const initialSwitches = {
     islesAztecGongs: 0,
     islesCavesLeft: 1,
     islesCavesRight: 1,
-    aztecGongs: 0
+    aztecGongs: 0,
+    factoryDarkRoom: 1,
+    factoryArcade: 1,
+    factoryToyMonster: 1
   }
 };
 const switchSlice = (set) => {
@@ -14403,12 +14406,22 @@ const useChunkyKaijuGb = () => {
   const climbing = useClimbing();
   const highGrab = useHighGrab();
   const punch = usePunch();
+  const hasCharge = useCharge();
   const triangle = useTriangle();
   const hunky = useHunky();
-  return {
-    in: testing.in && climbing && punch && triangle && hunky,
-    out: testing.out && highGrab && punch && triangle && hunky
-  };
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.factoryToyMonster));
+  switch (switchsanity) {
+    case 0:
+      return {
+        in: testing.in && climbing && hasCharge && triangle && hunky,
+        out: testing.out && highGrab && hasCharge && triangle && hunky
+      };
+    default:
+      return {
+        in: testing.in && climbing && punch && triangle && hunky,
+        out: testing.out && highGrab && punch && triangle && hunky
+      };
+  }
 };
 const useChunkyArcadeGb = () => {
   const inStage = usePlayFactory();
@@ -14416,19 +14429,39 @@ const useChunkyArcadeGb = () => {
   const hasBananaport = useBananaportAll();
   const DKPortal = useArcadePortal();
   const punch = usePunch();
-  return {
-    in: inStage.in && (hasClimbing || hasBananaport || DKPortal) && punch,
-    out: inStage.out && (hasClimbing || hasBananaport || DKPortal) && punch
-  };
+  const hasCharge = useCharge();
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.factoryToyMonster));
+  switch (switchsanity) {
+    case 0:
+      return {
+        in: inStage.in && (hasClimbing || hasBananaport || DKPortal) && hasCharge,
+        out: inStage.out && (hasClimbing || hasBananaport || DKPortal) && hasCharge
+      };
+    default:
+      return {
+        in: inStage.in && (hasClimbing || hasBananaport || DKPortal) && punch,
+        out: inStage.out && (hasClimbing || hasBananaport || DKPortal) && punch
+      };
+  }
 };
 const useChunkyDarkGb = () => {
   const inStage = usePlayFactory();
   const hasPunch = usePunch();
   const canSlam = useSlamFactory();
-  return {
-    in: inStage.in && hasPunch && canSlam,
-    out: inStage.out && hasPunch && canSlam
-  };
+  const hasCharge = useCharge();
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.factoryToyMonster));
+  switch (switchsanity) {
+    case 0:
+      return {
+        in: inStage.in && hasCharge && canSlam,
+        out: inStage.out && hasCharge && canSlam
+      };
+    default:
+      return {
+        in: inStage.in && hasPunch && canSlam,
+        out: inStage.out && hasPunch && canSlam
+      };
+  }
 };
 const useChunkyProductionGb = () => {
   const production = useFactoryProductionTop();
@@ -14654,10 +14687,20 @@ const useFactoryDirt = () => {
   const inStage = usePlayFactory();
   const shockwave2 = useShockwave();
   const punch = usePunch();
-  return {
-    in: inStage.in && punch && shockwave2,
-    out: inStage.out && punch && shockwave2
-  };
+  const switchsanity = useDonkStore(useShallow((state) => state.switchsanitySwitches.factoryToyMonster));
+  const hasCharge = useCharge();
+  switch (switchsanity) {
+    case 0:
+      return {
+        in: inStage.in && hasCharge && shockwave2,
+        out: inStage.out && hasCharge && shockwave2
+      };
+    default:
+      return {
+        in: inStage.in && punch && shockwave2,
+        out: inStage.out && punch && shockwave2
+      };
+  }
 };
 const useGeneralFairy$5 = () => {
   const thing = useGeneralThing$4();
@@ -60266,6 +60309,36 @@ const StandardSwitchsanitySelector = () => {
           currValue: switches.aztecDeadEnd,
           storeKey: "aztecDeadEnd",
           images: allKong
+        }
+      )
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h5", { children: "Factory:" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To reveal the Dark Room:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        SwitchsanitySwitch,
+        {
+          currValue: switches.factoryDarkRoom,
+          storeKey: "factoryDarkRoom",
+          images: freeTiny
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To reveal the Bonus Barrel near the arcade:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        SwitchsanitySwitch,
+        {
+          currValue: switches.factoryArcade,
+          storeKey: "factoryArcade",
+          images: freeTiny
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "To reach the Toy Monster in R&D:" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        SwitchsanitySwitch,
+        {
+          currValue: switches.factoryToyMonster,
+          storeKey: "factoryToyMonster",
+          images: freeTiny
         }
       )
     ] }),
