@@ -986,6 +986,7 @@ interface WinConCollection {
   pearls: boolean
   bosses: boolean
   bonuses: boolean
+  kontracts: boolean
   winConItemCount: GoldBananaRange
 }
 

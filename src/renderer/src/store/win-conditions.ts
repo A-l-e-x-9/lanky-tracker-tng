@@ -21,6 +21,7 @@ export const initialWinCon: WinConState = {
     pearls: false,
     bosses: false,
     bonuses: false,
+    kontracts: false,
     winConItemCount: 0
   }
 }
