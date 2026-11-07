@@ -39,7 +39,7 @@ const StandardSwitchsanitySelector: React.FC = () => {
   return (
     <>
     <h4>Switchsanity</h4>
-    <h5>Isles</h5>
+    <h5>Isles:</h5>
     <section>
       <p>To activate the Diddy Barrel in Isles:</p>
       <SwitchsanitySwitch
@@ -95,31 +95,33 @@ const StandardSwitchsanitySelector: React.FC = () => {
         ]}
       />
     </section>
+    <h5>Japes:</h5>
     <section>
+      <p>To open Diddy's early tunnel:</p>
+      <SwitchsanitySwitch currValue={switches.japesSide} storeKey="japesSide" images={allGun} />
       <p>To free Diddy:</p>
       <SwitchsanitySwitch currValue={switches.freeDiddy} storeKey="freeDiddy" images={allGun} />
-      <p>To free Lanky:</p>
-      <SwitchsanitySwitch currValue={switches.freeLanky} storeKey="freeLanky" images={allMusic} />
-      <p>To free Tiny:</p>
-      <SwitchsanitySwitch currValue={switches.freeTiny} storeKey="freeTiny" images={freeTiny} />
-      <p>To open the Japes Hive Area:</p>
-      <SwitchsanitySwitch currValue={switches.japesHive} storeKey="japesHive" images={allGun} />
-      <p>To open the Japes Rambi Cage:</p>
-      <SwitchsanitySwitch currValue={switches.japesRambi} storeKey="japesRambi" images={allGun} />
-      <p>To open the Japes Painting Room:</p>
+      <p>To open the Painting Room:</p>
       <SwitchsanitySwitch
         currValue={switches.japesPainting}
         storeKey="japesPainting"
         images={allGun}
       />
-      <p>To open Diddy's early tunnel in Japes:</p>
-      <SwitchsanitySwitch currValue={switches.japesSide} storeKey="japesSide" images={allGun} />
+      <p>To open the Hive Area:</p>
+      <SwitchsanitySwitch currValue={switches.japesHive} storeKey="japesHive" images={allGun} />
+      <p>To open the Rambi Cage:</p>
+      <SwitchsanitySwitch currValue={switches.japesRambi} storeKey="japesRambi" images={allGun} />
+    </section>
       <p>To get Aztec Early Kasplat:</p>
       <SwitchsanitySwitch
         currValue={switches.aztecBlueprint}
         storeKey="aztecBlueprint"
         images={allGun}
       />
+      <p>To free Lanky:</p>
+      <SwitchsanitySwitch currValue={switches.freeLanky} storeKey="freeLanky" images={allMusic} />
+      <p>To free Tiny:</p>
+      <SwitchsanitySwitch currValue={switches.freeTiny} storeKey="freeTiny" images={freeTiny} />
       <p>To get Aztec Back Access:</p>
       <SwitchsanitySwitch currValue={switches.aztecBack} storeKey="aztecBack" images={allMusic} />
       <p>To enter Aztec Llama Temple 1:</p>
