@@ -10425,6 +10425,7 @@ const initialWinCon = {
     pearls: false,
     bosses: false,
     bonuses: false,
+    kontracts: false,
     winConItemCount: 0
   }
 };
