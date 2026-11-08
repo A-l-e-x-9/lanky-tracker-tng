@@ -2,6 +2,7 @@ import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
 
 import TaskSelector from './task-selector'
+import CountSelector from './CountSelector'
 
 import t1 from '../../assets/images/1.png'
 import t2 from '../../assets/images/2.png'
@@ -14,6 +15,7 @@ import t8 from '../../assets/images/8.png'
 
 const Kontracts = (): JSX.Element => {
   const isKontractSeed = useDonkStore(useShallow((state) => state.winCondition.kontracts))
+  const setTaskCount = useDonkStore(useShallow((state) => state.setTaskCount))
   if (isKontractSeed) {
   return (
     <section className="kontract-section">
@@ -22,34 +24,98 @@ const Kontracts = (): JSX.Element => {
         <section className="task1">
           <img src={t1} height={24} />
           <TaskSelector storeKey="task1" />
+          <CountSelector
+            storeKey="taskCount1"
+            title="Amount of the item you need to complete this task."
+            imgUrl={t1}
+            prefix="taskCount"
+            setCount={setTaskCount}
+            maxValue={255}
+          />
         </section>
         <section className="task2">
           <img src={t2} height={24} />
           <TaskSelector storeKey="task2" />
+          <CountSelector
+            storeKey="taskCount2"
+            title="Amount of the item you need to complete this task."
+            imgUrl={t2}
+            prefix="taskCount"
+            setCount={setTaskCount}
+            maxValue={255}
+          />
         </section>
         <section className="task3">
           <img src={t3} height={24} />
           <TaskSelector storeKey="task3" />
+          <CountSelector
+            storeKey="taskCount3"
+            title="Amount of the item you need to complete this task."
+            imgUrl={t3}
+            prefix="taskCount"
+            setCount={setTaskCount}
+            maxValue={255}
+          />
         </section>
         <section className="task4">
           <img src={t4} height={24} />
           <TaskSelector storeKey="task4" />
+          <CountSelector
+            storeKey="taskCount4"
+            title="Amount of the item you need to complete this task."
+            imgUrl={t4}
+            prefix="taskCount"
+            setCount={setTaskCount}
+            maxValue={255}
+          />
         </section>
         <section className="task5">
           <img src={t5} height={24} />
           <TaskSelector storeKey="task5" />
+          <CountSelector
+            storeKey="taskCount5"
+            title="Amount of the item you need to complete this task."
+            imgUrl={t5}
+            prefix="taskCount"
+            setCount={setTaskCount}
+            maxValue={255}
+          />
         </section>
         <section className="task6">
           <img src={t6} height={24} />
           <TaskSelector storeKey="task6" />
+          <CountSelector
+            storeKey="taskCount6"
+            title="Amount of the item you need to complete this task."
+            imgUrl={t6}
+            prefix="taskCount"
+            setCount={setTaskCount}
+            maxValue={255}
+          />
         </section>
         <section className="task7">
           <img src={t7} height={24} />
           <TaskSelector storeKey="task7" />
+          <CountSelector
+            storeKey="taskCount7"
+            title="Amount of the item you need to complete this task."
+            imgUrl={t7}
+            prefix="taskCount"
+            setCount={setTaskCount}
+            maxValue={255}
+          />
         </section>
         <section className="task8">
           <img src={t8} height={24} />
           <TaskSelector storeKey="task8" />
+          <CountSelector
+            storeKey="taskCount8"
+            title="Amount of the item you need to complete this task."
+            imgUrl={t8}
+            prefix="taskCount"
+            setCount={setTaskCount}
+            maxValue={255}
+          />
         </section>
       </section>
     </section>

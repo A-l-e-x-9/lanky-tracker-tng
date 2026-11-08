@@ -2,26 +2,37 @@ import { StateCreator } from 'zustand'
 import { AllSlice, Task, TaskState, donkResetFns } from './common'
 
 export const initialTask: TaskState = {
-  task: {
-    task1: '',
-    task2: '',
-    task3: '',
-    task4: '',
-    task5: '',
-    task6: '',
-    task7: '',
-    task8: ''
-  },
-  taskCount: {
-    taskCount1: '0',
-    taskCount2: '0',
-    taskCount3: '0',
-    taskCount4: '0',
-    taskCount5: '0',
-    taskCount6: '0',
-    taskCount7: '0',
-    taskCount8: '0'
-  }
+  task1: '',
+  task2: '',
+  task3: '',
+  task4: '',
+  task5: '',
+  task6: '',
+  task7: '',
+  task8: ''
+}
+
+export const initialTaskCount: TaskState = {
+  taskCount1: 0,
+  taskCount2: 0,
+  taskCount3: 0,
+  taskCount4: 0,
+  taskCount5: 0,
+  taskCount6: 0,
+  taskCount7: 0,
+  taskCount8: 0
+}
+
+interface TaskSlice {
+  task1: Task
+  task2: Task
+  task3: Task
+  task4: Task
+  task5: Task
+  task6: Task
+  task7: Task
+  task8: Task
+  setTask: (index: number, name: string) => void
 }
 
 const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
@@ -38,6 +49,7 @@ const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
         }
         return state
       }),
+    ...initialTaskCount,
     setTaskCount: (id, val): void => {
       set((state) => {
         const target: Record<string, number> = {}

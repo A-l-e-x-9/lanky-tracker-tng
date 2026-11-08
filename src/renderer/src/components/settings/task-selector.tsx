@@ -3,7 +3,6 @@ import { useShallow } from 'zustand/react/shallow'
 
 import useDonkStore from '@renderer/store'
 import { Task } from '@renderer/store/common'
-import CountSelector from '@renderer/components/settings/CountSelector'
 
 import unknownIcon from '../../assets/images/unknown.png'
 import keyIcon from '../../assets/images/key.png'
@@ -28,7 +27,7 @@ type TaskSelectorProps = {
   storeKey: string
 }
 
-const taskToIcon = (task: Task): string => {
+export const taskToIcon = (task: Task): string => {
   switch (task) {
     case 'Keys':
     case 'Bosses':
@@ -180,7 +179,7 @@ const TaskSelector: React.FC<TaskSelectorProps> = ({ storeKey }) => {
   const [task, setTask] = useDonkStore(
     useShallow((state) => [state[storeKey] as Task, state.setTask])
   )
-  const setTaskCount = useDonkStore(useShallow((state) => state.setTaskCount))
+
   const taskNum = Number.parseInt(storeKey.slice(4), 23)
 
   const handleNextTask = (): void => {
@@ -201,65 +200,19 @@ const TaskSelector: React.FC<TaskSelectorProps> = ({ storeKey }) => {
 
   const taskTitle = task !== '' ? task : 'None'
 
-  switch (task) {
-    case 'Keys':
-    case 'Kremling Kapture':
-    case 'Golden Bananas':
-    case 'Blueprints':
-    case 'Company Coins':
-    case 'Medals':
-    case 'Crowns':
-    case 'Fairies':
-    case 'Rainbow Coins':
-    case 'The Bean™':
-    case 'Pearls':
-    case 'Bosses':
-    case 'Bonus Levels':
-    case 'Barrel Blast Courses':
-      return (
-        <>
-          <img
-            alt={taskTitle}
-            title={taskTitle}
-            height={24}
-            src={taskToIcon(task)}
-            onClick={handleNextTask}
-            onContextMenu={handlePrevTask}
-            onWheel={handleWheel}
-          />
-          <CountSelector
-            imgUrl={taskToIcon(task)}
-            title="Number of this item you need to complete this task."
-            storeKey={task}
-            prefix="taskCount"
-            setCount={setTaskCount}
-            maxValue={255}
-          />
-        </>
-      )
-    case 'Get Key 8 only':
-    case 'Kill the Wabbit':
-    case 'Complete the DK Rap':
-    case 'Take Down the Mechfish Agenda':
-    case 'Round 2 of DK Arcade':
-    case 'Jetpac':
-    case 'Defeat the Toy Monster':
-    case 'Get the Rareware Banana':
-    default:
-      return (
-        <>
-          <img
-            alt={taskTitle}
-            title={taskTitle}
-            height={24}
-            src={taskToIcon(task)}
-            onClick={handleNextTask}
-            onContextMenu={handlePrevTask}
-            onWheel={handleWheel}
-          />
-        </>
-      )
-  }
+  return (
+    <>
+      <img
+        alt={taskTitle}
+        title={taskTitle}
+        height={24}
+        src={taskToIcon(task)}
+        onClick={handleNextTask}
+        onContextMenu={handlePrevTask}
+        onWheel={handleWheel}
+      />
+    </>
+  )
 }
 
 export default TaskSelector
