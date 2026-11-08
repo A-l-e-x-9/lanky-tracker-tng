@@ -5,9 +5,11 @@ import SlopeBarrel from '../gold-bananas/lanky/SlopeBarrel'
 import DiddyKasplat from '../kasplats/Diddy'
 import LankyKasplat from '../kasplats/Lanky'
 import RambiHuts from '../breakables/RambiHuts'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const StormyTunnelChecks: React.FC = () => {
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>

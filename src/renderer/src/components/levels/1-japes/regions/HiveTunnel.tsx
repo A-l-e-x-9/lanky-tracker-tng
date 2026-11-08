@@ -3,7 +3,7 @@ import { useShallow } from 'zustand/react/shallow'
 import HiveTunnelEnemies from '../enemies/HiveTunnel'
 import DkKasplat from '../kasplats/Dk'
 import TinyKasplat from '../kasplats/Tiny'
-import { KRoolKontracts } from '@renderer/hooks/isles'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const HiveTunnelChecks: React.FC = () => {
 const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
