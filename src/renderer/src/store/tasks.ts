@@ -33,7 +33,7 @@ const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
         const newKey: Record<number, string> = {}
         newKey['task' + index] = name
         state = {
-          ...state,
+          ...state.task,
           ...newKey
         }
         return state
