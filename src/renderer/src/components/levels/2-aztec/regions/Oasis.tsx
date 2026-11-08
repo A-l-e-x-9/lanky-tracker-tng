@@ -5,9 +5,11 @@ import OasisEnemies from '../enemies/Oasis'
 import FreeLlama from '../gold-bananas/dk/FreeLlama'
 import DiddyKasplat from '../kasplats/Diddy'
 import OasisBalloons from '../balloons/Oasis'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const OasisChecks: React.FC = () => {
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>

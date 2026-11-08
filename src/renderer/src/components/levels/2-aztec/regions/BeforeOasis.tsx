@@ -7,10 +7,11 @@ import CircleVase from '../boulders/CircleVase'
 import ColonVase from '../boulders/ColonVase'
 import PlusVase from '../boulders/PlusVase'
 import TriangleVase from '../boulders/TriangleVase'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const BeforeOasisChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
@@ -21,10 +22,10 @@ return (
     <TriangleVase />
     <VaseBanana />
   </div>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <DkKasplat />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className="grid">
     <BeforeOasisEnemies />
   </div>
   </>

@@ -5,9 +5,11 @@ import TunnelBarrel from '../gold-bananas/chunky/Tunnel'
 import TunnelBoulder from '../boulders/TunnelBoulder'
 import TinyKasplat from '../kasplats/Tiny'
 import MiddleCaveBalloons from '../balloons/MiddleCave'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const ConnectorTunnelChecks: React.FC = () => {
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
