@@ -38,7 +38,7 @@ const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
         }
         return state
       }),
-    ...initialTaskCount,
+    ...initialTask,
     setTaskCount: (id, val): void => {
       set((state) => {
         const target: Record<string, number> = {}
