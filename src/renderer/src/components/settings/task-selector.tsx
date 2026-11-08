@@ -263,16 +263,3 @@ const TaskSelector: React.FC<TaskSelectorProps> = ({ storeKey }) => {
 }
 
 export default TaskSelector
-
-/*            <p>Number of the indicated item needed:</p>
-              <CountSelector
-                imgUrl={(isKeySeed || isKey8Seed || isKey38Seed || isBossSeed) ? keyIcon : isKremKaptureSeed ? fairyCamIcon : isRapSeed ? crankyIcon : isChallengeSeed ? hardShootIcon : isWabbitSeed ? toughBananaIcon : isGBSeed ? gbIcon : isBPSeed ? blueprintIcon : isCoCoinSeed ? companyCoinIcon : isMedalSeed ? bananaMedalIcon : isCrownSeed ? crownIcon : isFairySeed ? fairyIcon : isRainbowSeed ? rainbowCoinIcon : isBeanSeed ? beanIcon : isPearlSeed ? pearlIcon : isBonusSeed ? bonusIcon : unknownIcon}
-                title="Number of the indicated item needed."
-                storeKey="winConItemCount"
-                prefix="task"
-                setCount={settask}
-                maxValue={isKeySeed ? 8 : isGBSeed ? (capRemoved ? 255 : 201) : isBPSeed ? 40 : isCoCoinSeed ? 2 : isMedalSeed ? (capRemoved ? 255 : 40): isCrownSeed ? (capRemoved ? 255 : 10) : isFairySeed ? (capRemoved ? 255 : 20) : isRainbowSeed ? (capRemoved ? 255 : 16) : isBeanSeed ? 1 : isPearlSeed ? (capRemoved ? 255 : 5) : isBossSeed ? 7 : isBonusSeed ? 43 : 0} //I know no good way of implementing Hideout Helm bonuses at this time, so the "Bonuses" win con caps out at 43 even though it can go to 53.
-              />
-            <p></p>
-            <p></p>
-*/

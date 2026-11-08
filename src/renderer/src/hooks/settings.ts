@@ -1,6 +1,7 @@
 import useDonkStore from '@renderer/store'
 import { BananaportRange, SlamRange } from '@renderer/store/common'
 import { useShallow } from 'zustand/react/shallow'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 export const useBalancedRoolPhase = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.balancedRoolPhases))
@@ -131,13 +132,13 @@ export const usePoolMiniboss = (): boolean =>
  */
 export const usePoolPearls = (): boolean => {
   const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolPearls))
-  const pearlWinCon = useDonkStore(useShallow((state) => state.winCondition.pearls))
+  const pearlWinCon = useKRoolKontracts('Pearls')
   return pearlsInRotation || (pearlWinCon && !pearlsInRotation)
 }
 
 export const useBean = (): boolean => {
   const beanInRotation = useDonkStore(useShallow((state) => state.settings.poolBean))
-  const beanWinCon = useDonkStore(useShallow((state) => state.winCondition.theBean))
+  const beanWinCon = useKRoolKontracts('The Bean™')
   return beanInRotation || (beanWinCon && !beanInRotation)
 }
 
