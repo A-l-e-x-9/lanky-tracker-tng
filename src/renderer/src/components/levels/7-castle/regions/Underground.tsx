@@ -16,7 +16,7 @@ import DiddyKasplat from '../kasplats/Diddy'
 import UpperCaveEnemies from '../enemies/UpperCave'
 import DungeonCrates from '../crates/Dungeon'
 import DungeonKasplats from '../kasplats/Dungeon'
-import { useKRoolKontracts } from '@renderer/hooks/kongs'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const UndergroundChecks: React.FC = () => {
 const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''

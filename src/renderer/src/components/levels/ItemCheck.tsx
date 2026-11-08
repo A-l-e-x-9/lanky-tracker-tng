@@ -2,6 +2,7 @@ import { useShallow } from 'zustand/react/shallow'
 
 import useDonkStore from '@renderer/store'
 import { Level, SelectableRegionValues } from '@renderer/store/common'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 export type LevelCheckProps = {
   id: number
@@ -26,7 +27,13 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
   const hoardValues = Object.values(hoard)
   const isFoolish = foolishValues.some((f) => f === region)
   const isHoard = hoardValues.some((f) => f === region)
-  const [isCoCoinCheck, isMedalCheck, isBossCheck, isKillTheWabbit, isBonusSeed, isKRoolsChallenge, isKeyCheck] = useDonkStore(useShallow((state) => [state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.bosses, state.winCondition.killTheWabbit, state.winCondition.bonuses, state.winCondition.kRoolChallenge, state.winCondition.bossKeys]))
+  const isCoCoinCheck = useKRoolKontracts('Company Coins')
+  const isMedalCheck = useKRoolKontracts('Medals')
+  const isBossCheck = useKRoolKontracts('Bosses')
+  const isKillTheWabbit = useKRoolKontracts('Kill the Wabbit')
+  const isBonusSeed = useKRoolKontracts('Bonus Levels')
+  const isKeyCheck = useKRoolKontracts('Keys')
+  const isKRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals))
   const ninCoin = useDonkStore(useShallow((state) => state.settings.poolNintendoCoin))
   const rareCoin = useDonkStore(useShallow((state) => state.settings.poolRarewareCoin))
