@@ -18433,6 +18433,14 @@ const useCurrentCoCoinCount = () => useDonkStore(useShallow((state) => Number(st
 const useCurrentKeyCount = () => useDonkStore(useShallow((state) => Number(state.key1) + Number(state.key2) + Number(state.key3) + Number(state.key4) + Number(state.key5) + Number(state.key6) + Number(state.key7) + Number(state.key8)));
 const useCurrentCrownCount = () => useDonkStore(useShallow((state) => state.consumables.crowns));
 const useCurrentRainbowCoinCount = () => useDonkStore(useShallow((state) => state.consumables.rainbowCoins));
+const useCurrentBossCount = () => {
+  const [didCheck] = useDonkStore(useShallow((state) => [state.checks]));
+  return Number(didCheck[1105]) + Number(didCheck[2105]) + Number(didCheck[3105]) + Number(didCheck[4105]) + Number(didCheck[5105]) + Number(didCheck[6105]) + Number(didCheck[7105]);
+};
+const useCurrentBonusCount = () => {
+  const [didCheck] = useDonkStore(useShallow((state) => [state.checks]));
+  return Number(didCheck[10]) + Number(didCheck[12]) + Number(didCheck[23]) + Number(didCheck[32]) + Number(didCheck[43]) + Number(didCheck[1021]) + Number(didCheck[1022]) + Number(didCheck[1031]) + Number(didCheck[1042]) + Number(didCheck[2002]) + Number(didCheck[2021]) + Number(didCheck[2022]) + Number(didCheck[2042]) + Number(didCheck[2043]) + Number(didCheck[3010]) + Number(didCheck[3012]) + Number(didCheck[3020]) + Number(didCheck[3033]) + Number(didCheck[3042]) + Number(didCheck[4004]) + Number(didCheck[4011]) + Number(didCheck[4013]) + Number(didCheck[4021]) + Number(didCheck[4031]) + Number(didCheck[4032]) + Number(didCheck[4043]) + Number(didCheck[5001]) + Number(didCheck[5004]) + Number(didCheck[5010]) + Number(didCheck[5011]) + Number(didCheck[5021]) + Number(didCheck[5030]) + Number(didCheck[6001]) + Number(didCheck[6010]) + Number(didCheck[6030]) + Number(didCheck[6043]) + Number(didCheck[7010]) + Number(didCheck[7011]) + Number(didCheck[7020]) + Number(didCheck[7023]) + Number(didCheck[7033]) + Number(didCheck[7040]) + Number(didCheck[7043]);
+};
 const useCurrentCBCount = () => {
   const islesCBs = useDkMedalInLogic$7() + useDiddyMedalInLogic$7() + useLankyMedalInLogic$7() + useTinyMedalInLogic$7() + useChunkyMedalInLogic$7();
   const japesCBs = useDkMedalInLogic$6() + useDiddyMedalInLogic$6() + useLankyMedalInLogic$6() + useTinyMedalInLogic$6() + useChunkyMedalInLogic$6();
@@ -53891,6 +53899,23 @@ const useCanDeactivateHelm = () => {
     };
   }
 };
+const useWinCondition = () => {
+  const key38WinCon = useDonkStore(useShallow((state) => state.winCondition.key3And8));
+  const challengeWinCon = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
+  const hasKey3 = useDonkStore(useShallow((state) => state.key3));
+  const hasKey8 = useDonkStore(useShallow((state) => state.key8));
+  const currentBlueprintCount = useCurrentBlueprintCount();
+  const currentKeyCount = useCurrentKeyCount();
+  const currentBossCount = useCurrentBossCount();
+  const currentBonusCount = useCurrentBonusCount();
+  if (key38WinCon) {
+    return hasKey3 && hasKey8;
+  } else if (challengeWinCon) {
+    return currentKeyCount >= 8 && currentBlueprintCount >= 40 && currentBossCount >= 7 && currentBonusCount >= 43;
+  } else {
+    return false;
+  }
+};
 const useCanFightRool = () => {
   const num1 = useSingleRoolNum(1);
   const num2 = useSingleRoolNum(2);
@@ -53902,6 +53927,7 @@ const useCanFightRool = () => {
   const check3 = useSingleRoolCheck(3);
   const check4 = useSingleRoolCheck(4);
   const check5 = useSingleRoolCheck(5);
+  const winConditionSatisfied = useWinCondition();
   if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
     return {
       in: false,
@@ -53909,14 +53935,8 @@ const useCanFightRool = () => {
     };
   }
   return {
-    in: (
-      /*winConditionSatisfied && */
-      check1.in && check2.in && check3.in && check4.in && check5.in
-    ),
-    out: (
-      /*winConditionSatisfied && */
-      check1.out && check2.out && check3.out && check4.out && check5.out
-    )
+    in: winConditionSatisfied && check1.in && check2.in && check3.in && check4.in && check5.in,
+    out: winConditionSatisfied && check1.out && check2.out && check3.out && check4.out && check5.out
   };
 };
 const useNotFightingKRool = () => useDonkStore(useShallow((state) => state.ui.hideKRool));
