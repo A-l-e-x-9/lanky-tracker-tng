@@ -5,9 +5,10 @@ import AnthillBean from './AnthillBean'
 import BeanCheck from './BeanCheck'
 import MushroomBarrel from './Mushroom'
 import SpiderBoss from './Spider'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const TinyBananas: React.FC = () => {
-  const isBeanSeed = useDonkStore(useShallow((state) => state.winCondition.theBean)) ? 'foolish' : ''
+  const isBeanSeed = useKRoolKontracts('The Bean™') ? 'foolish' : ''
   const beanInRotation = useDonkStore(useShallow((state) => state.settings.poolBean)) ? '' : 'foolish'
   return (
   <>

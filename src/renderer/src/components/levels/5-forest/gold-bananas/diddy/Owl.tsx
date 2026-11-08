@@ -4,10 +4,12 @@ import GBPool from '@renderer/components/pools/GB'
 import ToughGoldenBanana from '@renderer/components/pools/ToughGoldenBanana'
 import { useDiddyOwlGb } from '@renderer/hooks/forest'
 import ForestCheck from '../../check'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const OwlRace: React.FC = () => {
   const owlGb = useDiddyOwlGb()
-  const [isBonusSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.bonuses, state.winCondition.kRoolChallenge]))
+  const isBonusSeed = useKRoolKontracts('Bonus Levels') ? 'foolish' : ''
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
   if (isBonusSeed || isKRoolChallengeSeed) { //causes this check to display if you indicated you had a K. Rool's Challenge seed or one where you have to do Bonus Barrel checks to win, even if you have Tough GB's off. Because this check ends in a Bonus Barrel, it's mandatory for those two rulesets.
   return (
   <GBPool>
