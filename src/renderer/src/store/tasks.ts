@@ -12,9 +12,7 @@ task: {
   task7: '',
   task8: ''
   }
-}
-
-export const initialTaskCount: TaskState = {
+},
 taskCount: {
   taskCount1: 0,
   taskCount2: 0,

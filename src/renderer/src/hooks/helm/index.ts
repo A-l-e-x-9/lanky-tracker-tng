@@ -30,9 +30,9 @@ import {
   useStrong,
   useTrombone
 } from '../kongs'
-import { useHelmStartPosition, useHelmItem1, useHelmItemNum1, useHelmItem2, useHelmItemNum2, useKRoolItem, useKRoolItemNum } from '../settings'
+import { useHelmStartPosition, useHelmItem1, useHelmItemNum1, useHelmItem2, useHelmItemNum2 } from '../settings'
 import { LogicBool } from '../world'
-import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentCoCoinCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useBean, useCurrentPearlCount, useCurrentBossCount, useCurrentBonusCount, useKremKaptureEnemyCount } from '../consumables'
+import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentCoCoinCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useBean, useCurrentPearlCount/*, useCurrentBossCount, useCurrentBonusCount, useKremKaptureEnemyCount*/ } from '../consumables'
 
 /**
  * Can we play in Hideout Helm?
@@ -373,7 +373,7 @@ export const useCanFightRool = (): LogicBool => {
   const check3 = useSingleRoolCheck(3)
   const check4 = useSingleRoolCheck(4)
   const check5 = useSingleRoolCheck(5)
-  const winConditionSatisfied = useWinCondition()
+//  const winConditionSatisfied = useWinCondition()
 
   if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
     return {
@@ -383,8 +383,8 @@ export const useCanFightRool = (): LogicBool => {
   }
 
   return {
-    in: winConditionSatisfied && check1.in && check2.in && check3.in && check4.in && check5.in,
-    out: winConditionSatisfied && check1.out && check2.out && check3.out && check4.out && check5.out
+    in: /*winConditionSatisfied && */check1.in && check2.in && check3.in && check4.in && check5.in,
+    out: /*winConditionSatisfied && */check1.out && check2.out && check3.out && check4.out && check5.out
   }
 }
 
