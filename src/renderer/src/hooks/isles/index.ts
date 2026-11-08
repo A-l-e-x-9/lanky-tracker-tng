@@ -599,7 +599,7 @@ export const useTroffAndScoff = (level: Level): number => {
 
 /*Another Alex addition to implement the Tasks feature that debuted in Season 6.*/
 export const useKRoolKontracts = (task: Task): boolean => {
-  const [task1, task2, task3, task4, task5, task6, task7, task8] = useDonkStore(useShallow((state) => [state.task1, state.task2, state.task3, state.task4, state.task5, state.task6, state.task7, state.task8]))
+  const [task1, task2, task3, task4, task5, task6, task7, task8] = useDonkStore(useShallow((state) => [state.task.task1, state.task.task2, state.task.task3, state.task.task4, state.task.task5, state.task.task6, state.task.task7, state.task.task8]))
   if (task1 === task) {
     return true
   }
