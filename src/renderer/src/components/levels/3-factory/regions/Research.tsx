@@ -8,9 +8,11 @@ import PianoGame from '../gold-bananas/lanky/Piano'
 import CarRace from '../gold-bananas/tiny/Race'
 import LankyKasplat from '../kasplats/Lanky'
 import RNDBalloons from '../balloons/RND'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const RNDChecks: React.FC = () => {
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
