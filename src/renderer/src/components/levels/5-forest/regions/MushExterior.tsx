@@ -6,9 +6,11 @@ import MushroomTop from '../gold-bananas/diddy/Top'
 import ForestBlast from '../gold-bananas/dk/Blast'
 import ChunkyKasplat from '../kasplats/Chunky'
 import TinyKasplat from '../kasplats/Tiny'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const MushExteriorChecks: React.FC = () => {
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>

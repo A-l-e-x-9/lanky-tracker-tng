@@ -7,11 +7,13 @@ import RabbitRace from '../gold-bananas/lanky/Race'
 import AnthillBanana from '../gold-bananas/tiny/AnthillBanana'
 import AnthillBean from '../gold-bananas/tiny/AnthillBean'
 import LankyKasplat from '../kasplats/Lanky'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const OwlChecks: React.FC = () => {
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBeanSeed = useKRoolKontracts('The Bean™') ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
-const isBeanSeed = useDonkStore(useShallow((state) => state.winCondition.theBean)) ? 'foolish' : ''
 const beanInRotation = useDonkStore(useShallow((state) => state.settings.poolBean)) ? '' : 'foolish'
 return (
   <>
