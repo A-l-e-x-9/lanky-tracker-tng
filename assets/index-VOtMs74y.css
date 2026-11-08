@@ -147,7 +147,7 @@ main > article:last-child {
   justify-items: center;
 }
 
-.level-list, .boss-list {
+.level-list, .boss-list, .kontract-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
@@ -156,11 +156,13 @@ main > article:last-child {
 .level-list img:nth-of-type(3n),
 .level-list img:nth-of-type(3n + 2),
 .boss-list img:nth-of-type(3n),
-.boss-list img:nth-of-type(3n + 2) {
+.boss-list img:nth-of-type(3n + 2),
+.kontract-list img:nth-of-type(3n),
+.kontract-list img:nth-of-type(3n+2) {
   cursor: pointer;
 }
 
-.level-list > section, .boss-list section {
+.level-list > section, .boss-list section, .kontract-list section {
   display: grid;
   justify-items: center;
 }
@@ -169,23 +171,23 @@ main > article:last-child {
   grid-template-columns: 1fr 14ex 1fr 1fr 1fr;
 }
 
-.boss-list section {
+.boss-list section, .kontract-list section {
   grid-template-columns: 1fr 14ex 1fr;
 }
 
-.level-list > .level2, .boss-list > .boss2 {
+.level-list > .level2, .boss-list > .boss2, .kontract-list > .task2 {
   grid-row: 2;
 }
 
-.level-list > .level3, .boss-list > .boss3 {
+.level-list > .level3, .boss-list > .boss3, .kontract-list > .task3 {
   grid-row: 3;
 }
 
-.level-list > .level4, .boss-list > .boss4 {
+.level-list > .level4, .boss-list > .boss4, .kontract-list > .task4 {
   grid-row: 4;
 }
 
-.level-list img, .boss-list img {
+.level-list img, .boss-list img, .kontract-list img {
   height: 24px;
 }
 

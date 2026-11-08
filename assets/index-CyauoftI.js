@@ -706,9 +706,9 @@ var scheduler_production_min = {};
     return 0 !== c ? c : a.id - b.id;
   }
   if ("object" === typeof performance && "function" === typeof performance.now) {
-    var l9 = performance;
+    var l2 = performance;
     exports.unstable_now = function() {
-      return l9.now();
+      return l2.now();
     };
   } else {
     var p2 = Date, q2 = p2.now();
@@ -716,17 +716,17 @@ var scheduler_production_min = {};
       return p2.now() - q2;
     };
   }
-  var r2 = [], t2 = [], u2 = 1, v2 = null, y2 = 3, z2 = false, A2 = false, B2 = false, D2 = "function" === typeof setTimeout ? setTimeout : null, E2 = "function" === typeof clearTimeout ? clearTimeout : null, F2 = "undefined" !== typeof setImmediate ? setImmediate : null;
+  var r2 = [], t9 = [], u2 = 1, v2 = null, y2 = 3, z2 = false, A2 = false, B2 = false, D2 = "function" === typeof setTimeout ? setTimeout : null, E2 = "function" === typeof clearTimeout ? clearTimeout : null, F2 = "undefined" !== typeof setImmediate ? setImmediate : null;
   "undefined" !== typeof navigator && void 0 !== navigator.scheduling && void 0 !== navigator.scheduling.isInputPending && navigator.scheduling.isInputPending.bind(navigator.scheduling);
   function G2(a) {
-    for (var b = h2(t2); null !== b; ) {
+    for (var b = h2(t9); null !== b; ) {
       if (null === b.callback)
-        k2(t2);
+        k2(t9);
       else if (b.startTime <= a)
-        k2(t2), b.sortIndex = b.expirationTime, f2(r2, b);
+        k2(t9), b.sortIndex = b.expirationTime, f2(r2, b);
       else
         break;
-      b = h2(t2);
+      b = h2(t9);
     }
   }
   function H2(a) {
@@ -736,7 +736,7 @@ var scheduler_production_min = {};
       if (null !== h2(r2))
         A2 = true, I2(J2);
       else {
-        var b = h2(t2);
+        var b = h2(t9);
         null !== b && K2(H2, b.startTime - a);
       }
   }
@@ -763,7 +763,7 @@ var scheduler_production_min = {};
       if (null !== v2)
         var w2 = true;
       else {
-        var m2 = h2(t2);
+        var m2 = h2(t9);
         null !== m2 && K2(H2, m2.startTime - b);
         w2 = false;
       }
@@ -896,7 +896,7 @@ var scheduler_production_min = {};
     }
     e2 = c + e2;
     a = { id: u2++, callback: b, priorityLevel: a, startTime: c, expirationTime: e2, sortIndex: -1 };
-    c > d ? (a.sortIndex = c, f2(t2, a), null === h2(r2) && a === h2(t2) && (B2 ? (E2(L2), L2 = -1) : B2 = true, K2(H2, c - d))) : (a.sortIndex = e2, f2(r2, a), A2 || z2 || (A2 = true, I2(J2)));
+    c > d ? (a.sortIndex = c, f2(t9, a), null === h2(r2) && a === h2(t9) && (B2 ? (E2(L2), L2 = -1) : B2 = true, K2(H2, c - d))) : (a.sortIndex = e2, f2(r2, a), A2 || z2 || (A2 = true, I2(J2)));
     return a;
   };
   exports.unstable_shouldYield = M2;
@@ -1095,29 +1095,29 @@ function Oa(a, b) {
       } }), "object" === typeof Reflect && Reflect.construct) {
         try {
           Reflect.construct(b, []);
-        } catch (l9) {
-          var d = l9;
+        } catch (l2) {
+          var d = l2;
         }
         Reflect.construct(a, [], b);
       } else {
         try {
           b.call();
-        } catch (l9) {
-          d = l9;
+        } catch (l2) {
+          d = l2;
         }
         a.call(b.prototype);
       }
     else {
       try {
         throw Error();
-      } catch (l9) {
-        d = l9;
+      } catch (l2) {
+        d = l2;
       }
       a();
     }
-  } catch (l9) {
-    if (l9 && d && "string" === typeof l9.stack) {
-      for (var e2 = l9.stack.split("\n"), f2 = d.stack.split("\n"), g = e2.length - 1, h2 = f2.length - 1; 1 <= g && 0 <= h2 && e2[g] !== f2[h2]; )
+  } catch (l2) {
+    if (l2 && d && "string" === typeof l2.stack) {
+      for (var e2 = l2.stack.split("\n"), f2 = d.stack.split("\n"), g = e2.length - 1, h2 = f2.length - 1; 1 <= g && 0 <= h2 && e2[g] !== f2[h2]; )
         h2--;
       for (; 1 <= g && 0 <= h2; g--, h2--)
         if (e2[g] !== f2[h2]) {
@@ -1650,9 +1650,9 @@ if (ia)
     Lb = false;
   }
 function Nb(a, b, c, d, e2, f2, g, h2, k2) {
-  var l9 = Array.prototype.slice.call(arguments, 3);
+  var l2 = Array.prototype.slice.call(arguments, 3);
   try {
-    b.apply(c, l9);
+    b.apply(c, l2);
   } catch (m2) {
     this.onError(m2);
   }
@@ -1670,12 +1670,12 @@ function Ub(a, b, c, d, e2, f2, g, h2, k2) {
   Tb.apply(this, arguments);
   if (Ob) {
     if (Ob) {
-      var l9 = Pb;
+      var l2 = Pb;
       Ob = false;
       Pb = null;
     } else
       throw Error(p$2(198));
-    Qb || (Qb = true, Rb = l9);
+    Qb || (Qb = true, Rb = l2);
   }
 }
 function Vb(a) {
@@ -2686,22 +2686,22 @@ function se(a, b) {
       var f2 = void 0;
       if (b)
         for (var g = d.length - 1; 0 <= g; g--) {
-          var h2 = d[g], k2 = h2.instance, l9 = h2.currentTarget;
+          var h2 = d[g], k2 = h2.instance, l2 = h2.currentTarget;
           h2 = h2.listener;
           if (k2 !== f2 && e2.isPropagationStopped())
             break a;
-          nf(e2, h2, l9);
+          nf(e2, h2, l2);
           f2 = k2;
         }
       else
         for (g = 0; g < d.length; g++) {
           h2 = d[g];
           k2 = h2.instance;
-          l9 = h2.currentTarget;
+          l2 = h2.currentTarget;
           h2 = h2.listener;
           if (k2 !== f2 && e2.isPropagationStopped())
             break a;
-          nf(e2, h2, l9);
+          nf(e2, h2, l2);
           f2 = k2;
         }
     }
@@ -2866,17 +2866,17 @@ function hd(a, b, c, d, e2) {
           case "pointerup":
             k3 = Td;
         }
-        var t2 = 0 !== (b & 4), J2 = !t2 && "scroll" === a, x2 = t2 ? null !== h3 ? h3 + "Capture" : null : h3;
-        t2 = [];
+        var t9 = 0 !== (b & 4), J2 = !t9 && "scroll" === a, x2 = t9 ? null !== h3 ? h3 + "Capture" : null : h3;
+        t9 = [];
         for (var w2 = d2, u2; null !== w2; ) {
           u2 = w2;
           var F2 = u2.stateNode;
-          5 === u2.tag && null !== F2 && (u2 = F2, null !== x2 && (F2 = Kb(w2, x2), null != F2 && t2.push(tf(w2, F2, u2))));
+          5 === u2.tag && null !== F2 && (u2 = F2, null !== x2 && (F2 = Kb(w2, x2), null != F2 && t9.push(tf(w2, F2, u2))));
           if (J2)
             break;
           w2 = w2.return;
         }
-        0 < t2.length && (h3 = new k3(h3, n2, null, c, e3), g2.push({ event: h3, listeners: t2 }));
+        0 < t9.length && (h3 = new k3(h3, n2, null, c, e3), g2.push({ event: h3, listeners: t9 }));
       }
     }
     if (0 === (b & 7)) {
@@ -2893,46 +2893,46 @@ function hd(a, b, c, d, e2) {
           } else
             k3 = null, n2 = d2;
           if (k3 !== n2) {
-            t2 = Bd;
+            t9 = Bd;
             F2 = "onMouseLeave";
             x2 = "onMouseEnter";
             w2 = "mouse";
             if ("pointerout" === a || "pointerover" === a)
-              t2 = Td, F2 = "onPointerLeave", x2 = "onPointerEnter", w2 = "pointer";
+              t9 = Td, F2 = "onPointerLeave", x2 = "onPointerEnter", w2 = "pointer";
             J2 = null == k3 ? h3 : ue(k3);
             u2 = null == n2 ? h3 : ue(n2);
-            h3 = new t2(F2, w2 + "leave", k3, c, e3);
+            h3 = new t9(F2, w2 + "leave", k3, c, e3);
             h3.target = J2;
             h3.relatedTarget = u2;
             F2 = null;
-            Wc(e3) === d2 && (t2 = new t2(x2, w2 + "enter", n2, c, e3), t2.target = u2, t2.relatedTarget = J2, F2 = t2);
+            Wc(e3) === d2 && (t9 = new t9(x2, w2 + "enter", n2, c, e3), t9.target = u2, t9.relatedTarget = J2, F2 = t9);
             J2 = F2;
             if (k3 && n2)
               b: {
-                t2 = k3;
+                t9 = k3;
                 x2 = n2;
                 w2 = 0;
-                for (u2 = t2; u2; u2 = vf(u2))
+                for (u2 = t9; u2; u2 = vf(u2))
                   w2++;
                 u2 = 0;
                 for (F2 = x2; F2; F2 = vf(F2))
                   u2++;
                 for (; 0 < w2 - u2; )
-                  t2 = vf(t2), w2--;
+                  t9 = vf(t9), w2--;
                 for (; 0 < u2 - w2; )
                   x2 = vf(x2), u2--;
                 for (; w2--; ) {
-                  if (t2 === x2 || null !== x2 && t2 === x2.alternate)
+                  if (t9 === x2 || null !== x2 && t9 === x2.alternate)
                     break b;
-                  t2 = vf(t2);
+                  t9 = vf(t9);
                   x2 = vf(x2);
                 }
-                t2 = null;
+                t9 = null;
               }
             else
-              t2 = null;
-            null !== k3 && wf(g2, h3, k3, t2, false);
-            null !== n2 && null !== J2 && wf(g2, J2, n2, t2, true);
+              t9 = null;
+            null !== k3 && wf(g2, h3, k3, t9, false);
+            null !== n2 && null !== J2 && wf(g2, J2, n2, t9, true);
           }
         }
       }
@@ -3028,10 +3028,10 @@ function vf(a) {
 }
 function wf(a, b, c, d, e2) {
   for (var f2 = b._reactName, g = []; null !== c && c !== d; ) {
-    var h2 = c, k2 = h2.alternate, l9 = h2.stateNode;
+    var h2 = c, k2 = h2.alternate, l2 = h2.stateNode;
     if (null !== k2 && k2 === d)
       break;
-    5 === h2.tag && null !== l9 && (h2 = l9, e2 ? (k2 = Kb(c, f2), null != k2 && g.unshift(tf(c, k2, h2))) : e2 || (k2 = Kb(c, f2), null != k2 && g.push(tf(c, k2, h2))));
+    5 === h2.tag && null !== l2 && (h2 = l2, e2 ? (k2 = Kb(c, f2), null != k2 && g.unshift(tf(c, k2, h2))) : e2 || (k2 = Kb(c, f2), null != k2 && g.push(tf(c, k2, h2))));
     c = c.return;
   }
   0 !== g.length && a.push({ event: b, listeners: g });
@@ -3509,17 +3509,17 @@ function gh(a, b, c, d) {
   var f2 = e2.firstBaseUpdate, g = e2.lastBaseUpdate, h2 = e2.shared.pending;
   if (null !== h2) {
     e2.shared.pending = null;
-    var k2 = h2, l9 = k2.next;
+    var k2 = h2, l2 = k2.next;
     k2.next = null;
-    null === g ? f2 = l9 : g.next = l9;
+    null === g ? f2 = l2 : g.next = l2;
     g = k2;
     var m2 = a.alternate;
-    null !== m2 && (m2 = m2.updateQueue, h2 = m2.lastBaseUpdate, h2 !== g && (null === h2 ? m2.firstBaseUpdate = l9 : h2.next = l9, m2.lastBaseUpdate = k2));
+    null !== m2 && (m2 = m2.updateQueue, h2 = m2.lastBaseUpdate, h2 !== g && (null === h2 ? m2.firstBaseUpdate = l2 : h2.next = l2, m2.lastBaseUpdate = k2));
   }
   if (null !== f2) {
     var q2 = e2.baseState;
     g = 0;
-    m2 = l9 = k2 = null;
+    m2 = l2 = k2 = null;
     h2 = f2;
     do {
       var r2 = h2.lane, y2 = h2.eventTime;
@@ -3533,12 +3533,12 @@ function gh(a, b, c, d) {
           next: null
         });
         a: {
-          var n2 = a, t2 = h2;
+          var n2 = a, t9 = h2;
           r2 = b;
           y2 = c;
-          switch (t2.tag) {
+          switch (t9.tag) {
             case 1:
-              n2 = t2.payload;
+              n2 = t9.payload;
               if ("function" === typeof n2) {
                 q2 = n2.call(y2, q2, r2);
                 break a;
@@ -3548,7 +3548,7 @@ function gh(a, b, c, d) {
             case 3:
               n2.flags = n2.flags & -65537 | 128;
             case 0:
-              n2 = t2.payload;
+              n2 = t9.payload;
               r2 = "function" === typeof n2 ? n2.call(y2, q2, r2) : n2;
               if (null === r2 || void 0 === r2)
                 break a;
@@ -3560,7 +3560,7 @@ function gh(a, b, c, d) {
         }
         null !== h2.callback && 0 !== h2.lane && (a.flags |= 64, r2 = e2.effects, null === r2 ? e2.effects = [h2] : r2.push(h2));
       } else
-        y2 = { eventTime: y2, lane: r2, tag: h2.tag, payload: h2.payload, callback: h2.callback, next: null }, null === m2 ? (l9 = m2 = y2, k2 = q2) : m2 = m2.next = y2, g |= r2;
+        y2 = { eventTime: y2, lane: r2, tag: h2.tag, payload: h2.payload, callback: h2.callback, next: null }, null === m2 ? (l2 = m2 = y2, k2 = q2) : m2 = m2.next = y2, g |= r2;
       h2 = h2.next;
       if (null === h2)
         if (h2 = e2.shared.pending, null === h2)
@@ -3570,7 +3570,7 @@ function gh(a, b, c, d) {
     } while (1);
     null === m2 && (k2 = q2);
     e2.baseState = k2;
-    e2.firstBaseUpdate = l9;
+    e2.firstBaseUpdate = l2;
     e2.lastBaseUpdate = m2;
     b = e2.shared.interleaved;
     if (null !== b) {
@@ -3764,7 +3764,7 @@ function vh(a) {
     d2.return = a2;
     return d2;
   }
-  function l9(a2, b2, c2, d2) {
+  function l2(a2, b2, c2, d2) {
     if (null === b2 || 4 !== b2.tag || b2.stateNode.containerInfo !== c2.containerInfo || b2.stateNode.implementation !== c2.implementation)
       return b2 = zh(c2, a2.mode, d2), b2.return = a2, b2;
     b2 = e2(b2, c2.children || []);
@@ -3806,7 +3806,7 @@ function vh(a) {
         case va:
           return c2.key === e3 ? k2(a2, b2, c2, d2) : null;
         case wa:
-          return c2.key === e3 ? l9(a2, b2, c2, d2) : null;
+          return c2.key === e3 ? l2(a2, b2, c2, d2) : null;
         case Ha:
           return e3 = c2._init, r2(
             a2,
@@ -3829,7 +3829,7 @@ function vh(a) {
         case va:
           return a2 = a2.get(null === d2.key ? c2 : d2.key) || null, k2(b2, a2, d2, e3);
         case wa:
-          return a2 = a2.get(null === d2.key ? c2 : d2.key) || null, l9(b2, a2, d2, e3);
+          return a2 = a2.get(null === d2.key ? c2 : d2.key) || null, l2(b2, a2, d2, e3);
         case Ha:
           var f3 = d2._init;
           return y2(a2, b2, c2, f3(d2._payload), e3);
@@ -3841,7 +3841,7 @@ function vh(a) {
     return null;
   }
   function n2(e3, g2, h3, k3) {
-    for (var l10 = null, m3 = null, u2 = g2, w2 = g2 = 0, x2 = null; null !== u2 && w2 < h3.length; w2++) {
+    for (var l3 = null, m3 = null, u2 = g2, w2 = g2 = 0, x2 = null; null !== u2 && w2 < h3.length; w2++) {
       u2.index > w2 ? (x2 = u2, u2 = null) : x2 = u2.sibling;
       var n3 = r2(e3, u2, h3[w2], k3);
       if (null === n3) {
@@ -3850,64 +3850,64 @@ function vh(a) {
       }
       a && u2 && null === n3.alternate && b(e3, u2);
       g2 = f2(n3, g2, w2);
-      null === m3 ? l10 = n3 : m3.sibling = n3;
+      null === m3 ? l3 = n3 : m3.sibling = n3;
       m3 = n3;
       u2 = x2;
     }
     if (w2 === h3.length)
-      return c(e3, u2), I && tg(e3, w2), l10;
+      return c(e3, u2), I && tg(e3, w2), l3;
     if (null === u2) {
       for (; w2 < h3.length; w2++)
-        u2 = q2(e3, h3[w2], k3), null !== u2 && (g2 = f2(u2, g2, w2), null === m3 ? l10 = u2 : m3.sibling = u2, m3 = u2);
+        u2 = q2(e3, h3[w2], k3), null !== u2 && (g2 = f2(u2, g2, w2), null === m3 ? l3 = u2 : m3.sibling = u2, m3 = u2);
       I && tg(e3, w2);
-      return l10;
+      return l3;
     }
     for (u2 = d(e3, u2); w2 < h3.length; w2++)
-      x2 = y2(u2, e3, w2, h3[w2], k3), null !== x2 && (a && null !== x2.alternate && u2.delete(null === x2.key ? w2 : x2.key), g2 = f2(x2, g2, w2), null === m3 ? l10 = x2 : m3.sibling = x2, m3 = x2);
+      x2 = y2(u2, e3, w2, h3[w2], k3), null !== x2 && (a && null !== x2.alternate && u2.delete(null === x2.key ? w2 : x2.key), g2 = f2(x2, g2, w2), null === m3 ? l3 = x2 : m3.sibling = x2, m3 = x2);
     a && u2.forEach(function(a2) {
       return b(e3, a2);
     });
     I && tg(e3, w2);
-    return l10;
+    return l3;
   }
-  function t2(e3, g2, h3, k3) {
-    var l10 = Ka(h3);
-    if ("function" !== typeof l10)
+  function t9(e3, g2, h3, k3) {
+    var l3 = Ka(h3);
+    if ("function" !== typeof l3)
       throw Error(p$2(150));
-    h3 = l10.call(h3);
+    h3 = l3.call(h3);
     if (null == h3)
       throw Error(p$2(151));
-    for (var u2 = l10 = null, m3 = g2, w2 = g2 = 0, x2 = null, n3 = h3.next(); null !== m3 && !n3.done; w2++, n3 = h3.next()) {
+    for (var u2 = l3 = null, m3 = g2, w2 = g2 = 0, x2 = null, n3 = h3.next(); null !== m3 && !n3.done; w2++, n3 = h3.next()) {
       m3.index > w2 ? (x2 = m3, m3 = null) : x2 = m3.sibling;
-      var t3 = r2(e3, m3, n3.value, k3);
-      if (null === t3) {
+      var t10 = r2(e3, m3, n3.value, k3);
+      if (null === t10) {
         null === m3 && (m3 = x2);
         break;
       }
-      a && m3 && null === t3.alternate && b(e3, m3);
-      g2 = f2(t3, g2, w2);
-      null === u2 ? l10 = t3 : u2.sibling = t3;
-      u2 = t3;
+      a && m3 && null === t10.alternate && b(e3, m3);
+      g2 = f2(t10, g2, w2);
+      null === u2 ? l3 = t10 : u2.sibling = t10;
+      u2 = t10;
       m3 = x2;
     }
     if (n3.done)
       return c(
         e3,
         m3
-      ), I && tg(e3, w2), l10;
+      ), I && tg(e3, w2), l3;
     if (null === m3) {
       for (; !n3.done; w2++, n3 = h3.next())
-        n3 = q2(e3, n3.value, k3), null !== n3 && (g2 = f2(n3, g2, w2), null === u2 ? l10 = n3 : u2.sibling = n3, u2 = n3);
+        n3 = q2(e3, n3.value, k3), null !== n3 && (g2 = f2(n3, g2, w2), null === u2 ? l3 = n3 : u2.sibling = n3, u2 = n3);
       I && tg(e3, w2);
-      return l10;
+      return l3;
     }
     for (m3 = d(e3, m3); !n3.done; w2++, n3 = h3.next())
-      n3 = y2(m3, e3, w2, n3.value, k3), null !== n3 && (a && null !== n3.alternate && m3.delete(null === n3.key ? w2 : n3.key), g2 = f2(n3, g2, w2), null === u2 ? l10 = n3 : u2.sibling = n3, u2 = n3);
+      n3 = y2(m3, e3, w2, n3.value, k3), null !== n3 && (a && null !== n3.alternate && m3.delete(null === n3.key ? w2 : n3.key), g2 = f2(n3, g2, w2), null === u2 ? l3 = n3 : u2.sibling = n3, u2 = n3);
     a && m3.forEach(function(a2) {
       return b(e3, a2);
     });
     I && tg(e3, w2);
-    return l10;
+    return l3;
   }
   function J2(a2, d2, f3, h3) {
     "object" === typeof f3 && null !== f3 && f3.type === ya && null === f3.key && (f3 = f3.props.children);
@@ -3915,38 +3915,38 @@ function vh(a) {
       switch (f3.$$typeof) {
         case va:
           a: {
-            for (var k3 = f3.key, l10 = d2; null !== l10; ) {
-              if (l10.key === k3) {
+            for (var k3 = f3.key, l3 = d2; null !== l3; ) {
+              if (l3.key === k3) {
                 k3 = f3.type;
                 if (k3 === ya) {
-                  if (7 === l10.tag) {
-                    c(a2, l10.sibling);
-                    d2 = e2(l10, f3.props.children);
+                  if (7 === l3.tag) {
+                    c(a2, l3.sibling);
+                    d2 = e2(l3, f3.props.children);
                     d2.return = a2;
                     a2 = d2;
                     break a;
                   }
-                } else if (l10.elementType === k3 || "object" === typeof k3 && null !== k3 && k3.$$typeof === Ha && uh(k3) === l10.type) {
-                  c(a2, l10.sibling);
-                  d2 = e2(l10, f3.props);
-                  d2.ref = sh(a2, l10, f3);
+                } else if (l3.elementType === k3 || "object" === typeof k3 && null !== k3 && k3.$$typeof === Ha && uh(k3) === l3.type) {
+                  c(a2, l3.sibling);
+                  d2 = e2(l3, f3.props);
+                  d2.ref = sh(a2, l3, f3);
                   d2.return = a2;
                   a2 = d2;
                   break a;
                 }
-                c(a2, l10);
+                c(a2, l3);
                 break;
               } else
-                b(a2, l10);
-              l10 = l10.sibling;
+                b(a2, l3);
+              l3 = l3.sibling;
             }
             f3.type === ya ? (d2 = Ah(f3.props.children, a2.mode, h3, f3.key), d2.return = a2, a2 = d2) : (h3 = yh(f3.type, f3.key, f3.props, null, a2.mode, h3), h3.ref = sh(a2, d2, f3), h3.return = a2, a2 = h3);
           }
           return g(a2);
         case wa:
           a: {
-            for (l10 = f3.key; null !== d2; ) {
-              if (d2.key === l10)
+            for (l3 = f3.key; null !== d2; ) {
+              if (d2.key === l3)
                 if (4 === d2.tag && d2.stateNode.containerInfo === f3.containerInfo && d2.stateNode.implementation === f3.implementation) {
                   c(a2, d2.sibling);
                   d2 = e2(d2, f3.children || []);
@@ -3967,12 +3967,12 @@ function vh(a) {
           }
           return g(a2);
         case Ha:
-          return l10 = f3._init, J2(a2, d2, l10(f3._payload), h3);
+          return l3 = f3._init, J2(a2, d2, l3(f3._payload), h3);
       }
       if (eb(f3))
         return n2(a2, d2, f3, h3);
       if (Ka(f3))
-        return t2(a2, d2, f3, h3);
+        return t9(a2, d2, f3, h3);
       th(a2, f3);
     }
     return "string" === typeof f3 && "" !== f3 || "number" === typeof f3 ? (f3 = "" + f3, null !== d2 && 6 === d2.tag ? (c(a2, d2.sibling), d2 = e2(d2, f3), d2.return = a2, a2 = d2) : (c(a2, d2), d2 = xh(f3, a2.mode, h3), d2.return = a2, a2 = d2), g(a2)) : c(a2, d2);
@@ -4140,25 +4140,25 @@ function fi(a) {
   if (null !== e2) {
     f2 = e2.next;
     d = d.baseState;
-    var h2 = g = null, k2 = null, l9 = f2;
+    var h2 = g = null, k2 = null, l2 = f2;
     do {
-      var m2 = l9.lane;
+      var m2 = l2.lane;
       if ((Rh & m2) === m2)
-        null !== k2 && (k2 = k2.next = { lane: 0, action: l9.action, hasEagerState: l9.hasEagerState, eagerState: l9.eagerState, next: null }), d = l9.hasEagerState ? l9.eagerState : a(d, l9.action);
+        null !== k2 && (k2 = k2.next = { lane: 0, action: l2.action, hasEagerState: l2.hasEagerState, eagerState: l2.eagerState, next: null }), d = l2.hasEagerState ? l2.eagerState : a(d, l2.action);
       else {
         var q2 = {
           lane: m2,
-          action: l9.action,
-          hasEagerState: l9.hasEagerState,
-          eagerState: l9.eagerState,
+          action: l2.action,
+          hasEagerState: l2.hasEagerState,
+          eagerState: l2.eagerState,
           next: null
         };
         null === k2 ? (h2 = k2 = q2, g = d) : k2 = k2.next = q2;
         N.lanes |= m2;
         hh |= m2;
       }
-      l9 = l9.next;
-    } while (null !== l9 && l9 !== f2);
+      l2 = l2.next;
+    } while (null !== l2 && l2 !== f2);
     null === k2 ? g = d : k2.next = h2;
     He(d, b.memoizedState) || (Ug = true);
     b.memoizedState = d;
@@ -4375,7 +4375,7 @@ function ri(a, b, c) {
           b.interleaved = e2;
           return;
         }
-      } catch (l9) {
+      } catch (l2) {
       } finally {
       }
     c = Yg(a, b, e2, d);
@@ -4701,22 +4701,22 @@ function ij(a, b, c, d, e2) {
   else if (null === a) {
     var g = b.stateNode, h2 = b.memoizedProps;
     g.props = h2;
-    var k2 = g.context, l9 = c.contextType;
-    "object" === typeof l9 && null !== l9 ? l9 = Vg(l9) : (l9 = Zf(c) ? Xf : H.current, l9 = Yf(b, l9));
+    var k2 = g.context, l2 = c.contextType;
+    "object" === typeof l2 && null !== l2 ? l2 = Vg(l2) : (l2 = Zf(c) ? Xf : H.current, l2 = Yf(b, l2));
     var m2 = c.getDerivedStateFromProps, q2 = "function" === typeof m2 || "function" === typeof g.getSnapshotBeforeUpdate;
-    q2 || "function" !== typeof g.UNSAFE_componentWillReceiveProps && "function" !== typeof g.componentWillReceiveProps || (h2 !== d || k2 !== l9) && qh(b, g, d, l9);
+    q2 || "function" !== typeof g.UNSAFE_componentWillReceiveProps && "function" !== typeof g.componentWillReceiveProps || (h2 !== d || k2 !== l2) && qh(b, g, d, l2);
     $g = false;
     var r2 = b.memoizedState;
     g.state = r2;
     gh(b, d, g, e2);
     k2 = b.memoizedState;
-    h2 !== d || r2 !== k2 || Wf.current || $g ? ("function" === typeof m2 && (kh(b, c, m2, d), k2 = b.memoizedState), (h2 = $g || oh(b, c, h2, d, r2, k2, l9)) ? (q2 || "function" !== typeof g.UNSAFE_componentWillMount && "function" !== typeof g.componentWillMount || ("function" === typeof g.componentWillMount && g.componentWillMount(), "function" === typeof g.UNSAFE_componentWillMount && g.UNSAFE_componentWillMount()), "function" === typeof g.componentDidMount && (b.flags |= 4194308)) : ("function" === typeof g.componentDidMount && (b.flags |= 4194308), b.memoizedProps = d, b.memoizedState = k2), g.props = d, g.state = k2, g.context = l9, d = h2) : ("function" === typeof g.componentDidMount && (b.flags |= 4194308), d = false);
+    h2 !== d || r2 !== k2 || Wf.current || $g ? ("function" === typeof m2 && (kh(b, c, m2, d), k2 = b.memoizedState), (h2 = $g || oh(b, c, h2, d, r2, k2, l2)) ? (q2 || "function" !== typeof g.UNSAFE_componentWillMount && "function" !== typeof g.componentWillMount || ("function" === typeof g.componentWillMount && g.componentWillMount(), "function" === typeof g.UNSAFE_componentWillMount && g.UNSAFE_componentWillMount()), "function" === typeof g.componentDidMount && (b.flags |= 4194308)) : ("function" === typeof g.componentDidMount && (b.flags |= 4194308), b.memoizedProps = d, b.memoizedState = k2), g.props = d, g.state = k2, g.context = l2, d = h2) : ("function" === typeof g.componentDidMount && (b.flags |= 4194308), d = false);
   } else {
     g = b.stateNode;
     bh(a, b);
     h2 = b.memoizedProps;
-    l9 = b.type === b.elementType ? h2 : Lg(b.type, h2);
-    g.props = l9;
+    l2 = b.type === b.elementType ? h2 : Lg(b.type, h2);
+    g.props = l2;
     q2 = b.pendingProps;
     r2 = g.context;
     k2 = c.contextType;
@@ -4728,7 +4728,7 @@ function ij(a, b, c, d, e2) {
     g.state = r2;
     gh(b, d, g, e2);
     var n2 = b.memoizedState;
-    h2 !== q2 || r2 !== n2 || Wf.current || $g ? ("function" === typeof y2 && (kh(b, c, y2, d), n2 = b.memoizedState), (l9 = $g || oh(b, c, l9, d, r2, n2, k2) || false) ? (m2 || "function" !== typeof g.UNSAFE_componentWillUpdate && "function" !== typeof g.componentWillUpdate || ("function" === typeof g.componentWillUpdate && g.componentWillUpdate(d, n2, k2), "function" === typeof g.UNSAFE_componentWillUpdate && g.UNSAFE_componentWillUpdate(d, n2, k2)), "function" === typeof g.componentDidUpdate && (b.flags |= 4), "function" === typeof g.getSnapshotBeforeUpdate && (b.flags |= 1024)) : ("function" !== typeof g.componentDidUpdate || h2 === a.memoizedProps && r2 === a.memoizedState || (b.flags |= 4), "function" !== typeof g.getSnapshotBeforeUpdate || h2 === a.memoizedProps && r2 === a.memoizedState || (b.flags |= 1024), b.memoizedProps = d, b.memoizedState = n2), g.props = d, g.state = n2, g.context = k2, d = l9) : ("function" !== typeof g.componentDidUpdate || h2 === a.memoizedProps && r2 === a.memoizedState || (b.flags |= 4), "function" !== typeof g.getSnapshotBeforeUpdate || h2 === a.memoizedProps && r2 === a.memoizedState || (b.flags |= 1024), d = false);
+    h2 !== q2 || r2 !== n2 || Wf.current || $g ? ("function" === typeof y2 && (kh(b, c, y2, d), n2 = b.memoizedState), (l2 = $g || oh(b, c, l2, d, r2, n2, k2) || false) ? (m2 || "function" !== typeof g.UNSAFE_componentWillUpdate && "function" !== typeof g.componentWillUpdate || ("function" === typeof g.componentWillUpdate && g.componentWillUpdate(d, n2, k2), "function" === typeof g.UNSAFE_componentWillUpdate && g.UNSAFE_componentWillUpdate(d, n2, k2)), "function" === typeof g.componentDidUpdate && (b.flags |= 4), "function" === typeof g.getSnapshotBeforeUpdate && (b.flags |= 1024)) : ("function" !== typeof g.componentDidUpdate || h2 === a.memoizedProps && r2 === a.memoizedState || (b.flags |= 4), "function" !== typeof g.getSnapshotBeforeUpdate || h2 === a.memoizedProps && r2 === a.memoizedState || (b.flags |= 1024), b.memoizedProps = d, b.memoizedState = n2), g.props = d, g.state = n2, g.context = k2, d = l2) : ("function" !== typeof g.componentDidUpdate || h2 === a.memoizedProps && r2 === a.memoizedState || (b.flags |= 4), "function" !== typeof g.getSnapshotBeforeUpdate || h2 === a.memoizedProps && r2 === a.memoizedState || (b.flags |= 1024), d = false);
   }
   return kj(a, b, c, d, f2, e2);
 }
@@ -5119,19 +5119,19 @@ Cj = function(a, b, c, d) {
     ub(c, d);
     var g;
     c = null;
-    for (l9 in e2)
-      if (!d.hasOwnProperty(l9) && e2.hasOwnProperty(l9) && null != e2[l9])
-        if ("style" === l9) {
-          var h2 = e2[l9];
+    for (l2 in e2)
+      if (!d.hasOwnProperty(l2) && e2.hasOwnProperty(l2) && null != e2[l2])
+        if ("style" === l2) {
+          var h2 = e2[l2];
           for (g in h2)
             h2.hasOwnProperty(g) && (c || (c = {}), c[g] = "");
         } else
-          "dangerouslySetInnerHTML" !== l9 && "children" !== l9 && "suppressContentEditableWarning" !== l9 && "suppressHydrationWarning" !== l9 && "autoFocus" !== l9 && (ea.hasOwnProperty(l9) ? f2 || (f2 = []) : (f2 = f2 || []).push(l9, null));
-    for (l9 in d) {
-      var k2 = d[l9];
-      h2 = null != e2 ? e2[l9] : void 0;
-      if (d.hasOwnProperty(l9) && k2 !== h2 && (null != k2 || null != h2))
-        if ("style" === l9)
+          "dangerouslySetInnerHTML" !== l2 && "children" !== l2 && "suppressContentEditableWarning" !== l2 && "suppressHydrationWarning" !== l2 && "autoFocus" !== l2 && (ea.hasOwnProperty(l2) ? f2 || (f2 = []) : (f2 = f2 || []).push(l2, null));
+    for (l2 in d) {
+      var k2 = d[l2];
+      h2 = null != e2 ? e2[l2] : void 0;
+      if (d.hasOwnProperty(l2) && k2 !== h2 && (null != k2 || null != h2))
+        if ("style" === l2)
           if (h2) {
             for (g in h2)
               !h2.hasOwnProperty(g) || k2 && k2.hasOwnProperty(g) || (c || (c = {}), c[g] = "");
@@ -5139,15 +5139,15 @@ Cj = function(a, b, c, d) {
               k2.hasOwnProperty(g) && h2[g] !== k2[g] && (c || (c = {}), c[g] = k2[g]);
           } else
             c || (f2 || (f2 = []), f2.push(
-              l9,
+              l2,
               c
             )), c = k2;
         else
-          "dangerouslySetInnerHTML" === l9 ? (k2 = k2 ? k2.__html : void 0, h2 = h2 ? h2.__html : void 0, null != k2 && h2 !== k2 && (f2 = f2 || []).push(l9, k2)) : "children" === l9 ? "string" !== typeof k2 && "number" !== typeof k2 || (f2 = f2 || []).push(l9, "" + k2) : "suppressContentEditableWarning" !== l9 && "suppressHydrationWarning" !== l9 && (ea.hasOwnProperty(l9) ? (null != k2 && "onScroll" === l9 && D("scroll", a), f2 || h2 === k2 || (f2 = [])) : (f2 = f2 || []).push(l9, k2));
+          "dangerouslySetInnerHTML" === l2 ? (k2 = k2 ? k2.__html : void 0, h2 = h2 ? h2.__html : void 0, null != k2 && h2 !== k2 && (f2 = f2 || []).push(l2, k2)) : "children" === l2 ? "string" !== typeof k2 && "number" !== typeof k2 || (f2 = f2 || []).push(l2, "" + k2) : "suppressContentEditableWarning" !== l2 && "suppressHydrationWarning" !== l2 && (ea.hasOwnProperty(l2) ? (null != k2 && "onScroll" === l2 && D("scroll", a), f2 || h2 === k2 || (f2 = [])) : (f2 = f2 || []).push(l2, k2));
     }
     c && (f2 = f2 || []).push("style", c);
-    var l9 = f2;
-    if (b.updateQueue = l9)
+    var l2 = f2;
+    if (b.updateQueue = l2)
       b.flags |= 4;
   }
 };
@@ -5614,7 +5614,7 @@ function Pj(a, b) {
             c = null;
             break a;
           }
-          var g = 0, h2 = -1, k2 = -1, l9 = 0, m2 = 0, q2 = a, r2 = null;
+          var g = 0, h2 = -1, k2 = -1, l2 = 0, m2 = 0, q2 = a, r2 = null;
           b:
             for (; ; ) {
               for (var y2; ; ) {
@@ -5629,7 +5629,7 @@ function Pj(a, b) {
               for (; ; ) {
                 if (q2 === a)
                   break b;
-                r2 === c && ++l9 === e2 && (h2 = g);
+                r2 === c && ++l2 === e2 && (h2 = g);
                 r2 === f2 && ++m2 === d && (k2 = g);
                 if (null !== (y2 = q2.nextSibling))
                   break;
@@ -5663,7 +5663,7 @@ function Pj(a, b) {
                 break;
               case 1:
                 if (null !== n2) {
-                  var t2 = n2.memoizedProps, J2 = n2.memoizedState, x2 = b.stateNode, w2 = x2.getSnapshotBeforeUpdate(b.elementType === b.type ? t2 : Lg(b.type, t2), J2);
+                  var t9 = n2.memoizedProps, J2 = n2.memoizedState, x2 = b.stateNode, w2 = x2.getSnapshotBeforeUpdate(b.elementType === b.type ? t9 : Lg(b.type, t9), J2);
                   x2.__reactInternalSnapshotBeforeUpdate = w2;
                 }
                 break;
@@ -5906,8 +5906,8 @@ function dk(a, b) {
         var k2 = e2.alternate;
         null !== k2 && (k2.return = null);
         e2.return = null;
-      } catch (l9) {
-        W(e2, b, l9);
+      } catch (l2) {
+        W(e2, b, l2);
       }
     }
   if (b.subtreeFlags & 12854)
@@ -5926,13 +5926,13 @@ function ek(a, b) {
       if (d & 4) {
         try {
           Qj(3, a, a.return), Rj(3, a);
-        } catch (t2) {
-          W(a, a.return, t2);
+        } catch (t9) {
+          W(a, a.return, t9);
         }
         try {
           Qj(5, a, a.return);
-        } catch (t2) {
-          W(a, a.return, t2);
+        } catch (t9) {
+          W(a, a.return, t9);
         }
       }
       break;
@@ -5949,8 +5949,8 @@ function ek(a, b) {
         var e2 = a.stateNode;
         try {
           ob(e2, "");
-        } catch (t2) {
-          W(a, a.return, t2);
+        } catch (t9) {
+          W(a, a.return, t9);
         }
       }
       if (d & 4 && (e2 = a.stateNode, null != e2)) {
@@ -5960,10 +5960,10 @@ function ek(a, b) {
           try {
             "input" === h2 && "radio" === f2.type && null != f2.name && ab(e2, f2);
             vb(h2, g);
-            var l9 = vb(h2, f2);
+            var l2 = vb(h2, f2);
             for (g = 0; g < k2.length; g += 2) {
               var m2 = k2[g], q2 = k2[g + 1];
-              "style" === m2 ? sb(e2, q2) : "dangerouslySetInnerHTML" === m2 ? nb(e2, q2) : "children" === m2 ? ob(e2, q2) : ta(e2, m2, q2, l9);
+              "style" === m2 ? sb(e2, q2) : "dangerouslySetInnerHTML" === m2 ? nb(e2, q2) : "children" === m2 ? ob(e2, q2) : ta(e2, m2, q2, l2);
             }
             switch (h2) {
               case "input":
@@ -5984,8 +5984,8 @@ function ek(a, b) {
                 ) : fb(e2, !!f2.multiple, f2.multiple ? [] : "", false));
             }
             e2[Pf] = f2;
-          } catch (t2) {
-            W(a, a.return, t2);
+          } catch (t9) {
+            W(a, a.return, t9);
           }
       }
       break;
@@ -5999,8 +5999,8 @@ function ek(a, b) {
         f2 = a.memoizedProps;
         try {
           e2.nodeValue = f2;
-        } catch (t2) {
-          W(a, a.return, t2);
+        } catch (t9) {
+          W(a, a.return, t9);
         }
       }
       break;
@@ -6010,8 +6010,8 @@ function ek(a, b) {
       if (d & 4 && null !== c && c.memoizedState.isDehydrated)
         try {
           bd(b.containerInfo);
-        } catch (t2) {
-          W(a, a.return, t2);
+        } catch (t9) {
+          W(a, a.return, t9);
         }
       break;
     case 4:
@@ -6027,11 +6027,11 @@ function ek(a, b) {
       break;
     case 22:
       m2 = null !== c && null !== c.memoizedState;
-      a.mode & 1 ? (U = (l9 = U) || m2, dk(b, a), U = l9) : dk(b, a);
+      a.mode & 1 ? (U = (l2 = U) || m2, dk(b, a), U = l2) : dk(b, a);
       fk(a);
       if (d & 8192) {
-        l9 = null !== a.memoizedState;
-        if ((a.stateNode.isHidden = l9) && !m2 && 0 !== (a.mode & 1))
+        l2 = null !== a.memoizedState;
+        if ((a.stateNode.isHidden = l2) && !m2 && 0 !== (a.mode & 1))
           for (V = a, m2 = a.child; null !== m2; ) {
             for (q2 = V = m2; null !== V; ) {
               r2 = V;
@@ -6051,8 +6051,8 @@ function ek(a, b) {
                     c = r2.return;
                     try {
                       b = d, n2.props = b.memoizedProps, n2.state = b.memoizedState, n2.componentWillUnmount();
-                    } catch (t2) {
-                      W(d, c, t2);
+                    } catch (t9) {
+                      W(d, c, t9);
                     }
                   }
                   break;
@@ -6075,17 +6075,17 @@ function ek(a, b) {
               if (null === m2) {
                 m2 = q2;
                 try {
-                  e2 = q2.stateNode, l9 ? (f2 = e2.style, "function" === typeof f2.setProperty ? f2.setProperty("display", "none", "important") : f2.display = "none") : (h2 = q2.stateNode, k2 = q2.memoizedProps.style, g = void 0 !== k2 && null !== k2 && k2.hasOwnProperty("display") ? k2.display : null, h2.style.display = rb("display", g));
-                } catch (t2) {
-                  W(a, a.return, t2);
+                  e2 = q2.stateNode, l2 ? (f2 = e2.style, "function" === typeof f2.setProperty ? f2.setProperty("display", "none", "important") : f2.display = "none") : (h2 = q2.stateNode, k2 = q2.memoizedProps.style, g = void 0 !== k2 && null !== k2 && k2.hasOwnProperty("display") ? k2.display : null, h2.style.display = rb("display", g));
+                } catch (t9) {
+                  W(a, a.return, t9);
                 }
               }
             } else if (6 === q2.tag) {
               if (null === m2)
                 try {
-                  q2.stateNode.nodeValue = l9 ? "" : q2.memoizedProps;
-                } catch (t2) {
-                  W(a, a.return, t2);
+                  q2.stateNode.nodeValue = l2 ? "" : q2.memoizedProps;
+                } catch (t9) {
+                  W(a, a.return, t9);
                 }
             } else if ((22 !== q2.tag && 23 !== q2.tag || null === q2.memoizedState || q2 === a) && null !== q2.child) {
               q2.child.return = q2;
@@ -6168,16 +6168,16 @@ function jk(a, b, c) {
       if (!g) {
         var h2 = e2.alternate, k2 = null !== h2 && null !== h2.memoizedState || U;
         h2 = Kj;
-        var l9 = U;
+        var l2 = U;
         Kj = g;
-        if ((U = k2) && !l9)
+        if ((U = k2) && !l2)
           for (V = e2; null !== V; )
             g = V, k2 = g.child, 22 === g.tag && null !== g.memoizedState ? kk(e2) : null !== k2 ? (k2.return = g, V = k2) : kk(e2);
         for (; null !== f2; )
           V = f2, jk(f2), f2 = f2.sibling;
         V = e2;
         Kj = h2;
-        U = l9;
+        U = l2;
       }
       lk(a);
     } else
@@ -6249,9 +6249,9 @@ function lk(a) {
               break;
             case 13:
               if (null === b.memoizedState) {
-                var l9 = b.alternate;
-                if (null !== l9) {
-                  var m2 = l9.memoizedState;
+                var l2 = b.alternate;
+                if (null !== l2) {
+                  var m2 = l2.memoizedState;
                   if (null !== m2) {
                     var q2 = m2.dehydrated;
                     null !== q2 && bd(q2);
@@ -6714,7 +6714,7 @@ function Nk(a, b) {
         b = Z;
         h2.flags |= 32768;
         if (null !== k2 && "object" === typeof k2 && "function" === typeof k2.then) {
-          var l9 = k2, m2 = h2, q2 = m2.tag;
+          var l2 = k2, m2 = h2, q2 = m2.tag;
           if (0 === (m2.mode & 1) && (0 === q2 || 11 === q2 || 15 === q2)) {
             var r2 = m2.alternate;
             r2 ? (m2.updateQueue = r2.updateQueue, m2.memoizedState = r2.memoizedState, m2.lanes = r2.lanes) : (m2.updateQueue = null, m2.memoizedState = null);
@@ -6723,20 +6723,20 @@ function Nk(a, b) {
           if (null !== y2) {
             y2.flags &= -257;
             Wi(y2, g, h2, f2, b);
-            y2.mode & 1 && Ti(f2, l9, b);
+            y2.mode & 1 && Ti(f2, l2, b);
             b = y2;
-            k2 = l9;
+            k2 = l2;
             var n2 = b.updateQueue;
             if (null === n2) {
-              var t2 = /* @__PURE__ */ new Set();
-              t2.add(k2);
-              b.updateQueue = t2;
+              var t9 = /* @__PURE__ */ new Set();
+              t9.add(k2);
+              b.updateQueue = t9;
             } else
               n2.add(k2);
             break a;
           } else {
             if (0 === (b & 1)) {
-              Ti(f2, l9, b);
+              Ti(f2, l2, b);
               uj();
               break a;
             }
@@ -6961,8 +6961,8 @@ function Ik() {
             var h2 = f2.deletions;
             if (null !== h2) {
               for (var k2 = 0; k2 < h2.length; k2++) {
-                var l9 = h2[k2];
-                for (V = l9; null !== V; ) {
+                var l2 = h2[k2];
+                for (V = l2; null !== V; ) {
                   var m2 = V;
                   switch (m2.tag) {
                     case 0:
@@ -6978,7 +6978,7 @@ function Ik() {
                       m2 = V;
                       var r2 = m2.sibling, y2 = m2.return;
                       Tj(m2);
-                      if (m2 === l9) {
+                      if (m2 === l2) {
                         V = null;
                         break;
                       }
@@ -6993,14 +6993,14 @@ function Ik() {
               }
               var n2 = f2.alternate;
               if (null !== n2) {
-                var t2 = n2.child;
-                if (null !== t2) {
+                var t9 = n2.child;
+                if (null !== t9) {
                   n2.child = null;
                   do {
-                    var J2 = t2.sibling;
-                    t2.sibling = null;
-                    t2 = J2;
-                  } while (null !== t2);
+                    var J2 = t9.sibling;
+                    t9.sibling = null;
+                    t9 = J2;
+                  } while (null !== t9);
                 }
               }
               V = f2;
@@ -7278,12 +7278,12 @@ Wk = function(a, b, c) {
                     if (1 === f2.tag) {
                       k2 = ch(-1, c & -c);
                       k2.tag = 2;
-                      var l9 = f2.updateQueue;
-                      if (null !== l9) {
-                        l9 = l9.shared;
-                        var m2 = l9.pending;
+                      var l2 = f2.updateQueue;
+                      if (null !== l2) {
+                        l2 = l2.shared;
+                        var m2 = l2.pending;
                         null === m2 ? k2.next = k2 : (k2.next = m2.next, m2.next = k2);
-                        l9.pending = k2;
+                        l2.pending = k2;
                       }
                     }
                     f2.lanes |= c;
@@ -9277,6 +9277,357 @@ Modal$2.default = Modal$1;
 })(lib, lib.exports);
 var libExports = lib.exports;
 const Modal = /* @__PURE__ */ getDefaultExportFromCjs(libExports);
+function makeTypeChecker(tabsRole) {
+  return (element) => !!element.type && element.type.tabsRole === tabsRole;
+}
+const isTab = makeTypeChecker("Tab");
+const isTabList = makeTypeChecker("TabList");
+const isTabPanel = makeTypeChecker("TabPanel");
+function isTabChild(child) {
+  return isTab(child) || isTabList(child) || isTabPanel(child);
+}
+function deepMap(children, callback) {
+  return reactExports.Children.map(children, (child) => {
+    if (child === null)
+      return null;
+    if (isTabChild(child)) {
+      return callback(child);
+    }
+    if (child.props && child.props.children && typeof child.props.children === "object") {
+      return reactExports.cloneElement(child, { ...child.props, children: deepMap(child.props.children, callback) });
+    }
+    return child;
+  });
+}
+function deepForEach(children, callback) {
+  return reactExports.Children.forEach(children, (child) => {
+    if (child === null)
+      return;
+    if (isTab(child) || isTabPanel(child)) {
+      callback(child);
+    } else if (child.props && child.props.children && typeof child.props.children === "object") {
+      if (isTabList(child))
+        callback(child);
+      deepForEach(child.props.children, callback);
+    }
+  });
+}
+function r$2(e2) {
+  var t9, f2, n2 = "";
+  if ("string" == typeof e2 || "number" == typeof e2)
+    n2 += e2;
+  else if ("object" == typeof e2)
+    if (Array.isArray(e2)) {
+      var o = e2.length;
+      for (t9 = 0; t9 < o; t9++)
+        e2[t9] && (f2 = r$2(e2[t9])) && (n2 && (n2 += " "), n2 += f2);
+    } else
+      for (f2 in e2)
+        e2[f2] && (n2 && (n2 += " "), n2 += f2);
+  return n2;
+}
+function clsx() {
+  for (var e2, t9, f2 = 0, n2 = "", o = arguments.length; f2 < o; f2++)
+    (e2 = arguments[f2]) && (t9 = r$2(e2)) && (n2 && (n2 += " "), n2 += t9);
+  return n2;
+}
+function getTabsCount(children) {
+  let tabCount = 0;
+  deepForEach(children, (child) => {
+    if (isTab(child))
+      tabCount++;
+  });
+  return tabCount;
+}
+function isNode(node) {
+  return node && "getAttribute" in node;
+}
+function isTabNode(node) {
+  return isNode(node) && node.getAttribute("data-rttab");
+}
+function isTabDisabled(node) {
+  return isNode(node) && node.getAttribute("aria-disabled") === "true";
+}
+let canUseActiveElement;
+function determineCanUseActiveElement(environment) {
+  const env = environment || (typeof window !== "undefined" ? window : void 0);
+  try {
+    canUseActiveElement = !!(typeof env !== "undefined" && env.document && env.document.activeElement);
+  } catch (e2) {
+    canUseActiveElement = false;
+  }
+}
+const defaultProps$4 = { className: "react-tabs", focus: false };
+const UncontrolledTabs = (props) => {
+  let tabNodes = reactExports.useRef([]);
+  let tabIds = reactExports.useRef([]);
+  const ref = reactExports.useRef();
+  function setSelected(index, event) {
+    if (index < 0 || index >= getTabsCount$1())
+      return;
+    const { onSelect: onSelect2, selectedIndex: selectedIndex2 } = props;
+    onSelect2(index, selectedIndex2, event);
+  }
+  function getNextTab(index) {
+    const count = getTabsCount$1();
+    for (let i = index + 1; i < count; i++) {
+      if (!isTabDisabled(getTab(i))) {
+        return i;
+      }
+    }
+    for (let i = 0; i < index; i++) {
+      if (!isTabDisabled(getTab(i))) {
+        return i;
+      }
+    }
+    return index;
+  }
+  function getPrevTab(index) {
+    let i = index;
+    while (i--) {
+      if (!isTabDisabled(getTab(i))) {
+        return i;
+      }
+    }
+    i = getTabsCount$1();
+    while (i-- > index) {
+      if (!isTabDisabled(getTab(i))) {
+        return i;
+      }
+    }
+    return index;
+  }
+  function getFirstTab() {
+    const count = getTabsCount$1();
+    for (let i = 0; i < count; i++) {
+      if (!isTabDisabled(getTab(i))) {
+        return i;
+      }
+    }
+    return null;
+  }
+  function getLastTab() {
+    let i = getTabsCount$1();
+    while (i--) {
+      if (!isTabDisabled(getTab(i))) {
+        return i;
+      }
+    }
+    return null;
+  }
+  function getTabsCount$1() {
+    const { children: children2 } = props;
+    return getTabsCount(children2);
+  }
+  function getTab(index) {
+    return tabNodes.current[`tabs-${index}`];
+  }
+  function getChildren() {
+    let index = 0;
+    const { children: children2, disabledTabClassName: disabledTabClassName2, focus: focus2, forceRenderTabPanel: forceRenderTabPanel2, selectedIndex: selectedIndex2, selectedTabClassName: selectedTabClassName2, selectedTabPanelClassName: selectedTabPanelClassName2, environment: environment2 } = props;
+    tabIds.current = tabIds.current || [];
+    let diff = tabIds.current.length - getTabsCount$1();
+    const id2 = reactExports.useId();
+    while (diff++ < 0) {
+      tabIds.current.push(`${id2}${tabIds.current.length}`);
+    }
+    return deepMap(children2, (child) => {
+      let result = child;
+      if (isTabList(child)) {
+        let listIndex = 0;
+        let wasTabFocused = false;
+        if (canUseActiveElement == null) {
+          determineCanUseActiveElement(environment2);
+        }
+        const env = environment2 || (typeof window !== "undefined" ? window : void 0);
+        if (canUseActiveElement && env) {
+          wasTabFocused = React.Children.toArray(child.props.children).filter(isTab).some((tab, i) => env.document.activeElement === getTab(i));
+        }
+        result = reactExports.cloneElement(child, { children: deepMap(child.props.children, (tab) => {
+          const key = `tabs-${listIndex}`;
+          const selected = selectedIndex2 === listIndex;
+          const props2 = { tabRef: (node) => {
+            tabNodes.current[key] = node;
+          }, id: tabIds.current[listIndex], selected, focus: selected && (focus2 || wasTabFocused) };
+          if (selectedTabClassName2)
+            props2.selectedClassName = selectedTabClassName2;
+          if (disabledTabClassName2)
+            props2.disabledClassName = disabledTabClassName2;
+          listIndex++;
+          return reactExports.cloneElement(tab, props2);
+        }) });
+      } else if (isTabPanel(child)) {
+        const props2 = { id: tabIds.current[index], selected: selectedIndex2 === index };
+        if (forceRenderTabPanel2)
+          props2.forceRender = forceRenderTabPanel2;
+        if (selectedTabPanelClassName2)
+          props2.selectedClassName = selectedTabPanelClassName2;
+        index++;
+        result = reactExports.cloneElement(child, props2);
+      }
+      return result;
+    });
+  }
+  function handleKeyDown(e2) {
+    const { direction, disableUpDownKeys: disableUpDownKeys2, disableLeftRightKeys: disableLeftRightKeys2 } = props;
+    if (isTabFromContainer(e2.target)) {
+      let { selectedIndex: index } = props;
+      let preventDefault = false;
+      let useSelectedIndex = false;
+      if (e2.code === "Space" || e2.keyCode === 32 || e2.code === "Enter" || e2.keyCode === 13) {
+        preventDefault = true;
+        useSelectedIndex = false;
+        handleClick(e2);
+      }
+      if (!disableLeftRightKeys2 && (e2.keyCode === 37 || e2.code === "ArrowLeft") || !disableUpDownKeys2 && (e2.keyCode === 38 || e2.code === "ArrowUp")) {
+        if (direction === "rtl") {
+          index = getNextTab(index);
+        } else {
+          index = getPrevTab(index);
+        }
+        preventDefault = true;
+        useSelectedIndex = true;
+      } else if (!disableLeftRightKeys2 && (e2.keyCode === 39 || e2.code === "ArrowRight") || !disableUpDownKeys2 && (e2.keyCode === 40 || e2.code === "ArrowDown")) {
+        if (direction === "rtl") {
+          index = getPrevTab(index);
+        } else {
+          index = getNextTab(index);
+        }
+        preventDefault = true;
+        useSelectedIndex = true;
+      } else if (e2.keyCode === 35 || e2.code === "End") {
+        index = getLastTab();
+        preventDefault = true;
+        useSelectedIndex = true;
+      } else if (e2.keyCode === 36 || e2.code === "Home") {
+        index = getFirstTab();
+        preventDefault = true;
+        useSelectedIndex = true;
+      }
+      if (preventDefault) {
+        e2.preventDefault();
+      }
+      if (useSelectedIndex) {
+        setSelected(index, e2);
+      }
+    }
+  }
+  function handleClick(e2) {
+    let node = e2.target;
+    do {
+      if (isTabFromContainer(node)) {
+        if (isTabDisabled(node)) {
+          return;
+        }
+        const index = [].slice.call(node.parentNode.children).filter(isTabNode).indexOf(node);
+        setSelected(index, e2);
+        return;
+      }
+    } while ((node = node.parentNode) != null);
+  }
+  function isTabFromContainer(node) {
+    if (!isTabNode(node)) {
+      return false;
+    }
+    let nodeAncestor = node.parentElement;
+    do {
+      if (nodeAncestor === ref.current)
+        return true;
+      if (nodeAncestor.getAttribute("data-rttabs"))
+        break;
+      nodeAncestor = nodeAncestor.parentElement;
+    } while (nodeAncestor);
+    return false;
+  }
+  const { children, className, disabledTabClassName, domRef, focus, forceRenderTabPanel, onSelect, selectedIndex, selectedTabClassName, selectedTabPanelClassName, environment, disableUpDownKeys, disableLeftRightKeys, ...attributes } = { ...defaultProps$4, ...props };
+  return React.createElement("div", Object.assign({}, attributes, { className: clsx(className), onClick: handleClick, onKeyDown: handleKeyDown, ref: (node) => {
+    ref.current = node;
+    if (domRef)
+      domRef(node);
+  }, "data-rttabs": true }), getChildren());
+};
+UncontrolledTabs.propTypes = {};
+const MODE_CONTROLLED = 0;
+const MODE_UNCONTROLLED = 1;
+const defaultProps$3 = { defaultFocus: false, focusTabOnClick: true, forceRenderTabPanel: false, selectedIndex: null, defaultIndex: null, environment: null, disableUpDownKeys: false, disableLeftRightKeys: false };
+const getModeFromProps = (props) => {
+  return props.selectedIndex === null ? MODE_UNCONTROLLED : MODE_CONTROLLED;
+};
+const Tabs = (props) => {
+  const { children, defaultFocus, defaultIndex, focusTabOnClick, onSelect, ...attributes } = { ...defaultProps$3, ...props };
+  const [focus, setFocus] = reactExports.useState(defaultFocus);
+  const [mode] = reactExports.useState(getModeFromProps(attributes));
+  const [selectedIndex, setSelectedIndex] = reactExports.useState(mode === MODE_UNCONTROLLED ? defaultIndex || 0 : null);
+  reactExports.useEffect(() => {
+    setFocus(false);
+  }, []);
+  if (mode === MODE_UNCONTROLLED) {
+    const tabsCount = getTabsCount(children);
+    reactExports.useEffect(() => {
+      if (selectedIndex != null) {
+        const maxTabIndex = Math.max(0, tabsCount - 1);
+        setSelectedIndex(Math.min(selectedIndex, maxTabIndex));
+      }
+    }, [tabsCount]);
+  }
+  const handleSelected = (index, last, event) => {
+    if (typeof onSelect === "function") {
+      if (onSelect(index, last, event) === false)
+        return;
+    }
+    if (focusTabOnClick) {
+      setFocus(true);
+    }
+    if (mode === MODE_UNCONTROLLED) {
+      setSelectedIndex(index);
+    }
+  };
+  let subProps = { ...props, ...attributes };
+  subProps.focus = focus;
+  subProps.onSelect = handleSelected;
+  if (selectedIndex != null) {
+    subProps.selectedIndex = selectedIndex;
+  }
+  delete subProps.defaultFocus;
+  delete subProps.defaultIndex;
+  delete subProps.focusTabOnClick;
+  return React.createElement(UncontrolledTabs, subProps, children);
+};
+Tabs.propTypes = {};
+Tabs.tabsRole = "Tabs";
+const defaultProps$2 = { className: "react-tabs__tab-list" };
+const TabList = (props) => {
+  const { children, className, ...attributes } = { ...defaultProps$2, ...props };
+  return React.createElement("ul", Object.assign({}, attributes, { className: clsx(className), role: "tablist" }), children);
+};
+TabList.tabsRole = "TabList";
+TabList.propTypes = {};
+const DEFAULT_CLASS$1 = "react-tabs__tab";
+const defaultProps$1 = { className: DEFAULT_CLASS$1, disabledClassName: `${DEFAULT_CLASS$1}--disabled`, focus: false, id: null, selected: false, selectedClassName: `${DEFAULT_CLASS$1}--selected` };
+const Tab = (props) => {
+  let nodeRef = reactExports.useRef();
+  const { children, className, disabled, disabledClassName, focus, id: id2, selected, selectedClassName, tabIndex, tabRef, ...attributes } = { ...defaultProps$1, ...props };
+  reactExports.useEffect(() => {
+    if (selected && focus) {
+      nodeRef.current.focus();
+    }
+  }, [selected, focus]);
+  return React.createElement("li", Object.assign({}, attributes, { className: clsx(className, { [selectedClassName]: selected, [disabledClassName]: disabled }), ref: (node) => {
+    nodeRef.current = node;
+    if (tabRef)
+      tabRef(node);
+  }, role: "tab", id: `tab${id2}`, "aria-selected": selected ? "true" : "false", "aria-disabled": disabled ? "true" : "false", "aria-controls": `panel${id2}`, tabIndex: tabIndex || (selected ? "0" : null), "data-rttab": true }), children);
+};
+Tab.propTypes = {};
+Tab.tabsRole = "Tab";
+const DEFAULT_CLASS = "react-tabs__tab-panel";
+const defaultProps = { className: DEFAULT_CLASS, forceRender: false, selectedClassName: `${DEFAULT_CLASS}--selected` };
+const TabPanel = (props) => {
+  const { children, className, forceRender, id: id2, selected, selectedClassName, ...attributes } = { ...defaultProps, ...props };
+  return React.createElement("div", Object.assign({}, attributes, { className: clsx(className, { [selectedClassName]: selected }), role: "tabpanel", id: `panel${id2}`, "aria-labelledby": `tab${id2}` }), forceRender || selected ? children : null);
+};
+TabPanel.tabsRole = "TabPanel";
+TabPanel.propTypes = {};
 var define_import_meta_env_default$2 = { BASE_URL: "./", MODE: "production", DEV: false, PROD: true, SSR: false };
 const createStoreImpl = (createState) => {
   let state;
@@ -9331,18 +9682,18 @@ function q$1(a, b) {
   n$1(function() {
     c.value = d;
     c.getSnapshot = b;
-    r$2(c) && g({ inst: c });
+    r$1(c) && g({ inst: c });
   }, [a, d, b]);
   m(function() {
-    r$2(c) && g({ inst: c });
+    r$1(c) && g({ inst: c });
     return a(function() {
-      r$2(c) && g({ inst: c });
+      r$1(c) && g({ inst: c });
     });
   }, [a]);
   p$1(d);
   return d;
 }
-function r$2(a) {
+function r$1(a) {
   var b = a.getSnapshot;
   a = a.value;
   try {
@@ -9374,8 +9725,8 @@ var h = reactExports, n = shimExports;
 function p(a, b) {
   return a === b && (0 !== a || 1 / a === 1 / b) || a !== a && b !== b;
 }
-var q = "function" === typeof Object.is ? Object.is : p, r$1 = n.useSyncExternalStore, t = h.useRef, u = h.useEffect, v = h.useMemo, w = h.useDebugValue;
-withSelector_production_min.useSyncExternalStoreWithSelector = function(a, b, e2, l9, g) {
+var q = "function" === typeof Object.is ? Object.is : p, r = n.useSyncExternalStore, t = h.useRef, u = h.useEffect, v = h.useMemo, w = h.useDebugValue;
+withSelector_production_min.useSyncExternalStoreWithSelector = function(a, b, e2, l2, g) {
   var c = t(null);
   if (null === c.current) {
     var f2 = { hasValue: false, value: null };
@@ -9387,7 +9738,7 @@ withSelector_production_min.useSyncExternalStoreWithSelector = function(a, b, e2
       if (!c2) {
         c2 = true;
         d2 = a3;
-        a3 = l9(a3);
+        a3 = l2(a3);
         if (void 0 !== g && f2.hasValue) {
           var b2 = f2.value;
           if (g(b2, a3))
@@ -9398,7 +9749,7 @@ withSelector_production_min.useSyncExternalStoreWithSelector = function(a, b, e2
       b2 = k2;
       if (q(d2, a3))
         return b2;
-      var e3 = l9(a3);
+      var e3 = l2(a3);
       if (void 0 !== g && g(b2, e3))
         return b2;
       d2 = a3;
@@ -9410,8 +9761,8 @@ withSelector_production_min.useSyncExternalStoreWithSelector = function(a, b, e2
     }, null === m2 ? void 0 : function() {
       return a2(m2());
     }];
-  }, [b, e2, l9, g]);
-  var d = r$1(a, c[0], c[1]);
+  }, [b, e2, l2, g]);
+  var d = r(a, c[0], c[1]);
   u(function() {
     f2.hasValue = true;
     f2.value = d;
@@ -10382,7 +10733,6 @@ const initialUi = {
     hideRed: false,
     hideYellow: false,
     hideKRool: true,
-    itemCountModifier: false,
     konglessHintDoorsOff: false,
     fungiLobbyOptionOff: false
   }
@@ -10407,26 +10757,9 @@ const uiSlice = (set) => {
 };
 const initialWinCon = {
   winCondition: {
-    bossKeys: true,
-    key8: false,
     key3And8: false,
-    kremlingKapture: false,
-    takeItToTheFridge: false,
     kRoolChallenge: false,
-    killTheWabbit: false,
-    goldBananas: false,
-    blueprints: false,
-    companyCoins: false,
-    bananaMedals: false,
-    crowns: false,
-    fairies: false,
-    rainbowCoins: false,
-    theBean: false,
-    pearls: false,
-    bosses: false,
-    bonuses: false,
-    kontracts: false,
-    winConItemCount: 0
+    kontracts: true
   }
 };
 const winConSlice = (set) => {
@@ -10435,20 +10768,9 @@ const winConSlice = (set) => {
     ...initialWinCon,
     setWinCondition: (id2, val) => {
       set((state) => {
-        if (typeof val === "number") {
-          return {
-            ...state,
-            winCondition: {
-              ...state.winCondition,
-              [id2]: val
-            }
-          };
-        }
         if (val) {
           const reset = {};
           for (const k2 of Object.keys(state.winCondition)) {
-            if (k2 === "winConItemCount")
-              continue;
             reset[k2] = false;
           }
           reset[id2] = true;
@@ -11454,6 +11776,58 @@ const wrinklyDoorSlice = (set) => {
     }
   };
 };
+const initialTask = {
+  task: {
+    task1: "",
+    task2: "",
+    task3: "",
+    task4: "",
+    task5: "",
+    task6: "",
+    task7: "",
+    task8: ""
+  },
+  taskCount: {
+    taskCount1: 0,
+    taskCount2: 0,
+    taskCount3: 0,
+    taskCount4: 0,
+    taskCount5: 0,
+    taskCount6: 0,
+    taskCount7: 0,
+    taskCount8: 0
+  }
+};
+const taskSlice = (set) => {
+  donkResetFns.add(() => set(initialTask));
+  return {
+    ...initialTask,
+    setTask: (index, name) => set((state) => {
+      const newKey = {};
+      newKey["task" + index] = name;
+      state = {
+        ...state,
+        ...newKey
+      };
+      return state;
+    }),
+    ...initialTask,
+    setTaskCount: (id2, val) => {
+      set((state) => {
+        const target = {};
+        target[id2] = val;
+        state = {
+          ...state,
+          taskCount: {
+            ...state.taskCount,
+            ...target
+          }
+        };
+        return state;
+      });
+    }
+  };
+};
 const initializer = (...d) => ({
   ...coreSlice(...d),
   ...settingSlice(...d),
@@ -11473,7 +11847,8 @@ const initializer = (...d) => ({
   ...shopSlice(...d),
   ...portalSlice(...d),
   ...slamSlice(...d),
-  ...wrinklyDoorSlice(...d)
+  ...wrinklyDoorSlice(...d),
+  ...taskSlice(...d)
 });
 const useDonkStore = create()(
   persist(initializer, {
@@ -11540,501 +11915,6 @@ function useShallow(selector) {
     return shallow(prev.current, next) ? prev.current : prev.current = next;
   };
 }
-function makeTypeChecker(tabsRole) {
-  return (element) => !!element.type && element.type.tabsRole === tabsRole;
-}
-const isTab = makeTypeChecker("Tab");
-const isTabList = makeTypeChecker("TabList");
-const isTabPanel = makeTypeChecker("TabPanel");
-function isTabChild(child) {
-  return isTab(child) || isTabList(child) || isTabPanel(child);
-}
-function deepMap(children, callback) {
-  return reactExports.Children.map(children, (child) => {
-    if (child === null)
-      return null;
-    if (isTabChild(child)) {
-      return callback(child);
-    }
-    if (child.props && child.props.children && typeof child.props.children === "object") {
-      return reactExports.cloneElement(child, { ...child.props, children: deepMap(child.props.children, callback) });
-    }
-    return child;
-  });
-}
-function deepForEach(children, callback) {
-  return reactExports.Children.forEach(children, (child) => {
-    if (child === null)
-      return;
-    if (isTab(child) || isTabPanel(child)) {
-      callback(child);
-    } else if (child.props && child.props.children && typeof child.props.children === "object") {
-      if (isTabList(child))
-        callback(child);
-      deepForEach(child.props.children, callback);
-    }
-  });
-}
-function r(e2) {
-  var t2, f2, n2 = "";
-  if ("string" == typeof e2 || "number" == typeof e2)
-    n2 += e2;
-  else if ("object" == typeof e2)
-    if (Array.isArray(e2)) {
-      var o = e2.length;
-      for (t2 = 0; t2 < o; t2++)
-        e2[t2] && (f2 = r(e2[t2])) && (n2 && (n2 += " "), n2 += f2);
-    } else
-      for (f2 in e2)
-        e2[f2] && (n2 && (n2 += " "), n2 += f2);
-  return n2;
-}
-function clsx() {
-  for (var e2, t2, f2 = 0, n2 = "", o = arguments.length; f2 < o; f2++)
-    (e2 = arguments[f2]) && (t2 = r(e2)) && (n2 && (n2 += " "), n2 += t2);
-  return n2;
-}
-function getTabsCount(children) {
-  let tabCount = 0;
-  deepForEach(children, (child) => {
-    if (isTab(child))
-      tabCount++;
-  });
-  return tabCount;
-}
-function isNode(node) {
-  return node && "getAttribute" in node;
-}
-function isTabNode(node) {
-  return isNode(node) && node.getAttribute("data-rttab");
-}
-function isTabDisabled(node) {
-  return isNode(node) && node.getAttribute("aria-disabled") === "true";
-}
-let canUseActiveElement;
-function determineCanUseActiveElement(environment) {
-  const env = environment || (typeof window !== "undefined" ? window : void 0);
-  try {
-    canUseActiveElement = !!(typeof env !== "undefined" && env.document && env.document.activeElement);
-  } catch (e2) {
-    canUseActiveElement = false;
-  }
-}
-const defaultProps$4 = { className: "react-tabs", focus: false };
-const UncontrolledTabs = (props) => {
-  let tabNodes = reactExports.useRef([]);
-  let tabIds = reactExports.useRef([]);
-  const ref = reactExports.useRef();
-  function setSelected(index, event) {
-    if (index < 0 || index >= getTabsCount$1())
-      return;
-    const { onSelect: onSelect2, selectedIndex: selectedIndex2 } = props;
-    onSelect2(index, selectedIndex2, event);
-  }
-  function getNextTab(index) {
-    const count = getTabsCount$1();
-    for (let i = index + 1; i < count; i++) {
-      if (!isTabDisabled(getTab(i))) {
-        return i;
-      }
-    }
-    for (let i = 0; i < index; i++) {
-      if (!isTabDisabled(getTab(i))) {
-        return i;
-      }
-    }
-    return index;
-  }
-  function getPrevTab(index) {
-    let i = index;
-    while (i--) {
-      if (!isTabDisabled(getTab(i))) {
-        return i;
-      }
-    }
-    i = getTabsCount$1();
-    while (i-- > index) {
-      if (!isTabDisabled(getTab(i))) {
-        return i;
-      }
-    }
-    return index;
-  }
-  function getFirstTab() {
-    const count = getTabsCount$1();
-    for (let i = 0; i < count; i++) {
-      if (!isTabDisabled(getTab(i))) {
-        return i;
-      }
-    }
-    return null;
-  }
-  function getLastTab() {
-    let i = getTabsCount$1();
-    while (i--) {
-      if (!isTabDisabled(getTab(i))) {
-        return i;
-      }
-    }
-    return null;
-  }
-  function getTabsCount$1() {
-    const { children: children2 } = props;
-    return getTabsCount(children2);
-  }
-  function getTab(index) {
-    return tabNodes.current[`tabs-${index}`];
-  }
-  function getChildren() {
-    let index = 0;
-    const { children: children2, disabledTabClassName: disabledTabClassName2, focus: focus2, forceRenderTabPanel: forceRenderTabPanel2, selectedIndex: selectedIndex2, selectedTabClassName: selectedTabClassName2, selectedTabPanelClassName: selectedTabPanelClassName2, environment: environment2 } = props;
-    tabIds.current = tabIds.current || [];
-    let diff = tabIds.current.length - getTabsCount$1();
-    const id2 = reactExports.useId();
-    while (diff++ < 0) {
-      tabIds.current.push(`${id2}${tabIds.current.length}`);
-    }
-    return deepMap(children2, (child) => {
-      let result = child;
-      if (isTabList(child)) {
-        let listIndex = 0;
-        let wasTabFocused = false;
-        if (canUseActiveElement == null) {
-          determineCanUseActiveElement(environment2);
-        }
-        const env = environment2 || (typeof window !== "undefined" ? window : void 0);
-        if (canUseActiveElement && env) {
-          wasTabFocused = React.Children.toArray(child.props.children).filter(isTab).some((tab, i) => env.document.activeElement === getTab(i));
-        }
-        result = reactExports.cloneElement(child, { children: deepMap(child.props.children, (tab) => {
-          const key = `tabs-${listIndex}`;
-          const selected = selectedIndex2 === listIndex;
-          const props2 = { tabRef: (node) => {
-            tabNodes.current[key] = node;
-          }, id: tabIds.current[listIndex], selected, focus: selected && (focus2 || wasTabFocused) };
-          if (selectedTabClassName2)
-            props2.selectedClassName = selectedTabClassName2;
-          if (disabledTabClassName2)
-            props2.disabledClassName = disabledTabClassName2;
-          listIndex++;
-          return reactExports.cloneElement(tab, props2);
-        }) });
-      } else if (isTabPanel(child)) {
-        const props2 = { id: tabIds.current[index], selected: selectedIndex2 === index };
-        if (forceRenderTabPanel2)
-          props2.forceRender = forceRenderTabPanel2;
-        if (selectedTabPanelClassName2)
-          props2.selectedClassName = selectedTabPanelClassName2;
-        index++;
-        result = reactExports.cloneElement(child, props2);
-      }
-      return result;
-    });
-  }
-  function handleKeyDown(e2) {
-    const { direction, disableUpDownKeys: disableUpDownKeys2, disableLeftRightKeys: disableLeftRightKeys2 } = props;
-    if (isTabFromContainer(e2.target)) {
-      let { selectedIndex: index } = props;
-      let preventDefault = false;
-      let useSelectedIndex = false;
-      if (e2.code === "Space" || e2.keyCode === 32 || e2.code === "Enter" || e2.keyCode === 13) {
-        preventDefault = true;
-        useSelectedIndex = false;
-        handleClick(e2);
-      }
-      if (!disableLeftRightKeys2 && (e2.keyCode === 37 || e2.code === "ArrowLeft") || !disableUpDownKeys2 && (e2.keyCode === 38 || e2.code === "ArrowUp")) {
-        if (direction === "rtl") {
-          index = getNextTab(index);
-        } else {
-          index = getPrevTab(index);
-        }
-        preventDefault = true;
-        useSelectedIndex = true;
-      } else if (!disableLeftRightKeys2 && (e2.keyCode === 39 || e2.code === "ArrowRight") || !disableUpDownKeys2 && (e2.keyCode === 40 || e2.code === "ArrowDown")) {
-        if (direction === "rtl") {
-          index = getPrevTab(index);
-        } else {
-          index = getNextTab(index);
-        }
-        preventDefault = true;
-        useSelectedIndex = true;
-      } else if (e2.keyCode === 35 || e2.code === "End") {
-        index = getLastTab();
-        preventDefault = true;
-        useSelectedIndex = true;
-      } else if (e2.keyCode === 36 || e2.code === "Home") {
-        index = getFirstTab();
-        preventDefault = true;
-        useSelectedIndex = true;
-      }
-      if (preventDefault) {
-        e2.preventDefault();
-      }
-      if (useSelectedIndex) {
-        setSelected(index, e2);
-      }
-    }
-  }
-  function handleClick(e2) {
-    let node = e2.target;
-    do {
-      if (isTabFromContainer(node)) {
-        if (isTabDisabled(node)) {
-          return;
-        }
-        const index = [].slice.call(node.parentNode.children).filter(isTabNode).indexOf(node);
-        setSelected(index, e2);
-        return;
-      }
-    } while ((node = node.parentNode) != null);
-  }
-  function isTabFromContainer(node) {
-    if (!isTabNode(node)) {
-      return false;
-    }
-    let nodeAncestor = node.parentElement;
-    do {
-      if (nodeAncestor === ref.current)
-        return true;
-      if (nodeAncestor.getAttribute("data-rttabs"))
-        break;
-      nodeAncestor = nodeAncestor.parentElement;
-    } while (nodeAncestor);
-    return false;
-  }
-  const { children, className, disabledTabClassName, domRef, focus, forceRenderTabPanel, onSelect, selectedIndex, selectedTabClassName, selectedTabPanelClassName, environment, disableUpDownKeys, disableLeftRightKeys, ...attributes } = { ...defaultProps$4, ...props };
-  return React.createElement("div", Object.assign({}, attributes, { className: clsx(className), onClick: handleClick, onKeyDown: handleKeyDown, ref: (node) => {
-    ref.current = node;
-    if (domRef)
-      domRef(node);
-  }, "data-rttabs": true }), getChildren());
-};
-UncontrolledTabs.propTypes = {};
-const MODE_CONTROLLED = 0;
-const MODE_UNCONTROLLED = 1;
-const defaultProps$3 = { defaultFocus: false, focusTabOnClick: true, forceRenderTabPanel: false, selectedIndex: null, defaultIndex: null, environment: null, disableUpDownKeys: false, disableLeftRightKeys: false };
-const getModeFromProps = (props) => {
-  return props.selectedIndex === null ? MODE_UNCONTROLLED : MODE_CONTROLLED;
-};
-const Tabs = (props) => {
-  const { children, defaultFocus, defaultIndex, focusTabOnClick, onSelect, ...attributes } = { ...defaultProps$3, ...props };
-  const [focus, setFocus] = reactExports.useState(defaultFocus);
-  const [mode] = reactExports.useState(getModeFromProps(attributes));
-  const [selectedIndex, setSelectedIndex] = reactExports.useState(mode === MODE_UNCONTROLLED ? defaultIndex || 0 : null);
-  reactExports.useEffect(() => {
-    setFocus(false);
-  }, []);
-  if (mode === MODE_UNCONTROLLED) {
-    const tabsCount = getTabsCount(children);
-    reactExports.useEffect(() => {
-      if (selectedIndex != null) {
-        const maxTabIndex = Math.max(0, tabsCount - 1);
-        setSelectedIndex(Math.min(selectedIndex, maxTabIndex));
-      }
-    }, [tabsCount]);
-  }
-  const handleSelected = (index, last, event) => {
-    if (typeof onSelect === "function") {
-      if (onSelect(index, last, event) === false)
-        return;
-    }
-    if (focusTabOnClick) {
-      setFocus(true);
-    }
-    if (mode === MODE_UNCONTROLLED) {
-      setSelectedIndex(index);
-    }
-  };
-  let subProps = { ...props, ...attributes };
-  subProps.focus = focus;
-  subProps.onSelect = handleSelected;
-  if (selectedIndex != null) {
-    subProps.selectedIndex = selectedIndex;
-  }
-  delete subProps.defaultFocus;
-  delete subProps.defaultIndex;
-  delete subProps.focusTabOnClick;
-  return React.createElement(UncontrolledTabs, subProps, children);
-};
-Tabs.propTypes = {};
-Tabs.tabsRole = "Tabs";
-const defaultProps$2 = { className: "react-tabs__tab-list" };
-const TabList = (props) => {
-  const { children, className, ...attributes } = { ...defaultProps$2, ...props };
-  return React.createElement("ul", Object.assign({}, attributes, { className: clsx(className), role: "tablist" }), children);
-};
-TabList.tabsRole = "TabList";
-TabList.propTypes = {};
-const DEFAULT_CLASS$1 = "react-tabs__tab";
-const defaultProps$1 = { className: DEFAULT_CLASS$1, disabledClassName: `${DEFAULT_CLASS$1}--disabled`, focus: false, id: null, selected: false, selectedClassName: `${DEFAULT_CLASS$1}--selected` };
-const Tab = (props) => {
-  let nodeRef = reactExports.useRef();
-  const { children, className, disabled, disabledClassName, focus, id: id2, selected, selectedClassName, tabIndex, tabRef, ...attributes } = { ...defaultProps$1, ...props };
-  reactExports.useEffect(() => {
-    if (selected && focus) {
-      nodeRef.current.focus();
-    }
-  }, [selected, focus]);
-  return React.createElement("li", Object.assign({}, attributes, { className: clsx(className, { [selectedClassName]: selected, [disabledClassName]: disabled }), ref: (node) => {
-    nodeRef.current = node;
-    if (tabRef)
-      tabRef(node);
-  }, role: "tab", id: `tab${id2}`, "aria-selected": selected ? "true" : "false", "aria-disabled": disabled ? "true" : "false", "aria-controls": `panel${id2}`, tabIndex: tabIndex || (selected ? "0" : null), "data-rttab": true }), children);
-};
-Tab.propTypes = {};
-Tab.tabsRole = "Tab";
-const DEFAULT_CLASS = "react-tabs__tab-panel";
-const defaultProps = { className: DEFAULT_CLASS, forceRender: false, selectedClassName: `${DEFAULT_CLASS}--selected` };
-const TabPanel = (props) => {
-  const { children, className, forceRender, id: id2, selected, selectedClassName, ...attributes } = { ...defaultProps, ...props };
-  return React.createElement("div", Object.assign({}, attributes, { className: clsx(className, { [selectedClassName]: selected }), role: "tabpanel", id: `panel${id2}`, "aria-labelledby": `tab${id2}` }), forceRender || selected ? children : null);
-};
-TabPanel.tabsRole = "TabPanel";
-TabPanel.propTypes = {};
-const useBalancedRoolPhase = () => useDonkStore(useShallow((state) => state.settings.balancedRoolPhases));
-const useForestTime = () => useDonkStore(useShallow((state) => state.settings.forestTime));
-const useGalleonTideStartHigh = () => useDonkStore(useShallow((state) => state.settings.galleonHighTide));
-const useIsSwitchsanity = () => useDonkStore(useShallow((state) => state.settings.isSwitchsanity));
-const useOpenLobbies = () => useDonkStore(useShallow((state) => state.settings.openLobbies));
-const useHardShooting = () => useDonkStore(useShallow((state) => state.settings.hardShooting));
-const useProgressiveSlams = () => useDonkStore(useShallow((state) => state.settings.progressiveSlams));
-const useCbCount = () => useDonkStore(useShallow((state) => state.settings.cbCount));
-const useHalfMedalPercent = () => useDonkStore(useShallow((state) => state.settings.halfMedalCount));
-const useFairyCount = () => useDonkStore(useShallow((state) => state.settings.fairyCount));
-const useJetpacCount = () => useDonkStore(useShallow((state) => state.settings.jetpacCount));
-const useAutoBonus = () => useDonkStore(useShallow((state) => state.settings.autoBonus));
-const useBananaport = () => useDonkStore(useShallow((state) => state.settings.bananaportOpen));
-const useBananaportAll = () => useBananaport() == 2;
-const useHelmStartPosition = () => useDonkStore(useShallow((state) => state.settings.helmAccess));
-const useShuffleCrates = () => useDonkStore(useShallow((state) => state.settings.shuffleCrates));
-const usePoolShops = () => useDonkStore(useShallow((state) => state.settings.poolShops));
-const usePoolToughBananas = () => useDonkStore(useShallow((state) => state.settings.poolToughBananas));
-const usePoolMiniboss = () => useDonkStore(useShallow((state) => state.settings.poolMiniboss));
-const usePoolPearls = () => {
-  const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolPearls));
-  const pearlWinCon = useDonkStore(useShallow((state) => state.winCondition.pearls));
-  return pearlsInRotation || pearlWinCon && !pearlsInRotation;
-};
-const useBean$1 = () => {
-  const beanInRotation = useDonkStore(useShallow((state) => state.settings.poolBean));
-  const beanWinCon = useDonkStore(useShallow((state) => state.winCondition.theBean));
-  return beanInRotation || beanWinCon && !beanInRotation;
-};
-const usePoolBlueprints = () => {
-  const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints));
-  const blueprintWinCon = useDonkStore(useShallow((state) => state.winCondition.blueprints));
-  const isKRoolChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
-  return kasplatsInRotation || (blueprintWinCon || isKRoolChallenge) && !kasplatsInRotation;
-};
-const usePoolFairies = () => {
-  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies));
-  const fairyWinCon = useDonkStore(useShallow((state) => state.winCondition.fairies));
-  return fairiesInRotation || fairyWinCon && !fairiesInRotation;
-};
-const usePoolDrops = () => useDonkStore(useShallow((state) => state.settings.poolDrops));
-const useShuffleColoredBananas = () => useDonkStore(useShallow((state) => state.settings.shuffleColoredBananas));
-const usePoolKeys = () => {
-  const keysInRotation = useDonkStore(useShallow((state) => state.settings.poolKeys));
-  const keyWinCon = useDonkStore(useShallow((state) => state.winCondition.bossKeys));
-  return keysInRotation || keyWinCon && !keysInRotation;
-};
-const usePoolCrates = () => useDonkStore(useShallow((state) => state.settings.poolCrates));
-const usePoolRainbowCoins = () => useDonkStore(useShallow((state) => state.settings.poolRainbowCoins));
-const usePoolCrowns = () => useDonkStore(useShallow((state) => state.settings.poolCrowns));
-const usePoolBananaMedals = () => {
-  const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals));
-  const medalWinCon = useDonkStore(useShallow((state) => state.winCondition.bananaMedals));
-  const bossWinCon = useDonkStore(useShallow((state) => state.winCondition.bosses));
-  const kRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
-  return medalsInRotation || (medalWinCon || bossWinCon || kRoolsChallenge) && !medalsInRotation;
-};
-const usePoolNintendoCoin = () => {
-  const coinInRotation = useDonkStore(useShallow((state) => state.settings.poolNintendoCoin));
-  const coinWinCon = useDonkStore(useShallow((state) => state.winCondition.companyCoins));
-  return coinInRotation || coinWinCon && !coinInRotation;
-};
-const usePoolRarewareCoin = () => {
-  const coinInRotation = useDonkStore(useShallow((state) => state.settings.poolRarewareCoin));
-  const coinWinCon = useDonkStore(useShallow((state) => state.winCondition.companyCoins));
-  return coinInRotation || coinWinCon && !coinInRotation;
-};
-const useShuffleDirt = () => useDonkStore(useShallow((state) => state.settings.shuffleDirt));
-const useShuffleFairies = () => useDonkStore(useShallow((state) => state.settings.shuffleFairies));
-const usePoolBoulders = () => useDonkStore(useShallow((state) => state.settings.poolBoulders));
-const usePoolWrinkly = () => useDonkStore(useShallow((state) => state.settings.poolWrinkly));
-const useShuffleKasplats = () => useDonkStore(useShallow((state) => state.settings.shuffleKasplats));
-const useShuffledArenas = () => useDonkStore(useShallow((state) => state.settings.shuffleArenas));
-const useChunkySlamLevel = () => useDonkStore(useShallow((state) => state.settings.chunkySlamLevel));
-const useIslesBananaMedals = () => {
-  const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolIslesMedals));
-  const regularMedalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals));
-  const medalWinCon = useDonkStore(useShallow((state) => state.winCondition.bananaMedals));
-  return medalsInRotation || medalWinCon && !regularMedalsInRotation;
-};
-const useHalfMedals = () => {
-  const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolHalfMedals));
-  return medalsInRotation;
-};
-const usePoolKongs = () => useDonkStore(useShallow((state) => state.settings.poolKongs));
-const usePoolGoldBananas = () => useDonkStore(useShallow((state) => state.settings.poolGoldBananas));
-const useBetaLankyPhase = () => useDonkStore(useShallow((state) => state.settings.betaLankyPhase));
-const useAngryCaves = () => useDonkStore(useShallow((state) => state.settings.angyKosha));
-const useHelmItem1 = () => useDonkStore(useShallow((state) => state.settings.helmItem1));
-const useHelmItem2 = () => useDonkStore(useShallow((state) => state.settings.helmItem2));
-const useWrinklyDoorItem = () => useDonkStore(useShallow((state) => state.settings.wrinklyDoorItem));
-const useKRoolItem = () => {
-  const currentWinCon = useDonkStore(useShallow((state) => state.winCondition));
-  if (currentWinCon.bossKeys) {
-    return 1;
-  } else if (currentWinCon.key8) {
-    return 2;
-  } else if (currentWinCon.key3And8) {
-    return 3;
-  } else if (currentWinCon.kremlingKapture) {
-    return 4;
-  } else if (currentWinCon.takeItToTheFridge) {
-    return 5;
-  } else if (currentWinCon.kRoolChallenge) {
-    return 6;
-  } else if (currentWinCon.killTheWabbit) {
-    return 7;
-  } else if (currentWinCon.goldBananas) {
-    return 8;
-  } else if (currentWinCon.blueprints) {
-    return 9;
-  } else if (currentWinCon.companyCoins) {
-    return 10;
-  } else if (currentWinCon.bananaMedals) {
-    return 11;
-  } else if (currentWinCon.crowns) {
-    return 12;
-  } else if (currentWinCon.fairies) {
-    return 13;
-  } else if (currentWinCon.rainbowCoins) {
-    return 14;
-  } else if (currentWinCon.theBean) {
-    return 15;
-  } else if (currentWinCon.pearls) {
-    return 16;
-  } else if (currentWinCon.bosses) {
-    return 17;
-  } else if (currentWinCon.bonuses) {
-    return 18;
-  } else {
-    return 0;
-  }
-};
-const useHelmItemNum1 = () => useDonkStore(useShallow((state) => state.settings.helmItemNum1));
-const useHelmItemNum2 = () => useDonkStore(useShallow((state) => state.settings.helmItemNum2));
-const useKRoolItemNum = () => useDonkStore(useShallow((state) => state.winCondition.winConItemCount));
-const useForestTimeSwitches = () => useDonkStore(useShallow((state) => state.settings.poolTime));
-const usePoolBreakables = () => useDonkStore(useShallow((state) => state.settings.poolBreakable));
-const usePoolBalloons = () => useDonkStore(useShallow((state) => state.settings.poolBalloons));
-const BananaMedalPool = ({ children }) => usePoolBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const IslesMedalPool = ({ children }) => useIslesBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const HalfMedalPool = ({ children }) => useHalfMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const ArenaPool = ({ children }) => usePoolCrowns() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const VanillaArena = ({ children }) => useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
 const useDk = () => {
   const kong = useDonkStore(useShallow((state) => state.moves.dk));
   return kong;
@@ -12062,14 +11942,6 @@ const useAnyKong = () => {
   const tiny = useTiny();
   const chunky = useChunky();
   return dk2 || diddy || lanky || tiny || chunky;
-};
-const useAllKongs = () => {
-  const dk2 = useDk();
-  const diddy = useDiddy();
-  const lanky = useLanky();
-  const tiny = useTiny();
-  const chunky = useChunky();
-  return dk2 && diddy && lanky && tiny && chunky;
 };
 const useHighGrab = () => {
   const diddy = useDiddy();
@@ -16335,7 +16207,7 @@ const useTinySpiderGb = () => {
 };
 const useTinyBeanGb = () => {
   const beanstalk = useForestBean();
-  const bean = useBean();
+  const bean = useBean$1();
   const mini = useMini();
   const sax = useSax();
   return {
@@ -18555,25 +18427,13 @@ const useChunkyMedalOutLogic = () => {
 const useCurrentBananaMedalCount = () => useDonkStore(useShallow((state) => state.consumables.bananaMedals));
 const useCurrentPearlCount = () => useDonkStore(useShallow((state) => state.consumables.pearls));
 const useCurrentFairyCount = () => useDonkStore(useShallow((state) => state.consumables.fairies));
-const useBean = () => useDonkStore(useShallow((state) => state.consumables.bean));
+const useBean$1 = () => useDonkStore(useShallow((state) => state.consumables.bean));
 const useCurrentGBCount = () => useDonkStore(useShallow((state) => state.consumables.goldBananas));
 const useCurrentBlueprintCount = () => useDonkStore(useShallow((state) => state.consumables.dkBp + state.consumables.diddyBp + state.consumables.lankyBp + state.consumables.tinyBp + state.consumables.chunkyBp));
 const useCurrentCoCoinCount = () => useDonkStore(useShallow((state) => Number(state.consumables.nintendoCoin) + Number(state.consumables.rareCoin)));
 const useCurrentKeyCount = () => useDonkStore(useShallow((state) => Number(state.key1) + Number(state.key2) + Number(state.key3) + Number(state.key4) + Number(state.key5) + Number(state.key6) + Number(state.key7) + Number(state.key8)));
 const useCurrentCrownCount = () => useDonkStore(useShallow((state) => state.consumables.crowns));
 const useCurrentRainbowCoinCount = () => useDonkStore(useShallow((state) => state.consumables.rainbowCoins));
-const useCurrentBossCount = () => {
-  const [didCheck] = useDonkStore(useShallow((state) => [state.checks]));
-  return Number(didCheck[1105]) + Number(didCheck[2105]) + Number(didCheck[3105]) + Number(didCheck[4105]) + Number(didCheck[5105]) + Number(didCheck[6105]) + Number(didCheck[7105]);
-};
-const useCurrentBonusCount = () => {
-  const [didCheck] = useDonkStore(useShallow((state) => [state.checks]));
-  return Number(didCheck[10]) + Number(didCheck[12]) + Number(didCheck[23]) + Number(didCheck[32]) + Number(didCheck[43]) + Number(didCheck[1021]) + Number(didCheck[1022]) + Number(didCheck[1031]) + Number(didCheck[1042]) + Number(didCheck[2002]) + Number(didCheck[2021]) + Number(didCheck[2022]) + Number(didCheck[2042]) + Number(didCheck[2043]) + Number(didCheck[3010]) + Number(didCheck[3012]) + Number(didCheck[3020]) + Number(didCheck[3033]) + Number(didCheck[3042]) + Number(didCheck[4004]) + Number(didCheck[4011]) + Number(didCheck[4013]) + Number(didCheck[4021]) + Number(didCheck[4031]) + Number(didCheck[4032]) + Number(didCheck[4043]) + Number(didCheck[5001]) + Number(didCheck[5004]) + Number(didCheck[5010]) + Number(didCheck[5011]) + Number(didCheck[5021]) + Number(didCheck[5030]) + Number(didCheck[6001]) + Number(didCheck[6010]) + Number(didCheck[6030]) + Number(didCheck[6043]) + Number(didCheck[7010]) + Number(didCheck[7011]) + Number(didCheck[7020]) + Number(didCheck[7023]) + Number(didCheck[7033]) + Number(didCheck[7040]) + Number(didCheck[7043]);
-};
-const useKremKaptureEnemyCount = () => {
-  const [didCheck] = useDonkStore(useShallow((state) => [state.checks]));
-  return +Number(didCheck[-42]) + Number(didCheck[-41]) + Number(didCheck[-40]) + Number(didCheck[-39]) + Number(didCheck[-38]) + Number(didCheck[-37]) + Number(didCheck[-36]) + Number(didCheck[-35]) + Number(didCheck[-34]) + Number(didCheck[-33]) + Number(didCheck[-32]) + Number(didCheck[-31]) + Number(didCheck[-30]) + Number(didCheck[-29]) + Number(didCheck[-28]) + Number(didCheck[-27]) + Number(didCheck[-26]) + Number(didCheck[-25]) + Number(didCheck[-24]) + Number(didCheck[-23]) + Number(didCheck[-22]) + Number(didCheck[-21]) + Number(didCheck[-20]) + Number(didCheck[-19]) + Number(didCheck[-18]) + Number(didCheck[-17]) + Number(didCheck[-16]) + Number(didCheck[-15]) + Number(didCheck[-14]) + Number(didCheck[-13]) + Number(didCheck[-12]) + Number(didCheck[-11]) + Number(didCheck[-10]) + Number(didCheck[-9]) + Number(didCheck[-8]) + Number(didCheck[-7]) + Number(didCheck[-6]) + Number(didCheck[-5]) + Number(didCheck[-4]) + Number(didCheck[-3]) + Number(didCheck[-2]) + Number(didCheck[-1]);
-};
 const useCurrentCBCount = () => {
   const islesCBs = useDkMedalInLogic$7() + useDiddyMedalInLogic$7() + useLankyMedalInLogic$7() + useTinyMedalInLogic$7() + useChunkyMedalInLogic$7();
   const japesCBs = useDkMedalInLogic$6() + useDiddyMedalInLogic$6() + useLankyMedalInLogic$6() + useTinyMedalInLogic$6() + useChunkyMedalInLogic$6();
@@ -19057,6 +18917,35 @@ const useTroffAndScoff = (level) => {
   }
   return 0;
 };
+const useKRoolKontracts = (task) => {
+  const [task1, task2, task3, task4, task5, task6, task7, task8] = useDonkStore(useShallow((state) => [state.task.task1, state.task.task2, state.task.task3, state.task.task4, state.task.task5, state.task.task6, state.task.task7, state.task.task8]));
+  if (task1 === task) {
+    return true;
+  }
+  if (task2 === task) {
+    return true;
+  }
+  if (task3 === task) {
+    return true;
+  }
+  if (task4 === task) {
+    return true;
+  }
+  if (task5 === task) {
+    return true;
+  }
+  if (task6 === task) {
+    return true;
+  }
+  if (task7 === task) {
+    return true;
+  }
+  if (task8 === task) {
+    return true;
+  } else {
+    return false;
+  }
+};
 const useCheckDkJapesRock = () => useAnyKong();
 const useCheckDkCoconutCage = () => {
   const coconut = useCoconut();
@@ -19526,6 +19415,107 @@ const useCastleLobbyGeneric = () => {
     out: canEnterCastle.out
   };
 };
+const useBalancedRoolPhase = () => useDonkStore(useShallow((state) => state.settings.balancedRoolPhases));
+const useForestTime = () => useDonkStore(useShallow((state) => state.settings.forestTime));
+const useGalleonTideStartHigh = () => useDonkStore(useShallow((state) => state.settings.galleonHighTide));
+const useIsSwitchsanity = () => useDonkStore(useShallow((state) => state.settings.isSwitchsanity));
+const useOpenLobbies = () => useDonkStore(useShallow((state) => state.settings.openLobbies));
+const useHardShooting = () => useDonkStore(useShallow((state) => state.settings.hardShooting));
+const useProgressiveSlams = () => useDonkStore(useShallow((state) => state.settings.progressiveSlams));
+const useCbCount = () => useDonkStore(useShallow((state) => state.settings.cbCount));
+const useHalfMedalPercent = () => useDonkStore(useShallow((state) => state.settings.halfMedalCount));
+const useFairyCount = () => useDonkStore(useShallow((state) => state.settings.fairyCount));
+const useJetpacCount = () => useDonkStore(useShallow((state) => state.settings.jetpacCount));
+const useAutoBonus = () => useDonkStore(useShallow((state) => state.settings.autoBonus));
+const useBananaport = () => useDonkStore(useShallow((state) => state.settings.bananaportOpen));
+const useBananaportAll = () => useBananaport() == 2;
+const useHelmStartPosition = () => useDonkStore(useShallow((state) => state.settings.helmAccess));
+const useShuffleCrates = () => useDonkStore(useShallow((state) => state.settings.shuffleCrates));
+const usePoolShops = () => useDonkStore(useShallow((state) => state.settings.poolShops));
+const usePoolToughBananas = () => useDonkStore(useShallow((state) => state.settings.poolToughBananas));
+const usePoolMiniboss = () => useDonkStore(useShallow((state) => state.settings.poolMiniboss));
+const usePoolPearls = () => {
+  const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolPearls));
+  const pearlWinCon = useKRoolKontracts("Pearls");
+  return pearlsInRotation || pearlWinCon && !pearlsInRotation;
+};
+const useBean = () => {
+  const beanInRotation = useDonkStore(useShallow((state) => state.settings.poolBean));
+  const beanWinCon = useKRoolKontracts("The Bean™");
+  return beanInRotation || beanWinCon && !beanInRotation;
+};
+const usePoolBlueprints = () => {
+  const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints));
+  const blueprintWinCon = useKRoolKontracts("Blueprints");
+  const isKRoolChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
+  return kasplatsInRotation || (blueprintWinCon || isKRoolChallenge) && !kasplatsInRotation;
+};
+const usePoolFairies = () => {
+  const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies));
+  const fairyWinCon = useKRoolKontracts("Fairies");
+  return fairiesInRotation || fairyWinCon && !fairiesInRotation;
+};
+const usePoolDrops = () => useDonkStore(useShallow((state) => state.settings.poolDrops));
+const useShuffleColoredBananas = () => useDonkStore(useShallow((state) => state.settings.shuffleColoredBananas));
+const usePoolKeys = () => {
+  const keysInRotation = useDonkStore(useShallow((state) => state.settings.poolKeys));
+  const keyWinCon = useKRoolKontracts("Keys");
+  return keysInRotation || keyWinCon && !keysInRotation;
+};
+const usePoolCrates = () => useDonkStore(useShallow((state) => state.settings.poolCrates));
+const usePoolRainbowCoins = () => useDonkStore(useShallow((state) => state.settings.poolRainbowCoins));
+const usePoolCrowns = () => useDonkStore(useShallow((state) => state.settings.poolCrowns));
+const usePoolBananaMedals = () => {
+  const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals));
+  const medalWinCon = useKRoolKontracts("Medals");
+  const bossWinCon = useKRoolKontracts("Bosses");
+  const kRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
+  return medalsInRotation || (medalWinCon || bossWinCon || kRoolsChallenge) && !medalsInRotation;
+};
+const usePoolNintendoCoin = () => {
+  const coinInRotation = useDonkStore(useShallow((state) => state.settings.poolNintendoCoin));
+  const coinWinCon = useKRoolKontracts("Company Coins");
+  return coinInRotation || coinWinCon && !coinInRotation;
+};
+const usePoolRarewareCoin = () => {
+  const coinInRotation = useDonkStore(useShallow((state) => state.settings.poolRarewareCoin));
+  const coinWinCon = useKRoolKontracts("Company Coins");
+  return coinInRotation || coinWinCon && !coinInRotation;
+};
+const useShuffleDirt = () => useDonkStore(useShallow((state) => state.settings.shuffleDirt));
+const useShuffleFairies = () => useDonkStore(useShallow((state) => state.settings.shuffleFairies));
+const usePoolBoulders = () => useDonkStore(useShallow((state) => state.settings.poolBoulders));
+const usePoolWrinkly = () => useDonkStore(useShallow((state) => state.settings.poolWrinkly));
+const useShuffleKasplats = () => useDonkStore(useShallow((state) => state.settings.shuffleKasplats));
+const useShuffledArenas = () => useDonkStore(useShallow((state) => state.settings.shuffleArenas));
+const useChunkySlamLevel = () => useDonkStore(useShallow((state) => state.settings.chunkySlamLevel));
+const useIslesBananaMedals = () => {
+  const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolIslesMedals));
+  const regularMedalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals));
+  const medalWinCon = useKRoolKontracts("Medals");
+  return medalsInRotation || medalWinCon && !regularMedalsInRotation;
+};
+const useHalfMedals = () => {
+  const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolHalfMedals));
+  return medalsInRotation;
+};
+const usePoolKongs = () => useDonkStore(useShallow((state) => state.settings.poolKongs));
+const usePoolGoldBananas = () => useDonkStore(useShallow((state) => state.settings.poolGoldBananas));
+const useBetaLankyPhase = () => useDonkStore(useShallow((state) => state.settings.betaLankyPhase));
+const useAngryCaves = () => useDonkStore(useShallow((state) => state.settings.angyKosha));
+const useHelmItem1 = () => useDonkStore(useShallow((state) => state.settings.helmItem1));
+const useHelmItem2 = () => useDonkStore(useShallow((state) => state.settings.helmItem2));
+const useWrinklyDoorItem = () => useDonkStore(useShallow((state) => state.settings.wrinklyDoorItem));
+const useHelmItemNum1 = () => useDonkStore(useShallow((state) => state.settings.helmItemNum1));
+const useHelmItemNum2 = () => useDonkStore(useShallow((state) => state.settings.helmItemNum2));
+const useForestTimeSwitches = () => useDonkStore(useShallow((state) => state.settings.poolTime));
+const usePoolBreakables = () => useDonkStore(useShallow((state) => state.settings.poolBreakable));
+const usePoolBalloons = () => useDonkStore(useShallow((state) => state.settings.poolBalloons));
+const BananaMedalPool = ({ children }) => usePoolBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const IslesMedalPool = ({ children }) => useIslesBananaMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const HalfMedalPool = ({ children }) => useHalfMedals() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const ArenaPool = ({ children }) => usePoolCrowns() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const VanillaArena = ({ children }) => useShuffledArenas() ? null : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children });
 const ItemCheck = (props) => {
   const { id: id2, name, region, done, canGetLogic } = props;
   let { canGetBreak } = props;
@@ -19536,7 +19526,13 @@ const ItemCheck = (props) => {
   const hoardValues = Object.values(hoard);
   const isFoolish = foolishValues.some((f2) => f2 === region);
   const isHoard = hoardValues.some((f2) => f2 === region);
-  const [isCoCoinCheck, isMedalCheck, isBossCheck, isKillTheWabbit, isBonusSeed, isKRoolsChallenge, isKeyCheck] = useDonkStore(useShallow((state) => [state.winCondition.companyCoins, state.winCondition.bananaMedals, state.winCondition.bosses, state.winCondition.killTheWabbit, state.winCondition.bonuses, state.winCondition.kRoolChallenge, state.winCondition.bossKeys]));
+  const isCoCoinCheck = useKRoolKontracts("Company Coins");
+  const isMedalCheck = useKRoolKontracts("Medals");
+  const isBossCheck = useKRoolKontracts("Bosses");
+  const isKillTheWabbit = useKRoolKontracts("Kill the Wabbit");
+  const isBonusSeed = useKRoolKontracts("Bonus Levels");
+  const isKeyCheck = useKRoolKontracts("Keys");
+  const isKRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals));
   const ninCoin = useDonkStore(useShallow((state) => state.settings.poolNintendoCoin));
   const rareCoin = useDonkStore(useShallow((state) => state.settings.poolRarewareCoin));
@@ -21137,8 +21133,9 @@ const Shuffled$2S = () => {
 };
 const AztecLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2S, {}) : null;
 const AztecLobbyChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -21570,8 +21567,9 @@ const Shuffled$2O = () => {
 };
 const CastleLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2O, {}) : null;
 const CastleLobbyChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -22068,8 +22066,9 @@ const Shuffled$2J = () => {
 };
 const CavesLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2J, {}) : null;
 const CavesLobbyChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -22510,8 +22509,9 @@ const Shuffled$2F = () => {
 };
 const FactoryLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2F, {}) : null;
 const FactoryLobbyChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -23084,7 +23084,7 @@ const Shuffled$2C = () => {
 };
 const ForestLobbyDirt = () => useShuffleDirt() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2C, {}) : null;
 const ForestLobbyChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -23488,7 +23488,8 @@ const Shuffled$2y = () => {
 };
 const GalleonLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2y, {}) : null;
 const GalleonLobbyChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -23636,7 +23637,8 @@ const Shuffled$2u = () => {
 };
 const HelmLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2u, {}) : null;
 const HelmLobbyChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$7, {}) }),
@@ -24069,7 +24071,8 @@ const Shuffled$2q = () => {
 };
 const JapesLobbyKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2q, {}) : null;
 const JapesLobbyChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -24099,7 +24102,7 @@ const KremLiftChecks = () => {
   ] });
 };
 const KremTopChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SaxPad, {}) }),
@@ -24107,7 +24110,7 @@ const KremTopChecks = () => {
   ] });
 };
 const OuterIslesChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => [state.winCondition.fairies && !state.settings.poolFairies])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -26161,8 +26164,9 @@ const Shuffled$2b = () => {
 };
 const OuterKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$2b, {}) : null;
 const IslesRegionChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -26360,7 +26364,9 @@ const ShuffledKasplats$7 = () => {
   ] });
 };
 const ClassicChecks$7 = () => {
-  const [isFairySeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.fairies, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const [fairiesInRotation, kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolFairies, state.settings.poolBlueprints])) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -27186,7 +27192,7 @@ const GrapeGate = () => {
 const Miniboss = ({ children }) => usePoolMiniboss() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const PaintingRoom = () => {
   const paintingGb = useLankyPaintingGb();
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies));
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies));
   if (isFairySeed && !fairiesInRotation) {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -27610,53 +27616,44 @@ const HiveInteriorChecks = () => {
   ] });
 };
 const HiveOutsideChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(HiveStump, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(HiveBarrel, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(HiveOutsideEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HiveStump, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HiveBarrel, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(HiveOutsideEnemies, {})
   ] });
 };
 const HiveTunnelChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$6, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyKasplat$6, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(HiveTunnelEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(HiveTunnelEnemies, {}) })
   ] });
 };
 const JapesMainChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FrontCage, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyTimedCage, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LankyTimedCage, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyTimedCage, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyTimedCage, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyCage, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FreeDiddy, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FunkyArena, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingHillDirt, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(MountainCrate, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(JapesMainEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FrontCage, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyTimedCage, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(LankyTimedCage, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyTimedCage, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyTimedCage, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyCage, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FreeDiddy, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FunkyArena, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingHillDirt, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(MountainCrate, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesMainEnemies, {})
   ] });
 };
 const JapesStartChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FloorCage, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Boulder, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(JapesStartEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FloorCage, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Boulder, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesStartEnemies, {})
   ] });
 };
 const DiddyConveyorBalloon = () => {
@@ -27696,7 +27693,7 @@ const LankyRoomBalloon = () => {
   ) });
 };
 const PaintingRoomChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PaintingRoom, {}) }),
@@ -27705,31 +27702,28 @@ const PaintingRoomChecks = () => {
   ] });
 };
 const PeanutGateChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(PeanutTunnel, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(GrapeGate, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FeatherGate, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(PeanutGateEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(PeanutTunnel, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(GrapeGate, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FeatherGate, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(PeanutGateEnemies, {})
   ] });
 };
 const RambiGateChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(RambiCrate, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(RambiFairy, {})
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(RambiCrate, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RambiFairy, {}) })
   ] });
 };
 const UndergroundChecks$1 = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Underground, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$6, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKasplat$6, {}) })
   ] });
 };
 const BreakablePool = ({ children }) => usePoolBreakables() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
@@ -27780,7 +27774,8 @@ const RambiHuts = () => {
   ] });
 };
 const StormyTunnelChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SlopeBarrel, {}) }),
@@ -30017,9 +30012,9 @@ const StormyBalloons = () => {
   ] });
 };
 const JapesRegionChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -30028,11 +30023,9 @@ const JapesRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyMedal$6, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyMedal$6, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyMedal$6, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$6, {})
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesStartChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(PeanutGateChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyMedal$6, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(JapesStartChecks, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(PeanutGateChecks, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BaboonBlast, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandArenas, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandBalloons, {}),
@@ -30040,9 +30033,9 @@ const JapesRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandsDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandKasplats$1, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(JapesMainChecks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandKasplats$1, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(JapesMainChecks, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TopMountain, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(HillsideArenas, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(HillsideBalloons, {}),
@@ -30050,17 +30043,17 @@ const JapesRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(HillsideDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(HillsideFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(LowlandKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(HiveTunnelChecks, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(HiveOutsideChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(HiveOutsideChecks, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(HiveInteriorChecks, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(HiveArenas, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(HiveCrates, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(HiveDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(HiveFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(HiveKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(HiveKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(StormyTunnelChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(RambiGateChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -30070,7 +30063,7 @@ const JapesRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(StormyDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(StormyFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(StormyKasplats, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(MineChecks, {})
     ] }),
@@ -30082,7 +30075,7 @@ const JapesRegionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(MineDirt, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(MineFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(MineKasplats, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(MineKasplats, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShopLocations$6, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck$7, {})
@@ -30135,7 +30128,9 @@ const ShuffledKasplats$6 = () => {
   ] });
 };
 const ClassicChecks$6 = () => {
-  const [isFairySeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.fairies, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const [fairiesInRotation, kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolFairies, state.settings.poolBlueprints])) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -31816,8 +31811,8 @@ const TriangleVase = () => {
   ) });
 };
 const BeforeOasisChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -31827,8 +31822,8 @@ const BeforeOasisChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleVase, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(VaseBanana, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$5, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(BeforeOasisEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$5, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(BeforeOasisEnemies, {}) })
   ] });
 };
 const TunnelBoulder = () => {
@@ -31871,7 +31866,8 @@ const MiddleCaveBalloons = () => {
   ] });
 };
 const ConnectorTunnelChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -31944,8 +31940,9 @@ const FDTBalloons = () => {
   ] });
 };
 const DoorTempleChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -32009,8 +32006,9 @@ const LlamaBalloons = () => {
   ] });
 };
 const LlamaTempleChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -32043,7 +32041,8 @@ const OasisBalloons = () => {
   ) });
 };
 const OasisChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -32058,8 +32057,7 @@ const OasisChecks = () => {
   ] });
 };
 const TinyStartChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed}`, children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(ChunkyKlaptrap, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(TinyStartEnemies, {})
   ] });
@@ -34719,8 +34717,9 @@ const QSCaveBalloons = () => {
   ) });
 };
 const AztecRegionChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -34751,8 +34750,8 @@ const AztecRegionChecks = () => {
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecMainFairies, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AztecMainKasplats, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TinyStartChecks, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TinyStartChecks, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinySwimChecks, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TTArenas, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TTCrates, {}),
@@ -34835,8 +34834,9 @@ const ShuffledKasplats$5 = () => {
   ] });
 };
 const ClassicChecks$5 = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -35916,8 +35916,9 @@ const TestingBalloons = () => {
   ] });
 };
 const TestingChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -36007,7 +36008,8 @@ const RNDBalloons = () => {
   ] });
 };
 const RNDChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -36054,7 +36056,8 @@ const StarcadeBalloons = () => {
   ) });
 };
 const StorageChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -36079,8 +36082,8 @@ const StorageChecks = () => {
   ] });
 };
 const ProductionChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -36090,11 +36093,11 @@ const ProductionChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(LankyProduction, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TinyProduction, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${isKremKaptureSeed} ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat$4, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DkKasplat$4, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ProductionEnemies, {}) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ProductionEnemies, {}) })
   ] });
 };
 const Shuffled$1n = () => {
@@ -38207,8 +38210,9 @@ const StartBalloons = () => {
   ) });
 };
 const FactoryRegionChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -38357,8 +38361,9 @@ const FactoryBalloons = () => {
   ] });
 };
 const ClassicChecks$4 = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -38846,7 +38851,7 @@ const LankyBananas$3 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeEx
   /* @__PURE__ */ jsxRuntimeExports.jsx(Lanky5Ship, {})
 ] });
 const PearlPool = ({ children }) => usePoolPearls() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
-const BeanPool = ({ children }) => useBean$1() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
+const BeanPool = ({ children }) => useBean() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const TimePool = ({ children }) => useForestTimeSwitches() ? /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children }) : null;
 const TreasureClams = () => {
   const clams = useTinyClams();
@@ -38956,7 +38961,7 @@ const Tiny2Ship = () => {
   ) });
 };
 const TinyBananas$3 = () => {
-  const isPearlSeed = useDonkStore(useShallow((state) => state.winCondition.pearls)) ? "foolish" : "";
+  const isPearlSeed = useKRoolKontracts("Pearls") ? "foolish" : "";
   const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolPearls)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -39278,8 +39283,9 @@ const MiddleChest = () => {
   ) });
 };
 const CavernsChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -40017,7 +40023,8 @@ const EnguardeChests = () => {
   ] });
 };
 const LighthouseChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -40884,7 +40891,8 @@ const Chests2DS = () => {
   ] });
 };
 const OutskirtsChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -41171,7 +41179,7 @@ const Shuffled$M = () => {
 };
 const OutskirtKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$M, {}) : null;
 const FiveShipChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -41185,9 +41193,10 @@ const FiveShipChecks = () => {
   ] });
 };
 const TreasureChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isPearlSeed = useKRoolKontracts("Pearls") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
-  const isPearlSeed = useDonkStore(useShallow((state) => state.winCondition.pearls)) ? "foolish" : "";
   const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolPearls)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -41338,8 +41347,9 @@ const Shuffled$H = () => {
 };
 const TreasureKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$H, {}) : null;
 const GalleonRegionChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -41459,8 +41469,9 @@ const ShuffledKasplats$3 = () => {
   ] });
 };
 const ClassicChecks$3 = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -44537,7 +44548,8 @@ const ChunkyBananas$2 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeE
 ] });
 const OwlRace = () => {
   const owlGb = useDiddyOwlGb();
-  const [isBonusSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.bonuses, state.winCondition.kRoolChallenge]));
+  const isBonusSeed = useKRoolKontracts("Bonus Levels") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   if (isBonusSeed || isKRoolChallengeSeed) {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
@@ -44789,7 +44801,7 @@ const SpiderBoss = () => {
   ) }) });
 };
 const TinyBananas$2 = () => {
-  const isBeanSeed = useDonkStore(useShallow((state) => state.winCondition.theBean)) ? "foolish" : "";
+  const isBeanSeed = useKRoolKontracts("The Bean™") ? "foolish" : "";
   const beanInRotation = useDonkStore(useShallow((state) => state.settings.poolBean)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -45131,7 +45143,8 @@ const CenterChecks = () => {
   ] });
 };
 const MushExteriorChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -45188,7 +45201,8 @@ const Shuffled$x = () => {
 };
 const MushExteriorFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$x, {}) : null;
 const MushInteriorChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -45303,9 +45317,10 @@ const Shuffled$w = () => {
 };
 const MushInteriorArenas = () => useShuffledArenas() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$w, {}) : null;
 const OwlChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBeanSeed = useKRoolKontracts("The Bean™") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
-  const isBeanSeed = useDonkStore(useShallow((state) => state.winCondition.theBean)) ? "foolish" : "";
   const beanInRotation = useDonkStore(useShallow((state) => state.settings.poolBean)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -45359,8 +45374,9 @@ const MillFrontKeg2 = () => {
   ) });
 };
 const MillsChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -46028,8 +46044,9 @@ const Area1Boxes = () => {
   ] });
 };
 const ForestRegionChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -46074,8 +46091,9 @@ const BoulderLocations$1 = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRunti
   /* @__PURE__ */ jsxRuntimeExports.jsx(MillBackKeg, {})
 ] });
 const ClassicChecks$2 = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -46640,13 +46658,13 @@ const EarlyGone = () => {
 };
 const ChunkyIgloo = () => {
   const thatFuckingRabbit = useChunkyIglooGb();
-  const isKillTheWabbit = useDonkStore(useShallow((state) => state.winCondition.killTheWabbit));
+  const isKillTheWabbit = useKRoolKontracts("Kill the Wabbit") ? "foolish" : "";
   if (isKillTheWabbit) {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(GBPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       CavesCheck,
       {
         id: 6042,
-        name: "Chunky's 5-Door Igloo Room (SHOOT THIS BASTARD TO END YOUR SEED!!!)",
+        name: "Chunky's 5-Door Igloo Room",
         region: "Caves Igloo",
         canGetLogic: thatFuckingRabbit.in,
         canGetBreak: thatFuckingRabbit.out
@@ -46657,7 +46675,7 @@ const ChunkyIgloo = () => {
       CavesCheck,
       {
         id: 6042,
-        name: "Chunky's 5-Door Igloo Room (with that damn rabbit)",
+        name: "Chunky's 5-Door Igloo Room",
         region: "Caves Igloo",
         canGetLogic: thatFuckingRabbit.in,
         canGetBreak: thatFuckingRabbit.out
@@ -47222,7 +47240,8 @@ const Okuu = () => {
   ) });
 };
 const MainChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -47731,8 +47750,9 @@ const Shuffled$p = () => {
 };
 const MainKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$p, {}) : null;
 const IglooChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -47899,8 +47919,9 @@ const Shuffled$m = () => {
 };
 const IglooKasplats = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$m, {}) : null;
 const CabinsChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -49363,8 +49384,9 @@ const Shuffled$f = () => {
 };
 const ShuffledKasplats$1 = () => useShuffleKasplats() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$f, {}) : null;
 const CavesRegionChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -49409,8 +49431,9 @@ const BoulderLocations = () => /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntime
   /* @__PURE__ */ jsxRuntimeExports.jsx(Okuu, {})
 ] });
 const ClassicChecks$1 = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -52647,7 +52670,7 @@ const ShopLocations = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ShopPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Vanilla, {}) });
 };
 const BallroomChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -52846,7 +52869,8 @@ const ShedBox = () => {
   ) });
 };
 const SurroundingsChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -52866,8 +52890,9 @@ const SurroundingsChecks = () => {
   ] });
 };
 const TreeChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -53370,7 +53395,8 @@ const Shuffled$3 = () => {
 };
 const DungeonCrates = () => useShuffleCrates() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled$3, {}) : null;
 const UndergroundChecks = () => {
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${(isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DiddyKasplat, {}) }),
@@ -53396,8 +53422,9 @@ const UndergroundChecks = () => {
   ] });
 };
 const CastleRegionChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -53437,14 +53464,15 @@ const CastleRegionChecks = () => {
   ] });
 };
 const ClassicChecks = () => {
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
-  const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
+  const isBlueprintSeed = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "not-available", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "WARNING:" }),
-      " If you don't have Climbing, any check in the Crypt area is yellow because you won't be able to get back up without killing your Kong, pause-exiting/re-entering, or abusing high-grabs on the gravestones."
+      " If you don't have Climbing, any check in the Crypt area is yellow because you won't be able to get back up without killing your Kong, pause-exiting/re-entering (assuming you didn't get a Portal in the Crypt area), or abusing high-grabs on the gravestones."
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DkBananas, {}),
@@ -53708,7 +53736,7 @@ const useEOHDoor1 = () => {
   const currentCrownCount = useCurrentCrownCount();
   const currentFairyCount = useCurrentFairyCount();
   const currentRainbowCoinCount = useCurrentRainbowCoinCount();
-  const currentBeanCount = useBean();
+  const currentBeanCount = useBean$1();
   const currentPearlCount = useCurrentPearlCount();
   switch (itemNeeded) {
     case 1:
@@ -53780,7 +53808,7 @@ const useEOHDoor2 = () => {
   const currentCrownCount = useCurrentCrownCount();
   const currentFairyCount = useCurrentFairyCount();
   const currentRainbowCoinCount = useCurrentRainbowCoinCount();
-  const currentBeanCount = useBean();
+  const currentBeanCount = useBean$1();
   const currentPearlCount = useCurrentPearlCount();
   switch (itemNeeded) {
     case 1:
@@ -53864,86 +53892,6 @@ const useCanDeactivateHelm = () => {
     };
   }
 };
-const useTheFridge = () => {
-  const hasAllKongs = useAllKongs();
-  const hasCoconut = useCoconut();
-  const hasStrongKong = useStrong();
-  const hasPeanut = usePeanut();
-  const hasGrapes = useGrape();
-  const hasPineapple = usePineapple();
-  const hasGuitar = useGuitar();
-  const hasOStand = useStand();
-  const hinaKagiyama = useTwirl();
-  const hasJetbarrel = useRocket();
-  const hasTrombone = useTrombone();
-  const hasMiniMonkey = useMini();
-  const inflation = useBalloon();
-  const hasOranges = useOrange();
-  const hasClimbing = useClimbing();
-  const hasBarrels = useBarrel();
-  const hasCranky = useCranky();
-  return hasAllKongs && hasCoconut && hasStrongKong && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasTrombone && hasMiniMonkey && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky;
-};
-const useWinCondition = () => {
-  const itemNeeded = useKRoolItem();
-  const hasKey3 = useDonkStore(useShallow((state) => state.key3));
-  const hasKey8 = useDonkStore(useShallow((state) => state.key8));
-  const targetItemCount = useKRoolItemNum();
-  const currentGBCount = useCurrentGBCount();
-  const currentBlueprintCount = useCurrentBlueprintCount();
-  const currentCoCoinCount = useCurrentCoCoinCount();
-  const currentKeyCount = useCurrentKeyCount();
-  const currentBananaMedalCount = useCurrentBananaMedalCount();
-  const currentCrownCount = useCurrentCrownCount();
-  const currentFairyCount = useCurrentFairyCount();
-  const currentRainbowCoinCount = useCurrentRainbowCoinCount();
-  const currentBeanCount = useBean();
-  const currentPearlCount = useCurrentPearlCount();
-  const currentBossCount = useCurrentBossCount();
-  const currentBonusCount = useCurrentBonusCount();
-  const tookItToTheFridge = useTheFridge();
-  const currentKapturedEnemyCount = useKremKaptureEnemyCount();
-  switch (itemNeeded) {
-    case 1:
-      return currentKeyCount >= targetItemCount;
-    case 2:
-      return hasKey8;
-    case 3:
-      return hasKey3 && hasKey8;
-    case 4:
-      return currentKapturedEnemyCount >= 42;
-    case 5:
-      return tookItToTheFridge;
-    case 6:
-      return currentKeyCount >= 8 && currentBlueprintCount >= 40 && currentBossCount >= 7 && currentBonusCount >= 43;
-    case 7:
-      return false;
-    case 8:
-      return currentGBCount >= targetItemCount;
-    case 9:
-      return currentBlueprintCount >= targetItemCount;
-    case 10:
-      return currentCoCoinCount >= targetItemCount;
-    case 11:
-      return currentBananaMedalCount >= targetItemCount;
-    case 12:
-      return currentCrownCount >= targetItemCount;
-    case 13:
-      return currentFairyCount >= targetItemCount;
-    case 14:
-      return currentRainbowCoinCount >= targetItemCount;
-    case 15:
-      return Number(currentBeanCount) >= targetItemCount;
-    case 16:
-      return currentPearlCount >= targetItemCount;
-    case 17:
-      return currentBossCount >= targetItemCount;
-    case 18:
-      return currentBonusCount >= targetItemCount;
-    default:
-      return true;
-  }
-};
 const useCanFightRool = () => {
   const num1 = useSingleRoolNum(1);
   const num2 = useSingleRoolNum(2);
@@ -53955,7 +53903,6 @@ const useCanFightRool = () => {
   const check3 = useSingleRoolCheck(3);
   const check4 = useSingleRoolCheck(4);
   const check5 = useSingleRoolCheck(5);
-  const winConditionSatisfied = useWinCondition();
   if (num1 === 0 && num2 === 0 && num3 === 0 && num4 === 0 && num5 === 0) {
     return {
       in: false,
@@ -53963,8 +53910,14 @@ const useCanFightRool = () => {
     };
   }
   return {
-    in: winConditionSatisfied && check1.in && check2.in && check3.in && check4.in && check5.in,
-    out: winConditionSatisfied && check1.out && check2.out && check3.out && check4.out && check5.out
+    in: (
+      /*winConditionSatisfied && */
+      check1.in && check2.in && check3.in && check4.in && check5.in
+    ),
+    out: (
+      /*winConditionSatisfied && */
+      check1.out && check2.out && check3.out && check4.out && check5.out
+    )
   };
 };
 const useNotFightingKRool = () => useDonkStore(useShallow((state) => state.ui.hideKRool));
@@ -54584,8 +54537,7 @@ const Shuffled = () => {
 };
 const ShuffledFairies = () => useShuffleFairies() ? /* @__PURE__ */ jsxRuntimeExports.jsx(Shuffled, {}) : null;
 const HelmChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "foolish" : "";
+  const isFairySeed = useKRoolKontracts("Fairies") ? "foolish" : "";
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? "" : "foolish";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
@@ -54594,8 +54546,8 @@ const HelmChecks = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx(BossCheck, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isFairySeed && fairiesInRotation}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(EndOfHelmFairies, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations, {}) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DropPool, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnemyLocations, {}) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledArenas, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ShuffledCrates, {})
     ] }),
@@ -54963,11 +54915,11 @@ const KremKapture = () => {
   ] });
 };
 const KKChecks = () => {
-  const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "";
+  const isKremKaptureSeed = useKRoolKontracts("Kremling Kapture") ? "foolish" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid ${isKremKaptureSeed}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(KremKapture, {}) });
 };
 const Checklist = () => {
-  const kremKapture = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "foolish" : "lzr-shuffler";
+  const kremKapture = useKRoolKontracts("Kremling Kapture") ? "foolish" : "lzr-shuffler";
   return /* @__PURE__ */ jsxRuntimeExports.jsx("article", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Tabs, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(TabList, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Tab, { children: "DK Isles" }),
@@ -54996,14 +54948,15 @@ const Checklist = () => {
 const CountSelector = (props) => {
   const { storeKey, imgUrl, maxValue } = props;
   const [num] = useDonkStore(useShallow((state) => [state[props.prefix][storeKey]]));
-  const [bpWinCondition, kRoolWinCondition] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge]));
-  const bananaSeed = props.storeKey === "goldBananas" && useDonkStore(useShallow((state) => state.winCondition.goldBananas)) ? "all-bosses" : "";
+  const bpWinCondition = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const kRoolWinCondition = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
+  const bananaSeed = props.storeKey === "goldBananas" && useKRoolKontracts("Golden Bananas") ? "all-bosses" : "";
   const bpSeed = (props.storeKey === "dkBp" || props.storeKey === "diddyBp" || props.storeKey === "lankyBp" || props.storeKey === "tinyBp" || props.storeKey === "chunkyBp") && (bpWinCondition || kRoolWinCondition) ? "all-bosses" : "";
-  const medalSeed = props.storeKey === "bananaMedals" && useDonkStore(useShallow((state) => state.winCondition.bananaMedals)) ? "all-bosses" : "";
-  const crownSeed = props.storeKey === "crowns" && useDonkStore(useShallow((state) => state.winCondition.crowns)) ? "all-bosses" : "";
-  const fairySeed = props.storeKey === "fairies" && useDonkStore(useShallow((state) => state.winCondition.fairies)) ? "all-bosses" : "";
-  const rainbowCoinSeed = props.storeKey === "rainbowCoins" && useDonkStore(useShallow((state) => state.winCondition.rainbowCoins)) ? "all-bosses" : "";
-  const pearlSeed = props.storeKey === "pearls" && useDonkStore(useShallow((state) => state.winCondition.pearls)) ? "all-bosses" : "";
+  const medalSeed = props.storeKey === "bananaMedals" && useKRoolKontracts("Medals") ? "all-bosses" : "";
+  const crownSeed = props.storeKey === "crowns" && useKRoolKontracts("Crowns") ? "all-bosses" : "";
+  const fairySeed = props.storeKey === "fairies" && useKRoolKontracts("Fairies") ? "all-bosses" : "";
+  const rainbowCoinSeed = props.storeKey === "rainbowCoins" && useKRoolKontracts("Rainbow Coins") ? "all-bosses" : "";
+  const pearlSeed = props.storeKey === "pearls" && useKRoolKontracts("Pearls") ? "all-bosses" : "";
   const clamp2 = (num2) => Math.min(Math.max(num2, 0), maxValue);
   const nextCount = (num2) => clamp2(num2 + 1);
   const prevCount = (num2) => clamp2(num2 - 1);
@@ -55116,10 +55069,10 @@ const CountSelector = (props) => {
   );
 };
 const SimpleIcon = (props) => {
-  const isDKRapSeed = (props.storeKey === "dk" || props.storeKey === "coconut" || props.storeKey === "strong" || props.storeKey === "diddy" || props.storeKey === "peanut" || props.storeKey === "guitar" || props.storeKey === "rocket" || props.storeKey === "lanky" || props.storeKey === "grape" || props.storeKey === "stand" || props.storeKey === "trombone" || props.storeKey === "balloon" || props.storeKey === "tiny" || props.storeKey === "twirl" || props.storeKey === "mini" || props.storeKey === "chunky" || props.storeKey === "pineapple" || props.storeKey === "orange" || props.storeKey === "barrel" || props.storeKey === "climbing" || props.storeKey === "cranky") && useDonkStore(useShallow((state) => state.winCondition.takeItToTheFridge)) ? "all-bosses" : "";
-  const beanSeed = props.storeKey === "bean" && useDonkStore(useShallow((state) => state.winCondition.theBean)) ? "all-bosses" : "";
-  const kremKapture = props.storeKey === "camera" && useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? "all-bosses" : "";
-  const coCoinSeed = (props.storeKey === "nintendoCoin" || props.storeKey === "rareCoin") && useDonkStore(useShallow((state) => state.winCondition.companyCoins)) ? "all-bosses" : "";
+  const isDKRapSeed = (props.storeKey === "dk" || props.storeKey === "coconut" || props.storeKey === "strong" || props.storeKey === "diddy" || props.storeKey === "peanut" || props.storeKey === "guitar" || props.storeKey === "rocket" || props.storeKey === "lanky" || props.storeKey === "grape" || props.storeKey === "stand" || props.storeKey === "trombone" || props.storeKey === "balloon" || props.storeKey === "tiny" || props.storeKey === "twirl" || props.storeKey === "mini" || props.storeKey === "chunky" || props.storeKey === "pineapple" || props.storeKey === "orange" || props.storeKey === "barrel" || props.storeKey === "climbing" || props.storeKey === "cranky") && useKRoolKontracts("Complete the DK Rap") ? "all-bosses" : "";
+  const beanSeed = props.storeKey === "bean" && useKRoolKontracts("The Bean™") ? "all-bosses" : "";
+  const kremKapture = props.storeKey === "camera" && useKRoolKontracts("Kremling Kapture") ? "all-bosses" : "";
+  const coCoinSeed = (props.storeKey === "nintendoCoin" || props.storeKey === "rareCoin") && useKRoolKontracts("Company Coins") ? "all-bosses" : "";
   const value = useDonkStore((state) => state[props.prefix][props.storeKey]);
   const classes = `simple-icon ${props.prefix}-${props.storeKey} ${value ? "have" : "have-not"} ${props.className} ${isDKRapSeed} ${beanSeed} ${kremKapture} ${coCoinSeed}`;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classes, onClick: () => props.updateItem(props.storeKey, !value), children: [
@@ -55227,11 +55180,11 @@ const KRoolSlamSelector = () => {
     }
   ) });
 };
-const bLocker$1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAsCAMAAADcpCGDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAv1QTFRFSDYA//8AWEQAdlgA////ZEoAaVIAmXYAMyUA/94A/+8A//cBjGsApXsA/84A//6J/9YAhGMA//4k//8UqoQA//6ZlWsA/8YAs4wA//53//9X//81//65zpQA/+cAvYwAtYQA//7ZzpwA///rxpQArXsA//+q2JwB//8I3LcA77UAu5QA970AemMA//9KxowA///K//9jxZwA7MoAjWMA1qUA/70Ap5cA3q0A560A770Ay6UA//9C//9r3qUA98YA570ApXMA/84L57UA/to1/us1/tol///31a0A/+1X9NYA/scV3JkU15QG/dgWtngA984A+9l0/sok/70Mv4QAc0oA/9tI760ApI0E55wP97UAxr4Ag2sA/+0TumxL49wA56Ymi3UA//dM/dtW/upp/t4KhloEyYUO0IwF97UN/usl56UA2Zgq3MoE6qUTpqUB/+p3//c7wq8FQywa/9YIglge9+8A/+xI+K0Eakg8+49z9d4B9+cA/ecOmYgA/uyKvXsN/+8I+6+N//cV884O/7cW//dtEFwS56UI/8YI8KUJ7KhA+9ST/syy8K0tk2gf/++59K0V/vdhlm02Y0ce/M428GxZ87hRmmVT0owXXTYv6ckVF5Ezpd5l8rZtlqWNESZW+rgk0JBU77Y3/7UA/cxG9tYK770K/7UId59ZChCCA70K760J/OyY470LlD419/cAmXMN0sqrkExBr4mJ7LUR9MYL6ecCRyZS7cpC/eqr3LcSYWdpQGYuQqG484xQCxTVrXMA/9rIFpxU970+1KGG560ODU+fxpQQe0od3qUI76UAzrIx1qpg57UIuN6qh1CU68YlxHslqokhwohzYKcO7NYV78Y5FV5U3q0LqKI0zrVPVm8I0rUd8//eUjnO77kl8rioQnOcedmB970IyZwLWjalUmfSqXcY26UVnZBTStJCxq3OvYQM1qUIjGsQqWsA9+/G1sM0/8xd/+/n5+f3e18279Yp1rW1/+fWtYwQjNbWhGMIxpQIAAAANnrqQwAAAP90Uk5T//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AZvyKWQAAAiBJREFUeNpi+EcIMKBytU0JqLDOttLGq4JdS8eCDa8KK3stbby2GG1rscLr0jr5i27n8KqwTp+QxItPRZn/PJa17HhUcDu8/cKihseMeK+DZ1lYZJbhVFFUo39wE1CFGU4VclamOYosLGszzXGo0BaQk3ORUVQMrBDBocJZh5u7kF9NJjDPC7sKZiUlAU5pQ37RlA4+7CrYFVRNLYT0bCU98zixqxBj51VQECqUMvT0ETfHqqKUnZ1XVVjIRkovhw+7is2laSZAFdJ6Un3icthVzJjcz8sNMuR6BydWFTM2x/WLVQMNkSr3wbAGrKJy/YxSk2gNYSE9qcUrOLGpmFU5pZStCKTCNnkiuiGQMGVgYw1lBqqwseU/0smJVQUzM3OokIawtK0af5AANzYVrEAlPEBDpNQU+Vs5ubHEPhMbG7OghrCwDb+yu6g3ihKoCg6oEiFDGRYWNTcB7miMVAhUwpxmDjTE1oCFRTHMiYsRIyUzgJTkA70jCVSizB/EyRWNnhtAFumeAQYsSAmLYoEf1DVIOQqohJVtMlCJrZoyUI1Bip8cF1q+5WBiYmJlcxWW1pOUAamR8fQWQMv7QCUMTLpFoHRgKypjoKgm6emHXgYxsDIxhSZqNgsLZbna6CUlSYWxM6AnByZWVlYebc0SIEhNTS3Z9o8BSyZjZYuRMPLw8LCw8tD+h00FyD2suokiIonMWMpCwqXlgKkACDAAt/Uws1o1F4UAAAAASUVORK5CYII=";
+const gbIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAsCAMAAADcpCGDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAv1QTFRFSDYA//8AWEQAdlgA////ZEoAaVIAmXYAMyUA/94A/+8A//cBjGsApXsA/84A//6J/9YAhGMA//4k//8UqoQA//6ZlWsA/8YAs4wA//53//9X//81//65zpQA/+cAvYwAtYQA//7ZzpwA///rxpQArXsA//+q2JwB//8I3LcA77UAu5QA970AemMA//9KxowA///K//9jxZwA7MoAjWMA1qUA/70Ap5cA3q0A560A770Ay6UA//9C//9r3qUA98YA570ApXMA/84L57UA/to1/us1/tol///31a0A/+1X9NYA/scV3JkU15QG/dgWtngA984A+9l0/sok/70Mv4QAc0oA/9tI760ApI0E55wP97UAxr4Ag2sA/+0TumxL49wA56Ymi3UA//dM/dtW/upp/t4KhloEyYUO0IwF97UN/usl56UA2Zgq3MoE6qUTpqUB/+p3//c7wq8FQywa/9YIglge9+8A/+xI+K0Eakg8+49z9d4B9+cA/ecOmYgA/uyKvXsN/+8I+6+N//cV884O/7cW//dtEFwS56UI/8YI8KUJ7KhA+9ST/syy8K0tk2gf/++59K0V/vdhlm02Y0ce/M428GxZ87hRmmVT0owXXTYv6ckVF5Ezpd5l8rZtlqWNESZW+rgk0JBU77Y3/7UA/cxG9tYK770K/7UId59ZChCCA70K760J/OyY470LlD419/cAmXMN0sqrkExBr4mJ7LUR9MYL6ecCRyZS7cpC/eqr3LcSYWdpQGYuQqG484xQCxTVrXMA/9rIFpxU970+1KGG560ODU+fxpQQe0od3qUI76UAzrIx1qpg57UIuN6qh1CU68YlxHslqokhwohzYKcO7NYV78Y5FV5U3q0LqKI0zrVPVm8I0rUd8//eUjnO77kl8rioQnOcedmB970IyZwLWjalUmfSqXcY26UVnZBTStJCxq3OvYQM1qUIjGsQqWsA9+/G1sM0/8xd/+/n5+f3e18279Yp1rW1/+fWtYwQjNbWhGMIxpQIAAAANnrqQwAAAP90Uk5T//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AZvyKWQAAAiBJREFUeNpi+EcIMKBytU0JqLDOttLGq4JdS8eCDa8KK3stbby2GG1rscLr0jr5i27n8KqwTp+QxItPRZn/PJa17HhUcDu8/cKihseMeK+DZ1lYZJbhVFFUo39wE1CFGU4VclamOYosLGszzXGo0BaQk3ORUVQMrBDBocJZh5u7kF9NJjDPC7sKZiUlAU5pQ37RlA4+7CrYFVRNLYT0bCU98zixqxBj51VQECqUMvT0ETfHqqKUnZ1XVVjIRkovhw+7is2laSZAFdJ6Un3icthVzJjcz8sNMuR6BydWFTM2x/WLVQMNkSr3wbAGrKJy/YxSk2gNYSE9qcUrOLGpmFU5pZStCKTCNnkiuiGQMGVgYw1lBqqwseU/0smJVQUzM3OokIawtK0af5AANzYVrEAlPEBDpNQU+Vs5ubHEPhMbG7OghrCwDb+yu6g3ihKoCg6oEiFDGRYWNTcB7miMVAhUwpxmDjTE1oCFRTHMiYsRIyUzgJTkA70jCVSizB/EyRWNnhtAFumeAQYsSAmLYoEf1DVIOQqohJVtMlCJrZoyUI1Bip8cF1q+5WBiYmJlcxWW1pOUAamR8fQWQMv7QCUMTLpFoHRgKypjoKgm6emHXgYxsDIxhSZqNgsLZbna6CUlSYWxM6AnByZWVlYebc0SIEhNTS3Z9o8BSyZjZYuRMPLw8LCw8tD+h00FyD2suokiIonMWMpCwqXlgKkACDAAt/Uws1o1F4UAAAAASUVORK5CYII=";
 const medalIcon$1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHUUExURaOQMe/IFuvHOb2jPei6OPvSbcqZAee6FHhlADEbAE85AJh1FNaxREYxALyLFtm3IMiKEphoAVhDAEYlALiIAcyXFHY5AJhWAN57E71rENVzCtZzGMp3ENZ7CqloFJdGAKpWAMtmAuh7EeqEE95zCtuGIog1AOd7CJJSCqlHAdNrCN57CPCMDOaECL1aC7toAMh1APiLGd5zAIhGAPCECGMxANZrAJp1AWs5ANZzALlWAaqGAKlnAIdYAad2AfzrWVUnAP/8jP/va7dKAclYAeq6Af/9V///2v3IFpc2AGtSAP/+JP/+vfvaPsiJAe+MAK80Af//C//9dv/gTOmrAVoxAFIxAPqJAOeEAHklAGdGALh4AP/9Q/etAFo5AO+EAP/nDP/tFf3MJvfGAKeXAXhEAN57AP/eAPC1BammAXhWAOd7AIplAdyoAf7OC//GCPKtCP/nAPfOAP+9Cv/3APO9CPLWAPfnAP/vAP/WALqWAP/OAP/eD9qXAP/3CuzKAPfvAP/WCNF7ANu6APyZAOTcAF9SCNmHAP+lAJiGBOeMAP+tAP+1AO97AP+9AOplAGQoAMmnAf/GANpIAe9zAN5rANxVAPp4AP//AOfnANXIAQAAABNOIP4AAACcdFJOU///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AL9nXxsAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAW0SURBVGhD7Zj7VxJbFIDrVpNYljxCwgzGSCMjCAniZRZSWSlaFIQ9TApUJMPIeFQWYlaalqX31vyzd+9hgzws6/7AsPR+a7k4s/dhPtae8xp3cFVge0t27PjDb9WkZOfOv/7atWvX7t179lDkN6hBCcPs3VtXJxKJ6uv37du/n6Kbsj0lDQ0Mc+AAXdTXHzxIzU2pQUljo1hMFxJJYyM1N6XmJFKpTFYkOXSImptSWxK5XN7U1NioUBw+rFQqm5uPHGlpOXqUkptQKxKVSq1m2dbW1mPHFAqNRpHnWI7jxzd11YakrU2jaW8HBaLRKJUKBd8kRZ4TJ6j/RmwPiVarPQloNB1Ae3s7PpHmZl6C9z0F8IIcCgV9rRKBJXI5y7I6XUcH1ignAjSa06f1ej3LGgwoOXPmDH4gvIm+W4agEpXKaNQhOQkPy1Iyj0jU2dnZ0oIi/DOZTBvXTEDJ2bNmM1Und3+1mjKIxWKhFiISnTun0xXGQGsrxYsQTKJSsazVajRarVaz+eRJm43ieex2e2FbQeD0IlIqTSYoLlTM5HBQvMAWlkilUlzZzWY0gKLkaeRoaGiw251OukLyGh6djqIFhJHANgszHSSosTY1UbgYkHR1nT9PVzlQQ+UymcqXZCEk3d1qLFZOAmsUhUuRSCQy2YULFy/SdQ7UiDo6UFReMCEkcrnL5erpyUkoVgFI3O5Lly5fvnKFIohUShJckptK6lx9iUjU2wsSmw0lKhVFK7h69SrDXLt2/XpfX39/PwVx7Eul3d2nTnk820QilQ4MkKRigyoCJDLZ4OCNGzdver1eCsIvvHXr1u3bHo/P5/H4/X4KI9WX3Lmj1ZLk58WSSAKBwNDQ4ODdu3199+7dW1+QIX7/vsHg8Tx4ILSkt7cgocgGSCRQrqGh4eGHD0dGgsHgo0eU4B4/fhwIOBwPgFAoREFEGAmAGopsQCAAkv7+cHhkZHQ0HA6PjVGCczqd4+N6PZTKH4lEKIhUX8IrtNqBgZ8/do6bmBCLxdHokyeTk0+fxmKxEonTqdeDIPKLclVF4nINDIDE5ZLLKVKBxdLVBWvJ1NTk5LNnXm88HqcElBHWEqeTZUEQKp3MW1Ris8EsQdraKFKGxRIMTk253e5w+Plzr9ftnp6ephQ8EZCIxXq90RgKwSZOYaT6EpwgPHRdht3+4kUikUwmEolgMBplGLebMgiMObHY4cDzrdFIMaL6EputpwcULLvB2TSVSsXjsVg6nUi8fPkyGn31imG6uijJcVgph8NhMGCxSiYJIIQEt0TY361WiuSZnobBGg4nk69fz8xEo9HRUZlsYoKSOHzF4qYmkFitoVAkUr6IV1+iVmMn6OX3d3ZSjOPq6t68SSTS6fTbt8PDbjfDwLhlmPFxSiMweEGRyWRw3fL7S44qwBaVcFwkAnsnnmoKm47FEg4Hg/zcnp1lmNnZqSmZTCaRUBqBZwHo9fT7yseWMBK/3+fzZXloiKRSOLcZBobUzMzcXCr17h0fLzA/n8no9QYAZjpqiipNCCHJZHjBe8DngymDMYvFbof5nkp9+FAu4PjeHz/Oz4dCuGSBZKO3MyEkHLeQYxH49OnTr85GQ0PZLN8XRR4Pjl44QFCyBGEksIEvrbO83NPz+TOlivjyZWXl/Xu+rouL2MhmfT4Y/ZX/V0G2sATwemGhyrO8/PXr8vK3b6urqyyLh4zVVbhzLBYOLy1BAyULC/iZzcJUoTuUIZiE45JJOK7nGR1dW/sbyWZzRqjN4mIslkyuIEtLqFlYWH8PrkBACcfNzMDBB4FtF0inceIs+nxra2YzLG8rK/g7kkmoZ05TdKaoRFAJx83N/VNBPE7qRAIfPS9Jp9ff5X+CwBIeunkxufqBDTVw9qaev6IWJBw3Nvb9O92+hETixw/qsinbSFLED571V+rfpuYk/5n/JX9EFSQc9y/Ls1G0Pmf+zwAAAABJRU5ErkJggg==";
 const barrelIcon = "" + new URL("barrel2-CIOHUXl8.png", import.meta.url).href;
-const beanIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqZQTFRFQSAxORgpzWqLnEpqg0FaxWKDtFp7pFJzlEpie0Fii0FiczlSYjFKajFK1WqLrFJzezlaSiA53nOUWilBOSAxvWKDvVp7ORgxezlS/5y07oOcUilB5nOU1XOL/5SslEpqUik5/7TFrFpz3mqU/6y9/4usQSA5xWqD7nucvWJ7zWKL5nuc/4Ok/73N/83V/8XVajlS3nuU9oukpFJq//+ki0FaYjFBnFJqlEFi/8XNpEpqxVqD/6S99nuki0pi7nOcg0Fi9oOkMRgp1XOUzWKD//aL/4uk5nuU/5y9/+6Di5xBg8VBnL1K/6S0/5S0//aUasU5/+6cvb1a1WKL1c1qtFpztFJzSik5i71B/6zFe0Faczla7oOkrFp7/5ys/+aU3mqLpLRS///N/+acWjFK3py95oOcpHOLYkFK5qS9vVqDOUEpxWqLnFp7//akrKRai1pz5nOcvYuk9nuczZRqg2pKWlI5Mc0pQe4pzZSsOYsge2JKlGqDSiAxEEoIMUEg3qRzIFIQ1ZS0lGpS1ax7WuYx5r2Di6xKQVIpvc1irHOUczlKYvZB/96UatUxxYuki2pSSqQx/5SkxZSs//+9akFSg2JSENUQUkE5pGJqg1pzSkoxIHMQvZRi///Vc3NB5rSDg0pqrJRa/+as/7TNKeYYc2pBYnNKUkExc2JBtIOc9tWLpEpzc1JK7qyD7qSDe1pKUko5g7RB1axqi3NSzc1iSnspIEEYrKxaxbRi/8WDe9U5gzlaSt4p//+0xZRilFJzzWqDvYOcYkpBUlox/73F/96LKUoYi0pqc6w5pGJ7Ymo5nKxSMVoYrFJ7Yu4xnEpic0paEEoQCLQIc1pBKbQgIJQQ9tV77rSUGEoQYko5zYusrMVSSr05xYtz7t5zEEEQAAAAVrtq4gAAAOJ0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AHAeuh8AAASySURBVHja7Jb1d9tmFIYFFtmWZMmyTDLKjh1DHCexk4ZpSZYtTRpek5Rx5XZMHTMzMzMzMzNz/pPdT7bTNE3Xbvttx+85PsfS8fvc917rfFfY7H8UVgaUAWXA/xBgbudWMdy/BXAB8lHy81UU82H7gl9wy82kOK6CRI6b5W76/fw7OW4hoJ1tHG/qPpYSBEpk9kvBcbYcOa5SCUEQEk3icS9ftnLZ9mXvn8vNB9hcDaLaLei6rGmC0NSk77Nva321gRRVSpC1tjZNTzyxcnvdtbe/Xjc4OMjNAaYsuVq6W9gVb2mJt8kjlKaX8Dt3rw80NIo0lZCTHaloqmWX8OOytWvvWbOmDsSVAHYXK6oJOd4T9ada2nRd0y9++83NHHfXxmuuYL+sFWloTfNE3c3N/pQmPH7mG7c980jdEaAiQMrbSNFBaB1+d7M7mmrTNP3mh9dvPvuXk3dvIxsZkVYpQuitcYfSS5qjcf2tc769/sq7fzgSVATgVhsLALnDHQkd0xdN7dH0psBXO0/b+DEjimO0qjooQk72DKSrMhF/XBsZe+ydJ5996Y/R0dESIO9iGZqQPSugxr3NS6MdcU0XRrop1ZDDAf+A7KkBfMjdE5cFNcf9fPyO54aHh4uAzqDFTNIOIemPLKnKpCN9S2FacVkXEgnKEEEIcrLG73b7O5KyQKmN7TeeuuOi1av7SwCJt0EECiIAoSoNfQBiT1yTBYJIJAiQT+7d4KnxeLI+gqJoseHBh178tb+/BMAxq8UUEFUiO70iBIRMJhTpg2nGk7IsCMhPCF1yNpuVfQTqS2xsOOH+T48GzQHsvM1MhmGOHncknQEEpBjwR6eTcpePKMjng28UVUnTIkPmnrrjgsnJybnnwCnlLfC8hyuB4B+ASWYy6fcibn+NBxUliK2xrTEQ5ahU6THws6ZbPnn6KBBXAmBBaIKFDDEfGhaMOxQyAHKXQMQoyoEExemwyNSSZINry7sfvTI0NLQPIHl5l4mtD1dSRNcGz9UwcLe/BwL4kN+wGm7DzrImy3UXPn/5F69dVQLMKphk51EGhnbEiK5sr8cz7Un2Qv4YqjwzEw4zSGAPsGzOxc/u/eyU8y496b4bHigAnBjmhUGazCQTpiGFMTPoHqobsRmmnkQCN2vOmS6Zmt30wVm3fv/dbyd+UzwPMKzCizKYAyQ8+3SlgzIaN2ZumJEVzKCcyWVFlk0v/PT1GX9uKQIURLDyluXtLCCYcNjoeabgDrCt5oJMSC7efuCRBj3AIO1WC7TRCgwSNVxbX3KbCrLZbC4X+KcWORMRoUKyQwibyWQ2G4EDhdJzTpcFxPN5adFDVUEZJrwIgRiIYjaVzGCsrq7mQda8/fTgogCnYmQIetchBEAKMsoiqxWUz9vtQQw7yLGuIAIgYBQQg+erkdNStFrtIK83KElO/KCLBTcIWAUwpKB9nbUow+kNTsBdDHPi+N9sJsxZQBg5oBlvEEmakDAJ3VQUHF/EP3+14fgcohhm3oUTquPYoZYrvpBRkKIgdyfGHcZ2RjFxp1NBM1XACV5kxjvxCu4w1zt+gDrhU81x/+T9YD+/Amau/I5UBpQBZcCh9ZcAAwAGseCjc7PZBQAAAABJRU5ErkJggg==";
-const chunkyKongIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA9CAMAAAA+ngESAAADAFBMVEUAAAD4sHD4oGj4uHD4qGj4wHg4IBj4kGBYMCBgMCD4yHj40ID4mGD4iFj42ID4gFj4qHD4uHgoGBBIKBj4+JD46IhQKCBAIBjoeFAwGBAgEBAYEAj4mGjYcEioKCBgIAC4YED48IiISDBYIASwWECgUDhoOChoIAaQSDBgIAj44IjQaEjIaEjAODD4+Pj4cFCoWDh4QCiwKCBwKAYAAAD40HjgcE/AYEBwOCdIGAAYCAD44ID4QDDAQDC4MCggEAjwgFDweFBYJx8QCAQgCAE4EAD4+Ij4wHD4iGD4eFKAQDCgKCBYGAb4sGj4oGCYUDj4QDj4QCCgICBQJhZQGAAQAAD4kFjwiFjgeFDQcEiAPib4OB4bGBh4KAhQGAgIAgIoCAD4+PD48OL46Njy4NLYyLrOwLLIuKjuqmh2cGj4cFjAYEj4VkT4TEC4OCpgOCg0LijwOBjYMBg4GBCIMAYwEAJAGAD4+Ojb1si2sKuwoJWjmJClk4X4yICLgHjww3BrY13wgFiQaFj4aFDIcEi7a0joWEhbTUWoWEDWTUCgWDi+UDj4SDjLRTXwQDX4ODCIQC3INS2wMChoOCCYICDoOB1IIBg4GBioKBCjMA2AKAhIGAhIEAgoEAP48PDo6Ojk3NTo2Mjg0MC4uLjIuLDQuKy4qKCooJC8fGTwmGDkkFzwkFiYcFjkiFTogFRcWFTggFDYgFDYaEi4WECkYDjcSDjASDiYSjWYSDCASDDgPCzAOCgsKCjQMCCwMCAgICC4KByAOBh4OBjcNBjIMBiIIBiUIBQoEBCsPAykOAiYOAhwIAgYCAhAEADQyLjYwLjYsJjomIC4kICYiIDw0Hj4oHj4mHiAeHDouGjYqGjwoGjwoGDgmGDwiGCIcGDYmFjoiFjweFjAcFh4YFjocFDoaEjgaEjIYEjwWEiwaEDQYEDIYEDgWEDQWECAUEDoSEBIQEC4QDCwQDDQODCYSCjAKCA4KCBwOBjAMBigKBC4QAiAMAhoKAhoGAhgGAiQMAA67x8DAAAAAXRSTlMAQObYZgAABilJREFUSMeV1QVUU1EYB3Df2+byMdyThTo312Oo4DacmAwQQUJFBFQEu7u7u7u7u7u7u7u7u+O7d5tPRDf9nwNnHPbj/917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";
+const theBean = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqZQTFRFQSAxORgpzWqLnEpqg0FaxWKDtFp7pFJzlEpie0Fii0FiczlSYjFKajFK1WqLrFJzezlaSiA53nOUWilBOSAxvWKDvVp7ORgxezlS/5y07oOcUilB5nOU1XOL/5SslEpqUik5/7TFrFpz3mqU/6y9/4usQSA5xWqD7nucvWJ7zWKL5nuc/4Ok/73N/83V/8XVajlS3nuU9oukpFJq//+ki0FaYjFBnFJqlEFi/8XNpEpqxVqD/6S99nuki0pi7nOcg0Fi9oOkMRgp1XOUzWKD//aL/4uk5nuU/5y9/+6Di5xBg8VBnL1K/6S0/5S0//aUasU5/+6cvb1a1WKL1c1qtFpztFJzSik5i71B/6zFe0Faczla7oOkrFp7/5ys/+aU3mqLpLRS///N/+acWjFK3py95oOcpHOLYkFK5qS9vVqDOUEpxWqLnFp7//akrKRai1pz5nOcvYuk9nuczZRqg2pKWlI5Mc0pQe4pzZSsOYsge2JKlGqDSiAxEEoIMUEg3qRzIFIQ1ZS0lGpS1ax7WuYx5r2Di6xKQVIpvc1irHOUczlKYvZB/96UatUxxYuki2pSSqQx/5SkxZSs//+9akFSg2JSENUQUkE5pGJqg1pzSkoxIHMQvZRi///Vc3NB5rSDg0pqrJRa/+as/7TNKeYYc2pBYnNKUkExc2JBtIOc9tWLpEpzc1JK7qyD7qSDe1pKUko5g7RB1axqi3NSzc1iSnspIEEYrKxaxbRi/8WDe9U5gzlaSt4p//+0xZRilFJzzWqDvYOcYkpBUlox/73F/96LKUoYi0pqc6w5pGJ7Ymo5nKxSMVoYrFJ7Yu4xnEpic0paEEoQCLQIc1pBKbQgIJQQ9tV77rSUGEoQYko5zYusrMVSSr05xYtz7t5zEEEQAAAAVrtq4gAAAOJ0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AHAeuh8AAASySURBVHja7Jb1d9tmFIYFFtmWZMmyTDLKjh1DHCexk4ZpSZYtTRpek5Rx5XZMHTMzMzMzMzNz/pPdT7bTNE3Xbvttx+85PsfS8fvc917rfFfY7H8UVgaUAWXA/xBgbudWMdy/BXAB8lHy81UU82H7gl9wy82kOK6CRI6b5W76/fw7OW4hoJ1tHG/qPpYSBEpk9kvBcbYcOa5SCUEQEk3icS9ftnLZ9mXvn8vNB9hcDaLaLei6rGmC0NSk77Nva321gRRVSpC1tjZNTzyxcnvdtbe/Xjc4OMjNAaYsuVq6W9gVb2mJt8kjlKaX8Dt3rw80NIo0lZCTHaloqmWX8OOytWvvWbOmDsSVAHYXK6oJOd4T9ada2nRd0y9++83NHHfXxmuuYL+sFWloTfNE3c3N/pQmPH7mG7c980jdEaAiQMrbSNFBaB1+d7M7mmrTNP3mh9dvPvuXk3dvIxsZkVYpQuitcYfSS5qjcf2tc769/sq7fzgSVATgVhsLALnDHQkd0xdN7dH0psBXO0/b+DEjimO0qjooQk72DKSrMhF/XBsZe+ydJ5996Y/R0dESIO9iGZqQPSugxr3NS6MdcU0XRrop1ZDDAf+A7KkBfMjdE5cFNcf9fPyO54aHh4uAzqDFTNIOIemPLKnKpCN9S2FacVkXEgnKEEEIcrLG73b7O5KyQKmN7TeeuuOi1av7SwCJt0EECiIAoSoNfQBiT1yTBYJIJAiQT+7d4KnxeLI+gqJoseHBh178tb+/BMAxq8UUEFUiO70iBIRMJhTpg2nGk7IsCMhPCF1yNpuVfQTqS2xsOOH+T48GzQHsvM1MhmGOHncknQEEpBjwR6eTcpePKMjng28UVUnTIkPmnrrjgsnJybnnwCnlLfC8hyuB4B+ASWYy6fcibn+NBxUliK2xrTEQ5ahU6THws6ZbPnn6KBBXAmBBaIKFDDEfGhaMOxQyAHKXQMQoyoEExemwyNSSZINry7sfvTI0NLQPIHl5l4mtD1dSRNcGz9UwcLe/BwL4kN+wGm7DzrImy3UXPn/5F69dVQLMKphk51EGhnbEiK5sr8cz7Un2Qv4YqjwzEw4zSGAPsGzOxc/u/eyU8y496b4bHigAnBjmhUGazCQTpiGFMTPoHqobsRmmnkQCN2vOmS6Zmt30wVm3fv/dbyd+UzwPMKzCizKYAyQ8+3SlgzIaN2ZumJEVzKCcyWVFlk0v/PT1GX9uKQIURLDyluXtLCCYcNjoeabgDrCt5oJMSC7efuCRBj3AIO1WC7TRCgwSNVxbX3KbCrLZbC4X+KcWORMRoUKyQwibyWQ2G4EDhdJzTpcFxPN5adFDVUEZJrwIgRiIYjaVzGCsrq7mQda8/fTgogCnYmQIetchBEAKMsoiqxWUz9vtQQw7yLGuIAIgYBQQg+erkdNStFrtIK83KElO/KCLBTcIWAUwpKB9nbUow+kNTsBdDHPi+N9sJsxZQBg5oBlvEEmakDAJ3VQUHF/EP3+14fgcohhm3oUTquPYoZYrvpBRkKIgdyfGHcZ2RjFxp1NBM1XACV5kxjvxCu4w1zt+gDrhU81x/+T9YD+/Amau/I5UBpQBZcCh9ZcAAwAGseCjc7PZBQAAAABJRU5ErkJggg==";
+const chunkyIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA9CAMAAAA+ngESAAADAFBMVEUAAAD4sHD4oGj4uHD4qGj4wHg4IBj4kGBYMCBgMCD4yHj40ID4mGD4iFj42ID4gFj4qHD4uHgoGBBIKBj4+JD46IhQKCBAIBjoeFAwGBAgEBAYEAj4mGjYcEioKCBgIAC4YED48IiISDBYIASwWECgUDhoOChoIAaQSDBgIAj44IjQaEjIaEjAODD4+Pj4cFCoWDh4QCiwKCBwKAYAAAD40HjgcE/AYEBwOCdIGAAYCAD44ID4QDDAQDC4MCggEAjwgFDweFBYJx8QCAQgCAE4EAD4+Ij4wHD4iGD4eFKAQDCgKCBYGAb4sGj4oGCYUDj4QDj4QCCgICBQJhZQGAAQAAD4kFjwiFjgeFDQcEiAPib4OB4bGBh4KAhQGAgIAgIoCAD4+PD48OL46Njy4NLYyLrOwLLIuKjuqmh2cGj4cFjAYEj4VkT4TEC4OCpgOCg0LijwOBjYMBg4GBCIMAYwEAJAGAD4+Ojb1si2sKuwoJWjmJClk4X4yICLgHjww3BrY13wgFiQaFj4aFDIcEi7a0joWEhbTUWoWEDWTUCgWDi+UDj4SDjLRTXwQDX4ODCIQC3INS2wMChoOCCYICDoOB1IIBg4GBioKBCjMA2AKAhIGAhIEAgoEAP48PDo6Ojk3NTo2Mjg0MC4uLjIuLDQuKy4qKCooJC8fGTwmGDkkFzwkFiYcFjkiFTogFRcWFTggFDYgFDYaEi4WECkYDjcSDjASDiYSjWYSDCASDDgPCzAOCgsKCjQMCCwMCAgICC4KByAOBh4OBjcNBjIMBiIIBiUIBQoEBCsPAykOAiYOAhwIAgYCAhAEADQyLjYwLjYsJjomIC4kICYiIDw0Hj4oHj4mHiAeHDouGjYqGjwoGjwoGDgmGDwiGCIcGDYmFjoiFjweFjAcFh4YFjocFDoaEjgaEjIYEjwWEiwaEDQYEDIYEDgWEDQWECAUEDoSEBIQEC4QDCwQDDQODCYSCjAKCA4KCBwOBjAMBigKBC4QAiAMAhoKAhoGAhgGAiQMAA67x8DAAAAAXRSTlMAQObYZgAABilJREFUSMeV1QVUU1EYB3Df2+byMdyThTo312Oo4DacmAwQQUJFBFQEu7u7u7u7u7u7u7u7u+O7d5tPRDf9nwNnHPbj/917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";
 const chunkyGunIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAiCAMAAABySOkBAAACK1BMVEUAAAAoGAAYEAAECAABEAAIQAAIOAAoEAAgEAAPWAAHMABoOAAAGAAQCABAIAA4IAABIABIMAJAKAA4KAAwIAA4GAAwGAAFAABYQApIOARoQALgaACAQAAIKAAAKABAGAAYYAWIUAVAMAP4mAD4eADwcADoaADAUAAQUACQSACgQAAQQACAOABwOABoMABYMABQMABYKABQKAC4oEDwmBQsiBSwbBRgUBQggBBYSBB8WAxsUAwYcAikYAhoSAhgSAhgQAj4iATggAQcgATYdASwbAS0YASQWAT4oAD4kAAUcADYaADQZADgYADIYAAQYADoWADAWAC4WAAYWADQUADIUAC4UACoUAAIUACkTACASAAQSAAISACYRABwRACoQACQPACYOABYOAB4NABgMAAgMAAQMABoKAAwKABQIABIIAAgIAAYIAAgGAAIGAAwEAAQEAAYCAD4+ID48ID48GDguFDguEDQuEDAmED48Dj4+DCgiDD4wCjYoCg4mCj4sCDwkCCYaCB4aCDQgBigcBj4uBD4mBDYmBDIiBC4eBCIYBAgYBAYWBB4UBBgSBAgSBD4kAj4gAjgeAj4uAD4sAD4qADwmADwkADwiACgiACAeADocADIcADwaAAwaAAQaADYYADYWADQWADIWACQUACAUAAYUADASAB4SACIQABYQACgOABQOAAQOABwMAA4MABgKABIKAAgKAAQKABYIAAoIAAQIAAQGAAgCADmKHBbAAAAAXRSTlMAQObYZgAAAhBJREFUKM91jnN/HFEUhufOHc/szNrI2oxtO43ttGFT27Zt2/p47S87XWTb97/7PPec9yCp2YD8N/S/8aw/F0GIFxn8K04gswSTOcDhQ36MWwc9WQhiYjCcI4gkHKI9TQW51e/7zRjD4Glnni05UFBCSwmckWLrtjNZWe00Rkg1mP+PXJZeFI2UZswPq7lhHJ4zL6fNmPoh3kTjhIk2m9IEnME4gm4f5qAG8yQxawO88efMndsPPsLU70Z23NB1RhepPzZaN5gqYtPOykPZsprjJ0vLa+uT/Acacj/aXhg+sWd3TvHBq1WJAoCiJKsonM/ZtmWfdaf9hsg3hvkgK1fKdBR7eFdeRVlNlyg2UXO+gbbnWrlMdyHfVi4T5H8FOfa4p7PUJh9ouVdbVPFGb30WF5tXJp50P7UqQs2OS5WXX2mrHK64wKi5iZG2sDJgaLjW4Bgsu9t4K94NNJD8NAVAwGC/bnfqI4bGm2tCSQnCkgQC1NLb6nI2Twotrro1sSBRf/Ce1wKAoiqV6rMcUKp4xRcNaYkezaYUk0V7j2iViuJ3ozrxql/z317rqVjfqf07TssUW690ImIkpCWgplTjPd29fWx+ntudEBoqhEosb1vvd4zwUV8HkhBqYQlCcmrspS+Kxox6JBGUDCohAIDnwfeIyESjBhI+6PUKwDgdJ0kFV8kV9SqJZGZxYTHt/RtttGT3J78D3QAAAABJRU5ErkJggg==";
 const chunkyMusicIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAnCAMAAAC/iHE6AAAA9lBMVEUAAACMhHuEe3OUjIT///9rY2OclIxza2NaUlJ7c2tjWlpaWlJSUkqtpZxrY1q1raVjY1pza2tKSkJCQjq9ta2lnJRSSkpCOTm1rZxzc2uEe3tra2NKQkIhISEYGBgTEAv///f39+/v5969taW1pZx7c3NjWlIxMTEpKSkpISH37+re1s7OvbW9raWllIl7e3M5OTkxKSkpKSENCAX79/fn3tba1sbOxsLWyr3Gxr3GvbXGua2tpZStnJSUjIxaUkpKSko5OTE5MTExMSkxKSEpIRghHBQYGBDv7+fWzsatraWlnIyMe3uEc2NSUlJKQjFKOTE5MSkXlkyBAAAAAXRSTlMAQObYZgAAAc1JREFUOMuNk9d2ozAQQJEUNcCEXg24Jl632HHapm/q9t38/88EbCeBUOzLAxpxjzQjRkKRl2dhC75sIz3928Z6mILNEnv4c9TYJCnK4/9266BekgGNH8Hwe7NO2udIXMQ3162vtfshwJ4Xhn1et6cNEIbxItoXjztGpcUJ92fJO3JA262S9hDw8Or4b82hWi59gwiDw+UwvlNHFQUowPPZehw1UUcrk5rwAMOnt2ggdU/KLAoV5LxHkaOdkKLE+kHfy8SDWzKyi0txTO4zcTyTulbhFHiAcG4m1OH4Ji85VPNImJ+7k8mnxRQeWEzIE9piL5eZQSlExQ5hcJqNRU53iy0VySLKbKBTTEBZu2GK5h8Fatx0hBL+qn3l/d9g1YXlV9NT+2+NJgW/zXlFX3qKuC5QUc65UE6oUbzKRcakW3nrdaBJ6Xuu4lMqVBEGABqpjZF5KFQyAz5NPkvqBRRqwFaS9L1Cx0adNVimJ2pEFzZh73HzVNvkySLv7LTPJm6vcXllXTbc3SVuo5c8V78IXN3CawTIT3PSvRif/Rgdd4bto9ZOlvXRA2JNEQA+TPEBAAgRq5GQrjsxP8pwdJlJCYzJSxhLQzFBVVPhFT00JnWmyRwYAAAAAElFTkSuQmCC";
 const chunkyMoveIcon = "data:image/png;base64,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";
@@ -55253,7 +55206,7 @@ const dkMoveIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAA
 const dkBarrelIcon = "" + new URL("dkbarrel-DsT_eVjN.png", import.meta.url).href;
 const dkPadIcon = "" + new URL("dkpad-BclD2lWG.png", import.meta.url).href;
 const fairyIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEjUExURf//if/6iPWnJf7DD9uviP7ME9uxi+SteO20VP/UG//1iOeXJuCiFdGFMuqoVpNsKpRzDfr2SeaJOOmxaWteU4d9cfS6dObk2ui2OP/2d7CRcMarnP/XmP//08WdZtaQFP/2arubidx5M//Ed//ylP/pbP/LON+QT9mYWu2paf3cff/yiMibeN6qOvDLN+KTPPq7GfrmD//8D/ajD//rEM6dQ/3Sfo1jRaRWG8ltGe6REP2xF8OJJsOIRv3Vctu2duq1GtOWKdeJZPDKgP/yD9h8F/+3SdyHW+OZYs16UeijGP2qZ++PXv3VhMy2EXFFK+y/dNmoZfLMD/HqD4VQMv/6Gv/kYeeEHvzGLv7zJP2lWP7fEPebJ//lGMqLGP7CJAAAAEwJit0AAABhdFJOU////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wCugG8xAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACwklEQVRoQ+2Ye3sZQRSHQ4oKQkTdmgtBGoqiVEUu7kFKNJG4lez3/xT9xZy4VdfStEkz+/7hcebMnvfZZ2Z2D2vCP0CWLMX/J1kbQsEEsmQGVh5QPI0sYaCqQqFg5RmUmEaWMFD1ySRKpXJ9fZ2CISg9hur/xgD+WIJbIcULlbwZQgEkKpWKgiFkGPH3JaOboeQvPKtErVZDotFo3gKtVos1wSfLbWxsUPkRIgawumRsYnfCcnN5VgnQ6XR6vd4ANjc3jUajyWTa2tpCOao9A101j9UlswtDV83jWSVms3l7e9tisbwDVqvVZrMhsNvtDocDa8KWZcxqa/KCJCPTahKALex0Ot+DnZ2d3d3dvb29/f19l8vFJA+QQnRBABcS4Ha7D4DH4/F6vVgZn893eHhIBiDFAHiRgA/g6OjI7/cHAoGPj5AE0DRRZMkImibKQgnW3h0MBkOhUDgcxjNlSkJzFsGR5BOIRCLRaDQWi+GcwEAZ6XAk+QzQD8XjcXgSicSXIZSUCC+SZDL5FaRSqePj43Q6fXJycnp6enZ2RnmJcCE5Pz/HY5ECJslkMtlsFr3Schv5lUtyuVw+nx8bAFrvQqGAQ18sFkulEt4tlJDCK5dcXFyUy2UKQKVSqVarMADs4svLSzRJlJPCK5dM8g3UajXsXDwg6/X61dUVmpdGo/Ed0JxFyJInlGAHQFDDNzyLr6+vb25uIGk2m/jFzWZIgiPJ1Bv99vb27u5uuUMCeJEAbNZGq9Vqt9ss7nQ6k1pJcCTBmz09+VcqlgVHvdvtUiwFjiRagHdVr9ejAUEwGAxms/kHoIFFcCRBL6SHpN/v04AgoCsaDAboJjM0sAjOJOgd7+/vaWAIBDDHsL1pQBSOJGgdq5FIhKJHSDK5sUWQJU8rmQ/MD5LJ0yMC9xKdTof+O0rRIriXLIcsWQJB+An1CY4/u0zrPQAAAABJRU5ErkJggg==";
-const film = "data:image/png;base64,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";
+const filmIcon = "data:image/png;base64,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";
 const shockwave = "" + new URL("dirt_patch-3Op7by5G.png", import.meta.url).href;
 const homingAmmo = "data:image/png;base64,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";
 const sniper = "data:image/png;base64,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";
@@ -55277,7 +55230,7 @@ const tinyPadIcon = "" + new URL("tinypad-BfIqtY4P.png", import.meta.url).href;
 const vineIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAADAFBMVEUAAAACBQgCBQkAAAABBgYAAAAAAAABCQMBAwYAAAACJQUAAAABAwYCAgUAAAEAAAAAAAAAAAAAAAADOgoBGAMAGQIBFAQAAAMBAwUAAAAAAAAAGwACGgYBGQQBFAQADgEAAQEAAAAAAAAQSCUACQACCwULGRwDBgoFDRAABAIBAwQAAAIAAAEZXg4FLAIJGxkBDwMAGgEGFgsCEQcACgADEwsCDgcAAAAhTggTWAwLLxsJNw6N/kx9+UJDxh8hSRoomw4MEyIAAAABfAEAXQAAcAEBawEAZwACgAEBdgEBhQAAVAAATwAEhwEAXwAATAAAdAEAYwAAUQAAQAECiQABjQADigAAYQAAVwARVQ4FkgEAVQAOjAkASQIHnQEAfgEAeQEAWwAAQwAomw0EbAsEbwoBNAMBKAMDjwEFmgAElQAAbgAAWQASUBAEVAoDdgkRUAkBLwMHoAEAZQCV/1EEWgsESwsEegkFXwkVVQgTsgMAggAAagAARwCH/0iA/kUwqBI33AsGjQIBeAGF/EeC9EVL0SRHxyFDxRIWXQ8wtg4bnQ0fjAsEaAsEYwsTWgsDagkEZQkCcwcTXgcPlQQBOQEDlgAAcgCP/0x690B38z5Z2y5S1idIziIzqxYvphIroBALShAlsA4EQAsJhwoOSwoIgwgesQYMkQYPfwUSrAMAPABq6jdh3zFdzjBPzyc5tBgkkwwERQsDUQopvQgltwgFgAgRnwcDPgYCWQULqQELowEAVgBz7zxy5Dpo1zZXyipBvh4KPB0+uRpQxBYJRRYUZxIHaBEzuw4uxAos0ggaqQYZuAQTpQQKmgKd/1d99UMegUF65D9dyjEVbipKzCQUiBsNaBtVyRdMzBU0sRIVdBI95Q0FNQ0nqQwUZwgSnAclygYhwgYUeAUccAUVpwQKZQIHXwEiakwfR0kiWkUpkzpnzDcYTTdo5TUYVzJTxyhFpCQPTiEORiFDwCAPfh9i1x1X0hhY+RRLvhRV+BMikhAinQ85tA410Ashawg9qzMPAAAAQ3RSTlMApq9EqkkHxX479wy0eWNSPxoE/uDZxZ2HNyT+9+3KuV4uIP7i2M+snpaSbVD58u3s5NfSy8K8WP79+fnv7u7u7twVbmKYbQAABfxJREFUWMOl1WVYU2EUB3BRlJBQKbu7u/v2ujfWG+sNcBsl3SAljYKEgKTd3d3d3d3d0y8+j+gE7/l6n//vvufc87y3mbVyHero0gxPteeGdLZv9f/5tqOCeXluXdu7OPwf0qOPkiXqJCcG5Tl62rfs2GSkzXAKWxLRSUWi0Ok8udFxzLimEa6dDQQ+SlSrqFyIE4uIIqiq5h2bkO/eSQDka1nceqYAId+plcsNNEDg0aHR+Q5diDT+xjqdnkQFabE0JhMEyAho8OjZ2Pl7UgsIm27EhMaBFFiK5OVxgQIGiS6h9G/k+0eTpATNxpj3MbkQhIFGFUijixgQmRPnNq4R8XYuI4g0CVlnunE55rqUtlmVB8IkuUEPmbnhSLd/5x26ORogqQQN45gOh2r0IiPTTBdFUBAeA8RyNR6t/jn+LkwuDSVzOIQwKa1AT2QSw2URRIqAxEOAmjtCT+vp1i29HJkCMw0laMRirYYAYAhCF5AM4GYByOWagXXP7K027+zORERMHgLRpChLayH4QDhFBoIGA8gTECnCC9+82lkDBl/J5pOpRBggsPl8vobDYhHiYBhG6DIiiUSUoVfHO1t9/+AxG/QAl0qBMJTM1olNYrHYFAthkFlGolJJYFXa0MFW+3dWwWg4xSBncGGMnHuofM2a1QdubpJiXEucwaPXXhrZw/rydFbEccgggwpiLHF1SkrK/uTdH1avqxUu7NS5i/uosbbt21rNt7LzoxgQgEbcHB4nRcm5F5OTS1PrHt2vOtG3R8+2ra0kfzUAgVQSHeaCZig25e3uz5X8jW9mdEm95NS49bcVmSVkWBBBAjMVa69Hf6oSpp7tZWc/LapoSB97ywEH2Xp29ezW3N7hb4cZ2ItIgQCJ3i/IL0Phr8z2rwrZM8xp54tji0v29m7WzOaaMDhtV3nwKuMI25Z/BAbtpIosWWW2MmSVX0aWQpkeeO70q7NLA4pK9to1sw8JrUy98O6qsCa2KkRt5/qHdWqhDskKXFlRERSoUGYEZin8g4NrhZXKUwmJy3P62E5KrV5+Prk8ZX957lr/zFVqp4aXW0fHfcJUodKvwq3CT6HISPf3D67knHi4/bgFUJMwoKZ6TfWhunW5mljO2uD09cMb9NHaPSNYWFO51j8ryG1lulKRjR49vKZ87/PIBWU5chmihwp+LHj+UZ2GLPHP3BDUu8HlZheozMxMV2THWR5nAQSJZuOB3V/ubZ9XtCKHSZHJKDyKHiCTORo2m0UAYIHK63egX2DIqqAgvywamR8LS7QstnZ18vnbp+Yt8MlhChhcKimcyORhNXVH+BZAz1jf7fcWPALXG1UiCnbk68FQTGrSscRHDqTcfhyQFH2tXmCmy4mwXM3D0EMxl2+aCBBj/YAGX6FCXc+jsetiPsaEomEmLWuTePX+u0sjl5Xk1KMEegQdYxh5QDiPLgwNzS/we+Dy+494JSINY+WbDh88GKpDWSYtYZNuXfKt7QFLSmf3dmcyiBjBcoqjHDMpT46wyfuG/T7EAemnX+7LlrB12nwdG+XksyVaHVpdu/RYUdlcr1auNl09HNVG1eaQwA2MPVeY8Ll+De7SkQNdnW3c62V6aViY5YuFYRw+ht7aFp8YPdfm55Da9mg5qP0AGye7vn3tbAd2/MsfyaWrUYRAUFwYAAGsgnB4W2HiRQvQhGrdfbQxggHCMB2hQbK72+YnllmAJtVMFzu1G5VBjWDIRPeWRi5YYQGaWK1cx07stXLPk4U7vZdELlsxxwI0tdo5OPe36W/vtXDrvCQfq4D1amEBXkfjAFr6LolfFu2NCwgo8pmAA1i4NWCBD54WFp08Xhw9x/b/h7jo5Jbikrl4gMWFxT7eOIBZi6POpOEBfAsjk/ABCZE78LWQEL+r1LsfDmBL1Jlo3+Z4AMsizcIBzE4ISPTxxgUUFpfhANrMTnhaXIoHmDV/cZIPLqAwKikN3wmidqT54plBfNQuHxyAw+x5UctLcQHx83eUzMIDzI9cVrbI6f+BOfEBSStwAB2GTJ4ydbqv1Uv1O/aXRl08jbqbAAAAAElFTkSuQmCC";
 const dkBpIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAACiFBMVEUAAACMhACUjAKMjABzOQBrMQCclAKEhAKEQgCUSgCMQgCUlADGYwB7OQBrOQCMhAiEewHOawC9YwC1WgBjMQCcawWclBiMjAiMSgBzMQCclCHGvUK1rTGUjBiclBB7QgG9WgBjKQC1rSKlnAVaOQD/rTH/pTGtpS+UlBiUjBBzawBjYwBjQgBjOQBaMQDGvWm9tUKtpTmlpSr3lBOlnBD/lAmUlAjWcwCtWgCEOQDOxnP/vUK9tTn/rSn/pSmlnCmtpSGlnCGlnBiUlBDvjAilcwjOcwDGawCcUgBaUgBaKQDq55HZ1o/WznC9vW61tVrGvVfWzlK9tVLGvUq9tUq9tTH3pTGtrSuclCv/pSGcnCGUjCGtpRj/nBj3nBWMjBD3lAiccwh2cwhrYwWlpQPnhANaWgC1UgCUUgBSRABKOQBSMQD3973v66Xn56Xr44TWzoTn3nPe1nPW1nPOzmvGxme1rWPSzl7OzlLOxlLGxlK9vVL/xkrOxkq9vUq1rUr3vUK1rUK9vT3/tTm1tTm1rTmtrTl3cymlpSH3nCHvjBSMhBCcnAyUYwycWgmUawi1YwRjWgRrQgScnAB7ewCMcwCUYwCMYwCpUgClSgBzSgBzQgBrKQBSJQD//+/3763e1qX375Tn3pTWzozW1oTW1nvWznvOxnvGxnvGxnO9tXPn1mvOxmvW1mO9tWO9vVqclFr/zkr/xkKlpTmlnDnGvTH/tTG1pTHvnDGUlCmtrSGUlCG9eyF7eyFrayGtrRicnBiEhBilaxilpRDnjBBraxD/jAjnjAjehAjWewhrawj3jADeewCUewCMewClawCEawBrawDOYwBrWgCESgCUOQB7MQBaIQBcQbHOAAAAAXRSTlMAQObYZgAAA5tJREFUOMu90uV22zAYBuBaVsyO48Sxw9g0ydYtTG234rp2zMzMzMzMzMzMzMwMtzM5TncFO3v/6fjRB8cq+odpqYN6nRqvTvK2Qwe9XpIkr1fS6yQJqh8R+lHPu3k35YYQHjj4W4K82w3VK3po1UGKoix6hCz1nFoHeiHl9lolSPEQWvNMp7PqrDSloiIx82F/aQuU0tLSFsUt1RSjoOO2/ftgA5NHGTGz7+uwl81Rhm8dNWpU8+HDH61e/bAZSvNxNE1JKtrLibuf97S7AJuuqe7RbdUUe9mUY4dXPPb7R7AIWfPr7RHFz4DYQLAEG20/d/LZLqcu2jtNj/j8fgKM45lcHrX1eHbhgCUIlmW7z4h0Csq2/rX9KuO9fQQ+3spTeWQyGXeH7dtH+AkWABwTQicmHT85+cziqI8A43k+p6E9po22hYRaHagqFOy8eFak+5xFFQhRVq2SMWvcFOtf2X1etEtSVeGQwgIMUycAxVSO12YymsaQfSbMOLpsdpJIVgCcJHGAoQAWL2aoJsRtwkjyRqf4iqplXSfa5cGD12PCSgHVGnaQoqDWjuMaMIw0dJs/r4fDPnFax/NLI/37tHdiON5MT1kKSBRpVNzw9G6sduqhCUTNoi6TOsw8bTNgCDGMhkz1bcdgqtqxQ5haVrYmHm0/fensPrFKZ/UwPW2xaojLZJFBDQ2G6vSasvjljjYyZpsZ6+y4Ai20VokxGrM4jkYnEexdlVauH4n0mBvtdsnpfCcxhZksoimLAbDeJt9e5VSASw6ecyjODrM62MhGnmG0du69o00YCPa7P1jABCXt62rvfKHWXosJTkMjPMC3yyP4c3T2E+qHBW0rbfITosrh6uqqcIF+gqGR/0UjpGY0ZzKgwXFcQFOBmmDH3tPC1WlXOCQ05nK0pCGTx4gQDnC0IAmU8Jx7PR2CAkClcyvFNFXycMYvuBoMrQiAAraPINRLceU7Y6GLCsjI7QQ4DgCp/Vb1AQJczViGZgpI5MSPBOGqcsjoxSFFEMkBPRc65lc4EGooIE78tjPpG+CqkeWQDHCkfL6bAzbIYWUs0/C3HZcZY9aya+PmzWbz0KFtUIaazdtoBqHCdlvep4bU1dW9GPlm3cC+rVq1DpSUBHr1urag/AFlaWrnGTkylap7PShR/3ZLQkUlCAUCy8uvLnnWhMQhQ16lUonEwIGD1iUG9V27tnXrW3d6BUqWl5cvWeAu+u/5A0zbws0r209bAAAAAElFTkSuQmCC";
 const diddyBpIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAACQ1BMVEUAAACUAACcAABrMQClAABzOQCMAACUCAiEQgCcEA+cCAaUSgCMQgCtKSlzMQCcGBjGYwB7OQDOawC9YwC1WgBjMQClEBClCAdjKQCMSgBrOQBaIQC9OTmMCAilGBh7QgG9WgCtGBiUEBClOQN7AQFrKQBjIQDGQkK9QkL/rTH/pTGlISGlQgaUCABrAADOWlrGUlK9KSn/lAmtCAicOQbWcwCEOQCtAADWa2v/vUK1OTm9MTGtMTH/rSn/pSm1KSWtISGcISG1GBjvjAjOcwDGawCtUgBaKQBSIQCMCABzAgBjAADOc3POY2PWY13GWlfGOTn/tTb3pTGlKSm9Lib/pSH/nBi1IRj3lBCtEBD3lAjnhAO1AwO1UgCcUgCUQgCUOQCUMQBKEABaCADnlJDriITjd3fre3Pea2u9Z2fGY2PeWlrWWlq9WlrOUlK1UlL/xkrGSkq1Skr3vULKSkLOQkK1QkLGQjmtOTW9OTG1MTGlMS33nCG1ISF7ISH3nBj3lBicIRjvjBSQGBS1FBBzFBCtPQilEAiUEAhrCAjaewStWgClSgCUHABWGABrEABSEABjCACEAAD/zs73paXenJz3nJTvjIzWe3PGc3Pna2vOY1rOWlL/zkq9SkqcSkr/xkK9SkLvnDHGMTG9eyG9ISGlaxitIRiUIRiUGBiEGBj3nBDnjBCcShCUORCtGBB7EBD/jAjnjAjehAi1YwicQgj3jADOYwC1YwClUgCcSgCESgCcQgB7MQBaMQCcIQCEGABpGHM5AAAAAXRSTlMAQObYZgAAA4BJREFUOMu90mV3E0EUBuDsrLtkJW5Em4R4SgVoaZEWd4eW4u7u7u7u7u7w05jdTfgFHN6zH1aevfeemXH8w/xEcQ9qxoVqruHwwePRNM3l0jyopuHmR4i+dcpBOUgFcRyPjfBquBwM4uYvHlxAcYqi3B6I3J0SCoO7cCroEjScknFcsBiKCqjAUiZyKJWjQswVj7tcsVjc6/We9Hrj8IrH4jFBwOdwFqooFaH79YH+MN0jYfofOXJg586n0e5otP88lqU0Ex2XlN7pk+7pADDhgC/ZOsA3etTCS4X9pdIsDCLBYWaYomSAYWAwvoWJxbn1Y1b6ViwfO7VUagTzZK5qoaGhUC8AmBmwKbd0Ca/vEelAmt8xBAMnBZmykKo6e+kWbFYjBgBAEJIeMH/U6KtLm1sgGiHLVRt9UV+Km4xGiCwl8mubV431JXyTIKIEu5LzmPNFq5gel2hZY5iKFknAIAgCYHsvVZXtmZzq3K72i7lFW9aXsOkFgBAEAhBTAcTLUXUkfUUI/7YVbZPChQ0LtuhkhES6WkmooiMoCrfbSdJ3AqqNyURy8LgFY66v3Jx/MnFxBNaKopS7hhRlLnxB7Gvn6WXnzhu6Lzn/8tgrjwlYCeU4G6mdQy1EnD3rXzYqF27bumhMa759YnskEEVZt2AjqTIMsRThTzPha+k1o0X/RDG/bS1/C3ezdiXO6TQRAZP1848YcvOFfHOyeePNfZFujavN5FbUYVmGjIgiz9Mkc0jnl/Bw2VcN2OM/I3Oc3S54fLaaZfiAeJhESNLYscF3J8/4aISMEH14TB5uIbxn9rGsuXq8yAdo3QgP1hN0i84ESKJP/sHayDFbUrsQM34/gjB6W65tOR1gDtE0eaZaZTUbqSFnFwHX1xqeIZnEkMJgMguYdOQUxdUrhSTnb8QKVABkmcZZGLxn0uQpzs06asgpnQDmfhKmA5h5AO0d7uNYroYUSfmFGXBgEZ44U2HTXz0Yxye38qc5dk4NScqnE8bUsBHQaVpkTDV1SGG/Th8mT3Nz/raTKmw/K+WennK5/CGTyRw82C+TKaMsV0dq6PPH4oyOjo7nM9/tnTJ54MBBqYaG1IQJt1c33afc9XahmTOLxY63z6Z1Hn2/20QNEKVS45turHtYR8qMGW+KxWnTpkzZtXf3rsnbtw8aNP7uhFTD+KamdauDjv+eP0LgqF5I0+FyAAAAAElFTkSuQmCC";
-const blueprintIcon = "data:image/png;base64,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";
+const bpIcon = "data:image/png;base64,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";
 const tinyBpIcon = "data:image/png;base64,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";
 const chunkyBpIcon = "data:image/png;base64,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";
 const crankyIcon = "data:image/png;base64,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";
@@ -55287,8 +55240,8 @@ const snideIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAAB
 const barrelCannon = "" + new URL("ground-cannon-B1E5DmTp.png", import.meta.url).href;
 const MoveTable = () => {
   const [setMove, setConsumable] = useDonkStore(useShallow((state) => [state.setMove, state.setConsumable]));
-  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier));
-  const [bpWinCondition, kRoolWinCondition] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge]));
+  const bpWinCondition = useKRoolKontracts("Blueprints") ? "foolish" : "";
+  const kRoolWinCondition = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? "foolish" : "";
   const bpSeed = bpWinCondition || kRoolWinCondition ? "all-bosses" : "";
   const dkBP = useDonkStore(useShallow((state) => state.consumables.dkBp));
   const diddyBP = useDonkStore(useShallow((state) => state.consumables.diddyBp));
@@ -55335,7 +55288,7 @@ const MoveTable = () => {
           imgUrl: pearlIcon,
           prefix: "consumables",
           setCount: setConsumable,
-          maxValue: capRemoved ? 255 : 5
+          maxValue: 255
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "diddy", title: "Diddy Kong", imgUrl: diddyKongIcon, prefix: "moves", updateItem: setMove }),
@@ -55374,7 +55327,7 @@ const MoveTable = () => {
           imgUrl: crownIcon,
           prefix: "consumables",
           setCount: setConsumable,
-          maxValue: capRemoved ? 255 : 10
+          maxValue: 255
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "lanky", title: "Lanky Kong", imgUrl: lankyKongIcon, prefix: "moves", updateItem: setMove }),
@@ -55388,7 +55341,7 @@ const MoveTable = () => {
         {
           storeKey: "lankyBp",
           title: "Lanky Blueprints",
-          imgUrl: blueprintIcon,
+          imgUrl: bpIcon,
           prefix: "consumables",
           setCount: setConsumable,
           maxValue: 8
@@ -55413,7 +55366,7 @@ const MoveTable = () => {
           imgUrl: medalIcon$1,
           prefix: "consumables",
           setCount: setConsumable,
-          maxValue: capRemoved ? 255 : 40
+          maxValue: 255
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "tiny", title: "Tiny Kong", imgUrl: tinyKongIcon, prefix: "moves", updateItem: setMove }),
@@ -55461,10 +55414,10 @@ const MoveTable = () => {
           imgUrl: rainbowCoinIcon,
           prefix: "consumables",
           setCount: setConsumable,
-          maxValue: capRemoved ? 255 : 16
+          maxValue: 255
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "chunky", title: "Chunky Kong", imgUrl: chunkyKongIcon, prefix: "moves", updateItem: setMove }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "chunky", title: "Chunky Kong", imgUrl: chunkyIcon, prefix: "moves", updateItem: setMove }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "pineapple", title: "Pineapples", imgUrl: chunkyGunIcon, prefix: "moves", updateItem: setMove }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "triangle", title: "Triangle", imgUrl: chunkyMusicIcon, prefix: "moves", updateItem: setMove }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "punch", title: "Primate Punch", imgUrl: chunkyMoveIcon, prefix: "moves", updateItem: setMove }),
@@ -55500,7 +55453,7 @@ const MoveTable = () => {
           imgUrl: fairyIcon,
           prefix: "consumables",
           setCount: setConsumable,
-          maxValue: capRemoved ? 255 : 20
+          maxValue: 255
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleIcon, { storeKey: "cranky", title: "Cranky Kong", imgUrl: crankyIcon, prefix: "moves", updateItem: setMove }),
@@ -55522,13 +55475,13 @@ const MoveTable = () => {
         {
           storeKey: "camera",
           title: "Fairy Cam",
-          imgUrl: film,
+          imgUrl: filmIcon,
           prefix: "moves",
           updateItem: setMove
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `count-icon ${bpSeed}`, style: { cursor: `not-allowed` }, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { height: 24, alt: "Total number of Blueprints", title: "Total number of Blueprints", src: blueprintIcon, style: { filter: `grayscale(${bpTotal != 0 ? "0" : "1"})` } }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { height: 24, alt: "Total number of Blueprints", title: "Total number of Blueprints", src: bpIcon, style: { filter: `grayscale(${bpTotal != 0 ? "0" : "1"})` } }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: `#ff0000`, fontSize: `18px` }, children: bpTotal })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -55546,7 +55499,7 @@ const MoveTable = () => {
         {
           storeKey: "bean",
           title: "The Bean™!",
-          imgUrl: beanIcon,
+          imgUrl: theBean,
           prefix: "consumables",
           updateItem: setConsumable
         }
@@ -55556,10 +55509,10 @@ const MoveTable = () => {
         {
           storeKey: "goldBananas",
           title: "Golden Bananas",
-          imgUrl: bLocker$1,
+          imgUrl: gbIcon,
           prefix: "consumables",
           setCount: setConsumable,
-          maxValue: capRemoved ? 255 : 201
+          maxValue: 255
         }
       )
     ] })
@@ -55813,44 +55766,46 @@ const BossSelector = ({ storeKey }) => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: bossState(boss), children: "⬤" })
   ] });
 };
-const l1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAVCAMAAABIbI/BAAAAZlBMVEUAAAD//wC9AAD/pAAfICD/nAD/zQB5AAAxEBC0AAD/gwD/AAD2AAD/KSlBDAz/lADuAACLAACDAABaAAApGBgxCAj/9gD/vQD/ewD2ewDmewDNUgD/OQDeOQDmAADNAACkAACcAAAMMrwwAAAAAXRSTlMAQObYZgAAAG1JREFUCNeFzckagyAMReEkEFKQ2qqd6/j+L6kBh6Vn9W/ud2HtWmyIsR2S7gW/PpQQEDEQ9JFRuxF4hylDUP12NuT+nGknGU0mlA1ttKXnzCUyB90Z33p8zEKi/zJz55VSi0hdKR/Py5JV2twM7OgEEX9o2tsAAAAASUVORK5CYII=";
-const l2 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAVCAMAAABBhy+7AAAAqFBMVEUAAAD//wAfICAxEBB7AADmAQH/nAC0AAD/AADFAAD/7gD/KQD2KQCcAACsAwPeAABWBAT/zQD/pAD/cwD/ZgD/OQDNAACHAABzAAD/KSnNKSliKSm9GBgpGBggGBjNEBA5EBApEBD/9gD/1QD/xQD2rADupAD/ewD2ewDuewDVewD/WgDVUgDFSgDmOQDuKQDVKQD2IADmGADuAADVAAC9AACkAABqAAA/hRgnAAAAAXRSTlMAQObYZgAAAJtJREFUGNNNzVcSwjAMRVHZxMgOOL3Re+99/ztDThzC/TsjzTwAQOG/oClLUyllzwoVY4vlQUrLOzO510fJZ8KqYmHovU9rt3TXJ06DT6FDwygjcs5nBRqGCsp4gOZ9hWCtGLX1LMXFEB1Lf046am6PXdJeK9Eo6lBYybZB0o3VxYro/phMoO/t2nXnIQyc3KnLNYxHrSYa5n/BF/hiCQOhvu7jAAAAAElFTkSuQmCC";
-const l3 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAVCAMAAABFcv+GAAAAolBMVEUAAAD//wAgICD/AADNAABiAQH/7gD2AACDAAD/ewC9AAB5AABqBAS0AgL/3gD/pABaAACsGADmAADVAACkAACcAACUAAAkGBhFBAT/tADuewD/WgD/GADeAADFAACsAAD/KSkxKSmcEBA5EBD/1QD/zQD/vQDerAD/nAD2ewD2agD/YgDFUgDVSgDNQQC9QQD/MQDuKQDeKQCsKQCLAABSAACxUFGgAAAAAXRSTlMAQObYZgAAALFJREFUGNNFjlcOgzAQRMfGBhuHHkiH9N7L/a+WXYiU9zVPuxoNMPcI/Cisndw9L+AczQSx3k/Z1ES0+NOc5DgatbZTQN84V/psNZBq3aiEJQKkCoKAc9IHEFpfMMawJG0eF+ovYjMLgap8VWf+fNBpqD+pGZPYApC612ueJAfqzj1ayW/hElEex7EgLpWEOnU7r28H1FaIeHsrTSppaJZlzjg9GACgrnS4WkgJQnaA+QLzlAnOC8S2VAAAAABJRU5ErkJggg==";
-const l4 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAVCAMAAACuRUSFAAAAilBMVEUAAAD//wAfICDFAAD/pADuAADeAABKAAC9AACcAAD/9gCkAACUAABqAAD/ewD2AAD2KSk1EBD/gwDudwD2XgD/KQCsGAD/AAC0AACHAABaAAApGBj/zQD/vQD/lAD2ewD/cwD/UgD2UgDuUgDeUgD/MQDuKQCsKQD2GACkGADmAADVAADNAACsAAAwvxvYAAAAAXRSTlMAQObYZgAAAI9JREFUGNNVz9cWwiAQRdGBBEJRSNRUe+///3syumDMeWKz7stAzPtWAVUKd24lWTrDdhnxxhibJQvBQptkuULn0XKPRNOa3CENWeaBp2RxCc/uGF3ievs4oOvawzOsqRe8zb8V2PnYvZ6ENP6u7VXDssDsAu9RQwH8m0K7jHP41dt702gNsWqYhqpkjuH6AyVkBxDGqCEUAAAAAElFTkSuQmCC";
-const l5 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAAAAllBMVEUAAAD//wAgICD/AAD/9gB7AAD2AADFAADeAAC0AACsAACDAAD/7gD/zQD/vQCkAACcAACLAAAxEBD/xQD/pADpAACUAABqAABfAADeOTkcHBxBCAjNBAT/ewDuUgDeTgD/KQDVAAC9AABKAAAxKSlSICCUGBgpGBg5EBD/3gD/nAD/cwD2YgDmSgC9QQDmKQDeKQCsGACmqoM2AAAAAXRSTlMAQObYZgAAAK5JREFUGNM1zucSwiAQBOADAQmkdzWJKfbu+7+cy5jsr/uGveGIqFCrf1QBrW9hGF4FY/fRic15GCJvWPSUUIchzwLf904ottBKGylLgnJItEpXO6gJIFjFHBqFEI65JiSR0sbOOoJ2aTrZPfReQxwpP1DntNk0ugggD81Bqb7PgMDglNituJhySyQ9381+lFywdjQhY9krsSmHeBR/E2vrM3pIXVX1dODuZf5vmX8rdwm+zuITuwAAAABJRU5ErkJggg==";
-const l6 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAVCAMAAABBhy+7AAAAq1BMVEUAAAD//wAgICD/pADeAADmAACoAACDAAD/9gCcAgD2AADFAAC9AAC0AAB7AAD/KQD2JgCLAAD/KSkxEBBBCAj/3gD/1QD/zQD2ewD/AADVAADNAABuAABeAABOAAA5KSkxKSlBEBA5EBApEBD/7gD/5gD/vQD/rAD2rAD/nAD/iwDegwD/ewDmewDFagDmWgD/UgDNMQDeKQD/GAD2GACsGACkGADuAACUAAB/9CeQAAAAAXRSTlMAQObYZgAAAKxJREFUGNNFzdcagjAMQOGkdLAFAUEZ7r237/9kEipyLpL+F/kKv2wbuvrv+0N0Egdzy/8UO0QMRKsb1q0cLR6QpB9qOqTcC6eNRmdib2hzTdSlPZsur9h2EfWlQS/DpBlwcDb1Nj2XbOTgDmi7MqvX2gWvIecGLQ+so/6HZvYBJZfYJgsYKyvVWMiQAYuVtU8Qk5P0ZwDAosK3Xk+l/AkD8jyuyrKKGIlMaXwBUrwJqIUfWicAAAAASUVORK5CYII=";
-const l7 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAAAAhFBMVEUAAAD//wAgICD/AACsAAB7AAD/7gDVAAC9AACUAABNAAB7ICD/3gD/zQD/vQDeAABqAAD/ewD2ewCfAACGAABmKSkpEBD/pAD2AADFAADeKSkpGBj/9gD/1QD/xQD/lAD/gwD2cwD2YgD/UgDmUgDFOQD/GADFGAC0GADNAAC0AABaAAB2wDSSAAAAAXRSTlMAQObYZgAAAIlJREFUGNNNilkWwiAQBIfICEFCghBN3Pf1/veT4TFqfXW9LlDDbcIMoP1GCLG11jo3gj4IZidB7792rOF1mRJkGiFiRIxjkkbOYG2MeT99snkNUCU6RaFEyOhzCTNqWUKibTnk6xfmi0Plc9j9Xa6Eq3uT7FTCHsPVWQ6rhcHwCD0UJaeLPZHHB1doBv/XpFOuAAAAAElFTkSuQmCC";
+const t1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAVCAMAAABIbI/BAAAAZlBMVEUAAAD//wC9AAD/pAAfICD/nAD/zQB5AAAxEBC0AAD/gwD/AAD2AAD/KSlBDAz/lADuAACLAACDAABaAAApGBgxCAj/9gD/vQD/ewD2ewDmewDNUgD/OQDeOQDmAADNAACkAACcAAAMMrwwAAAAAXRSTlMAQObYZgAAAG1JREFUCNeFzckagyAMReEkEFKQ2qqd6/j+L6kBh6Vn9W/ud2HtWmyIsR2S7gW/PpQQEDEQ9JFRuxF4hylDUP12NuT+nGknGU0mlA1ttKXnzCUyB90Z33p8zEKi/zJz55VSi0hdKR/Py5JV2twM7OgEEX9o2tsAAAAASUVORK5CYII=";
+const t2 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAVCAMAAABBhy+7AAAAqFBMVEUAAAD//wAfICAxEBB7AADmAQH/nAC0AAD/AADFAAD/7gD/KQD2KQCcAACsAwPeAABWBAT/zQD/pAD/cwD/ZgD/OQDNAACHAABzAAD/KSnNKSliKSm9GBgpGBggGBjNEBA5EBApEBD/9gD/1QD/xQD2rADupAD/ewD2ewDuewDVewD/WgDVUgDFSgDmOQDuKQDVKQD2IADmGADuAADVAAC9AACkAABqAAA/hRgnAAAAAXRSTlMAQObYZgAAAJtJREFUGNNNzVcSwjAMRVHZxMgOOL3Re+99/ztDThzC/TsjzTwAQOG/oClLUyllzwoVY4vlQUrLOzO510fJZ8KqYmHovU9rt3TXJ06DT6FDwygjcs5nBRqGCsp4gOZ9hWCtGLX1LMXFEB1Lf046am6PXdJeK9Eo6lBYybZB0o3VxYro/phMoO/t2nXnIQyc3KnLNYxHrSYa5n/BF/hiCQOhvu7jAAAAAElFTkSuQmCC";
+const t3 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAVCAMAAABFcv+GAAAAolBMVEUAAAD//wAgICD/AADNAABiAQH/7gD2AACDAAD/ewC9AAB5AABqBAS0AgL/3gD/pABaAACsGADmAADVAACkAACcAACUAAAkGBhFBAT/tADuewD/WgD/GADeAADFAACsAAD/KSkxKSmcEBA5EBD/1QD/zQD/vQDerAD/nAD2ewD2agD/YgDFUgDVSgDNQQC9QQD/MQDuKQDeKQCsKQCLAABSAACxUFGgAAAAAXRSTlMAQObYZgAAALFJREFUGNNFjlcOgzAQRMfGBhuHHkiH9N7L/a+WXYiU9zVPuxoNMPcI/Cisndw9L+AczQSx3k/Z1ES0+NOc5DgatbZTQN84V/psNZBq3aiEJQKkCoKAc9IHEFpfMMawJG0eF+ovYjMLgap8VWf+fNBpqD+pGZPYApC612ueJAfqzj1ayW/hElEex7EgLpWEOnU7r28H1FaIeHsrTSppaJZlzjg9GACgrnS4WkgJQnaA+QLzlAnOC8S2VAAAAABJRU5ErkJggg==";
+const t4 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAVCAMAAACuRUSFAAAAilBMVEUAAAD//wAfICDFAAD/pADuAADeAABKAAC9AACcAAD/9gCkAACUAABqAAD/ewD2AAD2KSk1EBD/gwDudwD2XgD/KQCsGAD/AAC0AACHAABaAAApGBj/zQD/vQD/lAD2ewD/cwD/UgD2UgDuUgDeUgD/MQDuKQCsKQD2GACkGADmAADVAADNAACsAAAwvxvYAAAAAXRSTlMAQObYZgAAAI9JREFUGNNVz9cWwiAQRdGBBEJRSNRUe+///3syumDMeWKz7stAzPtWAVUKd24lWTrDdhnxxhibJQvBQptkuULn0XKPRNOa3CENWeaBp2RxCc/uGF3ievs4oOvawzOsqRe8zb8V2PnYvZ6ENP6u7VXDssDsAu9RQwH8m0K7jHP41dt702gNsWqYhqpkjuH6AyVkBxDGqCEUAAAAAElFTkSuQmCC";
+const t5 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAAAAllBMVEUAAAD//wAgICD/AAD/9gB7AAD2AADFAADeAAC0AACsAACDAAD/7gD/zQD/vQCkAACcAACLAAAxEBD/xQD/pADpAACUAABqAABfAADeOTkcHBxBCAjNBAT/ewDuUgDeTgD/KQDVAAC9AABKAAAxKSlSICCUGBgpGBg5EBD/3gD/nAD/cwD2YgDmSgC9QQDmKQDeKQCsGACmqoM2AAAAAXRSTlMAQObYZgAAAK5JREFUGNM1zucSwiAQBOADAQmkdzWJKfbu+7+cy5jsr/uGveGIqFCrf1QBrW9hGF4FY/fRic15GCJvWPSUUIchzwLf904ottBKGylLgnJItEpXO6gJIFjFHBqFEI65JiSR0sbOOoJ2aTrZPfReQxwpP1DntNk0ugggD81Bqb7PgMDglNituJhySyQ9381+lFywdjQhY9krsSmHeBR/E2vrM3pIXVX1dODuZf5vmX8rdwm+zuITuwAAAABJRU5ErkJggg==";
+const t6 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAVCAMAAABBhy+7AAAAq1BMVEUAAAD//wAgICD/pADeAADmAACoAACDAAD/9gCcAgD2AADFAAC9AAC0AAB7AAD/KQD2JgCLAAD/KSkxEBBBCAj/3gD/1QD/zQD2ewD/AADVAADNAABuAABeAABOAAA5KSkxKSlBEBA5EBApEBD/7gD/5gD/vQD/rAD2rAD/nAD/iwDegwD/ewDmewDFagDmWgD/UgDNMQDeKQD/GAD2GACsGACkGADuAACUAAB/9CeQAAAAAXRSTlMAQObYZgAAAKxJREFUGNNFzdcagjAMQOGkdLAFAUEZ7r237/9kEipyLpL+F/kKv2wbuvrv+0N0Egdzy/8UO0QMRKsb1q0cLR6QpB9qOqTcC6eNRmdib2hzTdSlPZsur9h2EfWlQS/DpBlwcDb1Nj2XbOTgDmi7MqvX2gWvIecGLQ+so/6HZvYBJZfYJgsYKyvVWMiQAYuVtU8Qk5P0ZwDAosK3Xk+l/AkD8jyuyrKKGIlMaXwBUrwJqIUfWicAAAAASUVORK5CYII=";
+const t7 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAMAAABh7EcdAAAAhFBMVEUAAAD//wAgICD/AACsAAB7AAD/7gDVAAC9AACUAABNAAB7ICD/3gD/zQD/vQDeAABqAAD/ewD2ewCfAACGAABmKSkpEBD/pAD2AADFAADeKSkpGBj/9gD/1QD/xQD/lAD/gwD2cwD2YgD/UgDmUgDFOQD/GADFGAC0GADNAAC0AABaAAB2wDSSAAAAAXRSTlMAQObYZgAAAIlJREFUGNNNilkWwiAQBIfICEFCghBN3Pf1/veT4TFqfXW9LlDDbcIMoP1GCLG11jo3gj4IZidB7792rOF1mRJkGiFiRIxjkkbOYG2MeT99snkNUCU6RaFEyOhzCTNqWUKibTnk6xfmi0Plc9j9Xa6Eq3uT7FTCHsPVWQ6rhcHwCD0UJaeLPZHHB1doBv/XpFOuAAAAAElFTkSuQmCC";
 const Bosses = () => {
-  const allBosses = useDonkStore(useShallow((state) => state.winCondition.bosses || state.winCondition.kRoolChallenge)) ? "all-bosses" : "";
+  const isBossSeed = useKRoolKontracts("Bosses");
+  const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
+  const allBosses = isBossSeed || isKRoolChallengeSeed ? "all-bosses" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `boss-section ${allBosses}`, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Bosses" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss-list", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss1", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l1, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t1, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(BossSelector, { storeKey: "boss1" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l2, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t2, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(BossSelector, { storeKey: "boss2" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss3", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l3, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t3, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(BossSelector, { storeKey: "boss3" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss4", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l4, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t4, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(BossSelector, { storeKey: "boss4" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss5", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l5, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t5, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(BossSelector, { storeKey: "boss5" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss6", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l6, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t6, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(BossSelector, { storeKey: "boss6" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "boss7", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l7, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t7, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(BossSelector, { storeKey: "boss7" })
       ] })
     ] })
@@ -55869,7 +55824,7 @@ const currImg = (val) => {
     case 4:
       return tinyKongIcon;
     default:
-      return chunkyKongIcon;
+      return chunkyIcon;
   }
 };
 const nextEnd = (val) => {
@@ -56071,7 +56026,7 @@ const keyIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAArCAMAAABVR
 const SimpleKey = (props) => {
   const value = useDonkStore((state) => state["key" + props.keyNum]);
   const setKey = useDonkStore((state) => state.setKey);
-  const keysRequired = useDonkStore((state) => state.winCondition.bossKeys);
+  const keysRequired = useKRoolKontracts("Keys");
   const kRoolsChallenge = useDonkStore((state) => state.winCondition.kRoolChallenge);
   return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     "img",
@@ -56190,17 +56145,17 @@ const LevelSelector = ({ storeKey }) => {
     }
   ) });
 };
-const l8 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAVCAMAAABBhy+7AAAApVBMVEUAAAD//wAgICCkAQD/zQDNAQD/pAD/AACDAAD/ewD2AADeAAC9AAC0AACcAACUAACLAAB5AAD/KSlBCgr/9gD/vQDuewD/KwDuAADVAABnAAD/7gD/3gD/1QD/mADmKQD/GADmAADFAACsAAAYICApEBBKCAj/rADmlADegwD2ewDeewD/YgDeYgD/WgDeWgDuUgDNSgD/OQDNKQDmIAD2GABaAACHb7TVAAAAAXRSTlMAQObYZgAAALxJREFUGNM9jVcSwjAMRBU7xiakd0JP6L3f/2hoMx7eh1ZPY0vUk6Zap2Tx9PJ5rWpPQ+rxeZo7zGzpsY52jmXyWdHoje4hZ1znivwhpytlyZF3JI+cg3F7xzSgOMDjSrtcy5CyEE2PGzUkfGU9Xygc4l2Wig8pNJK/YCO1Q2QXvzDluwOokguoT8EB6dX9hoCMdMAU5SRpG10mdvE+MiS+cVjOi6K4RXEiiETWGJMkiWkyNnaxWQsAA+JvPw9bCvmDA2SDAAAAAElFTkSuQmCC";
-const coloredNanners = "" + new URL("rainbow_bananas-Ca-MVT_I.png", import.meta.url).href;
+const t8 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAVCAMAAABBhy+7AAAApVBMVEUAAAD//wAgICCkAQD/zQDNAQD/pAD/AACDAAD/ewD2AADeAAC9AAC0AACcAACUAACLAAB5AAD/KSlBCgr/9gD/vQDuewD/KwDuAADVAABnAAD/7gD/3gD/1QD/mADmKQD/GADmAADFAACsAAAYICApEBBKCAj/rADmlADegwD2ewDeewD/YgDeYgD/WgDeWgDuUgDNSgD/OQDNKQDmIAD2GABaAACHb7TVAAAAAXRSTlMAQObYZgAAALxJREFUGNM9jVcSwjAMRBU7xiakd0JP6L3f/2hoMx7eh1ZPY0vUk6Zap2Tx9PJ5rWpPQ+rxeZo7zGzpsY52jmXyWdHoje4hZ1znivwhpytlyZF3JI+cg3F7xzSgOMDjSrtcy5CyEE2PGzUkfGU9Xygc4l2Wig8pNJK/YCO1Q2QXvzDluwOokguoT8EB6dX9hoCMdMAU5SRpG10mdvE+MiS+cVjOi6K4RXEiiETWGJMkiWkyNnaxWQsAA+JvPw9bCvmDA2SDAAAAAElFTkSuQmCC";
+const cbIcon = "" + new URL("rainbow_bananas-Ca-MVT_I.png", import.meta.url).href;
 const LevelTable = () => {
   const [setBLocker, setTroffAndScoff] = useDonkStore(useShallow((state) => [state.setBLocker, state.setTroffAndScoff]));
   const key3And8Seed = useDonkStore(useShallow((state) => state.winCondition.key3And8)) ? "all-bosses" : "";
-  const key8Seed = useDonkStore(useShallow((state) => state.winCondition.key8)) ? "all-bosses" : "";
+  const key8Seed = useKRoolKontracts("Get Key 8 only") ? "all-bosses" : "";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level-section", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Levels, Keys, B. Lockers, and Troff 'n' Scoffs" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level-list", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level1", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l1, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t1, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level1" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 1 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -56208,7 +56163,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker1",
             title: "Bananas required for Level 1",
-            imgUrl: bLocker$1,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -56219,7 +56174,7 @@ const LevelTable = () => {
           {
             storeKey: "troffAndScoff1",
             title: "CB's required to access Boss 1",
-            imgUrl: coloredNanners,
+            imgUrl: cbIcon,
             prefix: "troffAndScoff",
             setCount: setTroffAndScoff,
             maxValue: 500
@@ -56227,7 +56182,7 @@ const LevelTable = () => {
         )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l2, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t2, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level2" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 2 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -56235,7 +56190,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker2",
             title: "Bananas required for Level 2",
-            imgUrl: bLocker$1,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -56246,7 +56201,7 @@ const LevelTable = () => {
           {
             storeKey: "troffAndScoff2",
             title: "CB's required to access Boss 2",
-            imgUrl: coloredNanners,
+            imgUrl: cbIcon,
             prefix: "troffAndScoff",
             setCount: setTroffAndScoff,
             maxValue: 500
@@ -56254,7 +56209,7 @@ const LevelTable = () => {
         )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `level3 ${key3And8Seed}`, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l3, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t3, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level3" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 3 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -56262,7 +56217,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker3",
             title: "Bananas required for Level 3",
-            imgUrl: bLocker$1,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -56273,7 +56228,7 @@ const LevelTable = () => {
           {
             storeKey: "troffAndScoff3",
             title: "CB's required to access Boss 3",
-            imgUrl: coloredNanners,
+            imgUrl: cbIcon,
             prefix: "troffAndScoff",
             setCount: setTroffAndScoff,
             maxValue: 500
@@ -56281,7 +56236,7 @@ const LevelTable = () => {
         )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level4", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l4, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t4, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level4" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 4 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -56289,7 +56244,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker4",
             title: "Bananas required for Level 4",
-            imgUrl: bLocker$1,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -56300,7 +56255,7 @@ const LevelTable = () => {
           {
             storeKey: "troffAndScoff4",
             title: "CB's required to access Boss 4",
-            imgUrl: coloredNanners,
+            imgUrl: cbIcon,
             prefix: "troffAndScoff",
             setCount: setTroffAndScoff,
             maxValue: 500
@@ -56308,7 +56263,7 @@ const LevelTable = () => {
         )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level5", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l5, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t5, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level5" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 5 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -56316,7 +56271,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker5",
             title: "Bananas required for Level 5",
-            imgUrl: bLocker$1,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -56327,7 +56282,7 @@ const LevelTable = () => {
           {
             storeKey: "troffAndScoff5",
             title: "CB's required to access Boss 5",
-            imgUrl: coloredNanners,
+            imgUrl: cbIcon,
             prefix: "troffAndScoff",
             setCount: setTroffAndScoff,
             maxValue: 500
@@ -56335,7 +56290,7 @@ const LevelTable = () => {
         )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level6", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l6, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t6, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level6" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 6 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -56343,7 +56298,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker6",
             title: "Bananas required for Level 6",
-            imgUrl: bLocker$1,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -56354,7 +56309,7 @@ const LevelTable = () => {
           {
             storeKey: "troffAndScoff6",
             title: "CB's required to access Boss 6",
-            imgUrl: coloredNanners,
+            imgUrl: cbIcon,
             prefix: "troffAndScoff",
             setCount: setTroffAndScoff,
             maxValue: 500
@@ -56362,7 +56317,7 @@ const LevelTable = () => {
         )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level7", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l7, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t7, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level7" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 7 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -56370,7 +56325,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker7",
             title: "Bananas required for Level 7",
-            imgUrl: bLocker$1,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -56381,7 +56336,7 @@ const LevelTable = () => {
           {
             storeKey: "troffAndScoff7",
             title: "CB's required to access Boss 7",
-            imgUrl: coloredNanners,
+            imgUrl: cbIcon,
             prefix: "troffAndScoff",
             setCount: setTroffAndScoff,
             maxValue: 500
@@ -56389,7 +56344,7 @@ const LevelTable = () => {
         )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `level8 ${key3And8Seed || key8Seed}`, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l8, height: 24 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t8, height: 24 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level8" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 8 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -56397,7 +56352,7 @@ const LevelTable = () => {
           {
             storeKey: "bLocker8",
             title: "Bananas required for Level 8",
-            imgUrl: bLocker$1,
+            imgUrl: gbIcon,
             prefix: "bLocker",
             setCount: setBLocker,
             maxValue: 201
@@ -56408,7 +56363,7 @@ const LevelTable = () => {
           {
             storeKey: "troffAndScoff8",
             title: "CB's required to access Boss 8",
-            imgUrl: coloredNanners,
+            imgUrl: cbIcon,
             prefix: "troffAndScoff",
             setCount: setTroffAndScoff,
             maxValue: 500
@@ -56503,10 +56458,10 @@ const HelmSelector = () => {
 };
 const coCoinIcon = "data:image/png;base64,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";
 const itemToIcon = (num) => {
-  return num == 1 ? bLocker$1 : num == 2 ? blueprintIcon : num == 3 ? coCoinIcon : num == 4 ? keyIcon : num == 5 ? medalIcon$1 : num == 6 ? crownIcon : num == 7 ? fairyIcon : num == 8 ? rainbowCoinIcon : num == 9 ? beanIcon : num == 10 ? pearlIcon : unknownIcon$1;
+  return num == 1 ? gbIcon : num == 2 ? bpIcon : num == 3 ? coCoinIcon : num == 4 ? keyIcon : num == 5 ? medalIcon$1 : num == 6 ? crownIcon : num == 7 ? fairyIcon : num == 8 ? rainbowCoinIcon : num == 9 ? theBean : num == 10 ? pearlIcon : unknownIcon$1;
 };
 const wrinklyDoorItemToIcon = (num) => {
-  return num == 1 ? blueprintIcon : num == 2 ? crownIcon : num == 3 ? keyIcon : num == 4 ? medalIcon$1 : num == 5 ? fairyIcon : num == 6 ? rainbowCoinIcon : num == 7 ? pearlIcon : num == 8 ? coloredNanners : bLocker$1;
+  return num == 1 ? bpIcon : num == 2 ? crownIcon : num == 3 ? keyIcon : num == 4 ? medalIcon$1 : num == 5 ? fairyIcon : num == 6 ? rainbowCoinIcon : num == 7 ? pearlIcon : num == 8 ? cbIcon : gbIcon;
 };
 const clamp = (num) => Math.min(Math.max(num, 0), 10);
 const wrinklyClamp = (num) => Math.min(Math.max(num, 0), 8);
@@ -56517,7 +56472,6 @@ const prevWrinklyItem = (num) => wrinklyClamp(num - 1);
 const HelmDoorSelector1 = () => {
   const helmItem1 = useHelmItem1();
   const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]));
-  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier));
   const handleNextItem = () => {
     setSetting("helmItem1", nextItem(helmItem1));
   };
@@ -56554,7 +56508,7 @@ const HelmDoorSelector1 = () => {
         storeKey: "helmItemNum1",
         prefix: "settings",
         setCount: setSetting,
-        maxValue: helmItem1 == 1 ? capRemoved ? 255 : 201 : helmItem1 == 2 ? 40 : helmItem1 == 3 ? 2 : helmItem1 == 4 ? 8 : helmItem1 == 5 ? capRemoved ? 255 : 40 : helmItem1 == 6 ? capRemoved ? 255 : 10 : helmItem1 == 7 ? capRemoved ? 255 : 20 : helmItem1 == 8 ? capRemoved ? 255 : 16 : helmItem1 == 9 ? 1 : helmItem1 == 10 ? capRemoved ? 255 : 5 : 0
+        maxValue: helmItem1 == 1 ? 255 : helmItem1 == 2 ? 40 : helmItem1 == 3 ? 2 : helmItem1 == 4 ? 8 : helmItem1 == 5 ? 255 : helmItem1 == 6 ? 255 : helmItem1 == 7 ? 255 : helmItem1 == 8 ? 255 : helmItem1 == 9 ? 1 : helmItem1 == 10 ? 255 : 0
       }
     )
   ] });
@@ -56562,7 +56516,6 @@ const HelmDoorSelector1 = () => {
 const HelmDoorSelector2 = () => {
   const helmItem2 = useHelmItem2();
   const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]));
-  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier));
   const handleNextItem = () => {
     setSetting("helmItem2", nextItem(helmItem2));
   };
@@ -56599,7 +56552,7 @@ const HelmDoorSelector2 = () => {
         storeKey: "helmItemNum2",
         prefix: "settings",
         setCount: setSetting,
-        maxValue: helmItem2 == 1 ? capRemoved ? 255 : 201 : helmItem2 == 2 ? 40 : helmItem2 == 3 ? 2 : helmItem2 == 4 ? 8 : helmItem2 == 5 ? capRemoved ? 255 : 40 : helmItem2 == 6 ? capRemoved ? 255 : 10 : helmItem2 == 7 ? capRemoved ? 255 : 20 : helmItem2 == 8 ? capRemoved ? 255 : 16 : helmItem2 == 9 ? 1 : helmItem2 == 10 ? capRemoved ? 255 : 5 : 0
+        maxValue: helmItem2 == 1 ? 255 : helmItem2 == 2 ? 40 : helmItem2 == 3 ? 2 : helmItem2 == 4 ? 8 : helmItem2 == 5 ? 255 : helmItem2 == 6 ? 255 : helmItem2 == 7 ? 255 : helmItem2 == 8 ? 255 : helmItem2 == 9 ? 1 : helmItem2 == 10 ? 255 : 0
       }
     )
   ] });
@@ -56655,11 +56608,11 @@ const SimpleRadioIcon = (props) => {
 const medalIcon = "" + new URL("bananamedal-bkq8SUQj.gif", import.meta.url).href;
 const halfMedalIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAddQTFRFAAAAo5Ax78gW68c5vaM96Lo4+9JtypkB57oUeGUAMRsATzkAmHUU1rFERjEAvIsW2bcgyIoSmGgBWEMARiUAuIgBzJcUdjkAmFYA3nsTvWsQ1XMK1nMYyncQ1nsKqWgUl0YAqlYAy2YC6HsR6oQT3nMK24YiiDUA53sIklIKqUcB02sI3nsI8IwM5oQIvVoLu2gAyHUA+IsZ3nMAiEYA8IQIYzEA1msAmnUBazkA1nMAuVYBqoYAqWcAh1gBp3YB/OtZVScA//yM/+9rt0oByVgB6roB//1X///a/cgWlzYAa1IA//4k//69+9o+yIkB74wArzQB//8L//12/+BM6asBWjEAUjEA+okA54QAeSUAZ0YAuHgA//1D960AWjkA74QA/+cM/+0V/cwm98YAp5cBeEQA3nsA/94A8LUFqaYBeFYA53sAimUB3KgB/s4L/8YI8q0I/+cA984A/70K//cA870I8tYA9+cA/+8A/9YAupYA/84A/94P2pcA//cK7MoA9+8A/9YI0XsA27oA/JkA5NwAX1II2YcA/6UAmIYE54wA/60A/7UA73sA/70A6mUAZCgAyacB/8YA2kgB73MA3msA3FUA+ngA//8A5+cA1cgBAAAAwPoqRAAAAAF0Uk5TAEDm2GYAAAABYktHRACIBR1IAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAB3RJTUUH6gYNAREDzTOnpAAAA99JREFUaN7t2ttL21AcB/DEhVTzUNFV0k4f2mixVHGCYksiDKGVIATtgxDdi4Jgla4PSqm9gPVaJtNV8DLdP7v8zkmbS9Ou3o61+n2rifnA7/Sc/E5SivrIC4dhmA5Auro+KRqiKLL8phGXq7u7h+Y4zu2maUX5QJrF7Xa5entrH9400tfX369/KJdfZrYQQTyegYEOQHie93r7+ny+L7QehqHpt4X4/YGAIAwPD4+M+HzBoI+x5zksAsjoaDAYCg3jBIODg/UIpFx+90g4HB7TEgyOawmFQjAiQ0POCPPYezIBhOcFQZiYGB+HGmFoHD58NeYJw7As+ySHAOL3T01NQDCCIgi2kziuDEsYQDWszZCZmUhErw6+fiBgOkpbpjhIjyoZAcTvFwRRnJoSRTESGRuTJNtxNOwWhuPw9+ABS1mHIB6PB1b2SAQEjbCMRrWh0Fo7y2JlY9oD4dFM1xBgRK/XsTXSEFtXD0zrSzIBZG4uAMXCyOTkpONJaJrLsgPDtVQwIgjPx2KxeBwjjU7SENhp2RgLQjf7HhNAOG5hQUMkCRC/vwmCyyXLpsogxO1+R4jHk0joSN0NyhlRjO0WCO4q0uQLRgRZXQ2HdaRxsT5rRhlmvI4YhSnjI+2ALCzUkMbFsiPG5doMCYNTdzM05Xu5NvBo3rclEsZJJBoPO0X9gDs8y7Y3EoslEqhcPN/olGj0G1xFH3TFtBDD9ekq0mRZ6RxEkmI4o6ONiI2NXRldXFGckOq+5bURmCAozodnZ/f2crk8LhVsSCyP1WjzDqxJG0EEkaR4XIKVy6E3LRQKmczOTrGYAwRvrEw1sRDtgAi4sRNF25FsNpPJJJP5/P5+SasUC4uviagNenXYXxsJBERxc3MzlVpZmZ6u/bWn5+AglysWi4eH6+vz8y4GLViWptpcqfeDUFQqtba2trSkqqlUbZInkxsb8/PZbPb42OU6Pt6VGUei9Z0WEWRlRVXVExS9mSgU0mmXlnQ6XSqdnhYK9m2UvlQZyH83c0SQoyME/NSiqnqvGo3OzhYgZ2d1/8+y9odRLeziiSAU9QvnXMvFxUWz3gjaCXRTsUAtPb0hgiwuLv42UqnE45eX9WdBSwRXx/dHg2nxYXfnIFqWl4tGKpWrq0rl+vrm5kYQoMm4oXEDobcStbAs/ZA3A0QQisrnk0a2tm5v/0BOTpBIo5uWXE0VefCTZyIIRZVKOZwMSrEIE+dcVW9vI9U21cI86kUNEYSiTk/v6pLJaKxszxPezxJBUO4cIFulnv5mjghCUdvb9/dW5bmq1JGIKX9Rtl/2lzFEkI90UP4BqhvhUepiEoYAAAAASUVORK5CYII=";
 const dropIcon = "" + new URL("beaver-hQ5QlB0C.png", import.meta.url).href;
-const bonusIcon = "" + new URL("bonus-Bf3zX_ol.png", import.meta.url).href;
+const bonusBarrelIcon = "" + new URL("bonus-Bf3zX_ol.png", import.meta.url).href;
 const bananaIcon = "data:image/png;base64,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";
 const anyGunIcon = "" + new URL("hard_shoot-B_JOAn4q.png", import.meta.url).href;
 const melonIcon = "data:image/png;base64,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";
-const toughBananaIcon = "" + new URL("rabbit-D6O9SrZi.png", import.meta.url).href;
+const wabbit = "" + new URL("rabbit-D6O9SrZi.png", import.meta.url).href;
 const slamSwitchIcon = "" + new URL("slam_switch-DrcJ-6n7.png", import.meta.url).href;
 const switchsanityIcon = "" + new URL("switch-D6Og0W-L.png", import.meta.url).href;
 const wrinkly = "" + new URL("wrinkly-COxhSpd3.png", import.meta.url).href;
@@ -56701,7 +56654,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: bLocker$1,
+                  imgUrl: gbIcon,
                   title: 'Puts Golden Bananas in the pool, other than those in the "minecart" and "miniboss" categories.',
                   storeKey: "poolGoldBananas",
                   prefix: "settings",
@@ -56712,7 +56665,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: toughBananaIcon,
+                  imgUrl: wabbit,
                   title: "Puts minecart and race-themed bananas in the pool.",
                   storeKey: "poolToughBananas",
                   prefix: "settings",
@@ -56756,7 +56709,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: blueprintIcon,
+                  imgUrl: bpIcon,
                   title: "Puts Kasplat checks in the pool.",
                   storeKey: "poolBlueprints",
                   prefix: "settings",
@@ -56877,7 +56830,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: beanIcon,
+                  imgUrl: theBean,
                   title: "Puts the second reward for clearing Tiny's Forest Area 4 tree stump in the pool.",
                   storeKey: "poolBean",
                   prefix: "settings",
@@ -56910,7 +56863,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: chunkyKongIcon,
+                  imgUrl: chunkyIcon,
                   title: "Puts the various objects Chunky can lift with relative ease into the pool.",
                   storeKey: "poolBoulders",
                   prefix: "settings",
@@ -56943,7 +56896,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: chunkyKongIcon,
+                  imgUrl: chunkyIcon,
                   title: "Puts breakable stuff in the pool that is neither a boulder or Melon Crate.",
                   storeKey: "poolBreakable",
                   prefix: "settings",
@@ -57090,7 +57043,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: bonusIcon,
+                  imgUrl: bonusBarrelIcon,
                   title: "If this is on, you don't have to do the bonus levels for Bonus Barrel checks. Doesn't apply to Helm.",
                   storeKey: "autoBonus",
                   prefix: "settings",
@@ -57417,7 +57370,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: beanIcon,
+                  imgUrl: theBean,
                   title: "Turn this on if you can reach Area 2 of the Forest at the start of your seed. Else, you'll need two guns to get through the green tunnel (Feathers and Pineapples by default).",
                   storeKey: "forestBeanstalk",
                   prefix: "removeBarriers",
@@ -57450,7 +57403,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: chunkyKongIcon,
+                  imgUrl: chunkyIcon,
                   title: "Turn this on if the ice walls in Caves have already been punched down. Else, you'll need Chunky and Primate Punch to do a few checks.",
                   storeKey: "cavesWalls",
                   prefix: "removeBarriers",
@@ -57483,7 +57436,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 SimpleIcon,
                 {
-                  imgUrl: chunkyKongIcon,
+                  imgUrl: chunkyIcon,
                   title: "Turn this on if the Primate Punch gates are already down for Hideout Helm. Else, you'll need Primate Punch.",
                   storeKey: "helmPunchGates",
                   prefix: "removeBarriers",
@@ -57524,9 +57477,7 @@ const GeneratorSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Hide unavailable checks?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideRed", prefix: "ui", updateItem: setUi }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Hide logic-breaking checks?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideYellow", prefix: "ui", updateItem: setUi }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { title: "Checking this will cause the Banana, Fairy, Medal, Rainbow Coin, Crown, and Pearl counters to cap out at 255 instead of their normal limits, both in the upper left corner tracker and on the Helm Doors and win condition listed up above.", children: "Did you use the Item Count Modifier to give yourself more than the default for any item?" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "itemCountModifier", prefix: "ui", updateItem: setUi })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CheckIcon, { storeKey: "hideYellow", prefix: "ui", updateItem: setUi })
             ] })
           ] })
         ] })
@@ -59769,9 +59720,8 @@ const SlamShuffler = () => {
   const wrinklyDoorShuffler = useDonkStore(useShallow((state) => state.settings.lockedWrinklyDoors)) ? "" : "locked-wrinkly";
   const [setUi, setWrinklyDoorCount] = useDonkStore(useShallow((state) => [state.setUi, state.setWrinklyDoorCount]));
   const wrinklyDoorItem = useWrinklyDoorItem();
-  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier));
   const wrinklyDoorItemToIcon2 = (num) => {
-    return num == 1 ? blueprintIcon : num == 2 ? crownIcon : num == 3 ? keyIcon : num == 4 ? medalIcon : num == 5 ? fairyIcon : num == 6 ? rainbowCoinIcon : num == 7 ? pearlIcon : num == 8 ? coloredNanners : bLocker$1;
+    return num == 1 ? bpIcon : num == 2 ? crownIcon : num == 3 ? keyIcon : num == 4 ? medalIcon : num == 5 ? fairyIcon : num == 6 ? rainbowCoinIcon : num == 7 ? pearlIcon : num == 8 ? cbIcon : gbIcon;
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `${wrinklyDoorShuffler}`, onClick: openModal, title: "Click to open Wrinkly door settings.", children: "⚙️" }),
@@ -59808,7 +59758,7 @@ const SlamShuffler = () => {
                 storeKey: "jungleJapes",
                 prefix: "wrinklyDoors",
                 setCount: setWrinklyDoorCount,
-                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? capRemoved ? 255 : 10 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? capRemoved ? 255 : 40 : wrinklyDoorItem == 5 ? capRemoved ? 255 : 20 : wrinklyDoorItem == 6 ? capRemoved ? 255 : 16 : wrinklyDoorItem == 7 ? capRemoved ? 255 : 5 : wrinklyDoorItem == 8 ? 3500 : capRemoved ? 255 : 201
+                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the item needed for Aztec:" }),
@@ -59820,7 +59770,7 @@ const SlamShuffler = () => {
                 storeKey: "angryAztec",
                 prefix: "wrinklyDoors",
                 setCount: setWrinklyDoorCount,
-                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? capRemoved ? 255 : 10 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? capRemoved ? 255 : 40 : wrinklyDoorItem == 5 ? capRemoved ? 255 : 20 : wrinklyDoorItem == 6 ? capRemoved ? 255 : 16 : wrinklyDoorItem == 7 ? capRemoved ? 255 : 5 : wrinklyDoorItem == 8 ? 3500 : capRemoved ? 255 : 201
+                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the item needed for Factory:" }),
@@ -59832,7 +59782,7 @@ const SlamShuffler = () => {
                 storeKey: "franticFactory",
                 prefix: "wrinklyDoors",
                 setCount: setWrinklyDoorCount,
-                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? capRemoved ? 255 : 10 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? capRemoved ? 255 : 40 : wrinklyDoorItem == 5 ? capRemoved ? 255 : 20 : wrinklyDoorItem == 6 ? capRemoved ? 255 : 16 : wrinklyDoorItem == 7 ? capRemoved ? 255 : 5 : wrinklyDoorItem == 8 ? 3500 : capRemoved ? 255 : 201
+                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the item needed for Galleon:" }),
@@ -59844,7 +59794,7 @@ const SlamShuffler = () => {
                 storeKey: "gloomyGalleon",
                 prefix: "wrinklyDoors",
                 setCount: setWrinklyDoorCount,
-                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? capRemoved ? 255 : 10 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? capRemoved ? 255 : 40 : wrinklyDoorItem == 5 ? capRemoved ? 255 : 20 : wrinklyDoorItem == 6 ? capRemoved ? 255 : 16 : wrinklyDoorItem == 7 ? capRemoved ? 255 : 5 : wrinklyDoorItem == 8 ? 3500 : capRemoved ? 255 : 201
+                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the item needed for Forest:" }),
@@ -59856,7 +59806,7 @@ const SlamShuffler = () => {
                 storeKey: "fungiForest",
                 prefix: "wrinklyDoors",
                 setCount: setWrinklyDoorCount,
-                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? capRemoved ? 255 : 10 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? capRemoved ? 255 : 40 : wrinklyDoorItem == 5 ? capRemoved ? 255 : 20 : wrinklyDoorItem == 6 ? capRemoved ? 255 : 16 : wrinklyDoorItem == 7 ? capRemoved ? 255 : 5 : wrinklyDoorItem == 8 ? 3500 : capRemoved ? 255 : 201
+                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Number of the item needed for Caves:" }),
@@ -59868,7 +59818,7 @@ const SlamShuffler = () => {
                 storeKey: "crystalCaves",
                 prefix: "wrinklyDoors",
                 setCount: setWrinklyDoorCount,
-                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? capRemoved ? 255 : 10 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? capRemoved ? 255 : 40 : wrinklyDoorItem == 5 ? capRemoved ? 255 : 20 : wrinklyDoorItem == 6 ? capRemoved ? 255 : 16 : wrinklyDoorItem == 7 ? capRemoved ? 255 : 5 : wrinklyDoorItem == 8 ? 3500 : capRemoved ? 255 : 201
+                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
@@ -59882,7 +59832,7 @@ const SlamShuffler = () => {
                 storeKey: "creepyCastle",
                 prefix: "wrinklyDoors",
                 setCount: setWrinklyDoorCount,
-                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? capRemoved ? 255 : 10 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? capRemoved ? 255 : 40 : wrinklyDoorItem == 5 ? capRemoved ? 255 : 20 : wrinklyDoorItem == 6 ? capRemoved ? 255 : 16 : wrinklyDoorItem == 7 ? capRemoved ? 255 : 5 : wrinklyDoorItem == 8 ? 3500 : capRemoved ? 255 : 201
+                maxValue: wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", {}),
@@ -60026,7 +59976,7 @@ const SwitchsanitySwitch = (props) => {
     }
   ) });
 };
-const allKong = [dkKongIcon, diddyKongIcon, lankyKongIcon, tinyKongIcon, chunkyKongIcon];
+const allKong = [dkKongIcon, diddyKongIcon, lankyKongIcon, tinyKongIcon, chunkyIcon];
 const allGun = [dkGunIcon, diddyGunIcon, lankyGunIcon, tinyGunIcon, chunkyGunIcon, anyGunIcon];
 const allMusic = [dkMusicIcon, diddyMusicIcon, lankyMusicIcon, tinyMusicIcon, chunkyMusicIcon, anyInstIcon];
 const freeTiny = [diddyMoveIcon, chunkyMoveIcon];
@@ -60285,231 +60235,317 @@ const SwitchsanitySelector = () => {
   const isSwitchsanity = useIsSwitchsanity();
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "switchsanity-settings", children: isSwitchsanity ? /* @__PURE__ */ jsxRuntimeExports.jsx(StandardSwitchsanitySelector, {}) : null });
 };
+const dkc2BarrelCannon = "" + new URL("dkc2-arrow-cannon-CSSfSnfG.png", import.meta.url).href;
+const mechfishIcon = "" + new URL("mechfish-agenda-DGuWF94W.png", import.meta.url).href;
+const taskToIcon = (task) => {
+  switch (task) {
+    case "Keys":
+    case "Bosses":
+    case "Get Key 8 only":
+      return keyIcon;
+    case "Kremling Kapture":
+      return filmIcon;
+    case "Golden Bananas":
+      return gbIcon;
+    case "Blueprints":
+      return bpIcon;
+    case "Company Coins":
+      return coCoinIcon;
+    case "Medals":
+      return medalIcon;
+    case "Crowns":
+      return crownIcon;
+    case "Fairies":
+    case "Get the Rareware Banana":
+      return fairyIcon;
+    case "Rainbow Coins":
+      return rainbowCoinIcon;
+    case "The Bean™":
+      return theBean;
+    case "Pearls":
+      return pearlIcon;
+    case "Bonus Levels":
+      return bonusBarrelIcon;
+    case "Barrel Blast Courses":
+      return dkc2BarrelCannon;
+    case "Kill the Wabbit":
+      return wabbit;
+    case "Complete the DK Rap":
+    case "Round 2 of DK Arcade":
+    case "Jetpac":
+      return crankyIcon;
+    case "Take Down the Mechfish Agenda":
+      return mechfishIcon;
+    case "Defeat the Toy Monster":
+      return chunkyIcon;
+    default:
+      return unknownIcon;
+  }
+};
+const nextTask = (task) => {
+  switch (task) {
+    case "Keys":
+      return "Kremling Kapture";
+    case "Kremling Kapture":
+      return "Golden Bananas";
+    case "Golden Bananas":
+      return "Blueprints";
+    case "Blueprints":
+      return "Company Coins";
+    case "Company Coins":
+      return "Medals";
+    case "Medals":
+      return "Crowns";
+    case "Crowns":
+      return "Fairies";
+    case "Fairies":
+      return "Rainbow Coins";
+    case "Rainbow Coins":
+      return "The Bean™";
+    case "The Bean™":
+      return "Pearls";
+    case "Pearls":
+      return "Bosses";
+    case "Bosses":
+      return "Bonus Levels";
+    case "Bonus Levels":
+      return "Barrel Blast Courses";
+    case "Barrel Blast Courses":
+      return "Get Key 8 only";
+    case "Get Key 8 only":
+      return "Kill the Wabbit";
+    case "Kill the Wabbit":
+      return "Complete the DK Rap";
+    case "Complete the DK Rap":
+      return "Take Down the Mechfish Agenda";
+    case "Take Down the Mechfish Agenda":
+      return "Round 2 of DK Arcade";
+    case "Round 2 of DK Arcade":
+      return "Jetpac";
+    case "Jetpac":
+      return "Defeat the Toy Monster";
+    case "Defeat the Toy Monster":
+      return "Get the Rareware Banana";
+    case "Get the Rareware Banana":
+      return "";
+    default:
+      return "Keys";
+  }
+};
+const prevTask = (task) => {
+  switch (task) {
+    case "Keys":
+      return "";
+    case "Kremling Kapture":
+      return "Keys";
+    case "Golden Bananas":
+      return "Kremling Kapture";
+    case "Blueprints":
+      return "Golden Bananas";
+    case "Company Coins":
+      return "Blueprints";
+    case "Medals":
+      return "Company Coins";
+    case "Crowns":
+      return "Medals";
+    case "Fairies":
+      return "Crowns";
+    case "Rainbow Coins":
+      return "Fairies";
+    case "The Bean™":
+      return "Rainbow Coins";
+    case "Pearls":
+      return "The Bean™";
+    case "Bosses":
+      return "Pearls";
+    case "Bonus Levels":
+      return "Bosses";
+    case "Barrel Blast Courses":
+      return "Bonus Levels";
+    case "Get Key 8 only":
+      return "Barrel Blast Courses";
+    case "Kill the Wabbit":
+      return "Get Key 8 only";
+    case "Complete the DK Rap":
+      return "Kill the Wabbit";
+    case "Take Down the Mechfish Agenda":
+      return "Complete the DK Rap";
+    case "Round 2 of DK Arcade":
+      return "Take Down the Mechfish Agenda";
+    case "Jetpac":
+      return "Round 2 of DK Arcade";
+    case "Defeat the Toy Monster":
+      return "Jetpac";
+    case "Get the Rareware Banana":
+      return "Defeat the Toy Monster";
+    default:
+      return "Get the Rareware Banana";
+  }
+};
+const TaskSelector = ({ storeKey }) => {
+  const [task, setTask] = useDonkStore(
+    useShallow((state) => [state[storeKey], state.setTask])
+  );
+  const taskNum = Number.parseInt(storeKey.slice(4), 23);
+  const handleNextTask = () => {
+    setTask(taskNum, nextTask(task));
+  };
+  const handlePrevTask = () => {
+    setTask(taskNum, prevTask(task));
+  };
+  const handleWheel = (e2) => {
+    if (e2.deltaY >= 0) {
+      setTask(taskNum, nextTask(task));
+    } else {
+      setTask(taskNum, prevTask(task));
+    }
+  };
+  const taskTitle = task !== "" ? task : "None";
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "img",
+    {
+      alt: taskTitle,
+      title: taskTitle,
+      height: 24,
+      src: taskToIcon(task),
+      onClick: handleNextTask,
+      onContextMenu: handlePrevTask,
+      onWheel: handleWheel
+    }
+  ) });
+};
 const Kontracts = () => {
-  const [setBLocker, setTroffAndScoff] = useDonkStore(useShallow((state) => [state.setBLocker, state.setTroffAndScoff]));
-  const key3And8Seed = useDonkStore(useShallow((state) => state.winCondition.key3And8)) ? "all-bosses" : "";
-  const key8Seed = useDonkStore(useShallow((state) => state.winCondition.key8)) ? "all-bosses" : "";
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level-section", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Levels, Keys, B. Lockers, and Troff 'n' Scoffs" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level-list", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level1", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l1, height: 24 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level1" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 1 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "bLocker1",
-            title: "Bananas required for Level 1",
-            imgUrl: bLocker$1,
-            prefix: "bLocker",
-            setCount: setBLocker,
-            maxValue: 201
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "troffAndScoff1",
-            title: "CB's required to access Boss 1",
-            imgUrl: coloredNanners,
-            prefix: "troffAndScoff",
-            setCount: setTroffAndScoff,
-            maxValue: 500
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l2, height: 24 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level2" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 2 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "bLocker2",
-            title: "Bananas required for Level 2",
-            imgUrl: bLocker$1,
-            prefix: "bLocker",
-            setCount: setBLocker,
-            maxValue: 201
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "troffAndScoff2",
-            title: "CB's required to access Boss 2",
-            imgUrl: coloredNanners,
-            prefix: "troffAndScoff",
-            setCount: setTroffAndScoff,
-            maxValue: 500
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `level3 ${key3And8Seed}`, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l3, height: 24 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level3" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 3 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "bLocker3",
-            title: "Bananas required for Level 3",
-            imgUrl: bLocker$1,
-            prefix: "bLocker",
-            setCount: setBLocker,
-            maxValue: 201
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "troffAndScoff3",
-            title: "CB's required to access Boss 3",
-            imgUrl: coloredNanners,
-            prefix: "troffAndScoff",
-            setCount: setTroffAndScoff,
-            maxValue: 500
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level4", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l4, height: 24 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level4" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 4 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "bLocker4",
-            title: "Bananas required for Level 4",
-            imgUrl: bLocker$1,
-            prefix: "bLocker",
-            setCount: setBLocker,
-            maxValue: 201
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "troffAndScoff4",
-            title: "CB's required to access Boss 4",
-            imgUrl: coloredNanners,
-            prefix: "troffAndScoff",
-            setCount: setTroffAndScoff,
-            maxValue: 500
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level5", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l5, height: 24 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level5" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 5 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "bLocker5",
-            title: "Bananas required for Level 5",
-            imgUrl: bLocker$1,
-            prefix: "bLocker",
-            setCount: setBLocker,
-            maxValue: 201
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "troffAndScoff5",
-            title: "CB's required to access Boss 5",
-            imgUrl: coloredNanners,
-            prefix: "troffAndScoff",
-            setCount: setTroffAndScoff,
-            maxValue: 500
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level6", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l6, height: 24 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level6" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 6 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "bLocker6",
-            title: "Bananas required for Level 6",
-            imgUrl: bLocker$1,
-            prefix: "bLocker",
-            setCount: setBLocker,
-            maxValue: 201
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "troffAndScoff6",
-            title: "CB's required to access Boss 6",
-            imgUrl: coloredNanners,
-            prefix: "troffAndScoff",
-            setCount: setTroffAndScoff,
-            maxValue: 500
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "level7", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l7, height: 24 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level7" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 7 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "bLocker7",
-            title: "Bananas required for Level 7",
-            imgUrl: bLocker$1,
-            prefix: "bLocker",
-            setCount: setBLocker,
-            maxValue: 201
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "troffAndScoff7",
-            title: "CB's required to access Boss 7",
-            imgUrl: coloredNanners,
-            prefix: "troffAndScoff",
-            setCount: setTroffAndScoff,
-            maxValue: 500
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `level8 ${key3And8Seed || key8Seed}`, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: l8, height: 24 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(LevelSelector, { storeKey: "level8" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(SimpleKey, { keyNum: 8 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "bLocker8",
-            title: "Bananas required for Level 8",
-            imgUrl: bLocker$1,
-            prefix: "bLocker",
-            setCount: setBLocker,
-            maxValue: 201
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CountSelector,
-          {
-            storeKey: "troffAndScoff8",
-            title: "CB's required to access Boss 8",
-            imgUrl: coloredNanners,
-            prefix: "troffAndScoff",
-            setCount: setTroffAndScoff,
-            maxValue: 500
-          }
-        )
+  const isKontractSeed = useDonkStore(useShallow((state) => state.winCondition.kontracts));
+  const setTaskCount = useDonkStore(useShallow((state) => state.setTaskCount));
+  if (isKontractSeed) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "kontract-section", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "K. Rool's Kontracts" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "kontract-list", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "task1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t1, height: 24 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TaskSelector, { storeKey: "task1" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            CountSelector,
+            {
+              storeKey: "taskCount1",
+              title: "Amount of the item you need to complete this task.",
+              imgUrl: t1,
+              prefix: "taskCount",
+              setCount: setTaskCount,
+              maxValue: 255
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "task2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t2, height: 24 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TaskSelector, { storeKey: "task2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            CountSelector,
+            {
+              storeKey: "taskCount2",
+              title: "Amount of the item you need to complete this task.",
+              imgUrl: t2,
+              prefix: "taskCount",
+              setCount: setTaskCount,
+              maxValue: 255
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "task3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t3, height: 24 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TaskSelector, { storeKey: "task3" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            CountSelector,
+            {
+              storeKey: "taskCount3",
+              title: "Amount of the item you need to complete this task.",
+              imgUrl: t3,
+              prefix: "taskCount",
+              setCount: setTaskCount,
+              maxValue: 255
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "task4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t4, height: 24 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TaskSelector, { storeKey: "task4" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            CountSelector,
+            {
+              storeKey: "taskCount4",
+              title: "Amount of the item you need to complete this task.",
+              imgUrl: t4,
+              prefix: "taskCount",
+              setCount: setTaskCount,
+              maxValue: 255
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "task5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t5, height: 24 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TaskSelector, { storeKey: "task5" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            CountSelector,
+            {
+              storeKey: "taskCount5",
+              title: "Amount of the item you need to complete this task.",
+              imgUrl: t5,
+              prefix: "taskCount",
+              setCount: setTaskCount,
+              maxValue: 255
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "task6", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t6, height: 24 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TaskSelector, { storeKey: "task6" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            CountSelector,
+            {
+              storeKey: "taskCount6",
+              title: "Amount of the item you need to complete this task.",
+              imgUrl: t6,
+              prefix: "taskCount",
+              setCount: setTaskCount,
+              maxValue: 255
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "task7", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t7, height: 24 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TaskSelector, { storeKey: "task7" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            CountSelector,
+            {
+              storeKey: "taskCount7",
+              title: "Amount of the item you need to complete this task.",
+              imgUrl: t7,
+              prefix: "taskCount",
+              setCount: setTaskCount,
+              maxValue: 255
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "task8", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: t8, height: 24 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TaskSelector, { storeKey: "task8" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            CountSelector,
+            {
+              storeKey: "taskCount8",
+              title: "Amount of the item you need to complete this task.",
+              imgUrl: t8,
+              prefix: "taskCount",
+              setCount: setTaskCount,
+              maxValue: 255
+            }
+          )
+        ] })
       ] })
-    ] })
-  ] });
+    ] });
+  } else {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {});
+  }
 };
 const App = () => {
   const isItOctober = currentMonth === 9 ? "font-changer" : "";
