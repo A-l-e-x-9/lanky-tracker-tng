@@ -1,6 +1,7 @@
 import BossSelector from './BossSelector'
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 import l1 from '../../assets/images/1.png'
 import l2 from '../../assets/images/2.png'
@@ -11,7 +12,9 @@ import l6 from '../../assets/images/6.png'
 import l7 from '../../assets/images/7.png'
 
 const Bosses = (): JSX.Element => {
-const allBosses = useDonkStore(useShallow((state) => state.winCondition.bosses || state.winCondition.kRoolChallenge)) ? 'all-bosses' : ''
+const isBossSeed = useKRoolKontracts('Bosses')
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) 
+const allBosses = (isBossSeed || isKRoolChallengeSeed) ? 'all-bosses' : ''
   return (
     <section className={`boss-section ${allBosses}`}>
     <h3>Bosses</h3>

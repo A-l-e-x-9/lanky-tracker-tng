@@ -1,7 +1,7 @@
 import React, { MouseEvent, WheelEvent, useState, useRef, useEffect, KeyboardEvent } from 'react'
 import { useShallow } from 'zustand/react/shallow'
-
 import useDonkStore from '@renderer/store'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 type CountSelectorProps = {
   title: string
@@ -15,14 +15,15 @@ type CountSelectorProps = {
 const CountSelector: React.FC<CountSelectorProps> = (props) => {
   const { storeKey, imgUrl, maxValue } = props
   const [num] = useDonkStore(useShallow((state) => [state[props.prefix][storeKey]]))
-  const [bpWinCondition, kRoolWinCondition] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge]))
-  const bananaSeed = props.storeKey === 'goldBananas' && useDonkStore(useShallow((state) => state.winCondition.goldBananas)) ? 'all-bosses' : ''
+  const bpWinCondition = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+  const kRoolWinCondition = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))
+  const bananaSeed = props.storeKey === 'goldBananas' && useKRoolKontracts('Golden Bananas') ? 'all-bosses' : ''
   const bpSeed = (props.storeKey === 'dkBp' || props.storeKey === 'diddyBp' || props.storeKey === 'lankyBp' || props.storeKey === 'tinyBp' || props.storeKey === 'chunkyBp') && (bpWinCondition || kRoolWinCondition) ? 'all-bosses' : ''
-  const medalSeed = props.storeKey === 'bananaMedals' && useDonkStore(useShallow((state) => state.winCondition.bananaMedals)) ? 'all-bosses' : ''
-  const crownSeed = props.storeKey === 'crowns' && useDonkStore(useShallow((state) => state.winCondition.crowns)) ? 'all-bosses' : ''
-  const fairySeed = props.storeKey === 'fairies' && useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'all-bosses' : ''
-  const rainbowCoinSeed = props.storeKey === 'rainbowCoins' && useDonkStore(useShallow((state) => state.winCondition.rainbowCoins)) ? 'all-bosses' : ''
-  const pearlSeed = props.storeKey === 'pearls' && useDonkStore(useShallow((state) => state.winCondition.pearls)) ? 'all-bosses' : ''
+  const medalSeed = props.storeKey === 'bananaMedals' && useKRoolKontracts('Medals') ? 'all-bosses' : ''
+  const crownSeed = props.storeKey === 'crowns' && useKRoolKontracts('Crowns') ? 'all-bosses' : ''
+  const fairySeed = props.storeKey === 'fairies' && useKRoolKontracts('Fairies') ? 'all-bosses' : ''
+  const rainbowCoinSeed = props.storeKey === 'rainbowCoins' && useKRoolKontracts('Rainbow Coins') ? 'all-bosses' : ''
+  const pearlSeed = props.storeKey === 'pearls' && useKRoolKontracts('Pearls') ? 'all-bosses' : ''
 
   const clamp = (num: number): number => Math.min(Math.max(num, 0), maxValue)
 

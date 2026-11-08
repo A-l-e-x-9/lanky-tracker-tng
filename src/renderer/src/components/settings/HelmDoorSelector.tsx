@@ -33,7 +33,6 @@ const prevWrinklyItem = (num: number): number => wrinklyClamp(num - 1)
 export const HelmDoorSelector1: React.FC = () => {
   const helmItem1 = useHelmItem1()
   const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]))
-  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier))
 
   const handleNextItem = (): void => {
     setSetting('helmItem1', nextItem(helmItem1))
@@ -70,7 +69,7 @@ export const HelmDoorSelector1: React.FC = () => {
         storeKey="helmItemNum1"
         prefix="settings"
         setCount={setSetting}
-        maxValue={helmItem1 == 1 ? (capRemoved ? 255 : 201) : helmItem1 == 2 ? 40 : helmItem1 == 3 ? 2 : helmItem1 == 4 ? 8 : helmItem1 == 5 ? (capRemoved ? 255 : 40) : helmItem1 == 6 ? (capRemoved ? 255 : 10) : helmItem1 == 7 ? (capRemoved ? 255 : 20) : helmItem1 == 8 ? (capRemoved ? 255 : 16) : helmItem1 == 9 ? 1 : helmItem1 == 10 ? (capRemoved ? 255 : 5) : 0}
+        maxValue={helmItem1 == 1 ? 255 : helmItem1 == 2 ? 40 : helmItem1 == 3 ? 2 : helmItem1 == 4 ? 8 : helmItem1 == 5 ? 255 : helmItem1 == 6 ? 255 : helmItem1 == 7 ? 255 : helmItem1 == 8 ? 255 : helmItem1 == 9 ? 1 : helmItem1 == 10 ? 255 : 0}
       />
     </div>
   )
@@ -79,7 +78,6 @@ export const HelmDoorSelector1: React.FC = () => {
 export const HelmDoorSelector2: React.FC = () => {
   const helmItem2 = useHelmItem2()
   const [setSetting] = useDonkStore(useShallow((state) => [state.setSetting]))
-  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier))
 
   const handleNextItem = (): void => {
     setSetting('helmItem2', nextItem(helmItem2))
@@ -116,8 +114,7 @@ export const HelmDoorSelector2: React.FC = () => {
         storeKey="helmItemNum2"
         prefix="settings"
         setCount={setSetting}
-        maxValue={helmItem2 == 1 ? (capRemoved ? 255 : 201) : helmItem2 == 2 ? 40 : helmItem2 == 3 ? 2 : helmItem2 == 4 ? 8 : helmItem2 == 5 ? (capRemoved ? 255 : 40) : helmItem2 == 6 ? (capRemoved ? 255 : 10) : helmItem2 == 7 ? (capRemoved ? 255 : 20) : helmItem2 == 8 ? (capRemoved ? 255 : 16) : helmItem2 == 9 ? 1 : helmItem2 == 10 ? (capRemoved ? 255 : 5) : 0}
-
+        maxValue={helmItem2 == 1 ? 255 : helmItem2 == 2 ? 40 : helmItem2 == 3 ? 2 : helmItem2 == 4 ? 8 : helmItem2 == 5 ? 255 : helmItem2 == 6 ? 255 : helmItem2 == 7 ? 255 : helmItem2 == 8 ? 255 : helmItem2 == 9 ? 1 : helmItem2 == 10 ? 255 : 0}
       />
     </div>
   )
