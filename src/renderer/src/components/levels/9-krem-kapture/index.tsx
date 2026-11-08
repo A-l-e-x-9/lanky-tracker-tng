@@ -1,6 +1,5 @@
-import useDonkStore from '@renderer/store'
-import { useShallow } from 'zustand/react/shallow'
 import KremKapture from './enemy-list'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const KKChecks: React.FC = () => {
 const isKremKaptureSeed = useKRoolKontracts('Kremling Kapture') ? 'foolish' : ''
