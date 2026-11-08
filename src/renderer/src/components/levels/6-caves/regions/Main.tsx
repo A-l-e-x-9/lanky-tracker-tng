@@ -12,9 +12,11 @@ import DkKasplat from '../kasplats/Dk'
 import LankyKasplat from '../kasplats/Lanky'
 import KooshyKomeiji from '../boulders/SmallRock'
 import Okuu from '../boulders/BeegRock'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const MainChecks: React.FC = () => {
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>

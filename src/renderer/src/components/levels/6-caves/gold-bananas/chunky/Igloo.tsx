@@ -1,6 +1,4 @@
 //hope VerdantAsh doesn't blow a gasket...okay, maybe I do! >xD
-import { useShallow } from 'zustand/react/shallow'
-import useDonkStore from '@renderer/store'
 import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useChunkyIglooGb } from '@renderer/hooks/caves'
