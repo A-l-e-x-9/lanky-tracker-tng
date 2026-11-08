@@ -1023,14 +1023,14 @@ interface taskCollection {
 }
 
 interface taskCountCollection {
-  task1: TroffAndScoffRange
-  task2: TroffAndScoffRange
-  task3: TroffAndScoffRange
-  task4: TroffAndScoffRange
-  task5: TroffAndScoffRange
-  task6: TroffAndScoffRange
-  task7: TroffAndScoffRange
-  task8: TroffAndScoffRange
+  taskCount1: TroffAndScoffRange
+  taskCount2: TroffAndScoffRange
+  taskCount3: TroffAndScoffRange
+  taskCount4: TroffAndScoffRange
+  taskCount5: TroffAndScoffRange
+  taskCount6: TroffAndScoffRange
+  taskCount7: TroffAndScoffRange
+  taskCount8: TroffAndScoffRange
 }
 
 export interface TaskState {

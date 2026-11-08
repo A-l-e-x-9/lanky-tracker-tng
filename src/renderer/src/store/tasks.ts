@@ -13,14 +13,14 @@ export const initialTask: TaskState = {
     task8: ''
   },
   taskCount: {
-    task1: '0',
-    task2: '0',
-    task3: '0',
-    task4: '0',
-    task5: '0',
-    task6: '0',
-    task7: '0',
-    task8: '0'
+    taskCount1: '0',
+    taskCount2: '0',
+    taskCount3: '0',
+    taskCount4: '0',
+    taskCount5: '0',
+    taskCount6: '0',
+    taskCount7: '0',
+    taskCount8: '0'
   }
 }
 
@@ -33,7 +33,7 @@ const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
         const newKey: Record<number, string> = {}
         newKey['task' + index] = name
         state = {
-          ...state.task,
+          ...state,
           ...newKey
         }
         return state
