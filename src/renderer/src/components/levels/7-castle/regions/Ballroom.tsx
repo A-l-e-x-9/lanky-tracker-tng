@@ -4,9 +4,10 @@ import BallroomEnemies from '../enemies/Ballroom'
 import RoomFairy from '../fairies/Room'
 import DiddyBallroom from '../gold-bananas/diddy/Ballroom'
 import TinyRace from '../gold-bananas/tiny/Race'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const BallroomChecks: React.FC = () => {
-const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const isFairySeed = useKRoolKontracts('Fairies') ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
   <>

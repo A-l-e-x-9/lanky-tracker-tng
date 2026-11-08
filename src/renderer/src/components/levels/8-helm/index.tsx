@@ -9,10 +9,10 @@ import MedalLocations from './medals'
 import ShuffledArenas from './arenas/Shuffled'
 import ShuffledCrates from './crates/Shuffled'
 import ShuffledFairies from './fairies/Shuffled'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const HelmChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
-const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const isFairySeed = useKRoolKontracts('Fairies') ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
   return (
   <>
@@ -24,12 +24,10 @@ const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.pool
     <div className={`grid ${isFairySeed && fairiesInRotation}`}>
       <EndOfHelmFairies />
     </div>
-    <div className={`grid ${isKremKaptureSeed}`}>
+    <div className="grid">
       <DropPool>
         <EnemyLocations />
       </DropPool>
-    </div>
-    <div className="grid">
       <ShuffledArenas />
       <ShuffledCrates />
     </div>

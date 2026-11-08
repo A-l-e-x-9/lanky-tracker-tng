@@ -16,9 +16,11 @@ import DiddyKasplat from '../kasplats/Diddy'
 import UpperCaveEnemies from '../enemies/UpperCave'
 import DungeonCrates from '../crates/Dungeon'
 import DungeonKasplats from '../kasplats/Dungeon'
+import { useKRoolKontracts } from '@renderer/hooks/kongs'
 
 const UndergroundChecks: React.FC = () => {
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>

@@ -27,15 +27,17 @@ import CastleRegionChecks from './regions'
 import CastleShops from './shops'
 import BoulderCheck from './boulder'
 import ShedBox from './shed-box'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const ClassicChecks: React.FC = () => {
-const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isFairySeed = useKRoolKontracts('Fairies') ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
 <>
-  <p className="not-available"><strong>WARNING:</strong> If you don't have Climbing, any check in the Crypt area is yellow because you won't be able to get back up without killing your Kong, pause-exiting/re-entering, or abusing high-grabs on the gravestones.</p>
+  <p className="not-available"><strong>WARNING:</strong> If you don't have Climbing, any check in the Crypt area is yellow because you won't be able to get back up without killing your Kong, pause-exiting/re-entering (assuming you didn't get a Portal in the Crypt area), or abusing high-grabs on the gravestones.</p>
   <div className="grid">
     <DkBananas />
     <DiddyBananas />
