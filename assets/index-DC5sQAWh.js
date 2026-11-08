@@ -11811,7 +11811,6 @@ const taskSlice = (set) => {
       };
       return state;
     }),
-    ...initialTask,
     setTaskCount: (id2, val) => {
       set((state) => {
         const target = {};
