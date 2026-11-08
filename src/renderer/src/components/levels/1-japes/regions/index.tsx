@@ -63,10 +63,8 @@ return (
     <LankyMedal />
     <TinyMedal />
     <ChunkyMedal />
-  </div>
     <JapesStartChecks />
     <PeanutGateChecks />
-  <div className="grid">
     <BaboonBlast />
     <LowlandArenas />
     <LowlandBalloons />
@@ -79,8 +77,8 @@ return (
   <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <LowlandKasplats />
   </div>
-    <JapesMainChecks />
   <div className="grid">
+    <JapesMainChecks />
     <TopMountain />
     <HillsideArenas />
     <HillsideBalloons />
@@ -94,8 +92,8 @@ return (
     <HillsideKasplats />
   </div>
     <HiveTunnelChecks />
-    <HiveOutsideChecks />
   <div className="grid">
+    <HiveOutsideChecks />
     <HiveInteriorChecks />
     <HiveArenas />
     <HiveCrates />

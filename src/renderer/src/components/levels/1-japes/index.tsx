@@ -32,9 +32,12 @@ import LowlandBalloons from './balloons/Lowlands'
 import DiddyConveyorBalloon from './balloons/Mine'
 import LankyRoomBalloon from './balloons/PaintingRoom'
 import StormyBalloons from './balloons/Stormy'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const ClassicChecks: React.FC = () => {
-const [isFairySeed, isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.fairies, state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isFairySeed = useKRoolKontracts('Fairies') ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const [fairiesInRotation, kasplatsInRotation] = useDonkStore(useShallow((state) => [state.settings.poolFairies, state.settings.poolBlueprints])) ? '' : 'foolish'
 return (
 <>

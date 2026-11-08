@@ -3,9 +3,10 @@ import { useShallow } from 'zustand/react/shallow'
 import PaintingFairy from '../fairies/Painting'
 import PaintingRoom from '../gold-bananas/lanky/PaintingRoom'
 import LankyRoomBalloon from '../balloons/PaintingRoom'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const PaintingRoomChecks: React.FC = () => {
-const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const isFairySeed = useKRoolKontracts('Fairies') ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
   <>

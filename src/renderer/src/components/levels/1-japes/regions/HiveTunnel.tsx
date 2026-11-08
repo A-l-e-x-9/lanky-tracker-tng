@@ -3,18 +3,19 @@ import { useShallow } from 'zustand/react/shallow'
 import HiveTunnelEnemies from '../enemies/HiveTunnel'
 import DkKasplat from '../kasplats/Dk'
 import TinyKasplat from '../kasplats/Tiny'
+import { KRoolKontracts } from '@renderer/hooks/isles'
 
 const HiveTunnelChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
 <>
-  <div className={`grid ${isKremKaptureSeed} ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
+  <div className={`grid ${((isBlueprintSeed || isKRoolChallengeSeed) && kasplatsInRotation)}`}>
     <DkKasplat />
     <TinyKasplat />
   </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
+  <div className="grid">
     <HiveTunnelEnemies />
   </div>
 </>

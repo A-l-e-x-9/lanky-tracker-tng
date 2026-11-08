@@ -4,10 +4,11 @@ import GBPool from '@renderer/components/pools/GB'
 import Miniboss from '@renderer/components/pools/Miniboss'
 import { useLankyPaintingGb } from '@renderer/hooks/japes'
 import JapesCheck from '../../check'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const PaintingRoom: React.FC = () => {
   const paintingGb = useLankyPaintingGb()
-  const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies))
+  const isFairySeed = useKRoolKontracts('Fairies') ? 'foolish' : ''
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies))
   if (isFairySeed && !fairiesInRotation) {
   return (

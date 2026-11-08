@@ -1,5 +1,3 @@
-import useDonkStore from '@renderer/store'
-import { useShallow } from 'zustand/react/shallow'
 import FunkyArena from '../arenas/Funky'
 import MountainCrate from '../crates/Mountain'
 import PaintingHillDirt from '../dirt/PaintingHill'
@@ -13,10 +11,8 @@ import TinyTimedCage from '../gold-bananas/tiny/TimedCage'
 import DiddyCage from '../gold-bananas/dk/DiddyCage'
 
 const JapesMainChecks: React.FC = () => {
-const isKremKaptureSeed = useDonkStore(useShallow((state) => state.winCondition.kremlingKapture)) ? 'foolish' : ''
 return (
   <>
-  <div className="grid">
     <FrontCage />
     <DiddyTimedCage />
     <LankyTimedCage />
@@ -27,10 +23,7 @@ return (
     <FunkyArena />
     <PaintingHillDirt />
     <MountainCrate />
-  </div>
-  <div className={`grid ${isKremKaptureSeed}`}>
     <JapesMainEnemies />
-  </div>
   </>
 )
 }
