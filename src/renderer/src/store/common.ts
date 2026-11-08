@@ -1040,7 +1040,7 @@ export interface TaskState {
 
 interface TaskActions {
   setTask: (index: number, name: Task) => void
-  setTaskCount: (id: string, val: number) =>void
+  setTaskCount: (id: string, val: number) => void
 }
 
 export type TaskSlice = TaskState & TaskActions
@@ -1475,7 +1475,8 @@ export type AllSlice = CheckSlice &
   ShopSlice &
   PortalSlice &
   SlamSlice &
-  WrinklyDoorSlice
+  WrinklyDoorSlice &
+  TaskSlice
 
 export const donkResetFns = new Set<() => void>()
 

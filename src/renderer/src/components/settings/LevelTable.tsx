@@ -1,5 +1,6 @@
 import useDonkStore from '@renderer/store'
 import { useShallow } from 'zustand/react/shallow'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 import SimpleKey from '@renderer/components/settings/SimpleKey'
 import LevelSelector from './LevelSelector'
@@ -19,7 +20,7 @@ import coloredNanners from '../../assets/images/rainbow_bananas.png'
 const LevelTable = (): JSX.Element => {
   const [setBLocker, setTroffAndScoff] = useDonkStore(useShallow((state) => [state.setBLocker, state.setTroffAndScoff]))
   const key3And8Seed = useDonkStore(useShallow((state) => state.winCondition.key3And8)) ? 'all-bosses' : ''
-  const key8Seed = useDonkStore(useShallow((state) => state.winCondition.key8)) ? 'all-bosses' : ''
+  const key8Seed = useKRoolKontracts('Get Key 8 only') ? 'all-bosses' : ''
   return (
     <section className="level-section">
     <h3>Levels, Keys, B. Lockers, and Troff 'n' Scoffs</h3>

@@ -30,7 +30,6 @@ const SlamShuffler: React.FC = () => {
   const wrinklyDoorShuffler = useDonkStore(useShallow((state) => state.settings.lockedWrinklyDoors)) ? '' : 'locked-wrinkly'
   const [setUi, setWrinklyDoorCount] = useDonkStore(useShallow((state) => [state.setUi, state.setWrinklyDoorCount]))
   const wrinklyDoorItem = useWrinklyDoorItem()
-  const capRemoved = useDonkStore(useShallow((state) => state.ui.itemCountModifier))
   const wrinklyDoorItemToIcon = (num): string => {
     return num == 1 ? blueprintIcon : num == 2 ? crownIcon : num == 3 ? keyIcon : num == 4 ? medalIcon : num == 5 ? fairyIcon : num == 6 ? rainbowCoinIcon : num == 7 ? pearlIcon : num == 8 ? cbIcon : gbIcon
   }
@@ -65,7 +64,7 @@ const SlamShuffler: React.FC = () => {
             storeKey="jungleJapes"
             prefix="wrinklyDoors"
             setCount={setWrinklyDoorCount}
-            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? (capRemoved ? 255 : 10) : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? (capRemoved ? 255 : 40) : wrinklyDoorItem == 5 ? (capRemoved ? 255 : 20) : wrinklyDoorItem == 6 ? (capRemoved ? 255 : 16) : wrinklyDoorItem == 7 ? (capRemoved ? 255 : 5) : wrinklyDoorItem == 8 ? 3500 : (capRemoved ? 255 : 201)}
+            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255}
           />
           <p>Number of the item needed for Aztec:</p>
           <CountSelector
@@ -74,7 +73,7 @@ const SlamShuffler: React.FC = () => {
             storeKey="angryAztec"
             prefix="wrinklyDoors"
             setCount={setWrinklyDoorCount}
-            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? (capRemoved ? 255 : 10) : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? (capRemoved ? 255 : 40) : wrinklyDoorItem == 5 ? (capRemoved ? 255 : 20) : wrinklyDoorItem == 6 ? (capRemoved ? 255 : 16) : wrinklyDoorItem == 7 ? (capRemoved ? 255 : 5) : wrinklyDoorItem == 8 ? 3500 : (capRemoved ? 255 : 201)}
+            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255}
           />
           <p>Number of the item needed for Factory:</p>
           <CountSelector
@@ -83,7 +82,7 @@ const SlamShuffler: React.FC = () => {
             storeKey="franticFactory"
             prefix="wrinklyDoors"
             setCount={setWrinklyDoorCount}
-            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? (capRemoved ? 255 : 10) : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? (capRemoved ? 255 : 40) : wrinklyDoorItem == 5 ? (capRemoved ? 255 : 20) : wrinklyDoorItem == 6 ? (capRemoved ? 255 : 16) : wrinklyDoorItem == 7 ? (capRemoved ? 255 : 5) : wrinklyDoorItem == 8 ? 3500 : (capRemoved ? 255 : 201)}
+            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255}
           />
           <p>Number of the item needed for Galleon:</p>
           <CountSelector
@@ -92,7 +91,7 @@ const SlamShuffler: React.FC = () => {
             storeKey="gloomyGalleon"
             prefix="wrinklyDoors"
             setCount={setWrinklyDoorCount}
-            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? (capRemoved ? 255 : 10) : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? (capRemoved ? 255 : 40) : wrinklyDoorItem == 5 ? (capRemoved ? 255 : 20) : wrinklyDoorItem == 6 ? (capRemoved ? 255 : 16) : wrinklyDoorItem == 7 ? (capRemoved ? 255 : 5) : wrinklyDoorItem == 8 ? 3500 : (capRemoved ? 255 : 201)}
+            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255}
           />
           <p>Number of the item needed for Forest:</p>
           <CountSelector
@@ -101,7 +100,7 @@ const SlamShuffler: React.FC = () => {
             storeKey="fungiForest"
             prefix="wrinklyDoors"
             setCount={setWrinklyDoorCount}
-            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? (capRemoved ? 255 : 10) : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? (capRemoved ? 255 : 40) : wrinklyDoorItem == 5 ? (capRemoved ? 255 : 20) : wrinklyDoorItem == 6 ? (capRemoved ? 255 : 16) : wrinklyDoorItem == 7 ? (capRemoved ? 255 : 5) : wrinklyDoorItem == 8 ? 3500 : (capRemoved ? 255 : 201)}
+            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255}
           />
           <p>Number of the item needed for Caves:</p>
           <CountSelector
@@ -110,7 +109,7 @@ const SlamShuffler: React.FC = () => {
             storeKey="crystalCaves"
             prefix="wrinklyDoors"
             setCount={setWrinklyDoorCount}
-            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? (capRemoved ? 255 : 10) : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? (capRemoved ? 255 : 40) : wrinklyDoorItem == 5 ? (capRemoved ? 255 : 20) : wrinklyDoorItem == 6 ? (capRemoved ? 255 : 16) : wrinklyDoorItem == 7 ? (capRemoved ? 255 : 5) : wrinklyDoorItem == 8 ? 3500 : (capRemoved ? 255 : 201)}
+            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255}
           />
           <p></p>
           <p></p>
@@ -121,7 +120,7 @@ const SlamShuffler: React.FC = () => {
             storeKey="creepyCastle"
             prefix="wrinklyDoors"
             setCount={setWrinklyDoorCount}
-            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? (capRemoved ? 255 : 10) : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? (capRemoved ? 255 : 40) : wrinklyDoorItem == 5 ? (capRemoved ? 255 : 20) : wrinklyDoorItem == 6 ? (capRemoved ? 255 : 16) : wrinklyDoorItem == 7 ? (capRemoved ? 255 : 5) : wrinklyDoorItem == 8 ? 3500 : (capRemoved ? 255 : 201)}
+            maxValue={wrinklyDoorItem == 1 ? 40 : wrinklyDoorItem == 2 ? 255 : wrinklyDoorItem == 3 ? 8 : wrinklyDoorItem == 4 ? 255 : wrinklyDoorItem == 5 ? 255 : wrinklyDoorItem == 6 ? 255 : wrinklyDoorItem == 7 ? 255 : wrinklyDoorItem == 8 ? 3500 : 255}
           />
           <p></p>
           <p></p>

@@ -1,5 +1,5 @@
 import useDonkStore from '../../store'
-
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 import keyIcon from '../../assets/images/key.png'
 
 type SimpleIconProps = {
@@ -9,7 +9,7 @@ type SimpleIconProps = {
 const SimpleKey: React.FC<SimpleIconProps> = (props) => {
   const value: boolean = useDonkStore((state) => state['key' + props.keyNum])
   const setKey = useDonkStore((state) => state.setKey)
-  const keysRequired = useDonkStore((state) => state.winCondition.bossKeys)
+  const keysRequired = useKRoolKontracts('Keys')
   const kRoolsChallenge = useDonkStore((state) => state.winCondition.kRoolChallenge)
   return (
     <>
