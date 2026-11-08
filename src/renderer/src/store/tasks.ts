@@ -23,18 +23,6 @@ export const initialTaskCount: TaskState = {
   taskCount8: 0
 }
 
-interface TaskSlice {
-  task1: Task
-  task2: Task
-  task3: Task
-  task4: Task
-  task5: Task
-  task6: Task
-  task7: Task
-  task8: Task
-  setTask: (index: number, name: string) => void
-}
-
 const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
   donkResetFns.add(() => set(initialTask))
   return {
