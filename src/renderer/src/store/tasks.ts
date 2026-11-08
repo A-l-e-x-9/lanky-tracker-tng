@@ -11,8 +11,7 @@ task: {
   task6: '',
   task7: '',
   task8: ''
-  }
-},
+  },
 taskCount: {
   taskCount1: 0,
   taskCount2: 0,
