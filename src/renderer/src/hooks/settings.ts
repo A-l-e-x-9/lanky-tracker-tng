@@ -148,7 +148,7 @@ export const useBean = (): boolean => {
  */
 export const usePoolBlueprints = (): boolean => {
   const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints))
-  const blueprintWinCon = useDonkStore(useShallow((state) => state.winCondition.blueprints))
+  const blueprintWinCon = useKRoolKontracts('Blueprints')
   const isKRoolChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))
   return kasplatsInRotation || ((blueprintWinCon || isKRoolChallenge) && !kasplatsInRotation)
 }
@@ -159,7 +159,7 @@ export const usePoolBlueprints = (): boolean => {
  */
 export const usePoolFairies = (): boolean => {
   const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies))
-  const fairyWinCon = useDonkStore(useShallow((state) => state.winCondition.fairies))
+  const fairyWinCon = useKRoolKontracts('Fairies')
   return fairiesInRotation || (fairyWinCon && !fairiesInRotation)
 }
 
@@ -183,7 +183,7 @@ export const useShuffleColoredBananas = (): boolean =>
  */
 export const usePoolKeys = (): boolean => {
   const keysInRotation = useDonkStore(useShallow((state) => state.settings.poolKeys))
-  const keyWinCon = useDonkStore(useShallow((state) => state.winCondition.bossKeys))
+  const keyWinCon = useKRoolKontracts('Keys')
   return keysInRotation || (keyWinCon && !keysInRotation)
 }
 
@@ -217,8 +217,8 @@ export const usePoolCrowns = (): boolean =>
  */
 export const usePoolBananaMedals = (): boolean => {
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals))
-  const medalWinCon = useDonkStore(useShallow((state) => state.winCondition.bananaMedals))
-  const bossWinCon = useDonkStore(useShallow((state) => state.winCondition.bosses))
+  const medalWinCon = useKRoolChallenge('Medals')
+  const bossWinCon = useKRoolChallenge('Bosses')
   const kRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))
   return medalsInRotation || ((medalWinCon || bossWinCon || kRoolsChallenge) && !medalsInRotation)
 }
@@ -229,13 +229,13 @@ export const usePoolBananaMedals = (): boolean => {
  */
 export const usePoolNintendoCoin = (): boolean => {
   const coinInRotation = useDonkStore(useShallow((state) => state.settings.poolNintendoCoin))
-  const coinWinCon = useDonkStore(useShallow((state) => state.winCondition.companyCoins))
+  const coinWinCon = useKRoolChallenge('Company Coins')
   return coinInRotation || (coinWinCon && !coinInRotation)
 }
 
 export const usePoolRarewareCoin = (): boolean => {
   const coinInRotation = useDonkStore(useShallow((state) => state.settings.poolRarewareCoin))
-  const coinWinCon = useDonkStore(useShallow((state) => state.winCondition.companyCoins))
+  const coinWinCon = useKRoolChallenge('Company Coins')
   return coinInRotation || (coinWinCon && !coinInRotation)
 }
   
@@ -280,7 +280,7 @@ export const useChunkySlamLevel = (): SlamRange =>
 export const useIslesBananaMedals = (): boolean => {
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolIslesMedals))
   const regularMedalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals))
-  const medalWinCon = useDonkStore(useShallow((state) => state.winCondition.bananaMedals))
+  const medalWinCon = useKRoolChallenge('Medals')
   return medalsInRotation || (medalWinCon && !regularMedalsInRotation)
 }
 
@@ -309,49 +309,6 @@ export const useHelmItem2 = (): number =>
   
 export const useWrinklyDoorItem = (): number =>
   useDonkStore(useShallow((state) => state.settings.wrinklyDoorItem))
-
-export const useKRoolItem = (): number => {
-const currentWinCon = useDonkStore(useShallow((state) => state.winCondition))
-if (currentWinCon.bossKeys) {
-  return 1
-} else if (currentWinCon.key8) {
-  return 2
-} else if (currentWinCon.key3And8) {
-  return 3
-} else if (currentWinCon.kremlingKapture) {
-  return 4
-} else if (currentWinCon.takeItToTheFridge) {
-  return 5
-} else if (currentWinCon.kRoolChallenge) {
-  return 6
-} else if (currentWinCon.killTheWabbit) {
-  return 7
-} else if (currentWinCon.goldBananas) {
-  return 8
-} else if (currentWinCon.blueprints) {
-  return 9
-} else if (currentWinCon.companyCoins) {
-  return 10
-} else if (currentWinCon.bananaMedals) {
-  return 11
-} else if (currentWinCon.crowns) {
-  return 12
-} else if (currentWinCon.fairies) {
-  return 13
-} else if (currentWinCon.rainbowCoins) {
-  return 14
-} else if (currentWinCon.theBean) {
-  return 15
-} else if (currentWinCon.pearls) {
-  return 16
-} else if (currentWinCon.bosses) {
-  return 17
-} else if (currentWinCon.bonuses) {
-  return 18
-} else {
-  return 0
-}
-}
   
 export const useHelmItemNum1 = (): number =>
   useDonkStore(useShallow((state) => state.settings.helmItemNum1))
