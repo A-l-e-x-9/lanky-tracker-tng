@@ -1,5 +1,4 @@
 import useDonkStore from '../../store'
-import { useShallow } from 'zustand/react/shallow'
 import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 type SimpleIconProps = {

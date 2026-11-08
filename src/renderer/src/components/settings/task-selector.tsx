@@ -230,7 +230,7 @@ const TaskSelector: React.FC<TaskSelectorProps> = ({ storeKey }) => {
           <CountSelector
             imgUrl={taskToIcon(task)}
             title="Number of this item you need to complete this task."
-            storeKey={taskNum}
+            storeKey={task}
             prefix="taskCount"
             setCount={setTaskCount}
             maxValue={255}

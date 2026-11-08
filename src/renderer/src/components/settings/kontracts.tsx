@@ -55,7 +55,9 @@ const Kontracts = (): JSX.Element => {
     </section>
   )
   } else {
-    return false
+    return (
+    <></>
+    )
   }
 }
 
