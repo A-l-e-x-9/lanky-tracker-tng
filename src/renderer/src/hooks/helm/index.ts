@@ -300,7 +300,7 @@ export const useTheFridge = (): boolean => {
   return hasAllKongs && hasCoconut && hasStrongKong && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasTrombone && hasMiniMonkey && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky
 }
 //Have we satisfied the conditions needed just for K. Rool to appear?
-export const useWinCondition = (): boolean => {
+/*export const useWinCondition = (): boolean => {
   const itemNeeded = useKRoolItem()
   const hasKey3 = useDonkStore(useShallow((state) => state.key3))
   const hasKey8 = useDonkStore(useShallow((state) => state.key8))
@@ -360,7 +360,7 @@ export const useWinCondition = (): boolean => {
     default:
       return true
   }
-}
+}*/
 
 export const useCanFightRool = (): LogicBool => {
   const num1 = useSingleRoolNum(1)

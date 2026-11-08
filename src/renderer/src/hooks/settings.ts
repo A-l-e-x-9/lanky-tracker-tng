@@ -217,8 +217,8 @@ export const usePoolCrowns = (): boolean =>
  */
 export const usePoolBananaMedals = (): boolean => {
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals))
-  const medalWinCon = useKRoolChallenge('Medals')
-  const bossWinCon = useKRoolChallenge('Bosses')
+  const medalWinCon = useKRoolKontracts('Medals')
+  const bossWinCon = useKRoolKontracts('Bosses')
   const kRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))
   return medalsInRotation || ((medalWinCon || bossWinCon || kRoolsChallenge) && !medalsInRotation)
 }
@@ -229,13 +229,13 @@ export const usePoolBananaMedals = (): boolean => {
  */
 export const usePoolNintendoCoin = (): boolean => {
   const coinInRotation = useDonkStore(useShallow((state) => state.settings.poolNintendoCoin))
-  const coinWinCon = useKRoolChallenge('Company Coins')
+  const coinWinCon = useKRoolKontracts('Company Coins')
   return coinInRotation || (coinWinCon && !coinInRotation)
 }
 
 export const usePoolRarewareCoin = (): boolean => {
   const coinInRotation = useDonkStore(useShallow((state) => state.settings.poolRarewareCoin))
-  const coinWinCon = useKRoolChallenge('Company Coins')
+  const coinWinCon = useKRoolKontracts('Company Coins')
   return coinInRotation || (coinWinCon && !coinInRotation)
 }
   
@@ -280,7 +280,7 @@ export const useChunkySlamLevel = (): SlamRange =>
 export const useIslesBananaMedals = (): boolean => {
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolIslesMedals))
   const regularMedalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals))
-  const medalWinCon = useKRoolChallenge('Medals')
+  const medalWinCon = useKRoolKontracts('Medals')
   return medalsInRotation || (medalWinCon && !regularMedalsInRotation)
 }
 
@@ -316,8 +316,8 @@ export const useHelmItemNum1 = (): number =>
 export const useHelmItemNum2 = (): number =>
   useDonkStore(useShallow((state) => state.settings.helmItemNum2))
 
-export const useKRoolItemNum = (): number =>
-  useDonkStore(useShallow((state) => state.winCondition.winConItemCount))
+/*export const useKRoolItemNum = (): number =>
+  useDonkStore(useShallow((state) => state.winCondition.winConItemCount))*/
 
 export const useForestTimeSwitches = (): boolean =>
   useDonkStore(useShallow((state) => state.settings.poolTime))

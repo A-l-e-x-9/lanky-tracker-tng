@@ -1,7 +1,8 @@
 import { StateCreator } from 'zustand'
-import { AllSlice, Task, TaskState, donkResetFns } from './common'
+import { AllSlice, TaskSlice, TaskState, donkResetFns } from './common'
 
 export const initialTask: TaskState = {
+task: {
   task1: '',
   task2: '',
   task3: '',
@@ -10,9 +11,11 @@ export const initialTask: TaskState = {
   task6: '',
   task7: '',
   task8: ''
+  }
 }
 
 export const initialTaskCount: TaskState = {
+taskCount: {
   taskCount1: 0,
   taskCount2: 0,
   taskCount3: 0,
@@ -21,6 +24,7 @@ export const initialTaskCount: TaskState = {
   taskCount6: 0,
   taskCount7: 0,
   taskCount8: 0
+  }
 }
 
 const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
