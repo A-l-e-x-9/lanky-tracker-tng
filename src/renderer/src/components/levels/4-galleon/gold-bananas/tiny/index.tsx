@@ -5,9 +5,10 @@ import MermaidReward from './Mermaid'
 import Tiny5Ship from './Ship'
 import TinySub from './Sub'
 import Tiny2Ship from './Switch'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const TinyBananas: React.FC = () => {
-const isPearlSeed = useDonkStore(useShallow((state) => state.winCondition.pearls)) ? 'foolish' : ''
+const isPearlSeed = useKRoolKontracts('Pearls') ? 'foolish' : ''
 const pearlsInRotation = useDonkStore(useShallow((state) => state.settings.poolPearls)) ? '' : 'foolish'
 return (
 <>

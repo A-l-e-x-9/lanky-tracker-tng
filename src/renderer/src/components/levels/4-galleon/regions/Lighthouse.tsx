@@ -9,9 +9,11 @@ import EnguardeChest from '../gold-bananas/lanky/Chest'
 import MermaidReward from '../gold-bananas/tiny/Mermaid'
 import DiddyKasplat from '../kasplats/Diddy'
 import EnguardeChests from '../breakable/Lighthouse'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const LighthouseChecks: React.FC = () => {
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>

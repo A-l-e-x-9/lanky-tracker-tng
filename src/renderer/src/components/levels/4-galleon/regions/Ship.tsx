@@ -6,9 +6,10 @@ import Diddy5Ship from '../gold-bananas/diddy/Ship'
 import Dk5Ship from '../gold-bananas/dk/Ship'
 import Lanky5Ship from '../gold-bananas/lanky/Ship'
 import Tiny5Ship from '../gold-bananas/tiny/Ship'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const FiveShipChecks: React.FC = () => {
-const isFairySeed = useDonkStore(useShallow((state) => state.winCondition.fairies)) ? 'foolish' : ''
+const isFairySeed = useKRoolKontracts('Fairies') ? 'foolish' : ''
 const fairiesInRotation = useDonkStore(useShallow((state) => state.settings.poolFairies)) ? '' : 'foolish'
 return (
   <>

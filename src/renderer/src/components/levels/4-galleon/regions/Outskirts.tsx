@@ -10,9 +10,11 @@ import Tiny2Ship from '../gold-bananas/tiny/Switch'
 import ChunkyKasplat from '../kasplats/Chunky'
 import Chests5DS from '../breakable/Outskirts'
 import Chests2DS from '../breakable/Lanky2DSRoom'
+import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 const OutskirtsChecks: React.FC = () => {
-const [isBlueprintSeed, isKRoolChallengeSeed] = useDonkStore(useShallow((state) => [state.winCondition.blueprints, state.winCondition.kRoolChallenge])) ? 'foolish' : ''
+const isBlueprintSeed = useKRoolKontracts('Blueprints') ? 'foolish' : ''
+const isKRoolChallengeSeed = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge)) ? 'foolish' : ''
 const kasplatsInRotation = useDonkStore(useShallow((state) => state.settings.poolBlueprints)) ? '' : 'foolish'
 return (
   <>
