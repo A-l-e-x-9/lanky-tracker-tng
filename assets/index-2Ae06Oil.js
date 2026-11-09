@@ -11777,16 +11777,14 @@ const wrinklyDoorSlice = (set) => {
   };
 };
 const initialTask = {
-  task: {
-    task1: "",
-    task2: "",
-    task3: "",
-    task4: "",
-    task5: "",
-    task6: "",
-    task7: "",
-    task8: ""
-  },
+  task1: "",
+  task2: "",
+  task3: "",
+  task4: "",
+  task5: "",
+  task6: "",
+  task7: "",
+  task8: "",
   taskCount: {
     taskCount1: 0,
     taskCount2: 0,
@@ -18925,7 +18923,7 @@ const useTroffAndScoff = (level) => {
   return 0;
 };
 const useKRoolKontracts = (task) => {
-  const [task1, task2, task3, task4, task5, task6, task7, task8] = useDonkStore(useShallow((state) => [state.task.task1, state.task.task2, state.task.task3, state.task.task4, state.task.task5, state.task.task6, state.task.task7, state.task.task8]));
+  const [task1, task2, task3, task4, task5, task6, task7, task8] = useDonkStore(useShallow((state) => [state.task1, state.task2, state.task3, state.task4, state.task5, state.task6, state.task7, state.task8]));
   if (task1 === task) {
     return true;
   }
@@ -53899,6 +53897,9 @@ const useCanDeactivateHelm = () => {
     };
   }
 };
+const useKontracts = () => {
+  return false;
+};
 const useWinCondition = () => {
   const key38WinCon = useDonkStore(useShallow((state) => state.winCondition.key3And8));
   const challengeWinCon = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge));
@@ -53908,12 +53909,13 @@ const useWinCondition = () => {
   const currentKeyCount = useCurrentKeyCount();
   const currentBossCount = useCurrentBossCount();
   const currentBonusCount = useCurrentBonusCount();
+  const kontracts = useKontracts();
   if (key38WinCon) {
     return hasKey3 && hasKey8;
   } else if (challengeWinCon) {
     return currentKeyCount >= 8 && currentBlueprintCount >= 40 && currentBossCount >= 7 && currentBonusCount >= 43;
   } else {
-    return false;
+    return kontracts;
   }
 };
 const useCanFightRool = () => {
@@ -55755,7 +55757,7 @@ const BossSelector = ({ storeKey }) => {
   const [boss, setBoss] = useDonkStore(
     useShallow((state) => [state[storeKey], state.setBoss])
   );
-  const bossNum = Number.parseInt(storeKey.slice(4), 13);
+  const bossNum = Number.parseInt(storeKey.slice(4), 10);
   const handleNextBoss = () => {
     setBoss(bossNum, nextBoss(boss));
   };
@@ -60405,7 +60407,7 @@ const TaskSelector = ({ storeKey }) => {
   const [task, setTask] = useDonkStore(
     useShallow((state) => [state[storeKey], state.setTask])
   );
-  const taskNum = Number.parseInt(storeKey.slice(4), 23);
+  const taskNum = Number.parseInt(storeKey.slice(4), 10);
   const handleNextTask = () => {
     setTask(taskNum, nextTask(task));
   };
