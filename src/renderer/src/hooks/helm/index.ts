@@ -1,6 +1,5 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
-import { Task } from '@renderer/store/common'
 import {
   useSingleHelmCheck,
   useSingleHelmNum,
@@ -301,7 +300,7 @@ export const useTheFridge = (): boolean => {
   return hasAllKongs && hasCoconut && hasStrongKong && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasTrombone && hasMiniMonkey && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky
 }
 
-export const useKontracts = (Task): boolean => {
+export const useKontracts = (): boolean => {
   const [task1, task2, task3, task4, task5, task6, task7, task8] = useDonkStore(useShallow((state) => [state.task1, state.task2, state.task3, state.task4, state.task5, state.task6, state.task7, state.task8]))
   const [taskCount1, taskCount2, taskCount3, taskCount4, taskCount5, taskCount6, taskCount7, taskCount8] = useDonkStore(useShallow((state) => [state.taskCount.taskCount1, state.taskCount.taskCount2, state.taskCount.taskCount3, state.taskCount.taskCount4, state.taskCount.taskCount5, state.taskCount.taskCount6, state.taskCount.taskCount7, state.taskCount.taskCount8]))
   const taskList = [task1, task2, task3, task4, task5, task6, task7, task8]
