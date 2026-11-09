@@ -1011,7 +1011,7 @@ export type WinConSlice = WinConState & WinConActions
 //#endregion
 
 //Begin K. Rool Kontracts region
-interface taskCountCollection {
+export interface taskCountCollection {
   taskCount1: TroffAndScoffRange
   taskCount2: TroffAndScoffRange
   taskCount3: TroffAndScoffRange

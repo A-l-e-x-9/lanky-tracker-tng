@@ -1,5 +1,5 @@
 import { StateCreator } from 'zustand'
-import { AllSlice, Task, TaskState, donkResetFns } from './common'
+import { AllSlice, Task, TaskState, TaskCountCollection, donkResetFns } from './common'
 
 export const initialTask: TaskState = {
   task1: '',
@@ -31,7 +31,9 @@ interface TaskSlice {
   task6: Task
   task7: Task
   task8: Task
+  taskCount: taskCountCollection
   setTask: (index: number, name: string) => void
+  setTaskCount: (id: string, val: number) => void
 }
 
 const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
