@@ -301,6 +301,7 @@ export const useTheFridge = (): boolean => {
 }
 
 export const useKontracts = (): boolean => {
+  return false
 }
 
 //Have we satisfied the conditions needed just for K. Rool to appear?
