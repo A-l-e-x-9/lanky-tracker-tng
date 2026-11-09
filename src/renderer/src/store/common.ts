@@ -1032,7 +1032,7 @@ export interface TaskState {
 
 interface TaskActions {
   setTask: (index: number, name: Task) => void
-  setTaskCount: (index: number, val: number) => void
+  setTaskCount: (id: string, val: number) => void
 }
 
 export type TaskSlice = TaskState & TaskActions

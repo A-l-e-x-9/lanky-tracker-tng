@@ -38,7 +38,7 @@ interface TaskSlice {
   taskCount7: number
   taskCount8: number
   setTask: (index: number, name: string) => void
-  setTaskCount: (index: number, val: number) => void
+  setTaskCount: (id: string, val: number) => void
 }
 
 const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
@@ -55,16 +55,20 @@ const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
         }
         return state
       }),
-    setTaskCount: (index, val) =>
+    setTaskCount: (id, val): void => {
       set((state) => {
-        const newKey: Record<number, number> = {}
-        newKey['taskCount' + index] = val
+        const target: Record<string, number> = {}
+        target[id] = val
         state = {
           ...state,
-          ...newKey
+          taskCount: {
+            ...state.taskCount,
+            ...target
+          }
         }
         return state
       })
+    }
   }
 }
 
