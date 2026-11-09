@@ -31,9 +31,7 @@ interface TaskSlice {
   task6: Task
   task7: Task
   task8: Task
-  taskCount: taskCountCollection
-  setBoss: (index: number, name: string) => void
-  setTaskCount: (id: string, val: number) => void
+  setTask: (index: number, name: string) => void
 }
 
 const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
