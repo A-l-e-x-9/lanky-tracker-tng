@@ -11940,6 +11940,14 @@ const useAnyKong = () => {
   const chunky = useChunky();
   return dk2 || diddy || lanky || tiny || chunky;
 };
+const useAllKongs = () => {
+  const dk2 = useDk();
+  const diddy = useDiddy();
+  const lanky = useLanky();
+  const tiny = useTiny();
+  const chunky = useChunky();
+  return dk2 && diddy && lanky && tiny && chunky;
+};
 const useHighGrab = () => {
   const diddy = useDiddy();
   const lanky = useLanky();
@@ -18438,6 +18446,15 @@ const useCurrentBossCount = () => {
 const useCurrentBonusCount = () => {
   const [didCheck] = useDonkStore(useShallow((state) => [state.checks]));
   return Number(didCheck[10]) + Number(didCheck[12]) + Number(didCheck[23]) + Number(didCheck[32]) + Number(didCheck[43]) + Number(didCheck[1021]) + Number(didCheck[1022]) + Number(didCheck[1031]) + Number(didCheck[1042]) + Number(didCheck[2002]) + Number(didCheck[2021]) + Number(didCheck[2022]) + Number(didCheck[2042]) + Number(didCheck[2043]) + Number(didCheck[3010]) + Number(didCheck[3012]) + Number(didCheck[3020]) + Number(didCheck[3033]) + Number(didCheck[3042]) + Number(didCheck[4004]) + Number(didCheck[4011]) + Number(didCheck[4013]) + Number(didCheck[4021]) + Number(didCheck[4031]) + Number(didCheck[4032]) + Number(didCheck[4043]) + Number(didCheck[5001]) + Number(didCheck[5004]) + Number(didCheck[5010]) + Number(didCheck[5011]) + Number(didCheck[5021]) + Number(didCheck[5030]) + Number(didCheck[6001]) + Number(didCheck[6010]) + Number(didCheck[6030]) + Number(didCheck[6043]) + Number(didCheck[7010]) + Number(didCheck[7011]) + Number(didCheck[7020]) + Number(didCheck[7023]) + Number(didCheck[7033]) + Number(didCheck[7040]) + Number(didCheck[7043]);
+};
+const useKremKaptureEnemyCount = () => {
+  const [didCheck] = useDonkStore(useShallow((state) => [state.checks]));
+  return Number(didCheck[9e3]) + Number(didCheck[9001]) + Number(didCheck[9002]) + Number(didCheck[9003]) + Number(didCheck[9004]) + Number(didCheck[9005]) + Number(didCheck[9006]) + Number(didCheck[9007]) + Number(didCheck[9008]) + Number(didCheck[9009]) + Number(didCheck[9010]) + Number(didCheck[9011]) + Number(didCheck[9012]) + Number(didCheck[9013]) + Number(didCheck[9014]) + Number(didCheck[9015]) + Number(didCheck[9016]) + Number(didCheck[9017]) + Number(didCheck[9018]) + Number(didCheck[9019]) + Number(didCheck[9020]) + Number(didCheck[9021]) + Number(didCheck[9022]) + Number(didCheck[9023]) + Number(didCheck[9024]) + Number(didCheck[9025]) + Number(didCheck[9026]) + Number(didCheck[9027]) + Number(didCheck[9028]) + Number(didCheck[9029]) + Number(didCheck[9030]) + Number(didCheck[9031]) + Number(didCheck[9032]) + Number(didCheck[9033]) + Number(didCheck[9034]) + Number(didCheck[9035]) + Number(didCheck[9036]) + Number(didCheck[9037]) + Number(didCheck[9038]) + Number(didCheck[9039]) + Number(didCheck[9040]) + Number(didCheck[9041]);
+};
+const useCurrentBlastCount = () => {
+  const [didCheck] = useDonkStore(useShallow((state) => [state.checks]));
+  const canEnterTree = useCastleTree();
+  return Number(didCheck[1004]) + Number(didCheck[2001]) + Number(didCheck[3003]) + Number(didCheck[4002]) + Number(didCheck[5001]) + Number(didCheck[6001]) + Number(canEnterTree);
 };
 const useCurrentCBCount = () => {
   const islesCBs = useDkMedalInLogic$7() + useDiddyMedalInLogic$7() + useLankyMedalInLogic$7() + useTinyMedalInLogic$7() + useChunkyMedalInLogic$7();
@@ -53897,8 +53914,60 @@ const useCanDeactivateHelm = () => {
     };
   }
 };
+const useTheFridge = () => {
+  const hasAllKongs = useAllKongs();
+  const hasCoconut = useCoconut();
+  const hasStrongKong = useStrong();
+  const hasPeanut = usePeanut();
+  const hasGrapes = useGrape();
+  const hasPineapple = usePineapple();
+  const hasGuitar = useGuitar();
+  const hasOStand = useStand();
+  const hinaKagiyama = useTwirl();
+  const hasJetbarrel = useRocket();
+  const hasTrombone = useTrombone();
+  const hasMiniMonkey = useMini();
+  const inflation = useBalloon();
+  const hasOranges = useOrange();
+  const hasClimbing = useClimbing();
+  const hasBarrels = useBarrel();
+  const hasCranky = useCranky();
+  return hasAllKongs && hasCoconut && hasStrongKong && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasTrombone && hasMiniMonkey && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky;
+};
 const useKontracts = () => {
-  return false;
+  const [task1, task2, task3, task4, task5, task6, task7, task8] = useDonkStore(useShallow((state) => [state.task1, state.task2, state.task3, state.task4, state.task5, state.task6, state.task7, state.task8]));
+  const [taskCount1, taskCount2, taskCount3, taskCount4, taskCount5, taskCount6, taskCount7, taskCount8] = useDonkStore(useShallow((state) => [state.taskCount.taskCount1, state.taskCount.taskCount2, state.taskCount.taskCount3, state.taskCount.taskCount4, state.taskCount.taskCount5, state.taskCount.taskCount6, state.taskCount.taskCount7, state.taskCount.taskCount8]));
+  const taskList = [task1, task2, task3, task4, task5, task6, task7, task8];
+  const taskCountList = [taskCount1, taskCount2, taskCount3, taskCount4, taskCount5, taskCount6, taskCount7, taskCount8];
+  let [winCon1, winCon2, winCon3, winCon4, winCon5, winCon6, winCon7, winCon8] = [false, false, false, false, false, false, false, false];
+  const winCon = [winCon1, winCon2, winCon3, winCon4, winCon5, winCon6, winCon7, winCon8];
+  const currentKeyCount = useCurrentKeyCount();
+  const kaptures = useKremKaptureEnemyCount();
+  const currentGBCount = useCurrentGBCount();
+  const currentBPCount = useCurrentBlueprintCount();
+  const currentCoCoinCount = useCurrentCoCoinCount();
+  const currentMedalCount = useCurrentBananaMedalCount();
+  const currentCrownCount = useCurrentCrownCount();
+  const currentFairyCount = useCurrentFairyCount();
+  const currentRainbowCoinCount = useCurrentRainbowCoinCount();
+  const currentBeanCount = useBean$1();
+  const currentPearlCount = useCurrentPearlCount();
+  const currentBossCount = useCurrentBossCount();
+  const currentBonusCount = useCurrentBonusCount();
+  const currentBlastCount = useCurrentBlastCount();
+  const hasKey8 = useDonkStore(useShallow((state) => state.key8));
+  const [didCheck] = useDonkStore(useShallow((state) => [state.checks]));
+  const didTheFridge = useTheFridge();
+  for (let i = 0; i < taskList.length; i++) {
+    if (taskList[i] === "" || taskList[i] === "Keys" && currentKeyCount >= taskCountList[i] || taskList[i] === "Kremling Kapture" && kaptures >= taskCountList[i] || taskList[i] === "Golden Bananas" && currentGBCount >= taskCountList[i] || taskList[i] === "Blueprints" && currentBPCount >= taskCountList[i] || taskList[i] === "Company Coins" && currentCoCoinCount >= taskCountList[i] || taskList[i] === "Medals" && currentMedalCount >= taskCountList[i] || taskList[i] === "Crowns" && currentCrownCount >= taskCountList[i] || taskList[i] === "Fairies" && currentFairyCount >= taskCountList[i] || taskList[i] === "Rainbow Coins" && currentRainbowCoinCount >= taskCountList[i] || taskList[i] === "The Bean™" && Number(currentBeanCount) >= taskCountList[i] || taskList[i] === "Pearls" && currentPearlCount >= taskCountList[i] || taskList[i] === "Bosses" && currentBossCount >= taskCountList[i] || taskList[i] === "Bonus Levels" && currentBonusCount >= taskCountList[i] || taskList[i] === "Barrel Blast Courses" && currentBlastCount >= taskCountList[i] || taskList[i] === "Get Key 8 only" && hasKey8 || taskList[i] === "Kill the Wabbit" && didCheck[6042] || taskList[i] === "Complete the DK Rap" && didTheFridge || taskList[i] === "Take Down the Mechfish Agenda" && didCheck[4012] || taskList[i] === "Round 2 of DK Arcade" && didCheck[3005] || taskList[i] === "Jetpac" && didCheck[105] || taskList[i] === "Defeat the Toy Monster" && didCheck[3040] || taskList[i] === "Get the Rareware Banana" && didCheck[47]) {
+      winCon[i] = true;
+    }
+  }
+  if (taskList[0] === "" && taskList[1] === "" && taskList[2] === "" && taskList[3] === "" && taskList[4] === "" && taskList[5] === "" && taskList[6] === "" && taskList[7] === "") {
+    return false;
+  } else {
+    return winCon[0] && winCon[1] && winCon[2] && winCon[3] && winCon[4] && winCon[5] && winCon[6] && winCon[7];
+  }
 };
 const useWinCondition = () => {
   const key38WinCon = useDonkStore(useShallow((state) => state.winCondition.key3And8));
@@ -54597,7 +54666,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -1,
+        id: 9e3,
         name: "Gnawty",
         canGetLogic: hasFairyCam
       }
@@ -54605,7 +54674,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -2,
+        id: 9001,
         name: "Gold Gnawty",
         canGetLogic: hasFairyCam
       }
@@ -54613,7 +54682,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -3,
+        id: 9002,
         name: "Kritter",
         canGetLogic: hasFairyCam
       }
@@ -54621,7 +54690,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -4,
+        id: 9003,
         name: "Stinging Zinger",
         canGetLogic: hasFairyCam
       }
@@ -54629,7 +54698,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -5,
+        id: 9004,
         name: "Orange-Throwing Zinger",
         canGetLogic: hasFairyCam
       }
@@ -54637,7 +54706,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -6,
+        id: 9005,
         name: "Green Klaptrap",
         canGetLogic: hasFairyCam
       }
@@ -54645,7 +54714,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -7,
+        id: 9006,
         name: "Red Klaptrap",
         canGetLogic: hasFairyCam
       }
@@ -54653,7 +54722,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -8,
+        id: 9007,
         name: "Purple Klaptrap",
         canGetLogic: hasFairyCam
       }
@@ -54661,7 +54730,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -9,
+        id: 9008,
         name: "Klump",
         canGetLogic: hasFairyCam
       }
@@ -54669,7 +54738,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -10,
+        id: 9009,
         name: "Klobber",
         canGetLogic: hasFairyCam
       }
@@ -54677,7 +54746,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -11,
+        id: 9010,
         name: "Kaboom",
         canGetLogic: hasFairyCam
       }
@@ -54685,7 +54754,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -12,
+        id: 9011,
         name: "Puftup",
         canGetLogic: hasFairyCam && hasDiving.in,
         canGetBreak: hasFairyCam && hasDiving.out
@@ -54694,7 +54763,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -13,
+        id: 9012,
         name: "Shuri",
         canGetLogic: hasFairyCam && hasDiving.in,
         canGetBreak: hasFairyCam && hasDiving.out
@@ -54703,7 +54772,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -14,
+        id: 9013,
         name: 'Scubi/"Gimpfish"',
         canGetLogic: hasFairyCam && hasDiving.in,
         canGetBreak: hasFairyCam && hasDiving.out
@@ -54712,7 +54781,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -15,
+        id: 9014,
         name: "Mecha-Zinger",
         canGetLogic: hasFairyCam
       }
@@ -54720,7 +54789,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -16,
+        id: 9015,
         name: "Mecha-Kritter",
         canGetLogic: hasFairyCam
       }
@@ -54728,7 +54797,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -17,
+        id: 9016,
         name: "Domino",
         canGetLogic: hasFairyCam
       }
@@ -54736,7 +54805,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -18,
+        id: 9017,
         name: "Red Dice",
         canGetLogic: hasFairyCam
       }
@@ -54744,7 +54813,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -19,
+        id: 9018,
         name: "Green Dice",
         canGetLogic: hasFairyCam
       }
@@ -54752,7 +54821,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -20,
+        id: 9019,
         name: "Wooden plank/ruler",
         canGetLogic: hasFairyCam
       }
@@ -54760,7 +54829,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -21,
+        id: 9020,
         name: "Kosha",
         canGetLogic: hasFairyCam
       }
@@ -54768,7 +54837,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -22,
+        id: 9021,
         name: "Spider",
         canGetLogic: hasFairyCam
       }
@@ -54776,7 +54845,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -23,
+        id: 9022,
         name: "Purple Bat",
         canGetLogic: hasFairyCam
       }
@@ -54784,7 +54853,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -24,
+        id: 9023,
         name: "Big Bug Bash Fly",
         canGetLogic: hasFairyCam
       }
@@ -54792,7 +54861,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -25,
+        id: 9024,
         name: "Mushroom Kritter",
         canGetLogic: hasFairyCam
       }
@@ -54800,7 +54869,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -26,
+        id: 9025,
         name: "Kritter Skeleton",
         canGetLogic: hasFairyCam
       }
@@ -54808,7 +54877,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -27,
+        id: 9026,
         name: "Flame from that damn Chunky 5-Door Igloo check with the wabbit",
         canGetLogic: hasFairyCam
       }
@@ -54816,7 +54885,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -28,
+        id: 9027,
         name: '""""""""""Ghost"""""""""" Kritter in a sheet',
         canGetLogic: hasFairyCam
       }
@@ -54824,7 +54893,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -29,
+        id: 9028,
         name: "DK's blonde Kasplat",
         canGetLogic: hasFairyCam
       }
@@ -54832,7 +54901,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -30,
+        id: 9029,
         name: "Diddy's ginger Kasplat",
         canGetLogic: hasFairyCam
       }
@@ -54840,7 +54909,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -31,
+        id: 9030,
         name: "Lanky's blue-haired Kasplat",
         canGetLogic: hasFairyCam
       }
@@ -54848,7 +54917,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -32,
+        id: 9031,
         name: "Tiny's purple-haired Kasplat",
         canGetLogic: hasFairyCam
       }
@@ -54856,7 +54925,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -33,
+        id: 9032,
         name: "Chunky's green-haired Kasplat",
         canGetLogic: hasFairyCam
       }
@@ -54864,7 +54933,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -34,
+        id: 9033,
         name: "White Kop (the classic)",
         canGetLogic: hasFairyCam
       }
@@ -54872,7 +54941,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -35,
+        id: 9034,
         name: "Orange Kop (disables Tag Anywhere)",
         canGetLogic: hasFairyCam
       }
@@ -54880,7 +54949,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -36,
+        id: 9035,
         name: "Green Kop (disables the Z Button)",
         canGetLogic: hasFairyCam
       }
@@ -54888,7 +54957,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -37,
+        id: 9036,
         name: "Blue Kop (disables the A Button)",
         canGetLogic: hasFairyCam
       }
@@ -54896,7 +54965,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -38,
+        id: 9037,
         name: "Black Kop (slams you with a 10-second instakill Kroc)",
         canGetLogic: hasFairyCam
       }
@@ -54904,7 +54973,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -39,
+        id: 9038,
         name: "Currently unknown enemy",
         canGetLogic: hasFairyCam
       }
@@ -54912,7 +54981,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -40,
+        id: 9039,
         name: "Currently unknown enemy",
         canGetLogic: hasFairyCam
       }
@@ -54920,7 +54989,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -41,
+        id: 9040,
         name: "Currently unknown enemy",
         canGetLogic: hasFairyCam
       }
@@ -54928,7 +54997,7 @@ const KremKapture = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       KKCheck,
       {
-        id: -42,
+        id: 9041,
         name: "Currently unknown enemy",
         canGetLogic: hasFairyCam
       }
