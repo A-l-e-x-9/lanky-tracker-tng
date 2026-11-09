@@ -1,5 +1,5 @@
 import { StateCreator } from 'zustand'
-import { AllSlice, Task, TaskState, TaskCountCollection, donkResetFns } from './common'
+import { AllSlice, Task, TaskState, taskCountCollection, donkResetFns } from './common'
 
 export const initialTask: TaskState = {
   task1: '',
