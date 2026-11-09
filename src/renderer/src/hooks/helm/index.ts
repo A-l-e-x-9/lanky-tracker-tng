@@ -299,6 +299,10 @@ export const useTheFridge = (): boolean => {
   const hasCranky = useCranky()
   return hasAllKongs && hasCoconut && hasStrongKong && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasTrombone && hasMiniMonkey && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky
 }
+
+export const useKontracts = (): boolean => {
+}
+
 //Have we satisfied the conditions needed just for K. Rool to appear?
 export const useWinCondition = (): boolean => {
   const key38WinCon = useDonkStore(useShallow((state) => state.winCondition.key3And8))
@@ -309,13 +313,14 @@ export const useWinCondition = (): boolean => {
   const currentKeyCount = useCurrentKeyCount()
   const currentBossCount = useCurrentBossCount()
   const currentBonusCount = useCurrentBonusCount()
+  const kontracts = useKontracts()
   
   if (key38WinCon) {
       return hasKey3 && hasKey8
   } else if (challengeWinCon) {
       return (currentKeyCount >= 8) && (currentBlueprintCount >= 40) && (currentBossCount >= 7) && (currentBonusCount >= 43) //Can't currently account for the Helm Bonuses
   } else {
-    return false /*Task shit. To be done later*/
+    return kontracts
   }
 }
 

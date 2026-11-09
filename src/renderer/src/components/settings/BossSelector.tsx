@@ -233,7 +233,7 @@ const BossSelector: React.FC<BossSelectorProps> = ({ storeKey }) => {
   const [boss, setBoss] = useDonkStore(
     useShallow((state) => [state[storeKey] as Boss, state.setBoss])
   )
-  const bossNum = Number.parseInt(storeKey.slice(4), 13)
+  const bossNum = Number.parseInt(storeKey.slice(4), 10)
 
   const handleNextBoss = (): void => {
     setBoss(bossNum, nextBoss(boss))

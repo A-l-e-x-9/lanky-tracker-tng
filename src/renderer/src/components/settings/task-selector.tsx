@@ -180,7 +180,7 @@ const TaskSelector: React.FC<TaskSelectorProps> = ({ storeKey }) => {
     useShallow((state) => [state[storeKey] as Task, state.setTask])
   )
 
-  const taskNum = Number.parseInt(storeKey.slice(4), 23)
+  const taskNum = Number.parseInt(storeKey.slice(4), 10)
 
   const handleNextTask = (): void => {
     setTask(taskNum, nextTask(task))
