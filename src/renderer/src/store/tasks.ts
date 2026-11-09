@@ -10,14 +10,16 @@ export const initialTask: TaskState = {
   task6: '',
   task7: '',
   task8: '',
-  taskCount1: 0,
-  taskCount2: 0,
-  taskCount3: 0,
-  taskCount4: 0,
-  taskCount5: 0,
-  taskCount6: 0,
-  taskCount7: 0,
-  taskCount8: 0,
+  taskCount: {
+    taskCount1: 0,
+    taskCount2: 0,
+    taskCount3: 0,
+    taskCount4: 0,
+    taskCount5: 0,
+    taskCount6: 0,
+    taskCount7: 0,
+    taskCount8: 0
+  }
 }
 
 interface TaskSlice {
@@ -29,15 +31,8 @@ interface TaskSlice {
   task6: Task
   task7: Task
   task8: Task
-  taskCount1: number
-  taskCount2: number
-  taskCount3: number
-  taskCount4: number
-  taskCount5: number
-  taskCount6: number
-  taskCount7: number
-  taskCount8: number
-  setTask: (index: number, name: string) => void
+  taskCount: taskCountCollection
+  setBoss: (index: number, name: string) => void
   setTaskCount: (id: string, val: number) => void
 }
 

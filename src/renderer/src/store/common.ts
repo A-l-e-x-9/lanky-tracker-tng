@@ -1011,6 +1011,17 @@ export type WinConSlice = WinConState & WinConActions
 //#endregion
 
 //Begin K. Rool Kontracts region
+interface taskCountCollection {
+  taskCount1: TroffAndScoffRange
+  taskCount2: TroffAndScoffRange
+  taskCount3: TroffAndScoffRange
+  taskCount4: TroffAndScoffRange
+  taskCount5: TroffAndScoffRange
+  taskCount6: TroffAndScoffRange
+  taskCount7: TroffAndScoffRange
+  taskCount8: TroffAndScoffRange
+}
+
 export interface TaskState {
   task1: Task
   task2: Task
@@ -1020,14 +1031,7 @@ export interface TaskState {
   task6: Task
   task7: Task
   task8: Task
-  taskCount1: TroffAndScoffRange
-  taskCount2: TroffAndScoffRange
-  taskCount3: TroffAndScoffRange
-  taskCount4: TroffAndScoffRange
-  taskCount5: TroffAndScoffRange
-  taskCount6: TroffAndScoffRange
-  taskCount7: TroffAndScoffRange
-  taskCount8: TroffAndScoffRange
+  taskCount: taskCountCollection
 }
 
 interface TaskActions {
