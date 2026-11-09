@@ -1,8 +1,7 @@
 import { StateCreator } from 'zustand'
-import { AllSlice, TaskSlice, TaskState, donkResetFns } from './common'
+import { AllSlice, Task, TaskState, donkResetFns } from './common'
 
 export const initialTask: TaskState = {
-task: {
   task1: '',
   task2: '',
   task3: '',
@@ -10,9 +9,6 @@ task: {
   task5: '',
   task6: '',
   task7: '',
-  task8: ''
-  },
-taskCount: {
   taskCount1: 0,
   taskCount2: 0,
   taskCount3: 0,
@@ -20,8 +16,28 @@ taskCount: {
   taskCount5: 0,
   taskCount6: 0,
   taskCount7: 0,
-  taskCount8: 0
-  }
+  taskCount8: 0,
+}
+
+interface TaskSlice {
+  task1: Task
+  task2: Task
+  task3: Task
+  task4: Task
+  task5: Task
+  task6: Task
+  task7: Task
+  task8: Task
+  taskCount1: number
+  taskCount2: number
+  taskCount3: number
+  taskCount4: number
+  taskCount5: number
+  taskCount6: number
+  taskCount7: number
+  taskCount8: number
+  setTask: (index: number, name: string) => void
+  setTaskCount: (index: number, val: number) => void
 }
 
 const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
@@ -38,20 +54,16 @@ const taskSlice: StateCreator<AllSlice, [], [], TaskSlice> = (set) => {
         }
         return state
       }),
-    setTaskCount: (id, val): void => {
+    setTaskCount: (index, val) =>
       set((state) => {
-        const target: Record<string, number> = {}
-        target[id] = val
+        const newKey: Record<number, number> = {}
+        newKey['taskCount' + index] = val
         state = {
           ...state,
-          taskCount: {
-            ...state.taskCount,
-            ...target
-          }
+          ...newKey
         }
         return state
       })
-    }
   }
 }
 
