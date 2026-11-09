@@ -9,6 +9,7 @@ export const initialTask: TaskState = {
   task5: '',
   task6: '',
   task7: '',
+  task8: '',
   taskCount1: 0,
   taskCount2: 0,
   taskCount3: 0,
