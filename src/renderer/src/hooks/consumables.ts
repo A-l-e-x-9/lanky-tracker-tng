@@ -40,6 +40,7 @@ import { useDiddyMedalInLogic as castleDiddy } from '@renderer/hooks/castle/meda
 import { useLankyMedalInLogic as castleLanky } from '@renderer/hooks/castle/medals/lanky'
 import { useTinyMedalInLogic as castleTiny } from '@renderer/hooks/castle/medals/tiny'
 import { useChunkyMedalInLogic as castleChunky } from '@renderer/hooks/castle/medals/chunky'
+import { useCastleTree } from '@renderer/hooks/castle'
 
 /**
  * How many banana medals do we actually have?
@@ -98,9 +99,14 @@ return Number(didCheck[10]) + Number(didCheck[12]) + Number(didCheck[23]) + Numb
 
 export const useKremKaptureEnemyCount = (): number => {
 const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
-return + Number(didCheck[-42]) + Number(didCheck[-41]) + Number(didCheck[-40]) + Number(didCheck[-39]) + Number(didCheck[-38]) + Number(didCheck[-37]) + Number(didCheck[-36]) + Number(didCheck[-35]) + Number(didCheck[-34]) + Number(didCheck[-33]) + Number(didCheck[-32]) + Number(didCheck[-31]) + Number(didCheck[-30]) + Number(didCheck[-29]) + Number(didCheck[-28]) + Number(didCheck[-27]) + Number(didCheck[-26]) + Number(didCheck[-25]) + Number(didCheck[-24]) + Number(didCheck[-23]) + Number(didCheck[-22]) + Number(didCheck[-21]) + Number(didCheck[-20]) + Number(didCheck[-19]) + Number(didCheck[-18]) + Number(didCheck[-17]) + Number(didCheck[-16]) + Number(didCheck[-15]) + Number(didCheck[-14]) + Number(didCheck[-13]) + Number(didCheck[-12]) + Number(didCheck[-11]) + Number(didCheck[-10]) + Number(didCheck[-9]) + Number(didCheck[-8]) + Number(didCheck[-7]) + Number(didCheck[-6]) + Number(didCheck[-5]) + Number(didCheck[-4]) + Number(didCheck[-3]) + Number(didCheck[-2]) + Number(didCheck[-1]) //What a pain in the ass. There's GOT to be a better way to do the above three!!! >_<;
+return Number(didCheck[9000]) + Number(didCheck[9001]) + Number(didCheck[9002]) + Number(didCheck[9003]) + Number(didCheck[9004]) + Number(didCheck[9005]) + Number(didCheck[9006]) + Number(didCheck[9007]) + Number(didCheck[9008]) + Number(didCheck[9009]) + Number(didCheck[9010]) + Number(didCheck[9011]) + Number(didCheck[9012]) + Number(didCheck[9013]) + Number(didCheck[9014]) + Number(didCheck[9015]) + Number(didCheck[9016]) + Number(didCheck[9017]) + Number(didCheck[9018]) + Number(didCheck[9019]) + Number(didCheck[9020]) + Number(didCheck[9021]) + Number(didCheck[9022]) + Number(didCheck[9023]) + Number(didCheck[9024]) + Number(didCheck[9025]) + Number(didCheck[9026]) + Number(didCheck[9027]) + Number(didCheck[9028]) + Number(didCheck[9029]) + Number(didCheck[9030]) + Number(didCheck[9031]) + Number(didCheck[9032]) + Number(didCheck[9033]) + Number(didCheck[9034]) + Number(didCheck[9035]) + Number(didCheck[9036]) + Number(didCheck[9037]) + Number(didCheck[9038]) + Number(didCheck[9039]) + Number(didCheck[9040]) + Number(didCheck[9041]) //What a pain in the ass. There's GOT to be a better way to do the above three!!! >_<;
 }
 
+export const useCurrentBlastCount = (): number => {
+const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
+const canEnterTree = useCastleTree()
+return Number(didCheck[1004]) + Number(didCheck[2001]) + Number(didCheck[3003]) + Number(didCheck[4002]) + Number(didCheck[5001]) + Number(didCheck[6001]) + Number(canEnterTree) //Kind of a flawed way to check if you did the Blast courses, because: you don't need to get the Llama's GB, what will you do if you don't have Fast Arcade on for Factory, you don't need to actually visit the Seal after freeing him, and "useCastleTree" has a DK Portal check, so if you got lucky and got a Portal in the Tree, "canEnterTree" will return 1 (the Tree has eight checks counting Dropsanity and Balloons, so I couldn't tie Castle's Blast course to just one). Will likely need the GitHub AI assistant's help to refine this...
+}
 export const useCurrentCBCount = (): number => {
   const islesCBs = islesDK() + islesDiddy() + islesLanky() + islesTiny() + islesChunky()
   const japesCBs = japesDK() + japesDiddy() + japesLanky() + japesTiny() + japesChunky()

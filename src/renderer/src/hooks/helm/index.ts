@@ -1,12 +1,13 @@
 import { useShallow } from 'zustand/react/shallow'
 import useDonkStore from '@renderer/store'
+import { Task } from '@renderer/store/common'
 import {
   useSingleHelmCheck,
   useSingleHelmNum,
   useSingleRoolCheck,
   useSingleRoolNum
 } from '../endings'
-import { useIslesHelmEntry, usePlayLevel, useSlamLevel } from '../isles'
+import { useIslesHelmEntry, usePlayLevel, useSlamLevel, useKRoolKontracts } from '../isles'
 import {
   useAllKongs,
   useAnyMusic,
@@ -32,7 +33,7 @@ import {
 } from '../kongs'
 import { useHelmStartPosition, useHelmItem1, useHelmItemNum1, useHelmItem2, useHelmItemNum2 } from '../settings'
 import { LogicBool } from '../world'
-import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentCoCoinCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useBean, useCurrentPearlCount, useCurrentBossCount, useCurrentBonusCount } from '../consumables'
+import { useCurrentGBCount, useCurrentBlueprintCount, useCurrentCoCoinCount, useCurrentKeyCount, useCurrentBananaMedalCount, useCurrentCrownCount, useCurrentFairyCount, useCurrentRainbowCoinCount, useBean, useCurrentPearlCount, useCurrentBossCount, useCurrentBonusCount, useKremKaptureEnemyCount, useCurrentBlastCount } from '../consumables'
 
 /**
  * Can we play in Hideout Helm?
@@ -300,8 +301,64 @@ export const useTheFridge = (): boolean => {
   return hasAllKongs && hasCoconut && hasStrongKong && hasPeanut && hasGrapes && hasPineapple && hasGuitar && hasOStand && hinaKagiyama && hasJetbarrel && hasTrombone && hasMiniMonkey && inflation && hasOranges && hasClimbing && hasBarrels && hasCranky
 }
 
-export const useKontracts = (): boolean => {
-  return false
+export const useKontracts = (task: Task): boolean => {
+  const [task1, task2, task3, task4, task5, task6, task7, task8] = useDonkStore(useShallow((state) => [state.task1, state.task2, state.task3, state.task4, state.task5, state.task6, state.task7, state.task8]))
+  const [taskCount1, taskCount2, taskCount3, taskCount4, taskCount5, taskCount6, taskCount7, taskCount8] = useDonkStore(useShallow((state) => [state.taskCount.taskCount1, state.taskCount.taskCount2, state.taskCount.taskCount3, state.taskCount.taskCount4, state.taskCount.taskCount5, state.taskCount.taskCount6, state.taskCount.taskCount7, state.taskCount.taskCount8]))
+  const taskList = [task1, task2, task3, task4, task5, task6, task7, task8]
+  const taskCountList = [taskCount1, taskCount2, taskCount3, taskCount4, taskCount5, taskCount6, taskCount7, taskCount8]
+  let [winCon1, winCon2, winCon3, winCon4, winCon5, winCon6, winCon7, winCon8] = [false, false, false, false, false, false, false, false]
+  const winCon = [winCon1, winCon2, winCon3, winCon4, winCon5, winCon6, winCon7, winCon8]
+  const currentKeyCount = useCurrentKeyCount()
+  const kaptures = useKremKaptureEnemyCount()
+  const currentGBCount = useCurrentGBCount()
+  const currentBPCount = useCurrentBlueprintCount()
+  const currentCoCoinCount = useCurrentCoCoinCount()
+  const currentMedalCount = useCurrentBananaMedalCount()
+  const currentCrownCount = useCurrentCrownCount()
+  const currentFairyCount = useCurrentFairyCount()
+  const currentRainbowCoinCount = useCurrentRainbowCoinCount()
+  const currentBeanCount = useBean()
+  const currentPearlCount = usePearlCount()
+  const currentBossCount = useCurrentBossCount()
+  const currentBonusCount = useCurrentBonusCount()
+  const currentBlastCount = useCurrentBlastCount()
+  const hasKey8 = useDonkStore(useShallow((state) => state.key8))
+  const [didCheck] = useDonkStore(useShallow((state) => [state.checks]))
+  const didTheFridge = useTheFridge()
+
+  for (let i = 0; i < taskList.length; i++) {
+    if (taskList[i] === ''
+        || (taskList[i] === 'Keys' && currentKeyCount >= taskCountList[i])
+        || (taskList[i] === 'Kremling Kapture' && kaptures >= taskCountList[i])
+        || (taskList[i] === 'Golden Bananas' && currentGBCount >= taskCountList[i])
+        || (taskList[i] === 'Blueprints' && currentBPCount >= taskCountList[i])
+        || (taskList[i] === 'Company Coins' && currentCoCoinCount >= taskCountList[i])
+        || (taskList[i] === 'Medals' && currentMedalCount >= taskCountList[i])
+        || (taskList[i] === 'Crowns' && currentCrownCount >= taskCountList[i])
+        || (taskList[i] === 'Fairies' && currentFairyCount >= taskCountList[i])
+        || (taskList[i] === 'Rainbow Coins' && currentRainbowCoinCount >= taskList[i])
+        || (taskList[i] === 'The Bean™' && currentBeanCount >= taskList[i])
+        || (taskList[i] === 'Pearls' && currentPearlCount >= taskList[i])
+        || (taskList[i] === 'Bosses' && currentBossCount >= taskList[i])
+        || (taskList[i] === 'Bonus Levels' && currentBonusCount >= taskList[i])
+        || (taskList[i] === 'Barrel Blast Courses' && currentBlastCount >= taskList[i])
+        || (taskList[i] === 'Get Key 8 only' && hasKey8)
+        || (taskList[i] === 'Kill the Wabbit' && didCheck[6042])
+        || (taskList[i] === 'Complete the DK Rap' && didTheFridge)
+        || (taskList[i] === 'Take Down the Mechfish Agenda' && didCheck[4012])
+        || (taskList[i] === 'Round 2 of DK Arcade' && didCheck[3005])
+        || (taskList[i] === 'Jetpac' && didCheck[105])
+        || (taskList[i] === 'Defeat the Toy Monster' && didCheck[3040])
+        || (taskList[i] === 'Get the Rareware Banana' && didCheck[47])) {
+      winCon[i] = true
+    }
+  }
+  
+  if (taskList[0] === '' && taskList[1] === '' && taskList[2] === '' && taskList[3] === '' && taskList[4] === '' && taskList[5] === '' && taskList[6] === '' && taskList[7] === '') {
+    return false
+  } else {
+    return winCon[0] && winCon[1] && winCon[2] && winCon[3] && winCon[4] && winCon[5] && winCon[6] && winCon[7]
+  }
 }
 
 //Have we satisfied the conditions needed just for K. Rool to appear?

@@ -7,215 +7,215 @@ const KremKapture: React.FC = () => {
   return (
     <>
       <KKCheck
-        id={-1}
+        id={9000}
         name="Gnawty"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-2}
+        id={9001}
         name="Gold Gnawty"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-3}
+        id={9002}
         name="Kritter"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-4}
+        id={9003}
         name="Stinging Zinger"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-5}
+        id={9004}
         name="Orange-Throwing Zinger"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-6}
+        id={9005}
         name="Green Klaptrap"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-7}
+        id={9006}
         name="Red Klaptrap"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-8}
+        id={9007}
         name="Purple Klaptrap"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-9}
+        id={9008}
         name="Klump"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-10}
+        id={9009}
         name="Klobber"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-11}
+        id={9010}
         name="Kaboom"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-12}
+        id={9011}
         name="Puftup"
         canGetLogic={hasFairyCam && hasDiving.in}
         canGetBreak={hasFairyCam && hasDiving.out}
       />
       <KKCheck
-        id={-13}
+        id={9012}
         name="Shuri"
         canGetLogic={hasFairyCam && hasDiving.in}
         canGetBreak={hasFairyCam && hasDiving.out}
       />
       <KKCheck
-        id={-14}
+        id={9013}
         name="Scubi/&quot;Gimpfish&quot;"
         canGetLogic={hasFairyCam && hasDiving.in}
         canGetBreak={hasFairyCam && hasDiving.out}
       />
       <KKCheck
-        id={-15}
+        id={9014}
         name="Mecha-Zinger"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-16}
+        id={9015}
         name="Mecha-Kritter"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-17}
+        id={9016}
         name="Domino"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-18}
+        id={9017}
         name="Red Dice"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-19}
+        id={9018}
         name="Green Dice"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-20}
+        id={9019}
         name="Wooden plank/ruler"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-21}
+        id={9020}
         name="Kosha"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-22}
+        id={9021}
         name="Spider"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-23}
+        id={9022}
         name="Purple Bat"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-24}
+        id={9023}
         name="Big Bug Bash Fly"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-25}
+        id={9024}
         name="Mushroom Kritter"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-26}
+        id={9025}
         name="Kritter Skeleton"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-27}
+        id={9026}
         name="Flame from that damn Chunky 5-Door Igloo check with the wabbit"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-28}
+        id={9027}
         name="&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;Ghost&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; Kritter in a sheet"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-29}
+        id={9028}
         name="DK's blonde Kasplat"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-30}
+        id={9029}
         name="Diddy's ginger Kasplat"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-31}
+        id={9030}
         name="Lanky's blue-haired Kasplat"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-32}
+        id={9031}
         name="Tiny's purple-haired Kasplat"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-33}
+        id={9032}
         name="Chunky's green-haired Kasplat"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-34}
+        id={9033}
         name="White Kop (the classic)"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-35}
+        id={9034}
         name="Orange Kop (disables Tag Anywhere)"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-36}
+        id={9035}
         name="Green Kop (disables the Z Button)"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-37}
+        id={9036}
         name="Blue Kop (disables the A Button)"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-38}
+        id={9037}
         name="Black Kop (slams you with a 10-second instakill Kroc)"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-39}
+        id={9038}
         name="Currently unknown enemy"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-40}
+        id={9039}
         name="Currently unknown enemy"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-41}
+        id={9040}
         name="Currently unknown enemy"
         canGetLogic={hasFairyCam}
       />
       <KKCheck
-        id={-42}
+        id={9041}
         name="Currently unknown enemy"
         canGetLogic={hasFairyCam}
       />

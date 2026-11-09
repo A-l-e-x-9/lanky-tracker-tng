@@ -2,7 +2,7 @@ import { StateCreator } from 'zustand'
 import { AllSlice, CheckSlice, CheckState, donkResetFns } from './common'
 
 export const initialChecks: CheckState = {
-  checks: {}
+  checks: false
 }
 
 const coreSlice: StateCreator<AllSlice, [], [], CheckSlice> = (set) => {

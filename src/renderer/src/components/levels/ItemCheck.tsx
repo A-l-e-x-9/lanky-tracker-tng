@@ -14,7 +14,7 @@ export type LevelCheckProps = {
 
 type ItemCheckProps = LevelCheckProps & {
   level: Level
-  done?: boolean
+  done: boolean
 }
 
 const ItemCheck: React.FC<ItemCheckProps> = (props) => {
