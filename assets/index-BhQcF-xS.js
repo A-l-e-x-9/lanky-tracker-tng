@@ -46022,6 +46022,7 @@ const Area1Boxes = () => {
   const hasDKPortal = useFrontMillPortal();
   const hasAnySlam = useSlam();
   const canGetToBackMill = useForestSpiderBoss();
+  const falconPunch = usePunch();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(BreakablePool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       ForestCheck,
@@ -46049,8 +46050,8 @@ const Area1Boxes = () => {
         id: 56702,
         name: "? Crate in Back Mill containing the Triangle Pad",
         region: "Forest Area 1",
-        canGetLogic: canGetToBackMill.in,
-        canGetBreak: canGetToBackMill.out
+        canGetLogic: canGetToBackMill.in && falconPunch,
+        canGetBreak: canGetToBackMill.out && falconPunch
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -46059,8 +46060,8 @@ const Area1Boxes = () => {
         id: 56703,
         name: "? Crate in Back Mill blocking Tiny's secret night entrance",
         region: "Forest Area 1",
-        canGetLogic: canGetToBackMill.in,
-        canGetBreak: canGetToBackMill.out
+        canGetLogic: canGetToBackMill.in && falconPunch,
+        canGetBreak: canGetToBackMill.out && falconPunch
       }
     )
   ] });
