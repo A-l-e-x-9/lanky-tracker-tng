@@ -1,6 +1,6 @@
 import BreakablePool from '@renderer/components/pools/Breakable'
 import { useForestBarn, usePlayForest, useForestDay, useFrontMillPortal, useForestSpiderBoss } from '@renderer/hooks/forest'
-import { useSlam } from '@renderer/hooks/kongs'
+import { useSlam, usePunch } from '@renderer/hooks/kongs'
 import ForestCheck from '../check'
 
 /*Version 6 of the Randomizer now allows you to have major rewards in miscellaneous breakable stuff, like so:*/
@@ -11,6 +11,7 @@ const isDay = useForestDay()
 const hasDKPortal = useFrontMillPortal()
 const hasAnySlam = useSlam()
 const canGetToBackMill = useForestSpiderBoss()
+const falconPunch = usePunch()
   return (
     <BreakablePool>
       <ForestCheck
@@ -31,15 +32,15 @@ const canGetToBackMill = useForestSpiderBoss()
         id={56702}
         name="? Crate in Back Mill containing the Triangle Pad"
         region="Forest Area 1"
-        canGetLogic={canGetToBackMill.in}
-        canGetBreak={canGetToBackMill.out}
+        canGetLogic={canGetToBackMill.in && falconPunch}
+        canGetBreak={canGetToBackMill.out && falconPunch}
       />
       <ForestCheck
         id={56703}
         name="? Crate in Back Mill blocking Tiny's secret night entrance"
         region="Forest Area 1"
-        canGetLogic={canGetToBackMill.in}
-        canGetBreak={canGetToBackMill.out}
+        canGetLogic={canGetToBackMill.in && falconPunch}
+        canGetBreak={canGetToBackMill.out && falconPunch}
       />
     </BreakablePool>
   )
