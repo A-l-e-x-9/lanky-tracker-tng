@@ -55673,6 +55673,7 @@ const bossState = (boss) => {
   const tiny = useTiny();
   const betaLanky = useBetaLankyPhase();
   const grape = useGrape();
+  const hasCannons = useCannons();
   switch (boss) {
     case "Army Dillo 1":
       if (anyKong && barrel) {
@@ -55713,7 +55714,7 @@ const bossState = (boss) => {
         return "not-available";
       }
     case "Kutout":
-      if (anyKong) {
+      if (anyKong && hasCannons) {
         return "available";
       } else {
         return "not-available";
