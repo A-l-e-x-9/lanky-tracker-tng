@@ -3,7 +3,7 @@ import { useShallow } from 'zustand/react/shallow'
 
 import useDonkStore from '@renderer/store'
 import { Boss } from '@renderer/store/common'
-import { useAnyKong, useBarrel, useBlast, useDk, useFeather, useGrape, useGone, useHunky, useMini, useOrange, usePeanut, usePunch, useRocket, useTiny, useTrombone, useTwirl, useClimbing } from '@renderer/hooks/kongs'
+import { useAnyKong, useBarrel, useBlast, useDk, useFeather, useGrape, useGone, useHunky, useMini, useOrange, usePeanut, usePunch, useRocket, useTiny, useTrombone, useTwirl, useClimbing, useCannons } from '@renderer/hooks/kongs'
 import { useBalancedRoolPhase, useChunkySlamLevel, useBetaLankyPhase } from '@renderer/hooks/settings'
 
 import dogadon1Icon from '../../assets/images/dogadon-1.png'
@@ -77,6 +77,7 @@ const bossState = (boss: Boss): string => {
   const tiny = useTiny()
   const betaLanky = useBetaLankyPhase()
   const grape = useGrape()
+  const hasCannons = useCannons()
   switch (boss) {
     case 'Army Dillo 1':
       if (anyKong && barrel) {
@@ -117,7 +118,7 @@ const bossState = (boss: Boss): string => {
         return 'not-available'
       }
     case 'Kutout':
-      if (anyKong) {
+      if (anyKong && hasCannons) {
         return 'available'
       } else {
         return 'not-available'
