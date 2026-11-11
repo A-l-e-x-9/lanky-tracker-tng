@@ -33,6 +33,7 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
   const isKillTheWabbit = useKRoolKontracts('Kill the Wabbit')
   const isBonusSeed = useKRoolKontracts('Bonus Levels')
   const isKeyCheck = useKRoolKontracts('Keys')
+  const isDKArcadeSeed = useKRoolKontracts('Round 2 of DK Arcade')
   const isKRoolsChallenge = useDonkStore(useShallow((state) => state.winCondition.kRoolChallenge))
   const medalsInRotation = useDonkStore(useShallow((state) => state.settings.poolBananaMedals))
   const ninCoin = useDonkStore(useShallow((state) => state.settings.poolNintendoCoin))
@@ -100,7 +101,8 @@ const ItemCheck: React.FC<ItemCheckProps> = (props) => {
     || props.id === 7023
     || props.id === 7033
     || props.id === 7040
-    || props.id === 7043))) {
+    || props.id === 7043))
+  || (isDKArcadeSeed && props.id === 3005)) {
     rowNames.push('foolish')
   } else if (isHoard) {
     rowNames.push('woth')
