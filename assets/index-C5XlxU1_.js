@@ -11408,6 +11408,8 @@ const initialPortal = {
     tinyTemplePoolPortal: false,
     secondHalfPortal: false,
     DK5DTPortal: false,
+    diddy5DTPortal: false,
+    tiny5DTPortal: false,
     chunky5DTPortal: false,
     llamaPortal: false,
     matchGame64Portal: false,
@@ -13230,6 +13232,8 @@ const useTinyTempleIcePortal = () => useDonkStore(useShallow((state) => state.sh
 const useTinyTemplePoolPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tinyTemplePoolPortal));
 const useSecondHalfPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.secondHalfPortal));
 const useDK5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.DK5DTPortal));
+const useDiddy5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.diddy5DTPortal));
+const useTiny5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.tiny5DTPortal));
 const useChunky5DTPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.chunky5DTPortal));
 const useLlamaPortal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.llamaPortal));
 const useMatchGame64Portal = () => useDonkStore(useShallow((state) => state.shuffledAztecPortals.matchGame64Portal));
@@ -13281,7 +13285,9 @@ const useAztecBack = () => {
   const DKPortal2 = useLlamaPortal();
   const DKPortal3 = useChunky5DTPortal();
   const DKPortal4 = useDK5DTPortal();
-  const portal = DKPortal || DKPortal2 || DKPortal3 || DKPortal4;
+  const DKPortal5 = useDiddy5DTPortal();
+  const DKPortal6 = useTiny5DTPortal();
+  const portal = DKPortal || DKPortal2 || DKPortal3 || DKPortal4 || DKPortal5 || DKPortal6;
   return {
     in: aztecFront.in && (backGateOpen || warpAll || hasClimbing && (vine || rocket) && musicSwitch) || portal,
     out: aztecFront.out && (backGateOpen || warpAll || musicSwitch && (diddy || tiny)) || portal
@@ -13668,9 +13674,10 @@ const useTinyFairy = () => {
   const feather = useFeather();
   const mini = useMini();
   const camera = useCamera();
+  const DKPortal = useTiny5DTPortal();
   return {
-    in: camera && door.in && feather && mini,
-    out: camera && door.out && feather && mini
+    in: camera && (door.in && feather || DKPortal) && mini,
+    out: camera && (door.out && feather || DKPortal) && mini
   };
 };
 const useCoconutKasplat = () => {
@@ -30538,6 +30545,7 @@ const Diddy5Enemies = () => {
   const door = useAztec5DoorTemple();
   const peanut = usePeanut();
   const klobberOrKlump = useDefeatToughEnemy();
+  const DKPortal = useDiddy5DTPortal();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -30545,8 +30553,8 @@ const Diddy5Enemies = () => {
         id: 2331,
         name: "Diddy 5DT Start Left Enemy 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && peanut,
-        canGetBreak: door.out && peanut
+        canGetLogic: (door.in || DKPortal) && peanut,
+        canGetBreak: door.out || DKPortal
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30555,8 +30563,8 @@ const Diddy5Enemies = () => {
         id: 2332,
         name: "Diddy 5DT Start Left Enemy 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && peanut,
-        canGetBreak: door.out && peanut
+        canGetLogic: (door.in || DKPortal) && peanut,
+        canGetBreak: (door.out || DKPortal) && peanut
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30565,8 +30573,8 @@ const Diddy5Enemies = () => {
         id: 2333,
         name: "Diddy 5DT Second Switch Enemy",
         region: "5 Door Temple",
-        canGetLogic: door.in && peanut,
-        canGetBreak: door.out && peanut
+        canGetLogic: door.in && peanut || DKPortal,
+        canGetBreak: door.out && peanut || DKPortal
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30575,8 +30583,8 @@ const Diddy5Enemies = () => {
         id: 2334,
         name: "Diddy 5DT End Trap Enemy 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && peanut && klobberOrKlump,
-        canGetBreak: door.out && peanut && klobberOrKlump
+        canGetLogic: (door.in && peanut || DKPortal) && klobberOrKlump,
+        canGetBreak: (door.in && peanut || DKPortal) && klobberOrKlump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30585,8 +30593,8 @@ const Diddy5Enemies = () => {
         id: 2335,
         name: "Diddy 5DT End Trap Enemy 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && peanut && klobberOrKlump,
-        canGetBreak: door.out && peanut && klobberOrKlump
+        canGetLogic: (door.in && peanut || DKPortal) && klobberOrKlump,
+        canGetBreak: (door.in && peanut || DKPortal) && klobberOrKlump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30595,8 +30603,8 @@ const Diddy5Enemies = () => {
         id: 2336,
         name: "Diddy 5DT End Trap Enemy 2",
         region: "5 Door Temple",
-        canGetLogic: door.in && peanut && klobberOrKlump,
-        canGetBreak: door.out && peanut && klobberOrKlump
+        canGetLogic: (door.in && peanut || DKPortal) && klobberOrKlump,
+        canGetBreak: (door.in && peanut || DKPortal) && klobberOrKlump
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30605,8 +30613,8 @@ const Diddy5Enemies = () => {
         id: 2337,
         name: "Enemy at Diddy 5DT Reward",
         region: "5 Door Temple",
-        canGetLogic: door.in && peanut && klobberOrKlump,
-        canGetBreak: door.out && peanut && klobberOrKlump
+        canGetLogic: (door.in || DKPortal) && peanut && klobberOrKlump,
+        canGetBreak: (door.out || DKPortal) && peanut && klobberOrKlump
       }
     )
   ] });
@@ -30750,6 +30758,7 @@ const Tiny5Enemies = () => {
   const door = useAztec5DoorTemple();
   const feather = useFeather();
   const zinger = useDefeatZinger();
+  const DKPortal = useTiny5DTPortal();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DropPool, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       AztecCheck,
@@ -30757,8 +30766,8 @@ const Tiny5Enemies = () => {
         id: 2341,
         name: "Tiny 5DT Start Left Front Enemy",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: door.out && feather && zinger.out
+        canGetLogic: (door.in && feather || DKPortal) && zinger.in,
+        canGetBreak: (door.out && feather || DKPortal) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30767,8 +30776,8 @@ const Tiny5Enemies = () => {
         id: 2342,
         name: "Tiny 5DT Start Left Back Enemy",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: door.out && feather && zinger.out
+        canGetLogic: (door.in && feather || DKPortal) && zinger.in,
+        canGetBreak: (door.out && feather || DKPortal) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30777,8 +30786,8 @@ const Tiny5Enemies = () => {
         id: 2343,
         name: "Tiny 5DT Start Right Back Enemy",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: door.out && feather && zinger.out
+        canGetLogic: (door.in && feather || DKPortal) && zinger.in,
+        canGetBreak: (door.out && feather || DKPortal) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30787,8 +30796,8 @@ const Tiny5Enemies = () => {
         id: 2344,
         name: "Tiny 5DT Start Right Front Enemy",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: door.out && feather && zinger.out
+        canGetLogic: (door.in && feather || DKPortal) && zinger.in,
+        canGetBreak: (door.out && feather || DKPortal) && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30797,8 +30806,8 @@ const Tiny5Enemies = () => {
         id: 2345,
         name: "Tiny 5DT Dead End Enemy 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: door.out && feather && zinger.out
+        canGetLogic: (door.in || DKPortal) && feather && zinger.in,
+        canGetBreak: (door.out || DKPortal) && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30807,8 +30816,8 @@ const Tiny5Enemies = () => {
         id: 2346,
         name: "Tiny 5DT Dead End Enemy 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: door.out && feather && zinger.out
+        canGetLogic: (door.in || DKPortal) && feather && zinger.in,
+        canGetBreak: (door.out || DKPortal) && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30817,8 +30826,8 @@ const Tiny5Enemies = () => {
         id: 2347,
         name: "Tiny 5DT Reward Enemy 0",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: door.out && feather && zinger.out
+        canGetLogic: (door.in || DKPortal) && feather && zinger.in,
+        canGetBreak: (door.out || DKPortal) && feather && zinger.out
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -30827,8 +30836,8 @@ const Tiny5Enemies = () => {
         id: 2348,
         name: "Tiny 5DT Reward Enemy 1",
         region: "5 Door Temple",
-        canGetLogic: door.in && feather && zinger.in,
-        canGetBreak: door.out && feather && zinger.out
+        canGetLogic: (door.in || DKPortal) && feather && zinger.in,
+        canGetBreak: (door.out || DKPortal) && feather && zinger.out
       }
     )
   ] });
@@ -59228,6 +59237,28 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is in DK's 5DT room.",
                   storeKey: "DK5DTPortal",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "In the second dead end of Diddy's 5-Door Temple room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Diddy's 5DT room.",
+                  storeKey: "diddy5DTPortal",
+                  prefix: "shuffledAztecPortals",
+                  updateItem: setAztecPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "At the second Feather switch of Tiny's 5-Door Temple room" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is in Tiny's 5DT room.",
+                  storeKey: "tiny5DTPortal",
                   prefix: "shuffledAztecPortals",
                   updateItem: setAztecPortal
                 }
