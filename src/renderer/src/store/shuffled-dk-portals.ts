@@ -23,6 +23,8 @@ export const initialPortal: PortalState = {
     tinyTemplePoolPortal: false,
     secondHalfPortal: false,
     DK5DTPortal: false,
+    diddy5DTPortal: false,
+    tiny5DTPortal: false,
     chunky5DTPortal: false,
     llamaPortal: false,
     matchGame64Portal: false,

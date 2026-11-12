@@ -1282,6 +1282,8 @@ interface aztecPortals {
   tinyTemplePoolPortal: boolean
   secondHalfPortal: boolean
   DK5DTPortal: boolean
+  diddy5DTPortal: boolean
+  tiny5DTPortal: boolean
   chunky5DTPortal: boolean
   llamaPortal: boolean
   matchGame64Portal: boolean

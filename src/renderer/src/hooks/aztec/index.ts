@@ -80,6 +80,12 @@ export const useSecondHalfPortal = (): boolean =>
 //Is the DK Portal in DK's 5DT room?
 export const useDK5DTPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.DK5DTPortal))
+//Is the DK Portal in Diddy's 5DT room?
+export const useDiddy5DTPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledAztecPortals.diddy5DTPortal))
+//Is the DK Portal in Tiny's 5DT room?
+export const useTiny5DTPortal = (): boolean =>
+  useDonkStore(useShallow((state) => state.shuffledAztecPortals.tiny5DTPortal))
 //Is the DK Portal in Chunky's 5DT room?
 export const useChunky5DTPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledAztecPortals.chunky5DTPortal))
@@ -165,7 +171,9 @@ export const useAztecBack = (): LogicBool => {
   const DKPortal2 = useLlamaPortal()
   const DKPortal3 = useChunky5DTPortal()
   const DKPortal4 = useDK5DTPortal()
-  const portal = DKPortal || DKPortal2 || DKPortal3 || DKPortal4
+  const DKPortal5 = useDiddy5DTPortal()
+  const DKPortal6 = useTiny5DTPortal()
+  const portal = DKPortal || DKPortal2 || DKPortal3 || DKPortal4 || DKPortal5 || DKPortal6
   return {
     in: (aztecFront.in && (backGateOpen || warpAll || (hasClimbing && (vine || rocket) && musicSwitch))) || portal,
     out: (aztecFront.out && (backGateOpen || warpAll || (musicSwitch && (diddy || tiny)))) || portal
@@ -265,7 +273,6 @@ export const useAztecBackTunnel = (): LogicBool => {
 
 /**
  * Can we enter the 5 Door Temple?
- * @todo Handle both versions of Fast Checks.
  * @returns true if we can enter the 5 Door Temple.
  */
 export const useAztec5DoorTemple = (): LogicBool => {
@@ -613,9 +620,10 @@ export const useTinyFairy = (): LogicBool => {
   const feather = useFeather()
   const mini = useMini()
   const camera = useCamera()
+  const DKPortal = useTiny5DTPortal()
   return {
-    in: camera && door.in && feather && mini,
-    out: camera && door.out && feather && mini
+    in: camera && ((door.in && feather) || DKPortal) && mini,
+    out: camera && ((door.out && feather) || DKPortal) && mini
   }
 }
 
