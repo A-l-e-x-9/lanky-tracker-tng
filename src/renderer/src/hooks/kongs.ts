@@ -282,7 +282,7 @@ export const useSlam = (): boolean => {
 /*On the flipside, if this is a Season 6 seed and we set a level in the Progressive Slam Shuffler to "No Slam", do we not need a slam?*/
 export const useNoSlam = (): boolean => {
   const slam = useDonkStore(useShallow((state) => state.moves.slam))
-  return slam === 0
+  return slam >= 0
 }
 
 /**
