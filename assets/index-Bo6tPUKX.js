@@ -508,10 +508,12 @@ let currentCharIndex = Math.floor(Math.random() * character.length);
 const titleBar = document.getElementById("header");
 const getBody = document.getElementById("lanky-tracker");
 const characterNum = character[currentCharIndex];
+const redToWhite = document.getElementsByClassName("foolish");
 switch (characterNum) {
   case 6:
     titleBar.innerHTML = "<header id='seija'><h1>Seija Tracker</h1><h2>The Flipped Generation</h2><p id='tip'></p></header>";
     getBody.style.color = "#ff0000";
+    redToWhite.forEach((element) => element.style.color = "#ffffff");
     {
       getBody.style.backgroundColor = "#000040";
     }
@@ -12110,7 +12112,7 @@ const useSlam = () => {
 };
 const useNoSlam = () => {
   const slam = useDonkStore(useShallow((state) => state.moves.slam));
-  return slam === 0;
+  return slam >= 0;
 };
 const useSuperSlam = () => {
   const slam = useDonkStore(useShallow((state) => state.moves.slam));
