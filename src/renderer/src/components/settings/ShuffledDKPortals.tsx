@@ -340,6 +340,14 @@ const ShuffledDKPortals: React.FC = () => {
                 prefix="shuffledGalleonPortals"
                 updateItem={setGalleonPortal}
             />
+            <p>In Lanky's 5DS room</p>
+            <SimpleRadioIcon
+                imgUrl={dkPortalIcon}
+                title="The DK Portal is in Lanky's 5-Door Ship room."
+                storeKey="lanky5DSPortal"
+                prefix="shuffledGalleonPortals"
+                updateItem={setGalleonPortal}
+            />
             </>
             <h3>Fungi Forest</h3>
             <>
