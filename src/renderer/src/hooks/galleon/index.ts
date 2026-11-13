@@ -58,6 +58,15 @@ export const useSlamGalleon = (): boolean => useSlamLevel('Gloomy Galleon')
 export const useGalleonTroffAndScoff = (): number => useTroffAndScoff('Gloomy Galleon')
 
 /*Alex addition: shuffled DK Portals*/
+//Is the DK Portal underwater?
+export const useUnderwaterPortal = (): LogicBool => {
+  const hasPortal = useDonkStore(useShallow((state) => state.shuffledGalleonPortals.underwaterPortal))
+  const waterIsLava = useDonkStore(useShallow((state) => state.settings.waterIsLava))
+  return {
+    in: hasPortal && !waterIsLava,
+    out: hasPortal && waterIsLava
+  }
+}
 //Is the DK Portal near Tiny's vanilla Kasplat?
 export const useTinyKasplatPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledGalleonPortals.tinyKasplatPortal))
@@ -70,7 +79,28 @@ export const useWhompsFortressPortal = (): boolean =>
 //Is the DK Portal inside Chunky's ship?
 export const useChunkyShipPortal = (): boolean =>
   useDonkStore(useShallow((state) => state.shuffledGalleonPortals.chunkyShipPortal))
+//Is the DK Portal in Lanky's 5DS room?
+export const useLanky5DSPortal = (): LogicBool => {
+  const hasPortal = useDonkStore(useShallow((state) => state.shuffledGalleonPortals.lanky5DSPortal))
+  const waterIsLava = useDonkStore(useShallow((state) => state.settings.waterIsLava))
+  return {
+    in: hasPortal && !waterIsLava,
+    out: hasPortal && waterIsLava
+  }
+}
 /*end shuffled DK Portals*/
+
+/*Alex addition: Can we do any underwater checks in this level? Thanks to the possibility of DK Portals being underwater in Season 6, this is no longer as simple as having Diving (and it never was if you were doing a Loading Zone Randomizer seed).*/
+export const useUW = (): LogicBool => {
+  const hasDiving = useDive()
+  const DKPortal = useUnderwaterPortal()
+  const DKPortal2 = useLanky5DSPortal()
+  const hasAPortal = DKPortal1 || DKPortal2
+  return {
+    in: hasDiving.in || hasAPortal.in,
+    out: hasDiving.out || hasAPortal.out
+  }
+}
 
 /**
  * Can we enter the Lighthouse area in Galleon?

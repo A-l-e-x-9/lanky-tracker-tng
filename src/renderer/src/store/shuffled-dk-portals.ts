@@ -42,10 +42,12 @@ export const initialPortal: PortalState = {
   },
   shuffledGalleonPortals: {
     vanilla: true,
+    underwater: false,
     tinyKasplatPortal: false,
     lighthousePortal: false,
     whompsFortressPortal: false,
-    chunkyShipPortal: false
+    chunkyShipPortal: false,
+    lanky5DSPortal: false
   },
   shuffledForestPortals: {
     vanilla: true,

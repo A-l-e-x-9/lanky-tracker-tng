@@ -1301,10 +1301,12 @@ interface factoryPortals {
 }
 interface galleonPortals {
   vanilla: boolean
+  underwater: boolean
   tinyKasplatPortal: boolean
   lighthousePortal: boolean
   whompsFortressPortal: boolean
   chunkyShipPortal: boolean
+  lanky5DSPortal: boolean
 }
 interface forestPortals {
   vanilla: boolean
