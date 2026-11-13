@@ -11427,10 +11427,12 @@ const initialPortal = {
   },
   shuffledGalleonPortals: {
     vanilla: true,
+    underwater: false,
     tinyKasplatPortal: false,
     lighthousePortal: false,
     whompsFortressPortal: false,
-    chunkyShipPortal: false
+    chunkyShipPortal: false,
+    lanky5DSPortal: false
   },
   shuffledForestPortals: {
     vanilla: true,
@@ -15009,10 +15011,36 @@ const usePlayGalleon = () => {
 };
 const useSlamGalleon = () => useSlamLevel("Gloomy Galleon");
 const useGalleonTroffAndScoff = () => useTroffAndScoff("Gloomy Galleon");
+const useUnderwaterPortal = () => {
+  const hasPortal = useDonkStore(useShallow((state) => state.shuffledGalleonPortals.underwater));
+  const waterIsLava = useDonkStore(useShallow((state) => state.settings.waterIsLava));
+  return {
+    in: hasPortal && !waterIsLava,
+    out: hasPortal && waterIsLava
+  };
+};
 const useTinyKasplatPortal = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.tinyKasplatPortal));
 const usePortalInLighthouse = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.lighthousePortal));
 const useWhompsFortressPortal = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.whompsFortressPortal));
 const useChunkyShipPortal = () => useDonkStore(useShallow((state) => state.shuffledGalleonPortals.chunkyShipPortal));
+const useLanky5DSPortal = () => {
+  const hasPortal = useDonkStore(useShallow((state) => state.shuffledGalleonPortals.lanky5DSPortal));
+  const waterIsLava = useDonkStore(useShallow((state) => state.settings.waterIsLava));
+  return {
+    in: hasPortal && !waterIsLava,
+    out: hasPortal && waterIsLava
+  };
+};
+const useUW = () => {
+  const hasDiving = useDive();
+  const DKPortal1 = useUnderwaterPortal();
+  const DKPortal2 = useLanky5DSPortal();
+  const hasAPortal = DKPortal1 || DKPortal2;
+  return {
+    in: hasDiving.in || hasAPortal.in,
+    out: hasDiving.out || hasAPortal.out
+  };
+};
 const useGalleonLighthouseArea = () => {
   const inStage = usePlayGalleon();
   const target = useSwitchsanityGun("galleonLighthouse", 0);
@@ -15028,7 +15056,7 @@ const useGalleonLighthouseArea = () => {
 };
 const useGalleonHighTide = () => {
   const lighthouse = useGalleonLighthouseArea();
-  const dive = useDive();
+  const dive = useUW();
   if (useGalleonTideStartHigh()) {
     return {
       in: true,
@@ -15041,7 +15069,7 @@ const useGalleonHighTide = () => {
   };
 };
 const useGalleonLowTide = () => {
-  const dive = useDive();
+  const dive = useUW();
   const inStage = usePlayGalleon();
   const canReachLighthouse = useGalleonLighthouseArea();
   if (!useGalleonTideStartHigh()) {
@@ -15100,7 +15128,7 @@ const useGalleonCavernTop = () => {
   const inStage = usePlayGalleon();
   const seasick = useGalleonSeasickShip();
   const rocket = useRocket();
-  const dive = useDive();
+  const dive = useUW();
   const vine = useVine();
   const warpAll = useBananaportAll();
   const DKPortal = useTinyKasplatPortal();
@@ -15133,7 +15161,7 @@ const useGalleonTreasureRoom = () => {
   const highTide = useGalleonHighTide();
   const inStage = usePlayGalleon();
   const lanky = useLanky();
-  const dive = useDive();
+  const dive = useUW();
   const preOpened = useDonkStore(useShallow((state) => state.removeBarriers.galleonTreasureRoom));
   const warpAll = useBananaportAll();
   return {
@@ -15195,7 +15223,7 @@ const useChunkySeasickGb = () => {
 const useChunky5DoorShipGb = () => {
   const lighthouse = useGalleonLighthouseArea();
   const outskirts = useGalleonOutskirts();
-  const dive = useDive();
+  const dive = useUW();
   const triangle = useTriangle();
   const lowTide = useGalleonLowTide();
   return {
@@ -15216,7 +15244,7 @@ const useDiddyMechGb = () => {
   const lighthouse = useGalleonLighthouseArea();
   const outskirts = useGalleonOutskirts();
   const highTide = useGalleonHighTide();
-  const dive = useDive();
+  const dive = useUW();
   const rocket = useRocket();
   const guitar = useGuitar();
   const gotAGun = useAnyGun();
@@ -15229,7 +15257,7 @@ const useDiddy5DoorShipGb = () => {
   const outskirts = useGalleonOutskirts();
   const lowTide = useGalleonLowTide();
   const guitar = useGuitar();
-  const dive = useDive();
+  const dive = useUW();
   return {
     in: outskirts.in && lowTide.in && guitar && dive.in,
     out: outskirts.out && lowTide.out && guitar && dive.out
@@ -15248,7 +15276,7 @@ const useDkBlastGb$2 = () => {
 const useDk5DoorShipGb = () => {
   const outskirts = useGalleonOutskirts();
   const bongos = useBongos();
-  const dive = useDive();
+  const dive = useUW();
   return {
     in: outskirts.in && bongos && dive.in,
     out: outskirts.out && bongos && dive.out
@@ -15257,7 +15285,7 @@ const useDk5DoorShipGb = () => {
 const useLankyChestGb = () => {
   const lighthouse = useGalleonLighthouseArea();
   const lanky = useLanky();
-  const dive = useDive();
+  const dive = useUW();
   return {
     in: lighthouse.in && lanky && dive.in,
     out: lighthouse.out && lanky && dive.out
@@ -15276,7 +15304,7 @@ const useLanky2DoorShipGb = () => {
   const outskirts = useGalleonOutskirts();
   const canSlam = useSlamGalleon();
   const lanky = useLanky();
-  const dive = useDive();
+  const dive = useUW();
   return {
     in: outskirts.in && canSlam && lanky && dive.in,
     out: outskirts.out && canSlam && lanky && dive.out
@@ -15286,7 +15314,7 @@ const useLanky5DoorShipGb = () => {
   const outskirts = useGalleonOutskirts();
   const trombone = useTrombone();
   const lowTide = useGalleonLowTide();
-  const dive = useDive();
+  const dive = useUW();
   return {
     in: outskirts.in && trombone && lowTide.in && dive.in,
     out: outskirts.out && trombone && lowTide.out && dive.out
@@ -15295,7 +15323,7 @@ const useLanky5DoorShipGb = () => {
 const useTinyMermaidGb = () => {
   const lighthouse = useGalleonLighthouseArea();
   const mini = useMini();
-  const dive = useDive();
+  const dive = useUW();
   const mermaid = useFastMermaid();
   const pearls = useCurrentPearlCount();
   return {
@@ -15306,7 +15334,7 @@ const useTinyMermaidGb = () => {
 const useTinySubGb = () => {
   const outskirts = useGalleonOutskirts();
   const mini = useMini();
-  const dive = useDive();
+  const dive = useUW();
   return {
     in: outskirts.in && mini && dive.in,
     out: outskirts.out && mini && dive.out
@@ -15314,7 +15342,7 @@ const useTinySubGb = () => {
 };
 const useTiny2DoorShipGb = () => {
   const outskirts = useGalleonOutskirts();
-  const dive = useDive();
+  const dive = useUW();
   const tiny = useTiny();
   const canSlam = useSlamGalleon();
   return {
@@ -15325,7 +15353,7 @@ const useTiny2DoorShipGb = () => {
 const useTiny5DoorShipGb = () => {
   const outskirts = useGalleonOutskirts();
   const sax = useSax();
-  const dive = useDive();
+  const dive = useUW();
   return {
     in: outskirts.in && sax && dive.in,
     out: outskirts.out && sax && dive.out
@@ -59407,6 +59435,17 @@ const ShuffledDKPortals = () => {
                   imgUrl: dkPortalIcon,
                   title: "The DK Portal is at its vanilla location or anywhere that wouldn't affect what checks you can do.",
                   storeKey: "vanilla",
+                  prefix: "shuffledGalleonPortals",
+                  updateItem: setGalleonPortal
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Any underwater location not listed" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                SimpleRadioIcon,
+                {
+                  imgUrl: dkPortalIcon,
+                  title: "The DK Portal is underwater somewhere.",
+                  storeKey: "underwater",
                   prefix: "shuffledGalleonPortals",
                   updateItem: setGalleonPortal
                 }
