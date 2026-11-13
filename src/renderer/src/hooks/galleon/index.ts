@@ -60,7 +60,7 @@ export const useGalleonTroffAndScoff = (): number => useTroffAndScoff('Gloomy Ga
 /*Alex addition: shuffled DK Portals*/
 //Is the DK Portal underwater?
 export const useUnderwaterPortal = (): LogicBool => {
-  const hasPortal = useDonkStore(useShallow((state) => state.shuffledGalleonPortals.underwaterPortal))
+  const hasPortal = useDonkStore(useShallow((state) => state.shuffledGalleonPortals.underwater))
   const waterIsLava = useDonkStore(useShallow((state) => state.settings.waterIsLava))
   return {
     in: hasPortal && !waterIsLava,
@@ -93,7 +93,7 @@ export const useLanky5DSPortal = (): LogicBool => {
 /*Alex addition: Can we do any underwater checks in this level? Thanks to the possibility of DK Portals being underwater in Season 6, this is no longer as simple as having Diving (and it never was if you were doing a Loading Zone Randomizer seed).*/
 export const useUW = (): LogicBool => {
   const hasDiving = useDive()
-  const DKPortal = useUnderwaterPortal()
+  const DKPortal1 = useUnderwaterPortal()
   const DKPortal2 = useLanky5DSPortal()
   const hasAPortal = DKPortal1 || DKPortal2
   return {
@@ -127,7 +127,7 @@ export const useGalleonLighthouseArea = (): LogicBool => {
  */
 export const useGalleonHighTide = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
-  const dive = useDive()
+  const dive = useUW()
   if (useGalleonTideStartHigh()) {
     return {
       in: true,
@@ -145,7 +145,7 @@ export const useGalleonHighTide = (): LogicBool => {
  * @returns true if we have access to Low Tide in Galleon.
  */
 export const useGalleonLowTide = (): LogicBool => {
-  const dive = useDive()
+  const dive = useUW()
   const inStage = usePlayGalleon()
   const canReachLighthouse = useGalleonLighthouseArea()
   if (!useGalleonTideStartHigh()) {
@@ -230,7 +230,7 @@ export const useGalleonCavernTop = (): LogicBool => {
   const inStage = usePlayGalleon()
   const seasick = useGalleonSeasickShip()
   const rocket = useRocket()
-  const dive = useDive()
+  const dive = useUW()
   const vine = useVine()
   const warpAll = useBananaportAll()
   const DKPortal = useTinyKasplatPortal()
@@ -280,7 +280,7 @@ export const useGalleonTreasureRoom = (): LogicBool => {
   const highTide = useGalleonHighTide()
   const inStage = usePlayGalleon()
   const lanky = useLanky()
-  const dive = useDive()
+  const dive = useUW()
   const preOpened = useDonkStore(useShallow((state) => state.removeBarriers.galleonTreasureRoom))
   const warpAll = useBananaportAll()
   return {
@@ -352,7 +352,7 @@ export const useChunkySeasickGb = (): LogicBool => {
 export const useChunky5DoorShipGb = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
   const outskirts = useGalleonOutskirts()
-  const dive = useDive()
+  const dive = useUW()
   const triangle = useTriangle()
   const lowTide = useGalleonLowTide()
   return {
@@ -375,7 +375,7 @@ export const useDiddyMechGb = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
   const outskirts = useGalleonOutskirts()
   const highTide = useGalleonHighTide()
-  const dive = useDive()
+  const dive = useUW()
   const rocket = useRocket()
   const guitar = useGuitar()
   const gotAGun = useAnyGun()
@@ -389,7 +389,7 @@ export const useDiddy5DoorShipGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const lowTide = useGalleonLowTide()
   const guitar = useGuitar()
-  const dive = useDive()
+  const dive = useUW()
   return {
     in: outskirts.in && lowTide.in && guitar && dive.in,
     out: outskirts.out && lowTide.out && guitar && dive.out
@@ -414,7 +414,7 @@ export const useDkBlastGb = (): LogicBool => {
 export const useDk5DoorShipGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const bongos = useBongos()
-  const dive = useDive()
+  const dive = useUW()
   return {
     in: outskirts.in && bongos && dive.in,
     out: outskirts.out && bongos && dive.out
@@ -424,7 +424,7 @@ export const useDk5DoorShipGb = (): LogicBool => {
 export const useLankyChestGb = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
   const lanky = useLanky()
-  const dive = useDive()
+  const dive = useUW()
   return {
     in: lighthouse.in && lanky && dive.in,
     out: lighthouse.out && lanky && dive.out
@@ -445,7 +445,7 @@ export const useLanky2DoorShipGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const canSlam = useSlamGalleon()
   const lanky = useLanky()
-  const dive = useDive()
+  const dive = useUW()
   return {
     in: outskirts.in && canSlam && lanky && dive.in,
     out: outskirts.out && canSlam && lanky && dive.out
@@ -456,7 +456,7 @@ export const useLanky5DoorShipGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const trombone = useTrombone()
   const lowTide = useGalleonLowTide()
-  const dive = useDive()
+  const dive = useUW()
   return {
     in: outskirts.in && trombone && lowTide.in && dive.in,
     out: outskirts.out && trombone && lowTide.out && dive.out
@@ -466,7 +466,7 @@ export const useLanky5DoorShipGb = (): LogicBool => {
 export const useTinyMermaidGb = (): LogicBool => {
   const lighthouse = useGalleonLighthouseArea()
   const mini = useMini()
-  const dive = useDive()
+  const dive = useUW()
   const mermaid = useFastMermaid()
   const pearls = useCurrentPearlCount()
   return {
@@ -478,7 +478,7 @@ export const useTinyMermaidGb = (): LogicBool => {
 export const useTinySubGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const mini = useMini()
-  const dive = useDive()
+  const dive = useUW()
   return {
     in: outskirts.in && mini && dive.in,
     out: outskirts.out && mini && dive.out
@@ -487,7 +487,7 @@ export const useTinySubGb = (): LogicBool => {
 
 export const useTiny2DoorShipGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
-  const dive = useDive()
+  const dive = useUW()
   const tiny = useTiny()
   const canSlam = useSlamGalleon()
   return {
@@ -499,7 +499,7 @@ export const useTiny2DoorShipGb = (): LogicBool => {
 export const useTiny5DoorShipGb = (): LogicBool => {
   const outskirts = useGalleonOutskirts()
   const sax = useSax()
-  const dive = useDive()
+  const dive = useUW()
   return {
     in: outskirts.in && sax && dive.in,
     out: outskirts.out && sax && dive.out
