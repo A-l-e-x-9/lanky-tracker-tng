@@ -7,7 +7,7 @@ import { SlamSelector } from './SlamSelector'
 import { useKRoolKontracts } from '@renderer/hooks/isles'
 
 import goldBananaIcon from '../../assets/images/GB.png'
-import bananaMedalIcon from '../../assets/images/bananamedal.png'
+import bananaMedalIcon from '../../assets/images/bananamedal.gif'
 import barrelIcon from '../../assets/images/barrel2.png'
 import beanIcon from '../../assets/images/bean.png'
 import chunkyIcon from '../../assets/images/chunky.png'
