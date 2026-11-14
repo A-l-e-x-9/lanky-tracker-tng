@@ -299,7 +299,7 @@ const GeneratorSettings: React.FC = () => {
                 setCount={setSetting}
                 maxValue={100}
               />
-              <p>Fairies needed for the Fairy's reward?</p>
+              <p>Fairies needed for the Fairy Queen's reward?</p>
               <CountSelector
                 imgUrl={fairyIcon}
                 title="Number of Fairies you need for the Rareware Banana."
@@ -690,7 +690,7 @@ const GeneratorSettings: React.FC = () => {
                 imgUrl={pearlIcon}
                 prefix="fastChecks"
                 setCount={setFastCheck}
-                maxValue={5} //I don't currently know if the Randomizer allows the Mermaid to demand more than five Pearls if you allotted more with the Item Count Modifier; not currently putting the "capRemoved" modifier here
+                maxValue={5} //I don't currently know if the Randomizer allows the Mermaid to demand more than five Pearls if you allotted more with the Item Count Modifier; not currently increasing this cap
               />
             </>
             <h3>UI Settings</h3>

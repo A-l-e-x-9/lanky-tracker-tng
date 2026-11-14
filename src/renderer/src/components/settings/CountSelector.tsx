@@ -24,6 +24,7 @@ const CountSelector: React.FC<CountSelectorProps> = (props) => {
   const fairySeed = props.storeKey === 'fairies' && useKRoolKontracts('Fairies') ? 'all-bosses' : ''
   const rainbowCoinSeed = props.storeKey === 'rainbowCoins' && useKRoolKontracts('Rainbow Coins') ? 'all-bosses' : ''
   const pearlSeed = props.storeKey === 'pearls' && useKRoolKontracts('Pearls') ? 'all-bosses' : ''
+  const uncountableKontract = useKRoolKontracts('' || 'Get Key 8 only' || 'Kill the Wabbit' || 'Complete the DK Rap' || 'Take Down the Mechfish Agenda' || 'Round 2 of DK Arcade' || 'Jetpac' || 'Defeat the Toy Monster' || 'Get the Rareware Banana') ? 'shop-shuffler' : '' //Makes this CountSelector disappear on Kontracts such as "finish DK Arcade", "kill the Wabbit", and "complete the DK Rap", that don't have a quantifiable, numerical goal
 
   const clamp = (num: number): number => Math.min(Math.max(num, 0), maxValue)
 
@@ -132,7 +133,7 @@ const CountSelector: React.FC<CountSelectorProps> = (props) => {
 
   return (
     <div
-      className={`count-icon ${props.prefix}-${props.storeKey} ${bananaSeed} ${bpSeed} ${medalSeed} ${crownSeed} ${fairySeed} ${rainbowCoinSeed} ${pearlSeed}`}
+      className={`count-icon ${props.prefix}-${props.storeKey} ${bananaSeed} ${bpSeed} ${medalSeed} ${crownSeed} ${fairySeed} ${rainbowCoinSeed} ${pearlSeed} ${uncountableKontract}`}
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}
       onContextMenu={handlePrevLevel}

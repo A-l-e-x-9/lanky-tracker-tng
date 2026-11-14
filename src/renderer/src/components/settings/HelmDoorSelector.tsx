@@ -69,7 +69,7 @@ export const HelmDoorSelector1: React.FC = () => {
         storeKey="helmItemNum1"
         prefix="settings"
         setCount={setSetting}
-        maxValue={helmItem1 == 1 ? 255 : helmItem1 == 2 ? 40 : helmItem1 == 3 ? 2 : helmItem1 == 4 ? 8 : helmItem1 == 5 ? 255 : helmItem1 == 6 ? 255 : helmItem1 == 7 ? 255 : helmItem1 == 8 ? 255 : helmItem1 == 9 ? 1 : helmItem1 == 10 ? 255 : 0}
+        maxValue={helmItem1 === 0 ? 0 : helmItem1 === 2 ? 40 : helmItem1 === 3 ? 2 : helmItem1 === 4 ? 8 : helmItem1 === 9 ? 1 : 255}
       />
     </div>
   )
@@ -114,7 +114,7 @@ export const HelmDoorSelector2: React.FC = () => {
         storeKey="helmItemNum2"
         prefix="settings"
         setCount={setSetting}
-        maxValue={helmItem2 == 1 ? 255 : helmItem2 == 2 ? 40 : helmItem2 == 3 ? 2 : helmItem2 == 4 ? 8 : helmItem2 == 5 ? 255 : helmItem2 == 6 ? 255 : helmItem2 == 7 ? 255 : helmItem2 == 8 ? 255 : helmItem2 == 9 ? 1 : helmItem2 == 10 ? 255 : 0}
+        maxValue={helmItem1 === 0 ? 0 : helmItem2 == 2 ? 40 : helmItem2 == 3 ? 2 : helmItem2 == 4 ? 8 : helmItem2 == 9 ? 1 : 255}
       />
     </div>
   )
