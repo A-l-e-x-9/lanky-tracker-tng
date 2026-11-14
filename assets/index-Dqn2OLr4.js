@@ -55088,6 +55088,7 @@ const CountSelector = (props) => {
   const fairySeed = props.storeKey === "fairies" && useKRoolKontracts("Fairies") ? "all-bosses" : "";
   const rainbowCoinSeed = props.storeKey === "rainbowCoins" && useKRoolKontracts("Rainbow Coins") ? "all-bosses" : "";
   const pearlSeed = props.storeKey === "pearls" && useKRoolKontracts("Pearls") ? "all-bosses" : "";
+  const uncountableKontract = useKRoolKontracts("Get Key 8 only") ? "shop-shuffler" : "";
   const clamp2 = (num2) => Math.min(Math.max(num2, 0), maxValue);
   const nextCount = (num2) => clamp2(num2 + 1);
   const prevCount = (num2) => clamp2(num2 - 1);
@@ -55173,7 +55174,7 @@ const CountSelector = (props) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
-      className: `count-icon ${props.prefix}-${props.storeKey} ${bananaSeed} ${bpSeed} ${medalSeed} ${crownSeed} ${fairySeed} ${rainbowCoinSeed} ${pearlSeed}`,
+      className: `count-icon ${props.prefix}-${props.storeKey} ${bananaSeed} ${bpSeed} ${medalSeed} ${crownSeed} ${fairySeed} ${rainbowCoinSeed} ${pearlSeed} ${uncountableKontract}`,
       onClick: handleClick,
       onDoubleClick: handleDoubleClick,
       onContextMenu: handlePrevLevel,
@@ -56640,7 +56641,7 @@ const HelmDoorSelector1 = () => {
         storeKey: "helmItemNum1",
         prefix: "settings",
         setCount: setSetting,
-        maxValue: helmItem1 == 1 ? 255 : helmItem1 == 2 ? 40 : helmItem1 == 3 ? 2 : helmItem1 == 4 ? 8 : helmItem1 == 5 ? 255 : helmItem1 == 6 ? 255 : helmItem1 == 7 ? 255 : helmItem1 == 8 ? 255 : helmItem1 == 9 ? 1 : helmItem1 == 10 ? 255 : 0
+        maxValue: helmItem1 === 0 ? 0 : helmItem1 === 2 ? 40 : helmItem1 === 3 ? 2 : helmItem1 === 4 ? 8 : helmItem1 === 9 ? 1 : 255
       }
     )
   ] });
@@ -56684,7 +56685,7 @@ const HelmDoorSelector2 = () => {
         storeKey: "helmItemNum2",
         prefix: "settings",
         setCount: setSetting,
-        maxValue: helmItem2 == 1 ? 255 : helmItem2 == 2 ? 40 : helmItem2 == 3 ? 2 : helmItem2 == 4 ? 8 : helmItem2 == 5 ? 255 : helmItem2 == 6 ? 255 : helmItem2 == 7 ? 255 : helmItem2 == 8 ? 255 : helmItem2 == 9 ? 1 : helmItem2 == 10 ? 255 : 0
+        maxValue: helmItem2 === 0 ? 0 : helmItem2 === 2 ? 40 : helmItem2 === 3 ? 2 : helmItem2 === 4 ? 8 : helmItem2 === 9 ? 1 : 255
       }
     )
   ] });
@@ -57072,7 +57073,7 @@ const GeneratorSettings = () => {
                   maxValue: 100
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Fairies needed for the Fairy's reward?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Fairies needed for the Fairy Queen's reward?" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 CountSelector,
                 {
