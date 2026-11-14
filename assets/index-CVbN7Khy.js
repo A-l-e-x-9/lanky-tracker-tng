@@ -508,12 +508,10 @@ let currentCharIndex = Math.floor(Math.random() * character.length);
 const titleBar = document.getElementById("header");
 const getBody = document.getElementById("lanky-tracker");
 const characterNum = character[currentCharIndex];
-const redToWhite = document.getElementsByClassName("foolish");
 switch (characterNum) {
   case 6:
     titleBar.innerHTML = "<header id='seija'><h1>Seija Tracker</h1><h2>The Flipped Generation</h2><p id='tip'></p></header>";
-    getBody.style.color = "#ff0000";
-    redToWhite.forEach((element) => element.style.color = "#ffffff");
+    getBody.style.color = "#0080ff";
     {
       getBody.style.backgroundColor = "#000040";
     }
@@ -55088,7 +55086,6 @@ const CountSelector = (props) => {
   const fairySeed = props.storeKey === "fairies" && useKRoolKontracts("Fairies") ? "all-bosses" : "";
   const rainbowCoinSeed = props.storeKey === "rainbowCoins" && useKRoolKontracts("Rainbow Coins") ? "all-bosses" : "";
   const pearlSeed = props.storeKey === "pearls" && useKRoolKontracts("Pearls") ? "all-bosses" : "";
-  const uncountableKontract = useKRoolKontracts("Get Key 8 only") ? "shop-shuffler" : "";
   const clamp2 = (num2) => Math.min(Math.max(num2, 0), maxValue);
   const nextCount = (num2) => clamp2(num2 + 1);
   const prevCount = (num2) => clamp2(num2 - 1);
@@ -55174,7 +55171,7 @@ const CountSelector = (props) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
-      className: `count-icon ${props.prefix}-${props.storeKey} ${bananaSeed} ${bpSeed} ${medalSeed} ${crownSeed} ${fairySeed} ${rainbowCoinSeed} ${pearlSeed} ${uncountableKontract}`,
+      className: `count-icon ${props.prefix}-${props.storeKey} ${bananaSeed} ${bpSeed} ${medalSeed} ${crownSeed} ${fairySeed} ${rainbowCoinSeed} ${pearlSeed}`,
       onClick: handleClick,
       onDoubleClick: handleDoubleClick,
       onContextMenu: handlePrevLevel,
