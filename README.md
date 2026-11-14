@@ -9,6 +9,7 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
 - Update the tracker to account for the following things added to the Randomizer on or around October 26, 2026:
 	- **NOW WORKING: Balloons being checks**
+- Make it so that for "uncountable" Kontracts like "Get Key 8 Only" and "Complete the DK Rap", the CountSelector disappears. (Maybe also make it disappear on the Generator Settings if a Helm door is already opened.)
 - Because the timetable for implementing shuffled Colored Bananas is "when hell freezes over plus 69 years", only vanilla balloons are tracked if you play a Season 6 seed with Balloons in the rotation.
 - Make it so that having Krem Kapture off doesn't mess up with navigating the tracker by keyboard. (•̀⤙•́)
 - Make this thing remember the last level you were on instead of always defaulting to DK Isles when you reload it. (so annoying •̀⤙•́)
