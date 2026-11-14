@@ -9,16 +9,10 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 ## Known Bugs and Stuff Alex Needs to Do for Future Versions:
 - Update the tracker to account for the following things added to the Randomizer on or around October 26, 2026:
 	- **NOW WORKING: Balloons being checks**
-	- more options for Switchsanity (basically amounting to everything Diddy can Chimpy Charge and Chunky can Primate Punch down being changeable now)
-	- **NOW WORKING: the win conditions of "clear the Mechfish", "beat Round 2 of DK Arcade", "beat Jetpac", "beat the Toy Monster", "get the Returning the Banana Fairies reward", Barrel Blast courses, and the "Tasks" feature (to be dubbed "K. Rool's Kontracts" after [this comment in Ballaam's original proposal for Tasks](https://github.com/2dos/DK64-Randomizer/issues/3333#issuecomment-4637198143)) (which essentially allows you to have up to eight win cons).**
-- Since the Kong you see on the main menu in S6 seeds can now apparently be a Kong other than DK (I got Lanky in my first such seed), make the title bar rotate to show a Kong other than Lanky every time you reload the page (but not with equal probability)? For example, it could sometimes say "DK Tracker: The OKAY! Generation", have DK in the middle, and have a yellow background instead of a blue one?
 - Because the timetable for implementing shuffled Colored Bananas is "when hell freezes over plus 69 years", only vanilla balloons are tracked if you play a Season 6 seed with Balloons in the rotation.
 - Make it so that having Krem Kapture off doesn't mess up with navigating the tracker by keyboard. (•̀⤙•́)
 - Make this thing remember the last level you were on instead of always defaulting to DK Isles when you reload it. (so annoying •̀⤙•́)
-- Piggybacking off of CountSelector becoming an input field when you double click, convert some icon-based selectors (currently thinking it should be the level and boss selectors) to simpler dropdown list boxes?
-- Recolor the pad and barrel icons to match the "color-coded Kong Pads/Barrels" option in the Randomizer.
 - Currently, the "Bonuses" and "K. Rool's Challenge" win conditions don't account for the Oil Drums in Hideout Helm, so if your current seed's win con is >43 Bonus Barrels, you're outta luck.
-- Make it so that for the shuffled Arenas, Crates, Dirts, Fairies, and eventually Kasplats and Colored Bananas, there's only one or two checks each, and you can use a drop-down list or something to choose where they are.
 - Make the left side of the tracker sticky...either Alex really sucks at using the "position: sticky;" CSS command, or something else about the tracker's design is stopping it from being sticky.
 - Alex took out the "Region Hints" section of the original Tracker because he thought it was poorly done. Reimplement it?
 - Need an easy way to reset the tracker if need be. (Currently, in Firefox, you have to do it by right-clicking, go to "Inspect", click the "Storage" tab, then on "Local Storage", then on the website's name, and deleting the "donk-storage" entry.)
@@ -27,10 +21,9 @@ As with the original, this tracker was written in JavaScript, primarily with an 
 If you know the answer to any of these (or any of the above that Alex hasn't done yet), see the Development section below.
 - As with the original, if there is a way to enable autotracking with the underlying languages, it's not known at this time, so this car is only available with a manual transmission.
 - Shuffled Colored Bananas will be the hardest feature to implement...
-- Alex also took out the "presets" dropdown underneath the Switchsanity settings, and will probably NOT re-implement this.
 - Any way to take the Loading Zone Randomizer into account...you're completely on your own there. At worst, this tracker was made for Complex Level Order seeds with the possibility of Hideout Helm being shuffled.
   - Putting in the rarely-seen feature that allows you to change where your start location is (and makes the relevant pause menu feature say "Exit to Spawn" instead of "Exit to Isles")
-- Implementing Glitch Logic.
+- Glitch Logic.
 
 # Development
 
