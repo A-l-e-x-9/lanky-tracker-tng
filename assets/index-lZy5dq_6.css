@@ -21,9 +21,7 @@
   --ev-button-alt-hover-border: transparent;
   --ev-button-alt-hover-text: var(--ev-c-text-1);
   --ev-button-alt-hover-bg: var(--ev-c-gray-2);
-}
 
-:root {
   --color-background: var(--ev-c-white);
   --color-background-soft: var(--ev-c-white-soft);
   --color-background-mute: var(--ev-c-white-mute);
@@ -38,6 +36,8 @@
   margin: 0;
 }
 
+::selection {background-color: var(--ev-c-black-mute); color: #ffffff;}
+
 ul {
   list-style: none;
 }
@@ -48,44 +48,25 @@ body {
   background-color: var(--color-background);
   font-family: Barlow, Tahoma, Verdana, sans-serif;
   text-rendering: optimizeLegibility;
-}
-
-body {
   background-image: url("data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201422%20800'%20opacity='0.3'%3e%3cdefs%3e%3clinearGradient%20x1='50%25'%20y1='0%25'%20x2='50%25'%20y2='100%25'%20id='oooscillate-grad'%3e%3cstop%20stop-color='hsl(206,%2075%25,%2049%25)'%20stop-opacity='1'%20offset='0%25'%3e%3c/stop%3e%3cstop%20stop-color='hsl(331,%2090%25,%2056%25)'%20stop-opacity='1'%20offset='100%25'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3cg%20stroke-width='1'%20stroke='url(%23oooscillate-grad)'%20fill='none'%20stroke-linecap='round'%3e%3cpath%20d='M%200%20448%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20448'%20opacity='0.05'%3e%3c/path%3e%3cpath%20d='M%200%20420%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20420'%20opacity='0.11'%3e%3c/path%3e%3cpath%20d='M%200%20392%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20392'%20opacity='0.18'%3e%3c/path%3e%3cpath%20d='M%200%20364%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20364'%20opacity='0.24'%3e%3c/path%3e%3cpath%20d='M%200%20336%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20336'%20opacity='0.30'%3e%3c/path%3e%3cpath%20d='M%200%20308%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20308'%20opacity='0.37'%3e%3c/path%3e%3cpath%20d='M%200%20280%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20280'%20opacity='0.43'%3e%3c/path%3e%3cpath%20d='M%200%20252%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20252'%20opacity='0.49'%3e%3c/path%3e%3cpath%20d='M%200%20224%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20224'%20opacity='0.56'%3e%3c/path%3e%3cpath%20d='M%200%20196%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20196'%20opacity='0.62'%3e%3c/path%3e%3cpath%20d='M%200%20168%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20168'%20opacity='0.68'%3e%3c/path%3e%3cpath%20d='M%200%20140%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20140'%20opacity='0.75'%3e%3c/path%3e%3cpath%20d='M%200%20112%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%20112'%20opacity='0.81'%3e%3c/path%3e%3cpath%20d='M%200%2084%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%2084'%20opacity='0.87'%3e%3c/path%3e%3cpath%20d='M%200%2056%20Q%20355.5%20-100%20711%20400%20Q%201066.5%20900%201422%2056'%20opacity='0.94'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
   background-size: cover;
   background-position: right;
 }
 
 h1, h2, h3, h4, h5, h6 {text-align: center; font-family: Optima LT Pro, Verdana, Tahoma, sans-serif; font-weight: bold;}
-
 header {background: #0080ff url('./tracker-bg-KU71SgQ9.png') no-repeat top center; color: #000000; width: 100%;}
-
 header h1 {font-size: 5em; text-align: left; padding-left: 100px; text-transform: lowercase;}
-
 header h2 {text-align: right; padding-right: 100px; text-transform: lowercase;}
-
 header p {background-color: #000040; color: #ffffff; width: 100%; padding: 0px 100px;}
-
 #dk {background: #ffff00 url('./dk-CTWGwX63.png') no-repeat top center;}
-
 #diddy {background: #ff0000 url('./diddy-BUD_XXI7.png') no-repeat top center;}
-
 #tiny {background: #ff00ff url('./tiny-C6yNteJ8.png') no-repeat top center;}
-
 #chunky {background: #00ff00 url('./chunky-CnXcifAb.png') no-repeat top center;}
-
 #cranky {background: #804000 url('./cranky-BF4YK1hJ.png') no-repeat top center;}
-
 #seija {background: #c00000 url('./seija-kijin-BGHZ7eEV.png') no-repeat top center; transform: rotate(180deg);}
-
-/*footer {position: fixed; bottom: 0; left: 0; max-width: 350px; border: 3px solid;}*/
-
 a {font-weight: bold;}
-
 a:link {color: #00ffff;}
-
 a:visited {color: #008080;}
-
 a:hover {color: #ffffff;}
 
 code {
@@ -152,7 +133,6 @@ main > article:last-child {
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
 }
-
 .level-list img:nth-of-type(3n),
 .level-list img:nth-of-type(3n + 2),
 .boss-list img:nth-of-type(3n),
@@ -161,32 +141,25 @@ main > article:last-child {
 .kontract-list img:nth-of-type(3n+2) {
   cursor: pointer;
 }
-
 .level-list > section, .boss-list section, .kontract-list section {
   display: grid;
   justify-items: center;
 }
-
 .level-list > section {
   grid-template-columns: 1fr 14ex 1fr 1fr 1fr;
 }
-
 .boss-list section, .kontract-list section {
   grid-template-columns: 1fr 14ex 1fr;
 }
-
 .level-list > .level2, .boss-list > .boss2, .kontract-list > .task2 {
   grid-row: 2;
 }
-
 .level-list > .level3, .boss-list > .boss3, .kontract-list > .task3 {
   grid-row: 3;
 }
-
 .level-list > .level4, .boss-list > .boss4, .kontract-list > .task4 {
   grid-row: 4;
 }
-
 .level-list img, .boss-list img, .kontract-list img {
   height: 24px;
 }
@@ -195,23 +168,19 @@ main > article:last-child {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
 .ending > div {
   font-size: larger;
   margin: 0 auto;
   text-align: center;
 }
-
 .ending > div > span:first-child::after {
   content: " ";
 }
-
 .ending > section {
   grid-row: 2;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
-
 .ending > section:last-child > img {
   margin-left: auto;
 }
@@ -244,7 +213,6 @@ main > article:last-child {
   font-size: 12px;
   line-height: 1;
 }
-
 .simple-icon.have > span {
   color: green;
 }
@@ -290,7 +258,6 @@ main > article:last-child {
   display: grid;
   grid-template-columns: repeat(3, 3fr 1fr);
 }
-
 .modal-settings > .pool > h3, .modal-settings > .pool > h4 {
   margin: 0 auto;
   display: flex;
@@ -301,12 +268,10 @@ main > article:last-child {
 .switchsanity-settings > h4 {
   text-align: center;
 }
-
 .switchsanity-settings > section {
   display: grid;
   grid-template-columns: 7fr 1fr;
 }
-
 .switchsanity-settings > section > img {
   text-align: right;
   margin-left: auto;

@@ -57162,7 +57162,7 @@ const GeneratorSettings = () => {
                 SimpleIcon,
                 {
                   imgUrl: slamSwitchIcon,
-                  title: "If on, the Simian Slam level required for Kong head switches is tied to a level's position (i.e., if Creepy Castle is Level 1, it requires regular Slam instead of Super Duper). If off, the level's vanilla slam level is used.",
+                  title: `Activates the Progressive Slam Selector underneath "Current Forest Time". If off, the level's vanilla slam level is used.`,
                   storeKey: "progressiveSlams",
                   prefix: "settings",
                   updateItem: setSetting
