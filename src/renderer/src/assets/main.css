@@ -69,6 +69,7 @@ header p {background-color: #000040; color: #ffffff; width: 100%; padding: 0px 1
 #chunky {background: #00ff00 url('./chunky.png') no-repeat top center;}
 #cranky {background: #804000 url('./cranky.png') no-repeat top center;}
 #seija {background: #c00000 url('./seija-kijin.png') no-repeat top center; transform: rotate(180deg);}
+#funky {background: #0080ff url('./funky.png') no-repeat top center;}
 a {font-weight: bold;}
 a:link {color: #00ffff;}
 a:visited {color: #008080;}

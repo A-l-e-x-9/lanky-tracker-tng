@@ -21,13 +21,21 @@
       const characterNum = character[currentCharIndex];
       const isDST = false
       switch (characterNum) {
-        case 6:
+        case 7:
           titleBar.innerHTML = "<header id='seija'><h1>Seija Tracker</h1><h2>The Flipped Generation</h2><p id='tip'></p></header>"
           getBody.style.color = "#0080ff"
           if (isDST) {
             getBody.style.backgroundColor = "#000000"
           } else {
             getBody.style.backgroundColor = "#000040"
+          }
+          break
+        case 6:
+          titleBar.innerHTML = "<header id='funky'><h1>Lanky Tracker<br><sub>New Funky Mode!</sub></h1><h2><a href='https://www.youtube.com/watch?v=7h7bnYA1LXE'>What a Funky!</a></h2><p id='tip'></p></header>"
+          if (isDST) {
+            getBody.style.backgroundColor = "#ffffff"
+          } else {
+            getBody.style.backgroundColor = "#002040"
           }
           break
         case 5:
