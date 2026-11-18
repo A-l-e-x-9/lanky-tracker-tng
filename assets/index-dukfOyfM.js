@@ -538,7 +538,7 @@ const character = [
   1,
   6
 ];
-let currentCharIndex = Math.floor(Math.random() * character.length);
+let currentCharIndex = Math.round(Math.random() * character.length);
 const titleBar = document.getElementById("header");
 const getBody = document.getElementById("lanky-tracker");
 const characterNum = character[currentCharIndex];
@@ -689,7 +689,7 @@ const tips = [
   "TIP: Using this tracker is on the Way of the Hoard. It would be foolish to not use this tracker.",
   "TIP: This tip was konfiscated by the best Kop on the force."
 ];
-let currentTipIndex = Math.floor(Math.random() * tips.length);
+let currentTipIndex = Math.round(Math.random() * tips.length);
 const bannerElement = document.getElementById("tip");
 bannerElement.innerHTML = tips[currentTipIndex];
 var client = {};
