@@ -15,7 +15,7 @@
                          0, 1, 2, 0, 1, 0, 0, 0, 0, 0,
                          0, 1, 1, 6];
 
-      let currentCharIndex = Math.floor(Math.random() * character.length);
+      let currentCharIndex = Math.round(Math.random() * character.length);
       const titleBar = document.getElementById('header');
       const getBody = document.getElementById('lanky-tracker');
       const characterNum = character[currentCharIndex];
@@ -188,7 +188,7 @@
           "TIP: This tip was konfiscated by the best Kop on the force."
       ];
 
-      let currentTipIndex = Math.floor(Math.random() * tips.length);
+      let currentTipIndex = Math.round(Math.random() * tips.length);
       const bannerElement = document.getElementById('tip');
       
       // 3. Initialize the first tip immediately
